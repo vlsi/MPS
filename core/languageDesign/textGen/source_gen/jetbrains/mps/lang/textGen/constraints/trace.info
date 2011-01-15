@@ -34,7 +34,7 @@
     <scopeInfo nodeId="1236703502277" fileName="OperationDeclaration_DefaultSearchScope.java" startLine="33" startPosition="29" endLine="34" endPosition="122" />
     <scopeInfo nodeId="1234264389787" fileName="OperationDeclaration_operationName_PropertyConstraint.java" startLine="34" startPosition="14" endLine="35" endPosition="38" />
     <scopeInfo nodeId="1234264345467" fileName="OperationDeclaration_operationName_PropertyConstraint.java" startLine="31" startPosition="50" endLine="33" endPosition="52" />
-    <scopeInfo nodeId="1236703502276" fileName="OperationDeclaration_DefaultSearchScope.java" startLine="32" startPosition="183" endLine="35" endPosition="5">
+    <scopeInfo nodeId="1236703502276" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OperationDeclaration_DefaultSearchScope.java" startLine="32" startPosition="183" endLine="35" endPosition="5">
       <varInfo nodeId="1236703502280" varName="tg" />
     </scopeInfo>
     <scopeInfo nodeId="1234264315915" fileName="OperationDeclaration_operationName_PropertyConstraint.java" startLine="30" startPosition="45" endLine="36" endPosition="7" />
@@ -42,7 +42,7 @@
       <varInfo nodeId="1236703309945" varName="result" />
       <varInfo nodeId="1236703470001" varName="tgList" />
     </scopeInfo>
-    <scopeInfo nodeId="1234264315914" fileName="OperationDeclaration_operationName_PropertyConstraint.java" startLine="29" startPosition="47" endLine="37" endPosition="5">
+    <scopeInfo nodeId="1234264315914" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="OperationDeclaration_operationName_PropertyConstraint.java" startLine="29" startPosition="47" endLine="37" endPosition="5">
       <varInfo nodeId="1234264315917" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1234264190387" fileName="OperationDeclaration_operationName_PropertyConstraint.java" startLine="24" startPosition="80" endLine="38" endPosition="29">

@@ -41,7 +41,7 @@
     <nodeInfo nodeId="4393431345217255797" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ImplementMethods_Intention.java" startLine="58" startPosition="25" endLine="59" endPosition="51" />
     <nodeInfo nodeId="4393431345217255822" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ImplementMethods_Intention.java" startLine="59" startPosition="51" endLine="60" endPosition="75" />
     <nodeInfo nodeId="7347712222698003846" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ImplementMethods_Intention.java" startLine="60" startPosition="75" endLine="61" endPosition="180" />
-    <nodeInfo nodeId="5167929551696755298" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ImplementMethods_Intention.java" startLine="57" startPosition="47" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="5167929551696755298" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ImplementMethods_Intention.java" startLine="57" startPosition="47" endLine="63" endPosition="0" />
     <nodeInfo nodeId="5167929551696755292" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ImplementMethods_Intention.java" startLine="56" startPosition="76" endLine="63" endPosition="7" />
     <scopeInfo nodeId="5167929551696755287" fileName="ImplementMethods_Intention.java" startLine="41" startPosition="85" endLine="42" endPosition="31" />
     <scopeInfo nodeId="5167929551696755315" fileName="ImplementMethods_Intention.java" startLine="52" startPosition="90" endLine="53" endPosition="212" />
@@ -49,7 +49,7 @@
       <varInfo nodeId="4393431345217255823" varName="project" />
       <varInfo nodeId="4393431345217255798" varName="frame" />
     </scopeInfo>
-    <scopeInfo nodeId="5167929551696755298" fileName="ImplementMethods_Intention.java" startLine="57" startPosition="47" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="5167929551696755298" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ImplementMethods_Intention.java" startLine="57" startPosition="47" endLine="63" endPosition="0" />
     <scopeInfo nodeId="5167929551696755291" fileName="ImplementMethods_Intention.java" startLine="56" startPosition="76" endLine="63" endPosition="7" />
     <unitInfo nodeId="5167929551696755296" fileName="ImplementMethods_Intention.java" startLine="57" startPosition="35" endLine="63" endPosition="5" unitName="jetbrains.mps.lang.behavior.intentions.ImplementMethods_Intention$1" />
   </root>

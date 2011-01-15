@@ -212,7 +212,7 @@ public class LanguageErrorsComponent {
       return;
     }
     for (SNode additional : SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(myDependenciesToNodes).keySet())) {
-      if (SNodeOperations.getModel(additional) == model) {
+      if (additional.shouldHaveBeenDisposed() || SNodeOperations.getModel(additional) == model) {
         processNodeChange(additional);
       }
     }

@@ -5,6 +5,7 @@ package jetbrains.mps.lang.plugin.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +19,9 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String OUTSIDE_COMMAND = "outsideCommand";
+  public static final String BASE_NODE_CONCEPT = "baseNodeConcept";
+  public static final String GOES_AFTER = "goesAfter";
+  public static final String BASE_NODE_BLOCK = "baseNodeBlock";
   public static final String INIT_BLOCK = "initBlock";
   public static final String ASK_BLOCK = "askBlock";
   public static final String CREATE_BLOCK = "createBlock";
@@ -80,6 +84,30 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
 
   public void setOutsideCommand(boolean value) {
     this.setBooleanProperty(AbstractEditorTab.OUTSIDE_COMMAND, value);
+  }
+
+  public AbstractConceptDeclaration getBaseNodeConcept() {
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, AbstractEditorTab.BASE_NODE_CONCEPT);
+  }
+
+  public void setBaseNodeConcept(AbstractConceptDeclaration node) {
+    super.setReferent(AbstractEditorTab.BASE_NODE_CONCEPT, node);
+  }
+
+  public AbstractEditorTab getGoesAfter() {
+    return (AbstractEditorTab) this.getReferent(AbstractEditorTab.class, AbstractEditorTab.GOES_AFTER);
+  }
+
+  public void setGoesAfter(AbstractEditorTab node) {
+    super.setReferent(AbstractEditorTab.GOES_AFTER, node);
+  }
+
+  public GetBaseNodeBlock getBaseNodeBlock() {
+    return (GetBaseNodeBlock) this.getChild(GetBaseNodeBlock.class, AbstractEditorTab.BASE_NODE_BLOCK);
+  }
+
+  public void setBaseNodeBlock(GetBaseNodeBlock node) {
+    super.setChild(AbstractEditorTab.BASE_NODE_BLOCK, node);
   }
 
   public InitTabBlock getInitBlock() {

@@ -52,7 +52,7 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp4k.1227008925923" resolveInfo="ActionConstructorParameterReferenceOperation" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="5003188907306360695">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Groups.GroupContents.Statements" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp4k.1207145475354" resolveInfo="AddElementStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="4434783588132677143">
@@ -60,7 +60,7 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp4k.678887849223472895" resolveInfo="DisposeConsoleBlock" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="4434783588132759534">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="RunConfigs.Configuration.Execute.Statements" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp4k.678887849223472893" resolveInfo="ProcessHandlerStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="4434783588132759545">
@@ -96,7 +96,7 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp4k.6938053545825350222" resolveInfo="ToolTab" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="5158570261711860781">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab.Methods" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp4k.5703381818026462228" resolveInfo="AskStatement" />
     </node>
   </roots>

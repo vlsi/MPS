@@ -21,7 +21,6 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import java.awt.Frame;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.smodel.IScope;
 import java.util.Set;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -112,7 +111,7 @@ public class SetNodePackage_Action extends GeneratedAction {
           for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
             node.setProperty(SModelTreeNode.PACK, dialog.getPackage());
             if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-              for (SNode aspect : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), ((IScope) MapSequence.fromMap(_params).get("scope"))))) {
+              for (SNode aspect : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
                 aspect.setProperty(SModelTreeNode.PACK, dialog.getPackage());
               }
             }

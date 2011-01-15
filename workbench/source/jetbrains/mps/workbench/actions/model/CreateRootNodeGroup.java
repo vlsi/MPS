@@ -20,16 +20,19 @@ import com.intellij.ide.SelectInContext;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
+import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.actions.AddLanguageImport_Action;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -38,7 +41,6 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -101,7 +103,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     List<Language> modelLanguages = SModelOperations.getLanguages(modelDescriptor.getSModel(), scope);
     if (modelLanguages.size() == 0) {
-      add(ActionFactory.getInstance().acquireRegisteredAction("jetbrains.mps.ide.actions.AddLanguageImport_Action", "jetbrains.mps.ide"));
+      add(ActionManager.getInstance().getAction(AddLanguageImport_Action.class.getName()));
     }
 
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
@@ -205,7 +207,9 @@ public class CreateRootNodeGroup extends BaseGroup {
       }
 
       IEditor editor = myProject.getComponent(MPSEditorOpener.class).editNode(node, myContext);
-      editor.requestFocus();
+      EditorComponent component = editor.getCurrentEditorComponent();
+      if (component==null) return;
+      component.requestFocus();
     }
 
     private boolean trySelectInCurrentPane(final SNode node) {

@@ -417,19 +417,19 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5979988948250981423(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.lang.smodel.structure.SNodeCreator"), "prototypeNode", true) != null;
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"), "prototype", true) != null;
   }
 
   public static boolean ifMacro_Condition_7776141288922801675(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "prototypeNode", true) != null;
+    return SLinkOperations.getTarget(_context.getNode(), "prototype", true) != null;
   }
 
   public static boolean ifMacro_Condition_5480835971642160890(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "prototypeNode", true) != null;
+    return SLinkOperations.getTarget(_context.getNode(), "prototype", true) != null;
   }
 
   public static boolean ifMacro_Condition_5480835971642160940(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "prototypeNode", true) != null;
+    return SLinkOperations.getTarget(_context.getNode(), "prototype", true) != null;
   }
 
   public static SNode sourceNodeQuery_1172253302099(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -680,7 +680,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5979988948250981437(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.lang.smodel.structure.SNodeCreator"), "prototypeNode", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"), "prototype", true);
   }
 
   public static SNode sourceNodeQuery_7776141288922801667(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -688,7 +688,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7776141288922801686(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "prototypeNode", true);
+    return SLinkOperations.getTarget(_context.getNode(), "prototype", true);
   }
 
   public static SNode sourceNodeQuery_5480835971642160869(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -696,7 +696,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5480835971642160901(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "prototypeNode", true);
+    return SLinkOperations.getTarget(_context.getNode(), "prototype", true);
   }
 
   public static SNode sourceNodeQuery_5480835971642160919(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -704,7 +704,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5480835971642160951(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "prototypeNode", true);
+    return SLinkOperations.getTarget(_context.getNode(), "prototype", true);
   }
 
   public static SNode sourceNodeQuery_767145758118906610(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

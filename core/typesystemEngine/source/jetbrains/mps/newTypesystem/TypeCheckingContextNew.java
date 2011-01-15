@@ -97,11 +97,17 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   public void checkRoot(final boolean refreshTypes) {
-    if (refreshTypes) {
-      myState.clear(true);
-      ((NodeTypesComponentNew)myNodeTypesComponent).checkNode(myRootNode, true);
-      solveAndExpand();
-    }
+   // synchronized (TYPECHECKING_LOCK) {
+      if (refreshTypes) {
+        myState.clear(true);
+        myNodeTypesComponent.computeTypes(refreshTypes);
+        //((NodeTypesComponentNew)myNodeTypesComponent).checkNode(myRootNode, true);
+        solveAndExpand();
+        myNodeTypesComponent.setCheckedTypesystem();
+      }
+   // }
+
+
   }
 
   public void solveAndExpand() {
@@ -162,6 +168,10 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
       if (addDependency) {
         currentTypesComponent.addDependcyOnCurrent(node);
       }
+      if (ruleModel != null && ruleId != null) {
+        currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
+        //todo wrap into "if (addDependency) {}" when sure that typeof works fine
+      }
     }
     //((NodeTypesComponentNew)myNodeTypesComponent).checkIfNotChecked(node);
     return myState.typeOf(node, info);
@@ -184,6 +194,9 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
+    if (nodeWithError == null) {
+      return;
+    }
     if (!ErrorReportUtil.shouldReportError(nodeWithError)) return;
     myState.addError(nodeWithError, errorReporter, null);
   }
@@ -333,7 +346,6 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
   public void dispose() {
     super.dispose();
     myState.clear(true);
-
   }
 
   @Override

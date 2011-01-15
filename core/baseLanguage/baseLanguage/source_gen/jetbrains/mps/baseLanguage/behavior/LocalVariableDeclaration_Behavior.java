@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.intentions.CodeStyleSettings;
+import jetbrains.mps.codeStyle.CodeStyleSettings;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class LocalVariableDeclaration_Behavior {

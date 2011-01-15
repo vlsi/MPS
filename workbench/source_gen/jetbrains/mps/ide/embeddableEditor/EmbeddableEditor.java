@@ -80,7 +80,7 @@ public class EmbeddableEditor {
     IEditor editor = myFileNodeEditor.getNodeEditor();
     if (editor instanceof NodeEditor) {
       NodeEditor nodeEditor = (NodeEditor) editor;
-      nodeEditor.setEditable(myIsEditable);
+      nodeEditor.getCurrentEditorComponent().setEditable(myIsEditable);
     }
     if (myPanel == null) {
       myPanel = new EmbeddableEditorPanel(myFileNodeEditor);
@@ -101,7 +101,7 @@ public class EmbeddableEditor {
     IEditor editor = myFileNodeEditor.getNodeEditor();
     if (editor instanceof NodeEditor) {
       NodeEditor nodeEditor = (NodeEditor) editor;
-      nodeEditor.setBackground(color);
+      nodeEditor.getCurrentEditorComponent().setBackground(color);
     }
   }
 
@@ -109,12 +109,12 @@ public class EmbeddableEditor {
     IEditor editor = myFileNodeEditor.getNodeEditor();
     if (editor instanceof NodeEditor) {
       NodeEditor nodeEditor = (NodeEditor) editor;
-      nodeEditor.mark(messages);
+      nodeEditor.getCurrentEditorComponent().getHighlightManager().mark(messages);
     }
   }
 
   public void selectNode(SNode node) {
-    myFileNodeEditor.getNodeEditor().selectNode(node);
+    myFileNodeEditor.getNodeEditor().showNode(node, true);
   }
 
   public IEditor getEditor() {

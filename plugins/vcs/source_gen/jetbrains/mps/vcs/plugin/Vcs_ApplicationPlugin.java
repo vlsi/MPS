@@ -12,10 +12,6 @@ import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup;
-import java.util.List;
-import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.vcs");
@@ -67,16 +63,5 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(VCS_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_vcs);
     insertGroupIntoAnother(AnnotateGroup_ActionGroup.ID, EditorLeftPanelMenu_ActionGroup.ID, null);
     insertGroupIntoAnother(InstallCustomMergeDriverGroup_ActionGroup.ID, "VcsGlobalGroup", null);
-  }
-
-  public List<BaseCustomApplicationPlugin> initCustomParts() {
-    List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
-    addCustomPart(res, new main_CustomApplicationPlugin());
-    return res;
-  }
-
-  private void addCustomPart(List<BaseCustomApplicationPlugin> plugins, BaseCustomApplicationPlugin plugin) {
-    ListSequence.fromList(plugins).addElement(plugin);
-    plugin.init();
   }
 }

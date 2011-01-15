@@ -5,6 +5,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="d8ec" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -20,6 +21,7 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpmh" modelUID="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)" version="-1" implicit="yes" />
+  <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1145576838780">
       <property name="name" nameId="tpck.1169194664001" value="SemanticDowncast" />
@@ -3653,12 +3655,12 @@
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068580123159" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1181945517590">
-              <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="1181945517591">
-                <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1181945517592">
-                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068580123159" />
+              <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="2505098507105945401">
+                <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2505098507105945402">
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068580123159" resolveInfo="IfStatement" />
                 </node>
-                <node role="prototypeNode" roleId="tp25.1181937442359" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1181945535358">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1181945499425" resolveInfo="prototype" />
+                <node role="prototype" roleId="tpdg.3757480014665187678" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2505098507105945403">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1181945499425" resolveInfo="sample" />
                 </node>
               </node>
             </node>
@@ -3688,8 +3690,8 @@
               <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1181950717276">
                 <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068580123159" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.Concept_NewInstance" typeId="tp25.1181949435690" id="1181950717275">
-                <node role="prototypeNode" roleId="tp25.1181949561194" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1181950724699">
+              <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Concept_NewInstance" typeId="tpdg.7776141288922801652" id="2505098507105945428">
+                <node role="prototype" roleId="tpdg.3757480014665178932" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2505098507105945429">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1181945499425" resolveInfo="sample" />
                 </node>
               </node>

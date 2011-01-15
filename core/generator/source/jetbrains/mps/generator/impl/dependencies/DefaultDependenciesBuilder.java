@@ -110,6 +110,10 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
     for (SNode root : newmodel.roots()) {
       SNodeId id = root.getSNodeId();
       SNode original = oldidsToOriginal.get(id);
+      if(original == null) {
+        // TODO if original is null -> new root added, warning/error(strict)?
+        LOG.warning("script created a new node");
+      }
       currentToOriginalMap.put(root, original);
     }
     currentInputModel = newmodel;
@@ -126,13 +130,30 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
       return;
     }
     SNode originalRoot = currentToOriginalMap.get(inputNode.getTopmostAncestor());
+//    if(originalRoot == null && !currentToOriginalMap.containsKey(inputNode.getTopmostAncestor())) {
+//      LOG.warning("consistency problem in dependencies map");
+//    }
     nextStepToOriginalMap.put(outputRoot, originalRoot);
+  }
+
+  public void rootReplaced(SNode oldOutputRoot, SNode newOutputRoot) {
+    if(nextStepToOriginalMap != null && nextStepToOriginalMap.containsKey(oldOutputRoot)) {
+        SNode original = nextStepToOriginalMap.remove(oldOutputRoot);
+      nextStepToOriginalMap.put(newOutputRoot, original);
+    }
   }
 
   @Override
   public void updateModel(SModel newInputModel) {
     if (nextStepToOriginalMap != null) {
       currentToOriginalMap = nextStepToOriginalMap;
+
+//      for(SNode newroot : newInputModel.roots()) {
+//        if(!currentToOriginalMap.containsKey(newroot)) {
+//          LOG.warning("unknown root in model " + newInputModel);
+//        }
+//      }
+
       nextStepToOriginalMap = null;
     } else {
       currentToOriginalMap = new HashMap<SNode, SNode>();
@@ -182,7 +203,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
       return myConditionalsBuilder;
     }
     // shouldn't happen
-    LOG.error("consistency problem in dependencies map");
+    LOG.error("consistency problem in dependencies map", new IllegalStateException());
     return null;
   }
 

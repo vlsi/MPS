@@ -57,11 +57,11 @@
     <scopeInfo nodeId="1234784672969" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="62" startPosition="77" endLine="63" endPosition="21" />
     <scopeInfo nodeId="1234781318165" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="30" startPosition="85" endLine="33" endPosition="9" />
     <scopeInfo nodeId="1234781318220" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="44" startPosition="84" endLine="47" endPosition="9" />
-    <scopeInfo nodeId="1234781318164" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="29" startPosition="36" endLine="34" endPosition="7">
+    <scopeInfo nodeId="1234781318164" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="29" startPosition="36" endLine="34" endPosition="7">
       <varInfo nodeId="1234781318181" varName="func" />
     </scopeInfo>
     <scopeInfo nodeId="1234781318218" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="43" startPosition="36" endLine="48" endPosition="7" />
-    <scopeInfo nodeId="1234781318219" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="43" startPosition="36" endLine="48" endPosition="7">
+    <scopeInfo nodeId="1234781318219" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="43" startPosition="36" endLine="48" endPosition="7">
       <varInfo nodeId="1234781318236" varName="func" />
     </scopeInfo>
     <scopeInfo nodeId="1234799367491" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="17" startPosition="78" endLine="23" endPosition="32">
@@ -69,10 +69,10 @@
     </scopeInfo>
     <scopeInfo nodeId="1234781318163" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="29" startPosition="36" endLine="35" endPosition="131" />
     <scopeInfo nodeId="1234781318246" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="53" startPosition="119" endLine="59" endPosition="5" />
-    <scopeInfo nodeId="1234781318217" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="42" startPosition="196" endLine="49" endPosition="5">
+    <scopeInfo nodeId="1234781318217" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="42" startPosition="196" endLine="49" endPosition="5">
       <varInfo nodeId="1234781318239" varName="baseTextGen" />
     </scopeInfo>
-    <scopeInfo nodeId="1234781318162" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="28" startPosition="147" endLine="36" endPosition="5">
+    <scopeInfo nodeId="1234781318162" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="28" startPosition="147" endLine="36" endPosition="5">
       <varInfo nodeId="1234781318191" varName="baseTextGen" />
     </scopeInfo>
     <scopeInfo nodeId="1234781318198" fileName="LanguageTextGenDeclaration_Behavior.java" startLine="40" startPosition="86" endLine="50" endPosition="18">
@@ -98,7 +98,7 @@
     <scopeInfo nodeId="1234784602519" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="30" startPosition="77" endLine="31" endPosition="18" />
     <scopeInfo nodeId="8952337903384725608" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="34" startPosition="82" endLine="35" endPosition="76" />
     <scopeInfo nodeId="6261424444345979605" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="38" startPosition="100" endLine="39" endPosition="82" />
-    <scopeInfo nodeId="1234781956544" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="23" startPosition="153" endLine="26" endPosition="5">
+    <scopeInfo nodeId="1234781956544" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="23" startPosition="153" endLine="26" endPosition="5">
       <varInfo nodeId="1234781956548" varName="langTextGen" />
     </scopeInfo>
     <scopeInfo nodeId="1234781881487" fileName="ConceptTextGenDeclaration_Behavior.java" startLine="21" startPosition="90" endLine="27" endPosition="18">
@@ -132,7 +132,7 @@
     <scopeInfo nodeId="1234789863280" fileName="SimpleTextGenOperation_Behavior.java" startLine="30" startPosition="41" endLine="31" endPosition="56" />
     <scopeInfo nodeId="1236168713985" fileName="SimpleTextGenOperation_Behavior.java" startLine="37" startPosition="74" endLine="38" endPosition="229" />
     <scopeInfo nodeId="1234789558733" fileName="SimpleTextGenOperation_Behavior.java" startLine="26" startPosition="8" endLine="32" endPosition="7" />
-    <scopeInfo nodeId="1234789558732" fileName="SimpleTextGenOperation_Behavior.java" startLine="22" startPosition="26" endLine="33" endPosition="5">
+    <scopeInfo nodeId="1234789558732" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="SimpleTextGenOperation_Behavior.java" startLine="22" startPosition="26" endLine="33" endPosition="5">
       <varInfo nodeId="1234789558735" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1234789420864" fileName="SimpleTextGenOperation_Behavior.java" startLine="16" startPosition="76" endLine="34" endPosition="29">
@@ -161,7 +161,7 @@
     <scopeInfo nodeId="1234885322204" fileName="AbstractTextGenParameter_Behavior.java" startLine="19" startPosition="46" endLine="25" endPosition="7">
       <varInfo nodeId="1234885322206" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="1234885322203" fileName="AbstractTextGenParameter_Behavior.java" startLine="18" startPosition="53" endLine="26" endPosition="5">
+    <scopeInfo nodeId="1234885322203" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="AbstractTextGenParameter_Behavior.java" startLine="18" startPosition="53" endLine="26" endPosition="5">
       <varInfo nodeId="1234885322234" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1234885318471" fileName="AbstractTextGenParameter_Behavior.java" startLine="16" startPosition="76" endLine="27" endPosition="30">

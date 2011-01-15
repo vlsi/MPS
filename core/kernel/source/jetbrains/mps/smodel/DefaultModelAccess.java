@@ -129,9 +129,17 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  @Deprecated
-  public void executeCommand(Runnable r) {
-    runWriteAction(r);
+  public boolean tryRead(Runnable r) {
+    if (getReadLock().tryLock()) {
+      try {
+        r.run();
+      } finally {
+        getReadLock().unlock();
+      }
+      return true;
+    } else {
+      return false;
+    }
   }
 
   @Override

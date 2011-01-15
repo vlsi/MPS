@@ -16,8 +16,8 @@
 package jetbrains.mps.make;
 
 import jetbrains.mps.make.java.BLDependenciesCache;
-import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
-import jetbrains.mps.baseLanguage.textGen.RootDependencies;
+import jetbrains.mps.make.java.ModelDependencies;
+import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelDescriptor;

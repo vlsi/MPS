@@ -16,16 +16,17 @@
 package jetbrains.mps.generator;
 
 import com.intellij.openapi.project.Project;
+import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Igor Alshannikov
@@ -42,14 +43,16 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private final TransientModelsModule myTransientModule;
   private final GenerationPlan myGenerationPlan;
 
-  private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
+  private final Object NULL_OBJECT = new Object();
+
+  private Map<Object, Object> myTransientObjects = new ConcurrentHashMap<Object, Object>();
   // objects survive between transient models but not between generation steps 
-  private Map<Object, Object> myStepObjects = new HashMap<Object, Object>();
+  private Map<Object, Object> myStepObjects = new ConcurrentHashMap<Object, Object>();
   // objects survive between transient models and between generation steps
-  private Map<Object, Object> mySessionObjects = new HashMap<Object, Object>();
+  private Map<Object, Object> mySessionObjects = new ConcurrentHashMap<Object, Object>();
 
   // these objects survive through all steps of generation
-  private Set<String> myUsedNames = new HashSet<String>();
+  private Set<String> myUsedNames = new ConcurrentHashSet<String>();
 
   public GenerationSessionContext(IOperationContext invocationContext,
                                   IGenerationTracer generationTracer,
@@ -114,27 +117,30 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   public void putTransientObject(Object key, Object o) {
-    myTransientObjects.put(key, o);
+    myTransientObjects.put(key, o != null ? o : NULL_OBJECT);
   }
 
   public Object getTransientObject(Object key) {
-    return myTransientObjects.get(key);
+    Object result = myTransientObjects.get(key);
+    return result == NULL_OBJECT ? null : result;
   }
 
   public void putStepObject(Object key, Object o) {
-    myStepObjects.put(key, o);
+    myStepObjects.put(key, o != null ? o : NULL_OBJECT);
   }
 
   public Object getStepObject(Object key) {
-    return myStepObjects.get(key);
+    Object result = myStepObjects.get(key);
+    return result == NULL_OBJECT ? null : result;
   }
 
   public void putSessionObject(Object key, Object o) {
-    mySessionObjects.put(key, o);
+    mySessionObjects.put(key, o != null ? o : NULL_OBJECT);
   }
 
   public Object getSessionObject(Object key) {
-    return mySessionObjects.get(key);
+    Object result = mySessionObjects.get(key);
+    return result == NULL_OBJECT ? null : result;
   }
 
   private static String nodeUniqueId(SNode node) {

@@ -192,7 +192,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     if (context != null) {
       context.executeCommand(runnable);
     } else {
-      ModelAccess.instance().executeCommand(runnable);
+      ModelAccess.instance().executeCommand(runnable, null /* TODO ? */);
     }
 
     return newNode[0];

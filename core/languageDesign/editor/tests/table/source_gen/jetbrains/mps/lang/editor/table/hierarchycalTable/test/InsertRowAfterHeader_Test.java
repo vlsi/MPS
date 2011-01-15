@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class InsertRowAfterHeader_Test extends BaseTransformationTest {
   @Test
   public void test_InsertRowAfterHeader() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/editor/editor.mpr", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test)");
+    this.initTest("${mps_home}/core/languageDesign/plugin/plugin.mpr", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test)");
     this.runTest("jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfterHeader_Test$TestBody", "testMethod", false);
   }
 
@@ -23,7 +23,7 @@ public class InsertRowAfterHeader_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("6170050146384276321", "6170050146384276349");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.actions.Insert_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.lang.editor.plugin.Insert_Action");
     }
   }
 }

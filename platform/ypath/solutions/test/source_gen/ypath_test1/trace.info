@@ -2,8 +2,8 @@
 <debugInfo>
   <unitInfo fileName="XMLTreeSimple_Test.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="ypath_test1.XMLTreeSimple_Test" />
   <root nodeId="1178886476824">
-    <nodeInfo nodeId="1179329286838" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="XMLTreeSimple_Test.java" startLine="18" startPosition="50" endLine="19" endPosition="47" />
-    <nodeInfo nodeId="1179400521623" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="XMLTreeSimple_Test.java" startLine="19" startPosition="47" endLine="20" endPosition="96" />
+    <nodeInfo nodeId="1179329286838" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SINGLE_NODE" fileName="XMLTreeSimple_Test.java" startLine="18" startPosition="50" endLine="19" endPosition="47" />
+    <nodeInfo nodeId="1179400521623" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SIMPLE_TREE" fileName="XMLTreeSimple_Test.java" startLine="19" startPosition="47" endLine="20" endPosition="96" />
     <nodeInfo nodeId="1179329407627" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="XMLTreeSimple_Test.java" startLine="22" startPosition="46" endLine="23" endPosition="43" />
     <nodeInfo nodeId="1179329423766" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="XMLTreeSimple_Test.java" startLine="23" startPosition="43" endLine="24" endPosition="60" />
     <nodeInfo nodeId="1179399173230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="XMLTreeSimple_Test.java" startLine="24" startPosition="60" endLine="25" endPosition="60" />
@@ -38,13 +38,13 @@
     <nodeInfo nodeId="1181230861774" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="XMLTreeSimple_Test.java" startLine="72" startPosition="45" endLine="73" endPosition="17" />
     <nodeInfo nodeId="1181230867913" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="XMLTreeSimple_Test.java" startLine="74" startPosition="5" endLine="75" endPosition="25" />
     <nodeInfo nodeId="1181230813655" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="XMLTreeSimple_Test.java" startLine="70" startPosition="20" endLine="74" endPosition="5" />
-    <nodeInfo nodeId="1179329314254" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="XMLTreeSimple_Test.java" startLine="61" startPosition="0" endLine="67" endPosition="0" />
-    <nodeInfo nodeId="1178886483044" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="XMLTreeSimple_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" />
-    <nodeInfo nodeId="1179401046867" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="XMLTreeSimple_Test.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
-    <nodeInfo nodeId="1179401424799" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="XMLTreeSimple_Test.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
-    <nodeInfo nodeId="1181230118836" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="XMLTreeSimple_Test.java" startLine="52" startPosition="0" endLine="61" endPosition="0" />
-    <nodeInfo nodeId="1179400510523" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="XMLTreeSimple_Test.java" startLine="28" startPosition="0" endLine="38" endPosition="0" />
-    <nodeInfo nodeId="1181230758114" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="XMLTreeSimple_Test.java" startLine="67" startPosition="0" endLine="77" endPosition="0" />
+    <nodeInfo nodeId="1179329314254" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parse#(Ljava/lang/String;)Lorg/w3c/dom/Document;" fileName="XMLTreeSimple_Test.java" startLine="61" startPosition="0" endLine="67" endPosition="0" />
+    <nodeInfo nodeId="1178886483044" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_single#()V" fileName="XMLTreeSimple_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="1179401046867" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_descendants#()V" fileName="XMLTreeSimple_Test.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="1179401424799" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_defautProperty#()V" fileName="XMLTreeSimple_Test.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="1181230118836" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_sibling_descendants#()V" fileName="XMLTreeSimple_Test.java" startLine="52" startPosition="0" endLine="61" endPosition="0" />
+    <nodeInfo nodeId="1179400510523" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_children#()V" fileName="XMLTreeSimple_Test.java" startLine="28" startPosition="0" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="1181230758114" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#(Ljava/lang/Iterable;)Ljava/lang/String;" fileName="XMLTreeSimple_Test.java" startLine="67" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="1181230813658" fileName="XMLTreeSimple_Test.java" startLine="71" startPosition="49" endLine="73" endPosition="17" />
     <scopeInfo nodeId="1179329314257" fileName="XMLTreeSimple_Test.java" startLine="62" startPosition="54" endLine="65" endPosition="15">
       <varInfo nodeId="1179329359487" varName="is" />
@@ -62,30 +62,30 @@
       <varInfo nodeId="1181230915987" varName="nodes" />
       <varInfo nodeId="1179401438198" varName="doc" />
     </scopeInfo>
-    <scopeInfo nodeId="1181230813655" fileName="XMLTreeSimple_Test.java" startLine="70" startPosition="20" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="1181230813655" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="XMLTreeSimple_Test.java" startLine="70" startPosition="20" endLine="74" endPosition="5" />
     <scopeInfo nodeId="1181230118838" fileName="XMLTreeSimple_Test.java" startLine="53" startPosition="59" endLine="59" endPosition="72">
       <varInfo nodeId="1181230144467" varName="nodes" />
       <varInfo nodeId="1181231319626" varName="a1" />
       <varInfo nodeId="1181230140365" varName="doc" />
     </scopeInfo>
-    <scopeInfo nodeId="1179329314254" fileName="XMLTreeSimple_Test.java" startLine="61" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="1179329314254" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parse#(Ljava/lang/String;)Lorg/w3c/dom/Document;" fileName="XMLTreeSimple_Test.java" startLine="61" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="1179329335510" varName="xml" />
     </scopeInfo>
-    <scopeInfo nodeId="1178886483044" fileName="XMLTreeSimple_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1178886483044" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_single#()V" fileName="XMLTreeSimple_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1179400510525" fileName="XMLTreeSimple_Test.java" startLine="29" startPosition="48" endLine="36" endPosition="57">
       <varInfo nodeId="1181231003381" varName="nodes2" />
       <varInfo nodeId="1181230985694" varName="nodes1" />
       <varInfo nodeId="1179400611280" varName="doc" />
     </scopeInfo>
-    <scopeInfo nodeId="1179401046867" fileName="XMLTreeSimple_Test.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1179401424799" fileName="XMLTreeSimple_Test.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1179401046867" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_descendants#()V" fileName="XMLTreeSimple_Test.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1179401424799" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_defautProperty#()V" fileName="XMLTreeSimple_Test.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="1181230758117" fileName="XMLTreeSimple_Test.java" startLine="68" startPosition="48" endLine="75" endPosition="25">
       <varInfo nodeId="1181230794385" varName="sb" />
       <varInfo nodeId="1181230781777" varName="sep" />
     </scopeInfo>
-    <scopeInfo nodeId="1181230118836" fileName="XMLTreeSimple_Test.java" startLine="52" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1179400510523" fileName="XMLTreeSimple_Test.java" startLine="28" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1181230758114" fileName="XMLTreeSimple_Test.java" startLine="67" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="1181230118836" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_sibling_descendants#()V" fileName="XMLTreeSimple_Test.java" startLine="52" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1179400510523" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_children#()V" fileName="XMLTreeSimple_Test.java" startLine="28" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1181230758114" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#(Ljava/lang/Iterable;)Ljava/lang/String;" fileName="XMLTreeSimple_Test.java" startLine="67" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="1181230773329" varName="nodes" />
     </scopeInfo>
   </root>

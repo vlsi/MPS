@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class InsertRowBefore_FromLastCell_ByIns_Test extends BaseTransformationTest {
   @Test
   public void test_InsertRowBefore_FromLastCell_ByIns() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/editor/editor.mpr", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)");
+    this.initTest("${mps_home}/core/languageDesign/plugin/plugin.mpr", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)");
     this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.InsertRowBefore_FromLastCell_ByIns_Test$TestBody", "testMethod", false);
   }
 
@@ -23,7 +23,7 @@ public class InsertRowBefore_FromLastCell_ByIns_Test extends BaseTransformationT
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("5481602834662808047", "5481602834662808069");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.actions.InsertBefore_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.lang.editor.plugin.InsertBefore_Action");
     }
   }
 }

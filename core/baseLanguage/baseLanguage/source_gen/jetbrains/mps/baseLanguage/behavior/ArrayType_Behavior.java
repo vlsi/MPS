@@ -59,4 +59,8 @@ public class ArrayType_Behavior {
   public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
     return "[" + Type_Behavior.call_jniSignature_8847328628797633411(SLinkOperations.getTarget(thisNode, "componentType", true));
   }
+
+  public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
+    return Type_Behavior.call_isReifiable_2817265908000464118(SLinkOperations.getTarget(thisNode, "componentType", true));
+  }
 }

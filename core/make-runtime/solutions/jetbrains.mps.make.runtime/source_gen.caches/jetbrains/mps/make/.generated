@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="39jfuvxiufjo93dlo6bbjash2s1r5j3">
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-5nztix013gb61szha7d69foggfwbn4z" />
+  <common hash="-bq0oadj6rijs9sdp67zrovc6ypa6u2l" />
+  <source id="6168415856807659180" name="WorkflowEngine" hash="83o2nwca8khqapoj13quu0vbon482ro">
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <file name="WorkflowEngine.java" />
+  </source>
+</dependencies>
+

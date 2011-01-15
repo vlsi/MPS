@@ -17,39 +17,63 @@ package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+
+import static jetbrains.mps.TestMain.configureMPS;
+
+import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.StandaloneMPSContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.ModelUtils;
+import jetbrains.mps.vcs.VcsHelper;
+import jetbrains.mps.vcs.VcsMergeVersion;
+import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.*;
+
+import jetbrains.mps.nodeEditor.EditorManager;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
+import java.io.File;
 import java.io.IOException;
 
-import static jetbrains.mps.TestMain.configureMPS;
-
 public class TestMergeDialog {
-  private static EditorManager myEditorManager = new EditorManager();
+  private static EditorManager ourEditorManager = new EditorManager();
 
   public static void main(final String[] args) throws JDOMException, IOException {
     IdeMain.setTestMode(TestMode.NO_TEST);
     configureMPS();
 
-    final SModel baseModel = ModelUtils.readModel(args[0]);
-    final SModel mineModel = ModelUtils.readModel(args[1]);
-    final SModel newModel = ModelUtils.readModel(args[2]);
+    final SModel models[] = new SModel[3];
+
+    String resultFile;
+    if (args.length == 2) {
+      try {
+        final SModel[] zipped = ModelUtils.loadZippedModels(new File(args[0]), VcsMergeVersion.values(), false);
+        models[0] = zipped[0];
+        models[1] = zipped[1];
+        models[2] = zipped[2];
+      } catch (ReadException e) {
+        return;
+      }
+
+      resultFile = args[1];
+    } else if (args.length == 4) {
+      models[0] = ModelUtils.readModel(args[0]);
+      models[1] = ModelUtils.readModel(args[1]);
+      models[2] = ModelUtils.readModel(args[2]);
+
+      resultFile = args[3];
+    } else {
+      System.err.println("There must be 2 or 4 parameters");
+      return;
+    }
 
     /*ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -68,6 +92,7 @@ public class TestMergeDialog {
       }
     });
 */
+    final String finalResultFile = resultFile;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
@@ -79,7 +104,7 @@ public class TestMergeDialog {
               }
 
               public IModule getModule() {
-                return null; 
+                return null;
               }
 
               @NotNull
@@ -90,13 +115,13 @@ public class TestMergeDialog {
               @Override
               public <T> T getComponent(Class<T> clazz) {
                 if (clazz == EditorManager.class) {
-                  return (T) myEditorManager;
+                  return (T) ourEditorManager;
                 }
                 return null;
               }
             };
 
-            return new MergeModelsDialog(context, baseModel, mineModel, newModel);
+            return new MergeModelsDialog(context, models[0], models[1], models[2]);
           }
         });
         dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -107,11 +132,11 @@ public class TestMergeDialog {
           dialog.dispose();
           System.exit(0);
         }
-        ModelAccess.instance().runReadAction(new Runnable() {
+        ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            IFile iFile = FileSystem.getInstance().getFileByPath(args[3]);
+            IFile iFile = FileSystem.getInstance().getFileByPath(finalResultFile);
             if (!iFile.exists()) iFile.createNewFile();
-            ModelPersistence.saveModel(result, iFile, false,result.getPersistenceVersion());
+            ModelPersistence.saveModel(result, iFile, true, result.getPersistenceVersion());
           }
         });
         dialog.dispose();

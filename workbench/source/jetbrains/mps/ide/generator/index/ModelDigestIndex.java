@@ -24,7 +24,7 @@ import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import com.intellij.util.io.EnumeratorStringDescriptor;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.generator.impl.dependencies.ModelDigestUtil;
+import jetbrains.mps.generator.ModelDigestUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.DataInput;

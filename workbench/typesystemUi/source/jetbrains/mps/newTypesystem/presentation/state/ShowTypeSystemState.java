@@ -54,6 +54,7 @@ public class ShowTypeSystemState extends JDialog {
     this.pack();
     this.setModal(true);
     this.setVisible(true);
+    this.setModal(false);
   }
 
   public Color getBackground() {

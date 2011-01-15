@@ -38,7 +38,7 @@ import javax.swing.JPopupMenu;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import jetbrains.mps.workbench.action.ActionFactory;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import javax.swing.BorderFactory;
 import javax.swing.event.PopupMenuListener;
 import javax.swing.event.PopupMenuEvent;
@@ -53,7 +53,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   private List<ChangesFoldingAreaPainter.MessageGroup> myMessageGroups;
   private ChangesFoldingAreaPainter.MessageGroup myCurrentMessageGroup = null;
   private ChangesFoldingAreaPainter.MessageGroup myMessageGroupUnderMouse = null;
-  private ChangesFoldingAreaPainter.MyPopupMenu myPopupMenu = new ChangesFoldingAreaPainter.MyPopupMenu();
+  private ChangesFoldingAreaPainter.MyPopupMenu myPopupMenu = null;
 
   public ChangesFoldingAreaPainter(@NotNull EditorComponentChangesHighligher editorComponentChangesHighligher) {
     super(editorComponentChangesHighligher.getEditorComponent().getLeftEditorHighlighter());
@@ -220,7 +220,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     } else {
       event.getComponent().setCursor(null);
     }
-    if (!(myPopupMenu.isVisible())) {
+    if (myPopupMenu == null || !(myPopupMenu.isVisible())) {
       setCurrentMessageGroup(messageGroup);
     }
   }
@@ -232,9 +232,16 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     }
     event.getComponent().setCursor(null);
     myMessageGroupUnderMouse = null;
-    if (!(myPopupMenu.isVisible())) {
+    if (myPopupMenu == null || !(myPopupMenu.isVisible())) {
       setCurrentMessageGroup(null);
     }
+  }
+
+  private ChangesFoldingAreaPainter.MyPopupMenu getPopupMenu() {
+    if (myPopupMenu == null) {
+      myPopupMenu = new ChangesFoldingAreaPainter.MyPopupMenu();
+    }
+    return myPopupMenu;
   }
 
   @Override
@@ -246,7 +253,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
       if (cell != null) {
         getEditorComponent().changeSelection(cell);
       }
-      myPopupMenu.showIfNeeded(event);
+      getPopupMenu().showIfNeeded(event);
     }
   }
 
@@ -256,15 +263,15 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   }
 
   public void updateAfterTransfer(@NotNull ChangesFoldingAreaPainter.MessageGroup messageGroup) {
-    if (myPopupMenu.isVisible()) {
-      myPopupMenu.updateAfterTransfer(messageGroup);
+    if (myPopupMenu != null && myPopupMenu.isVisible()) {
+      getPopupMenu().updateAfterTransfer(messageGroup);
     } else {
       setCurrentMessageGroup(messageGroup);
     }
   }
 
   public void updateAfterRollback() {
-    myPopupMenu.setVisible(false);
+    getPopupMenu().setVisible(false);
   }
 
   @NotNull
@@ -274,7 +281,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public String getToolTipText() {
-    return check_kvu3z4_a0a51(myCurrentMessageGroup);
+    return check_kvu3z4_a0a61(myCurrentMessageGroup);
   }
 
   @NotNull
@@ -291,7 +298,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     }
   }
 
-  private static String check_kvu3z4_a0a51(ChangesFoldingAreaPainter.MessageGroup p) {
+  private static String check_kvu3z4_a0a61(ChangesFoldingAreaPainter.MessageGroup p) {
     if (null == p) {
       return null;
     }
@@ -422,7 +429,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     private ActionToolbar myActionToolbar;
 
     public MyPopupMenu() {
-      myActionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, ActionFactory.getInstance().acquireRegisteredGroup("jetbrains.mps.vcs.plugin.ChangesStrip_ActionGroup", "jetbrains.mps.vcs"), true);
+      myActionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, ((ActionGroup) ActionManager.getInstance().getAction("jetbrains.mps.vcs.plugin.ChangesStrip_ActionGroup")), true);
       myActionToolbar.setTargetComponent(getEditorComponent());
       add(myActionToolbar.getComponent());
       setBorder(BorderFactory.createLineBorder(Color.BLACK));

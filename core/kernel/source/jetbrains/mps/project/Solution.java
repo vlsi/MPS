@@ -117,7 +117,10 @@ public class Solution extends AbstractModule {
   public List<SModelDescriptor> getEditableUserModels() {
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor sm : getOwnModelDescriptors()) {
-      if (SModelStereotype.isUserModel(sm) && (sm instanceof EditableSModelDescriptor)) {
+      if (SModelStereotype.isUserModel(sm) &&
+          (sm instanceof EditableSModelDescriptor) &&
+          !((EditableSModelDescriptor) sm).isPackaged())
+      {
         models.add(sm);
       }
     }

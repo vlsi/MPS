@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class LinkDeclaration_addOverrideAnnotation_Intention extends BaseIntention implements Intention {
@@ -40,7 +40,7 @@ public class LinkDeclaration_addOverrideAnnotation_Intention extends BaseIntenti
 
   public void execute(final SNode node, final EditorContext editorContext) {
     if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("OverrideLinkAnnotation"), true) == null)) {
-      SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("OverrideLinkAnnotation"), SConceptOperations.createNewNode("jetbrains.mps.ui.modeling.structure.OverrideAnnotation", null), true);
+      SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("OverrideLinkAnnotation"), SNodeFactoryOperations.createNewNode("jetbrains.mps.ui.modeling.structure.OverrideAnnotation", null), true);
     } else {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("OverrideLinkAnnotation"), true));
     }

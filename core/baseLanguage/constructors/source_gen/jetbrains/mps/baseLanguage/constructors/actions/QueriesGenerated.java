@@ -18,6 +18,7 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
@@ -61,7 +62,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode usage = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage", null);
+                SNode usage = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage", null);
                 SLinkOperations.setTarget(usage, "customConstructor", (item), false);
                 return usage;
               }
@@ -91,8 +92,8 @@ public class QueriesGenerated {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause", null);
-          SNode parameter = SLinkOperations.addNewChild(result, "parameter", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter");
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause", null);
+          SNode parameter = SNodeFactoryOperations.addNewChild(result, "parameter", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter");
           SLinkOperations.setTarget(parameter, "type", nodeToWrap, true);
           return result;
         }
@@ -124,7 +125,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause", null);
+            return SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause", null);
           }
 
           public String getMatchingText(String pattern) {

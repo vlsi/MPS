@@ -9,16 +9,16 @@
   <unitInfo fileName="DefaultCaretPositionStyleClassItem_Editor.java" startLine="78" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.DefaultCaretPositionStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_6" />
   <unitInfo fileName="LayoutConstraintStyleClassItem_Editor.java" startLine="78" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.LayoutConstraintStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_4" />
   <unitInfo fileName="AbstractPaddingStyleClassItem_Editor.java" startLine="97" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.AbstractPaddingStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_9" />
-  <unitInfo fileName="FontSizeStyleClassItem_Editor.java" startLine="119" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.FontSizeStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_2" />
-  <unitInfo fileName="UnderlinedStyleClassItem_Editor.java" startLine="121" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.UnderlinedStyleClassItem_Editor$UnderlinedStyleClassItem_underlined_cellMenu_a0c0" />
-  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="122" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0" />
+  <unitInfo fileName="FontSizeStyleClassItem_Editor.java" startLine="120" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.FontSizeStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_2" />
+  <unitInfo fileName="UnderlinedStyleClassItem_Editor.java" startLine="122" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.UnderlinedStyleClassItem_Editor$UnderlinedStyleClassItem_underlined_cellMenu_a0c0" />
+  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="123" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0" />
   <unitInfo fileName="FontStyleStyleClassItem_Editor.java" startLine="126" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.FontStyleStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_0" />
   <unitInfo fileName="CellKeyMapKeystroke_Editor.java" startLine="128" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapKeystroke_Editor$CellKeyMapKeystroke_modifiers_cellMenu_a0b0" />
   <unitInfo fileName="BooleanStyleSheetItem_Editor.java" startLine="129" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.BooleanStyleSheetItem_Editor$BooleanStyleSheetItem_flag_cellMenu_a0c0" />
-  <unitInfo fileName="UnderlinedStyleClassItem_Editor.java" startLine="130" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.UnderlinedStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_3" />
+  <unitInfo fileName="UnderlinedStyleClassItem_Editor.java" startLine="131" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.UnderlinedStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_3" />
   <unitInfo fileName="BooleanStyleSheetItem_Editor.java" startLine="138" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.BooleanStyleSheetItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_1" />
   <unitInfo fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="168" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_5" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="692" startPosition="0" endLine="700" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$CellModel_Collection_usesFolding_cellMenu_a0a1c3a" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="693" startPosition="0" endLine="701" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$CellModel_Collection_usesFolding_cellMenu_a0a1c3a" />
   <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1111" startPosition="0" endLine="1119" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$CellModel_RefNodeList_usesFolding_cellMenu_a0a1e3a" />
   <unitInfo fileName="Styles_StyleSheet.java" startLine="19" startPosition="56" endLine="29" endPosition="5" unitName="jetbrains.mps.lang.editor.editor.Styles_StyleSheet$1" />
   <unitInfo fileName="Styles_StyleSheet.java" startLine="30" startPosition="58" endLine="40" endPosition="5" unitName="jetbrains.mps.lang.editor.editor.Styles_StyleSheet$2" />
@@ -36,8 +36,8 @@
   <unitInfo fileName="CellModel_ReadOnlyModelAccessor_Editor.java" startLine="130" startPosition="48" endLine="140" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_ReadOnlyModelAccessor_Editor$5" />
   <unitInfo fileName="CellModel_ModelAccess_Editor.java" startLine="135" startPosition="54" endLine="145" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_ModelAccess_Editor$2" />
   <unitInfo fileName="CellKeyMapKeystroke_Editor.java" startLine="137" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapKeystroke_Editor$CellKeyMapKeystroke_keycode_cellMenu_a0d0" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="140" startPosition="54" endLine="150" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$1" />
   <unitInfo fileName="CellModel_Error_Editor.java" startLine="140" startPosition="54" endLine="150" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_Error_Editor$1" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="141" startPosition="54" endLine="151" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$1" />
   <unitInfo fileName="CellModel_ModelAccess_Editor.java" startLine="146" startPosition="48" endLine="156" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_ModelAccess_Editor$3" />
   <unitInfo fileName="CellModel_ModelAccess_Editor.java" startLine="157" startPosition="48" endLine="167" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_ModelAccess_Editor$4" />
   <unitInfo fileName="CellModel_Constant_Editor.java" startLine="166" startPosition="59" endLine="176" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_Constant_Editor$1" />
@@ -71,24 +71,24 @@
   <unitInfo fileName="CellModel_Property_Editor.java" startLine="289" startPosition="48" endLine="299" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_Property_Editor$5" />
   <unitInfo fileName="CellModel_URL_Editor.java" startLine="290" startPosition="48" endLine="300" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_URL_Editor$4" />
   <unitInfo fileName="CellModel_Property_Editor.java" startLine="300" startPosition="48" endLine="310" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_Property_Editor$6" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="300" startPosition="60" endLine="310" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$2" />
   <unitInfo fileName="CellModel_URL_Editor.java" startLine="301" startPosition="48" endLine="311" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_URL_Editor$5" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="301" startPosition="60" endLine="311" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$2" />
   <unitInfo fileName="CellModel_URL_Editor.java" startLine="312" startPosition="48" endLine="322" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_URL_Editor$6" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="328" startPosition="63" endLine="338" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$3" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="339" startPosition="60" endLine="349" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$4" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="329" startPosition="63" endLine="339" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$3" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="340" startPosition="60" endLine="350" endPosition="7" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$4" />
   <unitInfo fileName="_CloseTag.java" startLine="34" startPosition="83" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.editor.editor._CloseTag$1" />
   <unitInfo fileName="_OpenTag.java" startLine="34" startPosition="83" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.editor.editor._OpenTag$1" />
-  <unitInfo fileName="FontSizeStyleClassItem_Editor.java" startLine="128" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.FontSizeStyleClassItem_Editor$FontSizeStyleClassItem_generic_cellMenu_a0c0" />
+  <unitInfo fileName="FontSizeStyleClassItem_Editor.java" startLine="129" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.FontSizeStyleClassItem_Editor$FontSizeStyleClassItem_generic_cellMenu_a0c0" />
   <unitInfo fileName="MatchingLabelStyleClassItem_Editor.java" startLine="135" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.MatchingLabelStyleClassItem_Editor$MatchingLabelStyleClassItem_generic_cellMenu_a0c0" />
-  <unitInfo fileName="UnderlinedStyleClassItem_Editor.java" startLine="139" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.UnderlinedStyleClassItem_Editor$UnderlinedStyleClassItem_generic_cellMenu_b0c0" />
+  <unitInfo fileName="UnderlinedStyleClassItem_Editor.java" startLine="140" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.UnderlinedStyleClassItem_Editor$UnderlinedStyleClassItem_generic_cellMenu_b0c0" />
   <unitInfo fileName="BooleanStyleSheetItem_Editor.java" startLine="147" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.BooleanStyleSheetItem_Editor$BooleanStyleSheetItem_generic_cellMenu_b0c0" />
   <unitInfo fileName="MatchingLabelStyleClassItem_Editor.java" startLine="148" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.MatchingLabelStyleClassItem_Editor$MatchingLabelStyleClassItem_generic_cellMenu_a0d0" />
-  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="175" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_b0c0" />
-  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="188" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_c0c0" />
-  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="201" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_b0d0" />
-  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="214" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_c0d0" />
+  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="176" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_b0c0" />
+  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="189" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_c0c0" />
+  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="202" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_b0d0" />
+  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="215" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_c0d0" />
   <unitInfo fileName="CellActionMapDeclaration_Editor.java" startLine="262" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellActionMapDeclaration_Editor$CellActionMapDeclaration_name_cellMenu_a0b0a" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="701" startPosition="0" endLine="713" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$CellModel_Collection_generic_cellMenu_b0a1c3a" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="702" startPosition="0" endLine="714" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$CellModel_Collection_generic_cellMenu_b0a1c3a" />
   <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1190" startPosition="0" endLine="1202" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$CellModel_RefNodeList_generic_cellMenu_b0a1e3a" />
   <unitInfo fileName="CellKeyMapDeclaration_Editor.java" startLine="312" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapDeclaration_Editor$CellKeyMapDeclaration_name_postfixCellMenu_a0b0a" />
   <unitInfo fileName="CellMenuPart_Abstract_Editor.java" startLine="14" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuPart_Abstract_Editor" />
@@ -96,8 +96,8 @@
   <unitInfo fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="199" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor$SideTransformAnchorTagStyleClassItem_generic_cellMenu_b0c0" />
   <unitInfo fileName="CellModel_Indent_Editor.java" startLine="14" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Indent_Editor" />
   <unitInfo fileName="StyleSheetClass_RT.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheetClass_RT" />
-  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="131" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_a0c0" />
-  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="153" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_a0d0" />
+  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="132" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_a0c0" />
+  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="154" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_a0d0" />
   <unitInfo fileName="FontStyleStyleClassItem_Editor.java" startLine="166" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.FontStyleStyleClassItem_Editor$FontStyleStyleClassItem_generic_cellMenu_a0d0" />
   <unitInfo fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="177" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor$SideTransformAnchorTagStyleClassItem_generic_cellMenu_a0c0" />
   <unitInfo fileName="RightTransformAnchorTagWrapper_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.RightTransformAnchorTagWrapper_Editor" />
@@ -150,9 +150,9 @@
   <unitInfo fileName="ConceptEditorDeclaration_Editor.java" startLine="246" startPosition="0" endLine="283" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ConceptEditorDeclaration_Editor$_Inline_cth9w3_a1a0" />
   <unitInfo fileName="CellKeyMapDeclaration_Editor.java" startLine="274" startPosition="0" endLine="311" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapDeclaration_Editor$itemListHandler_zabbeg_i0" />
   <unitInfo fileName="CellKeyMapItem_Editor.java" startLine="470" startPosition="0" endLine="507" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapItem_Editor$keystrokeListHandler_4y23v1_c1b0a" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="578" startPosition="0" endLine="615" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$childCellModelListHandler_cvgoyj_b1a0a" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="616" startPosition="0" endLine="653" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$childCellModelListHandler_cvgoyj_b1a0" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="654" startPosition="0" endLine="691" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$childCellModelListHandler_cvgoyj_b0a" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="579" startPosition="0" endLine="616" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$childCellModelListHandler_cvgoyj_b1a0a" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="617" startPosition="0" endLine="654" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$childCellModelListHandler_cvgoyj_b1a0" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="655" startPosition="0" endLine="692" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$childCellModelListHandler_cvgoyj_b0a" />
   <unitInfo fileName="CellModel_RefCell_Editor.java" startLine="366" startPosition="0" endLine="404" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefCell_Editor$_Inline_lfsepz_a2a" />
   <unitInfo fileName="CellModel_RefCell_Editor.java" startLine="442" startPosition="0" endLine="480" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefCell_Editor$_Inline_lfsepz_a1b3a" />
   <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1151" startPosition="0" endLine="1189" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$CellModel_RefNodeList_generic_cellMenu_a0c6d0" />
@@ -210,9 +210,9 @@
   <unitInfo fileName="CellMenuPart_PropertyValues_Editor.java" startLine="19" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuPart_PropertyValues_Editor" />
   <unitInfo fileName="EditorCellModel_KeyMap.java" startLine="14" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.EditorCellModel_KeyMap" />
   <unitInfo fileName="CellModel_Component_Editor.java" startLine="20" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Component_Editor" />
-  <unitInfo fileName="FontSizeStyleClassItem_Editor.java" startLine="27" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.FontSizeStyleClassItem_Editor" />
+  <unitInfo fileName="FontSizeStyleClassItem_Editor.java" startLine="28" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.FontSizeStyleClassItem_Editor" />
   <unitInfo fileName="CellKeyMapKeystroke_Editor.java" startLine="27" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapKeystroke_Editor" />
-  <unitInfo fileName="UnderlinedStyleClassItem_Editor.java" startLine="30" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.UnderlinedStyleClassItem_Editor" />
+  <unitInfo fileName="UnderlinedStyleClassItem_Editor.java" startLine="31" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.UnderlinedStyleClassItem_Editor" />
   <unitInfo fileName="AbstractStyledTextOperation_Editor.java" startLine="29" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.AbstractStyledTextOperation_Editor" />
   <unitInfo fileName="CellModel_Custom_Editor.java" startLine="19" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Custom_Editor" />
   <unitInfo fileName="BooleanStyleSheetItem_Editor.java" startLine="34" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.BooleanStyleSheetItem_Editor" />
@@ -232,7 +232,7 @@
   <unitInfo fileName="CellModel_ReadOnlyModelAccessor_Editor.java" startLine="22" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_ReadOnlyModelAccessor_Editor" />
   <unitInfo fileName="Style_Component.java" startLine="30" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.Style_Component" />
   <unitInfo fileName="StyleSheetClass_Editor.java" startLine="31" startPosition="0" endLine="216" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheetClass_Editor" />
-  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="31" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor" />
+  <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="32" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor" />
   <unitInfo fileName="CellMenuComponent_Editor.java" startLine="22" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuComponent_Editor" />
   <unitInfo fileName="CellModel_Image_Editor.java" startLine="22" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Image_Editor" />
   <unitInfo fileName="CellMenuPart_ReplaceChild_Item_Editor.java" startLine="20" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuPart_ReplaceChild_Item_Editor" />
@@ -256,39 +256,39 @@
   <unitInfo fileName="CellModel_RefCell_Editor.java" startLine="28" startPosition="0" endLine="514" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefCell_Editor" />
   <unitInfo fileName="CellModel_Property_Editor.java" startLine="29" startPosition="0" endLine="549" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Property_Editor" />
   <unitInfo fileName="CellModel_URL_Editor.java" startLine="29" startPosition="0" endLine="561" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_URL_Editor" />
-  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="45" startPosition="0" endLine="714" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor" />
+  <unitInfo fileName="CellModel_Collection_Editor.java" startLine="46" startPosition="0" endLine="715" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor" />
   <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="39" startPosition="0" endLine="1203" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor" />
   <root nodeId="1078250851485">
     <nodeInfo nodeId="1214396913644" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Error_Editor.java" startLine="189" startPosition="107" endLine="190" endPosition="49" />
     <scopeInfo nodeId="1214396913643" fileName="CellModel_Error_Editor.java" startLine="189" startPosition="107" endLine="190" endPosition="49" />
   </root>
   <root nodeId="1078830687765">
-    <nodeInfo nodeId="7723470090030249339" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="534" startPosition="113" endLine="535" endPosition="89" />
-    <nodeInfo nodeId="1237473996312" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="538" startPosition="112" endLine="539" endPosition="77" />
-    <nodeInfo nodeId="7723470090030872885" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="542" startPosition="113" endLine="543" endPosition="89" />
-    <nodeInfo nodeId="1237473996328" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="546" startPosition="112" endLine="547" endPosition="156" />
-    <nodeInfo nodeId="1237474042599" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="550" startPosition="110" endLine="551" endPosition="84" />
-    <nodeInfo nodeId="7723470090030966953" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="554" startPosition="112" endLine="555" endPosition="89" />
-    <nodeInfo nodeId="4172501465791167598" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="558" startPosition="113" endLine="559" endPosition="83" />
-    <nodeInfo nodeId="1237474002633" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="562" startPosition="110" endLine="563" endPosition="83" />
-    <nodeInfo nodeId="1237474002646" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="566" startPosition="110" endLine="567" endPosition="83" />
-    <nodeInfo nodeId="1237474002653" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="570" startPosition="110" endLine="571" endPosition="83" />
-    <nodeInfo nodeId="1237473996307" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="574" startPosition="109" endLine="575" endPosition="49" />
-    <nodeInfo nodeId="4172501465791167623" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="696" startPosition="105" endLine="697" endPosition="85" />
-    <nodeInfo nodeId="4172501465791167632" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CellModel_Collection_Editor.java" startLine="705" startPosition="106" endLine="706" endPosition="131" />
-    <scopeInfo nodeId="7723470090030238507" fileName="CellModel_Collection_Editor.java" startLine="534" startPosition="113" endLine="535" endPosition="89" />
-    <scopeInfo nodeId="1237473996311" fileName="CellModel_Collection_Editor.java" startLine="538" startPosition="112" endLine="539" endPosition="77" />
-    <scopeInfo nodeId="7723470090030872884" fileName="CellModel_Collection_Editor.java" startLine="542" startPosition="113" endLine="543" endPosition="89" />
-    <scopeInfo nodeId="1237473996327" fileName="CellModel_Collection_Editor.java" startLine="546" startPosition="112" endLine="547" endPosition="156" />
-    <scopeInfo nodeId="1237473994195" fileName="CellModel_Collection_Editor.java" startLine="550" startPosition="110" endLine="551" endPosition="84" />
-    <scopeInfo nodeId="7723470090030966952" fileName="CellModel_Collection_Editor.java" startLine="554" startPosition="112" endLine="555" endPosition="89" />
-    <scopeInfo nodeId="4172501465791156104" fileName="CellModel_Collection_Editor.java" startLine="558" startPosition="113" endLine="559" endPosition="83" />
-    <scopeInfo nodeId="1237474002632" fileName="CellModel_Collection_Editor.java" startLine="562" startPosition="110" endLine="563" endPosition="83" />
-    <scopeInfo nodeId="1237474002645" fileName="CellModel_Collection_Editor.java" startLine="566" startPosition="110" endLine="567" endPosition="83" />
-    <scopeInfo nodeId="1237474002652" fileName="CellModel_Collection_Editor.java" startLine="570" startPosition="110" endLine="571" endPosition="83" />
-    <scopeInfo nodeId="1237473996306" fileName="CellModel_Collection_Editor.java" startLine="574" startPosition="109" endLine="575" endPosition="49" />
-    <scopeInfo nodeId="4172501465791167622" fileName="CellModel_Collection_Editor.java" startLine="696" startPosition="105" endLine="697" endPosition="85" />
-    <scopeInfo nodeId="4172501465791167631" fileName="CellModel_Collection_Editor.java" startLine="705" startPosition="106" endLine="706" endPosition="131" />
+    <nodeInfo nodeId="7723470090030249339" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="535" startPosition="113" endLine="536" endPosition="89" />
+    <nodeInfo nodeId="1237473996312" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="539" startPosition="112" endLine="540" endPosition="77" />
+    <nodeInfo nodeId="7723470090030872885" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="543" startPosition="113" endLine="544" endPosition="89" />
+    <nodeInfo nodeId="1237473996328" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="547" startPosition="112" endLine="548" endPosition="156" />
+    <nodeInfo nodeId="1237474042599" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="551" startPosition="110" endLine="552" endPosition="84" />
+    <nodeInfo nodeId="7723470090030966953" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="555" startPosition="112" endLine="556" endPosition="89" />
+    <nodeInfo nodeId="4172501465791167598" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="559" startPosition="113" endLine="560" endPosition="83" />
+    <nodeInfo nodeId="1237474002633" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="563" startPosition="110" endLine="564" endPosition="83" />
+    <nodeInfo nodeId="1237474002646" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="567" startPosition="110" endLine="568" endPosition="83" />
+    <nodeInfo nodeId="1237474002653" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="571" startPosition="110" endLine="572" endPosition="83" />
+    <nodeInfo nodeId="1237473996307" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="575" startPosition="109" endLine="576" endPosition="49" />
+    <nodeInfo nodeId="4172501465791167623" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Collection_Editor.java" startLine="697" startPosition="105" endLine="698" endPosition="85" />
+    <nodeInfo nodeId="4172501465791167632" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CellModel_Collection_Editor.java" startLine="706" startPosition="106" endLine="707" endPosition="138" />
+    <scopeInfo nodeId="7723470090030238507" fileName="CellModel_Collection_Editor.java" startLine="535" startPosition="113" endLine="536" endPosition="89" />
+    <scopeInfo nodeId="1237473996311" fileName="CellModel_Collection_Editor.java" startLine="539" startPosition="112" endLine="540" endPosition="77" />
+    <scopeInfo nodeId="7723470090030872884" fileName="CellModel_Collection_Editor.java" startLine="543" startPosition="113" endLine="544" endPosition="89" />
+    <scopeInfo nodeId="1237473996327" fileName="CellModel_Collection_Editor.java" startLine="547" startPosition="112" endLine="548" endPosition="156" />
+    <scopeInfo nodeId="1237473994195" fileName="CellModel_Collection_Editor.java" startLine="551" startPosition="110" endLine="552" endPosition="84" />
+    <scopeInfo nodeId="7723470090030966952" fileName="CellModel_Collection_Editor.java" startLine="555" startPosition="112" endLine="556" endPosition="89" />
+    <scopeInfo nodeId="4172501465791156104" fileName="CellModel_Collection_Editor.java" startLine="559" startPosition="113" endLine="560" endPosition="83" />
+    <scopeInfo nodeId="1237474002632" fileName="CellModel_Collection_Editor.java" startLine="563" startPosition="110" endLine="564" endPosition="83" />
+    <scopeInfo nodeId="1237474002645" fileName="CellModel_Collection_Editor.java" startLine="567" startPosition="110" endLine="568" endPosition="83" />
+    <scopeInfo nodeId="1237474002652" fileName="CellModel_Collection_Editor.java" startLine="571" startPosition="110" endLine="572" endPosition="83" />
+    <scopeInfo nodeId="1237473996306" fileName="CellModel_Collection_Editor.java" startLine="575" startPosition="109" endLine="576" endPosition="49" />
+    <scopeInfo nodeId="4172501465791167622" fileName="CellModel_Collection_Editor.java" startLine="697" startPosition="105" endLine="698" endPosition="85" />
+    <scopeInfo nodeId="4172501465791167631" fileName="CellModel_Collection_Editor.java" startLine="706" startPosition="106" endLine="707" endPosition="138" />
   </root>
   <root nodeId="1080742754453">
     <nodeInfo nodeId="1176717082035" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_Constant_Editor.java" startLine="306" startPosition="111" endLine="307" endPosition="88" />
@@ -475,9 +475,9 @@
   </root>
   <root nodeId="1178883358278">
     <nodeInfo nodeId="1178883491382" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="59" startPosition="152" endLine="60" endPosition="55" />
-    <nodeInfo nodeId="1178883510798" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="63" startPosition="146" endLine="64" endPosition="154" />
-    <nodeInfo nodeId="1178883562401" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="64" startPosition="154" endLine="65" endPosition="115" />
-    <nodeInfo nodeId="1178883476995" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="65" startPosition="115" endLine="66" endPosition="59" />
+    <nodeInfo nodeId="1178883510798" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="63" startPosition="146" endLine="64" endPosition="160" />
+    <nodeInfo nodeId="1178883562401" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="64" startPosition="160" endLine="65" endPosition="122" />
+    <nodeInfo nodeId="1178883476995" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="65" startPosition="122" endLine="66" endPosition="59" />
     <nodeInfo nodeId="1178883722383" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="66" startPosition="59" endLine="67" endPosition="64" />
     <nodeInfo nodeId="1178883840768" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="67" startPosition="64" endLine="68" endPosition="41" />
     <nodeInfo nodeId="1178884039623" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="69" startPosition="35" endLine="70" endPosition="60" />
@@ -508,8 +508,8 @@
     <nodeInfo nodeId="928328222692015532" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="963" startPosition="113" endLine="964" endPosition="79" />
     <nodeInfo nodeId="4601216887035995293" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="1115" startPosition="105" endLine="1116" endPosition="85" />
     <nodeInfo nodeId="4231890441199684733" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="1124" startPosition="105" endLine="1125" endPosition="73" />
-    <nodeInfo nodeId="4231890441199704377" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="1125" startPosition="73" endLine="1126" endPosition="154" />
-    <nodeInfo nodeId="4231890441199639112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="1126" startPosition="154" endLine="1127" endPosition="20" />
+    <nodeInfo nodeId="4231890441199704377" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="1125" startPosition="73" endLine="1126" endPosition="158" />
+    <nodeInfo nodeId="4231890441199639112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="1126" startPosition="158" endLine="1127" endPosition="20" />
     <nodeInfo nodeId="4231890441199637160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="1134" startPosition="163" endLine="1135" endPosition="83" />
     <nodeInfo nodeId="4231890441200219630" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="1146" startPosition="67" endLine="1147" endPosition="21" />
     <nodeInfo nodeId="4231890441200483237" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="1155" startPosition="105" endLine="1156" endPosition="75" />
@@ -518,7 +518,7 @@
     <nodeInfo nodeId="4231890441200483275" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="1165" startPosition="164" endLine="1166" endPosition="94" />
     <nodeInfo nodeId="4231890441200747056" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="1177" startPosition="68" endLine="1178" endPosition="29" />
     <nodeInfo nodeId="4231890441200483273" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="1185" startPosition="71" endLine="1186" endPosition="27" />
-    <nodeInfo nodeId="4601216887035995302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="1194" startPosition="106" endLine="1195" endPosition="131" />
+    <nodeInfo nodeId="4601216887035995302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CellModel_RefNodeList_Editor.java" startLine="1194" startPosition="106" endLine="1195" endPosition="138" />
     <scopeInfo nodeId="1182948746817" fileName="CellModel_RefNodeList_Editor.java" startLine="935" startPosition="111" endLine="936" endPosition="77" />
     <scopeInfo nodeId="6046489571270834062" fileName="CellModel_RefNodeList_Editor.java" startLine="939" startPosition="114" endLine="940" endPosition="91" />
     <scopeInfo nodeId="1182191264576" fileName="CellModel_RefNodeList_Editor.java" startLine="943" startPosition="112" endLine="944" endPosition="79" />
@@ -533,7 +533,7 @@
     <scopeInfo nodeId="4231890441200471062" fileName="CellModel_RefNodeList_Editor.java" startLine="1165" startPosition="164" endLine="1166" endPosition="94" />
     <scopeInfo nodeId="4231890441200740444" fileName="CellModel_RefNodeList_Editor.java" startLine="1177" startPosition="68" endLine="1178" endPosition="29" />
     <scopeInfo nodeId="4231890441200483272" fileName="CellModel_RefNodeList_Editor.java" startLine="1185" startPosition="71" endLine="1186" endPosition="27" />
-    <scopeInfo nodeId="4601216887035995301" fileName="CellModel_RefNodeList_Editor.java" startLine="1194" startPosition="106" endLine="1195" endPosition="131" />
+    <scopeInfo nodeId="4601216887035995301" fileName="CellModel_RefNodeList_Editor.java" startLine="1194" startPosition="106" endLine="1195" endPosition="138" />
     <scopeInfo nodeId="4231890441199624610" fileName="CellModel_RefNodeList_Editor.java" startLine="1124" startPosition="105" endLine="1127" endPosition="20">
       <varInfo nodeId="4231890441199684734" varName="result" />
     </scopeInfo>
@@ -567,35 +567,35 @@
     <scopeInfo nodeId="1198252496153" fileName="StyleSheetClass_Editor.java" startLine="174" startPosition="112" endLine="175" endPosition="74" />
   </root>
   <root nodeId="1186403823943">
-    <nodeInfo nodeId="1186412613632" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ColorStyleClassItem_Editor.java" startLine="114" startPosition="111" endLine="115" endPosition="66" />
-    <nodeInfo nodeId="1186412623144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ColorStyleClassItem_Editor.java" startLine="118" startPosition="111" endLine="119" endPosition="66" />
-    <nodeInfo nodeId="1240932730781" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ColorStyleClassItem_Editor.java" startLine="135" startPosition="105" endLine="136" endPosition="164" />
-    <nodeInfo nodeId="1225466894957" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="143" startPosition="163" endLine="144" endPosition="81" />
-    <nodeInfo nodeId="1225466903031" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="144" startPosition="81" endLine="145" endPosition="98" />
-    <nodeInfo nodeId="1240932749942" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ColorStyleClassItem_Editor.java" startLine="157" startPosition="105" endLine="158" endPosition="164" />
-    <nodeInfo nodeId="1225472714632" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="165" startPosition="163" endLine="166" endPosition="81" />
-    <nodeInfo nodeId="1225472714638" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="166" startPosition="81" endLine="167" endPosition="98" />
-    <nodeInfo nodeId="1225466935286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="179" startPosition="106" endLine="180" endPosition="97" />
-    <nodeInfo nodeId="1225472676313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="192" startPosition="106" endLine="193" endPosition="108" />
-    <nodeInfo nodeId="1225472714651" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="205" startPosition="106" endLine="206" endPosition="97" />
-    <nodeInfo nodeId="1225472714660" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="218" startPosition="106" endLine="219" endPosition="108" />
-    <scopeInfo nodeId="1186412612772" fileName="ColorStyleClassItem_Editor.java" startLine="114" startPosition="111" endLine="115" endPosition="66" />
-    <scopeInfo nodeId="1186412621878" fileName="ColorStyleClassItem_Editor.java" startLine="118" startPosition="111" endLine="119" endPosition="66" />
-    <scopeInfo nodeId="1225465568570" fileName="ColorStyleClassItem_Editor.java" startLine="135" startPosition="105" endLine="136" endPosition="164" />
-    <scopeInfo nodeId="1225472714610" fileName="ColorStyleClassItem_Editor.java" startLine="157" startPosition="105" endLine="158" endPosition="164" />
-    <scopeInfo nodeId="1225466728386" fileName="ColorStyleClassItem_Editor.java" startLine="179" startPosition="106" endLine="180" endPosition="97" />
-    <scopeInfo nodeId="1225472662046" fileName="ColorStyleClassItem_Editor.java" startLine="192" startPosition="106" endLine="193" endPosition="108" />
-    <scopeInfo nodeId="1225472714650" fileName="ColorStyleClassItem_Editor.java" startLine="205" startPosition="106" endLine="206" endPosition="97" />
-    <scopeInfo nodeId="1225472714659" fileName="ColorStyleClassItem_Editor.java" startLine="218" startPosition="106" endLine="219" endPosition="108" />
-    <scopeInfo nodeId="1225466261588" fileName="ColorStyleClassItem_Editor.java" startLine="143" startPosition="163" endLine="145" endPosition="98" />
-    <scopeInfo nodeId="1225472714631" fileName="ColorStyleClassItem_Editor.java" startLine="165" startPosition="163" endLine="167" endPosition="98" />
+    <nodeInfo nodeId="1186412613632" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ColorStyleClassItem_Editor.java" startLine="115" startPosition="111" endLine="116" endPosition="66" />
+    <nodeInfo nodeId="1186412623144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ColorStyleClassItem_Editor.java" startLine="119" startPosition="111" endLine="120" endPosition="66" />
+    <nodeInfo nodeId="1240932730781" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ColorStyleClassItem_Editor.java" startLine="136" startPosition="105" endLine="137" endPosition="164" />
+    <nodeInfo nodeId="1225466894957" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="144" startPosition="163" endLine="145" endPosition="81" />
+    <nodeInfo nodeId="1225466903031" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="145" startPosition="81" endLine="146" endPosition="98" />
+    <nodeInfo nodeId="1240932749942" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ColorStyleClassItem_Editor.java" startLine="158" startPosition="105" endLine="159" endPosition="164" />
+    <nodeInfo nodeId="1225472714632" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="166" startPosition="163" endLine="167" endPosition="81" />
+    <nodeInfo nodeId="1225472714638" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="167" startPosition="81" endLine="168" endPosition="98" />
+    <nodeInfo nodeId="1225466935286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="180" startPosition="106" endLine="181" endPosition="104" />
+    <nodeInfo nodeId="1225472676313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="193" startPosition="106" endLine="194" endPosition="115" />
+    <nodeInfo nodeId="1225472714651" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="206" startPosition="106" endLine="207" endPosition="104" />
+    <nodeInfo nodeId="1225472714660" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ColorStyleClassItem_Editor.java" startLine="219" startPosition="106" endLine="220" endPosition="115" />
+    <scopeInfo nodeId="1186412612772" fileName="ColorStyleClassItem_Editor.java" startLine="115" startPosition="111" endLine="116" endPosition="66" />
+    <scopeInfo nodeId="1186412621878" fileName="ColorStyleClassItem_Editor.java" startLine="119" startPosition="111" endLine="120" endPosition="66" />
+    <scopeInfo nodeId="1225465568570" fileName="ColorStyleClassItem_Editor.java" startLine="136" startPosition="105" endLine="137" endPosition="164" />
+    <scopeInfo nodeId="1225472714610" fileName="ColorStyleClassItem_Editor.java" startLine="158" startPosition="105" endLine="159" endPosition="164" />
+    <scopeInfo nodeId="1225466728386" fileName="ColorStyleClassItem_Editor.java" startLine="180" startPosition="106" endLine="181" endPosition="104" />
+    <scopeInfo nodeId="1225472662046" fileName="ColorStyleClassItem_Editor.java" startLine="193" startPosition="106" endLine="194" endPosition="115" />
+    <scopeInfo nodeId="1225472714650" fileName="ColorStyleClassItem_Editor.java" startLine="206" startPosition="106" endLine="207" endPosition="104" />
+    <scopeInfo nodeId="1225472714659" fileName="ColorStyleClassItem_Editor.java" startLine="219" startPosition="106" endLine="220" endPosition="115" />
+    <scopeInfo nodeId="1225466261588" fileName="ColorStyleClassItem_Editor.java" startLine="144" startPosition="163" endLine="146" endPosition="98" />
+    <scopeInfo nodeId="1225472714631" fileName="ColorStyleClassItem_Editor.java" startLine="166" startPosition="163" endLine="168" endPosition="98" />
   </root>
   <root nodeId="1186403885380">
     <nodeInfo nodeId="1220975737191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FontStyleStyleClassItem_Editor.java" startLine="104" startPosition="111" endLine="105" endPosition="286" />
     <nodeInfo nodeId="1232812593501" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FontStyleStyleClassItem_Editor.java" startLine="108" startPosition="111" endLine="109" endPosition="285" />
     <nodeInfo nodeId="6699718426954288709" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FontStyleStyleClassItem_Editor.java" startLine="139" startPosition="105" endLine="140" endPosition="167" />
     <nodeInfo nodeId="6699718426954288731" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FontStyleStyleClassItem_Editor.java" startLine="147" startPosition="163" endLine="148" endPosition="98" />
-    <nodeInfo nodeId="6699718426954288879" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FontStyleStyleClassItem_Editor.java" startLine="149" startPosition="209" endLine="150" endPosition="158" />
+    <nodeInfo nodeId="6699718426954288879" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FontStyleStyleClassItem_Editor.java" startLine="149" startPosition="209" endLine="150" endPosition="162" />
     <nodeInfo nodeId="6699718426954539991" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FontStyleStyleClassItem_Editor.java" startLine="170" startPosition="105" endLine="171" endPosition="167" />
     <nodeInfo nodeId="1225473442549" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FontStyleStyleClassItem_Editor.java" startLine="178" startPosition="163" endLine="179" endPosition="81" />
     <nodeInfo nodeId="1225473442555" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FontStyleStyleClassItem_Editor.java" startLine="179" startPosition="81" endLine="180" endPosition="98" />
@@ -603,7 +603,7 @@
     <scopeInfo nodeId="1220975716955" fileName="FontStyleStyleClassItem_Editor.java" startLine="104" startPosition="111" endLine="105" endPosition="286" />
     <scopeInfo nodeId="1220975770017" fileName="FontStyleStyleClassItem_Editor.java" startLine="108" startPosition="111" endLine="109" endPosition="285" />
     <scopeInfo nodeId="6699718426954288708" fileName="FontStyleStyleClassItem_Editor.java" startLine="139" startPosition="105" endLine="140" endPosition="167" />
-    <scopeInfo nodeId="6699718426954288837" fileName="FontStyleStyleClassItem_Editor.java" startLine="149" startPosition="209" endLine="150" endPosition="158" />
+    <scopeInfo nodeId="6699718426954288837" fileName="FontStyleStyleClassItem_Editor.java" startLine="149" startPosition="209" endLine="150" endPosition="162" />
     <scopeInfo nodeId="1225473442527" fileName="FontStyleStyleClassItem_Editor.java" startLine="170" startPosition="105" endLine="171" endPosition="167" />
     <scopeInfo nodeId="1225473442548" fileName="FontStyleStyleClassItem_Editor.java" startLine="178" startPosition="163" endLine="180" endPosition="98" />
     <scopeInfo nodeId="6699718426954288724" fileName="FontStyleStyleClassItem_Editor.java" startLine="147" startPosition="163" endLine="151" endPosition="7" />
@@ -612,19 +612,19 @@
     <nodeInfo nodeId="1223461934562" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BooleanStyleSheetItem_Editor.java" startLine="121" startPosition="111" endLine="122" endPosition="68" />
     <nodeInfo nodeId="1223461960302" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BooleanStyleSheetItem_Editor.java" startLine="125" startPosition="111" endLine="126" endPosition="136" />
     <nodeInfo nodeId="7436746056273373198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BooleanStyleSheetItem_Editor.java" startLine="133" startPosition="105" endLine="134" endPosition="85" />
-    <nodeInfo nodeId="7436746056273410476" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BooleanStyleSheetItem_Editor.java" startLine="151" startPosition="106" endLine="152" endPosition="154" />
+    <nodeInfo nodeId="7436746056273410476" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BooleanStyleSheetItem_Editor.java" startLine="151" startPosition="106" endLine="152" endPosition="158" />
     <scopeInfo nodeId="1223461892210" fileName="BooleanStyleSheetItem_Editor.java" startLine="121" startPosition="111" endLine="122" endPosition="68" />
     <scopeInfo nodeId="1223461957914" fileName="BooleanStyleSheetItem_Editor.java" startLine="125" startPosition="111" endLine="126" endPosition="136" />
     <scopeInfo nodeId="7436746056273373197" fileName="BooleanStyleSheetItem_Editor.java" startLine="133" startPosition="105" endLine="134" endPosition="85" />
-    <scopeInfo nodeId="7436746056273410475" fileName="BooleanStyleSheetItem_Editor.java" startLine="151" startPosition="106" endLine="152" endPosition="154" />
+    <scopeInfo nodeId="7436746056273410475" fileName="BooleanStyleSheetItem_Editor.java" startLine="151" startPosition="106" endLine="152" endPosition="158" />
   </root>
   <root nodeId="1186415744056">
-    <nodeInfo nodeId="1221210001684" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FontSizeStyleClassItem_Editor.java" startLine="111" startPosition="111" endLine="112" endPosition="66" />
-    <nodeInfo nodeId="1221214261517" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FontSizeStyleClassItem_Editor.java" startLine="115" startPosition="111" endLine="116" endPosition="68" />
-    <nodeInfo nodeId="1221210772217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FontSizeStyleClassItem_Editor.java" startLine="132" startPosition="106" endLine="133" endPosition="110" />
-    <scopeInfo nodeId="1221209996909" fileName="FontSizeStyleClassItem_Editor.java" startLine="111" startPosition="111" endLine="112" endPosition="66" />
-    <scopeInfo nodeId="1221214215446" fileName="FontSizeStyleClassItem_Editor.java" startLine="115" startPosition="111" endLine="116" endPosition="68" />
-    <scopeInfo nodeId="1221210724561" fileName="FontSizeStyleClassItem_Editor.java" startLine="132" startPosition="106" endLine="133" endPosition="110" />
+    <nodeInfo nodeId="1221210001684" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FontSizeStyleClassItem_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="66" />
+    <nodeInfo nodeId="1221214261517" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FontSizeStyleClassItem_Editor.java" startLine="116" startPosition="111" endLine="117" endPosition="68" />
+    <nodeInfo nodeId="1221210772217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FontSizeStyleClassItem_Editor.java" startLine="133" startPosition="106" endLine="134" endPosition="117" />
+    <scopeInfo nodeId="1221209996909" fileName="FontSizeStyleClassItem_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="66" />
+    <scopeInfo nodeId="1221214215446" fileName="FontSizeStyleClassItem_Editor.java" startLine="116" startPosition="111" endLine="117" endPosition="68" />
+    <scopeInfo nodeId="1221210724561" fileName="FontSizeStyleClassItem_Editor.java" startLine="133" startPosition="106" endLine="134" endPosition="117" />
   </root>
   <root nodeId="1194569476147">
     <nodeInfo nodeId="1237393303847" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Styles_StyleSheet.java" startLine="132" startPosition="103" endLine="133" endPosition="19" />
@@ -655,8 +655,8 @@
     <scopeInfo nodeId="1237384018256" fileName="Styles_StyleSheet.java" startLine="138" startPosition="108" endLine="151" endPosition="17" />
   </root>
   <root nodeId="1198252451584">
-    <nodeInfo nodeId="1198252478892" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StyleSheetClass_RT.java" startLine="28" startPosition="75" endLine="29" endPosition="121" />
-    <scopeInfo nodeId="1198252456493" fileName="StyleSheetClass_RT.java" startLine="28" startPosition="75" endLine="29" endPosition="121" />
+    <nodeInfo nodeId="1198252478892" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StyleSheetClass_RT.java" startLine="28" startPosition="75" endLine="29" endPosition="128" />
+    <scopeInfo nodeId="1198252456493" fileName="StyleSheetClass_RT.java" startLine="28" startPosition="75" endLine="29" endPosition="128" />
   </root>
   <root nodeId="1198590333967">
     <nodeInfo nodeId="1198590333975" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="_FocusPolicy_Applicable.java" startLine="89" startPosition="111" endLine="90" endPosition="76" />
@@ -667,14 +667,14 @@
     <scopeInfo nodeId="1198590726805" fileName="CellModel_Component_KeyMap.java" startLine="52" startPosition="146" endLine="53" endPosition="178" />
   </root>
   <root nodeId="1214316262412">
-    <nodeInfo nodeId="1221219142719" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnderlinedStyleClassItem_Editor.java" startLine="113" startPosition="111" endLine="114" endPosition="66" />
-    <nodeInfo nodeId="1221223818246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnderlinedStyleClassItem_Editor.java" startLine="117" startPosition="111" endLine="118" endPosition="68" />
-    <nodeInfo nodeId="1676468925319121998" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnderlinedStyleClassItem_Editor.java" startLine="125" startPosition="105" endLine="126" endPosition="83" />
-    <nodeInfo nodeId="1221222738182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnderlinedStyleClassItem_Editor.java" startLine="143" startPosition="106" endLine="144" endPosition="113" />
-    <scopeInfo nodeId="1221219117108" fileName="UnderlinedStyleClassItem_Editor.java" startLine="113" startPosition="111" endLine="114" endPosition="66" />
-    <scopeInfo nodeId="1221219156230" fileName="UnderlinedStyleClassItem_Editor.java" startLine="117" startPosition="111" endLine="118" endPosition="68" />
-    <scopeInfo nodeId="1676468925319120277" fileName="UnderlinedStyleClassItem_Editor.java" startLine="125" startPosition="105" endLine="126" endPosition="83" />
-    <scopeInfo nodeId="1221222528495" fileName="UnderlinedStyleClassItem_Editor.java" startLine="143" startPosition="106" endLine="144" endPosition="113" />
+    <nodeInfo nodeId="1221219142719" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnderlinedStyleClassItem_Editor.java" startLine="114" startPosition="111" endLine="115" endPosition="66" />
+    <nodeInfo nodeId="1221223818246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnderlinedStyleClassItem_Editor.java" startLine="118" startPosition="111" endLine="119" endPosition="68" />
+    <nodeInfo nodeId="1676468925319121998" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnderlinedStyleClassItem_Editor.java" startLine="126" startPosition="105" endLine="127" endPosition="83" />
+    <nodeInfo nodeId="1221222738182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnderlinedStyleClassItem_Editor.java" startLine="144" startPosition="106" endLine="145" endPosition="120" />
+    <scopeInfo nodeId="1221219117108" fileName="UnderlinedStyleClassItem_Editor.java" startLine="114" startPosition="111" endLine="115" endPosition="66" />
+    <scopeInfo nodeId="1221219156230" fileName="UnderlinedStyleClassItem_Editor.java" startLine="118" startPosition="111" endLine="119" endPosition="68" />
+    <scopeInfo nodeId="1676468925319120277" fileName="UnderlinedStyleClassItem_Editor.java" startLine="126" startPosition="105" endLine="127" endPosition="83" />
+    <scopeInfo nodeId="1221222528495" fileName="UnderlinedStyleClassItem_Editor.java" startLine="144" startPosition="106" endLine="145" endPosition="120" />
   </root>
   <root nodeId="1214320151708">
     <nodeInfo nodeId="3608226089192003318" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="91" />
@@ -682,8 +682,8 @@
     <nodeInfo nodeId="3608226089192003356" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="181" startPosition="105" endLine="182" endPosition="175" />
     <nodeInfo nodeId="3608226089192004234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="189" startPosition="163" endLine="190" endPosition="84" />
     <nodeInfo nodeId="3608226089192036676" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="190" startPosition="84" endLine="191" endPosition="96" />
-    <nodeInfo nodeId="3608226089192056555" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="203" startPosition="106" endLine="204" endPosition="134" />
-    <nodeInfo nodeId="3608226089192056563" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="204" startPosition="134" endLine="205" endPosition="103" />
+    <nodeInfo nodeId="3608226089192056555" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="203" startPosition="106" endLine="204" endPosition="138" />
+    <nodeInfo nodeId="3608226089192056563" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="204" startPosition="138" endLine="205" endPosition="103" />
     <nodeInfo nodeId="3608226089192037066" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="205" startPosition="103" endLine="206" endPosition="99" />
     <nodeInfo nodeId="3608226089192056584" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="206" startPosition="99" endLine="207" endPosition="49" />
     <scopeInfo nodeId="3608226089191997422" fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="91" />

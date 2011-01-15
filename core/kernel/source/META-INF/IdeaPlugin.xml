@@ -13,7 +13,7 @@
     <extensionPoint name="mps.NavigationProvider" interface="jetbrains.mps.ide.navigation.NavigationProvider"/>
     <extensionPoint name="mps.GenerationHandler"
                     interface="jetbrains.mps.ide.generator.GeneratorFacade$GenerationHandlerProvider"/>
-    <extensionPoint name="mps.TabColorProvider" interface="jetbrains.mps.ide.tabbedEditor.TabColorProvider"/>
+    <extensionPoint name="mps.TabColorProvider" interface="jetbrains.mps.ide.editorTabs.TabColorProvider"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
@@ -22,7 +22,7 @@
 
     <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
 
-    <directoryIndexExcludePolicy implementation="jetbrains.mps.project.ClassesGenPolicy"/>
+    <directoryIndexExcludePolicy implementation="jetbrains.mps.ide.vfs.ClassesGenPolicy"/>
 
     <applicationService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
                         serviceImplementation="com.intellij.codeStyle.DefaultCodeStyleFacade"/>
@@ -42,7 +42,7 @@
     <projectService serviceInterface="com.intellij.usages.UsageViewManager"
                     serviceImplementation="com.intellij.usages.impl.UsageViewManagerImpl"/>
     <projectService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
-                    serviceImplementation="jetbrains.mps.intentions.MPSCodeStyleFacade"/>
+                    serviceImplementation="jetbrains.mps.codeStyle.MPSCodeStyleFacade"/>
     <projectService serviceInterface="com.intellij.ide.util.gotoByName.GotoFileConfiguration"
                     serviceImplementation="com.intellij.ide.util.gotoByName.GotoFileConfiguration"/>
 

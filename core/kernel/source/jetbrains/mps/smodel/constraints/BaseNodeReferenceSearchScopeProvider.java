@@ -41,14 +41,13 @@ public abstract class BaseNodeReferenceSearchScopeProvider implements INodeRefer
     if (searchScopeOrListOfNodes instanceof ISearchScope) {
       return (ISearchScope) searchScopeOrListOfNodes;
     }
-    if (searchScopeOrListOfNodes instanceof List) {
-      CollectionUtil.checkForNulls((Iterable) searchScopeOrListOfNodes, "" + this);
-      return new SimpleSearchScope((List) searchScopeOrListOfNodes);
-    }
+/*    if (searchScopeOrListOfNodes instanceof List) {
+      Iterable iterable = CollectionUtil.withoutNulls((Iterable) searchScopeOrListOfNodes);
+      return new SimpleSearchScope(IterableUtil.asList(iterable));
+    }*/
     if (searchScopeOrListOfNodes instanceof Iterable) {
-      CollectionUtil.checkForNulls((Iterable) searchScopeOrListOfNodes, "" + this);
-      Collection nodes = IterableUtil.asCollection((Iterable) searchScopeOrListOfNodes);
-      return new SimpleSearchScope(nodes);
+      Iterable iterable = CollectionUtil.withoutNulls((Iterable) searchScopeOrListOfNodes);
+      return new SimpleSearchScope(IterableUtil.asList(iterable));
     }
     throw new RuntimeException("unexpected type in search-scope provider " + searchScopeOrListOfNodes.getClass());
   }

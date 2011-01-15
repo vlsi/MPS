@@ -27,7 +27,7 @@ public class GenerateFiles_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(GenerateFiles_Action.class);
 
   public GenerateFiles_Action() {
-    super("Generate Files", "Generate files from all models under this namespace", ICON);
+    super("Generate Files (obsolete)", "Generate files from all models under this namespace", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

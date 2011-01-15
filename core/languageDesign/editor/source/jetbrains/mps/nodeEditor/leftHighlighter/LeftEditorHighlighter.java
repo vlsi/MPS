@@ -382,7 +382,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private void recalculateFoldingAreaWidth() {
     myLeftFoldingAreaWidth = MIN_LEFT_FOLDING_AREA_WIDTH;
     myRightFoldingAreaWidth = MIN_RIGHT_FOLDING_AREA_WIDTH;
-    // Layouting painterss
+    // Layouting painters
     for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
       myLeftFoldingAreaWidth = Math.max(myLeftFoldingAreaWidth, painter.getLeftAreaWidth());
       myRightFoldingAreaWidth = Math.max(myRightFoldingAreaWidth, painter.getRightAreaWidth());
@@ -698,7 +698,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     myMouseIsInFoldingArea = false;
     EditorMessageIconRenderer newRendererUnderMouse = getIconRendererUnderMouse(e);
     if (newRendererUnderMouse != null) {
-      setCursor(newRendererUnderMouse.getMouseOwerCursor());
+      setCursor(newRendererUnderMouse.getMouseOverCursor());
     } else if (myRendererUnderMouse != null) {
       setCursor(null);
     }
@@ -802,13 +802,13 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     }
 
     @Override
-    public Cursor getMouseOwerCursor() {
+    public Cursor getMouseOverCursor() {
       return myNumber != -1 ? Cursor.getPredefinedCursor(Cursor.HAND_CURSOR) : null;
     }
 
     @Override
     public AnAction getClickAction() {
-      return myNumber != -1 ? ActionManager.getInstance().getAction("jetbrains.mps.ide#action#jetbrains.mps.ide.actions.GoToBookmark" + myNumber + "_Action") : null;
+      return myNumber != -1 ? ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToBookmark_Action#" + myNumber + "!") : null;
     }
 
     @Override

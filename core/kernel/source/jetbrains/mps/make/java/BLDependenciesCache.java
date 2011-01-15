@@ -16,11 +16,10 @@
 package jetbrains.mps.make.java;
 
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.baseLanguage.textGen.BLDependenciesHandler;
-import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.AllCaches;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -67,7 +66,7 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
     try {
       SAXParser saxParser = JDOMUtil.createSAXParser();
       BLDependenciesHandler handler = new BLDependenciesHandler();
-      saxParser.parse(new InputSource(new InputStreamReader(is, "UTF-8")), handler);
+      saxParser.parse(new InputSource(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET)), handler);
       ModelDependencies dependencies = handler.getResult();
       if(dependencies != null) {
         return dependencies;

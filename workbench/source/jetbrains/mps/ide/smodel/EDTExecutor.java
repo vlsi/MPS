@@ -15,30 +15,31 @@
  */
 package jetbrains.mps.ide.smodel;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.impl.LaterInvocator;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.annotations.NotNull;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 class EDTExecutor {
 
+  private static final int MAX_EXECUTION_TIME = 100;
+
   private static final Logger LOG = Logger.getLogger(EDTExecutor.class);
 
+  /* Notified when:
+   *    myTasks queue becomes non-empty
+   *    workerStarted becomes false
+   */
   private final Object myLock = new Object();
 
-  private Thread myExecutor;
+  private final Thread myExecutor;
   private final WorkbenchModelAccess myModelAccess;
 
-  private Queue<Runnable> myToExecuteRead = new LinkedList<Runnable>();
-  private Queue<Runnable> myToExecuteWrite = new LinkedList<Runnable>();
-  private Queue<Pair<Runnable, Project>> myToExecuteCommand = new LinkedList<Pair<Runnable, Project>>();
+  /* remove elements in EDT only */
+  private ConcurrentLinkedQueue<Task> myTasks = new ConcurrentLinkedQueue<Task>();
 
   public EDTExecutor(WorkbenchModelAccess modelAccess) {
     myModelAccess = modelAccess;
@@ -47,92 +48,126 @@ class EDTExecutor {
     myExecutor.start();
   }
 
-  public void invokeReadInEDT(Runnable r) {
+  public void scheduleRead(final Runnable r) {
     synchronized (myLock) {
-      myToExecuteRead.add(r);
-      myLock.notifyAll();
+      if (myTasks.isEmpty()) {
+        myLock.notifyAll();
+      }
+      myTasks.offer(new Task() {
+        @Override
+        public boolean tryRun() throws TaskIsOutdated {
+          return myModelAccess.tryRead(r);
+        }
+
+        @Override
+        public boolean needsWrite() {
+          return false;
+        }
+      });
     }
   }
 
-
-  public void invokeWriteInEDT(Runnable r) {
+  public void scheduleWrite(final Runnable r) {
     synchronized (myLock) {
-      myToExecuteWrite.add(r);
-      myLock.notifyAll();
+      if (myTasks.isEmpty()) {
+        myLock.notifyAll();
+      }
+      myTasks.offer(new Task() {
+        @Override
+        public boolean tryRun() throws TaskIsOutdated {
+          return myModelAccess.tryWrite(r);
+        }
+
+        @Override
+        public boolean needsWrite() {
+          return true;
+        }
+      });
     }
   }
 
-  public void invokeCommandInEDT(Runnable r, @NotNull Project p) {
+  public void scheduleCommand(final Runnable r, final Project p) {
+    if (p == null || r == null) {
+      throw new IllegalArgumentException();
+    }
     synchronized (myLock) {
-      myToExecuteCommand.add(new Pair(r, p));
-      myLock.notifyAll();
+      if (myTasks.isEmpty()) {
+        myLock.notifyAll();
+      }
+      myTasks.offer(new Task() {
+        @Override
+        public boolean tryRun() throws TaskIsOutdated {
+          boolean ok = myModelAccess.tryWriteInCommand(r, p);
+          if (p.isDisposed()) {
+            throw new TaskIsOutdated();
+          }
+          return ok;
+        }
+
+        @Override
+        public boolean needsWrite() {
+          return true;
+        }
+      });
     }
   }
 
   public void flushEventQueue() {
-    LOG.assertLog(!ThreadUtils.isEventDispatchThread(), "possible deadlock");
-    while (true) {
-      try {
-        synchronized (myLock) {
-          if (myToExecuteRead.isEmpty() && myToExecuteCommand.isEmpty() && myToExecuteWrite.isEmpty()) {
-            return;
-          }
-          myLock.wait(100);
+    if (ThreadUtils.isEventDispatchThread()) {
+      throw new IllegalStateException("possible deadlock");
+    }
+    synchronized (myLock) {
+      while (!myTasks.isEmpty()) {
+        try {
+          myLock.wait();
+        } catch (InterruptedException e) {
+          /* ignore */
         }
-      } catch (InterruptedException e) {
-        LOG.error(e);
       }
     }
   }
 
-  public boolean isInEDT() {
-    return ApplicationManager.getApplication().isDispatchThread();
-  }
-
   private class Executor extends Thread {
 
-    private static final int INTERVAL = 90;
-
-    private volatile boolean hasCommandWorker = false;
-    private volatile boolean hasReadWorker = false;
-    private volatile boolean hasWriteWorker = false;
+    private volatile boolean workerStarted = false;
+    private Runnable myWorker = new Runnable() {
+      @Override
+      public void run() {
+        worker();
+      }
+    };
 
     private Executor() {
       super("Executor");
     }
 
     public void run() {
-      long nextReadRun = 0;
-      long nextWriteRun = 0;
-      long nextCommandRun = 0;
-
       try {
         while (true) {
-          try {
-            boolean scheduleRead, scheduleWrite, scheduleCommand;
-            synchronized (myLock) {
-              if (myToExecuteRead.isEmpty() && myToExecuteCommand.isEmpty() && myToExecuteWrite.isEmpty()) {
-                myLock.wait(100);
+          boolean schedule, needsWrite;
+          synchronized (myLock) {
+            if (workerStarted || myTasks.isEmpty()) {
+              try {
+                myLock.wait();
+              } catch (InterruptedException e) {
+                /* ignore */
               }
-              scheduleRead = !hasReadWorker && !myToExecuteRead.isEmpty();
-              scheduleWrite = !hasWriteWorker && !myToExecuteWrite.isEmpty();
-              scheduleCommand = !hasCommandWorker && !myToExecuteCommand.isEmpty();
             }
+            if (workerStarted) {
+              continue;
+            }
+            Task first = myTasks.peek();
+            schedule = first != null;
+            needsWrite = schedule && first.needsWrite();
+          }
 
-            if (scheduleRead && nextReadRun < System.currentTimeMillis()) {
-              LaterInvocator.invokeLater(new ReadRunnable(), ModalityState.NON_MODAL);
-              nextReadRun = System.currentTimeMillis() + INTERVAL;
-            }
-            if (scheduleWrite && nextWriteRun < System.currentTimeMillis()) {
-              LaterInvocator.invokeLater(new WriteRunnable(), ModalityState.NON_MODAL);
-              nextWriteRun = System.currentTimeMillis() + INTERVAL;
-            }
-            if (scheduleCommand && nextCommandRun < System.currentTimeMillis()) {
-              LaterInvocator.invokeLater(new CommandRunnable(), ModalityState.NON_MODAL);
-              nextCommandRun = System.currentTimeMillis() + INTERVAL;
-            }
-          } catch (InterruptedException e) {
-            /* ignore */
+          if (schedule) {
+            /* wait until required lock is available */
+            myModelAccess.waitLock(needsWrite);
+
+            /* start worker */
+            workerStarted = true;
+            LaterInvocator.invokeLater(myWorker, ModalityState.NON_MODAL);
           }
         }
       } catch (Exception e) {
@@ -140,137 +175,55 @@ class EDTExecutor {
       }
     }
 
-    private class ReadRunnable implements Runnable {
-      private Runnable getToExecuteRead() {
-        synchronized (myLock) {
-          if (myToExecuteRead.isEmpty()) return null;
-          Runnable result = myToExecuteRead.remove();
-          if (myToExecuteRead.isEmpty()) {
-            myLock.notifyAll();
-          }
-          return result;
-        }
+    // invoked in EDT
+    private void worker() {
+      if (!workerStarted) {
+        return;
       }
+      try {
+        long deadline = System.currentTimeMillis() + MAX_EXECUTION_TIME;
 
-      public void run() {
-        synchronized (myLock) {
-          if (hasReadWorker) {
+        do {
+          Task t = myTasks.peek();
+          if (t == null) {
             return;
           }
-          hasReadWorker = true;
-        }
-
-        try {
-          myModelAccess.tryRead(new Runnable() {
-            public void run() {
-              Runnable command;
-              while ((command = getToExecuteRead()) != null) {
-                command.run();
+          boolean remove = true;
+          try {
+            if (!t.tryRun()) {
+              // stop processing, reschedule
+              remove = false;
+              return;
+            }
+          } catch (TaskIsOutdated e) {
+            /* ignore, remove task */
+          } catch (Exception e) {
+            /* report */
+            LOG.error("run in EDT failure", e);
+          } finally {
+            if (remove) {
+              synchronized (myLock) {
+                myTasks.remove();
               }
             }
-          });
-        } finally {
-          synchronized (myLock) {
-            hasReadWorker = false;
-            myLock.notifyAll();
           }
+        } while (deadline > System.currentTimeMillis());
+
+      } finally {
+        synchronized (myLock) {
+          workerStarted = false;
+          myLock.notifyAll();
         }
       }
     }
+  }
 
-    private class WriteRunnable implements Runnable {
-      private Runnable getToExecuteWrite() {
-        synchronized (myLock) {
-          if (myToExecuteWrite.isEmpty()) return null;
-          Runnable result = myToExecuteWrite.remove();
-          if (myToExecuteWrite.isEmpty()) {
-            myLock.notifyAll();
-          }
-          return result;
-        }
-      }
+  private static interface Task {
+    boolean tryRun() throws TaskIsOutdated;
 
-      public void run() {
-        synchronized (myLock) {
-          if (hasWriteWorker) {
-            return;
-          }
-          hasWriteWorker = true;
-        }
+    boolean needsWrite();
+  }
 
-        try {
-          myModelAccess.tryWrite(new Runnable() {
-            public void run() {
-              Runnable command;
-              while ((command = getToExecuteWrite()) != null) {
-                command.run();
-              }
-            }
-          });
-        } finally {
-          synchronized (myLock) {
-            hasWriteWorker = false;
-            myLock.notifyAll();
-          }
-        }
-      }
-    }
-
-    private class CommandRunnable implements Runnable {
-      private Runnable getToExecuteCommand(Project p) {
-        synchronized (myLock) {
-          if (myToExecuteCommand.isEmpty()) return null;
-          Pair<Runnable, Project> pair = myToExecuteCommand.peek();
-          if (pair.getSecond() == p) {
-            myToExecuteCommand.remove(pair);
-            if(myToExecuteCommand.isEmpty()) myLock.notifyAll();
-            return pair.getFirst();
-          }
-          return null;
-        }
-      }
-
-      private Project peekToExecuteProject() {
-        synchronized (myLock) {
-          if (myToExecuteCommand.isEmpty()) return null;
-          Pair<Runnable, Project> peek = myToExecuteCommand.peek();
-          if (peek != null) {
-            return peek.getSecond();
-          }
-          return null;
-        }
-      }
-
-      public void run() {
-        synchronized (myLock) {
-          if (hasCommandWorker) {
-            return;
-          }
-          hasCommandWorker = true;
-        }
-
-        try {
-          final Project project = peekToExecuteProject();
-          if (project != null && !project.isDisposed()) {
-            myModelAccess.tryWriteInCommand(new Runnable() {
-              public void run() {
-                Runnable command;
-                while ((command = getToExecuteCommand(project)) != null) {
-                  command.run();
-                }
-              }
-            }, project);
-          } else if (project != null) {
-            LOG.error("disposed project, command dropped "+project);
-            getToExecuteCommand(project);
-          }
-        } finally {
-          synchronized (myLock) {
-            hasCommandWorker = false;
-            myLock.notifyAll();
-          }
-        }
-      }
-    }
+  private static class TaskIsOutdated extends Exception {
   }
 }

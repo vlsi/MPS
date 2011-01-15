@@ -83,6 +83,7 @@ public class Inequalities {
     for (Block block : set) {
       InequalityBlock inequality = (InequalityBlock) block;
       if (!inequality.getRelationKind().isCheckOnly()) {
+        inequality.expand(myState);
         result.add(inequality);
       }
     }
@@ -120,8 +121,6 @@ public class Inequalities {
               }
             }
           }
-
-          
         }
         nodesToBlocks.addLink(output, inequality);
         nodes.add(output);
@@ -147,7 +146,6 @@ public class Inequalities {
       Set<SNode> superTypes = new LinkedHashSet<SNode>();
       Set<SNode> subTypes = new LinkedHashSet<SNode>();
       for (InequalityBlock block : blocks) {
-
         if (block.getRelationKind().isCheckOnly()) {
           continue;
         }
@@ -182,11 +180,30 @@ public class Inequalities {
           myState.addEquation(node, result, info);
         }
       } else {
-
       }
-
     }
+  }
 
+  private Set<Set<InequalityBlock>> getInequalityGroups(List<InequalityBlock> inequalities) {
+    Map<SNode, Set<InequalityBlock>> nodesToGroups = new HashMap<SNode, Set<InequalityBlock>>();
+    for (InequalityBlock inequality : inequalities) {
+      inequality.expand(myState);
+      List<SNode> variables = TypesUtil.getVariables(inequality.getRightNode());
+      variables.addAll(TypesUtil.getVariables(inequality.getLeftNode()));
+      if (variables.size() == 0) continue;
+      Set<InequalityBlock> group = new HashSet<InequalityBlock>();
+      group.add(inequality);
+      for (SNode var : variables) {
+        var = myState.getRepresentative(var);
+        Set<InequalityBlock> varGroup = nodesToGroups.get(var);
+        if (varGroup != null) {
+          group.addAll(varGroup);
+          varGroup.clear();
+        }
+        nodesToGroups.put(var, group);
+      }
+    }
+    return new HashSet<Set<InequalityBlock>>(nodesToGroups.values());
   }
 
   public void clear() {

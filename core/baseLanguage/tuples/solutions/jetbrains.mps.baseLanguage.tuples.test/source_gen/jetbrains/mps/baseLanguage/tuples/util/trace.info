@@ -3,12 +3,12 @@
   <unitInfo fileName="SharedPair.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.util.SharedPair" />
   <root nodeId="974579920306753652">
     <nodeInfo nodeId="974579920306753718" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="A.java" startLine="14" startPosition="60" endLine="15" endPosition="134" />
-    <nodeInfo nodeId="974579920306753663" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="A.java" startLine="10" startPosition="16" endLine="12" endPosition="3" />
-    <nodeInfo nodeId="974579920306753653" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="A.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <nodeInfo nodeId="974579920306753663" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="A#()V" fileName="A.java" startLine="10" startPosition="16" endLine="12" endPosition="3" />
+    <nodeInfo nodeId="974579920306753653" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="foo#()Ljava/lang/Iterable;" fileName="A.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
     <scopeInfo nodeId="974579920306753666" fileName="A.java" startLine="11" startPosition="14" endLine="11" endPosition="14" />
     <scopeInfo nodeId="974579920306753655" fileName="A.java" startLine="14" startPosition="60" endLine="15" endPosition="134" />
-    <scopeInfo nodeId="974579920306753663" fileName="A.java" startLine="10" startPosition="16" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="974579920306753653" fileName="A.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="974579920306753663" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="A#()V" fileName="A.java" startLine="10" startPosition="16" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="974579920306753653" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="foo#()Ljava/lang/Iterable;" fileName="A.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
     <unitInfo nodeId="974579920306753652" fileName="A.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.util.A" />
   </root>
 </debugInfo>

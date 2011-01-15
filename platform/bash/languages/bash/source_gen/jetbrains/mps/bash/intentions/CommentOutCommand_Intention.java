@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CommentOutCommand_Intention extends BaseIntention implements Intention {
@@ -47,7 +47,7 @@ public class CommentOutCommand_Intention extends BaseIntention implements Intent
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode commandList = SNodeOperations.getAncestor(node, "jetbrains.mps.bash.structure.CommandList", true, false);
-    SNode commentedCommandList = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.CommentedCommandList", null);
+    SNode commentedCommandList = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.CommentedCommandList", null);
     SNodeOperations.replaceWithAnother(commandList, commentedCommandList);
     SLinkOperations.setTarget(commentedCommandList, "commandList", commandList, true);
   }

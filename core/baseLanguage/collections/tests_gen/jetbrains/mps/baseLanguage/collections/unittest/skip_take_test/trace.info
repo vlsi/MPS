@@ -10,8 +10,8 @@
     <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SkipTakePage_Test.java" startLine="170" startPosition="27" endLine="170" endPosition="27" />
     <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SkipTakePage_Test.java" startLine="224" startPosition="27" endLine="224" endPosition="27" />
     <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SkipTakePage_Test.java" startLine="227" startPosition="27" endLine="227" endPosition="27" />
-    <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SkipTakePage_Test.java" startLine="18" startPosition="52" endLine="19" endPosition="37" />
-    <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SkipTakePage_Test.java" startLine="19" startPosition="37" endLine="20" endPosition="31" />
+    <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" fileName="SkipTakePage_Test.java" startLine="18" startPosition="52" endLine="19" endPosition="37" />
+    <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_i" fileName="SkipTakePage_Test.java" startLine="19" startPosition="37" endLine="20" endPosition="31" />
     <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="SkipTakePage_Test.java" startLine="27" startPosition="28" endLine="28" endPosition="54" />
     <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SkipTakePage_Test.java" startLine="28" startPosition="54" endLine="29" endPosition="35" />
     <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SkipTakePage_Test.java" startLine="30" startPosition="27" endLine="31" endPosition="36" />
@@ -38,8 +38,8 @@
     <nodeInfo nodeId="1172667284434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SkipTakePage_Test.java" startLine="67" startPosition="41" endLine="68" endPosition="76" />
     <nodeInfo nodeId="1172667323656" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SkipTakePage_Test.java" startLine="68" startPosition="76" endLine="69" endPosition="59" />
     <nodeInfo nodeId="1172667345831" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SkipTakePage_Test.java" startLine="69" startPosition="59" endLine="70" endPosition="67" />
-    <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SkipTakePage_Test.java" startLine="78" startPosition="52" endLine="79" endPosition="37" />
-    <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SkipTakePage_Test.java" startLine="79" startPosition="37" endLine="80" endPosition="31" />
+    <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" fileName="SkipTakePage_Test.java" startLine="78" startPosition="52" endLine="79" endPosition="37" />
+    <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_i" fileName="SkipTakePage_Test.java" startLine="79" startPosition="37" endLine="80" endPosition="31" />
     <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="SkipTakePage_Test.java" startLine="87" startPosition="28" endLine="88" endPosition="54" />
     <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SkipTakePage_Test.java" startLine="88" startPosition="54" endLine="89" endPosition="35" />
     <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SkipTakePage_Test.java" startLine="90" startPosition="27" endLine="91" endPosition="36" />
@@ -66,8 +66,8 @@
     <nodeInfo nodeId="1172667380491" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SkipTakePage_Test.java" startLine="127" startPosition="76" endLine="128" endPosition="59" />
     <nodeInfo nodeId="1172667436987" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SkipTakePage_Test.java" startLine="128" startPosition="59" endLine="129" endPosition="58" />
     <nodeInfo nodeId="1172667380496" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SkipTakePage_Test.java" startLine="129" startPosition="58" endLine="130" endPosition="66" />
-    <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SkipTakePage_Test.java" startLine="138" startPosition="52" endLine="139" endPosition="37" />
-    <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SkipTakePage_Test.java" startLine="139" startPosition="37" endLine="140" endPosition="31" />
+    <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" fileName="SkipTakePage_Test.java" startLine="138" startPosition="52" endLine="139" endPosition="37" />
+    <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_i" fileName="SkipTakePage_Test.java" startLine="139" startPosition="37" endLine="140" endPosition="31" />
     <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="SkipTakePage_Test.java" startLine="147" startPosition="28" endLine="148" endPosition="54" />
     <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SkipTakePage_Test.java" startLine="148" startPosition="54" endLine="149" endPosition="35" />
     <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SkipTakePage_Test.java" startLine="150" startPosition="27" endLine="151" endPosition="36" />
@@ -91,8 +91,8 @@
     <nodeInfo nodeId="1172667526758" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SkipTakePage_Test.java" startLine="184" startPosition="49" endLine="185" endPosition="76" />
     <nodeInfo nodeId="1172667537206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SkipTakePage_Test.java" startLine="185" startPosition="76" endLine="186" endPosition="59" />
     <nodeInfo nodeId="1172667543010" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SkipTakePage_Test.java" startLine="186" startPosition="59" endLine="187" endPosition="58" />
-    <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SkipTakePage_Test.java" startLine="195" startPosition="52" endLine="196" endPosition="37" />
-    <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SkipTakePage_Test.java" startLine="196" startPosition="37" endLine="197" endPosition="31" />
+    <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" fileName="SkipTakePage_Test.java" startLine="195" startPosition="52" endLine="196" endPosition="37" />
+    <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_i" fileName="SkipTakePage_Test.java" startLine="196" startPosition="37" endLine="197" endPosition="31" />
     <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="SkipTakePage_Test.java" startLine="204" startPosition="28" endLine="205" endPosition="54" />
     <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SkipTakePage_Test.java" startLine="205" startPosition="54" endLine="206" endPosition="35" />
     <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SkipTakePage_Test.java" startLine="207" startPosition="27" endLine="208" endPosition="36" />
@@ -128,34 +128,34 @@
     <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="SkipTakePage_Test.java" startLine="82" startPosition="46" endLine="116" endPosition="31" />
     <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="SkipTakePage_Test.java" startLine="142" startPosition="46" endLine="176" endPosition="31" />
     <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="SkipTakePage_Test.java" startLine="199" startPosition="46" endLine="233" endPosition="31" />
-    <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="21" startPosition="0" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="81" startPosition="0" endLine="119" endPosition="0" />
-    <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="141" startPosition="0" endLine="179" endPosition="0" />
-    <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="198" startPosition="0" endLine="236" endPosition="0" />
+    <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="SkipTakePage_Test.java" startLine="21" startPosition="0" endLine="59" endPosition="0" />
+    <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="SkipTakePage_Test.java" startLine="81" startPosition="0" endLine="119" endPosition="0" />
+    <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="SkipTakePage_Test.java" startLine="141" startPosition="0" endLine="179" endPosition="0" />
+    <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="SkipTakePage_Test.java" startLine="198" startPosition="0" endLine="236" endPosition="0" />
     <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SkipTakePage_Test.java" startLine="17" startPosition="47" endLine="59" endPosition="14" />
     <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SkipTakePage_Test.java" startLine="77" startPosition="47" endLine="119" endPosition="14" />
     <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SkipTakePage_Test.java" startLine="137" startPosition="47" endLine="179" endPosition="14" />
     <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SkipTakePage_Test.java" startLine="194" startPosition="47" endLine="236" endPosition="14" />
-    <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="16" startPosition="40" endLine="61" endPosition="0" />
-    <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="76" startPosition="40" endLine="121" endPosition="0" />
-    <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="136" startPosition="40" endLine="181" endPosition="0" />
-    <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="193" startPosition="40" endLine="238" endPosition="0" />
+    <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="SkipTakePage_Test.java" startLine="16" startPosition="40" endLine="61" endPosition="0" />
+    <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="SkipTakePage_Test.java" startLine="76" startPosition="40" endLine="121" endPosition="0" />
+    <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="SkipTakePage_Test.java" startLine="136" startPosition="40" endLine="181" endPosition="0" />
+    <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="SkipTakePage_Test.java" startLine="193" startPosition="40" endLine="238" endPosition="0" />
     <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SkipTakePage_Test.java" startLine="15" startPosition="43" endLine="61" endPosition="10" />
     <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SkipTakePage_Test.java" startLine="75" startPosition="43" endLine="121" endPosition="10" />
     <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SkipTakePage_Test.java" startLine="135" startPosition="43" endLine="181" endPosition="10" />
     <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SkipTakePage_Test.java" startLine="192" startPosition="43" endLine="238" endPosition="10" />
-    <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="14" startPosition="80" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="74" startPosition="80" endLine="123" endPosition="0" />
-    <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="134" startPosition="80" endLine="183" endPosition="0" />
-    <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="191" startPosition="80" endLine="240" endPosition="0" />
+    <nodeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" fileName="SkipTakePage_Test.java" startLine="14" startPosition="80" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" fileName="SkipTakePage_Test.java" startLine="74" startPosition="80" endLine="123" endPosition="0" />
+    <nodeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" fileName="SkipTakePage_Test.java" startLine="134" startPosition="80" endLine="183" endPosition="0" />
+    <nodeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" fileName="SkipTakePage_Test.java" startLine="191" startPosition="80" endLine="240" endPosition="0" />
     <nodeInfo nodeId="1172667132487" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SkipTakePage_Test.java" startLine="13" startPosition="45" endLine="63" endPosition="7" />
     <nodeInfo nodeId="1172667380442" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SkipTakePage_Test.java" startLine="73" startPosition="45" endLine="123" endPosition="7" />
     <nodeInfo nodeId="1172667489704" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SkipTakePage_Test.java" startLine="133" startPosition="48" endLine="183" endPosition="7" />
     <nodeInfo nodeId="1172668380749" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SkipTakePage_Test.java" startLine="190" startPosition="44" endLine="240" endPosition="7" />
-    <nodeInfo nodeId="1172667481220" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="132" startPosition="0" endLine="189" endPosition="0" />
-    <nodeInfo nodeId="1172668363428" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="189" startPosition="0" endLine="246" endPosition="0" />
-    <nodeInfo nodeId="1172667126985" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="12" startPosition="49" endLine="72" endPosition="0" />
-    <nodeInfo nodeId="1172667364856" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SkipTakePage_Test.java" startLine="72" startPosition="0" endLine="132" endPosition="0" />
+    <nodeInfo nodeId="1172667481220" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_takeSkip#()V" fileName="SkipTakePage_Test.java" startLine="132" startPosition="0" endLine="189" endPosition="0" />
+    <nodeInfo nodeId="1172668363428" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_page#()V" fileName="SkipTakePage_Test.java" startLine="189" startPosition="0" endLine="246" endPosition="0" />
+    <nodeInfo nodeId="1172667126985" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_skip1#()V" fileName="SkipTakePage_Test.java" startLine="12" startPosition="49" endLine="72" endPosition="0" />
+    <nodeInfo nodeId="1172667364856" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_take1#()V" fileName="SkipTakePage_Test.java" startLine="72" startPosition="0" endLine="132" endPosition="0" />
     <scopeInfo nodeId="1224596674739" fileName="SkipTakePage_Test.java" startLine="47" startPosition="27" endLine="47" endPosition="27" />
     <scopeInfo nodeId="1224596674739" fileName="SkipTakePage_Test.java" startLine="50" startPosition="27" endLine="50" endPosition="27" />
     <scopeInfo nodeId="1224596674862" fileName="SkipTakePage_Test.java" startLine="107" startPosition="27" endLine="107" endPosition="27" />
@@ -208,26 +208,26 @@
     <scopeInfo nodeId="1224596674862" fileName="SkipTakePage_Test.java" startLine="82" startPosition="46" endLine="117" endPosition="29" />
     <scopeInfo nodeId="1224596675141" fileName="SkipTakePage_Test.java" startLine="142" startPosition="46" endLine="177" endPosition="29" />
     <scopeInfo nodeId="1224596675396" fileName="SkipTakePage_Test.java" startLine="199" startPosition="46" endLine="234" endPosition="29" />
-    <scopeInfo nodeId="1224596674739" fileName="SkipTakePage_Test.java" startLine="21" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1224596674862" fileName="SkipTakePage_Test.java" startLine="81" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="1224596675141" fileName="SkipTakePage_Test.java" startLine="141" startPosition="0" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="1224596675396" fileName="SkipTakePage_Test.java" startLine="198" startPosition="0" endLine="236" endPosition="0" />
+    <scopeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="SkipTakePage_Test.java" startLine="21" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="SkipTakePage_Test.java" startLine="81" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="SkipTakePage_Test.java" startLine="141" startPosition="0" endLine="179" endPosition="0" />
+    <scopeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="SkipTakePage_Test.java" startLine="198" startPosition="0" endLine="236" endPosition="0" />
     <scopeInfo nodeId="1224596674739" fileName="SkipTakePage_Test.java" startLine="17" startPosition="47" endLine="59" endPosition="14" />
     <scopeInfo nodeId="1224596674862" fileName="SkipTakePage_Test.java" startLine="77" startPosition="47" endLine="119" endPosition="14" />
     <scopeInfo nodeId="1224596675141" fileName="SkipTakePage_Test.java" startLine="137" startPosition="47" endLine="179" endPosition="14" />
     <scopeInfo nodeId="1224596675396" fileName="SkipTakePage_Test.java" startLine="194" startPosition="47" endLine="236" endPosition="14" />
-    <scopeInfo nodeId="1224596674739" fileName="SkipTakePage_Test.java" startLine="16" startPosition="40" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1224596674862" fileName="SkipTakePage_Test.java" startLine="76" startPosition="40" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="1224596675141" fileName="SkipTakePage_Test.java" startLine="136" startPosition="40" endLine="181" endPosition="0" />
-    <scopeInfo nodeId="1224596675396" fileName="SkipTakePage_Test.java" startLine="193" startPosition="40" endLine="238" endPosition="0" />
+    <scopeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="SkipTakePage_Test.java" startLine="16" startPosition="40" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="SkipTakePage_Test.java" startLine="76" startPosition="40" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="SkipTakePage_Test.java" startLine="136" startPosition="40" endLine="181" endPosition="0" />
+    <scopeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="SkipTakePage_Test.java" startLine="193" startPosition="40" endLine="238" endPosition="0" />
     <scopeInfo nodeId="1224596674739" fileName="SkipTakePage_Test.java" startLine="15" startPosition="43" endLine="61" endPosition="10" />
     <scopeInfo nodeId="1224596674862" fileName="SkipTakePage_Test.java" startLine="75" startPosition="43" endLine="121" endPosition="10" />
     <scopeInfo nodeId="1224596675141" fileName="SkipTakePage_Test.java" startLine="135" startPosition="43" endLine="181" endPosition="10" />
     <scopeInfo nodeId="1224596675396" fileName="SkipTakePage_Test.java" startLine="192" startPosition="43" endLine="238" endPosition="10" />
-    <scopeInfo nodeId="1224596674739" fileName="SkipTakePage_Test.java" startLine="14" startPosition="80" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1224596674862" fileName="SkipTakePage_Test.java" startLine="74" startPosition="80" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="1224596675141" fileName="SkipTakePage_Test.java" startLine="134" startPosition="80" endLine="183" endPosition="0" />
-    <scopeInfo nodeId="1224596675396" fileName="SkipTakePage_Test.java" startLine="191" startPosition="80" endLine="240" endPosition="0" />
+    <scopeInfo nodeId="1224596674739" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" fileName="SkipTakePage_Test.java" startLine="14" startPosition="80" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="1224596674862" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" fileName="SkipTakePage_Test.java" startLine="74" startPosition="80" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="1224596675141" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" fileName="SkipTakePage_Test.java" startLine="134" startPosition="80" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="1224596675396" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" fileName="SkipTakePage_Test.java" startLine="191" startPosition="80" endLine="240" endPosition="0" />
     <scopeInfo nodeId="1172667481221" fileName="SkipTakePage_Test.java" startLine="133" startPosition="48" endLine="187" endPosition="58">
       <varInfo nodeId="1172667489705" varName="s" />
     </scopeInfo>
@@ -241,10 +241,10 @@
     <scopeInfo nodeId="1172667364857" fileName="SkipTakePage_Test.java" startLine="73" startPosition="45" endLine="130" endPosition="66">
       <varInfo nodeId="1172667380443" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="1172667481220" fileName="SkipTakePage_Test.java" startLine="132" startPosition="0" endLine="189" endPosition="0" />
-    <scopeInfo nodeId="1172668363428" fileName="SkipTakePage_Test.java" startLine="189" startPosition="0" endLine="246" endPosition="0" />
-    <scopeInfo nodeId="1172667126985" fileName="SkipTakePage_Test.java" startLine="12" startPosition="49" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1172667364856" fileName="SkipTakePage_Test.java" startLine="72" startPosition="0" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="1172667481220" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_takeSkip#()V" fileName="SkipTakePage_Test.java" startLine="132" startPosition="0" endLine="189" endPosition="0" />
+    <scopeInfo nodeId="1172668363428" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_page#()V" fileName="SkipTakePage_Test.java" startLine="189" startPosition="0" endLine="246" endPosition="0" />
+    <scopeInfo nodeId="1172667126985" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_skip1#()V" fileName="SkipTakePage_Test.java" startLine="12" startPosition="49" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="1172667364856" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_take1#()V" fileName="SkipTakePage_Test.java" startLine="72" startPosition="0" endLine="132" endPosition="0" />
     <unitInfo nodeId="1224596674739" fileName="SkipTakePage_Test.java" startLine="18" startPosition="23" endLine="59" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$3" />
     <unitInfo nodeId="1224596674862" fileName="SkipTakePage_Test.java" startLine="78" startPosition="23" endLine="119" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$4" />
     <unitInfo nodeId="1224596675141" fileName="SkipTakePage_Test.java" startLine="138" startPosition="23" endLine="179" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test$5" />

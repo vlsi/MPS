@@ -6,6 +6,7 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -29,6 +30,9 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
+        if ((SLinkOperations.getTarget(node, "prototypeNode", true) != null)) {
+          return true;
+        }
         LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.SNodeCreator") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
@@ -55,6 +59,9 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
+        if ((SLinkOperations.getTarget(node, "prototypeNode", true) != null)) {
+          return true;
+        }
         LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Concept_NewInstance") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
@@ -81,6 +88,9 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation")) && (SLinkOperations.getTarget(node, "prototypeNode", true) != null)) {
+          return true;
+        }
         LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
@@ -107,6 +117,9 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
+        if ((SLinkOperations.getTarget(node, "prototypeNode", true) != null)) {
+          return true;
+        }
         LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }

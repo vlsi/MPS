@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Typesystem_ProjectPlugin.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ProjectPlugin" />
   <unitInfo fileName="TypesystemNodeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions_ActionGroup" />
+  <unitInfo fileName="Typesystem_ProjectPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ProjectPlugin" />
   <unitInfo fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup" />
   <unitInfo fileName="TypesystemActions_ActionGroup.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Default_KeymapChanges" />
   <unitInfo fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemPlugin_CustomProjectPlugin" />
   <unitInfo fileName="Typesystem_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ApplicationPlugin" />
   <unitInfo fileName="ShowInequationsForCell_Action.java" startLine="18" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowInequationsForCell_Action" />
-  <unitInfo fileName="GoToTypeErrorRule_Action.java" startLine="20" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action" />
+  <unitInfo fileName="GoToTypeErrorRule_Action.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action" />
   <unitInfo fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="23" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action" />
   <unitInfo fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="22" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup" />
   <unitInfo fileName="ShowInferredNodeType_Action.java" startLine="22" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowInferredNodeType_Action" />
@@ -29,11 +29,11 @@
     <nodeInfo nodeId="3924602344979582140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="17" startPosition="133" endLine="18" endPosition="130" />
   </root>
   <root nodeId="1206101816406">
-    <nodeInfo nodeId="1206105127535" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoToTypeErrorRule_Action.java" startLine="30" startPosition="87" endLine="31" endPosition="210" />
-    <nodeInfo nodeId="1206105173116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoToTypeErrorRule_Action.java" startLine="31" startPosition="210" endLine="32" endPosition="135" />
-    <nodeInfo nodeId="1206105385968" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoToTypeErrorRule_Action.java" startLine="67" startPosition="9" endLine="68" endPosition="202" />
-    <nodeInfo nodeId="1206108594276" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToTypeErrorRule_Action.java" startLine="68" startPosition="202" endLine="69" endPosition="184" />
-    <scopeInfo nodeId="1206105096000" fileName="GoToTypeErrorRule_Action.java" startLine="30" startPosition="87" endLine="32" endPosition="135">
+    <nodeInfo nodeId="1206105127535" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoToTypeErrorRule_Action.java" startLine="29" startPosition="87" endLine="30" endPosition="210" />
+    <nodeInfo nodeId="1206105173116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoToTypeErrorRule_Action.java" startLine="30" startPosition="210" endLine="31" endPosition="135" />
+    <nodeInfo nodeId="1206105385968" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoToTypeErrorRule_Action.java" startLine="66" startPosition="9" endLine="67" endPosition="212" />
+    <nodeInfo nodeId="1206108594276" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToTypeErrorRule_Action.java" startLine="67" startPosition="212" endLine="68" endPosition="184" />
+    <scopeInfo nodeId="1206105096000" fileName="GoToTypeErrorRule_Action.java" startLine="29" startPosition="87" endLine="31" endPosition="135">
       <varInfo nodeId="1206105127536" varName="error" />
     </scopeInfo>
   </root>

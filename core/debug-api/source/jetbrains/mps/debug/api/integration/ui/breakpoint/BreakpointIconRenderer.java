@@ -1,7 +1,6 @@
 package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
@@ -93,13 +92,13 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
   }
 
   @Override
-  public Cursor getMouseOwerCursor() {
+  public Cursor getMouseOverCursor() {
     return null;
   }
 
   @Override
   public AnAction getClickAction() {
-    return ActionManager.getInstance().getAction("jetbrains.mps.ide#action#jetbrains.mps.ide.actions.ToggleBreakpoint_Action");
+    return null;
   }
 
   @Override

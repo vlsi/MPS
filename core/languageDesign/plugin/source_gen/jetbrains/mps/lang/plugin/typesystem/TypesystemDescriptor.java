@@ -286,19 +286,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new Typeof_SingletabbedEditorTabType_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
       SubtypingRule_Runtime subtypingRule = new Typeof_ToolType_Instanceof_BaseTool_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
       SubtypingRule_Runtime subtypingRule = new typeof_Console_IsSubtype_JComponent_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new typeof_MultitabbedEditorTabType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {

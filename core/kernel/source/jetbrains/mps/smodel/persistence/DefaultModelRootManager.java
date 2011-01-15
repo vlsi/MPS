@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ModelRefCreator;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
@@ -138,7 +139,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     if (!modelFile.exists()) return true;
     BufferedReader r = null;
     try {
-      r = new BufferedReader(new InputStreamReader(modelFile.openInputStream()));
+      r = new BufferedReader(new InputStreamReader(modelFile.openInputStream(), FileUtil.DEFAULT_CHARSET));
       String line;
       boolean result = false;
       while ((line = r.readLine()) != null) {
@@ -170,7 +171,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     if (!modelFile.exists()) return true;
     Reader reader = null;
     try {
-      BufferedReader r = new BufferedReader(new InputStreamReader(modelFile.openInputStream()));
+      BufferedReader r = new BufferedReader(new InputStreamReader(modelFile.openInputStream(), FileUtil.DEFAULT_CHARSET));
       String line;
       while ((line = r.readLine()) != null) {
         if (line.contains("<node")) {

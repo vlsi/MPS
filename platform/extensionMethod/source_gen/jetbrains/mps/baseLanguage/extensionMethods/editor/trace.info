@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ExtensionMethodDeclaration_Actions.java" startLine="18" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.editor.ExtensionMethodDeclaration_Actions$ExtensionMethodDeclaration_Actions_RIGHT_TRANSFORM" />
+  <unitInfo fileName="ExtensionMethodDeclaration_Actions.java" startLine="19" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.editor.ExtensionMethodDeclaration_Actions$ExtensionMethodDeclaration_Actions_RIGHT_TRANSFORM" />
   <unitInfo fileName="ThisExtensionExpression_Editor.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.editor.ThisExtensionExpression_Editor" />
-  <unitInfo fileName="ExtensionMethodDeclaration_Actions.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.editor.ExtensionMethodDeclaration_Actions" />
+  <unitInfo fileName="ExtensionMethodDeclaration_Actions.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.editor.ExtensionMethodDeclaration_Actions" />
   <unitInfo fileName="LocalExtendedMethodCall_Editor.java" startLine="63" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.editor.LocalExtendedMethodCall_Editor$_Inline_6e2wus_a0a" />
   <unitInfo fileName="ExtensionMethodCall_Editor.java" startLine="84" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.editor.ExtensionMethodCall_Editor$_Inline_74pwef_a0a" />
   <unitInfo fileName="ExtensionStaticFieldReference_Editor.java" startLine="48" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.editor.ExtensionStaticFieldReference_Editor$_Inline_gid07_a0a" />
@@ -24,10 +24,10 @@
     <scopeInfo nodeId="4006340295321214065" fileName="TypeExtension_Editor.java" startLine="195" startPosition="111" endLine="196" endPosition="112" />
   </root>
   <root nodeId="6513744873655832108">
-    <nodeInfo nodeId="1082537205635903145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExtensionMethodDeclaration_Actions.java" startLine="30" startPosition="101" endLine="31" endPosition="101" />
-    <nodeInfo nodeId="1082537205635903121" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ExtensionMethodDeclaration_Actions.java" startLine="29" startPosition="75" endLine="32" endPosition="7" />
-    <scopeInfo nodeId="1082537205635903122" fileName="ExtensionMethodDeclaration_Actions.java" startLine="30" startPosition="101" endLine="31" endPosition="101" />
-    <scopeInfo nodeId="6513744873655832111" fileName="ExtensionMethodDeclaration_Actions.java" startLine="29" startPosition="75" endLine="32" endPosition="7" />
+    <nodeInfo nodeId="1082537205635903145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExtensionMethodDeclaration_Actions.java" startLine="31" startPosition="101" endLine="32" endPosition="108" />
+    <nodeInfo nodeId="1082537205635903121" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ExtensionMethodDeclaration_Actions.java" startLine="30" startPosition="75" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="1082537205635903122" fileName="ExtensionMethodDeclaration_Actions.java" startLine="31" startPosition="101" endLine="32" endPosition="108" />
+    <scopeInfo nodeId="6513744873655832111" fileName="ExtensionMethodDeclaration_Actions.java" startLine="30" startPosition="75" endLine="33" endPosition="7" />
   </root>
   <root nodeId="7353029842736914602">
     <nodeInfo nodeId="3897935848304631878" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExtensionMethodDeclaration_Editor.java" startLine="240" startPosition="111" endLine="241" endPosition="112" />

@@ -55,13 +55,7 @@ public interface ModelCommandExecutor {
 
   void runWriteInEDT(Runnable r);
 
-  void runCommandInEDT(Runnable r, @NotNull Project p);
-
-  /**
-   * use executeCommand(Runnable r, Project project)
-   */
-  @Deprecated
-  void executeCommand(Runnable r);
+  void runCommandInEDT(@NotNull Runnable r, @NotNull Project p);
 
   void executeCommand(Runnable r, Project project);
 
@@ -85,6 +79,10 @@ public interface ModelCommandExecutor {
 
   void runWriteActionInCommand(Runnable r, String name, UndoConfirmationPolicy policy, Project project);
 
+  /**
+   * use runCommandInEDT
+   */
+  @Deprecated
   void runWriteActionInCommandAsync(Runnable r, Project project);
 
   void runIndexing(Runnable r);
@@ -92,6 +90,8 @@ public interface ModelCommandExecutor {
   void addCommandListener(ModelAccessListener l);
 
   void removeCommandListener(ModelAccessListener l);
+
+  boolean tryRead(Runnable r);
 
   <T> T tryRead(Computable<T> c);
 

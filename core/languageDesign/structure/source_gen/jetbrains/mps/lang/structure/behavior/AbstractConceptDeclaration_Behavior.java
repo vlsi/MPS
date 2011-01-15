@@ -4,7 +4,6 @@ package jetbrains.mps.lang.structure.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -13,20 +12,19 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.workbench.actions.nodes.GoToRulesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
@@ -35,6 +33,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
@@ -45,8 +44,8 @@ public class AbstractConceptDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static SModel call_getAspectModel_8360039740498072707(SNode thisNode, IScope scope, LanguageAspect aspect) {
-    Language language = SModelUtil.getDeclaringLanguage(thisNode, scope);
+  public static SModel call_getAspectModel_8360039740498072707(SNode thisNode, LanguageAspect aspect) {
+    Language language = SModelUtil.getDeclaringLanguage(thisNode);
     if (language == null) {
       return null;
     }
@@ -57,15 +56,15 @@ public class AbstractConceptDeclaration_Behavior {
     return md.getSModel();
   }
 
-  public static List<SNode> call_findConceptAspectCollection_1567570417158062208(SNode thisNode, IScope scope, LanguageAspect aspect) {
+  public static List<SNode> call_findConceptAspectCollection_1567570417158062208(SNode thisNode, LanguageAspect aspect) {
     List<SNode> result = new ArrayList<SNode>();
-    SModel model = AbstractConceptDeclaration_Behavior.call_getAspectModel_8360039740498072707(thisNode, scope, aspect);
+    SModel model = AbstractConceptDeclaration_Behavior.call_getAspectModel_8360039740498072707(thisNode, aspect);
     AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_8360039740498071686(thisNode, model, result);
     return result;
   }
 
-  public static SNode call_findConceptAspect_8360039740498068384(SNode thisNode, IScope scope, LanguageAspect aspect) {
-    SModel model = AbstractConceptDeclaration_Behavior.call_getAspectModel_8360039740498072707(thisNode, scope, aspect);
+  public static SNode call_findConceptAspect_8360039740498068384(SNode thisNode, LanguageAspect aspect) {
+    SModel model = AbstractConceptDeclaration_Behavior.call_getAspectModel_8360039740498072707(thisNode, aspect);
     return AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498069412(thisNode, model);
   }
 
@@ -92,8 +91,8 @@ public class AbstractConceptDeclaration_Behavior {
     }
   }
 
-  public static List<SNode> call_findGeneratorFragments_6409339300305625383(final SNode thisNode, IScope scope) {
-    Language language = SModelUtil_new.getDeclaringLanguage(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)), scope);
+  public static List<SNode> call_findGeneratorFragments_6409339300305625383(final SNode thisNode) {
+    Language language = SModelUtil.getDeclaringLanguage(thisNode);
     List<SNode> result = new ArrayList<SNode>();
     if (language == null) {
       return result;
@@ -117,17 +116,12 @@ public class AbstractConceptDeclaration_Behavior {
     return result;
   }
 
-  public static List<SNode> call_findApplicableTypesystemRules_6409339300305625028(SNode thisNode, IScope scope) {
-    List<SNode> helginsRules = GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)), scope, false);
-    return (List<SNode>) helginsRules;
-  }
-
-  public static List<SNode> call_findAllAspects_7754459869734028917(SNode thisNode, IScope scope) {
+  public static List<SNode> call_findAllAspects_7754459869734028917(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
-      ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, scope, aspect));
+      ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, aspect));
     }
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(thisNode, scope)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(thisNode)));
 
     while (ListSequence.fromList(result).contains(null)) {
       ListSequence.fromList(result).removeElement(null);
@@ -136,14 +130,14 @@ public class AbstractConceptDeclaration_Behavior {
     return result;
   }
 
-  public static List<SNode> call_getAvailableConceptMethods_1213877394200(SNode thisNode, SNode context, IScope scope) {
+  public static List<SNode> call_getAvailableConceptMethods_1213877394200(SNode thisNode, SNode context) {
     List<SNode> methods = new ArrayList<SNode>();
     if (thisNode == null) {
       return methods;
     }
     SNode contextBehaviour = SNodeOperations.getAncestor(context, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false);
     for (SNode concept : SConceptOperations.getConceptHierarchy(thisNode)) {
-      SNode behaviour = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, scope, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
+      SNode behaviour = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
       if (behaviour != null) {
         for (SNode method : SLinkOperations.getTargets(behaviour, "method", true)) {
           if (SLinkOperations.getTarget(method, "overriddenMethod", false) != null) {
@@ -176,7 +170,7 @@ public class AbstractConceptDeclaration_Behavior {
   public static List<SNode> call_getVirtualConceptMethods_1213877394290(SNode thisNode, IScope scope) {
     List<SNode> methods = new ArrayList<SNode>();
     for (SNode concept : SConceptOperations.getAllSuperConcepts(thisNode, false)) {
-      SNode behaviour = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, scope, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
+      SNode behaviour = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
       if (behaviour != null) {
         for (SNode method : SLinkOperations.getTargets(behaviour, "method", true)) {
           if (SPropertyOperations.getBoolean(method, "isVirtual")) {
@@ -194,7 +188,7 @@ public class AbstractConceptDeclaration_Behavior {
     List<SNode> concepts = SConceptOperations.getAllSuperConcepts(thisNode, false);
     ListSequence.fromList(concepts).addElement(thisNode);
     for (SNode concept : concepts) {
-      SNode behavior = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, scope, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
+      SNode behavior = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
       for (SNode method : SLinkOperations.getTargets(behavior, "method", true)) {
         if (SPropertyOperations.getBoolean(method, "isAbstract")) {
           ListSequence.fromList(abstractMethods).addElement(method);
@@ -210,11 +204,11 @@ public class AbstractConceptDeclaration_Behavior {
 
   public static SNode call_getAdapterType_1213877394418(SNode thisNode) {
     if (thisNode == null) {
-      return new AbstractConceptDeclaration_Behavior.QuotationClass_8dqsla_a0a0a0m().createNode();
+      return new AbstractConceptDeclaration_Behavior.QuotationClass_8dqsla_a0a0a0l().createNode();
     }
     String adapterClassFqName = NameUtil.nodeFQName(thisNode);
     SNode classifier = SNodeOperations.cast(SModelUtil.findNodeByFQName(adapterClassFqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), GlobalScope.getInstance()), "jetbrains.mps.baseLanguage.structure.Classifier");
-    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new AbstractConceptDeclaration_Behavior.QuotationClass_8dqsla_a0a0a3a21().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode adapterClassType = SModelOperations.createNewNode(SNodeOperations.getModel(new AbstractConceptDeclaration_Behavior.QuotationClass_8dqsla_a0a0a3a11().createNode()), "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(adapterClassType, "classifier", classifier, false);
     return adapterClassType;
   }
@@ -304,8 +298,8 @@ public class AbstractConceptDeclaration_Behavior {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), callerConceptFqName, "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
   }
 
-  public static class QuotationClass_8dqsla_a0a0a0m {
-    public QuotationClass_8dqsla_a0a0a0m() {
+  public static class QuotationClass_8dqsla_a0a0a0l {
+    public QuotationClass_8dqsla_a0a0a0l() {
     }
 
     public SNode createNode() {
@@ -322,8 +316,8 @@ public class AbstractConceptDeclaration_Behavior {
     }
   }
 
-  public static class QuotationClass_8dqsla_a0a0a3a21 {
-    public QuotationClass_8dqsla_a0a0a3a21() {
+  public static class QuotationClass_8dqsla_a0a0a3a11 {
+    public QuotationClass_8dqsla_a0a0a3a11() {
     }
 
     public SNode createNode() {

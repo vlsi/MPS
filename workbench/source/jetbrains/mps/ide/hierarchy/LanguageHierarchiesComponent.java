@@ -206,7 +206,9 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
         processed.put(parentConcept, newConceptContainer);
         parentConcept = parentConcept.getExtends();
       }
-      result.add(prevConceptContainer);
+      if (prevConceptContainer != null) { //null if structure is core.structure and node is BaseConcept
+        result.add(prevConceptContainer);
+      }
     }
     return result;
   }

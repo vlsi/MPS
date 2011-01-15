@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class InsertColumnBefore_Test extends BaseTransformationTest {
   @Test
   public void test_InsertColumnBefore() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/editor/editor.mpr", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)");
+    this.initTest("${mps_home}/core/languageDesign/plugin/plugin.mpr", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)");
     this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.InsertColumnBefore_Test$TestBody", "testMethod", false);
   }
 
@@ -23,7 +23,7 @@ public class InsertColumnBefore_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("6814837785823339531", "6814837785823361527");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.actions.Insert_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.lang.editor.plugin.Insert_Action");
     }
   }
 }

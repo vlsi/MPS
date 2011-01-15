@@ -33,7 +33,7 @@ abstract class AbstractWatchableNode extends MPSTreeNode {
               assert opener != null;
               opener.openNode(node, context, true, true);
             }
-          });
+          }, project);
         }
     }
   });
@@ -70,7 +70,7 @@ abstract class AbstractWatchableNode extends MPSTreeNode {
           assert opener != null;
           opener.openNode(myNode, context, focus, select);
         }
-      });
+      }, project);
     }
   }
 

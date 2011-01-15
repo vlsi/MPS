@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractStaticContainerProcessor;
+import jetbrains.mps.baseLanguage.behavior.AbstractStaticContainerProcessor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
@@ -143,7 +143,7 @@ public class ConceptBehavior_Behavior {
   public static List<SNode> call_getConceptMethods_5466054087443746043(SNode thisNode, IScope scope) {
     List<SNode> methods = new ArrayList<SNode>();
     for (SNode concept : SConceptOperations.getAllSuperConcepts(SLinkOperations.getTarget(thisNode, "concept", false), false)) {
-      SNode behaviour = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, scope, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
+      SNode behaviour = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
       if (behaviour != null) {
         for (SNode method : SLinkOperations.getTargets(behaviour, "method", true)) {
           ListSequence.fromList(methods).addElement(method);

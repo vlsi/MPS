@@ -42,7 +42,7 @@ public abstract class AbstractLeftEditorHighlighterMessage extends DefaultEditor
     return myTooltip;
   }
 
-  public Cursor getMouseOwerCursor() {
+  public Cursor getMouseOverCursor() {
     return Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
   }
 

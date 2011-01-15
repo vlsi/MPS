@@ -26,8 +26,7 @@ public interface EditorMessageIconRenderer {
 
   EditorCell getAnchorCell(EditorCell bigCell);
 
-  //todo fix typo
-  Cursor getMouseOwerCursor();
+   Cursor getMouseOverCursor();
 
   AnAction getClickAction();
 

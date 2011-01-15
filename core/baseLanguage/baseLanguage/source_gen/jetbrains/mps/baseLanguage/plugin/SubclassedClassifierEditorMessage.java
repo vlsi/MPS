@@ -55,7 +55,7 @@ public class SubclassedClassifierEditorMessage extends AbstractLeftEditorHighlig
   }
 
   public AnAction getClickAction() {
-    return ActionManager.getInstance().getAction("jetbrains.mps.baseLanguage#action#jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action");
+    return ActionManager.getInstance().getAction(GoToInheritedClassifier_Action.class.getName());
   }
 
   public JPopupMenu getPopupMenu() {

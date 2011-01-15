@@ -180,6 +180,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
     <classNode dependClassName="jetbrains.mps.workbench.editors.MPSEditorOpener" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="jetbrains.mps.ide.ui.TextTreeNode" />

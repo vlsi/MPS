@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class StaticConceptMethodCallUtil {
   public static List<SNode> getParameterObjectsForMethodDeclaration(SNode staticConceptMethodCall, IScope scope) {
     List<SNode> result = new ArrayList<SNode>();
-    SNode behavior = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(SLinkOperations.getTarget(staticConceptMethodCall, "concept", false), scope, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
+    SNode behavior = SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(SLinkOperations.getTarget(staticConceptMethodCall, "concept", false), LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
     if (behavior != null) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(ConceptBehavior_Behavior.call_getVisibleStaticMethods_1225194243338(behavior, staticConceptMethodCall)));
     }

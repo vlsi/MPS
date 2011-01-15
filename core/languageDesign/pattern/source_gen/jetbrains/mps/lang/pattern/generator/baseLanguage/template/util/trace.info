@@ -1,35 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <root nodeId="8288845019109238320">
-    <nodeInfo nodeId="8288845019109253872" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PatternGeneratorUtil.java" startLine="15" startPosition="71" endLine="16" endPosition="103" />
-    <nodeInfo nodeId="8288845019109253924" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="PatternGeneratorUtil.java" startLine="17" startPosition="52" endLine="18" endPosition="50" />
-    <nodeInfo nodeId="8288845019109253847" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PatternGeneratorUtil.java" startLine="19" startPosition="5" endLine="20" endPosition="128" />
-    <nodeInfo nodeId="8288845019109253865" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PatternGeneratorUtil.java" startLine="20" startPosition="128" endLine="21" endPosition="104" />
-    <nodeInfo nodeId="8288845019109253905" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="PatternGeneratorUtil.java" startLine="23" startPosition="130" endLine="24" endPosition="21" />
-    <nodeInfo nodeId="8288845019109253933" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="PatternGeneratorUtil.java" startLine="26" startPosition="5" endLine="27" endPosition="16" />
-    <nodeInfo nodeId="8288845019109238322" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PatternGeneratorUtil#()V" fileName="PatternGeneratorUtil.java" startLine="11" startPosition="35" endLine="13" endPosition="3" />
-    <nodeInfo nodeId="8288845019109253910" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="PatternGeneratorUtil.java" startLine="16" startPosition="103" endLine="19" endPosition="5" />
-    <nodeInfo nodeId="8288845019109253887" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="PatternGeneratorUtil.java" startLine="22" startPosition="31" endLine="25" endPosition="7" />
-    <nodeInfo nodeId="8288845019109253880" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="PatternGeneratorUtil.java" startLine="21" startPosition="104" endLine="26" endPosition="5" />
-    <nodeInfo nodeId="8288845019109238330" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="get#(Ljetbrains/mps/generator/template/TemplateQueryContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="PatternGeneratorUtil.java" startLine="14" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="8288845019109238325" fileName="PatternGeneratorUtil.java" startLine="12" startPosition="33" endLine="12" endPosition="33" />
-    <scopeInfo nodeId="8288845019109253911" fileName="PatternGeneratorUtil.java" startLine="17" startPosition="52" endLine="18" endPosition="50" />
-    <scopeInfo nodeId="8288845019109253888" fileName="PatternGeneratorUtil.java" startLine="23" startPosition="130" endLine="24" endPosition="21" />
-    <scopeInfo nodeId="8288845019109238322" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PatternGeneratorUtil#()V" fileName="PatternGeneratorUtil.java" startLine="11" startPosition="35" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="8288845019109253882" fileName="PatternGeneratorUtil.java" startLine="22" startPosition="31" endLine="25" endPosition="7" />
-    <scopeInfo nodeId="8288845019109253880" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="PatternGeneratorUtil.java" startLine="21" startPosition="104" endLine="26" endPosition="5">
-      <varInfo nodeId="8288845019109253881" varName="field" />
-    </scopeInfo>
-    <scopeInfo nodeId="8288845019109238333" fileName="PatternGeneratorUtil.java" startLine="15" startPosition="71" endLine="27" endPosition="16">
-      <varInfo nodeId="8288845019109253848" varName="varPattern" />
-      <varInfo nodeId="8288845019109253873" varName="nodes" />
-      <varInfo nodeId="8288845019109253866" varName="patternClass" />
-    </scopeInfo>
-    <scopeInfo nodeId="8288845019109238330" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="get#(Ljetbrains/mps/generator/template/TemplateQueryContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="PatternGeneratorUtil.java" startLine="14" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="8288845019109252780" varName="var" />
-      <varInfo nodeId="8288845019109252778" varName="genContext" />
-    </scopeInfo>
-    <unitInfo nodeId="8288845019109238320" fileName="PatternGeneratorUtil.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.pattern.generator.baseLanguage.template.util.PatternGeneratorUtil" />
-  </root>
-</debugInfo>
+<debugInfo />
 

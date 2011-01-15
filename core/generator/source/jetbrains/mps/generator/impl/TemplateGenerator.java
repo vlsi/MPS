@@ -343,6 +343,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return false;
   }
 
+  public boolean isDirty(SNode node) {
+    RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(node);
+    if(builder != null && builder.isUnchanged()) {
+      return false;
+    }
+    return true;
+  }
+
   /*
    * Unsynchronized
    */
@@ -680,6 +688,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         getGeneratorSessionContext().registerCopiedRoot(outputRoot);
       }
     }
+  }
+
+  void rootReplaced(SNode old, SNode new_) {
+    myDependenciesBuilder.rootReplaced(old, new_);
   }
 
   protected void registerInModel(SNode outputRoot, SNode inputNode, SNodePointer templateNode) {

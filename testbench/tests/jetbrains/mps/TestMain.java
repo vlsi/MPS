@@ -140,6 +140,7 @@ public class TestMain {
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         public void run() {}
       }, ModalityState.NON_MODAL);
+      ModelAccess.instance().flushEventQueue();
       // clean up
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {

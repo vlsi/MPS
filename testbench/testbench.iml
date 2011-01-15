@@ -81,6 +81,7 @@
     <orderEntry type="module" module-name="vcs" />
     <orderEntry type="module" module-name="make" />
     <orderEntry type="module" module-name="editor.table.tests" />
+    <orderEntry type="module" module-name="miscTests" />
   </component>
 </module>
 

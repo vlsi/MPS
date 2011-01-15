@@ -8,11 +8,38 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class GetNodesBlock extends ConceptFunction {
+public class GetNodesBlock extends ConceptFunction implements NodesBlock {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.GetNodesBlock";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public GetNodesBlock(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(GetNodesBlock.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(GetNodesBlock.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(GetNodesBlock.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(GetNodesBlock.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(GetNodesBlock.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(GetNodesBlock.VIRTUAL_PACKAGE, value);
   }
 
   public static GetNodesBlock newInstance(SModel sm, boolean init) {

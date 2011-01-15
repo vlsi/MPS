@@ -1,3 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="DistribConfiguration_Styles_StyleSheet.java" startLine="27" startPosition="46" endLine="37" endPosition="5" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Styles_StyleSheet$1" />
+  <unitInfo fileName="ArtifactReferenceCommandLinePart_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.ArtifactReferenceCommandLinePart_Editor" />
+  <unitInfo fileName="WindowsConfig_Editor.java" startLine="466" startPosition="0" endLine="479" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.WindowsConfig_Editor$WindowsConfig_generic_cellMenu_a0a2e0a" />
+  <unitInfo fileName="StringCommandLinePart_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.StringCommandLinePart_Editor" />
+  <unitInfo fileName="Role_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.Role_Editor" />
+  <unitInfo fileName="SystemSpecificConfig_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.SystemSpecificConfig_Editor" />
+  <unitInfo fileName="SimplePath_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.SimplePath_Editor" />
+  <unitInfo fileName="PathCommantLinePart_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.PathCommantLinePart_Editor" />
+  <unitInfo fileName="DistribConfiguration_Editor.java" startLine="865" startPosition="0" endLine="897" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Editor$_Inline_pkpw5p_a1d0" />
+  <unitInfo fileName="ExternalVariableReference_Editor.java" startLine="48" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.ExternalVariableReference_Editor$_Inline_w9zsr8_a0a" />
+  <unitInfo fileName="DistribConfiguration_Editor.java" startLine="831" startPosition="0" endLine="864" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Editor$_Inline_pkpw5p_a1c0" />
+  <unitInfo fileName="ClassPath_Editor.java" startLine="39" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.ClassPath_Editor$classPathItemListHandler_pegylz_a0" />
+  <unitInfo fileName="DigitalSignatureWindowsConfiguration_Editor.java" startLine="145" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DigitalSignatureWindowsConfiguration_Editor$commandLineListHandler_rvqdrg_b1b1a" />
+  <unitInfo fileName="MacConfig_Editor.java" startLine="209" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.MacConfig_Editor$associationListHandler_14tw65_b3e0" />
+  <unitInfo fileName="DistribConfiguration_Editor.java" startLine="898" startPosition="0" endLine="935" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Editor$systemSpecificConfigListHandler_pkpw5p_b3f0" />
+  <unitInfo fileName="DistribConfiguration_Styles_StyleSheet.java" startLine="15" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Styles_StyleSheet" />
+  <unitInfo fileName="ClassPath_Editor.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.ClassPath_Editor" />
+  <unitInfo fileName="ExternalVariableReference_Editor.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.ExternalVariableReference_Editor" />
+  <unitInfo fileName="FileAssociation_Editor.java" startLine="17" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.FileAssociation_Editor" />
+  <unitInfo fileName="MacOsFileAssociation_Editor.java" startLine="17" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.MacOsFileAssociation_Editor" />
+  <unitInfo fileName="DigitalSignatureWindowsConfiguration_Editor.java" startLine="27" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DigitalSignatureWindowsConfiguration_Editor" />
+  <unitInfo fileName="MacConfig_Editor.java" startLine="28" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.MacConfig_Editor" />
+  <unitInfo fileName="WindowsConfig_Editor.java" startLine="29" startPosition="0" endLine="480" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.WindowsConfig_Editor" />
+  <unitInfo fileName="DistribConfiguration_Editor.java" startLine="34" startPosition="0" endLine="936" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Editor" />
+  <root nodeId="1230056321889">
+    <nodeInfo nodeId="1231768853802" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DistribConfiguration_Editor.java" startLine="827" startPosition="115" endLine="828" endPosition="68" />
+    <scopeInfo nodeId="1231768824493" fileName="DistribConfiguration_Editor.java" startLine="827" startPosition="115" endLine="828" endPosition="68" />
+  </root>
+  <root nodeId="1230208353028">
+    <nodeInfo nodeId="1234796160621" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="WindowsConfig_Editor.java" startLine="458" startPosition="115" endLine="459" endPosition="144" />
+    <nodeInfo nodeId="1231856139132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="WindowsConfig_Editor.java" startLine="462" startPosition="113" endLine="463" endPosition="85" />
+    <nodeInfo nodeId="1231856399899" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="WindowsConfig_Editor.java" startLine="470" startPosition="106" endLine="471" endPosition="146" />
+    <nodeInfo nodeId="1231856421251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="WindowsConfig_Editor.java" startLine="471" startPosition="146" endLine="472" endPosition="82" />
+    <scopeInfo nodeId="1234796159096" fileName="WindowsConfig_Editor.java" startLine="458" startPosition="115" endLine="459" endPosition="144" />
+    <scopeInfo nodeId="1231856085300" fileName="WindowsConfig_Editor.java" startLine="462" startPosition="113" endLine="463" endPosition="85" />
+    <scopeInfo nodeId="1231856319835" fileName="WindowsConfig_Editor.java" startLine="470" startPosition="106" endLine="472" endPosition="82">
+      <varInfo nodeId="1231856399900" varName="signConfig" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1230217813665">
+    <nodeInfo nodeId="1230640047201" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DistribConfiguration_Styles_StyleSheet.java" startLine="54" startPosition="108" endLine="55" endPosition="16" />
+    <scopeInfo nodeId="1230640044410" fileName="DistribConfiguration_Styles_StyleSheet.java" startLine="54" startPosition="108" endLine="55" endPosition="16" />
+  </root>
+</debugInfo>
 

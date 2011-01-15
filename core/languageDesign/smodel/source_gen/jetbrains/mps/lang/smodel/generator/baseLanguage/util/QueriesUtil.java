@@ -47,6 +47,10 @@ public class QueriesUtil {
     return SModelLanguageUtil.findNodeOperationParameter(inputNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion")) != null;
   }
 
+  public static boolean operationHasParm_SameMetaLevel(SNode inputNode) {
+    return SModelLanguageUtil.findNodeOperationParameter(inputNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_SameMetaLevel")) != null;
+  }
+
   public static boolean operationHasParm_Root(SNode inputNode) {
     return SModelLanguageUtil.findNodeOperationParameter(inputNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Root")) != null;
   }

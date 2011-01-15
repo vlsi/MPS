@@ -44,6 +44,7 @@ import jetbrains.mps.vcs.diff.oldchanges.ChangeType;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.vcs.diff.oldchanges.ModelImportChange;
 import jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange;
@@ -250,7 +251,7 @@ import jetbrains.mps.ide.projectPane.Icons;
     private SModel myModel;
 
     public MySModelTreeNode(SModel model, String label, @NotNull IOperationContext operationContext) {
-      super(null, label, operationContext, new ModelChangesTree.MyCondition(myChangedNodes));
+      super(null, label, operationContext, new ModelChangesTree.MyCondition(myChangedSubtree));
       myModel = model;
     }
 
@@ -258,7 +259,8 @@ import jetbrains.mps.ide.projectPane.Icons;
       if (myModel == null) {
         return;
       }
-      super.doUpdatePresentation();
+      setIcon(IconManager.getIconFor(myModel.getModelDescriptor()));
+      setText(myModel.getLongName());
     }
 
     private boolean processNode(SNodeId nodeId, SNodeTreeNode parent, Map<SNodeId, SNodeTreeNode> visited, Set<SNodeId> rootNodes) {
@@ -364,7 +366,7 @@ import jetbrains.mps.ide.projectPane.Icons;
     }
 
     public boolean met(SNode node) {
-      return myNodeSet.contains(node);
+      return myNodeSet.contains(node.getSNodeId());
     }
   }
 

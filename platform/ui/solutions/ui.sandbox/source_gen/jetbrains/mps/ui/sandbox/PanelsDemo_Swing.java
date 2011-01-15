@@ -42,11 +42,12 @@ public class PanelsDemo_Swing {
     widget_wgtfc_a0a0a.setActionCommand("vertical");
     widget_wgtfc_a0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             verticalPanel();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     menu.add(widget_wgtfc_a0a0a);
@@ -55,11 +56,12 @@ public class PanelsDemo_Swing {
     widget_wgtfc_b0a0a.setActionCommand("horizontal");
     widget_wgtfc_b0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             horizontalPanel();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     menu.add(widget_wgtfc_b0a0a);
@@ -68,11 +70,12 @@ public class PanelsDemo_Swing {
     widget_wgtfc_c0a0a.setActionCommand("dock");
     widget_wgtfc_c0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             dockPanel();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     menu.add(widget_wgtfc_c0a0a);
@@ -81,11 +84,12 @@ public class PanelsDemo_Swing {
     widget_wgtfc_d0a0a.setActionCommand("flow");
     widget_wgtfc_d0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             flowPanel();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     menu.add(widget_wgtfc_d0a0a);
@@ -94,11 +98,12 @@ public class PanelsDemo_Swing {
     widget_wgtfc_e0a0a.setActionCommand("layout");
     widget_wgtfc_e0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             layoutPanel();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     menu.add(widget_wgtfc_e0a0a);
@@ -107,11 +112,12 @@ public class PanelsDemo_Swing {
     widget_wgtfc_f0a0a.setActionCommand("grid");
     widget_wgtfc_f0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             gridLayoutPanel();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     menu.add(widget_wgtfc_f0a0a);
@@ -243,14 +249,15 @@ public class PanelsDemo_Swing {
     widget_wgtfc_b0a0a0b0b0d.setText("North");
     widget_wgtfc_b0a0a0b0b0d.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             final JButton widget_wgtfc_a0a0a0a1a0a0a1a1a3 = new JButton();
             widget_wgtfc_a0a0a0a1a0a0a1a1a3.setText("North");
             cmp1.add(widget_wgtfc_a0a0a0a1a0a0a1a1a3, DockLayoutData.NORTH);
             cmp1.doLayout();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     widget_wgtfc_a0a1a1a3.add(widget_wgtfc_b0a0a0b0b0d, DockLayoutData.NORTH);
@@ -259,14 +266,15 @@ public class PanelsDemo_Swing {
     widget_wgtfc_b0b0a0b0b0d.setText("South");
     widget_wgtfc_b0b0a0b0b0d.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             final JButton widget_wgtfc_a0a0a0a1a1a0a1a1a3 = new JButton();
             widget_wgtfc_a0a0a0a1a1a0a1a1a3.setText("South");
             cmp2.add(widget_wgtfc_a0a0a0a1a1a0a1a1a3, DockLayoutData.SOUTH);
             cmp2.doLayout();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     widget_wgtfc_a0a1a1a3.add(widget_wgtfc_b0b0a0b0b0d, DockLayoutData.SOUTH);
@@ -275,14 +283,15 @@ public class PanelsDemo_Swing {
     widget_wgtfc_b0c0a0b0b0d.setText("East");
     widget_wgtfc_b0c0a0b0b0d.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             final JButton widget_wgtfc_a0a0a0a1a2a0a1a1a3 = new JButton();
             widget_wgtfc_a0a0a0a1a2a0a1a1a3.setText("East");
             cmp3.add(widget_wgtfc_a0a0a0a1a2a0a1a1a3, DockLayoutData.EAST);
             cmp3.doLayout();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     widget_wgtfc_a0a1a1a3.add(widget_wgtfc_b0c0a0b0b0d, DockLayoutData.EAST);
@@ -291,14 +300,15 @@ public class PanelsDemo_Swing {
     widget_wgtfc_b0d0a0b0b0d.setText("West");
     widget_wgtfc_b0d0a0b0b0d.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             final JButton widget_wgtfc_a0a0a0a1a3a0a1a1a3 = new JButton();
             widget_wgtfc_a0a0a0a1a3a0a1a1a3.setText("West");
             cmp4.add(widget_wgtfc_a0a0a0a1a3a0a1a1a3, DockLayoutData.WEST);
             cmp4.doLayout();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     widget_wgtfc_a0a1a1a3.add(widget_wgtfc_b0d0a0b0b0d, DockLayoutData.WEST);

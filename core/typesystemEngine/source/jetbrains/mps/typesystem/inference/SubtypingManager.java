@@ -300,16 +300,16 @@ public class SubtypingManager {
       return;
     }
     Set<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
-    boolean possiblyBlindAlley = false;
+   /* boolean possiblyBlindAlley = false;
     if (supertypeConceptFQName != null && !(supertypeConceptFQName.equals(term.getConceptFqName()))) {
       possiblyBlindAlley = myTypeChecker.getRulesManager().subtypingRulesByNodeAreAllByConcept(term, isWeak);
-    }
+    }*/
     if (subtypingRule_runtimes != null) {
       for (final Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
-        if (possiblyBlindAlley && subtypingRule.o1.surelyKeepsConcept()) {
+    /*    if (possiblyBlindAlley && subtypingRule.o1.surelyKeepsConcept()) {
           //skip a rule, it will give us nothing
           continue;
-        }
+        }*/
         final TypeCheckingContext tcContext = equationManager == null ? null : equationManager.getTypeCheckingContext();
         List<SNode> supertypes = ModelChange.freezeAndCompute(term,new Computable<List<SNode>>() {
           public List<SNode> compute() {

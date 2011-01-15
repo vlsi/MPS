@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bash.behavior.CommandList_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AsyncExecution_Intention extends BaseIntention implements Intention {
   public AsyncExecution_Intention() {
@@ -52,7 +53,7 @@ public class AsyncExecution_Intention extends BaseIntention implements Intention
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.setNewChild(node, "terminator", "jetbrains.mps.bash.structure.AsyncTerminator");
+    SNodeFactoryOperations.setNewChild(node, "terminator", "jetbrains.mps.bash.structure.AsyncTerminator");
   }
 
   public String getLocationString() {

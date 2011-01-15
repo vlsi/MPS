@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CheckedDot_Actions_MakeUnchecked {
@@ -31,7 +31,7 @@ public class CheckedDot_Actions_MakeUnchecked {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode dotExpression = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.DotExpression");
+      SNode dotExpression = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.DotExpression");
       SLinkOperations.setTarget(dotExpression, "operand", SLinkOperations.getTarget(node, "operand", true), true);
       SLinkOperations.setTarget(dotExpression, "operation", SLinkOperations.getTarget(node, "operation", true), true);
     }

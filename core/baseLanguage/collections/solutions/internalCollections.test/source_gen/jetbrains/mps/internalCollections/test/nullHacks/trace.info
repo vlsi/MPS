@@ -37,27 +37,27 @@
     <nodeInfo nodeId="1228857666964" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullSequence_Test.java" startLine="78" startPosition="25" endLine="79" endPosition="33" />
     <nodeInfo nodeId="1225731168633" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NullSequence_Test.java" startLine="69" startPosition="37" endLine="71" endPosition="7" />
     <nodeInfo nodeId="1228857666960" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NullSequence_Test.java" startLine="77" startPosition="6" endLine="80" endPosition="7" />
-    <nodeInfo nodeId="1207741449244" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullSequence_Test.java" startLine="45" startPosition="117" endLine="49" endPosition="0" />
+    <nodeInfo nodeId="1207741449244" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Integer;)Ljava/lang/Iterable;" fileName="NullSequence_Test.java" startLine="45" startPosition="117" endLine="49" endPosition="0" />
     <nodeInfo nodeId="1225731159906" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NullSequence_Test.java" startLine="68" startPosition="47" endLine="72" endPosition="5" />
     <nodeInfo nodeId="1207741307109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NullSequence_Test.java" startLine="44" startPosition="46" endLine="49" endPosition="9" />
     <nodeInfo nodeId="1228857666959" conceptFqName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" fileName="NullSequence_Test.java" startLine="76" startPosition="21" endLine="81" endPosition="6" />
-    <nodeInfo nodeId="1225731147875" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullSequence_Test.java" startLine="67" startPosition="0" endLine="74" endPosition="0" />
+    <nodeInfo nodeId="1225731147875" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_forEach#()V" fileName="NullSequence_Test.java" startLine="67" startPosition="0" endLine="74" endPosition="0" />
     <nodeInfo nodeId="1207739262786" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NullSequence_Test.java" startLine="31" startPosition="61" endLine="39" endPosition="5" />
-    <nodeInfo nodeId="1228857666951" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullSequence_Test.java" startLine="74" startPosition="0" endLine="83" endPosition="0" />
+    <nodeInfo nodeId="1228857666951" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullArray#()V" fileName="NullSequence_Test.java" startLine="74" startPosition="0" endLine="83" endPosition="0" />
     <nodeInfo nodeId="1207741362783" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NullSequence_Test.java" startLine="42" startPosition="53" endLine="52" endPosition="5" />
     <nodeInfo nodeId="1207743172788" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NullSequence_Test.java" startLine="55" startPosition="48" endLine="65" endPosition="5" />
-    <nodeInfo nodeId="1207739208836" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullSequence_Test.java" startLine="30" startPosition="0" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="1207739208836" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullCompareOperations#()V" fileName="NullSequence_Test.java" startLine="30" startPosition="0" endLine="41" endPosition="0" />
     <nodeInfo nodeId="1207739130321" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NullSequence_Test.java" startLine="15" startPosition="52" endLine="28" endPosition="5" />
-    <nodeInfo nodeId="1207741248631" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullSequence_Test.java" startLine="41" startPosition="0" endLine="54" endPosition="0" />
-    <nodeInfo nodeId="1207742900748" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullSequence_Test.java" startLine="54" startPosition="0" endLine="67" endPosition="0" />
-    <nodeInfo nodeId="1207738915593" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullSequence_Test.java" startLine="14" startPosition="50" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="1207741248631" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullTranslate#()V" fileName="NullSequence_Test.java" startLine="41" startPosition="0" endLine="54" endPosition="0" />
+    <nodeInfo nodeId="1207742900748" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullList#()V" fileName="NullSequence_Test.java" startLine="54" startPosition="0" endLine="67" endPosition="0" />
+    <nodeInfo nodeId="1207738915593" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullSequence#()V" fileName="NullSequence_Test.java" startLine="14" startPosition="50" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1225731168633" fileName="NullSequence_Test.java" startLine="70" startPosition="51" endLine="70" endPosition="51" />
     <scopeInfo nodeId="1207741449245" fileName="NullSequence_Test.java" startLine="46" startPosition="55" endLine="47" endPosition="44" />
     <scopeInfo nodeId="1228857666963" fileName="NullSequence_Test.java" startLine="78" startPosition="25" endLine="79" endPosition="33" />
     <scopeInfo nodeId="1225731159908" fileName="NullSequence_Test.java" startLine="69" startPosition="37" endLine="71" endPosition="7" />
-    <scopeInfo nodeId="1225731168633" fileName="NullSequence_Test.java" startLine="69" startPosition="37" endLine="71" endPosition="7" />
-    <scopeInfo nodeId="1228857666960" fileName="NullSequence_Test.java" startLine="77" startPosition="6" endLine="80" endPosition="7" />
-    <scopeInfo nodeId="1207741449244" fileName="NullSequence_Test.java" startLine="45" startPosition="117" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1225731168633" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NullSequence_Test.java" startLine="69" startPosition="37" endLine="71" endPosition="7" />
+    <scopeInfo nodeId="1228857666960" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NullSequence_Test.java" startLine="77" startPosition="6" endLine="80" endPosition="7" />
+    <scopeInfo nodeId="1207741449244" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Integer;)Ljava/lang/Iterable;" fileName="NullSequence_Test.java" startLine="45" startPosition="117" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1225731147877" fileName="NullSequence_Test.java" startLine="68" startPosition="47" endLine="72" endPosition="5" />
     <scopeInfo nodeId="1207739262787" fileName="NullSequence_Test.java" startLine="32" startPosition="37" endLine="38" endPosition="93">
       <varInfo nodeId="1207739227113" varName="input" />
@@ -65,7 +65,7 @@
     <scopeInfo nodeId="1228857666953" fileName="NullSequence_Test.java" startLine="75" startPosition="49" endLine="81" endPosition="6">
       <varInfo nodeId="1228857666955" varName="arr" />
     </scopeInfo>
-    <scopeInfo nodeId="1225731147875" fileName="NullSequence_Test.java" startLine="67" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="1225731147875" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_forEach#()V" fileName="NullSequence_Test.java" startLine="67" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="1207739208838" fileName="NullSequence_Test.java" startLine="31" startPosition="61" endLine="39" endPosition="5" />
     <scopeInfo nodeId="1207741362784" fileName="NullSequence_Test.java" startLine="43" startPosition="37" endLine="51" endPosition="69">
       <varInfo nodeId="1207741307110" varName="nullSeq" />
@@ -74,18 +74,18 @@
     <scopeInfo nodeId="1207743172789" fileName="NullSequence_Test.java" startLine="56" startPosition="37" endLine="64" endPosition="70">
       <varInfo nodeId="1207742923616" varName="nullList" />
     </scopeInfo>
-    <scopeInfo nodeId="1228857666951" fileName="NullSequence_Test.java" startLine="74" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1228857666951" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullArray#()V" fileName="NullSequence_Test.java" startLine="74" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="1207741248633" fileName="NullSequence_Test.java" startLine="42" startPosition="53" endLine="52" endPosition="5" />
     <scopeInfo nodeId="1207742900750" fileName="NullSequence_Test.java" startLine="55" startPosition="48" endLine="65" endPosition="5" />
     <scopeInfo nodeId="1207739130322" fileName="NullSequence_Test.java" startLine="16" startPosition="37" endLine="27" endPosition="55">
       <varInfo nodeId="1207743263054" varName="list5" />
       <varInfo nodeId="1207738992859" varName="nullSeq" />
     </scopeInfo>
-    <scopeInfo nodeId="1207739208836" fileName="NullSequence_Test.java" startLine="30" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1207739208836" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullCompareOperations#()V" fileName="NullSequence_Test.java" startLine="30" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="1207738915595" fileName="NullSequence_Test.java" startLine="15" startPosition="52" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="1207741248631" fileName="NullSequence_Test.java" startLine="41" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1207742900748" fileName="NullSequence_Test.java" startLine="54" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="1207738915593" fileName="NullSequence_Test.java" startLine="14" startPosition="50" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1207741248631" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullTranslate#()V" fileName="NullSequence_Test.java" startLine="41" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1207742900748" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullList#()V" fileName="NullSequence_Test.java" startLine="54" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1207738915593" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullSequence#()V" fileName="NullSequence_Test.java" startLine="14" startPosition="50" endLine="30" endPosition="0" />
     <unitInfo nodeId="1207741449244" fileName="NullSequence_Test.java" startLine="45" startPosition="84" endLine="49" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullSequence_Test$1" />
   </root>
   <root nodeId="1207742095107">
@@ -94,7 +94,7 @@
     <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="NullValues_Test.java" startLine="176" startPosition="29" endLine="176" endPosition="29" />
     <nodeInfo nodeId="1207743649434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NullValues_Test.java" startLine="21" startPosition="38" endLine="22" endPosition="46" />
     <nodeInfo nodeId="1207750514513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NullValues_Test.java" startLine="24" startPosition="43" endLine="25" endPosition="32" />
-    <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="NullValues_Test.java" startLine="32" startPosition="54" endLine="33" endPosition="39" />
+    <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" fileName="NullValues_Test.java" startLine="32" startPosition="54" endLine="33" endPosition="39" />
     <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="NullValues_Test.java" startLine="40" startPosition="30" endLine="41" endPosition="56" />
     <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NullValues_Test.java" startLine="41" startPosition="56" endLine="42" endPosition="37" />
     <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullValues_Test.java" startLine="43" startPosition="29" endLine="44" endPosition="40" />
@@ -108,7 +108,7 @@
     <nodeInfo nodeId="7556115255731757475" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NullValues_Test.java" startLine="64" startPosition="43" endLine="65" endPosition="32" />
     <nodeInfo nodeId="7556115255731757487" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullValues_Test.java" startLine="67" startPosition="9" endLine="68" endPosition="105" />
     <nodeInfo nodeId="7556115255731757522" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NullValues_Test.java" startLine="70" startPosition="43" endLine="71" endPosition="28" />
-    <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="NullValues_Test.java" startLine="78" startPosition="54" endLine="79" endPosition="39" />
+    <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" fileName="NullValues_Test.java" startLine="78" startPosition="54" endLine="79" endPosition="39" />
     <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="NullValues_Test.java" startLine="86" startPosition="30" endLine="87" endPosition="56" />
     <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NullValues_Test.java" startLine="87" startPosition="56" endLine="88" endPosition="37" />
     <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullValues_Test.java" startLine="89" startPosition="29" endLine="90" endPosition="40" />
@@ -149,7 +149,7 @@
     <nodeInfo nodeId="1571838961923400492" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullValues_Test.java" startLine="145" startPosition="127" endLine="146" endPosition="203" />
     <nodeInfo nodeId="7556115255731760141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NullValues_Test.java" startLine="146" startPosition="203" endLine="147" endPosition="37" />
     <nodeInfo nodeId="7556115255731760245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullValues_Test.java" startLine="147" startPosition="37" endLine="148" endPosition="126" />
-    <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="NullValues_Test.java" startLine="153" startPosition="54" endLine="154" endPosition="39" />
+    <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" fileName="NullValues_Test.java" startLine="153" startPosition="54" endLine="154" endPosition="39" />
     <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="NullValues_Test.java" startLine="161" startPosition="30" endLine="162" endPosition="56" />
     <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NullValues_Test.java" startLine="162" startPosition="56" endLine="163" endPosition="37" />
     <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullValues_Test.java" startLine="164" startPosition="29" endLine="165" endPosition="40" />
@@ -190,48 +190,48 @@
     <nodeInfo nodeId="1207747369945" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullValues_Test.java" startLine="221" startPosition="54" endLine="222" endPosition="61" />
     <nodeInfo nodeId="1207747292979" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullValues_Test.java" startLine="222" startPosition="61" endLine="223" endPosition="87" />
     <nodeInfo nodeId="1207747292986" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullValues_Test.java" startLine="223" startPosition="87" endLine="224" endPosition="57" />
-    <nodeInfo nodeId="1207743926767" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="23" startPosition="132" endLine="27" endPosition="0" />
-    <nodeInfo nodeId="7556115255731757471" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="63" startPosition="117" endLine="67" endPosition="0" />
-    <nodeInfo nodeId="7556115255731757514" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="69" startPosition="91" endLine="73" endPosition="0" />
-    <nodeInfo nodeId="7556115255731757686" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="112" startPosition="93" endLine="116" endPosition="0" />
+    <nodeInfo nodeId="1207743926767" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Integer;)Ljava/lang/Integer;" fileName="NullValues_Test.java" startLine="23" startPosition="132" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="7556115255731757471" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Integer;)Ljava/lang/Integer;" fileName="NullValues_Test.java" startLine="63" startPosition="117" endLine="67" endPosition="0" />
+    <nodeInfo nodeId="7556115255731757514" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" fileName="NullValues_Test.java" startLine="69" startPosition="91" endLine="73" endPosition="0" />
+    <nodeInfo nodeId="7556115255731757686" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" fileName="NullValues_Test.java" startLine="112" startPosition="93" endLine="116" endPosition="0" />
     <nodeInfo nodeId="1207743911036" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullValues_Test.java" startLine="22" startPosition="46" endLine="27" endPosition="10" />
     <nodeInfo nodeId="7556115255731757464" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NullValues_Test.java" startLine="62" startPosition="46" endLine="67" endPosition="9" />
     <nodeInfo nodeId="7556115255731757506" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullValues_Test.java" startLine="68" startPosition="105" endLine="73" endPosition="10" />
     <nodeInfo nodeId="7556115255731757678" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullValues_Test.java" startLine="111" startPosition="110" endLine="116" endPosition="10" />
     <nodeInfo nodeId="1571838961923397783" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="NullValues_Test.java" startLine="204" startPosition="10" endLine="214" endPosition="5" />
-    <nodeInfo nodeId="1207747260314" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="216" startPosition="0" endLine="226" endPosition="0" />
+    <nodeInfo nodeId="1207747260314" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertEmptyList#(Ljava/util/List;)V" fileName="NullValues_Test.java" startLine="216" startPosition="0" endLine="226" endPosition="0" />
     <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="NullValues_Test.java" startLine="37" startPosition="22" endLine="52" endPosition="21" />
     <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="NullValues_Test.java" startLine="35" startPosition="48" endLine="53" endPosition="33" />
     <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="NullValues_Test.java" startLine="83" startPosition="22" endLine="102" endPosition="21" />
     <nodeInfo nodeId="1241099383058" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NullValues_Test.java" startLine="193" startPosition="56" endLine="214" endPosition="5" />
-    <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="34" startPosition="0" endLine="56" endPosition="0" />
+    <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="NullValues_Test.java" startLine="34" startPosition="0" endLine="56" endPosition="0" />
     <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="NullValues_Test.java" startLine="81" startPosition="48" endLine="103" endPosition="33" />
     <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="NullValues_Test.java" startLine="158" startPosition="22" endLine="181" endPosition="21" />
-    <nodeInfo nodeId="1241099378710" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="192" startPosition="0" endLine="216" endPosition="0" />
+    <nodeInfo nodeId="1241099378710" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullsViaBackdoor#()V" fileName="NullValues_Test.java" startLine="192" startPosition="0" endLine="216" endPosition="0" />
     <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NullValues_Test.java" startLine="31" startPosition="49" endLine="56" endPosition="16" />
-    <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="80" startPosition="0" endLine="106" endPosition="0" />
+    <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="NullValues_Test.java" startLine="80" startPosition="0" endLine="106" endPosition="0" />
     <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="NullValues_Test.java" startLine="156" startPosition="48" endLine="182" endPosition="33" />
-    <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="30" startPosition="42" endLine="58" endPosition="0" />
+    <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="NullValues_Test.java" startLine="30" startPosition="42" endLine="58" endPosition="0" />
     <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NullValues_Test.java" startLine="29" startPosition="62" endLine="58" endPosition="12" />
     <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NullValues_Test.java" startLine="77" startPosition="49" endLine="106" endPosition="16" />
-    <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="155" startPosition="0" endLine="185" endPosition="0" />
-    <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="28" startPosition="138" endLine="60" endPosition="0" />
-    <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="76" startPosition="42" endLine="108" endPosition="0" />
+    <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="NullValues_Test.java" startLine="155" startPosition="0" endLine="185" endPosition="0" />
+    <nodeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Integer;)Ljava/lang/Iterable;" fileName="NullValues_Test.java" startLine="28" startPosition="138" endLine="60" endPosition="0" />
+    <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="NullValues_Test.java" startLine="76" startPosition="42" endLine="108" endPosition="0" />
     <nodeInfo nodeId="1207743946891" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullValues_Test.java" startLine="27" startPosition="10" endLine="60" endPosition="10" />
     <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NullValues_Test.java" startLine="75" startPosition="62" endLine="108" endPosition="12" />
     <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NullValues_Test.java" startLine="152" startPosition="49" endLine="185" endPosition="16" />
-    <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="74" startPosition="124" endLine="110" endPosition="0" />
-    <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="151" startPosition="42" endLine="187" endPosition="0" />
+    <nodeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Integer;)Ljava/lang/Iterable;" fileName="NullValues_Test.java" startLine="74" startPosition="124" endLine="110" endPosition="0" />
+    <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="NullValues_Test.java" startLine="151" startPosition="42" endLine="187" endPosition="0" />
     <nodeInfo nodeId="7556115255731757620" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NullValues_Test.java" startLine="73" startPosition="10" endLine="110" endPosition="9" />
     <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NullValues_Test.java" startLine="150" startPosition="45" endLine="187" endPosition="12" />
-    <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="149" startPosition="103" endLine="189" endPosition="0" />
+    <nodeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" fileName="NullValues_Test.java" startLine="149" startPosition="103" endLine="189" endPosition="0" />
     <nodeInfo nodeId="7556115255731760257" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullValues_Test.java" startLine="148" startPosition="126" endLine="189" endPosition="19" />
     <nodeInfo nodeId="7556115255731757382" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="NullValues_Test.java" startLine="61" startPosition="10" endLine="117" endPosition="5" />
     <nodeInfo nodeId="7556115255731760070" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="NullValues_Test.java" startLine="133" startPosition="10" endLine="190" endPosition="5" />
     <nodeInfo nodeId="1207744081628" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NullValues_Test.java" startLine="120" startPosition="52" endLine="190" endPosition="5" />
-    <nodeInfo nodeId="1207744018414" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="119" startPosition="0" endLine="192" endPosition="0" />
+    <nodeInfo nodeId="1207744018414" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullElements#()V" fileName="NullValues_Test.java" startLine="119" startPosition="0" endLine="192" endPosition="0" />
     <nodeInfo nodeId="1207743634282" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NullValues_Test.java" startLine="20" startPosition="50" endLine="117" endPosition="5" />
-    <nodeInfo nodeId="1207742102352" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullValues_Test.java" startLine="19" startPosition="48" endLine="119" endPosition="0" />
+    <nodeInfo nodeId="1207742102352" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullValues#()V" fileName="NullValues_Test.java" startLine="19" startPosition="48" endLine="119" endPosition="0" />
     <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="47" startPosition="29" endLine="47" endPosition="29" />
     <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="97" startPosition="29" endLine="97" endPosition="29" />
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="176" startPosition="29" endLine="176" endPosition="29" />
@@ -254,10 +254,10 @@
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="164" startPosition="29" endLine="167" endPosition="36" />
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="168" startPosition="29" endLine="171" endPosition="36" />
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="172" startPosition="29" endLine="175" endPosition="36" />
-    <scopeInfo nodeId="1207743926767" fileName="NullValues_Test.java" startLine="23" startPosition="132" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7556115255731757471" fileName="NullValues_Test.java" startLine="63" startPosition="117" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="7556115255731757514" fileName="NullValues_Test.java" startLine="69" startPosition="91" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="7556115255731757686" fileName="NullValues_Test.java" startLine="112" startPosition="93" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="1207743926767" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Integer;)Ljava/lang/Integer;" fileName="NullValues_Test.java" startLine="23" startPosition="132" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7556115255731757471" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Integer;)Ljava/lang/Integer;" fileName="NullValues_Test.java" startLine="63" startPosition="117" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="7556115255731757514" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" fileName="NullValues_Test.java" startLine="69" startPosition="91" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="7556115255731757686" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Integer;)Z" fileName="NullValues_Test.java" startLine="112" startPosition="93" endLine="116" endPosition="0" />
     <scopeInfo nodeId="1207747260317" fileName="NullValues_Test.java" startLine="217" startPosition="57" endLine="224" endPosition="57" />
     <scopeInfo nodeId="1241099383059" fileName="NullValues_Test.java" startLine="194" startPosition="38" endLine="203" endPosition="68">
       <varInfo nodeId="1241099383069" varName="arr" />
@@ -269,7 +269,7 @@
       <varInfo nodeId="1571838961923397789" varName="listWithNulls" />
       <varInfo nodeId="1571838961923397823" varName="dlist" />
     </scopeInfo>
-    <scopeInfo nodeId="1207747260314" fileName="NullValues_Test.java" startLine="216" startPosition="0" endLine="226" endPosition="0">
+    <scopeInfo nodeId="1207747260314" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertEmptyList#(Ljava/util/List;)V" fileName="NullValues_Test.java" startLine="216" startPosition="0" endLine="226" endPosition="0">
       <varInfo nodeId="1207747276469" varName="emptyList" />
     </scopeInfo>
     <scopeInfo nodeId="1207744081629" fileName="NullValues_Test.java" startLine="121" startPosition="38" endLine="132" endPosition="95">
@@ -280,28 +280,28 @@
     <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="35" startPosition="48" endLine="54" endPosition="31" />
     <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="83" startPosition="22" endLine="102" endPosition="21" />
     <scopeInfo nodeId="1241099378712" fileName="NullValues_Test.java" startLine="193" startPosition="56" endLine="214" endPosition="5" />
-    <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="34" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="NullValues_Test.java" startLine="34" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="81" startPosition="48" endLine="104" endPosition="31" />
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="158" startPosition="22" endLine="181" endPosition="21" />
-    <scopeInfo nodeId="1241099378710" fileName="NullValues_Test.java" startLine="192" startPosition="0" endLine="216" endPosition="0" />
+    <scopeInfo nodeId="1241099378710" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullsViaBackdoor#()V" fileName="NullValues_Test.java" startLine="192" startPosition="0" endLine="216" endPosition="0" />
     <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="31" startPosition="49" endLine="56" endPosition="16" />
-    <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="80" startPosition="0" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="NullValues_Test.java" startLine="80" startPosition="0" endLine="106" endPosition="0" />
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="156" startPosition="48" endLine="183" endPosition="31" />
-    <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="30" startPosition="42" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="NullValues_Test.java" startLine="30" startPosition="42" endLine="58" endPosition="0" />
     <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="29" startPosition="62" endLine="58" endPosition="12" />
     <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="77" startPosition="49" endLine="106" endPosition="16" />
-    <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="155" startPosition="0" endLine="185" endPosition="0" />
-    <scopeInfo nodeId="1207743956451" fileName="NullValues_Test.java" startLine="28" startPosition="138" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="76" startPosition="42" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="NullValues_Test.java" startLine="155" startPosition="0" endLine="185" endPosition="0" />
+    <scopeInfo nodeId="1207743956451" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Integer;)Ljava/lang/Iterable;" fileName="NullValues_Test.java" startLine="28" startPosition="138" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="NullValues_Test.java" startLine="76" startPosition="42" endLine="108" endPosition="0" />
     <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="75" startPosition="62" endLine="108" endPosition="12" />
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="152" startPosition="49" endLine="185" endPosition="16" />
-    <scopeInfo nodeId="7556115255731757627" fileName="NullValues_Test.java" startLine="74" startPosition="124" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="151" startPosition="42" endLine="187" endPosition="0" />
+    <scopeInfo nodeId="7556115255731757627" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Integer;)Ljava/lang/Iterable;" fileName="NullValues_Test.java" startLine="74" startPosition="124" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="NullValues_Test.java" startLine="151" startPosition="42" endLine="187" endPosition="0" />
     <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="150" startPosition="45" endLine="187" endPosition="12" />
     <scopeInfo nodeId="1207743634284" fileName="NullValues_Test.java" startLine="21" startPosition="38" endLine="60" endPosition="10">
       <varInfo nodeId="1207743649435" varName="input" />
     </scopeInfo>
-    <scopeInfo nodeId="7556115255731760291" fileName="NullValues_Test.java" startLine="149" startPosition="103" endLine="189" endPosition="0" />
+    <scopeInfo nodeId="7556115255731760291" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" fileName="NullValues_Test.java" startLine="149" startPosition="103" endLine="189" endPosition="0" />
     <scopeInfo nodeId="7556115255731757383" fileName="NullValues_Test.java" startLine="61" startPosition="12" endLine="116" endPosition="10">
       <varInfo nodeId="7556115255731757386" varName="input" />
       <varInfo nodeId="7556115255731757621" varName="seqOfNulls2" />
@@ -312,9 +312,9 @@
       <varInfo nodeId="7556115255731760142" varName="nullvalue" />
     </scopeInfo>
     <scopeInfo nodeId="1207744018416" fileName="NullValues_Test.java" startLine="120" startPosition="52" endLine="190" endPosition="5" />
-    <scopeInfo nodeId="1207744018414" fileName="NullValues_Test.java" startLine="119" startPosition="0" endLine="192" endPosition="0" />
+    <scopeInfo nodeId="1207744018414" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullElements#()V" fileName="NullValues_Test.java" startLine="119" startPosition="0" endLine="192" endPosition="0" />
     <scopeInfo nodeId="1207742102354" fileName="NullValues_Test.java" startLine="20" startPosition="50" endLine="117" endPosition="5" />
-    <scopeInfo nodeId="1207742102352" fileName="NullValues_Test.java" startLine="19" startPosition="48" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="1207742102352" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullValues#()V" fileName="NullValues_Test.java" startLine="19" startPosition="48" endLine="119" endPosition="0" />
     <unitInfo nodeId="1207743926767" fileName="NullValues_Test.java" startLine="23" startPosition="101" endLine="27" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$1" />
     <unitInfo nodeId="7556115255731757471" fileName="NullValues_Test.java" startLine="63" startPosition="86" endLine="67" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$3" />
     <unitInfo nodeId="7556115255731757514" fileName="NullValues_Test.java" startLine="69" startPosition="66" endLine="73" endPosition="7" unitName="jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test$4" />
@@ -347,8 +347,8 @@
     <nodeInfo nodeId="3001698940945665825" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullEmpty_Test.java" startLine="36" startPosition="32" endLine="37" endPosition="74" />
     <nodeInfo nodeId="3001698940945665840" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NullEmpty_Test.java" startLine="37" startPosition="74" endLine="38" endPosition="58" />
     <nodeInfo nodeId="1207745737811" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NullEmpty_Test.java" startLine="17" startPosition="53" endLine="27" endPosition="5" />
-    <nodeInfo nodeId="3001698940945661440" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullEmpty_Test.java" startLine="29" startPosition="0" endLine="40" endPosition="0" />
-    <nodeInfo nodeId="1207745709956" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NullEmpty_Test.java" startLine="16" startPosition="47" endLine="29" endPosition="0" />
+    <nodeInfo nodeId="3001698940945661440" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullAddAll#()V" fileName="NullEmpty_Test.java" startLine="29" startPosition="0" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="1207745709956" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullFirstLast#()V" fileName="NullEmpty_Test.java" startLine="16" startPosition="47" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1207745737812" fileName="NullEmpty_Test.java" startLine="18" startPosition="35" endLine="26" endPosition="73">
       <varInfo nodeId="1207745717596" varName="emptySeq" />
       <varInfo nodeId="1207745768909" varName="emptyList" />
@@ -360,8 +360,8 @@
       <varInfo nodeId="3001698940945661495" varName="test2" />
     </scopeInfo>
     <scopeInfo nodeId="1207745709958" fileName="NullEmpty_Test.java" startLine="17" startPosition="53" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="3001698940945661440" fileName="NullEmpty_Test.java" startLine="29" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1207745709956" fileName="NullEmpty_Test.java" startLine="16" startPosition="47" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="3001698940945661440" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullAddAll#()V" fileName="NullEmpty_Test.java" startLine="29" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1207745709956" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nullFirstLast#()V" fileName="NullEmpty_Test.java" startLine="16" startPosition="47" endLine="29" endPosition="0" />
   </root>
 </debugInfo>
 

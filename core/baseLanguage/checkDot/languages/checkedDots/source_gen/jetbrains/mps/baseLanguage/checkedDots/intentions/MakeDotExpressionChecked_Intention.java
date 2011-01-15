@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MakeDotExpressionChecked_Intention extends BaseIntention implements Intention {
@@ -39,12 +39,12 @@ public class MakeDotExpressionChecked_Intention extends BaseIntention implements
 
   public void execute(final SNode node, final EditorContext editorContext) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression")) {
-      SNode dotExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+      SNode dotExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
       SLinkOperations.setTarget(dotExpression, "operand", SLinkOperations.getTarget(node, "operand", true), true);
       SLinkOperations.setTarget(dotExpression, "operation", SLinkOperations.getTarget(node, "operation", true), true);
       SNodeOperations.replaceWithAnother(node, dotExpression);
     } else {
-      SNode checkedDot = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", null);
+      SNode checkedDot = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", null);
       SLinkOperations.setTarget(checkedDot, "operand", SLinkOperations.getTarget(node, "operand", true), true);
       SLinkOperations.setTarget(checkedDot, "operation", SLinkOperations.getTarget(node, "operation", true), true);
       SNodeOperations.replaceWithAnother(node, checkedDot);

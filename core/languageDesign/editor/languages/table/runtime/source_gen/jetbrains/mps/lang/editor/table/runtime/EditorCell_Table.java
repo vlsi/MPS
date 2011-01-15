@@ -13,15 +13,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
-import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import java.awt.Color;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.util.Iterator;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
@@ -30,6 +27,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
 public class EditorCell_Table extends EditorCell_Collection {
   private TableModel myModel;
   private String myUniquePrefix;
+  private boolean myEmpty;
 
   public EditorCell_Table(EditorContext editorContext, SNode node, CellLayout cellLayout, TableModel model, String uniquePrefix) {
     super(editorContext, node, new CellLayout_Vertical(), null);
@@ -42,70 +40,70 @@ public class EditorCell_Table extends EditorCell_Collection {
   }
 
   public void createChildrenCells() {
+    if (myModel.getRowCount() == 0) {
+      myEmpty = true;
+      EditorCell emptyCell = createEmptyTabeCell();
+      installEmptyTableCellActions(emptyCell);
+      emptyCell.setLeftGap(4);
+      emptyCell.setRightGap(4);
+      emptyCell.setCellId(myUniquePrefix + "_emptyTable");
+
+      addEditorCell(emptyCell);
+      return;
+    }
     for (int row = 0; row < myModel.getRowCount(); row++) {
       EditorCell_Collection rowCell = this.createRowCell(row);
       String rowId = myUniquePrefix + "_row_" + row;
       rowCell.setCellId(rowId);
       rowCell.addEditorCell(createRowOutermostCell(row, rowId, true));
       final int finalRow = row;
-      for (int column = 0; column < myModel.getColumnCount(); column++) {
-        final int finalColumn = column;
-        SNode value = myModel.getValueAt(row, column);
-        EditorCell editorCell;
-        if (value != null) {
-          editorCell = getEditorContext().createNodeCell(value);
-          editorCell.setAction(CellActionType.DELETE, new EditorCellAction() {
-            public void execute(EditorContext editorContext) {
-              myModel.deleteColumn(finalColumn);
-            }
-          });
-          editorCell.setAction(CellActionType.INSERT, new EditorCellAction() {
-            public void execute(EditorContext editorContext) {
-              myModel.insertColumn(finalColumn + 1);
-            }
-          });
-          editorCell.setAction(CellActionType.INSERT_BEFORE, new EditorCellAction() {
-            public void execute(EditorContext editorContext) {
-              myModel.insertColumn(finalColumn);
-            }
-          });
-        } else {
-          editorCell = new EditorCell_Constant(getEditorContext(), getSNode(), "", true);
-          editorCell.setAction(CellActionType.INSERT, new EditorCellAction() {
-            public void execute(EditorContext editorContext) {
-              myModel.createElement(finalRow, finalColumn);
-            }
-          });
-          editorCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(getEditorContext()) {
-            protected List<INodeSubstituteAction> createActions() {
-              List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-              ListSequence.fromList(result).addElement(new AbstractNodeSubstituteAction(null, getSNode()) {
-                protected SNode doSubstitute(String p0) {
-                  myModel.createElement(finalRow, finalColumn);
-                  return null;
-                }
+      if (myModel.getColumnCount() == 0) {
+        EditorCell emptyCell = createEmptyRowCell();
+        installEmptyRowCellActions(emptyCell, row);
+        emptyCell.setLeftGap(4);
+        emptyCell.setRightGap(4);
+        emptyCell.setCellId(rowId + "_empty");
 
-                @Override
-                protected String getMatchingText(String string, boolean b1, boolean b2) {
-                  return "create new cell node";
-                }
+        rowCell.addEditorCell(emptyCell);
+      } else {
+        for (int column = 0; column < myModel.getColumnCount(); column++) {
+          final int finalColumn = column;
+          SNode value = myModel.getValueAt(row, column);
+          EditorCell editorCell;
+          if (value != null) {
+            editorCell = getEditorContext().createNodeCell(value);
+            editorCell.setAction(CellActionType.DELETE, new EditorCellAction() {
+              public void execute(EditorContext editorContext) {
+                myModel.deleteColumn(finalColumn);
+              }
+            });
+            editorCell.setAction(CellActionType.INSERT, new EditorCellAction() {
+              public void execute(EditorContext editorContext) {
+                myModel.insertColumn(finalColumn + 1);
+              }
+            });
+            editorCell.setAction(CellActionType.INSERT_BEFORE, new EditorCellAction() {
+              public void execute(EditorContext editorContext) {
+                myModel.insertColumn(finalColumn);
+              }
+            });
+          } else {
+            editorCell = new EditorCell_Constant(getEditorContext(), getSNode(), "", true);
+            editorCell.setAction(CellActionType.INSERT, new EditorCellAction() {
+              public void execute(EditorContext editorContext) {
+                myModel.createElement(finalRow, finalColumn);
+              }
+            });
+          }
+          editorCell.setSubstituteInfo(myModel.getSubstituteInfo(row, column));
+          if (editorCell.getCellId() == null) {
+            editorCell.setCellId(rowId + "_column_" + column);
+          }
+          editorCell.setLeftGap(4);
+          editorCell.setRightGap(4);
 
-                @Override
-                protected String getDescriptionText(String string, boolean b) {
-                  return super.getDescriptionText(string, b);
-                }
-              });
-              return result;
-            }
-          });
+          rowCell.addEditorCell(editorCell);
         }
-        if (editorCell.getCellId() == null) {
-          editorCell.setCellId(rowId + "_column_" + column);
-        }
-        editorCell.setLeftGap(4);
-        editorCell.setRightGap(4);
-
-        rowCell.addEditorCell(editorCell);
       }
       rowCell.addEditorCell(createRowOutermostCell(row, rowId, false));
       this.addEditorCell(rowCell);
@@ -113,8 +111,17 @@ public class EditorCell_Table extends EditorCell_Collection {
   }
 
   @Override
+  public int getBottomInset() {
+    // Necesary for properly painting bottom table line 
+    return 1;
+  }
+
+  @Override
   public void paint(Graphics graphics, ParentSettings parentSettings) {
     super.paint(graphics, parentSettings);
+    if (myEmpty) {
+      return;
+    }
     graphics.setColor(Color.GRAY);
     List<Integer> positionsX = ListSequence.fromList(new ArrayList<Integer>());
     List<Integer> positionsY = ListSequence.fromList(new ArrayList<Integer>());
@@ -190,6 +197,40 @@ public class EditorCell_Table extends EditorCell_Collection {
       "_lastCell"
     )));
     return emptyCell;
+  }
+
+  private EditorCell createEmptyRowCell() {
+    EditorCell_Constant emptyCell = new EditorCell_Constant(getEditorContext(), getSNode(), null);
+    emptyCell.setDefaultText("<<emptyRow>>");
+    return emptyCell;
+  }
+
+  private void installEmptyRowCellActions(EditorCell emptyCell, final int rowNumber) {
+    EditorCellAction createFirstCellAction = new EditorCellAction() {
+      public void execute(EditorContext editorContext) {
+        myModel.insertColumn(rowNumber);
+      }
+    };
+    emptyCell.setAction(CellActionType.INSERT, createFirstCellAction);
+    emptyCell.setAction(CellActionType.INSERT_BEFORE, createFirstCellAction);
+  }
+
+  private EditorCell createEmptyTabeCell() {
+    EditorCell_Constant emptyCell = new EditorCell_Constant(getEditorContext(), getSNode(), null);
+    emptyCell.setDefaultText("<<emptyTable>>");
+
+    emptyCell.getStyle().set(StyleAttributes.DRAW_BORDER, true);
+    return emptyCell;
+  }
+
+  private void installEmptyTableCellActions(EditorCell emptyCell) {
+    EditorCellAction createFirstRowAction = new EditorCellAction() {
+      public void execute(EditorContext editorContext) {
+        myModel.insertRow(0);
+      }
+    };
+    emptyCell.setAction(CellActionType.INSERT, createFirstRowAction);
+    emptyCell.setAction(CellActionType.INSERT_BEFORE, createFirstRowAction);
   }
 
   public static EditorCell_Collection createTable(EditorContext editorContext, SNode node, final TableModel model, String uniquePrefix) {

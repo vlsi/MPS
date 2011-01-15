@@ -51,12 +51,26 @@
                         </node>
                       </node>
                       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3980696573555909133">
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4181924746626299689">
+                          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4181924746626299690">
+                            <property name="name" nameId="tpck.1169194664001" value="h" />
+                            <node role="type" roleId="tpee.5680397130376446158" type="tp2c.FunctionType" typeId="tp2c.1199542442495" id="4181924746626299691">
+                              <node role="parameterType" roleId="tp2c.1199542501692" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4181924746626299692">
+                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ajxc.~SelectionEvent" resolveInfo="SelectionEvent" />
+                              </node>
+                              <node role="resultType" roleId="tp2c.1199542457201" type="tpee.VoidType" typeId="tpee.1068581517677" id="4181924746626299693" />
+                            </node>
+                            <node role="initializer" roleId="tpee.1068431790190" type="sqp9.EventHandlerParam" typeId="sqp9.8115675450774807738" id="4181924746626299694" />
+                          </node>
+                        </node>
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3980696573555909237">
                           <node role="expression" roleId="tpee.1068580123156" type="tp2c.CompactInvokeFunctionExpression" typeId="tp2c.1235746970280" id="3980696573555909239">
                             <node role="parameter" roleId="tp2c.1235747002942" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3980696573555909258">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3980696573555909131" resolveInfo="event" />
                             </node>
-                            <node role="function" roleId="tp2c.1235746996653" type="sqp9.EventHandlerParam" typeId="sqp9.8115675450774807738" id="3980696573555909240" />
+                            <node role="function" roleId="tp2c.1235746996653" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4181924746626299695">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4181924746626299690" resolveInfo="h" />
+                            </node>
                           </node>
                         </node>
                       </node>

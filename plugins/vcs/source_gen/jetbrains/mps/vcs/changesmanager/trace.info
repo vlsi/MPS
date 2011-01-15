@@ -2388,191 +2388,6 @@
       <varInfo nodeId="833977803389943637" varName="descendants" />
     </scopeInfo>
   </root>
-  <root nodeId="6763225944573383966">
-    <nodeInfo nodeId="6763225944573384074" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTabListeners" fileName="VCSTabColorProvider.java" startLine="21" startPosition="62" endLine="22" endPosition="113" />
-    <nodeInfo nodeId="6763225944573384095" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="27" startPosition="56" endLine="28" endPosition="93" />
-    <nodeInfo nodeId="6763225944573384105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VCSTabColorProvider.java" startLine="29" startPosition="32" endLine="30" endPosition="25" />
-    <nodeInfo nodeId="6763225944573384107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="31" startPosition="5" endLine="32" endPosition="34" />
-    <nodeInfo nodeId="6763225944573384111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="32" startPosition="34" endLine="33" endPosition="32" />
-    <nodeInfo nodeId="6763225944573384115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="33" startPosition="32" endLine="34" endPosition="29" />
-    <nodeInfo nodeId="6763225944573384126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="35" startPosition="71" endLine="36" endPosition="51" />
-    <nodeInfo nodeId="6763225944573384137" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" fileName="VCSTabColorProvider.java" startLine="37" startPosition="25" endLine="38" endPosition="17" />
-    <nodeInfo nodeId="6763225944573384138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="39" startPosition="7" endLine="40" endPosition="56" />
-    <nodeInfo nodeId="6763225944573384165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="41" startPosition="39" endLine="42" endPosition="24" />
-    <nodeInfo nodeId="6763225944573384160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="44" startPosition="42" endLine="45" endPosition="27" />
-    <nodeInfo nodeId="6763225944573384155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="46" startPosition="14" endLine="47" endPosition="29" />
-    <nodeInfo nodeId="6763225944573384169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="49" startPosition="5" endLine="50" endPosition="47" />
-    <nodeInfo nodeId="6763225944573384192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="51" startPosition="22" endLine="52" endPosition="35" />
-    <nodeInfo nodeId="6763225944573384187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="55" startPosition="26" endLine="56" endPosition="37" />
-    <nodeInfo nodeId="6763225944573384182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="57" startPosition="14" endLine="58" endPosition="34" />
-    <nodeInfo nodeId="6763225944573384196" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VCSTabColorProvider.java" startLine="60" startPosition="5" endLine="61" endPosition="29" />
-    <nodeInfo nodeId="6763225944573384206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="64" startPosition="46" endLine="65" endPosition="104" />
-    <nodeInfo nodeId="6763225944573384217" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VCSTabColorProvider.java" startLine="66" startPosition="32" endLine="67" endPosition="13" />
-    <nodeInfo nodeId="6763225944573384218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="68" startPosition="5" endLine="69" endPosition="59" />
-    <nodeInfo nodeId="3876980871838660616" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="69" startPosition="59" endLine="70" endPosition="62" />
-    <nodeInfo nodeId="3876980871838704833" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VCSTabColorProvider.java" startLine="71" startPosition="27" endLine="72" endPosition="13" />
-    <nodeInfo nodeId="6763225944573384225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="73" startPosition="5" endLine="74" endPosition="54" />
-    <nodeInfo nodeId="6763225944573384239" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="77" startPosition="46" endLine="78" endPosition="104" />
-    <nodeInfo nodeId="6763225944573384250" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VCSTabColorProvider.java" startLine="79" startPosition="32" endLine="80" endPosition="13" />
-    <nodeInfo nodeId="3876980871838704834" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="81" startPosition="5" endLine="82" endPosition="65" />
-    <nodeInfo nodeId="3876980871838704852" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VCSTabColorProvider.java" startLine="83" startPosition="27" endLine="84" endPosition="13" />
-    <nodeInfo nodeId="6763225944573384251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="85" startPosition="5" endLine="86" endPosition="57" />
-    <nodeInfo nodeId="6763225944573384265" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VCSTabColorProvider.java" startLine="89" startPosition="54" endLine="90" endPosition="68" />
-    <nodeInfo nodeId="6763225944573384297" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="94" startPosition="45" endLine="95" endPosition="63" />
-    <nodeInfo nodeId="6763225944573384303" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VCSTabColorProvider.java" startLine="95" startPosition="63" endLine="96" endPosition="68" />
-    <nodeInfo nodeId="6763225944573384292" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VCSTabColorProvider.java" startLine="98" startPosition="44" endLine="99" endPosition="68" />
-    <nodeInfo nodeId="6763225944573384287" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="VCSTabColorProvider.java" startLine="100" startPosition="10" endLine="101" endPosition="57" />
-    <nodeInfo nodeId="6763225944573384315" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="104" startPosition="68" endLine="105" endPosition="103" />
-    <nodeInfo nodeId="6763225944573384326" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VCSTabColorProvider.java" startLine="106" startPosition="32" endLine="107" endPosition="13" />
-    <nodeInfo nodeId="6763225944573384327" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="108" startPosition="5" endLine="109" endPosition="108" />
-    <nodeInfo nodeId="6763225944573384346" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="110" startPosition="29" endLine="111" endPosition="42" />
-    <nodeInfo nodeId="6763225944573384350" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="112" startPosition="5" endLine="113" endPosition="40" />
-    <nodeInfo nodeId="6763225944573384361" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="114" startPosition="24" endLine="115" endPosition="26" />
-    <nodeInfo nodeId="6763225944573384365" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="116" startPosition="5" endLine="117" endPosition="58" />
-    <nodeInfo nodeId="6763225944573384373" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="117" startPosition="58" endLine="118" endPosition="73" />
-    <nodeInfo nodeId="6763225944573383972" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySt" fileName="VCSTabColorProvider.java" startLine="121" startPosition="85" endLine="122" endPosition="43" />
-    <nodeInfo nodeId="6763225944573383981" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="124" startPosition="63" endLine="125" endPosition="16" />
-    <nodeInfo nodeId="6763225944573383992" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="128" startPosition="62" endLine="129" endPosition="56" />
-    <nodeInfo nodeId="6763225944573384005" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="130" startPosition="75" endLine="131" endPosition="83" />
-    <nodeInfo nodeId="6763225944573384018" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTab" fileName="VCSTabColorProvider.java" startLine="136" startPosition="77" endLine="137" endPosition="40" />
-    <nodeInfo nodeId="6763225944573384027" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="139" startPosition="59" endLine="140" endPosition="18" />
-    <nodeInfo nodeId="6763225944573384038" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="143" startPosition="62" endLine="144" endPosition="56" />
-    <nodeInfo nodeId="6763225944573384044" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="144" startPosition="56" endLine="145" endPosition="57" />
-    <nodeInfo nodeId="6763225944573384058" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VCSTabColorProvider.java" startLine="146" startPosition="63" endLine="147" endPosition="53" />
-    <nodeInfo nodeId="6763225944573384065" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="VCSTabColorProvider.java" startLine="147" startPosition="53" endLine="148" endPosition="53" />
-    <nodeInfo nodeId="6763225944573384070" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSTabColorProvider.java" startLine="148" startPosition="53" endLine="149" endPosition="34" />
-    <nodeInfo nodeId="6763225944573384083" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VCSTabColorProvider#()V" fileName="VCSTabColorProvider.java" startLine="23" startPosition="0" endLine="25" endPosition="3" />
-    <nodeInfo nodeId="6763225944573384153" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="VCSTabColorProvider.java" startLine="46" startPosition="12" endLine="48" endPosition="7" />
-    <nodeInfo nodeId="6763225944573384180" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="VCSTabColorProvider.java" startLine="57" startPosition="12" endLine="59" endPosition="7" />
-    <nodeInfo nodeId="6763225944573384100" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="28" startPosition="93" endLine="31" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384132" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="36" startPosition="51" endLine="39" endPosition="7" />
-    <nodeInfo nodeId="6763225944573384212" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="65" startPosition="104" endLine="68" endPosition="5" />
-    <nodeInfo nodeId="3876980871838704824" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="70" startPosition="62" endLine="73" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384245" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="78" startPosition="104" endLine="81" endPosition="5" />
-    <nodeInfo nodeId="3876980871838704843" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="82" startPosition="65" endLine="85" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384321" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="105" startPosition="103" endLine="108" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384341" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="109" startPosition="108" endLine="112" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384356" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="113" startPosition="40" endLine="116" endPosition="5" />
-    <nodeInfo nodeId="6763225944573383975" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SingletabbedStatusListener#(Ljetbrains/mps/ide/tabbedEditor/tabs/BaseSingletabbedTab;)V" fileName="VCSTabColorProvider.java" startLine="123" startPosition="0" endLine="126" endPosition="5" />
-    <nodeInfo nodeId="6763225944573383998" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="129" startPosition="56" endLine="132" endPosition="7" />
-    <nodeInfo nodeId="6763225944573384021" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MultitabbedStatusListener#(Ljetbrains/mps/ide/tabbedEditor/AbstractLazyTab;)V" fileName="VCSTabColorProvider.java" startLine="138" startPosition="0" endLine="141" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384259" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTabProject#(Ljetbrains/mps/ide/tabbedEditor/AbstractLazyTab;)Lcom/intellij/openapi/project/Project;" fileName="VCSTabColorProvider.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
-    <nodeInfo nodeId="6763225944573384283" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="97" startPosition="10" endLine="101" endPosition="57" />
-    <nodeInfo nodeId="6763225944573384149" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="43" startPosition="12" endLine="48" endPosition="7" />
-    <nodeInfo nodeId="6763225944573384178" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="54" startPosition="19" endLine="59" endPosition="7" />
-    <nodeInfo nodeId="6763225944573384050" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="145" startPosition="57" endLine="150" endPosition="7" />
-    <nodeInfo nodeId="6763225944573384175" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="53" startPosition="10" endLine="60" endPosition="5" />
-    <nodeInfo nodeId="6763225944573383985" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileStatusChanged#(Ljetbrains/mps/smodel/SNode;)V" fileName="VCSTabColorProvider.java" startLine="127" startPosition="0" endLine="134" endPosition="0" />
-    <nodeInfo nodeId="6763225944573384145" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="40" startPosition="56" endLine="48" endPosition="7" />
-    <nodeInfo nodeId="6763225944573384279" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="93" startPosition="88" endLine="101" endPosition="57" />
-    <nodeInfo nodeId="6763225944573384173" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSTabColorProvider.java" startLine="50" startPosition="47" endLine="60" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384031" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileStatusChanged#(Ljetbrains/mps/smodel/SNode;)V" fileName="VCSTabColorProvider.java" startLine="142" startPosition="0" endLine="152" endPosition="0" />
-    <nodeInfo nodeId="6763225944573384273" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createFileStatusListener#(Ljetbrains/mps/ide/tabbedEditor/AbstractLazyTab;)Ljetbrains/mps/vcs/changesmanager/NodeFileStatusListener;" fileName="VCSTabColorProvider.java" startLine="92" startPosition="0" endLine="103" endPosition="0" />
-    <nodeInfo nodeId="6763225944573384233" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tabClosed#(Ljetbrains/mps/ide/tabbedEditor/AbstractLazyTab;)V" fileName="VCSTabColorProvider.java" startLine="76" startPosition="0" endLine="88" endPosition="0" />
-    <nodeInfo nodeId="6763225944573384200" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tabOpened#(Ljetbrains/mps/ide/tabbedEditor/AbstractLazyTab;)V" fileName="VCSTabColorProvider.java" startLine="63" startPosition="0" endLine="76" endPosition="0" />
-    <nodeInfo nodeId="6763225944573384119" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="VCSTabColorProvider.java" startLine="34" startPosition="29" endLine="49" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384307" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateTabColor#(ILjetbrains/mps/ide/tabbedEditor/tabs/BaseMultitabbedTab;)V" fileName="VCSTabColorProvider.java" startLine="103" startPosition="0" endLine="120" endPosition="0" />
-    <nodeInfo nodeId="6763225944573384087" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/tabbedEditor/ILazyTab;)Ljava/awt/Color;" fileName="VCSTabColorProvider.java" startLine="26" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="6763225944573384086" fileName="VCSTabColorProvider.java" startLine="24" startPosition="32" endLine="24" endPosition="32" />
-    <scopeInfo nodeId="6763225944573384104" fileName="VCSTabColorProvider.java" startLine="29" startPosition="32" endLine="30" endPosition="25" />
-    <scopeInfo nodeId="6763225944573384136" fileName="VCSTabColorProvider.java" startLine="37" startPosition="25" endLine="38" endPosition="17" />
-    <scopeInfo nodeId="6763225944573384164" fileName="VCSTabColorProvider.java" startLine="41" startPosition="39" endLine="42" endPosition="24" />
-    <scopeInfo nodeId="6763225944573384159" fileName="VCSTabColorProvider.java" startLine="44" startPosition="42" endLine="45" endPosition="27" />
-    <scopeInfo nodeId="6763225944573384154" fileName="VCSTabColorProvider.java" startLine="46" startPosition="14" endLine="47" endPosition="29" />
-    <scopeInfo nodeId="6763225944573384191" fileName="VCSTabColorProvider.java" startLine="51" startPosition="22" endLine="52" endPosition="35" />
-    <scopeInfo nodeId="6763225944573384186" fileName="VCSTabColorProvider.java" startLine="55" startPosition="26" endLine="56" endPosition="37" />
-    <scopeInfo nodeId="6763225944573384181" fileName="VCSTabColorProvider.java" startLine="57" startPosition="14" endLine="58" endPosition="34" />
-    <scopeInfo nodeId="6763225944573384216" fileName="VCSTabColorProvider.java" startLine="66" startPosition="32" endLine="67" endPosition="13" />
-    <scopeInfo nodeId="3876980871838704825" fileName="VCSTabColorProvider.java" startLine="71" startPosition="27" endLine="72" endPosition="13" />
-    <scopeInfo nodeId="6763225944573384249" fileName="VCSTabColorProvider.java" startLine="79" startPosition="32" endLine="80" endPosition="13" />
-    <scopeInfo nodeId="3876980871838704844" fileName="VCSTabColorProvider.java" startLine="83" startPosition="27" endLine="84" endPosition="13" />
-    <scopeInfo nodeId="6763225944573384264" fileName="VCSTabColorProvider.java" startLine="89" startPosition="54" endLine="90" endPosition="68" />
-    <scopeInfo nodeId="6763225944573384291" fileName="VCSTabColorProvider.java" startLine="98" startPosition="44" endLine="99" endPosition="68" />
-    <scopeInfo nodeId="6763225944573384325" fileName="VCSTabColorProvider.java" startLine="106" startPosition="32" endLine="107" endPosition="13" />
-    <scopeInfo nodeId="6763225944573384345" fileName="VCSTabColorProvider.java" startLine="110" startPosition="29" endLine="111" endPosition="42" />
-    <scopeInfo nodeId="6763225944573384360" fileName="VCSTabColorProvider.java" startLine="114" startPosition="24" endLine="115" endPosition="26" />
-    <scopeInfo nodeId="6763225944573383980" fileName="VCSTabColorProvider.java" startLine="124" startPosition="63" endLine="125" endPosition="16" />
-    <scopeInfo nodeId="6763225944573384004" fileName="VCSTabColorProvider.java" startLine="130" startPosition="75" endLine="131" endPosition="83" />
-    <scopeInfo nodeId="6763225944573384026" fileName="VCSTabColorProvider.java" startLine="139" startPosition="59" endLine="140" endPosition="18" />
-    <scopeInfo nodeId="6763225944573384083" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VCSTabColorProvider#()V" fileName="VCSTabColorProvider.java" startLine="23" startPosition="0" endLine="25" endPosition="3" />
-    <scopeInfo nodeId="6763225944573384296" fileName="VCSTabColorProvider.java" startLine="94" startPosition="45" endLine="96" endPosition="68">
-      <varInfo nodeId="6763225944573384298" varName="st" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573383975" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SingletabbedStatusListener#(Ljetbrains/mps/ide/tabbedEditor/tabs/BaseSingletabbedTab;)V" fileName="VCSTabColorProvider.java" startLine="123" startPosition="0" endLine="126" endPosition="5">
-      <varInfo nodeId="6763225944573383978" varName="st" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384021" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MultitabbedStatusListener#(Ljetbrains/mps/ide/tabbedEditor/AbstractLazyTab;)V" fileName="VCSTabColorProvider.java" startLine="138" startPosition="0" endLine="141" endPosition="5">
-      <varInfo nodeId="6763225944573384024" varName="tab" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384057" fileName="VCSTabColorProvider.java" startLine="146" startPosition="63" endLine="149" endPosition="34">
-      <varInfo nodeId="6763225944573384059" varName="index" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384259" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTabProject#(Ljetbrains/mps/ide/tabbedEditor/AbstractLazyTab;)Lcom/intellij/openapi/project/Project;" fileName="VCSTabColorProvider.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
-      <varInfo nodeId="6763225944573384262" varName="tab" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573383991" fileName="VCSTabColorProvider.java" startLine="128" startPosition="62" endLine="132" endPosition="7">
-      <varInfo nodeId="6763225944573383993" varName="nodePointer" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384177" fileName="VCSTabColorProvider.java" startLine="54" startPosition="19" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="6763225944573383985" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileStatusChanged#(Ljetbrains/mps/smodel/SNode;)V" fileName="VCSTabColorProvider.java" startLine="127" startPosition="0" endLine="134" endPosition="0">
-      <varInfo nodeId="6763225944573383988" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384037" fileName="VCSTabColorProvider.java" startLine="143" startPosition="62" endLine="150" endPosition="7">
-      <varInfo nodeId="6763225944573384039" varName="nodePointer" />
-      <varInfo nodeId="6763225944573384045" varName="mt" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384278" fileName="VCSTabColorProvider.java" startLine="93" startPosition="88" endLine="101" endPosition="57" />
-    <scopeInfo nodeId="6763225944573384238" fileName="VCSTabColorProvider.java" startLine="77" startPosition="46" endLine="86" endPosition="57">
-      <varInfo nodeId="6763225944573384240" varName="statusManager" />
-      <varInfo nodeId="3876980871838704835" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384205" fileName="VCSTabColorProvider.java" startLine="64" startPosition="46" endLine="74" endPosition="54">
-      <varInfo nodeId="6763225944573384207" varName="statusManager" />
-      <varInfo nodeId="3876980871838660617" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384031" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileStatusChanged#(Ljetbrains/mps/smodel/SNode;)V" fileName="VCSTabColorProvider.java" startLine="142" startPosition="0" endLine="152" endPosition="0">
-      <varInfo nodeId="6763225944573384034" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384273" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createFileStatusListener#(Ljetbrains/mps/ide/tabbedEditor/AbstractLazyTab;)Ljetbrains/mps/vcs/changesmanager/NodeFileStatusListener;" fileName="VCSTabColorProvider.java" startLine="92" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="6763225944573384276" varName="tab" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384233" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tabClosed#(Ljetbrains/mps/ide/tabbedEditor/AbstractLazyTab;)V" fileName="VCSTabColorProvider.java" startLine="76" startPosition="0" endLine="88" endPosition="0">
-      <varInfo nodeId="6763225944573384236" varName="tab" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384125" fileName="VCSTabColorProvider.java" startLine="35" startPosition="71" endLine="48" endPosition="7">
-      <varInfo nodeId="6763225944573384127" varName="node" />
-      <varInfo nodeId="6763225944573384139" varName="status" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384200" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tabOpened#(Ljetbrains/mps/ide/tabbedEditor/AbstractLazyTab;)V" fileName="VCSTabColorProvider.java" startLine="63" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="6763225944573384203" varName="tab" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384314" fileName="VCSTabColorProvider.java" startLine="104" startPosition="68" endLine="118" endPosition="73">
-      <varInfo nodeId="6763225944573384316" varName="statusManager" />
-      <varInfo nodeId="6763225944573384351" varName="color" />
-      <varInfo nodeId="6763225944573384328" varName="fileStatus" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384119" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="VCSTabColorProvider.java" startLine="34" startPosition="29" endLine="49" endPosition="5">
-      <varInfo nodeId="6763225944573384123" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384307" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateTabColor#(ILjetbrains/mps/ide/tabbedEditor/tabs/BaseMultitabbedTab;)V" fileName="VCSTabColorProvider.java" startLine="103" startPosition="0" endLine="120" endPosition="0">
-      <varInfo nodeId="6763225944573384312" varName="mt" />
-      <varInfo nodeId="6763225944573384310" varName="tabIndex" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384094" fileName="VCSTabColorProvider.java" startLine="27" startPosition="56" endLine="61" endPosition="29">
-      <varInfo nodeId="6763225944573384116" varName="hasAdded" />
-      <varInfo nodeId="6763225944573384108" varName="hasNotChanged" />
-      <varInfo nodeId="6763225944573384112" varName="hasModified" />
-      <varInfo nodeId="6763225944573384096" varName="statusManager" />
-      <varInfo nodeId="6763225944573384170" varName="status" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384087" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/tabbedEditor/ILazyTab;)Ljava/awt/Color;" fileName="VCSTabColorProvider.java" startLine="26" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="6763225944573384090" varName="project" />
-      <varInfo nodeId="6763225944573384092" varName="tab" />
-    </scopeInfo>
-    <unitInfo nodeId="6763225944573383969" fileName="VCSTabColorProvider.java" startLine="121" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.VCSTabColorProvider$SingletabbedStatusListener" />
-    <unitInfo nodeId="6763225944573384015" fileName="VCSTabColorProvider.java" startLine="136" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.VCSTabColorProvider$MultitabbedStatusListener" />
-    <unitInfo nodeId="6763225944573383966" fileName="VCSTabColorProvider.java" startLine="21" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.VCSTabColorProvider" />
-  </root>
   <root nodeId="8006781392765204425">
     <nodeInfo nodeId="4604734785880205984" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="476" startPosition="31" endLine="476" endPosition="31" />
     <nodeInfo nodeId="4604734785880205984" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="479" startPosition="31" endLine="479" endPosition="31" />
@@ -3145,7 +2960,7 @@
     <nodeInfo nodeId="5962623969496447558" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="ModelChangesManager.java" startLine="142" startPosition="70" endLine="145" endPosition="5" />
     <nodeInfo nodeId="3187554551048019021" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="ModelChangesManager.java" startLine="149" startPosition="48" endLine="152" endPosition="5" />
     <nodeInfo nodeId="3187554551048036636" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="160" startPosition="29" endLine="163" endPosition="9" />
-    <nodeInfo nodeId="3187554551048036395" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="173" startPosition="29" endLine="176" endPosition="9" />
+    <nodeInfo nodeId="3187554551048036395" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="173" startPosition="29" endLine="176" endPosition="9" />
     <nodeInfo nodeId="3187554551048035436" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="186" startPosition="29" endLine="189" endPosition="9" />
     <nodeInfo nodeId="7542415519011390366" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="199" startPosition="29" endLine="202" endPosition="9" />
     <nodeInfo nodeId="7542415519011395027" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="212" startPosition="29" endLine="215" endPosition="9" />
@@ -3153,7 +2968,7 @@
     <nodeInfo nodeId="4373338147090813408" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelChangesManager.java" startLine="236" startPosition="69" endLine="239" endPosition="5" />
     <nodeInfo nodeId="3913480212906642511" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="243" startPosition="49" endLine="246" endPosition="5" />
     <nodeInfo nodeId="3913480212906643301" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="258" startPosition="70" endLine="261" endPosition="5" />
-    <nodeInfo nodeId="3367145324776993279" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="271" startPosition="56" endLine="274" endPosition="7" />
+    <nodeInfo nodeId="3367145324776993279" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="271" startPosition="56" endLine="274" endPosition="7" />
     <nodeInfo nodeId="8303122470448996053" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="277" startPosition="59" endLine="280" endPosition="5" />
     <nodeInfo nodeId="399572749666385472" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="280" startPosition="5" endLine="283" endPosition="5" />
     <nodeInfo nodeId="5235541930885971714" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="283" startPosition="5" endLine="286" endPosition="5" />
@@ -3184,8 +2999,8 @@
     <nodeInfo nodeId="83742232301382749" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="619" startPosition="96" endLine="622" endPosition="9" />
     <nodeInfo nodeId="1281598945698463551" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="623" startPosition="7" endLine="626" endPosition="7" />
     <nodeInfo nodeId="1281598945698463601" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelChangesManager.java" startLine="640" startPosition="0" endLine="643" endPosition="7" />
-    <nodeInfo nodeId="1281598945698463662" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="655" startPosition="35" endLine="658" endPosition="7" />
-    <nodeInfo nodeId="3767959966756100127" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="667" startPosition="24" endLine="670" endPosition="13" />
+    <nodeInfo nodeId="1281598945698463662" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="655" startPosition="35" endLine="658" endPosition="7" />
+    <nodeInfo nodeId="3767959966756100127" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="667" startPosition="24" endLine="670" endPosition="13" />
     <nodeInfo nodeId="5260985045910033383" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="688" startPosition="34" endLine="691" endPosition="9" />
     <nodeInfo nodeId="1998279847126832470" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelChangesManager.java" startLine="712" startPosition="34" endLine="715" endPosition="9" />
     <nodeInfo nodeId="1390130991678041247" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="721" startPosition="91" endLine="724" endPosition="5" />
@@ -3197,7 +3012,7 @@
     <nodeInfo nodeId="762570481842487007" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelChangesManager.java" startLine="843" startPosition="5" endLine="846" endPosition="5" />
     <nodeInfo nodeId="5890845648943338" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="888" startPosition="52" endLine="891" endPosition="9" />
     <nodeInfo nodeId="5494534766666272288" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="892" startPosition="52" endLine="895" endPosition="9" />
-    <nodeInfo nodeId="5687497293128274385" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="950" startPosition="16" endLine="953" endPosition="11" />
+    <nodeInfo nodeId="5687497293128274385" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="950" startPosition="16" endLine="953" endPosition="11" />
     <nodeInfo nodeId="8006781392765204425" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="959" startPosition="70" endLine="962" endPosition="5" />
     <nodeInfo nodeId="8006781392765204425" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="966" startPosition="70" endLine="969" endPosition="5" />
     <nodeInfo nodeId="8006781392765204425" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="973" startPosition="82" endLine="976" endPosition="5" />
@@ -4465,7 +4280,7 @@
     <nodeInfo nodeId="6746101208730363954" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageGroups" fileName="ChangesFoldingAreaPainter.java" startLine="52" startPosition="78" endLine="53" endPosition="71" />
     <nodeInfo nodeId="7429456937243130495" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentMessageGroup" fileName="ChangesFoldingAreaPainter.java" startLine="53" startPosition="71" endLine="54" endPosition="78" />
     <nodeInfo nodeId="8909869386401300728" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageGroupUnderMouse" fileName="ChangesFoldingAreaPainter.java" startLine="54" startPosition="78" endLine="55" endPosition="81" />
-    <nodeInfo nodeId="6208564103581773727" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPopupMenu" fileName="ChangesFoldingAreaPainter.java" startLine="55" startPosition="81" endLine="56" endPosition="106" />
+    <nodeInfo nodeId="6208564103581773727" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPopupMenu" fileName="ChangesFoldingAreaPainter.java" startLine="55" startPosition="81" endLine="56" endPosition="67" />
     <nodeInfo nodeId="9048291698849215506" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="ChangesFoldingAreaPainter.java" startLine="58" startPosition="112" endLine="59" endPosition="92" />
     <nodeInfo nodeId="9048291698849215513" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="59" startPosition="92" endLine="60" endPosition="74" />
     <nodeInfo nodeId="8274502957383614784" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="63" startPosition="26" endLine="64" endPosition="13" />
@@ -4538,88 +4353,90 @@
     <nodeInfo nodeId="8909869386401300775" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="216" startPosition="5" endLine="217" endPosition="44" />
     <nodeInfo nodeId="1216620237029569865" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="218" startPosition="31" endLine="219" endPosition="85" />
     <nodeInfo nodeId="1216620237029569901" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="220" startPosition="12" endLine="221" endPosition="43" />
-    <nodeInfo nodeId="7429456937243136060" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="223" startPosition="37" endLine="224" endPosition="43" />
+    <nodeInfo nodeId="7429456937243136060" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="223" startPosition="60" endLine="224" endPosition="43" />
     <nodeInfo nodeId="8909869386401300746" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="230" startPosition="43" endLine="231" endPosition="13" />
     <nodeInfo nodeId="1216620237029569909" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="232" startPosition="5" endLine="233" endPosition="41" />
     <nodeInfo nodeId="8909869386401300750" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="233" startPosition="41" endLine="234" endPosition="36" />
-    <nodeInfo nodeId="6208564103581782294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="235" startPosition="37" endLine="236" endPosition="35" />
-    <nodeInfo nodeId="5444017747356995491" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="241" startPosition="46" endLine="242" endPosition="98" />
-    <nodeInfo nodeId="5444017747357015202" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="243" startPosition="31" endLine="244" endPosition="43" />
-    <nodeInfo nodeId="7539796992259356332" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="244" startPosition="43" endLine="245" endPosition="86" />
-    <nodeInfo nodeId="7539796992259356344" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="246" startPosition="25" endLine="247" endPosition="51" />
-    <nodeInfo nodeId="2643085131950809484" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="248" startPosition="7" endLine="249" endPosition="38" />
-    <nodeInfo nodeId="5444017747357190855" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="254" startPosition="74" endLine="255" endPosition="27" />
-    <nodeInfo nodeId="6378762527268290205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="259" startPosition="34" endLine="260" endPosition="52" />
-    <nodeInfo nodeId="3821603290882626782" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="261" startPosition="12" endLine="262" endPosition="43" />
-    <nodeInfo nodeId="7317795005505898110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="266" startPosition="37" endLine="267" endPosition="34" />
-    <nodeInfo nodeId="6105081101195305214" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="271" startPosition="74" endLine="272" endPosition="33" />
-    <nodeInfo nodeId="4745893119449688979" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="276" startPosition="34" endLine="277" endPosition="53" />
-    <nodeInfo nodeId="4434895596490172180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="281" startPosition="146" endLine="282" endPosition="65" />
-    <nodeInfo nodeId="4434895596490172172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="284" startPosition="85" endLine="285" endPosition="55" />
-    <nodeInfo nodeId="4434895596490172192" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="287" startPosition="9" endLine="288" endPosition="70" />
-    <nodeInfo nodeId="4434895596490172204" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="289" startPosition="12" endLine="290" endPosition="66" />
-    <nodeInfo nodeId="8274502957383551392" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="295" startPosition="20" endLine="296" endPosition="18" />
-    <nodeInfo nodeId="8274502957383551392" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="297" startPosition="5" endLine="298" endPosition="30" />
-    <nodeInfo nodeId="6746101208730360012" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessages" fileName="ChangesFoldingAreaPainter.java" startLine="301" startPosition="29" endLine="302" endPosition="177" />
-    <nodeInfo nodeId="6746101208730360041" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myY" fileName="ChangesFoldingAreaPainter.java" startLine="302" startPosition="177" endLine="303" endPosition="24" />
-    <nodeInfo nodeId="6746101208730360045" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHeight" fileName="ChangesFoldingAreaPainter.java" startLine="303" startPosition="24" endLine="304" endPosition="29" />
-    <nodeInfo nodeId="6746101208730360092" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="ChangesFoldingAreaPainter.java" startLine="306" startPosition="104" endLine="307" endPosition="67" />
-    <nodeInfo nodeId="6746101208730360075" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="307" startPosition="67" endLine="308" endPosition="132" />
-    <nodeInfo nodeId="6746101208730360674" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="308" startPosition="132" endLine="309" endPosition="67" />
-    <nodeInfo nodeId="6746101208730360087" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="309" startPosition="67" endLine="310" endPosition="89" />
-    <nodeInfo nodeId="1488166530899637889" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="312" startPosition="102" endLine="313" endPosition="86" />
-    <nodeInfo nodeId="6746101208730361686" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="315" startPosition="9" endLine="316" endPosition="31" />
-    <nodeInfo nodeId="6746101208730364064" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="320" startPosition="85" endLine="321" endPosition="24" />
-    <nodeInfo nodeId="6746101208730364072" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="324" startPosition="23" endLine="325" endPosition="17" />
-    <nodeInfo nodeId="6746101208730364080" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="328" startPosition="28" endLine="329" endPosition="22" />
-    <nodeInfo nodeId="3322868409858674647" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="334" startPosition="87" endLine="335" endPosition="65" />
-    <nodeInfo nodeId="3322868409858674638" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="337" startPosition="11" endLine="338" endPosition="30" />
-    <nodeInfo nodeId="3322868409858674668" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="340" startPosition="87" endLine="341" endPosition="68" />
-    <nodeInfo nodeId="3322868409858674659" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="343" startPosition="11" endLine="344" endPosition="33" />
-    <nodeInfo nodeId="3322868409858674680" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="345" startPosition="14" endLine="346" endPosition="33" />
-    <nodeInfo nodeId="3322868409858674684" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="351" startPosition="29" endLine="352" endPosition="46" />
-    <nodeInfo nodeId="2331005757591015011" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="356" startPosition="59" endLine="357" endPosition="78" />
-    <nodeInfo nodeId="3322868409858689541" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="358" startPosition="135" endLine="359" endPosition="90" />
-    <nodeInfo nodeId="3322868409858689530" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="360" startPosition="53" endLine="361" endPosition="87" />
-    <nodeInfo nodeId="3322868409858689544" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="362" startPosition="56" endLine="363" endPosition="90" />
-    <nodeInfo nodeId="3322868409858689547" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="364" startPosition="58" endLine="365" endPosition="94" />
-    <nodeInfo nodeId="3322868409858689550" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="366" startPosition="57" endLine="367" endPosition="95" />
-    <nodeInfo nodeId="2331005757591010198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="368" startPosition="9" endLine="369" endPosition="26" />
-    <nodeInfo nodeId="3322868409858674695" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="370" startPosition="14" endLine="371" endPosition="60" />
-    <nodeInfo nodeId="3322868409858674709" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="373" startPosition="19" endLine="374" endPosition="83" />
-    <nodeInfo nodeId="3322868409858674728" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="375" startPosition="22" endLine="376" endPosition="85" />
-    <nodeInfo nodeId="8332220865210648784" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="377" startPosition="18" endLine="378" endPosition="74" />
-    <nodeInfo nodeId="4434895596490172113" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myY" fileName="ChangesFoldingAreaPainter.java" startLine="384" startPosition="81" endLine="385" endPosition="20" />
-    <nodeInfo nodeId="4434895596490168996" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="ChangesFoldingAreaPainter.java" startLine="387" startPosition="107" endLine="388" endPosition="22" />
-    <nodeInfo nodeId="4434895596490172089" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="388" startPosition="22" endLine="389" endPosition="67" />
-    <nodeInfo nodeId="4434895596490171979" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="391" startPosition="87" endLine="392" endPosition="57" />
-    <nodeInfo nodeId="4434895596490172044" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="396" startPosition="87" endLine="397" endPosition="41" />
-    <nodeInfo nodeId="4434895596490172096" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="ChangesFoldingAreaPainter.java" startLine="399" startPosition="10" endLine="400" endPosition="50" />
-    <nodeInfo nodeId="4434895596490172118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="400" startPosition="50" endLine="401" endPosition="89" />
-    <nodeInfo nodeId="4434895596490169006" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="406" startPosition="29" endLine="407" endPosition="42" />
-    <nodeInfo nodeId="4434895596490172008" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="411" startPosition="28" endLine="412" endPosition="52" />
-    <nodeInfo nodeId="4434895596490172134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="416" startPosition="23" endLine="417" endPosition="17" />
-    <nodeInfo nodeId="4957875527975081886" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActionToolbar" fileName="ChangesFoldingAreaPainter.java" startLine="421" startPosition="48" endLine="422" endPosition="42" />
-    <nodeInfo nodeId="4957875527975107841" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="424" startPosition="26" endLine="425" endPosition="226" />
-    <nodeInfo nodeId="6531409938423387864" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="425" startPosition="226" endLine="426" endPosition="63" />
-    <nodeInfo nodeId="6208564103581775273" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="426" startPosition="63" endLine="427" endPosition="42" />
-    <nodeInfo nodeId="1039290607165159065" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="427" startPosition="42" endLine="428" endPosition="61" />
-    <nodeInfo nodeId="4957875527975108834" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="430" startPosition="70" endLine="431" endPosition="53" />
-    <nodeInfo nodeId="9173051028496930069" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="434" startPosition="72" endLine="435" endPosition="39" />
-    <nodeInfo nodeId="6208564103581786115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="444" startPosition="52" endLine="445" endPosition="89" />
-    <nodeInfo nodeId="6208564103581788060" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="445" startPosition="89" endLine="446" endPosition="24" />
-    <nodeInfo nodeId="6378762527268295125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="451" startPosition="24" endLine="452" endPosition="26" />
-    <nodeInfo nodeId="6378762527268296967" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="452" startPosition="26" endLine="453" endPosition="69" />
-    <nodeInfo nodeId="6378762527268302492" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="453" startPosition="69" endLine="454" endPosition="73" />
-    <nodeInfo nodeId="6378762527268296309" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="455" startPosition="35" endLine="456" endPosition="88" />
-    <nodeInfo nodeId="7755015088410488384" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="457" startPosition="9" endLine="458" endPosition="45" />
+    <nodeInfo nodeId="6208564103581782294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="235" startPosition="60" endLine="236" endPosition="35" />
+    <nodeInfo nodeId="5921685378876832133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="241" startPosition="30" endLine="242" endPosition="64" />
+    <nodeInfo nodeId="5921685378876832147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="243" startPosition="5" endLine="244" endPosition="23" />
+    <nodeInfo nodeId="5444017747356995491" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="248" startPosition="46" endLine="249" endPosition="98" />
+    <nodeInfo nodeId="5444017747357015202" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="250" startPosition="31" endLine="251" endPosition="43" />
+    <nodeInfo nodeId="7539796992259356332" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="251" startPosition="43" endLine="252" endPosition="86" />
+    <nodeInfo nodeId="7539796992259356344" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="253" startPosition="25" endLine="254" endPosition="51" />
+    <nodeInfo nodeId="2643085131950809484" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="255" startPosition="7" endLine="256" endPosition="41" />
+    <nodeInfo nodeId="5444017747357190855" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="261" startPosition="74" endLine="262" endPosition="27" />
+    <nodeInfo nodeId="6378762527268290205" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="266" startPosition="57" endLine="267" endPosition="55" />
+    <nodeInfo nodeId="3821603290882626782" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="268" startPosition="12" endLine="269" endPosition="43" />
+    <nodeInfo nodeId="7317795005505898110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="273" startPosition="37" endLine="274" endPosition="37" />
+    <nodeInfo nodeId="6105081101195305214" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="278" startPosition="74" endLine="279" endPosition="33" />
+    <nodeInfo nodeId="4745893119449688979" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="283" startPosition="34" endLine="284" endPosition="53" />
+    <nodeInfo nodeId="4434895596490172180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="288" startPosition="146" endLine="289" endPosition="65" />
+    <nodeInfo nodeId="4434895596490172172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="291" startPosition="85" endLine="292" endPosition="55" />
+    <nodeInfo nodeId="4434895596490172192" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="294" startPosition="9" endLine="295" endPosition="70" />
+    <nodeInfo nodeId="4434895596490172204" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="296" startPosition="12" endLine="297" endPosition="66" />
+    <nodeInfo nodeId="8274502957383551392" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="302" startPosition="20" endLine="303" endPosition="18" />
+    <nodeInfo nodeId="8274502957383551392" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="304" startPosition="5" endLine="305" endPosition="30" />
+    <nodeInfo nodeId="6746101208730360012" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessages" fileName="ChangesFoldingAreaPainter.java" startLine="308" startPosition="29" endLine="309" endPosition="177" />
+    <nodeInfo nodeId="6746101208730360041" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myY" fileName="ChangesFoldingAreaPainter.java" startLine="309" startPosition="177" endLine="310" endPosition="24" />
+    <nodeInfo nodeId="6746101208730360045" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHeight" fileName="ChangesFoldingAreaPainter.java" startLine="310" startPosition="24" endLine="311" endPosition="29" />
+    <nodeInfo nodeId="6746101208730360092" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="ChangesFoldingAreaPainter.java" startLine="313" startPosition="104" endLine="314" endPosition="67" />
+    <nodeInfo nodeId="6746101208730360075" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="314" startPosition="67" endLine="315" endPosition="132" />
+    <nodeInfo nodeId="6746101208730360674" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="315" startPosition="132" endLine="316" endPosition="67" />
+    <nodeInfo nodeId="6746101208730360087" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="316" startPosition="67" endLine="317" endPosition="89" />
+    <nodeInfo nodeId="1488166530899637889" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="319" startPosition="102" endLine="320" endPosition="86" />
+    <nodeInfo nodeId="6746101208730361686" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="322" startPosition="9" endLine="323" endPosition="31" />
+    <nodeInfo nodeId="6746101208730364064" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="327" startPosition="85" endLine="328" endPosition="24" />
+    <nodeInfo nodeId="6746101208730364072" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="331" startPosition="23" endLine="332" endPosition="17" />
+    <nodeInfo nodeId="6746101208730364080" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="335" startPosition="28" endLine="336" endPosition="22" />
+    <nodeInfo nodeId="3322868409858674647" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="341" startPosition="87" endLine="342" endPosition="65" />
+    <nodeInfo nodeId="3322868409858674638" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="344" startPosition="11" endLine="345" endPosition="30" />
+    <nodeInfo nodeId="3322868409858674668" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="347" startPosition="87" endLine="348" endPosition="68" />
+    <nodeInfo nodeId="3322868409858674659" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="350" startPosition="11" endLine="351" endPosition="33" />
+    <nodeInfo nodeId="3322868409858674680" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="352" startPosition="14" endLine="353" endPosition="33" />
+    <nodeInfo nodeId="3322868409858674684" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="358" startPosition="29" endLine="359" endPosition="46" />
+    <nodeInfo nodeId="2331005757591015011" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="363" startPosition="59" endLine="364" endPosition="78" />
+    <nodeInfo nodeId="3322868409858689541" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="365" startPosition="135" endLine="366" endPosition="90" />
+    <nodeInfo nodeId="3322868409858689530" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="367" startPosition="53" endLine="368" endPosition="87" />
+    <nodeInfo nodeId="3322868409858689544" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="369" startPosition="56" endLine="370" endPosition="90" />
+    <nodeInfo nodeId="3322868409858689547" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="371" startPosition="58" endLine="372" endPosition="94" />
+    <nodeInfo nodeId="3322868409858689550" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="373" startPosition="57" endLine="374" endPosition="95" />
+    <nodeInfo nodeId="2331005757591010198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="375" startPosition="9" endLine="376" endPosition="26" />
+    <nodeInfo nodeId="3322868409858674695" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="377" startPosition="14" endLine="378" endPosition="60" />
+    <nodeInfo nodeId="3322868409858674709" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="380" startPosition="19" endLine="381" endPosition="83" />
+    <nodeInfo nodeId="3322868409858674728" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="382" startPosition="22" endLine="383" endPosition="85" />
+    <nodeInfo nodeId="8332220865210648784" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="384" startPosition="18" endLine="385" endPosition="74" />
+    <nodeInfo nodeId="4434895596490172113" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myY" fileName="ChangesFoldingAreaPainter.java" startLine="391" startPosition="81" endLine="392" endPosition="20" />
+    <nodeInfo nodeId="4434895596490168996" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="ChangesFoldingAreaPainter.java" startLine="394" startPosition="107" endLine="395" endPosition="22" />
+    <nodeInfo nodeId="4434895596490172089" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="395" startPosition="22" endLine="396" endPosition="67" />
+    <nodeInfo nodeId="4434895596490171979" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="398" startPosition="87" endLine="399" endPosition="57" />
+    <nodeInfo nodeId="4434895596490172044" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="403" startPosition="87" endLine="404" endPosition="41" />
+    <nodeInfo nodeId="4434895596490172096" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="ChangesFoldingAreaPainter.java" startLine="406" startPosition="10" endLine="407" endPosition="50" />
+    <nodeInfo nodeId="4434895596490172118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="407" startPosition="50" endLine="408" endPosition="89" />
+    <nodeInfo nodeId="4434895596490169006" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="413" startPosition="29" endLine="414" endPosition="42" />
+    <nodeInfo nodeId="4434895596490172008" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="418" startPosition="28" endLine="419" endPosition="52" />
+    <nodeInfo nodeId="4434895596490172134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="423" startPosition="23" endLine="424" endPosition="17" />
+    <nodeInfo nodeId="4957875527975081886" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActionToolbar" fileName="ChangesFoldingAreaPainter.java" startLine="428" startPosition="48" endLine="429" endPosition="42" />
+    <nodeInfo nodeId="4957875527975107841" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="431" startPosition="26" endLine="432" endPosition="208" />
+    <nodeInfo nodeId="6531409938423387864" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="432" startPosition="208" endLine="433" endPosition="63" />
+    <nodeInfo nodeId="6208564103581775273" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="433" startPosition="63" endLine="434" endPosition="42" />
+    <nodeInfo nodeId="1039290607165159065" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="434" startPosition="42" endLine="435" endPosition="61" />
+    <nodeInfo nodeId="4957875527975108834" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="437" startPosition="70" endLine="438" endPosition="53" />
+    <nodeInfo nodeId="9173051028496930069" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="441" startPosition="72" endLine="442" endPosition="39" />
+    <nodeInfo nodeId="6208564103581786115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="451" startPosition="52" endLine="452" endPosition="89" />
+    <nodeInfo nodeId="6208564103581788060" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="452" startPosition="89" endLine="453" endPosition="24" />
+    <nodeInfo nodeId="6378762527268295125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="458" startPosition="24" endLine="459" endPosition="26" />
+    <nodeInfo nodeId="6378762527268296967" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="459" startPosition="26" endLine="460" endPosition="69" />
+    <nodeInfo nodeId="6378762527268302492" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="460" startPosition="69" endLine="461" endPosition="73" />
+    <nodeInfo nodeId="6378762527268296309" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="462" startPosition="35" endLine="463" endPosition="88" />
+    <nodeInfo nodeId="7755015088410488384" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="464" startPosition="9" endLine="465" endPosition="45" />
     <nodeInfo nodeId="480390906262810853" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ChangesFoldingAreaPainter.java" startLine="147" startPosition="16" endLine="149" endPosition="11" />
     <nodeInfo nodeId="480390906262810870" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ChangesFoldingAreaPainter.java" startLine="150" startPosition="14" endLine="152" endPosition="9" />
     <nodeInfo nodeId="7429456937243135894" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ChangesFoldingAreaPainter.java" startLine="183" startPosition="10" endLine="185" endPosition="5" />
     <nodeInfo nodeId="1216620237029569878" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ChangesFoldingAreaPainter.java" startLine="220" startPosition="10" endLine="222" endPosition="5" />
-    <nodeInfo nodeId="7755015088410487294" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ChangesFoldingAreaPainter.java" startLine="261" startPosition="10" endLine="263" endPosition="5" />
-    <nodeInfo nodeId="4434895596490172202" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ChangesFoldingAreaPainter.java" startLine="289" startPosition="10" endLine="291" endPosition="5" />
-    <nodeInfo nodeId="3322868409858674678" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ChangesFoldingAreaPainter.java" startLine="345" startPosition="12" endLine="347" endPosition="7" />
+    <nodeInfo nodeId="7755015088410487294" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ChangesFoldingAreaPainter.java" startLine="268" startPosition="10" endLine="270" endPosition="5" />
+    <nodeInfo nodeId="4434895596490172202" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ChangesFoldingAreaPainter.java" startLine="296" startPosition="10" endLine="298" endPosition="5" />
+    <nodeInfo nodeId="3322868409858674678" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ChangesFoldingAreaPainter.java" startLine="352" startPosition="12" endLine="354" endPosition="7" />
     <nodeInfo nodeId="3511475470456928963" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="68" startPosition="54" endLine="71" endPosition="5" />
     <nodeInfo nodeId="6923910471520920989" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="72" startPosition="45" endLine="75" endPosition="5" />
     <nodeInfo nodeId="6923910471520922801" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="92" startPosition="44" endLine="95" endPosition="7" />
@@ -4632,28 +4449,29 @@
     <nodeInfo nodeId="6208564103581780933" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="222" startPosition="5" endLine="225" endPosition="5" />
     <nodeInfo nodeId="8909869386401300737" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="229" startPosition="45" endLine="232" endPosition="5" />
     <nodeInfo nodeId="6208564103581782292" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="234" startPosition="36" endLine="237" endPosition="5" />
-    <nodeInfo nodeId="7539796992259494955" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="245" startPosition="86" endLine="248" endPosition="7" />
-    <nodeInfo nodeId="8274502957383551392" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="294" startPosition="86" endLine="297" endPosition="5" />
-    <nodeInfo nodeId="9173051028496928516" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupMenuCanceled#(Ljavax/swing/event/PopupMenuEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="437" startPosition="0" endLine="440" endPosition="0" />
-    <nodeInfo nodeId="6378762527268302762" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="454" startPosition="73" endLine="457" endPosition="9" />
+    <nodeInfo nodeId="5921685378876832125" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="240" startPosition="64" endLine="243" endPosition="5" />
+    <nodeInfo nodeId="7539796992259494955" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="252" startPosition="86" endLine="255" endPosition="7" />
+    <nodeInfo nodeId="8274502957383551392" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="301" startPosition="86" endLine="304" endPosition="5" />
+    <nodeInfo nodeId="9173051028496928516" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupMenuCanceled#(Ljavax/swing/event/PopupMenuEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="444" startPosition="0" endLine="447" endPosition="0" />
+    <nodeInfo nodeId="6378762527268302762" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="461" startPosition="73" endLine="464" endPosition="9" />
     <nodeInfo nodeId="9048291698849215501" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangesFoldingAreaPainter#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher;)V" fileName="ChangesFoldingAreaPainter.java" startLine="57" startPosition="0" endLine="61" endPosition="3" />
     <nodeInfo nodeId="8274502957383614780" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWeight#()I" fileName="ChangesFoldingAreaPainter.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
     <nodeInfo nodeId="2792704635247516036" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="123" startPosition="34" endLine="127" endPosition="5" />
     <nodeInfo nodeId="6746101208730361851" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="134" startPosition="241" endLine="138" endPosition="0" />
     <nodeInfo nodeId="1216620237029549073" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="160" startPosition="69" endLine="164" endPosition="9" />
     <nodeInfo nodeId="7429456937243135909" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="178" startPosition="122" endLine="182" endPosition="0" />
-    <nodeInfo nodeId="7317795005505883205" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAfterRollback#()V" fileName="ChangesFoldingAreaPainter.java" startLine="265" startPosition="0" endLine="269" endPosition="0" />
-    <nodeInfo nodeId="4434895596490172170" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="283" startPosition="118" endLine="287" endPosition="0" />
-    <nodeInfo nodeId="1488166530899637887" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Ljava/lang/Integer;" fileName="ChangesFoldingAreaPainter.java" startLine="311" startPosition="150" endLine="315" endPosition="0" />
-    <nodeInfo nodeId="6746101208730364068" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getY#()I" fileName="ChangesFoldingAreaPainter.java" startLine="323" startPosition="0" endLine="327" endPosition="0" />
-    <nodeInfo nodeId="6746101208730364076" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#()I" fileName="ChangesFoldingAreaPainter.java" startLine="327" startPosition="0" endLine="331" endPosition="0" />
-    <nodeInfo nodeId="3322868409858674645" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="333" startPosition="122" endLine="337" endPosition="0" />
-    <nodeInfo nodeId="3322868409858674666" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="339" startPosition="129" endLine="343" endPosition="0" />
-    <nodeInfo nodeId="4434895596490169019" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="390" startPosition="123" endLine="394" endPosition="0" />
-    <nodeInfo nodeId="4434895596490172040" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Ljava/lang/Integer;" fileName="ChangesFoldingAreaPainter.java" startLine="395" startPosition="206" endLine="399" endPosition="0" />
-    <nodeInfo nodeId="9173051028496928504" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupMenuWillBecomeVisible#(Ljavax/swing/event/PopupMenuEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="429" startPosition="52" endLine="433" endPosition="0" />
-    <nodeInfo nodeId="9173051028496928510" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupMenuWillBecomeInvisible#(Ljavax/swing/event/PopupMenuEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="433" startPosition="0" endLine="437" endPosition="0" />
-    <nodeInfo nodeId="6208564103581785206" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="443" startPosition="48" endLine="447" endPosition="7" />
+    <nodeInfo nodeId="7317795005505883205" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAfterRollback#()V" fileName="ChangesFoldingAreaPainter.java" startLine="272" startPosition="0" endLine="276" endPosition="0" />
+    <nodeInfo nodeId="4434895596490172170" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="290" startPosition="118" endLine="294" endPosition="0" />
+    <nodeInfo nodeId="1488166530899637887" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Ljava/lang/Integer;" fileName="ChangesFoldingAreaPainter.java" startLine="318" startPosition="150" endLine="322" endPosition="0" />
+    <nodeInfo nodeId="6746101208730364068" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getY#()I" fileName="ChangesFoldingAreaPainter.java" startLine="330" startPosition="0" endLine="334" endPosition="0" />
+    <nodeInfo nodeId="6746101208730364076" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#()I" fileName="ChangesFoldingAreaPainter.java" startLine="334" startPosition="0" endLine="338" endPosition="0" />
+    <nodeInfo nodeId="3322868409858674645" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="340" startPosition="122" endLine="344" endPosition="0" />
+    <nodeInfo nodeId="3322868409858674666" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="346" startPosition="129" endLine="350" endPosition="0" />
+    <nodeInfo nodeId="4434895596490169019" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="397" startPosition="123" endLine="401" endPosition="0" />
+    <nodeInfo nodeId="4434895596490172040" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Ljava/lang/Integer;" fileName="ChangesFoldingAreaPainter.java" startLine="402" startPosition="206" endLine="406" endPosition="0" />
+    <nodeInfo nodeId="9173051028496928504" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupMenuWillBecomeVisible#(Ljavax/swing/event/PopupMenuEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="436" startPosition="52" endLine="440" endPosition="0" />
+    <nodeInfo nodeId="9173051028496928510" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupMenuWillBecomeInvisible#(Ljavax/swing/event/PopupMenuEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="440" startPosition="0" endLine="444" endPosition="0" />
+    <nodeInfo nodeId="6208564103581785206" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="450" startPosition="48" endLine="454" endPosition="7" />
     <nodeInfo nodeId="8274502957383614839" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftAreaWidth#()I" fileName="ChangesFoldingAreaPainter.java" startLine="107" startPosition="0" endLine="112" endPosition="0" />
     <nodeInfo nodeId="3511475470456930835" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayout#()V" fileName="ChangesFoldingAreaPainter.java" startLine="112" startPosition="0" endLine="117" endPosition="0" />
     <nodeInfo nodeId="6746101208730361840" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="133" startPosition="65" endLine="138" endPosition="24" />
@@ -4661,56 +4479,57 @@
     <nodeInfo nodeId="7429456937243135899" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangesFoldingAreaPainter.java" startLine="177" startPosition="72" endLine="182" endPosition="9" />
     <nodeInfo nodeId="7429456937243136226" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="193" startPosition="47" endLine="198" endPosition="9" />
     <nodeInfo nodeId="1216620237029569852" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="217" startPosition="44" endLine="222" endPosition="5" />
-    <nodeInfo nodeId="5444017747357190850" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessageGroups#()Ljava/util/List;" fileName="ChangesFoldingAreaPainter.java" startLine="252" startPosition="0" endLine="257" endPosition="0" />
-    <nodeInfo nodeId="7755015088410487282" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="258" startPosition="97" endLine="263" endPosition="5" />
-    <nodeInfo nodeId="6105081101195305210" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentMessageGroup#()Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;" fileName="ChangesFoldingAreaPainter.java" startLine="269" startPosition="0" endLine="274" endPosition="0" />
-    <nodeInfo nodeId="4745893119449660806" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolTipText#()Ljava/lang/String;" fileName="ChangesFoldingAreaPainter.java" startLine="274" startPosition="0" endLine="279" endPosition="0" />
-    <nodeInfo nodeId="6746101208730361663" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="310" startPosition="89" endLine="315" endPosition="9" />
-    <nodeInfo nodeId="6746101208730364059" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessages#()Ljava/util/List;" fileName="ChangesFoldingAreaPainter.java" startLine="318" startPosition="0" endLine="323" endPosition="0" />
-    <nodeInfo nodeId="531813502180011368" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" fileName="ChangesFoldingAreaPainter.java" startLine="349" startPosition="0" endLine="354" endPosition="0" />
-    <nodeInfo nodeId="4434895596490169011" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="ChangesFoldingAreaPainter.java" startLine="389" startPosition="67" endLine="394" endPosition="9" />
-    <nodeInfo nodeId="4434895596490172022" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="394" startPosition="9" endLine="399" endPosition="10" />
-    <nodeInfo nodeId="4434895596490171987" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#()I" fileName="ChangesFoldingAreaPainter.java" startLine="409" startPosition="0" endLine="414" endPosition="0" />
-    <nodeInfo nodeId="4434895596490171991" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getY#()I" fileName="ChangesFoldingAreaPainter.java" startLine="414" startPosition="0" endLine="419" endPosition="0" />
+    <nodeInfo nodeId="5444017747357190850" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessageGroups#()Ljava/util/List;" fileName="ChangesFoldingAreaPainter.java" startLine="259" startPosition="0" endLine="264" endPosition="0" />
+    <nodeInfo nodeId="7755015088410487282" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="265" startPosition="97" endLine="270" endPosition="5" />
+    <nodeInfo nodeId="6105081101195305210" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentMessageGroup#()Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;" fileName="ChangesFoldingAreaPainter.java" startLine="276" startPosition="0" endLine="281" endPosition="0" />
+    <nodeInfo nodeId="4745893119449660806" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolTipText#()Ljava/lang/String;" fileName="ChangesFoldingAreaPainter.java" startLine="281" startPosition="0" endLine="286" endPosition="0" />
+    <nodeInfo nodeId="6746101208730361663" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="317" startPosition="89" endLine="322" endPosition="9" />
+    <nodeInfo nodeId="6746101208730364059" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessages#()Ljava/util/List;" fileName="ChangesFoldingAreaPainter.java" startLine="325" startPosition="0" endLine="330" endPosition="0" />
+    <nodeInfo nodeId="531813502180011368" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" fileName="ChangesFoldingAreaPainter.java" startLine="356" startPosition="0" endLine="361" endPosition="0" />
+    <nodeInfo nodeId="4434895596490169011" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="ChangesFoldingAreaPainter.java" startLine="396" startPosition="67" endLine="401" endPosition="9" />
+    <nodeInfo nodeId="4434895596490172022" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="401" startPosition="9" endLine="406" endPosition="10" />
+    <nodeInfo nodeId="4434895596490171987" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#()I" fileName="ChangesFoldingAreaPainter.java" startLine="416" startPosition="0" endLine="421" endPosition="0" />
+    <nodeInfo nodeId="4434895596490171991" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getY#()I" fileName="ChangesFoldingAreaPainter.java" startLine="421" startPosition="0" endLine="426" endPosition="0" />
     <nodeInfo nodeId="1216620237029549045" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="159" startPosition="72" endLine="165" endPosition="7" />
-    <nodeInfo nodeId="4434895596490168998" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" fileName="ChangesFoldingAreaPainter.java" startLine="403" startPosition="0" endLine="409" endPosition="0" />
-    <nodeInfo nodeId="8274502957383551392" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_kvu3z4_a0a51#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)Ljava/lang/String;" fileName="ChangesFoldingAreaPainter.java" startLine="293" startPosition="0" endLine="300" endPosition="0" />
-    <nodeInfo nodeId="6208564103581783468" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showIfNeeded#(Ljava/awt/event/MouseEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="442" startPosition="0" endLine="449" endPosition="0" />
+    <nodeInfo nodeId="4434895596490168998" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" fileName="ChangesFoldingAreaPainter.java" startLine="410" startPosition="0" endLine="416" endPosition="0" />
+    <nodeInfo nodeId="5921685378876737841" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPopupMenu#()Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MyPopupMenu;" fileName="ChangesFoldingAreaPainter.java" startLine="239" startPosition="0" endLine="246" endPosition="0" />
+    <nodeInfo nodeId="8274502957383551392" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_kvu3z4_a0a61#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)Ljava/lang/String;" fileName="ChangesFoldingAreaPainter.java" startLine="300" startPosition="0" endLine="307" endPosition="0" />
+    <nodeInfo nodeId="6208564103581783468" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showIfNeeded#(Ljava/awt/event/MouseEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="449" startPosition="0" endLine="456" endPosition="0" />
     <nodeInfo nodeId="7429456937243136224" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Boolean;)V" fileName="ChangesFoldingAreaPainter.java" startLine="192" startPosition="108" endLine="200" endPosition="0" />
-    <nodeInfo nodeId="7473049078843270640" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="242" startPosition="98" endLine="250" endPosition="5" />
-    <nodeInfo nodeId="6378762527268289355" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAfterTransfer#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)V" fileName="ChangesFoldingAreaPainter.java" startLine="257" startPosition="0" endLine="265" endPosition="0" />
-    <nodeInfo nodeId="3322868409858674700" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="ChangesFoldingAreaPainter.java" startLine="371" startPosition="60" endLine="379" endPosition="9" />
+    <nodeInfo nodeId="7473049078843270640" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="249" startPosition="98" endLine="257" endPosition="5" />
+    <nodeInfo nodeId="6378762527268289355" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAfterTransfer#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)V" fileName="ChangesFoldingAreaPainter.java" startLine="264" startPosition="0" endLine="272" endPosition="0" />
+    <nodeInfo nodeId="3322868409858674700" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="ChangesFoldingAreaPainter.java" startLine="378" startPosition="60" endLine="386" endPosition="9" />
     <nodeInfo nodeId="480390906262810834" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="143" startPosition="62" endLine="152" endPosition="9" />
     <nodeInfo nodeId="7429456937243135882" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="176" startPosition="70" endLine="185" endPosition="5" />
     <nodeInfo nodeId="7429456937243136220" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ChangesFoldingAreaPainter.java" startLine="191" startPosition="5" endLine="200" endPosition="6" />
-    <nodeInfo nodeId="4434895596490172164" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="282" startPosition="65" endLine="291" endPosition="5" />
-    <nodeInfo nodeId="6378762527268295652" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="450" startPosition="99" endLine="459" endPosition="7" />
-    <nodeInfo nodeId="2331005757591009641" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ChangesFoldingAreaPainter.java" startLine="370" startPosition="12" endLine="380" endPosition="7" />
+    <nodeInfo nodeId="4434895596490172164" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="289" startPosition="65" endLine="298" endPosition="5" />
+    <nodeInfo nodeId="6378762527268295652" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="457" startPosition="99" endLine="466" endPosition="7" />
+    <nodeInfo nodeId="2331005757591009641" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ChangesFoldingAreaPainter.java" startLine="377" startPosition="12" endLine="387" endPosition="7" />
     <nodeInfo nodeId="6746101208730363621" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesFoldingAreaPainter.java" startLine="157" startPosition="27" endLine="168" endPosition="5" />
-    <nodeInfo nodeId="2331005757591015009" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="357" startPosition="78" endLine="368" endPosition="9" />
+    <nodeInfo nodeId="2331005757591015009" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="364" startPosition="78" endLine="375" endPosition="9" />
     <nodeInfo nodeId="1216620237029569548" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseExited#(Ljava/awt/event/MouseEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="227" startPosition="0" endLine="239" endPosition="0" />
-    <nodeInfo nodeId="6746101208730360067" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MessageGroup#(Ljava/util/List;)V" fileName="ChangesFoldingAreaPainter.java" startLine="305" startPosition="0" endLine="317" endPosition="5" />
-    <nodeInfo nodeId="9173051028496844704" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="428" startPosition="61" endLine="440" endPosition="9" />
-    <nodeInfo nodeId="6378762527268264724" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAfterTransfer#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)V" fileName="ChangesFoldingAreaPainter.java" startLine="449" startPosition="0" endLine="461" endPosition="0" />
+    <nodeInfo nodeId="6746101208730360067" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MessageGroup#(Ljava/util/List;)V" fileName="ChangesFoldingAreaPainter.java" startLine="312" startPosition="0" endLine="324" endPosition="5" />
+    <nodeInfo nodeId="9173051028496844704" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="435" startPosition="61" endLine="447" endPosition="9" />
+    <nodeInfo nodeId="6378762527268264724" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAfterTransfer#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)V" fileName="ChangesFoldingAreaPainter.java" startLine="456" startPosition="0" endLine="468" endPosition="0" />
     <nodeInfo nodeId="4434895596490172218" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="78" startPosition="42" endLine="91" endPosition="7" />
     <nodeInfo nodeId="2792704635247516007" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessageBounds#(Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Ljava/awt/Rectangle;" fileName="ChangesFoldingAreaPainter.java" startLine="117" startPosition="0" endLine="130" endPosition="0" />
-    <nodeInfo nodeId="2310110763987865522" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="239" startPosition="0" endLine="252" endPosition="0" />
+    <nodeInfo nodeId="2310110763987865522" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="246" startPosition="0" endLine="259" endPosition="0" />
     <nodeInfo nodeId="480390906262810818" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)I" fileName="ChangesFoldingAreaPainter.java" startLine="140" startPosition="142" endLine="154" endPosition="0" />
     <nodeInfo nodeId="7429456937243135759" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findMessageGroupUnder#(Ljava/awt/Point;)Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;" fileName="ChangesFoldingAreaPainter.java" startLine="173" startPosition="0" endLine="187" endPosition="0" />
-    <nodeInfo nodeId="4434895596490172139" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMessageGroup#(Ljava/util/List;)Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;" fileName="ChangesFoldingAreaPainter.java" startLine="279" startPosition="0" endLine="293" endPosition="0" />
+    <nodeInfo nodeId="4434895596490172139" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMessageGroup#(Ljava/util/List;)Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;" fileName="ChangesFoldingAreaPainter.java" startLine="286" startPosition="0" endLine="300" endPosition="0" />
     <nodeInfo nodeId="480390906262810788" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesFoldingAreaPainter.java" startLine="139" startPosition="0" endLine="154" endPosition="30" />
-    <nodeInfo nodeId="3322868409858674636" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="332" startPosition="46" endLine="347" endPosition="7" />
-    <nodeInfo nodeId="4434895596490127940" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ThinMessageGroup#(Ljava/util/List;)V" fileName="ChangesFoldingAreaPainter.java" startLine="386" startPosition="0" endLine="402" endPosition="5" />
-    <nodeInfo nodeId="3322868409858650847" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnitedChangeType#()Ljetbrains/mps/vcs/diff/oldchanges/ChangeType;" fileName="ChangesFoldingAreaPainter.java" startLine="331" startPosition="0" endLine="349" endPosition="0" />
-    <nodeInfo nodeId="6208564103581772569" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyPopupMenu#()V" fileName="ChangesFoldingAreaPainter.java" startLine="423" startPosition="0" endLine="441" endPosition="5" />
+    <nodeInfo nodeId="3322868409858674636" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="339" startPosition="46" endLine="354" endPosition="7" />
+    <nodeInfo nodeId="4434895596490127940" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ThinMessageGroup#(Ljava/util/List;)V" fileName="ChangesFoldingAreaPainter.java" startLine="393" startPosition="0" endLine="409" endPosition="5" />
+    <nodeInfo nodeId="3322868409858650847" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnitedChangeType#()Ljetbrains/mps/vcs/diff/oldchanges/ChangeType;" fileName="ChangesFoldingAreaPainter.java" startLine="338" startPosition="0" endLine="356" endPosition="0" />
+    <nodeInfo nodeId="6208564103581772569" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyPopupMenu#()V" fileName="ChangesFoldingAreaPainter.java" startLine="430" startPosition="0" endLine="448" endPosition="5" />
     <nodeInfo nodeId="7429456937243134093" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setCurrentMessageGroup#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)V" fileName="ChangesFoldingAreaPainter.java" startLine="187" startPosition="0" endLine="207" endPosition="0" />
     <nodeInfo nodeId="1216620237029569507" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseMoved#(Ljava/awt/event/MouseEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="207" startPosition="0" endLine="227" endPosition="0" />
-    <nodeInfo nodeId="2331005757591009627" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="355" startPosition="36" endLine="380" endPosition="7" />
-    <nodeInfo nodeId="8332220865210648779" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolTipText#()Ljava/lang/String;" fileName="ChangesFoldingAreaPainter.java" startLine="354" startPosition="0" endLine="382" endPosition="0" />
+    <nodeInfo nodeId="2331005757591009627" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ChangesFoldingAreaPainter.java" startLine="362" startPosition="36" endLine="387" endPosition="7" />
+    <nodeInfo nodeId="8332220865210648779" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolTipText#()Ljava/lang/String;" fileName="ChangesFoldingAreaPainter.java" startLine="361" startPosition="0" endLine="389" endPosition="0" />
     <nodeInfo nodeId="6746101208730364039" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesFoldingAreaPainter.java" startLine="75" startPosition="5" endLine="105" endPosition="5" />
     <nodeInfo nodeId="8274502957383614813" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintInLocalCoordinates#(Ljava/awt/Graphics;)V" fileName="ChangesFoldingAreaPainter.java" startLine="66" startPosition="0" endLine="107" endPosition="0" />
     <nodeInfo nodeId="6746101208730360003" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initMessageGroups#()V" fileName="ChangesFoldingAreaPainter.java" startLine="130" startPosition="0" endLine="173" endPosition="0" />
-    <scopeInfo nodeId="9173051028496928521" fileName="ChangesFoldingAreaPainter.java" startLine="438" startPosition="61" endLine="438" endPosition="61" />
+    <scopeInfo nodeId="9173051028496928521" fileName="ChangesFoldingAreaPainter.java" startLine="445" startPosition="61" endLine="445" endPosition="61" />
     <scopeInfo nodeId="8274502957383614783" fileName="ChangesFoldingAreaPainter.java" startLine="63" startPosition="26" endLine="64" endPosition="13" />
     <scopeInfo nodeId="3511475470456928964" fileName="ChangesFoldingAreaPainter.java" startLine="69" startPosition="34" endLine="70" endPosition="26" />
     <scopeInfo nodeId="6923910471520920990" fileName="ChangesFoldingAreaPainter.java" startLine="73" startPosition="80" endLine="74" endPosition="13" />
@@ -4731,53 +4550,54 @@
     <scopeInfo nodeId="8909869386401300758" fileName="ChangesFoldingAreaPainter.java" startLine="214" startPosition="51" endLine="215" endPosition="13" />
     <scopeInfo nodeId="1216620237029569853" fileName="ChangesFoldingAreaPainter.java" startLine="218" startPosition="31" endLine="219" endPosition="85" />
     <scopeInfo nodeId="1216620237029569879" fileName="ChangesFoldingAreaPainter.java" startLine="220" startPosition="12" endLine="221" endPosition="43" />
-    <scopeInfo nodeId="6208564103581780934" fileName="ChangesFoldingAreaPainter.java" startLine="223" startPosition="37" endLine="224" endPosition="43" />
+    <scopeInfo nodeId="6208564103581780934" fileName="ChangesFoldingAreaPainter.java" startLine="223" startPosition="60" endLine="224" endPosition="43" />
     <scopeInfo nodeId="8909869386401300738" fileName="ChangesFoldingAreaPainter.java" startLine="230" startPosition="43" endLine="231" endPosition="13" />
-    <scopeInfo nodeId="6208564103581782293" fileName="ChangesFoldingAreaPainter.java" startLine="235" startPosition="37" endLine="236" endPosition="35" />
-    <scopeInfo nodeId="7539796992259494956" fileName="ChangesFoldingAreaPainter.java" startLine="246" startPosition="25" endLine="247" endPosition="51" />
-    <scopeInfo nodeId="5444017747357190854" fileName="ChangesFoldingAreaPainter.java" startLine="254" startPosition="74" endLine="255" endPosition="27" />
-    <scopeInfo nodeId="7755015088410487283" fileName="ChangesFoldingAreaPainter.java" startLine="259" startPosition="34" endLine="260" endPosition="52" />
-    <scopeInfo nodeId="7755015088410487295" fileName="ChangesFoldingAreaPainter.java" startLine="261" startPosition="12" endLine="262" endPosition="43" />
-    <scopeInfo nodeId="7317795005505883208" fileName="ChangesFoldingAreaPainter.java" startLine="266" startPosition="37" endLine="267" endPosition="34" />
-    <scopeInfo nodeId="6105081101195305213" fileName="ChangesFoldingAreaPainter.java" startLine="271" startPosition="74" endLine="272" endPosition="33" />
-    <scopeInfo nodeId="4745893119449660809" fileName="ChangesFoldingAreaPainter.java" startLine="276" startPosition="34" endLine="277" endPosition="53" />
-    <scopeInfo nodeId="4434895596490172171" fileName="ChangesFoldingAreaPainter.java" startLine="284" startPosition="85" endLine="285" endPosition="55" />
-    <scopeInfo nodeId="4434895596490172166" fileName="ChangesFoldingAreaPainter.java" startLine="287" startPosition="9" endLine="288" endPosition="70" />
-    <scopeInfo nodeId="4434895596490172203" fileName="ChangesFoldingAreaPainter.java" startLine="289" startPosition="12" endLine="290" endPosition="66" />
-    <scopeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="295" startPosition="20" endLine="296" endPosition="18" />
-    <scopeInfo nodeId="1488166530899637888" fileName="ChangesFoldingAreaPainter.java" startLine="312" startPosition="102" endLine="313" endPosition="86" />
-    <scopeInfo nodeId="6746101208730364063" fileName="ChangesFoldingAreaPainter.java" startLine="320" startPosition="85" endLine="321" endPosition="24" />
-    <scopeInfo nodeId="6746101208730364071" fileName="ChangesFoldingAreaPainter.java" startLine="324" startPosition="23" endLine="325" endPosition="17" />
-    <scopeInfo nodeId="6746101208730364079" fileName="ChangesFoldingAreaPainter.java" startLine="328" startPosition="28" endLine="329" endPosition="22" />
-    <scopeInfo nodeId="3322868409858674646" fileName="ChangesFoldingAreaPainter.java" startLine="334" startPosition="87" endLine="335" endPosition="65" />
-    <scopeInfo nodeId="3322868409858674637" fileName="ChangesFoldingAreaPainter.java" startLine="337" startPosition="11" endLine="338" endPosition="30" />
-    <scopeInfo nodeId="3322868409858674667" fileName="ChangesFoldingAreaPainter.java" startLine="340" startPosition="87" endLine="341" endPosition="68" />
-    <scopeInfo nodeId="3322868409858674658" fileName="ChangesFoldingAreaPainter.java" startLine="343" startPosition="11" endLine="344" endPosition="33" />
-    <scopeInfo nodeId="3322868409858674679" fileName="ChangesFoldingAreaPainter.java" startLine="345" startPosition="14" endLine="346" endPosition="33" />
-    <scopeInfo nodeId="531813502180011371" fileName="ChangesFoldingAreaPainter.java" startLine="351" startPosition="29" endLine="352" endPosition="46" />
-    <scopeInfo nodeId="2331005757591015010" fileName="ChangesFoldingAreaPainter.java" startLine="358" startPosition="135" endLine="359" endPosition="90" />
-    <scopeInfo nodeId="3322868409858674738" fileName="ChangesFoldingAreaPainter.java" startLine="360" startPosition="53" endLine="361" endPosition="87" />
-    <scopeInfo nodeId="3322868409858675906" fileName="ChangesFoldingAreaPainter.java" startLine="362" startPosition="56" endLine="363" endPosition="90" />
-    <scopeInfo nodeId="3322868409858675951" fileName="ChangesFoldingAreaPainter.java" startLine="364" startPosition="58" endLine="365" endPosition="94" />
-    <scopeInfo nodeId="3322868409858675986" fileName="ChangesFoldingAreaPainter.java" startLine="366" startPosition="57" endLine="367" endPosition="95" />
-    <scopeInfo nodeId="3322868409858674706" fileName="ChangesFoldingAreaPainter.java" startLine="373" startPosition="19" endLine="374" endPosition="83" />
-    <scopeInfo nodeId="3322868409858674724" fileName="ChangesFoldingAreaPainter.java" startLine="375" startPosition="22" endLine="376" endPosition="85" />
-    <scopeInfo nodeId="3322868409858674702" fileName="ChangesFoldingAreaPainter.java" startLine="377" startPosition="18" endLine="378" endPosition="74" />
-    <scopeInfo nodeId="4434895596490169020" fileName="ChangesFoldingAreaPainter.java" startLine="391" startPosition="87" endLine="392" endPosition="57" />
-    <scopeInfo nodeId="4434895596490172041" fileName="ChangesFoldingAreaPainter.java" startLine="396" startPosition="87" endLine="397" endPosition="41" />
-    <scopeInfo nodeId="4434895596490169002" fileName="ChangesFoldingAreaPainter.java" startLine="406" startPosition="29" endLine="407" endPosition="42" />
-    <scopeInfo nodeId="4434895596490171990" fileName="ChangesFoldingAreaPainter.java" startLine="411" startPosition="28" endLine="412" endPosition="52" />
-    <scopeInfo nodeId="4434895596490171994" fileName="ChangesFoldingAreaPainter.java" startLine="416" startPosition="23" endLine="417" endPosition="17" />
-    <scopeInfo nodeId="9173051028496928509" fileName="ChangesFoldingAreaPainter.java" startLine="430" startPosition="70" endLine="431" endPosition="53" />
-    <scopeInfo nodeId="9173051028496928515" fileName="ChangesFoldingAreaPainter.java" startLine="434" startPosition="72" endLine="435" endPosition="39" />
-    <scopeInfo nodeId="6378762527268302763" fileName="ChangesFoldingAreaPainter.java" startLine="455" startPosition="35" endLine="456" endPosition="88" />
+    <scopeInfo nodeId="6208564103581782293" fileName="ChangesFoldingAreaPainter.java" startLine="235" startPosition="60" endLine="236" endPosition="35" />
+    <scopeInfo nodeId="5921685378876832127" fileName="ChangesFoldingAreaPainter.java" startLine="241" startPosition="30" endLine="242" endPosition="64" />
+    <scopeInfo nodeId="7539796992259494956" fileName="ChangesFoldingAreaPainter.java" startLine="253" startPosition="25" endLine="254" endPosition="51" />
+    <scopeInfo nodeId="5444017747357190854" fileName="ChangesFoldingAreaPainter.java" startLine="261" startPosition="74" endLine="262" endPosition="27" />
+    <scopeInfo nodeId="7755015088410487283" fileName="ChangesFoldingAreaPainter.java" startLine="266" startPosition="57" endLine="267" endPosition="55" />
+    <scopeInfo nodeId="7755015088410487295" fileName="ChangesFoldingAreaPainter.java" startLine="268" startPosition="12" endLine="269" endPosition="43" />
+    <scopeInfo nodeId="7317795005505883208" fileName="ChangesFoldingAreaPainter.java" startLine="273" startPosition="37" endLine="274" endPosition="37" />
+    <scopeInfo nodeId="6105081101195305213" fileName="ChangesFoldingAreaPainter.java" startLine="278" startPosition="74" endLine="279" endPosition="33" />
+    <scopeInfo nodeId="4745893119449660809" fileName="ChangesFoldingAreaPainter.java" startLine="283" startPosition="34" endLine="284" endPosition="53" />
+    <scopeInfo nodeId="4434895596490172171" fileName="ChangesFoldingAreaPainter.java" startLine="291" startPosition="85" endLine="292" endPosition="55" />
+    <scopeInfo nodeId="4434895596490172166" fileName="ChangesFoldingAreaPainter.java" startLine="294" startPosition="9" endLine="295" endPosition="70" />
+    <scopeInfo nodeId="4434895596490172203" fileName="ChangesFoldingAreaPainter.java" startLine="296" startPosition="12" endLine="297" endPosition="66" />
+    <scopeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="302" startPosition="20" endLine="303" endPosition="18" />
+    <scopeInfo nodeId="1488166530899637888" fileName="ChangesFoldingAreaPainter.java" startLine="319" startPosition="102" endLine="320" endPosition="86" />
+    <scopeInfo nodeId="6746101208730364063" fileName="ChangesFoldingAreaPainter.java" startLine="327" startPosition="85" endLine="328" endPosition="24" />
+    <scopeInfo nodeId="6746101208730364071" fileName="ChangesFoldingAreaPainter.java" startLine="331" startPosition="23" endLine="332" endPosition="17" />
+    <scopeInfo nodeId="6746101208730364079" fileName="ChangesFoldingAreaPainter.java" startLine="335" startPosition="28" endLine="336" endPosition="22" />
+    <scopeInfo nodeId="3322868409858674646" fileName="ChangesFoldingAreaPainter.java" startLine="341" startPosition="87" endLine="342" endPosition="65" />
+    <scopeInfo nodeId="3322868409858674637" fileName="ChangesFoldingAreaPainter.java" startLine="344" startPosition="11" endLine="345" endPosition="30" />
+    <scopeInfo nodeId="3322868409858674667" fileName="ChangesFoldingAreaPainter.java" startLine="347" startPosition="87" endLine="348" endPosition="68" />
+    <scopeInfo nodeId="3322868409858674658" fileName="ChangesFoldingAreaPainter.java" startLine="350" startPosition="11" endLine="351" endPosition="33" />
+    <scopeInfo nodeId="3322868409858674679" fileName="ChangesFoldingAreaPainter.java" startLine="352" startPosition="14" endLine="353" endPosition="33" />
+    <scopeInfo nodeId="531813502180011371" fileName="ChangesFoldingAreaPainter.java" startLine="358" startPosition="29" endLine="359" endPosition="46" />
+    <scopeInfo nodeId="2331005757591015010" fileName="ChangesFoldingAreaPainter.java" startLine="365" startPosition="135" endLine="366" endPosition="90" />
+    <scopeInfo nodeId="3322868409858674738" fileName="ChangesFoldingAreaPainter.java" startLine="367" startPosition="53" endLine="368" endPosition="87" />
+    <scopeInfo nodeId="3322868409858675906" fileName="ChangesFoldingAreaPainter.java" startLine="369" startPosition="56" endLine="370" endPosition="90" />
+    <scopeInfo nodeId="3322868409858675951" fileName="ChangesFoldingAreaPainter.java" startLine="371" startPosition="58" endLine="372" endPosition="94" />
+    <scopeInfo nodeId="3322868409858675986" fileName="ChangesFoldingAreaPainter.java" startLine="373" startPosition="57" endLine="374" endPosition="95" />
+    <scopeInfo nodeId="3322868409858674706" fileName="ChangesFoldingAreaPainter.java" startLine="380" startPosition="19" endLine="381" endPosition="83" />
+    <scopeInfo nodeId="3322868409858674724" fileName="ChangesFoldingAreaPainter.java" startLine="382" startPosition="22" endLine="383" endPosition="85" />
+    <scopeInfo nodeId="3322868409858674702" fileName="ChangesFoldingAreaPainter.java" startLine="384" startPosition="18" endLine="385" endPosition="74" />
+    <scopeInfo nodeId="4434895596490169020" fileName="ChangesFoldingAreaPainter.java" startLine="398" startPosition="87" endLine="399" endPosition="57" />
+    <scopeInfo nodeId="4434895596490172041" fileName="ChangesFoldingAreaPainter.java" startLine="403" startPosition="87" endLine="404" endPosition="41" />
+    <scopeInfo nodeId="4434895596490169002" fileName="ChangesFoldingAreaPainter.java" startLine="413" startPosition="29" endLine="414" endPosition="42" />
+    <scopeInfo nodeId="4434895596490171990" fileName="ChangesFoldingAreaPainter.java" startLine="418" startPosition="28" endLine="419" endPosition="52" />
+    <scopeInfo nodeId="4434895596490171994" fileName="ChangesFoldingAreaPainter.java" startLine="423" startPosition="23" endLine="424" endPosition="17" />
+    <scopeInfo nodeId="9173051028496928509" fileName="ChangesFoldingAreaPainter.java" startLine="437" startPosition="70" endLine="438" endPosition="53" />
+    <scopeInfo nodeId="9173051028496928515" fileName="ChangesFoldingAreaPainter.java" startLine="441" startPosition="72" endLine="442" endPosition="39" />
+    <scopeInfo nodeId="6378762527268302763" fileName="ChangesFoldingAreaPainter.java" startLine="462" startPosition="35" endLine="463" endPosition="88" />
     <scopeInfo nodeId="9048291698849215505" fileName="ChangesFoldingAreaPainter.java" startLine="58" startPosition="112" endLine="60" endPosition="74" />
     <scopeInfo nodeId="2792704635247516037" fileName="ChangesFoldingAreaPainter.java" startLine="124" startPosition="56" endLine="126" endPosition="17" />
     <scopeInfo nodeId="1216620237029549074" fileName="ChangesFoldingAreaPainter.java" startLine="161" startPosition="49" endLine="163" endPosition="62" />
-    <scopeInfo nodeId="6208564103581785208" fileName="ChangesFoldingAreaPainter.java" startLine="444" startPosition="52" endLine="446" endPosition="24" />
+    <scopeInfo nodeId="6208564103581785208" fileName="ChangesFoldingAreaPainter.java" startLine="451" startPosition="52" endLine="453" endPosition="24" />
     <scopeInfo nodeId="7429456937243136232" fileName="ChangesFoldingAreaPainter.java" startLine="194" startPosition="44" endLine="197" endPosition="11" />
     <scopeInfo nodeId="7429456937243136233" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesFoldingAreaPainter.java" startLine="194" startPosition="44" endLine="197" endPosition="11" />
-    <scopeInfo nodeId="9173051028496928516" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupMenuCanceled#(Ljavax/swing/event/PopupMenuEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="437" startPosition="0" endLine="440" endPosition="0">
+    <scopeInfo nodeId="9173051028496928516" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupMenuCanceled#(Ljavax/swing/event/PopupMenuEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="444" startPosition="0" endLine="447" endPosition="0">
       <varInfo nodeId="9173051028496928519" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="9048291698849215501" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangesFoldingAreaPainter#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher;)V" fileName="ChangesFoldingAreaPainter.java" startLine="57" startPosition="0" endLine="61" endPosition="3">
@@ -4787,63 +4607,65 @@
     <scopeInfo nodeId="6746101208730361851" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="134" startPosition="241" endLine="138" endPosition="0" />
     <scopeInfo nodeId="1216620237029549046" fileName="ChangesFoldingAreaPainter.java" startLine="160" startPosition="69" endLine="164" endPosition="9" />
     <scopeInfo nodeId="7429456937243135909" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="178" startPosition="122" endLine="182" endPosition="0" />
-    <scopeInfo nodeId="7317795005505883205" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAfterRollback#()V" fileName="ChangesFoldingAreaPainter.java" startLine="265" startPosition="0" endLine="269" endPosition="0" />
-    <scopeInfo nodeId="4434895596490172170" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="283" startPosition="118" endLine="287" endPosition="0" />
-    <scopeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="294" startPosition="86" endLine="298" endPosition="30" />
-    <scopeInfo nodeId="1488166530899637887" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Ljava/lang/Integer;" fileName="ChangesFoldingAreaPainter.java" startLine="311" startPosition="150" endLine="315" endPosition="0" />
-    <scopeInfo nodeId="6746101208730364068" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getY#()I" fileName="ChangesFoldingAreaPainter.java" startLine="323" startPosition="0" endLine="327" endPosition="0" />
-    <scopeInfo nodeId="6746101208730364076" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#()I" fileName="ChangesFoldingAreaPainter.java" startLine="327" startPosition="0" endLine="331" endPosition="0" />
-    <scopeInfo nodeId="3322868409858674645" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="333" startPosition="122" endLine="337" endPosition="0" />
-    <scopeInfo nodeId="3322868409858674666" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="339" startPosition="129" endLine="343" endPosition="0" />
-    <scopeInfo nodeId="4434895596490169019" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="390" startPosition="123" endLine="394" endPosition="0" />
-    <scopeInfo nodeId="4434895596490172040" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Ljava/lang/Integer;" fileName="ChangesFoldingAreaPainter.java" startLine="395" startPosition="206" endLine="399" endPosition="0" />
-    <scopeInfo nodeId="9173051028496928504" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupMenuWillBecomeVisible#(Ljavax/swing/event/PopupMenuEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="429" startPosition="52" endLine="433" endPosition="0">
+    <scopeInfo nodeId="5921685378876737844" fileName="ChangesFoldingAreaPainter.java" startLine="240" startPosition="64" endLine="244" endPosition="23" />
+    <scopeInfo nodeId="7317795005505883205" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAfterRollback#()V" fileName="ChangesFoldingAreaPainter.java" startLine="272" startPosition="0" endLine="276" endPosition="0" />
+    <scopeInfo nodeId="4434895596490172170" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="290" startPosition="118" endLine="294" endPosition="0" />
+    <scopeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="301" startPosition="86" endLine="305" endPosition="30" />
+    <scopeInfo nodeId="1488166530899637887" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Ljava/lang/Integer;" fileName="ChangesFoldingAreaPainter.java" startLine="318" startPosition="150" endLine="322" endPosition="0" />
+    <scopeInfo nodeId="6746101208730364068" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getY#()I" fileName="ChangesFoldingAreaPainter.java" startLine="330" startPosition="0" endLine="334" endPosition="0" />
+    <scopeInfo nodeId="6746101208730364076" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#()I" fileName="ChangesFoldingAreaPainter.java" startLine="334" startPosition="0" endLine="338" endPosition="0" />
+    <scopeInfo nodeId="3322868409858674645" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="340" startPosition="122" endLine="344" endPosition="0" />
+    <scopeInfo nodeId="3322868409858674666" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="346" startPosition="129" endLine="350" endPosition="0" />
+    <scopeInfo nodeId="4434895596490169019" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Z" fileName="ChangesFoldingAreaPainter.java" startLine="397" startPosition="123" endLine="401" endPosition="0" />
+    <scopeInfo nodeId="4434895596490172040" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Ljava/lang/Integer;" fileName="ChangesFoldingAreaPainter.java" startLine="402" startPosition="206" endLine="406" endPosition="0" />
+    <scopeInfo nodeId="9173051028496928504" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupMenuWillBecomeVisible#(Ljavax/swing/event/PopupMenuEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="436" startPosition="52" endLine="440" endPosition="0">
       <varInfo nodeId="9173051028496928507" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="9173051028496928510" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupMenuWillBecomeInvisible#(Ljavax/swing/event/PopupMenuEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="433" startPosition="0" endLine="437" endPosition="0">
+    <scopeInfo nodeId="9173051028496928510" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popupMenuWillBecomeInvisible#(Ljavax/swing/event/PopupMenuEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="440" startPosition="0" endLine="444" endPosition="0">
       <varInfo nodeId="9173051028496928513" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6208564103581783471" fileName="ChangesFoldingAreaPainter.java" startLine="443" startPosition="48" endLine="447" endPosition="7" />
+    <scopeInfo nodeId="6208564103581783471" fileName="ChangesFoldingAreaPainter.java" startLine="450" startPosition="48" endLine="454" endPosition="7" />
     <scopeInfo nodeId="8274502957383614839" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLeftAreaWidth#()I" fileName="ChangesFoldingAreaPainter.java" startLine="107" startPosition="0" endLine="112" endPosition="0" />
     <scopeInfo nodeId="3511475470456930835" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayout#()V" fileName="ChangesFoldingAreaPainter.java" startLine="112" startPosition="0" endLine="117" endPosition="0" />
     <scopeInfo nodeId="480390906262810835" fileName="ChangesFoldingAreaPainter.java" startLine="144" startPosition="25" endLine="149" endPosition="11" />
     <scopeInfo nodeId="7429456937243135883" fileName="ChangesFoldingAreaPainter.java" startLine="177" startPosition="72" endLine="182" endPosition="9" />
     <scopeInfo nodeId="7429456937243136225" fileName="ChangesFoldingAreaPainter.java" startLine="193" startPosition="47" endLine="198" endPosition="9" />
-    <scopeInfo nodeId="5444017747357190850" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessageGroups#()Ljava/util/List;" fileName="ChangesFoldingAreaPainter.java" startLine="252" startPosition="0" endLine="257" endPosition="0" />
-    <scopeInfo nodeId="6378762527268289358" fileName="ChangesFoldingAreaPainter.java" startLine="258" startPosition="97" endLine="263" endPosition="5" />
-    <scopeInfo nodeId="6105081101195305210" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentMessageGroup#()Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;" fileName="ChangesFoldingAreaPainter.java" startLine="269" startPosition="0" endLine="274" endPosition="0" />
-    <scopeInfo nodeId="4745893119449660806" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolTipText#()Ljava/lang/String;" fileName="ChangesFoldingAreaPainter.java" startLine="274" startPosition="0" endLine="279" endPosition="0" />
-    <scopeInfo nodeId="6746101208730364059" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessages#()Ljava/util/List;" fileName="ChangesFoldingAreaPainter.java" startLine="318" startPosition="0" endLine="323" endPosition="0" />
-    <scopeInfo nodeId="531813502180011368" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" fileName="ChangesFoldingAreaPainter.java" startLine="349" startPosition="0" endLine="354" endPosition="0" />
-    <scopeInfo nodeId="4434895596490171987" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#()I" fileName="ChangesFoldingAreaPainter.java" startLine="409" startPosition="0" endLine="414" endPosition="0" />
-    <scopeInfo nodeId="4434895596490171991" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getY#()I" fileName="ChangesFoldingAreaPainter.java" startLine="414" startPosition="0" endLine="419" endPosition="0" />
-    <scopeInfo nodeId="7473049078843270641" fileName="ChangesFoldingAreaPainter.java" startLine="243" startPosition="31" endLine="249" endPosition="38">
+    <scopeInfo nodeId="5444017747357190850" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessageGroups#()Ljava/util/List;" fileName="ChangesFoldingAreaPainter.java" startLine="259" startPosition="0" endLine="264" endPosition="0" />
+    <scopeInfo nodeId="6378762527268289358" fileName="ChangesFoldingAreaPainter.java" startLine="265" startPosition="97" endLine="270" endPosition="5" />
+    <scopeInfo nodeId="6105081101195305210" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentMessageGroup#()Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;" fileName="ChangesFoldingAreaPainter.java" startLine="276" startPosition="0" endLine="281" endPosition="0" />
+    <scopeInfo nodeId="4745893119449660806" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolTipText#()Ljava/lang/String;" fileName="ChangesFoldingAreaPainter.java" startLine="281" startPosition="0" endLine="286" endPosition="0" />
+    <scopeInfo nodeId="6746101208730364059" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessages#()Ljava/util/List;" fileName="ChangesFoldingAreaPainter.java" startLine="325" startPosition="0" endLine="330" endPosition="0" />
+    <scopeInfo nodeId="531813502180011368" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" fileName="ChangesFoldingAreaPainter.java" startLine="356" startPosition="0" endLine="361" endPosition="0" />
+    <scopeInfo nodeId="4434895596490171987" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#()I" fileName="ChangesFoldingAreaPainter.java" startLine="416" startPosition="0" endLine="421" endPosition="0" />
+    <scopeInfo nodeId="4434895596490171991" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getY#()I" fileName="ChangesFoldingAreaPainter.java" startLine="421" startPosition="0" endLine="426" endPosition="0" />
+    <scopeInfo nodeId="7473049078843270641" fileName="ChangesFoldingAreaPainter.java" startLine="250" startPosition="31" endLine="256" endPosition="41">
       <varInfo nodeId="7539796992259356333" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="4434895596490168998" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" fileName="ChangesFoldingAreaPainter.java" startLine="403" startPosition="0" endLine="409" endPosition="0" />
-    <scopeInfo nodeId="8274502957383551392" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_kvu3z4_a0a51#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)Ljava/lang/String;" fileName="ChangesFoldingAreaPainter.java" startLine="293" startPosition="0" endLine="300" endPosition="0" />
-    <scopeInfo nodeId="6208564103581783468" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showIfNeeded#(Ljava/awt/event/MouseEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="442" startPosition="0" endLine="449" endPosition="0">
+    <scopeInfo nodeId="4434895596490168998" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" fileName="ChangesFoldingAreaPainter.java" startLine="410" startPosition="0" endLine="416" endPosition="0" />
+    <scopeInfo nodeId="5921685378876737841" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPopupMenu#()Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MyPopupMenu;" fileName="ChangesFoldingAreaPainter.java" startLine="239" startPosition="0" endLine="246" endPosition="0" />
+    <scopeInfo nodeId="8274502957383551392" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_kvu3z4_a0a61#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)Ljava/lang/String;" fileName="ChangesFoldingAreaPainter.java" startLine="300" startPosition="0" endLine="307" endPosition="0" />
+    <scopeInfo nodeId="6208564103581783468" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showIfNeeded#(Ljava/awt/event/MouseEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="449" startPosition="0" endLine="456" endPosition="0">
       <varInfo nodeId="6208564103581783921" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6378762527268295653" fileName="ChangesFoldingAreaPainter.java" startLine="451" startPosition="24" endLine="458" endPosition="45">
+    <scopeInfo nodeId="6378762527268295653" fileName="ChangesFoldingAreaPainter.java" startLine="458" startPosition="24" endLine="465" endPosition="45">
       <varInfo nodeId="6378762527268296968" varName="leftHighlighter" />
       <varInfo nodeId="6378762527268302493" varName="selectedCell" />
     </scopeInfo>
     <scopeInfo nodeId="7429456937243136224" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/Boolean;)V" fileName="ChangesFoldingAreaPainter.java" startLine="192" startPosition="108" endLine="200" endPosition="0" />
     <scopeInfo nodeId="1216620237029569553" fileName="ChangesFoldingAreaPainter.java" startLine="229" startPosition="45" endLine="237" endPosition="5" />
-    <scopeInfo nodeId="6378762527268289355" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAfterTransfer#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)V" fileName="ChangesFoldingAreaPainter.java" startLine="257" startPosition="0" endLine="265" endPosition="0">
+    <scopeInfo nodeId="6378762527268289355" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAfterTransfer#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)V" fileName="ChangesFoldingAreaPainter.java" startLine="264" startPosition="0" endLine="272" endPosition="0">
       <varInfo nodeId="3821603290882626779" varName="messageGroup" />
     </scopeInfo>
     <scopeInfo nodeId="6746101208730363624" fileName="ChangesFoldingAreaPainter.java" startLine="158" startPosition="115" endLine="167" endPosition="64">
       <varInfo nodeId="3176852462137033862" varName="cellBounds" />
     </scopeInfo>
-    <scopeInfo nodeId="2310110763987865527" fileName="ChangesFoldingAreaPainter.java" startLine="241" startPosition="46" endLine="250" endPosition="5">
+    <scopeInfo nodeId="2310110763987865527" fileName="ChangesFoldingAreaPainter.java" startLine="248" startPosition="46" endLine="257" endPosition="5">
       <varInfo nodeId="5444017747356995492" varName="messageGroup" />
     </scopeInfo>
-    <scopeInfo nodeId="2331005757591009642" fileName="ChangesFoldingAreaPainter.java" startLine="370" startPosition="14" endLine="379" endPosition="9">
+    <scopeInfo nodeId="2331005757591009642" fileName="ChangesFoldingAreaPainter.java" startLine="377" startPosition="14" endLine="386" endPosition="9">
       <varInfo nodeId="3322868409858674696" varName="unitedChangeType" />
     </scopeInfo>
-    <scopeInfo nodeId="6378762527268264727" fileName="ChangesFoldingAreaPainter.java" startLine="450" startPosition="99" endLine="459" endPosition="7" />
+    <scopeInfo nodeId="6378762527268264727" fileName="ChangesFoldingAreaPainter.java" startLine="457" startPosition="99" endLine="466" endPosition="7" />
     <scopeInfo nodeId="2792704635247516010" fileName="ChangesFoldingAreaPainter.java" startLine="118" startPosition="151" endLine="128" endPosition="46">
       <varInfo nodeId="2792704635247522101" varName="height" />
       <varInfo nodeId="2792704635247522090" varName="width" />
@@ -4854,10 +4676,10 @@
     <scopeInfo nodeId="7429456937243135762" fileName="ChangesFoldingAreaPainter.java" startLine="175" startPosition="96" endLine="185" endPosition="5">
       <varInfo nodeId="7429456937243135809" varName="localX" />
     </scopeInfo>
-    <scopeInfo nodeId="4434895596490172142" fileName="ChangesFoldingAreaPainter.java" startLine="281" startPosition="146" endLine="291" endPosition="5">
+    <scopeInfo nodeId="4434895596490172142" fileName="ChangesFoldingAreaPainter.java" startLine="288" startPosition="146" endLine="298" endPosition="5">
       <varInfo nodeId="4434895596490172181" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="6746101208730360071" fileName="ChangesFoldingAreaPainter.java" startLine="306" startPosition="104" endLine="316" endPosition="31">
+    <scopeInfo nodeId="6746101208730360071" fileName="ChangesFoldingAreaPainter.java" startLine="313" startPosition="104" endLine="323" endPosition="31">
       <varInfo nodeId="6746101208730361664" varName="bottomY" />
       <varInfo nodeId="6746101208730360675" varName="editorComponent" />
     </scopeInfo>
@@ -4875,58 +4697,58 @@
     <scopeInfo nodeId="1216620237029569548" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseExited#(Ljava/awt/event/MouseEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="227" startPosition="0" endLine="239" endPosition="0">
       <varInfo nodeId="1216620237029569551" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6746101208730360067" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MessageGroup#(Ljava/util/List;)V" fileName="ChangesFoldingAreaPainter.java" startLine="305" startPosition="0" endLine="317" endPosition="5">
+    <scopeInfo nodeId="6746101208730360067" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MessageGroup#(Ljava/util/List;)V" fileName="ChangesFoldingAreaPainter.java" startLine="312" startPosition="0" endLine="324" endPosition="5">
       <varInfo nodeId="6746101208730360072" varName="messages" />
     </scopeInfo>
-    <scopeInfo nodeId="6378762527268264724" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAfterTransfer#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)V" fileName="ChangesFoldingAreaPainter.java" startLine="449" startPosition="0" endLine="461" endPosition="0">
+    <scopeInfo nodeId="6378762527268264724" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAfterTransfer#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)V" fileName="ChangesFoldingAreaPainter.java" startLine="456" startPosition="0" endLine="468" endPosition="0">
       <varInfo nodeId="7755015088410487296" varName="messageGroup" />
     </scopeInfo>
     <scopeInfo nodeId="2792704635247516007" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessageBounds#(Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)Ljava/awt/Rectangle;" fileName="ChangesFoldingAreaPainter.java" startLine="117" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="2792704635247516013" varName="message" />
       <varInfo nodeId="2792704635247516015" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="2310110763987865522" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="239" startPosition="0" endLine="252" endPosition="0">
+    <scopeInfo nodeId="2310110763987865522" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mousePressed#(Ljava/awt/event/MouseEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="246" startPosition="0" endLine="259" endPosition="0">
       <varInfo nodeId="2310110763987865525" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2331005757591009628" fileName="ChangesFoldingAreaPainter.java" startLine="356" startPosition="59" endLine="369" endPosition="26">
+    <scopeInfo nodeId="2331005757591009628" fileName="ChangesFoldingAreaPainter.java" startLine="363" startPosition="59" endLine="376" endPosition="26">
       <varInfo nodeId="2331005757591015012" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="480390906262810818" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;Ljetbrains/mps/vcs/changesmanager/EditorComponentChangesHighligher/ChangeEditorMessage;)I" fileName="ChangesFoldingAreaPainter.java" startLine="140" startPosition="142" endLine="154" endPosition="0" />
     <scopeInfo nodeId="7429456937243135759" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findMessageGroupUnder#(Ljava/awt/Point;)Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;" fileName="ChangesFoldingAreaPainter.java" startLine="173" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="7429456937243135804" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="4434895596490172139" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMessageGroup#(Ljava/util/List;)Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;" fileName="ChangesFoldingAreaPainter.java" startLine="279" startPosition="0" endLine="293" endPosition="0">
+    <scopeInfo nodeId="4434895596490172139" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMessageGroup#(Ljava/util/List;)Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;" fileName="ChangesFoldingAreaPainter.java" startLine="286" startPosition="0" endLine="300" endPosition="0">
       <varInfo nodeId="4434895596490172145" varName="messages" />
     </scopeInfo>
-    <scopeInfo nodeId="4434895596490127943" fileName="ChangesFoldingAreaPainter.java" startLine="387" startPosition="107" endLine="401" endPosition="89">
+    <scopeInfo nodeId="4434895596490127943" fileName="ChangesFoldingAreaPainter.java" startLine="394" startPosition="107" endLine="408" endPosition="89">
       <varInfo nodeId="4434895596490172025" varName="ys" />
       <varInfo nodeId="4434895596490172090" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="3322868409858650850" fileName="ChangesFoldingAreaPainter.java" startLine="332" startPosition="46" endLine="347" endPosition="7" />
+    <scopeInfo nodeId="3322868409858650850" fileName="ChangesFoldingAreaPainter.java" startLine="339" startPosition="46" endLine="354" endPosition="7" />
     <scopeInfo nodeId="1216620237029569512" fileName="ChangesFoldingAreaPainter.java" startLine="209" startPosition="44" endLine="225" endPosition="5">
       <varInfo nodeId="7429456937243136039" varName="messageGroup" />
     </scopeInfo>
-    <scopeInfo nodeId="4434895596490127940" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ThinMessageGroup#(Ljava/util/List;)V" fileName="ChangesFoldingAreaPainter.java" startLine="386" startPosition="0" endLine="402" endPosition="5">
+    <scopeInfo nodeId="4434895596490127940" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ThinMessageGroup#(Ljava/util/List;)V" fileName="ChangesFoldingAreaPainter.java" startLine="393" startPosition="0" endLine="409" endPosition="5">
       <varInfo nodeId="4434895596490168853" varName="messages" />
     </scopeInfo>
-    <scopeInfo nodeId="6208564103581772572" fileName="ChangesFoldingAreaPainter.java" startLine="424" startPosition="26" endLine="440" endPosition="9" />
+    <scopeInfo nodeId="6208564103581772572" fileName="ChangesFoldingAreaPainter.java" startLine="431" startPosition="26" endLine="447" endPosition="9" />
     <scopeInfo nodeId="7429456937243134096" fileName="ChangesFoldingAreaPainter.java" startLine="188" startPosition="95" endLine="205" endPosition="116">
       <varInfo nodeId="7429456937243136221" varName="setHighlighted" />
     </scopeInfo>
-    <scopeInfo nodeId="3322868409858650847" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnitedChangeType#()Ljetbrains/mps/vcs/diff/oldchanges/ChangeType;" fileName="ChangesFoldingAreaPainter.java" startLine="331" startPosition="0" endLine="349" endPosition="0" />
-    <scopeInfo nodeId="6208564103581772569" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyPopupMenu#()V" fileName="ChangesFoldingAreaPainter.java" startLine="423" startPosition="0" endLine="441" endPosition="5" />
+    <scopeInfo nodeId="3322868409858650847" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnitedChangeType#()Ljetbrains/mps/vcs/diff/oldchanges/ChangeType;" fileName="ChangesFoldingAreaPainter.java" startLine="338" startPosition="0" endLine="356" endPosition="0" />
+    <scopeInfo nodeId="6208564103581772569" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyPopupMenu#()V" fileName="ChangesFoldingAreaPainter.java" startLine="430" startPosition="0" endLine="448" endPosition="5" />
     <scopeInfo nodeId="7429456937243134093" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setCurrentMessageGroup#(Ljetbrains/mps/vcs/changesmanager/ChangesFoldingAreaPainter/MessageGroup;)V" fileName="ChangesFoldingAreaPainter.java" startLine="187" startPosition="0" endLine="207" endPosition="0">
       <varInfo nodeId="7429456937243134135" varName="group" />
     </scopeInfo>
     <scopeInfo nodeId="1216620237029569507" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseMoved#(Ljava/awt/event/MouseEvent;)V" fileName="ChangesFoldingAreaPainter.java" startLine="207" startPosition="0" endLine="227" endPosition="0">
       <varInfo nodeId="1216620237029569510" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8332220865210648782" fileName="ChangesFoldingAreaPainter.java" startLine="355" startPosition="36" endLine="380" endPosition="7" />
+    <scopeInfo nodeId="8332220865210648782" fileName="ChangesFoldingAreaPainter.java" startLine="362" startPosition="36" endLine="387" endPosition="7" />
     <scopeInfo nodeId="6746101208730364042" fileName="ChangesFoldingAreaPainter.java" startLine="76" startPosition="104" endLine="104" endPosition="58">
       <varInfo nodeId="9213787164325786216" varName="height" />
       <varInfo nodeId="9213787164325786207" varName="y" />
     </scopeInfo>
-    <scopeInfo nodeId="8332220865210648779" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolTipText#()Ljava/lang/String;" fileName="ChangesFoldingAreaPainter.java" startLine="354" startPosition="0" endLine="382" endPosition="0" />
+    <scopeInfo nodeId="8332220865210648779" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolTipText#()Ljava/lang/String;" fileName="ChangesFoldingAreaPainter.java" startLine="361" startPosition="0" endLine="389" endPosition="0" />
     <scopeInfo nodeId="6746101208730364039" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ChangesFoldingAreaPainter.java" startLine="75" startPosition="5" endLine="105" endPosition="5" />
     <scopeInfo nodeId="8274502957383614818" fileName="ChangesFoldingAreaPainter.java" startLine="68" startPosition="54" endLine="105" endPosition="5">
       <varInfo nodeId="6923910471520917317" varName="clipBounds" />
@@ -4943,19 +4765,19 @@
     <scopeInfo nodeId="6746101208730360003" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initMessageGroups#()V" fileName="ChangesFoldingAreaPainter.java" startLine="130" startPosition="0" endLine="173" endPosition="0" />
     <unitInfo nodeId="6746101208730361851" fileName="ChangesFoldingAreaPainter.java" startLine="134" startPosition="171" endLine="138" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
     <unitInfo nodeId="7429456937243135909" fileName="ChangesFoldingAreaPainter.java" startLine="178" startPosition="66" endLine="182" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$3" />
-    <unitInfo nodeId="4434895596490172170" fileName="ChangesFoldingAreaPainter.java" startLine="283" startPosition="48" endLine="287" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$5" />
-    <unitInfo nodeId="1488166530899637887" fileName="ChangesFoldingAreaPainter.java" startLine="311" startPosition="68" endLine="315" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
-    <unitInfo nodeId="3322868409858674645" fileName="ChangesFoldingAreaPainter.java" startLine="333" startPosition="52" endLine="337" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />
-    <unitInfo nodeId="3322868409858674666" fileName="ChangesFoldingAreaPainter.java" startLine="339" startPosition="59" endLine="343" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$3" />
-    <unitInfo nodeId="4434895596490169019" fileName="ChangesFoldingAreaPainter.java" startLine="390" startPosition="53" endLine="394" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
-    <unitInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="395" startPosition="130" endLine="399" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />
+    <unitInfo nodeId="4434895596490172170" fileName="ChangesFoldingAreaPainter.java" startLine="290" startPosition="48" endLine="294" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$5" />
+    <unitInfo nodeId="1488166530899637887" fileName="ChangesFoldingAreaPainter.java" startLine="318" startPosition="68" endLine="322" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
+    <unitInfo nodeId="3322868409858674645" fileName="ChangesFoldingAreaPainter.java" startLine="340" startPosition="52" endLine="344" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />
+    <unitInfo nodeId="3322868409858674666" fileName="ChangesFoldingAreaPainter.java" startLine="346" startPosition="59" endLine="350" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$3" />
+    <unitInfo nodeId="4434895596490169019" fileName="ChangesFoldingAreaPainter.java" startLine="397" startPosition="53" endLine="401" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
+    <unitInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="402" startPosition="130" endLine="406" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />
     <unitInfo nodeId="7429456937243136224" fileName="ChangesFoldingAreaPainter.java" startLine="192" startPosition="69" endLine="200" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$4" />
-    <unitInfo nodeId="9173051028496928502" fileName="ChangesFoldingAreaPainter.java" startLine="429" startPosition="31" endLine="440" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
+    <unitInfo nodeId="9173051028496928502" fileName="ChangesFoldingAreaPainter.java" startLine="436" startPosition="31" endLine="447" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
     <unitInfo nodeId="480390906262810818" fileName="ChangesFoldingAreaPainter.java" startLine="140" startPosition="74" endLine="154" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />
-    <unitInfo nodeId="4434895596490127938" fileName="ChangesFoldingAreaPainter.java" startLine="384" startPosition="0" endLine="420" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$ThinMessageGroup" />
-    <unitInfo nodeId="6208564103581772567" fileName="ChangesFoldingAreaPainter.java" startLine="421" startPosition="0" endLine="462" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$MyPopupMenu" />
-    <unitInfo nodeId="6746101208730359979" fileName="ChangesFoldingAreaPainter.java" startLine="301" startPosition="0" endLine="383" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$MessageGroup" />
-    <unitInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="47" startPosition="0" endLine="463" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter" />
+    <unitInfo nodeId="4434895596490127938" fileName="ChangesFoldingAreaPainter.java" startLine="391" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$ThinMessageGroup" />
+    <unitInfo nodeId="6208564103581772567" fileName="ChangesFoldingAreaPainter.java" startLine="428" startPosition="0" endLine="469" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$MyPopupMenu" />
+    <unitInfo nodeId="6746101208730359979" fileName="ChangesFoldingAreaPainter.java" startLine="308" startPosition="0" endLine="390" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$MessageGroup" />
+    <unitInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="47" startPosition="0" endLine="470" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter" />
   </root>
 </debugInfo>
 

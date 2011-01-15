@@ -56,6 +56,8 @@ public interface ITemplateGenerator {
 
   boolean isStrict();
 
+  boolean isDirty(SNode node);
+
   IGeneratorLogger getLogger();
 
   void showErrorMessage(SNode inputNode, SNode templateNode, String message);

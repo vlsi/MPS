@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ui.multiplexing.VariantsUtil;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.ui.modeling.behavior.HasTemplate_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -15,7 +17,11 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "template", false) == null) && VariantsUtil.isWithinVariant(_context.getNode(), "Test");
   }
 
+  public static SNode mapSrcMacro_mapper_3723152527274801898(final IOperationContext operationContext, final MapSrcMacroContext _context) {
+    return _context.getNode();
+  }
+
   public static void mapSrcMacro_post_mapper_1251509410704075124(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setTarget(_context.getNode(), "template", HasTemplate_Behavior.call_findTemplate_3939571372331676060(SLinkOperations.getTarget(_context.getNode(), "hasTemplate", false), SNodeOperations.getModel(_context.getTemplateNode()), _context.getScope()), false);
+    SLinkOperations.setTarget(_context.getOutputNode(), "template", HasTemplate_Behavior.call_findTemplate_3939571372331676060(SLinkOperations.getTarget(_context.getNode(), "hasTemplate", false), SNodeOperations.getModel(_context.getTemplateNode()), _context.getScope()), false);
   }
 }

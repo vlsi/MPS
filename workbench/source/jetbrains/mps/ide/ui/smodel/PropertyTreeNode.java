@@ -16,11 +16,11 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.PropertyNodeActions_ActionGroup;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.action.ActionFactory;
 
 public class PropertyTreeNode extends TextTreeNode {
   private String myProperty;
@@ -38,7 +38,7 @@ public class PropertyTreeNode extends TextTreeNode {
 
   @Override
   public ActionGroup getActionGroup() {
-    return ActionFactory.getInstance().acquireRegisteredGroup(PropertyNodeActions_ActionGroup.class.getName(), "jetbrains.mps.ide");
+    return ((ActionGroup) ActionManager.getInstance().getAction(PropertyNodeActions_ActionGroup.class.getName()));
   }
 
   public boolean isLeaf() {

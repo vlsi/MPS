@@ -21,17 +21,18 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.newTypesystem.presentation.difference.TypeSystemTraceTreeNode;
 import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.BlockKind;
+import jetbrains.mps.newTypesystem.state.NodeMaps;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.JPopupMenu;
 import java.awt.Color;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -66,7 +67,7 @@ public class TypeSystemStateTree extends MPSTree {
     result.add(createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null));
     result.add(createNode("When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null));
     result.add(createNode("Errors", myState.getNodeMaps().getErrorListPresentation(), Color.RED));
-    result.add(createNode("Types", myState.getNodeMaps().getTypeListPresentation(), null));
+    result.add(createTypesNode());
     result.add(createNode("Equations", myState.getEquations().getGroupsListPresentation(), null));
 
     return result;
@@ -94,6 +95,26 @@ public class TypeSystemStateTree extends MPSTree {
     return result;
   }
 
+  private TypeSystemStateTreeNode createTypesNode() {
+    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Types", myOperationContext);
+    List<TypeTreeNode> list = new ArrayList<TypeTreeNode>();
+    NodeMaps nodeMaps = myState.getNodeMaps();
+    for (SNode node : nodeMaps.getTypeKeySet()) {
+      SNode type = nodeMaps.getInitialType(node);
+      list.add(new TypeTreeNode(myOperationContext, node, type, myState.expand(type)));
+    }
+    Collections.sort(list, new Comparator<TypeTreeNode>() {
+      @Override
+      public int compare(TypeTreeNode o1, TypeTreeNode o2) {
+        return o1.toString().compareTo(o2.toString());
+      }
+    });
+    for (TypeTreeNode node : list) {
+      result.add(node);
+    }
+    return result;
+  }
+
   @Override
    protected JPopupMenu createPopupMenu(final MPSTreeNode treeNode) {
      BaseAction goToRule = new BaseAction("Go to rule") {
@@ -101,7 +122,12 @@ public class TypeSystemStateTree extends MPSTree {
          ((TypeSystemStateTreeNode) treeNode).goToRule();
        }
      };
-     DefaultActionGroup group = ActionUtils.groupFromActions(goToRule);
+     BaseAction goToNode = new BaseAction("Go to node") {
+      public void doExecute(AnActionEvent e, Map<String, Object> _params) {
+        ((TypeSystemStateTreeNode) treeNode).goToNode();
+      }
+    };
+     DefaultActionGroup group = ActionUtils.groupFromActions(goToRule, goToNode);
      return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
    }
 

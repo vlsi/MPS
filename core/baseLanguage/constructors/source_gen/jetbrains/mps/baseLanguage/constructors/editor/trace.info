@@ -15,7 +15,7 @@
   <unitInfo fileName="CustomConstructorUsage_Editor.java" startLine="30" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.editor.CustomConstructorUsage_Editor" />
   <unitInfo fileName="CustomConstructor_Editor.java" startLine="22" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.editor.CustomConstructor_Editor" />
   <root nodeId="6820702584719569332">
-    <nodeInfo nodeId="6820702584720069062" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CustomConstructorUsage_Editor.java" startLine="50" startPosition="65" endLine="51" endPosition="113" />
+    <nodeInfo nodeId="6820702584720069062" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CustomConstructorUsage_Editor.java" startLine="50" startPosition="65" endLine="51" endPosition="117" />
     <nodeInfo nodeId="6820702584720070187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CustomConstructorUsage_Editor.java" startLine="54" startPosition="96" endLine="55" endPosition="90" />
     <nodeInfo nodeId="6820702584720070196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CustomConstructorUsage_Editor.java" startLine="55" startPosition="90" endLine="56" endPosition="105" />
     <nodeInfo nodeId="6820702584720070235" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CustomConstructorUsage_Editor.java" startLine="56" startPosition="105" endLine="57" endPosition="35" />
@@ -52,7 +52,7 @@
     <nodeInfo nodeId="6820702584720017007" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CustomConstructorUsage_Editor.java" startLine="46" startPosition="44" endLine="92" endPosition="10" />
     <scopeInfo nodeId="6820702584719764403" fileName="CustomConstructorUsage_Editor.java" startLine="106" startPosition="40" endLine="106" endPosition="40" />
     <scopeInfo nodeId="6820702584719790416" fileName="CustomConstructorUsage_Editor.java" startLine="131" startPosition="40" endLine="131" endPosition="40" />
-    <scopeInfo nodeId="6820702584720069050" fileName="CustomConstructorUsage_Editor.java" startLine="50" startPosition="65" endLine="51" endPosition="113" />
+    <scopeInfo nodeId="6820702584720069050" fileName="CustomConstructorUsage_Editor.java" startLine="50" startPosition="65" endLine="51" endPosition="117" />
     <scopeInfo nodeId="6820702584720070369" fileName="CustomConstructorUsage_Editor.java" startLine="75" startPosition="141" endLine="76" endPosition="149" />
     <scopeInfo nodeId="6820702584719764401" fileName="CustomConstructorUsage_Editor.java" startLine="102" startPosition="31" endLine="103" endPosition="125" />
     <scopeInfo nodeId="6820702584719764405" fileName="CustomConstructorUsage_Editor.java" startLine="109" startPosition="47" endLine="110" endPosition="20" />

@@ -29,8 +29,9 @@ import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.MPSProject.ProjectDisposeListener;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -60,7 +61,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   private static final Object PENDING_LOCK = new Object();
 
-  private boolean myStopThread = false;
+  private volatile boolean myStopThread = false;
   private FileEditorManager myFileEditorManager;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
@@ -117,12 +118,17 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   };
 
-  public Highlighter(Project project,FileEditorManager fileEditorManager, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager,InspectorTool inspector) {
+  public Highlighter(MPSProject mpsProject, Project project,FileEditorManager fileEditorManager, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager,InspectorTool inspector) {
     myProject = project;
     myFileEditorManager = fileEditorManager;
     myGlobalSModelEventsManager = eventsManager;
     myClassLoaderManager = classLoaderManager;
     myInspectorTool = inspector;
+    mpsProject.addDisposeListener(new ProjectDisposeListener() {
+      public void onBeforeDispose() {
+        stopUpdater();
+      }
+    });
   }
 
   public void projectOpened() {
@@ -373,7 +379,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             });
           }
 
-          if (checkersToRecheck.isEmpty()) {
+          if (checkersToRecheck.isEmpty() && checkersToRemove.isEmpty()) {
             return false;
           }
           List<IEditorChecker> checkersToRecheckList = new ArrayList<IEditorChecker>(checkersToRecheck);
@@ -397,7 +403,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   /*
-   * Only carrently visible (active) editor remains in myCheckedOnceEditors forcing all Checkers
+   * Only currently visible (active) editor remains in myCheckedOnceEditors forcing all Checkers
    * to createMessages() on next visible (active) editor change
    */
   private void cleanupCheckedOnce(List<EditorComponent> allEditorComponents) {
@@ -447,7 +453,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
                 messages.addAll(checker.createMessages(node, operationContext, events, wasCheckedOnce, editorContext));
                 messagesChangedContainer[0] = messagesChangedContainer[0] || checker.messagesChanged();
               } catch (IndexNotReadyException ex) {
-                highlightManager.clearForOwner(owners[0], false);
+                highlightManager.clearForOwner(owners[0], true);
                 checker.clear(node, editor);
                 throw ex;
               }
@@ -483,6 +489,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       };
       ModelAccess.instance().runReadAction(runnable);
       highlightManager.clearForOwner(owners[0], false);
+      anyMessageChanged = true;
     }
 
     if (anyMessageChanged) {

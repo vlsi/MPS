@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -67,6 +68,10 @@ public class TemplateQueryContext {
 
   public SModel getInputModel() {
     return myGenerator.getInputModel();
+  }
+
+  public boolean isDirty(SNode node) {
+    return myGenerator.isDirty(node);
   }
 
   public SModel getOutputModel() {

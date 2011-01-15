@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -48,7 +48,7 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
           public EditorCell createEditorCell(EditorContext editorContext) {
             RefNodeListHandler handler = new RefNodeListHandler(node, "element", editorContext) {
               public SNode createNodeToInsert(EditorContext p0) {
-                return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null);
+                return SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null);
               }
 
               public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {

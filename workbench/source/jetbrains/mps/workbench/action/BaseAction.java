@@ -84,6 +84,7 @@ public abstract class BaseAction extends AnAction implements DumbAware {
       }
     }
 
+    // TODO rewrite! do not start read action in EDT directly (to avoid UI freeze)
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (myDisableOnNoProject && e.getData(PlatformDataKeys.PROJECT) == null) {

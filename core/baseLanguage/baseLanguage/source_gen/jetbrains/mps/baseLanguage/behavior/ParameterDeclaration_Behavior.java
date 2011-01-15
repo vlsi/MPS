@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.intentions.CodeStyleSettings;
+import jetbrains.mps.codeStyle.CodeStyleSettings;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ParameterDeclaration_Behavior {

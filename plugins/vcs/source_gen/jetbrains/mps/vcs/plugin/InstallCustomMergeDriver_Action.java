@@ -82,6 +82,7 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+
       String globalConfigPath = WorkbenchPathManager.getUserHome() + File.separator + ".gitconfig";
       if (!(new File(globalConfigPath).exists())) {
         Messages.showErrorDialog(((Project) MapSequence.fromMap(_params).get("project")), "Git config (~/.gitconfig) file is not present", "No Git Config");
@@ -102,7 +103,11 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
         try {
           raf = new RandomAccessFile(globalConfigPath, "rw");
           raf.seek(raf.length());
-          raf.write(("\n" + "[merge \"mps\"]\n" + "\tname = MPS merge driver\n" + "\tdriver = " + MergeDriverMain.getCommandLine() + " %O %A %B %L\n").getBytes("utf-8"));
+          String stringToWrite = "\n[merge \"mps\"]\tname = MPS merge driver\n\tdriver = %s %O %A %B %L\n";
+          stringToWrite = String.format(stringToWrite, MergeDriverMain.getCommandLine());
+          stringToWrite = stringToWrite.replace("\n", System.getProperty("line.separator"));
+          stringToWrite = stringToWrite.replace("\\", "\\\\");
+          raf.write(stringToWrite.getBytes("utf-8"));
           raf.close();
         } catch (IOException e) {
           if (log.isErrorEnabled()) {

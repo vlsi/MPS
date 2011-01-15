@@ -15,18 +15,14 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 
 public class ErrorReportUtil {
   public static boolean shouldReportError(SNode node) {
-    if (getMetaLevel(node) != 0) return false;
+    if (SModelUtil_new.getMetaLevel(node) != 0) return false;
     if (SModelStereotype.isStubModelStereotype(node.getModel().getStereotype())) return false;
     return true;
-  }
-
-  public static int getMetaLevel(SNode node) {
-    return BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(node);
   }
 }

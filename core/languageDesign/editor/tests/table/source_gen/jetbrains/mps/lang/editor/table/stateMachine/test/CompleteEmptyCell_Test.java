@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class CompleteEmptyCell_Test extends BaseTransformationTest {
   @Test
   public void test_CompleteEmptyCell() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/editor/editor.mpr", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test)");
+    this.initTest("${mps_home}/core/languageDesign/plugin/plugin.mpr", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test)");
     this.runTest("jetbrains.mps.lang.editor.table.stateMachine.test.CompleteEmptyCell_Test$TestBody", "testMethod", false);
   }
 
@@ -23,7 +23,7 @@ public class CompleteEmptyCell_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      final IEditor editor = TestBody.this.initEditor("3676708844864308451", "3676708844864308477");
+      final IEditor editor = TestBody.this.initEditor("3676708844864308451", "7668835185988064522");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE", " ENTER"));
     }

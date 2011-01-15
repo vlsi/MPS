@@ -25,6 +25,7 @@ import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.runtime.BytecodeLocator;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
 import java.net.URL;
@@ -337,8 +338,13 @@ public class Generator extends AbstractModule {
 
   @Override
   public List<SModelDescriptor> getEditableUserModels() {
-    // forward to the language
-    return getSourceLanguage().getEditableUserModels();
+    List<SModelDescriptor> emodels = new ArrayList<SModelDescriptor>();
+    for (SModelDescriptor smd: getGeneratorModels()) {
+      if (smd instanceof EditableSModelDescriptor && !((EditableSModelDescriptor)smd).isPackaged()) {
+        emodels.add(smd);
+      }
+    }
+    return emodels;
   }
 
   public List<SModelDescriptor> getGeneratorModels() {

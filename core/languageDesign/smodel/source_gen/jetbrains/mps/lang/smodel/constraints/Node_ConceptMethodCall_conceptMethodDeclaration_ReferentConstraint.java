@@ -15,7 +15,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.SNodePointer;
@@ -38,7 +37,7 @@ public class Node_ConceptMethodCall_conceptMethodDeclaration_ReferentConstraint 
     ISearchScope searchScope;
     if ((snodeType != null)) {
       SNode concept = SLinkOperations.getTarget(snodeType, "concept", false);
-      List<SNode> methods = AbstractConceptDeclaration_Behavior.call_getAvailableConceptMethods_1213877394200(concept, _context.getEnclosingNode(), GlobalScope.getInstance());
+      List<SNode> methods = AbstractConceptDeclaration_Behavior.call_getAvailableConceptMethods_1213877394200(concept, _context.getEnclosingNode());
       searchScope = new SimpleSearchScope(methods);
     } else {
       searchScope = new EmptySearchScope();

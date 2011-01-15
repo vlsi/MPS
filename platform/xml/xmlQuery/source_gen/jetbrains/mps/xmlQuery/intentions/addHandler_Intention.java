@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class addHandler_Intention extends BaseIntention implements Intention {
   public addHandler_Intention() {
@@ -45,7 +45,7 @@ public class addHandler_Intention extends BaseIntention implements Intention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.setTarget(node, "handler", SConceptOperations.createNewNode("jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler", null), true);
+    SLinkOperations.setTarget(node, "handler", SNodeFactoryOperations.createNewNode("jetbrains.mps.xmlQuery.structure.XMLSAXAttributeHandler", null), true);
   }
 
   public String getLocationString() {

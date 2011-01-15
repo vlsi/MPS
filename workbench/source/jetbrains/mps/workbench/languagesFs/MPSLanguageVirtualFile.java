@@ -52,7 +52,9 @@ public class MPSLanguageVirtualFile extends DeprecatedVirtualFile {
   @NotNull
   @NonNls
   public String getName() {
-    return myName;
+    // language name could end with .java, .xml etc. which might confuse IDEA file system
+    // see also MPS-11156
+    return myName + " (language) ";
   }
 
   public boolean isDirectory() {

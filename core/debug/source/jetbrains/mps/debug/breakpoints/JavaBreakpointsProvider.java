@@ -18,14 +18,12 @@ package jetbrains.mps.debug.breakpoints;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.breakpoints.*;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint.ExceptionBreakpointInfo;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -80,48 +78,38 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
   @Nullable
   public JavaBreakpoint loadFromState(Element state, JavaBreakpointKind kind, final Project project) {
     switch (kind) {
-      case LINE_BREAKPOINT:
+      case LINE_BREAKPOINT: {
         final JavaBreakpointInfo breakpointInfo = XmlSerializer.deserialize(state, JavaBreakpointInfo.class);
         if (!breakpointInfo.isValid()) return null;
-        LineBreakpoint breakpoint = ModelAccess.instance().runReadAction(new Computable<LineBreakpoint>() {
-          @Override
-          public LineBreakpoint compute() {
-            SNodePointer pointer = new SNodePointer(breakpointInfo.myModelReference, breakpointInfo.myNodeId);
-            return new LineBreakpoint(pointer, project);
-          }
-        });
+        SNodePointer pointer = new SNodePointer(breakpointInfo.myModelReference, breakpointInfo.myNodeId);
+        LineBreakpoint breakpoint = new LineBreakpoint(pointer, project);
         breakpointInfo.initBreakpoint(breakpoint);
         return breakpoint;
-      case EXCEPTION_BREAKPOINT:
+      }
+      case EXCEPTION_BREAKPOINT: {
         ExceptionBreakpointInfo exceptionBreakpointInfo = XmlSerializer.deserialize(state, ExceptionBreakpointInfo.class);
         ExceptionBreakpoint exceptionBreakpoint = new ExceptionBreakpoint(exceptionBreakpointInfo.myExceptionName, project);
         exceptionBreakpointInfo.initBreakpoint(exceptionBreakpoint);
         return exceptionBreakpoint;
-      case METHOD_BREAKPOINT:
-        final JavaBreakpointInfo methodBreakpointInfo = XmlSerializer.deserialize(state, JavaBreakpointInfo.class);
-        if (!methodBreakpointInfo.isValid()) return null;
-        MethodBreakpoint methodBreakpoint = ModelAccess.instance().runReadAction(new Computable<MethodBreakpoint>() {
-          @Override
-          public MethodBreakpoint compute() {
-            SNodePointer pointer = new SNodePointer(methodBreakpointInfo.myModelReference, methodBreakpointInfo.myNodeId);
-            return new MethodBreakpoint(pointer, project);
-          }
-        });
-        methodBreakpointInfo.initBreakpoint(methodBreakpoint);
-        return methodBreakpoint;
-      //todo duplication
-      case FIELD_BREAKPOINT:
+      }
+      case METHOD_BREAKPOINT: {
+        // I am going to replace method breakpoints with a new ones, so I temporary read old method breakpoints into line breakpoints
+        // todo new method breakpoints
+        final JavaBreakpointInfo lineBreakpointInfo = XmlSerializer.deserialize(state, JavaBreakpointInfo.class);
+        if (!lineBreakpointInfo.isValid()) return null;
+        SNodePointer pointer = new SNodePointer(lineBreakpointInfo.myModelReference, lineBreakpointInfo.myNodeId);
+        LineBreakpoint lineBreakpoint = new LineBreakpoint(pointer, project);
+        lineBreakpointInfo.initBreakpoint(lineBreakpoint);
+        return lineBreakpoint;
+      }
+      case FIELD_BREAKPOINT: {
         final JavaBreakpointInfo fieldBreakpointInfo = XmlSerializer.deserialize(state, JavaBreakpointInfo.class);
         if (!fieldBreakpointInfo.isValid()) return null;
-        FieldBreakpoint fieldBreakpoint = ModelAccess.instance().runReadAction(new Computable<FieldBreakpoint>() {
-          @Override
-          public FieldBreakpoint compute() {
-            SNodePointer pointer = new SNodePointer(fieldBreakpointInfo.myModelReference, fieldBreakpointInfo.myNodeId);
-            return new FieldBreakpoint(pointer, project);
-          }
-        });
+        SNodePointer pointer = new SNodePointer(fieldBreakpointInfo.myModelReference, fieldBreakpointInfo.myNodeId);
+        FieldBreakpoint fieldBreakpoint = new FieldBreakpoint(pointer, project);
         fieldBreakpointInfo.initBreakpoint(fieldBreakpoint);
         return fieldBreakpoint;
+      }
     }
     return null;
   }

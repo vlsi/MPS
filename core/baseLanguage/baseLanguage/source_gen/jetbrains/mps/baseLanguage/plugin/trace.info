@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="DefaultJavaApplication_Editor.java" startLine="24" startPosition="47" endLine="28" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor$2" />
-  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="25" startPosition="65" endLine="29" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$1" />
+  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="65" endLine="28" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$1" />
   <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="29" startPosition="102" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$1" />
-  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="33" startPosition="65" endLine="37" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$2" />
+  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="32" startPosition="65" endLine="36" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$2" />
   <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="34" startPosition="108" endLine="38" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$2" />
   <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="39" startPosition="107" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$3" />
-  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="41" startPosition="65" endLine="45" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$3" />
   <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="44" startPosition="103" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$4" />
   <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="60" startPosition="98" endLine="64" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$6" />
   <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="65" startPosition="94" endLine="69" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$7" />
@@ -37,15 +36,15 @@
   <unitInfo fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup" />
   <unitInfo fileName="RefactoringAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.RefactoringAddition_ActionGroup" />
   <unitInfo fileName="TodoViewer_Tool.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool" />
-  <unitInfo fileName="BaseLanguage_ProjectPlugin.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ProjectPlugin" />
+  <unitInfo fileName="BaseLanguage_ProjectPlugin.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ProjectPlugin" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="362" startPosition="0" endLine="385" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionResult" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="386" startPosition="0" endLine="411" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionConsole" />
   <unitInfo fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.Default_KeymapChanges" />
+  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin" />
   <unitInfo fileName="AnalyzeStacktrace_Tool.java" startLine="22" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Tool" />
   <unitInfo fileName="JavaApplication_ConfigurationType.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaApplication_ConfigurationType" />
   <unitInfo fileName="ShowTodoViewer_Action.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action" />
-  <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="16" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="301" startPosition="0" endLine="344" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MySettingsEditor" />
   <unitInfo fileName="AnalyzeStacktrace_Action.java" startLine="17" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Action" />
   <unitInfo fileName="ShowNullDFA_Action.java" startLine="21" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowNullDFA_Action" />
@@ -686,8 +685,8 @@
     </scopeInfo>
     <scopeInfo nodeId="155142699038773183" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addClosingParenthesis#(Ljetbrains/mps/smodel/SNode;ZLjetbrains/mps/nodeEditor/EditorContext;)V" fileName="ParenthesisUtil.java" startLine="16" startPosition="30" endLine="21" endPosition="0">
       <varInfo nodeId="155142699038773199" varName="expression" />
-      <varInfo nodeId="155142699038773204" varName="context" />
       <varInfo nodeId="155142699038773202" varName="opening" />
+      <varInfo nodeId="155142699038773204" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773227" fileName="ParenthesisUtil.java" startLine="25" startPosition="129" endLine="30" endPosition="124" />
     <scopeInfo nodeId="155142699038773748" fileName="ParenthesisUtil.java" startLine="161" startPosition="105" endLine="166" endPosition="7">
@@ -703,8 +702,8 @@
       <varInfo nodeId="155142699038773310" varName="parExpr" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773941" fileName="ParenthesisUtil.java" startLine="220" startPosition="93" endLine="230" endPosition="5">
-      <varInfo nodeId="155142699038773953" varName="nodeCell" />
       <varInfo nodeId="155142699038773947" varName="component" />
+      <varInfo nodeId="155142699038773953" varName="nodeCell" />
       <varInfo nodeId="155142699038773960" varName="cell" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773529" fileName="ParenthesisUtil.java" startLine="103" startPosition="30" endLine="114" endPosition="7">
@@ -765,8 +764,8 @@
       <varInfo nodeId="155142699038773836" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="155142699038773208" fileName="ParenthesisUtil.java" startLine="22" startPosition="85" endLine="65" endPosition="19">
-      <varInfo nodeId="155142699038773367" varName="parExpr" />
       <varInfo nodeId="155142699038773255" varName="binOp" />
+      <varInfo nodeId="155142699038773367" varName="parExpr" />
       <varInfo nodeId="155142699038773356" varName="subtree" />
       <varInfo nodeId="155142699038773210" varName="current" />
       <varInfo nodeId="155142699038773287" varName="left" />
@@ -780,8 +779,8 @@
     <scopeInfo nodeId="155142699038773405" fileName="ParenthesisUtil.java" startLine="68" startPosition="106" endLine="121" endPosition="39">
       <varInfo nodeId="155142699038773417" varName="binOp" />
       <varInfo nodeId="155142699038773451" varName="backsideSubtree" />
-      <varInfo nodeId="155142699038773575" varName="binOpCheck" />
       <varInfo nodeId="155142699038773495" varName="sideSubtree" />
+      <varInfo nodeId="155142699038773575" varName="binOpCheck" />
       <varInfo nodeId="155142699038773437" varName="leaf" />
       <varInfo nodeId="155142699038773429" varName="sidemost" />
     </scopeInfo>
@@ -793,12 +792,10 @@
     <unitInfo nodeId="155142699038773182" fileName="ParenthesisUtil.java" startLine="16" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ParenthesisUtil" />
   </root>
   <root nodeId="2566194812863059400">
-    <nodeInfo nodeId="2566194812863059404" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="26" startPosition="81" endLine="27" endPosition="61" />
-    <nodeInfo nodeId="7621249199945657688" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="34" startPosition="81" endLine="35" endPosition="63" />
-    <nodeInfo nodeId="7879978511258778793" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="42" startPosition="81" endLine="43" endPosition="62" />
-    <scopeInfo nodeId="2566194812863059403" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="26" startPosition="81" endLine="27" endPosition="61" />
-    <scopeInfo nodeId="7621249199945657687" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="34" startPosition="81" endLine="35" endPosition="63" />
-    <scopeInfo nodeId="7879978511258717716" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="42" startPosition="81" endLine="43" endPosition="62" />
+    <nodeInfo nodeId="2566194812863059404" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="25" startPosition="81" endLine="26" endPosition="61" />
+    <nodeInfo nodeId="7879978511258778793" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="33" startPosition="81" endLine="34" endPosition="62" />
+    <scopeInfo nodeId="2566194812863059403" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="25" startPosition="81" endLine="26" endPosition="61" />
+    <scopeInfo nodeId="7879978511258717716" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="33" startPosition="81" endLine="34" endPosition="62" />
   </root>
   <root nodeId="3331861101285339078">
     <nodeInfo nodeId="3331861101285428311" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="134" />
@@ -1121,7 +1118,7 @@
     <nodeInfo nodeId="3836499504550260198" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/nodeEditor/cells/EditorCell;)V" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <nodeInfo nodeId="3836499504550260251" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="33" startPosition="48" endLine="37" endPosition="5" />
     <nodeInfo nodeId="3836499504550260307" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTooltipText#()Ljava/lang/String;" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <nodeInfo nodeId="3836499504550260314" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMouseOwerCursor#()Ljava/awt/Cursor;" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <nodeInfo nodeId="3836499504550260314" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMouseOverCursor#()Ljava/awt/Cursor;" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <nodeInfo nodeId="3982223387891493198" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showInGutter#()Z" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <nodeInfo nodeId="3836499504550260214" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Ljetbrains/mps/nodeEditor/EditorComponent;)Z" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
     <nodeInfo nodeId="3836499504550260240" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sameAs#(Ljetbrains/mps/nodeEditor/EditorMessage;)Z" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="31" startPosition="0" endLine="40" endPosition="0" />
@@ -1145,7 +1142,7 @@
       <varInfo nodeId="3836499504550260201" varName="graphics" />
     </scopeInfo>
     <scopeInfo nodeId="3836499504550260307" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTooltipText#()Ljava/lang/String;" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="3836499504550260314" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMouseOwerCursor#()Ljava/awt/Cursor;" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="3836499504550260314" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMouseOverCursor#()Ljava/awt/Cursor;" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="3982223387891493198" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showInGutter#()Z" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="3836499504550260214" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Ljetbrains/mps/nodeEditor/EditorComponent;)Z" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="3836499504550260217" varName="component" />
@@ -1167,7 +1164,7 @@
     <nodeInfo nodeId="3836499504550260867" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SubclassedClassifierEditorMessage.java" startLine="32" startPosition="43" endLine="33" endPosition="117" />
     <nodeInfo nodeId="3836499504550260366" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SubclassedClassifierEditorMessage.java" startLine="45" startPosition="63" endLine="46" endPosition="16" />
     <nodeInfo nodeId="3836499504550260435" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SubclassedClassifierEditorMessage.java" startLine="49" startPosition="55" endLine="50" endPosition="78" />
-    <nodeInfo nodeId="3703829873956641483" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SubclassedClassifierEditorMessage.java" startLine="57" startPosition="36" endLine="58" endPosition="151" />
+    <nodeInfo nodeId="3703829873956641483" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SubclassedClassifierEditorMessage.java" startLine="57" startPosition="36" endLine="58" endPosition="97" />
     <nodeInfo nodeId="7437471060342841603" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SubclassedClassifierEditorMessage.java" startLine="61" startPosition="36" endLine="62" endPosition="16" />
     <nodeInfo nodeId="3836499504550260851" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Z" fileName="SubclassedClassifierEditorMessage.java" startLine="31" startPosition="86" endLine="35" endPosition="0" />
     <nodeInfo nodeId="3836499504550260405" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SubclassedClassifierEditorMessage.java" startLine="38" startPosition="25" endLine="42" endPosition="13" />
@@ -1181,7 +1178,7 @@
     <nodeInfo nodeId="3836499504550260332" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubclassedClassifierEditorMessage#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;Z)V" fileName="SubclassedClassifierEditorMessage.java" startLine="27" startPosition="0" endLine="36" endPosition="3" />
     <scopeInfo nodeId="3836499504550260856" fileName="SubclassedClassifierEditorMessage.java" startLine="32" startPosition="43" endLine="33" endPosition="117" />
     <scopeInfo nodeId="3836499504550260365" fileName="SubclassedClassifierEditorMessage.java" startLine="45" startPosition="63" endLine="46" endPosition="16" />
-    <scopeInfo nodeId="3836499504550260379" fileName="SubclassedClassifierEditorMessage.java" startLine="57" startPosition="36" endLine="58" endPosition="151" />
+    <scopeInfo nodeId="3836499504550260379" fileName="SubclassedClassifierEditorMessage.java" startLine="57" startPosition="36" endLine="58" endPosition="97" />
     <scopeInfo nodeId="7437471060342841602" fileName="SubclassedClassifierEditorMessage.java" startLine="61" startPosition="36" endLine="62" endPosition="16" />
     <scopeInfo nodeId="3836499504550260851" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Z" fileName="SubclassedClassifierEditorMessage.java" startLine="31" startPosition="86" endLine="35" endPosition="0">
       <varInfo nodeId="3836499504550260854" varName="cell" />
@@ -1290,14 +1287,14 @@
     <nodeInfo nodeId="113917032267578788" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="OverridingMethodEditorMessage.java" startLine="21" startPosition="114" endLine="22" endPosition="32" />
     <nodeInfo nodeId="113917032267548851" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverridingMethodEditorMessage.java" startLine="22" startPosition="32" endLine="23" endPosition="35" />
     <nodeInfo nodeId="113917032267548887" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverridingMethodEditorMessage.java" startLine="33" startPosition="63" endLine="34" endPosition="16" />
-    <nodeInfo nodeId="335007595588453651" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverridingMethodEditorMessage.java" startLine="37" startPosition="36" endLine="38" endPosition="147" />
+    <nodeInfo nodeId="335007595588453651" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverridingMethodEditorMessage.java" startLine="37" startPosition="36" endLine="38" endPosition="93" />
     <nodeInfo nodeId="4291694139627064711" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OverridingMethodEditorMessage#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;Z)V" fileName="OverridingMethodEditorMessage.java" startLine="20" startPosition="0" endLine="24" endPosition="3" />
     <nodeInfo nodeId="113917032267548871" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverridingMethodEditorMessage.java" startLine="26" startPosition="25" endLine="30" endPosition="13" />
     <nodeInfo nodeId="113917032267548783" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" fileName="OverridingMethodEditorMessage.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <nodeInfo nodeId="113917032267548803" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" fileName="OverridingMethodEditorMessage.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <nodeInfo nodeId="113917032267548771" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" fileName="OverridingMethodEditorMessage.java" startLine="25" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="113917032267548786" fileName="OverridingMethodEditorMessage.java" startLine="33" startPosition="63" endLine="34" endPosition="16" />
-    <scopeInfo nodeId="113917032267548806" fileName="OverridingMethodEditorMessage.java" startLine="37" startPosition="36" endLine="38" endPosition="147" />
+    <scopeInfo nodeId="113917032267548806" fileName="OverridingMethodEditorMessage.java" startLine="37" startPosition="36" endLine="38" endPosition="93" />
     <scopeInfo nodeId="4291694139627064714" fileName="OverridingMethodEditorMessage.java" startLine="21" startPosition="114" endLine="23" endPosition="35" />
     <scopeInfo nodeId="4291694139627064711" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OverridingMethodEditorMessage#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;Z)V" fileName="OverridingMethodEditorMessage.java" startLine="20" startPosition="0" endLine="24" endPosition="3">
       <varInfo nodeId="113917032267548811" varName="ovner" />
@@ -1420,7 +1417,7 @@
     <nodeInfo nodeId="1594966379433195692" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="220" startPosition="63" endLine="221" endPosition="44" />
     <nodeInfo nodeId="1594966379433196303" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideMethodsChecker.java" startLine="221" startPosition="44" endLine="222" endPosition="53" />
     <nodeInfo nodeId="1594966379433196321" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="OverrideMethodsChecker.java" startLine="222" startPosition="53" endLine="223" endPosition="48" />
-    <nodeInfo nodeId="1594966379433196384" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="224" startPosition="286" endLine="225" endPosition="22" />
+    <nodeInfo nodeId="1594966379433196384" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="224" startPosition="387" endLine="225" endPosition="22" />
     <nodeInfo nodeId="1594966379433196324" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="OverrideMethodsChecker.java" startLine="226" startPosition="9" endLine="227" endPosition="63" />
     <nodeInfo nodeId="1594966379433196299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideMethodsChecker.java" startLine="228" startPosition="273" endLine="229" endPosition="22" />
     <nodeInfo nodeId="1594966379433196482" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="OverrideMethodsChecker.java" startLine="230" startPosition="9" endLine="231" endPosition="101" />
@@ -1531,7 +1528,7 @@
     <scopeInfo nodeId="4053237040709225860" fileName="OverrideMethodsChecker.java" startLine="199" startPosition="68" endLine="200" endPosition="30" />
     <scopeInfo nodeId="2374396819863378958" fileName="OverrideMethodsChecker.java" startLine="212" startPosition="34" endLine="213" endPosition="18" />
     <scopeInfo nodeId="1594966379432123419" fileName="OverrideMethodsChecker.java" startLine="216" startPosition="88" endLine="217" endPosition="20" />
-    <scopeInfo nodeId="1594966379433196331" fileName="OverrideMethodsChecker.java" startLine="224" startPosition="286" endLine="225" endPosition="22" />
+    <scopeInfo nodeId="1594966379433196331" fileName="OverrideMethodsChecker.java" startLine="224" startPosition="387" endLine="225" endPosition="22" />
     <scopeInfo nodeId="1594966379433195769" fileName="OverrideMethodsChecker.java" startLine="228" startPosition="273" endLine="229" endPosition="22" />
     <scopeInfo nodeId="1594966379433196403" fileName="OverrideMethodsChecker.java" startLine="232" startPosition="610" endLine="233" endPosition="22" />
     <scopeInfo nodeId="1594966379433196485" fileName="OverrideMethodsChecker.java" startLine="236" startPosition="282" endLine="237" endPosition="22" />
@@ -1694,14 +1691,14 @@
     <nodeInfo nodeId="113917032267579801" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="OverridenMethodEditorMessage.java" startLine="21" startPosition="112" endLine="22" endPosition="32" />
     <nodeInfo nodeId="3488726975323013592" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OverridenMethodEditorMessage.java" startLine="22" startPosition="32" endLine="23" endPosition="33" />
     <nodeInfo nodeId="1266304285022803844" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverridenMethodEditorMessage.java" startLine="33" startPosition="63" endLine="34" endPosition="16" />
-    <nodeInfo nodeId="2769330170999148267" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverridenMethodEditorMessage.java" startLine="37" startPosition="36" endLine="38" endPosition="209" />
+    <nodeInfo nodeId="2769330170999148267" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverridenMethodEditorMessage.java" startLine="37" startPosition="36" endLine="38" endPosition="160" />
     <nodeInfo nodeId="427992486439506112" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OverridenMethodEditorMessage#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;Z)V" fileName="OverridenMethodEditorMessage.java" startLine="20" startPosition="0" endLine="24" endPosition="3" />
     <nodeInfo nodeId="127250423364131831" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverridenMethodEditorMessage.java" startLine="26" startPosition="25" endLine="30" endPosition="13" />
     <nodeInfo nodeId="1266304285022803840" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" fileName="OverridenMethodEditorMessage.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <nodeInfo nodeId="2769330170999145996" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" fileName="OverridenMethodEditorMessage.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <nodeInfo nodeId="127250423364131827" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" fileName="OverridenMethodEditorMessage.java" startLine="25" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1266304285022803843" fileName="OverridenMethodEditorMessage.java" startLine="33" startPosition="63" endLine="34" endPosition="16" />
-    <scopeInfo nodeId="2769330170999145999" fileName="OverridenMethodEditorMessage.java" startLine="37" startPosition="36" endLine="38" endPosition="209" />
+    <scopeInfo nodeId="2769330170999145999" fileName="OverridenMethodEditorMessage.java" startLine="37" startPosition="36" endLine="38" endPosition="160" />
     <scopeInfo nodeId="427992486439506115" fileName="OverridenMethodEditorMessage.java" startLine="21" startPosition="112" endLine="23" endPosition="33" />
     <scopeInfo nodeId="427992486439506112" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OverridenMethodEditorMessage#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;Z)V" fileName="OverridenMethodEditorMessage.java" startLine="20" startPosition="0" endLine="24" endPosition="3">
       <varInfo nodeId="427992486439506118" varName="ovner" />

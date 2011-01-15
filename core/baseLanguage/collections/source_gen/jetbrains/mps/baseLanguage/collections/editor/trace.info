@@ -53,12 +53,12 @@
   <unitInfo fileName="GetKeysOperation_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.GetKeysOperation_Editor" />
   <unitInfo fileName="ToIteratorOperation_Editor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ToIteratorOperation_Editor" />
   <unitInfo fileName="ListElementAccessExpression_delete_brackets.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ListElementAccessExpression_delete_brackets" />
-  <unitInfo fileName="replace_withAnotherSequenceType.java" startLine="26" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType$Type_customReplace_cellMenu_a0" />
+  <unitInfo fileName="replace_withAnotherSequenceType.java" startLine="27" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType$Type_customReplace_cellMenu_a0" />
   <unitInfo fileName="Collections_Style_StyleSheet.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet" />
   <unitInfo fileName="AllConstant_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.AllConstant_Editor" />
   <unitInfo fileName="AbstractEnumeratorOperation_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.AbstractEnumeratorOperation_Editor" />
   <unitInfo fileName="AbstractIteratorOperation_Editor.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.AbstractIteratorOperation_Editor" />
-  <unitInfo fileName="replace_withAnotherSequenceType.java" startLine="21" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType" />
+  <unitInfo fileName="replace_withAnotherSequenceType.java" startLine="22" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.replace_withAnotherSequenceType" />
   <unitInfo fileName="CustomMapCreator_Editor.java" startLine="80" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.CustomMapCreator_Editor$_Inline_jxu7lh_a1a0" />
   <unitInfo fileName="CustomContainerCreator_Editor.java" startLine="80" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.CustomContainerCreator_Editor$_Inline_j9f7go_a1a0" />
   <unitInfo fileName="StopStatement_Editor.java" startLine="17" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.StopStatement_Editor" />
@@ -68,11 +68,11 @@
   <unitInfo fileName="ClearSetOperation_Editor.java" startLine="18" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ClearSetOperation_Editor" />
   <unitInfo fileName="SortDirection_Editor.java" startLine="18" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SortDirection_Editor" />
   <unitInfo fileName="SmartClosureParameterDeclaration_Editor.java" startLine="19" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SmartClosureParameterDeclaration_Editor" />
-  <unitInfo fileName="SequenceCreator_add_initializer.java" startLine="22" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SequenceCreator_add_initializer$SequenceCreator_add_initializer_Action0" />
+  <unitInfo fileName="SequenceCreator_add_initializer.java" startLine="23" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SequenceCreator_add_initializer$SequenceCreator_add_initializer_Action0" />
   <unitInfo fileName="DowncastExpression_Editor.java" startLine="20" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.DowncastExpression_Editor" />
   <unitInfo fileName="ForEachVariable_Editor.java" startLine="27" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ForEachVariable_Editor" />
   <unitInfo fileName="MapInitializer_Editor.java" startLine="70" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.MapInitializer_Editor$entriesListHandler_3hyu43_b0" />
-  <unitInfo fileName="SequenceCreator_add_initializer.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SequenceCreator_add_initializer" />
+  <unitInfo fileName="SequenceCreator_add_initializer.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SequenceCreator_add_initializer" />
   <unitInfo fileName="MapEntry_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.MapEntry_Editor" />
   <unitInfo fileName="MapOperationExpression_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.MapOperationExpression_Editor" />
   <unitInfo fileName="CustomContainers_Editor.java" startLine="142" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.CustomContainers_Editor$containerDeclarationListHandler_xp0b50_a1c0" />
@@ -163,10 +163,10 @@
     <scopeInfo nodeId="1228229070813" fileName="DowncastExpression_DELETE.java" startLine="29" startPosition="75" endLine="30" endPosition="100" />
   </root>
   <root nodeId="1229428441559">
-    <nodeInfo nodeId="1229428505812" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SequenceCreator_add_initializer.java" startLine="55" startPosition="152" endLine="56" endPosition="76" />
-    <nodeInfo nodeId="1229428583478" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SequenceCreator_add_initializer.java" startLine="59" startPosition="146" endLine="60" endPosition="119" />
-    <scopeInfo nodeId="1229428502688" fileName="SequenceCreator_add_initializer.java" startLine="55" startPosition="152" endLine="56" endPosition="76" />
-    <scopeInfo nodeId="1229428480520" fileName="SequenceCreator_add_initializer.java" startLine="59" startPosition="146" endLine="60" endPosition="119" />
+    <nodeInfo nodeId="1229428505812" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SequenceCreator_add_initializer.java" startLine="56" startPosition="152" endLine="57" endPosition="76" />
+    <nodeInfo nodeId="1229428583478" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SequenceCreator_add_initializer.java" startLine="60" startPosition="146" endLine="61" endPosition="126" />
+    <scopeInfo nodeId="1229428502688" fileName="SequenceCreator_add_initializer.java" startLine="56" startPosition="152" endLine="57" endPosition="76" />
+    <scopeInfo nodeId="1229428480520" fileName="SequenceCreator_add_initializer.java" startLine="60" startPosition="146" endLine="61" endPosition="126" />
   </root>
   <root nodeId="1240687606670">
     <nodeInfo nodeId="1240687785199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="JoinOperation_Editor.java" startLine="110" startPosition="111" endLine="111" endPosition="72" />
@@ -213,20 +213,20 @@
     <scopeInfo nodeId="6099516049394772616" fileName="CustomContainerDeclaration_Editor.java" startLine="248" startPosition="112" endLine="249" endPosition="112" />
   </root>
   <root nodeId="7246115176735615080">
-    <nodeInfo nodeId="3357971920377774942" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="replace_withAnotherSequenceType.java" startLine="30" startPosition="105" endLine="31" endPosition="505" />
-    <nodeInfo nodeId="5686963296372576471" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="replace_withAnotherSequenceType.java" startLine="31" startPosition="505" endLine="32" endPosition="134" />
-    <nodeInfo nodeId="5686963296372870434" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="replace_withAnotherSequenceType.java" startLine="34" startPosition="41" endLine="35" endPosition="74" />
-    <nodeInfo nodeId="7246115176735615110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="replace_withAnotherSequenceType.java" startLine="44" startPosition="144" endLine="45" endPosition="90" />
-    <nodeInfo nodeId="5686963296372870424" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="replace_withAnotherSequenceType.java" startLine="33" startPosition="150" endLine="37" endPosition="0" />
-    <nodeInfo nodeId="5686963296372576461" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="replace_withAnotherSequenceType.java" startLine="32" startPosition="134" endLine="37" endPosition="64" />
-    <scopeInfo nodeId="5686963296372870425" fileName="replace_withAnotherSequenceType.java" startLine="34" startPosition="41" endLine="35" endPosition="74" />
-    <scopeInfo nodeId="7246115176735615087" fileName="replace_withAnotherSequenceType.java" startLine="44" startPosition="144" endLine="45" endPosition="90" />
-    <scopeInfo nodeId="5686963296372870424" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="replace_withAnotherSequenceType.java" startLine="33" startPosition="150" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="7246115176735615085" fileName="replace_withAnotherSequenceType.java" startLine="30" startPosition="105" endLine="37" endPosition="64">
+    <nodeInfo nodeId="3357971920377774942" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="replace_withAnotherSequenceType.java" startLine="31" startPosition="105" endLine="32" endPosition="505" />
+    <nodeInfo nodeId="5686963296372576471" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="replace_withAnotherSequenceType.java" startLine="32" startPosition="505" endLine="33" endPosition="134" />
+    <nodeInfo nodeId="5686963296372870434" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="replace_withAnotherSequenceType.java" startLine="35" startPosition="41" endLine="36" endPosition="74" />
+    <nodeInfo nodeId="7246115176735615110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="replace_withAnotherSequenceType.java" startLine="45" startPosition="144" endLine="46" endPosition="94" />
+    <nodeInfo nodeId="5686963296372870424" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="replace_withAnotherSequenceType.java" startLine="34" startPosition="150" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="5686963296372576461" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="replace_withAnotherSequenceType.java" startLine="33" startPosition="134" endLine="38" endPosition="64" />
+    <scopeInfo nodeId="5686963296372870425" fileName="replace_withAnotherSequenceType.java" startLine="35" startPosition="41" endLine="36" endPosition="74" />
+    <scopeInfo nodeId="7246115176735615087" fileName="replace_withAnotherSequenceType.java" startLine="45" startPosition="144" endLine="46" endPosition="94" />
+    <scopeInfo nodeId="5686963296372870424" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="replace_withAnotherSequenceType.java" startLine="34" startPosition="150" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="7246115176735615085" fileName="replace_withAnotherSequenceType.java" startLine="31" startPosition="105" endLine="38" endPosition="64">
       <varInfo nodeId="3357971920377774943" varName="others" />
       <varInfo nodeId="5686963296372576472" varName="act" />
     </scopeInfo>
-    <unitInfo nodeId="5686963296372870424" fileName="replace_withAnotherSequenceType.java" startLine="33" startPosition="127" endLine="37" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.editor.IWhereFilter$anonymous" />
+    <unitInfo nodeId="5686963296372870424" fileName="replace_withAnotherSequenceType.java" startLine="34" startPosition="127" endLine="38" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.editor.IWhereFilter$anonymous" />
   </root>
   <root nodeId="9201346465041659430">
     <nodeInfo nodeId="9201346465041659434" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MapElement_DELETE.java" startLine="29" startPosition="75" endLine="30" endPosition="93" />

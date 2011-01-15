@@ -3,7 +3,6 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -28,7 +27,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     this.generator = generator;
   }
 
-  @Override
   public boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
     if (condition == null) {
       if (required) {
@@ -56,7 +54,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     return false;
   }
 
-  @Override
   public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
     IfMacro_Condition function = ifMacro.getConditionFunction();
     if (function == null) {
@@ -82,7 +79,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     return false;
   }
 
-  @Override
   public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
     MapSrcMacro_MapperFunction mapperFunction;
@@ -104,7 +100,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
   }
 
-  @Override
   public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
     MapSrcMacro_PostMapperFunction postMapperFunction;
@@ -128,7 +123,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
   }
 
-  @Override
   public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     String attributeRole = propertyMacro.getRole_();
     String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(attributeRole);
@@ -153,7 +147,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
   }
 
-  @Override
   public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query, @NotNull TemplateContext context) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query.getNode());
     try {
@@ -172,7 +165,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
   }
 
-  @Override
   public Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query, @Nullable TemplateContext context) {
     String methodName = TemplateFunctionMethodName.templateArgumentQuery(query.getNode());
     try {
@@ -194,7 +186,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   /**
    * used to evaluate 'sourceNodesQuery' in macros and in rules
    */
-  @Override
   public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, @NotNull TemplateContext context) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
     try {
@@ -224,7 +215,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
   }
 
-  @Override
   public SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context) {
     TemplateFragment fragment = TemplateFragment_AnnotationLink.getTemplateFragment((BaseConcept) templateFragmentNode.getAdapter());
     // has custom context builder provider?
@@ -251,7 +241,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     return mainContextNode;
   }
 
-  @Override
   public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context) {
     ReferenceMacro_GetReferent function = refMacro.getReferentFunction();
     if (function == null) {
@@ -274,47 +263,38 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     return null;
   }
 
-  @Override
   public void executeInContext(SNode outputNode, TemplateContext context, PostProcessor processor) {
     processor.process(outputNode, context);
   }
 
-  @Override
   public SNode executeInContext(SNode outputNode, TemplateContext context, NodeMapper mapper) {
     return mapper.map(outputNode, context);
   }
 
-  @Override
   public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     return rule.tryToApply(environment, context);
   }
 
-  @Override
   public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     return rule.isApplicable(environment, context);
   }
 
-  @Override
   public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     return rule.apply(environment, context);
   }
 
-  @Override
   public Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException {
     return rule.apply(environment);
   }
 
-  @Override
   public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) {
     return rule.getContextNode(environment, context);
   }
 
-  @Override
   public void executeScript(TemplateMappingScript mappingScript, SModel model) {
     mappingScript.apply(model, generator);
   }
 
-  @Override
   public boolean isMultithreaded() {
     return true;
   }

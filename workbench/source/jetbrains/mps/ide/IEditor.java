@@ -29,39 +29,24 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.util.List;
 
-public interface IEditor {
+public interface IEditor{
   JComponent getComponent();
 
-  void addCellSelectionListener(CellSelectionListener listener);
+  EditorComponent getCurrentEditorComponent();
 
-  void removeCellSelectionListener(CellSelectionListener listener);
+  SNodePointer getCurrentlyEditedNode();
 
-  IOperationContext getOperationContext();
+  List<SNodePointer> getAllEditedNodes();
 
   EditorContext getEditorContext();
 
-  EditorCell getSelectedCell();
+  IOperationContext getOperationContext();
 
-  EditorCell getRootCell();
-
-  SNode getEditedNode();
-
-  SNodePointer getEditedNodePointer();
-
-  List<SNode> getEditedNodes();
-
-  void selectNode(SNode node);
-
-  void requestFocus();
+  void showNode(SNode node, boolean select);
 
   void dispose();
 
-  void repaint();
-
-  @Nullable
-  EditorComponent getCurrentEditorComponent();
-
-  boolean removeFromRecentEditorsOnClose();
+  //---state
 
   MPSEditorState saveState(@NotNull FileEditorStateLevel level);
 

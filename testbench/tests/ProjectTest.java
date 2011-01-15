@@ -89,7 +89,8 @@ public class ProjectTest {
       "/core/baseLanguage/unitTest/unitTest.mpr",
       "/platform/math/mathLanguage.mpr",
       "/platform/money/MoneyLang.mpr",
-      //"/platform/contracts/contracts.mpr",
+      "/platform/contracts/contracts.mpr",
+      "/platform/gwtsupport/GWTSupport.mpr",
       "/workbench/ideSolution/ide.mpr",
 
       "/plugins/vcs/vcs.mpr",

@@ -37,8 +37,12 @@ public class ReadUtil {
   }
 
   public static byte[] read(InputStream is) throws IOException {
-    ByteArrayOutputStream os = new ByteArrayOutputStream();
-    byte[] buff = new byte[1024];
+    return read(is, 4096);
+  }
+
+  public static byte[] read(InputStream is, int size) throws IOException {
+    ByteArrayOutputStream os = new ByteArrayOutputStream(size);
+    byte[] buff = new byte[4096];
     while (true) {
       int read = is.read(buff, 0, buff.length);
       if (read == -1) break;

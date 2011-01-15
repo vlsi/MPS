@@ -12,9 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -64,7 +64,7 @@ public class SafeDeleteConcept extends BaseGeneratedRefactoring {
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     // all usages excluding concept's aspects 
-    refactoringContext.setParameter("nodeAspects", AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(refactoringContext.getSelectedNode(), GlobalScope.getInstance()));
+    refactoringContext.setParameter("nodeAspects", AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(refactoringContext.getSelectedNode()));
 
     SearchResults searchResults = new SearchResults();
     searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));

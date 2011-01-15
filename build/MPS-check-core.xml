@@ -21,150 +21,71 @@
     <path path="core/kernel/source"/>
     <path path="core/kernel/source_gen"/>
     <path path="core/generator/source" />
+    <path path="core/generator/source_gen" />
+    <path path="core/typesystemEngine/source"/>
     <path path="core/runtime/source" />
     <path path="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" />
 
-    <!-- typesystem engine -->
-    <path path="core/typesystemEngine/source"/>
+    <!-- language sources -->
+    <path path="core/languageDesign/pattern/source"/>
+    <path path="core/languageDesign/smodel/source"/>
+    <path path="core/languageDesign/textGen/source"/>
 
-    <!-- actions -->
-    <path path="core/languageDesign/actions/source_gen/jetbrains/mps/lang/actions/structure"/>
+    <!-- runtime -->
+    <path path="core/languageDesign/smodel/solutions/runtime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter"/>
+    <path path="core/baseLanguage/collections/runtime/source_gen/jetbrains/mps/internal/collections/runtime"/>
+    <path path="core/baseLanguage/closures/runtime/source"/>
+    <path path="core/baseLanguage/closures/runtime/source_gen"/>
+    <path path="core/baseLanguage/tuples/runtime/source_gen"/>
+
+    <!-- structures -->
+    <path path="core/languageDesign/behavior/source_gen/jetbrains/mps/lang/behavior/structure"/>
+    <path path="core/languageDesign/constraints/source_gen/jetbrains/mps/lang/constraints/structure"/>
+    <path path="core/languageDesign/core/source_gen/jetbrains/mps/lang/core/structure"/>
+    <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/generationContext/structure"/>
+    <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/structure"/>
+    <path path="core/languageDesign/pattern/source_gen/jetbrains/mps/lang/pattern/structure"/>
+    <path path="core/languageDesign/quotation/source_gen/jetbrains/mps/lang/quotation/structure"/>
+    <path path="core/languageDesign/sharedConcepts/source_gen/jetbrains/mps/lang/sharedConcepts/structure"/>
+    <path path="core/languageDesign/smodel/source_gen/jetbrains/mps/lang/smodel/structure"/>
+    <path path="core/languageDesign/structure/source_gen/jetbrains/mps/lang/structure/structure"/>
+    <path path="core/languageDesign/stubs/source_gen/jetbrains/mps/lang/stubs/structure"/>
+    <path path="core/languageDesign/textGen/source_gen/jetbrains/mps/lang/textGen/structure"/>
+    <path path="core/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/structure"/>
+
+    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/structure"/>
+    <path path="core/baseLanguage/classifiers/source_gen/jetbrains/mps/baseLanguage/classifiers/structure"/>
+    <path path="core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/structure"/>
+    <path path="core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/structure"/>
+
+  </path>
+
+  <path id="core.behavior.sources">
 
     <!-- behavior -->
     <path path="core/languageDesign/behavior/source_gen/jetbrains/mps/lang/behavior/behavior"/>
-    <path path="core/languageDesign/behavior/source_gen/jetbrains/mps/lang/behavior/generator"/>
-    <path path="core/languageDesign/behavior/source_gen/jetbrains/mps/lang/behavior/structure"/>
-    <path path="core/languageDesign/behavior/source_gen/jetbrains/mps/lang/behavior/typesystem"/>
-
-    <!-- constraints -->
-    <path path="core/languageDesign/constraints/source_gen/jetbrains/mps/lang/constraints/behavior"/>
-    <path path="core/languageDesign/constraints/source_gen/jetbrains/mps/lang/constraints/generator"/>
-    <path path="core/languageDesign/constraints/source_gen/jetbrains/mps/lang/constraints/structure"/>
-    <path path="core/languageDesign/constraints/source_gen/jetbrains/mps/lang/constraints/typesystem"/>
-
-    <!-- core -->
-    <path path="core/languageDesign/core/source_gen/jetbrains/mps/lang/core/behavior"/>
-    <path path="core/languageDesign/core/source_gen/jetbrains/mps/lang/core/structure"/>
-
-    <!-- dataFlow -->
-    <path path="core/languageDesign/dataFlow/source_gen/jetbrains/mps/lang/dataFlow/behavior"/>
-    <path path="core/languageDesign/dataFlow/source_gen/jetbrains/mps/lang/dataFlow/structure"/>
-
-    <!-- editor -->
-    <path path="core/languageDesign/editor/source_gen/jetbrains/mps/lang/editor/structure"/>
-
-    <!-- findUsages -->
-    <path path="core/languageDesign/findUsages/source_gen/jetbrains/mps/lang/findUsages/structure"/>
-
-    <!-- generator -->
     <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/generationContext/behavior"/>
-    <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/generationContext/generator"/>
-    <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/generationContext/structure"/>
-    <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/generationContext/typesystem"/>
     <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/behavior"/>
-    <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/generator"/>
-    <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/structure"/>
-    <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/typesystem"/>
-    <path path="core/languageDesign/generator/source/jetbrains/mps/lang/generator/generator"/>
-
-    <!-- intentions -->
-    <path path="core/languageDesign/intentions/source_gen/jetbrains/mps/lang/intentions/structure"/>
-
-    <!-- pattern -->
-    <path path="core/languageDesign/pattern/source"/>
-    <path path="core/languageDesign/pattern/source_gen/jetbrains/mps/lang/pattern/behavior"/>
-    <path path="core/languageDesign/pattern/source_gen/jetbrains/mps/lang/pattern/generator"/>
-    <path path="core/languageDesign/pattern/source_gen/jetbrains/mps/lang/pattern/structure"/>
-    <path path="core/languageDesign/pattern/source_gen/jetbrains/mps/lang/pattern/typesystem"/>
-
-    <!-- plugin -->
-    <!-- <path path="core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/behavior"/> -->
-    <!-- <path path="core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/generator"/> -->
-    <path path="core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/structure"/>
-   <!-- <path path="core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/typesystem"/> -->
-
-    <!-- quotation -->
     <path path="core/languageDesign/quotation/source_gen/jetbrains/mps/lang/quotation/behavior"/>
-    <path path="core/languageDesign/quotation/source_gen/jetbrains/mps/lang/quotation/generator"/>
-    <path path="core/languageDesign/quotation/source_gen/jetbrains/mps/lang/quotation/structure"/>
-    <path path="core/languageDesign/quotation/source_gen/jetbrains/mps/lang/quotation/typesystem"/>
-
-    <!-- refactoring -->
-    <!-- <path path="core/languageDesign/refactoring/source"/> -->
-    <!--<path path="core/languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/behavior"/>-->
-    <!--<path path="core/languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/generator"/>-->
-    <path path="core/languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/structure"/>
-    <!--<path path="core/languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/typesystem"/>-->
-
-    <!-- script -->
-    <path path="core/languageDesign/script/source/jetbrains/mps/lang/script/runtime"/>
-    <path path="core/languageDesign/script/source/jetbrains/mps/lang/script/util"/>
-    <path path="core/languageDesign/script/source_gen/jetbrains/mps/lang/script/generator"/>
-    <path path="core/languageDesign/script/source_gen/jetbrains/mps/lang/script/structure"/>
-    <path path="core/languageDesign/script/source_gen/jetbrains/mps/lang/script/typesystem"/>
-
-    <!-- sharedConcepts -->
     <path path="core/languageDesign/sharedConcepts/source_gen/jetbrains/mps/lang/sharedConcepts/behavior"/>
-    <path path="core/languageDesign/sharedConcepts/source_gen/jetbrains/mps/lang/sharedConcepts/generator"/>
-    <path path="core/languageDesign/sharedConcepts/source_gen/jetbrains/mps/lang/sharedConcepts/structure"/>
-
-    <!-- smodel -->
-    <path path="core/languageDesign/smodel/source"/>
-    <path path="core/languageDesign/smodel/source_gen/jetbrains/mps/lang/smodel/behavior"/>
-    <path path="core/languageDesign/smodel/source_gen/jetbrains/mps/lang/smodel/generator"/>
-    <path path="core/languageDesign/smodel/source_gen/jetbrains/mps/lang/smodel/structure"/>
-    <path path="core/languageDesign/smodel/source_gen/jetbrains/mps/lang/smodel/typesystem"/>
-    <path path="core/languageDesign/smodel/solutions/runtime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter"/>
-
-    <!-- structure -->
-    <path path="core/languageDesign/structure/source/jetbrains/mps/lang/structure/constraints"/>
+    <path path="core/languageDesign/core/source_gen/jetbrains/mps/lang/core/behavior"/>
+    <path path="core/languageDesign/pattern/source_gen/jetbrains/mps/lang/pattern/behavior"/>
     <path path="core/languageDesign/structure/source_gen/jetbrains/mps/lang/structure/behavior"/>
-    <path path="core/languageDesign/structure/source_gen/jetbrains/mps/lang/structure/generator_new"/>
-    <path path="core/languageDesign/structure/source_gen/jetbrains/mps/lang/structure/structure"/>
-    <path path="core/languageDesign/structure/source_gen/jetbrains/mps/lang/structure/typesystem"/>
 
-    <!-- stubs -->
-    <path path="core/languageDesign/stubs/source_gen/jetbrains/mps/lang/stubs/behavior"/>
-    <path path="core/languageDesign/stubs/source_gen/jetbrains/mps/lang/stubs/generator"/>
-    <path path="core/languageDesign/stubs/source_gen/jetbrains/mps/lang/stubs/structure"/>
-    <path path="core/languageDesign/stubs/source_gen/jetbrains/mps/lang/stubs/typesystem"/>
-
-    <!-- test -->
-    <path path="core/languageDesign/test/source_gen/jetbrains/mps/lang/test/structure"/>
-
-    <!-- textGen -->
-    <path path="core/languageDesign/textGen/source"/>
-    <path path="core/languageDesign/textGen/source_gen/jetbrains/mps/lang/textGen/behavior"/>
-    <path path="core/languageDesign/textGen/source_gen/jetbrains/mps/lang/textGen/generator"/>
-    <path path="core/languageDesign/textGen/source_gen/jetbrains/mps/lang/textGen/structure"/>
-    <path path="core/languageDesign/textGen/source_gen/jetbrains/mps/lang/textGen/typesystem"/>
-
-    <!-- typesystem -->
-    <path path="core/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/behavior"/>
-    <path path="core/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/generator"/>
-    <path path="core/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/structure"/>
-    <path path="core/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/typesystem"/>
-
+    <!--TODO <path path="core/languageDesign/constraints/source_gen/jetbrains/mps/lang/constraints/behavior"/>-->
+    <!--TODO<path path="core/languageDesign/smodel/source_gen/jetbrains/mps/lang/smodel/behavior"/>-->
+    <!--TODO<path path="core/languageDesign/stubs/source_gen/jetbrains/mps/lang/stubs/behavior"/>-->
+    <!--TODO<path path="core/languageDesign/textGen/source_gen/jetbrains/mps/lang/textGen/behavior"/>-->
+    <!--TODO<path path="core/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/behavior"/>-->
 
     <!-- baseLanguage -->
-    <path path="core/baseLanguage/baseLanguage/source/jetbrains/mps/baseLanguage"/>
+    <path path="core/baseLanguage/baseLanguage/source/jetbrains/mps/baseLanguage/icons"/>
     <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/behavior"/>
-    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/structure"/>
-    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/textGen"/>
     <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/stubs"/>
+    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/stubs"/>
     <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/search"/>
+    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/textGen"/>
 
-    <path path="core/baseLanguage/classifiers/source_gen/jetbrains/mps/baseLanguage/classifiers/structure"/>
-
-    <!-- collections -->	
-    <path path="core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/structure"/>
-    <path path="core/baseLanguage/collections/runtime/source_gen/jetbrains/mps/internal/collections/runtime"/>
-
-    <path path="core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/structure"/>
-    <path path="core/baseLanguage/closures/runtime/source"/>
-    <path path="core/baseLanguage/closures/runtime/source_gen"/>
-
-    <path path="core/baseLanguage/tuples/runtime/source_gen"/>
   </path>
 
   <path id="core.classpath">
@@ -178,10 +99,9 @@
   <target name="compile" depends="clean">
     <mkdir dir="tempbuild"/>
 
-    <javac classpathref="core.classpath" destdir="tempbuild" fork="true" memorymaximumsize="1024m">
-      <src>
-        <path refid="core.sources"/>
-      </src>
+    <javac sourcepath="" classpathref="core.classpath" destdir="tempbuild" fork="true" memorymaximumsize="1024m">
+      <src refid="core.sources"/>
+      <!--<src refid="core.behavior.sources"/>-->
     </javac>
   </target>
 </project>

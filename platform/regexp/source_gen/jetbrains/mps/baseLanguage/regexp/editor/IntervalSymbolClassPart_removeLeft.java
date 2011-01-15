@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IntervalSymbolClassPart_removeLeft {
@@ -27,7 +27,7 @@ public class IntervalSymbolClassPart_removeLeft {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode cn = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart");
+      SNode cn = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart");
       SPropertyOperations.set(cn, "character", SPropertyOperations.getString(node, "end"));
     }
   }

@@ -13,10 +13,8 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SNodeCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -28,7 +26,9 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_8ma8bu_a");
     editorCell.addEditorCell(this.createRefNode_8ma8bu_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8ma8bu_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8ma8bu_c0(editorContext, node));
+    if (renderingCondition_8ma8bu_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_8ma8bu_c0(editorContext, node));
+    }
     editorCell.addEditorCell(this.createConstant_8ma8bu_d0(editorContext, node));
     return editorCell;
   }
@@ -69,13 +69,9 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_8ma8bu_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("prototypeNode");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no prototypeNode>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -85,5 +81,9 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean renderingCondition_8ma8bu_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "prototypeNode", true) != null);
   }
 }

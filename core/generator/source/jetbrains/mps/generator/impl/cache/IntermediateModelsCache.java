@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.cache;
 
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.util.FileUtil;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -68,7 +69,7 @@ public class IntermediateModelsCache {
         is.close();
       }
 
-      InputStreamReader reader = new InputStreamReader(cacheContainer.openStream(SIGNATURE));
+      InputStreamReader reader = new InputStreamReader(cacheContainer.openStream(SIGNATURE), FileUtil.DEFAULT_CHARSET);
       try {
         StringBuilder signature = new StringBuilder();
         char[] buff = new char[512];

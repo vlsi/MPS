@@ -26,7 +26,7 @@ import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
-import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
+import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
@@ -248,7 +248,7 @@ public class MPSEditorOpener {
     IEditor nodeEditor = fileNodeEditor.getNodeEditor();
 
     if (nodeEditor instanceof TabbedEditor) {
-      ((TabbedEditor) nodeEditor).selectLinkedEditor(root);
+      nodeEditor.showNode(root, false);
     }
 
     return nodeEditor;

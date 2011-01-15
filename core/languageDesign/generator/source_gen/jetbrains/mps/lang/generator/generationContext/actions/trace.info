@@ -40,11 +40,11 @@
   <root nodeId="1216861714160">
     <nodeInfo nodeId="1216861714164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="24" startPosition="184" endLine="25" endPosition="417" />
     <nodeInfo nodeId="1227876800489" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="79" startPosition="45" endLine="80" endPosition="78" />
-    <nodeInfo nodeId="1227876800485" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="QueriesGenerated.java" startLine="78" startPosition="288" endLine="82" endPosition="0" />
+    <nodeInfo nodeId="1227876800485" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="QueriesGenerated.java" startLine="78" startPosition="288" endLine="82" endPosition="0" />
     <nodeInfo nodeId="1217013835117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="77" startPosition="35" endLine="82" endPosition="30" />
     <scopeInfo nodeId="1216861714163" fileName="QueriesGenerated.java" startLine="24" startPosition="184" endLine="25" endPosition="417" />
     <scopeInfo nodeId="1227876800488" fileName="QueriesGenerated.java" startLine="79" startPosition="45" endLine="80" endPosition="78" />
-    <scopeInfo nodeId="1227876800485" fileName="QueriesGenerated.java" startLine="78" startPosition="288" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="1227876800485" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="QueriesGenerated.java" startLine="78" startPosition="288" endLine="82" endPosition="0" />
     <scopeInfo nodeId="1217013815553" fileName="QueriesGenerated.java" startLine="77" startPosition="35" endLine="82" endPosition="30" />
     <unitInfo nodeId="1227876800485" fileName="QueriesGenerated.java" startLine="78" startPosition="265" endLine="82" endPosition="11" unitName="jetbrains.mps.lang.generator.generationContext.actions.IWhereFilter$anonymous" />
   </root>

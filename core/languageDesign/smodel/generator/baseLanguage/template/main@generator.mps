@@ -332,6 +332,14 @@
       <property name="name" nameId="tpck.1169194664001" value="reduce_ConceptMethodCall_viaBehaviorManager" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp25.1179409122411" resolveInfo="Node_ConceptMethodCall" />
     </node>
+    <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1627366655853340206">
+      <property name="name" nameId="tpck.1169194664001" value="reduce_GetAncestor_noConceptList_SameML" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp25.1171407110247" resolveInfo="Node_GetAncestorOperation" />
+    </node>
+    <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1627366655853340240">
+      <property name="name" nameId="tpck.1169194664001" value="reduce_GetAncestor_whereConceptInList_SameML" />
+      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp25.1171407110247" resolveInfo="Node_GetAncestorOperation" />
+    </node>
   </roots>
   <root id="1139186732963">
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1168910896903">
@@ -2079,10 +2087,19 @@
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1171416050076">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1171416050077">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1173119959236">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1171416050079">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1168968334480" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1171416050080" />
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.AndExpression" typeId="tpee.1080120340718" id="1627366655853434025">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="1627366655853434028">
+                <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1627366655853434030">
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.4179981224539639933" resolveInfo="operationHasParm_SameMetaLevel" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1627366655853434031" />
+                </node>
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1171416050079">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1168968334480" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1171416050080" />
+              </node>
             </node>
           </node>
         </node>
@@ -2091,16 +2108,49 @@
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1171415812313" resolveInfo="reduce_GetAncestor_noConceptList" />
       </node>
     </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1627366655853434018">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp25.1171407110247" resolveInfo="Node_GetAncestorOperation" />
+      <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1627366655853434019">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1627366655853434020">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1627366655853434021">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.AndExpression" typeId="tpee.1080120340718" id="1627366655853434032">
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1627366655853434022">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1168968334480" resolveInfo="nodeOp_noParm_conceptList" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1627366655853434023" />
+              </node>
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1627366655853434035">
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.4179981224539639933" resolveInfo="operationHasParm_SameMetaLevel" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1627366655853434036" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1627366655853434037">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1627366655853340206" resolveInfo="reduce_GetAncestor_noConceptList_SameML" />
+      </node>
+    </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1171416050082">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp25.1171407110247" />
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1171416050083">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1171416050084">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1173119961113">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.NotExpression" typeId="tpee.1081516740877" id="1239490148325">
-              <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1239490148326">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1168968334480" resolveInfo="nodeOp_noParm_conceptList" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1239490148327" />
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.AndExpression" typeId="tpee.1080120340718" id="1627366655853434010">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="1627366655853434013">
+                <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1627366655853434016">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.4179981224539639933" resolveInfo="operationHasParm_SameMetaLevel" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1627366655853434017" />
+                </node>
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotExpression" typeId="tpee.1081516740877" id="1239490148325">
+                <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1239490148326">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1168968334480" resolveInfo="nodeOp_noParm_conceptList" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1239490148327" />
+                </node>
               </node>
             </node>
           </node>
@@ -2108,6 +2158,32 @@
       </node>
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1171416297971">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1171415959992" resolveInfo="reduce_GetAncestor_whereConceptInList" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1627366655853340339">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp25.1171407110247" resolveInfo="Node_GetAncestorOperation" />
+      <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1627366655853340340">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1627366655853340341">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1627366655853340342">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.AndExpression" typeId="tpee.1080120340718" id="1627366655853340348">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1627366655853434008">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.4179981224539639933" resolveInfo="operationHasParm_SameMetaLevel" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1627366655853434009" />
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotExpression" typeId="tpee.1081516740877" id="1627366655853340343">
+                <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1627366655853340344">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1168968334480" resolveInfo="nodeOp_noParm_conceptList" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1627366655853340345" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1627366655853340347">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1627366655853340240" resolveInfo="reduce_GetAncestor_whereConceptInList_SameML" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1173123556618">
@@ -10654,6 +10730,170 @@
         <property name="name" nameId="tpck.1169194664001" value="hasReturnType" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="2853323645193805390" />
       </node>
+    </node>
+  </root>
+  <root id="1627366655853340206">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1627366655853340207">
+      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n8s8.~SNodeOperations" resolveInfo="SNodeOperations" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n8s8.~SNodeOperations%dgetAncestor(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,boolean,boolean,boolean)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getAncestor" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1627366655853340208">
+        <node role="nodeMacro$attribute" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1627366655853340209">
+          <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1627366655853340210">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1627366655853340211">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1627366655853340212">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1627366655853340213">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1627366655853340214" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1627366655853340215">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpeu.1213877508894" resolveInfo="getLeftExpression" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1627366655853340216">
+        <property name="value" nameId="tpee.1070475926801" value="_concept_name_" />
+        <node role="nodeMacro$attribute" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="1627366655853340217">
+          <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1144109979264" resolveInfo="switch_operationParm_toConceptNameStringExpr" />
+        </node>
+      </node>
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1627366655853340218">
+        <node role="propertyMacro$property_attribute$value" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1627366655853340219">
+          <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1627366655853340220">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1627366655853340221">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1627366655853340222">
+                <node role="expression" roleId="tpee.1068581517676" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1627366655853340223">
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1627366655853340224">
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1239207857544" resolveInfo="operationHasParm_Inclusion" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1627366655853340225" />
+                  </node>
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1627366655853340226" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1627366655853340227">
+        <node role="propertyMacro$property_attribute$value" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1627366655853340228">
+          <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1627366655853340229">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1627366655853340230">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1627366655853340231">
+                <node role="expression" roleId="tpee.1068581517676" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1627366655853340232">
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1627366655853340233">
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1239207960142" resolveInfo="operationHasParm_Root" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1627366655853340234" />
+                  </node>
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1627366655853340235" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1627366655853340238">
+        <property name="value" nameId="tpee.1068580123138" value="true" />
+      </node>
+      <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1627366655853340236" />
+    </node>
+  </root>
+  <root id="1627366655853340240">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1627366655853340291">
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n8s8.~SNodeOperations%dgetAncestorWhereConceptInList(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString[],boolean,boolean,boolean)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getAncestorWhereConceptInList" />
+      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n8s8.~SNodeOperations" resolveInfo="SNodeOperations" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1627366655853340292">
+        <node role="nodeMacro$attribute" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1627366655853340293">
+          <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1627366655853340294">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1627366655853340295">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1627366655853340296">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1627366655853340297">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1627366655853340298" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1627366655853340299">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpeu.1213877508894" resolveInfo="getLeftExpression" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1627366655853340300">
+        <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreatorWithInitializer" typeId="tpee.1154542696413" id="1627366655853340301">
+          <node role="componentType" roleId="tpee.1154542793668" type="tpee.StringType" typeId="tpee.1225271177708" id="1627366655853340302" />
+          <node role="initValue" roleId="tpee.1154542803372" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1627366655853340303">
+            <property name="value" nameId="tpee.1070475926801" value="_concept_name_" />
+            <node role="nodeMacro$attribute" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="1627366655853340304">
+              <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="1627366655853340305">
+                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1627366655853340306">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1627366655853340307">
+                    <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1627366655853340308">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1239205674051" resolveInfo="getNodeOperation_ConceptList_concepts" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1627366655853340309" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="propertyMacro$property_attribute$value" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1627366655853340310">
+              <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1627366655853340311">
+                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1627366655853340312">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1627366655853340313">
+                    <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1627366655853340314">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ctdc.~NameUtil%dnodeFQName(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="nodeFQName" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ctdc.~NameUtil" resolveInfo="NameUtil" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1627366655853340315" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1627366655853340316">
+        <node role="propertyMacro$property_attribute$value" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1627366655853340317">
+          <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1627366655853340318">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1627366655853340319">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1627366655853340320">
+                <node role="expression" roleId="tpee.1068581517676" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1627366655853340321">
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1627366655853340322" />
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1627366655853340323">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1239207857544" resolveInfo="operationHasParm_Inclusion" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1627366655853340324" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1627366655853340325">
+        <node role="propertyMacro$property_attribute$value" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1627366655853340326">
+          <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1627366655853340327">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1627366655853340328">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1627366655853340329">
+                <node role="expression" roleId="tpee.1068581517676" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1627366655853340330">
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1627366655853340331" />
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1627366655853340332">
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp26.1168968323635" resolveInfo="QueriesUtil" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp26.1239207960142" resolveInfo="operationHasParm_Root" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1627366655853340333" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1627366655853340334">
+        <property name="value" nameId="tpee.1068580123138" value="true" />
+      </node>
+      <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1627366655853340335" />
     </node>
   </root>
 </model>

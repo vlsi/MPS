@@ -11,8 +11,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ui.modeling.behavior.Event_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -30,7 +30,7 @@ public class EventPropertyGetter_property_ReferentConstraint extends BaseNodeRef
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return Sequence.fromIterable(Event_Behavior.call_allExtends_5224413709454845737(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate"), "event", false))).translate(new ITranslator2<SNode, SNode>() {
+    return Sequence.fromIterable(Event_Behavior.call_allExtends_5224413709454845737(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate"), "event", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode e) {
         return SLinkOperations.getTargets(e, "property", true);
       }

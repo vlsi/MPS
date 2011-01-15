@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
+import jetbrains.mps.make.java.ModelDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -28,8 +28,8 @@ import org.jetbrains.annotations.Nullable;
  * Oct 24, 2005
  */
 public class GenerationStatus extends Status {
-  private SModel myOutputModel;
-  private SModel myInputModel;
+  private SModelDescriptor myOutputModel;
+  private SModelDescriptor myInputModel;
   private boolean myCanceled;
   private boolean myWarnings;
   private DebugInfo myDebugInfo;
@@ -38,7 +38,7 @@ public class GenerationStatus extends Status {
 
   private SModelDescriptor myOriginalInputModel;
 
-  public GenerationStatus(SModel inputModel, SModel outputModel, GenerationDependencies dependencies, boolean errors, boolean warnings, boolean canceled) {
+  public GenerationStatus(SModelDescriptor inputModel, SModelDescriptor outputModel, GenerationDependencies dependencies, boolean errors, boolean warnings, boolean canceled) {
     super(errors ? Code.ERROR : Code.OK, null);
     myCanceled = canceled;
     myOutputModel = outputModel;
@@ -61,11 +61,11 @@ public class GenerationStatus extends Status {
 
   @Nullable
   public SModel getOutputModel() {
-    return myOutputModel;
+    return myOutputModel != null ? myOutputModel.getSModel() : null;
   }
 
   public SModel getInputModel() {
-    return myInputModel;
+    return myInputModel != null ? myInputModel.getSModel() : null;
   }
 
   public DebugInfo getDebugInfo() {
@@ -97,7 +97,7 @@ public class GenerationStatus extends Status {
   }
 
   public static class ERROR extends GenerationStatus {
-    public ERROR(SModel inputModel) {
+    public ERROR(SModelDescriptor inputModel) {
       super(inputModel, null, null, true, false, false);
     }
   }

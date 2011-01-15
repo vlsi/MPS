@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class NegativeSymbolClassRegexp_toPositive {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -30,7 +30,7 @@ public class NegativeSymbolClassRegexp_toPositive {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp");
+      SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp");
     }
   }
 }

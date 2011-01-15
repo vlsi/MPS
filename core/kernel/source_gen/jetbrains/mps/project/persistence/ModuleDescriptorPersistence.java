@@ -19,9 +19,11 @@ import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class ModuleDescriptorPersistence {
+  private ModuleDescriptorPersistence() {
+  }
+
   public static void loadDependencies(ModuleDescriptor descriptor, Element root) {
     descriptor.getDependencies().addAll(loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(root, "dependencies")).first()));
 
@@ -238,11 +240,7 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  public static void setTimestamp(final ModuleDescriptor descriptor, final IFile file) {
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      public void run() {
-        descriptor.setTimestamp("" + file.lastModified());
-      }
-    });
+  public static void setTimestamp(ModuleDescriptor descriptor, IFile file) {
+    descriptor.setTimestamp(Long.toString(file.lastModified()));
   }
 }

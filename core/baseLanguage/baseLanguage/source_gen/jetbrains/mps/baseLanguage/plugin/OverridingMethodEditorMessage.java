@@ -35,6 +35,6 @@ public class OverridingMethodEditorMessage extends AbstractOverrideEditorMessage
   }
 
   public AnAction getClickAction() {
-    return ActionManager.getInstance().getAction("jetbrains.mps.baseLanguage#action#jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action");
+    return ActionManager.getInstance().getAction(GoToOverridenMethod_Action.class.getName());
   }
 }

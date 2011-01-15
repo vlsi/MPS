@@ -730,8 +730,8 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1225194243580">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="1225194243581">
               <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="1225194243582">
-                <link role="classifier" roleId="tpee.1170346070688" targetNodeId="89o2.8492459591399169401" resolveInfo="AbstractStaticContainerProcessor" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399169418" resolveInfo="AbstractStaticContainerProcessor" />
+                <link role="classifier" roleId="tpee.1170346070688" targetNodeId="tpek.1430303182963994558" resolveInfo="AbstractStaticContainerProcessor" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1430303182963994575" resolveInfo="AbstractStaticContainerProcessor" />
                 <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1225194243583" />
                 <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1225194243585">
                   <property name="name" nameId="tpck.1169194664001" value="createNewMethod" />
@@ -764,7 +764,7 @@
                                 <link role="concept" roleId="tp25.1140138128738" targetNodeId="1i04.1225194240794" resolveInfo="ConceptBehavior" />
                                 <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225221099436">
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1225221099437">
-                                    <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="89o2.8492459591399169414" resolveInfo="myStaticContainer" />
+                                    <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="tpek.1430303182963994571" resolveInfo="myStaticContainer" />
                                   </node>
                                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1225221099438" />
                                 </node>
@@ -820,7 +820,7 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1225194243686" />
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225194243687">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89o2.8492459591399169401" resolveInfo="AbstractStaticContainerProcessor" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpek.1430303182963994558" resolveInfo="AbstractStaticContainerProcessor" />
       </node>
     </node>
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="5418393554803775570">
@@ -1076,9 +1076,6 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5466054087443746066">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.8360039740498068384" resolveInfo="findConceptAspect" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5466054087443746067">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5466054087443746044" resolveInfo="scope" />
-                      </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8360039740498069918">
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="d8ec.~LanguageAspect%dBEHAVIOR" resolveInfo="BEHAVIOR" />
                         <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="d8ec.~LanguageAspect" resolveInfo="LanguageAspect" />

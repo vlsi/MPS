@@ -8,8 +8,8 @@
   <root nodeId="1224245135252">
     <nodeInfo nodeId="1224245365572" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AddDeprecatedAnnotation_Intention.java" startLine="35" startPosition="124" endLine="36" endPosition="41" />
     <nodeInfo nodeId="1224245381358" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AddDeprecatedAnnotation_Intention.java" startLine="37" startPosition="5" endLine="38" endPosition="42" />
-    <nodeInfo nodeId="1224245430628" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddDeprecatedAnnotation_Intention.java" startLine="42" startPosition="124" endLine="43" endPosition="131" />
-    <nodeInfo nodeId="1224245455278" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddDeprecatedAnnotation_Intention.java" startLine="43" startPosition="131" endLine="44" endPosition="122" />
+    <nodeInfo nodeId="1224245430628" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddDeprecatedAnnotation_Intention.java" startLine="42" startPosition="124" endLine="43" endPosition="135" />
+    <nodeInfo nodeId="1224245455278" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddDeprecatedAnnotation_Intention.java" startLine="43" startPosition="135" endLine="44" endPosition="122" />
     <nodeInfo nodeId="1224245566347" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddDeprecatedAnnotation_Intention.java" startLine="45" startPosition="12" endLine="46" endPosition="138" />
     <nodeInfo nodeId="1224245542923" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="AddDeprecatedAnnotation_Intention.java" startLine="45" startPosition="10" endLine="47" endPosition="5" />
     <nodeInfo nodeId="1224245334979" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AddDeprecatedAnnotation_Intention.java" startLine="34" startPosition="85" endLine="37" endPosition="5" />

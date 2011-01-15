@@ -18,13 +18,13 @@
     <scopeInfo nodeId="1237980842068" fileName="OperationCall_MigrationScript.java" startLine="41" startPosition="103" endLine="45" endPosition="59">
       <varInfo nodeId="1237980852580" varName="append" />
     </scopeInfo>
-    <scopeInfo nodeId="1237978465228" fileName="OperationCall_MigrationScript.java" startLine="30" startPosition="59" endLine="35" endPosition="9">
+    <scopeInfo nodeId="1237978465228" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OperationCall_MigrationScript.java" startLine="30" startPosition="59" endLine="35" endPosition="9">
       <varInfo nodeId="1237978465230" varName="st" />
     </scopeInfo>
     <scopeInfo nodeId="1237978456365" fileName="OperationCall_MigrationScript.java" startLine="30" startPosition="59" endLine="36" endPosition="21" />
     <scopeInfo nodeId="1237980813772" fileName="OperationCall_MigrationScript.java" startLine="40" startPosition="78" endLine="46" endPosition="11" />
     <scopeInfo nodeId="1237978442534" fileName="OperationCall_MigrationScript.java" startLine="39" startPosition="52" endLine="47" endPosition="9" />
-    <scopeInfo nodeId="1237980813771" fileName="OperationCall_MigrationScript.java" startLine="39" startPosition="52" endLine="47" endPosition="9">
+    <scopeInfo nodeId="1237980813771" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OperationCall_MigrationScript.java" startLine="39" startPosition="52" endLine="47" endPosition="9">
       <varInfo nodeId="1237980813775" varName="st" />
     </scopeInfo>
   </root>

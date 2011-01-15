@@ -31,6 +31,9 @@
     <component>
       <implementation-class>com.intellij.util.indexing.FileBasedIndex</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.generator.TransientSwapOwnerComponent</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
@@ -43,7 +46,10 @@
       <skipForDummyProject/>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.intentions.CodeStyleSettings</implementation-class>
+      <implementation-class>jetbrains.mps.codeStyle.CodeStyleSettings</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.codeStyle.CodeStyleSettingsConfigurable</implementation-class>
     </component>
   </project-components>
 
@@ -592,6 +598,7 @@
     <component>
       <implementation-class>jetbrains.mps.ide.make.StartupModuleMaker</implementation-class>
     </component>
+
   </project-components>
 
 </components>

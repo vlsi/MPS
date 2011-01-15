@@ -15,7 +15,7 @@
     <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode extendsClassName="jetbrains.mps.project.BaseDirectoryIndexExcludePolicy" />
+    <classNode extendsClassName="jetbrains.mps.ide.vfs.BaseDirectoryIndexExcludePolicy" />
   </dependency>
 </dependenciesRoot>
 

@@ -60,7 +60,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new DumpKeyStrokes_Action());
     addAction(new EditNodeExplicit_Action());
     addAction(new EditNode_Action());
-    addAction(new End_Action());
     addAction(new EvaluateExpression_Action());
     addAction(new ExpandAll_Action());
     addAction(new ExpandNode_Action());
@@ -90,16 +89,11 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new HighlightCellDependencies_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
-    addAction(new Home_Action());
-    addAction(new InsertBefore_Action());
-    addAction(new Insert_Action());
     addAction(new InstallIDEAPlugin_Action());
     addAction(new LanguageHierarchy_Action());
     addAction(new LanguagePaths_Action());
     addAction(new LanguageProperties_Action());
     addAction(new LoadNonStubModels_Action());
-    addAction(new LocalEnd_Action());
-    addAction(new LocalHome_Action());
     addAction(new MPSProjectPaths_Action());
     addAction(new MakeAllModules_Action());
     addAction(new MakeModule_Action());
@@ -149,13 +143,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RenameSolution_Action());
     addAction(new Resume_Action());
     addAction(new RevertMemoryChanges_Action());
-    addAction(new RootEnd_Action());
-    addAction(new RootHome_Action());
     addAction(new SaveModel_Action());
-    addAction(new SelectDown_Action());
-    addAction(new SelectLocalEnd_Action());
-    addAction(new SelectLocalHome_Action());
-    addAction(new SelectUp_Action());
     addAction(new SetBookmarkNoNumber_Action());
     addAction(new SetModuleFolder_Action());
     addAction(new SetNodePackage_Action());
@@ -219,6 +207,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Folding_ActionGroup());
     addGroup(new GenerateEditorPopup_ActionGroup());
     addGroup(new GenerateFavorites_ActionGroup());
+    addGroup(new GenerateGeneratorPopup_ActionGroup());
     addGroup(new GenerateModelPopup_ActionGroup());
     addGroup(new GenerateModels_ActionGroup());
     addGroup(new GenerateModulePopup_ActionGroup());
@@ -231,7 +220,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new GeneratorNewActions_ActionGroup());
     addGroup(new GoByReference_ActionGroup());
     addGroup(new Goto_ActionGroup());
-    addGroup(new InEditorActions_ActionGroup());
     addGroup(new JUnitTestCaseActions_ActionGroup());
     addGroup(new JUnitTestMethodActions_ActionGroup());
     addGroup(new LanguageActions_ActionGroup());
@@ -245,6 +233,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new ModuleActions_ActionGroup());
     addGroup(new NamespaceActions_ActionGroup());
     addGroup(new NamespaceInternalActions_ActionGroup());
+    addGroup(new NamespaceMakeActions_ActionGroup());
     addGroup(new NodeActionsInternal_ActionGroup());
     addGroup(new NodeActions_ActionGroup());
     addGroup(new PackageActions_ActionGroup());
@@ -292,6 +281,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Edit_ActionGroup.ID, "EditMenu", null);
     insertGroupIntoAnother(Folding_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_folding);
     insertGroupIntoAnother(Generate_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_aux);
+    insertGroupIntoAnother(GenerateGeneratorPopup_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(GenerateModelPopup_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_generateActions);
     insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_generateModule);
     insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_generateModule);
@@ -319,7 +309,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, FolderActions_ActionGroup.ID, FolderActions_ActionGroup.LABEL_ID_abstractFileActions);
     insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, ModuleActions_ActionGroup.ID, ModuleActions_ActionGroup.LABEL_ID_abstractFileActions);
     insertGroupIntoAnother(NamespaceInternalActions_ActionGroup.ID, NamespaceActions_ActionGroup.ID, NamespaceActions_ActionGroup.LABEL_ID_namespaceInternal);
-    insertGroupIntoAnother(InEditorActions_ActionGroup.ID, "EditorActions", null);
     insertGroupIntoAnother(DebugRunMenu_ActionGroup.ID, "RunMenu", null);
     insertGroupIntoAnother(AddToFavoritesGroup_ActionGroup.ID, FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
     insertGroupIntoAnother(GenerateModule_ActionGroup.ID, GenerateModulePopup_ActionGroup.ID, GenerateModulePopup_ActionGroup.LABEL_ID_generate);

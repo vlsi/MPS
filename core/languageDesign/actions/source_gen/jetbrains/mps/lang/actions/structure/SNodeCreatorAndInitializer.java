@@ -4,15 +4,25 @@ package jetbrains.mps.lang.actions.structure;
 
 import jetbrains.mps.lang.smodel.structure.SNodeCreator;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SNodeCreatorAndInitializer extends SNodeCreator {
   public static final String concept = "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer";
+  public static final String PROTOTYPE = "prototype";
 
   public SNodeCreatorAndInitializer(SNode node) {
     super(node);
+  }
+
+  public Expression getPrototype() {
+    return (Expression) this.getChild(Expression.class, SNodeCreatorAndInitializer.PROTOTYPE);
+  }
+
+  public void setPrototype(Expression node) {
+    super.setChild(SNodeCreatorAndInitializer.PROTOTYPE, node);
   }
 
   public static SNodeCreatorAndInitializer newInstance(SModel sm, boolean init) {

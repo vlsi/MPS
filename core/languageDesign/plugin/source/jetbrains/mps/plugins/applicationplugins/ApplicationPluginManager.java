@@ -24,7 +24,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ApplicationPluginCreator;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.workbench.action.ActionFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -118,7 +117,6 @@ public class ApplicationPluginManager implements ApplicationComponent {
         LOG.error("Plugin " + plugin + " threw an exception during disposing ", t);
       }
     }
-    ActionFactory.getInstance().unregisterActions();
     mySortedPlugins.clear();
   }
 

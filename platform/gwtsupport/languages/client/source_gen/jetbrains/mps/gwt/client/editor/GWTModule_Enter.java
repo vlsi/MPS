@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class GWTModule_Enter extends EditorCellKeyMap {
   public GWTModule_Enter() {
@@ -53,7 +54,7 @@ public class GWTModule_Enter extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SLinkOperations.setNewChild(node, "renameTo", "jetbrains.mps.gwt.client.structure.RenameTo");
+      SNodeFactoryOperations.setNewChild(node, "renameTo", "jetbrains.mps.gwt.client.structure.RenameTo");
     }
 
     public String getKeyStroke() {

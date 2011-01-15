@@ -103,7 +103,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   private MessageViewLoggingHandler myLoggingHandler;
   private ActionToolbar myToolbar;
   private AtomicInteger myMessagesInProgress = new AtomicInteger();
-  private MessageToolSearchPanel mySearchPanel = new MessageToolSearchPanel(myList, getProject());
+  private MessageToolSearchPanel mySearchPanel = null;
 
   private Project myProject;
 
@@ -169,12 +169,15 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     panel.add(myToolbar.getComponent(), BorderLayout.NORTH);
 
     myComponent.add(panel, BorderLayout.WEST);
-    myComponent.add(mySearchPanel, BorderLayout.NORTH);
     final JScrollPane scrollPane = new JScrollPane(myList);
     myComponent.add(scrollPane, BorderLayout.CENTER);
 
     myComponent.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
+        if (mySearchPanel == null) {
+          mySearchPanel = new MessageToolSearchPanel(myList, getProject());
+          myComponent.add(mySearchPanel, BorderLayout.NORTH);
+        }
         mySearchPanel.activate();
       }
     }, KeyStroke.getKeyStroke("ctrl F"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
@@ -350,7 +353,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
         });
       }
     }
-    if(myList.getSelectedIndices().length == 1) {
+    if (myList.getSelectedIndices().length == 1) {
       Throwable exc = null;
       for (Object message : myList.getSelectedValues()) {
         exc = ((Message) message).getException();

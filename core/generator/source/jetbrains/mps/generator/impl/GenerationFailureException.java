@@ -29,7 +29,7 @@ public class GenerationFailureException extends GenerationException {
 
   public GenerationFailureException(String message, SNode hintNode, Throwable cause) {
     super(toBetterMessage(message, cause), toBetterCause(cause));
-    LOG.error(message, hintNode);
+    LOG.error(message, toBetterCause(cause), hintNode);
   }
 
   public GenerationFailureException(String message, SNode inputNode, SNode templateNode, SNode ruleNode) {

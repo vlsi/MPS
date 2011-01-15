@@ -665,7 +665,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_ueqr71_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    Language l = SModelUtil.getDeclaringLanguage(node, scope);
+    Language l = SModelUtil.getDeclaringLanguage(node);
     if (l == null) {
       return false;
     }

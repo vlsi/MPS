@@ -27,7 +27,6 @@ import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.highlighter.EditorsHelper;
-import jetbrains.mps.workbench.highlighter.EditorsProvider;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
@@ -194,7 +193,7 @@ public class TypecheckerStateViewComponent extends JPanel {
       public void run() {
         myOperationContext.getComponent(MPSEditorOpener.class).openNode(rule);
       }
-    });
+    }, myOperationContext.getProject());
   }
 
   public class SNodeTree extends MPSTree {

@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_Behavior;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -32,7 +33,7 @@ public class QueriesGenerated {
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode usage = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", null);
+            SNode usage = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), usage);
             SLinkOperations.setTarget(usage, "operator", (item), false);
             SLinkOperations.setTarget(usage, "leftExpression", _context.getSourceNode(), true);

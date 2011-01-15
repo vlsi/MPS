@@ -527,30 +527,44 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   @Override
   public List<SModelDescriptor> getEditableUserModels() {
     List<SModelDescriptor> inputModels = new ArrayList<SModelDescriptor>();
+
+    // language aspects
     for (LanguageAspect aspect : LanguageAspect.values()) {
       SModelDescriptor model = aspect.get(this);
-      if (model != null) {
+      if (model instanceof EditableSModelDescriptor && !((EditableSModelDescriptor)model).isPackaged()) {
         inputModels.add(model);
       }
     }
 
+    // accessory models
     Set<SModelDescriptor> ownModels = new HashSet<SModelDescriptor>(getOwnModelDescriptors());
     for (SModelDescriptor sm : getAccessoryModels()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
       if (!(sm instanceof EditableSModelDescriptor)) continue;
+      if (((EditableSModelDescriptor) sm).isPackaged()) continue;
 
       if (ownModels.contains(sm)) {
         inputModels.add(sm);
       }
     }
 
-    inputModels.addAll(getUtilModels());
+    // util models
+    for (EditableSModelDescriptor esmd: getUtilModels()) {
+      if (!esmd.isPackaged()) {
+        inputModels.add(esmd);
+      }
+    }
 
-    // add it from all generators
+    // generators
     List<Generator> list = getGenerators();
     for (Generator generator : list) {
-      inputModels.addAll(generator.getGeneratorModels());
+      for (SModelDescriptor smd: generator.getGeneratorModels()) {
+        if (smd instanceof EditableSModelDescriptor && !((EditableSModelDescriptor)smd).isPackaged()) {
+          inputModels.add(smd);
+        }
+      }
     }
+
     return inputModels;
   }
 

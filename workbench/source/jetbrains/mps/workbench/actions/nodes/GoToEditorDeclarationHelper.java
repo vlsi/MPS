@@ -25,7 +25,6 @@ import jetbrains.mps.util.ConditionalIterator;
 
 import javax.swing.JOptionPane;
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * @author Kostik
@@ -56,7 +55,7 @@ public class GoToEditorDeclarationHelper {
       public SNode compute() {
         return createEditorDeclaration(concept, languageEditor, scope).getNode();
       }
-    });
+    }, null /* TODO ? */);
   }
 
   public static SModelDescriptor getOrCreateEditorAspect(final Language language, final ConceptDeclaration concept, final IScope scope) {
