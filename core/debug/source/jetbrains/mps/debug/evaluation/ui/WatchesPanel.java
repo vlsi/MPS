@@ -39,20 +39,35 @@ public class WatchesPanel extends EvaluationUi {
     myProvider.addWatchListener(new WatchAdapter() {
       @Override
       public void watchAdded(final AbstractEvaluationModel model) {
-        myTree.addModel(model); // todo threads
-        evaluate(model);
-        myTree.rebuildLater();
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
+          public void run() {
+            myTree.addModel(model);
+            evaluate(model);
+            myTree.rebuildLater();
+          }
+        });
       }
 
       @Override
-      public void watchUpdated(AbstractEvaluationModel model) {
-        evaluate(model);
+      public void watchUpdated(final AbstractEvaluationModel model) {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
+          public void run() {
+            evaluate(model);
+          }
+        });
       }
 
       @Override
-      public void watchRemoved(AbstractEvaluationModel model) {
-        myTree.removeModel(model);
-        myTree.rebuildLater();
+      public void watchRemoved(final AbstractEvaluationModel model) {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
+          public void run() {
+            myTree.removeModel(model);
+            myTree.rebuildLater();
+          }
+        });
       }
     });
 

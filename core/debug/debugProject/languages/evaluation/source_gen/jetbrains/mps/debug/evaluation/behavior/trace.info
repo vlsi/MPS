@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="LowLevelVariable_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.debug.evaluation.behavior.LowLevelVariable_Behavior" />
   <unitInfo fileName="EvaluatorsSuperMethodCall_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.debug.evaluation.behavior.EvaluatorsSuperMethodCall_Behavior" />
   <unitInfo fileName="EvaluatorConcept_Behavior.java" startLine="63" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.debug.evaluation.behavior.EvaluatorConcept_Behavior$QuotationClass_29c8r0_a0a0d" />
   <unitInfo fileName="EvaluatorConcept_Behavior.java" startLine="19" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.debug.evaluation.behavior.EvaluatorConcept_Behavior" />
+  <root nodeId="4005274477404902656">
+    <nodeInfo nodeId="4005274477404903819" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LowLevelVariable_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="67" />
+    <scopeInfo nodeId="4005274477404902658" fileName="LowLevelVariable_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="67" />
+  </root>
   <root nodeId="5211667636169798154">
     <nodeInfo nodeId="5211667636169820149" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EvaluatorConcept_Behavior.java" startLine="27" startPosition="91" endLine="28" endPosition="34" />
     <nodeInfo nodeId="5211667636169820154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EvaluatorConcept_Behavior.java" startLine="31" startPosition="69" endLine="32" endPosition="105" />

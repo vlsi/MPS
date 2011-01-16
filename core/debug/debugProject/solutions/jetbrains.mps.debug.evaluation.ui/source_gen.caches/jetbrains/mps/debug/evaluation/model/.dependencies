@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel" file="AbstractEvaluationModel.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ProjectModels" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
@@ -46,7 +46,6 @@
     <classNode dependClassName="com.intellij.openapi.progress.util.ProgressWindow" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -57,11 +56,12 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.model.EvaluationContext" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler" />
   </dependency>
@@ -97,7 +97,6 @@
     <classNode extendsClassName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel" />
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.model.LowLevelEvaluationModel" file="LowLevelEvaluationModel.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -152,6 +151,7 @@
     <classNode dependClassName="com.sun.jdi.BooleanType" />
     <classNode dependClassName="com.sun.jdi.PrimitiveType" />
     <classNode dependClassName="com.sun.jdi.DoubleType" />
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="com.sun.jdi.ObjectReference" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
@@ -166,24 +166,29 @@
     <classNode dependClassName="com.sun.jdi.IntegerType" />
     <classNode dependClassName="com.sun.jdi.ArrayType" />
     <classNode dependClassName="com.sun.jdi.Location" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.transform.TransformationUtil" />
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.JavaUiState" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="com.sun.jdi.StackFrame" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.reloading.CommonPaths" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="com.sun.jdi.ClassNotLoadedException" />
     <classNode dependClassName="java.util.LinkedHashMap" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="com.sun.jdi.ByteType" />
     <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.ShortType" />

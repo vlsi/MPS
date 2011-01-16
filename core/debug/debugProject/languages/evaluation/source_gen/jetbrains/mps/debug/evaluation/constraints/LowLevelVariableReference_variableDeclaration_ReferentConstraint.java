@@ -7,12 +7,12 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.constraints.ProviderGeneratedSearchScope;
 import jetbrains.mps.smodel.SNodePointer;
@@ -30,7 +30,11 @@ public class LowLevelVariableReference_variableDeclaration_ReferentConstraint ex
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", false, false), "variables", true)).where(new IWhereFilter<SNode>() {
+    SNode evaluator = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", false, false);
+    if (SPropertyOperations.getBoolean(evaluator, "isShowContext")) {
+      return SLinkOperations.getTargets(evaluator, "variables", true);
+    }
+    return ListSequence.fromList(SLinkOperations.getTargets(evaluator, "variables", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "isOutOfScope"));
       }

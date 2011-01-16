@@ -2,17 +2,17 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation" file="DoNotTransformAnnotation.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation_AnnotationLink" file="DoNotTransformAnnotation_AnnotationLink.java">
     <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation" />
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.structure.Evaluation_Language" file="Evaluation_Language.java">
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
@@ -45,19 +45,19 @@
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression" file="EvaluatorsThisExpression.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation" file="GenerationHelperAnnotation.java">
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.structure.LowLevelVariable" file="LowLevelVariable.java">
@@ -82,9 +82,9 @@
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation" file="ToEvaluateAnnotation.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
@@ -96,17 +96,17 @@
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation" file="UnprocessedAnnotation.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation_AnnotationLink" file="UnprocessedAnnotation_AnnotationLink.java">
     <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation" />
   </dependency>
 </dependenciesRoot>
 

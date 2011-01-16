@@ -28,4 +28,9 @@ public class EvaluationDialog extends AbstractEvaluationDialog {
   public void buttonCancel() {
     dispose();
   }
+
+  @Override
+  public void dispose() {
+    super.dispose();
+  }
 }

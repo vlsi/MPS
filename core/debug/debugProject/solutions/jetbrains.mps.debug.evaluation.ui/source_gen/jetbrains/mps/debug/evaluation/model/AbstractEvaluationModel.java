@@ -17,16 +17,17 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
@@ -55,7 +56,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.debug.evaluation.transform.Transformator;
 
 public abstract class AbstractEvaluationModel {
@@ -74,6 +74,7 @@ public abstract class AbstractEvaluationModel {
   private final boolean myShowContext;
 
   public AbstractEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule auxModule, EvaluationContext context, boolean isShowContext) {
+    assert !(ApplicationManager.getApplication().isDispatchThread());
     myUiState = session.getUiState();
     myDebugSession = session;
     if (context.getLocationNode() != null) {
@@ -83,14 +84,13 @@ public abstract class AbstractEvaluationModel {
     }
     myAuxModule = auxModule;
 
-    final Wrappers._T<EditableSModelDescriptor> modelDescriptor = new Wrappers._T<EditableSModelDescriptor>();
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    final EditableSModelDescriptor modelDescriptor = ProjectModels.createDescriptorFor(myAuxModule);
+    modelDescriptor.getSModel().runLoadingAction(new Runnable() {
       public void run() {
-        modelDescriptor.value = ProjectModels.createDescriptorFor(myAuxModule);
-        modelDescriptor.value.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
+        modelDescriptor.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
       }
     });
-    myAuxModel = modelDescriptor.value;
+    myAuxModel = modelDescriptor;
     myEvaluationContext = context;
     myShowContext = isShowContext;
   }
@@ -133,6 +133,7 @@ public abstract class AbstractEvaluationModel {
     model.getSModel().runLoadingAction(new Runnable() {
       public void run() {
         model.getSModel().addRoot(myEvaluator);
+        SModelOperations.validateLanguagesAndImports(model.getSModel(), false, true);
       }
     });
   }
@@ -154,6 +155,10 @@ public abstract class AbstractEvaluationModel {
   public void updateState() {
     myUiState = myDebugSession.getUiState();
     myEvaluationContext.setUiState(myUiState);
+  }
+
+  public EvaluationContext getEvaluationContext() {
+    return myEvaluationContext;
   }
 
   public String getPresentation() {

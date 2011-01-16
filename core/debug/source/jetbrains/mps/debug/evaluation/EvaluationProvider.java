@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.debug.evaluation;
 
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._void_P0_E0;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
-import jetbrains.mps.debug.evaluation.model.HighLevelEvaluationModel;
 import jetbrains.mps.debug.evaluation.model.LowLevelEvaluationModel;
 import jetbrains.mps.debug.evaluation.ui.EditWatchDialog;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
@@ -66,13 +66,23 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   @Override
-  public void showEvaluationDialog(IOperationContext context) {
-    JavaUiState state = myDebugSession.getUiState();
-    if (state.isPausedOnBreakpoint()) {
-      AbstractEvaluationModel model = createLowLevelEvaluationModel(false);
-      EvaluationDialog evaluationDialog = new EvaluationDialog(context, this, model);
-      evaluationDialog.showDialog();
-    }
+  public void showEvaluationDialog(final IOperationContext context) {
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      @Override
+      public void run() {
+        JavaUiState state = myDebugSession.getUiState();
+        if (state.isPausedOnBreakpoint()) {
+          final AbstractEvaluationModel model = createLowLevelEvaluationModel(false);
+          ApplicationManager.getApplication().invokeLater(new Runnable() {
+            @Override
+            public void run() {
+              EvaluationDialog evaluationDialog = new EvaluationDialog(context, EvaluationProvider.this, model);
+              evaluationDialog.showDialog();
+            }
+          });
+        }
+      }
+    });
   }
 
   public void showEditWatchDialog(IOperationContext context, final AbstractEvaluationModel model) {
@@ -91,10 +101,18 @@ public class EvaluationProvider implements IEvaluationProvider {
     return new WatchesPanel(this);
   }
 
-  public void addWatch(AbstractEvaluationModel evaluationModel) {
-    AbstractEvaluationModel copy = evaluationModel.copy(true);
-    myWatches.add(copy);
-    fireWatchAdded(copy);
+  public void addWatch(final AbstractEvaluationModel evaluationModel) {
+    // we take some read locks inside, so we do not want to du stuff in UI thread
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      @Override
+      public void run() {
+        AbstractEvaluationModel copy = evaluationModel.copy(true);
+        synchronized (myWatches) {
+          myWatches.add(copy);
+        }
+        fireWatchAdded(copy);
+      }
+    });
   }
 
   public void createWatch() {
@@ -109,7 +127,9 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public void removeWatch(AbstractEvaluationModel model) {
-    myWatches.remove(model);
+    synchronized (myWatches) {
+      myWatches.remove(model);
+    }
     fireWatchRemoved(model);
   }
 
@@ -126,33 +146,49 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public List<AbstractEvaluationModel> getWatches() {
-    return myWatches;
+    List<AbstractEvaluationModel> watchesCopy = new ArrayList<AbstractEvaluationModel>();
+    synchronized (myWatches) {
+      watchesCopy.addAll(myWatches);
+    }
+    return watchesCopy;
+  }
+
+  private List<IWatchListener> getListeners() {
+    List<IWatchListener> listeners = new ArrayList<IWatchListener>();
+    synchronized (myWatchListeners) {
+      listeners.addAll(myWatchListeners);
+    }
+    return listeners;
   }
 
   private void fireWatchAdded(AbstractEvaluationModel model) {
-    for (IWatchListener listener : myWatchListeners) {
+    for (IWatchListener listener : getListeners()) {
       listener.watchAdded(model);
     }
   }
 
   private void fireWatchUpdated(AbstractEvaluationModel model) {
-    for (IWatchListener listener : myWatchListeners) {
+    for (IWatchListener listener : getListeners()) {
       listener.watchUpdated(model);
     }
   }
 
   private void fireWatchRemoved(AbstractEvaluationModel model) {
-    for (IWatchListener listener : myWatchListeners) {
+    for (IWatchListener listener : getListeners()) {
       listener.watchRemoved(model);
     }
   }
 
   public void addWatchListener(@NotNull IWatchListener listener) {
-    myWatchListeners.add(listener);
+    synchronized (myWatchListeners) {
+      myWatchListeners.add(listener);
+    }
   }
 
   public void removeWatchListener(@NotNull IWatchListener listener) {
-    myWatchListeners.remove(listener);
+    synchronized (myWatchListeners) {
+      myWatchListeners.remove(listener);
+    }
   }
 
   public interface IWatchListener {

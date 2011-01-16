@@ -45,7 +45,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.sun.jdi.InvalidStackFrameException;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SModelOperations;
 
 public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   private static final Logger LOG = Logger.getLogger(LowLevelEvaluationModel.class);
@@ -83,11 +82,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
           }
         });
         StubReloadManager.getInstance().loadImmediately(myAuxModule, pathsToAdd);
-      }
-    });
 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
         createNodesToShow(myAuxModel);
       }
     });
@@ -141,14 +136,15 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   public void createNodesToShow(EditableSModelDescriptor model) {
     super.createNodesToShow(model);
 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
         SModel model = getLocationModel();
         if (model != null) {
           LowLevelEvaluationModel.this.importStubForFqName(model.getSModelFqName().toString());
         }
       }
-    });
+    }, myDebugSession.getProject());
+
     createVars();
   }
 
@@ -178,11 +174,11 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       });
     }
 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
         fillVariables();
       }
-    });
+    }, myDebugSession.getProject());
   }
 
   private void fillVariables() {
@@ -245,8 +241,6 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       protected SNode createEvaluator(SModelDescriptor model) {
         SNode newEvaluator = (SNode) CopyUtil.copyAndPreserveId(evaluator, true);
         SPropertyOperations.set(newEvaluator, "isShowContext", "" + (isShowConetxt));
-        model.getSModel().addRoot(newEvaluator);
-        SModelOperations.validateLanguagesAndImports(model.getSModel(), false, true);
         return newEvaluator;
       }
     };

@@ -24,6 +24,9 @@
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5211667636169798154">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="8sls.6036237525966182693" resolveInfo="EvaluatorConcept" />
     </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4005274477404902656">
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="8sls.6036237525966182694" resolveInfo="LowLevelVariable" />
+    </node>
   </roots>
   <root id="6036237525966348398">
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="6036237525966348401">
@@ -120,6 +123,27 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5211667636169798168" />
+    </node>
+  </root>
+  <root id="4005274477404902656">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4005274477404902657">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4005274477404902658">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4005274477404903819">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4005274477404903826">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4005274477404903821">
+              <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="4005274477404903820" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4005274477404903825">
+                <link role="property" roleId="tp25.1138056395725" targetNodeId="8sls.6146091894852355121" resolveInfo="isOutOfScope" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_SetOperation" typeId="tp25.1138661924179" id="4005274477404903830">
+              <node role="value" roleId="tp25.1138662048170" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4005274477404903832">
+                <property name="value" nameId="tpee.1068580123138" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </root>
 </model>

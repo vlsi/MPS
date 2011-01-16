@@ -42,4 +42,10 @@ public abstract class EvaluationContext {
 
   @Nullable
   public abstract SNode getThisClassifierType(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType);
+
+  public abstract boolean isVariableVisible(String variableName, SNode variableType);
+
+  public abstract boolean isThisTypeValid(SNode thisType);
+
+  public abstract boolean isStaticContextTypeValid(SNode staticContextType);
 }
