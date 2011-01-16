@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.editorTabs;
 
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,19 +24,20 @@ import java.util.List;
 public abstract class EditorTabDescriptor {
   public abstract String getTitle();
 
+  @Nullable
   public Character getShortcutChar() {
     return null;
   }
 
-  public SNode getBaseNode(SNode aspect){
+  public SNode getBaseNode(SNode aspect) {
     return aspect;
   }
 
-  public boolean isApplicable(SNode node){
+  public boolean isApplicable(SNode node) {
     return true;
   }
 
-  public List<SNode> getNodes(SNode baseNode){
+  public List<SNode> getNodes(SNode baseNode) {
     ArrayList<SNode> result = new ArrayList<SNode>();
     result.add(baseNode);
     return result;
