@@ -13,17 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.editors;
+package jetbrains.mps.ide.editorTabs.tabs.icons;
 
-import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
-public interface MPSEditorOpenHandler {
-  //todo split into base node getter & TabbedEditorHandler
-  SNode getBaseNode(IOperationContext context, SNode node);
-
-  boolean canOpen(IOperationContext context, SNode node);
-
-  IEditor open(IOperationContext context, SNode node);
+public class Icons {
+  public static final Icon ADD_ICON = new ImageIcon(Icons.class.getResource("add.png"));
 }

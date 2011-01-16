@@ -560,7 +560,7 @@ __switch__:
 
   private boolean checkLoaded() {
     myCommandQueue.assertSoftlyIsCommandThread();
-    if (myEnabled && isEmpty()) {
+    if (myEnabled && isEmpty() && myBaseVersionModel == null) {
       update(true);
     }
     return myBaseVersionModel != null;

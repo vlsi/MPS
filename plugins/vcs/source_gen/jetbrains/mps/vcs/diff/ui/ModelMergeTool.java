@@ -9,8 +9,6 @@ import jetbrains.mps.vcs.diff.ModelMergeRequest;
 import com.intellij.openapi.diff.DiffContent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.ModelMergeRequestConstants;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.IOperationContext;
@@ -34,16 +32,14 @@ public class ModelMergeTool implements DiffTool {
       final SModel baseModel = ModelDiffTool.readModel(contents[ModelMergeRequestConstants.ORIGINAL], mrequest.getFile().getPath());
       final SModel mineModel = ModelDiffTool.readModel(contents[ModelMergeRequestConstants.CURRENT], mrequest.getFile().getPath());
       final SModel newModel = ModelDiffTool.readModel(contents[ModelMergeRequestConstants.LAST_REVISION], mrequest.getFile().getPath());
-      final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
-        public MergeModelsDialog compute() {
-          SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(baseModel.getSModelReference());
-          if (modelDescriptor == null) {
-            modelDescriptor = SModelRepository.getInstance().getModelDescriptor(mineModel.getSModelFqName());
-          }
-          IOperationContext context = new ModuleContext(modelDescriptor.getModule(), request.getProject());
-          return new MergeModelsDialog(context, baseModel, mineModel, newModel);
-        }
-      });
+
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(baseModel.getSModelReference());
+      if (modelDescriptor == null) {
+        modelDescriptor = SModelRepository.getInstance().getModelDescriptor(mineModel.getSModelFqName());
+      }
+      IOperationContext context = new ModuleContext(modelDescriptor.getModule(), request.getProject());
+      final MergeModelsDialog dialog = new MergeModelsDialog(context, baseModel, mineModel, newModel);
+
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           dialog.toFront();

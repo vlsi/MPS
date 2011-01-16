@@ -104,7 +104,7 @@ public class Merger {
   }
 
   public void doRebuild(final Runnable afterRebuild) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         collectConflicts();
         collectWarnings();

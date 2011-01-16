@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.editorTabs.tabs;
 
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Pair;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
@@ -24,17 +26,18 @@ import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.workbench.action.ActionUtils;
+import org.jetbrains.annotations.NonNls;
 
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
-public abstract class TabsComponent extends JPanel {
+public abstract class TabsComponent extends JPanel{
   private SNodePointer myBaseNode;
   private SNodePointer myLastNode = null;
   private Set<EditorTabDescriptor> myPossibleTabs;
@@ -50,7 +53,7 @@ public abstract class TabsComponent extends JPanel {
       updateTabs();
     }
   };
-  private JPanel myTabPanel;
+  private JComponent myToolbar = null;
 
   public TabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs) {
     myBaseNode = baseNode;
@@ -91,19 +94,21 @@ public abstract class TabsComponent extends JPanel {
     });
 
     setLayout(new BorderLayout());
-    add(new JPanel(), BorderLayout.CENTER);
 
-    myTabPanel = new JPanel();
-    myTabPanel.setLayout(new FlowLayout());
-    add(myTabPanel, BorderLayout.WEST);
-
-    JPanel plusPanel = new JPanel();
-    plusPanel.add(new AddConceptButton(myBaseNode, myPossibleTabs) {
+    AddConceptTab button = new AddConceptTab(myBaseNode, myPossibleTabs) {
       protected SNode getCurrentAspect() {
         return myLastNode.getNode();
       }
-    });
-    add(plusPanel, BorderLayout.EAST);
+
+      protected void aspectCreated(SNode aspect) {
+        onNodeChange(aspect);
+      }
+    };
+
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(button.getAction(this));
+    JComponent tab = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
+    add(tab, BorderLayout.EAST);
 
     addListeners();
     updateTabs();
@@ -127,7 +132,6 @@ public abstract class TabsComponent extends JPanel {
   }
 
   private void updateTabs() {
-    myTabPanel.removeAll();
     myRealTabs.clear();
     for (EditorTabDescriptor d : myPossibleTabs) {
       List<SNode> nodes = d.getNodes(myBaseNode.getNode());
@@ -149,13 +153,21 @@ public abstract class TabsComponent extends JPanel {
       }
     });
 
+    DefaultActionGroup group = new DefaultActionGroup();
     for (EditorTab tab : myRealTabs) {
-      myTabPanel.add(tab);
+      group.add(tab.getAction(this));
     }
+    if (myToolbar != null) {
+      remove(myToolbar);
+    }
+    ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true);
+    actionToolbar.setLayoutPolicy(ActionToolbar.WRAP_LAYOUT_POLICY);
+    myToolbar = actionToolbar.getComponent();
+    add(myToolbar, BorderLayout.CENTER);
   }
 
   //todo
-  public void setLastNode(SNodePointer node){
+  public void setLastNode(SNodePointer node) {
     myLastNode = node;
   }
 
@@ -173,7 +185,7 @@ public abstract class TabsComponent extends JPanel {
         int index = myRealTabs.indexOf(tab);
         if (index == myRealTabs.size() - 1) return;
 
-        myRealTabs.get(index + 1).doClick();
+        performTabAction(index + 1);
 
         return;
       }
@@ -187,13 +199,25 @@ public abstract class TabsComponent extends JPanel {
         int index = myRealTabs.indexOf(tab);
         if (index == 0) return;
 
-        myRealTabs.get(index - 1).doClick();
+        performTabAction(index - 1);
 
         return;
       }
     }
   }
 
+  private void performTabAction(final int index) {
+    final DataContext context = DataManager.getInstance().getDataContext(this);
+    DataContext changedContext = new DataContext() {
+      public Object getData(@NonNls String dataId) {
+        if (dataId.equals(EditorTab.COMPONENT_KEY.getName())) return myToolbar.getComponent(index);
+        return context.getData(dataId);
+      }
+    };
+    AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, changedContext);
+
+    myRealTabs.get(index).getAction(this).actionPerformed(event);
+  }
 
   ///-------------events----------------
 
