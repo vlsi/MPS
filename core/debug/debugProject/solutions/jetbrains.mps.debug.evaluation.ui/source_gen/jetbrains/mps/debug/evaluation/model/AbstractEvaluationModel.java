@@ -25,8 +25,7 @@ import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -139,9 +138,9 @@ public abstract class AbstractEvaluationModel {
   }
 
   protected SNode createEvaluator(SModelDescriptor model) {
-    SNode evaluatorConcept = (SNode) new SNode(model.getSModel(), INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept")));
-    SPropertyOperations.set(evaluatorConcept, "isShowContext", "" + (myShowContext));
-    return evaluatorConcept;
+    SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", null);
+    SPropertyOperations.set(node, "isShowContext", "" + (myShowContext));
+    return node;
   }
 
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
@@ -161,7 +160,7 @@ public abstract class AbstractEvaluationModel {
     // todo better presentation 
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
-        List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(myEvaluator, "evaluatedStatement", true), "statements", true), "statement", true);
+        List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(myEvaluator, "evaluatedStatements", true), "statement", true);
         if (ListSequence.fromList(statements).isEmpty()) {
           return "empty statement";
         }

@@ -155,8 +155,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   @Override
   protected SNode createEvaluator(SModelDescriptor model) {
     SNode evaluatorConcept = super.createEvaluator(model);
-    SLinkOperations.setNewChild(evaluatorConcept, "evaluatedStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
-    SLinkOperations.setNewChild(SLinkOperations.getTarget(evaluatorConcept, "evaluatedStatement", true), AttributesRolesUtil.childRoleFromAttributeRole("toEvaluateAnnotation"), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
+    SLinkOperations.setNewChild(SLinkOperations.getTarget(evaluatorConcept, "evaluatedStatements", true), AttributesRolesUtil.childRoleFromAttributeRole("toEvaluateAnnotation"), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
     return evaluatorConcept;
   }
 
