@@ -16,10 +16,6 @@
 package jetbrains.mps.ide.editorTabs.tabs;
 
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.ui.popup.JBPopupFactory;
-import com.intellij.openapi.ui.popup.JBPopupFactory.ActionSelectionAid;
-import com.intellij.openapi.ui.popup.ListPopup;
-import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
@@ -29,7 +25,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 import java.awt.Component;
-import java.awt.Point;
 import java.util.List;
 
 public class EditorTab {
@@ -52,9 +47,11 @@ public class EditorTab {
   public AnAction getAction(JComponent shortcutComponent) {
     AnAction action = new SelectTabAction();
 
-    KeyStroke keystroke = KeyStroke.getKeyStroke("alt shift " + myDescriptor.getShortcutChar());
-    KeyboardShortcut shortcut = new KeyboardShortcut(keystroke, null);
-    action.registerCustomShortcutSet(new CustomShortcutSet(shortcut), shortcutComponent);
+    if (myDescriptor.getShortcutChar() != null) {
+      KeyStroke keystroke = KeyStroke.getKeyStroke("alt shift " + myDescriptor.getShortcutChar());
+      KeyboardShortcut shortcut = new KeyboardShortcut(keystroke, null);
+      action.registerCustomShortcutSet(new CustomShortcutSet(shortcut), shortcutComponent);
+    }
 
     return action;
   }
@@ -113,7 +110,7 @@ public class EditorTab {
           ActionGroup group = getGotoGroup();
           assert group != null : "no nodes to go, but tab is visible";
           ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group);
-          popup.getComponent().show(component,0, 0);
+          popup.getComponent().show(component, 0, 0);
         }
       });
     }
