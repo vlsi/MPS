@@ -127,17 +127,15 @@ public class SubTyping {
     frontier.add(subType);
     while (!frontier.isEmpty()) {
       Set<SNode> yetPassedRaw = new HashSet<SNode>();
-
       //collecting a set of frontier's ancestors
       Set<SNode> ancestors = new HashSet<SNode>();
       for (SNode node : frontier) {
-
         TypeCheckingContextNew typeCheckingContextNew = myState == null ? null : myState.getTypeCheckingContext();
         Set<SNode> result = collectImmediateSuperTypes(node, isWeak, typeCheckingContextNew, superType.getConceptFQName());
         for (SNode test : result) {
           boolean found = false;
           for (SNode anc : yetPassed) {
-            if (TypesUtil.match(anc, test, myEquations, info, true)) {
+            if (TypesUtil.match(anc, test)) {
               found = true;
             }
           }
@@ -147,7 +145,6 @@ public class SubTyping {
         }
         yetPassedRaw.add(node);
       }
-
       ArrayList<SNode> ancestorsSorted = new ArrayList<SNode>(ancestors);
       Collections.sort(ancestorsSorted, new Comparator<SNode>() {
         public int compare(SNode o1, SNode o2) {
@@ -288,13 +285,71 @@ public class SubTyping {
     // todo implement meet
   }
 
+  private SNode leastCommonSuperType(SNode left, SNode right) {
+    Set<SNode> frontier = new HashSet<SNode>();
+    Set<SNode> newFrontier = new HashSet<SNode>();
+    Set<SNode> yetPassed = new HashSet<SNode>();
+    frontier.add(left);
+    while (!frontier.isEmpty()) {
+      Set<SNode> yetPassedRaw = new HashSet<SNode>();
+      Set<SNode> ancestors = new HashSet<SNode>();
+      for (SNode node : frontier) {
+        TypeCheckingContextNew typeCheckingContextNew = myState == null ? null : myState.getTypeCheckingContext();
+        Set<SNode> result = collectImmediateSuperTypes(node, true, typeCheckingContextNew, "");
+        for (SNode test : result) {
+          boolean found = false;
+          for (SNode anc : yetPassed) {
+            if (TypesUtil.match(anc, test)) {
+              found = true;
+            }
+          }
+          if (!found) {
+            ancestors.add(test);
+          }
+        }
+        yetPassedRaw.add(node);
+      }
+
+      for (SNode ancestor : ancestors) {
+        if (isSubType(right, ancestor)) {
+          return ancestor;
+        }
+      }
+      for (SNode passedNodeRaw : yetPassedRaw) {
+        yetPassed.add(passedNodeRaw);
+      }
+      for (SNode passedNode : yetPassed) {
+        ancestors.remove(passedNode);
+      }
+
+      newFrontier.addAll(ancestors);
+      yetPassed.addAll(ancestors);
+      frontier = newFrontier;
+      newFrontier = new HashSet<SNode>();
+    }
+    return null;
+  }
+
+  private SNode leastCommonSuperType(List<SNode> types) {
+    if (types.size() == 0) {
+      return null;
+    }
+    while (types.size() > 1) {
+      int size = types.size();
+      SNode left = types.remove(size - 1);
+      SNode right = types.remove(size - 2);
+      types.add(leastCommonSuperType(left,right));
+    }
+    return types.iterator().next();
+  }
+
   public SNode createLCS(Set<SNode> types) {
     if (types.size() > 1) {
     //  System.out.println("lcs" + types);
       types = eliminateSubOrSuperTypes(types, false);
     //  System.out.println(types);
     }
-    return types.iterator().next();
+    return leastCommonSuperType(new LinkedList<SNode>(types));
 
     // todo implement least common supertype
   }
