@@ -50,13 +50,14 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   private static final Logger LOG = Logger.getLogger(LowLevelEvaluationModel.class);
 
   private AbstractClassifiersScope myScope;
+  private boolean myVariablesInitialized = false;
 
-  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, boolean isInContext) {
-    this(project, session, module, new StackFrameContext(session.getUiState()), isInContext);
+  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, boolean isShowContext) {
+    this(project, session, module, new StackFrameContext(session.getUiState()), isShowContext);
   }
 
-  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, EvaluationContext context, boolean isInContext) {
-    super(project, session, module, context, isInContext);
+  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, EvaluationContext context, boolean isShowContext) {
+    super(project, session, module, context, isShowContext);
 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -198,22 +199,26 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
       final Set<SNode> foundVars = SetSequence.fromSet(new HashSet<SNode>());
       for (String variable : SetSequence.fromSet(MapSequence.fromMap(contextVariables).keySet())) {
+
         String name = variable;
-        SNode lowLevelVarNode;
-        if (!(MapSequence.fromMap(declaredVariables).containsKey(name))) {
-          lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", null);
-          SPropertyOperations.set(lowLevelVarNode, "name", name);
-          ListSequence.fromList(SLinkOperations.getTargets(evaluatorConcept, "variables", true)).addElement(lowLevelVarNode);
-          MapSequence.fromMap(declaredVariables).put(name, lowLevelVarNode);
-        } else {
-          lowLevelVarNode = MapSequence.fromMap(declaredVariables).get(name);
+        SNode lowLevelVarNode = MapSequence.fromMap(declaredVariables).get(name);
+
+        if (needUpdateVariables()) {
+          // we should update variables if we are first time here or if we do not show context (i.e. in evaluation) 
+          if (lowLevelVarNode == null) {
+            lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", null);
+            SPropertyOperations.set(lowLevelVarNode, "name", name);
+            ListSequence.fromList(SLinkOperations.getTargets(evaluatorConcept, "variables", true)).addElement(lowLevelVarNode);
+            MapSequence.fromMap(declaredVariables).put(name, lowLevelVarNode);
+          }
+          SNode deducedType = MapSequence.fromMap(contextVariables).get(name);
+          if (deducedType == null) {
+            LOG.error("Could not deduce type for variable " + name);
+            continue;
+          }
+          SLinkOperations.setTarget(lowLevelVarNode, "type", deducedType, true);
         }
-        SNode deducedType = MapSequence.fromMap(contextVariables).get(name);
-        if (deducedType == null) {
-          LowLevelEvaluationModel.LOG.error("Could not deduce type for variable " + name);
-          continue;
-        }
-        SLinkOperations.setTarget(lowLevelVarNode, "type", deducedType, true);
+
         SetSequence.fromSet(foundVars).addElement(lowLevelVarNode);
       }
 
@@ -224,13 +229,21 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         }
       });
 
-      // create static context type 
-      SLinkOperations.setTarget(evaluatorConcept, "staticContextType", myEvaluationContext.getStaticContextType(createClassifierType), true);
-      // create this 
-      SLinkOperations.setTarget(evaluatorConcept, "thisType", myEvaluationContext.getThisClassifierType(createClassifierType), true);
+      if (needUpdateVariables()) {
+        // create static context type 
+        SLinkOperations.setTarget(evaluatorConcept, "staticContextType", myEvaluationContext.getStaticContextType(createClassifierType), true);
+        // create this 
+        SLinkOperations.setTarget(evaluatorConcept, "thisType", myEvaluationContext.getThisClassifierType(createClassifierType), true);
+      }
+      // todo highlight when this type or static context type are invalid 
     } catch (InvalidStackFrameException e) {
       LowLevelEvaluationModel.LOG.warning("InvalidStackFrameException", e);
     }
+    myVariablesInitialized = true;
+  }
+
+  private boolean needUpdateVariables() {
+    return !(myVariablesInitialized) || !(myShowContext);
   }
 
   public LowLevelEvaluationModel copy(final boolean isShowConetxt) {

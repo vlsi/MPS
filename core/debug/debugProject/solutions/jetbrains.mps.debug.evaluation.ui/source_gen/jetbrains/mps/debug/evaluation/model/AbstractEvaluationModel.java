@@ -71,7 +71,7 @@ public abstract class AbstractEvaluationModel {
   protected SNode myEvaluator;
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
   protected final EvaluationContext myEvaluationContext;
-  private final boolean myShowContext;
+  protected final boolean myShowContext;
 
   public AbstractEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule auxModule, EvaluationContext context, boolean isShowContext) {
     assert !(ApplicationManager.getApplication().isDispatchThread());
