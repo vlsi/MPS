@@ -19,23 +19,21 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.tree.TreePath;
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.debug.evaluation.EvaluationProvider;
-import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import java.io.StringWriter;
+import java.io.PrintWriter;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable;
 import jetbrains.mps.debug.api.integration.ui.WatchableNode;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.awt.Color;
 import jetbrains.mps.ide.messages.Icons;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import java.io.StringWriter;
-import java.io.PrintWriter;
 
 /*package*/ class EvaluationTree extends MPSTree implements DataProvider {
   private String myClassFqName;
@@ -114,20 +112,15 @@ import java.io.PrintWriter;
     return null;
   }
 
-  private static ActionGroup getWatchesActionGroup() {
-    AnAction editWatchAction = new AnAction("Edit Watch") {
-      public void actionPerformed(AnActionEvent event) {
-        AbstractEvaluationModel model = EvaluationUi.EVALUATION_MODEL.getData(event.getDataContext());
-        // todo remove cast 
-        ((EvaluationProvider) model.getDebugSession().getEvaluationProvider()).showEditWatchDialog(MPSDataKeys.OPERATION_CONTEXT.getData(event.getDataContext()), model);
-      }
+  @Nullable
+  protected ActionGroup getTreeActionGroup() {
+    return null;
+  }
 
-      @Override
-      public void update(AnActionEvent event) {
-        event.getPresentation().setVisible(EvaluationUi.EVALUATION_MODEL.getData(event.getDataContext()) != null);
-      }
-    };
-    return new DefaultActionGroup(editWatchAction);
+  public static String[] getStackTrace(Throwable t) {
+    StringWriter writer = new StringWriter();
+    t.printStackTrace(new PrintWriter(writer));
+    return writer.toString().split("\n");
   }
 
   private static abstract class EvaluationState {
@@ -160,7 +153,7 @@ import java.io.PrintWriter;
     }
   }
 
-  private static class ResultState extends EvaluationTree.EvaluationState {
+  private class ResultState extends EvaluationTree.EvaluationState {
     @NotNull
     private final IValueProxy myValueProxy;
     @NotNull
@@ -208,10 +201,17 @@ import java.io.PrintWriter;
       @Override
       public ActionGroup getActionGroup() {
         ActionGroup group = super.getActionGroup();
+        ActionGroup treeActionGroup = getTreeActionGroup();
         if (group == null) {
-          return new DefaultActionGroup(getWatchesActionGroup());
+          if (treeActionGroup != null) {
+            return treeActionGroup;
+          }
+          return null;
         }
-        return new DefaultActionGroup(group, getWatchesActionGroup());
+        if (treeActionGroup != null) {
+          return new DefaultActionGroup(group, treeActionGroup);
+        }
+        return group;
       }
 
       public AbstractEvaluationModel getModel() {
@@ -220,7 +220,7 @@ import java.io.PrintWriter;
     }
   }
 
-  private static class FailureState extends EvaluationTree.EvaluationState {
+  private class FailureState extends EvaluationTree.EvaluationState {
     @Nullable
     private String myErrorText;
     private Throwable myError;
@@ -242,7 +242,7 @@ import java.io.PrintWriter;
     }
   }
 
-  private static class ErrorTreeNode extends TextTreeNode implements EvaluationTree.EvaluationModelNode {
+  private class ErrorTreeNode extends TextTreeNode implements EvaluationTree.EvaluationModelNode {
     private final List<String> myExtendedMessage = ListSequence.fromList(new ArrayList<String>());
     private final AbstractEvaluationModel myModel;
 
@@ -304,18 +304,16 @@ import java.io.PrintWriter;
           }));
         }
       });
-      defaultActionGroup.add(getWatchesActionGroup());
+      ActionGroup treeActionGroup = getTreeActionGroup();
+      if (treeActionGroup != null) {
+        defaultActionGroup.addSeparator();
+        defaultActionGroup.add(treeActionGroup);
+      }
       return defaultActionGroup;
     }
 
     public AbstractEvaluationModel getModel() {
       return myModel;
-    }
-
-    private static String[] getStackTrace(Throwable t) {
-      StringWriter writer = new StringWriter();
-      t.printStackTrace(new PrintWriter(writer));
-      return writer.toString().split("\n");
     }
   }
 

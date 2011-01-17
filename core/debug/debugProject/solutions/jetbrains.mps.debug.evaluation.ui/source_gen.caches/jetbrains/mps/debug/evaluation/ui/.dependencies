@@ -72,8 +72,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.messages.Icons" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationProvider" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -81,9 +80,8 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.io.PrintWriter" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="java.io.StringWriter" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="jetbrains.mps.datatransfer.CopyPasteUtil" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable" />
@@ -102,11 +100,24 @@
     <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode extendsClassName="jetbrains.mps.debug.evaluation.ui.EvaluationModelNode" />
   </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.ui.EvaluationTreeActions" file="EvaluationTreeActions.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.DebugActionsUtil" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.EvaluationUi" />
+    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons" />
+    <classNode dependClassName="jetbrains.mps.debug.api.evaluation.IEvaluationProvider" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationProvider" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel" />
+    <classNode extendsClassName="com.intellij.openapi.actionSystem.AnAction" />
+  </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.ui.EvaluationUi" file="EvaluationUi.java">
     <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.SuspendContext" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataKey" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />

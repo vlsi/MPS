@@ -9,6 +9,8 @@ import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debug.runtime.DebugSession;
 import org.jetbrains.annotations.NotNull;
 import java.awt.BorderLayout;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
 import com.intellij.openapi.application.ApplicationManager;
@@ -16,7 +18,6 @@ import jetbrains.mps.debug.runtime.SuspendContext;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
-import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 import jetbrains.mps.debug.api.AbstractDebugSession;
@@ -36,12 +37,23 @@ public abstract class EvaluationUi extends JPanel {
     myDebugSession = session;
     myAutoUpdate = autoUpdate;
     myDebugSession.addChangeListener(mySessionChangeAdapter);
-    myTree = new EvaluationTree();
+    myTree = new EvaluationTree() {
+      @Nullable
+      @Override
+      protected ActionGroup getTreeActionGroup() {
+        return getActionGroup();
+      }
+    };
   }
 
   protected abstract void update();
 
   public abstract void evaluate();
+
+  @Nullable
+  public ActionGroup getActionGroup() {
+    return null;
+  }
 
   public void dispose() {
     myDebugSession.removeChangeListener(mySessionChangeAdapter);

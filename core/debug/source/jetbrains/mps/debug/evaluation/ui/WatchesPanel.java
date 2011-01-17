@@ -22,6 +22,9 @@ import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.evaluation.EvaluationProvider.WatchAdapter;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debug.evaluation.ui.EvaluationTreeActions.AddWatchAction;
+import jetbrains.mps.debug.evaluation.ui.EvaluationTreeActions.EditWatchAction;
+import jetbrains.mps.debug.evaluation.ui.EvaluationTreeActions.RemoveWatchAction;
 import jetbrains.mps.debug.runtime.SessionStopDisposer;
 import jetbrains.mps.ide.actions.DebugActionsUtil;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons;
@@ -102,42 +105,8 @@ public class WatchesPanel extends EvaluationUi {
     }
   }
 
-  private static class RemoveWatchAction extends AnAction {
-    public RemoveWatchAction() {
-      super("Remove Watch", "Remove Watch", Icons.REMOVE);
-    }
-
-    @Override
-    public void update(AnActionEvent e) {
-      e.getPresentation().setEnabled(EVALUATION_MODEL.getData(e.getDataContext()) != null);
-    }
-
-    @Override
-    public void actionPerformed(AnActionEvent e) {
-      AbstractEvaluationModel model = EVALUATION_MODEL.getData(e.getDataContext());
-      IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(e);
-      if (evaluationProvider != null) {
-        ((EvaluationProvider) evaluationProvider).removeWatch(model);
-      }
-    }
-  }
-
-  private static class AddWatchAction extends AnAction {
-    public AddWatchAction() {
-      super("Add Watch", "Add Watch", Icons.ADD);
-    }
-
-    @Override
-    public void update(AnActionEvent e) {
-      e.getPresentation().setEnabled(DebugActionsUtil.getDebugSession(e) != null);
-    }
-
-    @Override
-    public void actionPerformed(AnActionEvent e) {
-      IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(e);
-      if (evaluationProvider != null) {
-        ((EvaluationProvider) evaluationProvider).createWatch();
-      }
-    }
+  @Override
+  public ActionGroup getActionGroup() {
+    return new DefaultActionGroup(new AddWatchAction(), new EditWatchAction(), new RemoveWatchAction());
   }
 }

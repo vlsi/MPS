@@ -86,6 +86,7 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public void showEditWatchDialog(IOperationContext context, final AbstractEvaluationModel model) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
     final EditWatchDialog editWatchDialog = new EditWatchDialog(context, this, model);
     editWatchDialog.addWindowListener(new WindowAdapter() {
       @Override
@@ -116,14 +117,25 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public void createWatch() {
-    final AbstractEvaluationModel model = createLowLevelEvaluationModel(true);
-    EditWatchDialog editWatchDialog = new EditWatchDialog(ProjectOperationContext.get(myDebugSession.getProject()), this, model, new _void_P0_E0() {
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       @Override
-      public void invoke() {
-        addWatch(model);
+      public void run() {
+        final AbstractEvaluationModel model = createLowLevelEvaluationModel(true);
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
+          public void run() {
+            EditWatchDialog editWatchDialog = new EditWatchDialog(ProjectOperationContext.get(myDebugSession.getProject()), EvaluationProvider.this, model, new _void_P0_E0() {
+              @Override
+              public void invoke() {
+                addWatch(model);
+              }
+            });
+            editWatchDialog.showDialog();
+          }
+        });
       }
     });
-    editWatchDialog.showDialog();
+
   }
 
   public void removeWatch(AbstractEvaluationModel model) {
