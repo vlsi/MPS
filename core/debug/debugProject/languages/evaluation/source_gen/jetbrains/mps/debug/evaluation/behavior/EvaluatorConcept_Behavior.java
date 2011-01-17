@@ -29,7 +29,7 @@ public class EvaluatorConcept_Behavior {
   }
 
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "", false), "statements", true);
+    return SLinkOperations.getTarget(thisNode, "evaluatedStatements", true);
   }
 
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
