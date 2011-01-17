@@ -105,6 +105,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     }
   };
   private Set<ComponentCreationListener> myComponentCreationListeners;
+  private static boolean ourShowGenStatus = true;
 
   public ProjectPane(Project project, ProjectView projectView) {
     super(project);
@@ -345,6 +346,16 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     if (myComponentCreationListeners.isEmpty()) {
       myComponentCreationListeners = null;
     }
+  }
+
+  //---gen status---
+
+  public static void setShowGenStatus(boolean showGenStatusInTree) {
+    ourShowGenStatus = showGenStatusInTree;
+  }
+
+  public static boolean isShowGenStatus() {
+    return ourShowGenStatus;
   }
 
   //----UI----

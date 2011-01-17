@@ -203,10 +203,13 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
 
   private class MyDumbModeListener implements DumbModeListener {
     public void enteredDumbMode() {
+      if (!ProjectPane.isShowGenStatus()) return;
       visit(myGenStatusVisitor);
     }
 
     public void exitDumbMode() {
+      if (!ProjectPane.isShowGenStatus()) return;
+
       Project p = getProject();
       if (p.isDisposed()) return;
 
@@ -237,7 +240,9 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
 
     public void treeNodeUpdated(MPSTreeNode treeNode, MPSTree tree) {
       myErrorVisitor.visitNode(treeNode);
-      myGenStatusVisitor.visitNode(treeNode);
+      if (ProjectPane.isShowGenStatus()) {
+        myGenStatusVisitor.visitNode(treeNode);
+      }
       myModifiedMarker.visitNode(treeNode);
 
       if (treeNode instanceof SModelTreeNode) {
