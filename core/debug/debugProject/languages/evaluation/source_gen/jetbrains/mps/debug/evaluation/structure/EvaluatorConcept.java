@@ -6,7 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.IMethodLike;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.baseLanguage.structure.BlockStatement;
+import jetbrains.mps.baseLanguage.structure.StatementList;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -18,10 +18,10 @@ public class EvaluatorConcept extends BaseConcept implements IMethodLike {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String IS_RUNTIME = "isRuntime";
+  public static final String IS_SHOW_CONTEXT = "isShowContext";
   public static final String THIS_TYPE = "thisType";
   public static final String STATIC_CONTEXT_TYPE = "staticContextType";
-  public static final String EVALUATED_STATEMENT = "evaluatedStatement";
+  public static final String EVALUATED_STATEMENTS = "evaluatedStatements";
   public static final String VARIABLES = "variables";
 
   public EvaluatorConcept(SNode node) {
@@ -52,12 +52,12 @@ public class EvaluatorConcept extends BaseConcept implements IMethodLike {
     this.setProperty(EvaluatorConcept.VIRTUAL_PACKAGE, value);
   }
 
-  public boolean getIsRuntime() {
-    return this.getBooleanProperty(EvaluatorConcept.IS_RUNTIME);
+  public boolean getIsShowContext() {
+    return this.getBooleanProperty(EvaluatorConcept.IS_SHOW_CONTEXT);
   }
 
-  public void setIsRuntime(boolean value) {
-    this.setBooleanProperty(EvaluatorConcept.IS_RUNTIME, value);
+  public void setIsShowContext(boolean value) {
+    this.setBooleanProperty(EvaluatorConcept.IS_SHOW_CONTEXT, value);
   }
 
   public ClassifierType getThisType() {
@@ -76,12 +76,12 @@ public class EvaluatorConcept extends BaseConcept implements IMethodLike {
     super.setChild(EvaluatorConcept.STATIC_CONTEXT_TYPE, node);
   }
 
-  public BlockStatement getEvaluatedStatement() {
-    return (BlockStatement) this.getChild(BlockStatement.class, EvaluatorConcept.EVALUATED_STATEMENT);
+  public StatementList getEvaluatedStatements() {
+    return (StatementList) this.getChild(StatementList.class, EvaluatorConcept.EVALUATED_STATEMENTS);
   }
 
-  public void setEvaluatedStatement(BlockStatement node) {
-    super.setChild(EvaluatorConcept.EVALUATED_STATEMENT, node);
+  public void setEvaluatedStatements(StatementList node) {
+    super.setChild(EvaluatorConcept.EVALUATED_STATEMENTS, node);
   }
 
   public int getVariablesesCount() {

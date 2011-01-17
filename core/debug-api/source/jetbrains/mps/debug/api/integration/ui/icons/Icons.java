@@ -17,5 +17,6 @@ public class Icons {
 
   public static final Icon FRAMES = new ImageIcon(Icons.class.getResource("db_frames.png"));
   public static final Icon VARIABLES = new ImageIcon(Icons.class.getResource("db_variables.png"));
+  public static final Icon WATCHES = new ImageIcon(Icons.class.getResource("db_watches.png"));
 
 }

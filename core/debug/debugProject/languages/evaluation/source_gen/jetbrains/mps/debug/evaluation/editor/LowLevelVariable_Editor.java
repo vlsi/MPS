@@ -27,20 +27,11 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_f5bzsg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_f5bzsg_a");
-    editorCell.addEditorCell(this.createConstant_f5bzsg_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_f5bzsg_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_f5bzsg_b0(editorContext, node));
     if (renderingCondition_f5bzsg_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_f5bzsg_c0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_f5bzsg_d0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_f5bzsg_e0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_f5bzsg_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "var");
-    editorCell.setCellId("Constant_f5bzsg_a0");
-    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -55,14 +46,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_f5bzsg_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_f5bzsg_d0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_f5bzsg_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_f5bzsg_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("deducedType");
     provider.setNoTargetText("<no deducedType>");

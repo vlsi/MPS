@@ -18,8 +18,12 @@ public class SeveralThreads {
           }
         };
         while (true) {
-          i++;
-          cl.invoke();
+          try {
+            Thread.sleep((long) (1000 * Math.random()));
+            i++;
+            cl.invoke();
+          } catch (InterruptedException e) {
+          }
         }
       }
     }).start();
@@ -29,7 +33,11 @@ public class SeveralThreads {
   }
 
   public static void doSomething() {
-    System.err.println("doing something...");
-    System.err.println("doing something once again...");
+    try {
+      Thread.sleep((long) (1000 * Math.random()));
+      System.err.println("doing something...");
+      System.err.println("doing something once again...");
+    } catch (InterruptedException e) {
+    }
   }
 }

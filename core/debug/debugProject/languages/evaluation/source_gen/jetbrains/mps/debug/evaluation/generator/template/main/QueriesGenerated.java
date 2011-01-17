@@ -9,8 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
-  public static SNode sourceNodeQuery_5885457541676789230(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "evaluatedStatement", true);
+  public static SNode sourceNodeQuery_6293005617706016074(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "evaluatedStatements", true);
   }
 
   public static Iterable sourceNodesQuery_1496492112286760828(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

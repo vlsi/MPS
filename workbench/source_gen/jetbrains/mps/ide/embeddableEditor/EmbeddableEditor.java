@@ -55,17 +55,27 @@ public class EmbeddableEditor {
     myIsEditable = editable;
     myModel = ProjectModels.createDescriptorFor(myOwner);
     myModel.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
-    setNode(rootNode, targetNode);
+    setNode(rootNode, targetNode, true);
   }
 
-  private void setNode(@NotNull SNode rootNode, @NotNull SNode targetNode) {
+  public EmbeddableEditor(IOperationContext context, EditableSModelDescriptor modelDescriptor, SNode rootNode, SNode targetNode, boolean editable) {
+    myOwner = modelDescriptor.getModule();
+    myContext = context;
+    myIsEditable = editable;
+    myModel = modelDescriptor;
+    setNode(rootNode, targetNode, false);
+  }
+
+  private void setNode(@NotNull final SNode rootNode, @NotNull SNode targetNode, boolean addToModel) {
     myRootNode = rootNode;
     myNode = targetNode;
-    myModel.getSModel().runLoadingAction(new Runnable() {
-      public void run() {
-        myModel.getSModel().addRoot(myRootNode);
-      }
-    });
+    if (addToModel) {
+      myModel.getSModel().runLoadingAction(new Runnable() {
+        public void run() {
+          myModel.getSModel().addRoot(rootNode);
+        }
+      });
+    }
     myFileNodeEditor = new MPSFileNodeEditor(myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(myNode));
     IEditor editor = myFileNodeEditor.getNodeEditor();
     if (editor instanceof NodeEditor) {
@@ -80,7 +90,7 @@ public class EmbeddableEditor {
   }
 
   public void setNode(@NotNull SNode node) {
-    setNode(node, node);
+    setNode(node, node, true);
   }
 
   public JComponent getComponenet() {
