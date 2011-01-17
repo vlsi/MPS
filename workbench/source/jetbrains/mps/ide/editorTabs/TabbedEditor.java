@@ -27,7 +27,6 @@ import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.editorTabs.tabs.TabsComponent;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -53,7 +52,7 @@ public class TabbedEditor extends BaseNodeEditor {
     myContext = context;
     myColorProvider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
 
-    myTabsComponent = new TabsComponent(baseNode, possibleTabs) {
+    myTabsComponent = new TabsComponent(baseNode, possibleTabs, getComponent()) {
       protected void changeNode(SNode newNode) {
         showNode(newNode, false);
       }

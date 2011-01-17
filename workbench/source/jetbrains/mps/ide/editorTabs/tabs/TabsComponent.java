@@ -54,10 +54,12 @@ public abstract class TabsComponent extends JPanel{
     }
   };
   private JComponent myToolbar = null;
+  private JComponent myShortcutComponent;
 
-  public TabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs) {
+  public TabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent) {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
+    myShortcutComponent = shortcutComponent;
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -155,7 +157,7 @@ public abstract class TabsComponent extends JPanel{
 
     DefaultActionGroup group = new DefaultActionGroup();
     for (EditorTab tab : myRealTabs) {
-      group.add(tab.getAction(this));
+      group.add(tab.getAction(myShortcutComponent));
     }
     if (myToolbar != null) {
       remove(myToolbar);
@@ -216,7 +218,7 @@ public abstract class TabsComponent extends JPanel{
     };
     AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, changedContext);
 
-    myRealTabs.get(index).getAction(this).actionPerformed(event);
+    myRealTabs.get(index).getAction(myShortcutComponent).actionPerformed(event);
   }
 
   ///-------------events----------------
