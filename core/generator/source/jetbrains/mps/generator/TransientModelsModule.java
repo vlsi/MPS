@@ -157,6 +157,9 @@ public class TransientModelsModule extends AbstractModule {
       if (myPublished.remove(md)) {
         SModelRepository.getInstance().removeModelDescriptor(md);
       }
+      if (md instanceof TransientSModelDescriptor) {
+        ((TransientSModelDescriptor)md).dropModel();
+      }
     }
   }
 
@@ -253,10 +256,21 @@ public class TransientModelsModule extends AbstractModule {
         if (swap == null || !swap.swapOut((TransientSModel) mySModel)) { return false; }
 
         this.mySModel = null;
+        fireModelReplaced();
         setLoadingState(ModelLoadingState.NOT_LOADED);
         this.wasUnloaded = true;
       }
       return false;
+    }
+
+    private void dropModel() {
+      if (mySModel != null) {
+        LOG.debug("Dropped "+getSModelReference());
+
+        this.mySModel = null;
+        fireModelReplaced();
+        setLoadingState(ModelLoadingState.NOT_LOADED);
+      }
     }
 
     @Override
