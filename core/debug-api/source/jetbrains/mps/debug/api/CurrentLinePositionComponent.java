@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.highlighter.EditorOpenListener;
@@ -137,8 +138,8 @@ public class CurrentLinePositionComponent implements ProjectComponent {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SNode editedNode = editor.getEditedNode();
-        if (painter.getItem().getContainingRoot() == editedNode) {
+        SNodePointer editedNode = editor.getCurrentlyEditedNode();
+        if (painter.getItem().getContainingRoot() == editedNode.getNode()) {
           EditorComponent editorComponent = editor.getCurrentEditorComponent();
           if (editorComponent != null) {
             editorComponent.removeAdditionalPainter(painter);
@@ -183,8 +184,8 @@ public class CurrentLinePositionComponent implements ProjectComponent {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SNode editedNode = editor.getEditedNode();
-        if (painter.getItem().getContainingRoot() == editedNode) {
+        SNodePointer editedNode = editor.getCurrentlyEditedNode();
+        if (painter.getItem().getContainingRoot() == editedNode.getNode()) {
           EditorComponent editorComponent = editor.getCurrentEditorComponent();
           if (editorComponent != null) {
             editorComponent.scrollToNode(painter.getItem());

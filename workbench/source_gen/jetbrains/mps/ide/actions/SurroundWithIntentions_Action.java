@@ -20,7 +20,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.workbench.action.ActionFactory;
+import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
 import java.awt.Point;
@@ -69,7 +69,7 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ActionGroup group = ActionFactory.getInstance().acquireRegisteredGroup("jetbrains.mps.ide.actions.SurroundWithIntentions_ActionGroup", "jetbrains.mps.ide");
+          ActionGroup group = ((ActionGroup) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.SurroundWithIntentions_ActionGroup"));
           group.update(event);
           if (group.getChildren(event).length == 0) {
             return;

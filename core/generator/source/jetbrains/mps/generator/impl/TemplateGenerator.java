@@ -690,6 +690,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
+  void rootReplaced(SNode old, SNode new_) {
+    myDependenciesBuilder.rootReplaced(old, new_);
+  }
+
   protected void registerInModel(SNode outputRoot, SNode inputNode, SNodePointer templateNode) {
     myOutputRoots.add(outputRoot);
   }

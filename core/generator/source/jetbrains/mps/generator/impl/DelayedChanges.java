@@ -145,6 +145,7 @@ public class DelayedChanges {
             if (myChildToReplace.isRoot()) {
               myChildToReplace.getModel().addRoot(child);
               myChildToReplace.getModel().removeRoot(myChildToReplace);
+              myGenerator.rootReplaced(myChildToReplace, child);
             }
           } else {
             String childRole = parent.getRoleOf(myChildToReplace);

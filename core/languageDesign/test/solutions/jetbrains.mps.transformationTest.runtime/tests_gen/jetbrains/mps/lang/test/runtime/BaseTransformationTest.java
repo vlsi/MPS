@@ -68,6 +68,7 @@ public class BaseTransformationTest extends TestCase {
         });
       }
     });
+    ModelAccess.instance().flushEventQueue();
   }
 
   private void clearSystemClipboard() {

@@ -39,11 +39,12 @@ public class WindowsDemo_SWT {
     widget_le4s0b_a0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             dialog();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     //  with SWT items are not added to container
@@ -77,11 +78,12 @@ public class WindowsDemo_SWT {
     widget_le4s0b_a0a0a0b0b0b.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             showDialog();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     //  with SWT items are not added to container
@@ -108,11 +110,12 @@ public class WindowsDemo_SWT {
     widget_le4s0b_a0a1a0b0b0b.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             showForm();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     //  with SWT items are not added to container
@@ -142,11 +145,12 @@ public class WindowsDemo_SWT {
     widget_le4s0b_a0a0a1a2.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             widget_le4s0b_a0a0c.dispose();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     //  with SWT items are not added to container
@@ -190,11 +194,12 @@ public class WindowsDemo_SWT {
     widget_le4s0b_c0a0a1a3.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             widget_le4s0b_a0a0d.dispose();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     {
@@ -212,11 +217,12 @@ public class WindowsDemo_SWT {
     widget_le4s0b_d0a0a1a3.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             widget_le4s0b_a0a0d.dispose();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     {
@@ -234,11 +240,12 @@ public class WindowsDemo_SWT {
     widget_le4s0b_e0a0a1a3.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             widget_le4s0b_a0a0d.dispose();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     {

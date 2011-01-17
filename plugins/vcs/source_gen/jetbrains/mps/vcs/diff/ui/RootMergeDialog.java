@@ -33,6 +33,7 @@ import jetbrains.mps.vcs.diff.Conflict;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange;
@@ -128,13 +129,9 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     final SNode[] change2Node = new SNode[1];
     merger.rebuldResultModel();
     final SModel resultModel = merger.getResultModel();
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        change1Node[0] = myChange1Model.getNodeById(node.getSNodeId());
-        resultNode[0] = resultModel.getNodeById(node.getSNodeId());
-        change2Node[0] = myChange2Model.getNodeById(node.getSNodeId());
-      }
-    });
+    change1Node[0] = myChange1Model.getNodeById(node.getSNodeId());
+    resultNode[0] = resultModel.getNodeById(node.getSNodeId());
+    change2Node[0] = myChange2Model.getNodeById(node.getSNodeId());
     myTopComponent = new JPanel(new GridLayout(1, 3));
     myBottomComponent = new JPanel(new GridLayout(1, 3));
     for (Change conflict : merger.getConflictingChanges()) {
@@ -235,13 +232,13 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
       }
     });
     myResultModel = myMerger.getResultModel();
-    final SNode[] resultNode = new SNode[1];
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    final Wrappers._T<SNode> resultNode = new Wrappers._T<SNode>();
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        resultNode[0] = myResultModel.getNodeById(myRoot.getSNodeId());
+        resultNode.value = myResultModel.getNodeById(myRoot.getSNodeId());
       }
     });
-    myResultEditorComponent.editNode(resultNode[0], myContext);
+    myResultEditorComponent.editNode(resultNode.value, myContext);
     List<Change> mineChange = new ArrayList<Change>(myMerger.getBaseMineChanges());
     mineChange.removeAll(myMerger.getAppliedChanges());
     mineChange.removeAll(myMerger.getExcludedChanges());
@@ -251,7 +248,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     removedNodes.addAll(CollectionUtil.filter(DeleteNodeChange.class, myMerger.getBaseMineChanges()));
     removedNodes.addAll(CollectionUtil.filter(DeleteNodeChange.class, myMerger.getBaseRepoChanges()));
     removedNodes.removeAll(myMerger.getExcludedChanges());
-    myResultEditorComponent.hightlight(removedNodes, true, false);
+    myResultEditorComponent.hightlight(removedNodes, false, false);
     myResultEditorComponent.makeChangeBlocks();
     List<Change> repoChange = new ArrayList<Change>(myMerger.getBaseRepoChanges());
     repoChange.removeAll(myMerger.getAppliedChanges());

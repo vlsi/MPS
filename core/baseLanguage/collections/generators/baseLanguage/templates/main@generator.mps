@@ -4211,7 +4211,12 @@
             </node>
           </node>
         </node>
-        <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="1208692297146" />
+        <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="1208692297146">
+          <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="3970531531377152193">
+            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
+            <property name="messageText" nameId="tpf8.1169670173015" value="erroneous operation" />
+          </node>
+        </node>
       </node>
       <node role="conditionFunction" roleId="tpf8.1167169362365" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1208692001915">
         <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="1208692001916">
@@ -9479,7 +9484,12 @@
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1227368554115">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpef.1197027756228" resolveInfo="DotExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineSwitch_RuleConsequence" typeId="tpf8.1195158154974" id="1227368649243">
-        <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="1227368811015" />
+        <node role="defaultConsequence" roleId="tpf8.1195158241124" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="1227368811015">
+          <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="3970531531377152194">
+            <property name="messageType" nameId="tpf8.1169670356567" value="error" />
+            <property name="messageText" nameId="tpf8.1169670173015" value="not a primitive array" />
+          </node>
+        </node>
         <node role="case" roleId="tpf8.1195158408710" type="tpf8.InlineSwitch_Case" typeId="tpf8.1195158388553" id="1227368650765">
           <node role="conditionFunction" roleId="tpf8.1195158608805" type="tpf8.BaseMappingRule_Condition" typeId="tpf8.1167168920554" id="1227368650766">
             <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="1227368650767">

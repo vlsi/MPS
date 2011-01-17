@@ -18,11 +18,12 @@ public class Events_Test extends UITestBase_Test {
         widget_m32u4c_a0a0a0a1a0a.setProp("id", "1234");
         widget_m32u4c_a0a0a0a1a0a.addEventHandler("foo", new MockEventHandler() {
           public void handle(MockWidget wdg, MockEvent event) {
-            new _FunctionTypes._return_P1_E0<String, MockEvent>() {
-              public String invoke(MockEvent event) {
-                return volatileValue.value = event.getProp("bar");
+            _FunctionTypes._void_P1_E0<? super MockEvent> h = new _FunctionTypes._void_P1_E0<MockEvent>() {
+              public void invoke(MockEvent event) {
+                volatileValue.value = event.getProp("bar");
               }
-            }.invoke(event);
+            };
+            h.invoke(event);
           }
         });
         return widget_m32u4c_a0a0a0a1a0a;

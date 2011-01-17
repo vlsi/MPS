@@ -38,19 +38,14 @@ public class GenerationCycle {
     for (final SModelDescriptor model : models) {
       assert model != null;
 
-      Set<IModule> owningModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
-        public Set<IModule> compute() {
-          return model.getModules();
+      IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+        public IModule compute() {
+          return model.getModule();
         }
       });
 
-      IModule module = null;
-      if (owningModules.size() > 0) {
-        module = owningModules.iterator().next();
-      }
-
       if (module == null) {
-        System.out.println("Model " + model.getLongName() + " won't be generated because module for it can not be found.");
+        Testbench.LOG.error("Model " + model.getLongName() + " won't be generated because module for it can not be found.");
       } else {
         List<SModelDescriptor> modelsList = moduleToModels.get(module);
         if (modelsList == null) {

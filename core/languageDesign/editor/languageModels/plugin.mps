@@ -1666,6 +1666,10 @@
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="4743603200655340469">
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_INSERT" />
       </node>
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7473495377081413486">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="shift" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_ENTER" />
+      </node>
     </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="4743603200655340470">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="4743603200655334840" resolveInfo="LocalEnd" />

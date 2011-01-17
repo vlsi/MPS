@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Core_ProjectPlugin.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ProjectPlugin" />
   <unitInfo fileName="CoreActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.CoreActions_ActionGroup" />
   <unitInfo fileName="FindModelUsages_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindModelUsages_ActionGroup" />
+  <unitInfo fileName="Core_ProjectPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ProjectPlugin" />
   <unitInfo fileName="FindLanguageUsages_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindLanguageUsages_ActionGroup" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Default_KeymapChanges" />
   <unitInfo fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.LanguageChecksPlugin_CustomProjectPlugin" />
@@ -201,7 +201,7 @@
     <nodeInfo nodeId="525325117940944269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LanguageErrorsComponent.java" startLine="202" startPosition="56" endLine="203" endPosition="89" />
     <nodeInfo nodeId="525325117940944282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LanguageErrorsComponent.java" startLine="206" startPosition="55" endLine="207" endPosition="68" />
     <nodeInfo nodeId="6431949033427819732" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LanguageErrorsComponent.java" startLine="211" startPosition="52" endLine="212" endPosition="13" />
-    <nodeInfo nodeId="6431949033427820759" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LanguageErrorsComponent.java" startLine="215" startPosition="58" endLine="216" endPosition="38" />
+    <nodeInfo nodeId="6431949033427820759" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LanguageErrorsComponent.java" startLine="215" startPosition="97" endLine="216" endPosition="38" />
     <nodeInfo nodeId="525325117940936228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LanguageErrorsComponent.java" startLine="221" startPosition="69" endLine="222" endPosition="73" />
     <nodeInfo nodeId="3518990154940923450" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LanguageErrorsComponent.java" startLine="225" startPosition="23" endLine="226" endPosition="26" />
     <nodeInfo nodeId="3518990154940923457" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LanguageErrorsComponent.java" startLine="226" startPosition="26" endLine="227" endPosition="48" />
@@ -316,7 +316,7 @@
     <scopeInfo nodeId="525325117940923976" fileName="LanguageErrorsComponent.java" startLine="202" startPosition="56" endLine="203" endPosition="89" />
     <scopeInfo nodeId="525325117940924018" fileName="LanguageErrorsComponent.java" startLine="206" startPosition="55" endLine="207" endPosition="68" />
     <scopeInfo nodeId="6431949033427748785" fileName="LanguageErrorsComponent.java" startLine="211" startPosition="52" endLine="212" endPosition="13" />
-    <scopeInfo nodeId="6431949033427820746" fileName="LanguageErrorsComponent.java" startLine="215" startPosition="58" endLine="216" endPosition="38" />
+    <scopeInfo nodeId="6431949033427820746" fileName="LanguageErrorsComponent.java" startLine="215" startPosition="97" endLine="216" endPosition="38" />
     <scopeInfo nodeId="525325117940924203" fileName="LanguageErrorsComponent.java" startLine="221" startPosition="69" endLine="222" endPosition="73" />
     <scopeInfo nodeId="2944963449630169783" fileName="LanguageErrorsComponent.java" startLine="241" startPosition="60" endLine="242" endPosition="62" />
     <scopeInfo nodeId="2944963449630169798" fileName="LanguageErrorsComponent.java" startLine="245" startPosition="83" endLine="246" endPosition="62" />

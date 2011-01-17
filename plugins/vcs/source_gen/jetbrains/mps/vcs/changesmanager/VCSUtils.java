@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.diff.DiffProvider;
@@ -23,6 +24,11 @@ public class VCSUtils {
 
   @Nullable
   public static String getBaseVersionContent(@NotNull VirtualFile file, @NotNull Project project) {
+    if (ModelAccess.instance().canRead()) {
+      if (log.isErrorEnabled()) {
+        log.error("VCSUtils.getBaseVersionContent() is invoked from read action: possible deadlock", new IllegalStateException());
+      }
+    }
     try {
       AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
       if (vcs == null) {

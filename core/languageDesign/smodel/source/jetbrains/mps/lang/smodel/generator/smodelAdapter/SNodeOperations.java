@@ -70,19 +70,20 @@ public class SNodeOperations {
   }
 
   public static SNode getAncestor(SNode node, String ancestorConceptFqName, boolean inclusion, boolean root) {
+    return getAncestor(node, ancestorConceptFqName, inclusion, root, false);
+  }
+
+  public static SNode getAncestor(SNode node, String ancestorConceptFqName, boolean inclusion, boolean root, boolean sameMetaLevel) {
     if (node == null) return null;
-    if (ancestorConceptFqName == null) {
-      if (root) {
-        return node.getContainingRoot();
-      }
-      return node.getParent();
-    }
+    int metaLevel = sameMetaLevel ? SModelUtil_new.getMetaLevel(node) : 0;
 
     // look up for certain concept
     if (root) {
       SNode rootParent = node.getContainingRoot();
-      if (rootParent != null && rootParent.isInstanceOfConcept(ancestorConceptFqName)) {
-        return rootParent;
+      if (rootParent != null && nullSafeInstanceOf(rootParent, ancestorConceptFqName)) {
+        if (!sameMetaLevel || SModelUtil_new.getMetaLevel(rootParent) == metaLevel) {
+          return rootParent;
+        }
       }
       return null;
     }
@@ -95,17 +96,34 @@ public class SNodeOperations {
       outputNode = node.getParent();
     }
     if (outputNode == null) return null;
-    if (outputNode.isInstanceOfConcept(ancestorConceptFqName)) return outputNode;
+    if (nullSafeInstanceOf(outputNode, ancestorConceptFqName)) {
+      if (!sameMetaLevel || SModelUtil_new.getMetaLevel(outputNode) == metaLevel) {
+        return outputNode;
+      }
+    }
 
     while ((outputNode = outputNode.getParent()) != null) {
-      if (outputNode.isInstanceOfConcept(ancestorConceptFqName)) break;
+      if (nullSafeInstanceOf(outputNode, ancestorConceptFqName)) {
+        if (!sameMetaLevel || SModelUtil_new.getMetaLevel(outputNode) == metaLevel) {
+          break;
+        }
+      }
     }
     return outputNode;
   }
 
-  public static SNode getAncestorWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion, boolean root) {
-    if (node == null) return null;
+  private static boolean nullSafeInstanceOf(SNode node, String conceptFQName) {
+    if (conceptFQName == null) return true;
+    return node.isInstanceOfConcept(conceptFQName);
+  }
 
+  public static SNode getAncestorWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion, boolean root) {
+    return getAncestorWhereConceptInList(node,  ancestorConceptFqNames, inclusion, root, false);
+  }
+
+  public static SNode getAncestorWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion, boolean root, boolean sameMetaLevel) {
+    if (node == null) return null;
+    int metaLevel = sameMetaLevel ? SModelUtil_new.getMetaLevel(node) : 0;
     if (ancestorConceptFqNames.length == 0) {
       return null;
     }
@@ -113,7 +131,9 @@ public class SNodeOperations {
     if (root) {
       SNode rootParent = node.getContainingRoot();
       if (_isInstanceOf(rootParent, ancestorConceptFqNames)) {
-        return rootParent;
+        if (!sameMetaLevel || SModelUtil_new.getMetaLevel(rootParent) == metaLevel) {
+          return rootParent;
+        }
       }
       return null;
     }
@@ -127,10 +147,18 @@ public class SNodeOperations {
     }
     if (outputNode == null) return null;
 
-    if (_isInstanceOf(outputNode, ancestorConceptFqNames)) return outputNode;
+    if (_isInstanceOf(outputNode, ancestorConceptFqNames)) {
+      if (!sameMetaLevel || SModelUtil_new.getMetaLevel(outputNode) == metaLevel) {
+        return outputNode;
+      }
+    }
 
     while ((outputNode = outputNode.getParent()) != null) {
-      if (_isInstanceOf(outputNode, ancestorConceptFqNames)) return outputNode;
+      if (_isInstanceOf(outputNode, ancestorConceptFqNames)) {
+        if (!sameMetaLevel || SModelUtil_new.getMetaLevel(outputNode) == metaLevel) {
+          return outputNode;
+        }
+      }
     }
     return outputNode;
   }
@@ -592,7 +620,7 @@ public class SNodeOperations {
 
   public static SNode getContainingLinkDeclaration(SNode childNode) {
     if (childNode == null) {
-      return null; 
+      return null;
     }
     LinkDeclaration linkDeclaration = childNode.getRoleLink();
     return linkDeclaration == null ? null : linkDeclaration.getNode();

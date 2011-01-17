@@ -26,6 +26,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.Set;
@@ -108,7 +109,7 @@ public class SModelUtil {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
   }
 
-  public static Language getDeclaringLanguage(SNode concept, @NotNull IScope scope) {
+  public static Language getDeclaringLanguage(SNode concept) {
     Language l = MapSequence.fromMap(myConceptToLanguage).get(concept);
     if (l != null) {
       return l;
@@ -117,7 +118,7 @@ public class SModelUtil {
     if (languageFqName == null) {
       return null;
     }
-    l = scope.getLanguage(new ModuleReference(languageFqName));
+    l = MPSModuleRepository.getInstance().getLanguage(languageFqName);
     if (l != null) {
       MapSequence.fromMap(myConceptToLanguage).put(concept, l);
     }

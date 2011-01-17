@@ -827,7 +827,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageIconRenderer" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.plugin.AbstractOverrideEditorMessage" />
   </dependency>
@@ -989,7 +988,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageIconRenderer" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />

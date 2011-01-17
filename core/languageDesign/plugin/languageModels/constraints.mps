@@ -32,6 +32,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tp4k.1203092361741" resolveInfo="ModificationStatement" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213107435692">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tp4k.1207145475354" resolveInfo="AddElementStatement" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1213107437648">
@@ -115,7 +116,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tp4k.485694842828664424" resolveInfo="SmartDisposeClosureParameterDeclaration" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="5703381818026462229">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab.Methods" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tp4k.5703381818026462228" resolveInfo="AskStatement" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="5857416866788535172">

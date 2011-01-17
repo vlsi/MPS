@@ -40,11 +40,12 @@ public class ControlsDemo_Swing {
     widget_e1wtj0_a0a0a.setActionCommand("tree");
     widget_e1wtj0_a0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             tree();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     menu.add(widget_e1wtj0_a0a0a);
@@ -53,11 +54,12 @@ public class ControlsDemo_Swing {
     widget_e1wtj0_b0a0a.setActionCommand("tree");
     widget_e1wtj0_b0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             table();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     menu.add(widget_e1wtj0_b0a0a);

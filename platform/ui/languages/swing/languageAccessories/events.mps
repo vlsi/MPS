@@ -70,12 +70,26 @@
                       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3302932283760647123" />
                       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3302932283760647124" />
                       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3302932283760647125">
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4181924746626280056">
+                          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4181924746626280057">
+                            <property name="name" nameId="tpck.1169194664001" value="h" />
+                            <node role="type" roleId="tpee.5680397130376446158" type="tp2c.FunctionType" typeId="tp2c.1199542442495" id="4181924746626280058">
+                              <node role="parameterType" roleId="tp2c.1199542501692" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4181924746626280059">
+                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4bsm.~MouseEvent" resolveInfo="MouseEvent" />
+                              </node>
+                              <node role="resultType" roleId="tp2c.1199542457201" type="tpee.VoidType" typeId="tpee.1068581517677" id="4181924746626280060" />
+                            </node>
+                            <node role="initializer" roleId="tpee.1068431790190" type="sqp9.EventHandlerParam" typeId="sqp9.8115675450774807738" id="4181924746626280061" />
+                          </node>
+                        </node>
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3302932283760647126">
                           <node role="expression" roleId="tpee.1068580123156" type="tp2c.CompactInvokeFunctionExpression" typeId="tp2c.1235746970280" id="3302932283760647127">
                             <node role="parameter" roleId="tp2c.1235747002942" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3302932283760647128">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3302932283760647121" resolveInfo="e" />
                             </node>
-                            <node role="function" roleId="tp2c.1235746996653" type="sqp9.EventHandlerParam" typeId="sqp9.8115675450774807738" id="3302932283760647129" />
+                            <node role="function" roleId="tp2c.1235746996653" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4181924746626280062">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4181924746626280057" resolveInfo="h" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -126,12 +140,26 @@
                         </node>
                       </node>
                       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5894005964488370479">
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4181924746626280063">
+                          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4181924746626280064">
+                            <property name="name" nameId="tpck.1169194664001" value="h" />
+                            <node role="type" roleId="tpee.5680397130376446158" type="tp2c.FunctionType" typeId="tp2c.1199542442495" id="4181924746626280065">
+                              <node role="parameterType" roleId="tp2c.1199542501692" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4181924746626280066">
+                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4bsm.~ActionEvent" resolveInfo="ActionEvent" />
+                              </node>
+                              <node role="resultType" roleId="tp2c.1199542457201" type="tpee.VoidType" typeId="tpee.1068581517677" id="4181924746626280067" />
+                            </node>
+                            <node role="initializer" roleId="tpee.1068431790190" type="sqp9.EventHandlerParam" typeId="sqp9.8115675450774807738" id="4181924746626280068" />
+                          </node>
+                        </node>
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5894005964488370480">
                           <node role="expression" roleId="tpee.1068580123156" type="tp2c.CompactInvokeFunctionExpression" typeId="tp2c.1235746970280" id="5894005964488370482">
                             <node role="parameter" roleId="tp2c.1235747002942" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5894005964488370501">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5894005964488370477" resolveInfo="e" />
                             </node>
-                            <node role="function" roleId="tp2c.1235746996653" type="sqp9.EventHandlerParam" typeId="sqp9.8115675450774807738" id="5894005964488370483" />
+                            <node role="function" roleId="tp2c.1235746996653" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4181924746626280069">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4181924746626280064" resolveInfo="h" />
+                            </node>
                           </node>
                         </node>
                       </node>

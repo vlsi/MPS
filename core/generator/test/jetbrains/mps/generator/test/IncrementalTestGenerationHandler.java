@@ -105,7 +105,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
     if(myFilesDir != null) {
       for (IFile f : myFilesDir.list()) {
         try {
-          String s = FileUtil.read(new InputStreamReader(f.openInputStream()));
+          String s = FileUtil.read(new InputStreamReader(f.openInputStream(), FileUtil.DEFAULT_CHARSET));
           existingContent.put(f.getName(), s);
         } catch (IOException e) {
           throw new RuntimeException(e);

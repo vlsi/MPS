@@ -48,7 +48,7 @@ public class JavaCompiler {
 
   public void compile(IClassPathItem classPath) {
     CompilerOptions options = new CompilerOptions();
-    options.sourceLevel = ClassFileConstants.JDK1_5;
+    options.sourceLevel = ClassFileConstants.JDK1_6;
     options.targetJDK = ClassFileConstants.JDK1_5;
     options.produceDebugAttributes = ClassFileConstants.ATTR_SOURCE | ClassFileConstants.ATTR_LINES | ClassFileConstants.ATTR_VARS;
 

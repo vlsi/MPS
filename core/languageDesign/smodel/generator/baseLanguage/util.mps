@@ -266,6 +266,34 @@
         </node>
       </node>
     </node>
+    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="4179981224539639933">
+      <property name="name" nameId="tpck.1169194664001" value="operationHasParm_SameMetaLevel" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="4179981224539639934" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4179981224539639935" />
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4179981224539639936">
+        <property name="name" nameId="tpck.1169194664001" value="inputNode" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4179981224539639937">
+          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp25.1138411891628" resolveInfo="SNodeOperation" />
+        </node>
+      </node>
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4179981224539639938">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4179981224539639939">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="4179981224539639940">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4179981224539639941" />
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4179981224539639942">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1239206111476" resolveInfo="findNodeOperationParameter" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1239206083907" resolveInfo="SModelLanguageUtil" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4179981224539639943">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4179981224539639936" resolveInfo="inputNode" />
+              </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="4179981224539639944">
+                <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tp25.1540150895035667832" resolveInfo="OperationParm_KeepsMetaLevel" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1239207960142">
       <property name="name" nameId="tpck.1169194664001" value="operationHasParm_Root" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1239207960143" />

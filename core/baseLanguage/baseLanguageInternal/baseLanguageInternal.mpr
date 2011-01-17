@@ -11,7 +11,7 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule name="blInternal" moduleRef="jetbrains.mps.baseLanguageInternal" />
+      <genConfModule name="baseLanguageInternal" moduleRef="jetbrains.mps.baseLanguageInternal" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
@@ -26,9 +26,7 @@
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$" vcs="svn" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>
 

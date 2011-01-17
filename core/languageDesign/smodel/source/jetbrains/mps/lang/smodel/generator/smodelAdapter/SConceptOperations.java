@@ -120,7 +120,7 @@ public final class SConceptOperations {
     List<SNode> result = new ArrayList<SNode>();
     for (String descendant : descendants) {
       SNode declaration = SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance());
-      Language lang = SModelUtil.getDeclaringLanguage(declaration, scope);
+      Language lang = SModelUtil.getDeclaringLanguage(declaration);
       if (availableLanguages.contains(lang)) {
         result.add(lang.findConceptDeclaration(NameUtil.shortNameFromLongName(descendant)).getNode());
       }

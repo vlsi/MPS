@@ -32,7 +32,6 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NonNls;
@@ -235,7 +234,7 @@ public class SModelUtil_new implements ApplicationComponent {
 
   public static Language getDeclaringLanguage(AbstractConceptDeclaration concept, IScope scope) {
     if (concept == null) return null;
-    return SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(concept), scope);
+    return SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(concept));
   }
 
   public static boolean isAcceptableTarget(LinkDeclaration linkDeclaration, SNode referentNode) {
@@ -277,5 +276,9 @@ public class SModelUtil_new implements ApplicationComponent {
 
   public static ConceptDeclaration getBaseConcept() {
     return (ConceptDeclaration) BaseAdapter.fromNode(SModelUtil.getBaseConcept());
+  }
+
+  public static int getMetaLevel(SNode node) {
+    return SNodeUtil.getMetaLevel(node);
   }
 }

@@ -11,12 +11,12 @@
     <scopeInfo nodeId="6030013275786405063" fileName="ChildAspectDefinition_makeOptional_Intention.java" startLine="46" startPosition="76" endLine="47" endPosition="57" />
   </root>
   <root nodeId="6247544121092588774">
-    <nodeInfo nodeId="6247544121092588840" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="216" />
+    <nodeInfo nodeId="6247544121092588840" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="220" />
     <nodeInfo nodeId="6247544121092588859" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="44" startPosition="12" endLine="45" endPosition="146" />
     <nodeInfo nodeId="6247544121092588857" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="44" startPosition="10" endLine="46" endPosition="5" />
     <nodeInfo nodeId="6247544121092588798" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="34" startPosition="85" endLine="38" endPosition="6" />
     <nodeInfo nodeId="6247544121092588824" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="41" startPosition="76" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="6247544121092588826" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="216" />
+    <scopeInfo nodeId="6247544121092588826" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="42" startPosition="132" endLine="43" endPosition="220" />
     <scopeInfo nodeId="6247544121092588858" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="44" startPosition="12" endLine="45" endPosition="146" />
     <scopeInfo nodeId="6247544121092588776" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="34" startPosition="85" endLine="38" endPosition="6" />
     <scopeInfo nodeId="6247544121092588778" fileName="LinkDeclaration_addOverrideAnnotation_Intention.java" startLine="41" startPosition="76" endLine="46" endPosition="5" />

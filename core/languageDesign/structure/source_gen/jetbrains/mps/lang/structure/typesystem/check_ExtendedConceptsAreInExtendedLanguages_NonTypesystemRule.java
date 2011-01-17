@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,14 +24,14 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
   }
 
   public void applyRule(final SNode cd, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    Language language = SModelUtil.getDeclaringLanguage(cd, GlobalScope.getInstance());
+    Language language = SModelUtil.getDeclaringLanguage(cd);
     if (language == null) {
       return;
     }
     List<SNode> superConcepts = AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(cd);
     List<Language> extendedLanguages = language.getAllExtendedLanguages();
     for (SNode superConcept : superConcepts) {
-      Language conceptLanguage = SModelUtil.getDeclaringLanguage(superConcept, GlobalScope.getInstance());
+      Language conceptLanguage = SModelUtil.getDeclaringLanguage(superConcept);
       if (conceptLanguage == null) {
         continue;
       }

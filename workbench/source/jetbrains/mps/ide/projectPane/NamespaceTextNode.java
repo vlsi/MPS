@@ -29,7 +29,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 import java.util.ArrayList;
@@ -87,8 +86,8 @@ public class NamespaceTextNode extends TextTreeNode {
     DefaultActionGroup newGroup = new DefaultActionGroup("New", true);
 
     if (hasModulesUnder) {
-      newGroup.add(ActionFactory.getInstance().acquireRegisteredAction(NewSolution_Action.class.getName(), "jetbrains.mps.ide", myName));
-      newGroup.add(ActionFactory.getInstance().acquireRegisteredAction(NewLanguage_Action.class.getName(), "jetbrains.mps.ide", myName));
+      newGroup.add(new NewSolution_Action(myName));
+      newGroup.add(new NewLanguage_Action(myName));
     }
     if (hasModelsUnder && hasModulesUnder) {
       newGroup.addSeparator();

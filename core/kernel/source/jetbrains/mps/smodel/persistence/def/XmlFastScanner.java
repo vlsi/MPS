@@ -1,5 +1,7 @@
 package jetbrains.mps.smodel.persistence.def;
 
+import jetbrains.mps.util.FileUtil;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -123,7 +125,7 @@ public class XmlFastScanner {
 
   private static char[] getCharacters(byte[] content) {
     try {
-      Reader r = new InputStreamReader(new ByteArrayInputStream(content), "UTF-8");
+      Reader r = new InputStreamReader(new ByteArrayInputStream(content), FileUtil.DEFAULT_CHARSET);
       StringBuilder sb = new StringBuilder(content.length + content.length / 4);
       char[] c = new char[1024];
       int size;

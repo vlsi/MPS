@@ -65,11 +65,11 @@ public class MakeActionParameters {
           public Iterator<SModelDescriptor> iterator() {
             return new YieldingIterator<SModelDescriptor>() {
               private int __CP__ = 0;
-              private SModelDescriptor _5__yield_nk3wxj_a0a0a0a0a0a0b;
-              private Iterator<SModelDescriptor> _5__yield_nk3wxj_a0a0a0a0a0a0b_it;
-              private Iterable<SModelDescriptor> _11_modelsFromModules;
-              private SModelDescriptor _12__yield_nk3wxj_d0a0a0a0a0b;
-              private Iterator<SModelDescriptor> _12__yield_nk3wxj_d0a0a0a0a0b_it;
+              private SModelDescriptor _4__yield_nk3wxj_a0a0a0a0a0a0b;
+              private Iterator<SModelDescriptor> _4__yield_nk3wxj_a0a0a0a0a0a0b_it;
+              private Iterable<SModelDescriptor> _12_modelsFromModules;
+              private SModelDescriptor _13__yield_nk3wxj_c0a0a0a0a0a0a1;
+              private Iterator<SModelDescriptor> _13__yield_nk3wxj_c0a0a0a0a0a0a1_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -79,77 +79,77 @@ __switch__:
                     case -1:
                       assert false : "Internal error";
                       return false;
+                    case 4:
+                      this._4__yield_nk3wxj_a0a0a0a0a0a0b_it = Sequence.fromIterable(MakeActionParameters.this.models).iterator();
                     case 5:
-                      this._5__yield_nk3wxj_a0a0a0a0a0a0b_it = Sequence.fromIterable(MakeActionParameters.this.models).iterator();
-                    case 6:
-                      if (!(this._5__yield_nk3wxj_a0a0a0a0a0a0b_it.hasNext())) {
-                        this.__CP__ = 4;
-                        break;
-                      }
-                      this._5__yield_nk3wxj_a0a0a0a0a0a0b = this._5__yield_nk3wxj_a0a0a0a0a0a0b_it.next();
-                      this.__CP__ = 7;
-                      break;
-                    case 12:
-                      this._12__yield_nk3wxj_d0a0a0a0a0b_it = Sequence.fromIterable(_11_modelsFromModules).iterator();
-                    case 13:
-                      if (!(this._12__yield_nk3wxj_d0a0a0a0a0b_it.hasNext())) {
+                      if (!(this._4__yield_nk3wxj_a0a0a0a0a0a0b_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
-                      this._12__yield_nk3wxj_d0a0a0a0a0b = this._12__yield_nk3wxj_d0a0a0a0a0b_it.next();
-                      this.__CP__ = 14;
+                      this._4__yield_nk3wxj_a0a0a0a0a0a0b = this._4__yield_nk3wxj_a0a0a0a0a0a0b_it.next();
+                      this.__CP__ = 6;
+                      break;
+                    case 13:
+                      this._13__yield_nk3wxj_c0a0a0a0a0a0a1_it = Sequence.fromIterable(_12_modelsFromModules).iterator();
+                    case 14:
+                      if (!(this._13__yield_nk3wxj_c0a0a0a0a0a0a1_it.hasNext())) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this._13__yield_nk3wxj_c0a0a0a0a0a0a1 = this._13__yield_nk3wxj_c0a0a0a0a0a0a1_it.next();
+                      this.__CP__ = 15;
                       break;
                     case 2:
                       if (MakeActionParameters.this.models != null) {
                         this.__CP__ = 3;
                         break;
                       } else if (MakeActionParameters.this.cmodel != null) {
-                        this.__CP__ = 9;
+                        this.__CP__ = 8;
                         break;
                       }
-                      this.__CP__ = 4;
+                      this.__CP__ = 10;
                       break;
-                    case 8:
-                      this.__CP__ = 6;
-                      this.yield(_5__yield_nk3wxj_a0a0a0a0a0a0b);
+                    case 7:
+                      this.__CP__ = 5;
+                      this.yield(_4__yield_nk3wxj_a0a0a0a0a0a0b);
                       return true;
-                    case 10:
-                      this.__CP__ = 4;
+                    case 9:
+                      this.__CP__ = 1;
                       this.yield(MakeActionParameters.this.cmodel);
                       return true;
-                    case 15:
-                      this.__CP__ = 13;
-                      this.yield(_12__yield_nk3wxj_d0a0a0a0a0b);
+                    case 16:
+                      this.__CP__ = 14;
+                      this.yield(_13__yield_nk3wxj_c0a0a0a0a0a0a1);
                       return true;
                     case 0:
                       this.__CP__ = 2;
                       break;
-                    case 4:
-                      this._11_modelsFromModules = null;
+                    case 3:
+                      this.__CP__ = 4;
+                      break;
+                    case 6:
+                      this.__CP__ = 7;
+                      break;
+                    case 8:
+                      this.__CP__ = 9;
+                      break;
+                    case 10:
+                      this._12_modelsFromModules = null;
                       ModelAccess.instance().runReadAction(new Runnable() {
                         public void run() {
                           if (MakeActionParameters.this.modules != null) {
                             for (IModule mod : ListSequence.fromList(MakeActionParameters.this.modules)) {
-                              _11_modelsFromModules = Sequence.fromIterable(_11_modelsFromModules).concat(ListSequence.fromList(mod.getEditableUserModels()));
+                              _12_modelsFromModules = Sequence.fromIterable(_12_modelsFromModules).concat(ListSequence.fromList(mod.getEditableUserModels()));
                             }
                           } else if (MakeActionParameters.this.cmodule != null) {
-                            _11_modelsFromModules = Sequence.fromIterable(_11_modelsFromModules).concat(ListSequence.fromList(MakeActionParameters.this.cmodule.getEditableUserModels()));
+                            _12_modelsFromModules = Sequence.fromIterable(_12_modelsFromModules).concat(ListSequence.fromList(MakeActionParameters.this.cmodule.getEditableUserModels()));
                           }
                         }
                       });
-                      this.__CP__ = 12;
+                      this.__CP__ = 13;
                       break;
-                    case 3:
-                      this.__CP__ = 5;
-                      break;
-                    case 7:
-                      this.__CP__ = 8;
-                      break;
-                    case 9:
-                      this.__CP__ = 10;
-                      break;
-                    case 14:
-                      this.__CP__ = 15;
+                    case 15:
+                      this.__CP__ = 16;
                       break;
                     default:
                       break __loop__;

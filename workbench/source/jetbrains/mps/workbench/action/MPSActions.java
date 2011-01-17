@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MPSActions {
-  private static final Logger LOG = Logger.getLogger(ActionFactory.class);
+  private static final Logger LOG = Logger.getLogger(MPSActions.class);
 
   private static MPSActions ourInstance = new MPSActions();
 

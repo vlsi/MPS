@@ -25,7 +25,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
@@ -222,17 +221,6 @@ public class GeneratorUtil {
     return parameterDeclarations.toArray(new TemplateParameterDeclaration[parameterDeclarations.size()]);
   }
 
-  public static BaseConcept getPatternVariable(TemplateArgumentPatternRef argument) {
-    if (argument instanceof TemplateArgumentPatternVarRefExpression) {
-      return ((TemplateArgumentPatternVarRefExpression) argument).getPatternVarDecl();
-    } else if (argument instanceof TemplateArgumentLinkPatternRefExpression) {
-      return ((TemplateArgumentLinkPatternRefExpression) argument).getPatternVar();
-    } else if (argument instanceof TemplateArgumentPropertyPatternRefExpression) {
-      return ((TemplateArgumentPropertyPatternRefExpression) argument).getPropertyPattern();
-    }
-    return null;
-  }
-
   @NotNull
   public static TemplateContext createTemplateContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, RuleConsequence consequence, SNode newInputNode, ITemplateGenerator generator) {
     if (consequence instanceof ITemplateCall) {
@@ -275,12 +263,12 @@ public class GeneratorUtil {
           value = outerContext.getVariable(parameter.getName());
         }
       } else if (expr instanceof TemplateArgumentPatternRef && outerContext != null) {
-        BaseConcept patternVar = getPatternVariable((TemplateArgumentPatternRef) expr);
+        String patternVar = GeneratorUtilEx.getPatternVariableName(expr.getNode());
         if (patternVar == null) {
           generator.showErrorMessage(inputNode, expr.getNode(), "cannot evaluate template argument #" + (i + 1) + ": invalid pattern reference");
         } else {
           // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
-          value = outerContext.getPatternVariable(PatternVarsUtil.getFieldName(patternVar.getNode()));
+          value = outerContext.getPatternVariable(patternVar);
         }
       } else if (expr instanceof TemplateArgumentQueryExpression) {
         TemplateArgumentQuery query = ((TemplateArgumentQueryExpression) expr).getQuery();

@@ -287,7 +287,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     if (ModelAccess.instance().isInEDT()) {
       modelReplacedNotifier.run();
     } else {
-      ModelAccess.instance().runReadInEDT(modelReplacedNotifier);
+      ModelAccess.instance().runWriteInEDT(modelReplacedNotifier);
     }
   }
 

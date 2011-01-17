@@ -4,12 +4,16 @@
   <unitInfo fileName="TemplateDeclarationReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior" />
   <unitInfo fileName="IfMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IfMacro_Behavior" />
   <unitInfo fileName="Root_MappingRule_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.Root_MappingRule_Behavior" />
+  <unitInfo fileName="TemplateArgumentPatternRef_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternRef_Behavior" />
   <unitInfo fileName="IGeneratorParameter_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_Behavior" />
   <unitInfo fileName="CreateRootRule_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CreateRootRule_Behavior" />
   <unitInfo fileName="PatternReduction_MappingRule_Behavior.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule_Behavior" />
   <unitInfo fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="37" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_Behavior$QuotationClass_90g9ox_a0f0b" />
   <unitInfo fileName="TemplateArgumentQuery_Behavior.java" startLine="40" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentQuery_Behavior$QuotationClass_8mmc34_a0e0b" />
   <unitInfo fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="39" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ReferenceMacro_GetReferent_Behavior$QuotationClass_mxwyp3_a0a7a1" />
+  <unitInfo fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentPropertyPatternRefExpression_Behavior" />
+  <unitInfo fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentLinkPatternRefExpression_Behavior" />
+  <unitInfo fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternVarRefExpression_Behavior" />
   <unitInfo fileName="ITemplateCall_Behavior.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ITemplateCall_Behavior" />
   <unitInfo fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="57" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ReferenceMacro_GetReferent_Behavior$QuotationClass_mxwyp3_a0a0j0b" />
   <unitInfo fileName="TemplateDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_Behavior" />
@@ -376,6 +380,24 @@
     <scopeInfo nodeId="1805153994417064762" fileName="PatternReduction_MappingRule_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1805153994417123444" fileName="PatternReduction_MappingRule_Behavior.java" startLine="20" startPosition="80" endLine="21" endPosition="16" />
     <scopeInfo nodeId="1805153994417064766" fileName="PatternReduction_MappingRule_Behavior.java" startLine="13" startPosition="75" endLine="17" endPosition="6" />
+  </root>
+  <root nodeId="2902001550281906068">
+    <scopeInfo nodeId="2902001550281906070" fileName="TemplateArgumentPatternRef_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+  </root>
+  <root nodeId="2902001550281949293">
+    <nodeInfo nodeId="2902001550281980978" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="17" startPosition="84" endLine="18" endPosition="102" />
+    <scopeInfo nodeId="2902001550281949295" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="2902001550281949298" fileName="TemplateArgumentPatternVarRefExpression_Behavior.java" startLine="17" startPosition="84" endLine="18" endPosition="102" />
+  </root>
+  <root nodeId="2902001550282064500">
+    <nodeInfo nodeId="2902001550282064507" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="17" startPosition="84" endLine="18" endPosition="98" />
+    <scopeInfo nodeId="2902001550282064502" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="2902001550282064505" fileName="TemplateArgumentLinkPatternRefExpression_Behavior.java" startLine="17" startPosition="84" endLine="18" endPosition="98" />
+  </root>
+  <root nodeId="2902001550282064516">
+    <nodeInfo nodeId="2902001550282064523" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="17" startPosition="84" endLine="18" endPosition="103" />
+    <scopeInfo nodeId="2902001550282064518" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="2902001550282064521" fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="17" startPosition="84" endLine="18" endPosition="103" />
   </root>
   <root nodeId="4035562641222622440">
     <nodeInfo nodeId="4035562641222637925" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TemplateArgumentQuery_Behavior.java" startLine="21" startPosition="83" endLine="22" endPosition="143" />

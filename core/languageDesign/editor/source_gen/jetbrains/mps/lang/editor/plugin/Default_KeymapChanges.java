@@ -15,7 +15,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.End_Action", getShortcut(" END"));
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.ExtractComponent_Action", getShortcut("ctrl alt C"));
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.Home_Action", getShortcut(" HOME"));
-    addSimpleShortcut("jetbrains.mps.lang.editor.plugin.InsertBefore_Action", getShortcut(" INSERT"));
+    addSimpleShortcut("jetbrains.mps.lang.editor.plugin.InsertBefore_Action", getShortcut(" INSERT"), getShortcut("shift ENTER"));
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.Insert_Action", getShortcut(" ENTER"));
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.LocalEnd_Action", getShortcut("ctrl RIGHT"));
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.LocalHome_Action", getShortcut("ctrl LEFT"));

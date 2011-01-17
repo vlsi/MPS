@@ -59,6 +59,9 @@
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="9025751233592076947">
       <property name="name" nameId="tpck.1169194664001" value="RemoveCell" />
     </node>
+    <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="458414629082786298">
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/core/languageDesign/editor/editor.mpr" />
+    </node>
   </roots>
   <root id="6170050146384276078">
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="2qyu.UltimateContainer" typeId="2qyu.5508804114499095504" id="6170050146384276079">
@@ -2324,5 +2327,6 @@
       <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="9025751233592112535" />
     </node>
   </root>
+  <root id="458414629082786298" />
 </model>
 

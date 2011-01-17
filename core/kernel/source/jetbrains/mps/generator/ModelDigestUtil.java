@@ -16,6 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -66,7 +67,7 @@ public class ModelDigestUtil {
     InputStream is = null;
     try {
       is = file.openInputStream();
-      return hash(new InputStreamReader(is));
+      return hash(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET));
     } catch (IOException e) {
       /* ignore */
     } finally {
@@ -83,7 +84,7 @@ public class ModelDigestUtil {
 
   public static String hash(byte[] content) {
     try {
-      return hash(new InputStreamReader(new ByteArrayInputStream(content)));
+      return hash(new InputStreamReader(new ByteArrayInputStream(content), FileUtil.DEFAULT_CHARSET));
     } catch (IOException e) {
       // it can't happen
       throw new IllegalStateException(e);
@@ -106,7 +107,7 @@ public class ModelDigestUtil {
       MessageDigest digest = MessageDigest.getInstance("SHA");
       String line;
       while ((line = reader.readLine()) != null) {
-        digest.update(line.getBytes());
+        digest.update(line.getBytes(FileUtil.DEFAULT_CHARSET));
       }
 
       byte[] res = digest.digest();

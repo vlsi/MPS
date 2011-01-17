@@ -25,6 +25,12 @@ import java.util.concurrent.CyclicBarrier;
 
 public class InternerTest {
 
+  private static final int MEAN_LENGTH = 50;
+
+  private static int magicDivider () {
+    return String.valueOf(System.getProperty("os.arch")).contains("64") ? 4 : 3;
+  }
+
   @Test
   public void cacheRandomStrings() {
     final int maxObjects = 20000;
@@ -57,8 +63,8 @@ public class InternerTest {
     double perfRatio = stats[0] / (double) refTime[0];
     Assert.assertTrue("Interner perfomance is not within bounds: "+perfRatio,  0.45 < perfRatio && perfRatio < 1.95);
 
-    double memRatio = stats[2] / (double) stats[3] / 4. / 50.;
-    Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.65 < memRatio && memRatio < 1.35);
+    double memRatio = stats[2] / (double) stats[3] / magicDivider() / MEAN_LENGTH / 1.5;
+    Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.65 < memRatio && memRatio < 1.5);
   }
 
   @Test
@@ -94,8 +100,8 @@ public class InternerTest {
     double perfRatio = stats[0] / (double) refTime[0];
     Assert.assertTrue("Interner perfomance is not within bounds: "+perfRatio,  0.45 < perfRatio && perfRatio < 1.95);
 
-    double memRatio = stats[2] / (double) stats[3] / 4. / 50.;
-    Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.65 < memRatio && memRatio < 1.35);
+    double memRatio = stats[2] / (double) stats[3] / magicDivider() / MEAN_LENGTH;
+    Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.65 < memRatio && memRatio < 1.5);
   }
 
   @Test
@@ -129,8 +135,8 @@ public class InternerTest {
     double perfRatio = stats[0] / (double) refTime[0];
     Assert.assertTrue("Interner perfomance is not within bounds: "+perfRatio,  0.45 < perfRatio && perfRatio < 1.95);
 
-    double memRatio = stats[2] / (double) stats[3] / 4. / 50.;
-    Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.65 < memRatio && memRatio < 1.35);
+    double memRatio = stats[2] / (double) stats[3] / magicDivider() / MEAN_LENGTH;
+    Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.65 < memRatio && memRatio < 1.5);
   }
 
 
@@ -145,7 +151,7 @@ public class InternerTest {
           listOfLists.add(list);
           for (int count=maxObjects/maxThreads/3; count > 0; --count) {
             sb.setLength(0);
-            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + 50))); size > 0; --size) {
+            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + MEAN_LENGTH))); size > 0; --size) {
               sb.append ((char)(rnd.nextInt(127-32)+32));
             }
             list.add (interner.intern(sb.toString()));
@@ -173,7 +179,7 @@ public class InternerTest {
           listOfLists.add(list);
           for (int count=maxObjects*2; count > 0; --count) {
             sb.setLength(0);
-            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + 50))); size > 0; --size) {
+            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + MEAN_LENGTH))); size > 0; --size) {
               sb.append ((char)(rnd.nextInt(127-32)+32));
             }
             list.add (interner.intern(sb.toString()));
@@ -202,7 +208,7 @@ public class InternerTest {
           listOfLists.add(list);
           for (int count=maxObjects*2; count > 0; --count) {
             sb.setLength(0);
-            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + 50))); size > 0; --size) {
+            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + MEAN_LENGTH))); size > 0; --size) {
               sb.append ((char)(rnd.nextInt(127-32)+32));
             }
             list.add (/*interner.intern*/(sb.toString()));
@@ -290,7 +296,7 @@ public class InternerTest {
       public void run() {
         Random rnd = new Random();
         for (int count = reps; count > 0; --count) {
-          int size = Math.max (20, Math.min(70, (int) (rnd.nextGaussian() * 10. + 50)));
+          int size = Math.max (20, Math.min(70, (int) (rnd.nextGaussian() * 10. + MEAN_LENGTH)));
           list.add(new int[size]);
         }
       }
@@ -336,7 +342,7 @@ public class InternerTest {
 
   private long[] computeMedian (LongProducer lp) {
     List<long[]> data = new ArrayList<long[]>();
-    for (int count=8; count>0; --count) {
+    for (int count=16; count>0; --count) {
       data.add(lp.produce());
     }
 

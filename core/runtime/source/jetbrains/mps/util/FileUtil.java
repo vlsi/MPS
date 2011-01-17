@@ -29,6 +29,7 @@ import java.util.zip.ZipOutputStream;
  */
 public class FileUtil {
   private static final String[] IGNORED_DIRS = new String[]{".svn", ".git", "_svn"};
+  public static final String DEFAULT_CHARSET = "UTF-8";
 
   public static File createTmpDir() {
     File tmp = getTempDir();

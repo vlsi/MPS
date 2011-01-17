@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.BaseLanguageUtil;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.structure.Interface;

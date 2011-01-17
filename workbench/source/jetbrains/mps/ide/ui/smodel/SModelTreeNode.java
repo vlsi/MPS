@@ -123,7 +123,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
     String nodePackage = node.getProperty(PACK);
 
-    if (nodePackage != null) {
+    if (nodePackage != null && !"".equals(nodePackage)) {
       String[] packages = nodePackage.split("\\.");
 
       String pack = "";

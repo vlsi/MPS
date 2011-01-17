@@ -28,7 +28,7 @@ public class ModelChange {
     if (FREEZE_CHECKS_ENABLED && isFrozen(node)) {
       throw new IllegalModelChangeError("can't modify a frozen node" + node.getDebugText());
     }
-    if (!node.getModel().isLoading() && node.isRegistered() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
+    if (!node.getModelInternal().isLoading() && node.isRegistered() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
       throw new IllegalModelChangeError("registered node can only be modified inside undoable command or in 'loading' model " + node.getDebugText());
     }
   }
