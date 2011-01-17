@@ -46,7 +46,6 @@ import org.jetbrains.annotations.NotNull;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.annotation.Annotation;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
@@ -228,7 +227,7 @@ public class ProjectTester {
             );
 
             if (myIsRunnable) {
-              diffReports.addAll(DiffReporter.createDiffReports(generationHandler));
+              diffReports.addAll(DiffReporter.createDiffReports(generationHandler, null));
             }
             List<SModel> outputModels = new ArrayList<SModel>();
             outputModels.addAll(generationHandler.getOutputModels());

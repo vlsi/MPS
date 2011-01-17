@@ -21,10 +21,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class DiffReporter {
 
@@ -52,7 +49,7 @@ public class DiffReporter {
     }
   }
 
-  public static List<String> createDiffReports(TesterGenerationHandler genHandler) {
+  public static List<String> createDiffReports(TesterGenerationHandler genHandler, Set<File> excludedFromDiffFiles) {
     List<String> result = new ArrayList<String>();
     for (SModelReference outputModel : genHandler.getOutputModelRefs()) {
       List<String> files = new ArrayList<String>();
@@ -67,8 +64,17 @@ public class DiffReporter {
           continue;
         }
 
+        final String filePath = getFilePath(genHandler, outputModel, outputFileName);
+        if(excludedFromDiffFiles != null) {
+          final File expectedFile = new File(filePath);
+          if(excludedFromDiffFiles.contains(expectedFile)) {
+            files.remove(outputFileName);
+            continue;
+          }
+        }
+
         String newContent = genHandler.getSourceByNode(outputRoot, outputModel);
-        if (addDiffReport(genHandler, outputModel, outputRoot, outputFileName, newContent, result)) {
+        if (addDiffReport(filePath, outputRoot, newContent, result)) {
           files.remove(outputFileName);
         }
       }
@@ -81,7 +87,7 @@ public class DiffReporter {
         String newContent = sources.get(fileName);
 
         if (newContent != null) {
-          addDiffReport(genHandler, outputModel, fileName, fileName, newContent, result);
+          addDiffReport(getFilePath(genHandler, outputModel, fileName), fileName, newContent, result);
         } else {
           String title = getDiffReportTitle((SNode) null, fileName, false, true);
           File file = new File(genHandler.getOutputDir(outputModel) + File.separator + fileName);
@@ -96,9 +102,8 @@ public class DiffReporter {
     return result;
   }
 
-  private static boolean addDiffReport(TesterGenerationHandler genHandler, SModelReference outputModel, String outputName, String outputFileName, String newContent, List<String> result) {
+  private static boolean addDiffReport(String filePath, String outputName, String newContent, List<String> result) {
     boolean found = false;
-    final String filePath = genHandler.getOutputDir(outputModel) + File.separator + outputFileName;
     final File testFile = new File(filePath);
     String oldContent = null;
     if (testFile.exists() && testFile.canRead()) {
@@ -111,5 +116,9 @@ public class DiffReporter {
     String[] newTest = getContentAsArray(newContent, System.getProperty("line.separator"));
     addDiffReport(new TestComparator(oldTest, newTest), result, title);
     return found;
+  }
+
+  private static String getFilePath(TesterGenerationHandler genHandler, SModelReference outputModel, String outputFileName) {
+    return genHandler.getOutputDir(outputModel) + File.separator + outputFileName;
   }
 }

@@ -246,7 +246,7 @@ public class TestGenerationWorker extends GeneratorWorker {
       Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
       diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
         public List<String> compute() {
-          return DiffReporter.createDiffReports(myGenerationHandler);
+          return DiffReporter.createDiffReports(myGenerationHandler, myWhatToDo.getExcludedFromDiffFiles());
         }
       });
     } else {
