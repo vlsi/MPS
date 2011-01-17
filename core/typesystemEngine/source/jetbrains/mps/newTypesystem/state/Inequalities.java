@@ -41,22 +41,13 @@ public class Inequalities {
     myState = state;
   }
 
-  private SNode getNodeWithNoInput(ManyToManyMap<SNode, SNode> inputsToOutputs, SNode node, int n) {
-    if (inputsToOutputs.getBySecond(node).isEmpty()) {
-      return node;
-    }
-    SNode result = inputsToOutputs.getBySecond(node).iterator().next();
-    int counter = 0;
-    while(true) {
-      if (inputsToOutputs.getBySecond(result).isEmpty()) {
-        return result;
-      }
-      result = inputsToOutputs.getBySecond(result).iterator().next();
-      counter++;
-      if (counter == n) {
-        return result; // todo cycle!
+  private SNode getNodeWithNoInput(ManyToManyMap<SNode, SNode> inputsToOutputs, Set<SNode> unsorted) {
+    for (SNode node : unsorted) {
+      if (inputsToOutputs.getBySecond(node).isEmpty()) {
+        return node;
       }
     }
+    return unsorted.iterator().next();
   }
 
   private List<SNode> sort(ManyToManyMap<SNode, SNode> inputsToOutputs, Set<SNode> unsorted) {
@@ -64,10 +55,11 @@ public class Inequalities {
     int size = unsorted.size();
     List<SNode> result = new LinkedList<SNode>();
     while (result.size() < size) {
-      SNode current = getNodeWithNoInput(inputsToOutputs, node, unsorted.size());
+      SNode current = getNodeWithNoInput(inputsToOutputs, unsorted);
       result.add(current);
       unsorted.remove(current);
       if (unsorted.isEmpty()) {
+        assert result.size() == size;
         return result;
       }
       if (inputsToOutputs.getByFirst(current).isEmpty()) {
@@ -125,8 +117,12 @@ public class Inequalities {
           addVariablesLink(input, output);
           myNodesToBlocks.addLink(input, inequality);
           if (!TypesUtil.isVariable(input) && !TypesUtil.isVariable(output)) {
-            for (SNode inputVar : TypesUtil.getVariables(input)) {
-              for (SNode outputVar : TypesUtil.getVariables(output)) {
+            List<SNode> inputVariables= TypesUtil.getVariables(input);
+            List<SNode> outputVariables = TypesUtil.getVariables(output);
+            myNodes.addAll(inputVariables);
+            myNodes.addAll(outputVariables);
+            for (SNode inputVar : inputVariables) {
+              for (SNode outputVar : outputVariables) {
                 addVariablesLink(myState.getRepresentative(inputVar), myState.getRepresentative(outputVar));
               }
             }
@@ -147,6 +143,12 @@ public class Inequalities {
    // SNode node = getNodeWithNoInput(myInputsToOutputs, nodes.iterator().next(),nodes.size());
       if (solveInequalitiesForNode(node)) {
        return true;
+      }
+    }
+    //last chance
+    for (InequalityBlock inequality : inequalities) {
+      if (inequality.processReplacementRules()) {
+        return true;
       }
     }
     return false;

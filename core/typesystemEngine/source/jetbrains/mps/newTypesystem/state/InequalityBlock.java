@@ -68,11 +68,7 @@ public class InequalityBlock extends RelationBlock {
     processInequality(left, right);
   }
 
-  public void processInequality(final SNode subType, final SNode superType) {
-    if (subType == null || superType == null || subType == superType) {
-      return;
-    }
-    //replacement rules
+  private boolean processReplacementRules(final SNode subType, final SNode superType) {
     TypeChecker typeChecker = myState.getTypeCheckingContext().getTypeChecker();
     for (jetbrains.mps.util.Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequalityReplacementRule : typeChecker.getRulesManager().getReplacementRules(subType, superType)) {
       final InequationReplacementRule_Runtime rule = inequalityReplacementRule.o1;
@@ -83,8 +79,23 @@ public class InequalityBlock extends RelationBlock {
           ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, myEquationInfo, myState.getTypeCheckingContext(), status);
         }
       }));
+      return true;
+    }
+    return false;
+  }
+
+  public boolean processReplacementRules() {
+    final SNode subType = getResolvedInput(myLeftNode);
+    final SNode superType = getResolvedInput(myRightNode);
+    return processReplacementRules(subType, superType);
+  }
+
+  public void processInequality(final SNode subType, final SNode superType) {
+    if (subType == null || superType == null || subType == superType) {
       return;
     }
+    //replacement rules
+    processReplacementRules(subType, superType);
     final SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
     myState.executeOperation(new jetbrains.mps.newTypesystem.operation.AddRemarkOperation("checking whether " + subType + " is subtype of " + superType, new Runnable() {
       public void run() {

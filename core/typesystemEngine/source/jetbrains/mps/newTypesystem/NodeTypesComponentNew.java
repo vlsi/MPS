@@ -57,7 +57,7 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
 
   @Override
   public void solveInequationsAndExpandTypes() {
-    ((TypeCheckingContextNew)myTypeCheckingContext).solveAndExpand();
+    //((TypeCheckingContextNew)myTypeCheckingContext).solveAndExpand();
   }
 
   public void checkNode(SNode node, boolean refresh) {
