@@ -95,8 +95,11 @@ public class State {
   @StateMethod
   public void removeBlockNoVars(Block dataFlowBlock) {
     assertIsInStateChangeAction();
+    if (myInequalities.isSolvingInProcess() && !myBlocks.contains(dataFlowBlock)) {
+      return;
+    }
     for (ManyToManyMap<SNode, Block> map : myBlocksAndInputs.values()) {
-      assert !map.containsSecond(dataFlowBlock);
+      assert !map.containsSecond(dataFlowBlock) || myInequalities.isSolvingInProcess();
     }
     boolean removed = myBlocks.remove(dataFlowBlock);
     assert removed;
@@ -105,7 +108,6 @@ public class State {
   @StateMethod
   public void removeInequalityBlock(InequalityBlock block) {
     assertIsInStateChangeAction();
-   
     boolean removed = myBlocks.remove(block);
     assert removed;
   }
@@ -114,7 +116,7 @@ public class State {
   public void addBlockNoVars(Block dataFlowBlock) {
     assertIsInStateChangeAction();
     for (ManyToManyMap<SNode, Block> map : myBlocksAndInputs.values()) {
-      assert !map.containsSecond(dataFlowBlock);
+      assert !map.containsSecond(dataFlowBlock) || myInequalities.isSolvingInProcess();
     }
     boolean addedAnew = myBlocks.add(dataFlowBlock);
     assert addedAnew;
@@ -194,11 +196,11 @@ public class State {
      addBlock(new ComparableBlock(this, left, right, RelationKind.fromFlags(isWeak, true, true), info));
   }
 
-  public jetbrains.mps.newTypesystem.state.NodeMaps getNodeMaps() {
+  public NodeMaps getNodeMaps() {
     return myNodeMaps;
   }
 
-  public jetbrains.mps.newTypesystem.state.Inequalities getInequalities() {
+  public Inequalities getInequalities() {
     return myInequalities;
   }
 

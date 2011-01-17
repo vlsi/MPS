@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.state;
 
 import jetbrains.mps.newTypesystem.SubTyping;
 import jetbrains.mps.newTypesystem.TypesUtil;
+import jetbrains.mps.newTypesystem.operation.block.RemoveBlockOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.ManyToManyMap;
@@ -36,6 +37,14 @@ public class Inequalities {
   Set<SNode> myNodes = new LinkedHashSet<SNode>();
 
   private boolean solvingInProcess = false;
+
+  public void setSolvingInProcess(boolean solvingInProcess) {
+    this.solvingInProcess = solvingInProcess;
+  }
+
+  public boolean isSolvingInProcess() {
+    return solvingInProcess;
+  }
 
   public Inequalities(State state) {
     myState = state;
@@ -59,13 +68,7 @@ public class Inequalities {
       result.add(current);
       unsorted.remove(current);
       if (unsorted.isEmpty()) {
-        assert result.size() == size;
         return result;
-      }
-      if (inputsToOutputs.getByFirst(current).isEmpty()) {
-        node = unsorted.iterator().next();
-      } else {
-        node = inputsToOutputs.getByFirst(current).iterator().next();
       }
       inputsToOutputs.clearFirst(current);
     }
@@ -148,6 +151,7 @@ public class Inequalities {
     //last chance
     for (InequalityBlock inequality : inequalities) {
       if (inequality.processReplacementRules()) {
+        myState.executeOperation(new RemoveBlockOperation(inequality));
         return true;
       }
     }
