@@ -8,7 +8,6 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="39kg" modelUID="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" version="-1" implicit="yes" />
-  <import index="i16x" modelUID="f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)" version="-1" implicit="yes" />
   <import index="pvbu" modelUID="r:1201cbca-20a7-403e-b576-e74f1ede2961(math_samples)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2367141965016610273">
@@ -55,61 +54,60 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4253775830167681102">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n1y2.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolveInfo="println" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4253775830167790497">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="4253775830167790370">
-                  <node role="expression" roleId="tpee.1079359253376" type="39kg.BigSumExpression" typeId="39kg.1236439460603" id="4253775830167790371">
-                    <node role="var" roleId="39kg.1236427007990" type="39kg.MathSymbolFromToIndex" typeId="39kg.1236589239536" id="4253775830167790372">
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3399831755284009643">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dvalueOf(java%dlang%dObject)%cjava%dlang%dString" resolveInfo="valueOf" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="mwyq.~String" resolveInfo="String" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3399831755284009647">
+                  <node role="expression" roleId="tpee.1079359253376" type="39kg.BigSumExpression" typeId="39kg.1236439460603" id="3399831755284009648">
+                    <node role="var" roleId="39kg.1236427007990" type="39kg.MathSymbolFromToIndex" typeId="39kg.1236589239536" id="3399831755284009649">
                       <property name="name" nameId="tpck.1169194664001" value="k" />
-                      <node role="from" roleId="39kg.1236589606450" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4253775830167790373">
+                      <node role="from" roleId="39kg.1236589606450" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3399831755284009650">
                         <property name="value" nameId="tpee.1068580320021" value="0" />
                       </node>
                     </node>
-                    <node role="upperBound" roleId="39kg.1236594888470" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4253775830167790374">
+                    <node role="upperBound" roleId="39kg.1236594888470" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3399831755284009651">
                       <property name="value" nameId="tpee.1068580320021" value="99" />
                     </node>
-                    <node role="expression" roleId="39kg.1236427008116" type="39kg.MatrixConstructor" typeId="39kg.4815887568697232005" id="4253775830167790538">
+                    <node role="expression" roleId="39kg.1236427008116" type="39kg.MatrixConstructor" typeId="39kg.4815887568697232005" id="3399831755284009652">
                       <property name="column" nameId="39kg.3498370411873418560" value="true" />
-                      <node role="components" roleId="39kg.4815887568697232013" type="39kg.MatrixConstructor" typeId="39kg.4815887568697232005" id="4253775830167790539">
+                      <node role="components" roleId="39kg.4815887568697232013" type="39kg.MatrixConstructor" typeId="39kg.4815887568697232005" id="3399831755284009653">
                         <property name="column" nameId="39kg.3498370411873418560" value="false" />
-                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4253775830167790540">
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3399831755284009654">
                           <property name="value" nameId="tpee.1068580320021" value="1" />
                         </node>
-                        <node role="components" roleId="39kg.4815887568697232013" type="39kg.MathSymbolIndexReference" typeId="39kg.1236427936913" id="4253775830167790541">
-                          <link role="indexRef" roleId="39kg.1236427955167" targetNodeId="4253775830167790372" resolveInfo="k" />
+                        <node role="components" roleId="39kg.4815887568697232013" type="39kg.MathSymbolIndexReference" typeId="39kg.1236427936913" id="3399831755284009655">
+                          <link role="indexRef" roleId="39kg.1236427955167" targetNodeId="3399831755284009649" resolveInfo="k" />
                         </node>
-                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4253775830167790542">
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3399831755284009656">
                           <property name="value" nameId="tpee.1068580320021" value="0" />
                         </node>
                       </node>
-                      <node role="components" roleId="39kg.4815887568697232013" type="39kg.MatrixConstructor" typeId="39kg.4815887568697232005" id="4253775830167790543">
+                      <node role="components" roleId="39kg.4815887568697232013" type="39kg.MatrixConstructor" typeId="39kg.4815887568697232005" id="3399831755284009657">
                         <property name="column" nameId="39kg.3498370411873418560" value="false" />
-                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4253775830167790544">
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3399831755284009658">
                           <property name="value" nameId="tpee.1068580320021" value="0" />
                         </node>
-                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="1331994661796611817">
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="3399831755284009659">
                           <property name="value" nameId="tpee.1113006610751" value="1.0" />
                         </node>
-                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4253775830167790546">
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3399831755284009660">
                           <property name="value" nameId="tpee.1068580320021" value="0" />
                         </node>
                       </node>
-                      <node role="components" roleId="39kg.4815887568697232013" type="39kg.MatrixConstructor" typeId="39kg.4815887568697232005" id="4253775830167790547">
+                      <node role="components" roleId="39kg.4815887568697232013" type="39kg.MatrixConstructor" typeId="39kg.4815887568697232005" id="3399831755284009661">
                         <property name="column" nameId="39kg.3498370411873418560" value="false" />
-                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4253775830167790548">
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3399831755284009662">
                           <property name="value" nameId="tpee.1068580320021" value="0" />
                         </node>
-                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4253775830167790549">
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3399831755284009663">
                           <property name="value" nameId="tpee.1068580320021" value="0" />
                         </node>
-                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4253775830167790550">
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3399831755284009664">
                           <property name="value" nameId="tpee.1068580320021" value="1" />
                         </node>
                       </node>
                     </node>
                   </node>
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4253775830167790533">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i16x.~Matrix%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
                 </node>
               </node>
             </node>

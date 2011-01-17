@@ -4,7 +4,6 @@ package math_samples;
 
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.math.runtime.Matrix;
-import jetbrains.mps.baseLanguage.math.runtime.MatrixOperation;
 import jetbrains.mps.baseLanguage.math.runtime.Complex;
 import java.io.IOException;
 
@@ -12,19 +11,19 @@ public class ABC {
   public static void main(String[] args) {
     double a = Math.random();
     double b = Math.random();
-    System.out.println((new _FunctionTypes._return_P0_E0<Matrix<Double>>() {
-      public Matrix<Double> invoke() {
-        Matrix<Double> r0;
-        r0 = null;
-        for (int i0 = 0; i0 <= 99; i0++) {
-          int k0 = i0;
-          r0 = new Matrix(r0, new Matrix<Double>(true, Matrix.soDouble, new Matrix<Double>(new Matrix<Integer>(new Integer[][]{{1 ,k0 ,0}}, Matrix.soInt), Matrix.soDouble), new Matrix<Double>(new Double[][]{{(double)0 ,1.0 ,(double)0}}, Matrix.soDouble), new Matrix<Double>(new Matrix<Integer>(new Integer[][]{{0 ,0 ,1}}, Matrix.soInt), Matrix.soDouble)), MatrixOperation.MatrixAdd, Matrix.soDouble);
+    System.out.println(String.valueOf((new _FunctionTypes._return_P0_E0<Object>() {
+      public Object invoke() {
+        Object r_a0a0a2a0;
+        r_a0a0a2a0 = (Object) 0;
+        for (int i_a0a0a0c0a = 0; i_a0a0a0c0a <= 99; i_a0a0a0c0a++) {
+          int k_a0a0a0c0a = i_a0a0a0c0a;
+          r_a0a0a2a0 += new Matrix<Double>(true, Matrix.soDouble, new Matrix<Double>(new Matrix<Integer>(new Integer[][]{{1 ,k_a0a0a0c0a ,0}}, Matrix.soInt), Matrix.soDouble), new Matrix<Double>(new Double[][]{{(double) 0 ,1.0 ,(double) 0}}, Matrix.soDouble), new Matrix<Double>(new Matrix<Integer>(new Integer[][]{{0 ,0 ,1}}, Matrix.soInt), Matrix.soDouble));
         }
-        return r0;
+        return r_a0a0a2a0;
       }
-    }.invoke()).toString());
+    }.invoke())));
     System.out.println(new Complex(a, b).exp().sub(new Complex(Math.exp(a), 0).mul((new Complex(Math.cos(b), Math.sin(b))))));
-    Matrix<Double> s = new Matrix<Double>(false, Matrix.soDouble, new Matrix<Double>(new Double[][]{{3.0},{Math.pow(3, 2)},{(double)0},{(double)4}}, Matrix.soDouble), new Matrix<Double>(new Double[][]{{Math.sin(1)},{(double)1},{Math.pow(2, ((1.0) / (2)))},{(double)0}}, Matrix.soDouble), new Matrix<Double>(new Double[][]{{(double)1},{3 + ((1.0) / (2))},{Math.exp(1)},{(double)0}}, Matrix.soDouble), new Matrix<Double>(new Matrix<Integer>(new Integer[][]{{1},{2},{3},{0}}, Matrix.soInt), Matrix.soDouble));
+    Matrix<Double> s = new Matrix<Double>(false, Matrix.soDouble, new Matrix<Double>(new Double[][]{{3.0}, {Math.pow(3, 2)}, {(double) 0}, {(double) 4}}, Matrix.soDouble), new Matrix<Double>(new Double[][]{{Math.sin(1)}, {(double) 1}, {Math.pow(2, 7 - ((1.0) / (2)) + 1)}, {(double) 0}}, Matrix.soDouble), new Matrix<Double>(new Double[][]{{(double) 1}, {3 + ((1.0) / (2))}, {Math.exp(1)}, {(double) 0}}, Matrix.soDouble), new Matrix<Double>(new Matrix<Integer>(new Integer[][]{{1}, {2}, {3}, {0}}, Matrix.soInt), Matrix.soDouble));
     System.out.println(s);
     try {
       int i = 1;

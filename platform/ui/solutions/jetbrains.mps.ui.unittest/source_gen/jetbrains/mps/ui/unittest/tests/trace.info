@@ -64,7 +64,7 @@
     <nodeInfo nodeId="3633072329222755538" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="Widgets_noCtx_Test.java" startLine="29" startPosition="75" endLine="30" endPosition="63" />
     <nodeInfo nodeId="3633072329222755538" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Widgets_noCtx_Test.java" startLine="30" startPosition="63" endLine="31" endPosition="86" />
     <nodeInfo nodeId="3633072329222755538" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Widgets_noCtx_Test.java" startLine="31" startPosition="86" endLine="32" endPosition="75" />
-    <nodeInfo nodeId="3633072329222755538" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="Widgets_noCtx_Test.java" startLine="32" startPosition="75" endLine="33" endPosition="63" />
+    <nodeInfo nodeId="3633072329222755538" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Widgets_noCtx_Test.java" startLine="32" startPosition="75" endLine="33" endPosition="63" />
     <nodeInfo nodeId="3633072329222755538" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Widgets_noCtx_Test.java" startLine="33" startPosition="63" endLine="34" endPosition="86" />
     <nodeInfo nodeId="3633072329222755538" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Widgets_noCtx_Test.java" startLine="34" startPosition="86" endLine="35" endPosition="43" />
     <nodeInfo nodeId="3633072329222733232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Widgets_noCtx_Test.java" startLine="42" startPosition="33" endLine="43" endPosition="77" />
@@ -75,7 +75,7 @@
     <nodeInfo nodeId="3633072329222733232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Widgets_noCtx_Test.java" startLine="47" startPosition="75" endLine="48" endPosition="62" />
     <nodeInfo nodeId="3633072329222733232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Widgets_noCtx_Test.java" startLine="48" startPosition="62" endLine="49" endPosition="89" />
     <nodeInfo nodeId="3633072329222733232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Widgets_noCtx_Test.java" startLine="49" startPosition="89" endLine="50" endPosition="75" />
-    <nodeInfo nodeId="3633072329222733232" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="Widgets_noCtx_Test.java" startLine="50" startPosition="75" endLine="51" endPosition="62" />
+    <nodeInfo nodeId="3633072329222733232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Widgets_noCtx_Test.java" startLine="50" startPosition="75" endLine="51" endPosition="62" />
     <nodeInfo nodeId="3633072329222733232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Widgets_noCtx_Test.java" startLine="51" startPosition="62" endLine="52" endPosition="89" />
     <nodeInfo nodeId="3633072329222733232" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Widgets_noCtx_Test.java" startLine="52" startPosition="89" endLine="53" endPosition="43" />
     <nodeInfo nodeId="2462638993234615827" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Widgets_noCtx_Test.java" startLine="60" startPosition="33" endLine="61" endPosition="78" />
