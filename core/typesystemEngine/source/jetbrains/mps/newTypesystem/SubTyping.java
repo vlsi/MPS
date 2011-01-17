@@ -116,7 +116,11 @@ public class SubTyping {
       return false;
     }
     // todo optimize!
-    // to cache or not to cache? that is the question
+    Boolean answer = getCacheAnswer(subType, superType, isWeak);
+    if (answer != null) {
+      return answer;
+    }
+
     Set<SNode> frontier = new HashSet<SNode>();
     Set<SNode> newFrontier = new HashSet<SNode>();
     Set<SNode> yetPassed = new HashSet<SNode>();
@@ -156,6 +160,7 @@ public class SubTyping {
       //boolean wasMatch = false;
       for (SNode ancestor : ancestorsSorted) {
         if (superType.matchesWith(ancestor)) {
+          addToCache(subType, superType, true, isWeak);
           return true;                     //TypesUtil.match(ancestor, superType, myState.getEquations(), info, false)
         }
       }
@@ -185,7 +190,7 @@ public class SubTyping {
       frontier = newFrontier;
       newFrontier = new HashSet<SNode>();
     }
-    //cache
+    addToCache(subType, superType, false, isWeak);
     return false;
   }
 
@@ -394,6 +399,38 @@ public class SubTyping {
     });
   }
 
+  private Boolean getCacheAnswer(SNode subType, INodeMatcher superType, boolean isWeak) {
+    SubtypingCache cache = myTypeChecker.getSubtypingCache();
+    if (cache != null) {
+      if (superType instanceof NodeWrapper) {
+        Boolean answer = cache.getAnswer(subType, ((NodeMatcher) superType).getNode(), isWeak);
+        if (answer != null) {
+          return answer;
+        }
+      }
+    }
+    cache = myTypeChecker.getGlobalSubtypingCache();
+    if (cache != null) {
+      if (superType instanceof NodeWrapper) {
+        Boolean answer = cache.getAnswer(subType, ((NodeWrapper) superType).getNode(), isWeak);
+        if (answer != null) {
+          return answer;
+        }
+      }
+    }
+    return null;
+  }
+
+  private void addToCache(SNode subType, INodeMatcher superType, boolean answer, boolean isWeak) {
+    SubtypingCache cache = myTypeChecker.getSubtypingCache();
+    if (cache == null) {
+      cache = myTypeChecker.getGlobalSubtypingCache();
+    }
+    if (cache !=null && superType instanceof NodeMatcher) {
+      cache.addCacheEntry(subType, ((NodeMatcher)superType).getNode(), answer, isWeak);
+    }
+  }
+
   public SNode coerceSubTyping(SNode subtype, final IMatchingPattern pattern, State state) {
     return coerceSubtyping(subtype, pattern, true, state);
   }
@@ -405,7 +442,6 @@ public class SubTyping {
     public CoercionMatcher(IMatchingPattern pattern) {
       myPattern = pattern;
     }
-
 
     public boolean matchesWith(SNode nodeToMatch) {
       boolean b = myPattern.match(nodeToMatch);
@@ -428,7 +464,7 @@ public class SubTyping {
     }
   }
 
-   private static class NodeMatcher implements INodeMatcher {
+  private static class NodeMatcher implements INodeMatcher {
     private final SNode myNode;
     private final Equations myEquations;
     private final EquationInfo myInfo;
@@ -443,6 +479,10 @@ public class SubTyping {
 
     public boolean matchesWith(SNode nodeToMatch) {
       return TypesUtil.match(nodeToMatch, myNode, myEquations, myInfo, checkOnly);
+    }
+
+    public SNode getNode() {
+      return myNode;
     }
 
     public String getConceptFQName() {
