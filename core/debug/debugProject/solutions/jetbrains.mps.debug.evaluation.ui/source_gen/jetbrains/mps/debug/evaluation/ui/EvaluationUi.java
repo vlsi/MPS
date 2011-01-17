@@ -16,6 +16,7 @@ import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debug.runtime.SuspendContext;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
+import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
 import com.intellij.openapi.application.ModalityState;
@@ -81,6 +82,8 @@ public abstract class EvaluationUi extends JPanel {
             } else {
               setFailure(null, "Evaluation returned null.", model);
             }
+          } catch (EvaluationException e) {
+            setFailure(e, null, model);
           } catch (Throwable t) {
             setFailure(t, null, model);
             EvaluationUi.LOG.error(t);
@@ -94,6 +97,8 @@ public abstract class EvaluationUi extends JPanel {
     } catch (InvocationTargetEvaluationException e) {
       setFailure(e.getCause(), null, model);
       LOG.error(e.getCause());
+    } catch (EvaluationException e) {
+      setFailure(e, null, model);
     } catch (Throwable t) {
       setFailure(t, null, model);
       LOG.error(t);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="br9f368ed3v5sebzbs3pxiae3ugyghb">
+<dependencies version="2" modelHash="-8r7ic4orkoin093yt516mvzkwgx82bh">
   <dep model="f:java_stub#com.intellij.ide.dnd(com.intellij.ide.dnd@java_stub)" />
   <dep model="f:java_stub#com.intellij.ide.dnd.aware(com.intellij.ide.dnd.aware@java_stub)" />
   <dep model="f:java_stub#com.intellij.openapi(com.intellij.openapi@java_stub)" />
@@ -49,7 +49,6 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-ymvmuh63y37o30rl1jr1uh6em837cs" />
   <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="vuw3vf02hriw0ihpnc0qw2frzjs04j" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-esie754zeuc8fi4empsdd1hwfbi6n6p" />
-  <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="2lac3d5txx2zhyhor7d0z240g5fmnpy" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-7jwu3k8o7d8f6ssg9z8k50bgtm9e4ez" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="222hfoec4eclho8dndo8bvi3jfygysm" />
   <dep model="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)" hash="hng4z9cvwxctag8sfo62zx21w7v9vr" />
@@ -99,7 +98,6 @@
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)" />
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
@@ -161,7 +159,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="EvaluationTree.java" />
   </source>
-  <source id="7406771907178600108" name="EvaluationUi" hash="-cep7t3hapu9fuylnibw02j3261las7n">
+  <source id="7406771907178600108" name="EvaluationUi" hash="3wqr1uk48a3ejl0iwd5b2hjy7q28cdo">
     <dep model="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" />
     <dep model="f:java_stub#java.awt(java.awt@java_stub)" />
     <dep model="f:java_stub#java.awt.image(java.awt.image@java_stub)" />

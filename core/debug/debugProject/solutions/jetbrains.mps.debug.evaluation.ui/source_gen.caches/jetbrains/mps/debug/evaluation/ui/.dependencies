@@ -128,6 +128,7 @@
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.DebugVMEventsProcessor" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException" />
     <classNode dependClassName="java.lang.Throwable" />

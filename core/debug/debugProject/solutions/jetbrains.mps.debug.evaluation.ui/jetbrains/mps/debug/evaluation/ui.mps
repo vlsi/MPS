@@ -3726,6 +3726,28 @@
                                   </node>
                                 </node>
                               </node>
+                              <node role="catchClause" roleId="tpee.1164903700860" type="tpee.CatchClause" typeId="tpee.1164903280175" id="775296678941431090">
+                                <node role="throwable" roleId="tpee.1164903359217" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="775296678941431091">
+                                  <property name="name" nameId="tpck.1169194664001" value="e" />
+                                  <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="775296678941460284">
+                                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mzqd.~EvaluationException" resolveInfo="EvaluationException" />
+                                  </node>
+                                </node>
+                                <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="775296678941431093">
+                                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="775296678941461179">
+                                    <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="775296678941461180">
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7406771907178600324" resolveInfo="setFailure" />
+                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="775296678941517358">
+                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="775296678941431091" resolveInfo="e" />
+                                      </node>
+                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="775296678941517360" />
+                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="775296678941517362">
+                                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7406771907178600268" resolveInfo="model" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
                               <node role="catchClause" roleId="tpee.1164903700860" type="tpee.CatchClause" typeId="tpee.1164903280175" id="7406771907178600216">
                                 <node role="throwable" roleId="tpee.1164903359217" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7406771907178600217">
                                   <property name="name" nameId="tpck.1169194664001" value="t" />
@@ -3827,6 +3849,28 @@
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~Throwable%dgetCause()%cjava%dlang%dThrowable" resolveInfo="getCause" />
                       </node>
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="catchClause" roleId="tpee.1164903496223" type="tpee.CatchClause" typeId="tpee.1164903280175" id="5207878536355550406">
+            <node role="throwable" roleId="tpee.1164903359217" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5207878536355550407">
+              <property name="name" nameId="tpck.1169194664001" value="e" />
+              <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5207878536355562589">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mzqd.~EvaluationException" resolveInfo="EvaluationException" />
+              </node>
+            </node>
+            <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="5207878536355550409">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5207878536355562590">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5207878536355562591">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7406771907178600324" resolveInfo="setFailure" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5207878536355562592">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5207878536355550407" resolveInfo="e" />
+                  </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5207878536355562599" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5207878536355562601">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7406771907178600268" resolveInfo="model" />
                   </node>
                 </node>
               </node>
