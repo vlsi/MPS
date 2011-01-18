@@ -118,18 +118,18 @@ public class RootNodeFileStatusManager extends AbstractProjectComponent {
         nodePointer.value = new SNodePointer(root);
         myChangesManager.getCommandQueue().runTask(new Runnable() {
           public void run() {
+            final Wrappers._T<SModelDescriptor> modelDescriptor = new Wrappers._T<SModelDescriptor>(null);
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
-                SModelDescriptor modelDescriptor = null;
                 if (!(root.isDisposed() && SNodeOperations.getModel(root).isDisposed())) {
-                  modelDescriptor = SNodeOperations.getModel(root).getModelDescriptor();
-                }
-                if (modelDescriptor != null) {
-                  ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(modelDescriptor);
-                  modelChangesManager.setEnabled(true);
+                  modelDescriptor.value = SNodeOperations.getModel(root).getModelDescriptor();
                 }
               }
             });
+            if (modelDescriptor.value != null) {
+              ModelChangesManager modelChangesManager = myChangesManager.getModelChangesManager(modelDescriptor.value);
+              modelChangesManager.setEnabled(true);
+            }
           }
         });
       }
