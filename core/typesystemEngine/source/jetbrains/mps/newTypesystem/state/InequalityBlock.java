@@ -95,7 +95,9 @@ public class InequalityBlock extends RelationBlock {
       return;
     }
     //replacement rules
-    processReplacementRules(subType, superType);
+    if (processReplacementRules(subType, superType)) {
+      return;
+    }
     final SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
     myState.executeOperation(new jetbrains.mps.newTypesystem.operation.AddRemarkOperation("checking whether " + subType + " is subtype of " + superType, new Runnable() {
       public void run() {

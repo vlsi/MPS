@@ -102,7 +102,6 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
         myState.clear(true);
         myNodeTypesComponent.computeTypes(refreshTypes);
         //((NodeTypesComponentNew)myNodeTypesComponent).checkNode(myRootNode, true);
-        solveAndExpand();
         myNodeTypesComponent.setCheckedTypesystem();
       }
    // }
