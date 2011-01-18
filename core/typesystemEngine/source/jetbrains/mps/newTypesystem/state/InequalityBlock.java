@@ -87,6 +87,9 @@ public class InequalityBlock extends RelationBlock {
   public boolean processReplacementRules() {
     final SNode subType = getResolvedInput(myLeftNode);
     final SNode superType = getResolvedInput(myRightNode);
+    if (subType == null || superType == null || subType == superType) {
+      return false;
+    }
     return processReplacementRules(subType, superType);
   }
 
