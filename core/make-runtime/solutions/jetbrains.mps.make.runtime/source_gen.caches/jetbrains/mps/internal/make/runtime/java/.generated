@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dsh3gkq87mbey1pkcdslpw04ydodsez">
+<dependencies version="2" modelHash="-c8ock5qvau861qk4sbess51mtcshwkc">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-eoyumulhutahduk0ug9h3b4xkduamnh" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-5nztix013gb61szha7d69foggfwbn4z" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-8eob1vp1n3p5p0p7dnkfigagsucewza" />
@@ -34,7 +34,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IJavaCompiler.java" />
   </source>
-  <source id="2974008768272253139" name="IAuxProjectPeer" hash="d6wlh9p7jwtafzh7xrh277zoonhnai8">
+  <source id="2974008768272253139" name="IAuxProjectPeer" hash="-aa594fr0diz4sq2vrpo1op2etrtivwn">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IAuxProjectPeer.java" />
   </source>

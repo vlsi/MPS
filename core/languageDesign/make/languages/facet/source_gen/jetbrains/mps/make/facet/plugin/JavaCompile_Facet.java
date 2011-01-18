@@ -14,7 +14,6 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.CollectionUtil;
@@ -89,7 +88,7 @@ public class JavaCompile_Facet implements IFacet {
                   continue;
                 }
 
-                monitor.currentProgress().advanceWork("Compiling", 50, NameUtil.compactNamespace(tres.module().getModuleReference().getModuleFqName()));
+                monitor.currentProgress().advanceWork("Compiling", 50, tres.module().getModuleReference().getModuleFqName());
 
                 MPSCompilationResult cr = new ModuleMaker().make(CollectionUtil.set(tres.module()), new EmptyProgressIndicator());
 
@@ -197,10 +196,11 @@ public class JavaCompile_Facet implements IFacet {
                   return new IResult.FAILURE(_output_wf1ya0_a0b);
                 }
 
-                monitor.currentProgress().advanceWork("Compiling in IntelliJ IDEA", 50, NameUtil.compactNamespace(tres.module().getModuleReference().getModuleFqName()));
+                monitor.currentProgress().advanceWork("Compiling in IntelliJ IDEA", 50, tres.module().getModuleReference().getModuleFqName());
 
                 IAuxProjectPeer peer = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(IAuxProjectPeer.class);
-                if (peer == null) {
+                if (peer == null || !(peer.isValid())) {
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("IntelliJ IDEA is required for compilation")));
                   return new IResult.FAILURE(_output_wf1ya0_a0b);
                 }
 

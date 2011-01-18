@@ -4,5 +4,6 @@ package jetbrains.mps.internal.make.runtime.java;
 
 
 public interface IAuxProjectPeer {
+  public boolean isValid();
   public IJavaCompiler getJavaCompiler();
 }

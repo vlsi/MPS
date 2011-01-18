@@ -34,6 +34,9 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 
 public class MakeActionImpl {
   private IOperationContext context;
@@ -135,6 +138,13 @@ public class MakeActionImpl {
           return res.value = scr.execute(inputRes);
         }
       }.invoke();
+    }
+
+    if (!(res.value.isSucessful())) {
+      context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, (cleanMake ?
+        "Rebuild" :
+        "Make"
+      ) + " failed. See previous messages for details."));
     }
   }
 }
