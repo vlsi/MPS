@@ -926,6 +926,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1461424660015405635" resolveInfo="EscapeOperation" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4836112446988635824">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.4836112446988635817" resolveInfo="UndefinedType" />
+    </node>
   </roots>
   <root id="1073416106125">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1229447107349">
@@ -17596,6 +17600,12 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="1461424660015668136">
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
       <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215188818086" resolveInfo="CompactKeyWord" />
+    </node>
+  </root>
+  <root id="4836112446988635824">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="4836112446988635825">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1186415544875" resolveInfo="KeyWord" />
     </node>
   </root>
 </model>

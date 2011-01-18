@@ -86,6 +86,13 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.constraints.BaseVariableDeclaration_Constraints" file="BaseVariableDeclaration_Constraints.java">
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAParentContext" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.constraints.ClassConcept_Constraints" file="ClassConcept_Constraints.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
