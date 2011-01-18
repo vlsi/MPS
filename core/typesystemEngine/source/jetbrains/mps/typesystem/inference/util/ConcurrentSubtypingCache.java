@@ -39,7 +39,7 @@ public class ConcurrentSubtypingCache extends SubtypingCache {
     = new ConcurrentHashMap<CacheNodeHandler, ConcurrentHashMap<Class, Pair<SNode, GeneratedMatchingPattern>>>();
   private final Object myCoerceToPatternsCacheLock = new Object();
 
-  private final SNode NULL = new SNode(null, "null", false);
+  private static final SNode NULL = new SNode(null, "null", false);
 
   private SNode preprocessPutNode(SNode node) {
     return node == null ? NULL : node;
