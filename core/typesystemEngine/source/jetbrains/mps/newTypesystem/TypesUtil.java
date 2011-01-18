@@ -65,6 +65,9 @@ public class TypesUtil {
   }
 
   private static void getVariablesInside(SNode node, List<SNode> result) {
+    if (node == null) {
+      return;
+    }
     if (isVariable(node)) {
       result.add(node);
       return;
