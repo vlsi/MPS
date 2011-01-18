@@ -6,15 +6,15 @@ import jetbrains.mps.baseLanguage.regexp.runtime.Replacer;
 import java.util.regex.Matcher;
 
 public class _Replacer_a0a0b0b_0 implements Replacer {
-  /*package*/ SimpleReplace _enclosingClass;
+  /*package*/ PredefinedRegexps _enclosingClass;
   /*package*/ Object _closureContext;
 
-  public _Replacer_a0a0b0b_0(SimpleReplace enclosingClass, Object closureContext) {
+  public _Replacer_a0a0b0b_0(PredefinedRegexps enclosingClass, Object closureContext) {
     this._enclosingClass = enclosingClass;
     this._closureContext = (Object) closureContext;
   }
 
   public String replace(Matcher matcher) {
-    return "<" + matcher.group(1) + ">";
+    return matcher.group(1) + " at " + matcher.group(2);
   }
 }
