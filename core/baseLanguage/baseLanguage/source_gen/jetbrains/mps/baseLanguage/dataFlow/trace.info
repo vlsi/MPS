@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="RemarkStatement_DataFlow.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RemarkStatement_DataFlow" />
-  <unitInfo fileName="Expression_DataFlow.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.Expression_DataFlow" />
   <unitInfo fileName="ParameterDeclaration_DataFlow.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ParameterDeclaration_DataFlow" />
+  <unitInfo fileName="Expression_DataFlow.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.Expression_DataFlow" />
   <unitInfo fileName="ParameterReference_DataFlow.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ParameterReference_DataFlow" />
-  <unitInfo fileName="ExpressionStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ExpressionStatement_DataFlow" />
-  <unitInfo fileName="BlockStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BlockStatement_DataFlow" />
-  <unitInfo fileName="CastExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.CastExpression_DataFlow" />
-  <unitInfo fileName="ParenthesizedExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ParenthesizedExpression_DataFlow" />
-  <unitInfo fileName="DimensionExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DimensionExpression_DataFlow" />
-  <unitInfo fileName="InstanceOfExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.InstanceOfExpression_DataFlow" />
-  <unitInfo fileName="LocalVariableDeclarationStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.LocalVariableDeclarationStatement_DataFlow" />
-  <unitInfo fileName="BaseMethodDeclaration_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BaseMethodDeclaration_DataFlow" />
-  <unitInfo fileName="NotExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NotExpression_DataFlow" />
-  <unitInfo fileName="InstanceInitializer_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.InstanceInitializer_DataFlow" />
-  <unitInfo fileName="SwitchCase_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.SwitchCase_DataFlow" />
-  <unitInfo fileName="GenericNewExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.GenericNewExpression_DataFlow" />
-  <unitInfo fileName="StaticInitializer_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.StaticInitializer_DataFlow" />
-  <unitInfo fileName="ConceptFunction_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ConceptFunction_DataFlow" />
-  <unitInfo fileName="BitwiseNotExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BitwiseNotExpression_DataFlow" />
   <unitInfo fileName="AsExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.AsExpression_DataFlow" />
-  <unitInfo fileName="BinaryOperation_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BinaryOperation_DataFlow" />
-  <unitInfo fileName="VariableDeclaration_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.VariableDeclaration_DataFlow" />
-  <unitInfo fileName="SynchronizedStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.SynchronizedStatement_DataFlow" />
-  <unitInfo fileName="DotExpression_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DotExpression_DataFlow" />
-  <unitInfo fileName="ArrayAccessExpression_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ArrayAccessExpression_DataFlow" />
-  <unitInfo fileName="CatchClause_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.CatchClause_DataFlow" />
+  <unitInfo fileName="BitwiseNotExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BitwiseNotExpression_DataFlow" />
+  <unitInfo fileName="ConceptFunction_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ConceptFunction_DataFlow" />
+  <unitInfo fileName="StaticInitializer_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.StaticInitializer_DataFlow" />
+  <unitInfo fileName="GenericNewExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.GenericNewExpression_DataFlow" />
+  <unitInfo fileName="SwitchCase_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.SwitchCase_DataFlow" />
+  <unitInfo fileName="InstanceInitializer_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.InstanceInitializer_DataFlow" />
+  <unitInfo fileName="NotExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NotExpression_DataFlow" />
+  <unitInfo fileName="BaseMethodDeclaration_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BaseMethodDeclaration_DataFlow" />
+  <unitInfo fileName="LocalVariableDeclarationStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.LocalVariableDeclarationStatement_DataFlow" />
+  <unitInfo fileName="InstanceOfExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.InstanceOfExpression_DataFlow" />
+  <unitInfo fileName="DimensionExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DimensionExpression_DataFlow" />
+  <unitInfo fileName="ParenthesizedExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ParenthesizedExpression_DataFlow" />
+  <unitInfo fileName="CastExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.CastExpression_DataFlow" />
+  <unitInfo fileName="BlockStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BlockStatement_DataFlow" />
+  <unitInfo fileName="ExpressionStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ExpressionStatement_DataFlow" />
   <unitInfo fileName="AbstractUnaryNumberOperation_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.AbstractUnaryNumberOperation_DataFlow" />
-  <unitInfo fileName="AssertStatement_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.AssertStatement_DataFlow" />
-  <unitInfo fileName="IMethodCall_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IMethodCall_DataFlow" />
-  <unitInfo fileName="ArrayLiteral_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ArrayLiteral_DataFlow" />
-  <unitInfo fileName="StaticMethodCall_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.StaticMethodCall_DataFlow" />
-  <unitInfo fileName="InstanceMethodCallOperation_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.InstanceMethodCallOperation_DataFlow" />
-  <unitInfo fileName="ArrayCreatorWithInitializer_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ArrayCreatorWithInitializer_DataFlow" />
-  <unitInfo fileName="BaseMethodCall_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BaseMethodCall_DataFlow" />
+  <unitInfo fileName="CatchClause_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.CatchClause_DataFlow" />
+  <unitInfo fileName="ArrayAccessExpression_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ArrayAccessExpression_DataFlow" />
+  <unitInfo fileName="DotExpression_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DotExpression_DataFlow" />
+  <unitInfo fileName="SynchronizedStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.SynchronizedStatement_DataFlow" />
+  <unitInfo fileName="VariableDeclaration_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.VariableDeclaration_DataFlow" />
+  <unitInfo fileName="BinaryOperation_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BinaryOperation_DataFlow" />
   <unitInfo fileName="LocalVariableReference_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.LocalVariableReference_DataFlow" />
-  <unitInfo fileName="ArrayCreator_DataFlow.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ArrayCreator_DataFlow" />
+  <unitInfo fileName="BaseMethodCall_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BaseMethodCall_DataFlow" />
+  <unitInfo fileName="ArrayCreatorWithInitializer_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ArrayCreatorWithInitializer_DataFlow" />
+  <unitInfo fileName="InstanceMethodCallOperation_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.InstanceMethodCallOperation_DataFlow" />
+  <unitInfo fileName="StaticMethodCall_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.StaticMethodCall_DataFlow" />
+  <unitInfo fileName="ArrayLiteral_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ArrayLiteral_DataFlow" />
+  <unitInfo fileName="IMethodCall_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IMethodCall_DataFlow" />
+  <unitInfo fileName="AssertStatement_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.AssertStatement_DataFlow" />
   <unitInfo fileName="Closure_DataFlow.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.Closure_DataFlow" />
+  <unitInfo fileName="ArrayCreator_DataFlow.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ArrayCreator_DataFlow" />
   <unitInfo fileName="CommentedStatementsBlock_DataFlow.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.CommentedStatementsBlock_DataFlow" />
   <unitInfo fileName="ContinueStatement_DataFlow.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ContinueStatement_DataFlow" />
-  <unitInfo fileName="TernaryOperatorExpression_DataFlow.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.TernaryOperatorExpression_DataFlow" />
   <unitInfo fileName="LocalVariableDeclaration_DataFlow.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.LocalVariableDeclaration_DataFlow" />
-  <unitInfo fileName="ReturnStatement_DataFlow.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ReturnStatement_DataFlow" />
+  <unitInfo fileName="TernaryOperatorExpression_DataFlow.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.TernaryOperatorExpression_DataFlow" />
   <unitInfo fileName="BreakStatement_DataFlow.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.BreakStatement_DataFlow" />
+  <unitInfo fileName="ReturnStatement_DataFlow.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ReturnStatement_DataFlow" />
   <unitInfo fileName="SubstringExpression_DataFlow.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.SubstringExpression_DataFlow" />
   <unitInfo fileName="ElsifClause_DataFlow.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ElsifClause_DataFlow" />
   <unitInfo fileName="SwitchStatement_DataFlow.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.SwitchStatement_DataFlow" />
@@ -52,15 +52,15 @@
   <unitInfo fileName="DoWhileStatement_DataFlow.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DoWhileStatement_DataFlow" />
   <unitInfo fileName="ThrowStatement_DataFlow.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ThrowStatement_DataFlow" />
   <unitInfo fileName="WhileStatement_DataFlow.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.WhileStatement_DataFlow" />
-  <unitInfo fileName="notNullInstruction.java" startLine="8" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.notNullInstruction" />
-  <unitInfo fileName="nullableInstruction.java" startLine="8" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.nullableInstruction" />
   <unitInfo fileName="nullInstruction.java" startLine="8" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.nullInstruction" />
+  <unitInfo fileName="nullableInstruction.java" startLine="8" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.nullableInstruction" />
+  <unitInfo fileName="notNullInstruction.java" startLine="8" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.notNullInstruction" />
   <unitInfo fileName="AnonymousClassCreator_DataFlow.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.AnonymousClassCreator_DataFlow" />
-  <unitInfo fileName="RuleCreator.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleCreator" />
   <unitInfo fileName="RuleNullLiteral.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleNullLiteral" />
+  <unitInfo fileName="RuleCreator.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleCreator" />
   <unitInfo fileName="TryCatchStatement_DataFlow.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.TryCatchStatement_DataFlow" />
-  <unitInfo fileName="StatementList_DataFlow.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.StatementList_DataFlow" />
   <unitInfo fileName="RuleAfterDotExpression.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleAfterDotExpression" />
+  <unitInfo fileName="StatementList_DataFlow.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.StatementList_DataFlow" />
   <unitInfo fileName="IfStatement_DataFlow.java" startLine="13" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IfStatement_DataFlow" />
   <unitInfo fileName="ForLoopNotNull.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ForLoopNotNull" />
   <unitInfo fileName="RuleFieldReference.java" startLine="15" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleFieldReference" />
@@ -1409,8 +1409,8 @@
     <scopeInfo nodeId="7597254041024463759" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="DataFlowTryCatchUtil.java" startLine="101" startPosition="0" endLine="114" endPosition="0" />
     <scopeInfo nodeId="7597254041024463768" fileName="DataFlowTryCatchUtil.java" startLine="25" startPosition="88" endLine="41" endPosition="18">
       <varInfo nodeId="7597254041024527700" varName="statement" />
-      <varInfo nodeId="7597254041024527613" varName="result" />
       <varInfo nodeId="7597254041024527635" varName="uncaughtThrowables" />
+      <varInfo nodeId="7597254041024527613" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7597254041024463765" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPossibleCatches#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Ljava/util/List;" fileName="DataFlowTryCatchUtil.java" startLine="24" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="7597254041024464549" varName="source" />

@@ -30,7 +30,6 @@
   <unitInfo fileName="Classifier_StaticKeyWord.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Classifier_StaticKeyWord$Classifier_StaticKeyWord_DELETE" />
   <unitInfo fileName="_ClassConcept_Abstract_Actions.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor._ClassConcept_Abstract_Actions$_ClassConcept_Abstract_Actions_DELETE" />
   <unitInfo fileName="VariableDeclaration_RemoveFinalOnDelete.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.VariableDeclaration_RemoveFinalOnDelete$VariableDeclaration_RemoveFinalOnDelete_DELETE" />
-  <unitInfo fileName="TypeVariableDeclaration_addAuxBound.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TypeVariableDeclaration_addAuxBound$TypeVariableDeclaration_addAuxBound_RIGHT_TRANSFORM" />
   <unitInfo fileName="TypeVariableDeclaration_addBound.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TypeVariableDeclaration_addBound$TypeVariableDeclaration_addBound_RIGHT_TRANSFORM" />
   <unitInfo fileName="ContinueStatement_Actions.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ContinueStatement_Actions$ContinueStatement_Actions_DELETE" />
   <unitInfo fileName="BreakStatement_Actions.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BreakStatement_Actions$BreakStatement_Actions_DELETE" />
@@ -86,7 +85,6 @@
   <unitInfo fileName="Classifier_StaticKeyWord.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Classifier_StaticKeyWord" />
   <unitInfo fileName="_ClassConcept_Abstract_Actions.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor._ClassConcept_Abstract_Actions" />
   <unitInfo fileName="VariableDeclaration_RemoveFinalOnDelete.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.VariableDeclaration_RemoveFinalOnDelete" />
-  <unitInfo fileName="TypeVariableDeclaration_addAuxBound.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TypeVariableDeclaration_addAuxBound" />
   <unitInfo fileName="TypeVariableDeclaration_addBound.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TypeVariableDeclaration_addBound" />
   <unitInfo fileName="ContinueStatement_Actions.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ContinueStatement_Actions" />
   <unitInfo fileName="BreakStatement_Actions.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BreakStatement_Actions" />
@@ -298,6 +296,7 @@
   <unitInfo fileName="ThisExpressionToLocal.java" startLine="25" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ThisExpressionToLocal$ThisExpressionToLocal_Action0" />
   <unitInfo fileName="TrimOperation_Editor.java" startLine="16" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TrimOperation_Editor" />
   <unitInfo fileName="Expression_Editor.java" startLine="21" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Expression_Editor" />
+  <unitInfo fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="24" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap$TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap_Action0" />
   <unitInfo fileName="UsingStatement_Editor.java" startLine="129" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.UsingStatement_Editor$resourceListHandler_pkcf3k_c0" />
   <unitInfo fileName="ArrayCloneOperation_Editor.java" startLine="15" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ArrayCloneOperation_Editor" />
   <unitInfo fileName="AddForStatementVar.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AddForStatementVar" />
@@ -339,6 +338,7 @@
   <unitInfo fileName="ThisExpressionToLocal.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ThisExpressionToLocal" />
   <unitInfo fileName="BitwiseNotExpression_Editor.java" startLine="19" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BitwiseNotExpression_Editor" />
   <unitInfo fileName="ParenthesizedExpression_Editor.java" startLine="19" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ParenthesizedExpression_Editor" />
+  <unitInfo fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="16" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap" />
   <unitInfo fileName="NotExpression_Editor.java" startLine="19" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.NotExpression_Editor" />
   <unitInfo fileName="ArrayAccessExpression_Editor.java" startLine="16" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ArrayAccessExpression_Editor" />
   <unitInfo fileName="AdditionalForLoopVariable_Editor.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AdditionalForLoopVariable_Editor" />
@@ -1518,10 +1518,6 @@
       <varInfo nodeId="1226062531002" varName="parameters" />
     </scopeInfo>
   </root>
-  <root nodeId="1215091205555">
-    <nodeInfo nodeId="1215091241135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TypeVariableDeclaration_addAuxBound.java" startLine="28" startPosition="75" endLine="29" endPosition="115" />
-    <scopeInfo nodeId="1215091234658" fileName="TypeVariableDeclaration_addAuxBound.java" startLine="28" startPosition="75" endLine="29" endPosition="115" />
-  </root>
   <root nodeId="1215091382398">
     <nodeInfo nodeId="1215091415444" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TypeVariableDeclaration_deleteBound.java" startLine="29" startPosition="75" endLine="30" endPosition="89" />
     <nodeInfo nodeId="1215091405551" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TypeVariableDeclaration_deleteBound.java" startLine="30" startPosition="89" endLine="31" endPosition="59" />
@@ -1748,6 +1744,39 @@
   <root nodeId="4972241301747194480">
     <nodeInfo nodeId="4972241301747194484" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IMethodCall_DeleteTypeArguments.java" startLine="29" startPosition="75" endLine="30" endPosition="92" />
     <scopeInfo nodeId="4972241301747194483" fileName="IMethodCall_DeleteTypeArguments.java" startLine="29" startPosition="75" endLine="30" endPosition="92" />
+  </root>
+  <root nodeId="5019026806746802173">
+    <nodeInfo nodeId="869872053968649476" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="52" startPosition="62" endLine="53" endPosition="21" />
+    <nodeInfo nodeId="1528454294470193872" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="54" startPosition="7" endLine="55" endPosition="0" />
+    <nodeInfo nodeId="1528454294470193870" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="55" startPosition="0" endLine="56" endPosition="64" />
+    <nodeInfo nodeId="869872053968649487" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="56" startPosition="64" endLine="57" endPosition="72" />
+    <nodeInfo nodeId="1528454294470172715" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="57" startPosition="72" endLine="58" endPosition="152" />
+    <nodeInfo nodeId="1528454294470172729" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="59" startPosition="39" endLine="60" endPosition="21" />
+    <nodeInfo nodeId="1528454294470173318" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="61" startPosition="7" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="1528454294470193874" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="62" startPosition="0" endLine="63" endPosition="81" />
+    <nodeInfo nodeId="1528454294470168361" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="63" startPosition="81" endLine="64" endPosition="64" />
+    <nodeInfo nodeId="1528454294470172685" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="64" startPosition="64" endLine="65" endPosition="55" />
+    <nodeInfo nodeId="1528454294470173300" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="66" startPosition="29" endLine="67" endPosition="21" />
+    <nodeInfo nodeId="1528454294470173304" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="68" startPosition="7" endLine="69" endPosition="55" />
+    <nodeInfo nodeId="1528454294470193855" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="69" startPosition="55" endLine="70" endPosition="72" />
+    <nodeInfo nodeId="869872053968649549" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="73" startPosition="146" endLine="74" endPosition="184" />
+    <nodeInfo nodeId="5019026806746821799" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="74" startPosition="184" endLine="75" endPosition="129" />
+    <nodeInfo nodeId="869872053968649463" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="51" startPosition="152" endLine="54" endPosition="7" />
+    <nodeInfo nodeId="1528454294470172693" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="58" startPosition="152" endLine="61" endPosition="7" />
+    <nodeInfo nodeId="1528454294470173291" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="65" startPosition="55" endLine="68" endPosition="7" />
+    <scopeInfo nodeId="869872053968649465" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="52" startPosition="62" endLine="53" endPosition="21" />
+    <scopeInfo nodeId="1528454294470172694" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="59" startPosition="39" endLine="60" endPosition="21" />
+    <scopeInfo nodeId="1528454294470173292" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="66" startPosition="29" endLine="67" endPosition="21" />
+    <scopeInfo nodeId="5019026806746811509" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="73" startPosition="146" endLine="75" endPosition="129">
+      <varInfo nodeId="869872053968649550" varName="typeVarDeclaration" />
+    </scopeInfo>
+    <scopeInfo nodeId="869872053968649455" fileName="TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.java" startLine="51" startPosition="152" endLine="70" endPosition="72">
+      <varInfo nodeId="869872053968649488" varName="selectedNode" />
+      <varInfo nodeId="1528454294470172686" varName="nextLeaf" />
+      <varInfo nodeId="1528454294470168362" varName="selectedCell" />
+      <varInfo nodeId="1528454294470172716" varName="typeVarDeclaration" />
+      <varInfo nodeId="1528454294470173305" varName="nextCellNode" />
+    </scopeInfo>
   </root>
   <root nodeId="6040729714013676768">
     <nodeInfo nodeId="6040729714013739447" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AsExpression_Delete.java" startLine="29" startPosition="75" endLine="30" endPosition="100" />

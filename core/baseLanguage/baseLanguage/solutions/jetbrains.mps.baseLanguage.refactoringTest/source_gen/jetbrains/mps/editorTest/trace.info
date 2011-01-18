@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test.java" startLine="20" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.editorTest.NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test$TestBody" />
+  <unitInfo fileName="RT_ClassTypeVariableDeclaration_with_ampersand_Test.java" startLine="20" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.editorTest.RT_ClassTypeVariableDeclaration_with_ampersand_Test$TestBody" />
+  <unitInfo fileName="RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test.java" startLine="20" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.editorTest.RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test$TestBody" />
   <unitInfo fileName="LT_ListElementAccess_with_PlusOperation_Test.java" startLine="20" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.editorTest.LT_ListElementAccess_with_PlusOperation_Test$TestBody" />
   <unitInfo fileName="RT_AssertInstanceMethodCallOperation_with_colon_Test.java" startLine="20" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.editorTest.RT_AssertInstanceMethodCallOperation_with_colon_Test$TestBody" />
   <unitInfo fileName="RT_AssertBinaryOperation_with_colon_Test.java" startLine="20" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.editorTest.RT_AssertBinaryOperation_with_colon_Test$TestBody" />
@@ -124,6 +127,9 @@
   <unitInfo fileName="MoveNodeRange_Test.java" startLine="25" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.editorTest.MoveNodeRange_Test$TestBody" />
   <unitInfo fileName="SmartReferenseUpdateOnChange_Test.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$TestBody" />
   <unitInfo fileName="DefaultCellInfoTest_Test.java" startLine="27" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$TestBody" />
+  <unitInfo fileName="NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.editorTest.NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test" />
+  <unitInfo fileName="RT_ClassTypeVariableDeclaration_with_ampersand_Test.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.editorTest.RT_ClassTypeVariableDeclaration_with_ampersand_Test" />
+  <unitInfo fileName="RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.editorTest.RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test" />
   <unitInfo fileName="LT_ListElementAccess_with_PlusOperation_Test.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.editorTest.LT_ListElementAccess_with_PlusOperation_Test" />
   <unitInfo fileName="RT_AssertInstanceMethodCallOperation_with_colon_Test.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.editorTest.RT_AssertInstanceMethodCallOperation_with_colon_Test" />
   <unitInfo fileName="RT_AssertBinaryOperation_with_colon_Test.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.editorTest.RT_AssertBinaryOperation_with_colon_Test" />
@@ -458,6 +464,15 @@
     </scopeInfo>
     <scopeInfo nodeId="7633582661619381553" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="MovingNode_Test.java" startLine="30" startPosition="51" endLine="35" endPosition="0" />
     <unitInfo nodeId="7633582661619381551" fileName="MovingNode_Test.java" startLine="30" startPosition="39" endLine="35" endPosition="7" unitName="jetbrains.mps.editorTest.MovingNode_Test$1" />
+  </root>
+  <root nodeId="1528454294471603927">
+    <nodeInfo nodeId="1528454294471625087" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="58" />
+  </root>
+  <root nodeId="1528454294471625088">
+    <nodeInfo nodeId="1528454294471625114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RT_ClassTypeVariableDeclaration_with_ampersand_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="58" />
+  </root>
+  <root nodeId="1528454294471625115">
+    <nodeInfo nodeId="1528454294471625138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="58" />
   </root>
   <root nodeId="1574561129028766962">
     <nodeInfo nodeId="1574561129028805663" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SubstituteSmallPatternInLeft_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="58" />

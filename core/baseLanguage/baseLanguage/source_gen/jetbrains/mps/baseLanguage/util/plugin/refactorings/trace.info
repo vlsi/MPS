@@ -5973,8 +5973,8 @@
     <scopeInfo nodeId="8492459591399173126" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InlineVariableRefactoring.java" startLine="37" startPosition="5" endLine="46" endPosition="5" />
     <scopeInfo nodeId="8492459591399173208" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InlineVariableRefactoring.java" startLine="53" startPosition="102" endLine="62" endPosition="5" />
     <scopeInfo nodeId="8492459591399173180" fileName="InlineVariableRefactoring.java" startLine="50" startPosition="68" endLine="63" endPosition="70">
-      <varInfo nodeId="8492459591399173190" varName="program" />
       <varInfo nodeId="8492459591399173199" varName="reachingReads" />
+      <varInfo nodeId="8492459591399173190" varName="program" />
       <varInfo nodeId="8492459591399173182" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="8492459591399173173" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optimizeAssignment#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" fileName="InlineVariableRefactoring.java" startLine="49" startPosition="0" endLine="65" endPosition="0">
