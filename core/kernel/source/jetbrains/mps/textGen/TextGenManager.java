@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
@@ -87,7 +86,12 @@ public class TextGenManager {
     }
     List<String> dependencies = getUserObjectCollection(DEPENDENCY, node, buffer, (Set<String>) buffer.getUserObject(EXTENDS));
     List<String> extend = getUserObjectCollection(EXTENDS, node, buffer, null);
-    return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), myPositions, myScopePositions, myUnitPositions, dependencies, extend);
+
+    Map<String, List<String>> deps = new HashMap<String, List<String>>(2);
+    deps.put(TextGenManager.DEPENDENCY, dependencies);
+    deps.put(TextGenManager.EXTENDS, extend);
+
+    return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), myPositions, myScopePositions, myUnitPositions, deps);
   }
 
   public boolean canGenerateTextFor(SNode node) {
@@ -231,52 +235,4 @@ public class TextGenManager {
     return Collections.emptyList();
   }
 
-  public static class TextGenerationResult {
-    private String myText;
-    private boolean myContainErrors;
-    private final HashMap<SNode, PositionInfo> myPositions;
-    private final HashMap<SNode, ScopePositionInfo> myScopePositions;
-    private final Map<SNode, UnitPositionInfo> myUnitPositions;
-    private Map<String, List<String>> myDependencies;
-
-    private TextGenerationResult(String text,
-                                 boolean containErrors,
-                                 HashMap<SNode, PositionInfo> positions,
-                                 HashMap<SNode, ScopePositionInfo> scopePositions,
-                                 Map<SNode, UnitPositionInfo> unitPositions, List<String> dependencies,
-                                 List<String> extend) {
-      myText = text;
-      myContainErrors = containErrors;
-      myPositions = positions;
-      myScopePositions = scopePositions;
-      myUnitPositions = unitPositions;
-      myDependencies = new HashMap<String, List<String>>(2);
-      myDependencies.put(DEPENDENCY, dependencies);
-      myDependencies.put(EXTENDS, extend);
-    }
-
-    public String getText() {
-      return myText;
-    }
-
-    public boolean hasErrors() {
-      return myContainErrors;
-    }
-
-    public Map<SNode, PositionInfo> getPositions() {
-      return myPositions;
-    }
-
-    public Map<SNode, ScopePositionInfo> getScopePositions() {
-      return myScopePositions;
-    }
-
-    public Map<SNode, UnitPositionInfo> getUnitPositions() {
-      return myUnitPositions;
-    }
-
-    public Map<String, List<String>> getDependencies() {
-      return myDependencies;
-    }
-  }
 }

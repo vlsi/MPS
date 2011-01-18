@@ -14,7 +14,7 @@ import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
-import jetbrains.mps.generator.fileGenerator.TextGenerationUtil;
+import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -42,7 +42,7 @@ public class GenerateTextFromBuild {
     final File[] fileToRun = new File[]{null};
     TextGenerationHandler generationHandler = new TextGenerationHandler() {
       @Override
-      protected void fileGenerated(String targetDir, String fileName, TextGenerationUtil.TextGenerationResult result) {
+      protected void fileGenerated(String targetDir, String fileName, TextGenerationResult result) {
         File target = new File(basedir + File.separator + fileName);
         new File(basedir + File.separator).mkdirs();
         FileUtil.write(target, result.getText());
