@@ -57,11 +57,12 @@ public class OverridingMethodsFinder {
   private void collectOverridingMethodsInClassifierHierarchy(SNode classifier, final Map<String, Set<SNode>> nameToMethodsMap, final Set<SNode> visitedClassifiers) {
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode clazz = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-      if ((SLinkOperations.getTarget(clazz, "superclass", true) != null)) {
-        SNode superClassifier = SLinkOperations.getTarget(SLinkOperations.getTarget(clazz, "superclass", true), "classifier", false);
-        if (addIfNotContains(visitedClassifiers, superClassifier)) {
-          collectOverridingMethods(superClassifier, nameToMethodsMap, visitedClassifiers);
-        }
+      SNode superClass = ((SLinkOperations.getTarget(clazz, "superclass", true) != null) ?
+        SLinkOperations.getTarget(SLinkOperations.getTarget(clazz, "superclass", true), "classifier", false) :
+        SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Object")
+      );
+      if (addIfNotContains(visitedClassifiers, superClass)) {
+        collectOverridingMethods(superClass, nameToMethodsMap, visitedClassifiers);
       }
       ListSequence.fromList(SLinkOperations.getTargets(clazz, "implementedInterface", true)).<SNode>select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
