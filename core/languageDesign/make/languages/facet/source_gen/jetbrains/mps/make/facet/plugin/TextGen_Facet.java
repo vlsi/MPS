@@ -23,7 +23,10 @@ import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.make.script.IConfig;
 
 public class TextGen_Facet implements IFacet {
@@ -66,8 +69,8 @@ public class TextGen_Facet implements IFacet {
           Iterable<IResource> _output_21gswx_a0a = null;
           switch (0) {
             case 0:
-              final FileProcessor fileProc = new FileProcessor();
               for (IResource resource : Sequence.fromIterable(input)) {
+                final FileProcessor fileProc = new FileProcessor();
                 GResource gres = new GResource().assignFrom((GResource) resource);
                 if (!(gres.status().isOk())) {
                   Logger.getLogger("jetbrains.mps.make.TextGen").error("Generation was not OK");
@@ -83,21 +86,33 @@ public class TextGen_Facet implements IFacet {
                   GenerationDependenciesCache gdc = GenerationDependenciesCache.getInstance();
                   boolean res;
                   res = new TextGenerator(javaStreamHandler, mgsm.getCacheGenerator(), bldc.getGenerator(), tic.getGenerator(), gdc.getGenerator()).handleOutput(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gres.status());
+
+                  final SModelDescriptor outputMD = gres.status().getOutputModelDescriptor();
+                  if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
+                    ModelAccess.instance().runWriteInEDT(new Runnable() {
+                      public void run() {
+                        TransientModelsModule.TransientSModelDescriptor tmd = (TransientModelsModule.TransientSModelDescriptor) outputMD;
+                        ((TransientModelsModule) tmd.getModule()).removeModel(tmd);
+                      }
+                    });
+                  }
+                  CleanupManager.getInstance().cleanup();
+
                   if (!(res)) {
                     Logger.getLogger("jetbrains.mps.make.TextGen").error("TextGenerator returned false");
                     return new IResult.FAILURE(_output_21gswx_a0a);
                   }
+                  ModelAccess.instance().writeFilesInEDT(new Runnable() {
+                    public void run() {
+                      fileProc.saveGeneratedFiles();
+                    }
+                  });
                 } finally {
                   javaStreamHandler.dispose();
                 }
                 monitor.currentProgress().finishWork("Generating text...");
                 _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module()))));
               }
-              ModelAccess.instance().writeFilesInEDT(new Runnable() {
-                public void run() {
-                  fileProc.saveGeneratedFiles();
-                }
-              });
             default:
               return new IResult.SUCCESS(_output_21gswx_a0a);
           }

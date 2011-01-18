@@ -12,9 +12,9 @@ public class FacetManifest {
   private List<IFacet> facets = ListSequence.fromList(new ArrayList<IFacet>());
 
   public FacetManifest() {
-    ListSequence.fromList(facets).addElement(new Generate_Facet());
     ListSequence.fromList(facets).addElement(new TextGen_Facet());
     ListSequence.fromList(facets).addElement(new JavaCompile_Facet());
+    ListSequence.fromList(facets).addElement(new Generate_Facet());
     ListSequence.fromList(facets).addElement(new Make_Facet());
   }
 

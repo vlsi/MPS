@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Facet_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ProjectPlugin" />
-  <unitInfo fileName="TextGen_Facet.java" startLine="96" startPosition="57" endLine="100" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet$2" />
-  <unitInfo fileName="JavaCompile_Facet.java" startLine="286" startPosition="55" endLine="290" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
+  <unitInfo fileName="MakeActionImpl.java" startLine="71" startPosition="36" endLine="75" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionImpl$2" />
+  <unitInfo fileName="MakeActionImpl.java" startLine="76" startPosition="82" endLine="80" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionImpl$3" />
+  <unitInfo fileName="MakeActionImpl.java" startLine="114" startPosition="55" endLine="118" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionImpl$6" />
+  <unitInfo fileName="MakeActionImpl.java" startLine="123" startPosition="126" endLine="127" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionImpl$8" />
+  <unitInfo fileName="MakeActionImpl.java" startLine="127" startPosition="29" endLine="131" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionImpl$9" />
+  <unitInfo fileName="MakeActionImpl.java" startLine="133" startPosition="10" endLine="137" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.MakeActionImpl$7" />
+  <unitInfo fileName="MakeActionParameters.java" startLine="164" startPosition="18" endLine="168" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$2" />
+  <unitInfo fileName="MakeActionParameters.java" startLine="168" startPosition="16" endLine="172" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$3" />
+  <unitInfo fileName="MakeActionParameters.java" startLine="174" startPosition="51" endLine="178" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$4" />
   <unitInfo fileName="Generate_Facet.java" startLine="426" startPosition="109" endLine="430" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$2" />
   <unitInfo fileName="Generate_Facet.java" startLine="431" startPosition="108" endLine="435" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$2" />
   <unitInfo fileName="Generate_Facet.java" startLine="435" startPosition="285" endLine="440" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$2" />
+  <unitInfo fileName="MakeActionImpl.java" startLine="93" startPosition="75" endLine="99" endPosition="9" unitName="jetbrains.mps.make.facet.plugin.MakeActionImpl$6" />
   <unitInfo fileName="Generate_Facet.java" startLine="419" startPosition="63" endLine="425" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$2" />
-  <unitInfo fileName="JavaCompile_Facet.java" startLine="70" startPosition="70" endLine="77" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
-  <unitInfo fileName="JavaCompile_Facet.java" startLine="171" startPosition="70" endLine="178" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$2" />
+  <unitInfo fileName="MakeActionImpl.java" startLine="81" startPosition="203" endLine="89" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionImpl$4" />
   <unitInfo fileName="Make_Facet.java" startLine="52" startPosition="17" endLine="61" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$1" />
+  <unitInfo fileName="MakeActionParameters.java" startLine="138" startPosition="63" endLine="148" endPosition="23" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$4" />
   <unitInfo fileName="Generate_Facet.java" startLine="500" startPosition="17" endLine="512" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$1" />
   <unitInfo fileName="Generate_Facet.java" startLine="199" startPosition="17" endLine="212" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$1" />
   <unitInfo fileName="rrr_Option.java" startLine="7" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.rrr_Option" />
   <unitInfo fileName="ToolbarMake_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.ToolbarMake_ActionGroup" />
+  <unitInfo fileName="MakeActionImpl.java" startLine="55" startPosition="33" endLine="70" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionImpl$1" />
+  <unitInfo fileName="MakeActionImpl.java" startLine="89" startPosition="24" endLine="104" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionImpl$5" />
   <unitInfo fileName="SaveTransient_Option.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.SaveTransient_Option" />
   <unitInfo fileName="ProjectMake_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.ProjectMake_ActionGroup" />
   <unitInfo fileName="NamespaceMake_ActionGroup.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.NamespaceMake_ActionGroup" />
   <unitInfo fileName="Make_ActionGroup.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_ActionGroup" />
-  <unitInfo fileName="JavaCompile_Facet.java" startLine="281" startPosition="17" endLine="297" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$1" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Default_KeymapChanges" />
   <unitInfo fileName="GenerationStrategy.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.GenerationStrategy" />
   <unitInfo fileName="GlobalMake_ActionGroup.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.GlobalMake_ActionGroup" />
@@ -33,13 +42,11 @@
   <unitInfo fileName="MResource.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MResource" />
   <unitInfo fileName="Facets_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facets_CustomApplicationPlugin" />
   <unitInfo fileName="Generate_Facet.java" startLine="357" startPosition="0" endLine="395" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet.Target_fi61u2_c$Variables" />
-  <unitInfo fileName="TextGen_Facet.java" startLine="64" startPosition="17" endLine="105" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet$1" />
   <unitInfo fileName="RebuildProject_Action.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.RebuildProject_Action" />
   <unitInfo fileName="MakeProject_Action.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeProject_Action" />
   <unitInfo fileName="Generate_Facet.java" startLine="404" startPosition="17" endLine="449" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$1" />
   <unitInfo fileName="GResource.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.GResource" />
   <unitInfo fileName="Generate_Facet.java" startLine="144" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet.Target_fi61u2_a$Variables" />
-  <unitInfo fileName="JavaCompile_Facet.java" startLine="65" startPosition="17" endLine="115" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$1" />
   <unitInfo fileName="RebuildSelectedModules_Action.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.RebuildSelectedModules_Action" />
   <unitInfo fileName="MakeSelectedModels_Action.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeSelectedModels_Action" />
   <unitInfo fileName="RebuildSelectedModels_Action.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.RebuildSelectedModels_Action" />
@@ -48,18 +55,21 @@
   <unitInfo fileName="Make_Facet.java" startLine="45" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$Target_pm9z_a" />
   <unitInfo fileName="Generate_Facet.java" startLine="493" startPosition="0" endLine="555" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$Target_fi61u2_e" />
   <unitInfo fileName="Generate_Facet.java" startLine="192" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$Target_fi61u2_b" />
-  <unitInfo fileName="JavaCompile_Facet.java" startLine="166" startPosition="17" endLine="230" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$1" />
-  <unitInfo fileName="JavaCompile_Facet.java" startLine="274" startPosition="0" endLine="340" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$Target_wf1ya0_c" />
   <unitInfo fileName="MakeSelection_Action.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeSelection_Action" />
   <unitInfo fileName="MakeNamespace_Action.java" startLine="21" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeNamespace_Action" />
   <unitInfo fileName="Make_Facet.java" startLine="17" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet" />
-  <unitInfo fileName="TextGen_Facet.java" startLine="57" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet$Target_21gswx_a" />
+  <unitInfo fileName="MakeActionParameters.java" startLine="189" startPosition="23" endLine="280" endPosition="13" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$7" />
+  <unitInfo fileName="MakeActionParameters.java" startLine="66" startPosition="23" endLine="160" endPosition="13" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$3" />
+  <unitInfo fileName="MakeActionParameters.java" startLine="187" startPosition="19" endLine="282" endPosition="9" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$6" />
   <unitInfo fileName="Generate_Facet.java" startLine="397" startPosition="0" endLine="492" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$Target_fi61u2_d" />
-  <unitInfo fileName="JavaCompile_Facet.java" startLine="58" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$Target_wf1ya0_a" />
-  <unitInfo fileName="JavaCompile_Facet.java" startLine="159" startPosition="0" endLine="273" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet$Target_wf1ya0_b" />
+  <unitInfo fileName="MakeActionParameters.java" startLine="64" startPosition="19" endLine="162" endPosition="9" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$2" />
+  <unitInfo fileName="MakeActionParameters.java" startLine="185" startPosition="138" endLine="284" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$5" />
+  <unitInfo fileName="MakeActionParameters.java" startLine="62" startPosition="85" endLine="164" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$1" />
+  <unitInfo fileName="MakeActionImpl.java" startLine="38" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeActionImpl" />
   <unitInfo fileName="Generate_Facet.java" startLine="73" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$Target_fi61u2_a" />
-  <unitInfo fileName="TextGen_Facet.java" startLine="29" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet" />
+  <unitInfo fileName="TextGen_Facet.java" startLine="32" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet" />
   <unitInfo fileName="Generate_Facet.java" startLine="256" startPosition="0" endLine="396" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet$Target_fi61u2_c" />
+  <unitInfo fileName="MakeActionParameters.java" startLine="24" startPosition="0" endLine="307" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters" />
   <unitInfo fileName="JavaCompile_Facet.java" startLine="28" startPosition="0" endLine="341" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet" />
   <unitInfo fileName="Generate_Facet.java" startLine="41" startPosition="0" endLine="556" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Generate_Facet" />
   <root nodeId="1347231559998412406">
@@ -157,8 +167,8 @@
       <varInfo nodeId="2383991756720270217" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270170" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compile#(Ljetbrains/mps/smodel/IOperationContext;Ljava/util/List;ZLjetbrains/mps/ide/progress/ITaskProgressHelper;)Z" fileName="GenerationHandler.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="2383991756720270183" varName="helper" />
       <varInfo nodeId="2383991756720270181" varName="b" />
+      <varInfo nodeId="2383991756720270183" varName="helper" />
       <varInfo nodeId="2383991756720270173" varName="context" />
       <varInfo nodeId="2383991756720270175" varName="list" />
     </scopeInfo>
@@ -168,8 +178,8 @@
     <scopeInfo nodeId="2383991756720270198" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleOutput#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/generator/GenerationStatus;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/progress/ITaskProgressHelper;)Z" fileName="GenerationHandler.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="2383991756720270201" varName="module" />
       <varInfo nodeId="2383991756720270209" varName="helper" />
-      <varInfo nodeId="2383991756720270205" varName="status" />
       <varInfo nodeId="2383991756720270203" varName="descriptor" />
+      <varInfo nodeId="2383991756720270205" varName="status" />
       <varInfo nodeId="2383991756720270207" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270225" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canHandle#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" fileName="GenerationHandler.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
@@ -285,7 +295,7 @@
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="98" startPosition="23" endLine="99" endPosition="110" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="99" startPosition="110" endLine="100" endPosition="39" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="100" startPosition="39" endLine="101" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="103" startPosition="69" endLine="104" endPosition="40" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="103" startPosition="90" endLine="104" endPosition="40" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="104" startPosition="40" endLine="105" endPosition="30" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="106" startPosition="76" endLine="107" endPosition="40" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="107" startPosition="40" endLine="108" endPosition="30" />
@@ -467,7 +477,7 @@
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="79" startPosition="28" endLine="81" endPosition="35" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="85" startPosition="80" endLine="87" endPosition="30" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="95" startPosition="82" endLine="97" endPosition="30" />
-    <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="103" startPosition="69" endLine="105" endPosition="30" />
+    <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="103" startPosition="90" endLine="105" endPosition="30" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="106" startPosition="76" endLine="108" endPosition="30" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="124" startPosition="27" endLine="126" endPosition="28" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="127" startPosition="27" endLine="129" endPosition="28" />
@@ -529,8 +539,8 @@
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="136" startPosition="28" endLine="148" endPosition="25" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="136" startPosition="28" endLine="150" endPosition="28" />
     <scopeInfo nodeId="8666365535672290264" fileName="MakeActionParameters.java" startLine="39" startPosition="47" endLine="58" endPosition="25">
-      <varInfo nodeId="8666365535672310931" varName="model" />
       <varInfo nodeId="8666365535672310925" varName="module" />
+      <varInfo nodeId="8666365535672310931" varName="model" />
       <varInfo nodeId="8666365535672310910" varName="sb" />
     </scopeInfo>
     <scopeInfo nodeId="8666365535672290261" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionText#(Z)Ljava/lang/String;" fileName="MakeActionParameters.java" startLine="38" startPosition="0" endLine="60" endPosition="0">
@@ -680,18 +690,18 @@
       <varInfo nodeId="4175026531914406745" varName="code" />
     </scopeInfo>
     <scopeInfo nodeId="4175026531914406543" fileName="MakeActionImpl.java" startLine="49" startPosition="31" endLine="138" endPosition="5">
-      <varInfo nodeId="4175026531914406837" varName="res" />
-      <varInfo nodeId="4175026531914406645" varName="pindGet" />
-      <varInfo nodeId="4175026531914406585" varName="jmon" />
-      <varInfo nodeId="4175026531914406580" varName="feedbackStrat" />
       <varInfo nodeId="4175026531914406565" varName="scb" />
-      <varInfo nodeId="4175026531914406653" varName="scr" />
+      <varInfo nodeId="4175026531914406580" varName="feedbackStrat" />
+      <varInfo nodeId="4175026531914406585" varName="jmon" />
+      <varInfo nodeId="4175026531914406645" varName="pindGet" />
+      <varInfo nodeId="4175026531914406837" varName="res" />
       <varInfo nodeId="4175026531914406641" varName="pind" />
-      <varInfo nodeId="4175026531914406841" varName="mct" />
+      <varInfo nodeId="4175026531914406653" varName="scr" />
       <varInfo nodeId="4175026531914406570" varName="relayStrat" />
+      <varInfo nodeId="4175026531914406841" varName="mct" />
       <varInfo nodeId="4175026531914406617" varName="cmon" />
-      <varInfo nodeId="4175026531914406799" varName="inputRes" />
       <varInfo nodeId="4175026531914406575" varName="progStrat" />
+      <varInfo nodeId="4175026531914406799" varName="inputRes" />
     </scopeInfo>
     <scopeInfo nodeId="4175026531914406540" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeAction#()V" fileName="MakeActionImpl.java" startLine="48" startPosition="0" endLine="140" endPosition="0" />
     <unitInfo nodeId="4175026531914406621" fileName="MakeActionImpl.java" startLine="71" startPosition="36" endLine="75" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionImpl$2" />
@@ -707,103 +717,118 @@
     <unitInfo nodeId="4175026531914406520" fileName="MakeActionImpl.java" startLine="38" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeActionImpl" />
   </root>
   <root nodeId="4328738523548214510">
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" fileName="TextGen_Facet.java" startLine="57" startPosition="58" endLine="58" endPosition="60" />
-    <nodeInfo nodeId="4328738523548214515" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="65" startPosition="120" endLine="66" endPosition="56" />
-    <nodeInfo nodeId="4328738523548335614" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="68" startPosition="19" endLine="69" endPosition="65" />
-    <nodeInfo nodeId="7831273901269568205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="70" startPosition="71" endLine="71" endPosition="82" />
-    <nodeInfo nodeId="2383991756720468108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="72" startPosition="46" endLine="73" endPosition="96" />
-    <nodeInfo nodeId="4328738523548339972" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TextGen_Facet.java" startLine="73" startPosition="96" endLine="74" endPosition="65" />
-    <nodeInfo nodeId="273167807853687443" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="75" startPosition="17" endLine="76" endPosition="117" />
-    <nodeInfo nodeId="4328738523548222352" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="76" startPosition="117" endLine="77" endPosition="115" />
-    <nodeInfo nodeId="4328738523548333220" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="77" startPosition="115" endLine="78" endPosition="111" />
-    <nodeInfo nodeId="2383991756720502716" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="79" startPosition="21" endLine="80" endPosition="97" />
-    <nodeInfo nodeId="2383991756720502721" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="80" startPosition="97" endLine="81" endPosition="79" />
-    <nodeInfo nodeId="2383991756720502726" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="81" startPosition="79" endLine="82" endPosition="68" />
-    <nodeInfo nodeId="2383991756720502731" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="82" startPosition="68" endLine="83" endPosition="94" />
-    <nodeInfo nodeId="8502503369265645239" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="83" startPosition="94" endLine="84" endPosition="30" />
-    <nodeInfo nodeId="8502503369265645269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="84" startPosition="30" endLine="85" endPosition="297" />
-    <nodeInfo nodeId="2383991756720472620" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="86" startPosition="31" endLine="87" endPosition="105" />
-    <nodeInfo nodeId="4328738523548340014" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TextGen_Facet.java" startLine="87" startPosition="105" endLine="88" endPosition="67" />
-    <nodeInfo nodeId="4328738523548339892" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="90" startPosition="27" endLine="91" endPosition="46" />
-    <nodeInfo nodeId="273167807853687453" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="92" startPosition="17" endLine="93" endPosition="75" />
-    <nodeInfo nodeId="5964195490229321781" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="93" startPosition="75" endLine="94" endPosition="170" />
-    <nodeInfo nodeId="2603024666671580151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="97" startPosition="35" endLine="98" endPosition="48" />
-    <nodeInfo nodeId="4328738523548214515" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TextGen_Facet.java" startLine="101" startPosition="20" endLine="102" endPosition="61" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TextGen_Facet.java" startLine="108" startPosition="35" endLine="109" endPosition="18" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TextGen_Facet.java" startLine="112" startPosition="46" endLine="113" endPosition="18" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TextGen_Facet.java" startLine="120" startPosition="47" endLine="121" endPosition="18" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_21gswx_a#()V" fileName="TextGen_Facet.java" startLine="59" startPosition="0" endLine="61" endPosition="5" />
-    <nodeInfo nodeId="4328738523548339950" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TextGen_Facet.java" startLine="71" startPosition="82" endLine="75" endPosition="17" />
-    <nodeInfo nodeId="4328738523548339983" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TextGen_Facet.java" startLine="85" startPosition="297" endLine="89" endPosition="19" />
-    <nodeInfo nodeId="2603024666671580149" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="TextGen_Facet.java" startLine="96" startPosition="69" endLine="100" endPosition="0" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" fileName="TextGen_Facet.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" fileName="TextGen_Facet.java" startLine="127" startPosition="0" endLine="131" endPosition="0" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" fileName="TextGen_Facet.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" fileName="TextGen_Facet.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedResources#()Ljava/lang/Class;" fileName="TextGen_Facet.java" startLine="139" startPosition="0" endLine="143" endPosition="0" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" fileName="TextGen_Facet.java" startLine="143" startPosition="0" endLine="147" endPosition="0" />
-    <nodeInfo nodeId="2603024666671580142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="95" startPosition="15" endLine="100" endPosition="17" />
-    <nodeInfo nodeId="4328738523548339890" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" fileName="TextGen_Facet.java" startLine="78" startPosition="111" endLine="92" endPosition="17" />
-    <nodeInfo nodeId="5964195490229295170" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="TextGen_Facet.java" startLine="69" startPosition="65" endLine="95" endPosition="15" />
-    <nodeInfo nodeId="4328738523548214515" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="TextGen_Facet.java" startLine="66" startPosition="56" endLine="103" endPosition="11" />
-    <nodeInfo nodeId="4328738523548214515" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" fileName="TextGen_Facet.java" startLine="64" startPosition="25" endLine="105" endPosition="0" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TextGen_Facet.java" startLine="63" startPosition="29" endLine="105" endPosition="8" />
-    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" fileName="TextGen_Facet.java" startLine="62" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="60" startPosition="30" endLine="60" endPosition="30" />
-    <scopeInfo nodeId="4328738523548339891" fileName="TextGen_Facet.java" startLine="90" startPosition="27" endLine="91" endPosition="46" />
-    <scopeInfo nodeId="2603024666671580150" fileName="TextGen_Facet.java" startLine="97" startPosition="35" endLine="98" endPosition="48" />
-    <scopeInfo nodeId="4328738523548214515" fileName="TextGen_Facet.java" startLine="101" startPosition="20" endLine="102" endPosition="61" />
-    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="108" startPosition="35" endLine="109" endPosition="18" />
-    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="112" startPosition="46" endLine="113" endPosition="18" />
-    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="116" startPosition="43" endLine="117" endPosition="82" />
-    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="120" startPosition="47" endLine="121" endPosition="18" />
-    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="124" startPosition="44" endLine="125" endPosition="122" />
-    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="128" startPosition="35" endLine="129" endPosition="18" />
-    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="132" startPosition="36" endLine="133" endPosition="18" />
-    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="136" startPosition="37" endLine="137" endPosition="18" />
-    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="140" startPosition="59" endLine="141" endPosition="18" />
-    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="144" startPosition="49" endLine="145" endPosition="18" />
-    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_21gswx_a#()V" fileName="TextGen_Facet.java" startLine="59" startPosition="0" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="4328738523548339951" fileName="TextGen_Facet.java" startLine="72" startPosition="46" endLine="74" endPosition="65" />
-    <scopeInfo nodeId="4328738523548339984" fileName="TextGen_Facet.java" startLine="86" startPosition="31" endLine="88" endPosition="67" />
-    <scopeInfo nodeId="2603024666671580149" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="TextGen_Facet.java" startLine="96" startPosition="69" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" fileName="TextGen_Facet.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" fileName="TextGen_Facet.java" startLine="127" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" fileName="TextGen_Facet.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" fileName="TextGen_Facet.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedResources#()Ljava/lang/Class;" fileName="TextGen_Facet.java" startLine="139" startPosition="0" endLine="143" endPosition="0" />
-    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" fileName="TextGen_Facet.java" startLine="143" startPosition="0" endLine="147" endPosition="0" />
-    <scopeInfo nodeId="4328738523548339896" fileName="TextGen_Facet.java" startLine="79" startPosition="21" endLine="89" endPosition="19">
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" fileName="TextGen_Facet.java" startLine="60" startPosition="58" endLine="61" endPosition="60" />
+    <nodeInfo nodeId="4328738523548214515" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="68" startPosition="120" endLine="69" endPosition="56" />
+    <nodeInfo nodeId="4328738523548335614" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="72" startPosition="71" endLine="73" endPosition="67" />
+    <nodeInfo nodeId="7831273901269568205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="73" startPosition="67" endLine="74" endPosition="82" />
+    <nodeInfo nodeId="2383991756720468108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="75" startPosition="46" endLine="76" endPosition="96" />
+    <nodeInfo nodeId="4328738523548339972" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TextGen_Facet.java" startLine="76" startPosition="96" endLine="77" endPosition="65" />
+    <nodeInfo nodeId="273167807853687443" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="78" startPosition="17" endLine="79" endPosition="117" />
+    <nodeInfo nodeId="4328738523548222352" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="79" startPosition="117" endLine="80" endPosition="115" />
+    <nodeInfo nodeId="4328738523548333220" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="80" startPosition="115" endLine="81" endPosition="111" />
+    <nodeInfo nodeId="2383991756720502716" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="82" startPosition="21" endLine="83" endPosition="97" />
+    <nodeInfo nodeId="2383991756720502721" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="83" startPosition="97" endLine="84" endPosition="79" />
+    <nodeInfo nodeId="2383991756720502726" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="84" startPosition="79" endLine="85" endPosition="68" />
+    <nodeInfo nodeId="2383991756720502731" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="85" startPosition="68" endLine="86" endPosition="94" />
+    <nodeInfo nodeId="8502503369265645239" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="86" startPosition="94" endLine="87" endPosition="30" />
+    <nodeInfo nodeId="8502503369265645269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="87" startPosition="30" endLine="88" endPosition="297" />
+    <nodeInfo nodeId="7129090988691668380" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="TextGen_Facet.java" startLine="88" startPosition="297" endLine="89" endPosition="0" />
+    <nodeInfo nodeId="4905458225579975771" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="89" startPosition="0" endLine="90" endPosition="93" />
+    <nodeInfo nodeId="8967271351649664054" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TextGen_Facet.java" startLine="93" startPosition="41" endLine="94" endPosition="137" />
+    <nodeInfo nodeId="7129090988691668866" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="94" startPosition="137" endLine="95" endPosition="83" />
+    <nodeInfo nodeId="4625963893869763378" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="98" startPosition="19" endLine="99" endPosition="57" />
+    <nodeInfo nodeId="7129090988691657864" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="TextGen_Facet.java" startLine="99" startPosition="57" endLine="100" endPosition="0" />
+    <nodeInfo nodeId="2383991756720472620" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="101" startPosition="31" endLine="102" endPosition="105" />
+    <nodeInfo nodeId="4328738523548340014" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TextGen_Facet.java" startLine="102" startPosition="105" endLine="103" endPosition="67" />
+    <nodeInfo nodeId="2603024666671580151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="106" startPosition="39" endLine="107" endPosition="52" />
+    <nodeInfo nodeId="4328738523548339892" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="110" startPosition="27" endLine="111" endPosition="46" />
+    <nodeInfo nodeId="273167807853687453" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="112" startPosition="17" endLine="113" endPosition="75" />
+    <nodeInfo nodeId="5964195490229321781" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="113" startPosition="75" endLine="114" endPosition="170" />
+    <nodeInfo nodeId="4328738523548214515" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TextGen_Facet.java" startLine="116" startPosition="20" endLine="117" endPosition="61" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TextGen_Facet.java" startLine="123" startPosition="35" endLine="124" endPosition="18" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TextGen_Facet.java" startLine="127" startPosition="46" endLine="128" endPosition="18" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TextGen_Facet.java" startLine="135" startPosition="47" endLine="136" endPosition="18" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_21gswx_a#()V" fileName="TextGen_Facet.java" startLine="62" startPosition="0" endLine="64" endPosition="5" />
+    <nodeInfo nodeId="4328738523548339950" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TextGen_Facet.java" startLine="74" startPosition="82" endLine="78" endPosition="17" />
+    <nodeInfo nodeId="4328738523548339983" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TextGen_Facet.java" startLine="100" startPosition="0" endLine="104" endPosition="19" />
+    <nodeInfo nodeId="2603024666671580149" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="TextGen_Facet.java" startLine="105" startPosition="73" endLine="109" endPosition="0" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" fileName="TextGen_Facet.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="138" startPosition="0" endLine="142" endPosition="0" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" fileName="TextGen_Facet.java" startLine="142" startPosition="0" endLine="146" endPosition="0" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" fileName="TextGen_Facet.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" fileName="TextGen_Facet.java" startLine="150" startPosition="0" endLine="154" endPosition="0" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedResources#()Ljava/lang/Class;" fileName="TextGen_Facet.java" startLine="154" startPosition="0" endLine="158" endPosition="0" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" fileName="TextGen_Facet.java" startLine="158" startPosition="0" endLine="162" endPosition="0" />
+    <nodeInfo nodeId="7129090988691668864" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="TextGen_Facet.java" startLine="92" startPosition="73" endLine="97" endPosition="0" />
+    <nodeInfo nodeId="2603024666671580142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="104" startPosition="19" endLine="109" endPosition="21" />
+    <nodeInfo nodeId="7129090988691668382" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TextGen_Facet.java" startLine="91" startPosition="92" endLine="97" endPosition="23" />
+    <nodeInfo nodeId="4905458225579986688" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TextGen_Facet.java" startLine="90" startPosition="93" endLine="98" endPosition="19" />
+    <nodeInfo nodeId="4328738523548339890" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" fileName="TextGen_Facet.java" startLine="81" startPosition="111" endLine="112" endPosition="17" />
+    <nodeInfo nodeId="5964195490229295170" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="TextGen_Facet.java" startLine="71" startPosition="19" endLine="115" endPosition="15" />
+    <nodeInfo nodeId="4328738523548214515" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="TextGen_Facet.java" startLine="69" startPosition="56" endLine="118" endPosition="11" />
+    <nodeInfo nodeId="4328738523548214515" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" fileName="TextGen_Facet.java" startLine="67" startPosition="25" endLine="120" endPosition="0" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TextGen_Facet.java" startLine="66" startPosition="29" endLine="120" endPosition="8" />
+    <nodeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" fileName="TextGen_Facet.java" startLine="65" startPosition="0" endLine="122" endPosition="0" />
+    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="63" startPosition="30" endLine="63" endPosition="30" />
+    <scopeInfo nodeId="2603024666671580150" fileName="TextGen_Facet.java" startLine="106" startPosition="39" endLine="107" endPosition="52" />
+    <scopeInfo nodeId="4328738523548339891" fileName="TextGen_Facet.java" startLine="110" startPosition="27" endLine="111" endPosition="46" />
+    <scopeInfo nodeId="4328738523548214515" fileName="TextGen_Facet.java" startLine="116" startPosition="20" endLine="117" endPosition="61" />
+    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="123" startPosition="35" endLine="124" endPosition="18" />
+    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="127" startPosition="46" endLine="128" endPosition="18" />
+    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="131" startPosition="43" endLine="132" endPosition="82" />
+    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="135" startPosition="47" endLine="136" endPosition="18" />
+    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="139" startPosition="44" endLine="140" endPosition="122" />
+    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="143" startPosition="35" endLine="144" endPosition="18" />
+    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="147" startPosition="36" endLine="148" endPosition="18" />
+    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="151" startPosition="37" endLine="152" endPosition="18" />
+    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="155" startPosition="59" endLine="156" endPosition="18" />
+    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="159" startPosition="49" endLine="160" endPosition="18" />
+    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_21gswx_a#()V" fileName="TextGen_Facet.java" startLine="62" startPosition="0" endLine="64" endPosition="5" />
+    <scopeInfo nodeId="4328738523548339951" fileName="TextGen_Facet.java" startLine="75" startPosition="46" endLine="77" endPosition="65" />
+    <scopeInfo nodeId="7129090988691668865" fileName="TextGen_Facet.java" startLine="93" startPosition="41" endLine="95" endPosition="83">
+      <varInfo nodeId="8967271351649664055" varName="tmd" />
+    </scopeInfo>
+    <scopeInfo nodeId="4328738523548339984" fileName="TextGen_Facet.java" startLine="101" startPosition="31" endLine="103" endPosition="67" />
+    <scopeInfo nodeId="2603024666671580149" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="TextGen_Facet.java" startLine="105" startPosition="73" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" fileName="TextGen_Facet.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" fileName="TextGen_Facet.java" startLine="138" startPosition="0" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" fileName="TextGen_Facet.java" startLine="142" startPosition="0" endLine="146" endPosition="0" />
+    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" fileName="TextGen_Facet.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" fileName="TextGen_Facet.java" startLine="150" startPosition="0" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedResources#()Ljava/lang/Class;" fileName="TextGen_Facet.java" startLine="154" startPosition="0" endLine="158" endPosition="0" />
+    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" fileName="TextGen_Facet.java" startLine="158" startPosition="0" endLine="162" endPosition="0" />
+    <scopeInfo nodeId="7129090988691668864" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="TextGen_Facet.java" startLine="92" startPosition="73" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="4905458225579986689" fileName="TextGen_Facet.java" startLine="91" startPosition="92" endLine="97" endPosition="23" />
+    <scopeInfo nodeId="4328738523548339896" fileName="TextGen_Facet.java" startLine="82" startPosition="21" endLine="109" endPosition="21">
       <varInfo nodeId="8502503369265645240" varName="res" />
+      <varInfo nodeId="4905458225579975772" varName="outputMD" />
       <varInfo nodeId="2383991756720502732" varName="gdc" />
       <varInfo nodeId="2383991756720502727" varName="tic" />
       <varInfo nodeId="2383991756720502722" varName="bldc" />
       <varInfo nodeId="2383991756720502717" varName="mgsm" />
     </scopeInfo>
-    <scopeInfo nodeId="5964195490229295173" fileName="TextGen_Facet.java" startLine="70" startPosition="71" endLine="94" endPosition="170">
+    <scopeInfo nodeId="5964195490229295173" fileName="TextGen_Facet.java" startLine="72" startPosition="71" endLine="114" endPosition="170">
+      <varInfo nodeId="4328738523548335615" varName="fileProc" />
       <varInfo nodeId="4328738523548222353" varName="targetDir" />
       <varInfo nodeId="7831273901269568206" varName="gres" />
       <varInfo nodeId="4328738523548333221" varName="javaStreamHandler" />
     </scopeInfo>
-    <scopeInfo nodeId="5964195490229295170" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="TextGen_Facet.java" startLine="69" startPosition="65" endLine="95" endPosition="15" />
-    <scopeInfo nodeId="4328738523548214515" fileName="TextGen_Facet.java" startLine="68" startPosition="19" endLine="100" endPosition="17">
-      <varInfo nodeId="4328738523548335615" varName="fileProc" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548214515" fileName="TextGen_Facet.java" startLine="65" startPosition="120" endLine="103" endPosition="11" />
-    <scopeInfo nodeId="4328738523548214515" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" fileName="TextGen_Facet.java" startLine="64" startPosition="25" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="63" startPosition="29" endLine="105" endPosition="8" />
-    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" fileName="TextGen_Facet.java" startLine="62" startPosition="0" endLine="107" endPosition="0" />
-    <unitInfo nodeId="2603024666671580149" fileName="TextGen_Facet.java" startLine="96" startPosition="57" endLine="100" endPosition="15" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet$2" />
-    <unitInfo nodeId="4328738523548214515" fileName="TextGen_Facet.java" startLine="64" startPosition="17" endLine="105" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet$1" />
-    <unitInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="57" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet$Target_21gswx_a" />
+    <scopeInfo nodeId="4328738523548214515" fileName="TextGen_Facet.java" startLine="71" startPosition="19" endLine="115" endPosition="15" />
+    <scopeInfo nodeId="5964195490229295170" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="TextGen_Facet.java" startLine="71" startPosition="19" endLine="115" endPosition="15" />
+    <scopeInfo nodeId="4328738523548214515" fileName="TextGen_Facet.java" startLine="68" startPosition="120" endLine="118" endPosition="11" />
+    <scopeInfo nodeId="4328738523548214515" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" fileName="TextGen_Facet.java" startLine="67" startPosition="25" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="66" startPosition="29" endLine="120" endPosition="8" />
+    <scopeInfo nodeId="4328738523548214513" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" fileName="TextGen_Facet.java" startLine="65" startPosition="0" endLine="122" endPosition="0" />
+    <unitInfo nodeId="2603024666671580149" fileName="TextGen_Facet.java" startLine="105" startPosition="61" endLine="109" endPosition="19" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet$2" />
+    <unitInfo nodeId="7129090988691668864" fileName="TextGen_Facet.java" startLine="92" startPosition="61" endLine="97" endPosition="21" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet$2" />
+    <unitInfo nodeId="4328738523548214515" fileName="TextGen_Facet.java" startLine="67" startPosition="17" endLine="120" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet$1" />
+    <unitInfo nodeId="4328738523548214513" fileName="TextGen_Facet.java" startLine="60" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet$Target_21gswx_a" />
   </root>
   <root nodeId="4328738523548357342">
     <nodeInfo nodeId="4328738523548357345" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" fileName="JavaCompile_Facet.java" startLine="58" startPosition="58" endLine="59" endPosition="60" />
@@ -1495,10 +1520,10 @@
     <scopeInfo nodeId="4853833103870841535" fileName="Generate_Facet.java" startLine="289" startPosition="35" endLine="318" endPosition="8" />
     <scopeInfo nodeId="4853833103870841535" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" fileName="Generate_Facet.java" startLine="288" startPosition="0" endLine="320" endPosition="0" />
     <scopeInfo nodeId="4853833103871058543" fileName="Generate_Facet.java" startLine="408" startPosition="19" endLine="444" endPosition="15">
-      <varInfo nodeId="127305800529677982" varName="gm" />
       <varInfo nodeId="2340850238541850353" varName="mvt" />
-      <varInfo nodeId="2383991756720301158" varName="gh" />
+      <varInfo nodeId="127305800529677982" varName="gm" />
       <varInfo nodeId="127305800529678029" varName="generationOk" />
+      <varInfo nodeId="2383991756720301158" varName="gh" />
     </scopeInfo>
     <scopeInfo nodeId="4853833103871058543" fileName="Generate_Facet.java" startLine="405" startPosition="120" endLine="447" endPosition="11" />
     <scopeInfo nodeId="4853833103871058543" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" fileName="Generate_Facet.java" startLine="404" startPosition="25" endLine="449" endPosition="0" />
@@ -1524,8 +1549,8 @@
   </root>
   <root nodeId="5409216892672534934">
     <nodeInfo nodeId="5409216892672535944" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="manifest" fileName="Facets_CustomApplicationPlugin.java" startLine="12" startPosition="0" endLine="13" endPosition="26" />
-    <nodeInfo nodeId="9207664711062886690" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Facets_CustomApplicationPlugin.java" startLine="19" startPosition="9" endLine="20" endPosition="16" />
-    <nodeInfo nodeId="9207664711062886693" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Facets_CustomApplicationPlugin.java" startLine="20" startPosition="16" endLine="21" endPosition="16" />
+    <nodeInfo nodeId="2423342542278878678" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Facets_CustomApplicationPlugin.java" startLine="19" startPosition="9" endLine="20" endPosition="16" />
+    <nodeInfo nodeId="2423342542278878680" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Facets_CustomApplicationPlugin.java" startLine="20" startPosition="16" endLine="21" endPosition="16" />
     <nodeInfo nodeId="6124869363107730716" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Facets_CustomApplicationPlugin.java" startLine="21" startPosition="16" endLine="22" endPosition="40" />
     <nodeInfo nodeId="5409216892672535881" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Facets_CustomApplicationPlugin.java" startLine="22" startPosition="40" endLine="23" endPosition="36" />
     <nodeInfo nodeId="5409216892672535923" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Facets_CustomApplicationPlugin.java" startLine="23" startPosition="36" endLine="24" endPosition="58" />
