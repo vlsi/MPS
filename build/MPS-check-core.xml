@@ -26,15 +26,13 @@
     <path path="core/runtime/source" />
     <path path="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" />
 
-    <!-- language sources -->
-    <path path="core/languageDesign/pattern/source"/>
-
     <!-- runtime -->
     <path path="core/languageDesign/smodel/solutions/runtime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter"/>
     <path path="core/baseLanguage/collections/runtime/source_gen/jetbrains/mps/internal/collections/runtime"/>
     <path path="core/baseLanguage/closures/runtime/source"/>
     <path path="core/baseLanguage/closures/runtime/source_gen"/>
     <path path="core/baseLanguage/tuples/runtime/source_gen"/>
+    <path path="core/languageDesign/pattern/source"/> <!-- TODO rename to runtime -->
 
     <!-- structures -->
     <path path="core/languageDesign/behavior/source_gen/jetbrains/mps/lang/behavior/structure"/>
