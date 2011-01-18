@@ -42,8 +42,8 @@ public class PanelsDemo_Swing {
     widget_wgtfc_a0a0a.setActionCommand("vertical");
     widget_wgtfc_a0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
-          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
+          public void invoke(ActionEvent event) {
             verticalPanel();
           }
         };
@@ -56,8 +56,8 @@ public class PanelsDemo_Swing {
     widget_wgtfc_b0a0a.setActionCommand("horizontal");
     widget_wgtfc_b0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
-          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
+          public void invoke(ActionEvent event) {
             horizontalPanel();
           }
         };
@@ -70,8 +70,8 @@ public class PanelsDemo_Swing {
     widget_wgtfc_c0a0a.setActionCommand("dock");
     widget_wgtfc_c0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
-          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
+          public void invoke(ActionEvent event) {
             dockPanel();
           }
         };
@@ -84,8 +84,8 @@ public class PanelsDemo_Swing {
     widget_wgtfc_d0a0a.setActionCommand("flow");
     widget_wgtfc_d0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
-          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
+          public void invoke(ActionEvent event) {
             flowPanel();
           }
         };
@@ -98,8 +98,8 @@ public class PanelsDemo_Swing {
     widget_wgtfc_e0a0a.setActionCommand("layout");
     widget_wgtfc_e0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
-          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
+          public void invoke(ActionEvent event) {
             layoutPanel();
           }
         };
@@ -112,8 +112,8 @@ public class PanelsDemo_Swing {
     widget_wgtfc_f0a0a.setActionCommand("grid");
     widget_wgtfc_f0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
-          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
+          public void invoke(ActionEvent event) {
             gridLayoutPanel();
           }
         };
@@ -300,8 +300,8 @@ public class PanelsDemo_Swing {
     widget_wgtfc_b0d0a0b0b0d.setText("West");
     widget_wgtfc_b0d0a0b0b0d.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
-          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
+          public void invoke(ActionEvent event) {
             final JButton widget_wgtfc_a0a0a0a1a3a0a1a1a3 = new JButton();
             widget_wgtfc_a0a0a0a1a3a0a1a1a3.setText("West");
             cmp4.add(widget_wgtfc_a0a0a0a1a3a0a1a1a3, DockLayoutData.WEST);

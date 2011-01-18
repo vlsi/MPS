@@ -54,8 +54,8 @@ public class ControlsDemo_Swing {
     widget_e1wtj0_b0a0a.setActionCommand("tree");
     widget_e1wtj0_b0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
-          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
+          public void invoke(ActionEvent event) {
             table();
           }
         };
