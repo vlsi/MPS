@@ -11,6 +11,9 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 
 /*package*/ class Main_map_operation {
+  /*package*/ Main_map_operation() {
+  }
+
   /*package*/ static void main(String[] args) {
     Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {

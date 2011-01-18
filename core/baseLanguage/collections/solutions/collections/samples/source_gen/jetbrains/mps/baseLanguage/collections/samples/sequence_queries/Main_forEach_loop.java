@@ -8,6 +8,9 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 /*package*/ class Main_forEach_loop {
+  /*package*/ Main_forEach_loop() {
+  }
+
   /*package*/ static void main(String[] args) {
     Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
