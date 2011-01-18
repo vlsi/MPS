@@ -69,14 +69,15 @@ public class TextGen_Facet implements IFacet {
           Iterable<IResource> _output_21gswx_a0a = null;
           switch (0) {
             case 0:
+              monitor.currentProgress().beginWork("Generating text", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
               for (IResource resource : Sequence.fromIterable(input)) {
                 final FileProcessor fileProc = new FileProcessor();
                 GResource gres = new GResource().assignFrom((GResource) resource);
+                monitor.currentProgress().advanceWork("Generating text", 50, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
                 if (!(gres.status().isOk())) {
                   Logger.getLogger("jetbrains.mps.make.TextGen").error("Generation was not OK");
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
-                monitor.currentProgress().beginWork("Generating text...", 100, monitor.currentProgress().workLeft());
                 IFile targetDir = FileSystem.getInstance().getFileByPath(gres.module().getOutputFor(gres.model()));
                 JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), targetDir, fileProc);
                 try {
@@ -107,12 +108,13 @@ public class TextGen_Facet implements IFacet {
                       fileProc.saveGeneratedFiles();
                     }
                   });
+                  monitor.currentProgress().advanceWork("Generating text", 50);
                 } finally {
                   javaStreamHandler.dispose();
                 }
-                monitor.currentProgress().finishWork("Generating text...");
                 _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module()))));
               }
+              monitor.currentProgress().finishWork("Generating text");
             default:
               return new IResult.SUCCESS(_output_21gswx_a0a);
           }

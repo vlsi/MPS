@@ -29,11 +29,13 @@ public class ProgressIndicatorProgressStrategy extends AbstractProgressStrategy 
   }
 
   protected void advancedWork(AbstractProgressStrategy.Work wrk) {
-    pind.setFraction(wrk.matchingOrTotal(TOTAL).doneRatio());
-    pind.setText2((wrk.comment() != null ?
-      wrk.comment() :
-      ""
-    ));
+    if (wrk == lastProgress()) {
+      pind.setFraction(wrk.matchingOrTotal(TOTAL).doneRatio());
+      pind.setText((wrk.comment() != null ?
+        wrk.name() + " " + wrk.comment() :
+        wrk.name()
+      ));
+    }
   }
 
   protected void finishedWork(AbstractProgressStrategy.Work wrk) {
