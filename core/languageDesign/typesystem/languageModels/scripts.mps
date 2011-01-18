@@ -30,7 +30,7 @@
       <property name="name" nameId="tpck.1169194664001" value="TypesLanguageScriptsUtil" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="3350570190399467211">
-      <property name="migrationFromBuild" nameId="tp33.1206123256132" value="1193" />
+      <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5270" />
       <property name="name" nameId="tpck.1169194664001" value="ReplaceAbstractTypeInWCVars" />
       <property name="title" nameId="tp33.1177457669450" value="replace abstract type in when concrete vars" />
     </node>
