@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.presentation.state;
 
 import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.JDialog;
@@ -31,7 +32,7 @@ public class ShowTypeSystemState extends JDialog {
   private MPSTree myTree;
 
 
-  public ShowTypeSystemState(jetbrains.mps.newTypesystem.state.State s, final IOperationContext operationContext, Frame frame) {
+  public ShowTypeSystemState(State s, final IOperationContext operationContext, Frame frame) {
     super(frame);
 
 

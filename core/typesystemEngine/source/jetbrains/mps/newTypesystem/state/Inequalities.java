@@ -157,10 +157,10 @@ public class Inequalities {
     }
     //last chance
     for (InequalityBlock inequality : inequalities) {
-      if (inequality.processReplacementRules()) {
+     // if (inequality.processReplacementRules()) {
         myState.executeOperation(new RemoveBlockOperation(inequality));
         return true;
-      }
+     // }
     }
     return false;
   }

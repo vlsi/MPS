@@ -61,6 +61,7 @@ public class TypeSystemStateTree extends MPSTree {
   private TypeSystemStateTreeNode createNode() {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("State", myOperationContext);
    //todo: show info from blocks grouped by class
+    result.add(new TypeSystemStateTreeNode("Solving inequalities in process: " + myState.getInequalities().isSolvingInProcess(), myOperationContext));
     result.add(createNode("Inequalities", myState.getBlocks(BlockKind.INEQUALITY), null));
     result.add(createInequalitiesNode());
     result.add(createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null));

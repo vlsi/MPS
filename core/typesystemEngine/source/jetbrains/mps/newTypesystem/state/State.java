@@ -25,6 +25,7 @@ import jetbrains.mps.newTypesystem.VariableIdentifier;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.newTypesystem.operation.CheckAllOperation;
+import jetbrains.mps.newTypesystem.operation.SolveInequalitiesOperation;
 import jetbrains.mps.newTypesystem.operation.block.AddBlockOperation;
 import jetbrains.mps.newTypesystem.operation.block.AddDependencyOperation;
 import jetbrains.mps.newTypesystem.operation.block.RemoveBlockOperation;
@@ -261,8 +262,7 @@ public class State {
   }
 
   public void solveInequalities() {
-    executeOperation(new AddRemarkOperation("Solving inequalities", new Runnable() {
-
+    executeOperation(new SolveInequalitiesOperation(new Runnable() {
       public void run() {
         myInequalities.solveInequalities();
       }

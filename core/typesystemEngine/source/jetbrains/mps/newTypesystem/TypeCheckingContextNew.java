@@ -73,8 +73,8 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void checkRoot() {
     if (!myChecked) {
-      myChecked = true;
       checkRoot(true);
+      myChecked = true;
     }
     // myState.solveInequalities();
   }
@@ -86,14 +86,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     }
   }
      */
-  /*
-@Override
-public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-SNode left = myState.expand(leftOperandType);
-SNode right = myState.expand(rightOperandType);
-return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
-}
-  */
 
   @Override
   public void checkRoot(final boolean refreshTypes) {
@@ -103,10 +95,14 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
         myNodeTypesComponent.computeTypes(refreshTypes);
         //((NodeTypesComponentNew)myNodeTypesComponent).checkNode(myRootNode, true);
         myNodeTypesComponent.setCheckedTypesystem();
+        myChecked = true;
       }
    // }
+  }
 
-
+  @Override
+  public boolean isCheckedRoot(boolean considerNonTypesystemRules) {
+    return myChecked;
   }
 
   public void solveAndExpand() {
@@ -245,7 +241,6 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
   @Override
   public void clear() {
     myState.clear(true);
-    myChecked = false;
   }
 
   @Override

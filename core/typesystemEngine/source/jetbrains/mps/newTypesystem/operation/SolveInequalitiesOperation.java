@@ -26,8 +26,8 @@ import jetbrains.mps.newTypesystem.state.State;
 public class SolveInequalitiesOperation extends AbstractOperation {
   private Runnable myAction = null;
 
-  public SolveInequalitiesOperation() {
-
+  public SolveInequalitiesOperation(Runnable action) {
+    myAction = action;
   }
 
   @Override
@@ -47,5 +47,9 @@ public class SolveInequalitiesOperation extends AbstractOperation {
 
   public void execute(State state) {
     state.getInequalities().setSolvingInProcess(true);
+     if (myAction != null) {
+      myAction.run();
+      myAction = null;
+    }
   }
 }
