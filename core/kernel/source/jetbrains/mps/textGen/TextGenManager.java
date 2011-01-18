@@ -55,12 +55,12 @@ public class TextGenManager {
     return ourInstance;
   }
 
-  private HashMap<SNode, PositionInfo> myPositions;
-  private HashMap<SNode, ScopePositionInfo> myScopePositions;
+  private Map<SNode, PositionInfo> myPositions;
+  private Map<SNode, ScopePositionInfo> myScopePositions;
   private Map<SNode, UnitPositionInfo> myUnitPositions;
   private Map<String, Class<SNodeTextGen>> myClassesCache;
 
-  public TextGenerationResult generateText(IOperationContext context, SNode node) {
+  /*package*/ TextGenerationResult generateText(IOperationContext context, SNode node) {
     myPositions = new HashMap<SNode, PositionInfo>();
     myScopePositions = new HashMap<SNode, ScopePositionInfo>();
     myUnitPositions = new HashMap<SNode, UnitPositionInfo>();
