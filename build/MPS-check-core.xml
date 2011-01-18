@@ -28,7 +28,6 @@
 
     <!-- language sources -->
     <path path="core/languageDesign/pattern/source"/>
-    <path path="core/languageDesign/smodel/source"/>
 
     <!-- runtime -->
     <path path="core/languageDesign/smodel/solutions/runtime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter"/>
