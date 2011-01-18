@@ -188,7 +188,22 @@ public class SModelUtil {
     }
     String fromFqName = NameUtil.nodeFQName(from);
     String toFqName = NameUtil.nodeFQName(to);
-    return LanguageHierarchyCache.getInstance().getAncestorsNames(fromFqName).contains(toFqName);
+    return LanguageHierarchyCache.getInstance().isAssignable(fromFqName, toFqName);
+  }
+
+  public static boolean isAssignableConcept(String fromFqName, String toFqName) {
+    if (eq_74see4_a0a0m(fromFqName, toFqName)) {
+      return true;
+    }
+    if (fromFqName == null || toFqName == null) {
+      return false;
+    }
+    // TODO generate conceptFqName 
+    if (SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), "name").equals(toFqName)) {
+      return true;
+    }
+
+    return LanguageHierarchyCache.getInstance().isAssignable(fromFqName, toFqName);
   }
 
   public static SNode getGenuineLinkSourceCardinality(SNode linkDecl) {
@@ -206,5 +221,17 @@ public class SModelUtil {
       }
     });
     return annotationLinkDeclaration;
+  }
+
+  public static boolean isAcceptableTarget(SNode linkDeclaration, SNode referentNode) {
+    SNode linkTargetConcept = SLinkOperations.getTarget(linkDeclaration, "target", false);
+    return isAssignableConcept(referentNode.getConceptFqName(), NameUtil.nodeFQName(linkTargetConcept));
+  }
+
+  private static boolean eq_74see4_a0a0m(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }
