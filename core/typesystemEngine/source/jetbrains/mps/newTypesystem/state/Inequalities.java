@@ -141,9 +141,16 @@ public class Inequalities {
     if (myNodes.size() == 0) {
       return false;
     }
+    for (Block block : myState.getBlocks(BlockKind.WHEN_CONCRETE)) {
+      SNode node = myState.getRepresentative(((WhenConcreteBlock) block).getArgument());
+      if (myNodes.contains(node) && myInputsToOutputs.getBySecond(node).isEmpty()) {
+        if (solveInequalitiesForNode(node)) {
+          return true;
+        }
+      }
+    }
     List<SNode> sortedNodes = sort(myInputsToOutputs, myNodes);
     for (SNode node: sortedNodes) {
-   // SNode node = getNodeWithNoInput(myInputsToOutputs, nodes.iterator().next(),nodes.size());
       if (solveInequalitiesForNode(node)) {
        return true;
       }

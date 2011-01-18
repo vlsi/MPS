@@ -45,6 +45,10 @@ public class WhenConcreteBlock extends Block {
     return myArgument.toString();
   }
 
+  public SNode getArgument() {
+    return myArgument;
+  }  
+
   @Override
   public void performAction() {
     myRunnable.run();
