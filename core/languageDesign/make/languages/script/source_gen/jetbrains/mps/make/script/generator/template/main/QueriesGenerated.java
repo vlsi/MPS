@@ -45,15 +45,15 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_3668957831723397506(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)", "Feedback"), "info")) == SPropertyOperations.getString_def(_context.getNode(), "feedback", "INFO");
+    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)", "Feedback"), "info")).equals(SPropertyOperations.getString_def(_context.getNode(), "feedback", "INFO"));
   }
 
   public static boolean baseMappingRule_Condition_3668957831723418661(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)", "Feedback"), "warning")) == SPropertyOperations.getString_def(_context.getNode(), "feedback", "INFO");
+    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)", "Feedback"), "warning")).equals(SPropertyOperations.getString_def(_context.getNode(), "feedback", "INFO"));
   }
 
   public static boolean baseMappingRule_Condition_3668957831723418687(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)", "Feedback"), "error")) == SPropertyOperations.getString_def(_context.getNode(), "feedback", "INFO");
+    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)", "Feedback"), "error")).equals(SPropertyOperations.getString_def(_context.getNode(), "feedback", "INFO"));
   }
 
   public static Object propertyMacro_GetPropertyValue_3916013743093752790(final IOperationContext operationContext, final PropertyMacroContext _context) {
