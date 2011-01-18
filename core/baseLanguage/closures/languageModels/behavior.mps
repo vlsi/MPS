@@ -370,7 +370,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetNewChildOperation" typeId="tp25.1138757581985" id="1213877398371">
-              <link role="concept" roleId="tp25.1139880128956" targetNodeId="tpee.1171903607971" resolveInfo="WildCardType" />
+              <link role="concept" roleId="tp25.1139880128956" targetNodeId="tpee.4836112446988635817" resolveInfo="UndefinedType" />
             </node>
           </node>
         </node>
