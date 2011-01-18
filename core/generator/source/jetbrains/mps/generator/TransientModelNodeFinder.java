@@ -1,12 +1,9 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.FlattenIterable;
-import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
 
@@ -34,31 +31,6 @@ public class TransientModelNodeFinder implements FastNodeFinder {
       addToCache(root);
     }
     myInitialized = true;
-  }
-
-  @Override
-  public Iterable<SNode> getNodes(AbstractConceptDeclaration concept, boolean includeInherited) {
-    String conceptFqName = NameUtil.nodeFQName(concept);
-    synchronized (myLock) {
-      if (!myInitialized) {
-        initCache();
-      }
-    }
-
-    if (includeInherited) {
-      final FlattenIterable<SNode> result = new FlattenIterable<SNode>(new ArrayList<Iterable<SNode>>());
-      for (String d : LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(conceptFqName)) {
-        if (myNodes.containsKey(d)) {
-          result.add(myNodes.get(d));
-        }
-      }
-      return result;
-    } else {
-      if (myNodes.containsKey(conceptFqName)) {
-        return myNodes.get(conceptFqName);
-      }
-      return Collections.emptyList();
-    }
   }
 
   @Override
