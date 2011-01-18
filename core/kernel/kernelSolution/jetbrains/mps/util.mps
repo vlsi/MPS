@@ -901,7 +901,7 @@
                         </node>
                         <node role="7.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="4972886494893402382">
                           <property name="3.name:0" value="pair" />
-                          <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="4972886494893402383" />
+                          <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="2108863436754490076" />
                         </node>
                       </node>
                     </node>

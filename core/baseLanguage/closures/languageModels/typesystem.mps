@@ -908,7 +908,7 @@
                     </node>
                     <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="4616312228468046989">
                       <property name="name" nameId="tpck.1169194664001" value="m" />
-                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.WildCardType" typeId="tpee.1171903607971" id="4616312228468046990" />
+                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2108863436754490537" />
                     </node>
                   </node>
                 </node>
@@ -1345,7 +1345,7 @@
                     </node>
                     <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="4616312228468046927">
                       <property name="name" nameId="tpck.1169194664001" value="m" />
-                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.WildCardType" typeId="tpee.1171903607971" id="4616312228468046928" />
+                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2108863436754490357" />
                     </node>
                   </node>
                 </node>

@@ -50,8 +50,8 @@ public class ControlsDemo_SWT {
     widget_z347t1_b0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
-          public void invoke(SelectionEvent event) {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             table();
           }
         };

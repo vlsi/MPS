@@ -39,8 +39,8 @@ public class WindowsDemo_SWT {
     widget_le4s0b_a0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
-          public void invoke(SelectionEvent event) {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             dialog();
           }
         };
@@ -78,8 +78,8 @@ public class WindowsDemo_SWT {
     widget_le4s0b_a0a0a0b0b0b.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
-          public void invoke(SelectionEvent event) {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             showDialog();
           }
         };
@@ -110,8 +110,8 @@ public class WindowsDemo_SWT {
     widget_le4s0b_a0a1a0b0b0b.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
-          public void invoke(SelectionEvent event) {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             showForm();
           }
         };
@@ -145,8 +145,8 @@ public class WindowsDemo_SWT {
     widget_le4s0b_a0a0a1a2.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
-          public void invoke(SelectionEvent event) {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             widget_le4s0b_a0a0c.dispose();
           }
         };
@@ -194,8 +194,8 @@ public class WindowsDemo_SWT {
     widget_le4s0b_c0a0a1a3.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
-          public void invoke(SelectionEvent event) {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             widget_le4s0b_a0a0d.dispose();
           }
         };
@@ -240,8 +240,8 @@ public class WindowsDemo_SWT {
     widget_le4s0b_e0a0a1a3.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
-          public void invoke(SelectionEvent event) {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             widget_le4s0b_a0a0d.dispose();
           }
         };

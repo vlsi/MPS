@@ -18,8 +18,8 @@ public class Events_Test extends UITestBase_Test {
         widget_m32u4c_a0a0a0a1a0a.setProp("id", "1234");
         widget_m32u4c_a0a0a0a1a0a.addEventHandler("foo", new MockEventHandler() {
           public void handle(MockWidget wdg, MockEvent event) {
-            _FunctionTypes._void_P1_E0<? super MockEvent> h = new _FunctionTypes._void_P1_E0<MockEvent>() {
-              public void invoke(MockEvent event) {
+            _FunctionTypes._void_P1_E0<? super MockEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+              public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
                 volatileValue.value = event.getProp("bar");
               }
             };

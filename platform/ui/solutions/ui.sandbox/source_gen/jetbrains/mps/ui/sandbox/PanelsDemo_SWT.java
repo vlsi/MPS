@@ -39,8 +39,8 @@ public class PanelsDemo_SWT {
     widget_vdkvtt_a0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
-          public void invoke(SelectionEvent event) {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             verticalPanel();
           }
         };
@@ -54,8 +54,8 @@ public class PanelsDemo_SWT {
     widget_vdkvtt_b0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
-          public void invoke(SelectionEvent event) {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             horizontalPanel();
           }
         };
@@ -69,8 +69,8 @@ public class PanelsDemo_SWT {
     widget_vdkvtt_c0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
-          public void invoke(SelectionEvent event) {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             dockPanel();
           }
         };
@@ -84,8 +84,8 @@ public class PanelsDemo_SWT {
     widget_vdkvtt_d0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
-          public void invoke(SelectionEvent event) {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             flowPanel();
           }
         };

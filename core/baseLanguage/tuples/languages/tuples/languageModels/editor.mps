@@ -645,7 +645,7 @@
                             </node>
                             <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="2912004279740652477">
                               <property name="name" nameId="tpck.1169194664001" value="ntd" />
-                              <node role="type" roleId="tpee.5680397130376446158" type="tpee.WildCardType" typeId="tpee.1171903607971" id="2912004279740652478" />
+                              <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2108863436754490240" />
                             </node>
                           </node>
                         </node>
@@ -893,7 +893,7 @@
                                 </node>
                                 <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="2912004279740714722">
                                   <property name="name" nameId="tpck.1169194664001" value="ntd" />
-                                  <node role="type" roleId="tpee.5680397130376446158" type="tpee.WildCardType" typeId="tpee.1171903607971" id="2912004279740714723" />
+                                  <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2108863436754489738" />
                                 </node>
                               </node>
                             </node>
@@ -959,7 +959,7 @@
                               </node>
                               <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="2912004279740714740">
                                 <property name="name" nameId="tpck.1169194664001" value="c" />
-                                <node role="type" roleId="tpee.5680397130376446158" type="tpee.WildCardType" typeId="tpee.1171903607971" id="2912004279740714741" />
+                                <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2108863436754489821" />
                               </node>
                             </node>
                           </node>

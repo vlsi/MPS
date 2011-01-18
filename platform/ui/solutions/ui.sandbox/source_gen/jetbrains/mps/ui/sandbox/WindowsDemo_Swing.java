@@ -37,8 +37,8 @@ public class WindowsDemo_Swing {
     widget_ucaale_a0a0a.setActionCommand("dialog");
     widget_ucaale_a0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
-          public void invoke(ActionEvent event) {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             dialog();
           }
         };
@@ -67,8 +67,8 @@ public class WindowsDemo_Swing {
     widget_ucaale_a0a0a0b0b0b.setText("Dialog");
     widget_ucaale_a0a0a0b0b0b.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
-          public void invoke(ActionEvent event) {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             showDialog();
           }
         };
@@ -165,8 +165,8 @@ public class WindowsDemo_Swing {
     widget_ucaale_c0a0a1a3.setText("<-  / <->");
     widget_ucaale_c0a0a1a3.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
-          public void invoke(ActionEvent event) {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             widget_ucaale_a0a0d.setVisible(false);
           }
         };
@@ -189,8 +189,8 @@ public class WindowsDemo_Swing {
     widget_ucaale_d0a0a1a3.setText(" -> / <->");
     widget_ucaale_d0a0a1a3.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
-          public void invoke(ActionEvent event) {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!>>() {
+          public void invoke(<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.UndefinedType'!> event) {
             widget_ucaale_a0a0d.setVisible(false);
           }
         };

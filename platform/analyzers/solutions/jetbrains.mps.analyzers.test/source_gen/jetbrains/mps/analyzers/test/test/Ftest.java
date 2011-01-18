@@ -4,6 +4,9 @@ package jetbrains.mps.analyzers.test.test;
 
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Ftest {
   @Nullable
@@ -56,6 +59,24 @@ public class Ftest {
     }
     if (INSTANCE != null) {
       INSTANCE.charAt(2);
+    }
+  }
+
+  public boolean testUninit() {
+    final String str = "";
+    Iterable<String> str2 = Sequence.fromIterable(Collections.<String>emptyList());
+    Sequence.fromIterable(str2).any(new IWhereFilter<String>() {
+      public boolean accept(String it) {
+        return it != str;
+      }
+    });
+    return true;
+  }
+
+  public void f() {
+    String s = null;
+    if (s != null) {
+      s.isEmpty();
     }
   }
 

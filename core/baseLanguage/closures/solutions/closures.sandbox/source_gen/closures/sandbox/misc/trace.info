@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1221651112606">
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="Debug.java" startLine="34" startPosition="27" endLine="34" endPosition="27" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="Debug.java" startLine="66" startPosition="27" endLine="66" endPosition="27" />
+    <nodeInfo nodeId="1222775672898" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Debug.java" startLine="13" startPosition="27" endLine="14" endPosition="81" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" fileName="Debug.java" startLine="19" startPosition="52" endLine="20" endPosition="37" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="Debug.java" startLine="27" startPosition="28" endLine="28" endPosition="54" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Debug.java" startLine="28" startPosition="54" endLine="29" endPosition="35" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Debug.java" startLine="30" startPosition="27" endLine="31" endPosition="38" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Debug.java" startLine="31" startPosition="38" endLine="32" endPosition="36" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Debug.java" startLine="32" startPosition="36" endLine="33" endPosition="34" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Debug.java" startLine="34" startPosition="27" endLine="35" endPosition="38" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="Debug.java" startLine="35" startPosition="38" endLine="36" endPosition="28" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="Debug.java" startLine="37" startPosition="28" endLine="38" endPosition="37" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Debug.java" startLine="40" startPosition="31" endLine="41" endPosition="29" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" fileName="Debug.java" startLine="51" startPosition="51" endLine="52" endPosition="37" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="Debug.java" startLine="59" startPosition="28" endLine="60" endPosition="54" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Debug.java" startLine="60" startPosition="54" endLine="61" endPosition="35" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Debug.java" startLine="62" startPosition="27" endLine="63" endPosition="38" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Debug.java" startLine="63" startPosition="38" endLine="64" endPosition="53" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Debug.java" startLine="64" startPosition="53" endLine="65" endPosition="34" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Debug.java" startLine="66" startPosition="27" endLine="67" endPosition="38" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="Debug.java" startLine="67" startPosition="38" endLine="68" endPosition="28" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="Debug.java" startLine="69" startPosition="28" endLine="70" endPosition="37" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Debug.java" startLine="72" startPosition="31" endLine="73" endPosition="29" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="Debug.java" startLine="24" startPosition="20" endLine="39" endPosition="19" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="Debug.java" startLine="56" startPosition="20" endLine="71" endPosition="19" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="Debug.java" startLine="22" startPosition="46" endLine="40" endPosition="31" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="Debug.java" startLine="54" startPosition="46" endLine="72" endPosition="31" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="Debug.java" startLine="21" startPosition="0" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="Debug.java" startLine="53" startPosition="0" endLine="75" endPosition="0" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Debug.java" startLine="18" startPosition="47" endLine="43" endPosition="14" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Debug.java" startLine="50" startPosition="46" endLine="75" endPosition="14" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="Debug.java" startLine="17" startPosition="40" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="Debug.java" startLine="49" startPosition="39" endLine="77" endPosition="0" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Debug.java" startLine="16" startPosition="43" endLine="45" endPosition="10" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Debug.java" startLine="48" startPosition="56" endLine="77" endPosition="10" />
+    <nodeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" fileName="Debug.java" startLine="15" startPosition="80" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Void;)Ljava/lang/Iterable;" fileName="Debug.java" startLine="47" startPosition="65" endLine="79" endPosition="0" />
+    <nodeInfo nodeId="1222765452529" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Debug.java" startLine="14" startPosition="81" endLine="79" endPosition="7" />
+    <nodeInfo nodeId="1221651191297" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="debugThis#()V" fileName="Debug.java" startLine="12" startPosition="20" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="1227876790338" fileName="Debug.java" startLine="34" startPosition="27" endLine="34" endPosition="27" />
+    <scopeInfo nodeId="1222765975373" fileName="Debug.java" startLine="66" startPosition="27" endLine="66" endPosition="27" />
+    <scopeInfo nodeId="1227876790338" fileName="Debug.java" startLine="37" startPosition="28" endLine="38" endPosition="37" />
+    <scopeInfo nodeId="1222765975373" fileName="Debug.java" startLine="69" startPosition="28" endLine="70" endPosition="37" />
+    <scopeInfo nodeId="1227876790338" fileName="Debug.java" startLine="27" startPosition="28" endLine="29" endPosition="35" />
+    <scopeInfo nodeId="1227876790338" fileName="Debug.java" startLine="34" startPosition="27" endLine="36" endPosition="28" />
+    <scopeInfo nodeId="1222765975373" fileName="Debug.java" startLine="59" startPosition="28" endLine="61" endPosition="35" />
+    <scopeInfo nodeId="1222765975373" fileName="Debug.java" startLine="66" startPosition="27" endLine="68" endPosition="28" />
+    <scopeInfo nodeId="1227876790338" fileName="Debug.java" startLine="30" startPosition="27" endLine="33" endPosition="34" />
+    <scopeInfo nodeId="1222765975373" fileName="Debug.java" startLine="62" startPosition="27" endLine="65" endPosition="34" />
+    <scopeInfo nodeId="1227876790338" fileName="Debug.java" startLine="24" startPosition="20" endLine="39" endPosition="19" />
+    <scopeInfo nodeId="1222765975373" fileName="Debug.java" startLine="56" startPosition="20" endLine="71" endPosition="19" />
+    <scopeInfo nodeId="1227876790338" fileName="Debug.java" startLine="22" startPosition="46" endLine="41" endPosition="29" />
+    <scopeInfo nodeId="1222765975373" fileName="Debug.java" startLine="54" startPosition="46" endLine="73" endPosition="29" />
+    <scopeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="Debug.java" startLine="21" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="Debug.java" startLine="53" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="1227876790338" fileName="Debug.java" startLine="18" startPosition="47" endLine="43" endPosition="14" />
+    <scopeInfo nodeId="1222765975373" fileName="Debug.java" startLine="50" startPosition="46" endLine="75" endPosition="14" />
+    <scopeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="Debug.java" startLine="17" startPosition="40" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="Debug.java" startLine="49" startPosition="39" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1227876790338" fileName="Debug.java" startLine="16" startPosition="43" endLine="45" endPosition="10" />
+    <scopeInfo nodeId="1222765975373" fileName="Debug.java" startLine="48" startPosition="56" endLine="77" endPosition="10" />
+    <scopeInfo nodeId="1227876790338" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" fileName="Debug.java" startLine="15" startPosition="80" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1222765975373" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/lang/Void;)Ljava/lang/Iterable;" fileName="Debug.java" startLine="47" startPosition="65" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="1221651191299" fileName="Debug.java" startLine="13" startPosition="27" endLine="79" endPosition="7">
+      <varInfo nodeId="1222775672899" varName="meet" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221651191297" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="debugThis#()V" fileName="Debug.java" startLine="12" startPosition="20" endLine="81" endPosition="0" />
+    <unitInfo nodeId="1227876790338" fileName="Debug.java" startLine="19" startPosition="23" endLine="43" endPosition="13" unitName="closures.sandbox.misc.Debug$3" />
+    <unitInfo nodeId="1222765975373" fileName="Debug.java" startLine="51" startPosition="23" endLine="75" endPosition="13" unitName="closures.sandbox.misc.Debug$4" />
+    <unitInfo nodeId="1227876790338" fileName="Debug.java" startLine="17" startPosition="19" endLine="45" endPosition="9" unitName="closures.sandbox.misc.Debug$2" />
+    <unitInfo nodeId="1222765975373" fileName="Debug.java" startLine="49" startPosition="19" endLine="77" endPosition="9" unitName="closures.sandbox.misc.Debug$3" />
+    <unitInfo nodeId="1227876790338" fileName="Debug.java" startLine="15" startPosition="51" endLine="47" endPosition="5" unitName="closures.sandbox.misc.Debug$1" />
+    <unitInfo nodeId="1222765975373" fileName="Debug.java" startLine="47" startPosition="35" endLine="79" endPosition="5" unitName="closures.sandbox.misc.Debug$2" />
+    <unitInfo nodeId="1221651112606" fileName="Debug.java" startLine="12" startPosition="0" endLine="82" endPosition="0" unitName="closures.sandbox.misc.Debug" />
+  </root>
+  <root nodeId="1221651222638">
+    <nodeInfo nodeId="1221651222639" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doWork#(Ljava/lang/Integer;)Ljava/lang/String;" fileName="Worker.java" startLine="6" startPosition="25" endLine="7" endPosition="41" />
+    <scopeInfo nodeId="1221651222639" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doWork#(Ljava/lang/Integer;)Ljava/lang/String;" fileName="Worker.java" startLine="6" startPosition="25" endLine="7" endPosition="41">
+      <varInfo nodeId="1221651222640" varName="duration" />
+    </scopeInfo>
+    <unitInfo nodeId="1221651222638" fileName="Worker.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="closures.sandbox.misc.Worker" />
+  </root>
+  <root nodeId="1222958673994">
+    <nodeInfo nodeId="4816492477345853494" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MyWorker.java" startLine="10" startPosition="42" endLine="11" endPosition="16" />
+    <nodeInfo nodeId="1222958673996" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyWorker#()V" fileName="MyWorker.java" startLine="6" startPosition="41" endLine="8" endPosition="3" />
+    <nodeInfo nodeId="1222958686689" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doWork#(Ljava/lang/Integer;)Ljava/lang/String;" fileName="MyWorker.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="1222958673999" fileName="MyWorker.java" startLine="7" startPosition="21" endLine="7" endPosition="21" />
+    <scopeInfo nodeId="1222958686694" fileName="MyWorker.java" startLine="10" startPosition="42" endLine="11" endPosition="16" />
+    <scopeInfo nodeId="1222958673996" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyWorker#()V" fileName="MyWorker.java" startLine="6" startPosition="41" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="1222958686689" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doWork#(Ljava/lang/Integer;)Ljava/lang/String;" fileName="MyWorker.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="1222958686690" varName="duration" />
+    </scopeInfo>
+    <unitInfo nodeId="1222958673994" fileName="MyWorker.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="closures.sandbox.misc.MyWorker" />
+  </root>
+  <root nodeId="3329614760086819472">
+    <nodeInfo nodeId="3329614760086841984" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Jabberwocky.java" startLine="12" startPosition="25" endLine="13" endPosition="46" />
+    <nodeInfo nodeId="3329614760086836878" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Jabberwocky.java" startLine="13" startPosition="46" endLine="14" endPosition="40" />
+    <nodeInfo nodeId="3329614760086841997" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Jabberwocky.java" startLine="14" startPosition="40" endLine="15" endPosition="23" />
+    <nodeInfo nodeId="3329614760086842014" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Jabberwocky.java" startLine="15" startPosition="23" endLine="16" endPosition="24" />
+    <nodeInfo nodeId="3329614760086842038" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Jabberwocky.java" startLine="19" startPosition="26" endLine="20" endPosition="34" />
+    <nodeInfo nodeId="3329614760086842067" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="h" fileName="Jabberwocky.java" startLine="21" startPosition="20" endLine="22" endPosition="34" />
+    <nodeInfo nodeId="3329614760086856951" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Jabberwocky.java" startLine="24" startPosition="25" endLine="25" endPosition="35" />
+    <nodeInfo nodeId="3329614760086856938" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="Jabberwocky.java" startLine="27" startPosition="6" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="3329614760086819474" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Jabberwocky#()V" fileName="Jabberwocky.java" startLine="8" startPosition="26" endLine="10" endPosition="3" />
+    <nodeInfo nodeId="3329614760086856947" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="Jabberwocky.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="3329614760086819478" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testing#()V" fileName="Jabberwocky.java" startLine="11" startPosition="0" endLine="18" endPosition="0" />
+    <nodeInfo nodeId="3329614760086842045" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Jabberwocky.java" startLine="20" startPosition="34" endLine="27" endPosition="6" />
+    <nodeInfo nodeId="3329614760086842032" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testing2#()V" fileName="Jabberwocky.java" startLine="18" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="3329614760086819477" fileName="Jabberwocky.java" startLine="9" startPosition="24" endLine="9" endPosition="24" />
+    <scopeInfo nodeId="3329614760086856950" fileName="Jabberwocky.java" startLine="24" startPosition="25" endLine="25" endPosition="35" />
+    <scopeInfo nodeId="3329614760086819474" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Jabberwocky#()V" fileName="Jabberwocky.java" startLine="8" startPosition="26" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="3329614760086819481" fileName="Jabberwocky.java" startLine="12" startPosition="25" endLine="16" endPosition="24">
+      <varInfo nodeId="3329614760086836879" varName="dim" />
+      <varInfo nodeId="3329614760086841985" varName="rec" />
+    </scopeInfo>
+    <scopeInfo nodeId="3329614760086856947" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="Jabberwocky.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="3329614760086819478" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testing#()V" fileName="Jabberwocky.java" startLine="11" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="3329614760086842035" fileName="Jabberwocky.java" startLine="19" startPosition="26" endLine="28" endPosition="0">
+      <varInfo nodeId="3329614760086842039" varName="o" />
+    </scopeInfo>
+    <scopeInfo nodeId="3329614760086842032" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testing2#()V" fileName="Jabberwocky.java" startLine="18" startPosition="0" endLine="30" endPosition="0" />
+    <unitInfo nodeId="3329614760086842049" fileName="Jabberwocky.java" startLine="21" startPosition="8" endLine="27" endPosition="5" unitName="closures.sandbox.misc.Jabberwocky$1" />
+    <unitInfo nodeId="3329614760086819472" fileName="Jabberwocky.java" startLine="8" startPosition="0" endLine="31" endPosition="0" unitName="closures.sandbox.misc.Jabberwocky" />
+  </root>
+</debugInfo>
+

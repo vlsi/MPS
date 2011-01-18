@@ -29,7 +29,7 @@
       <varInfo nodeId="1225207309558" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1225206150542" fileName="check_DeprecatedReference_NonTypesystemRule.java" startLine="24" startPosition="124" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="1225206378687" fileName="check_DeprecatedReference_NonTypesystemRule.java" startLine="24" startPosition="124" endLine="35" endPosition="5">
+    <scopeInfo nodeId="1225206378687" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_DeprecatedReference_NonTypesystemRule.java" startLine="24" startPosition="124" endLine="35" endPosition="5">
       <varInfo nodeId="1225206378691" varName="ref" />
     </scopeInfo>
   </root>
@@ -49,7 +49,7 @@
     <nodeInfo nodeId="1556973682253870183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="51" startPosition="132" endLine="52" endPosition="84" />
     <nodeInfo nodeId="1556973682253870183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="52" startPosition="84" endLine="53" endPosition="62" />
     <nodeInfo nodeId="1556973682253870183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="53" startPosition="62" endLine="54" endPosition="302" />
-    <nodeInfo nodeId="1556973682253868745" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="29" startPosition="113" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="1556973682253868745" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="29" startPosition="113" endLine="33" endPosition="0" />
     <nodeInfo nodeId="1556973682253868925" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="35" startPosition="107" endLine="42" endPosition="9" />
     <nodeInfo nodeId="1556973682253870183" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="48" startPosition="105" endLine="55" endPosition="9" />
     <nodeInfo nodeId="1556973682253868874" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="34" startPosition="71" endLine="43" endPosition="7" />
@@ -57,7 +57,7 @@
     <nodeInfo nodeId="1556973682253868800" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="57" endPosition="5" />
     <nodeInfo nodeId="1556973682253868738" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="44" endPosition="5" />
     <scopeInfo nodeId="1556973682253868746" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="30" startPosition="39" endLine="31" endPosition="50" />
-    <scopeInfo nodeId="1556973682253868745" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="29" startPosition="113" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1556973682253868745" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="29" startPosition="113" endLine="33" endPosition="0" />
     <scopeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="36" startPosition="9" endLine="41" endPosition="308" />
     <scopeInfo nodeId="1556973682253870183" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="49" startPosition="9" endLine="54" endPosition="302" />
     <scopeInfo nodeId="1556973682253868907" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="35" startPosition="107" endLine="42" endPosition="9" />
@@ -68,8 +68,8 @@
     <scopeInfo nodeId="1556973682253868805" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="46" startPosition="93" endLine="56" endPosition="7">
       <varInfo nodeId="1556973682253870154" varName="link" />
     </scopeInfo>
-    <scopeInfo nodeId="1556973682253868800" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="57" endPosition="5" />
-    <scopeInfo nodeId="1556973682253868738" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="44" endPosition="5" />
+    <scopeInfo nodeId="1556973682253868800" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="57" endPosition="5" />
+    <scopeInfo nodeId="1556973682253868738" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="44" endPosition="5" />
     <scopeInfo nodeId="1556973682253867611" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="27" startPosition="117" endLine="57" endPosition="5" />
     <unitInfo nodeId="1556973682253868745" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="29" startPosition="90" endLine="33" endPosition="5" unitName="jetbrains.mps.lang.core.typesystem.check_UnknownLinks_NonTypesystemRule$1" />
   </root>
@@ -82,7 +82,7 @@
     <scopeInfo nodeId="1556973682253873232" fileName="RemoveUnknownChildren_QuickFix.java" startLine="20" startPosition="132" endLine="21" endPosition="42" />
     <scopeInfo nodeId="1556973682253873225" fileName="RemoveUnknownChildren_QuickFix.java" startLine="19" startPosition="82" endLine="22" endPosition="7" />
     <scopeInfo nodeId="1556973682253870206" fileName="RemoveUnknownChildren_QuickFix.java" startLine="18" startPosition="35" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="1556973682253873222" fileName="RemoveUnknownChildren_QuickFix.java" startLine="18" startPosition="35" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="1556973682253873222" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="RemoveUnknownChildren_QuickFix.java" startLine="18" startPosition="35" endLine="23" endPosition="5" />
   </root>
   <root nodeId="1556973682253873271">
     <nodeInfo nodeId="1556973682253873279" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="RemoveUnknownReference_QuickFix.java" startLine="12" startPosition="34" endLine="13" endPosition="122" />
@@ -135,17 +135,17 @@
     <scopeInfo nodeId="8536912951295756847" fileName="check_Cardinalities_NonTypesystemRule.java" startLine="37" startPosition="92" endLine="49" endPosition="13" />
     <scopeInfo nodeId="8536912951295756845" fileName="check_Cardinalities_NonTypesystemRule.java" startLine="36" startPosition="94" endLine="59" endPosition="11" />
     <scopeInfo nodeId="8536912951295756843" fileName="check_Cardinalities_NonTypesystemRule.java" startLine="35" startPosition="133" endLine="70" endPosition="9" />
-    <scopeInfo nodeId="8536912951295756838" fileName="check_Cardinalities_NonTypesystemRule.java" startLine="34" startPosition="66" endLine="71" endPosition="7" />
+    <scopeInfo nodeId="8536912951295756838" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_Cardinalities_NonTypesystemRule.java" startLine="34" startPosition="66" endLine="71" endPosition="7" />
     <scopeInfo nodeId="1556973682253886085" fileName="check_Cardinalities_NonTypesystemRule.java" startLine="28" startPosition="117" endLine="72" endPosition="6" />
   </root>
   <root nodeId="1556973682253891011">
     <nodeInfo nodeId="1556973682253891019" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="16" startPosition="34" endLine="17" endPosition="189" />
     <nodeInfo nodeId="1556973682253891054" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="22" startPosition="38" endLine="23" endPosition="42" />
-    <nodeInfo nodeId="1556973682253891052" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="21" startPosition="201" endLine="25" endPosition="0" />
+    <nodeInfo nodeId="1556973682253891052" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="21" startPosition="201" endLine="25" endPosition="0" />
     <nodeInfo nodeId="1556973682253891038" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="20" startPosition="35" endLine="25" endPosition="7" />
     <scopeInfo nodeId="1556973682253891015" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="16" startPosition="34" endLine="17" endPosition="189" />
     <scopeInfo nodeId="1556973682253891053" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="22" startPosition="38" endLine="23" endPosition="42" />
-    <scopeInfo nodeId="1556973682253891052" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="21" startPosition="201" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1556973682253891052" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="21" startPosition="201" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1556973682253891013" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="20" startPosition="35" endLine="25" endPosition="7" />
     <unitInfo nodeId="1556973682253891052" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="21" startPosition="182" endLine="25" endPosition="5" unitName="jetbrains.mps.lang.core.typesystem.RemoveUnnecessaryChildrenInSingleRole_QuickFix$1" />
   </root>
@@ -180,7 +180,7 @@
     <scopeInfo nodeId="5425021671150237300" fileName="check_Export_NonTypesystemRule.java" startLine="33" startPosition="128" endLine="38" endPosition="7" />
     <scopeInfo nodeId="402007580867616260" fileName="check_Export_NonTypesystemRule.java" startLine="42" startPosition="122" endLine="48" endPosition="9" />
     <scopeInfo nodeId="376024488709665192" fileName="check_Export_NonTypesystemRule.java" startLine="41" startPosition="87" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="376024488709665189" fileName="check_Export_NonTypesystemRule.java" startLine="40" startPosition="24" endLine="50" endPosition="5" />
+    <scopeInfo nodeId="376024488709665189" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_Export_NonTypesystemRule.java" startLine="40" startPosition="24" endLine="50" endPosition="5" />
     <scopeInfo nodeId="376024488709664743" fileName="check_Export_NonTypesystemRule.java" startLine="26" startPosition="117" endLine="50" endPosition="5">
       <varInfo nodeId="5425021671150235564" varName="namespace" />
     </scopeInfo>
@@ -229,7 +229,7 @@
       <varInfo nodeId="8536912951295757716" varName="sss" />
       <varInfo nodeId="8536912951295757690" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="8536912951295757685" fileName="check_ReferencesScope_NonTypesystemRule.java" startLine="36" startPosition="138" endLine="70" endPosition="7">
+    <scopeInfo nodeId="8536912951295757685" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_ReferencesScope_NonTypesystemRule.java" startLine="36" startPosition="138" endLine="70" endPosition="7">
       <varInfo nodeId="8536912951295757686" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="4942048232752368511" fileName="check_ReferencesScope_NonTypesystemRule.java" startLine="30" startPosition="117" endLine="71" endPosition="6" />
@@ -363,7 +363,7 @@
     <scopeInfo nodeId="8536912951295757447" fileName="check_Constraints_NonTypesystemRule.java" startLine="110" startPosition="27" endLine="121" endPosition="11" />
     <scopeInfo nodeId="8536912951295757534" fileName="check_Constraints_NonTypesystemRule.java" startLine="137" startPosition="94" endLine="150" endPosition="11" />
     <scopeInfo nodeId="8536912951295757592" fileName="check_Constraints_NonTypesystemRule.java" startLine="154" startPosition="72" endLine="167" endPosition="9" />
-    <scopeInfo nodeId="8536912951295757586" fileName="check_Constraints_NonTypesystemRule.java" startLine="153" startPosition="0" endLine="168" endPosition="7" />
+    <scopeInfo nodeId="8536912951295757586" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_Constraints_NonTypesystemRule.java" startLine="153" startPosition="0" endLine="168" endPosition="7" />
     <scopeInfo nodeId="8536912951295757488" fileName="check_Constraints_NonTypesystemRule.java" startLine="129" startPosition="66" endLine="151" endPosition="9">
       <varInfo nodeId="8536912951295757495" varName="propertyName" />
       <varInfo nodeId="8536912951295757523" varName="value" />
@@ -372,13 +372,13 @@
     <scopeInfo nodeId="8536912951295757306" fileName="check_Constraints_NonTypesystemRule.java" startLine="50" startPosition="138" endLine="73" endPosition="9">
       <varInfo nodeId="8536912951295757308" varName="link" />
     </scopeInfo>
-    <scopeInfo nodeId="8536912951295757485" fileName="check_Constraints_NonTypesystemRule.java" startLine="128" startPosition="83" endLine="152" endPosition="7" />
+    <scopeInfo nodeId="8536912951295757485" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_Constraints_NonTypesystemRule.java" startLine="128" startPosition="83" endLine="152" endPosition="7" />
     <scopeInfo nodeId="8536912951295757400" fileName="check_Constraints_NonTypesystemRule.java" startLine="90" startPosition="61" endLine="122" endPosition="9">
       <varInfo nodeId="8536912951295757438" varName="rule" />
       <varInfo nodeId="8536912951295757408" varName="childLink" />
       <varInfo nodeId="8536912951295757402" varName="childConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="8536912951295757399" fileName="check_Constraints_NonTypesystemRule.java" startLine="89" startPosition="0" endLine="123" endPosition="7">
+    <scopeInfo nodeId="8536912951295757399" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_Constraints_NonTypesystemRule.java" startLine="89" startPosition="0" endLine="123" endPosition="7">
       <varInfo nodeId="8536912951295757458" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="4950342498455564874" fileName="check_Constraints_NonTypesystemRule.java" startLine="37" startPosition="117" endLine="169" endPosition="6" />
@@ -408,7 +408,7 @@
     <nodeInfo nodeId="8536912951295757902" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="53" startPosition="13" endLine="54" endPosition="60" />
     <nodeInfo nodeId="8536912951295757902" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="54" startPosition="60" endLine="55" endPosition="66" />
     <nodeInfo nodeId="8536912951295757902" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="55" startPosition="66" endLine="56" endPosition="313" />
-    <nodeInfo nodeId="8536912951295757820" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="31" startPosition="115" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="8536912951295757820" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="31" startPosition="115" endLine="35" endPosition="0" />
     <nodeInfo nodeId="8536912951295757850" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="38" startPosition="172" endLine="43" endPosition="13" />
     <nodeInfo nodeId="8536912951295757902" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="52" startPosition="173" endLine="57" endPosition="13" />
     <nodeInfo nodeId="8536912951295757848" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="37" startPosition="106" endLine="44" endPosition="11" />
@@ -421,7 +421,7 @@
     <scopeInfo nodeId="8536912951295757821" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="32" startPosition="41" endLine="33" endPosition="52" />
     <scopeInfo nodeId="8536912951295757850" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="39" startPosition="13" endLine="42" endPosition="323" />
     <scopeInfo nodeId="8536912951295757902" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="53" startPosition="13" endLine="56" endPosition="313" />
-    <scopeInfo nodeId="8536912951295757820" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="31" startPosition="115" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="8536912951295757820" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="31" startPosition="115" endLine="35" endPosition="0" />
     <scopeInfo nodeId="8536912951295757849" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="38" startPosition="172" endLine="43" endPosition="13" />
     <scopeInfo nodeId="8536912951295757901" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="52" startPosition="173" endLine="57" endPosition="13" />
     <scopeInfo nodeId="8536912951295757847" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="37" startPosition="106" endLine="44" endPosition="11" />
@@ -434,8 +434,8 @@
     <scopeInfo nodeId="8536912951295757875" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="48" startPosition="95" endLine="59" endPosition="9">
       <varInfo nodeId="8536912951295757877" varName="link" />
     </scopeInfo>
-    <scopeInfo nodeId="8536912951295757870" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="60" endPosition="7" />
-    <scopeInfo nodeId="8536912951295757813" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="30" startPosition="6" endLine="46" endPosition="7" />
+    <scopeInfo nodeId="8536912951295757870" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="60" endPosition="7" />
+    <scopeInfo nodeId="8536912951295757813" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="30" startPosition="6" endLine="46" endPosition="7" />
     <scopeInfo nodeId="7815324287109263446" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="29" startPosition="117" endLine="61" endPosition="6" />
     <unitInfo nodeId="8536912951295757820" fileName="check_TargetConcepts_NonTypesystemRule.java" startLine="31" startPosition="92" endLine="35" endPosition="7" unitName="jetbrains.mps.lang.core.typesystem.check_TargetConcepts_NonTypesystemRule$1" />
   </root>
