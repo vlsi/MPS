@@ -117,6 +117,9 @@
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="5312038888515830436">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpd4.1212056081426" resolveInfo="AbstractInequationStatement" />
     </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3350570190399391695">
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpd4.1205762105978" resolveInfo="WhenConcreteVariableDeclaration" />
+    </node>
   </roots>
   <root id="1213877218089">
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1213877218090">
@@ -1383,6 +1386,25 @@
     </node>
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="5312038888515830437">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5312038888515830438" />
+    </node>
+  </root>
+  <root id="3350570190399391695">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="3350570190399391696">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3350570190399391697">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3350570190399462396">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3350570190399462403">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3350570190399462398">
+              <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="3350570190399462397" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3350570190399462402">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.5680397130376446158" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetNewChildOperation" typeId="tp25.1138757581985" id="3350570190399467208">
+              <link role="concept" roleId="tp25.1139880128956" targetNodeId="tpee.4836112446988635817" resolveInfo="UndefinedType" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </root>
 </model>

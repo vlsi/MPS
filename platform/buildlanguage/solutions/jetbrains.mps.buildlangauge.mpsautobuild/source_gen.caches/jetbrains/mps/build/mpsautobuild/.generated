@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1u2z95fvewczihnpr2cx6uu2q9qhxxc">
+<dependencies version="2" modelHash="-aj0i4xrk30dfm9ogscmsuljxztbq44b">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-d210pk8xi3k369xbgop6hfgbxsjqja5" />
   <dep model="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" hash="-a9ra6tzt2rafrje31vg9yhz9vn4z98b" />
   <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" hash="-4z66nknqu3sa9ame4n32lzhzebqam86" />
@@ -106,6 +106,8 @@
     <file name="mps.vmoptions" />
   </source>
   <source id="2235195415637076848" name="help-build" hash="5txtcrxbu59evs5ctlmjat1baigvl7w">
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895905a3(jetbrains.mps.xml.deprecated.structure)" />
     <dep model="r:581bb25d-517d-4f18-b7c0-d3f6a738994e(jetbrains.mps.build.generictasks.generator.template.main@generator)" />
@@ -121,7 +123,7 @@
   <source id="8431776905956472858" name="core" hash="-cy07g7gl8ym9u3f5oj1bs0fya7998cw">
     <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
   </source>
-  <source id="8431776905956472865" name="core.baseLanguage" hash="-3vxvb799c56yyqr6cqsx8v1z4j1w6k2" />
+  <source id="8431776905956472865" name="core.baseLanguage" hash="-dyhap4n0p5t5l5nvck0wlhdxnhbw6a" />
   <source id="8431776905956472896" name="core.debug" hash="-cbuuvczva9e2xxsmuuah6ksln7sfdqr" />
   <source id="8431776905956472902" name="core.devkits" hash="865pkduq3t8cb8fcfiymk82mwoe4jik" />
   <source id="8431776905956472907" name="core.languageDesign" hash="3vepr0yn7sbuqgezamnft78f2nhac3l" />

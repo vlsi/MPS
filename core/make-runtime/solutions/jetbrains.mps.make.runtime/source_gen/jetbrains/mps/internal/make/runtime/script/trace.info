@@ -114,7 +114,7 @@
     <nodeInfo nodeId="5589305777382267457" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractProgressStrategy.java" startLine="158" startPosition="67" endLine="159" endPosition="56" />
     <nodeInfo nodeId="5589305777382267470" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractProgressStrategy.java" startLine="162" startPosition="41" endLine="163" endPosition="38" />
     <nodeInfo nodeId="5589305777382267483" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractProgressStrategy.java" startLine="166" startPosition="52" endLine="167" endPosition="45" />
-    <nodeInfo nodeId="8530713690800023591" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractProgressStrategy.java" startLine="170" startPosition="68" endLine="171" endPosition="45" />
+    <nodeInfo nodeId="8530713690800023591" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractProgressStrategy.java" startLine="170" startPosition="68" endLine="171" endPosition="54" />
     <nodeInfo nodeId="5589305777382267493" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractProgressStrategy.java" startLine="174" startPosition="27" endLine="175" endPosition="39" />
     <nodeInfo nodeId="5589305777382265145" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="begunWork#(Ljetbrains/mps/internal/make/runtime/script/AbstractProgressStrategy/Work;)V" fileName="AbstractProgressStrategy.java" startLine="34" startPosition="0" endLine="36" endPosition="0" />
     <nodeInfo nodeId="5589305777382265191" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advancedWork#(Ljetbrains/mps/internal/make/runtime/script/AbstractProgressStrategy/Work;)V" fileName="AbstractProgressStrategy.java" startLine="36" startPosition="0" endLine="38" endPosition="0" />
@@ -140,7 +140,7 @@
     <nodeInfo nodeId="5589305777382267447" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="AbstractProgressStrategy.java" startLine="157" startPosition="0" endLine="161" endPosition="0" />
     <nodeInfo nodeId="5589305777382267464" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="AbstractProgressStrategy.java" startLine="161" startPosition="0" endLine="165" endPosition="0" />
     <nodeInfo nodeId="5589305777382267475" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;I)V" fileName="AbstractProgressStrategy.java" startLine="165" startPosition="0" endLine="169" endPosition="0" />
-    <nodeInfo nodeId="8530713690800023581" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;Ljava/lang/String;I)V" fileName="AbstractProgressStrategy.java" startLine="169" startPosition="0" endLine="173" endPosition="0" />
+    <nodeInfo nodeId="8530713690800023581" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;ILjava/lang/String;)V" fileName="AbstractProgressStrategy.java" startLine="169" startPosition="0" endLine="173" endPosition="0" />
     <nodeInfo nodeId="5589305777382267489" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="AbstractProgressStrategy.java" startLine="173" startPosition="0" endLine="177" endPosition="0" />
     <nodeInfo nodeId="5589305777382267311" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fullName#()Ljava/lang/String;" fileName="AbstractProgressStrategy.java" startLine="102" startPosition="0" endLine="107" endPosition="0" />
     <nodeInfo nodeId="4061343222277824368" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="namePrefix#()Ljava/lang/String;" fileName="AbstractProgressStrategy.java" startLine="107" startPosition="0" endLine="112" endPosition="0" />
@@ -149,7 +149,7 @@
     <nodeInfo nodeId="5589305777382267254" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractProgressStrategy.java" startLine="143" startPosition="29" endLine="149" endPosition="7" />
     <nodeInfo nodeId="5589305777382265479" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popProgress#(Ljetbrains/mps/internal/make/runtime/script/AbstractProgressStrategy/Work;)Ljetbrains/mps/internal/make/runtime/script/AbstractProgressStrategy/Work;" fileName="AbstractProgressStrategy.java" startLine="23" startPosition="0" endLine="30" endPosition="0" />
     <nodeInfo nodeId="5589305777382265132" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_idfyc1_a0a0b0k0#(Ljava/lang/Object;Ljava/lang/Object;)Z" fileName="AbstractProgressStrategy.java" startLine="44" startPosition="0" endLine="51" endPosition="0" />
-    <nodeInfo nodeId="8530713690800023597" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;Ljava/lang/String;I)V" fileName="AbstractProgressStrategy.java" startLine="80" startPosition="0" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="8530713690800023597" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;ILjava/lang/String;)V" fileName="AbstractProgressStrategy.java" startLine="80" startPosition="0" endLine="87" endPosition="0" />
     <nodeInfo nodeId="5589305777382267291" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="AbstractProgressStrategy.java" startLine="87" startPosition="0" endLine="94" endPosition="0" />
     <nodeInfo nodeId="5589305777382267189" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="AbstractProgressStrategy.java" startLine="66" startPosition="0" endLine="76" endPosition="0" />
     <nodeInfo nodeId="4061343222277824326" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="namePath#()Ljava/util/List;" fileName="AbstractProgressStrategy.java" startLine="131" startPosition="0" endLine="141" endPosition="0" />
@@ -172,7 +172,7 @@
     <scopeInfo nodeId="5589305777382267456" fileName="AbstractProgressStrategy.java" startLine="158" startPosition="67" endLine="159" endPosition="56" />
     <scopeInfo nodeId="5589305777382267469" fileName="AbstractProgressStrategy.java" startLine="162" startPosition="41" endLine="163" endPosition="38" />
     <scopeInfo nodeId="5589305777382267482" fileName="AbstractProgressStrategy.java" startLine="166" startPosition="52" endLine="167" endPosition="45" />
-    <scopeInfo nodeId="8530713690800023590" fileName="AbstractProgressStrategy.java" startLine="170" startPosition="68" endLine="171" endPosition="45" />
+    <scopeInfo nodeId="8530713690800023590" fileName="AbstractProgressStrategy.java" startLine="170" startPosition="68" endLine="171" endPosition="54" />
     <scopeInfo nodeId="5589305777382267492" fileName="AbstractProgressStrategy.java" startLine="174" startPosition="27" endLine="175" endPosition="39" />
     <scopeInfo nodeId="5589305777382265137" fileName="AbstractProgressStrategy.java" startLine="15" startPosition="49" endLine="17" endPosition="66" />
     <scopeInfo nodeId="5589305777382265145" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="begunWork#(Ljetbrains/mps/internal/make/runtime/script/AbstractProgressStrategy/Work;)V" fileName="AbstractProgressStrategy.java" startLine="34" startPosition="0" endLine="36" endPosition="0">
@@ -231,7 +231,7 @@
       <varInfo nodeId="5589305777382267478" varName="done" />
       <varInfo nodeId="5589305777382267476" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="8530713690800023581" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;Ljava/lang/String;I)V" fileName="AbstractProgressStrategy.java" startLine="169" startPosition="0" endLine="173" endPosition="0">
+    <scopeInfo nodeId="8530713690800023581" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;ILjava/lang/String;)V" fileName="AbstractProgressStrategy.java" startLine="169" startPosition="0" endLine="173" endPosition="0">
       <varInfo nodeId="8530713690800023586" varName="done" />
       <varInfo nodeId="8530713690800023582" varName="name" />
       <varInfo nodeId="8530713690800023584" varName="comment" />
@@ -250,7 +250,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5589305777382265132" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_idfyc1_a0a0b0k0#(Ljava/lang/Object;Ljava/lang/Object;)Z" fileName="AbstractProgressStrategy.java" startLine="44" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="5589305777382267198" fileName="AbstractProgressStrategy.java" startLine="67" startPosition="67" endLine="74" endPosition="55" />
-    <scopeInfo nodeId="8530713690800023597" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;Ljava/lang/String;I)V" fileName="AbstractProgressStrategy.java" startLine="80" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="8530713690800023597" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;ILjava/lang/String;)V" fileName="AbstractProgressStrategy.java" startLine="80" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="8530713690800023602" varName="done" />
       <varInfo nodeId="8530713690800023598" varName="name" />
       <varInfo nodeId="8530713690800023600" varName="comment" />

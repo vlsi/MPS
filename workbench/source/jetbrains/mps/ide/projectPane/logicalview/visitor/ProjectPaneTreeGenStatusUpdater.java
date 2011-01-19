@@ -69,10 +69,6 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     return GenerationStatus.NOT_REQUIRED;
   }
 
-  private boolean isInheritableGenStatus(GenerationStatus childGenStatus) {
-    return childGenStatus == GenerationStatus.REQUIRED || childGenStatus == GenerationStatus.UPDATING;
-  }
-
   private GenerationStatus getGenerationStatus(SModelTreeNode node) {
     if (node.getSModelDescriptor() == null) return GenerationStatus.NOT_REQUIRED;
     if (isPackaged(node)) return GenerationStatus.PACKAGED;

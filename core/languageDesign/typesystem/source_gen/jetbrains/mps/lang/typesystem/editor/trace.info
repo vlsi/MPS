@@ -129,7 +129,6 @@
   <unitInfo fileName="ReplacementRuleReference_Editor.java" startLine="20" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.ReplacementRuleReference_Editor" />
   <unitInfo fileName="InequationReference_Editor.java" startLine="26" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.InequationReference_Editor" />
   <unitInfo fileName="MatchStatementItem_Editor.java" startLine="20" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.MatchStatementItem_Editor" />
-  <unitInfo fileName="GivetypeStatement_Editor.java" startLine="20" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.GivetypeStatement_Editor" />
   <unitInfo fileName="SimpleRule_VarRef_Editor.java" startLine="25" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.SimpleRule_VarRef_Editor" />
   <unitInfo fileName="OriginalNodeId_Editor.java" startLine="16" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.OriginalNodeId_Editor" />
   <unitInfo fileName="GetOperationType_Editor.java" startLine="17" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.GetOperationType_Editor" />

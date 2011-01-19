@@ -44,12 +44,12 @@ public class SModelUtil {
   private static Map<SNode, Language> myConceptToLanguage = MapSequence.fromMap(new HashMap<SNode, Language>());
   protected static Log log = LogFactory.getLog(SModelUtil.class);
 
-  public static void clearCaches() {
+  public static synchronized void clearCaches() {
     MapSequence.fromMap(myFQNameToConcepDecl).clear();
     MapSequence.fromMap(myConceptToLanguage).clear();
   }
 
-  public static void conceptRenamed(String oldName, String newName) {
+  public static synchronized void conceptRenamed(String oldName, String newName) {
     MapSequence.fromMap(myFQNameToConcepDecl).put(InternUtil.intern(newName), MapSequence.fromMap(myFQNameToConcepDecl).get(oldName));
     MapSequence.fromMap(myFQNameToConcepDecl).removeKey(oldName);
   }
@@ -74,7 +74,7 @@ public class SModelUtil {
     return null;
   }
 
-  public static SNode findConceptDeclaration(@NotNull final String conceptFQName, final IScope scope) {
+  public static synchronized SNode findConceptDeclaration(@NotNull final String conceptFQName, final IScope scope) {
     SNode cd = MapSequence.fromMap(myFQNameToConcepDecl).get(conceptFQName);
     if (cd != null) {
       return cd;
@@ -109,7 +109,7 @@ public class SModelUtil {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
   }
 
-  public static Language getDeclaringLanguage(SNode concept) {
+  public static synchronized Language getDeclaringLanguage(SNode concept) {
     Language l = MapSequence.fromMap(myConceptToLanguage).get(concept);
     if (l != null) {
       return l;
@@ -188,7 +188,22 @@ public class SModelUtil {
     }
     String fromFqName = NameUtil.nodeFQName(from);
     String toFqName = NameUtil.nodeFQName(to);
-    return LanguageHierarchyCache.getInstance().getAncestorsNames(fromFqName).contains(toFqName);
+    return LanguageHierarchyCache.getInstance().isAssignable(fromFqName, toFqName);
+  }
+
+  public static boolean isAssignableConcept(String fromFqName, String toFqName) {
+    if (eq_74see4_a0a0m(fromFqName, toFqName)) {
+      return true;
+    }
+    if (fromFqName == null || toFqName == null) {
+      return false;
+    }
+    // TODO generate conceptFqName 
+    if (SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), "name").equals(toFqName)) {
+      return true;
+    }
+
+    return LanguageHierarchyCache.getInstance().isAssignable(fromFqName, toFqName);
   }
 
   public static SNode getGenuineLinkSourceCardinality(SNode linkDecl) {
@@ -206,5 +221,17 @@ public class SModelUtil {
       }
     });
     return annotationLinkDeclaration;
+  }
+
+  public static boolean isAcceptableTarget(SNode linkDeclaration, SNode referentNode) {
+    SNode linkTargetConcept = SLinkOperations.getTarget(linkDeclaration, "target", false);
+    return isAssignableConcept(referentNode.getConceptFqName(), NameUtil.nodeFQName(linkTargetConcept));
+  }
+
+  private static boolean eq_74see4_a0a0m(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

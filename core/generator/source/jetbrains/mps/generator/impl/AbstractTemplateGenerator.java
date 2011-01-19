@@ -21,7 +21,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -194,21 +194,21 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       return null; //todo maybe add check for attribule links
     }
     String relationKind = child ? "child" : "referent";
-    AbstractConceptDeclaration concept = sourceNode.getConceptDeclarationAdapter();
+    SNode concept = sourceNode.getConceptDeclarationNode();
     if (concept == null) {
       return new RoleValidationStatus(sourceNode, "cannot find concept '" + sourceNode.getConceptFqName() + "'");
     }
-    LinkDeclaration link = SModelSearchUtil.findMostSpecificLinkDeclaration(concept, role);
+    SNode link = SModelSearchUtil.findMostSpecificLinkDeclaration(concept, role);
     if (link == null) {
       return new RoleValidationStatus(sourceNode, "concept '" + concept.getName() + "' cannot have " + relationKind + " with role '" + role + "'",
         GeneratorUtil.describe(targetNode, relationKind + (child ? "" : " (hidden in editor)")));
     }
-    if (!SModelUtil_new.isAcceptableTarget(link, targetNode)) {
+    if (!SModelUtil.isAcceptableTarget(link, targetNode)) {
       if (child && targetNode.getUserObject(DelayedChanges.MAP_SRC_TEMP_NODE) != null) {
         // temporary child node, ignore
         return null;
       }
-      String expected = link.getTarget().getName();
+      String expected = link.getReferent(LinkDeclaration.TARGET).getName();
       String was = targetNode.getConceptShortName();
       return new RoleValidationStatus(sourceNode, relationKind + " '" + expected + "' is expected for role '" + role + "' but was '" + was + "'",
         GeneratorUtil.describe(targetNode, relationKind));

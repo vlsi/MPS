@@ -65,6 +65,14 @@ public class EditorContext {
     return myNodeEditorComponent.getSelectedCell();
   }
 
+  public String getSelectedCellText() {
+    EditorCell selectedCell = getSelectedCell();
+    if (selectedCell instanceof EditorCell_Label) {
+      return ((EditorCell_Label) selectedCell).getRenderedText();
+    }
+    return null;
+  }
+
   public IScope getScope() {
     return myOperationContext.getScope();
   }

@@ -51,7 +51,11 @@ public class ConvertAssignmentToVariableDeclaration_Intention extends BaseIntent
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode assignment = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
-    SNode result = AssignmentExpression_Behavior.call_convertToLocalVariableDeclaration_1221573391693(assignment);
+    String suggestedName = editorContext.getSelectedCellText();
+    if ("".equals(suggestedName)) {
+      suggestedName = null;
+    }
+    SNode result = AssignmentExpression_Behavior.call_convertToLocalVariableDeclaration_1221573391693(assignment, suggestedName);
     editorContext.selectWRTFocusPolicy(result);
   }
 

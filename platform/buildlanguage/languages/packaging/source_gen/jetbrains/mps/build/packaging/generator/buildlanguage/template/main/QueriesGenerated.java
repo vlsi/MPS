@@ -1052,4 +1052,14 @@ __switch__:
       SNodeOperations.deleteNode(block);
     }
   }
+
+  public static void mappingScript_CodeBlock_5934900624260317374(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), null))) {
+      for (SNode module : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.build.packaging.structure.Module", false, new String[]{}))) {
+        if (Module_Behavior.call_getModule_1213877515148(module) == null) {
+          _context.showErrorMessage(module, "Module not found");
+        }
+      }
+    }
+  }
 }

@@ -53,6 +53,10 @@ public class Data_Flow_TabDescriptor extends EditorTabDescriptor {
     );
   }
 
+  public List<SNode> getConcepts(final SNode node) {
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
+  }
+
   public SNode createNode(final SNode node, final SNode concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.DATA_FLOW, node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"));
   }

@@ -42,7 +42,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SimpleReplace.java" />
     <file name="_Replacer_a0a0b0a.java" />
-    <file name="_Replacer_a0a0b0b.java" />
+    <file name="_Replacer_a0a0b0b_0.java" />
   </source>
   <source id="1174939905327" name="Regexps" hash="-dlzlzzj8to4nv8sidtokspqxzm4yuvc">
     <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" />
@@ -62,7 +62,7 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PredefinedRegexps.java" />
-    <file name="_Replacer_a0a0b0b_0.java" />
+    <file name="_Replacer_a0a0b0b.java" />
   </source>
   <source id="1175155050941" name="MatchIteration" hash="-5umex8xn8knh51fyvef83ih8i1uvil8">
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />

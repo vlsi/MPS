@@ -7,6 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class UnboundClosureParameterDeclaration_Behavior {
   public static void init(SNode thisNode) {
-    SLinkOperations.setNewChild(thisNode, "type", "jetbrains.mps.baseLanguage.structure.WildCardType");
+    SLinkOperations.setNewChild(thisNode, "type", "jetbrains.mps.baseLanguage.structure.UndefinedType");
   }
 }

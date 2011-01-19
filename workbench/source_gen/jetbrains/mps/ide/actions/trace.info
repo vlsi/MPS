@@ -112,13 +112,13 @@
   <unitInfo fileName="EditorTabActions_ActionGroup.java" startLine="11" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorTabActions_ActionGroup" />
   <unitInfo fileName="ShowModuleDependencies_Action.java" startLine="18" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowModuleDependencies_Action" />
   <unitInfo fileName="AnalyzeClasspath_Action.java" startLine="18" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.actions.AnalyzeClasspath_Action" />
+  <unitInfo fileName="EvaluateExpression_Action.java" startLine="19" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ide.actions.EvaluateExpression_Action" />
   <unitInfo fileName="FixDependenciesEverywhere_Action.java" startLine="23" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.actions.FixDependenciesEverywhere_Action" />
   <unitInfo fileName="RebuildAllModules_Action.java" startLine="23" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.actions.RebuildAllModules_Action" />
   <unitInfo fileName="MakeAllModules_Action.java" startLine="23" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.actions.MakeAllModules_Action" />
   <unitInfo fileName="CopyNodeName_Action.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.actions.CopyNodeName_Action" />
   <unitInfo fileName="RevertMemoryChanges_Action.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.actions.RevertMemoryChanges_Action" />
   <unitInfo fileName="SaveModel_Action.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.actions.SaveModel_Action" />
-  <unitInfo fileName="EvaluateExpression_Action.java" startLine="19" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ide.actions.EvaluateExpression_Action" />
   <unitInfo fileName="FindPrevious_Action.java" startLine="16" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.actions.FindPrevious_Action" />
   <unitInfo fileName="FindNext_Action.java" startLine="16" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.actions.FindNext_Action" />
   <unitInfo fileName="ReloadStubs_Action.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ide.actions.ReloadStubs_Action" />
@@ -273,7 +273,7 @@
   <unitInfo fileName="Default_KeymapChanges.java" startLine="12" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges" />
   <unitInfo fileName="NewModel_Action.java" startLine="29" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.ide.actions.NewModel_Action" />
   <unitInfo fileName="NewModelFromSource_Action.java" startLine="36" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.ide.actions.NewModelFromSource_Action" />
-  <unitInfo fileName="GoByCurrentReference_Action.java" startLine="35" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action" />
+  <unitInfo fileName="GoByCurrentReference_Action.java" startLine="36" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action" />
   <unitInfo fileName="ModelCheckerTool_Tool.java" startLine="33" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelCheckerTool_Tool" />
   <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="341" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
   <root nodeId="1015639512126924602">
@@ -4605,156 +4605,161 @@
     <scopeInfo nodeId="6659061594281163438" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAction#(Ljava/util/Map;)Ljetbrains/mps/nodeEditor/EditorCellAction;" fileName="Expand_Action.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
   </root>
   <root nodeId="5357294907628536183">
-    <nodeInfo nodeId="5357294907628571324" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="45" startPosition="87" endLine="46" endPosition="102" />
-    <nodeInfo nodeId="5357294907628571334" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="47" startPosition="29" endLine="48" endPosition="19" />
-    <nodeInfo nodeId="5357294907628571340" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="50" startPosition="91" endLine="51" endPosition="19" />
-    <nodeInfo nodeId="5357294907628571320" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="52" startPosition="5" endLine="53" endPosition="16" />
-    <nodeInfo nodeId="5735282328623448682" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="94" startPosition="9" endLine="95" endPosition="110" />
-    <nodeInfo nodeId="5735282328623448690" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="95" startPosition="110" endLine="96" endPosition="79" />
-    <nodeInfo nodeId="5735282328623448700" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="96" startPosition="79" endLine="97" endPosition="81" />
-    <nodeInfo nodeId="5735282328623448750" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="GoByCurrentReference_Action.java" startLine="97" startPosition="81" endLine="98" endPosition="0" />
-    <nodeInfo nodeId="5735282328623448742" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="99" startPosition="53" endLine="100" endPosition="67" />
-    <nodeInfo nodeId="5735282328623448878" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="101" startPosition="14" endLine="102" endPosition="100" />
-    <nodeInfo nodeId="5735282328623448886" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="102" startPosition="100" endLine="103" endPosition="39" />
-    <nodeInfo nodeId="5735282328623448892" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="103" startPosition="39" endLine="104" endPosition="71" />
-    <nodeInfo nodeId="5735282328623448903" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="GoByCurrentReference_Action.java" startLine="104" startPosition="71" endLine="105" endPosition="36" />
-    <nodeInfo nodeId="5735282328623448946" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="105" startPosition="36" endLine="106" endPosition="51" />
-    <nodeInfo nodeId="5648737274373535111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="107" startPosition="73" endLine="108" endPosition="91" />
-    <nodeInfo nodeId="5648737274373535121" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="GoByCurrentReference_Action.java" startLine="108" startPosition="91" endLine="109" endPosition="37" />
-    <nodeInfo nodeId="5648737274373534001" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="109" startPosition="37" endLine="110" endPosition="56" />
-    <nodeInfo nodeId="5331922421125915910" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="111" startPosition="49" endLine="112" endPosition="60" />
-    <nodeInfo nodeId="5735282328623449454" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="113" startPosition="9" endLine="114" endPosition="79" />
-    <nodeInfo nodeId="5735282328623448901" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="GoByCurrentReference_Action.java" startLine="114" startPosition="79" endLine="115" endPosition="0" />
-    <nodeInfo nodeId="6906006820130795042" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="GoByCurrentReference_Action.java" startLine="117" startPosition="29" endLine="118" endPosition="108" />
-    <nodeInfo nodeId="8625430239852275663" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="121" startPosition="110" endLine="122" endPosition="77" />
-    <nodeInfo nodeId="5735282328623448731" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="136" startPosition="74" endLine="137" endPosition="224" />
-    <nodeInfo nodeId="5357294907628574108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="140" startPosition="120" endLine="141" endPosition="84" />
-    <nodeInfo nodeId="6105093990493768706" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="141" startPosition="84" endLine="142" endPosition="119" />
-    <nodeInfo nodeId="6105093990493768658" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="142" startPosition="119" endLine="143" endPosition="132" />
-    <nodeInfo nodeId="6105093990493768691" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="143" startPosition="132" endLine="144" endPosition="248" />
-    <nodeInfo nodeId="6105093990493768736" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="144" startPosition="248" endLine="145" endPosition="351" />
-    <nodeInfo nodeId="6105093990493768776" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="146" startPosition="66" endLine="147" endPosition="19" />
-    <nodeInfo nodeId="8625430239852275505" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="149" startPosition="23" endLine="150" endPosition="171" />
-    <nodeInfo nodeId="8625430239852275524" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="152" startPosition="48" endLine="153" endPosition="22" />
-    <nodeInfo nodeId="8625430239852275538" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="156" startPosition="31" endLine="157" endPosition="107" />
-    <nodeInfo nodeId="8625430239852275546" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="157" startPosition="107" endLine="158" endPosition="197" />
-    <nodeInfo nodeId="8625430239852275569" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="161" startPosition="76" endLine="162" endPosition="24" />
-    <nodeInfo nodeId="8625430239852275582" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="166" startPosition="26" endLine="167" endPosition="107" />
-    <nodeInfo nodeId="8625430239852275590" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="167" startPosition="107" endLine="168" endPosition="116" />
-    <nodeInfo nodeId="8625430239852275614" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="170" startPosition="190" endLine="171" endPosition="22" />
-    <nodeInfo nodeId="8625430239852275621" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="174" startPosition="12" endLine="175" endPosition="107" />
-    <nodeInfo nodeId="8625430239852275644" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="177" startPosition="78" endLine="178" endPosition="22" />
-    <nodeInfo nodeId="6105093990493768782" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="181" startPosition="5" endLine="182" endPosition="17" />
-    <nodeInfo nodeId="6105093990493768793" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="185" startPosition="110" endLine="186" endPosition="134" />
-    <nodeInfo nodeId="6105093990493768800" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="GoByCurrentReference_Action.java" startLine="186" startPosition="134" endLine="187" endPosition="30" />
-    <nodeInfo nodeId="6105093990493768816" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="187" startPosition="30" endLine="188" endPosition="87" />
-    <nodeInfo nodeId="5357294907628571332" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="46" startPosition="102" endLine="49" endPosition="5" />
-    <nodeInfo nodeId="5357294907628571338" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="49" startPosition="5" endLine="52" endPosition="5" />
-    <nodeInfo nodeId="6906006820130795046" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="120" startPosition="33" endLine="123" endPosition="17" />
-    <nodeInfo nodeId="6105093990493768757" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="145" startPosition="351" endLine="148" endPosition="5" />
-    <nodeInfo nodeId="8625430239852275522" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="151" startPosition="80" endLine="154" endPosition="9" />
-    <nodeInfo nodeId="8625430239852275561" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="160" startPosition="56" endLine="163" endPosition="11" />
-    <nodeInfo nodeId="8625430239852275599" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="169" startPosition="80" endLine="172" endPosition="9" />
-    <nodeInfo nodeId="8625430239852275633" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="176" startPosition="80" endLine="179" endPosition="9" />
-    <nodeInfo nodeId="5357294907628574026" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="open#(Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)V" fileName="GoByCurrentReference_Action.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
-    <nodeInfo nodeId="8625430239852275518" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="150" startPosition="171" endLine="155" endPosition="7" />
-    <nodeInfo nodeId="8625430239852275559" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="159" startPosition="80" endLine="164" endPosition="9" />
-    <nodeInfo nodeId="8625430239852275595" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="168" startPosition="116" endLine="173" endPosition="7" />
-    <nodeInfo nodeId="8625430239852275629" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="175" startPosition="107" endLine="180" endPosition="7" />
-    <nodeInfo nodeId="6906006820130795044" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="GoByCurrentReference_Action.java" startLine="119" startPosition="65" endLine="125" endPosition="0" />
-    <nodeInfo nodeId="6105093990493768785" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifierName#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModelReference;Ljava/util/Map;)Ljava/lang/String;" fileName="GoByCurrentReference_Action.java" startLine="184" startPosition="0" endLine="190" endPosition="0" />
-    <nodeInfo nodeId="5648737274373533971" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="106" startPosition="51" endLine="113" endPosition="9" />
-    <nodeInfo nodeId="6906006820130794721" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="118" startPosition="108" endLine="125" endPosition="15" />
-    <nodeInfo nodeId="8625430239852275555" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="158" startPosition="197" endLine="165" endPosition="7" />
-    <nodeInfo nodeId="8625430239852275619" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="GoByCurrentReference_Action.java" startLine="174" startPosition="10" endLine="181" endPosition="5" />
-    <nodeInfo nodeId="5735282328623448764" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="GoByCurrentReference_Action.java" startLine="116" startPosition="22" endLine="127" endPosition="0" />
-    <nodeInfo nodeId="5735282328623448758" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="115" startPosition="0" endLine="127" endPosition="18" />
-    <nodeInfo nodeId="5735282328623448751" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="GoByCurrentReference_Action.java" startLine="101" startPosition="12" endLine="128" endPosition="7" />
-    <nodeInfo nodeId="5735282328623448656" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="98" startPosition="0" endLine="128" endPosition="7" />
-    <nodeInfo nodeId="8625430239852275503" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="148" startPosition="5" endLine="181" endPosition="5" />
-    <nodeInfo nodeId="5357294907628574083" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigateToJavaStub#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)Z" fileName="GoByCurrentReference_Action.java" startLine="139" startPosition="0" endLine="184" endPosition="0" />
-    <scopeInfo nodeId="5357294907628571333" fileName="GoByCurrentReference_Action.java" startLine="47" startPosition="29" endLine="48" endPosition="19" />
-    <scopeInfo nodeId="5357294907628571339" fileName="GoByCurrentReference_Action.java" startLine="50" startPosition="91" endLine="51" endPosition="19" />
-    <scopeInfo nodeId="5735282328623448657" fileName="GoByCurrentReference_Action.java" startLine="99" startPosition="53" endLine="100" endPosition="67" />
-    <scopeInfo nodeId="5331922421125828126" fileName="GoByCurrentReference_Action.java" startLine="111" startPosition="49" endLine="112" endPosition="60" />
-    <scopeInfo nodeId="6906006820130795047" fileName="GoByCurrentReference_Action.java" startLine="121" startPosition="110" endLine="122" endPosition="77" />
-    <scopeInfo nodeId="5357294907628574029" fileName="GoByCurrentReference_Action.java" startLine="136" startPosition="74" endLine="137" endPosition="224" />
-    <scopeInfo nodeId="6105093990493768758" fileName="GoByCurrentReference_Action.java" startLine="146" startPosition="66" endLine="147" endPosition="19" />
-    <scopeInfo nodeId="8625430239852275523" fileName="GoByCurrentReference_Action.java" startLine="152" startPosition="48" endLine="153" endPosition="22" />
-    <scopeInfo nodeId="8625430239852275568" fileName="GoByCurrentReference_Action.java" startLine="161" startPosition="76" endLine="162" endPosition="24" />
-    <scopeInfo nodeId="8625430239852275613" fileName="GoByCurrentReference_Action.java" startLine="170" startPosition="190" endLine="171" endPosition="22" />
-    <scopeInfo nodeId="8625430239852275643" fileName="GoByCurrentReference_Action.java" startLine="177" startPosition="78" endLine="178" endPosition="22" />
-    <scopeInfo nodeId="5648737274373533972" fileName="GoByCurrentReference_Action.java" startLine="107" startPosition="73" endLine="110" endPosition="56">
+    <nodeInfo nodeId="5357294907628571324" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="46" startPosition="87" endLine="47" endPosition="102" />
+    <nodeInfo nodeId="5357294907628571334" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="48" startPosition="29" endLine="49" endPosition="19" />
+    <nodeInfo nodeId="5357294907628571340" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="51" startPosition="91" endLine="52" endPosition="19" />
+    <nodeInfo nodeId="5357294907628571320" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="53" startPosition="5" endLine="54" endPosition="16" />
+    <nodeInfo nodeId="5735282328623448682" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="95" startPosition="9" endLine="96" endPosition="110" />
+    <nodeInfo nodeId="5735282328623448690" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="96" startPosition="110" endLine="97" endPosition="79" />
+    <nodeInfo nodeId="5735282328623448700" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="97" startPosition="79" endLine="98" endPosition="81" />
+    <nodeInfo nodeId="5735282328623448750" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="GoByCurrentReference_Action.java" startLine="98" startPosition="81" endLine="99" endPosition="0" />
+    <nodeInfo nodeId="5735282328623448742" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="100" startPosition="53" endLine="101" endPosition="67" />
+    <nodeInfo nodeId="5735282328623448878" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="102" startPosition="14" endLine="103" endPosition="100" />
+    <nodeInfo nodeId="5735282328623448886" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="103" startPosition="100" endLine="104" endPosition="39" />
+    <nodeInfo nodeId="5735282328623448892" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="104" startPosition="39" endLine="105" endPosition="71" />
+    <nodeInfo nodeId="5735282328623448903" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="GoByCurrentReference_Action.java" startLine="105" startPosition="71" endLine="106" endPosition="36" />
+    <nodeInfo nodeId="6632904793135615456" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="106" startPosition="36" endLine="107" endPosition="50" />
+    <nodeInfo nodeId="5735282328623448946" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="107" startPosition="50" endLine="108" endPosition="35" />
+    <nodeInfo nodeId="5648737274373535111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="109" startPosition="73" endLine="110" endPosition="91" />
+    <nodeInfo nodeId="5648737274373535121" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="GoByCurrentReference_Action.java" startLine="110" startPosition="91" endLine="111" endPosition="37" />
+    <nodeInfo nodeId="5648737274373534001" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="111" startPosition="37" endLine="112" endPosition="56" />
+    <nodeInfo nodeId="5331922421125915910" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="113" startPosition="49" endLine="114" endPosition="60" />
+    <nodeInfo nodeId="6632904793135747451" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="GoByCurrentReference_Action.java" startLine="115" startPosition="56" endLine="116" endPosition="30" />
+    <nodeInfo nodeId="6632904793135812159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="116" startPosition="30" endLine="117" endPosition="29" />
+    <nodeInfo nodeId="5735282328623449454" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="118" startPosition="9" endLine="119" endPosition="79" />
+    <nodeInfo nodeId="5735282328623448901" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="GoByCurrentReference_Action.java" startLine="119" startPosition="79" endLine="120" endPosition="0" />
+    <nodeInfo nodeId="6906006820130795042" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="GoByCurrentReference_Action.java" startLine="122" startPosition="29" endLine="123" endPosition="108" />
+    <nodeInfo nodeId="8625430239852275663" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="126" startPosition="110" endLine="127" endPosition="77" />
+    <nodeInfo nodeId="5735282328623448731" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="141" startPosition="74" endLine="142" endPosition="224" />
+    <nodeInfo nodeId="5357294907628574108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="145" startPosition="120" endLine="146" endPosition="84" />
+    <nodeInfo nodeId="6105093990493768706" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="146" startPosition="84" endLine="147" endPosition="119" />
+    <nodeInfo nodeId="6105093990493768658" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="147" startPosition="119" endLine="148" endPosition="132" />
+    <nodeInfo nodeId="6105093990493768691" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="148" startPosition="132" endLine="149" endPosition="248" />
+    <nodeInfo nodeId="6105093990493768736" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="149" startPosition="248" endLine="150" endPosition="351" />
+    <nodeInfo nodeId="6105093990493768776" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="151" startPosition="66" endLine="152" endPosition="19" />
+    <nodeInfo nodeId="8625430239852275505" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="154" startPosition="23" endLine="155" endPosition="171" />
+    <nodeInfo nodeId="8625430239852275524" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="157" startPosition="48" endLine="158" endPosition="22" />
+    <nodeInfo nodeId="8625430239852275538" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="161" startPosition="31" endLine="162" endPosition="107" />
+    <nodeInfo nodeId="8625430239852275546" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="162" startPosition="107" endLine="163" endPosition="197" />
+    <nodeInfo nodeId="8625430239852275569" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="166" startPosition="76" endLine="167" endPosition="24" />
+    <nodeInfo nodeId="8625430239852275582" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="171" startPosition="26" endLine="172" endPosition="107" />
+    <nodeInfo nodeId="8625430239852275590" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="172" startPosition="107" endLine="173" endPosition="116" />
+    <nodeInfo nodeId="8625430239852275614" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="175" startPosition="190" endLine="176" endPosition="22" />
+    <nodeInfo nodeId="8625430239852275621" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="179" startPosition="12" endLine="180" endPosition="107" />
+    <nodeInfo nodeId="8625430239852275644" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="182" startPosition="78" endLine="183" endPosition="22" />
+    <nodeInfo nodeId="6105093990493768782" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="186" startPosition="5" endLine="187" endPosition="17" />
+    <nodeInfo nodeId="6105093990493768793" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GoByCurrentReference_Action.java" startLine="190" startPosition="110" endLine="191" endPosition="134" />
+    <nodeInfo nodeId="6105093990493768800" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="GoByCurrentReference_Action.java" startLine="191" startPosition="134" endLine="192" endPosition="30" />
+    <nodeInfo nodeId="6105093990493768816" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoByCurrentReference_Action.java" startLine="192" startPosition="30" endLine="193" endPosition="87" />
+    <nodeInfo nodeId="5357294907628571332" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="47" startPosition="102" endLine="50" endPosition="5" />
+    <nodeInfo nodeId="5357294907628571338" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="50" startPosition="5" endLine="53" endPosition="5" />
+    <nodeInfo nodeId="6906006820130795046" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="125" startPosition="33" endLine="128" endPosition="17" />
+    <nodeInfo nodeId="6105093990493768757" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="150" startPosition="351" endLine="153" endPosition="5" />
+    <nodeInfo nodeId="8625430239852275522" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="156" startPosition="80" endLine="159" endPosition="9" />
+    <nodeInfo nodeId="8625430239852275561" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="165" startPosition="56" endLine="168" endPosition="11" />
+    <nodeInfo nodeId="8625430239852275599" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="174" startPosition="80" endLine="177" endPosition="9" />
+    <nodeInfo nodeId="8625430239852275633" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="181" startPosition="80" endLine="184" endPosition="9" />
+    <nodeInfo nodeId="5357294907628574026" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="open#(Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)V" fileName="GoByCurrentReference_Action.java" startLine="140" startPosition="0" endLine="144" endPosition="0" />
+    <nodeInfo nodeId="8625430239852275518" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="155" startPosition="171" endLine="160" endPosition="7" />
+    <nodeInfo nodeId="8625430239852275559" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="164" startPosition="80" endLine="169" endPosition="9" />
+    <nodeInfo nodeId="8625430239852275595" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="173" startPosition="116" endLine="178" endPosition="7" />
+    <nodeInfo nodeId="8625430239852275629" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="180" startPosition="107" endLine="185" endPosition="7" />
+    <nodeInfo nodeId="6906006820130795044" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="GoByCurrentReference_Action.java" startLine="124" startPosition="65" endLine="130" endPosition="0" />
+    <nodeInfo nodeId="6105093990493768785" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifierName#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModelReference;Ljava/util/Map;)Ljava/lang/String;" fileName="GoByCurrentReference_Action.java" startLine="189" startPosition="0" endLine="195" endPosition="0" />
+    <nodeInfo nodeId="6906006820130794721" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="123" startPosition="108" endLine="130" endPosition="15" />
+    <nodeInfo nodeId="8625430239852275555" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="163" startPosition="197" endLine="170" endPosition="7" />
+    <nodeInfo nodeId="8625430239852275619" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="GoByCurrentReference_Action.java" startLine="179" startPosition="10" endLine="186" endPosition="5" />
+    <nodeInfo nodeId="5648737274373533971" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="108" startPosition="35" endLine="118" endPosition="9" />
+    <nodeInfo nodeId="5735282328623448764" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="GoByCurrentReference_Action.java" startLine="121" startPosition="22" endLine="132" endPosition="0" />
+    <nodeInfo nodeId="5735282328623448758" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoByCurrentReference_Action.java" startLine="120" startPosition="0" endLine="132" endPosition="18" />
+    <nodeInfo nodeId="5735282328623448751" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="GoByCurrentReference_Action.java" startLine="102" startPosition="12" endLine="133" endPosition="7" />
+    <nodeInfo nodeId="8625430239852275503" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="153" startPosition="5" endLine="186" endPosition="5" />
+    <nodeInfo nodeId="5735282328623448656" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GoByCurrentReference_Action.java" startLine="99" startPosition="0" endLine="133" endPosition="7" />
+    <nodeInfo nodeId="5357294907628574083" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigateToJavaStub#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)Z" fileName="GoByCurrentReference_Action.java" startLine="144" startPosition="0" endLine="189" endPosition="0" />
+    <scopeInfo nodeId="5357294907628571333" fileName="GoByCurrentReference_Action.java" startLine="48" startPosition="29" endLine="49" endPosition="19" />
+    <scopeInfo nodeId="5357294907628571339" fileName="GoByCurrentReference_Action.java" startLine="51" startPosition="91" endLine="52" endPosition="19" />
+    <scopeInfo nodeId="5735282328623448657" fileName="GoByCurrentReference_Action.java" startLine="100" startPosition="53" endLine="101" endPosition="67" />
+    <scopeInfo nodeId="5331922421125828126" fileName="GoByCurrentReference_Action.java" startLine="113" startPosition="49" endLine="114" endPosition="60" />
+    <scopeInfo nodeId="6906006820130795047" fileName="GoByCurrentReference_Action.java" startLine="126" startPosition="110" endLine="127" endPosition="77" />
+    <scopeInfo nodeId="5357294907628574029" fileName="GoByCurrentReference_Action.java" startLine="141" startPosition="74" endLine="142" endPosition="224" />
+    <scopeInfo nodeId="6105093990493768758" fileName="GoByCurrentReference_Action.java" startLine="151" startPosition="66" endLine="152" endPosition="19" />
+    <scopeInfo nodeId="8625430239852275523" fileName="GoByCurrentReference_Action.java" startLine="157" startPosition="48" endLine="158" endPosition="22" />
+    <scopeInfo nodeId="8625430239852275568" fileName="GoByCurrentReference_Action.java" startLine="166" startPosition="76" endLine="167" endPosition="24" />
+    <scopeInfo nodeId="8625430239852275613" fileName="GoByCurrentReference_Action.java" startLine="175" startPosition="190" endLine="176" endPosition="22" />
+    <scopeInfo nodeId="8625430239852275643" fileName="GoByCurrentReference_Action.java" startLine="182" startPosition="78" endLine="183" endPosition="22" />
+    <scopeInfo nodeId="6632904793135615422" fileName="GoByCurrentReference_Action.java" startLine="115" startPosition="56" endLine="117" endPosition="29" />
+    <scopeInfo nodeId="5648737274373533972" fileName="GoByCurrentReference_Action.java" startLine="109" startPosition="73" endLine="112" endPosition="56">
       <varInfo nodeId="5648737274373535112" varName="owners" />
     </scopeInfo>
-    <scopeInfo nodeId="6906006820130795045" fileName="GoByCurrentReference_Action.java" startLine="120" startPosition="33" endLine="123" endPosition="17" />
-    <scopeInfo nodeId="8625430239852275521" fileName="GoByCurrentReference_Action.java" startLine="151" startPosition="80" endLine="154" endPosition="9" />
-    <scopeInfo nodeId="8625430239852275560" fileName="GoByCurrentReference_Action.java" startLine="160" startPosition="56" endLine="163" endPosition="11" />
-    <scopeInfo nodeId="8625430239852275598" fileName="GoByCurrentReference_Action.java" startLine="169" startPosition="80" endLine="172" endPosition="9" />
-    <scopeInfo nodeId="8625430239852275632" fileName="GoByCurrentReference_Action.java" startLine="176" startPosition="80" endLine="179" endPosition="9" />
-    <scopeInfo nodeId="6105093990493768792" fileName="GoByCurrentReference_Action.java" startLine="185" startPosition="110" endLine="188" endPosition="87">
+    <scopeInfo nodeId="6906006820130795045" fileName="GoByCurrentReference_Action.java" startLine="125" startPosition="33" endLine="128" endPosition="17" />
+    <scopeInfo nodeId="8625430239852275521" fileName="GoByCurrentReference_Action.java" startLine="156" startPosition="80" endLine="159" endPosition="9" />
+    <scopeInfo nodeId="8625430239852275560" fileName="GoByCurrentReference_Action.java" startLine="165" startPosition="56" endLine="168" endPosition="11" />
+    <scopeInfo nodeId="8625430239852275598" fileName="GoByCurrentReference_Action.java" startLine="174" startPosition="80" endLine="177" endPosition="9" />
+    <scopeInfo nodeId="8625430239852275632" fileName="GoByCurrentReference_Action.java" startLine="181" startPosition="80" endLine="184" endPosition="9" />
+    <scopeInfo nodeId="6105093990493768792" fileName="GoByCurrentReference_Action.java" startLine="190" startPosition="110" endLine="193" endPosition="87">
       <varInfo nodeId="6105093990493768794" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="5357294907628574026" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="open#(Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)V" fileName="GoByCurrentReference_Action.java" startLine="135" startPosition="0" endLine="139" endPosition="0">
+    <scopeInfo nodeId="5357294907628574026" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="open#(Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)V" fileName="GoByCurrentReference_Action.java" startLine="140" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="5735282328623448733" varName="targetNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8625430239852275518" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="150" startPosition="171" endLine="155" endPosition="7">
+    <scopeInfo nodeId="8625430239852275518" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="155" startPosition="171" endLine="160" endPosition="7">
       <varInfo nodeId="8625430239852275519" varName="np" />
     </scopeInfo>
-    <scopeInfo nodeId="8625430239852275558" fileName="GoByCurrentReference_Action.java" startLine="159" startPosition="80" endLine="164" endPosition="9" />
-    <scopeInfo nodeId="8625430239852275595" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="168" startPosition="116" endLine="173" endPosition="7">
+    <scopeInfo nodeId="8625430239852275558" fileName="GoByCurrentReference_Action.java" startLine="164" startPosition="80" endLine="169" endPosition="9" />
+    <scopeInfo nodeId="8625430239852275595" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="173" startPosition="116" endLine="178" endPosition="7">
       <varInfo nodeId="8625430239852275596" varName="np" />
     </scopeInfo>
-    <scopeInfo nodeId="8625430239852275629" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="175" startPosition="107" endLine="180" endPosition="7">
+    <scopeInfo nodeId="8625430239852275629" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="180" startPosition="107" endLine="185" endPosition="7">
       <varInfo nodeId="8625430239852275630" varName="np" />
     </scopeInfo>
-    <scopeInfo nodeId="6906006820130795044" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="GoByCurrentReference_Action.java" startLine="119" startPosition="65" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="8625430239852275504" fileName="GoByCurrentReference_Action.java" startLine="149" startPosition="23" endLine="155" endPosition="7">
+    <scopeInfo nodeId="6906006820130795044" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="GoByCurrentReference_Action.java" startLine="124" startPosition="65" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="8625430239852275504" fileName="GoByCurrentReference_Action.java" startLine="154" startPosition="23" endLine="160" endPosition="7">
       <varInfo nodeId="8625430239852275506" varName="fqName" />
     </scopeInfo>
-    <scopeInfo nodeId="8625430239852275620" fileName="GoByCurrentReference_Action.java" startLine="174" startPosition="12" endLine="180" endPosition="7">
+    <scopeInfo nodeId="8625430239852275620" fileName="GoByCurrentReference_Action.java" startLine="179" startPosition="12" endLine="185" endPosition="7">
       <varInfo nodeId="8625430239852275622" varName="classifierName" />
     </scopeInfo>
-    <scopeInfo nodeId="6105093990493768785" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifierName#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModelReference;Ljava/util/Map;)Ljava/lang/String;" fileName="GoByCurrentReference_Action.java" startLine="184" startPosition="0" endLine="190" endPosition="0">
+    <scopeInfo nodeId="6105093990493768785" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifierName#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModelReference;Ljava/util/Map;)Ljava/lang/String;" fileName="GoByCurrentReference_Action.java" startLine="189" startPosition="0" endLine="195" endPosition="0">
       <varInfo nodeId="6105093990493768790" varName="ref" />
       <varInfo nodeId="6105093990493768788" varName="targetNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8625430239852275555" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="158" startPosition="197" endLine="165" endPosition="7">
+    <scopeInfo nodeId="8625430239852275555" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="GoByCurrentReference_Action.java" startLine="163" startPosition="197" endLine="170" endPosition="7">
       <varInfo nodeId="8625430239852275556" varName="np" />
     </scopeInfo>
-    <scopeInfo nodeId="8625430239852275581" fileName="GoByCurrentReference_Action.java" startLine="166" startPosition="26" endLine="173" endPosition="7">
+    <scopeInfo nodeId="8625430239852275581" fileName="GoByCurrentReference_Action.java" startLine="171" startPosition="26" endLine="178" endPosition="7">
       <varInfo nodeId="8625430239852275583" varName="classifierName" />
       <varInfo nodeId="8625430239852275591" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="5357294907628544821" fileName="GoByCurrentReference_Action.java" startLine="45" startPosition="87" endLine="53" endPosition="16">
+    <scopeInfo nodeId="5357294907628544821" fileName="GoByCurrentReference_Action.java" startLine="46" startPosition="87" endLine="54" endPosition="16">
       <varInfo nodeId="5357294907628571325" varName="targetNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5735282328623448767" fileName="GoByCurrentReference_Action.java" startLine="117" startPosition="29" endLine="125" endPosition="15" />
-    <scopeInfo nodeId="8625430239852275537" fileName="GoByCurrentReference_Action.java" startLine="156" startPosition="31" endLine="165" endPosition="7">
+    <scopeInfo nodeId="5735282328623448767" fileName="GoByCurrentReference_Action.java" startLine="122" startPosition="29" endLine="130" endPosition="15" />
+    <scopeInfo nodeId="8625430239852275537" fileName="GoByCurrentReference_Action.java" startLine="161" startPosition="31" endLine="170" endPosition="7">
       <varInfo nodeId="8625430239852275539" varName="classifierName" />
       <varInfo nodeId="8625430239852275547" varName="paramCount" />
     </scopeInfo>
-    <scopeInfo nodeId="5735282328623448764" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="GoByCurrentReference_Action.java" startLine="116" startPosition="22" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="5735282328623448752" fileName="GoByCurrentReference_Action.java" startLine="101" startPosition="14" endLine="127" endPosition="18">
+    <scopeInfo nodeId="5735282328623448764" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="GoByCurrentReference_Action.java" startLine="121" startPosition="22" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="5735282328623448752" fileName="GoByCurrentReference_Action.java" startLine="102" startPosition="14" endLine="132" endPosition="18">
       <varInfo nodeId="5735282328623448947" varName="module" />
       <varInfo nodeId="5735282328623448887" varName="model" />
       <varInfo nodeId="5735282328623448879" varName="node" />
+      <varInfo nodeId="6632904793135615457" varName="it" />
       <varInfo nodeId="5735282328623448893" varName="modules" />
       <varInfo nodeId="5735282328623449455" varName="modulePath" />
     </scopeInfo>
-    <scopeInfo nodeId="5357294907628574085" fileName="GoByCurrentReference_Action.java" startLine="140" startPosition="120" endLine="182" endPosition="17">
+    <scopeInfo nodeId="5357294907628574085" fileName="GoByCurrentReference_Action.java" startLine="145" startPosition="120" endLine="187" endPosition="17">
       <varInfo nodeId="6105093990493768692" varName="isMethod" />
       <varInfo nodeId="5357294907628574109" varName="ref" />
       <varInfo nodeId="6105093990493768659" varName="isConstructor" />
       <varInfo nodeId="6105093990493768707" varName="isClassifier" />
       <varInfo nodeId="6105093990493768737" varName="isField" />
     </scopeInfo>
-    <scopeInfo nodeId="5357294907628574083" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigateToJavaStub#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)Z" fileName="GoByCurrentReference_Action.java" startLine="139" startPosition="0" endLine="184" endPosition="0">
+    <scopeInfo nodeId="5357294907628574083" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigateToJavaStub#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)Z" fileName="GoByCurrentReference_Action.java" startLine="144" startPosition="0" endLine="189" endPosition="0">
       <varInfo nodeId="5357294907628574088" varName="targetNode" />
       <varInfo nodeId="1686314534853253655" varName="projectPath" />
     </scopeInfo>
-    <unitInfo nodeId="6906006820130795044" fileName="GoByCurrentReference_Action.java" startLine="119" startPosition="53" endLine="125" endPosition="13" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action$2" />
-    <unitInfo nodeId="5735282328623448762" fileName="GoByCurrentReference_Action.java" startLine="116" startPosition="12" endLine="127" endPosition="9" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action$1" />
+    <unitInfo nodeId="6906006820130795044" fileName="GoByCurrentReference_Action.java" startLine="124" startPosition="53" endLine="130" endPosition="13" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action$2" />
+    <unitInfo nodeId="5735282328623448762" fileName="GoByCurrentReference_Action.java" startLine="121" startPosition="12" endLine="132" endPosition="9" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action$1" />
   </root>
   <root nodeId="5408201126509038596">
     <nodeInfo nodeId="2042640167017164587" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GetModuleContentsFromSource_Action.java" startLine="64" startPosition="9" endLine="65" endPosition="62" />
@@ -5606,62 +5611,74 @@
     <unitInfo nodeId="5792297515476886377" fileName="ModelCheckerViewer.java" startLine="55" startPosition="0" endLine="283" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelCheckerViewer" />
   </root>
   <root nodeId="5817196281476553125">
-    <nodeInfo nodeId="9165393648219124259" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DebugActionsUtil.java" startLine="22" startPosition="75" endLine="23" endPosition="53" />
-    <nodeInfo nodeId="560906474909821678" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugActionsUtil.java" startLine="23" startPosition="53" endLine="24" endPosition="57" />
-    <nodeInfo nodeId="795143013695839434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DebugActionsUtil.java" startLine="27" startPosition="79" endLine="28" endPosition="110" />
-    <nodeInfo nodeId="795143013695839441" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DebugActionsUtil.java" startLine="28" startPosition="110" endLine="29" endPosition="68" />
-    <nodeInfo nodeId="560906474909888547" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugActionsUtil.java" startLine="29" startPosition="68" endLine="30" endPosition="75" />
-    <nodeInfo nodeId="560906474909821600" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DebugActionsUtil.java" startLine="33" startPosition="134" endLine="34" endPosition="34" />
-    <nodeInfo nodeId="560906474909821604" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="DebugActionsUtil.java" startLine="35" startPosition="39" endLine="36" endPosition="21" />
-    <nodeInfo nodeId="560906474909821606" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DebugActionsUtil.java" startLine="36" startPosition="21" endLine="37" endPosition="64" />
-    <nodeInfo nodeId="560906474909821617" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="DebugActionsUtil.java" startLine="38" startPosition="12" endLine="39" endPosition="19" />
-    <nodeInfo nodeId="560906474909821621" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugActionsUtil.java" startLine="40" startPosition="28" endLine="41" endPosition="20" />
-    <nodeInfo nodeId="560906474909821626" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DebugActionsUtil.java" startLine="42" startPosition="7" endLine="43" endPosition="117" />
-    <nodeInfo nodeId="560906474909821636" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="DebugActionsUtil.java" startLine="44" startPosition="29" endLine="45" endPosition="108" />
-    <nodeInfo nodeId="560906474909821638" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="DebugActionsUtil.java" startLine="45" startPosition="108" endLine="46" endPosition="44" />
-    <nodeInfo nodeId="560906474909821640" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DebugActionsUtil.java" startLine="46" startPosition="44" endLine="47" endPosition="145" />
-    <nodeInfo nodeId="560906474909821667" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugActionsUtil.java" startLine="54" startPosition="26" endLine="55" endPosition="18" />
-    <nodeInfo nodeId="560906474909821672" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugActionsUtil.java" startLine="56" startPosition="5" endLine="57" endPosition="93" />
-    <nodeInfo nodeId="5817196281476553127" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugActionsUtil#()V" fileName="DebugActionsUtil.java" startLine="18" startPosition="31" endLine="20" endPosition="3" />
-    <nodeInfo nodeId="560906474909821619" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DebugActionsUtil.java" startLine="39" startPosition="19" endLine="42" endPosition="7" />
-    <nodeInfo nodeId="560906474909821665" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DebugActionsUtil.java" startLine="53" startPosition="5" endLine="56" endPosition="5" />
-    <nodeInfo nodeId="560906474909821654" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DebugActionsUtil.java" startLine="48" startPosition="7" endLine="52" endPosition="8" />
-    <nodeInfo nodeId="5817196281476553131" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljetbrains/mps/debug/api/AbstractDebugSession;" fileName="DebugActionsUtil.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
-    <nodeInfo nodeId="560906474909821634" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DebugActionsUtil.java" startLine="43" startPosition="117" endLine="48" endPosition="7" />
-    <nodeInfo nodeId="560906474909882061" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/openapi/actionSystem/DataContext;)Ljetbrains/mps/debug/api/AbstractDebugSession;" fileName="DebugActionsUtil.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
-    <nodeInfo nodeId="560906474909821615" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="DebugActionsUtil.java" startLine="38" startPosition="10" endLine="53" endPosition="5" />
-    <nodeInfo nodeId="560906474909821602" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DebugActionsUtil.java" startLine="34" startPosition="34" endLine="53" endPosition="5" />
-    <nodeInfo nodeId="560906474909821594" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/execution/ui/RunContentDescriptor;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/AbstractDebugSession;" fileName="DebugActionsUtil.java" startLine="32" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="5817196281476553130" fileName="DebugActionsUtil.java" startLine="19" startPosition="29" endLine="19" endPosition="29" />
-    <scopeInfo nodeId="560906474909821620" fileName="DebugActionsUtil.java" startLine="40" startPosition="28" endLine="41" endPosition="20" />
-    <scopeInfo nodeId="560906474909821666" fileName="DebugActionsUtil.java" startLine="54" startPosition="26" endLine="55" endPosition="18" />
-    <scopeInfo nodeId="5817196281476553127" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugActionsUtil#()V" fileName="DebugActionsUtil.java" startLine="18" startPosition="31" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="5817196281476553134" fileName="DebugActionsUtil.java" startLine="22" startPosition="75" endLine="24" endPosition="57">
+    <nodeInfo nodeId="9165393648219124259" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DebugActionsUtil.java" startLine="24" startPosition="75" endLine="25" endPosition="53" />
+    <nodeInfo nodeId="560906474909821678" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugActionsUtil.java" startLine="25" startPosition="53" endLine="26" endPosition="57" />
+    <nodeInfo nodeId="5565424165410309790" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DebugActionsUtil.java" startLine="30" startPosition="80" endLine="31" endPosition="63" />
+    <nodeInfo nodeId="5565424165410309813" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugActionsUtil.java" startLine="32" startPosition="31" endLine="33" endPosition="50" />
+    <nodeInfo nodeId="5565424165410309810" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugActionsUtil.java" startLine="34" startPosition="5" endLine="35" endPosition="16" />
+    <nodeInfo nodeId="795143013695839434" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DebugActionsUtil.java" startLine="39" startPosition="79" endLine="40" endPosition="110" />
+    <nodeInfo nodeId="795143013695839441" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DebugActionsUtil.java" startLine="40" startPosition="110" endLine="41" endPosition="68" />
+    <nodeInfo nodeId="560906474909888547" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugActionsUtil.java" startLine="41" startPosition="68" endLine="42" endPosition="75" />
+    <nodeInfo nodeId="560906474909821600" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DebugActionsUtil.java" startLine="46" startPosition="134" endLine="47" endPosition="34" />
+    <nodeInfo nodeId="560906474909821604" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="DebugActionsUtil.java" startLine="48" startPosition="39" endLine="49" endPosition="21" />
+    <nodeInfo nodeId="560906474909821606" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DebugActionsUtil.java" startLine="49" startPosition="21" endLine="50" endPosition="64" />
+    <nodeInfo nodeId="560906474909821617" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="DebugActionsUtil.java" startLine="51" startPosition="12" endLine="52" endPosition="19" />
+    <nodeInfo nodeId="560906474909821621" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugActionsUtil.java" startLine="53" startPosition="28" endLine="54" endPosition="20" />
+    <nodeInfo nodeId="560906474909821626" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DebugActionsUtil.java" startLine="55" startPosition="7" endLine="56" endPosition="117" />
+    <nodeInfo nodeId="560906474909821636" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="DebugActionsUtil.java" startLine="57" startPosition="29" endLine="58" endPosition="108" />
+    <nodeInfo nodeId="560906474909821638" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="DebugActionsUtil.java" startLine="58" startPosition="108" endLine="59" endPosition="44" />
+    <nodeInfo nodeId="560906474909821640" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DebugActionsUtil.java" startLine="59" startPosition="44" endLine="60" endPosition="145" />
+    <nodeInfo nodeId="560906474909821667" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugActionsUtil.java" startLine="67" startPosition="26" endLine="68" endPosition="18" />
+    <nodeInfo nodeId="560906474909821672" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DebugActionsUtil.java" startLine="69" startPosition="5" endLine="70" endPosition="93" />
+    <nodeInfo nodeId="5817196281476553127" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugActionsUtil#()V" fileName="DebugActionsUtil.java" startLine="19" startPosition="31" endLine="21" endPosition="3" />
+    <nodeInfo nodeId="5565424165410309800" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DebugActionsUtil.java" startLine="31" startPosition="63" endLine="34" endPosition="5" />
+    <nodeInfo nodeId="560906474909821619" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DebugActionsUtil.java" startLine="52" startPosition="19" endLine="55" endPosition="7" />
+    <nodeInfo nodeId="560906474909821665" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DebugActionsUtil.java" startLine="66" startPosition="5" endLine="69" endPosition="5" />
+    <nodeInfo nodeId="560906474909821654" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DebugActionsUtil.java" startLine="61" startPosition="7" endLine="65" endPosition="8" />
+    <nodeInfo nodeId="560906474909821634" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DebugActionsUtil.java" startLine="56" startPosition="117" endLine="61" endPosition="7" />
+    <nodeInfo nodeId="5817196281476553131" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljetbrains/mps/debug/api/AbstractDebugSession;" fileName="DebugActionsUtil.java" startLine="22" startPosition="0" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="560906474909882061" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/openapi/actionSystem/DataContext;)Ljetbrains/mps/debug/api/AbstractDebugSession;" fileName="DebugActionsUtil.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="5565424165410115967" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEvaluationProvider#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljetbrains/mps/debug/api/evaluation/IEvaluationProvider;" fileName="DebugActionsUtil.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="560906474909821615" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="DebugActionsUtil.java" startLine="51" startPosition="10" endLine="66" endPosition="5" />
+    <nodeInfo nodeId="560906474909821602" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DebugActionsUtil.java" startLine="47" startPosition="34" endLine="66" endPosition="5" />
+    <nodeInfo nodeId="560906474909821594" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/execution/ui/RunContentDescriptor;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/AbstractDebugSession;" fileName="DebugActionsUtil.java" startLine="44" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="5817196281476553130" fileName="DebugActionsUtil.java" startLine="20" startPosition="29" endLine="20" endPosition="29" />
+    <scopeInfo nodeId="5565424165410309801" fileName="DebugActionsUtil.java" startLine="32" startPosition="31" endLine="33" endPosition="50" />
+    <scopeInfo nodeId="560906474909821620" fileName="DebugActionsUtil.java" startLine="53" startPosition="28" endLine="54" endPosition="20" />
+    <scopeInfo nodeId="560906474909821666" fileName="DebugActionsUtil.java" startLine="67" startPosition="26" endLine="68" endPosition="18" />
+    <scopeInfo nodeId="5817196281476553127" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugActionsUtil#()V" fileName="DebugActionsUtil.java" startLine="19" startPosition="31" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="5817196281476553134" fileName="DebugActionsUtil.java" startLine="24" startPosition="75" endLine="26" endPosition="57">
       <varInfo nodeId="9165393648219124260" varName="dataContext" />
     </scopeInfo>
-    <scopeInfo nodeId="560906474909821603" fileName="DebugActionsUtil.java" startLine="35" startPosition="39" endLine="37" endPosition="64" />
-    <scopeInfo nodeId="560906474909882064" fileName="DebugActionsUtil.java" startLine="27" startPosition="79" endLine="30" endPosition="75">
+    <scopeInfo nodeId="560906474909821603" fileName="DebugActionsUtil.java" startLine="48" startPosition="39" endLine="50" endPosition="64" />
+    <scopeInfo nodeId="560906474909882064" fileName="DebugActionsUtil.java" startLine="39" startPosition="79" endLine="42" endPosition="75">
       <varInfo nodeId="795143013695839442" varName="project" />
       <varInfo nodeId="795143013695839435" varName="runContentDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="560906474909821635" fileName="DebugActionsUtil.java" startLine="44" startPosition="29" endLine="47" endPosition="145" />
-    <scopeInfo nodeId="5817196281476553131" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljetbrains/mps/debug/api/AbstractDebugSession;" fileName="DebugActionsUtil.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="560906474909821635" fileName="DebugActionsUtil.java" startLine="57" startPosition="29" endLine="60" endPosition="145" />
+    <scopeInfo nodeId="5565424165410115970" fileName="DebugActionsUtil.java" startLine="30" startPosition="80" endLine="35" endPosition="16">
+      <varInfo nodeId="5565424165410309791" varName="debugSession" />
+    </scopeInfo>
+    <scopeInfo nodeId="5817196281476553131" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljetbrains/mps/debug/api/AbstractDebugSession;" fileName="DebugActionsUtil.java" startLine="22" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="9165393648219124254" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="560906474909882061" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/openapi/actionSystem/DataContext;)Ljetbrains/mps/debug/api/AbstractDebugSession;" fileName="DebugActionsUtil.java" startLine="26" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="560906474909882061" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/openapi/actionSystem/DataContext;)Ljetbrains/mps/debug/api/AbstractDebugSession;" fileName="DebugActionsUtil.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="560906474909888498" varName="dataContext" />
     </scopeInfo>
-    <scopeInfo nodeId="560906474909821616" fileName="DebugActionsUtil.java" startLine="38" startPosition="12" endLine="52" endPosition="8">
+    <scopeInfo nodeId="5565424165410115967" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEvaluationProvider#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljetbrains/mps/debug/api/evaluation/IEvaluationProvider;" fileName="DebugActionsUtil.java" startLine="28" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="5565424165410309785" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="560906474909821616" fileName="DebugActionsUtil.java" startLine="51" startPosition="12" endLine="65" endPosition="8">
       <varInfo nodeId="560906474909821591" varName="selected" />
     </scopeInfo>
-    <scopeInfo nodeId="560906474909821599" fileName="DebugActionsUtil.java" startLine="33" startPosition="134" endLine="57" endPosition="93">
+    <scopeInfo nodeId="560906474909821599" fileName="DebugActionsUtil.java" startLine="46" startPosition="134" endLine="70" endPosition="93">
       <varInfo nodeId="560906474909821590" varName="processHandler" />
     </scopeInfo>
-    <scopeInfo nodeId="560906474909821594" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/execution/ui/RunContentDescriptor;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/AbstractDebugSession;" fileName="DebugActionsUtil.java" startLine="32" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="560906474909821594" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugSession#(Lcom/intellij/execution/ui/RunContentDescriptor;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/AbstractDebugSession;" fileName="DebugActionsUtil.java" startLine="44" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="560906474909821593" varName="project" />
       <varInfo nodeId="560906474909821592" varName="runContentDescriptor" />
     </scopeInfo>
-    <unitInfo nodeId="5817196281476553125" fileName="DebugActionsUtil.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.actions.DebugActionsUtil" />
+    <unitInfo nodeId="5817196281476553125" fileName="DebugActionsUtil.java" startLine="19" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.actions.DebugActionsUtil" />
   </root>
   <root nodeId="5837064474747299178">
     <nodeInfo nodeId="4825631273596746195" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Pause_Action.java" startLine="30" startPosition="7" endLine="31" endPosition="84" />
@@ -7251,236 +7268,248 @@
     <unitInfo nodeId="7824118464175996831" fileName="BaseAddMethodDialog.java" startLine="45" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.ide.actions.BaseAddMethodDialog" />
   </root>
   <root nodeId="7824118464175997551">
-    <nodeInfo nodeId="7824118464175997715" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContainerStrategy" fileName="StratergyAddMethodDialog.java" startLine="32" startPosition="67" endLine="33" endPosition="73" />
-    <nodeInfo nodeId="7824118464175997718" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAdditionStrategy" fileName="StratergyAddMethodDialog.java" startLine="33" startPosition="73" endLine="34" endPosition="71" />
-    <nodeInfo nodeId="7824118464175997721" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCollectStrategy" fileName="StratergyAddMethodDialog.java" startLine="34" startPosition="71" endLine="35" endPosition="76" />
-    <nodeInfo nodeId="7824118464175997724" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySortByNameAction" fileName="StratergyAddMethodDialog.java" startLine="35" startPosition="76" endLine="36" endPosition="71" />
-    <nodeInfo nodeId="4151408063400001366" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" fileName="StratergyAddMethodDialog.java" startLine="36" startPosition="71" endLine="37" endPosition="28" />
-    <nodeInfo nodeId="7824118464175997742" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="StratergyAddMethodDialog.java" startLine="39" startPosition="287" endLine="40" endPosition="59" />
-    <nodeInfo nodeId="7824118464175997748" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="40" startPosition="59" endLine="41" endPosition="44" />
-    <nodeInfo nodeId="7824118464175997754" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="41" startPosition="44" endLine="42" endPosition="40" />
-    <nodeInfo nodeId="7824118464175997760" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="42" startPosition="40" endLine="43" endPosition="42" />
-    <nodeInfo nodeId="4151408063400001379" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="43" startPosition="42" endLine="44" endPosition="59" />
-    <nodeInfo nodeId="7824118464176218641" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="44" startPosition="59" endLine="45" endPosition="82" />
-    <nodeInfo nodeId="4151408063400001311" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="49" startPosition="105" endLine="50" endPosition="110" />
-    <nodeInfo nodeId="4151408063400000254" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="50" startPosition="110" endLine="51" endPosition="73" />
-    <nodeInfo nodeId="4151408063400001413" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="52" startPosition="29" endLine="53" endPosition="116" />
-    <nodeInfo nodeId="4151408063400000277" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="53" startPosition="116" endLine="54" endPosition="109" />
-    <nodeInfo nodeId="4151408063400000284" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="54" startPosition="109" endLine="55" endPosition="109" />
-    <nodeInfo nodeId="4151408063400001438" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="59" startPosition="10" endLine="60" endPosition="78" />
-    <nodeInfo nodeId="4151408063400001341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="63" startPosition="59" endLine="64" endPosition="30" />
-    <nodeInfo nodeId="7824118464175997772" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="68" startPosition="68" endLine="69" endPosition="97" />
-    <nodeInfo nodeId="7824118464175997788" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="72" startPosition="48" endLine="73" endPosition="54" />
-    <nodeInfo nodeId="7824118464175997795" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="73" startPosition="54" endLine="74" endPosition="45" />
-    <nodeInfo nodeId="7824118464175997800" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="74" startPosition="45" endLine="75" endPosition="35" />
-    <nodeInfo nodeId="7824118464175997807" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="75" startPosition="35" endLine="76" endPosition="18" />
-    <nodeInfo nodeId="7824118464175997847" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="80" startPosition="45" endLine="81" endPosition="30" />
-    <nodeInfo nodeId="7824118464175997853" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="81" startPosition="30" endLine="82" endPosition="72" />
-    <nodeInfo nodeId="7824118464175997865" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="82" startPosition="72" endLine="83" endPosition="30" />
-    <nodeInfo nodeId="7824118464175997871" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="83" startPosition="30" endLine="84" endPosition="72" />
-    <nodeInfo nodeId="7824118464175997883" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="84" startPosition="72" endLine="85" endPosition="21" />
-    <nodeInfo nodeId="7824118464175997825" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="86" startPosition="12" endLine="87" endPosition="36" />
-    <nodeInfo nodeId="7824118464175997833" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="87" startPosition="36" endLine="88" endPosition="36" />
-    <nodeInfo nodeId="7824118464175997841" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="88" startPosition="36" endLine="89" endPosition="30" />
-    <nodeInfo nodeId="7824118464175997895" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="93" startPosition="105" endLine="94" endPosition="80" />
-    <nodeInfo nodeId="7824118464175997902" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="94" startPosition="80" endLine="95" endPosition="49" />
-    <nodeInfo nodeId="4151408063400001462" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="96" startPosition="71" endLine="97" endPosition="54" />
-    <nodeInfo nodeId="7824118464175997914" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="97" startPosition="54" endLine="98" endPosition="26" />
-    <nodeInfo nodeId="7824118464175997923" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="99" startPosition="5" endLine="100" endPosition="125" />
-    <nodeInfo nodeId="7840389369972830269" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="101" startPosition="90" endLine="102" endPosition="67" />
-    <nodeInfo nodeId="7840389369972895333" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="102" startPosition="67" endLine="103" endPosition="55" />
-    <nodeInfo nodeId="7840389369972895398" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="103" startPosition="55" endLine="104" endPosition="66" />
-    <nodeInfo nodeId="4151408063400001473" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="105" startPosition="80" endLine="106" endPosition="38" />
-    <nodeInfo nodeId="7824118464175997938" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="107" startPosition="7" endLine="108" endPosition="36" />
-    <nodeInfo nodeId="7824118464175997945" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="108" startPosition="36" endLine="109" endPosition="96" />
-    <nodeInfo nodeId="7824118464175997961" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="110" startPosition="5" endLine="111" endPosition="18" />
-    <nodeInfo nodeId="7824118464175997969" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="114" startPosition="62" endLine="115" endPosition="86" />
-    <nodeInfo nodeId="7824118464175998003" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="118" startPosition="69" endLine="119" endPosition="57" />
-    <nodeInfo nodeId="7824118464175998015" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="122" startPosition="59" endLine="123" endPosition="65" />
-    <nodeInfo nodeId="7824118464175997599" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainContainer#()Ljetbrains/mps/smodel/SNode;" fileName="StratergyAddMethodDialog.java" startLine="126" startPosition="45" endLine="127" endPosition="36" />
-    <nodeInfo nodeId="7824118464175997603" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="StratergyAddMethodDialog.java" startLine="127" startPosition="36" endLine="128" endPosition="48" />
-    <nodeInfo nodeId="7824118464175997609" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="128" startPosition="48" endLine="129" endPosition="107" />
-    <nodeInfo nodeId="7824118464175997625" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)I" fileName="StratergyAddMethodDialog.java" startLine="129" startPosition="107" endLine="130" endPosition="67" />
-    <nodeInfo nodeId="7824118464175997558" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySource" fileName="StratergyAddMethodDialog.java" startLine="131" startPosition="40" endLine="132" endPosition="45" />
-    <nodeInfo nodeId="7824118464175997561" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" fileName="StratergyAddMethodDialog.java" startLine="132" startPosition="45" endLine="133" endPosition="45" />
-    <nodeInfo nodeId="7824118464175997571" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="135" startPosition="89" endLine="136" endPosition="26" />
-    <nodeInfo nodeId="7824118464175997577" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="136" startPosition="26" endLine="137" endPosition="26" />
-    <nodeInfo nodeId="7824118464175997587" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="140" startPosition="48" endLine="141" endPosition="24" />
-    <nodeInfo nodeId="7824118464175997595" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="144" startPosition="48" endLine="145" endPosition="24" />
-    <nodeInfo nodeId="7824118464175997635" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" fileName="StratergyAddMethodDialog.java" startLine="151" startPosition="44" endLine="152" endPosition="29" />
-    <nodeInfo nodeId="7824118464175997639" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" fileName="StratergyAddMethodDialog.java" startLine="152" startPosition="29" endLine="153" endPosition="57" />
-    <nodeInfo nodeId="7824118464175997643" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateMethod#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" fileName="StratergyAddMethodDialog.java" startLine="153" startPosition="57" endLine="154" endPosition="63" />
-    <nodeInfo nodeId="7824118464175997653" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="157" startPosition="50" endLine="158" endPosition="84" />
-    <nodeInfo nodeId="7824118464176219398" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" fileName="StratergyAddMethodDialog.java" startLine="161" startPosition="55" endLine="162" endPosition="30" />
-    <nodeInfo nodeId="7824118464175997670" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="StratergyAddMethodDialog.java" startLine="164" startPosition="41" endLine="165" endPosition="35" />
-    <nodeInfo nodeId="7824118464175997672" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="165" startPosition="35" endLine="166" endPosition="72" />
-    <nodeInfo nodeId="7824118464176219401" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="166" startPosition="72" endLine="167" endPosition="20" />
-    <nodeInfo nodeId="7824118464175997685" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="170" startPosition="48" endLine="171" endPosition="26" />
-    <nodeInfo nodeId="7824118464176218627" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="174" startPosition="61" endLine="175" endPosition="25" />
-    <nodeInfo nodeId="7824118464175997703" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="175" startPosition="25" endLine="176" endPosition="50" />
-    <nodeInfo nodeId="7824118464175997711" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="179" startPosition="33" endLine="180" endPosition="164" />
-    <nodeInfo nodeId="7824118464176218609" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="183" startPosition="44" endLine="184" endPosition="165" />
-    <nodeInfo nodeId="4151408063400000325" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StratergyAddMethodDialog.java" startLine="62" startPosition="5" endLine="65" endPosition="5" />
-    <nodeInfo nodeId="4151408063400001479" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StratergyAddMethodDialog.java" startLine="104" startPosition="66" endLine="107" endPosition="7" />
-    <nodeInfo nodeId="4151408063400000291" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="55" startPosition="109" endLine="59" endPosition="10" />
-    <nodeInfo nodeId="7824118464175997767" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#()Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <nodeInfo nodeId="7824118464175997823" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="StratergyAddMethodDialog.java" startLine="86" startPosition="10" endLine="90" endPosition="5" />
-    <nodeInfo nodeId="7824118464175997909" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StratergyAddMethodDialog.java" startLine="95" startPosition="49" endLine="99" endPosition="5" />
-    <nodeInfo nodeId="7824118464175997963" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;)Ljetbrains/mps/smodel/INodeAdapter;" fileName="StratergyAddMethodDialog.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
-    <nodeInfo nodeId="7824118464175997995" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)I" fileName="StratergyAddMethodDialog.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
-    <nodeInfo nodeId="7824118464175998011" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" fileName="StratergyAddMethodDialog.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
-    <nodeInfo nodeId="7824118464175997564" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodAddition#(Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;)V" fileName="StratergyAddMethodDialog.java" startLine="134" startPosition="0" endLine="138" endPosition="7" />
-    <nodeInfo nodeId="7824118464175997583" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSource#()Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;" fileName="StratergyAddMethodDialog.java" startLine="139" startPosition="0" endLine="143" endPosition="0" />
-    <nodeInfo nodeId="7824118464175997591" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;" fileName="StratergyAddMethodDialog.java" startLine="143" startPosition="0" endLine="147" endPosition="0" />
-    <nodeInfo nodeId="7824118464175997679" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" fileName="StratergyAddMethodDialog.java" startLine="169" startPosition="0" endLine="173" endPosition="0" />
-    <nodeInfo nodeId="7824118464175997707" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#()Z" fileName="StratergyAddMethodDialog.java" startLine="178" startPosition="0" endLine="182" endPosition="0" />
-    <nodeInfo nodeId="7824118464176218601" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Z)V" fileName="StratergyAddMethodDialog.java" startLine="182" startPosition="0" endLine="186" endPosition="0" />
-    <nodeInfo nodeId="7824118464175997667" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortByNameAction#(Lcom/intellij/openapi/project/Project;)V" fileName="StratergyAddMethodDialog.java" startLine="163" startPosition="0" endLine="168" endPosition="5" />
-    <nodeInfo nodeId="7824118464175997689" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" fileName="StratergyAddMethodDialog.java" startLine="173" startPosition="0" endLine="178" endPosition="0" />
-    <nodeInfo nodeId="7824118464175997783" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolbarActions#()Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="71" startPosition="0" endLine="78" endPosition="0" />
-    <nodeInfo nodeId="7824118464175997729" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StratergyAddMethodDialog#(Ljetbrains/mps/nodeEditor/EditorContext;Ljava/awt/Frame;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/ContainerStrategy;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/CollectMethodsStrategy;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/AdditionStrategy;)V" fileName="StratergyAddMethodDialog.java" startLine="38" startPosition="0" endLine="46" endPosition="3" />
-    <nodeInfo nodeId="4151408063400000260" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StratergyAddMethodDialog.java" startLine="51" startPosition="73" endLine="61" endPosition="7" />
-    <nodeInfo nodeId="7824118464175997933" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StratergyAddMethodDialog.java" startLine="100" startPosition="125" endLine="110" endPosition="5" />
-    <nodeInfo nodeId="7824118464175997817" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StratergyAddMethodDialog.java" startLine="79" startPosition="84" endLine="90" endPosition="5" />
-    <nodeInfo nodeId="4151408063400001299" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StratergyAddMethodDialog.java" startLine="48" startPosition="45" endLine="62" endPosition="5" />
-    <nodeInfo nodeId="7824118464175997809" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareMethods#(Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;)I" fileName="StratergyAddMethodDialog.java" startLine="78" startPosition="0" endLine="92" endPosition="0" />
-    <nodeInfo nodeId="4151408063399997079" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVariableNames#(Ljetbrains/mps/smodel/SNode;)V" fileName="StratergyAddMethodDialog.java" startLine="47" startPosition="0" endLine="67" endPosition="0" />
-    <nodeInfo nodeId="7824118464175997887" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="92" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="4151408063400000326" fileName="StratergyAddMethodDialog.java" startLine="63" startPosition="59" endLine="64" endPosition="30" />
-    <scopeInfo nodeId="7824118464175997771" fileName="StratergyAddMethodDialog.java" startLine="68" startPosition="68" endLine="69" endPosition="97" />
-    <scopeInfo nodeId="4151408063400001480" fileName="StratergyAddMethodDialog.java" startLine="105" startPosition="80" endLine="106" endPosition="38" />
-    <scopeInfo nodeId="7824118464175997968" fileName="StratergyAddMethodDialog.java" startLine="114" startPosition="62" endLine="115" endPosition="86" />
-    <scopeInfo nodeId="7824118464175998002" fileName="StratergyAddMethodDialog.java" startLine="118" startPosition="69" endLine="119" endPosition="57" />
-    <scopeInfo nodeId="7824118464175998014" fileName="StratergyAddMethodDialog.java" startLine="122" startPosition="59" endLine="123" endPosition="65" />
-    <scopeInfo nodeId="7824118464175997599" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainContainer#()Ljetbrains/mps/smodel/SNode;" fileName="StratergyAddMethodDialog.java" startLine="126" startPosition="45" endLine="127" endPosition="36" />
-    <scopeInfo nodeId="7824118464175997603" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="StratergyAddMethodDialog.java" startLine="127" startPosition="36" endLine="128" endPosition="48">
+    <nodeInfo nodeId="7824118464175997715" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContainerStrategy" fileName="StratergyAddMethodDialog.java" startLine="35" startPosition="67" endLine="36" endPosition="73" />
+    <nodeInfo nodeId="7824118464175997718" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAdditionStrategy" fileName="StratergyAddMethodDialog.java" startLine="36" startPosition="73" endLine="37" endPosition="71" />
+    <nodeInfo nodeId="7824118464175997721" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCollectStrategy" fileName="StratergyAddMethodDialog.java" startLine="37" startPosition="71" endLine="38" endPosition="76" />
+    <nodeInfo nodeId="7824118464175997724" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySortByNameAction" fileName="StratergyAddMethodDialog.java" startLine="38" startPosition="76" endLine="39" endPosition="71" />
+    <nodeInfo nodeId="4151408063400001366" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" fileName="StratergyAddMethodDialog.java" startLine="39" startPosition="71" endLine="40" endPosition="28" />
+    <nodeInfo nodeId="7824118464175997742" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="StratergyAddMethodDialog.java" startLine="42" startPosition="287" endLine="43" endPosition="59" />
+    <nodeInfo nodeId="7824118464175997748" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="43" startPosition="59" endLine="44" endPosition="44" />
+    <nodeInfo nodeId="7824118464175997754" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="44" startPosition="44" endLine="45" endPosition="40" />
+    <nodeInfo nodeId="7824118464175997760" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="45" startPosition="40" endLine="46" endPosition="42" />
+    <nodeInfo nodeId="4151408063400001379" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="46" startPosition="42" endLine="47" endPosition="59" />
+    <nodeInfo nodeId="7824118464176218641" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="47" startPosition="59" endLine="48" endPosition="82" />
+    <nodeInfo nodeId="4151408063400001311" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="52" startPosition="105" endLine="53" endPosition="110" />
+    <nodeInfo nodeId="4151408063400000254" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="53" startPosition="110" endLine="54" endPosition="73" />
+    <nodeInfo nodeId="4151408063400001413" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="55" startPosition="29" endLine="56" endPosition="116" />
+    <nodeInfo nodeId="7346552127093467483" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="57" startPosition="63" endLine="58" endPosition="59" />
+    <nodeInfo nodeId="7346552127093467490" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="58" startPosition="59" endLine="59" endPosition="20" />
+    <nodeInfo nodeId="7346552127093467501" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="59" startPosition="20" endLine="60" endPosition="54" />
+    <nodeInfo nodeId="7346552127093467512" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="60" startPosition="54" endLine="61" endPosition="26" />
+    <nodeInfo nodeId="7346552127093467524" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="62" startPosition="16" endLine="63" endPosition="54" />
+    <nodeInfo nodeId="4151408063400000277" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="64" startPosition="9" endLine="65" endPosition="109" />
+    <nodeInfo nodeId="4151408063400000284" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="65" startPosition="109" endLine="66" endPosition="109" />
+    <nodeInfo nodeId="4151408063400001438" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="70" startPosition="10" endLine="71" endPosition="78" />
+    <nodeInfo nodeId="4151408063400001341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="74" startPosition="59" endLine="75" endPosition="41" />
+    <nodeInfo nodeId="7824118464175997772" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="79" startPosition="68" endLine="80" endPosition="97" />
+    <nodeInfo nodeId="7824118464175997788" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="83" startPosition="48" endLine="84" endPosition="54" />
+    <nodeInfo nodeId="7824118464175997795" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="84" startPosition="54" endLine="85" endPosition="45" />
+    <nodeInfo nodeId="7824118464175997800" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="85" startPosition="45" endLine="86" endPosition="35" />
+    <nodeInfo nodeId="7824118464175997807" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="86" startPosition="35" endLine="87" endPosition="18" />
+    <nodeInfo nodeId="7824118464175997847" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="91" startPosition="45" endLine="92" endPosition="30" />
+    <nodeInfo nodeId="7824118464175997853" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="92" startPosition="30" endLine="93" endPosition="72" />
+    <nodeInfo nodeId="7824118464175997865" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="93" startPosition="72" endLine="94" endPosition="30" />
+    <nodeInfo nodeId="7824118464175997871" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="94" startPosition="30" endLine="95" endPosition="72" />
+    <nodeInfo nodeId="7824118464175997883" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="95" startPosition="72" endLine="96" endPosition="21" />
+    <nodeInfo nodeId="7824118464175997825" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="97" startPosition="12" endLine="98" endPosition="36" />
+    <nodeInfo nodeId="7824118464175997833" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="98" startPosition="36" endLine="99" endPosition="36" />
+    <nodeInfo nodeId="7824118464175997841" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="99" startPosition="36" endLine="100" endPosition="30" />
+    <nodeInfo nodeId="7824118464175997895" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="104" startPosition="105" endLine="105" endPosition="80" />
+    <nodeInfo nodeId="7824118464175997902" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="105" startPosition="80" endLine="106" endPosition="49" />
+    <nodeInfo nodeId="4151408063400001462" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="107" startPosition="71" endLine="108" endPosition="54" />
+    <nodeInfo nodeId="7824118464175997914" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="108" startPosition="54" endLine="109" endPosition="26" />
+    <nodeInfo nodeId="7824118464175997923" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="110" startPosition="5" endLine="111" endPosition="125" />
+    <nodeInfo nodeId="7840389369972830269" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="112" startPosition="90" endLine="113" endPosition="67" />
+    <nodeInfo nodeId="7840389369972895333" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="113" startPosition="67" endLine="114" endPosition="55" />
+    <nodeInfo nodeId="7840389369972895398" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="114" startPosition="55" endLine="115" endPosition="66" />
+    <nodeInfo nodeId="4151408063400001473" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="116" startPosition="80" endLine="117" endPosition="91" />
+    <nodeInfo nodeId="7824118464175997938" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="118" startPosition="7" endLine="119" endPosition="36" />
+    <nodeInfo nodeId="7824118464175997945" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="119" startPosition="36" endLine="120" endPosition="96" />
+    <nodeInfo nodeId="7824118464175997961" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="121" startPosition="5" endLine="122" endPosition="18" />
+    <nodeInfo nodeId="7824118464175997969" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="125" startPosition="62" endLine="126" endPosition="86" />
+    <nodeInfo nodeId="7824118464175998003" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="129" startPosition="69" endLine="130" endPosition="57" />
+    <nodeInfo nodeId="7824118464175998015" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="133" startPosition="59" endLine="134" endPosition="65" />
+    <nodeInfo nodeId="7824118464175997599" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainContainer#()Ljetbrains/mps/smodel/SNode;" fileName="StratergyAddMethodDialog.java" startLine="137" startPosition="45" endLine="138" endPosition="36" />
+    <nodeInfo nodeId="7824118464175997603" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="StratergyAddMethodDialog.java" startLine="138" startPosition="36" endLine="139" endPosition="48" />
+    <nodeInfo nodeId="7824118464175997609" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="139" startPosition="48" endLine="140" endPosition="107" />
+    <nodeInfo nodeId="7824118464175997625" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)I" fileName="StratergyAddMethodDialog.java" startLine="140" startPosition="107" endLine="141" endPosition="67" />
+    <nodeInfo nodeId="7824118464175997558" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySource" fileName="StratergyAddMethodDialog.java" startLine="142" startPosition="40" endLine="143" endPosition="45" />
+    <nodeInfo nodeId="7824118464175997561" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" fileName="StratergyAddMethodDialog.java" startLine="143" startPosition="45" endLine="144" endPosition="45" />
+    <nodeInfo nodeId="7824118464175997571" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="146" startPosition="89" endLine="147" endPosition="26" />
+    <nodeInfo nodeId="7824118464175997577" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="147" startPosition="26" endLine="148" endPosition="26" />
+    <nodeInfo nodeId="7824118464175997587" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="151" startPosition="48" endLine="152" endPosition="24" />
+    <nodeInfo nodeId="7824118464175997595" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="155" startPosition="48" endLine="156" endPosition="24" />
+    <nodeInfo nodeId="7824118464175997635" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" fileName="StratergyAddMethodDialog.java" startLine="162" startPosition="44" endLine="163" endPosition="29" />
+    <nodeInfo nodeId="7824118464175997639" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" fileName="StratergyAddMethodDialog.java" startLine="163" startPosition="29" endLine="164" endPosition="57" />
+    <nodeInfo nodeId="7824118464175997643" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateMethod#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" fileName="StratergyAddMethodDialog.java" startLine="164" startPosition="57" endLine="165" endPosition="63" />
+    <nodeInfo nodeId="7824118464175997653" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="168" startPosition="50" endLine="169" endPosition="84" />
+    <nodeInfo nodeId="7824118464176219398" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" fileName="StratergyAddMethodDialog.java" startLine="172" startPosition="55" endLine="173" endPosition="30" />
+    <nodeInfo nodeId="7824118464175997670" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="StratergyAddMethodDialog.java" startLine="175" startPosition="41" endLine="176" endPosition="35" />
+    <nodeInfo nodeId="7824118464175997672" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="176" startPosition="35" endLine="177" endPosition="72" />
+    <nodeInfo nodeId="7824118464176219401" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="177" startPosition="72" endLine="178" endPosition="20" />
+    <nodeInfo nodeId="7824118464175997685" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="181" startPosition="48" endLine="182" endPosition="26" />
+    <nodeInfo nodeId="7824118464176218627" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="185" startPosition="61" endLine="186" endPosition="25" />
+    <nodeInfo nodeId="7824118464175997703" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="186" startPosition="25" endLine="187" endPosition="50" />
+    <nodeInfo nodeId="7824118464175997711" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StratergyAddMethodDialog.java" startLine="190" startPosition="33" endLine="191" endPosition="164" />
+    <nodeInfo nodeId="7824118464176218609" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StratergyAddMethodDialog.java" startLine="194" startPosition="44" endLine="195" endPosition="165" />
+    <nodeInfo nodeId="7346552127093467522" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="StratergyAddMethodDialog.java" startLine="62" startPosition="14" endLine="64" endPosition="9" />
+    <nodeInfo nodeId="4151408063400000325" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StratergyAddMethodDialog.java" startLine="73" startPosition="5" endLine="76" endPosition="5" />
+    <nodeInfo nodeId="4151408063400001479" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StratergyAddMethodDialog.java" startLine="115" startPosition="66" endLine="118" endPosition="7" />
+    <nodeInfo nodeId="4151408063400000291" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StratergyAddMethodDialog.java" startLine="66" startPosition="109" endLine="70" endPosition="10" />
+    <nodeInfo nodeId="7824118464175997767" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#()Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <nodeInfo nodeId="7824118464175997823" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="StratergyAddMethodDialog.java" startLine="97" startPosition="10" endLine="101" endPosition="5" />
+    <nodeInfo nodeId="7824118464175997909" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StratergyAddMethodDialog.java" startLine="106" startPosition="49" endLine="110" endPosition="5" />
+    <nodeInfo nodeId="7824118464175997963" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;)Ljetbrains/mps/smodel/INodeAdapter;" fileName="StratergyAddMethodDialog.java" startLine="124" startPosition="0" endLine="128" endPosition="0" />
+    <nodeInfo nodeId="7824118464175997995" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)I" fileName="StratergyAddMethodDialog.java" startLine="128" startPosition="0" endLine="132" endPosition="0" />
+    <nodeInfo nodeId="7824118464175998011" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" fileName="StratergyAddMethodDialog.java" startLine="132" startPosition="0" endLine="136" endPosition="0" />
+    <nodeInfo nodeId="7824118464175997564" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodAddition#(Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;)V" fileName="StratergyAddMethodDialog.java" startLine="145" startPosition="0" endLine="149" endPosition="7" />
+    <nodeInfo nodeId="7824118464175997583" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSource#()Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;" fileName="StratergyAddMethodDialog.java" startLine="150" startPosition="0" endLine="154" endPosition="0" />
+    <nodeInfo nodeId="7824118464175997591" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;" fileName="StratergyAddMethodDialog.java" startLine="154" startPosition="0" endLine="158" endPosition="0" />
+    <nodeInfo nodeId="7824118464175997679" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" fileName="StratergyAddMethodDialog.java" startLine="180" startPosition="0" endLine="184" endPosition="0" />
+    <nodeInfo nodeId="7824118464175997707" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#()Z" fileName="StratergyAddMethodDialog.java" startLine="189" startPosition="0" endLine="193" endPosition="0" />
+    <nodeInfo nodeId="7824118464176218601" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Z)V" fileName="StratergyAddMethodDialog.java" startLine="193" startPosition="0" endLine="197" endPosition="0" />
+    <nodeInfo nodeId="7824118464175997667" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortByNameAction#(Lcom/intellij/openapi/project/Project;)V" fileName="StratergyAddMethodDialog.java" startLine="174" startPosition="0" endLine="179" endPosition="5" />
+    <nodeInfo nodeId="7824118464175997689" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" fileName="StratergyAddMethodDialog.java" startLine="184" startPosition="0" endLine="189" endPosition="0" />
+    <nodeInfo nodeId="7824118464175997783" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolbarActions#()Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="82" startPosition="0" endLine="89" endPosition="0" />
+    <nodeInfo nodeId="7824118464175997729" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StratergyAddMethodDialog#(Ljetbrains/mps/nodeEditor/EditorContext;Ljava/awt/Frame;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/ContainerStrategy;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/CollectMethodsStrategy;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/AdditionStrategy;)V" fileName="StratergyAddMethodDialog.java" startLine="41" startPosition="0" endLine="49" endPosition="3" />
+    <nodeInfo nodeId="7346552127093467464" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StratergyAddMethodDialog.java" startLine="56" startPosition="116" endLine="64" endPosition="9" />
+    <nodeInfo nodeId="7824118464175997933" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StratergyAddMethodDialog.java" startLine="111" startPosition="125" endLine="121" endPosition="5" />
+    <nodeInfo nodeId="7824118464175997817" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StratergyAddMethodDialog.java" startLine="90" startPosition="84" endLine="101" endPosition="5" />
+    <nodeInfo nodeId="7824118464175997809" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareMethods#(Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;)I" fileName="StratergyAddMethodDialog.java" startLine="89" startPosition="0" endLine="103" endPosition="0" />
+    <nodeInfo nodeId="4151408063400000260" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StratergyAddMethodDialog.java" startLine="54" startPosition="73" endLine="72" endPosition="7" />
+    <nodeInfo nodeId="7824118464175997887" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="103" startPosition="0" endLine="124" endPosition="0" />
+    <nodeInfo nodeId="4151408063400001299" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StratergyAddMethodDialog.java" startLine="51" startPosition="77" endLine="73" endPosition="5" />
+    <nodeInfo nodeId="4151408063399997079" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVariableNames#(Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)V" fileName="StratergyAddMethodDialog.java" startLine="50" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="7346552127093467523" fileName="StratergyAddMethodDialog.java" startLine="62" startPosition="16" endLine="63" endPosition="54" />
+    <scopeInfo nodeId="4151408063400000326" fileName="StratergyAddMethodDialog.java" startLine="74" startPosition="59" endLine="75" endPosition="41" />
+    <scopeInfo nodeId="7824118464175997771" fileName="StratergyAddMethodDialog.java" startLine="79" startPosition="68" endLine="80" endPosition="97" />
+    <scopeInfo nodeId="4151408063400001480" fileName="StratergyAddMethodDialog.java" startLine="116" startPosition="80" endLine="117" endPosition="91" />
+    <scopeInfo nodeId="7824118464175997968" fileName="StratergyAddMethodDialog.java" startLine="125" startPosition="62" endLine="126" endPosition="86" />
+    <scopeInfo nodeId="7824118464175998002" fileName="StratergyAddMethodDialog.java" startLine="129" startPosition="69" endLine="130" endPosition="57" />
+    <scopeInfo nodeId="7824118464175998014" fileName="StratergyAddMethodDialog.java" startLine="133" startPosition="59" endLine="134" endPosition="65" />
+    <scopeInfo nodeId="7824118464175997599" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainContainer#()Ljetbrains/mps/smodel/SNode;" fileName="StratergyAddMethodDialog.java" startLine="137" startPosition="45" endLine="138" endPosition="36" />
+    <scopeInfo nodeId="7824118464175997603" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="StratergyAddMethodDialog.java" startLine="138" startPosition="36" endLine="139" endPosition="48">
       <varInfo nodeId="7824118464175997606" varName="methodDecl" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997609" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="128" startPosition="48" endLine="129" endPosition="107">
+    <scopeInfo nodeId="7824118464175997609" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="139" startPosition="48" endLine="140" endPosition="107">
       <varInfo nodeId="7824118464175997613" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997625" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)I" fileName="StratergyAddMethodDialog.java" startLine="129" startPosition="107" endLine="130" endPosition="67">
+    <scopeInfo nodeId="7824118464175997625" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)I" fileName="StratergyAddMethodDialog.java" startLine="140" startPosition="107" endLine="141" endPosition="67">
       <varInfo nodeId="7824118464175997628" varName="c1" />
       <varInfo nodeId="7824118464175997630" varName="c2" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997586" fileName="StratergyAddMethodDialog.java" startLine="140" startPosition="48" endLine="141" endPosition="24" />
-    <scopeInfo nodeId="7824118464175997594" fileName="StratergyAddMethodDialog.java" startLine="144" startPosition="48" endLine="145" endPosition="24" />
-    <scopeInfo nodeId="7824118464175997635" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" fileName="StratergyAddMethodDialog.java" startLine="151" startPosition="44" endLine="152" endPosition="29" />
-    <scopeInfo nodeId="7824118464175997639" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" fileName="StratergyAddMethodDialog.java" startLine="152" startPosition="29" endLine="153" endPosition="57" />
-    <scopeInfo nodeId="7824118464175997643" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateMethod#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" fileName="StratergyAddMethodDialog.java" startLine="153" startPosition="57" endLine="154" endPosition="63">
+    <scopeInfo nodeId="7824118464175997586" fileName="StratergyAddMethodDialog.java" startLine="151" startPosition="48" endLine="152" endPosition="24" />
+    <scopeInfo nodeId="7824118464175997594" fileName="StratergyAddMethodDialog.java" startLine="155" startPosition="48" endLine="156" endPosition="24" />
+    <scopeInfo nodeId="7824118464175997635" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTitle#()Ljava/lang/String;" fileName="StratergyAddMethodDialog.java" startLine="162" startPosition="44" endLine="163" endPosition="29" />
+    <scopeInfo nodeId="7824118464175997639" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" fileName="StratergyAddMethodDialog.java" startLine="163" startPosition="29" endLine="164" endPosition="57" />
+    <scopeInfo nodeId="7824118464175997643" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateMethod#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" fileName="StratergyAddMethodDialog.java" startLine="164" startPosition="57" endLine="165" endPosition="63">
       <varInfo nodeId="7824118464175997646" varName="sourceMethod" />
       <varInfo nodeId="7824118464175997648" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997653" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="157" startPosition="50" endLine="158" endPosition="84">
+    <scopeInfo nodeId="7824118464175997653" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="168" startPosition="50" endLine="169" endPosition="84">
       <varInfo nodeId="7824118464175997657" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997684" fileName="StratergyAddMethodDialog.java" startLine="170" startPosition="48" endLine="171" endPosition="26" />
-    <scopeInfo nodeId="7824118464175997710" fileName="StratergyAddMethodDialog.java" startLine="179" startPosition="33" endLine="180" endPosition="164" />
-    <scopeInfo nodeId="7824118464176218604" fileName="StratergyAddMethodDialog.java" startLine="183" startPosition="44" endLine="184" endPosition="165" />
-    <scopeInfo nodeId="7824118464175997913" fileName="StratergyAddMethodDialog.java" startLine="96" startPosition="71" endLine="98" endPosition="26">
+    <scopeInfo nodeId="7824118464175997684" fileName="StratergyAddMethodDialog.java" startLine="181" startPosition="48" endLine="182" endPosition="26" />
+    <scopeInfo nodeId="7824118464175997710" fileName="StratergyAddMethodDialog.java" startLine="190" startPosition="33" endLine="191" endPosition="164" />
+    <scopeInfo nodeId="7824118464176218604" fileName="StratergyAddMethodDialog.java" startLine="194" startPosition="44" endLine="195" endPosition="165" />
+    <scopeInfo nodeId="7824118464175997913" fileName="StratergyAddMethodDialog.java" startLine="107" startPosition="71" endLine="109" endPosition="26">
       <varInfo nodeId="4151408063400001463" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997570" fileName="StratergyAddMethodDialog.java" startLine="135" startPosition="89" endLine="137" endPosition="26" />
-    <scopeInfo nodeId="7824118464175997696" fileName="StratergyAddMethodDialog.java" startLine="174" startPosition="61" endLine="176" endPosition="50" />
-    <scopeInfo nodeId="4151408063400000325" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StratergyAddMethodDialog.java" startLine="62" startPosition="5" endLine="65" endPosition="5">
+    <scopeInfo nodeId="7824118464175997570" fileName="StratergyAddMethodDialog.java" startLine="146" startPosition="89" endLine="148" endPosition="26" />
+    <scopeInfo nodeId="7824118464175997696" fileName="StratergyAddMethodDialog.java" startLine="185" startPosition="61" endLine="187" endPosition="50" />
+    <scopeInfo nodeId="4151408063400000325" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StratergyAddMethodDialog.java" startLine="73" startPosition="5" endLine="76" endPosition="5">
       <varInfo nodeId="4151408063400000329" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997824" fileName="StratergyAddMethodDialog.java" startLine="86" startPosition="12" endLine="89" endPosition="30">
+    <scopeInfo nodeId="7824118464175997824" fileName="StratergyAddMethodDialog.java" startLine="97" startPosition="12" endLine="100" endPosition="30">
       <varInfo nodeId="7824118464175997826" varName="n1" />
       <varInfo nodeId="7824118464175997834" varName="n2" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997669" fileName="StratergyAddMethodDialog.java" startLine="164" startPosition="41" endLine="167" endPosition="20" />
-    <scopeInfo nodeId="7824118464175997767" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#()Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997787" fileName="StratergyAddMethodDialog.java" startLine="72" startPosition="48" endLine="76" endPosition="18">
+    <scopeInfo nodeId="7824118464175997669" fileName="StratergyAddMethodDialog.java" startLine="175" startPosition="41" endLine="178" endPosition="20" />
+    <scopeInfo nodeId="7346552127093467465" fileName="StratergyAddMethodDialog.java" startLine="57" startPosition="63" endLine="61" endPosition="26">
+      <varInfo nodeId="7346552127093467484" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="7824118464175997767" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectImplementableMethods#()Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997787" fileName="StratergyAddMethodDialog.java" startLine="83" startPosition="48" endLine="87" endPosition="18">
       <varInfo nodeId="7824118464175997789" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997909" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StratergyAddMethodDialog.java" startLine="95" startPosition="49" endLine="99" endPosition="5">
+    <scopeInfo nodeId="7824118464175997909" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StratergyAddMethodDialog.java" startLine="106" startPosition="49" endLine="110" endPosition="5">
       <varInfo nodeId="7824118464175997911" varName="methodNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997963" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;)Ljetbrains/mps/smodel/INodeAdapter;" fileName="StratergyAddMethodDialog.java" startLine="113" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="7824118464175997963" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;)Ljetbrains/mps/smodel/INodeAdapter;" fileName="StratergyAddMethodDialog.java" startLine="124" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="7824118464175997966" varName="bm" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997995" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)I" fileName="StratergyAddMethodDialog.java" startLine="117" startPosition="0" endLine="121" endPosition="0">
+    <scopeInfo nodeId="7824118464175997995" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)I" fileName="StratergyAddMethodDialog.java" startLine="128" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="7824118464175997998" varName="c1" />
       <varInfo nodeId="7824118464175998000" varName="c2" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175998011" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" fileName="StratergyAddMethodDialog.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997564" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodAddition#(Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;)V" fileName="StratergyAddMethodDialog.java" startLine="134" startPosition="0" endLine="138" endPosition="7">
+    <scopeInfo nodeId="7824118464175998011" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAdditionalOptionsComponent#()Ljavax/swing/JComponent;" fileName="StratergyAddMethodDialog.java" startLine="132" startPosition="0" endLine="136" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997564" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodAddition#(Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;)V" fileName="StratergyAddMethodDialog.java" startLine="145" startPosition="0" endLine="149" endPosition="7">
       <varInfo nodeId="7824118464175997568" varName="result" />
       <varInfo nodeId="7824118464175997566" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997583" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSource#()Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;" fileName="StratergyAddMethodDialog.java" startLine="139" startPosition="0" endLine="143" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997591" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;" fileName="StratergyAddMethodDialog.java" startLine="143" startPosition="0" endLine="147" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997679" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" fileName="StratergyAddMethodDialog.java" startLine="169" startPosition="0" endLine="173" endPosition="0">
+    <scopeInfo nodeId="7824118464175997583" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSource#()Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;" fileName="StratergyAddMethodDialog.java" startLine="150" startPosition="0" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997591" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;" fileName="StratergyAddMethodDialog.java" startLine="154" startPosition="0" endLine="158" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997679" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" fileName="StratergyAddMethodDialog.java" startLine="180" startPosition="0" endLine="184" endPosition="0">
       <varInfo nodeId="7824118464175997682" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997707" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#()Z" fileName="StratergyAddMethodDialog.java" startLine="178" startPosition="0" endLine="182" endPosition="0" />
-    <scopeInfo nodeId="7824118464176218601" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Z)V" fileName="StratergyAddMethodDialog.java" startLine="182" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="7824118464175997707" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#()Z" fileName="StratergyAddMethodDialog.java" startLine="189" startPosition="0" endLine="193" endPosition="0" />
+    <scopeInfo nodeId="7824118464176218601" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Z)V" fileName="StratergyAddMethodDialog.java" startLine="193" startPosition="0" endLine="197" endPosition="0">
       <varInfo nodeId="7824118464176218607" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997846" fileName="StratergyAddMethodDialog.java" startLine="80" startPosition="45" endLine="85" endPosition="21">
+    <scopeInfo nodeId="7824118464175997846" fileName="StratergyAddMethodDialog.java" startLine="91" startPosition="45" endLine="96" endPosition="21">
       <varInfo nodeId="7824118464175997848" varName="n1" />
       <varInfo nodeId="7824118464175997866" varName="n2" />
       <varInfo nodeId="7824118464175997872" varName="i2" />
       <varInfo nodeId="7824118464175997854" varName="i1" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997667" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortByNameAction#(Lcom/intellij/openapi/project/Project;)V" fileName="StratergyAddMethodDialog.java" startLine="163" startPosition="0" endLine="168" endPosition="5">
+    <scopeInfo nodeId="7824118464175997667" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortByNameAction#(Lcom/intellij/openapi/project/Project;)V" fileName="StratergyAddMethodDialog.java" startLine="174" startPosition="0" endLine="179" endPosition="5">
       <varInfo nodeId="7824118464176219395" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997689" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" fileName="StratergyAddMethodDialog.java" startLine="173" startPosition="0" endLine="178" endPosition="0">
+    <scopeInfo nodeId="7824118464175997689" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" fileName="StratergyAddMethodDialog.java" startLine="184" startPosition="0" endLine="189" endPosition="0">
       <varInfo nodeId="7824118464175997692" varName="e" />
       <varInfo nodeId="7824118464175997694" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997741" fileName="StratergyAddMethodDialog.java" startLine="39" startPosition="287" endLine="45" endPosition="82" />
-    <scopeInfo nodeId="7824118464175997783" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolbarActions#()Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="71" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="7824118464175997729" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StratergyAddMethodDialog#(Ljetbrains/mps/nodeEditor/EditorContext;Ljava/awt/Frame;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/ContainerStrategy;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/CollectMethodsStrategy;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/AdditionStrategy;)V" fileName="StratergyAddMethodDialog.java" startLine="38" startPosition="0" endLine="46" endPosition="3">
+    <scopeInfo nodeId="7824118464175997741" fileName="StratergyAddMethodDialog.java" startLine="42" startPosition="287" endLine="48" endPosition="82" />
+    <scopeInfo nodeId="7824118464175997783" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToolbarActions#()Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="82" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="7824118464175997729" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StratergyAddMethodDialog#(Ljetbrains/mps/nodeEditor/EditorContext;Ljava/awt/Frame;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/ContainerStrategy;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/CollectMethodsStrategy;Ljetbrains/mps/ide/actions/StratergyAddMethodDialog/AdditionStrategy;)V" fileName="StratergyAddMethodDialog.java" startLine="41" startPosition="0" endLine="49" endPosition="3">
       <varInfo nodeId="7824118464175997735" varName="containerStrategy" />
       <varInfo nodeId="7824118464175997737" varName="collectStrategy" />
       <varInfo nodeId="7824118464175997731" varName="context" />
       <varInfo nodeId="7824118464175997733" varName="mainFrame" />
       <varInfo nodeId="7824118464175997739" varName="additionStrategy" />
     </scopeInfo>
-    <scopeInfo nodeId="4151408063400000261" fileName="StratergyAddMethodDialog.java" startLine="52" startPosition="29" endLine="60" endPosition="78">
+    <scopeInfo nodeId="7824118464175997937" fileName="StratergyAddMethodDialog.java" startLine="112" startPosition="90" endLine="120" endPosition="96">
+      <varInfo nodeId="7840389369972895399" varName="sourceModel" />
+      <varInfo nodeId="7840389369972830270" varName="addedMethodAdapter" />
+      <varInfo nodeId="7840389369972895334" varName="addedMethod" />
+    </scopeInfo>
+    <scopeInfo nodeId="7824118464175997933" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StratergyAddMethodDialog.java" startLine="111" startPosition="125" endLine="121" endPosition="5">
+      <varInfo nodeId="7824118464175997935" varName="added" />
+    </scopeInfo>
+    <scopeInfo nodeId="7824118464175997816" fileName="StratergyAddMethodDialog.java" startLine="90" startPosition="84" endLine="101" endPosition="5" />
+    <scopeInfo nodeId="7824118464175997809" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareMethods#(Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;)I" fileName="StratergyAddMethodDialog.java" startLine="89" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="7824118464175997812" varName="m1" />
+      <varInfo nodeId="7824118464175997814" varName="m2" />
+    </scopeInfo>
+    <scopeInfo nodeId="4151408063400000261" fileName="StratergyAddMethodDialog.java" startLine="55" startPosition="29" endLine="71" endPosition="78">
       <varInfo nodeId="4151408063400000292" varName="mainName" />
       <varInfo nodeId="4151408063400000278" varName="prefix" />
       <varInfo nodeId="4151408063400001414" varName="name" />
       <varInfo nodeId="4151408063400000285" varName="suffix" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997937" fileName="StratergyAddMethodDialog.java" startLine="101" startPosition="90" endLine="109" endPosition="96">
-      <varInfo nodeId="7840389369972895399" varName="sourceModel" />
-      <varInfo nodeId="7840389369972830270" varName="addedMethodAdapter" />
-      <varInfo nodeId="7840389369972895334" varName="addedMethod" />
-    </scopeInfo>
-    <scopeInfo nodeId="7824118464175997933" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StratergyAddMethodDialog.java" startLine="100" startPosition="125" endLine="110" endPosition="5">
-      <varInfo nodeId="7824118464175997935" varName="added" />
-    </scopeInfo>
-    <scopeInfo nodeId="7824118464175997816" fileName="StratergyAddMethodDialog.java" startLine="79" startPosition="84" endLine="90" endPosition="5" />
-    <scopeInfo nodeId="4151408063400001300" fileName="StratergyAddMethodDialog.java" startLine="49" startPosition="105" endLine="61" endPosition="7">
-      <varInfo nodeId="4151408063400000255" varName="nodeType" />
-      <varInfo nodeId="4151408063400001312" varName="variable" />
-    </scopeInfo>
-    <scopeInfo nodeId="7824118464175997809" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareMethods#(Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;)I" fileName="StratergyAddMethodDialog.java" startLine="78" startPosition="0" endLine="92" endPosition="0">
-      <varInfo nodeId="7824118464175997812" varName="m1" />
-      <varInfo nodeId="7824118464175997814" varName="m2" />
-    </scopeInfo>
-    <scopeInfo nodeId="4151408063399997082" fileName="StratergyAddMethodDialog.java" startLine="48" startPosition="45" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="7824118464175997894" fileName="StratergyAddMethodDialog.java" startLine="93" startPosition="105" endLine="111" endPosition="18">
+    <scopeInfo nodeId="7824118464175997894" fileName="StratergyAddMethodDialog.java" startLine="104" startPosition="105" endLine="122" endPosition="18">
       <varInfo nodeId="7824118464175997903" varName="methods" />
       <varInfo nodeId="7824118464175997896" varName="result" />
       <varInfo nodeId="7824118464175997924" varName="addedMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="4151408063399997079" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVariableNames#(Ljetbrains/mps/smodel/SNode;)V" fileName="StratergyAddMethodDialog.java" startLine="47" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="4151408063400000237" varName="node" />
+    <scopeInfo nodeId="4151408063400001300" fileName="StratergyAddMethodDialog.java" startLine="52" startPosition="105" endLine="72" endPosition="7">
+      <varInfo nodeId="4151408063400000255" varName="nodeType" />
+      <varInfo nodeId="4151408063400001312" varName="variable" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464175997887" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="92" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="7824118464175997887" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" fileName="StratergyAddMethodDialog.java" startLine="103" startPosition="0" endLine="124" endPosition="0">
       <varInfo nodeId="7824118464175997891" varName="methodNodes" />
     </scopeInfo>
-    <unitInfo nodeId="7824118464175997651" fileName="StratergyAddMethodDialog.java" startLine="157" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$CollectMethodsStrategy" />
-    <unitInfo nodeId="7824118464175997633" fileName="StratergyAddMethodDialog.java" startLine="151" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$AdditionStrategy" />
-    <unitInfo nodeId="7824118464175997556" fileName="StratergyAddMethodDialog.java" startLine="131" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog.ContainerStrategy$MethodAddition" />
-    <unitInfo nodeId="7824118464175997554" fileName="StratergyAddMethodDialog.java" startLine="126" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$ContainerStrategy" />
-    <unitInfo nodeId="7824118464175997660" fileName="StratergyAddMethodDialog.java" startLine="161" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$SortByNameAction" />
-    <unitInfo nodeId="7824118464175997551" fileName="StratergyAddMethodDialog.java" startLine="32" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
+    <scopeInfo nodeId="4151408063399997082" fileName="StratergyAddMethodDialog.java" startLine="51" startPosition="77" endLine="76" endPosition="5" />
+    <scopeInfo nodeId="4151408063399997079" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVariableNames#(Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)V" fileName="StratergyAddMethodDialog.java" startLine="50" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="1031120732049525628" varName="usedNames" />
+      <varInfo nodeId="4151408063400000237" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="7824118464175997651" fileName="StratergyAddMethodDialog.java" startLine="168" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$CollectMethodsStrategy" />
+    <unitInfo nodeId="7824118464175997633" fileName="StratergyAddMethodDialog.java" startLine="162" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$AdditionStrategy" />
+    <unitInfo nodeId="7824118464175997556" fileName="StratergyAddMethodDialog.java" startLine="142" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog.ContainerStrategy$MethodAddition" />
+    <unitInfo nodeId="7824118464175997554" fileName="StratergyAddMethodDialog.java" startLine="137" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$ContainerStrategy" />
+    <unitInfo nodeId="7824118464175997660" fileName="StratergyAddMethodDialog.java" startLine="172" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog$SortByNameAction" />
+    <unitInfo nodeId="7824118464175997551" fileName="StratergyAddMethodDialog.java" startLine="35" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
   </root>
   <root nodeId="7824118464176019393">
     <nodeInfo nodeId="7824118464176019396" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassConcept" fileName="AddClassMethodStrategy.java" startLine="20" startPosition="91" endLine="21" endPosition="38" />
@@ -8322,11 +8351,14 @@
     <nodeInfo nodeId="5394250374101437971" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="removeAttributes" fileName="PersistentOptions_PreferencesComponent.java" startLine="53" startPosition="48" endLine="54" endPosition="43" />
   </root>
   <root nodeId="8561070507645357700">
-    <nodeInfo nodeId="8561070507645357712" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="EvaluateExpression_Action.java" startLine="31" startPosition="7" endLine="32" endPosition="84" />
-    <nodeInfo nodeId="8561070507645357717" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluateExpression_Action.java" startLine="32" startPosition="84" endLine="33" endPosition="139" />
-    <nodeInfo nodeId="8561070507645357704" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluateExpression_Action.java" startLine="59" startPosition="9" endLine="60" endPosition="143" />
-    <scopeInfo nodeId="8561070507645357711" fileName="EvaluateExpression_Action.java" startLine="31" startPosition="7" endLine="33" endPosition="139">
-      <varInfo nodeId="8561070507645357713" varName="debugSession" />
+    <nodeInfo nodeId="8561070507645357712" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="EvaluateExpression_Action.java" startLine="31" startPosition="7" endLine="32" endPosition="95" />
+    <nodeInfo nodeId="8561070507645357717" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluateExpression_Action.java" startLine="32" startPosition="95" endLine="33" endPosition="107" />
+    <nodeInfo nodeId="3159074134556634160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="EvaluateExpression_Action.java" startLine="55" startPosition="9" endLine="56" endPosition="93" />
+    <nodeInfo nodeId="3159074134556816491" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluateExpression_Action.java" startLine="57" startPosition="39" endLine="58" endPosition="124" />
+    <nodeInfo nodeId="3159074134556634167" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="EvaluateExpression_Action.java" startLine="56" startPosition="93" endLine="59" endPosition="7" />
+    <scopeInfo nodeId="3159074134556634168" fileName="EvaluateExpression_Action.java" startLine="57" startPosition="39" endLine="58" endPosition="124" />
+    <scopeInfo nodeId="8561070507645357711" fileName="EvaluateExpression_Action.java" startLine="31" startPosition="7" endLine="33" endPosition="107">
+      <varInfo nodeId="8561070507645357713" varName="evaluationProvider" />
     </scopeInfo>
   </root>
   <root nodeId="86456464976452106">

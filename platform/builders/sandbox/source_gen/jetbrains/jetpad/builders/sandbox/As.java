@@ -6,24 +6,24 @@ package jetbrains.jetpad.builders.sandbox;
 public class As {
   public As() {
     Node n = null;
-    Node result_2130_0 = n;
-    String result_2130_1 = "aaaa";
-    result_2130_0.setName(result_2130_1);
-    Node result_2130_2 = new Node("c1");
+    Node result_tl_a1a0 = n;
+    final String result_tl_a0a1a0 = "aaaa";
+    result_tl_a1a0.setName(result_tl_a0a1a0);
+    final Node result_tl_a1a1a0 = new Node("c1");
     for (int i = 0; i < 100; i++) {
-      Node result_2130_3 = new Node("c3");
-      String result_2130_4 = "aaaa";
-      result_2130_3.setAAAA(result_2130_4);
-      Node result_2130_5 = new Node("ccc");
-      result_2130_3.add(result_2130_5);
-      result_2130_2.add(result_2130_3);
-      Node result_2130_6 = new Node("c2");
-      Node result_2130_7 = new Node("c3");
-      result_2130_6.add(result_2130_7);
-      result_2130_2.add(result_2130_6);
-      Node result_2130_8 = new Node("c2");
-      result_2130_2.add(result_2130_8);
+      final Node result_tl_a0a0a1a1a0 = new Node("c3");
+      final String result_tl_a0a0a0a1a1a0 = "aaaa";
+      result_tl_a0a0a1a1a0.setAAAA(result_tl_a0a0a0a1a1a0);
+      final Node result_tl_a1a0a0a1a1a0 = new Node("ccc");
+      result_tl_a0a0a1a1a0.add(result_tl_a1a0a0a1a1a0);
+      result_tl_a1a1a0.add(result_tl_a0a0a1a1a0);
+      final Node result_tl_a1a0a1a1a0 = new Node("c2");
+      final Node result_tl_a0a1a0a1a1a0 = new Node("c3");
+      result_tl_a1a0a1a1a0.add(result_tl_a0a1a0a1a1a0);
+      result_tl_a1a1a0.add(result_tl_a1a0a1a1a0);
+      final Node result_tl_a2a0a1a1a0 = new Node("c2");
+      result_tl_a1a1a0.add(result_tl_a2a0a1a1a0);
     }
-    result_2130_0.add(result_2130_2);
+    result_tl_a1a0.add(result_tl_a1a1a0);
   }
 }

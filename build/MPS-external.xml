@@ -193,7 +193,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.index" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.javadoc" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.logging" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.refactoring" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.search" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.runtime" />

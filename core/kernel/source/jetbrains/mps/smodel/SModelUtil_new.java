@@ -129,6 +129,10 @@ public class SModelUtil_new implements ApplicationComponent {
     return isAssignableConcept(NameUtil.nodeFQName(fromConcept), toConceptFqName);
   }
 
+  /**
+   * use SModelUtil
+   */
+  @Deprecated
   public static boolean isAssignableConcept(String fromConceptFqName, String toConceptFqName) {
     if (ObjectUtils.equals(fromConceptFqName, toConceptFqName)) return true;
     if (toConceptFqName == null || fromConceptFqName == null) return false;
@@ -137,10 +141,18 @@ public class SModelUtil_new implements ApplicationComponent {
     return LanguageHierarchyCache.getInstance().isAssignable(fromConceptFqName, toConceptFqName);
   }
 
+  /**
+   * use SModelUtil
+   */
+  @Deprecated
   public static LinkDeclaration getGenuineLinkDeclaration(LinkDeclaration linkDeclaration) {
     return (LinkDeclaration) BaseAdapter.fromNode(SModelUtil.getGenuineLinkDeclaration(BaseAdapter.fromAdapter(linkDeclaration)));
   }
 
+  /**
+   * use SModelUtil
+   */
+  @Deprecated
   public static String getGenuineLinkRole(LinkDeclaration linkDeclaration) {
     return SModelUtil.getGenuineLinkRole(BaseAdapter.fromAdapter(linkDeclaration));
   }
@@ -237,19 +249,14 @@ public class SModelUtil_new implements ApplicationComponent {
     return SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(concept));
   }
 
-  public static boolean isAcceptableTarget(LinkDeclaration linkDeclaration, SNode referentNode) {
-    AbstractConceptDeclaration linkTargetConcept = linkDeclaration.getTarget();
-    return isAssignableConcept(referentNode.getConceptFqName(), NameUtil.nodeFQName(linkTargetConcept));
-  }
-
   public static boolean isAcceptableTarget(SNode sourceNode, String role, SNode targetNode) {
-    AbstractConceptDeclaration conceptDeclaration = sourceNode.getConceptDeclarationAdapter();
-    LinkDeclaration linkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(conceptDeclaration, role);
+    SNode conceptDeclaration = sourceNode.getConceptDeclarationNode();
+    SNode linkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(conceptDeclaration, role);
     if (linkDeclaration == null) {
       LOG.error("couldn't find link declaration for role '" + role + "' in hierarchy of concept " + conceptDeclaration.getDebugText(), sourceNode);
       return false;
     }
-    return isAcceptableTarget(linkDeclaration, targetNode);
+    return SModelUtil.isAcceptableTarget(linkDeclaration, targetNode);
   }
 
   public static String getAlias(AbstractConceptDeclaration conceptDeclaration) {

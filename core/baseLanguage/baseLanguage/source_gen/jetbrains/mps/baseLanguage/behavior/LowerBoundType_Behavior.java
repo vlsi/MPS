@@ -17,4 +17,12 @@ public class LowerBoundType_Behavior {
       return "? super ???";
     }
   }
+
+  public static boolean virtual_isValueType_4836112446988592019(SNode thisNode) {
+    return false;
+  }
+
+  public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
+    return false;
+  }
 }

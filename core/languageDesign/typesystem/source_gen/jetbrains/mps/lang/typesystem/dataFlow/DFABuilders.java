@@ -17,7 +17,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.typesystem.structure.CoerceExpression", new CoerceExpression_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.CoerceStatement", new CoerceStatement_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.ComparisonRule", new ComparisonRule_DataFlow());
-    manager.register("jetbrains.mps.lang.typesystem.structure.GivetypeStatement", new GivetypeStatement_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression", new ImmediateSupertypesExpression_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", new InequationReplacementRule_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.InfoStatement", new InfoStatement_DataFlow());

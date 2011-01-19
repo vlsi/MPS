@@ -2,11 +2,15 @@ package jetbrains.mps.debug.api;
 
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.debug.api.evaluation.DummyEvaluationProvider;
+import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -79,26 +83,32 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
     return myDebuggableFramesSelector;
   }
 
+  private List<SessionChangeListener> getListeners() {
+    List<SessionChangeListener> listeners = new ArrayList<SessionChangeListener>();
+    listeners.addAll(myListeners);
+    return listeners;
+  }
+
   protected void fireStateChanged() {
-    for (SessionChangeListener listener : myListeners) {
+    for (SessionChangeListener listener : getListeners()) {
       listener.stateChanged(this);
     }
   }
 
   protected void fireSessionPaused(AbstractDebugSession debugSession) {
-    for (SessionChangeListener listener : myListeners) {
+    for (SessionChangeListener listener : getListeners()) {
       listener.paused(debugSession);
     }
   }
 
   protected void fireSessionResumed(AbstractDebugSession debugSession) {
-    for (SessionChangeListener listener : myListeners) {
+    for (SessionChangeListener listener : getListeners()) {
       listener.resumed(debugSession);
     }
   }
 
   protected void fireSessionMuted(AbstractDebugSession debugSession) {
-    for (SessionChangeListener listener : myListeners) {
+    for (SessionChangeListener listener : getListeners()) {
       listener.muted(debugSession);
     }
   }
@@ -132,7 +142,16 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
     return myExecutionState;
   }
 
-  public abstract void showEvaluationDialog(IOperationContext operationContext);
+  @Deprecated
+  @ToRemove(version = 2.0)
+  public void showEvaluationDialog(IOperationContext operationContext) {
+  }
+
+  @Nullable
+  public IEvaluationProvider getEvaluationProvider() {
+    if (!canShowEvaluationDialog()) return null;
+    return new DummyEvaluationProvider(this);
+  }
 
   public void sessionRegistered(DebugSessionManagerComponent manager) {
   }
@@ -140,7 +159,6 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
   public void sessionUnregistered(DebugSessionManagerComponent manager) {
   }
 
-  // todo make next two abstract after 2.0 (now we can not: will break users code)
   public void muteBreakpoints(boolean mute) {
   }
 

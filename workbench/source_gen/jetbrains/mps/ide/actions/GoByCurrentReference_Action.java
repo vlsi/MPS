@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModel;
 import java.util.Set;
 import jetbrains.mps.project.IModule;
+import java.util.Iterator;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -103,13 +104,17 @@ public class GoByCurrentReference_Action extends GeneratedAction {
         SModel model = node.getModel();
         Set<IModule> modules = model.getModelDescriptor().getModules();
         assert !(modules.isEmpty());
-        IModule module = modules.iterator().next();
+        Iterator<IModule> it = modules.iterator();
+        IModule module = it.next();
         if (module instanceof Solution && ((Solution) module).isStub()) {
           Set<MPSModuleOwner> owners = MPSModuleRepository.getInstance().getOwners(module);
           assert !(owners.isEmpty());
           module = ((IModule) owners.iterator().next());
         } else if (module instanceof Generator) {
           module = ((Generator) module).getSourceLanguage();
+        } else if (module.getDescriptorFile() == null) {
+          assert it.hasNext();
+          module = it.next();
         }
         final String modulePath = module.getDescriptorFile().getAbsolutePath();
 

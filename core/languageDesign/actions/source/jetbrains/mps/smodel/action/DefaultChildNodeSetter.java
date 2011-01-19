@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 
 /**
@@ -44,14 +45,15 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
   }
 
   public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
-    if (newChild != null && !SModelUtil_new.isAcceptableTarget(myLinkDeclaration, newChild)) {
+    SNode linkDeclaration = BaseAdapter.fromAdapter(myLinkDeclaration);
+    if (newChild != null && !SModelUtil.isAcceptableTarget(linkDeclaration, newChild)) {
       LOG.error("couldn't set instance of " + newChild.getConceptFqName() +
         " as child '" + myLinkDeclaration.getRole() + "' to " + parentNode.getDebugText());
       return newChild;
     }
 
     if (oldChild == null) {
-      parentNode.setChild(SModelUtil_new.getGenuineLinkRole(myLinkDeclaration), newChild);
+      parentNode.setChild(SModelUtil.getGenuineLinkRole(linkDeclaration), newChild);
     } else {
       parentNode.replaceChild(oldChild, newChild);
       oldChild.delete();

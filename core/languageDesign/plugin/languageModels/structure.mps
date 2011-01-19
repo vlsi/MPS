@@ -1194,11 +1194,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab.Methods.GetNodes" />
       <property name="name" nameId="tpck.1169194664001" value="NodesBlock" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3743831881070612965">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
-      <property name="name" nameId="tpck.1169194664001" value="OrderConstraints" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3743831881070613135">
       <property name="name" nameId="tpck.1169194664001" value="IsApplicableTabBlock" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab.Methods" />
@@ -1213,6 +1208,26 @@
       <property name="name" nameId="tpck.1169194664001" value="ListenBlock" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab.Methods" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2450897840534683973">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
+      <property name="name" nameId="tpck.1169194664001" value="OrderConstraints" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2450897840534683975">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
+      <property name="name" nameId="tpck.1169194664001" value="Order" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2450897840534683979">
+      <property name="name" nameId="tpck.1169194664001" value="EditorTabReference" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2450897840534688273">
+      <property name="name" nameId="tpck.1169194664001" value="OrderReference" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </roots>
   <root id="1203071646776">
@@ -4686,7 +4701,7 @@
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3743831881070613126">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="order" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3743831881070612965" resolveInfo="OrderConstraints" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2450897840534683973" resolveInfo="OrderConstraints" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3743831881070613134">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -4733,7 +4748,6 @@
     </node>
   </root>
   <root id="3743831881070612962" />
-  <root id="3743831881070612965" />
   <root id="3743831881070613135">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="3743831881070613136">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
@@ -4775,6 +4789,40 @@
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3743831881070657682">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpee.1216468774225" resolveInfo="showName" />
+    </node>
+  </root>
+  <root id="2450897840534683973" />
+  <root id="2450897840534683975">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2450897840534683977">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="tab" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2450897840534683979" resolveInfo="EditorTabReference" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2450897840534683976">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2450897840534683973" resolveInfo="OrderConstraints" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2450897840534800785">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </root>
+  <root id="2450897840534683979">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2450897840534683980">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <property name="role" nameId="tpce.1071599776563" value="editorTab" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3743831881070611759" resolveInfo="EditorTab" />
+    </node>
+  </root>
+  <root id="2450897840534688273">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2450897840534688274">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <property name="role" nameId="tpce.1071599776563" value="order" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="2450897840534683975" resolveInfo="Order" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2450897840534688279">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2450897840534683973" resolveInfo="OrderConstraints" />
     </node>
   </root>
 </model>

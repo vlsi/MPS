@@ -420,8 +420,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1241461839327" fileName="BuildGeneratorImpl.java" startLine="149" startPosition="133" endLine="180" endPosition="21">
       <varInfo nodeId="1241461839464" varName="folder" />
-      <varInfo nodeId="1241461839439" varName="zip" />
       <varInfo nodeId="1241461839356" varName="result" />
+      <varInfo nodeId="1241461839439" varName="zip" />
       <varInfo nodeId="1241461839370" varName="index" />
       <varInfo nodeId="1241461839330" varName="mpsLayout" />
       <varInfo nodeId="1241528543664" varName="basedirPath" />
@@ -446,8 +446,8 @@
     </scopeInfo>
     <scopeInfo nodeId="6979612000521479886" fileName="BuildGeneratorImpl.java" startLine="56" startPosition="69" endLine="99" endPosition="36">
       <varInfo nodeId="6979612000521479981" varName="projectBasedirPath" />
-      <varInfo nodeId="6979612000521481992" varName="moduleReferencesToAdd" />
       <varInfo nodeId="6979612000521479968" varName="descriptor" />
+      <varInfo nodeId="6979612000521481992" varName="moduleReferencesToAdd" />
       <varInfo nodeId="6979612000521479991" varName="modules" />
       <varInfo nodeId="6979612000521479975" varName="projectName" />
     </scopeInfo>
@@ -560,8 +560,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1222950545484" fileName="BuildGeneratorUtil.java" startLine="50" startPosition="109" endLine="74" endPosition="20">
       <varInfo nodeId="1222950592424" varName="solutionFilePath" />
-      <varInfo nodeId="1222950592439" varName="solution" />
       <varInfo nodeId="1222950592434" varName="solutionFile" />
+      <varInfo nodeId="1222950592439" varName="solution" />
       <varInfo nodeId="1222950592409" varName="baseDirFile" />
     </scopeInfo>
     <scopeInfo nodeId="1222950545481" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSolution#(Ljetbrains/mps/project/MPSProject;Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/project/Solution;" fileName="BuildGeneratorUtil.java" startLine="49" startPosition="0" endLine="76" endPosition="0">
@@ -623,8 +623,8 @@
       <varInfo nodeId="1223050118533" varName="isSelected" />
       <varInfo nodeId="1223050118531" varName="value" />
       <varInfo nodeId="1223050118537" varName="leaf" />
-      <varInfo nodeId="1223050118541" varName="hasFocus" />
       <varInfo nodeId="1223050118535" varName="expanded" />
+      <varInfo nodeId="1223050118541" varName="hasFocus" />
       <varInfo nodeId="1223050118539" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="1223050118475" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckBoxCellRenderrer#()V" fileName="CheckBoxCellRenderrer.java" startLine="18" startPosition="0" endLine="28" endPosition="3" />
@@ -934,8 +934,8 @@
       <varInfo nodeId="1224845371899" varName="moduleWithSelectedName" />
     </scopeInfo>
     <scopeInfo nodeId="1224009024004" fileName="AbstractBuildGenerator.java" startLine="44" startPosition="66" endLine="51" endPosition="7">
-      <varInfo nodeId="1225199267880" varName="count" />
       <varInfo nodeId="1225198070089" varName="modelNamePrefix" />
+      <varInfo nodeId="1225199267880" varName="count" />
     </scopeInfo>
     <scopeInfo nodeId="1223990712599" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setCreateSolution#(Z)V" fileName="AbstractBuildGenerator.java" startLine="96" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="1223990719387" varName="createSolution" />
@@ -1264,8 +1264,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1223050119538" fileName="LanguagesStep.java" startLine="55" startPosition="41" endLine="82" endPosition="44">
       <varInfo nodeId="1223655839243" varName="allModulesNode" />
-      <varInfo nodeId="1223657149117" varName="builder" />
       <varInfo nodeId="1223656364728" varName="data" />
+      <varInfo nodeId="1223657149117" varName="builder" />
       <varInfo nodeId="1223656393273" varName="children" />
       <varInfo nodeId="1223655850810" varName="allModules" />
     </scopeInfo>
@@ -1879,7 +1879,7 @@
     <nodeInfo nodeId="7376433222636453979" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="GenerateTextFromBuild.java" startLine="39" startPosition="7" endLine="40" endPosition="22" />
     <nodeInfo nodeId="1224851586148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GenerateTextFromBuild.java" startLine="40" startPosition="22" endLine="41" endPosition="91" />
     <nodeInfo nodeId="6053328609845221841" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GenerateTextFromBuild.java" startLine="41" startPosition="91" endLine="42" endPosition="46" />
-    <nodeInfo nodeId="6053328609845221168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GenerateTextFromBuild.java" startLine="45" startPosition="119" endLine="46" endPosition="68" />
+    <nodeInfo nodeId="6053328609845221168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GenerateTextFromBuild.java" startLine="45" startPosition="100" endLine="46" endPosition="68" />
     <nodeInfo nodeId="689680155166286341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GenerateTextFromBuild.java" startLine="46" startPosition="68" endLine="47" endPosition="52" />
     <nodeInfo nodeId="6053328609845221196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GenerateTextFromBuild.java" startLine="47" startPosition="52" endLine="48" endPosition="49" />
     <nodeInfo nodeId="6053328609845221856" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GenerateTextFromBuild.java" startLine="49" startPosition="122" endLine="50" endPosition="32" />
@@ -1898,7 +1898,7 @@
     <nodeInfo nodeId="1240233965580" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GenerateTextFromBuild.java" startLine="53" startPosition="6" endLine="58" endPosition="5" />
     <nodeInfo nodeId="1224851995326" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="GenerateTextFromBuild.java" startLine="64" startPosition="57" endLine="69" endPosition="0" />
     <nodeInfo nodeId="1224851995325" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GenerateTextFromBuild.java" startLine="63" startPosition="63" endLine="69" endPosition="7" />
-    <nodeInfo nodeId="6053328609845221150" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileGenerated#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/generator/fileGenerator/TextGenerationUtil/TextGenerationResult;)V" fileName="GenerateTextFromBuild.java" startLine="43" startPosition="75" endLine="53" endPosition="0" />
+    <nodeInfo nodeId="6053328609845221150" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileGenerated#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/textGen/TextGenerationResult;)V" fileName="GenerateTextFromBuild.java" startLine="43" startPosition="75" endLine="53" endPosition="0" />
     <nodeInfo nodeId="6053328609845219934" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GenerateTextFromBuild.java" startLine="42" startPosition="46" endLine="53" endPosition="6" />
     <nodeInfo nodeId="1224851981654" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLayout#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/smodel/SNode;" fileName="GenerateTextFromBuild.java" startLine="61" startPosition="0" endLine="72" endPosition="0" />
     <nodeInfo nodeId="1224851567257" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="generate#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/IOperationContext;Lcom/intellij/openapi/project/Project;Z)Ljava/io/File;" fileName="GenerateTextFromBuild.java" startLine="33" startPosition="0" endLine="61" endPosition="0" />
@@ -1913,13 +1913,13 @@
     </scopeInfo>
     <scopeInfo nodeId="1224851586136" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" fileName="GenerateTextFromBuild.java" startLine="35" startPosition="90" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1224851995326" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="GenerateTextFromBuild.java" startLine="64" startPosition="57" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="6053328609845221159" fileName="GenerateTextFromBuild.java" startLine="45" startPosition="119" endLine="51" endPosition="9">
+    <scopeInfo nodeId="6053328609845221159" fileName="GenerateTextFromBuild.java" startLine="45" startPosition="100" endLine="51" endPosition="9">
       <varInfo nodeId="6053328609845221169" varName="target" />
     </scopeInfo>
     <scopeInfo nodeId="1224851981657" fileName="GenerateTextFromBuild.java" startLine="62" startPosition="68" endLine="70" endPosition="24">
       <varInfo nodeId="1224851995323" varName="layout" />
     </scopeInfo>
-    <scopeInfo nodeId="6053328609845221150" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileGenerated#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/generator/fileGenerator/TextGenerationUtil/TextGenerationResult;)V" fileName="GenerateTextFromBuild.java" startLine="43" startPosition="75" endLine="53" endPosition="0">
+    <scopeInfo nodeId="6053328609845221150" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileGenerated#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/textGen/TextGenerationResult;)V" fileName="GenerateTextFromBuild.java" startLine="43" startPosition="75" endLine="53" endPosition="0">
       <varInfo nodeId="6053328609845221157" varName="result" />
       <varInfo nodeId="6053328609845221153" varName="targetDir" />
       <varInfo nodeId="6053328609845221155" varName="fileName" />

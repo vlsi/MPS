@@ -226,8 +226,7 @@ public class JavaUiState extends AbstractUiState {
     if (myContext != null) {
       EventSet eventSet = myContext.getEventSet();
       if (eventSet != null) {
-        for (Object eventObject : eventSet) {
-          Event event = (Event) eventObject;
+        for (Event event : eventSet) {
           if (event instanceof ExceptionEvent) {
             ObjectReference exception = ((ExceptionEvent) event).exception();
             watchables.add(new JavaExceptionWatchable(exception, getStackFrame().getClassFqName(), getThread().getThread()));

@@ -20,8 +20,11 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.findUsages.ProxyFindUsagesManager;
 import jetbrains.mps.ide.PerformanceSettings.MyState;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.workbench.actions.goTo.GoToNamedNodeAction;
 import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
 import jetbrains.mps.workbench.actions.imports.ImportHelper;
@@ -48,6 +51,7 @@ public class PerformanceSettings implements PersistentStateComponent<MyState>, C
   private JRadioButton myDefaultGoToRadio;
   private JRadioButton myFastFindRadio;
   private JRadioButton myDefaultFindRadio;
+  private JCheckBox myShowGenStatus;
 
   public MyState getState() {
     return myState;
@@ -91,6 +95,10 @@ public class PerformanceSettings implements PersistentStateComponent<MyState>, C
     myMainPanel.add(createChoosePanel(myFastFindRadio, myDefaultFindRadio, "Find actions"), c);
 
     c.gridy = 2;
+    myShowGenStatus = new JCheckBox("Show 'generation required' status in logical view");
+    myMainPanel.add(myShowGenStatus, c);
+
+    c.gridy = 3;
     c.weighty = 1;
     myMainPanel.add(new JPanel(), c);
 
@@ -113,19 +121,22 @@ public class PerformanceSettings implements PersistentStateComponent<MyState>, C
   public boolean isModified() {
     boolean gotoChanged = myFastGoToRadio.isSelected() != myState.isUseFastGoToNode();
     boolean findChanged = myFastFindRadio.isSelected() != myState.isUseFastFindUsages();
+    boolean statusChanged = myShowGenStatus.isSelected() != myState.isShowGenStatusInTree();
 
-    return gotoChanged || findChanged;
+    return gotoChanged || findChanged || statusChanged;
   }
 
   public void apply() throws ConfigurationException {
     myState.setUseFastGoToNode(myFastGoToRadio.isSelected());
     myState.setUseFastFindUsages(myFastFindRadio.isSelected());
+    myState.setShowGenStatusInTree(myShowGenStatus.isSelected());
     applyInternal();
   }
 
   public void reset() {
     (myState.isUseFastGoToNode() ? myFastGoToRadio : myDefaultGoToRadio).setSelected(true);
     (myState.isUseFastFindUsages() ? myFastFindRadio : myDefaultFindRadio).setSelected(true);
+    myShowGenStatus.setSelected(myState.isShowGenStatusInTree());
   }
 
   public void disposeUIResources() {
@@ -133,6 +144,7 @@ public class PerformanceSettings implements PersistentStateComponent<MyState>, C
     myFastFindRadio = null;
     myDefaultGoToRadio = null;
     myDefaultFindRadio = null;
+    myShowGenStatus = null;
     myMainPanel = null;
   }
 
@@ -144,11 +156,17 @@ public class PerformanceSettings implements PersistentStateComponent<MyState>, C
 
     boolean fastFindUsages = myState.isUseFastFindUsages();
     ProxyFindUsagesManager.setOurUseFastManager(fastFindUsages);
+
+    ProjectPane.setShowGenStatus(myState.isShowGenStatusInTree());
+    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+      ProjectPane.getInstance(p).rebuildTree();
+    }
   }
 
   public static class MyState {
     private boolean myUseFastGoToNode = true;
-    public boolean myUseFastFindUsages = true;
+    private boolean myUseFastFindUsages = true;
+    private boolean myShowGenStatusInTree = true;
 
     public MyState() {
 
@@ -168,6 +186,14 @@ public class PerformanceSettings implements PersistentStateComponent<MyState>, C
 
     public void setUseFastFindUsages(boolean useFastFindUsages) {
       myUseFastFindUsages = useFastFindUsages;
+    }
+
+    public boolean isShowGenStatusInTree() {
+      return myShowGenStatusInTree;
+    }
+
+    public void setShowGenStatusInTree(boolean showGenStatusInTree) {
+      myShowGenStatusInTree = showGenStatusInTree;
     }
   }
 }

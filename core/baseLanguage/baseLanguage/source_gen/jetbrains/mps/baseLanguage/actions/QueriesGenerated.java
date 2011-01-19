@@ -3126,7 +3126,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return AssignmentExpression_Behavior.call_convertToLocalVariableDeclaration_1221573391693(assignment);
+          return AssignmentExpression_Behavior.call_convertToLocalVariableDeclaration_1221573391693(assignment, null);
         }
 
         public String getMatchingText(String pattern) {

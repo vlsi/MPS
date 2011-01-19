@@ -59,8 +59,8 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877398363">
-    <nodeInfo nodeId="1213877398366" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnboundClosureParameterDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="103" />
-    <scopeInfo nodeId="1213877398365" fileName="UnboundClosureParameterDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="103" />
+    <nodeInfo nodeId="1213877398366" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnboundClosureParameterDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="104" />
+    <scopeInfo nodeId="1213877398365" fileName="UnboundClosureParameterDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="104" />
   </root>
   <root nodeId="1213877404868">
     <nodeInfo nodeId="1213877404871" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FunctionType_Behavior.java" startLine="37" startPosition="78" endLine="38" endPosition="44" />

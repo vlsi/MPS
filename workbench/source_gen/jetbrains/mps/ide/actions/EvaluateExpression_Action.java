@@ -11,7 +11,7 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
@@ -29,8 +29,8 @@ public class EvaluateExpression_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
-        event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled() && debugSession.canShowEvaluationDialog());
+        IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);
+        event.getPresentation().setEnabled(evaluationProvider != null && evaluationProvider.canEvaluate());
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -44,10 +44,6 @@ public class EvaluateExpression_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
     if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
@@ -57,7 +53,10 @@ public class EvaluateExpression_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      DebugActionsUtil.getDebugSession(event).showEvaluationDialog(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")));
+      IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);
+      if (evaluationProvider != null) {
+        evaluationProvider.showEvaluationDialog(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")));
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "EvaluateExpression", t);

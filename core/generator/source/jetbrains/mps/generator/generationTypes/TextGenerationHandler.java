@@ -2,8 +2,8 @@ package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.fileGenerator.TextGenerationUtil;
-import jetbrains.mps.generator.fileGenerator.TextGenerationUtil.TextGenerationResult;
+import jetbrains.mps.textGen.TextGenerationResult;
+import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
@@ -12,7 +12,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Pair;
 
 import java.io.File;
-import java.util.Collections;
 import java.util.List;
 
 /**

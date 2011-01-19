@@ -100,7 +100,7 @@ __switch__:
                       this.__CP__ = 15;
                       break;
                     case 2:
-                      if (MakeActionParameters.this.models != null) {
+                      if (MakeActionParameters.this.models != null && models.size() > 0) {
                         this.__CP__ = 3;
                         break;
                       } else if (MakeActionParameters.this.cmodel != null) {

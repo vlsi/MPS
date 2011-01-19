@@ -31,6 +31,8 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_wnrqtk_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_wnrqtk_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_wnrqtk_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_wnrqtk_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_wnrqtk_g0(editorContext, node));
     return editorCell;
   }
 
@@ -43,8 +45,16 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_wnrqtk_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with comment");
     editorCell.setCellId("Constant_wnrqtk_e0");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_wnrqtk_g0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
+    editorCell.setCellId("Constant_wnrqtk_g0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
@@ -72,6 +82,23 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("amount");
     provider.setNoTargetText("<no amount>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_wnrqtk_f0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("comment");
+    provider.setNoTargetText("<no comment>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

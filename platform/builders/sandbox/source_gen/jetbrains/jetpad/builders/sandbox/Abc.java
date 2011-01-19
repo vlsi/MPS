@@ -8,10 +8,10 @@ public class Abc {
   public Abc() {
     new _FunctionTypes._return_P0_E0<Node>() {
       public Node invoke() {
-        Node result_5602_0 = new Node("abc");
-        String result_5602_1 = "abc";
-        result_5602_0.setText(result_5602_1);
-        return result_5602_0;
+        final Node result_pb5_a0a0a0 = new Node("abc");
+        final String result_pb5_a0a0a0a0 = "abc";
+        result_pb5_a0a0a0.setText(result_pb5_a0a0a0a0);
+        return result_pb5_a0a0a0;
       }
     }.invoke();
   }
@@ -19,26 +19,26 @@ public class Abc {
   public void aaa() {
     new _FunctionTypes._return_P0_E0<Node>() {
       public Node invoke() {
-        Node result_5602_2 = new Node("root");
-        Node result_5602_3 = new Node("c1");
-        Node result_5602_4 = new Node("c2");
-        int result_5602_5 = 22;
-        result_5602_4.setXYZ(result_5602_5);
-        String result_5602_6 = "text to set";
-        result_5602_4.setText(result_5602_6);
-        result_5602_3.add(result_5602_4);
-        Node result_5602_7 = new Node("c2");
-        result_5602_3.add(result_5602_7);
-        Node result_5602_8 = new Node("c3");
-        result_5602_3.add(result_5602_8);
-        Node result_5602_9 = new Node("c2");
-        result_5602_3.add(result_5602_9);
-        Node result_5602_10 = new Node("c1");
-        result_5602_3.add(result_5602_10);
-        Node result_5602_11 = new Node("c1");
-        result_5602_3.add(result_5602_11);
-        result_5602_2.add(result_5602_3);
-        return result_5602_2;
+        final Node result_pb5_a0a0a0_0 = new Node("root");
+        final Node result_pb5_a0a0a0a0_0 = new Node("c1");
+        final Node result_pb5_a0a0a0a0a0 = new Node("c2");
+        final int result_pb5_a0a0a0a0a0a0 = 22;
+        result_pb5_a0a0a0a0a0.setXYZ(result_pb5_a0a0a0a0a0a0);
+        final String result_pb5_a1a0a0a0a0a0 = "text to set";
+        result_pb5_a0a0a0a0a0.setText(result_pb5_a1a0a0a0a0a0);
+        result_pb5_a0a0a0a0_0.add(result_pb5_a0a0a0a0a0);
+        final Node result_pb5_a1a0a0a0a0 = new Node("c2");
+        result_pb5_a0a0a0a0_0.add(result_pb5_a1a0a0a0a0);
+        final Node result_pb5_a2a0a0a0a0 = new Node("c3");
+        result_pb5_a0a0a0a0_0.add(result_pb5_a2a0a0a0a0);
+        final Node result_pb5_a3a0a0a0a0 = new Node("c2");
+        result_pb5_a0a0a0a0_0.add(result_pb5_a3a0a0a0a0);
+        final Node result_pb5_a4a0a0a0a0 = new Node("c1");
+        result_pb5_a0a0a0a0_0.add(result_pb5_a4a0a0a0a0);
+        final Node result_pb5_a5a0a0a0a0 = new Node("c1");
+        result_pb5_a0a0a0a0_0.add(result_pb5_a5a0a0a0a0);
+        result_pb5_a0a0a0_0.add(result_pb5_a0a0a0a0_0);
+        return result_pb5_a0a0a0_0;
       }
     }.invoke();
   }

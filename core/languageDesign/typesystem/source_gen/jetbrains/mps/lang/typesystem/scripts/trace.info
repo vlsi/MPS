@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="SetDefaultInequationGroup_MigrationScript.java" startLine="14" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.typesystem.scripts.SetDefaultInequationGroup_MigrationScript$1" />
+  <unitInfo fileName="ReplaceAbstractTypeInWCVars_MigrationScript.java" startLine="16" startPosition="28" endLine="40" endPosition="5" unitName="jetbrains.mps.lang.typesystem.scripts.ReplaceAbstractTypeInWCVars_MigrationScript$1" />
   <unitInfo fileName="SetDefaultInequationGroup_MigrationScript.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.typesystem.scripts.SetDefaultInequationGroup_MigrationScript" />
+  <unitInfo fileName="ReplaceAbstractTypeInWCVars_MigrationScript.java" startLine="13" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.typesystem.scripts.ReplaceAbstractTypeInWCVars_MigrationScript" />
   <unitInfo fileName="ReplacePrioritiesWithReferences_MigrationScript.java" startLine="15" startPosition="28" endLine="53" endPosition="5" unitName="jetbrains.mps.lang.typesystem.scripts.ReplacePrioritiesWithReferences_MigrationScript$1" />
   <unitInfo fileName="ReplacePrioritiesWithReferences_MigrationScript.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.typesystem.scripts.ReplacePrioritiesWithReferences_MigrationScript" />
   <root nodeId="1320713984677838150">
@@ -67,6 +69,12 @@
       <varInfo nodeId="1759628044690734775" varName="priority" />
     </scopeInfo>
     <unitInfo nodeId="1759628044690734764" fileName="TypesLanguageScriptsUtil.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.typesystem.scripts.TypesLanguageScriptsUtil" />
+  </root>
+  <root nodeId="3350570190399467211">
+    <nodeInfo nodeId="3350570190399467217" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReplaceAbstractTypeInWCVars_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="175" />
+    <nodeInfo nodeId="3350570190399467245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplaceAbstractTypeInWCVars_MigrationScript.java" startLine="33" startPosition="52" endLine="34" endPosition="104" />
+    <scopeInfo nodeId="3350570190399467216" fileName="ReplaceAbstractTypeInWCVars_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="175" />
+    <scopeInfo nodeId="3350570190399467214" fileName="ReplaceAbstractTypeInWCVars_MigrationScript.java" startLine="33" startPosition="52" endLine="34" endPosition="104" />
   </root>
 </debugInfo>
 
