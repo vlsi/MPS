@@ -1,6 +1,8 @@
+import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.junit.runners.WatchingSuite;
 import junit.framework.TestSuite;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
@@ -438,5 +440,10 @@ public class GlobalTestSuite extends TestSuite {
   @BeforeClass
   public static void make () throws Exception {
     new MpsMakeHelper().make();
+  }
+
+  @AfterClass
+  public static void shutdown() {
+    BaseTransformationTest.getProjectContainer().clear();
   }
 }
