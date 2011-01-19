@@ -21,7 +21,6 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.structure.MeetType;
-import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
@@ -360,9 +359,10 @@ public class SubtypingManager {
   public IWrapper leastCommonSupertype(Set<IWrapper> types, boolean isWeak, EquationManager equationManager) {
     Set<IWrapper> lcss = leastCommonSupertypesWrappers(types, isWeak);
     if (lcss.size() != 1) {
-      RuntimeErrorType type = RuntimeErrorType.newInstance(AuxilaryRuntimeModel.getDescriptor().getSModel());
+     /* RuntimeErrorType type = RuntimeErrorType.newInstance(AuxilaryRuntimeModel.getDescriptor().getSModel());
       type.setErrorText("uncomparable types");
-      return NodeWrapper.createWrapperFromNode(BaseAdapter.fromAdapter(type), equationManager);
+      return NodeWrapper.createWrapperFromNode(BaseAdapter.fromAdapter(type), equationManager);*/
+      return null; //todo error
     }
     return lcss.iterator().next();
   }

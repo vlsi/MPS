@@ -22,8 +22,6 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_R
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
-import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModel;
@@ -583,12 +581,12 @@ public class EquationManager {
   }
 
   private List<SNode> getChildAndReferentVariables(SNode node) {
-    if (node.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+    if (HUtil.isRuntimeTypeVariable(node)) {
       return Arrays.asList(node);
     }
     List<SNode> result = new ArrayList<SNode>();
     for (SNode referent : node.getReferents()) {
-      if (referent != null && referent.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+      if (referent != null && HUtil.isRuntimeTypeVariable(referent)) {
         result.add(referent);
       }
     }
@@ -657,8 +655,8 @@ public class EquationManager {
     if (rhsRepresentator == null || lhsRepresentator == null) return;
 
     // add var to type's multieq
-    RuntimeTypeVariable varRhs = rhsRepresentator.getVariable();
-    RuntimeTypeVariable varLhs = lhsRepresentator.getVariable();
+    SNode varRhs = rhsRepresentator.getVariable();
+    SNode varLhs = lhsRepresentator.getVariable();
     if (varRhs != null) {
       processEquation(rhsRepresentator, lhsRepresentator, errorInfo);
       return;
@@ -741,10 +739,10 @@ public class EquationManager {
       setParent(var, type);
       keepInequationsAndEffects(var, type, false);
     }
-    RuntimeTypeVariable typeVar = var.getVariable();
-    if (typeVar instanceof RuntimeErrorType) {
+    SNode typeVar = var.getVariable();
+    if (HUtil.isRuntimeErrorType(typeVar)) {
       SNode nodeWithError = errorInfo.getNodeWithError();
-      SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, ((RuntimeErrorType) typeVar).getErrorText(), errorInfo.getRuleModel(), errorInfo.getRuleId());
+      SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, HUtil.getErrorText(typeVar), errorInfo.getRuleModel(), errorInfo.getRuleId());
       reporter.setIntentionProvider(errorInfo.getIntentionProvider());
       reporter.setAdditionalRulesIds(errorInfo.getAdditionalRulesIds());
       myTypeCheckingContext.reportMessage(
@@ -1391,9 +1389,9 @@ public class EquationManager {
 
         if (variablesMet.contains(wrapper)) {
           //recursion!!
-          RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
-          error.setErrorText("recursion types not allowed");
-          return NodeWrapper.fromNode(error.getNode(), this);
+          IErrorReporter reporter = new SimpleErrorReporter(term, "recursion types not allowed", null, null);
+          nodeTypesComponent.reportTypeError(term, reporter);
+          return (NodeWrapper) wrapper;
         }
         variablesMet.add(wrapper);
         if (expandChild) {
@@ -1412,11 +1410,8 @@ public class EquationManager {
     if (finalExpansion) {
       WhenConcreteEntity whenConcreteEntity = this.getWhenConcreteEntity(wrapper);
       if (whenConcreteEntity != null && !whenConcreteEntity.skipsError()) {
-        RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
-        error.setErrorText("argument of WHEN CONCRETE block is never concrete");
-        error.setNodeModel(whenConcreteEntity.getNodeModel());
-        error.setNodeId(whenConcreteEntity.getNodeId());
-        nodeTypesComponent.reportTypeError(term, error.getErrorText(), error.getNodeModel(), error.getNodeId());
+        nodeTypesComponent.reportTypeError(term,
+          "argument of WHEN CONCRETE block is never concrete", whenConcreteEntity.getNodeModel(), whenConcreteEntity.getNodeId());
       }
     }
     Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
@@ -1438,9 +1433,9 @@ public class EquationManager {
     for (SNode child : new ArrayList<SNode>(children)) {
       if (!childrenReplacement.keySet().contains(child)) continue;
       if (child.getParent() == null) {
-        RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
-        error.setErrorText("recursion types not allowed");
-        return NodeWrapper.fromNode(error.getNode(), this);
+        IErrorReporter errorReporter = new SimpleErrorReporter(term, "recursion types not allowed", null, null);
+        nodeTypesComponent.reportTypeError(term, errorReporter);
+        return (NodeWrapper) wrapper;
       }
       SNode parent = child.getParent();
       assert parent != null;
