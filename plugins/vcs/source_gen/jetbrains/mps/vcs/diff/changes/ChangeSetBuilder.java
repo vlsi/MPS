@@ -38,7 +38,6 @@ public class ChangeSetBuilder {
     myOldModel = oldModel;
     myNewModel = newModel;
     myChangeSet = new ChangeSet(oldModel, newModel);
-    buildChanges();
   }
 
   private void buildPropertyChanges(SNode oldNode, SNode newNode) {
@@ -171,7 +170,9 @@ public class ChangeSetBuilder {
   }
 
   public static ChangeSet buildChangeSet(SModel oldModel, SModel newModel) {
-    return new ChangeSetBuilder(oldModel, newModel).myChangeSet;
+    ChangeSetBuilder builder = new ChangeSetBuilder(oldModel, newModel);
+    builder.buildChanges();
+    return builder.myChangeSet;
   }
 
   private static SModelReference check_nbyrtw_a0a0c0e0b(SModel p) {

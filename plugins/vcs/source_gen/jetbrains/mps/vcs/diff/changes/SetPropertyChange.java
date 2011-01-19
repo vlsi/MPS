@@ -4,20 +4,14 @@ package jetbrains.mps.vcs.diff.changes;
 
 import jetbrains.mps.smodel.SNodeId;
 
-public class SetPropertyChange extends ModelChange {
-  private SNodeId myNodeId;
+public class SetPropertyChange extends NodeChange {
   private String myPropertyName;
   private String myNewValue;
 
   public SetPropertyChange(ChangeSet changeSet, SNodeId nodeId, String propertyName, String newValue) {
-    super(changeSet);
-    myNodeId = nodeId;
+    super(changeSet, nodeId);
     myPropertyName = propertyName;
     myNewValue = newValue;
-  }
-
-  public SNodeId getNodeId() {
-    return myNodeId;
   }
 
   public String getPropertyName() {
@@ -30,6 +24,6 @@ public class SetPropertyChange extends ModelChange {
 
   @Override
   public String toString() {
-    return String.format("Set property %s to %s in node %s", myPropertyName, myNewValue, myNodeId);
+    return String.format("Set property %s to %s in node %s", myPropertyName, myNewValue, getAffectedNodeId());
   }
 }

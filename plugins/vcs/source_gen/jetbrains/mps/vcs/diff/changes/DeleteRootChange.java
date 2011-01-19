@@ -12,6 +12,10 @@ public class DeleteRootChange extends ModelChange {
     myNodeId = nodeId;
   }
 
+  public SNodeId getNodeId() {
+    return myNodeId;
+  }
+
   @Override
   public String toString() {
     return "Delete root " + myNodeId;

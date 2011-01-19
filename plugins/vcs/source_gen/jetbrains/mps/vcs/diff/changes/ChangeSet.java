@@ -6,6 +6,9 @@ import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ChangeSet {
@@ -18,8 +21,22 @@ public class ChangeSet {
     myNewModel = newModel;
   }
 
+  @NotNull
   public List<ModelChange> getModelChanges() {
     return myModelChanges;
+  }
+
+  @NotNull
+  public <C extends ModelChange> Iterable<C> getModelChanges(final Class<C> changeClass) {
+    return ListSequence.fromList(myModelChanges).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return changeClass.isInstance(ch);
+      }
+    }).<C>select(new ISelector<ModelChange, C>() {
+      public C select(ModelChange ch) {
+        return (C) ch;
+      }
+    });
   }
 
   public SModel getOldModel() {
