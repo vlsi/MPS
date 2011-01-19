@@ -37,6 +37,6 @@ public class typeof_IfInstanceOfVariable_InferenceRule extends AbstractInference
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

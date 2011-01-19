@@ -481,6 +481,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1883223317721107038">
       <property name="name" nameId="tpck.1169194664001" value="typeof_IfInstanceOfVariable" />
+      <property name="overrides" nameId="tpd4.1195213689297" value="true" />
     </node>
   </roots>
   <root id="1178287490510">

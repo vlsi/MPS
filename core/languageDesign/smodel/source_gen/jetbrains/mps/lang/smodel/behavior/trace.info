@@ -467,6 +467,10 @@
     <scopeInfo nodeId="1240931315604" fileName="SEnumOperation_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1240931322046" fileName="SEnumOperation_Behavior.java" startLine="13" startPosition="66" endLine="14" endPosition="186" />
   </root>
+  <root nodeId="1883223317721302910">
+    <nodeInfo nodeId="1883223317721302913" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfInstanceOfVariable_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="104" />
+    <scopeInfo nodeId="1883223317721302912" fileName="IfInstanceOfVariable_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="104" />
+  </root>
   <root nodeId="3476105411552591981">
     <nodeInfo nodeId="3476105411552591990" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Node_GetChildrenOperation_Behavior.java" startLine="13" startPosition="81" endLine="14" endPosition="276" />
     <scopeInfo nodeId="3476105411552591983" fileName="Node_GetChildrenOperation_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
