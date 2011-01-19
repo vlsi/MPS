@@ -169,8 +169,13 @@ public class SModelUtil_new implements ApplicationComponent {
     return ((LinkDeclaration) SModelUtil.getGenuineLinkDeclaration(BaseAdapter.fromAdapter(linkDeclaration)).getAdapter()).getSourceCardinality();
   }
 
+  @Deprecated
   public static List<AbstractConceptDeclaration> getConceptAndSuperConcepts(AbstractConceptDeclaration topConcept) {
     return new ConceptAndSuperConceptsScope(topConcept).getConcepts();
+  }
+
+  public static List<SNode> getConceptAndSuperConcepts(SNode topConcept) {
+    return BaseAdapter.toNodes(new ConceptAndSuperConceptsScope(topConcept).getConcepts());
   }
 
   public static List<AbstractConceptDeclaration> getDirectSuperInterfacesAndTheySupers(AbstractConceptDeclaration concept) {

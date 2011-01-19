@@ -4,6 +4,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SNodeUtil {
   public SNodeUtil() {
@@ -23,5 +24,9 @@ public class SNodeUtil {
 
   public static int getMetaLevel(SNode node) {
     return ((Integer) BehaviorManager.getInstance().invoke(Integer.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getMetaLevel_3981318653438234726", new Class[]{SNode.class}));
+  }
+
+  public static String getConceptDeclarationAlias(SNode conceptDeclaration) {
+    return SPropertyOperations.getString(conceptDeclaration, "alias");
   }
 }

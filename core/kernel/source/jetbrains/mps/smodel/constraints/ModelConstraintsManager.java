@@ -24,7 +24,6 @@ import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -209,9 +208,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
       }
 
       // find set-event-handler and put to cache
-      List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
-      for (AbstractConceptDeclaration concept : hierarchy) {
-        Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+      List<SNode> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationNode());
+      for (SNode concept : hierarchy) {
+        Language l = SModelUtil.getDeclaringLanguage(concept);
         ensureLanguageAdded(l);
 
         String conceptFqName = NameUtil.nodeFQName(concept);
@@ -299,11 +298,11 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<IModelConstraints>() {
       public IModelConstraints compute() {
-        AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-        List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(conceptDeclaration);
+        SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+        List<SNode/*AbstractConceptDeclaration*/> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(conceptDeclaration);
 
-        for (final AbstractConceptDeclaration concept : hierarchy) {
-          Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+        for (final SNode concept : hierarchy) {
+          Language l = SModelUtil.getDeclaringLanguage(concept);
           ensureLanguageAdded(l);
 
           final String conceptFqName = NameUtil.nodeFQName(concept);
@@ -349,9 +348,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
       return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<INodePropertyValidator>() {
         public INodePropertyValidator compute() {
           // find validator and put to cache
-          List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
-          for (AbstractConceptDeclaration concept : hierarchy) {
-            Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+          List<SNode> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationNode());
+          for (SNode concept : hierarchy) {
+            Language l = SModelUtil.getDeclaringLanguage(concept);
             ensureLanguageAdded(l);
 
             String conceptFqName = NameUtil.nodeFQName(concept);
@@ -370,12 +369,12 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
-  INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(AbstractConceptDeclaration nodeConcept, String referentRole) {
+  INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(SNode nodeConcept, String referentRole) {
     INodeReferentSearchScopeProvider result = getNodeReferentSearchScopeProviderNonDefault(nodeConcept, referentRole);
     if (result != null) return result;
-    LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
+    SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
     if (linkDeclaration == null) {
-      LOG.error("No reference serch scope provider was found. Concept: " + nodeConcept.getAlias() + "; refName: " + referentRole);
+      LOG.error("No reference serch scope provider was found. Concept: " + SNodeUtil.getConceptDeclarationAlias(nodeConcept) + "; refName: " + referentRole);
       return new BaseNodeReferenceSearchScopeProvider() {
         public void registerSelf(ModelConstraintsManager manager) {
 
@@ -386,19 +385,21 @@ public class ModelConstraintsManager implements ApplicationComponent {
         }
       };
     }
-    return getNodeDefaultSearchScopeProvider(linkDeclaration.getTarget());
+    return getNodeDefaultSearchScopeProvider(SModelUtil.getLinkDeclarationTarget(linkDeclaration));
   }
 
-  private INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(AbstractConceptDeclaration referentConcept) {
+  private INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(SNode referentConcept) {
     while (referentConcept != null) {
-      Language l = SModelUtil_new.getDeclaringLanguage(referentConcept, GlobalScope.getInstance());
+      Language l = SModelUtil.getDeclaringLanguage(referentConcept);
       ensureLanguageAdded(l);
 
       String conceptFqName = NameUtil.nodeFQName(referentConcept);
       INodeReferentSearchScopeProvider provider = myNodeDefaultSearchScopeProvidersMap.get(conceptFqName);
       if (provider != null) return provider;
-      if (!(referentConcept instanceof ConceptDeclaration)) break;
-      referentConcept = ((ConceptDeclaration) referentConcept).getExtends();
+
+      // TODO
+      if (!(referentConcept.getAdapter() instanceof ConceptDeclaration)) break;
+      referentConcept = BaseAdapter.fromAdapter(((ConceptDeclaration) referentConcept.getAdapter()).getExtends());
     }
     return null;
   }
@@ -406,10 +407,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
   /**
    * use the ModelConstraintsUtil.getSearchScope()
    */
-  private INodeReferentSearchScopeProvider getNodeReferentSearchScopeProviderNonDefault(AbstractConceptDeclaration nodeConcept, String referentRole) {
-    List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(nodeConcept);
-    for (AbstractConceptDeclaration concept : hierarchy) {
-      Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+  private INodeReferentSearchScopeProvider getNodeReferentSearchScopeProviderNonDefault(SNode nodeConcept, String referentRole) {
+    List<SNode> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(nodeConcept);
+    for (SNode concept : hierarchy) {
+      Language l = SModelUtil.getDeclaringLanguage(concept);
       ensureLanguageAdded(l);
 
       String conceptFqName = NameUtil.nodeFQName(concept);

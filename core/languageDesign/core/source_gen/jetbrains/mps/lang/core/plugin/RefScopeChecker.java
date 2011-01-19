@@ -4,12 +4,10 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
@@ -24,18 +22,17 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     if (operationContext == null) {
       return;
     }
-    AbstractConceptDeclaration concept = ((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node)));
+    SNode concept = SNodeOperations.getConceptDeclaration(node);
     for (SReference ref : SNodeOperations.getReferences(node)) {
       SNode target = SLinkOperations.getTargetNode(ref);
       SNode ld = SLinkOperations.findLinkDeclaration(ref);
-      LinkDeclaration linkDeclaration = ((LinkDeclaration) SNodeOperations.getAdapter(ld));
       // don't check unresolved and broken references, they should already have an error message 
-      if ((target == null) || linkDeclaration == null) {
+      if ((target == null) || ld == null) {
         continue;
       }
       component.addDependency(target);
-      component.addDependency(linkDeclaration.getNode());
-      String linkRole = SModelUtil_new.getGenuineLinkRole(linkDeclaration);
+      component.addDependency(ld);
+      String linkRole = SModelUtil.getGenuineLinkRole(ld);
       final SNode linkTarget = SLinkOperations.getTarget(ld, "target", false);
       final INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsUtil.getSearchScopeProvider(concept, linkRole);
       SearchScopeStatus searchScopeStatus = component.runCheckingAction(new _FunctionTypes._return_P0_E0<SearchScopeStatus>() {
