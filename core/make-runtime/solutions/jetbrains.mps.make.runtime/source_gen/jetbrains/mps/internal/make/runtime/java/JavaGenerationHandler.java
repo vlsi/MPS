@@ -168,7 +168,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     if (myProcessor != null) {
       performWritingFilesTask(new Runnable() {
         public void run() {
-          myProcessor.saveGeneratedFiles();
+          myProcessor.flushChanges();
         }
       });
       myProcessor = null;
