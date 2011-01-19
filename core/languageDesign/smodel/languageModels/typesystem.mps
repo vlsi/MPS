@@ -10280,31 +10280,20 @@
           </node>
         </node>
       </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="1240331973196">
-        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1240331976981">
-          <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1240331976982">
-            <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1240331870095" resolveInfo="Enum" />
-          </node>
-        </node>
-        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.ConceptTypeClause" typeId="tpd4.1240322207314" id="1240332107176">
-          <link role="matchingConcept" roleId="tpd4.1240322227198" targetNodeId="tpce.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
-          <node role="linkInfo" roleId="tpd4.1240322224540" type="tpd4.ConceptClauseLinkInfo" typeId="tpd4.1240322303006" id="1240332130415">
-            <link role="linkDeclaration" roleId="tpd4.1240322663260" targetNodeId="tpce.1083171729157" />
-            <node role="targetNode" roleId="tpd4.1240322649599" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1240332856567">
-              <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1240331876974" resolveInfo="Member" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.WhenConcreteStatement" typeId="tpd4.1185805035213" id="1240577305543">
         <node role="body" roleId="tpd4.1185805047793" type="tpee.StatementList" typeId="tpee.1068580123136" id="1240577305544">
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="1240577344535">
             <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1240577344536">
               <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1240577368466">
-                <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1240577355683">
-                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpce.1083243159079" resolveInfo="PrimitiveDataTypeDeclaration" />
-                  <node role="leftExpression" roleId="tp25.1140138123956" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="1240577354416">
-                    <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="1240577319236" resolveInfo="memberType" />
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7276679036056125246">
+                  <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="7276679036056125250">
+                    <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpce.1082978164219" resolveInfo="EnumerationDataTypeDeclaration" />
+                    <node role="leftExpression" roleId="tp25.1140138123956" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="1240577354416">
+                      <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="1240577319236" resolveInfo="memberType" />
+                    </node>
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2167791596357043070">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpce.1083171729157" />
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1240577374454">
@@ -10321,11 +10310,11 @@
             </node>
           </node>
         </node>
-        <node role="argument" roleId="tpd4.1185805056450" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1240577310579">
-          <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1240331876974" resolveInfo="Member" />
+        <node role="argument" roleId="tpd4.1185805056450" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="7276679036056125245">
+          <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1240331870095" resolveInfo="Enum" />
         </node>
         <node role="argumentRepresentator" roleId="tpd4.1205761991995" type="tpd4.WhenConcreteVariableDeclaration" typeId="tpd4.1205762105978" id="1240577319236">
-          <property name="name" nameId="tpck.1169194664001" value="memberType" />
+          <property name="name" nameId="tpck.1169194664001" value="enumDecl" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.Type" typeId="tpee.1068431790189" id="1240577319237" />
         </node>
       </node>
