@@ -72,10 +72,9 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void checkRoot() {
-    if (!myChecked) {
+
       checkRoot(true);
-      myChecked = true;
-    }
+   
     // myState.solveInequalities();
   }
      /*
@@ -98,11 +97,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
         myChecked = true;
       }
    // }
-  }
-
-  @Override
-  public boolean isCheckedRoot(boolean considerNonTypesystemRules) {
-    return myChecked;
   }
 
   public void solveAndExpand() {

@@ -229,7 +229,7 @@ public class SubTyping {
   }
 
   private Set<SNode> eliminateSubOrSuperTypes(Set<SNode> types, boolean sub) {
-    //todo fix bug & optimize
+    //todo optimize
     types = eliminateEqual(types);
     Set<SNode> result = new HashSet<SNode>();
     Set<SNode> toRemove = new HashSet<SNode>();
