@@ -10,6 +10,7 @@
     <nodeInfo nodeId="8339862546319981457" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="37" startPosition="77" endLine="38" endPosition="112" />
     <nodeInfo nodeId="8339862546319981402" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SNodeUtil.java" startLine="41" startPosition="76" endLine="42" endPosition="51" />
     <nodeInfo nodeId="8339862546319981419" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="42" startPosition="51" endLine="43" endPosition="280" />
+    <nodeInfo nodeId="2594890229324800860" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="46" startPosition="70" endLine="47" endPosition="60" />
     <nodeInfo nodeId="2274990519051114061" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SNodeUtil#()V" fileName="SNodeUtil.java" startLine="9" startPosition="24" endLine="11" endPosition="3" />
     <nodeInfo nodeId="2274990519051152612" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="SNodeUtil.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <nodeInfo nodeId="2274990519051271953" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDetailedPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="SNodeUtil.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
@@ -18,6 +19,7 @@
     <nodeInfo nodeId="4383452389582120647" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConceptDeclarationAlias#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="SNodeUtil.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <nodeInfo nodeId="8339862546319979449" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInstanceOfConceptDeclaration#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SNodeUtil.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <nodeInfo nodeId="8339862546319981450" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInstanceOfInterfaceConceptDeclaration#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SNodeUtil.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="2594890229324800853" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConceptDeclaration_IsRootable#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SNodeUtil.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
     <nodeInfo nodeId="8339862546319981395" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInstanceOfAbstractConceptDeclaration#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SNodeUtil.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="2274990519051114064" fileName="SNodeUtil.java" startLine="10" startPosition="22" endLine="10" endPosition="22" />
     <scopeInfo nodeId="2274990519051152615" fileName="SNodeUtil.java" startLine="13" startPosition="52" endLine="14" endPosition="217" />
@@ -27,6 +29,7 @@
     <scopeInfo nodeId="4383452389582120650" fileName="SNodeUtil.java" startLine="29" startPosition="77" endLine="30" endPosition="70" />
     <scopeInfo nodeId="8339862546319979452" fileName="SNodeUtil.java" startLine="33" startPosition="68" endLine="34" endPosition="103" />
     <scopeInfo nodeId="8339862546319981453" fileName="SNodeUtil.java" startLine="37" startPosition="77" endLine="38" endPosition="112" />
+    <scopeInfo nodeId="2594890229324800856" fileName="SNodeUtil.java" startLine="46" startPosition="70" endLine="47" endPosition="60" />
     <scopeInfo nodeId="2274990519051114061" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SNodeUtil#()V" fileName="SNodeUtil.java" startLine="9" startPosition="24" endLine="11" endPosition="3" />
     <scopeInfo nodeId="8339862546319981398" fileName="SNodeUtil.java" startLine="41" startPosition="76" endLine="43" endPosition="280">
       <varInfo nodeId="8339862546319981403" varName="conceptFqName" />
@@ -52,10 +55,13 @@
     <scopeInfo nodeId="8339862546319981450" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInstanceOfInterfaceConceptDeclaration#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SNodeUtil.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="8339862546319981455" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="2594890229324800853" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConceptDeclaration_IsRootable#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SNodeUtil.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="2594890229324800857" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="8339862546319981395" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInstanceOfAbstractConceptDeclaration#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SNodeUtil.java" startLine="40" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="8339862546319981400" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2274990519051114059" fileName="SNodeUtil.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.smodel.SNodeUtil" />
+    <unitInfo nodeId="2274990519051114059" fileName="SNodeUtil.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.smodel.SNodeUtil" />
   </root>
   <root nodeId="5073169472575923460">
     <nodeInfo nodeId="5073169472575947667" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ACTIONS" fileName="BootstrapLanguages.java" startLine="7" startPosition="33" endLine="8" endPosition="143" />

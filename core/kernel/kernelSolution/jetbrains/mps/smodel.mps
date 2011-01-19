@@ -641,6 +641,29 @@
         <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8339862546319981401" />
       </node>
     </node>
+    <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="2594890229324800853">
+      <property name="name:3" value="getConceptDeclaration_IsRootable" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="2594890229324800859" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2594890229324800855" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2594890229324800856">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2594890229324800860">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2594890229324800862">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2594890229324800861">
+              <link role="variableDeclaration:3" targetNodeId="2594890229324800857" resolveInfo="node" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="2594890229324850475">
+              <link role="property:16" targetNodeId="6.1096454100552:0" resolveInfo="rootable" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="2594890229324800857">
+        <property name="name:3" value="node" />
+        <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="2594890229324800858">
+          <link role="concept:16" targetNodeId="6.1071489090640:0" resolveInfo="ConceptDeclaration" />
+        </node>
+      </node>
+    </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2274990519051114060" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="2274990519051114061">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2274990519051114062" />

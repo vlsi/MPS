@@ -42,4 +42,8 @@ public class SNodeUtil {
     String conceptFqName = node.getConceptFqName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
+
+  public static boolean getConceptDeclaration_IsRootable(SNode node) {
+    return SPropertyOperations.getBoolean(node, "rootable");
+  }
 }
