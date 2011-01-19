@@ -5,6 +5,9 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class SNodeUtil {
   public SNodeUtil() {
@@ -43,7 +46,19 @@ public class SNodeUtil {
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
 
-  public static boolean getConceptDeclaration_IsRootable(SNode node) {
-    return SPropertyOperations.getBoolean(node, "rootable");
+  public static boolean getConceptDeclaration_IsRootable(SNode concept) {
+    return SPropertyOperations.getBoolean(concept, "rootable");
+  }
+
+  public static SNode getConceptDeclaration_Extends(SNode concept) {
+    return SLinkOperations.getTarget(concept, "extends", false);
+  }
+
+  public static Iterable<SNode> getConceptDeclaration_Implements(SNode concept) {
+    return ListSequence.fromList(SLinkOperations.getTargets(concept, "implements", true)).<SNode>select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "intfc", false);
+      }
+    });
   }
 }

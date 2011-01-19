@@ -22,8 +22,6 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -111,7 +109,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private final Map<String, Method> myCanBeRootMethods = new HashMap<String, Method>();
   private final Map<String, String> myDefaultConceptNames = new HashMap<String, String>();
 
-  private final Map<String, String> myConstraintClassNames = new HashMap<String, String>();
+  private final Map<String, String> myConstraintClassNames = new ConcurrentHashMap<String, String>();
 
   public ModelConstraintsManager(ClassLoaderManager cm) {
   }
@@ -397,9 +395,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
       INodeReferentSearchScopeProvider provider = myNodeDefaultSearchScopeProvidersMap.get(conceptFqName);
       if (provider != null) return provider;
 
-      // TODO
-      if (!(referentConcept.getAdapter() instanceof ConceptDeclaration)) break;
-      referentConcept = BaseAdapter.fromAdapter(((ConceptDeclaration) referentConcept.getAdapter()).getExtends());
+      if (!SNodeUtil.isInstanceOfConceptDeclaration(referentConcept)) break;
+      referentConcept = SNodeUtil.getConceptDeclaration_Extends(referentConcept);
     }
     return null;
   }
@@ -470,10 +467,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     myNodePropertyValidatorsMap.clear();
     myNodeReferentSearchScopeProvidersMap.clear();
     myNodeDefaultSearchScopeProvidersMap.clear();
-
-    synchronized (myConstraintClassNames) {
-      myConstraintClassNames.clear();
-    }
+    myConstraintClassNames.clear();
 
     synchronized (myLock) {
       myNodeReferentSetEventHandlersMap.clear();
@@ -661,14 +655,14 @@ public class ModelConstraintsManager implements ApplicationComponent {
       }
 
       IScope scope = context.getScope();
-      AbstractConceptDeclaration topConcept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
+      SNode topConcept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
 
       if (topConcept != null) {
-        List<AbstractConceptDeclaration> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(topConcept);
+        List<SNode> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(topConcept);
 
-        for (AbstractConceptDeclaration concept : conceptAndSuperConcepts) {
+        for (SNode concept : conceptAndSuperConcepts) {
           String fqName = NameUtil.nodeFQName(concept);
-          Language language = scope.getLanguage(NameUtil.namespaceFromConcept(concept));
+          Language language = SModelUtil.getDeclaringLanguage(concept);
           if (language == null) {
             continue;
           }
@@ -759,9 +753,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
-  public Method getAlternativeIconMethod(ConceptDeclaration concept) {
-    String fqName = NameUtil.nodeFQName(concept);
-    String namespace = NameUtil.namespaceFromConcept(concept);
+  public Method getAlternativeIconMethod(SNode conceptDeclaration) {
+    String fqName = NameUtil.nodeFQName(conceptDeclaration);
+    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
     Language language = GlobalScope.getInstance().getLanguage(namespace);
     String behaviorClassName = constraintsClassByConceptFqName(fqName);
     Class behaviorClass = language.getClass(behaviorClassName);
@@ -792,7 +786,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public boolean canBeRoot(IOperationContext context, String conceptFqName, SModel model) {
-    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, context.getScope());
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, context.getScope());
     if (concept == null) {
       return false;
     }
@@ -800,8 +794,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return canBeRoot(context, method, model, concept);
   }
 
-  public boolean canBeRoot(IOperationContext context, Method method, SModel model, AbstractConceptDeclaration concept) {
-    if (concept instanceof ConceptDeclaration && ((ConceptDeclaration) concept).getRootable()) {
+  public boolean canBeRoot(IOperationContext context, Method method, SModel model, SNode concept) {
+    if (SNodeUtil.isInstanceOfConceptDeclaration(concept) && SNodeUtil.getConceptDeclaration_IsRootable(concept)) {
       if (method != null) {
         try {
           return (Boolean) method.invoke(null, context, new CanBeARootContext(model));
@@ -838,21 +832,19 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   private String constraintsClassByConceptFqName(String fqName) {
-    synchronized (myConstraintClassNames) {
-      String cachedValue = myConstraintClassNames.get(fqName);
-      if (cachedValue != null) {
-        return cachedValue;
-      }
+    String cachedValue = myConstraintClassNames.get(fqName);
+    if (cachedValue != null) {
+      return cachedValue;
+    }
 
-      // TODO replace with code like in NameUtil.namespaceFromConceptFQName, remove cache
-      Matcher m = CONCEPT_FQNAME.matcher(fqName);
-      if (m.matches()) {
-        String result = m.group(1) + ".constraints." + m.group(2) + "_Constraints";
-        myConstraintClassNames.put(fqName, result);
-        return result;
-      } else {
-        throw new RuntimeException();
-      }
+    // TODO replace with code like in NameUtil.namespaceFromConceptFQName, remove cache
+    Matcher m = CONCEPT_FQNAME.matcher(fqName);
+    if (m.matches()) {
+      String result = m.group(1) + ".constraints." + m.group(2) + "_Constraints";
+      myConstraintClassNames.put(fqName, result);
+      return result;
+    } else {
+      throw new RuntimeException();
     }
   }
 }
