@@ -5,12 +5,12 @@
   <unitInfo fileName="ToolbarMake_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.ToolbarMake_ActionGroup" />
   <unitInfo fileName="SaveTransient_Option.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.SaveTransient_Option" />
   <unitInfo fileName="ProjectMake_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.ProjectMake_ActionGroup" />
-  <unitInfo fileName="NamespaceMake_ActionGroup.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.NamespaceMake_ActionGroup" />
   <unitInfo fileName="Make_ActionGroup.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_ActionGroup" />
+  <unitInfo fileName="NamespaceMake_ActionGroup.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.NamespaceMake_ActionGroup" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Default_KeymapChanges" />
   <unitInfo fileName="GlobalMake_ActionGroup.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.GlobalMake_ActionGroup" />
-  <unitInfo fileName="WontAskAgain_Query.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.WontAskAgain_Query" />
   <unitInfo fileName="SaveTransientModels_Query.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.SaveTransientModels_Query" />
+  <unitInfo fileName="WontAskAgain_Query.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.WontAskAgain_Query" />
   <unitInfo fileName="TResource.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.TResource" />
   <unitInfo fileName="FacetManifest.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.FacetManifest" />
   <unitInfo fileName="MResource.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MResource" />
@@ -18,10 +18,10 @@
   <unitInfo fileName="RebuildProject_Action.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.RebuildProject_Action" />
   <unitInfo fileName="MakeProject_Action.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeProject_Action" />
   <unitInfo fileName="GResource.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.GResource" />
-  <unitInfo fileName="RebuildSelectedModules_Action.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.RebuildSelectedModules_Action" />
   <unitInfo fileName="MakeSelectedModels_Action.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeSelectedModels_Action" />
-  <unitInfo fileName="RebuildSelectedModels_Action.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.RebuildSelectedModels_Action" />
+  <unitInfo fileName="RebuildSelectedModules_Action.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.RebuildSelectedModules_Action" />
   <unitInfo fileName="MakeSelectedModules_Action.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeSelectedModules_Action" />
+  <unitInfo fileName="RebuildSelectedModels_Action.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.RebuildSelectedModels_Action" />
   <unitInfo fileName="Facet_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ApplicationPlugin" />
   <unitInfo fileName="MakeSelection_Action.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeSelection_Action" />
   <unitInfo fileName="MakeNamespace_Action.java" startLine="21" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeNamespace_Action" />
@@ -124,8 +124,8 @@
       <varInfo nodeId="2383991756720270217" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270170" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compile#(Ljetbrains/mps/smodel/IOperationContext;Ljava/util/List;ZLjetbrains/mps/ide/progress/ITaskProgressHelper;)Z" fileName="GenerationHandler.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="2383991756720270183" varName="helper" />
       <varInfo nodeId="2383991756720270181" varName="b" />
+      <varInfo nodeId="2383991756720270183" varName="helper" />
       <varInfo nodeId="2383991756720270173" varName="context" />
       <varInfo nodeId="2383991756720270175" varName="list" />
     </scopeInfo>
@@ -135,8 +135,8 @@
     <scopeInfo nodeId="2383991756720270198" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleOutput#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/generator/GenerationStatus;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/progress/ITaskProgressHelper;)Z" fileName="GenerationHandler.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="2383991756720270201" varName="module" />
       <varInfo nodeId="2383991756720270209" varName="helper" />
-      <varInfo nodeId="2383991756720270205" varName="status" />
       <varInfo nodeId="2383991756720270203" varName="descriptor" />
+      <varInfo nodeId="2383991756720270205" varName="status" />
       <varInfo nodeId="2383991756720270207" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="2383991756720270225" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canHandle#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" fileName="GenerationHandler.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
@@ -496,8 +496,8 @@
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="136" startPosition="28" endLine="148" endPosition="25" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="136" startPosition="28" endLine="150" endPosition="28" />
     <scopeInfo nodeId="8666365535672290264" fileName="MakeActionParameters.java" startLine="39" startPosition="47" endLine="58" endPosition="25">
-      <varInfo nodeId="8666365535672310931" varName="model" />
       <varInfo nodeId="8666365535672310925" varName="module" />
+      <varInfo nodeId="8666365535672310931" varName="model" />
       <varInfo nodeId="8666365535672310910" varName="sb" />
     </scopeInfo>
     <scopeInfo nodeId="8666365535672290261" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionText#(Z)Ljava/lang/String;" fileName="MakeActionParameters.java" startLine="38" startPosition="0" endLine="60" endPosition="0">
@@ -651,18 +651,18 @@
       <varInfo nodeId="4175026531914406745" varName="code" />
     </scopeInfo>
     <scopeInfo nodeId="4175026531914406543" fileName="MakeActionImpl.java" startLine="52" startPosition="31" endLine="148" endPosition="5">
-      <varInfo nodeId="4175026531914406837" varName="res" />
-      <varInfo nodeId="4175026531914406645" varName="pindGet" />
-      <varInfo nodeId="4175026531914406585" varName="jmon" />
-      <varInfo nodeId="4175026531914406580" varName="feedbackStrat" />
       <varInfo nodeId="4175026531914406565" varName="scb" />
-      <varInfo nodeId="4175026531914406653" varName="scr" />
+      <varInfo nodeId="4175026531914406580" varName="feedbackStrat" />
+      <varInfo nodeId="4175026531914406585" varName="jmon" />
+      <varInfo nodeId="4175026531914406645" varName="pindGet" />
+      <varInfo nodeId="4175026531914406837" varName="res" />
       <varInfo nodeId="4175026531914406641" varName="pind" />
-      <varInfo nodeId="4175026531914406841" varName="mct" />
+      <varInfo nodeId="4175026531914406653" varName="scr" />
       <varInfo nodeId="4175026531914406570" varName="relayStrat" />
+      <varInfo nodeId="4175026531914406841" varName="mct" />
       <varInfo nodeId="4175026531914406617" varName="cmon" />
-      <varInfo nodeId="4175026531914406799" varName="inputRes" />
       <varInfo nodeId="4175026531914406575" varName="progStrat" />
+      <varInfo nodeId="4175026531914406799" varName="inputRes" />
     </scopeInfo>
     <scopeInfo nodeId="4175026531914406540" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeAction#()V" fileName="MakeActionImpl.java" startLine="51" startPosition="0" endLine="150" endPosition="0" />
     <unitInfo nodeId="4175026531914406621" fileName="MakeActionImpl.java" startLine="74" startPosition="36" endLine="78" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionImpl$2" />
@@ -775,8 +775,8 @@
       <varInfo nodeId="4905458225579975772" varName="outputMD" />
       <varInfo nodeId="2383991756720502732" varName="gdc" />
       <varInfo nodeId="4328738523548222353" varName="targetDir" />
-      <varInfo nodeId="2383991756720502727" varName="tic" />
       <varInfo nodeId="2383991756720502722" varName="bldc" />
+      <varInfo nodeId="2383991756720502727" varName="tic" />
       <varInfo nodeId="7831273901269568206" varName="gres" />
       <varInfo nodeId="2383991756720502717" varName="mgsm" />
       <varInfo nodeId="4328738523548333221" varName="javaStreamHandler" />
@@ -1487,10 +1487,10 @@
     <scopeInfo nodeId="4853833103870841535" fileName="Generate_Facet.java" startLine="289" startPosition="35" endLine="318" endPosition="8" />
     <scopeInfo nodeId="4853833103870841535" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" fileName="Generate_Facet.java" startLine="288" startPosition="0" endLine="320" endPosition="0" />
     <scopeInfo nodeId="4853833103871058543" fileName="Generate_Facet.java" startLine="408" startPosition="19" endLine="444" endPosition="15">
-      <varInfo nodeId="127305800529677982" varName="gm" />
       <varInfo nodeId="2340850238541850353" varName="mvt" />
-      <varInfo nodeId="2383991756720301158" varName="gh" />
+      <varInfo nodeId="127305800529677982" varName="gm" />
       <varInfo nodeId="127305800529678029" varName="generationOk" />
+      <varInfo nodeId="2383991756720301158" varName="gh" />
     </scopeInfo>
     <scopeInfo nodeId="4853833103871058543" fileName="Generate_Facet.java" startLine="405" startPosition="120" endLine="447" endPosition="11" />
     <scopeInfo nodeId="4853833103871058543" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/script/IParametersPool;)Ljetbrains/mps/make/script/IResult;" fileName="Generate_Facet.java" startLine="404" startPosition="25" endLine="449" endPosition="0" />
