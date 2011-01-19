@@ -48,6 +48,12 @@ public class SModelSearchUtil {
   }
 
 
+  public static SNode findLinkDeclaration(SNode conceptDeclaration, String role) {
+    if (role == null) return null;
+    return BaseAdapter.fromAdapter(new ConceptAndSuperConceptsScope(conceptDeclaration).getLinkDeclarationByRole(role));
+  }
+
+  @Deprecated
   public static LinkDeclaration findLinkDeclaration(AbstractConceptDeclaration conceptDeclaration, String role) {
     if (role == null) return null;
     return new ConceptAndSuperConceptsScope(conceptDeclaration).getLinkDeclarationByRole(role);

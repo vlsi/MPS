@@ -228,6 +228,14 @@ public class SModelUtil {
     return isAssignableConcept(referentNode.getConceptFqName(), NameUtil.nodeFQName(linkTargetConcept));
   }
 
+  public static boolean isMultipleLinkDeclaration(@NotNull SNode linkDeclaration) {
+    return SPropertyOperations.hasValue(linkDeclaration, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(linkDeclaration, "sourceCardinality", "1..n", "0..1");
+  }
+
+  public static SNode getLinkDeclarationTarget(SNode linkDeclaration) {
+    return SLinkOperations.getTarget(linkDeclaration, "target", false);
+  }
+
   private static boolean eq_74see4_a0a0m(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
