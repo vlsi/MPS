@@ -22,8 +22,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.smodel.BaseAdapter;
 import java.util.HashMap;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.AnonymousClass;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -164,8 +164,16 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
       this.myDependsOnNodes = new HashSet<SNode>();
       for (Classifier classifier : this.myClassifiers) {
         this.myDependsOnNodes.add(classifier.getNode());
-        for (TypeVariableDeclaration typeVariableDecl : classifier.getTypeVariableDeclarations()) {
-          this.myDependsOnNodes.add(typeVariableDecl.getNode());
+        if (classifier instanceof AnonymousClass) {
+          for (Type type : ((AnonymousClass) classifier).getTypeParameters()) {
+            SNode node = type.getNode();
+            this.myDependsOnNodes.add(node);
+            this.myDependsOnNodes.addAll(node.getDescendants());
+          }
+        } else {
+          for (TypeVariableDeclaration typeVariableDecl : classifier.getTypeVariableDeclarations()) {
+            this.myDependsOnNodes.add(typeVariableDecl.getNode());
+          }
         }
         if (classifier instanceof ClassConcept && !((classifier instanceof AnonymousClass))) {
           ClassifierType classifierType0 = ((ClassConcept) classifier).getSuperclass();
@@ -193,7 +201,7 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
     public void childAdded(SModelChildEvent event) {
       if (event.getParent().getAdapter() instanceof Classifier) {
         String role = event.getChildRole();
-        if (!((GenericDeclaration.TYPE_VARIABLE_DECLARATION.equals(role) || ClassConcept.SUPERCLASS.equals(role) || ClassConcept.IMPLEMENTED_INTERFACE.equals(role) || Interface.EXTENDED_INTERFACE.equals(role)))) {
+        if (!((GenericDeclaration.TYPE_VARIABLE_DECLARATION.equals(role) || ClassConcept.SUPERCLASS.equals(role) || ClassConcept.IMPLEMENTED_INTERFACE.equals(role) || Interface.EXTENDED_INTERFACE.equals(role) || AnonymousClass.TYPE_PARAMETER.equals(role)))) {
           return;
         }
       }
@@ -203,7 +211,7 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
     public void childRemoved(SModelChildEvent event) {
       if (event.getParent().getAdapter() instanceof Classifier) {
         String role = event.getChildRole();
-        if (!((GenericDeclaration.TYPE_VARIABLE_DECLARATION.equals(role) || ClassConcept.SUPERCLASS.equals(role) || ClassConcept.IMPLEMENTED_INTERFACE.equals(role) || Interface.EXTENDED_INTERFACE.equals(role)))) {
+        if (!((GenericDeclaration.TYPE_VARIABLE_DECLARATION.equals(role) || ClassConcept.SUPERCLASS.equals(role) || ClassConcept.IMPLEMENTED_INTERFACE.equals(role) || Interface.EXTENDED_INTERFACE.equals(role) || AnonymousClass.TYPE_PARAMETER.equals(role)))) {
           return;
         }
       }
