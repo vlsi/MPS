@@ -24,9 +24,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
-import jetbrains.mps.lang.generator.structure.BaseMappingRule;
-import jetbrains.mps.lang.generator.structure.MappingLabelDeclaration;
-import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.lang.generator.structure.RuleConsequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -51,7 +48,7 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
 
   public TemplateReductionRuleInterpreted(SNode ruleNode) {
     this.ruleNode = ruleNode;
-    this.applicableConcept = ruleNode.getReferent(Reduction_MappingRule.APPLICABLE_CONCEPT);
+    this.applicableConcept = RuleUtil.getBaseRuleApplicableConcept(ruleNode);
   }
 
   @Override
@@ -66,12 +63,12 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
 
   @Override
   public boolean applyToInheritors() {
-    return ruleNode.getBooleanProperty(Reduction_MappingRule.APPLY_TO_CONCEPT_INHERITORS);
+    return RuleUtil.getBaseRuleApplyToConceptInheritors(ruleNode);
   }
 
   @Override
   public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    if (!checkCondition(ruleNode.getChild(BaseMappingRule.CONDITION_FUNCTION), false, context.getInput(), environment.getGenerator())) {
+    if (!checkCondition(RuleUtil.getBaseRuleCondition(ruleNode), false, context.getInput(), environment.getGenerator())) {
       return null;
     }
 
@@ -117,9 +114,8 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
   private Collection<SNode> apply(TemplateContext context, @NotNull TemplateExecutionEnvironment environment)
     throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, GenerationCanceledException {
 
-    SNode labelDeclaration = ruleNode.getReferent(BaseMappingRule.LABEL_DECLARATION);
-    String ruleMappingName = labelDeclaration != null ? labelDeclaration.getProperty(MappingLabelDeclaration.NAME) : null;
-    SNode ruleConsequence = ruleNode.getChild(Reduction_MappingRule.RULE_CONSEQUENCE);
+    String ruleMappingName = RuleUtil.getBaseRuleLabel(ruleNode);
+    SNode ruleConsequence = RuleUtil.getReductionRuleConsequence(ruleNode);
     if (ruleConsequence == null) {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "error processing reduction rule: no rule consequence");
       return null;
