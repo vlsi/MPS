@@ -512,7 +512,7 @@ public class NodeTypesComponent {
         }
         computeTypes(node, true, false, additionalNodes, inferenceMode);
         type = getType(initialNode);
-        if (type == null || HUtil.hasVariablesInside(node)) {
+        if (type == null || HUtil.hasVariablesInside(type)) {
           if (node.isRoot()) {
             computeTypes(node, true, true, new ArrayList<SNode>(0), inferenceMode); //the last possibility: check the whole root
             type = getType(initialNode);
