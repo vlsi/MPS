@@ -33,6 +33,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new SEnum_MemberOperation_member_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new SEnumOperationInvocation_enumDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new SLinkImplicitSelect_link_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new IfInstanceOfVarReference_instanceOfVariable_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

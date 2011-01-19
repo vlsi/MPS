@@ -19,10 +19,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -66,8 +66,8 @@ public class IfInstanceOfVariable_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
+      SNode nodeConcept = SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement"), "nodeConcept", false);
       List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "node");
-      SNode nodeConcept = SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.lang.smodel.structure.IfInstanceOf"), "nodeConcept", false);
       if (nodeConcept != null) {
         String name = NameUtil.decapitalize(SPropertyOperations.getString(nodeConcept, "name"));
         ListSequence.fromList(variableSuffixes).addSequence(ListSequence.fromList(NameUtil.splitByCamels(name)));

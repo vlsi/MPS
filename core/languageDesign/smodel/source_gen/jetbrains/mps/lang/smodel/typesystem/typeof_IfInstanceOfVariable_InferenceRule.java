@@ -15,14 +15,13 @@ public class typeof_IfInstanceOfVariable_InferenceRule extends AbstractInference
   public typeof_IfInstanceOfVariable_InferenceRule() {
   }
 
-  public void applyRule(final SNode instanceOfVariable, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final SNode V_typevar_5682393876426592340 = typeCheckingContext.createNewRuntimeTypesVariable();
-    // type will be infered by context node 
+  public void applyRule(final SNode variable, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    final SNode V_typevar_1883223317721107041 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
-      SNode _nodeToCheck_1029348928467 = instanceOfVariable;
+      SNode _nodeToCheck_1029348928467 = variable;
       BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "5682393876426592335", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "5682393876426592327", true), (SNode) typeCheckingContext.getRepresentative(V_typevar_5682393876426592340), _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1883223317721107053", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1883223317721107044", true), (SNode) typeCheckingContext.getRepresentative(V_typevar_1883223317721107041), _info_12389875345);
     }
   }
 
@@ -38,6 +37,6 @@ public class typeof_IfInstanceOfVariable_InferenceRule extends AbstractInference
   }
 
   public boolean overrides() {
-    return true;
+    return false;
   }
 }
