@@ -84,6 +84,7 @@
   <unitInfo fileName="Link_SetNewChildOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" />
   <unitInfo fileName="Property_SetOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Property_SetOperation" />
   <unitInfo fileName="SPropertyAccess.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SPropertyAccess" />
+  <unitInfo fileName="ConceptFqNameRefExpression.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" />
   <unitInfo fileName="SEnumMemberType.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SEnumMemberType" />
   <unitInfo fileName="NodeRefExpression.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.NodeRefExpression" />
   <unitInfo fileName="ConceptRefExpression.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" />
