@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.state;
 
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
@@ -44,7 +44,7 @@ public enum ConditionKind {
     public List<SNode> getUnresolvedInputs(SNode node, State state) {
       if (node != null) {
         SNode representative = state.getRepresentative(node);
-        if (representative.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+        if (HUtil.isRuntimeTypeVariable(representative)) {
           return Arrays.asList(representative);
         }
       }
@@ -63,14 +63,14 @@ public enum ConditionKind {
         return new LinkedList<SNode>();
       }
       SNode representative = state.getRepresentative(node);
-      if (representative.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+      if (HUtil.isRuntimeTypeVariable(representative)) {
         return Arrays.asList(representative);
       }
       List<SNode> result = new ArrayList<SNode>();
       for (SNode referent : representative.getReferents()) {
         if (referent != null) {
           SNode refRepresentative = state.getRepresentative(referent);
-          if (refRepresentative.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+          if (HUtil.isRuntimeTypeVariable(refRepresentative)) {
             result.add(refRepresentative);
           }
         }

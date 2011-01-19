@@ -18,7 +18,6 @@ package jetbrains.mps.newTypesystem;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -44,7 +43,7 @@ public class TypesUtil {
   }
 
   public static boolean isVariable(SNode node) {
-    return node != null && RuntimeTypeVariable.concept.equals(node.getConceptFqName());
+    return HUtil.isRuntimeTypeVariable(node);
   }
 
   public static boolean hasVariablesInside(SNode node) {
@@ -57,7 +56,7 @@ public class TypesUtil {
       }
     }
     for (SNode referent : node.getReferents()) {
-      if (referent != null && referent.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+      if (referent != null && HUtil.isRuntimeTypeVariable(referent)) {
         return true;
       }
     }

@@ -19,8 +19,6 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
-import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
@@ -73,8 +71,8 @@ public class HUtil {
   public static boolean isRuntimeTypeVariable(SNode node) {
     if (node == null) return false;
     String conceptFqName = node.getConceptFqName();
-    return RuntimeTypeVariable.concept.equals(conceptFqName)
-      || RuntimeErrorType.concept.equals(conceptFqName);
+    return "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable".equals(conceptFqName)
+      || "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType".equals(conceptFqName);
   }
 
   public static void addAdditionalRuleIdsFromInfo(IErrorReporter errorReporter, EquationInfo equationInfo) {
