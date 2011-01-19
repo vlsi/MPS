@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ResourceType_Editor.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.make.script.editor.ResourceType_Editor" />
   <unitInfo fileName="AllWorkLeftExpression_Editor.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.make.script.editor.AllWorkLeftExpression_Editor" />
+  <unitInfo fileName="ResourceType_Editor.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.make.script.editor.ResourceType_Editor" />
   <unitInfo fileName="OptionExpression_Editor.java" startLine="49" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.make.script.editor.OptionExpression_Editor$_Inline_57zibj_a0a" />
   <unitInfo fileName="OptionType_Editor.java" startLine="98" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.make.script.editor.OptionType_Editor$_Inline_xgjw32_a2a" />
   <unitInfo fileName="RelayQueryExpression_Editor.java" startLine="112" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.make.script.editor.RelayQueryExpression_Editor$_Inline_ne0cce_a2a" />

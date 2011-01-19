@@ -219,8 +219,8 @@
     <scopeInfo nodeId="4328738523548225498" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compile#(Ljetbrains/mps/smodel/IOperationContext;Ljava/util/List;ZLjetbrains/mps/ide/progress/ITaskProgressHelper;)Z" fileName="JavaGenerationHandler.java" startLine="81" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="4328738523548225503" varName="input" />
       <varInfo nodeId="4328738523548225501" varName="operationContext" />
-      <varInfo nodeId="4328738523548225509" varName="generationOK" />
       <varInfo nodeId="4328738523548225511" varName="progressHelper" />
+      <varInfo nodeId="4328738523548225509" varName="generationOK" />
     </scopeInfo>
     <scopeInfo nodeId="4328738523548225343" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleOutput#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/generator/GenerationStatus;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/progress/ITaskProgressHelper;)Z" fileName="JavaGenerationHandler.java" startLine="47" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="4328738523548225346" varName="module" />
@@ -454,17 +454,17 @@
     </scopeInfo>
     <scopeInfo nodeId="4328738523548226224" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveStream#(Ljava/lang/String;Ljava/lang/String;Z)V" fileName="JavaStreamHandler.java" startLine="28" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="4328738523548226229" varName="content" />
-      <varInfo nodeId="4328738523548226227" varName="name" />
       <varInfo nodeId="4328738523548226231" varName="isCache" />
+      <varInfo nodeId="4328738523548226227" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4328738523548226262" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveStream#(Ljava/lang/String;Lorg/jdom/Element;Z)V" fileName="JavaStreamHandler.java" startLine="38" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="4328738523548226267" varName="content" />
-      <varInfo nodeId="4328738523548226265" varName="name" />
       <varInfo nodeId="4328738523548226269" varName="isCache" />
+      <varInfo nodeId="4328738523548226265" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4328738523548226300" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="touch#(Ljava/lang/String;Z)Z" fileName="JavaStreamHandler.java" startLine="48" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="4328738523548226303" varName="name" />
       <varInfo nodeId="4328738523548226305" varName="isCache" />
+      <varInfo nodeId="4328738523548226303" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4328738523548226374" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="JavaStreamHandler.java" startLine="66" startPosition="61" endLine="77" endPosition="5">
       <varInfo nodeId="4328738523548226376" varName="dir" />

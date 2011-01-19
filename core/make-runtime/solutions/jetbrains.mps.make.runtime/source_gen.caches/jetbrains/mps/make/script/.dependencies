@@ -13,14 +13,14 @@
   </dependency>
   <dependency className="jetbrains.mps.make.script.IJob" file="IJob.java">
     <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
-    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
-    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="java.lang.Iterable" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IJobMonitor" file="IJobMonitor.java">
-    <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
     <classNode dependClassName="jetbrains.mps.make.script.IProgress" />
+    <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IMonitors" file="IMonitors.java">
     <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
@@ -48,10 +48,10 @@
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IScript" file="IScript.java">
-    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
-    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="java.lang.Iterable" />
   </dependency>
 </dependenciesRoot>
 
