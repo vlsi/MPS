@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-21vj1o7pwylem2ioofk26nudsio1f2i">
+<dependencies version="2" modelHash="dlimautehgpv9hga1ahhppx9rz2wgxo">
   <dep model="f:java_stub#com.intellij.openapi.diff(com.intellij.openapi.diff@java_stub)" />
   <dep model="f:java_stub#com.intellij.openapi.diff.impl.mergeTool(com.intellij.openapi.diff.impl.mergeTool@java_stub)" />
   <dep model="f:java_stub#com.intellij.openapi.ui(com.intellij.openapi.ui@java_stub)" />
@@ -7,34 +7,43 @@
   <dep model="f:java_stub#com.intellij.openapi.vfs(com.intellij.openapi.vfs@java_stub)" />
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#java.util(java.util@java_stub)" />
+  <dep model="f:java_stub#jetbrains.mps.baseLanguage.tuples.runtime(jetbrains.mps.baseLanguage.tuples.runtime@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.fileTypes(jetbrains.mps.fileTypes@java_stub)" />
+  <dep model="f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.vcs(jetbrains.mps.vcs@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-d210pk8xi3k369xbgop6hfgbxsjqja5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-bsqcw4kcs4b3bf1x5nylwas22k5l6" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-b8dqrau4infogeue6163jb8xxvbejk2" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-5nztix013gb61szha7d69foggfwbn4z" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-8eob1vp1n3p5p0p7dnkfigagsucewza" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" hash="-co19v7c6snj0iuyht83v6zaqjkr91rn" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-a3cz2casgxn5aee86oxct3jthp1yp3j" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-3jqxlxs34j29hnielvgtjfxrvk6xeg1" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-yxjbmlms4rwuanzquvdqmejhiguxx0" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-ymvmuh63y37o30rl1jr1uh6em837cs" />
+  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="vuw3vf02hriw0ihpnc0qw2frzjs04j" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-esie754zeuc8fi4empsdd1hwfbi6n6p" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-7jwu3k8o7d8f6ssg9z8k50bgtm9e4ez" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-3zm2fh55oana6cj2rz9a0jwguuq016v" />
   <dep model="r:0aa2e89a-3f2c-4ca7-bd78-489a5b116779(jetbrains.mps.vcs.diff.oldchanges)" hash="-cxtkfjegyung0x8vnvuhl1qepix435r" />
   <dep model="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)" hash="-67spkn5unytfvn638rutraw7z6lgfp2" />
-  <dep model="r:9e14a2a5-2074-4212-bc2f-81b31dc2b4fd(jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs@generator)" hash="9qkn9oldr2m3ykrwg7pia99fxot4win" />
+  <dep model="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" hash="6j9m8oyejc79gi2w2k0vfjpag0pej8t" />
+  <dep model="r:9e14a2a5-2074-4212-bc2f-81b31dc2b4fd(jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs@generator)" hash="-bfmdkhu113jfaxtn7qnfmwa05aa0c6j" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-ajvf5lxae1xhsojrbc5w19vapmo22hn" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="aps9gsdebnixwf9uksbq5cxqexaeyp7" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="7onuy7ras5spdyysdm2zbxch2b4ail7" />
-  <common hash="76twj4oc7pskr84h87lf0frfu7kp3zv">
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7yc2otwmtk8l9gpt3015ytm8lr9jri9" />
+  <common hash="bdspj72baclb8ie3u91seasscmtvaqh">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9e14a2a5-2074-4212-bc2f-81b31dc2b4fd(jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs@generator)" />
   </common>
-  <source id="4707157387247628917" name="DiffBuilder" hash="6izlxlj0bz4obahp95ou09rguz1ytlc">
+  <source id="4707157387247628917" name="DiffBuilder" hash="2d2u9b98gzqcc2xsi6cpsyoeijwg1rm">
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#java.util(java.util@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" />
@@ -42,6 +51,7 @@
     <dep model="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -60,6 +70,7 @@
   </source>
   <source id="4707157387247630609" name="MPSDiffRequestFactory" hash="bcdj8lvakr8b40wyovzmhljpb8s7gpl">
     <dep model="f:java_stub#jetbrains.mps.fileTypes(jetbrains.mps.fileTypes@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -74,7 +85,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MPSDiffRequestFactory.java" />
   </source>
-  <source id="4707157387247630666" name="Merger" hash="-9k3wim0hf8oywgxvhtozjmjlff28qvu">
+  <source id="4707157387247630666" name="Merger" hash="7rhmzb3hdrtxfvdfonj9dxpvypz1fjr">
     <dep root="4707157387247632367" />
     <dep model="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
@@ -83,6 +94,7 @@
     <dep model="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -100,7 +112,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Merger.java" />
   </source>
-  <source id="4707157387247632367" name="Conflict" hash="-27c1h3db9ij5rq07oi22717c1e4eohl">
+  <source id="4707157387247632367" name="Conflict" hash="etwo0uqzvl8yrl6qnm2czntcgxjrkg3">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -111,7 +123,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Conflict.java" />
   </source>
-  <source id="4707157387247632403" name="Warning" hash="a6pg4gdi3lfolia8g1rbxzn34hn28l0">
+  <source id="4707157387247632403" name="Warning" hash="-29j6jllfrvr0scvwxmegvvaxofj16fd">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -129,6 +141,7 @@
     <dep model="f:java_stub#com.intellij.openapi.vfs(com.intellij.openapi.vfs@java_stub)" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.vcs(jetbrains.mps.vcs@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -142,6 +155,35 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ModelMergeRequest.java" />
+  </source>
+  <source id="5694687812506924620" name="MergeContext" hash="ed1oi661fwdijpy9oh2zexbpg7mosh0">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#java.util(java.util@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.baseLanguage.tuples.runtime(jetbrains.mps.baseLanguage.tuples.runtime@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)" />
+    <dep model="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" />
+    <dep model="r:9e14a2a5-2074-4212-bc2f-81b31dc2b4fd(jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="MergeContext.java" />
   </source>
 </dependencies>
 

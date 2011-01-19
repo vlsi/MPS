@@ -4,10 +4,12 @@ package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.vcs.diff.oldchanges.Change;
 
+@Deprecated
 public class Conflict {
   private Change myChange1;
   private Change myChange2;
 
+  @Deprecated
   public Conflict(Change change1, Change change2) {
     myChange1 = change1;
     myChange2 = change2;

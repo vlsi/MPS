@@ -4,10 +4,12 @@ package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.SNodeId;
 
+@Deprecated
 public class Warning {
   private SNodeId myId;
   private String myMessage;
 
+  @Deprecated
   public Warning(SNodeId id, String message) {
     myId = id;
     myMessage = message;
