@@ -5,7 +5,7 @@ package jetbrains.mps.make.facet.plugin;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.script.IScript;
-import jetbrains.mps.make.IResourceProvider;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IProgress;
@@ -37,7 +37,10 @@ public class WorkbenchMakeService implements IMakeService {
     this.cleanMake = cleanMake;
   }
 
-  public void make(IScript script, IResourceProvider resourceProvider) {
+  public void make(IScript script, Iterable<IResource> resources) {
+  }
+
+  public void make(IScript script, Iterable<IResource> resources, IMakeService.ScriptExecutor executor) {
   }
 
   private IScript completeScript(IScript scr) {

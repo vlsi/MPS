@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2082624981609760242">
-    <nodeInfo nodeId="2082624981609760244" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/IResourceProvider;)V" fileName="IMakeService.java" startLine="7" startPosition="31" endLine="8" endPosition="71" />
-    <scopeInfo nodeId="2082624981609760244" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/IResourceProvider;)V" fileName="IMakeService.java" startLine="7" startPosition="31" endLine="8" endPosition="71">
-      <varInfo nodeId="8536620230643687680" varName="resourceProvider" />
+    <nodeInfo nodeId="2082624981609760244" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;Ljava/lang/Iterable;)V" fileName="IMakeService.java" startLine="8" startPosition="31" endLine="9" endPosition="66" />
+    <nodeInfo nodeId="8273032235152883836" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;Ljava/lang/Iterable;Ljetbrains/mps/make/IMakeService/ScriptExecutor;)V" fileName="IMakeService.java" startLine="9" startPosition="66" endLine="10" endPosition="104" />
+    <nodeInfo nodeId="8273032235152867695" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Ljava/lang/Runnable;)V" fileName="IMakeService.java" startLine="11" startPosition="42" endLine="12" endPosition="45" />
+    <scopeInfo nodeId="2082624981609760244" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;Ljava/lang/Iterable;)V" fileName="IMakeService.java" startLine="8" startPosition="31" endLine="9" endPosition="66">
+      <varInfo nodeId="6516862185756586882" varName="resources" />
       <varInfo nodeId="2082624981609760248" varName="script" />
     </scopeInfo>
-    <unitInfo nodeId="2082624981609760242" fileName="IMakeService.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.make.IMakeService" />
-  </root>
-  <root nodeId="2984338846423049443">
-    <nodeInfo nodeId="2984338846423049446" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resources#()Ljava/lang/Iterable;" fileName="IResourceProvider.java" startLine="7" startPosition="36" endLine="8" endPosition="41" />
-    <scopeInfo nodeId="2984338846423049446" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resources#()Ljava/lang/Iterable;" fileName="IResourceProvider.java" startLine="7" startPosition="36" endLine="8" endPosition="41" />
-    <unitInfo nodeId="2984338846423049443" fileName="IResourceProvider.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.make.IResourceProvider" />
+    <scopeInfo nodeId="8273032235152883836" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;Ljava/lang/Iterable;Ljetbrains/mps/make/IMakeService/ScriptExecutor;)V" fileName="IMakeService.java" startLine="9" startPosition="66" endLine="10" endPosition="104">
+      <varInfo nodeId="8273032235152883842" varName="resources" />
+      <varInfo nodeId="8273032235152883845" varName="executor" />
+      <varInfo nodeId="8273032235152883840" varName="script" />
+    </scopeInfo>
+    <scopeInfo nodeId="8273032235152867695" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Ljava/lang/Runnable;)V" fileName="IMakeService.java" startLine="11" startPosition="42" endLine="12" endPosition="45">
+      <varInfo nodeId="8273032235152883832" varName="runnable" />
+    </scopeInfo>
+    <unitInfo nodeId="8273032235152867693" fileName="IMakeService.java" startLine="11" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.make.IMakeService$ScriptExecutor" />
+    <unitInfo nodeId="2082624981609760242" fileName="IMakeService.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.IMakeService" />
   </root>
   <root nodeId="6168415856807659180">
     <nodeInfo nodeId="6168415856807659181" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" fileName="WorkflowEngine.java" startLine="7" startPosition="29" endLine="8" endPosition="69" />
@@ -19,11 +25,6 @@
     <scopeInfo nodeId="6168415856807659189" fileName="WorkflowEngine.java" startLine="10" startPosition="27" endLine="10" endPosition="27" />
     <scopeInfo nodeId="6168415856807659186" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WorkflowEngine#()V" fileName="WorkflowEngine.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
     <unitInfo nodeId="6168415856807659180" fileName="WorkflowEngine.java" startLine="7" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.make.WorkflowEngine" />
-  </root>
-  <root nodeId="8536620230643691250">
-    <nodeInfo nodeId="8536620230643691252" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="script#()Ljetbrains/mps/make/script/IScript;" fileName="IScriptProvider.java" startLine="7" startPosition="34" endLine="8" endPosition="26" />
-    <scopeInfo nodeId="8536620230643691252" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="script#()Ljetbrains/mps/make/script/IScript;" fileName="IScriptProvider.java" startLine="7" startPosition="34" endLine="8" endPosition="26" />
-    <unitInfo nodeId="8536620230643691250" fileName="IScriptProvider.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.make.IScriptProvider" />
   </root>
 </debugInfo>
 

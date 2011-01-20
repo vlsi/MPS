@@ -15,10 +15,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy;
@@ -32,6 +32,7 @@ import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.make.script.IMonitors;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.Progressive;
 import jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator;
@@ -58,6 +59,7 @@ public class MakeActionImpl {
 
     final IScript scr = this.completeScript(scb.toScript());
 
+
     if (!(scr.isValid())) {
       context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, (cleanMake ?
         "Rebuild" :
@@ -74,20 +76,15 @@ public class MakeActionImpl {
     });
 
     final Wrappers._T<IResult> res = new Wrappers._T<IResult>();
-
-    ModelCheckerTool_Tool mct = this.context.getProject().getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class);
-    if (mct.checkModelsBeforeGenerationIfNeeded(this.context, Sequence.fromIterable(this.selectModels(inputRes)).toListSequence(), new Runnable() {
+    new IMakeService.ScriptExecutor() {
+      public void doExecute(Runnable runnable) {
+        dodoExecute(inputRes, runnable);
+      }
+    }.doExecute(new Runnable() {
       public void run() {
         res.value = scr.execute(inputRes);
       }
-    })) {
-      //  this is insanity! really call this _again_? 
-      new _FunctionTypes._return_P0_E0<IResult>() {
-        public IResult invoke() {
-          return res.value = scr.execute(inputRes);
-        }
-      }.invoke();
-    }
+    });
 
     if (!(res.value.isSucessful())) {
       context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, (cleanMake ?
@@ -95,6 +92,11 @@ public class MakeActionImpl {
         "Make"
       ) + " failed. See previous messages for details."));
     }
+  }
+
+  private void dodoExecute(Iterable<? extends IResource> inputRes, Runnable exec) {
+    ModelCheckerTool_Tool mct = this.context.getProject().getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class);
+    mct.checkModelsAndRun(this.context, Sequence.fromIterable(this.selectModels(inputRes)).toListSequence(), exec);
   }
 
   private Iterable<SModelDescriptor> selectModels(Iterable<? extends IResource> inputRes) {
