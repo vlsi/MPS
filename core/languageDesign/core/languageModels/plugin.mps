@@ -1732,12 +1732,9 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9077133196728706419">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9077133196728706420">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wt1u.~ConceptAndSuperConceptsScope%d&lt;init&gt;(jetbrains%dmps%dlang%dstructure%dstructure%dAbstractConceptDeclaration)" resolveInfo="ConceptAndSuperConceptsScope" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9077133196728706421">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9077133196728706422">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9077133196728706411" resolveInfo="concept" />
-                  </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAdapterOperation" typeId="tp25.1170384605257" id="9077133196728706423" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wt1u.~ConceptAndSuperConceptsScope%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="ConceptAndSuperConceptsScope" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9077133196728706422">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9077133196728706411" resolveInfo="concept" />
                 </node>
               </node>
             </node>
@@ -1752,13 +1749,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2660635828425286025">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2660635828425169589" resolveInfo="addDependency" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2660635828425286027">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2660635828425286026">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2660635828425286014" resolveInfo="parentConcept" />
-                    </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2660635828425286031">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~BaseAdapter%dgetNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNode" />
-                    </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2660635828425286026">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2660635828425286014" resolveInfo="parentConcept" />
                   </node>
                 </node>
               </node>
@@ -1766,8 +1758,8 @@
           </node>
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2660635828425286014">
             <property name="name" nameId="tpck.1169194664001" value="parentConcept" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2660635828425286015">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vskm.~AbstractConceptDeclaration" resolveInfo="AbstractConceptDeclaration" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3454002900905607728">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d8ec.~SNode" resolveInfo="SNode" />
             </node>
           </node>
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2660635828425286016">

@@ -144,8 +144,8 @@ public class SModelUtil {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
       if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
-        for (AbstractConceptDeclaration adapter : ListSequence.fromList(new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(superConcept))).getConcepts())) {
-          SetSequence.fromSet(result).addElement((SNode) adapter.getNode());
+        for (SNode node : ListSequence.fromList(new ConceptAndSuperConceptsScope(superConcept).getConcepts())) {
+          SetSequence.fromSet(result).addElement((SNode) node);
         }
       }
     }

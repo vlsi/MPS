@@ -265,21 +265,20 @@ public final class BehaviorManager implements ApplicationComponent {
       }
     }
 
-    List<AbstractConceptDeclaration> superConcepts;
+    List<SNode> superConcepts;
     if (callerConceptFqName == null) {
-      AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
+      SNode concept = node.getConceptDeclarationNode();
       superConcepts = SModelUtil_new.getConceptAndSuperConcepts(concept);
     } else {
-      AbstractConceptDeclaration callerConcept = SModelUtil_new.findConceptDeclaration(callerConceptFqName, GlobalScope.getInstance());
-      superConcepts = new ArrayList<AbstractConceptDeclaration>(SModelUtil_new.getConceptAndSuperConcepts(callerConcept));
+      SNode callerConcept = SModelUtil.findConceptDeclaration(callerConceptFqName, GlobalScope.getInstance());
+      superConcepts = new ArrayList<SNode>(SModelUtil_new.getConceptAndSuperConcepts(callerConcept));
       superConcepts.remove(callerConcept);
     }
 
     Method method = null;
     Class[] parameterTypeArray = parametersTypes;
 
-    for (AbstractConceptDeclaration sconcept : superConcepts) {
-      SNode conceptDeclaration = BaseAdapter.fromAdapter(sconcept);
+    for (SNode conceptDeclaration : superConcepts) {
       method = getMethod(conceptDeclaration, methodName, parameterTypeArray);
       if (method != null) {
         break;

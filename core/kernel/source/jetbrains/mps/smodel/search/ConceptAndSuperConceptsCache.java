@@ -20,11 +20,10 @@ import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.cache.CachesManager.CacheCreator;
 import jetbrains.mps.cache.DataSet;
 import jetbrains.mps.cache.KeyProducer;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -54,7 +53,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
   @Override
   public Set<SModelDescriptor> getDependsOnModels(Object element) {
     Set<SModelDescriptor> dependsOnModel = new HashSet<SModelDescriptor>();
-    for (AbstractConceptDeclaration concept : getConcepts()) {
+    for (SNode concept : getConcepts()) {
       // http://youtrack.jetbrains.net/issue/MPS-8362
       // http://youtrack.jetbrains.net/issue/MPS-8556
       SModelDescriptor descriptor = concept.getModel().getModelDescriptor();
@@ -64,8 +63,8 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     return dependsOnModel;
   }
 
-  private String getAssertionMessage(Object element, AbstractConceptDeclaration concept) {
-    AbstractConceptDeclaration conceptFromModelUtil = SModelUtil_new.findConceptDeclaration(NameUtil.nodeFQName(concept), GlobalScope.getInstance());
+  private String getAssertionMessage(Object element, SNode concept) {
+    SNode conceptFromModelUtil = SModelUtil.findConceptDeclaration(NameUtil.nodeFQName(concept), GlobalScope.getInstance());
     return "Model descriptor is null for concept: " +
       concept + "(" + System.identityHashCode(concept) + ")  same concept from SModelUtil_new: " +
       conceptFromModelUtil + "(" + System.identityHashCode(conceptFromModelUtil) + "), element: " +
@@ -82,7 +81,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     myTopConcept = topConcept;
   }
 
-  public AbstractConceptDeclaration[] getConcepts() {
+  public SNode[] getConcepts() {
     ConceptsDataSet dataSet = (ConceptsDataSet) getDataSet(ConceptsDataSet.ID, CONCEPTS_CACHE_CREATOR);
     return dataSet.getConcepts();
 
@@ -122,43 +121,40 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
   // Utils
   //
 
-  private static void collectImplementedAndExtended(AbstractConceptDeclaration top, Set<AbstractConceptDeclaration> result) {
-    Set<AbstractConceptDeclaration> frontier = new LinkedHashSet<AbstractConceptDeclaration>();
-    Set<AbstractConceptDeclaration> newFrontier = new LinkedHashSet<AbstractConceptDeclaration>();
+  private static void collectImplementedAndExtended(SNode top, Set<SNode> result) {
+    Set<SNode> frontier = new LinkedHashSet<SNode>();
+    Set<SNode> newFrontier = new LinkedHashSet<SNode>();
     frontier.add(top);
     result.add(top);
     while (!frontier.isEmpty()) {
-      for (AbstractConceptDeclaration cd : frontier) {
-        if (cd instanceof InterfaceConceptDeclaration) {
-          InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) cd;
+      for (SNode/*AbstractConceptDeclaration*/ cd : frontier) {
+        if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(cd)) {
+          // TODO
+          InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) cd.getAdapter();
           for (InterfaceConceptReference i : icd.getExtendses()) {
             InterfaceConceptDeclaration intfc = i.getIntfc();
             if (intfc != null && !result.contains(intfc)) {
-              newFrontier.add(intfc);
-              result.add(intfc);
+              newFrontier.add(intfc.getNode());
+              result.add(intfc.getNode());
             }
           }
-        }
-
-        if (cd instanceof ConceptDeclaration) {
-          ConceptDeclaration c = (ConceptDeclaration) cd;
-          ConceptDeclaration anExtends = c.getExtends();
+        } else if (SNodeUtil.isInstanceOfConceptDeclaration(cd)) {
+          SNode anExtends = SNodeUtil.getConceptDeclaration_Extends(cd);
           if (anExtends != null && !result.contains(anExtends)) {
             newFrontier.add(anExtends);
             result.add(anExtends);
           }
 
-          for (InterfaceConceptReference i : c.getImplementses()) {
-            InterfaceConceptDeclaration intfc = i.getIntfc();
-            if (intfc != null) {
-              newFrontier.add(intfc);
-              result.add(intfc);
+          for (SNode interfaceDeclaration : SNodeUtil.getConceptDeclaration_Implements(cd)) {
+            if (interfaceDeclaration != null && !result.contains(interfaceDeclaration)) {
+              newFrontier.add(interfaceDeclaration);
+              result.add(interfaceDeclaration);
             }
           }
         }
       }
       frontier = newFrontier;
-      newFrontier = new LinkedHashSet<AbstractConceptDeclaration>();
+      newFrontier = new LinkedHashSet<SNode>();
     }
   }
 
@@ -172,16 +168,16 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
   private static class ConceptsDataSet extends DataSet {
     public static final String ID = "CONCEPTS_DATASET";
-    private AbstractConceptDeclaration myTopConcept;
-    private AbstractConceptDeclaration[] myConcepts;
+    private SNode myTopConcept;
+    private SNode[] myConcepts;
     private Set<SNode> myDependsOnNodes;
 
     public ConceptsDataSet(ConceptAndSuperConceptsCache ownerCache) {
       super(ID, ownerCache, DefaultNodeChangedProcessing.DROP_OWNER_CACHE);
-      myTopConcept = ownerCache.myTopConcept;
+      myTopConcept = BaseAdapter.fromAdapter(ownerCache.myTopConcept);
     }
 
-    public AbstractConceptDeclaration[] getConcepts() {
+    public SNode[] getConcepts() {
       return myConcepts;
     }
 
@@ -190,22 +186,23 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     }
 
     protected void init() {
-      Set<AbstractConceptDeclaration> result = new LinkedHashSet<AbstractConceptDeclaration>();
+      Set<SNode> result = new LinkedHashSet<SNode>();
       collectImplementedAndExtended(myTopConcept, result);
-      result.add(SModelUtil_new.getBaseConcept());
-      myConcepts = result.toArray(new AbstractConceptDeclaration[result.size()]);
+      result.add(SModelUtil.getBaseConcept());
+      myConcepts = result.toArray(new SNode[result.size()]);
 
       // depends on concepts and implemented interface references
       myDependsOnNodes = new HashSet<SNode>(myConcepts.length * 2);
-      for (AbstractConceptDeclaration concept : myConcepts) {
-        myDependsOnNodes.add(concept.getNode());
-        if (concept instanceof InterfaceConceptDeclaration) {
-          for (InterfaceConceptReference i : ((InterfaceConceptDeclaration) concept).getExtendses()) {
+      for (SNode concept : myConcepts) {
+        myDependsOnNodes.add(concept);
+        if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(concept)) {
+          // TODO
+          for (InterfaceConceptReference i : ((InterfaceConceptDeclaration) concept.getAdapter()).getExtendses()) {
             myDependsOnNodes.add(i.getNode());
           }
-        }
-        if (concept instanceof ConceptDeclaration) {
-          for (InterfaceConceptReference i : ((ConceptDeclaration) concept).getImplementses()) {
+        } else if (SNodeUtil.isInstanceOfConceptDeclaration(concept)) {
+          // TODO
+          for (InterfaceConceptReference i :  ((ConceptDeclaration) concept.getAdapter()).getImplementses()) {
             myDependsOnNodes.add(i.getNode());
           }
         }
@@ -217,7 +214,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     //
 
     public void childAdded(SModelChildEvent event) {
-      if (event.getParent().getAdapter() instanceof AbstractConceptDeclaration) {
+      if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process adding of smth. to concept unless it is extended/implemented interface-concept
         if (ConceptDeclaration.IMPLEMENTS.equals(role) || InterfaceConceptDeclaration.EXTENDS.equals(role)) {
@@ -227,7 +224,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     }
 
     public void childRemoved(SModelChildEvent event) {
-      if (event.getParent().getAdapter() instanceof AbstractConceptDeclaration) {
+      if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process removing of smth. from concept unless it is extended/implemented interface-concept
         if (ConceptDeclaration.IMPLEMENTS.equals(role) || InterfaceConceptDeclaration.EXTENDS.equals(role)) {
@@ -276,10 +273,10 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       myProperties = new ArrayList<PropertyDeclaration>();
       myPropertyByName = new HashMap<String, PropertyDeclaration>();
 
-      AbstractConceptDeclaration[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
+      SNode[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
       // iterate bottom-up
       for (int i = concepts.length - 1; i >= 0; i--) {
-        List<PropertyDeclaration> props = concepts[i].getPropertyDeclarations();
+        List<PropertyDeclaration> props = ((AbstractConceptDeclaration)concepts[i].getAdapter()).getPropertyDeclarations();
         for (PropertyDeclaration prop : props) {
           allProperties.add(prop);
           String name = prop.getName();
@@ -295,8 +292,8 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
       // depends on concepts and link declarations
       myDependsOnNodes = new HashSet<SNode>();
-      for (AbstractConceptDeclaration concept : concepts) {
-        myDependsOnNodes.add(concept.getNode());
+      for (SNode concept : concepts) {
+        myDependsOnNodes.add(concept);
       }
       for (PropertyDeclaration prop : allProperties) {
         myDependsOnNodes.add(prop.getNode());
@@ -380,10 +377,10 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
     protected void init() {
       myLinkByRole = new HashMap<String, LinkDeclaration>();
-      AbstractConceptDeclaration[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
+      SNode[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
       FlattenIterable<LinkDeclaration> allLinks = new FlattenIterable<LinkDeclaration>(new ArrayList<Iterable<LinkDeclaration>>(concepts.length));
-      for (AbstractConceptDeclaration concept : concepts) {
-        List<LinkDeclaration> list = concept.getLinkDeclarations();
+      for (SNode concept : concepts) {
+        List<LinkDeclaration> list = ((AbstractConceptDeclaration)concept.getAdapter()).getLinkDeclarations();
         allLinks.add(list);
         for (LinkDeclaration link : list) {
           String role1 = link.getRole();
@@ -417,8 +414,8 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
       // depends on concepts and link declarations
       myDependsOnNodes = new HashSet<SNode>();
-      for (AbstractConceptDeclaration concept : concepts) {
-        myDependsOnNodes.add(concept.getNode());
+      for (SNode concept : concepts) {
+        myDependsOnNodes.add(concept);
       }
       for (LinkDeclaration link : allLinks) {
         myDependsOnNodes.add(link.getNode());
@@ -494,10 +491,10 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       Set<ConceptPropertyDeclaration> allConceptPropertyDeclarations = new HashSet<ConceptPropertyDeclaration>();
       myPropertyByName = new HashMap<String, ConceptProperty>();
 
-      AbstractConceptDeclaration[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
+      SNode[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
       // iterate up-down
-      for (AbstractConceptDeclaration concept : concepts) {
-        List<ConceptProperty> conceptProperties = concept.getConceptProperties();
+      for (SNode concept : concepts) {
+        List<ConceptProperty> conceptProperties = ((AbstractConceptDeclaration)concept.getAdapter()).getConceptProperties();
         for (ConceptProperty conceptProperty : conceptProperties) {
           allConceptProperties.add(conceptProperty);
           ConceptPropertyDeclaration conceptPropertyDeclaration = conceptProperty.getConceptPropertyDeclaration();
@@ -518,8 +515,8 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
       // depends on concepts, concept properties and concept property declarations
       myDependsOnNodes = new HashSet<SNode>();
-      for (AbstractConceptDeclaration concept : concepts) {
-        myDependsOnNodes.add(concept.getNode());
+      for (SNode concept : concepts) {
+        myDependsOnNodes.add(concept);
       }
       for (ConceptProperty prop : allConceptProperties) {
         myDependsOnNodes.add(prop.getNode());

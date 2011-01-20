@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.lang.reflect.Method;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import java.util.List;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -88,9 +87,9 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     // Properties validation 
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     component.addDependency(concept);
-    ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
-    for (AbstractConceptDeclaration parentConcept : chs.getConcepts()) {
-      component.addDependency(parentConcept.getNode());
+    ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(concept);
+    for (SNode parentConcept : chs.getConcepts()) {
+      component.addDependency(parentConcept);
     }
     List<PropertyDeclaration> props = chs.getAdapters(PropertyDeclaration.class);
     for (PropertyDeclaration p : ListSequence.fromList(props)) {

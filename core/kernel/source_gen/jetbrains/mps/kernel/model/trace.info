@@ -42,7 +42,7 @@
     <nodeInfo nodeId="1238250495528" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SModelUtil.java" startLine="137" startPosition="30" endLine="138" endPosition="18" />
     <nodeInfo nodeId="1238250506095" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SModelUtil.java" startLine="139" startPosition="5" endLine="140" endPosition="62" />
     <nodeInfo nodeId="1238254781299" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SModelUtil.java" startLine="143" startPosition="83" endLine="144" endPosition="72" />
-    <nodeInfo nodeId="1238254781324" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SModelUtil.java" startLine="147" startPosition="195" endLine="148" endPosition="76" />
+    <nodeInfo nodeId="1238254781324" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SModelUtil.java" startLine="147" startPosition="112" endLine="148" endPosition="63" />
     <nodeInfo nodeId="1238254781340" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SModelUtil.java" startLine="151" startPosition="5" endLine="152" endPosition="75" />
     <nodeInfo nodeId="1237996276626" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SModelUtil.java" startLine="155" startPosition="67" endLine="156" endPosition="71" />
     <nodeInfo nodeId="1237996518962" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SModelUtil.java" startLine="157" startPosition="109" endLine="158" endPosition="42" />
@@ -141,7 +141,7 @@
     <scopeInfo nodeId="1237995590873" fileName="SModelUtil.java" startLine="122" startPosition="20" endLine="123" endPosition="63" />
     <scopeInfo nodeId="1237995590904" fileName="SModelUtil.java" startLine="129" startPosition="117" endLine="130" endPosition="93" />
     <scopeInfo nodeId="1238250489786" fileName="SModelUtil.java" startLine="137" startPosition="30" endLine="138" endPosition="18" />
-    <scopeInfo nodeId="1238254781323" fileName="SModelUtil.java" startLine="147" startPosition="195" endLine="148" endPosition="76" />
+    <scopeInfo nodeId="1238254781323" fileName="SModelUtil.java" startLine="147" startPosition="112" endLine="148" endPosition="63" />
     <scopeInfo nodeId="1237996433638" fileName="SModelUtil.java" startLine="160" startPosition="29" endLine="161" endPosition="59" />
     <scopeInfo nodeId="1237996607634" fileName="SModelUtil.java" startLine="164" startPosition="69" endLine="165" endPosition="99" />
     <scopeInfo nodeId="1237996744254" fileName="SModelUtil.java" startLine="171" startPosition="69" endLine="172" endPosition="99" />

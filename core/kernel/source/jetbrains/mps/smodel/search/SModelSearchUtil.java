@@ -114,9 +114,10 @@ public class SModelSearchUtil {
 
   public static List<ConceptPropertyDeclaration> getConceptPropertyDeclarations(AbstractConceptDeclaration concept) {
     List<ConceptPropertyDeclaration> result = new ArrayList<ConceptPropertyDeclaration>();
-    List<AbstractConceptDeclaration> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
-    for (AbstractConceptDeclaration c : concepts) {
-      result.addAll(c.getConceptPropertyDeclarations());
+    List<SNode> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
+    for (SNode c : concepts) {
+      // TODO get rid of adapter
+      result.addAll(((AbstractConceptDeclaration)c.getAdapter()).getConceptPropertyDeclarations());
     }
     return result;
   }
@@ -128,9 +129,9 @@ public class SModelSearchUtil {
 
   public static List<ConceptLinkDeclaration> getConceptLinkDeclarations(AbstractConceptDeclaration concept) {
     List<ConceptLinkDeclaration> result = new ArrayList<ConceptLinkDeclaration>();
-    List<AbstractConceptDeclaration> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
-    for (AbstractConceptDeclaration c : concepts) {
-      result.addAll(c.getConceptLinkDeclarations());
+    List<SNode> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
+    for (SNode c : concepts) {
+      result.addAll(((AbstractConceptDeclaration)c.getAdapter()).getConceptLinkDeclarations());
     }
     return result;
   }

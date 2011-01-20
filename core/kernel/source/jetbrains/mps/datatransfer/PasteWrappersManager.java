@@ -74,8 +74,8 @@ public class PasteWrappersManager implements ApplicationComponent {
   private PasteWrapper getWrapperFor(SNode node, AbstractConceptDeclaration targetConcept) {
     Map<String, PasteWrapper> wrappers = myWrappers.get(NameUtil.nodeFQName(targetConcept));
     if (wrappers == null) return null;
-    List<AbstractConceptDeclaration> superConcepts = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
-    for (AbstractConceptDeclaration acd : superConcepts) {
+    List<SNode> superConcepts = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationNode());
+    for (SNode acd : superConcepts) {
       if (wrappers.containsKey(NameUtil.nodeFQName(acd))) {
         return wrappers.get(NameUtil.nodeFQName(acd));
       }

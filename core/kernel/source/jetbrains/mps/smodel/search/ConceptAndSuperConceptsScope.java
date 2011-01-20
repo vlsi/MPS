@@ -21,7 +21,6 @@ import jetbrains.mps.lang.structure.structure.ConceptProperty;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
@@ -48,7 +47,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
     myTopConcept = topConcept;
   }
 
-  public List<AbstractConceptDeclaration> getConcepts() {
+  public List<SNode> getConcepts() {
     if (myTopConcept == null) return Collections.emptyList();
     return Arrays.asList(ConceptAndSuperConceptsCache.getInstance(myTopConcept).getConcepts());
   }
@@ -113,9 +112,9 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
     if (myTopConcept == null) return Collections.emptyList();
     List<SNode> result = new ArrayList<SNode>();
     // filter by condition
-    for (INodeAdapter node : getConcepts()) {
+    for (SNode node : getConcepts()) {
       if (node == null) continue;
-      for (SNode n : node.getNode().getDescendantsIterable(condition, true)) {
+      for (SNode n : node.getDescendantsIterable(condition, true)) {
         result.add(n);
       }
     }
