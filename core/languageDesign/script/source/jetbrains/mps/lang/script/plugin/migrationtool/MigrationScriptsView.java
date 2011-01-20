@@ -162,7 +162,7 @@ public abstract class MigrationScriptsView {
             // ----
             checkMigrationResults();
           }
-        }, "migration refactoring", UndoConfirmationPolicy.REQUEST_CONFIRMATION, myProject);
+        }, "migration refactoring", null, UndoConfirmationPolicy.REQUEST_CONFIRMATION, myProject);
       }
     });
   }
