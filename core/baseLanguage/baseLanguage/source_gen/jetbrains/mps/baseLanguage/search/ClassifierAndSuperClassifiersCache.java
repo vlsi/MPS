@@ -7,8 +7,6 @@ import jetbrains.mps.cache.KeyProducer;
 import jetbrains.mps.cache.DataSet;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import java.util.Set;
-
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.HashSet;
 import java.util.List;
@@ -258,14 +256,12 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
       result.add(classifier);
       if (typeParms != null && typeParms.size() > 0) {
         Iterator<TypeVariableDeclaration> typeVars = classifier.typeVariableDeclarations();
-        for (INodeAdapter typeParm : typeParms) {
+        for (Type typeParm : typeParms) {
           if (!(typeVars.hasNext())) {
             break;
           }
           TypeVariableDeclaration typeVar = typeVars.next();
-          if (typeParm instanceof Type) {
-            typeByTypeVar.put(typeVar, (Type) typeParm);
-          }
+          typeByTypeVar.put(typeVar, typeParm);
         }
       }
       if (classifier instanceof AnonymousClass) {
