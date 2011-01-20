@@ -70,13 +70,13 @@ public class LatticeUtil {
 
   private static SNode join(SNode node1, SNode node2) {
     SNode joinType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
-    if (SNodeOperations.isInstanceOf(((SNode) node1), "jetbrains.mps.lang.typesystem.structure.JoinType")) {
-      SNode joinWrapper1 = (SNode) node1;
+    if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.lang.typesystem.structure.JoinType")) {
+      SNode joinWrapper1 = SNodeOperations.cast(node1, "jetbrains.mps.lang.typesystem.structure.JoinType");
       for (SNode bc : SLinkOperations.getTargets(joinWrapper1, "argument", true)) {
         ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
       }
-      if (SNodeOperations.isInstanceOf(((SNode) node2), "jetbrains.mps.lang.typesystem.structure.JoinType")) {
-        SNode joinWrapper2 = (SNode) node2;
+      if (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.typesystem.structure.JoinType")) {
+        SNode joinWrapper2 = SNodeOperations.cast(node2, "jetbrains.mps.lang.typesystem.structure.JoinType");
         for (SNode bc : SLinkOperations.getTargets(joinWrapper2, "argument", true)) {
           ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
         }
@@ -84,8 +84,8 @@ public class LatticeUtil {
         ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(node2));
       }
     } else
-    if (SNodeOperations.isInstanceOf(((SNode) node2), "jetbrains.mps.lang.typesystem.structure.JoinType")) {
-      SNode joinWrapper2 = (SNode) node2;
+    if (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.typesystem.structure.JoinType")) {
+      SNode joinWrapper2 = SNodeOperations.cast(node2, "jetbrains.mps.lang.typesystem.structure.JoinType");
       ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(node1));
       for (SNode bc : SLinkOperations.getTargets(joinWrapper2, "argument", true)) {
         ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
@@ -99,13 +99,13 @@ public class LatticeUtil {
 
   private static SNode meet(SNode node1, SNode node2) {
     SNode meetType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.MeetType", null);
-    if (SNodeOperations.isInstanceOf(((SNode) node1), "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      SNode meetWrapper1 = (SNode) node1;
+    if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+      SNode meetWrapper1 = SNodeOperations.cast(node1, "jetbrains.mps.lang.typesystem.structure.MeetType");
       for (SNode bc : SLinkOperations.getTargets(meetWrapper1, "argument", true)) {
         ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
       }
-      if (SNodeOperations.isInstanceOf(((SNode) node2), "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-        SNode meetWrapper2 = (SNode) node2;
+      if (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+        SNode meetWrapper2 = SNodeOperations.cast(node2, "jetbrains.mps.lang.typesystem.structure.MeetType");
         for (SNode bc : SLinkOperations.getTargets(meetWrapper2, "argument", true)) {
           ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
         }
@@ -113,8 +113,8 @@ public class LatticeUtil {
         ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(node2));
       }
     } else
-    if (SNodeOperations.isInstanceOf(((SNode) node2), "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      SNode meetWrapper2 = (SNode) node2;
+    if (SNodeOperations.isInstanceOf(node2, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+      SNode meetWrapper2 = SNodeOperations.cast(node2, "jetbrains.mps.lang.typesystem.structure.MeetType");
       ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(node1));
       for (SNode bc : SLinkOperations.getTargets(meetWrapper2, "argument", true)) {
         ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
