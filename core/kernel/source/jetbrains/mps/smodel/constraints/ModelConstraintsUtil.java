@@ -45,8 +45,8 @@ public class ModelConstraintsUtil {
   /**
    * @param linkRole - use *genuine* link role here!!!
    */
-  public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, String linkRole, IOperationContext context) {
-    return getSearchScope(enclosingNode, referenceNode, BaseAdapter.fromAdapter(referenceNodeConcept), linkRole, null, context);
+  public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, String linkRole, IOperationContext context) {
+    return getSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, null, context);
   }
 
   private static SearchScopeStatus getSearchScope(SNode enclosingNode, final SNode referenceNode, final SNode referenceNodeConcept, final String linkRole, final AbstractConceptDeclaration linkTarget, final IOperationContext context) {

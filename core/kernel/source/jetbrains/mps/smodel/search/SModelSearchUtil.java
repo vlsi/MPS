@@ -50,48 +50,48 @@ public class SModelSearchUtil {
 
   public static SNode findLinkDeclaration(SNode conceptDeclaration, String role) {
     if (role == null) return null;
-    return BaseAdapter.fromAdapter(new ConceptAndSuperConceptsScope(conceptDeclaration).getLinkDeclarationByRole(role));
+    return new ConceptAndSuperConceptsScope(conceptDeclaration).getLinkDeclarationByRole(role);
   }
 
   @Deprecated
   public static LinkDeclaration findLinkDeclaration(AbstractConceptDeclaration conceptDeclaration, String role) {
     if (role == null) return null;
-    return new ConceptAndSuperConceptsScope(conceptDeclaration).getLinkDeclarationByRole(role);
+    return (LinkDeclaration) BaseAdapter.fromNode(new ConceptAndSuperConceptsScope(conceptDeclaration).getLinkDeclarationByRole(role));
   }
 
   public static SNode/*LinkDeclaration*/ findMostSpecificLinkDeclaration(SNode conceptDeclaration, String role) {
     if (role == null) return null;
-    return BaseAdapter.fromAdapter(new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(role));
+    return new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(role);
   }
 
   @Deprecated
   public static LinkDeclaration findMostSpecificLinkDeclaration(AbstractConceptDeclaration conceptDeclaration, String role) {
     if (role == null) return null;
-    return new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(role);
+    return (LinkDeclaration) BaseAdapter.fromNode(new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(role));
   }
 
-  public static List<LinkDeclaration> getLinkDeclarations(AbstractConceptDeclaration concept) {
+  public static List<SNode> getLinkDeclarations(AbstractConceptDeclaration concept) {
     return new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
   }
 
-  public static List<LinkDeclaration> getAggregationLinkDeclarations(AbstractConceptDeclaration concept) {
-    List<LinkDeclaration> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
-    List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
-    for (LinkDeclaration link : list) {
-      if (link.getMetaClass() == LinkMetaclass.aggregation) {
+  public static List<SNode> getAggregationLinkDeclarations(AbstractConceptDeclaration concept) {
+    List<SNode> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode link : list) {
+      if (((LinkDeclaration)link.getAdapter()).getMetaClass() == LinkMetaclass.aggregation) {
         result.add(link);
       }
     }
     return result;
   }
 
-  public static List<LinkDeclaration> getReferenceLinkDeclarations(final AbstractConceptDeclaration concept) {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<LinkDeclaration>>() {
-      public List<LinkDeclaration> compute() {
-        List<LinkDeclaration> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
-        List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
-        for (LinkDeclaration link : list) {
-          if (link.getMetaClass() == LinkMetaclass.reference) {
+  public static List<SNode> getReferenceLinkDeclarations(final AbstractConceptDeclaration concept) {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<SNode>>() {
+      public List<SNode> compute() {
+        List<SNode> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
+        List<SNode> result = new ArrayList<SNode>();
+        for (SNode link : list) {
+          if (((LinkDeclaration)link.getAdapter()).getMetaClass() == LinkMetaclass.reference) {
             result.add(link);
           }
         }

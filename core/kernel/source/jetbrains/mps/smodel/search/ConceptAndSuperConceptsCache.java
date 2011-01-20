@@ -100,17 +100,17 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     return dataSet.getPropertyDeclarations();
   }
 
-  public LinkDeclaration getLinkDeclarationByRole(String role) {
+  public SNode getLinkDeclarationByRole(String role) {
     LinkDeclarationsDataSet dataSet = (LinkDeclarationsDataSet) getDataSet(LinkDeclarationsDataSet.ID, LINKDECL_CACHE_CREATOR);
     return dataSet.getLinkDeclarationByRole(role);
   }
 
-  public LinkDeclaration getMostSpecificLinkDeclarationByRole(String role) {
+  public SNode getMostSpecificLinkDeclarationByRole(String role) {
     LinkDeclarationsDataSet dataSet = (LinkDeclarationsDataSet) getDataSet(LinkDeclarationsDataSet.ID, LINKDECL_CACHE_CREATOR);
     return dataSet.getMostSpecificLinkDeclarationByRole(role);
   }
 
-  public List<LinkDeclaration> getLinkDeclarationsExcludingOverridden() {
+  public List<SNode> getLinkDeclarationsExcludingOverridden() {
     LinkDeclarationsDataSet dataSet = (LinkDeclarationsDataSet) getDataSet(LinkDeclarationsDataSet.ID, LINKDECL_CACHE_CREATOR);
     return dataSet.getLinkDeclarationsExcludingOverridden();
   }
@@ -306,7 +306,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     //
 
     public void childAdded(SModelChildEvent event) {
-      if (event.getParent().getAdapter() instanceof AbstractConceptDeclaration) {
+      if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process adding of smth. to concept unless it is property-declaration
         if (AbstractConceptDeclaration.PROPERTY_DECLARATION.equals(role)) {
@@ -316,7 +316,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     }
 
     public void childRemoved(SModelChildEvent event) {
-      if (event.getParent().getAdapter() instanceof AbstractConceptDeclaration) {
+      if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process removing of smth. from concept unless it is property-declaration
         if (AbstractConceptDeclaration.PROPERTY_DECLARATION.equals(role)) {
@@ -343,9 +343,9 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
   private static class LinkDeclarationsDataSet extends DataSet {
     public static final String ID = "LINK_DECLARATIONS_DATASET";
-    private Map<String, LinkDeclaration> myLinkByRole;
-    private Map<LinkDeclaration, LinkDeclaration> myMostSpecificLinkBySpecializedLink;
-    private List<LinkDeclaration> myMostSpecificLinks;
+    private Map<String, SNode> myLinkByRole;
+    private Map<SNode, SNode> myMostSpecificLinkBySpecializedLink;
+    private List<SNode> myMostSpecificLinks;
     private Set<SNode> myDependsOnNodes;
 
     public LinkDeclarationsDataSet(AbstractCache ownerCache) {
@@ -356,14 +356,14 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       return myDependsOnNodes;
     }
 
-    public LinkDeclaration getLinkDeclarationByRole(String role) {
+    public SNode getLinkDeclarationByRole(String role) {
       return myLinkByRole.get(role);
     }
 
-    public LinkDeclaration getMostSpecificLinkDeclarationByRole(String role) {
-      LinkDeclaration linkDeclaration = myLinkByRole.get(role);
+    public SNode getMostSpecificLinkDeclarationByRole(String role) {
+      SNode linkDeclaration = myLinkByRole.get(role);
       if (linkDeclaration != null) {
-        LinkDeclaration mostSpecificLinkDeclaration = myMostSpecificLinkBySpecializedLink.get(linkDeclaration);
+        SNode mostSpecificLinkDeclaration = myMostSpecificLinkBySpecializedLink.get(linkDeclaration);
         if (mostSpecificLinkDeclaration != null) {
           return mostSpecificLinkDeclaration;
         }
@@ -372,37 +372,37 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       return null;
     }
 
-    public List<LinkDeclaration> getLinkDeclarationsExcludingOverridden() {
-      return new ArrayList<LinkDeclaration>(myMostSpecificLinks);
+    public List<SNode> getLinkDeclarationsExcludingOverridden() {
+      return new ArrayList<SNode>(myMostSpecificLinks);
     }
 
     protected void init() {
-      myLinkByRole = new HashMap<String, LinkDeclaration>();
+      myLinkByRole = new HashMap<String, SNode>();
       SNode[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
-      FlattenIterable<LinkDeclaration> allLinks = new FlattenIterable<LinkDeclaration>(new ArrayList<Iterable<LinkDeclaration>>(concepts.length));
+      FlattenIterable<SNode> allLinks = new FlattenIterable<SNode>(new ArrayList<Iterable<SNode>>(concepts.length));
       for (SNode concept : concepts) {
-        List<LinkDeclaration> list = ((AbstractConceptDeclaration) concept.getAdapter()).getLinkDeclarations();
+        Iterable<SNode> list = SNodeUtil.getConcept_LinkDeclarations(concept);
         allLinks.add(list);
-        for (LinkDeclaration link : list) {
-          String role1 = link.getRole();
+        for (SNode link : list) {
+          String role1 = SModelUtil.getLinkDeclarationRole(link);
           if (role1 == null) continue;
           if (myLinkByRole.containsKey(role1)) continue;
           myLinkByRole.put(role1, link);
         }
       }
 
-      Map<LinkDeclaration, LinkDeclaration> specializedLinks = new HashMap<LinkDeclaration, LinkDeclaration>();
-      for (LinkDeclaration link : allLinks) {
-        LinkDeclaration specializedLink = link.getSpecializedLink();
+      Map<SNode, SNode> specializedLinks = new HashMap<SNode, SNode>();
+      for (SNode link : allLinks) {
+        SNode specializedLink = SModelUtil.getLinkDeclarationSpecializedLink(link);
         if (specializedLink != null) {
           specializedLinks.put(specializedLink, link);
         }
       }
 
-      myMostSpecificLinkBySpecializedLink = new HashMap<LinkDeclaration, LinkDeclaration>();
-      myMostSpecificLinks = new ArrayList<LinkDeclaration>(5);
-      for (LinkDeclaration link : allLinks) {
-        LinkDeclaration moreSpecificLink = specializedLinks.get(link);
+      myMostSpecificLinkBySpecializedLink = new HashMap<SNode, SNode>();
+      myMostSpecificLinks = new ArrayList<SNode>(5);
+      for (SNode link : allLinks) {
+        SNode moreSpecificLink = specializedLinks.get(link);
         if (moreSpecificLink == null) {
           myMostSpecificLinks.add(link);
         } else {
@@ -418,8 +418,8 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       for (SNode concept : concepts) {
         myDependsOnNodes.add(concept);
       }
-      for (LinkDeclaration link : allLinks) {
-        myDependsOnNodes.add(link.getNode());
+      for (SNode link : allLinks) {
+        myDependsOnNodes.add(link);
       }
     }
 
@@ -428,7 +428,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     //
 
     public void childAdded(SModelChildEvent event) {
-      if (event.getParent().getAdapter() instanceof AbstractConceptDeclaration) {
+      if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process adding of smth. to concept unless it is link-declaration
         if (AbstractConceptDeclaration.LINK_DECLARATION.equals(role)) {
@@ -438,7 +438,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     }
 
     public void childRemoved(SModelChildEvent event) {
-      if (event.getParent().getAdapter() instanceof AbstractConceptDeclaration) {
+      if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process removing of smth. from concept unless it is link-declaration
         if (AbstractConceptDeclaration.LINK_DECLARATION.equals(role)) {
@@ -456,7 +456,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
         }
         String newRole = event.getNewPropertyValue();
         if (!(newRole == null || myLinkByRole.containsKey(newRole))) {
-          myLinkByRole.put(newRole, (LinkDeclaration) event.getNode().getAdapter());
+          myLinkByRole.put(newRole, event.getNode());
         }
       }
     }
@@ -532,7 +532,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     //
 
     public void childAdded(SModelChildEvent event) {
-      if (event.getParent().getAdapter() instanceof AbstractConceptDeclaration) {
+      if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process adding of smth. to concept unless it is concept property
         if (AbstractConceptDeclaration.CONCEPT_PROPERTY.equals(role)) {
@@ -542,7 +542,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     }
 
     public void childRemoved(SModelChildEvent event) {
-      if (event.getParent().getAdapter() instanceof AbstractConceptDeclaration) {
+      if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process removing of smth. from concept unless it is concept property
         if (AbstractConceptDeclaration.CONCEPT_PROPERTY.equals(role)) {

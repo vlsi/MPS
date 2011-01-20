@@ -240,6 +240,10 @@ public class SModelUtil {
     return SLinkOperations.getTarget(link, "specializedLink", false);
   }
 
+  public static String getLinkDeclarationRole(SNode link) {
+    return SPropertyOperations.getString(link, "role");
+  }
+
   private static boolean eq_74see4_a0a0m(Object a, Object b) {
     return (a != null ?
       a.equals(b) :

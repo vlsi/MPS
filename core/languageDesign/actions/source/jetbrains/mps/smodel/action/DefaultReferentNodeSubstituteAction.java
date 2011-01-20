@@ -35,15 +35,15 @@ import java.util.Arrays;
  */
 public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteAction {
   private SNode myCurrentReferent;
-  private LinkDeclaration myLinkDeclaration;
+  private SNode myLinkDeclaration;
   private IReferencePresentation myPresentation;
 
-  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IReferencePresentation presentation) {
+  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode referenceNode, SNode currentReferent, SNode linkDeclaration, IReferencePresentation presentation) {
     super(null, parameterNode, referenceNode);
     myCurrentReferent = currentReferent;
     myLinkDeclaration = linkDeclaration;
     myPresentation = presentation;
-    if (SModelUtil_new.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.reference) {
+    if (SModelUtil_new.getGenuineLinkMetaclass((LinkDeclaration) BaseAdapter.fromNode(linkDeclaration)) != LinkMetaclass.reference) {
       throw new RuntimeException("Only reference links are allowed here.");
     }
   }
@@ -85,7 +85,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   public SNode doSubstitute(String pattern) {
     SNode parameterNode = (SNode) getParameterObject();
     if (myCurrentReferent != parameterNode) {
-      SNode linkDeclaration = BaseAdapter.fromAdapter(myLinkDeclaration);
+      SNode linkDeclaration = myLinkDeclaration;
       if (!SModelUtil.isAcceptableTarget(linkDeclaration, parameterNode)) {
         throw new RuntimeException("Couldn't set referent node: " + parameterNode.getDebugText());
       }
@@ -106,7 +106,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
       if (!nodeCopyRoot.isRoot()) {
         auxModel.addRoot(nodeCopyRoot);
       }
-      String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
+      String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
       SNode sourceNode = mapping.get(sourceNodePeer);
       SNode nodeToEquatePeer = sourceNodePeer;
       TypeChecker typeChecker = TypeChecker.getInstance();

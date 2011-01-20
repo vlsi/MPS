@@ -227,17 +227,17 @@ public class SModelUtil_new implements ApplicationComponent {
 
   public static void createNodeStructure(AbstractConceptDeclaration nodeConcept,
                                          SNode newNode, SModel model) {
-    for (LinkDeclaration linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {
-      String role = getGenuineLinkRole(linkDeclaration);
-      LinkMetaclass metaClass = getGenuineLinkMetaclass(linkDeclaration);
-      Cardinality sourceCardinality = getGenuineLinkSourceCardinality(linkDeclaration);
+    for (SNode linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {
+      String role = SModelUtil.getGenuineLinkRole(linkDeclaration);
+      LinkMetaclass metaClass = getGenuineLinkMetaclass((LinkDeclaration) linkDeclaration.getAdapter());
+      Cardinality sourceCardinality = getGenuineLinkSourceCardinality((LinkDeclaration) linkDeclaration.getAdapter());
       if (metaClass == LinkMetaclass.aggregation &&
         (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._1__n)) {
 
-        AbstractConceptDeclaration targetConcept = linkDeclaration.getTarget();
+        SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
         LOG.assertLog(targetConcept != null, "link target is null");
         if (newNode.getChildren(role).isEmpty()) {
-          SNode childNode = BaseAdapter.fromAdapter(instantiateConceptDeclaration((AbstractConceptDeclaration) targetConcept, model));
+          SNode childNode = BaseAdapter.fromAdapter(instantiateConceptDeclaration((AbstractConceptDeclaration) BaseAdapter.fromNode(targetConcept), model));
           newNode.addChild(role, childNode);
         }
       }

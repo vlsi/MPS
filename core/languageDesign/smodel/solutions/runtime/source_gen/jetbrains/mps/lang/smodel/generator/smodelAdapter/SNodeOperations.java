@@ -622,12 +622,12 @@ public class SNodeOperations {
     if (referenceNode == null) {
       return null;
     }
-    AbstractConceptDeclaration referenceNodeConcept = referenceNode.getConceptDeclarationAdapter();
-    LinkDeclaration referenceLinkDecl = SModelSearchUtil.findLinkDeclaration(referenceNodeConcept, referenceRole);
+    SNode referenceNodeConcept = referenceNode.getConceptDeclarationNode();
+    SNode referenceLinkDecl = SNodeOperations.cast(SModelSearchUtil.findLinkDeclaration(referenceNodeConcept, referenceRole), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     if (referenceLinkDecl == null) {
       return null;
     }
-    String genuineRole = SModelUtil_new.getGenuineLinkRole(referenceLinkDecl);
+    String genuineRole = SModelUtil.getGenuineLinkRole(referenceLinkDecl);
     SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, genuineRole, context);
     if (status.isOk()) {
       return status.getSearchScope();
