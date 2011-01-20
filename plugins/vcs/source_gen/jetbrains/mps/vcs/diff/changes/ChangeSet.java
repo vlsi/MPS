@@ -12,11 +12,11 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ChangeSet {
-  private SModel myOldModel;
-  private SModel myNewModel;
-  private List<ModelChange> myModelChanges = ListSequence.fromList(new ArrayList<ModelChange>());
+  private final SModel myOldModel;
+  private final SModel myNewModel;
+  private final List<ModelChange> myModelChanges = ListSequence.fromList(new ArrayList<ModelChange>());
 
-  /*package*/ ChangeSet(SModel oldModel, SModel newModel) {
+  /*package*/ ChangeSet(@NotNull SModel oldModel, @NotNull SModel newModel) {
     myOldModel = oldModel;
     myNewModel = newModel;
   }
@@ -39,15 +39,17 @@ public class ChangeSet {
     });
   }
 
+  @NotNull
   public SModel getOldModel() {
     return myOldModel;
   }
 
+  @NotNull
   public SModel getNewModel() {
     return myNewModel;
   }
 
-  /*package*/ void add(ModelChange change) {
+  /*package*/ void add(@NotNull ModelChange change) {
     ListSequence.fromList(myModelChanges).addElement(change);
   }
 

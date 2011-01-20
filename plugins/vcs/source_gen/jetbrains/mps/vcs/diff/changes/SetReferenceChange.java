@@ -4,6 +4,12 @@ package jetbrains.mps.vcs.diff.changes;
 
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.StaticReference;
 
 public class SetReferenceChange extends NodeChange {
   private String myRole;
@@ -11,7 +17,7 @@ public class SetReferenceChange extends NodeChange {
   private SNodeId myTargetNodeId;
   private String myResolveInfo;
 
-  public SetReferenceChange(ChangeSet changeSet, SNodeId sourceNodeId, String role, SModelReference targetModelReference, SNodeId targetNodeId, String resolveInfo) {
+  public SetReferenceChange(@NotNull ChangeSet changeSet, @NotNull SNodeId sourceNodeId, @NotNull String role, @Nullable SModelReference targetModelReference, @Nullable SNodeId targetNodeId, @Nullable String resolveInfo) {
     super(changeSet, sourceNodeId);
     myRole = role;
     myTargetModelReference = targetModelReference;
@@ -19,20 +25,40 @@ public class SetReferenceChange extends NodeChange {
     myResolveInfo = resolveInfo;
   }
 
+  @NotNull
   public String getRole() {
     return myRole;
   }
 
+  @Nullable
   public SModelReference getTargetModelReference() {
     return myTargetModelReference;
   }
 
+  @Nullable
   public SNodeId getTargetNodeId() {
     return myTargetNodeId;
   }
 
+  @Nullable
   public String getResolveInfo() {
     return myResolveInfo;
+  }
+
+  public void apply(@NotNull SModel model) {
+    SNode node = model.getNodeById(getAffectedNodeId());
+    assert node != null;
+    if (myTargetNodeId == null && myResolveInfo == null) {
+      node.setReferent(myRole, null);
+    } else {
+      SModelReference targetModel = (myTargetModelReference == null ?
+        model.getSModelReference() :
+        myTargetModelReference
+      );
+      SReference reference = new StaticReference(myRole, node, targetModel, myTargetNodeId, myResolveInfo);
+      node.removeReferent(myRole);
+      node.addReference(reference);
+    }
   }
 
   @Override
