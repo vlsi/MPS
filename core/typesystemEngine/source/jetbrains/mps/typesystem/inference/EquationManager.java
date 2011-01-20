@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.debug.ISlicer;
-import jetbrains.mps.typesystem.inference.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import org.apache.commons.lang.ObjectUtils;
@@ -213,7 +212,7 @@ public class EquationManager {
         }
       }
     }
-    LatticeUtil.processMeetsAndJoins(type);
+    jetbrains.mps.typesystemEngine.util.LatticeUtil.processMeetsAndJoins(type);
     return type;
   }
 

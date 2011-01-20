@@ -22,9 +22,7 @@ import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.typesystem.inference.*;
-import jetbrains.mps.typesystem.inference.util.LatticeUtil;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
@@ -59,8 +57,8 @@ public class SubTyping {
 
   private boolean meetsAndJoins(SNode subType, SNode superType, EquationInfo info, boolean isWeak, boolean checkOnly) {
     //todo use replacement rules
-    if (LatticeUtil.isJoin(superType)) {
-      for (SNode argument : LatticeUtil.getJoinArguments(superType)) {
+    if (jetbrains.mps.typesystemEngine.util.LatticeUtil.isJoin(superType)) {
+      for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getJoinArguments(superType)) {
   //      if (myState.isConcrete(argument) && isSubTypeByReplacementRules(subType, argument)) {
   //        return true;
    //     }
@@ -69,8 +67,8 @@ public class SubTyping {
         }
       }
     }
-    if (LatticeUtil.isMeet(subType)) {
-      for (SNode argument : LatticeUtil.getMeetArguments(subType)) {
+    if (jetbrains.mps.typesystemEngine.util.LatticeUtil.isMeet(subType)) {
+      for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getMeetArguments(subType)) {
    //     if (myState.isConcrete(argument) && isSubTypeByReplacementRules(argument, superType)) {
     //      return true;
      //   }

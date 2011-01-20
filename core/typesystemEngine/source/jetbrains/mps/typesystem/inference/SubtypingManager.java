@@ -121,8 +121,8 @@ public class SubtypingManager {
     //joins
     if (superRepresentator instanceof NodeWrapper) {
       SNode node = superRepresentator.getNode();
-      if (LatticeUtil.isJoin(node)) {
-        for (SNode argument : LatticeUtil.getJoinArguments(node)) {
+      if (jetbrains.mps.typesystemEngine.util.LatticeUtil.isJoin(node)) {
+        for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getJoinArguments(node)) {
           if (equationManager == null || equationManager.isConcrete(NodeWrapper.createWrapperFromNode(argument, equationManager, true))) {
             if (isSubtypeByReplacementRules(subRepresentator.getNode(), argument)) {
               return true;
@@ -140,9 +140,9 @@ public class SubtypingManager {
       SNode node = subRepresentator.getNode();
 
       //meets
-      if (LatticeUtil.isMeet(node)) {
+      if (jetbrains.mps.typesystemEngine.util.LatticeUtil.isMeet(node)) {
         boolean replacementAllowed = equationManager == null || equationManager.isConcrete(superRepresentator);
-        for (SNode argument : LatticeUtil.getMeetArguments(node)) {
+        for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getMeetArguments(node)) {
           if (replacementAllowed) {
             if (isSubtypeByReplacementRules(argument, superRepresentator.getNode())) {
               return true;
@@ -335,8 +335,8 @@ public class SubtypingManager {
     if (term.isConcrete()) {
       SNode node = term.getNode();
 
-      if (LatticeUtil.isMeet(node)) {
-        for (SNode argument : LatticeUtil.getMeetArguments(node)) {
+      if (jetbrains.mps.typesystemEngine.util.LatticeUtil.isMeet(node)) {
+        for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getMeetArguments(node)) {
           result.addStructurally(NodeWrapper.createWrapperFromNode(argument, null));
         }
         return result;
@@ -555,7 +555,7 @@ System.out.println("alltypes = " + allTypes);*/
     }
 
     StructuralWrapperSet result_ = new StructuralWrapperSet();
-    result_.add(LatticeUtil.meet(commonSupertypes));
+    result_.add(jetbrains.mps.typesystemEngine.util.LatticeUtil.meet(commonSupertypes));
 
     return result_; //commonSupertypes;
   }
