@@ -308,12 +308,11 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   protected <C extends INodeAdapter> C ensureAdapter(Class<C> requiredClass, String role, INodeAdapter adapter) {
-    try {
+    if (requiredClass.isInstance(adapter)) {
       return (C) adapter;
-    } catch (ClassCastException e) {
-      LOG.error("Incorrect type in role " + role + ". " + requiredClass.getName() + " required", adapter);
-      return null;
     }
+    LOG.error("Incorrect type in role " + role + ". " + requiredClass.getName() + " required", adapter);
+    return null;
   }
 
   protected void setReferent(@NotNull String role, INodeAdapter newValue) {
