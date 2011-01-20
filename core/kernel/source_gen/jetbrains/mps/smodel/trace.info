@@ -13,6 +13,15 @@
     <nodeInfo nodeId="2594890229324800860" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="49" startPosition="73" endLine="50" endPosition="63" />
     <nodeInfo nodeId="2594890229324947576" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="53" startPosition="68" endLine="54" endPosition="64" />
     <nodeInfo nodeId="2594890229324963786" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="59" startPosition="37" endLine="60" endPosition="61" />
+    <nodeInfo nodeId="5178936997682662844" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="65" startPosition="95" endLine="66" endPosition="67" />
+    <nodeInfo nodeId="5178936997682662867" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="69" startPosition="76" endLine="70" endPosition="72" />
+    <nodeInfo nodeId="5178936997682694475" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="73" startPosition="80" endLine="74" endPosition="76" />
+    <nodeInfo nodeId="5178936997682694489" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="77" startPosition="77" endLine="78" endPosition="72" />
+    <nodeInfo nodeId="5178936997682694514" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="81" startPosition="72" endLine="82" endPosition="68" />
+    <nodeInfo nodeId="5178936997682694502" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="85" startPosition="87" endLine="86" endPosition="83" />
+    <nodeInfo nodeId="5178936997682694527" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="89" startPosition="83" endLine="90" endPosition="79" />
+    <nodeInfo nodeId="5178936997682694553" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="95" startPosition="37" endLine="96" endPosition="61" />
+    <nodeInfo nodeId="5178936997682694567" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="101" startPosition="101" endLine="102" endPosition="64" />
     <nodeInfo nodeId="2274990519051114061" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SNodeUtil#()V" fileName="SNodeUtil.java" startLine="12" startPosition="24" endLine="14" endPosition="3" />
     <nodeInfo nodeId="2274990519051152612" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="SNodeUtil.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
     <nodeInfo nodeId="2274990519051271953" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDetailedPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="SNodeUtil.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
@@ -24,9 +33,20 @@
     <nodeInfo nodeId="2594890229324800853" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConceptDeclaration_IsRootable#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SNodeUtil.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <nodeInfo nodeId="2594890229324947030" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConceptDeclaration_Extends#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="SNodeUtil.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
     <nodeInfo nodeId="2594890229324963782" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="SNodeUtil.java" startLine="58" startPosition="135" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="5178936997682662841" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConceptDeclaration_ImplementsReferenceNodes#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <nodeInfo nodeId="5178936997682662837" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept_LinkDeclarations#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <nodeInfo nodeId="5178936997682694468" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept_PropertyDeclarations#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <nodeInfo nodeId="5178936997682694482" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept_ConceptProperties#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <nodeInfo nodeId="5178936997682694507" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept_ConceptLinks#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <nodeInfo nodeId="5178936997682694495" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept_ConceptPropertyDeclarations#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <nodeInfo nodeId="5178936997682694520" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept_ConceptLinkDeclarations#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <nodeInfo nodeId="5178936997682694549" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="SNodeUtil.java" startLine="94" startPosition="132" endLine="98" endPosition="0" />
+    <nodeInfo nodeId="5178936997682694564" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInterfaceConceptDeclaration_ExtendsReferenceNodes#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
     <nodeInfo nodeId="8339862546319981395" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInstanceOfAbstractConceptDeclaration#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SNodeUtil.java" startLine="43" startPosition="0" endLine="48" endPosition="0" />
     <nodeInfo nodeId="2594890229324963752" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="57" startPosition="81" endLine="62" endPosition="7" />
+    <nodeInfo nodeId="5178936997682694537" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeUtil.java" startLine="93" startPosition="87" endLine="98" endPosition="7" />
     <nodeInfo nodeId="2594890229324947585" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConceptDeclaration_Implements#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="56" startPosition="0" endLine="64" endPosition="0" />
+    <nodeInfo nodeId="5178936997682694533" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInterfaceConceptDeclaration_Extends#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="92" startPosition="0" endLine="100" endPosition="0" />
     <scopeInfo nodeId="2274990519051114064" fileName="SNodeUtil.java" startLine="13" startPosition="22" endLine="13" endPosition="22" />
     <scopeInfo nodeId="2274990519051152615" fileName="SNodeUtil.java" startLine="16" startPosition="52" endLine="17" endPosition="217" />
     <scopeInfo nodeId="2274990519051271956" fileName="SNodeUtil.java" startLine="20" startPosition="60" endLine="21" endPosition="231" />
@@ -38,6 +58,15 @@
     <scopeInfo nodeId="2594890229324800856" fileName="SNodeUtil.java" startLine="49" startPosition="73" endLine="50" endPosition="63" />
     <scopeInfo nodeId="2594890229324947033" fileName="SNodeUtil.java" startLine="53" startPosition="68" endLine="54" endPosition="64" />
     <scopeInfo nodeId="2594890229324963783" fileName="SNodeUtil.java" startLine="59" startPosition="37" endLine="60" endPosition="61" />
+    <scopeInfo nodeId="5178936997682662843" fileName="SNodeUtil.java" startLine="65" startPosition="95" endLine="66" endPosition="67" />
+    <scopeInfo nodeId="5178936997682662840" fileName="SNodeUtil.java" startLine="69" startPosition="76" endLine="70" endPosition="72" />
+    <scopeInfo nodeId="5178936997682694474" fileName="SNodeUtil.java" startLine="73" startPosition="80" endLine="74" endPosition="76" />
+    <scopeInfo nodeId="5178936997682694488" fileName="SNodeUtil.java" startLine="77" startPosition="77" endLine="78" endPosition="72" />
+    <scopeInfo nodeId="5178936997682694513" fileName="SNodeUtil.java" startLine="81" startPosition="72" endLine="82" endPosition="68" />
+    <scopeInfo nodeId="5178936997682694501" fileName="SNodeUtil.java" startLine="85" startPosition="87" endLine="86" endPosition="83" />
+    <scopeInfo nodeId="5178936997682694526" fileName="SNodeUtil.java" startLine="89" startPosition="83" endLine="90" endPosition="79" />
+    <scopeInfo nodeId="5178936997682694550" fileName="SNodeUtil.java" startLine="95" startPosition="37" endLine="96" endPosition="61" />
+    <scopeInfo nodeId="5178936997682694566" fileName="SNodeUtil.java" startLine="101" startPosition="101" endLine="102" endPosition="64" />
     <scopeInfo nodeId="2274990519051114061" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SNodeUtil#()V" fileName="SNodeUtil.java" startLine="12" startPosition="24" endLine="14" endPosition="3" />
     <scopeInfo nodeId="8339862546319981398" fileName="SNodeUtil.java" startLine="44" startPosition="76" endLine="46" endPosition="280">
       <varInfo nodeId="8339862546319981403" varName="conceptFqName" />
@@ -70,15 +99,45 @@
       <varInfo nodeId="2594890229324947574" varName="concept" />
     </scopeInfo>
     <scopeInfo nodeId="2594890229324963782" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="SNodeUtil.java" startLine="58" startPosition="135" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="5178936997682662841" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConceptDeclaration_ImplementsReferenceNodes#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="5178936997682662858" varName="concept" />
+    </scopeInfo>
+    <scopeInfo nodeId="5178936997682662837" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept_LinkDeclarations#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="5178936997682662862" varName="concept" />
+    </scopeInfo>
+    <scopeInfo nodeId="5178936997682694468" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept_PropertyDeclarations#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="5178936997682694469" varName="concept" />
+    </scopeInfo>
+    <scopeInfo nodeId="5178936997682694482" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept_ConceptProperties#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="5178936997682694483" varName="concept" />
+    </scopeInfo>
+    <scopeInfo nodeId="5178936997682694507" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept_ConceptLinks#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="5178936997682694508" varName="concept" />
+    </scopeInfo>
+    <scopeInfo nodeId="5178936997682694495" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept_ConceptPropertyDeclarations#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="5178936997682694496" varName="concept" />
+    </scopeInfo>
+    <scopeInfo nodeId="5178936997682694520" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept_ConceptLinkDeclarations#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="5178936997682694521" varName="concept" />
+    </scopeInfo>
+    <scopeInfo nodeId="5178936997682694549" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="SNodeUtil.java" startLine="94" startPosition="132" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="5178936997682694564" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInterfaceConceptDeclaration_ExtendsReferenceNodes#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="5178936997682694581" varName="concept" />
+    </scopeInfo>
     <scopeInfo nodeId="8339862546319981395" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInstanceOfAbstractConceptDeclaration#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SNodeUtil.java" startLine="43" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="8339862546319981400" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2594890229324947588" fileName="SNodeUtil.java" startLine="57" startPosition="81" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="5178936997682694536" fileName="SNodeUtil.java" startLine="93" startPosition="87" endLine="98" endPosition="7" />
     <scopeInfo nodeId="2594890229324947585" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConceptDeclaration_Implements#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="56" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="2594890229324947593" varName="concept" />
     </scopeInfo>
+    <scopeInfo nodeId="5178936997682694533" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInterfaceConceptDeclaration_Extends#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SNodeUtil.java" startLine="92" startPosition="0" endLine="100" endPosition="0">
+      <varInfo nodeId="5178936997682694541" varName="concept" />
+    </scopeInfo>
     <unitInfo nodeId="2594890229324963782" fileName="SNodeUtil.java" startLine="58" startPosition="108" endLine="62" endPosition="5" unitName="jetbrains.mps.smodel.ISelector$anonymous" />
-    <unitInfo nodeId="2274990519051114059" fileName="SNodeUtil.java" startLine="12" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.smodel.SNodeUtil" />
+    <unitInfo nodeId="5178936997682694549" fileName="SNodeUtil.java" startLine="94" startPosition="105" endLine="98" endPosition="5" unitName="jetbrains.mps.smodel.ISelector$anonymous" />
+    <unitInfo nodeId="2274990519051114059" fileName="SNodeUtil.java" startLine="12" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.smodel.SNodeUtil" />
   </root>
   <root nodeId="5073169472575923460">
     <nodeInfo nodeId="5073169472575947667" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ACTIONS" fileName="BootstrapLanguages.java" startLine="7" startPosition="33" endLine="8" endPosition="143" />

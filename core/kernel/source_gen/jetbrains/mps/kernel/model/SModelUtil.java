@@ -236,6 +236,10 @@ public class SModelUtil {
     return SLinkOperations.getTarget(linkDeclaration, "target", false);
   }
 
+  public static SNode getLinkDeclarationSpecializedLink(SNode link) {
+    return SLinkOperations.getTarget(link, "specializedLink", false);
+  }
+
   private static boolean eq_74see4_a0a0m(Object a, Object b) {
     return (a != null ?
       a.equals(b) :

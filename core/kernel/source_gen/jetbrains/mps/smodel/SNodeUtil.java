@@ -61,4 +61,44 @@ public class SNodeUtil {
       }
     });
   }
+
+  public static Iterable<SNode> getConceptDeclaration_ImplementsReferenceNodes(SNode concept) {
+    return SLinkOperations.getTargets(concept, "implements", true);
+  }
+
+  public static Iterable<SNode> getConcept_LinkDeclarations(SNode concept) {
+    return SLinkOperations.getTargets(concept, "linkDeclaration", true);
+  }
+
+  public static Iterable<SNode> getConcept_PropertyDeclarations(SNode concept) {
+    return SLinkOperations.getTargets(concept, "propertyDeclaration", true);
+  }
+
+  public static Iterable<SNode> getConcept_ConceptProperties(SNode concept) {
+    return SLinkOperations.getTargets(concept, "conceptProperty", true);
+  }
+
+  public static Iterable<SNode> getConcept_ConceptLinks(SNode concept) {
+    return SLinkOperations.getTargets(concept, "conceptLink", true);
+  }
+
+  public static Iterable<SNode> getConcept_ConceptPropertyDeclarations(SNode concept) {
+    return SLinkOperations.getTargets(concept, "conceptPropertyDeclaration", true);
+  }
+
+  public static Iterable<SNode> getConcept_ConceptLinkDeclarations(SNode concept) {
+    return SLinkOperations.getTargets(concept, "conceptLinkDeclaration", true);
+  }
+
+  public static Iterable<SNode> getInterfaceConceptDeclaration_Extends(SNode concept) {
+    return ListSequence.fromList(SLinkOperations.getTargets(concept, "extends", true)).<SNode>select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "intfc", false);
+      }
+    });
+  }
+
+  public static Iterable<SNode> getInterfaceConceptDeclaration_ExtendsReferenceNodes(SNode concept) {
+    return SLinkOperations.getTargets(concept, "extends", true);
+  }
 }
