@@ -166,7 +166,7 @@ public class MPSEditorOpener {
     ideaProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
     /* TODO use SNodePointer instead of SNode */
     /* temp hack: runWriteAction instead of read, TODO move sync into doOpenNode */
-    return ModelAccess.instance().runWriteAction(new Computable<IEditor>() {
+    return ModelAccess.instance().runReadAction(new Computable<IEditor>() {
       public IEditor compute() {
         return doOpenNode(node, context, focus, select, openBaseNode);
       }
