@@ -23,12 +23,11 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
 
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode Enum_typevar_1240331870095 = typeCheckingContext.createNewRuntimeTypesVariable();
-    final SNode Member_typevar_1240331876974 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(operation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331899146", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331895732", true), (SNode) new typeof_EnumMember_ValueOperation_InferenceRule.QuotationClass_ecgaoh_a0a2a0().createNode(typeCheckingContext.getRepresentative(Enum_typevar_1240331870095), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331895732", true), (SNode) new typeof_EnumMember_ValueOperation_InferenceRule.QuotationClass_ecgaoh_a0a1a0().createNode(typeCheckingContext.getRepresentative(Enum_typevar_1240331870095), typeCheckingContext), _info_12389875345);
     }
     {
       final SNode enumDecl = typeCheckingContext.getRepresentative(Enum_typevar_1240331870095);
@@ -60,8 +59,8 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
     return false;
   }
 
-  public static class QuotationClass_ecgaoh_a0a2a0 {
-    public QuotationClass_ecgaoh_a0a2a0() {
+  public static class QuotationClass_ecgaoh_a0a1a0 {
+    public QuotationClass_ecgaoh_a0a1a0() {
     }
 
     public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
