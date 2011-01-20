@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import org.jmock.integration.junit4.JMock;
 import jetbrains.mps.make.unittest.MockTestCase;
 import org.junit.Test;
-import jetbrains.mps.internal.make.runtime.script.ScriptBuilder;
+import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.script.IProgress;
 import org.jmock.Expectations;
 import jetbrains.mps.make.facet.ITarget;
