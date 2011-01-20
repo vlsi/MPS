@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="2082624981609760242">
+    <nodeInfo nodeId="2082624981609760254" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="completeScript#(Ljetbrains/mps/make/script/ScriptBuilder;)Ljetbrains/mps/make/script/IScript;" fileName="IMakeService.java" startLine="8" startPosition="31" endLine="9" endPosition="50" />
+    <nodeInfo nodeId="2082624981609760244" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;)V" fileName="IMakeService.java" startLine="9" startPosition="50" endLine="10" endPosition="35" />
+    <scopeInfo nodeId="2082624981609760254" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="completeScript#(Ljetbrains/mps/make/script/ScriptBuilder;)Ljetbrains/mps/make/script/IScript;" fileName="IMakeService.java" startLine="8" startPosition="31" endLine="9" endPosition="50">
+      <varInfo nodeId="2082624981609760259" varName="sb" />
+    </scopeInfo>
+    <scopeInfo nodeId="2082624981609760244" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;)V" fileName="IMakeService.java" startLine="9" startPosition="50" endLine="10" endPosition="35">
+      <varInfo nodeId="2082624981609760248" varName="script" />
+    </scopeInfo>
+    <unitInfo nodeId="2082624981609760242" fileName="IMakeService.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.make.IMakeService" />
+  </root>
+  <root nodeId="2984338846423049443">
+    <nodeInfo nodeId="2984338846423049446" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resources#()Ljava/lang/Iterable;" fileName="IResourceProvider.java" startLine="7" startPosition="36" endLine="8" endPosition="41" />
+    <scopeInfo nodeId="2984338846423049446" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resources#()Ljava/lang/Iterable;" fileName="IResourceProvider.java" startLine="7" startPosition="36" endLine="8" endPosition="41" />
+    <unitInfo nodeId="2984338846423049443" fileName="IResourceProvider.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.make.IResourceProvider" />
+  </root>
   <root nodeId="6168415856807659180">
     <nodeInfo nodeId="6168415856807659181" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" fileName="WorkflowEngine.java" startLine="7" startPosition="29" endLine="8" endPosition="69" />
     <nodeInfo nodeId="6168415856807659186" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WorkflowEngine#()V" fileName="WorkflowEngine.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />

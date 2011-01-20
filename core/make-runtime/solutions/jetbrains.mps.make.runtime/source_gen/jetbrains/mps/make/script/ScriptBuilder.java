@@ -109,8 +109,6 @@ public class ScriptBuilder {
       return new InvalidScript(errors);
     }
     Script sc = new Script(tr, defaultTarget);
-    sc.setInit(init);
-    sc.setMonitors(mons);
     sc.validate();
     return sc;
   }
