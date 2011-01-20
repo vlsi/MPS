@@ -83,7 +83,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_3073231036165996124(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a9().createNode()));
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a01().createNode()));
   }
 
   public static boolean ifMacro_Condition_1201570983175(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -191,8 +191,8 @@ public class QueriesGenerated {
     return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
   }
 
-  public static class QuotationClass_x583g4_a1a0a0a9 {
-    public QuotationClass_x583g4_a1a0a0a9() {
+  public static class QuotationClass_x583g4_a1a0a0a01 {
+    public QuotationClass_x583g4_a1a0a0a01() {
     }
 
     public SNode createNode() {
