@@ -393,6 +393,34 @@
         </node>
       </node>
     </node>
+    <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="5375364354070859437">
+      <property name="name:3" value="coreLanguage" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5375364354070859441">
+        <link role="classifier:3" targetNodeId="4.~Language" resolveInfo="Language" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5375364354070859439" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5375364354070859440">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5375364354070859442">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="5375364354070859444">
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5375364354070859445">
+              <link role="classifier:3" targetNodeId="4.~Language" resolveInfo="Language" />
+            </node>
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5375364354070859449">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5375364354070859448">
+                <link role="baseMethodDeclaration:3" targetNodeId="4.~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolveInfo="getInstance" />
+                <link role="classConcept:3" targetNodeId="4.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5375364354070859597">
+                <link role="baseMethodDeclaration:3" targetNodeId="4.~MPSModuleRepository.getModule(jetbrains.mps.project.structure.modules.ModuleReference):jetbrains.mps.project.IModule" resolveInfo="getModule" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="5375364354070859598">
+                  <link role="variableDeclaration:3" targetNodeId="5073169472575947786" resolveInfo="CORE" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />

@@ -117,7 +117,7 @@ public final class SConceptOperations {
       SNode declaration = SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance());
       Language lang = SModelUtil.getDeclaringLanguage(declaration);
       if (availableLanguages.contains(lang)) {
-        result.add(lang.findConceptDeclaration(NameUtil.shortNameFromLongName(descendant)).getNode());
+        result.add(lang.findConceptDeclaration(NameUtil.shortNameFromLongName(descendant)));
       }
     }
     return result;

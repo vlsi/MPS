@@ -44,9 +44,10 @@ public class MappingConfigFinder implements IFinder {
 
   public SearchResults<SNode> find(SearchQuery query, ProgressIndicator indicator) {
     List<SearchResult<SNode>> results = new ArrayList<SearchResult<SNode>>();
-    List<MappingConfiguration> mappingConfigs = myGenerator.getOwnMappings();
+    List<SNode> mappingConfigs = myGenerator.getOwnMappings();
     List<SNode> nodesToCheck = new ArrayList<SNode>();
-    for (MappingConfiguration mappingConfig : mappingConfigs) {
+    for (SNode m : mappingConfigs) {
+      MappingConfiguration mappingConfig = (MappingConfiguration) BaseAdapter.fromNode(m);
       List<BaseMappingRule> rules = mappingConfig.getChildren(BaseMappingRule.class);
       for (BaseMappingRule rule : rules) {
         nodesToCheck.add(rule.getNode());

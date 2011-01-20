@@ -132,13 +132,10 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     while (!frontier.isEmpty()) {
       for (SNode/*AbstractConceptDeclaration*/ cd : frontier) {
         if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(cd)) {
-          // TODO
-          InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) cd.getAdapter();
-          for (InterfaceConceptReference i : icd.getExtendses()) {
-            InterfaceConceptDeclaration intfc = i.getIntfc();
-            if (intfc != null && !result.contains(intfc)) {
-              newFrontier.add(intfc.getNode());
-              result.add(intfc.getNode());
+          for (SNode interfaceDeclaration : SNodeUtil.getInterfaceConceptDeclaration_Extends(cd)) {
+            if (interfaceDeclaration != null && !result.contains(interfaceDeclaration)) {
+              newFrontier.add(interfaceDeclaration);
+              result.add(interfaceDeclaration);
             }
           }
         } else if (SNodeUtil.isInstanceOfConceptDeclaration(cd)) {

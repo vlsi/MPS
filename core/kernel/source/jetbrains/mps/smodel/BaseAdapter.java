@@ -63,7 +63,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public String getAlias() {
-    return SModelUtil_new.getAlias(getConceptDeclarationAdapter());
+    return SModelUtil_new.getAlias(getNode().getConceptDeclarationAdapter());
   }
 
   public INodeAdapter getParent() {
@@ -128,10 +128,6 @@ public abstract class BaseAdapter implements INodeAdapter {
       list.add(currNode);
     }
     return list;
-  }
-
-  public final AbstractConceptDeclaration getConceptDeclarationAdapter() {
-    return getNode().getConceptDeclarationAdapter();
   }
 
   public void replaceChild(INodeAdapter oldChild, INodeAdapter newChild) {
@@ -557,7 +553,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     if (this instanceof AbstractConceptDeclaration) {
       conceptDeclaration = (AbstractConceptDeclaration) this;
     } else {
-      conceptDeclaration = getConceptDeclarationAdapter();
+      conceptDeclaration = getNode().getConceptDeclarationAdapter();
     }
 
     if (lookupHierarchy) {

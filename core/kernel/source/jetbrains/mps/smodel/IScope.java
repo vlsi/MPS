@@ -17,11 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-
-import java.util.List;
-import java.util.Set;
 
 /**
  * DO NOT implement this interface directly. Always use BaseScope class

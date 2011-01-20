@@ -22,10 +22,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -90,8 +89,7 @@ public class SModelUtil {
           return null;
         }
         String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
-        AbstractConceptDeclaration resultAdapter = language.findConceptDeclaration(conceptName);
-        SNode result = ((SNode) BaseAdapter.fromAdapter(resultAdapter));
+        SNode result = (SNode) language.findConceptDeclaration(conceptName);
         MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).put(InternUtil.intern(conceptFQName), result);
         return result;
       }

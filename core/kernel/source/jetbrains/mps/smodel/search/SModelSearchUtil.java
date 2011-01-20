@@ -78,7 +78,7 @@ public class SModelSearchUtil {
     List<SNode> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
     List<SNode> result = new ArrayList<SNode>();
     for (SNode link : list) {
-      if (((LinkDeclaration)link.getAdapter()).getMetaClass() == LinkMetaclass.aggregation) {
+      if (((LinkDeclaration) link.getAdapter()).getMetaClass() == LinkMetaclass.aggregation) {
         result.add(link);
       }
     }
@@ -91,7 +91,7 @@ public class SModelSearchUtil {
         List<SNode> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
         List<SNode> result = new ArrayList<SNode>();
         for (SNode link : list) {
-          if (((LinkDeclaration)link.getAdapter()).getMetaClass() == LinkMetaclass.reference) {
+          if (((LinkDeclaration) link.getAdapter()).getMetaClass() == LinkMetaclass.reference) {
             result.add(link);
           }
         }
@@ -130,7 +130,7 @@ public class SModelSearchUtil {
     List<ConceptLinkDeclaration> result = new ArrayList<ConceptLinkDeclaration>();
     List<SNode> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
     for (SNode c : concepts) {
-      result.addAll(((AbstractConceptDeclaration)c.getAdapter()).getConceptLinkDeclarations());
+      result.addAll(((AbstractConceptDeclaration) c.getAdapter()).getConceptLinkDeclarations());
     }
     return result;
   }
@@ -140,7 +140,7 @@ public class SModelSearchUtil {
     private SModel myModel;
     private boolean myRootsOnly;
     private IScope myScope;
-    private List<ConceptDeclaration> myConcepts;
+    private List<SNode> myConcepts;
 
     public _ConceptsFromModelLanguagesScope(SModel model, boolean rootsOnly, IScope scope) {
       myModel = model;
@@ -151,12 +151,16 @@ public class SModelSearchUtil {
     @NotNull
     public List<SNode> getNodes(Condition<SNode> condition) {
       if (myConcepts == null) {
-        myConcepts = new ArrayList<ConceptDeclaration>();
+        myConcepts = new ArrayList<SNode>();
         List<Language> languages = SModelOperations.getLanguages(myModel, myScope);
         for (Language language : languages) {
           if (myRootsOnly) {
             SModel structureModel = language.getStructureModelDescriptor().getSModel();
-            myConcepts.addAll(structureModel.getRootsAdapters(ConceptDeclaration.class));
+            for (SNode node : structureModel.roots()) {
+              if (SNodeUtil.isInstanceOfConceptDeclaration(node)) {
+                myConcepts.add(node);
+              }
+            }
           } else {
             myConcepts.addAll(language.getConceptDeclarations());
           }
@@ -164,9 +168,9 @@ public class SModelSearchUtil {
       }
 
       List<SNode> concepts = new ArrayList<SNode>();
-      for (ConceptDeclaration concept : myConcepts) {
-        if (condition.met(concept.getNode())) {
-          concepts.add(concept.getNode());
+      for (SNode concept : myConcepts) {
+        if (condition.met(concept)) {
+          concepts.add(concept);
         }
       }
 

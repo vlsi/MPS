@@ -16,7 +16,6 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.DependencyManager;
 import jetbrains.mps.project.dependency.ModuleDepsManager;
@@ -118,8 +117,8 @@ public abstract class AbstractModule implements IModule {
 
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
-    for (Dependency dep:descriptor.getDependencies()) {
-      if (ObjectUtils.equals(dep.getModuleRef(),moduleRef)) return;
+    for (Dependency dep : descriptor.getDependencies()) {
+      if (ObjectUtils.equals(dep.getModuleRef(), moduleRef)) return;
     }
 
     Dependency dep = new Dependency();
@@ -431,7 +430,7 @@ public abstract class AbstractModule implements IModule {
   public Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
     LinkedHashSet<Language> result = new LinkedHashSet<Language>();
     if (SModelStereotype.isGeneratorModel(sm)) {
-      result.add(Generator_Language.get());
+      result.add(BootstrapLanguages.generatorLanguage());
     }
     return result;
   }
