@@ -158,7 +158,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.typesystem.check_ReferencesScope_NonTypesystemRule" file="check_ReferencesScope_NonTypesystemRule.java">
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.ReferenceMessageTarget" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
