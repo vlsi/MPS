@@ -206,7 +206,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_671853460608824199(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.make.facet.structure.FacetDeclaration");
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.make.facet.structure.FacetDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode fd) {
+        return SPropertyOperations.getString(fd, "name");
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_7320828025189345730(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
