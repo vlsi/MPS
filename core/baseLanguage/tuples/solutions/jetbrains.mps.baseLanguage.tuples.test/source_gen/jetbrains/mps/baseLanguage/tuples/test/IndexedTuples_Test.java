@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import aux.MPS11114;
+import jetbrains.mps.baseLanguage.tuples.util.MPS11114;
 
 public class IndexedTuples_Test extends TestCase {
   public void test_empty() throws Exception {

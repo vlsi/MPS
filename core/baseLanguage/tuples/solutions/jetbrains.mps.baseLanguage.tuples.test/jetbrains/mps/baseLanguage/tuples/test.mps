@@ -9,7 +9,6 @@
   <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="digr" modelUID="r:f52cb0e4-0aa9-419b-85cb-0e6e9e8071aa(jetbrains.mps.baseLanguage.tuples.util)" version="-1" />
   <import index="xz5j" modelUID="r:26fc506c-44aa-4c44-b7bf-9712d972460d(jetbrains.mps.baseLanguage.tuples.shared)" version="-1" />
-  <import index="mb30" modelUID="r:827dce35-ec52-4283-a9be-dae8dda050c2(aux)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -1345,8 +1344,8 @@
                   <property name="name" nameId="tpck.1169194664001" value="tt" />
                 </node>
                 <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6395420914225303315">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mb30.6395420914225303256" resolveInfo="returnTuples" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="mb30.6395420914225303246" resolveInfo="MPS11114" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="digr.1543650586506860265" resolveInfo="returnTuples" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="digr.1543650586506860264" resolveInfo="MPS11114" />
                 </node>
                 <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="6395420914225303313">
                   <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertInNotNull" typeId="tpe3.7080278351417106679" id="6395420914225303316">
@@ -1367,8 +1366,8 @@
               </node>
             </node>
             <node role="iterable" roleId="tpee.1144226360166" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6395420914225306518">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="mb30.6395420914225303246" resolveInfo="MPS11114" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mb30.6395420914225303256" resolveInfo="returnTuples" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="digr.1543650586506860264" resolveInfo="MPS11114" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="digr.1543650586506860265" resolveInfo="returnTuples" />
             </node>
             <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6395420914225306532">
               <property name="name" nameId="tpck.1169194664001" value="tt" />

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="SharedPair.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.util.SharedPair" />
+  <root nodeId="1543650586506860264">
+    <nodeInfo nodeId="1543650586506860268" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MPS11114.java" startLine="15" startPosition="65" endLine="16" endPosition="176" />
+    <nodeInfo nodeId="1543650586506860289" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPS11114#()V" fileName="MPS11114.java" startLine="11" startPosition="23" endLine="13" endPosition="3" />
+    <nodeInfo nodeId="1543650586506860265" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="returnTuples#()Ljava/util/List;" fileName="MPS11114.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1543650586506860292" fileName="MPS11114.java" startLine="12" startPosition="21" endLine="12" endPosition="21" />
+    <scopeInfo nodeId="1543650586506860267" fileName="MPS11114.java" startLine="15" startPosition="65" endLine="16" endPosition="176" />
+    <scopeInfo nodeId="1543650586506860289" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPS11114#()V" fileName="MPS11114.java" startLine="11" startPosition="23" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="1543650586506860265" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="returnTuples#()Ljava/util/List;" fileName="MPS11114.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <unitInfo nodeId="1543650586506860264" fileName="MPS11114.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.util.MPS11114" />
+  </root>
   <root nodeId="974579920306753652">
     <nodeInfo nodeId="974579920306753718" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="A.java" startLine="14" startPosition="60" endLine="15" endPosition="134" />
     <nodeInfo nodeId="974579920306753663" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="A#()V" fileName="A.java" startLine="10" startPosition="16" endLine="12" endPosition="3" />
