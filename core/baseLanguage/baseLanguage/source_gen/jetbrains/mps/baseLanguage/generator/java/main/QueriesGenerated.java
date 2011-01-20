@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
+import jetbrains.mps.baseLanguage.textGen.LastStatementUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -34,6 +36,20 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1201386765715(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "operation", true)), "jetbrains.mps.baseLanguage.structure.PropertyReference");
+  }
+
+  public static boolean baseMappingRule_Condition_1566704013439143567(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(_context.getNode())) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList"))) {
+      return false;
+    }
+    SNode methodLike = SNodeOperations.getAncestor(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
+    if (!(IMethodLike_Behavior.call_getLastStatement_1239354409446(methodLike) == _context.getNode())) {
+      return false;
+    }
+    if (!(LastStatementUtil.canMakeReturnStatement(_context.getNode()))) {
+      return false;
+    }
+    return true;
   }
 
   public static Object propertyMacro_GetPropertyValue_1224072736283(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -92,6 +108,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1202008840753(final IOperationContext operationContext, final IfMacroContext _context) {
     return Property_Behavior.call_hasSetter_1213877383224(_context.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1566704013439215978(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 
   public static SNode sourceNodeQuery_1224072736270(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
