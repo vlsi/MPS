@@ -6,17 +6,21 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.diff.changes.ChangeSet;
 import java.util.Map;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.changes.ChangeSetBuilder;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.SNodeId;
-import java.util.List;
-import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -24,7 +28,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.CopyUtil;
@@ -37,8 +40,10 @@ public class MergeContext {
   private SModel myResultModel;
   private ChangeSet myMineChangeSet;
   private ChangeSet myRepositoryChangeSet;
-  private Map<ModelChange, ModelChange> myConflictingChanges = MapSequence.fromMap(new HashMap<ModelChange, ModelChange>());
-  private Map<ModelChange, ModelChange> mySymmetricChanges = MapSequence.fromMap(new HashMap<ModelChange, ModelChange>());
+  private Map<ModelChange, List<ModelChange>> myConflictingChanges = MapSequence.fromMap(new HashMap<ModelChange, List<ModelChange>>());
+  private Map<ModelChange, List<ModelChange>> mySymmetricChanges = MapSequence.fromMap(new HashMap<ModelChange, List<ModelChange>>());
+  private Set<ModelChange> myAppliedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
+  private Set<ModelChange> myExcludedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
 
   public MergeContext(final SModel base, final SModel mine, final SModel repository) {
     myBaseModel = base;
@@ -52,25 +57,36 @@ public class MergeContext {
     });
   }
 
-  private void addConflict(ModelChange ch1, ModelChange ch2) {
-    assert ch1.getChangeSet() != ch2.getChangeSet();
-    MapSequence.fromMap(myConflictingChanges).put(ch1, ch2);
-    MapSequence.fromMap(myConflictingChanges).put(ch2, ch1);
+  private void addConflict(ModelChange a, ModelChange b) {
+    addChangeLink(myConflictingChanges, a, b);
   }
 
-  private void addSymmetric(ModelChange ch1, ModelChange ch2) {
-    assert ch1.getChangeSet() != ch2.getChangeSet();
-    MapSequence.fromMap(mySymmetricChanges).put(ch1, ch2);
-    MapSequence.fromMap(mySymmetricChanges).put(ch2, ch1);
+  private void addSymmetric(ModelChange a, ModelChange b) {
+    addChangeLink(mySymmetricChanges, a, b);
   }
 
-  private void collectGroupChangesWithOthersConflicts(Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> arrangedChanges, ChangeSet thisChangeSet, ChangeSet otherChangeSet) {
+  private Map<SNodeId, DeleteRootChange> arrangeDeleteRootChanges(ChangeSet changeSet) {
     final Map<SNodeId, DeleteRootChange> deleteRootChanges = MapSequence.fromMap(new HashMap<SNodeId, DeleteRootChange>());
-    Sequence.fromIterable(thisChangeSet.getModelChanges(DeleteRootChange.class)).visitAll(new IVisitor<DeleteRootChange>() {
+    Sequence.fromIterable(changeSet.getModelChanges(DeleteRootChange.class)).visitAll(new IVisitor<DeleteRootChange>() {
       public void visit(DeleteRootChange d) {
         MapSequence.fromMap(deleteRootChanges).put(d.getNodeId(), d);
       }
     });
+    return deleteRootChanges;
+  }
+
+  private Map<SNodeId, AddRootChange> arrangeAddRootChanges(ChangeSet changeSet) {
+    final Map<SNodeId, AddRootChange> addRootChanges = MapSequence.fromMap(new HashMap<SNodeId, AddRootChange>());
+    Sequence.fromIterable(changeSet.getModelChanges(AddRootChange.class)).visitAll(new IVisitor<AddRootChange>() {
+      public void visit(AddRootChange a) {
+        MapSequence.fromMap(addRootChanges).put(a.getNodeId(), a);
+      }
+    });
+    return addRootChanges;
+  }
+
+  private void collectGroupChangesWithOthersConflicts(Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> arrangedChanges, ChangeSet thisChangeSet, ChangeSet otherChangeSet) {
+    Map<SNodeId, DeleteRootChange> deleteRootChanges = arrangeDeleteRootChanges(thisChangeSet);
     for (NodeChange change : Sequence.fromIterable(otherChangeSet.getModelChanges(NodeChange.class))) {
       if (!(MapSequence.fromMap(myConflictingChanges).containsKey(change))) {
         SNode node = myBaseModel.getNodeById(change.getAffectedNodeId());
@@ -144,6 +160,22 @@ public class MergeContext {
     }
   }
 
+  private void collectSymmetricRootDeletes() {
+    Map<SNodeId, DeleteRootChange> mineDeleteRootChanges = arrangeDeleteRootChanges(myMineChangeSet);
+    Map<SNodeId, DeleteRootChange> repositoryDeleteRootChanges = arrangeDeleteRootChanges(myRepositoryChangeSet);
+    for (SNodeId deletedRoot : SetSequence.fromSet(MapSequence.fromMap(mineDeleteRootChanges).keySet()).intersect(SetSequence.fromSet(MapSequence.fromMap(repositoryDeleteRootChanges).keySet()))) {
+      addSymmetric(MapSequence.fromMap(mineDeleteRootChanges).get(deletedRoot), MapSequence.fromMap(repositoryDeleteRootChanges).get(deletedRoot));
+    }
+  }
+
+  private void collectConflictingRootAdds() {
+    Map<SNodeId, AddRootChange> mineAddRootChanges = arrangeAddRootChanges(myMineChangeSet);
+    Map<SNodeId, AddRootChange> repositoryAddRootChanges = arrangeAddRootChanges(myRepositoryChangeSet);
+    for (SNodeId addedRoot : SetSequence.fromSet(MapSequence.fromMap(mineAddRootChanges).keySet()).intersect(SetSequence.fromSet(MapSequence.fromMap(repositoryAddRootChanges).keySet()))) {
+      addConflict(MapSequence.fromMap(mineAddRootChanges).get(addedRoot), MapSequence.fromMap(repositoryAddRootChanges).get(addedRoot));
+    }
+  }
+
   private void collectConflicts() {
     Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> mineGroupChanges = arrangeNodeGroupChanges(myMineChangeSet);
     Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> repositoryGroupChanges = arrangeNodeGroupChanges(myRepositoryChangeSet);
@@ -167,6 +199,49 @@ public class MergeContext {
 
     collectPropertyConflicts();
     collectReferenceConflicts();
+
+    collectSymmetricRootDeletes();
+    collectConflictingRootAdds();
+  }
+
+  public void applyAllNonConflictingChanges() {
+    for (ModelChange change : ListSequence.fromList(myMineChangeSet.getModelChanges()).concat(ListSequence.fromList(myRepositoryChangeSet.getModelChanges()))) {
+      if (!(isChangeResolved(change)) && Sequence.fromIterable(getConflictedWith(change)).isEmpty()) {
+        applyChange(change);
+      }
+    }
+  }
+
+  private Iterable<ModelChange> getConflictedWith(ModelChange change) {
+    return ListSequence.fromList(MapSequence.fromMap(myConflictingChanges).get(change)).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange other) {
+        return !(SetSequence.fromSet(myExcludedChanges).contains(other));
+      }
+    });
+  }
+
+  private boolean isChangeResolved(ModelChange change) {
+    return SetSequence.fromSet(myExcludedChanges).contains(change) || SetSequence.fromSet(myAppliedChanges).contains(change);
+  }
+
+  public void applyChange(ModelChange change) {
+    assert !(isChangeResolved(change));
+    change.apply(myResultModel);
+    SetSequence.fromSet(myAppliedChanges).addElement(change);
+    for (ModelChange conflicted : Sequence.fromIterable(getConflictedWith(change))) {
+      assert !(SetSequence.fromSet(myAppliedChanges).contains(conflicted));
+      excludeChange(conflicted);
+    }
+  }
+
+  public void excludeChange(ModelChange change) {
+    assert !(isChangeResolved(change));
+    SetSequence.fromSet(myExcludedChanges).addElement(change);
+    for (ModelChange conflicted : Sequence.fromIterable(getConflictedWith(change))) {
+      if (!(isChangeResolved(conflicted)) && Sequence.fromIterable(getConflictedWith(conflicted)).isEmpty()) {
+        applyChange(conflicted);
+      }
+    }
   }
 
   public void rebuildAll() {
@@ -174,6 +249,9 @@ public class MergeContext {
       public void run() {
         collectConflicts();
         myResultModel = CopyUtil.copyModel(myBaseModel);
+        myResultModel.setLoading(true);
+        applyAllNonConflictingChanges();
+        myResultModel.setLoading(false);
       }
     });
   }
@@ -188,5 +266,18 @@ public class MergeContext {
       ListSequence.fromList(MapSequence.fromMap(nodeRoleToGroupChanges).get(nodeRole)).addElement(change);
     }
     return nodeRoleToGroupChanges;
+  }
+
+  private static void addOneWayChangeLink(Map<ModelChange, List<ModelChange>> map, ModelChange a, ModelChange b) {
+    if (MapSequence.fromMap(map).get(a) == null) {
+      MapSequence.fromMap(map).put(a, ListSequence.fromList(new ArrayList<ModelChange>()));
+    }
+    ListSequence.fromList(MapSequence.fromMap(map).get(a)).addElement(b);
+  }
+
+  private static void addChangeLink(Map<ModelChange, List<ModelChange>> map, ModelChange a, ModelChange b) {
+    assert a.getChangeSet() != b.getChangeSet();
+    addOneWayChangeLink(map, a, b);
+    addOneWayChangeLink(map, b, a);
   }
 }
