@@ -52,19 +52,19 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
     return Arrays.asList(ConceptAndSuperConceptsCache.getInstance(myTopConcept).getConcepts());
   }
 
-  public PropertyDeclaration getPropertyDeclarationByName(final String name) {
+  public SNode getPropertyDeclarationByName(final String name) {
     if (myTopConcept == null) return null;
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<PropertyDeclaration>() {
-      public PropertyDeclaration compute() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
+      public SNode compute() {
         return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getPropertyDeclarationByName(name);
       }
     });
   }
 
-  public List<PropertyDeclaration> getPropertyDeclarations() {
+  public List<SNode> getPropertyDeclarations() {
     if (myTopConcept == null) return Collections.emptyList();
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<PropertyDeclaration>>() {
-      public List<PropertyDeclaration> compute() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<SNode>>() {
+      public List<SNode> compute() {
         return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getPropertyDeclarations();
       }
     });

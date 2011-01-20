@@ -8,7 +8,7 @@
   <unitInfo fileName="IGeneratorParameter_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_Behavior" />
   <unitInfo fileName="CreateRootRule_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.CreateRootRule_Behavior" />
   <unitInfo fileName="PatternReduction_MappingRule_Behavior.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule_Behavior" />
-  <unitInfo fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="37" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_Behavior$QuotationClass_90g9ox_a0f0b" />
+  <unitInfo fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="35" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_Behavior$QuotationClass_90g9ox_a0f0b" />
   <unitInfo fileName="TemplateArgumentQuery_Behavior.java" startLine="40" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentQuery_Behavior$QuotationClass_8mmc34_a0e0b" />
   <unitInfo fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="39" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ReferenceMacro_GetReferent_Behavior$QuotationClass_mxwyp3_a0a7a1" />
   <unitInfo fileName="TemplateArgumentPropertyPatternRefExpression_Behavior.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentPropertyPatternRefExpression_Behavior" />
@@ -18,7 +18,7 @@
   <unitInfo fileName="ReferenceMacro_GetReferent_Behavior.java" startLine="57" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ReferenceMacro_GetReferent_Behavior$QuotationClass_mxwyp3_a0a0j0b" />
   <unitInfo fileName="TemplateDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_Behavior" />
   <unitInfo fileName="BaseMappingRule_Behavior.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.BaseMappingRule_Behavior" />
-  <unitInfo fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="18" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_Behavior" />
+  <unitInfo fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_Behavior" />
   <unitInfo fileName="TemplateSwitch_Behavior.java" startLine="14" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateSwitch_Behavior" />
   <unitInfo fileName="TemplateCallMacro_Behavior.java" startLine="27" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_Behavior$Pattern_4ckpni_a0a0a0a1" />
   <unitInfo fileName="SwitchMacro_Behavior.java" startLine="27" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.SwitchMacro_Behavior$Pattern_i6m7ss_a0a0a0a1" />
@@ -273,23 +273,23 @@
     <scopeInfo nodeId="1213877426760" fileName="CopySrcNodeMacro_Behavior.java" startLine="15" startPosition="91" endLine="24" endPosition="16" />
   </root>
   <root nodeId="1213877472999">
-    <nodeInfo nodeId="1213877473002" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="134" />
-    <nodeInfo nodeId="1213877473010" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="23" startPosition="134" endLine="24" endPosition="68" />
-    <nodeInfo nodeId="1213877473016" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="24" startPosition="68" endLine="25" endPosition="113" />
-    <nodeInfo nodeId="1213877473024" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="25" startPosition="113" endLine="26" endPosition="205" />
-    <nodeInfo nodeId="1213877473036" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="27" startPosition="28" endLine="28" endPosition="127" />
-    <nodeInfo nodeId="1213877473044" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="28" startPosition="127" endLine="29" endPosition="78" />
-    <nodeInfo nodeId="1213877473052" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="30" startPosition="29" endLine="31" endPosition="92" />
-    <nodeInfo nodeId="1213877473062" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="98" />
-    <nodeInfo nodeId="1213877473050" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="29" startPosition="78" endLine="32" endPosition="7" />
-    <nodeInfo nodeId="1213877473034" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="26" startPosition="205" endLine="33" endPosition="5" />
-    <scopeInfo nodeId="1213877473067" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
-    <scopeInfo nodeId="1213877473051" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="30" startPosition="29" endLine="31" endPosition="92" />
-    <scopeInfo nodeId="1213877473035" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="27" startPosition="28" endLine="32" endPosition="7">
+    <nodeInfo nodeId="1213877473002" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="20" startPosition="83" endLine="21" endPosition="134" />
+    <nodeInfo nodeId="1213877473010" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="21" startPosition="134" endLine="22" endPosition="68" />
+    <nodeInfo nodeId="1213877473016" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="22" startPosition="68" endLine="23" endPosition="113" />
+    <nodeInfo nodeId="1213877473024" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="23" startPosition="113" endLine="24" endPosition="132" />
+    <nodeInfo nodeId="1213877473036" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="25" startPosition="28" endLine="26" endPosition="117" />
+    <nodeInfo nodeId="1213877473044" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="26" startPosition="117" endLine="27" endPosition="78" />
+    <nodeInfo nodeId="1213877473052" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="28" startPosition="29" endLine="29" endPosition="92" />
+    <nodeInfo nodeId="1213877473062" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="31" startPosition="5" endLine="32" endPosition="98" />
+    <nodeInfo nodeId="1213877473050" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="27" startPosition="78" endLine="30" endPosition="7" />
+    <nodeInfo nodeId="1213877473034" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="24" startPosition="132" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="1213877473067" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="1213877473051" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="28" startPosition="29" endLine="29" endPosition="92" />
+    <scopeInfo nodeId="1213877473035" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="25" startPosition="28" endLine="30" endPosition="7">
       <varInfo nodeId="1213877473045" varName="dataType" />
       <varInfo nodeId="1213877473037" varName="property" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877473001" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="22" startPosition="83" endLine="34" endPosition="98">
+    <scopeInfo nodeId="1213877473001" fileName="PropertyMacro_GetPropertyValue_Behavior.java" startLine="20" startPosition="83" endLine="32" endPosition="98">
       <varInfo nodeId="1213877473017" varName="propertyName" />
       <varInfo nodeId="1213877473011" varName="attributedNode" />
       <varInfo nodeId="1213877473003" varName="propertyMacro" />

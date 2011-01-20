@@ -101,23 +101,22 @@ public class SModelSearchUtil {
   }
 
 
-  public static List<PropertyDeclaration> getPropertyDeclarations(AbstractConceptDeclaration concept) {
+  public static List<SNode> getPropertyDeclarations(SNode concept) {
     return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarations();
   }
 
   @Nullable
-  public static PropertyDeclaration findPropertyDeclaration(AbstractConceptDeclaration concept, String propertyName) {
+  public static SNode findPropertyDeclaration(SNode concept, String propertyName) {
     if (concept == null || propertyName == null) return null;
     return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarationByName(propertyName);
   }
-
 
   public static List<ConceptPropertyDeclaration> getConceptPropertyDeclarations(AbstractConceptDeclaration concept) {
     List<ConceptPropertyDeclaration> result = new ArrayList<ConceptPropertyDeclaration>();
     List<SNode> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
     for (SNode c : concepts) {
       // TODO get rid of adapter
-      result.addAll(((AbstractConceptDeclaration)c.getAdapter()).getConceptPropertyDeclarations());
+      result.addAll(((AbstractConceptDeclaration) c.getAdapter()).getConceptPropertyDeclarations());
     }
     return result;
   }

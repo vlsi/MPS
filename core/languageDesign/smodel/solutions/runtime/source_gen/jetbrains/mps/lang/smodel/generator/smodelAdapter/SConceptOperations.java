@@ -93,6 +93,7 @@ public final class SConceptOperations {
     }
     List<SNode> result = SModelUtil_new.getConceptAndSuperConcepts(conceptDeclarationNode);
     if (!(inclusion)) {
+      result = new ArrayList<SNode>(result);
       result.remove(conceptDeclarationNode);
     }
     return result;

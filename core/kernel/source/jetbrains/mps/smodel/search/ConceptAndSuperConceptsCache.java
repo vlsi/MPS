@@ -23,7 +23,10 @@ import jetbrains.mps.cache.KeyProducer;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -87,12 +90,12 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
   }
 
-  public PropertyDeclaration getPropertyDeclarationByName(String name) {
+  public SNode getPropertyDeclarationByName(String name) {
     PropertyDeclarationsDataSet dataSet = (PropertyDeclarationsDataSet) getDataSet(PropertyDeclarationsDataSet.ID, PROPDECL_CACHE_CREATOR);
     return dataSet.getPropertyDeclarationByName(name);
   }
 
-  public List<PropertyDeclaration> getPropertyDeclarations() {
+  public List<SNode> getPropertyDeclarations() {
     PropertyDeclarationsDataSet dataSet = (PropertyDeclarationsDataSet) getDataSet(PropertyDeclarationsDataSet.ID, PROPDECL_CACHE_CREATOR);
     return dataSet.getPropertyDeclarations();
   }
@@ -196,14 +199,12 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       for (SNode concept : myConcepts) {
         myDependsOnNodes.add(concept);
         if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(concept)) {
-          // TODO
-          for (InterfaceConceptReference i : ((InterfaceConceptDeclaration) concept.getAdapter()).getExtendses()) {
-            myDependsOnNodes.add(i.getNode());
+          for (SNode n : SNodeUtil.getInterfaceConceptDeclaration_ExtendsReferenceNodes(concept)) {
+            myDependsOnNodes.add(n);
           }
         } else if (SNodeUtil.isInstanceOfConceptDeclaration(concept)) {
-          // TODO
-          for (InterfaceConceptReference i :  ((ConceptDeclaration) concept.getAdapter()).getImplementses()) {
-            myDependsOnNodes.add(i.getNode());
+          for (SNode n : SNodeUtil.getConceptDeclaration_ImplementsReferenceNodes(concept)) {
+            myDependsOnNodes.add(n);
           }
         }
       }
@@ -248,8 +249,8 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
   private static class PropertyDeclarationsDataSet extends DataSet {
     public static final String ID = "PROPERTY_DECLARATIONS_DATASET";
-    private Map<String, PropertyDeclaration> myPropertyByName;
-    private List<PropertyDeclaration> myProperties;
+    private Map<String, SNode> myPropertyByName;
+    private List<SNode> myProperties;
     private Set<SNode> myDependsOnNodes;
 
     public PropertyDeclarationsDataSet(AbstractCache ownerCache) {
@@ -260,24 +261,24 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       return myDependsOnNodes;
     }
 
-    public PropertyDeclaration getPropertyDeclarationByName(String name) {
+    public SNode getPropertyDeclarationByName(String name) {
       return myPropertyByName.get(name);
     }
 
-    public List<PropertyDeclaration> getPropertyDeclarations() {
-      return new ArrayList<PropertyDeclaration>(myProperties);
+    public List<SNode> getPropertyDeclarations() {
+      return new ArrayList<SNode>(myProperties);
     }
 
     protected void init() {
-      List<PropertyDeclaration> allProperties = new ArrayList<PropertyDeclaration>();
-      myProperties = new ArrayList<PropertyDeclaration>();
-      myPropertyByName = new HashMap<String, PropertyDeclaration>();
+      List<SNode> allProperties = new ArrayList<SNode>();
+      myProperties = new ArrayList<SNode>();
+      myPropertyByName = new HashMap<String, SNode>();
 
       SNode[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
       // iterate bottom-up
       for (int i = concepts.length - 1; i >= 0; i--) {
-        List<PropertyDeclaration> props = ((AbstractConceptDeclaration)concepts[i].getAdapter()).getPropertyDeclarations();
-        for (PropertyDeclaration prop : props) {
+        Iterable<SNode> props = SNodeUtil.getConcept_PropertyDeclarations(concepts[i]);
+        for (SNode prop : props) {
           allProperties.add(prop);
           String name = prop.getName();
           if (name == null) continue;
@@ -295,8 +296,8 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       for (SNode concept : concepts) {
         myDependsOnNodes.add(concept);
       }
-      for (PropertyDeclaration prop : allProperties) {
-        myDependsOnNodes.add(prop.getNode());
+      for (SNode prop : allProperties) {
+        myDependsOnNodes.add(prop);
       }
     }
 
@@ -380,7 +381,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       SNode[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
       FlattenIterable<LinkDeclaration> allLinks = new FlattenIterable<LinkDeclaration>(new ArrayList<Iterable<LinkDeclaration>>(concepts.length));
       for (SNode concept : concepts) {
-        List<LinkDeclaration> list = ((AbstractConceptDeclaration)concept.getAdapter()).getLinkDeclarations();
+        List<LinkDeclaration> list = ((AbstractConceptDeclaration) concept.getAdapter()).getLinkDeclarations();
         allLinks.add(list);
         for (LinkDeclaration link : list) {
           String role1 = link.getRole();
@@ -494,7 +495,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       SNode[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
       // iterate up-down
       for (SNode concept : concepts) {
-        List<ConceptProperty> conceptProperties = ((AbstractConceptDeclaration)concept.getAdapter()).getConceptProperties();
+        List<ConceptProperty> conceptProperties = ((AbstractConceptDeclaration) concept.getAdapter()).getConceptProperties();
         for (ConceptProperty conceptProperty : conceptProperties) {
           allConceptProperties.add(conceptProperty);
           ConceptPropertyDeclaration conceptPropertyDeclaration = conceptProperty.getConceptPropertyDeclaration();

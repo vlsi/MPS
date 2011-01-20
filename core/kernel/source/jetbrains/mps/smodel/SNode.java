@@ -1455,14 +1455,11 @@ public final class SNode {
   }
 
   public PropertyDeclaration getPropertyDeclaration(String propertyName) {
-    SNode sourceNode = this;
-    AbstractConceptDeclaration typeDeclaration = sourceNode.getConceptDeclarationAdapter();
-    return SModelSearchUtil.findPropertyDeclaration(typeDeclaration, propertyName);
+    return (PropertyDeclaration) BaseAdapter.fromNode(SModelSearchUtil.findPropertyDeclaration(getConceptDeclarationNode(), propertyName));
   }
 
   public LinkDeclaration getLinkDeclaration(String role) {
-    AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
-    return SModelSearchUtil.findLinkDeclaration(conceptDeclaration, role);
+    return (LinkDeclaration) BaseAdapter.fromNode(SModelSearchUtil.findLinkDeclaration(getConceptDeclarationNode(), role));
   }
 
   public SNode findParent(Condition<SNode> condition) {
