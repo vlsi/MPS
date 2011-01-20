@@ -130,7 +130,7 @@ public class MakeActionImpl {
     };
 
     final Wrappers._T<ProgressIndicator> pind = new Wrappers._T<ProgressIndicator>(null);
-    IMonitors.Stub mons = new IMonitors.Stub(cmon, jmon) {
+    final IMonitors mons = new IMonitors.Stub(cmon, jmon) {
       @Override
       public void runJobWithMonitor(final _FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
         IdeEventQueue.getInstance().flushQueue();
@@ -152,7 +152,7 @@ public class MakeActionImpl {
         return pind.value;
       }
     };
-    _FunctionTypes._void_P1_E0<? super IParametersPool> init = new _FunctionTypes._void_P1_E0<IParametersPool>() {
+    final _FunctionTypes._void_P1_E0<? super IParametersPool> init = new _FunctionTypes._void_P1_E0<IParametersPool>() {
       public void invoke(IParametersPool pool) {
         Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.parameters(new ITarget.Name("checkParameters"), Object.class);
         vars._0(MakeActionImpl.this.context.getProject());
@@ -161,9 +161,16 @@ public class MakeActionImpl {
         vars._3(pindGet);
       }
     };
+    return new IScript.StubBoss(scr) {
+      @Override
+      public void init(IParametersPool ppool) {
+        init.invoke(ppool);
+      }
 
-    scr.setInit(init);
-    scr.setMonitors(mons);
-    return scr;
+      @Override
+      public IMonitors monitors() {
+        return mons;
+      }
+    };
   }
 }

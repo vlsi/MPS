@@ -15,7 +15,6 @@ import java.util.List;
 import jetbrains.mps.internal.make.runtime.script.ValidationError;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.facet.FacetRegistry;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.make.runtime.script.InvalidScript;
@@ -33,8 +32,6 @@ public class ScriptBuilder {
   private Set<ITarget.Name> requestedTargets = SetSequence.fromSet(new HashSet<ITarget.Name>());
   private ITarget.Name defaultTarget;
   private List<ValidationError> errors = ListSequence.fromList(new ArrayList<ValidationError>());
-  private _FunctionTypes._void_P1_E0<? super IParametersPool> init;
-  private IMonitors mons;
 
   public ScriptBuilder() {
   }
@@ -77,16 +74,6 @@ public class ScriptBuilder {
   public ScriptBuilder withTarget(ITarget.Name targetName) {
     SetSequence.fromSet(requestedTargets).addElement(targetName);
     this.defaultTarget = targetName;
-    return this;
-  }
-
-  public ScriptBuilder withInit(_FunctionTypes._void_P1_E0<? super IParametersPool> init) {
-    this.init = init;
-    return this;
-  }
-
-  public ScriptBuilder withMonitors(IMonitors mons) {
-    this.mons = mons;
     return this;
   }
 

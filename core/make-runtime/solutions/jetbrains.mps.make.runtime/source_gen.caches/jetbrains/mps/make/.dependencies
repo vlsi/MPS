@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.make.IMakeService" file="IMakeService.java">
+    <classNode dependClassName="jetbrains.mps.make.IResourceProvider" />
     <classNode dependClassName="jetbrains.mps.make.script.IScript" />
-    <classNode dependClassName="jetbrains.mps.make.script.ScriptBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.make.IResourceProvider" file="IResourceProvider.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.IScriptProvider" file="IScriptProvider.java">
+    <classNode dependClassName="jetbrains.mps.make.script.IScript" />
   </dependency>
   <dependency className="jetbrains.mps.make.WorkflowEngine" file="WorkflowEngine.java">
     <classNode dependClassName="jetbrains.mps.logging.Logger" />

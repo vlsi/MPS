@@ -5,7 +5,7 @@ package jetbrains.mps.make.facet.plugin;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.script.IScript;
-import jetbrains.mps.make.script.ScriptBuilder;
+import jetbrains.mps.make.IResourceProvider;
 import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IProgress;
@@ -37,7 +37,10 @@ public class WorkbenchMakeService implements IMakeService {
     this.cleanMake = cleanMake;
   }
 
-  public IScript completeScript(ScriptBuilder builder) {
+  public void make(IScript script, IResourceProvider resourceProvider) {
+  }
+
+  private IScript completeScript(IScript scr) {
     final ProgressIndicatorProgressStrategy progStrat = new ProgressIndicatorProgressStrategy();
     final IJobMonitor jmon = new IJobMonitor() {
       public boolean stopRequested() {
@@ -62,7 +65,7 @@ public class WorkbenchMakeService implements IMakeService {
     };
 
     final Wrappers._T<ProgressIndicator> pind = new Wrappers._T<ProgressIndicator>(null);
-    IMonitors.Stub mons = new IMonitors.Stub(cmon, jmon) {
+    final IMonitors mons = new IMonitors.Stub(cmon, jmon) {
       @Override
       public void runJobWithMonitor(final _FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
         IdeEventQueue.getInstance().flushQueue();
@@ -84,7 +87,7 @@ public class WorkbenchMakeService implements IMakeService {
         return pind.value;
       }
     };
-    _FunctionTypes._void_P1_E0<? super IParametersPool> init = new _FunctionTypes._void_P1_E0<IParametersPool>() {
+    final _FunctionTypes._void_P1_E0<? super IParametersPool> init = new _FunctionTypes._void_P1_E0<IParametersPool>() {
       public void invoke(IParametersPool pool) {
         Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.parameters(new ITarget.Name("checkParameters"), Object.class);
         vars._0(WorkbenchMakeService.this.context.getProject());
@@ -93,10 +96,16 @@ public class WorkbenchMakeService implements IMakeService {
         vars._3(pindGet);
       }
     };
+    return new IScript.StubBoss(scr) {
+      @Override
+      public void init(IParametersPool ppool) {
+        init.invoke(ppool);
+      }
 
-    return builder.withInit(init).withMonitors(mons).toScript();
-  }
-
-  public void make(IScript script) {
+      @Override
+      public IMonitors monitors() {
+        return mons;
+      }
+    };
   }
 }
