@@ -1169,7 +1169,8 @@ public class EquationManager {
         }
         ISlicer slicer = myTypeCheckingContext.getCurrentSlicer();
         IWrapper otherType = myTypeChecker.getSubtypingManager().leastCommonSupertype(expandedSubtypes, isWeak, EquationManager.this);
-        slicer.beforeInequationsSolvedForType(type.getNode(), otherType.getNode(), new ArrayList<EquationInfo>(errorInfoMap.values()));
+        SNode node = otherType == null ? null : otherType.getNode();
+        slicer.beforeInequationsSolvedForType(type.getNode(), node, new ArrayList<EquationInfo>(errorInfoMap.values()));
         addEquation(type, otherType,
           errorInfo);
       }

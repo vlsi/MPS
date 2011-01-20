@@ -25,6 +25,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.util.*;
+import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
@@ -579,6 +580,7 @@ System.out.println("alltypes = " + allTypes);*/
         wrappers.add(NodeWrapper.fromNode(child, equationManager));
       }
       IWrapper lcs = leastCommonSupertype(wrappers, isWeak, equationManager);
+      if (lcs == null) return null;
       SNode result = coerceSubtyping(lcs.getNode(), pattern, isWeak, equationManager);
       return result;
     }
