@@ -68,96 +68,126 @@ public class LatticeUtil {
     }
   }
 
-  public static IWrapper join(IWrapper wrapper1, IWrapper wrapper2) {
+  private static SNode join(SNode node1, SNode node2) {
     SNode joinType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
-    if (SNodeOperations.isInstanceOf(((SNode) wrapper1.getNode()), "jetbrains.mps.lang.typesystem.structure.JoinType")) {
-      SNode joinWrapper1 = (SNode) wrapper1.getNode();
+    if (SNodeOperations.isInstanceOf(((SNode) node1), "jetbrains.mps.lang.typesystem.structure.JoinType")) {
+      SNode joinWrapper1 = (SNode) node1;
       for (SNode bc : SLinkOperations.getTargets(joinWrapper1, "argument", true)) {
         ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
       }
-      if (SNodeOperations.isInstanceOf(((SNode) wrapper2.getNode()), "jetbrains.mps.lang.typesystem.structure.JoinType")) {
-        SNode joinWrapper2 = (SNode) wrapper2.getNode();
+      if (SNodeOperations.isInstanceOf(((SNode) node2), "jetbrains.mps.lang.typesystem.structure.JoinType")) {
+        SNode joinWrapper2 = (SNode) node2;
         for (SNode bc : SLinkOperations.getTargets(joinWrapper2, "argument", true)) {
           ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
         }
       } else {
-        ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(wrapper2.getNode()));
+        ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(node2));
       }
     } else
-    if (SNodeOperations.isInstanceOf(((SNode) wrapper2.getNode()), "jetbrains.mps.lang.typesystem.structure.JoinType")) {
-      SNode joinWrapper2 = (SNode) wrapper2.getNode();
-      ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(wrapper1.getNode()));
+    if (SNodeOperations.isInstanceOf(((SNode) node2), "jetbrains.mps.lang.typesystem.structure.JoinType")) {
+      SNode joinWrapper2 = (SNode) node2;
+      ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(node1));
       for (SNode bc : SLinkOperations.getTargets(joinWrapper2, "argument", true)) {
         ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
       }
     } else {
-      ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(wrapper1.getNode()));
-      ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(wrapper2.getNode()));
+      ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(node1));
+      ListSequence.fromList(SLinkOperations.getTargets(joinType, "argument", true)).addElement(HUtil.copyIfNecessary(node2));
     }
-    return NodeWrapper.createWrapperFromNode(joinType, null);
+    return joinType;
   }
 
-  public static IWrapper meet(IWrapper wrapper1, IWrapper wrapper2) {
+  private static SNode meet(SNode node1, SNode node2) {
     SNode meetType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.MeetType", null);
-    if (SNodeOperations.isInstanceOf(((SNode) wrapper1.getNode()), "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      SNode meetWrapper1 = (SNode) wrapper1.getNode();
+    if (SNodeOperations.isInstanceOf(((SNode) node1), "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+      SNode meetWrapper1 = (SNode) node1;
       for (SNode bc : SLinkOperations.getTargets(meetWrapper1, "argument", true)) {
         ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
       }
-      if (SNodeOperations.isInstanceOf(((SNode) wrapper2.getNode()), "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-        SNode meetWrapper2 = (SNode) wrapper2.getNode();
+      if (SNodeOperations.isInstanceOf(((SNode) node2), "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+        SNode meetWrapper2 = (SNode) node2;
         for (SNode bc : SLinkOperations.getTargets(meetWrapper2, "argument", true)) {
           ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
         }
       } else {
-        ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(wrapper2.getNode()));
+        ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(node2));
       }
     } else
-    if (SNodeOperations.isInstanceOf(((SNode) wrapper2.getNode()), "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      SNode meetWrapper2 = (SNode) wrapper2.getNode();
-      ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(wrapper1.getNode()));
+    if (SNodeOperations.isInstanceOf(((SNode) node2), "jetbrains.mps.lang.typesystem.structure.MeetType")) {
+      SNode meetWrapper2 = (SNode) node2;
+      ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(node1));
       for (SNode bc : SLinkOperations.getTargets(meetWrapper2, "argument", true)) {
         ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(bc));
       }
     } else {
-      ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(wrapper1.getNode()));
-      ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(wrapper2.getNode()));
+      ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(node1));
+      ListSequence.fromList(SLinkOperations.getTargets(meetType, "argument", true)).addElement(HUtil.copyIfNecessary(node2));
     }
-    return NodeWrapper.createWrapperFromNode(meetType, null);
+    return meetType;
+  }
+
+  public static SNode joinNodes(Set<SNode> nodes) {
+    if (nodes.isEmpty()) {
+      return null;
+    }
+    if (nodes.size() == 1) {
+      return nodes.iterator().next();
+    }
+    Iterator<SNode> iterator = nodes.iterator();
+    SNode node1 = iterator.next();
+    SNode node2 = iterator.next();
+    Set<SNode> result = new HashSet<SNode>(nodes);
+    result.remove(node1);
+    result.remove(node2);
+    result.add(join(node1, node2));
+    return joinNodes(result);
+  }
+
+  public static SNode meetNodes(Set<SNode> nodes) {
+    if (nodes.isEmpty()) {
+      return null;
+    }
+    if (nodes.size() == 1) {
+      return nodes.iterator().next();
+    }
+    Iterator<SNode> iterator = nodes.iterator();
+    SNode node1 = iterator.next();
+    SNode node2 = iterator.next();
+    Set<SNode> result = new HashSet<SNode>(nodes);
+    result.remove(node1);
+    result.remove(node2);
+    result.add(meet(node1, node2));
+    return meetNodes(result);
   }
 
   public static IWrapper join(Set<IWrapper> wrappers) {
-    if (wrappers.isEmpty()) {
+    Set<SNode> nodes = new HashSet<SNode>();
+    for (IWrapper wrapper : wrappers) {
+      SNode wrapperNode = wrapper.getNode();
+      if (wrapperNode != null) {
+        nodes.add(wrapperNode);
+      }
+    }
+    SNode join = joinNodes(nodes);
+    if (join == null) {
       return null;
     }
-    if (wrappers.size() == 1) {
-      return wrappers.iterator().next();
-    }
-    Iterator<IWrapper> iterator = wrappers.iterator();
-    IWrapper wrapper1 = iterator.next();
-    IWrapper wrapper2 = iterator.next();
-    Set<IWrapper> result = new HashSet<IWrapper>(wrappers);
-    result.remove(wrapper1);
-    result.remove(wrapper2);
-    result.add(join(wrapper1, wrapper2));
-    return join(result);
+    return NodeWrapper.createWrapperFromNode(join, null);
   }
 
   public static IWrapper meet(Set<IWrapper> wrappers) {
-    if (wrappers.isEmpty()) {
+    Set<SNode> nodes = new HashSet<SNode>();
+    for (IWrapper wrapper : wrappers) {
+      SNode wrapperNode = wrapper.getNode();
+      if (wrapperNode != null) {
+        nodes.add(wrapperNode);
+      }
+    }
+    SNode meet = meetNodes(nodes);
+    if (meet == null) {
       return null;
     }
-    if (wrappers.size() == 1) {
-      return wrappers.iterator().next();
-    }
-    Iterator<IWrapper> iterator = wrappers.iterator();
-    IWrapper wrapper1 = iterator.next();
-    IWrapper wrapper2 = iterator.next();
-    Set<IWrapper> result = new HashSet<IWrapper>(wrappers);
-    result.remove(wrapper1);
-    result.remove(wrapper2);
-    result.add(meet(wrapper1, wrapper2));
-    return meet(result);
+    return NodeWrapper.createWrapperFromNode(meet, null);
   }
 
   public static boolean isMeet(SNode node) {
