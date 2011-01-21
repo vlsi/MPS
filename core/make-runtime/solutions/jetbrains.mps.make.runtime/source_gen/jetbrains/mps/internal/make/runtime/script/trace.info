@@ -33,7 +33,7 @@
     <scopeInfo nodeId="1291978361072214439" fileName="CompositeResult.java" startLine="28" startPosition="32" endLine="33" endPosition="7" />
     <scopeInfo nodeId="1291978361072214467" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="output#()Ljava/lang/Iterable;" fileName="CompositeResult.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="1291978361072214436" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSucessful#()Z" fileName="CompositeResult.java" startLine="27" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="8057264969877337080" fileName="CompositeResult.java" startLine="29" startPosition="80" endLine="33" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.IWhereFilter$anonymous" />
+    <unitInfo nodeId="8057264969877337080" fileName="CompositeResult.java" startLine="29" startPosition="80" endLine="33" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.CompositeResult$1" />
     <unitInfo nodeId="1291978361072214390" fileName="CompositeResult.java" startLine="14" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.CompositeResult" />
   </root>
   <root nodeId="2798840071352747003">
@@ -792,12 +792,12 @@
     </scopeInfo>
     <unitInfo nodeId="6168415856807658650" fileName="TargetRange.java" startLine="43" startPosition="185" endLine="47" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.TargetRange$1" />
     <unitInfo nodeId="6168415856807658728" fileName="TargetRange.java" startLine="55" startPosition="107" endLine="59" endPosition="9" unitName="jetbrains.mps.internal.make.runtime.script.TargetRange$2" />
-    <unitInfo nodeId="6168415856807658796" fileName="TargetRange.java" startLine="77" startPosition="103" endLine="81" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.ISelector$anonymous" />
-    <unitInfo nodeId="5566937012378945006" fileName="TargetRange.java" startLine="88" startPosition="104" endLine="92" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.ISelector$anonymous" />
-    <unitInfo nodeId="1291978361072220633" fileName="TargetRange.java" startLine="99" startPosition="91" endLine="103" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.IWhereFilter$anonymous" />
-    <unitInfo nodeId="1291978361072220654" fileName="TargetRange.java" startLine="103" startPosition="27" endLine="107" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.ISelector$anonymous" />
-    <unitInfo nodeId="6168415856807658531" fileName="TargetRange.java" startLine="224" startPosition="88" endLine="228" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.script.IWhereFilter$anonymous" />
-    <unitInfo nodeId="6168415856807658556" fileName="TargetRange.java" startLine="233" startPosition="89" endLine="237" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.script.IWhereFilter$anonymous" />
+    <unitInfo nodeId="6168415856807658796" fileName="TargetRange.java" startLine="77" startPosition="103" endLine="81" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.TargetRange$3" />
+    <unitInfo nodeId="5566937012378945006" fileName="TargetRange.java" startLine="88" startPosition="104" endLine="92" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.TargetRange$4" />
+    <unitInfo nodeId="1291978361072220633" fileName="TargetRange.java" startLine="99" startPosition="91" endLine="103" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.TargetRange$5" />
+    <unitInfo nodeId="1291978361072220654" fileName="TargetRange.java" startLine="103" startPosition="27" endLine="107" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.TargetRange$6" />
+    <unitInfo nodeId="6168415856807658531" fileName="TargetRange.java" startLine="224" startPosition="88" endLine="228" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.script.TargetRange$1" />
+    <unitInfo nodeId="6168415856807658556" fileName="TargetRange.java" startLine="233" startPosition="89" endLine="237" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.script.TargetRange$2" />
     <unitInfo nodeId="6168415856807658488" fileName="TargetRange.java" startLine="210" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.TargetRange$TargetRefs" />
     <unitInfo nodeId="6168415856807658508" fileName="TargetRange.java" startLine="218" startPosition="0" endLine="245" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.TargetRange$TargetsGraph" />
     <unitInfo nodeId="6168415856807658380" fileName="TargetRange.java" startLine="155" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.TargetRange$CompositeTarget" />

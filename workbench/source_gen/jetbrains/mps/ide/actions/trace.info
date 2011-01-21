@@ -6273,9 +6273,9 @@
       <varInfo nodeId="2777079932569210179" varName="module" />
     </scopeInfo>
     <unitInfo nodeId="640843604926284633" fileName="NewRuntimeModule_Action.java" startLine="90" startPosition="47" endLine="94" endPosition="7" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action$1" />
-    <unitInfo nodeId="1918923653324493652" fileName="NewRuntimeModule_Action.java" startLine="97" startPosition="76" endLine="101" endPosition="11" unitName="jetbrains.mps.ide.actions.ISelector$anonymous" />
+    <unitInfo nodeId="1918923653324493652" fileName="NewRuntimeModule_Action.java" startLine="97" startPosition="76" endLine="101" endPosition="11" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action$3" />
     <unitInfo nodeId="2777079932569212912" fileName="NewRuntimeModule_Action.java" startLine="121" startPosition="23" endLine="125" endPosition="7" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action$3" />
-    <unitInfo nodeId="2777079932569210190" fileName="NewRuntimeModule_Action.java" startLine="105" startPosition="21" endLine="117" endPosition="11" unitName="jetbrains.mps.ide.actions.BaseModuleItem$anonymous" />
+    <unitInfo nodeId="2777079932569210190" fileName="NewRuntimeModule_Action.java" startLine="105" startPosition="21" endLine="117" endPosition="11" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action$3" />
     <unitInfo nodeId="2777079932569210167" fileName="NewRuntimeModule_Action.java" startLine="95" startPosition="46" endLine="119" endPosition="7" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action$2" />
   </root>
   <root nodeId="6435591524234935935">

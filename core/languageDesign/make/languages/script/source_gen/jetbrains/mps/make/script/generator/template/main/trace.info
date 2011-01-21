@@ -117,12 +117,12 @@
     <scopeInfo nodeId="1906791586424011853" fileName="QueriesGenerated.java" startLine="171" startPosition="151" endLine="176" endPosition="7" />
     <scopeInfo nodeId="3297237684108624013" fileName="QueriesGenerated.java" startLine="179" startPosition="151" endLine="184" endPosition="7" />
     <scopeInfo nodeId="3297237684108627714" fileName="QueriesGenerated.java" startLine="187" startPosition="151" endLine="192" endPosition="7" />
-    <unitInfo nodeId="3668957831723418785" fileName="QueriesGenerated.java" startLine="148" startPosition="285" endLine="152" endPosition="5" unitName="jetbrains.mps.make.script.generator.template.main.IWhereFilter$anonymous" />
-    <unitInfo nodeId="3297237684108623972" fileName="QueriesGenerated.java" startLine="156" startPosition="285" endLine="160" endPosition="5" unitName="jetbrains.mps.make.script.generator.template.main.IWhereFilter$anonymous" />
-    <unitInfo nodeId="1906791586424054352" fileName="QueriesGenerated.java" startLine="164" startPosition="285" endLine="168" endPosition="5" unitName="jetbrains.mps.make.script.generator.template.main.IWhereFilter$anonymous" />
-    <unitInfo nodeId="271764119388921527" fileName="QueriesGenerated.java" startLine="172" startPosition="285" endLine="176" endPosition="5" unitName="jetbrains.mps.make.script.generator.template.main.IWhereFilter$anonymous" />
-    <unitInfo nodeId="3297237684108624027" fileName="QueriesGenerated.java" startLine="180" startPosition="285" endLine="184" endPosition="5" unitName="jetbrains.mps.make.script.generator.template.main.IWhereFilter$anonymous" />
-    <unitInfo nodeId="3297237684108627728" fileName="QueriesGenerated.java" startLine="188" startPosition="285" endLine="192" endPosition="5" unitName="jetbrains.mps.make.script.generator.template.main.IWhereFilter$anonymous" />
+    <unitInfo nodeId="3668957831723418785" fileName="QueriesGenerated.java" startLine="148" startPosition="285" endLine="152" endPosition="5" unitName="jetbrains.mps.make.script.generator.template.main.QueriesGenerated$1" />
+    <unitInfo nodeId="3297237684108623972" fileName="QueriesGenerated.java" startLine="156" startPosition="285" endLine="160" endPosition="5" unitName="jetbrains.mps.make.script.generator.template.main.QueriesGenerated$2" />
+    <unitInfo nodeId="1906791586424054352" fileName="QueriesGenerated.java" startLine="164" startPosition="285" endLine="168" endPosition="5" unitName="jetbrains.mps.make.script.generator.template.main.QueriesGenerated$3" />
+    <unitInfo nodeId="271764119388921527" fileName="QueriesGenerated.java" startLine="172" startPosition="285" endLine="176" endPosition="5" unitName="jetbrains.mps.make.script.generator.template.main.QueriesGenerated$4" />
+    <unitInfo nodeId="3297237684108624027" fileName="QueriesGenerated.java" startLine="180" startPosition="285" endLine="184" endPosition="5" unitName="jetbrains.mps.make.script.generator.template.main.QueriesGenerated$5" />
+    <unitInfo nodeId="3297237684108627728" fileName="QueriesGenerated.java" startLine="188" startPosition="285" endLine="192" endPosition="5" unitName="jetbrains.mps.make.script.generator.template.main.QueriesGenerated$6" />
   </root>
   <root nodeId="7877690107352906531">
     <nodeInfo nodeId="7877690107352956522" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="83" startPosition="154" endLine="84" endPosition="118" />
