@@ -567,6 +567,21 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8339862546319979453" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8339862546319979451" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8339862546319979452">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3773819293481018365">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3773819293481018366">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3773819293481018374">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3773819293481028265">
+                <property name="value:3" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3773819293481018370">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3773819293481018373" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3773819293481018369">
+              <link role="variableDeclaration:3" targetNodeId="8339862546319979454" resolveInfo="node" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8339862546319979457">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8339862546319981389">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8339862546319979465">
@@ -598,6 +613,21 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8339862546319981454" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8339862546319981452" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8339862546319981453">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3773819293481018378">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3773819293481018379">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3773819293481018387">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3773819293481018389">
+                <property name="value:3" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3773819293481018383">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3773819293481018386" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3773819293481018382">
+              <link role="variableDeclaration:3" targetNodeId="8339862546319981455" resolveInfo="node" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8339862546319981457">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8339862546319981466">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8339862546319981461">
@@ -629,6 +659,21 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8339862546319981399" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8339862546319981397" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8339862546319981398">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3773819293481028267">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3773819293481028268">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3773819293481028276">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3773819293481028278">
+                <property name="value:3" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3773819293481028272">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3773819293481028275" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3773819293481028271">
+              <link role="variableDeclaration:3" targetNodeId="8339862546319981400" resolveInfo="node" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8339862546319981402">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8339862546319981403">
             <property name="name:3" value="conceptFqName" />

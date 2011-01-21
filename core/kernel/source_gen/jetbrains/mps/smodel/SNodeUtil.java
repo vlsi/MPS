@@ -38,14 +38,23 @@ public class SNodeUtil {
   }
 
   public static boolean isInstanceOfConceptDeclaration(SNode node) {
+    if (node == null) {
+      return false;
+    }
     return node.getConceptFqName().equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
   }
 
   public static boolean isInstanceOfInterfaceConceptDeclaration(SNode node) {
+    if (node == null) {
+      return false;
+    }
     return node.getConceptFqName().equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
   }
 
   public static boolean isInstanceOfAbstractConceptDeclaration(SNode node) {
+    if (node == null) {
+      return false;
+    }
     String conceptFqName = node.getConceptFqName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
