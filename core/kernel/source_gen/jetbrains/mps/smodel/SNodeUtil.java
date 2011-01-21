@@ -60,6 +60,30 @@ public class SNodeUtil {
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
 
+  public static boolean isInstanceOfConceptProperty(SNode node) {
+    if (node == null) {
+      return false;
+    }
+    String conceptFqName = node.getConceptFqName();
+    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.BooleanConceptProperty") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.StringConceptProperty") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.IntegerConceptProperty") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptProperty");
+  }
+
+  public static SNode getConceptProperty_Declaration(SNode property) {
+    return SLinkOperations.getTarget(property, "conceptPropertyDeclaration", false);
+  }
+
+  public static boolean getConceptPropertyDeclaration_IsInheritable(SNode propertyDeclaration) {
+    return SPropertyOperations.getBoolean(propertyDeclaration, "inheritable");
+  }
+
+  public static boolean isInstanceOfConceptPropertyDeclaration(SNode node) {
+    if (node == null) {
+      return false;
+    }
+    String conceptFqName = node.getConceptFqName();
+    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration");
+  }
+
   public static boolean getConceptDeclaration_IsRootable(SNode concept) {
     return SPropertyOperations.getBoolean(concept, "rootable");
   }

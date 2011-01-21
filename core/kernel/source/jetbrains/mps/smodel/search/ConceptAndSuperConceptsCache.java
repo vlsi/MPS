@@ -23,10 +23,7 @@ import jetbrains.mps.cache.KeyProducer;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -115,7 +112,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     return dataSet.getLinkDeclarationsExcludingOverridden();
   }
 
-  public ConceptProperty getConceptPropertyByName(String name) {
+  public SNode getConceptPropertyByName(String name) {
     ConceptPropertiesDataSet dataSet = (ConceptPropertiesDataSet) getDataSet(ConceptPropertiesDataSet.ID, CONCEPTPROPS_CACHE_CREATOR);
     return dataSet.getConceptPropertyByName(name);
   }
@@ -469,7 +466,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
   private static class ConceptPropertiesDataSet extends DataSet {
     public static final String ID = "CONCEPT_PROPERTIES_DATASET";
-    private Map<String, ConceptProperty> myPropertyByName;
+    private Map<String, SNode> myPropertyByName;
     private Set<SNode> myDependsOnNodes;
 
     public ConceptPropertiesDataSet(AbstractCache ownerCache) {
@@ -480,29 +477,29 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       return myDependsOnNodes;
     }
 
-    public ConceptProperty getConceptPropertyByName(String name) {
+    public SNode getConceptPropertyByName(String name) {
       return myPropertyByName.get(name);
     }
 
     protected void init() {
-      List<ConceptProperty> allConceptProperties = new ArrayList<ConceptProperty>();
-      Set<ConceptPropertyDeclaration> allConceptPropertyDeclarations = new HashSet<ConceptPropertyDeclaration>();
-      myPropertyByName = new HashMap<String, ConceptProperty>();
+      List<SNode> allConceptProperties = new ArrayList<SNode>();
+      Set<SNode> allConceptPropertyDeclarations = new HashSet<SNode>();
+      myPropertyByName = new HashMap<String, SNode>();
 
       SNode[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
       // iterate up-down
       for (SNode concept : concepts) {
-        List<ConceptProperty> conceptProperties = ((AbstractConceptDeclaration) concept.getAdapter()).getConceptProperties();
-        for (ConceptProperty conceptProperty : conceptProperties) {
+        Iterable<SNode> conceptProperties = SNodeUtil.getConcept_ConceptProperties(concept);
+        for (SNode conceptProperty : conceptProperties) {
           allConceptProperties.add(conceptProperty);
-          ConceptPropertyDeclaration conceptPropertyDeclaration = conceptProperty.getConceptPropertyDeclaration();
+          SNode conceptPropertyDeclaration = SNodeUtil.getConceptProperty_Declaration(conceptProperty);
           if (conceptPropertyDeclaration == null) continue;
           allConceptPropertyDeclarations.add(conceptPropertyDeclaration);
           String propertyName = conceptPropertyDeclaration.getName();
           if (propertyName == null || propertyName.length() == 0) continue;
 
           // property is in 'top' concept or inheritable property
-          if (conceptPropertyDeclaration.getInheritable() ||
+          if (SNodeUtil.getConceptPropertyDeclaration_IsInheritable(conceptPropertyDeclaration) ||
             concept == concepts[0]) {
             if (!myPropertyByName.containsKey(propertyName)) {
               myPropertyByName.put(propertyName, conceptProperty);
@@ -516,11 +513,11 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       for (SNode concept : concepts) {
         myDependsOnNodes.add(concept);
       }
-      for (ConceptProperty prop : allConceptProperties) {
-        myDependsOnNodes.add(prop.getNode());
+      for (SNode prop : allConceptProperties) {
+        myDependsOnNodes.add(prop);
       }
-      for (ConceptPropertyDeclaration propDecl : allConceptPropertyDeclarations) {
-        myDependsOnNodes.add(propDecl.getNode());
+      for (SNode propDecl : allConceptPropertyDeclarations) {
+        myDependsOnNodes.add(propDecl);
       }
     }
 
@@ -550,7 +547,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
     public void propertyChanged(SModelPropertyEvent event) {
       // don't process unless it is concept property declaration 'name' or 'inheritable' flag
-      if (event.getNode().getAdapter() instanceof ConceptPropertyDeclaration) {
+      if (SNodeUtil.isInstanceOfConceptPropertyDeclaration(event.getNode())) {
         super.propertyChanged(event);
       }
     }

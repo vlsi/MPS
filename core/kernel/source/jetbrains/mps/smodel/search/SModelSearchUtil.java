@@ -121,9 +121,15 @@ public class SModelSearchUtil {
     return result;
   }
 
-  public static ConceptProperty findConceptProperty(AbstractConceptDeclaration concept, String propertyName) {
+  public static SNode findConceptProperty(SNode concept, String propertyName) {
     if (concept == null) return null;
     return new ConceptAndSuperConceptsScope(concept).getConceptPropertyByName(propertyName);
+  }
+
+  @Deprecated
+  public static ConceptProperty findConceptProperty(AbstractConceptDeclaration concept, String propertyName) {
+    if (concept == null) return null;
+    return (ConceptProperty) BaseAdapter.fromNode(new ConceptAndSuperConceptsScope(concept).getConceptPropertyByName(propertyName));
   }
 
   public static List<ConceptLinkDeclaration> getConceptLinkDeclarations(AbstractConceptDeclaration concept) {

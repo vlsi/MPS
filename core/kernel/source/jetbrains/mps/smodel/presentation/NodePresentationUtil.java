@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.presentation;
 
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
@@ -150,7 +149,7 @@ public class NodePresentationUtil {
     if (role != null) {
       return role;
     }
-    if (node.getAdapter() instanceof ConceptDeclaration && node.getName() != null) {
+    if (SNodeUtil.isInstanceOfConceptDeclaration(node) && node.getName() != null) {
       return node.getName();
     }
     return NameUtil.shortNameFromLongName(node.getClass().getName());
