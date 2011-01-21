@@ -822,7 +822,7 @@
       <varInfo nodeId="1747818952411874074" varName="list" />
       <varInfo nodeId="1747818952411874072" varName="caption" />
     </scopeInfo>
-    <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="447" startPosition="52" endLine="451" endPosition="13" />
+    <scopeInfo nodeId="3416087927885130128" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StandardComponents.java" startLine="447" startPosition="52" endLine="451" endPosition="13" />
     <scopeInfo nodeId="4060390951635974672" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createProjectSolutionsPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)Ljavax/swing/JPanel;" fileName="StandardComponents.java" startLine="479" startPosition="0" endLine="483" endPosition="0">
       <varInfo nodeId="4060390951635974675" varName="owner" />
       <varInfo nodeId="4060390951635974679" varName="list" />
