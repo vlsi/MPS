@@ -17,9 +17,9 @@ package jetbrains.mps.runtime;
 
 import jetbrains.mps.util.InternUtil;
 
+import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class BundleClassLoader<T> extends BaseClassLoader {
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
@@ -102,6 +102,19 @@ public class BundleClassLoader<T> extends BaseClassLoader {
     return null;
   }
 
+  @Override
+  protected Enumeration<URL> findResources(String name) throws IOException {
+    ArrayList<URL> result = new ArrayList<URL>();
+    RuntimeEnvironment<T> re = myBundle.getRuntimeEnvironment();
+    for (T dep : re.getAllDependencies(myBundle)) {
+      if (re.get(dep).hasResource(name)) {
+        result.add(re.get(dep).getResource(name));
+      }
+    }
+
+    return new IterableToEnumWrapper<URL>(result);
+  }
+
   public void dispose() {
     super.dispose();
     myClassesCache.clear();
@@ -125,5 +138,24 @@ public class BundleClassLoader<T> extends BaseClassLoader {
 
   public String toString() {
     return myBundle.getId() + "'s class loader";
+  }
+
+  private static class IterableToEnumWrapper<E> implements Enumeration<E> {
+
+    private Iterator<E> myIterator;
+
+    public IterableToEnumWrapper(Iterable<E> iterable) {
+      myIterator = iterable.iterator();
+    }
+
+    @Override
+    public boolean hasMoreElements() {
+      return myIterator.hasNext();
+    }
+
+    @Override
+    public E nextElement() {
+      return myIterator.next();
+    }
   }
 }
