@@ -37,7 +37,7 @@ public interface IScript {
     }
   }
 
-  public static class StubBoss implements IScript {
+  public static abstract class StubBoss implements IScript {
     private IScript delegate;
 
     public StubBoss(IScript delegate) {
@@ -68,14 +68,6 @@ public interface IScript {
 
     public boolean isValid() {
       return delegate.isValid();
-    }
-
-    public IMonitors monitors() {
-      return delegate.monitors();
-    }
-
-    public void init(IParametersPool ppool) {
-      delegate.init(ppool);
     }
   }
 
