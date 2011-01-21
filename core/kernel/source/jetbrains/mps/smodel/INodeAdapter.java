@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -56,8 +55,6 @@ public interface INodeAdapter {
   INodeAdapter findFirstParent(Class[] classes);
 
   <T extends INodeAdapter> List<T> findParents(Class<T> aClass);
-
-  AbstractConceptDeclaration getConceptDeclarationAdapter();
 
   void replaceChild(INodeAdapter oldChild, INodeAdapter newChild);
 

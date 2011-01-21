@@ -15,6 +15,7 @@
   <unitInfo fileName="Node_IsRoleOperation_linkInParent_ReferentConstraint.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.Node_IsRoleOperation_linkInParent_ReferentConstraint" />
   <unitInfo fileName="SPropertyAccess_property_ReferentConstraint.java" startLine="16" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.SPropertyAccess_property_ReferentConstraint" />
   <unitInfo fileName="SEnum_MemberOperation_member_ReferentConstraint.java" startLine="16" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.SEnum_MemberOperation_member_ReferentConstraint" />
+  <unitInfo fileName="IfInstanceOfVarReference_instanceOfVariable_ReferentConstraint.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.IfInstanceOfVarReference_instanceOfVariable_ReferentConstraint" />
   <unitInfo fileName="EnumMemberReference_enumMember_ReferentConstraint.java" startLine="18" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.EnumMemberReference_enumMember_ReferentConstraint" />
   <unitInfo fileName="Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint.java" startLine="20" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint" />
   <unitInfo fileName="SLinkListAccess_link_ReferentConstraint.java" startLine="20" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.SLinkListAccess_link_ReferentConstraint" />
@@ -26,8 +27,8 @@
   <unitInfo fileName="SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint.java" startLine="19" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint" />
   <unitInfo fileName="Node_ConceptMethodCall_conceptMethodDeclaration_ReferentConstraint.java" startLine="22" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.Node_ConceptMethodCall_conceptMethodDeclaration_ReferentConstraint" />
   <unitInfo fileName="NodeAttributeAccessQualifier_annotationLink_ReferentConstraint.java" startLine="23" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.NodeAttributeAccessQualifier_annotationLink_ReferentConstraint" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="CheckedModuleReference_moduleId_PropertyConstraint.java" startLine="18" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.CheckedModuleReference_moduleId_PropertyConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.ConstraintsDescriptor" />
   <root nodeId="1213104840262">
     <nodeInfo nodeId="1213104840266" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SPropertyAccess_property_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="192" />
     <nodeInfo nodeId="1213104840272" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SPropertyAccess_property_ReferentConstraint.java" startLine="29" startPosition="192" endLine="30" endPosition="109" />
@@ -288,6 +289,15 @@
   <root nodeId="1547759872598425099">
     <nodeInfo nodeId="6409763769032753230" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IReferenceOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="360" />
     <scopeInfo nodeId="1547759872598425103" fileName="IReferenceOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="360" />
+  </root>
+  <root nodeId="1883223317721107061">
+    <nodeInfo nodeId="1883223317721107086" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IfInstanceOfVarReference_instanceOfVariable_ReferentConstraint.java" startLine="31" startPosition="37" endLine="32" endPosition="63" />
+    <nodeInfo nodeId="1883223317721107082" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="IfInstanceOfVarReference_instanceOfVariable_ReferentConstraint.java" startLine="30" startPosition="205" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="1883223317721107065" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IfInstanceOfVarReference_instanceOfVariable_ReferentConstraint.java" startLine="29" startPosition="132" endLine="34" endPosition="7" />
+    <scopeInfo nodeId="1883223317721107083" fileName="IfInstanceOfVarReference_instanceOfVariable_ReferentConstraint.java" startLine="31" startPosition="37" endLine="32" endPosition="63" />
+    <scopeInfo nodeId="1883223317721107082" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="IfInstanceOfVarReference_instanceOfVariable_ReferentConstraint.java" startLine="30" startPosition="205" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1883223317721107064" fileName="IfInstanceOfVarReference_instanceOfVariable_ReferentConstraint.java" startLine="29" startPosition="132" endLine="34" endPosition="7" />
+    <unitInfo nodeId="1883223317721107082" fileName="IfInstanceOfVarReference_instanceOfVariable_ReferentConstraint.java" startLine="30" startPosition="178" endLine="34" endPosition="5" unitName="jetbrains.mps.lang.smodel.constraints.ISelector$anonymous" />
   </root>
   <root nodeId="4357968816427488501">
     <nodeInfo nodeId="4357968816427529241" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckedModuleReference_moduleId_PropertyConstraint.java" startLine="34" startPosition="80" endLine="35" endPosition="70" />

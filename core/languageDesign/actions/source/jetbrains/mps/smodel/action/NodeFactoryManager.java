@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.actions.behavior.NodeFactory_Behavior;
 import jetbrains.mps.lang.actions.structure.NodeFactories;
 import jetbrains.mps.lang.actions.structure.NodeFactory;
@@ -44,19 +45,19 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   }
 
   public static SNode createNode(SNode enclosingNode, EditorContext editorContext, String linkRole) {
-    ConceptDeclaration concept = (ConceptDeclaration) enclosingNode.getConceptDeclarationAdapter();
-    LinkDeclaration linkDeclaration = getTopLinkDeclaration(concept, SModelSearchUtil.findLinkDeclaration(concept, linkRole));
-    AbstractConceptDeclaration targetConcept = linkDeclaration.getTarget();
+    SNode concept = enclosingNode.getConceptDeclarationNode();
+    SNode linkDeclaration = getTopLinkDeclaration(concept, SModelSearchUtil.findLinkDeclaration(concept, linkRole));
+    SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
     SModel model = enclosingNode.getModel();
     IScope scope = editorContext.getOperationContext().getScope();
-    return createNode(targetConcept, null, enclosingNode, model, scope);
+    return createNode((AbstractConceptDeclaration) BaseAdapter.fromNode(targetConcept), null, enclosingNode, model, scope);
   }
 
-  private static LinkDeclaration getTopLinkDeclaration(ConceptDeclaration conceptDeclaration, LinkDeclaration linkDeclaration) {
-    LinkDeclaration result = linkDeclaration;
-    List<LinkDeclaration> linkDeclarations = SModelSearchUtil.getLinkDeclarations(conceptDeclaration);
-    for (LinkDeclaration declaration : linkDeclarations) {
-      LinkDeclaration specializedLink = declaration.getSpecializedLink();
+  private static SNode getTopLinkDeclaration(SNode conceptDeclaration, SNode linkDeclaration) {
+    SNode result = linkDeclaration;
+    List<SNode> linkDeclarations = SModelSearchUtil.getLinkDeclarations((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration));
+    for (SNode declaration : linkDeclarations) {
+      SNode specializedLink = SModelUtil.getLinkDeclarationSpecializedLink(declaration);
       if (specializedLink == linkDeclaration) {
         result = declaration;
         break;
@@ -88,17 +89,17 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   private static void createNodeStructure(AbstractConceptDeclaration nodeConcept,
                                          SNode newNode, SNode sampleNode, SNode enclosingNode,
                                          SModel model, IScope scope) {
-    for (LinkDeclaration linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {
-      String role = SModelUtil_new.getGenuineLinkRole(linkDeclaration);
-      LinkMetaclass metaClass = SModelUtil_new.getGenuineLinkMetaclass(linkDeclaration);
-      Cardinality sourceCardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
+    for (SNode linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {
+      String role = SModelUtil.getGenuineLinkRole(linkDeclaration);
+      LinkMetaclass metaClass = SModelUtil_new.getGenuineLinkMetaclass((LinkDeclaration) BaseAdapter.fromNode(linkDeclaration));
+      Cardinality sourceCardinality = SModelUtil_new.getGenuineLinkSourceCardinality((LinkDeclaration) BaseAdapter.fromNode(linkDeclaration));
       if (metaClass == LinkMetaclass.aggregation &&
         (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._1__n)) {
 
-        AbstractConceptDeclaration targetConcept = linkDeclaration.getTarget();
+        SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
         LOG.assertLog(targetConcept != null, "link target is null");
         if (newNode.getChildren(role).isEmpty()) {
-          SNode childNode = createNode((AbstractConceptDeclaration) targetConcept, sampleNode, enclosingNode, model, scope);
+          SNode childNode = createNode((AbstractConceptDeclaration) BaseAdapter.fromNode(targetConcept), sampleNode, enclosingNode, model, scope);
           newNode.addChild(role, childNode);
         }
       }

@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.lang.core.structure.Core_Language;
 import jetbrains.mps.project.dependency.LanguageDepsManager;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
@@ -97,7 +97,7 @@ public class ClasspathCollector {
 
       if (current instanceof Language) {
         Language l = (Language) current;
-        doCollect(Core_Language.get(), includeStubSolutions);
+        doCollect(BootstrapLanguages.coreLanguage(), includeStubSolutions);
         for (Language extended : l.getExtendedLanguages()) {
           doCollect(extended, includeStubSolutions);
         }

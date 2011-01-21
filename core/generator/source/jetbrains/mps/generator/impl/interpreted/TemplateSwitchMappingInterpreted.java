@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.impl.*;
+import jetbrains.mps.generator.impl.AbandonRuleInputException;
+import jetbrains.mps.generator.impl.GeneratorUtil;
+import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.TemplateProcessor;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.lang.generator.structure.GeneratorMessage;
@@ -74,7 +76,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
 
   @Override
   public Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingName, TemplateContext context) throws GenerationException {
-    SNode defaultConsequence = mySwitch.getChild(TemplateSwitch.DEFAULT_CONSEQUENCE);
+    SNode defaultConsequence = RuleUtil.getSwitchDefaultConsequence(mySwitch);
     if (defaultConsequence == null) {
       SNodePointer modifies = getModifiesSwitch();
       if (modifies == null) {
@@ -116,7 +118,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
 
     SNode generatorMessage = mySwitch.getChild(TemplateSwitch.NULL_INPUT_MESSAGE);
     if (generatorMessage != null) {
-      GeneratorUtil.processGeneratorMessage((GeneratorMessage)generatorMessage.getAdapter(), context.getInput(), templateSwitch.getNode(), null, environment.getGenerator());
+      GeneratorUtil.processGeneratorMessage((GeneratorMessage) generatorMessage.getAdapter(), context.getInput(), templateSwitch.getNode(), null, environment.getGenerator());
     }
   }
 }

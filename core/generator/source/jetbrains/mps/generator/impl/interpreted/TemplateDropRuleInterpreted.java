@@ -16,12 +16,12 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.DropRootRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
-import jetbrains.mps.lang.generator.structure.DropRootRule;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
@@ -31,13 +31,13 @@ import jetbrains.mps.util.QueryMethodGenerated;
  * Evgeny Gryaznov, Nov 30, 2010
  */
 public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
-  
+
   private final SNode ruleNode;
   private final SNode applicableConcept;
 
   public TemplateDropRuleInterpreted(SNode child) {
     this.ruleNode = child;
-    this.applicableConcept = ruleNode.getReferent(DropRootRule.APPLICABLE_CONCEPT);
+    this.applicableConcept = RuleUtil.getDropRuleApplicableConcept(ruleNode);
   }
 
   @Override
@@ -50,14 +50,9 @@ public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
     return NameUtil.nodeFQName(this.applicableConcept);
   }
 
-  @Deprecated
-  public DropRootRule getNode() {
-    return (DropRootRule) ruleNode.getAdapter();
-  }
-
   @Override
   public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
-    SNode condition = ruleNode.getChild(DropRootRule.CONDITION_FUNCTION);
+    SNode condition = RuleUtil.getDropRuleCondition(ruleNode);
     if (condition == null) {
       // condition is not required
       return true;

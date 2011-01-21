@@ -1,6 +1,8 @@
+import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.junit.runners.WatchingSuite;
 import junit.framework.TestSuite;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
@@ -152,9 +154,9 @@ import org.junit.runners.Suite.SuiteClasses;
   jetbrains.mps.refactoringTest.ExtractContinue_Test.class,
   jetbrains.mps.editorTest.DeleteFieldReference_Test.class,
   jetbrains.mps.editorTest.SubstitudeAmbigousActions_Test.class,
+  jetbrains.mps.editorTest.RestoreCellSelection_Test.class,
   jetbrains.mps.refactoringTest.ConvertAnonymousWithTypeVariablesComplexTest_Test.class,
   jetbrains.mps.editorTest.RemoveNodeTest_Test.class,
-  jetbrains.mps.editorTest.RestoreCellSelection_Test.class,
   jetbrains.mps.editorTest.SimpleUndoTest_Test.class,
   jetbrains.mps.editorTest.LT_DotExpression_with_MinusAssignment_Test.class,
   jetbrains.mps.editorTest.RightTransformInAnnotation_Test.class,
@@ -214,6 +216,7 @@ import org.junit.runners.Suite.SuiteClasses;
   jetbrains.mps.editorTest.LT_DotExpression_with_PrefixDecrement_Test.class,
   jetbrains.mps.refactoringTest.ReplaceOutputVaryable_Test.class,
   jetbrains.mps.refactoringTest.TwoParametersWithSameType_Test.class,
+  jetbrains.mps.editorTest.RT_ClassTypeVariableDeclaration_with_ampersand_Test.class,
   jetbrains.mps.refactoringTest.ConvertAnonymousWithParameterReference_Test.class,
   jetbrains.mps.refactoringTest.ChangeMethodParametersForStatement_Test.class,
   jetbrains.mps.refactoringTest.MoveStaticFieldWithUsageTest_Test.class,
@@ -229,12 +232,14 @@ import org.junit.runners.Suite.SuiteClasses;
   jetbrains.mps.refactoringTest.SimpleFindForIntroduceLocalVariable_Test.class,
   jetbrains.mps.editorTest.SurroundExpressionWithParenthesis_Test.class,
   jetbrains.mps.editorTest.AssignmentExpression_Test.class,
+  jetbrains.mps.editorTest.NO_RT_ClassTypeVarialeDeclaration_on_typing_ampersand_inbetween_Test.class,
   jetbrains.mps.editorTest.PressingBackspaseInFirstPosition_Test.class,
   jetbrains.mps.refactoringTest.FindForMethodWithIVariableLikeNodes_Test.class,
   jetbrains.mps.refactoringTest.CheckInlineCanBePerformed_Test.class,
   jetbrains.mps.editorTest.PriorityCheckTest_Test.class,
   jetbrains.mps.refactoringTest.ExtractMethodWithOutputVaryableFromStatement_Test.class,
   jetbrains.mps.refactoringTest.InlineFromBehaviorWithMethods_Test.class,
+  jetbrains.mps.editorTest.RT_ClassTypeVarialeDeclaration_with_AngleBracker_Test.class,
   jetbrains.mps.editorTest.WrappingCellShouldntBeSelectable_Test.class,
   jetbrains.mps.editorTest.TypingIncorrectTextInFields_Test.class,
   jetbrains.mps.editorTest.TypeToTypeof_Test.class,
@@ -435,5 +440,10 @@ public class GlobalTestSuite extends TestSuite {
   @BeforeClass
   public static void make () throws Exception {
     new MpsMakeHelper().make();
+  }
+
+  @AfterClass
+  public static void shutdown() {
+    BaseTransformationTest.getProjectContainer().clear();
   }
 }

@@ -16,12 +16,12 @@
 package jetbrains.mps.workbench.actions.nodes;
 
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.typesystem.structure.*;
+import jetbrains.mps.lang.typesystem.structure.AbstractRule;
+import jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition;
+import jetbrains.mps.lang.typesystem.structure.InferenceRule;
+import jetbrains.mps.lang.typesystem.structure.PatternCondition;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
@@ -72,8 +72,8 @@ public class GoToRulesHelper {
             return isApplicable(n, conceptDeclaration, false);
           }
         };
-        Iterable<SNode> iter = new ConditionalIterable<SNode>(helginsDescriptor.getSModel().roots(),cond);
-        for (SNode node : iter){
+        Iterable<SNode> iter = new ConditionalIterable<SNode>(helginsDescriptor.getSModel().roots(), cond);
+        for (SNode node : iter) {
           rules.add(node);
           if (node.getAdapter() instanceof InferenceRule) {
             InferenceRule inferenceRule = (InferenceRule) node.getAdapter();
@@ -88,7 +88,7 @@ public class GoToRulesHelper {
       AbstractConceptDeclaration subConcept = getApplicableConcept(overridingRule.getApplicableNode());
       for (SNode ruleNode : new ArrayList<SNode>(rules)) {
         if (ruleNode.getAdapter().getClass() == overridingRule.getClass() && isApplicable(ruleNode, subConcept, true)) {
-           rules.remove(ruleNode);
+          rules.remove(ruleNode);
         }
       }
     }
@@ -119,17 +119,17 @@ public class GoToRulesHelper {
   }
 
   private static AbstractConceptDeclaration getApplicableConcept(ApplicableNodeCondition applicableNode) {
-     if (applicableNode instanceof jetbrains.mps.lang.typesystem.structure.ConceptReference) {
-       jetbrains.mps.lang.typesystem.structure.ConceptReference conceptReference =
+    if (applicableNode instanceof jetbrains.mps.lang.typesystem.structure.ConceptReference) {
+      jetbrains.mps.lang.typesystem.structure.ConceptReference conceptReference =
         (jetbrains.mps.lang.typesystem.structure.ConceptReference) applicableNode;
-       return conceptReference.getConcept();
-     } else if (applicableNode instanceof PatternCondition) {
+      return conceptReference.getConcept();
+    } else if (applicableNode instanceof PatternCondition) {
       BaseConcept baseConcept = ((PatternCondition) applicableNode).getPattern().getPatternNode();
       if (baseConcept == null) return null;
-      return baseConcept.getConceptDeclarationAdapter();
-     } else {
-       return null;
-     }
+      return baseConcept.getNode().getConceptDeclarationAdapter();
+    } else {
+      return null;
+    }
   }
 
   private static class MyMenu extends JPopupMenu {

@@ -25,8 +25,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
@@ -218,8 +216,7 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static List<SNode> call_getLinkDeclarations_1213877394480(SNode thisNode) {
-    List<LinkDeclaration> links = SModelSearchUtil.getLinkDeclarations(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)));
-    return (List<SNode>) BaseAdapter.toNodes(links);
+    return (List<SNode>) SModelSearchUtil.getLinkDeclarations(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)));
   }
 
   public static List<SNode> call_getReferenceLinkDeclarations_1213877394496(SNode thisNode) {
@@ -241,13 +238,13 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static List<SNode> call_getPropertyDeclarations_1213877394546(SNode thisNode) {
-    List<PropertyDeclaration> properties = SModelSearchUtil.getPropertyDeclarations(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)));
-    return (List<SNode>) BaseAdapter.toNodes(properties);
+    List<SNode> properties = SModelSearchUtil.getPropertyDeclarations(thisNode);
+    return (List<SNode>) properties;
   }
 
   public static SNode call_findPropertyDeclaration_1219835742593(SNode thisNode, String name) {
-    PropertyDeclaration p = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)), name);
-    return SNodeOperations.cast(BaseAdapter.fromAdapter(p), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+    SNode p = SModelSearchUtil.findPropertyDeclaration(thisNode, name);
+    return SNodeOperations.cast(p, "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
 
   public static List<SNode> call_getConceptPropertyDeclarations_1213877394562(SNode thisNode) {

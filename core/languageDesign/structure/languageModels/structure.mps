@@ -181,6 +181,9 @@
     </node>
   </roots>
   <root id="1071489090640">
+    <node role="conceptProperty" roleId="1105725339613" type="tpce.BooleanConceptProperty" typeId="1105725574259" id="8339862546319981475">
+      <link role="conceptPropertyDeclaration" roleId="1105725439818" targetNodeId="tpck.8339862546319981473" resolveInfo="final" />
+    </node>
     <node role="conceptProperty" roleId="1105725339613" type="tpce.StringConceptProperty" typeId="1105725638761" id="1194565364187">
       <property name="value" nameId="1105725733873" value="Concept" />
       <link role="conceptPropertyDeclaration" roleId="1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
@@ -597,6 +600,9 @@
     </node>
   </root>
   <root id="1169125989551">
+    <node role="conceptProperty" roleId="1105725339613" type="tpce.BooleanConceptProperty" typeId="1105725574259" id="8339862546319981477">
+      <link role="conceptPropertyDeclaration" roleId="1105725439818" targetNodeId="tpck.8339862546319981473" resolveInfo="final" />
+    </node>
     <node role="linkDeclaration" roleId="1071489727083" type="tpce.LinkDeclaration" typeId="1071489288298" id="1169127546356">
       <property name="metaClass" nameId="1071599937831" value="aggregation" />
       <property name="sourceCardinality" nameId="1071599893252" value="0..n" />

@@ -4,6 +4,10 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class SNodeUtil {
   public SNodeUtil() {
@@ -23,5 +27,78 @@ public class SNodeUtil {
 
   public static int getMetaLevel(SNode node) {
     return ((Integer) BehaviorManager.getInstance().invoke(Integer.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getMetaLevel_3981318653438234726", new Class[]{SNode.class}));
+  }
+
+  public static String getConceptDeclarationAlias(SNode conceptDeclaration) {
+    return SPropertyOperations.getString(conceptDeclaration, "alias");
+  }
+
+  public static boolean isInstanceOfConceptDeclaration(SNode node) {
+    return node.getConceptFqName().equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+  }
+
+  public static boolean isInstanceOfInterfaceConceptDeclaration(SNode node) {
+    return node.getConceptFqName().equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
+  }
+
+  public static boolean isInstanceOfAbstractConceptDeclaration(SNode node) {
+    String conceptFqName = node.getConceptFqName();
+    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+  }
+
+  public static boolean getConceptDeclaration_IsRootable(SNode concept) {
+    return SPropertyOperations.getBoolean(concept, "rootable");
+  }
+
+  public static SNode getConceptDeclaration_Extends(SNode concept) {
+    return SLinkOperations.getTarget(concept, "extends", false);
+  }
+
+  public static Iterable<SNode> getConceptDeclaration_Implements(SNode concept) {
+    return ListSequence.fromList(SLinkOperations.getTargets(concept, "implements", true)).<SNode>select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "intfc", false);
+      }
+    });
+  }
+
+  public static Iterable<SNode> getConceptDeclaration_ImplementsReferenceNodes(SNode concept) {
+    return SLinkOperations.getTargets(concept, "implements", true);
+  }
+
+  public static Iterable<SNode> getConcept_LinkDeclarations(SNode concept) {
+    return SLinkOperations.getTargets(concept, "linkDeclaration", true);
+  }
+
+  public static Iterable<SNode> getConcept_PropertyDeclarations(SNode concept) {
+    return SLinkOperations.getTargets(concept, "propertyDeclaration", true);
+  }
+
+  public static Iterable<SNode> getConcept_ConceptProperties(SNode concept) {
+    return SLinkOperations.getTargets(concept, "conceptProperty", true);
+  }
+
+  public static Iterable<SNode> getConcept_ConceptLinks(SNode concept) {
+    return SLinkOperations.getTargets(concept, "conceptLink", true);
+  }
+
+  public static Iterable<SNode> getConcept_ConceptPropertyDeclarations(SNode concept) {
+    return SLinkOperations.getTargets(concept, "conceptPropertyDeclaration", true);
+  }
+
+  public static Iterable<SNode> getConcept_ConceptLinkDeclarations(SNode concept) {
+    return SLinkOperations.getTargets(concept, "conceptLinkDeclaration", true);
+  }
+
+  public static Iterable<SNode> getInterfaceConceptDeclaration_Extends(SNode concept) {
+    return ListSequence.fromList(SLinkOperations.getTargets(concept, "extends", true)).<SNode>select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "intfc", false);
+      }
+    });
+  }
+
+  public static Iterable<SNode> getInterfaceConceptDeclaration_ExtendsReferenceNodes(SNode concept) {
+    return SLinkOperations.getTargets(concept, "extends", true);
   }
 }

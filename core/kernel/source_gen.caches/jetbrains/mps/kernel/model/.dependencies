@@ -37,7 +37,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.kernel.model.TemporaryModelOwner" file="TemporaryModelOwner.java">

@@ -55,7 +55,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   private Map<Language, LanguageConceptsCache> myLanguageSpecificCaches = new HashMap<Language, LanguageConceptsCache>();
 
   private CopyOnWriteArrayList<CacheChangeListener> myCacheChangeListeners = new CopyOnWriteArrayList<CacheChangeListener>();
-  private CacheReadAccessListener myCacheReadAccessListener = null;
+  private volatile CacheReadAccessListener myCacheReadAccessListener = null;
 
 
   private MPSModuleRepository myModuleRepository;
@@ -114,8 +114,9 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   private void fireReadAccessPerformed() {
-    if (myCacheReadAccessListener != null) {
-      myCacheReadAccessListener.languageCacheRead();
+    CacheReadAccessListener listener = myCacheReadAccessListener;
+    if (listener != null) {
+      listener.languageCacheRead();
     }
   }
 
@@ -142,26 +143,24 @@ public class LanguageHierarchyCache implements ApplicationComponent {
       if (result == null) {
         result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<InternAwareStringSet>() {
           public InternAwareStringSet compute() {
-            AbstractConceptDeclaration declaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+            SNode declaration = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
             if (declaration == null) {
               return EMPTY_INTERN_AWARE_STRING_SET;
             }
             InternAwareStringSet result = new InternAwareStringSet();
-            if (declaration instanceof ConceptDeclaration) {
-              ConceptDeclaration cd = (ConceptDeclaration) declaration;
-              if (cd.getExtends() != null) {
-                result.add(NameUtil.nodeFQName(cd.getExtends()));
-              } else if (!BaseConcept.concept.equals(NameUtil.nodeFQName(cd))) {
+            if (SNodeUtil.isInstanceOfConceptDeclaration(declaration)) {
+              SNode superConcept = SNodeUtil.getConceptDeclaration_Extends(declaration);
+              if (superConcept != null) {
+                result.add(NameUtil.nodeFQName(superConcept));
+              } else if (!BaseConcept.concept.equals(NameUtil.nodeFQName(declaration))) {
                 result.add(BaseConcept.concept);
               }
-              for (InterfaceConceptReference icr : cd.getImplementses()) {
-                result.add(NameUtil.nodeFQName(icr.getIntfc()));
+              for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
+                result.add(NameUtil.nodeFQName(interfaceConcept));
               }
-            }
-            if (declaration instanceof InterfaceConceptDeclaration) {
-              InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
-              for (InterfaceConceptReference icr : icd.getExtendses()) {
-                result.add(NameUtil.nodeFQName(icr.getIntfc()));
+            } else if(SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration)) {
+              for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(declaration)) {
+                result.add(NameUtil.nodeFQName(interfaceConcept));
               }
             }
             return result;
@@ -333,9 +332,9 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     }
 
     void build() {
-      for (ConceptDeclaration cd : myLanguage.getConceptDeclarations()) {
+      for (SNode cd : myLanguage.getConceptDeclarations()) {
         if (!cd.isRoot()) continue;
-        if (!SNodeUtil.isDefaultSubstitutable(cd.getNode())) {
+        if (!SNodeUtil.isDefaultSubstitutable(cd)) {
           continue;
         }
 

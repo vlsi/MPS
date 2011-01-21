@@ -71,7 +71,9 @@ public class GenerationPartitioner {
   private List<List<MappingConfiguration>> doPartitioning(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators) {
     reset();
     for (Generator generator : generators) {
-      for (MappingConfiguration mapping : generator.getOwnMappings()) {
+      for (SNode m : generator.getOwnMappings()) {
+        // TODO
+        MappingConfiguration mapping = (MappingConfiguration) BaseAdapter.fromNode(m);
         myPriorityMap.put(mapping, new HashMap<MappingConfiguration, PriorityData>());
       }
     }
@@ -259,7 +261,11 @@ public class GenerationPartitioner {
     }
 
     if (mappingRef instanceof MappingConfig_RefAllLocal) {
-      return refGenerator.getOwnMappings();
+      List<MappingConfiguration> mappingConf = new ArrayList<MappingConfiguration>();
+      for(SNode n : refGenerator.getOwnMappings()) {
+        mappingConf.add((MappingConfiguration) BaseAdapter.fromNode(n));
+      }
+      return mappingConf;
     }
 
     if (mappingRef instanceof MappingConfig_RefSet) {

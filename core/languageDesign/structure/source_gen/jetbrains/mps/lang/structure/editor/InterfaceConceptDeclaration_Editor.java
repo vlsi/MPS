@@ -32,6 +32,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
@@ -600,7 +601,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
           substituteInfoNode = elementNode;
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPart[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu_a0f1c0()}));
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, BaseAdapter.fromAdapter(super.getLinkDeclaration())), new SubstituteInfoPart[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu_a0f1c0()}));
       }
     }
 
@@ -646,7 +647,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
           substituteInfoNode = elementNode;
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPart[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu_a0i1c0()}));
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, BaseAdapter.fromAdapter(super.getLinkDeclaration())), new SubstituteInfoPart[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu_a0i1c0()}));
       }
     }
 

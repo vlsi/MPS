@@ -63,7 +63,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public String getAlias() {
-    return SModelUtil_new.getAlias(getConceptDeclarationAdapter());
+    return SModelUtil_new.getAlias(getNode().getConceptDeclarationAdapter());
   }
 
   public INodeAdapter getParent() {
@@ -128,10 +128,6 @@ public abstract class BaseAdapter implements INodeAdapter {
       list.add(currNode);
     }
     return list;
-  }
-
-  public final AbstractConceptDeclaration getConceptDeclarationAdapter() {
-    return getNode().getConceptDeclarationAdapter();
   }
 
   public void replaceChild(INodeAdapter oldChild, INodeAdapter newChild) {
@@ -308,12 +304,11 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   protected <C extends INodeAdapter> C ensureAdapter(Class<C> requiredClass, String role, INodeAdapter adapter) {
-    try {
+    if (requiredClass.isInstance(adapter)) {
       return (C) adapter;
-    } catch (ClassCastException e) {
-      LOG.error("Incorrect type in role " + role + ". " + requiredClass.getName() + " required", adapter);
-      return null;
     }
+    LOG.error("Incorrect type in role " + role + ". " + requiredClass.getName() + " required", adapter);
+    return null;
   }
 
   protected void setReferent(@NotNull String role, INodeAdapter newValue) {
@@ -558,7 +553,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     if (this instanceof AbstractConceptDeclaration) {
       conceptDeclaration = (AbstractConceptDeclaration) this;
     } else {
-      conceptDeclaration = getConceptDeclarationAdapter();
+      conceptDeclaration = getNode().getConceptDeclarationAdapter();
     }
 
     if (lookupHierarchy) {

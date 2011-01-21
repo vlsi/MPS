@@ -112,7 +112,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       Language lang = scope.getLanguage(ref);
       modelLanguages.remove(lang);
 
-      for (ConceptDeclaration conceptDeclaration : lang.getConceptDeclarations()) {
+      for (SNode conceptDeclaration : lang.getConceptDeclarations()) {
         if (ModelConstraintsManager.getInstance().canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
           add(new NewRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
         }
@@ -126,7 +126,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     List<Language> languagesWithRoots = new ArrayList<Language>();
     for (final Language language : modelLanguages) {
-      for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
+      for (SNode conceptDeclaration : language.getConceptDeclarations()) {
         if (ModelConstraintsManager.getInstance().canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
           languagesWithRoots.add(language);
           break;
@@ -148,7 +148,7 @@ public class CreateRootNodeGroup extends BaseGroup {
         langRootsGroup = this;
       }
 
-      for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
+      for (SNode conceptDeclaration : language.getConceptDeclarations()) {
         if (ModelConstraintsManager.getInstance().canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
           langRootsGroup.add(new NewRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
         }

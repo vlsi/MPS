@@ -24,9 +24,8 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
-import jetbrains.mps.lang.generator.structure.*;
+import jetbrains.mps.lang.generator.structure.RuleConsequence;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.lang.pattern.structure.PatternExpression;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
@@ -57,7 +56,7 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
 
   @Override
   public String getApplicableConcept() {
-    SNode patternNode = ruleNode.getChild(PatternReduction_MappingRule.PATTERN).getChild(PatternExpression.PATTERN_NODE);
+    SNode patternNode = RuleUtil.getPatternReductionRulePatternNode(ruleNode);
     return patternNode.getConceptFqName();
   }
 
@@ -108,9 +107,8 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
   private Collection<SNode> apply(SNode inputNode, @NotNull GeneratedMatchingPattern pattern, @NotNull TemplateExecutionEnvironment environment)
     throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, GenerationCanceledException {
 
-    SNode labelDeclaration = ruleNode.getReferent(BaseMappingRule.LABEL_DECLARATION);
-    String ruleMappingName = labelDeclaration != null ? labelDeclaration.getProperty(MappingLabelDeclaration.NAME) : null;
-    SNode ruleConsequence = ruleNode.getChild(Reduction_MappingRule.RULE_CONSEQUENCE);
+    String ruleMappingName = RuleUtil.getPatternReductionRuleLabel(ruleNode);
+    SNode ruleConsequence = RuleUtil.getPatternReductionRuleConsequence(ruleNode);
     if (ruleConsequence == null) {
       environment.getGenerator().showErrorMessage(inputNode, null, ruleNode, "error processing reduction rule: no rule consequence");
       return null;

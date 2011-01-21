@@ -101,13 +101,13 @@ public final class CreateFromUsageUtil {
     Collections.sort(modelLanguages, new ToStringComparator());
     for (final Language language : modelLanguages) {
       boolean hasChildren = false;
-      for (final ConceptDeclaration concept : language.getConceptDeclarations()) {
-        if (concept.getRootable() && (conceptsFilter == null || conceptsFilter.met(concept.getNode()))) {
-          BaseAction action = new BaseAction(NodePresentationUtil.matchingText(concept.getNode())) {
+      for (final SNode concept : language.getConceptDeclarations()) {
+        if (SNodeUtil.getConceptDeclaration_IsRootable(concept) && (conceptsFilter == null || conceptsFilter.met(concept))) {
+          BaseAction action = new BaseAction(NodePresentationUtil.matchingText(concept)) {
             protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {
-                  SNode result = NodeFactoryManager.createNode(concept, null, null, model, scope);
+                  SNode result = NodeFactoryManager.createNode((ConceptDeclaration) BaseAdapter.fromNode(concept), null, null, model, scope);
                   model.addRoot(result);
                   if (newRootHandler != null) {
                     newRootHandler.set(result);
@@ -116,7 +116,7 @@ public final class CreateFromUsageUtil {
               });
             }
           };
-          Icon icon = IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept.getNode()));
+          Icon icon = IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept));
           action.getTemplatePresentation().setIcon(icon);
           action.setExecuteOutsideCommand(true);
 

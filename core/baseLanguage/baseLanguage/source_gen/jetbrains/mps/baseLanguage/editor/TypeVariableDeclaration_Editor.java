@@ -101,7 +101,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no bound>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    TypeVariableDeclaration_addAuxBound.setCellActions(editorCell, node, editorContext);
+    editorCell.addKeyMap(new TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

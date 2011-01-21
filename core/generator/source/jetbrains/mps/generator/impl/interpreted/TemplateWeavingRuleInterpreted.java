@@ -17,18 +17,15 @@ package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
-import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
-import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.GeneratorUtil;
-import jetbrains.mps.generator.impl.TemplateProcessor;
+import jetbrains.mps.generator.impl.*;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
+import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
@@ -51,7 +48,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
 
   public TemplateWeavingRuleInterpreted(SNode rule) {
     ruleNode = rule;
-    applicableConcept = rule.getReferent(Weaving_MappingRule.APPLICABLE_CONCEPT);
+    applicableConcept = RuleUtil.getBaseRuleApplicableConcept(ruleNode);
   }
 
   @Override
@@ -66,7 +63,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
 
   @Override
   public boolean applyToInheritors() {
-    return ruleNode.getBooleanProperty(Weaving_MappingRule.APPLY_TO_CONCEPT_INHERITORS);
+    return RuleUtil.getBaseRuleApplyToConceptInheritors(ruleNode);
   }
 
   @Override
@@ -95,7 +92,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
 
   @Override
   public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    SNode condition = ruleNode.getChild(Weaving_MappingRule.CONDITION_FUNCTION);
+    SNode condition = RuleUtil.getBaseRuleCondition(ruleNode);
     if (condition == null) {
       return true;
     }
@@ -158,11 +155,6 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     }
   }
 
-  @Deprecated
-  public Weaving_MappingRule getNode() {
-    return (Weaving_MappingRule) ruleNode.getAdapter();
-  }
-
   private void weaveTemplateDeclaration(TemplateDeclaration template,
                                         SNode outputContextNode, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment environment)
     throws GenerationFailureException, GenerationCanceledException {
@@ -192,8 +184,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     // check fragments: all fragments with <default context> should have the same parent
     checkTemplateFragmentsForWeaving(template, templateFragments, environment);
 
-    SNode labelDeclaration = ruleNode.getReferent(BaseMappingRule.LABEL_DECLARATION);
-    String ruleMappingName = labelDeclaration != null ? labelDeclaration.getProperty(MappingLabelDeclaration.NAME) : null;
+    String ruleMappingName = RuleUtil.getBaseRuleLabel(ruleNode);
 
     // for each template fragment create output nodes
     TemplateProcessor templateProcessor = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());

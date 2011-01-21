@@ -17,7 +17,6 @@ package jetbrains.mps.datatransfer;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -53,12 +52,12 @@ public class PasteWrappersManager implements ApplicationComponent {
     myClassLoaderManager = classLoaderManager;
   }
 
-  public boolean canWrapInto(SNode node, AbstractConceptDeclaration targetConcept) {
+  public boolean canWrapInto(SNode node, SNode targetConcept) {
     checkLoaded();
     return getWrapperFor(node, targetConcept) != null;
   }
 
-  public SNode wrapInto(SNode node, AbstractConceptDeclaration targetConcept) {
+  public SNode wrapInto(SNode node, SNode targetConcept) {
     checkLoaded();
     PasteWrapper wrapper = getWrapperFor(node, targetConcept);
     if (wrapper == null) {
@@ -71,11 +70,11 @@ public class PasteWrappersManager implements ApplicationComponent {
     return result;
   }
 
-  private PasteWrapper getWrapperFor(SNode node, AbstractConceptDeclaration targetConcept) {
+  private PasteWrapper getWrapperFor(SNode node, SNode targetConcept) {
     Map<String, PasteWrapper> wrappers = myWrappers.get(NameUtil.nodeFQName(targetConcept));
     if (wrappers == null) return null;
-    List<AbstractConceptDeclaration> superConcepts = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
-    for (AbstractConceptDeclaration acd : superConcepts) {
+    List<SNode> superConcepts = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationNode());
+    for (SNode acd : superConcepts) {
       if (wrappers.containsKey(NameUtil.nodeFQName(acd))) {
         return wrappers.get(NameUtil.nodeFQName(acd));
       }

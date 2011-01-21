@@ -16,7 +16,6 @@
 package jetbrains.mps.typesystem.inference;
 
 import com.intellij.util.containers.HashMap;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
@@ -55,12 +54,13 @@ public class ConceptWrapper extends DefaultAbstractWrapper {
     return false;
   }
 
-  public boolean isConcrete() {
-    return false;
+  @Override
+  public SNode getVariable() {
+    return null;
   }
 
-  public RuntimeTypeVariable getVariable() {
-    return null;
+  public boolean isConcrete() {
+    return false;
   }
 
   public String getVariableName() {

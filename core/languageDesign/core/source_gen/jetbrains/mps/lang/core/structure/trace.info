@@ -13,6 +13,6 @@
   <unitInfo fileName="ExportScopeModule.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.core.structure.ExportScopeModule" />
   <unitInfo fileName="ExportScopePublic.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.core.structure.ExportScopePublic" />
   <unitInfo fileName="ExportScopeNamespace.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.structure.ExportScopeNamespace" />
-  <unitInfo fileName="BaseConcept.java" startLine="11" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  <unitInfo fileName="BaseConcept.java" startLine="11" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.core.structure.BaseConcept" />
 </debugInfo>
 

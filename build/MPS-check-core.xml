@@ -23,6 +23,7 @@
     <path path="core/generator/source" />
     <path path="core/generator/source_gen" />
     <path path="core/typesystemEngine/source"/>
+    <path path="core/typesystemEngine/source_gen"/>
     <path path="core/runtime/source" />
     <path path="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" />
 

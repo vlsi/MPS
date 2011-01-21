@@ -16,9 +16,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.HashSet" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.ArrayAccessExpression_DataFlow" file="ArrayAccessExpression_DataFlow.java">
@@ -68,9 +68,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.LocalVariableReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.BaseAssignmentExpression_DataFlow" file="BaseAssignmentExpression_DataFlow.java">
@@ -141,9 +141,9 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.Closure_DataFlow" file="Closure_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Closure_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Closure_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
@@ -168,31 +168,32 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.DFABuilders" file="DFABuilders.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.SubstringExpression_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.GenericNewExpression_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.AssignmentExpression_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.SwitchStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.LocalVariableDeclaration_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.NotExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.StaticInitializer_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ConceptFunction_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.TernaryOperatorExpression_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.BitwiseNotExpression_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.StaticMethodCall_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.BlockStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.Closure_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.IfStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.WhileStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.Expression_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ContinueStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.TryCatchStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.BitwiseNotExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ArrayAccessExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.SwitchCase_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ElsifClause_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.AnonymousClassCreator_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.InstanceMethodCallOperation_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.Closure_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.StaticMethodCall_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.CatchClause_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.BaseAssignmentExpression_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.InstanceInitializer_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.SynchronizedStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.AssertStatement_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.LocalVariableDeclaration_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ForeachStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ArrayCreator_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.DoWhileStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.StatementList_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.WhileStatement_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.SwitchStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.TryStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ParameterReference_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.LocalVariableDeclarationStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.BaseMethodCall_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.DimensionExpression_DataFlow" />
@@ -202,28 +203,27 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ForStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ReturnStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.AsExpression_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.InstanceInitializer_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.BreakStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ContinueStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.LocalVariableReference_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ThrowStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ArrayLiteral_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ParenthesizedExpression_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.TernaryOperatorExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.CastExpression_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ParameterReference_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.BreakStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ArrayCreatorWithInitializer_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.TryStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ParenthesizedExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ParameterDeclaration_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ForeachStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.CatchClause_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.AbstractUnaryNumberOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.BaseMethodDeclaration_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.CommentedStatementsBlock_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.VariableDeclaration_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.DoWhileStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.BaseAssignmentExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.IMethodCall_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.SynchronizedStatement_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.TryCatchStatement_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.BlockStatement_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ConceptFunction_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.GenericNewExpression_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.AssignmentExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ExpressionStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.BinaryOperation_DataFlow" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilders" />
@@ -285,8 +285,8 @@
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.Expression_DataFlow" file="Expression_DataFlow.java">
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.ForLoopNotNull" file="ForLoopNotNull.java">
@@ -486,14 +486,14 @@
     <classNode dependClassName="java.util.ArrayList" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.ParameterDeclaration_DataFlow" file="ParameterDeclaration_DataFlow.java">
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.ParameterReference_DataFlow" file="ParameterReference_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.ParenthesizedExpression_DataFlow" file="ParenthesizedExpression_DataFlow.java">
@@ -504,8 +504,8 @@
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.RemarkStatement_DataFlow" file="RemarkStatement_DataFlow.java">
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.ReturnStatement_DataFlow" file="ReturnStatement_DataFlow.java">
@@ -640,11 +640,11 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.StaticInitializer_DataFlow" file="StaticInitializer_DataFlow.java">

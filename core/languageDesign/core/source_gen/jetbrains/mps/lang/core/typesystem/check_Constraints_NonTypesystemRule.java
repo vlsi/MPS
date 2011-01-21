@@ -156,7 +156,7 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
         if ("left_transform_hint".equals(name) || "right_transform_hint".equals(name)) {
           continue;
         }
-        if (SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)), name) == null) {
+        if (SModelSearchUtil.findPropertyDeclaration(concept, name) == null) {
           {
             BaseQuickFixProvider intentionProvider = null;
             intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.RemoveUndeclaredProperty_QuickFix", false);

@@ -71,8 +71,52 @@ public class HUtil {
   public static boolean isRuntimeTypeVariable(SNode node) {
     if (node == null) return false;
     String conceptFqName = node.getConceptFqName();
-    return "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable".equals(conceptFqName)
-      || "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType".equals(conceptFqName);
+    return "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable".equals(conceptFqName);
+  }
+
+  public static boolean isRuntimeListVariable(SNode node) {
+    if (node == null) return false;
+    String conceptFqName = node.getConceptFqName();
+    return "jetbrains.mps.lang.typesystem.structure.RuntimeListVariable".equals(conceptFqName);
+  }
+
+  public static boolean hasVariablesInside(SNode node) {
+    if (isRuntimeTypeVariable(node)) {
+      return true;
+    }
+    for (SNode child : node.getChildren()) {
+      if (hasVariablesInside(child)) {
+        return true;
+      }
+    }
+    for (SNode referent : node.getReferents()) {
+      if (referent != null && HUtil.isRuntimeTypeVariable(referent)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  @Deprecated
+  public static boolean isRuntimeErrorType(SNode node) {
+    if (node == null) return false;
+    String conceptFqName = node.getConceptFqName();
+    return "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType".equals(conceptFqName);
+  }
+
+  public static boolean isRuntimeHoleType(SNode node) {
+    if (node == null) return false;
+    String conceptFqName = node.getConceptFqName();
+    return "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType".equals(conceptFqName);
+  }
+
+  @Deprecated
+  public static String getErrorText(SNode node) {
+    if (isRuntimeErrorType(node)) {
+      return node.getProperty("errorText");
+    } else {
+      return null;
+    }
   }
 
   public static void addAdditionalRuleIdsFromInfo(IErrorReporter errorReporter, EquationInfo equationInfo) {

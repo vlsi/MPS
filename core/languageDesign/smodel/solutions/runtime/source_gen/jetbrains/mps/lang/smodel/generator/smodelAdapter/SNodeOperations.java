@@ -513,7 +513,7 @@ public class SNodeOperations {
       String role = attribute.getRole_();
       if (AttributesRolesUtil.isPropertyAttributeRole(role)) {
         String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
-        if (SModelSearchUtil.findPropertyDeclaration(newChild.getConceptDeclarationAdapter(), propertyName) == null) {
+        if (SModelSearchUtil.findPropertyDeclaration(newChild.getConceptDeclarationNode(), propertyName) == null) {
           // no such property in new child : don't copy the attribute 
           LOG.error("couldn't copy attribute " + attribute.getConceptShortName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConceptShortName(), newChild);
           continue;
@@ -521,7 +521,7 @@ public class SNodeOperations {
       }
       if (AttributesRolesUtil.isLinkAttributeRole(role)) {
         String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(role);
-        if (SModelSearchUtil.findLinkDeclaration(newChild.getConceptDeclarationAdapter(), linkRole) == null) {
+        if (SModelSearchUtil.findLinkDeclaration(newChild.getConceptDeclarationNode(), linkRole) == null) {
           // no such link in new child : don't copy the attribute 
           LOG.error("couldn't copy attribute " + attribute.getConceptShortName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConceptShortName(), newChild);
           continue;
@@ -622,12 +622,12 @@ public class SNodeOperations {
     if (referenceNode == null) {
       return null;
     }
-    AbstractConceptDeclaration referenceNodeConcept = referenceNode.getConceptDeclarationAdapter();
-    LinkDeclaration referenceLinkDecl = SModelSearchUtil.findLinkDeclaration(referenceNodeConcept, referenceRole);
+    SNode referenceNodeConcept = referenceNode.getConceptDeclarationNode();
+    SNode referenceLinkDecl = SNodeOperations.cast(SModelSearchUtil.findLinkDeclaration(referenceNodeConcept, referenceRole), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     if (referenceLinkDecl == null) {
       return null;
     }
-    String genuineRole = SModelUtil_new.getGenuineLinkRole(referenceLinkDecl);
+    String genuineRole = SModelUtil.getGenuineLinkRole(referenceLinkDecl);
     SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, genuineRole, context);
     if (status.isOk()) {
       return status.getSearchScope();

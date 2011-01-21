@@ -91,9 +91,9 @@ public final class SConceptOperations {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
     }
-    List<AbstractConceptDeclaration> list = SModelUtil_new.getConceptAndSuperConcepts((AbstractConceptDeclaration) conceptDeclarationNode.getAdapter());
-    List<SNode> result = BaseAdapter.toNodes(list);
+    List<SNode> result = SModelUtil_new.getConceptAndSuperConcepts(conceptDeclarationNode);
     if (!(inclusion)) {
+      result = new ArrayList<SNode>(result);
       result.remove(conceptDeclarationNode);
     }
     return result;
@@ -103,8 +103,7 @@ public final class SConceptOperations {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
     }
-    List<AbstractConceptDeclaration> list = SModelUtil_new.getConceptAndSuperConcepts((AbstractConceptDeclaration) conceptDeclarationNode.getAdapter());
-    return BaseAdapter.toNodes(list);
+    return SModelUtil_new.getConceptAndSuperConcepts(conceptDeclarationNode);
   }
 
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model, IScope scope) {
@@ -118,7 +117,7 @@ public final class SConceptOperations {
       SNode declaration = SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance());
       Language lang = SModelUtil.getDeclaringLanguage(declaration);
       if (availableLanguages.contains(lang)) {
-        result.add(lang.findConceptDeclaration(NameUtil.shortNameFromLongName(descendant)).getNode());
+        result.add(lang.findConceptDeclaration(NameUtil.shortNameFromLongName(descendant)));
       }
     }
     return result;

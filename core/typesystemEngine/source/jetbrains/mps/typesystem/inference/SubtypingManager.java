@@ -21,11 +21,11 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.structure.MeetType;
-import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.util.*;
+import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
@@ -122,8 +122,8 @@ public class SubtypingManager {
     //joins
     if (superRepresentator instanceof NodeWrapper) {
       SNode node = superRepresentator.getNode();
-      if (LatticeUtil.isJoin(node)) {
-        for (SNode argument : LatticeUtil.getJoinArguments(node)) {
+      if (jetbrains.mps.typesystemEngine.util.LatticeUtil.isJoin(node)) {
+        for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getJoinArguments(node)) {
           if (equationManager == null || equationManager.isConcrete(NodeWrapper.createWrapperFromNode(argument, equationManager, true))) {
             if (isSubtypeByReplacementRules(subRepresentator.getNode(), argument)) {
               return true;
@@ -141,9 +141,9 @@ public class SubtypingManager {
       SNode node = subRepresentator.getNode();
 
       //meets
-      if (LatticeUtil.isMeet(node)) {
+      if (jetbrains.mps.typesystemEngine.util.LatticeUtil.isMeet(node)) {
         boolean replacementAllowed = equationManager == null || equationManager.isConcrete(superRepresentator);
-        for (SNode argument : LatticeUtil.getMeetArguments(node)) {
+        for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getMeetArguments(node)) {
           if (replacementAllowed) {
             if (isSubtypeByReplacementRules(argument, superRepresentator.getNode())) {
               return true;
@@ -336,8 +336,8 @@ public class SubtypingManager {
     if (term.isConcrete()) {
       SNode node = term.getNode();
 
-      if (LatticeUtil.isMeet(node)) {
-        for (SNode argument : LatticeUtil.getMeetArguments(node)) {
+      if (jetbrains.mps.typesystemEngine.util.LatticeUtil.isMeet(node)) {
+        for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getMeetArguments(node)) {
           result.addStructurally(NodeWrapper.createWrapperFromNode(argument, null));
         }
         return result;
@@ -360,9 +360,10 @@ public class SubtypingManager {
   public IWrapper leastCommonSupertype(Set<IWrapper> types, boolean isWeak, EquationManager equationManager) {
     Set<IWrapper> lcss = leastCommonSupertypesWrappers(types, isWeak);
     if (lcss.size() != 1) {
-      RuntimeErrorType type = RuntimeErrorType.newInstance(AuxilaryRuntimeModel.getDescriptor().getSModel());
+     /* RuntimeErrorType type = RuntimeErrorType.newInstance(AuxilaryRuntimeModel.getDescriptor().getSModel());
       type.setErrorText("uncomparable types");
-      return NodeWrapper.createWrapperFromNode(BaseAdapter.fromAdapter(type), equationManager);
+      return NodeWrapper.createWrapperFromNode(BaseAdapter.fromAdapter(type), equationManager);*/
+      return null; //todo error
     }
     return lcss.iterator().next();
   }
@@ -555,7 +556,7 @@ System.out.println("alltypes = " + allTypes);*/
     }
 
     StructuralWrapperSet result_ = new StructuralWrapperSet();
-    result_.add(LatticeUtil.meet(commonSupertypes));
+    result_.add(jetbrains.mps.typesystemEngine.util.LatticeUtil.meet(commonSupertypes));
 
     return result_; //commonSupertypes;
   }
@@ -579,6 +580,7 @@ System.out.println("alltypes = " + allTypes);*/
         wrappers.add(NodeWrapper.fromNode(child, equationManager));
       }
       IWrapper lcs = leastCommonSupertype(wrappers, isWeak, equationManager);
+      if (lcs == null) return null;
       SNode result = coerceSubtyping(lcs.getNode(), pattern, isWeak, equationManager);
       return result;
     }

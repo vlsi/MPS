@@ -25,7 +25,7 @@ public class ModelChange {
 
   static void assertLegalNodeChange(SNode node) {
     //noinspection PointlessBooleanExpression,ConstantConditions
-    if (FREEZE_CHECKS_ENABLED && isFrozen(node)) {
+    if (FREEZE_CHECKS_ENABLED && myFrozenNodes.get().contains(node)) {
       throw new IllegalModelChangeError("can't modify a frozen node" + node.getDebugText());
     }
     if (!node.getModelInternal().isLoading() && node.isRegistered() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
@@ -57,36 +57,39 @@ public class ModelChange {
 
   //----------frozen mode---------
 
-  //todo should work in parallel mode
-  private static final Set<SNode> myFrozenNodes = new HashSet<SNode>();
+  private static final ThreadLocal<Set<SNode>> myFrozenNodes = new ThreadLocal<Set<SNode>>() {
+    @Override
+    protected Set<SNode> initialValue() {
+      return new HashSet<SNode>();
+    }
+  };
 
   public static <T> T freezeAndCompute(SNode node, Computable<T> computable) {
-    if (isFrozen(node)) {
+    assert ModelAccess.instance().canRead();
+    SModel model = node.getModel();
+    if (model != null && !model.isLoading()) {
+      // normal node => do not freeze, we believe in ModelAccess
+      if (ModelAccess.instance().canWrite()) {
+        return ModelAccess.instance().runReadInWriteAction(computable);
+      } else {
+        return computable.compute();
+      }
+    }
+
+    Set<SNode> frozen = myFrozenNodes.get();
+    if (frozen.contains(node)) {
       return computable.compute();
     }
+
     try {
-      freeze(node);
+      for (SNode desc : node.getDescendantsIterable(null, true)) {
+        frozen.add(desc);
+      }
       return computable.compute();
     } finally {
-      unfreeze(node);
+      for (SNode desc : node.getDescendantsIterable(null, true)) {
+        frozen.remove(desc);
+      }
     }
-  }
-
-  private static void freeze(SNode node) {
-    myFrozenNodes.add(node);
-    for (SNode child : node.getChildrenIterable()) {
-      freeze(child);
-    }
-  }
-
-  private static void unfreeze(SNode node) {
-    myFrozenNodes.remove(node);
-    for (SNode child : node.getChildrenIterable()) {
-      unfreeze(child);
-    }
-  }
-
-  private static boolean isFrozen(SNode node) {
-    return myFrozenNodes.contains(node);
   }
 }

@@ -47,4 +47,8 @@ public class BootstrapLanguages {
   public static Language generatorLanguage() {
     return (Language) MPSModuleRepository.getInstance().getModule(GENERATOR);
   }
+
+  public static Language coreLanguage() {
+    return (Language) MPSModuleRepository.getInstance().getModule(CORE);
+  }
 }

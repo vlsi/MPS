@@ -20,9 +20,6 @@ import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.*;
-import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
-import jetbrains.mps.lang.typesystem.structure.RuntimeHoleType;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
@@ -443,9 +440,8 @@ public class NodeTypesComponent {
       SNode term = contextEntry.getKey();
       if (term == null) continue;
       SNode type = expandTypeAndPutToContext(term);
-      if (type != null && (RuntimeErrorType.concept.equals(type.getConceptFqName()))) {
-        RuntimeErrorType errorType = (RuntimeErrorType) BaseAdapter.fromNode(type);
-        reportTypeError(term, errorType.getErrorText(), errorType.getNodeModel(), errorType.getNodeId());
+      if (HUtil.isRuntimeErrorType(type)) {
+        reportTypeError(term, HUtil.getErrorText(type), null, null);
       }
     }
   }
@@ -516,10 +512,7 @@ public class NodeTypesComponent {
         }
         computeTypes(node, true, false, additionalNodes, inferenceMode);
         type = getType(initialNode);
-        if (type == null ||
-          type.getAdapter() instanceof RuntimeTypeVariable ||
-          (type.getAdapter() instanceof RuntimeHoleType && myHoleTypeWrapper.getInequationSystem().isEmpty()) ||
-          !type.getAdapter().getDescendants(RuntimeTypeVariable.class).isEmpty()) {
+        if (type == null || HUtil.hasVariablesInside(type)) {
           if (node.isRoot()) {
             computeTypes(node, true, true, new ArrayList<SNode>(0), inferenceMode); //the last possibility: check the whole root
             type = getType(initialNode);

@@ -72,7 +72,7 @@ public class IconManager {
       return false;
     }
     ConceptDeclaration concept = (ConceptDeclaration) acd;
-    return ModelConstraintsManager.getInstance().getAlternativeIconMethod(concept) != null;
+    return ModelConstraintsManager.getInstance().getAlternativeIconMethod(BaseAdapter.fromAdapter(concept)) != null;
   }
 
   public static Icon getIconWithoutAdditionalPart(@NotNull final SNode node) {
@@ -94,7 +94,7 @@ public class IconManager {
 
         if (node.getConceptDeclarationAdapter() instanceof ConceptDeclaration) {
           ConceptDeclaration concept = (ConceptDeclaration) node.getConceptDeclarationAdapter();
-          Method alternativeIconMethod = ModelConstraintsManager.getInstance().getAlternativeIconMethod(concept);
+          Method alternativeIconMethod = ModelConstraintsManager.getInstance().getAlternativeIconMethod(BaseAdapter.fromAdapter(concept));
           Icon alternativeIcon = null;
           try {
             if (alternativeIconMethod != null) {
