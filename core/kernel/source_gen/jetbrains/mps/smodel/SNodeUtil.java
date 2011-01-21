@@ -8,8 +8,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class SNodeUtil {
+  public static String CONCEPT_IResolveInfo = "jetbrains.mps.lang.core.structure.IResolveInfo";
+  public static String CONCEPT_BaseConcept = "jetbrains.mps.lang.core.structure.BaseConcept";
+
   public SNodeUtil() {
   }
 
@@ -100,5 +104,21 @@ public class SNodeUtil {
 
   public static Iterable<SNode> getInterfaceConceptDeclaration_ExtendsReferenceNodes(SNode concept) {
     return SLinkOperations.getTargets(concept, "extends", true);
+  }
+
+  public static String getNodeShortDescription(SNode node) {
+    return SPropertyOperations.getString(node, "shortDescription");
+  }
+
+  public static String getConceptShortDescription(SNode concept) {
+    return SConceptPropertyOperations.getString(concept, "shortDescription");
+  }
+
+  public static String getConceptAlias(SNode concept) {
+    return SConceptPropertyOperations.getString(concept, "alias");
+  }
+
+  public static String getResolveInfo(SNode node) {
+    return SPropertyOperations.getString(node, "resolveInfo");
   }
 }
