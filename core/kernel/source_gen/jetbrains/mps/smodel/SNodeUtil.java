@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 public class SNodeUtil {
   public static String CONCEPT_IResolveInfo = "jetbrains.mps.lang.core.structure.IResolveInfo";
   public static String CONCEPT_BaseConcept = "jetbrains.mps.lang.core.structure.BaseConcept";
+  public static String CONCEPT_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
 
   public SNodeUtil() {
   }

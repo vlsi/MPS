@@ -17,11 +17,11 @@ package jetbrains.mps.textGen;
 
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceInfoManager;
@@ -172,7 +172,7 @@ public class TextGenManager {
         return textgenClass;
       }
 
-      cd = cd.getReferent(ConceptDeclaration.EXTENDS);
+      cd = SNodeUtil.getConceptDeclaration_Extends(cd);
       if (cd == null) cd = baseConcept;
     }
     return DefaultTextGen.class;

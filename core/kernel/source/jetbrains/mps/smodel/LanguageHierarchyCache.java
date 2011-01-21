@@ -19,15 +19,14 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.util.*;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.InternAwareStringSet;
+import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -152,13 +151,13 @@ public class LanguageHierarchyCache implements ApplicationComponent {
               SNode superConcept = SNodeUtil.getConceptDeclaration_Extends(declaration);
               if (superConcept != null) {
                 result.add(NameUtil.nodeFQName(superConcept));
-              } else if (!BaseConcept.concept.equals(NameUtil.nodeFQName(declaration))) {
-                result.add(BaseConcept.concept);
+              } else if (!SNodeUtil.CONCEPT_BaseConcept.equals(NameUtil.nodeFQName(declaration))) {
+                result.add(SNodeUtil.CONCEPT_BaseConcept);
               }
               for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
                 result.add(NameUtil.nodeFQName(interfaceConcept));
               }
-            } else if(SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration)) {
+            } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration)) {
               for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(declaration)) {
                 result.add(NameUtil.nodeFQName(interfaceConcept));
               }
@@ -201,38 +200,32 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
     result.add(conceptFqName);
 
-    AbstractConceptDeclaration declaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    SNode declaration = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (declaration == null) {
       return;
     }
 
-    if (declaration instanceof ConceptDeclaration) {
-      ConceptDeclaration cd = (ConceptDeclaration) declaration;
-      ConceptDeclaration extendedConcept = cd.getExtends();
+    if (SNodeUtil.isInstanceOfConceptDeclaration(declaration)) {
+      SNode extendedConcept = SNodeUtil.getConceptDeclaration_Extends(declaration);
       if (extendedConcept != null) {
-        Language declaringLanguage = SModelUtil.getDeclaringLanguage(extendedConcept.getNode());
+        Language declaringLanguage = SModelUtil.getDeclaringLanguage(extendedConcept);
         if (declaringLanguage != null) {
           collectAncestorNames(NameUtil.nodeFQName(extendedConcept), result);
         }
-      } else if (!BaseConcept.concept.equals(NameUtil.nodeFQName(cd))) {
-        collectAncestorNames(NameUtil.nodeFQName(SModelUtil.getBaseConcept()), result);
+      } else if (!SNodeUtil.CONCEPT_BaseConcept.equals(NameUtil.nodeFQName(declaration))) {
+        collectAncestorNames(SNodeUtil.CONCEPT_BaseConcept, result);
       }
 
-      for (InterfaceConceptReference icr : cd.getImplementses()) {
-        InterfaceConceptDeclaration interfaceConcept = icr.getIntfc();
+      for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
         if (interfaceConcept == null) continue;
-        Language declaringLanguage = SModelUtil.getDeclaringLanguage(interfaceConcept.getNode());
+        Language declaringLanguage = SModelUtil.getDeclaringLanguage(interfaceConcept);
         if (declaringLanguage == null) continue;
         collectAncestorNames(NameUtil.nodeFQName(interfaceConcept), result);
       }
-    }
-
-    if (declaration instanceof InterfaceConceptDeclaration) {
-      InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
-      for (InterfaceConceptReference icr : icd.getExtendses()) {
-        InterfaceConceptDeclaration interfaceConcept = icr.getIntfc();
+    } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration)) {
+      for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(declaration)) {
         if (interfaceConcept == null) continue;
-        Language declaringLanguage = SModelUtil.getDeclaringLanguage(interfaceConcept.getNode());
+        Language declaringLanguage = SModelUtil.getDeclaringLanguage(interfaceConcept);
         if (declaringLanguage == null) continue;
         collectAncestorNames(NameUtil.nodeFQName(interfaceConcept), result);
       }
@@ -285,13 +278,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
         for (Language language : myModuleRepository.getAllLanguages()) {
           SModelDescriptor structureDescriptor = language.getStructureModelDescriptor();
           if (structureDescriptor == null) continue;
-
-          Condition<SNode> cond = new Condition<SNode>() {
-            public boolean met(SNode node) {
-              return node.isInstanceOfConcept(AbstractConceptDeclaration.concept);
-            }
-          };
-          Iterable<SNode> iterable = new ConditionalIterable<SNode>(structureDescriptor.getSModel().roots(), cond);
+          Iterable<SNode> iterable = new ConditionalIterable<SNode>(structureDescriptor.getSModel().roots(), new IsInstanceCondition(SNodeUtil.CONCEPT_AbstractConceptDeclaration));
           for (SNode root : iterable) {
             addToCache(NameUtil.nodeFQName(root));
           }
