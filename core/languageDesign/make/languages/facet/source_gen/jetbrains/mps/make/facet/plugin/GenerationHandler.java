@@ -4,6 +4,7 @@ package jetbrains.mps.make.facet.plugin;
 
 import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.util.Pair;
