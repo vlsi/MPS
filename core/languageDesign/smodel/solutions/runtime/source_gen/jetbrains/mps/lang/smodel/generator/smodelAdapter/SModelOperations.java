@@ -54,14 +54,14 @@ public class SModelOperations {
 
   public static List<SNode> getRootsIncludingImported(SModel model, IScope scope, String conceptFqName) {
     if (model == null) {
-      return Collections.EMPTY_LIST;
+      return Collections.emptyList();
     }
     if (conceptFqName == null) {
       return allRootsIncludingImported(model, scope);
     }
     AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
     if (concept == null) {
-      return Collections.EMPTY_LIST;
+      return Collections.emptyList();
     }
     List<SNode> list = new ArrayList<SNode>();
     for (SNode node : allRootsIncludingImported(model, scope)) {
@@ -74,7 +74,7 @@ public class SModelOperations {
 
   public static List<SNode> getNodesIncludingImported(SModel model, IScope scope, String conceptFqName) {
     if (model == null) {
-      return Collections.EMPTY_LIST;
+      return Collections.emptyList();
     }
     if (conceptFqName == null) {
       return allNodesIncludingImported(model, scope, new Condition<SNode>() {
@@ -83,9 +83,9 @@ public class SModelOperations {
         }
       });
     }
-    final AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
+    final SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
     if (concept == null) {
-      return Collections.EMPTY_LIST;
+      return Collections.emptyList();
     }
     return allNodesIncludingImported(model, scope, new IsInstanceCondition(concept));
   }

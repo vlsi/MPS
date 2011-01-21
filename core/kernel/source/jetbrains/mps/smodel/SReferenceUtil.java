@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.NameUtil;
@@ -46,7 +45,6 @@ public class SReferenceUtil {
       return false;
     }
 
-    // TODO get rid of IResolveInfo.concept
-    return SModelUtil.isAssignableConcept(NameUtil.nodeFQName(target), IResolveInfo.concept);
+    return SModelUtil.isAssignableConcept(NameUtil.nodeFQName(target), SNodeUtil.concept_IResolveInfo);
   }
 }
