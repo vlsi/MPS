@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.NodeAttributeAccessQualifier_annotationLink_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.SEnumOperationInvocation_enumDeclaration_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.LinkNameRefExpression_linkDeclaration_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.SPropertyAccess_property_ReferentConstraint" />
@@ -29,6 +30,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.SLinkImplicitSelect_link_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.Node_IsRoleOperation_linkInParent_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.SLinkAccess_link_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.PropertyNameRefExpression_propertyDeclaration_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.SConceptPropertyAccess_conceptProperty_ReferentConstraint" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.SLinkListAccess_link_ReferentConstraint" />
@@ -94,6 +96,17 @@
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.constraints.LinkNameRefExpression_linkDeclaration_ReferentConstraint" file="LinkNameRefExpression_linkDeclaration_ReferentConstraint.java">
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
@@ -211,6 +224,17 @@
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.constraints.PropertyNameRefExpression_propertyDeclaration_ReferentConstraint" file="PropertyNameRefExpression_propertyDeclaration_ReferentConstraint.java">
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>

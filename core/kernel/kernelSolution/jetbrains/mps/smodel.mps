@@ -459,6 +459,24 @@
         <link role="conceptDeclaration:16" targetNodeId="6.1071489090640:0" resolveInfo="ConceptDeclaration" />
       </node>
     </node>
+    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="5253134957341832993">
+      <property name="name:3" value="link_ConceptDeclaration_extends" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5253134957341832996" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="5253134957341832997" />
+      <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.LinkNameRefExpression:16" id="5253134957341977346">
+        <link role="conceptDeclaration:16" targetNodeId="6.1071489090640:0" resolveInfo="ConceptDeclaration" />
+        <link role="linkDeclaration:16" targetNodeId="6.1071489389519:0" />
+      </node>
+    </node>
+    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="5253134957342015602">
+      <property name="name:3" value="property_INamedConcept_name" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5253134957342015605" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="5253134957342015606" />
+      <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression:16" id="5253134957342015608">
+        <link role="conceptDeclaration:16" targetNodeId="5.1169194658468:0" resolveInfo="INamedConcept" />
+        <link role="propertyDeclaration:16" targetNodeId="5.1169194664001:0" resolveInfo="name" />
+      </node>
+    </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="2274990519051152612">
       <property name="name:3" value="getPresentation" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2274990519051152616" />

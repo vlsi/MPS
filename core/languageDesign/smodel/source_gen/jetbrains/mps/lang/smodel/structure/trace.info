@@ -104,6 +104,8 @@
   <unitInfo fileName="Model_RootsIncludingImportedOperation.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation" />
   <unitInfo fileName="Node_IsRoleOperation.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" />
   <unitInfo fileName="Model_CreateNewNodeOperation.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" />
+  <unitInfo fileName="PropertyNameRefExpression.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression" />
+  <unitInfo fileName="LinkNameRefExpression.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.LinkNameRefExpression" />
   <unitInfo fileName="LinkRefExpression.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.LinkRefExpression" />
   <unitInfo fileName="OperationParm_StopConceptList.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList" />
   <unitInfo fileName="OperationParm_ConceptList.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" />

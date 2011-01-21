@@ -15,6 +15,8 @@ public class SNodeUtil {
   public static String concept_BaseConcept = "jetbrains.mps.lang.core.structure.BaseConcept";
   public static String concept_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
   public static String concept_ConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
+  public static String link_ConceptDeclaration_extends = "extends";
+  public static String property_INamedConcept_name = "name";
 
   public SNodeUtil() {
   }
