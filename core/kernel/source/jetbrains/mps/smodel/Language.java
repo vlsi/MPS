@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.util.containers.ConcurrentHashSet;
-import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
@@ -510,7 +509,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private String getConceptName(SNode node) {
     if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(node))) return null;
-    return node.getPersistentProperty(INamedConcept.NAME);
+    return node.getPersistentProperty(SNodeUtil.property_INamedConcept_name);
   }
 
   public void save() {
