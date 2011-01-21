@@ -554,14 +554,14 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
     public void referenceAdded(SModelReferenceEvent event) {
       // don't process unless it is concept property (ref to concept property declaration)
-      if (event.getReference().getSourceNode().getAdapter() instanceof ConceptProperty) {
+      if (SNodeUtil.isInstanceOfConceptProperty(event.getReference().getSourceNode())) {
         super.referenceRemoved(event);
       }
     }
 
     public void referenceRemoved(SModelReferenceEvent event) {
       // don't process unless it is concept property (ref to concept property declaration)
-      if (event.getReference().getSourceNode().getAdapter() instanceof ConceptProperty) {
+      if (SNodeUtil.isInstanceOfConceptProperty(event.getReference().getSourceNode())) {
         super.referenceRemoved(event);
       }
     }
