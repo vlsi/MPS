@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2082624981609760242">
-    <nodeInfo nodeId="2082624981609760244" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;Ljava/lang/Iterable;)V" fileName="IMakeService.java" startLine="8" startPosition="31" endLine="9" endPosition="66" />
-    <nodeInfo nodeId="8273032235152883836" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;Ljava/lang/Iterable;Ljetbrains/mps/make/IMakeService/ScriptExecutor;)V" fileName="IMakeService.java" startLine="9" startPosition="66" endLine="10" endPosition="104" />
-    <nodeInfo nodeId="8273032235152867695" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Ljava/lang/Runnable;)V" fileName="IMakeService.java" startLine="11" startPosition="42" endLine="12" endPosition="45" />
-    <scopeInfo nodeId="2082624981609760244" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;Ljava/lang/Iterable;)V" fileName="IMakeService.java" startLine="8" startPosition="31" endLine="9" endPosition="66">
+    <nodeInfo nodeId="2082624981609760244" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;Ljava/lang/Iterable;)V" fileName="IMakeService.java" startLine="8" startPosition="31" endLine="9" endPosition="76" />
+    <nodeInfo nodeId="8273032235152883836" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;Ljava/lang/Iterable;Ljetbrains/mps/make/IMakeService/Executor;)V" fileName="IMakeService.java" startLine="9" startPosition="76" endLine="10" endPosition="108" />
+    <nodeInfo nodeId="8273032235152867695" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Ljava/lang/Runnable;)V" fileName="IMakeService.java" startLine="11" startPosition="36" endLine="12" endPosition="45" />
+    <scopeInfo nodeId="2082624981609760244" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;Ljava/lang/Iterable;)V" fileName="IMakeService.java" startLine="8" startPosition="31" endLine="9" endPosition="76">
       <varInfo nodeId="6516862185756586882" varName="resources" />
       <varInfo nodeId="2082624981609760248" varName="script" />
     </scopeInfo>
-    <scopeInfo nodeId="8273032235152883836" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;Ljava/lang/Iterable;Ljetbrains/mps/make/IMakeService/ScriptExecutor;)V" fileName="IMakeService.java" startLine="9" startPosition="66" endLine="10" endPosition="104">
+    <scopeInfo nodeId="8273032235152883836" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/script/IScript;Ljava/lang/Iterable;Ljetbrains/mps/make/IMakeService/Executor;)V" fileName="IMakeService.java" startLine="9" startPosition="76" endLine="10" endPosition="108">
       <varInfo nodeId="8273032235152883842" varName="resources" />
       <varInfo nodeId="8273032235152883845" varName="executor" />
       <varInfo nodeId="8273032235152883840" varName="script" />
     </scopeInfo>
-    <scopeInfo nodeId="8273032235152867695" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Ljava/lang/Runnable;)V" fileName="IMakeService.java" startLine="11" startPosition="42" endLine="12" endPosition="45">
+    <scopeInfo nodeId="8273032235152867695" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Ljava/lang/Runnable;)V" fileName="IMakeService.java" startLine="11" startPosition="36" endLine="12" endPosition="45">
       <varInfo nodeId="8273032235152883832" varName="runnable" />
     </scopeInfo>
-    <unitInfo nodeId="8273032235152867693" fileName="IMakeService.java" startLine="11" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.make.IMakeService$ScriptExecutor" />
+    <unitInfo nodeId="8273032235152867693" fileName="IMakeService.java" startLine="11" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.make.IMakeService$Executor" />
     <unitInfo nodeId="2082624981609760242" fileName="IMakeService.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.IMakeService" />
   </root>
   <root nodeId="6168415856807659180">

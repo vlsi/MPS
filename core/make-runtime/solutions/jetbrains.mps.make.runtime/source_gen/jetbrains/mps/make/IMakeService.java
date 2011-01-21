@@ -6,9 +6,9 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.resources.IResource;
 
 public interface IMakeService {
-  public void make(IScript script, Iterable<IResource> resources);
-  public void make(IScript script, Iterable<IResource> resources, IMakeService.ScriptExecutor executor);
-  public static interface ScriptExecutor {
+  public void make(IScript script, Iterable<? extends IResource> resources);
+  public void make(IScript script, Iterable<? extends IResource> resources, IMakeService.Executor executor);
+  public static interface Executor {
     public void doExecute(Runnable runnable);
   }
 
