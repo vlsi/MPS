@@ -30,6 +30,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Deprecated
 public abstract class BaseAction extends AnAction implements DumbAware {
   private boolean myIsAlwaysVisible = true;
   private boolean myExecuteOutsideCommand = false;

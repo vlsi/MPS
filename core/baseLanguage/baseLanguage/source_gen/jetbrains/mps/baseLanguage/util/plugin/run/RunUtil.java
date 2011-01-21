@@ -14,7 +14,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.workbench.make.WorkbenchMakeService;
+import jetbrains.mps.smodel.resources.ModelsToResources;
 
 public class RunUtil {
   public RunUtil() {
@@ -40,7 +41,9 @@ public class RunUtil {
       });
     }
     if (ListSequence.fromList(models).isNotEmpty()) {
-      GeneratorFacade.getInstance().generateModels(ProjectOperationContext.get(project), models, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true, false);
+      ProjectOperationContext context = ProjectOperationContext.get(project);
+      new WorkbenchMakeService(context, true).make(new ModelsToResources(context, models).resources(false));
+      // <node> 
     }
   }
 }

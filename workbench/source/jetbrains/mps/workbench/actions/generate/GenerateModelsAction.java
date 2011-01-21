@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+@Deprecated
 public abstract class GenerateModelsAction extends BaseAction {
   private List<SModelDescriptor> myModels;
   private IOperationContext myContext;

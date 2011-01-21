@@ -4,9 +4,6 @@ package jetbrains.mps.make.facet.plugin;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.make.script.ScriptBuilder;
-import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
@@ -30,10 +27,7 @@ public class MakeActionImpl {
   public void executeAction() {
     final Iterable<? extends IResource> inputRes = params.collectInput(!(this.cleanMake));
 
-    ScriptBuilder scb = new ScriptBuilder();
-    scb = scb.withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make"));
-
-    new WorkbenchMakeService(context, cleanMake).make(scb.toScript(), inputRes, new IMakeService.Executor() {
+    new WorkbenchMakeService(context, cleanMake).make(inputRes, new IMakeService.Executor() {
       public void doExecute(Runnable runnable) {
         dodoExecute(inputRes, runnable);
       }

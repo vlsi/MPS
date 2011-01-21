@@ -4,8 +4,8 @@ package jetbrains.mps.workbench.make;
 
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -32,6 +32,8 @@ import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.make.script.ScriptBuilder;
+import jetbrains.mps.make.facet.IFacet;
 
 public class WorkbenchMakeService implements IMakeService {
   private IOperationContext context;
@@ -42,19 +44,31 @@ public class WorkbenchMakeService implements IMakeService {
     this.cleanMake = cleanMake;
   }
 
-  public void make(IScript script, Iterable<? extends IResource> resources) {
-    doMake(script, resources, new IMakeService.Executor() {
+  public boolean make(Iterable<? extends IResource> resources) {
+    return doMake(resources, WorkbenchMakeService.defaultMakeScript(), new IMakeService.Executor() {
       public void doExecute(Runnable runnable) {
         runnable.run();
       }
     });
   }
 
-  public void make(IScript script, Iterable<? extends IResource> resources, IMakeService.Executor executor) {
-    doMake(script, resources, executor);
+  public boolean make(Iterable<? extends IResource> resources, IScript script) {
+    return doMake(resources, script, new IMakeService.Executor() {
+      public void doExecute(Runnable runnable) {
+        runnable.run();
+      }
+    });
   }
 
-  private void doMake(IScript script, final Iterable<? extends IResource> inputRes, IMakeService.Executor executor) {
+  public boolean make(Iterable<? extends IResource> resources, IScript script, IMakeService.Executor executor) {
+    return doMake(resources, script, executor);
+  }
+
+  public boolean make(Iterable<? extends IResource> resources, IMakeService.Executor executor) {
+    return doMake(resources, WorkbenchMakeService.defaultMakeScript(), executor);
+  }
+
+  private boolean doMake(final Iterable<? extends IResource> inputRes, IScript script, IMakeService.Executor executor) {
     final IScript scr = this.completeScript(script);
 
     if (!(scr.isValid())) {
@@ -62,7 +76,7 @@ public class WorkbenchMakeService implements IMakeService {
         "Rebuild" :
         "Make"
       ) + " failed. Invalid script."));
-      return;
+      return false;
     }
 
     // save all before launching the script 
@@ -84,7 +98,9 @@ public class WorkbenchMakeService implements IMakeService {
         "Rebuild" :
         "Make"
       ) + " failed. See previous messages for details."));
+      return false;
     }
+    return true;
   }
 
   private IScript completeScript(IScript scr) {
@@ -154,5 +170,9 @@ public class WorkbenchMakeService implements IMakeService {
         return mons;
       }
     };
+  }
+
+  public static IScript defaultMakeScript() {
+    return new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make")).toScript();
   }
 }
