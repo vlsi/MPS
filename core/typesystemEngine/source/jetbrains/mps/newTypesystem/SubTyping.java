@@ -114,9 +114,11 @@ public class SubTyping {
       return false;
     }
     // todo optimize!
-    Boolean answer = getCacheAnswer(subType, superType, isWeak);
-    if (answer != null) {
-      return answer;
+    if (false && superType instanceof NodeMatcher) {     //todo how about matched vars?
+      Boolean answer = getCacheAnswer(subType, (NodeMatcher)superType, isWeak);
+      if (answer != null) {
+        return answer;
+      }
     }
 
     Set<SNode> frontier = new HashSet<SNode>();
@@ -206,18 +208,6 @@ public class SubTyping {
           continue;
         }
         List<SNode> superTypes = subTypingRule.o1.getSubOrSuperTypes(term, context, subTypingRule.o2);
-        /*
-        List<SNode> superTypes = FreezeUtil.freezeAndCompute(term, new Computable<List<SNode>>() {
-          public List<SNode> compute() {
-            return UndoHelper.getInstance().runNonUndoableAction(new Computable<List<SNode>>() {
-              @Override
-              public List<SNode> compute() {
-                return
-              }
-            });
-          }
-        });*/
-        //todo freeze ?
         if (superTypes != null) {
           result.addAll(superTypes);
         }
@@ -452,23 +442,19 @@ public class SubTyping {
     });
   }
 
-  private Boolean getCacheAnswer(SNode subType, INodeMatcher superType, boolean isWeak) {
+  private Boolean getCacheAnswer(SNode subType, NodeMatcher superType, boolean isWeak) {
     SubtypingCache cache = myTypeChecker.getSubtypingCache();
     if (cache != null) {
-      if (superType instanceof NodeMatcher) {
-        Boolean answer = cache.getAnswer(subType, ((NodeMatcher) superType).getNode(), isWeak);
-        if (answer != null) {
-          return answer;
-        }
+      Boolean answer = cache.getAnswer(subType,superType.getNode(), isWeak);
+      if (answer != null) {
+        return answer;
       }
     }
     cache = myTypeChecker.getGlobalSubtypingCache();
     if (cache != null) {
-      if (superType instanceof NodeMatcher) {
-        Boolean answer = cache.getAnswer(subType, ((NodeMatcher) superType).getNode(), isWeak);
-        if (answer != null) {
-          return answer;
-        }
+      Boolean answer = cache.getAnswer(subType,superType.getNode(), isWeak);
+      if (answer != null) {
+        return answer;
       }
     }
     return null;
