@@ -457,7 +457,7 @@ public class SubTyping {
   private Boolean getCacheAnswer(SNode subType, INodeMatcher superType, boolean isWeak) {
     SubtypingCache cache = myTypeChecker.getSubtypingCache();
     if (cache != null) {
-      if (superType instanceof NodeWrapper) {
+      if (superType instanceof NodeMatcher) {
         Boolean answer = cache.getAnswer(subType, ((NodeMatcher) superType).getNode(), isWeak);
         if (answer != null) {
           return answer;
@@ -466,8 +466,8 @@ public class SubTyping {
     }
     cache = myTypeChecker.getGlobalSubtypingCache();
     if (cache != null) {
-      if (superType instanceof NodeWrapper) {
-        Boolean answer = cache.getAnswer(subType, ((NodeWrapper) superType).getNode(), isWeak);
+      if (superType instanceof NodeMatcher) {
+        Boolean answer = cache.getAnswer(subType, ((NodeMatcher) superType).getNode(), isWeak);
         if (answer != null) {
           return answer;
         }
