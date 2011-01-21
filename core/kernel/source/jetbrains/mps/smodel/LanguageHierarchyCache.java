@@ -151,8 +151,8 @@ public class LanguageHierarchyCache implements ApplicationComponent {
               SNode superConcept = SNodeUtil.getConceptDeclaration_Extends(declaration);
               if (superConcept != null) {
                 result.add(NameUtil.nodeFQName(superConcept));
-              } else if (!SNodeUtil.CONCEPT_BaseConcept.equals(NameUtil.nodeFQName(declaration))) {
-                result.add(SNodeUtil.CONCEPT_BaseConcept);
+              } else if (!SNodeUtil.concept_BaseConcept.equals(NameUtil.nodeFQName(declaration))) {
+                result.add(SNodeUtil.concept_BaseConcept);
               }
               for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
                 result.add(NameUtil.nodeFQName(interfaceConcept));
@@ -212,8 +212,8 @@ public class LanguageHierarchyCache implements ApplicationComponent {
         if (declaringLanguage != null) {
           collectAncestorNames(NameUtil.nodeFQName(extendedConcept), result);
         }
-      } else if (!SNodeUtil.CONCEPT_BaseConcept.equals(NameUtil.nodeFQName(declaration))) {
-        collectAncestorNames(SNodeUtil.CONCEPT_BaseConcept, result);
+      } else if (!SNodeUtil.concept_BaseConcept.equals(NameUtil.nodeFQName(declaration))) {
+        collectAncestorNames(SNodeUtil.concept_BaseConcept, result);
       }
 
       for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
@@ -278,7 +278,10 @@ public class LanguageHierarchyCache implements ApplicationComponent {
         for (Language language : myModuleRepository.getAllLanguages()) {
           SModelDescriptor structureDescriptor = language.getStructureModelDescriptor();
           if (structureDescriptor == null) continue;
-          Iterable<SNode> iterable = new ConditionalIterable<SNode>(structureDescriptor.getSModel().roots(), new IsInstanceCondition(SNodeUtil.CONCEPT_AbstractConceptDeclaration));
+          Iterable<SNode> iterable =
+            new ConditionalIterable<SNode>(
+              structureDescriptor.getSModel().roots(),
+              new IsInstanceCondition(SNodeUtil.concept_AbstractConceptDeclaration));
           for (SNode root : iterable) {
             addToCache(NameUtil.nodeFQName(root));
           }

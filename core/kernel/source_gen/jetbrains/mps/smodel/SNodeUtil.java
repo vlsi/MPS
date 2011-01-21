@@ -11,9 +11,10 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class SNodeUtil {
-  public static String CONCEPT_IResolveInfo = "jetbrains.mps.lang.core.structure.IResolveInfo";
-  public static String CONCEPT_BaseConcept = "jetbrains.mps.lang.core.structure.BaseConcept";
-  public static String CONCEPT_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
+  public static String concept_IResolveInfo = "jetbrains.mps.lang.core.structure.IResolveInfo";
+  public static String concept_BaseConcept = "jetbrains.mps.lang.core.structure.BaseConcept";
+  public static String concept_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
+  public static String concept_ConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
 
   public SNodeUtil() {
   }

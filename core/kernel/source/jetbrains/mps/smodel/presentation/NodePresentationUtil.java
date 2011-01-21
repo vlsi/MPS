@@ -84,7 +84,7 @@ public class NodePresentationUtil {
     }
 
     if (!visible) {
-      if (node.isInstanceOfConcept(SNodeUtil.CONCEPT_IResolveInfo)) {
+      if (node.isInstanceOfConcept(SNodeUtil.concept_IResolveInfo)) {
         return SNodeUtil.getResolveInfo(node);
       }
     }
