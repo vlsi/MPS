@@ -27067,8 +27067,9 @@
                 <property name="name" nameId="tpck.1169194664001" value="definitions" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7093131866560523056">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="m3a2.~AnalysisResult" resolveInfo="AnalysisResult" />
-                  <node role="parameter" roleId="tpee.1109201940907" type="tp2q.SetType" typeId="tp2q.1226511727824" id="7093131866560523057">
-                    <node role="elementType" roleId="tp2q.1226511765987" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7093131866560523058">
+                  <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4921263192982827442">
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~Set" resolveInfo="Set" />
+                    <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4921263192982827450">
                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ngmx.~WriteInstruction" resolveInfo="WriteInstruction" />
                     </node>
                   </node>
