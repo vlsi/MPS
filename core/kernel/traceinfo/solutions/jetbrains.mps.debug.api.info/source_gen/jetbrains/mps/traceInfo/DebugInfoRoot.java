@@ -19,7 +19,7 @@ public class DebugInfoRoot {
   private static final String UNIT_INFO = "unitInfo";
 
   private String myRootId;
-  private Set<PositionInfo> myPositions;
+  private Set<TraceablePositionInfo> myPositions;
   private Set<ScopePositionInfo> myScopePositions;
   private Set<UnitPositionInfo> myUnitPositions;
 
@@ -27,9 +27,9 @@ public class DebugInfoRoot {
     this.myRootId = rootId;
   }
 
-  public void addPosition(PositionInfo position) {
+  public void addPosition(TraceablePositionInfo position) {
     if (myPositions == null) {
-      myPositions = SetSequence.fromSet(new TreeSet<PositionInfo>());
+      myPositions = SetSequence.fromSet(new TreeSet<TraceablePositionInfo>());
     }
     SetSequence.fromSet(myPositions).addElement(position);
   }
@@ -52,7 +52,7 @@ public class DebugInfoRoot {
     return this.myRootId;
   }
 
-  public Set<PositionInfo> getPositions() {
+  public Set<TraceablePositionInfo> getPositions() {
     return this.myPositions;
   }
 
@@ -92,7 +92,7 @@ public class DebugInfoRoot {
     Element root = element;
     DebugInfoRoot result = new DebugInfoRoot(id);
     for (Element e : ((List<Element>) root.getChildren(DebugInfoRoot.NODE_INFO))) {
-      result.addPosition(new PositionInfo(e));
+      result.addPosition(new TraceablePositionInfo(e));
     }
     for (Element e : ((List<Element>) root.getChildren(DebugInfoRoot.SCOPE_INFO))) {
       result.addScopePosition(new ScopePositionInfo(e));

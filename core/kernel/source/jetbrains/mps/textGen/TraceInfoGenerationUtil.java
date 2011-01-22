@@ -18,8 +18,10 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
+import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
 import org.jetbrains.annotations.NotNull;
+import org.objectweb.asm.util.Traceable;
 
 import java.util.HashMap;
 import java.util.List;
@@ -50,14 +52,14 @@ public class TraceInfoGenerationUtil {
   }
 
   public static void createPositionInfo(SNodeTextGen nodeTextGen, SNode node) {
-    PositionInfo info = new PositionInfo();
+    TraceablePositionInfo info = new TraceablePositionInfo();
     info.setStartLine(nodeTextGen.getBuffer().getLineNumber());
     info.setStartPosition(nodeTextGen.getBuffer().getPosition());
     putUserObject(nodeTextGen.getBuffer(), POSITION_INFO, node, info);
   }
 
   public static void fillPositionInfo(SNodeTextGen nodeTextGen, SNode node, String propertyString) {
-    PositionInfo info = getUserObject(nodeTextGen.getBuffer(), POSITION_INFO, node);
+    TraceablePositionInfo info = getUserObject(nodeTextGen.getBuffer(), POSITION_INFO, node);
     info.setEndLine(nodeTextGen.getBuffer().getLineNumber());
     info.setEndPosition(nodeTextGen.getBuffer().getPosition());
     info.setConceptFqName(node.getConceptFqName());

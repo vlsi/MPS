@@ -87,7 +87,7 @@ public class TextGenerator {
   }
 
   private void fillDebugInfo(DebugInfo info, String fileName, TextGenerationResult result) {
-    Map<SNode, PositionInfo> positions = result.getPositions();
+    Map<SNode, TraceablePositionInfo> positions = result.getPositions();
     Map<SNode, ScopePositionInfo> scopePositions = result.getScopePositions();
     Map<SNode, UnitPositionInfo> unitPositions = result.getUnitPositions();
     if (positions == null && scopePositions == null && unitPositions == null) {
@@ -98,7 +98,7 @@ public class TextGenerator {
         SNode input = out;
         input = getOriginalInputNodeForNearestParent(input);
         if (input != null && !(input.isDisposed())) {
-          PositionInfo positionInfo = result.getPositions().get(out);
+          TraceablePositionInfo positionInfo = result.getPositions().get(out);
           positionInfo.setNodeId(input.getId());
           info.setModel(input.getModel());
           positionInfo.setFileName(fileName);

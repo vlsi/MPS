@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
+import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
 import jetbrains.mps.util.NameUtil;
 
@@ -67,10 +68,10 @@ public class TextGenManager {
     int topLength = topBufferText.isEmpty() ? 1 : topBufferText.split(buffer.getLineSeparator(), -1).length + 2;
 
     // position info
-    Map<SNode, PositionInfo> positionInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.POSITION_INFO);
+    Map<SNode, TraceablePositionInfo> positionInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.POSITION_INFO);
     Map<SNode, ScopePositionInfo> scopeInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.SCOPE_INFO);
     Map<SNode, UnitPositionInfo> unitInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.UNIT_INFO);
-    for (PositionInfo position : positionInfo.values()) {
+    for (TraceablePositionInfo position : positionInfo.values()) {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }

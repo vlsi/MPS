@@ -31,6 +31,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.traceInfo.PositionInfo;
+import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import org.jetbrains.annotations.NotNull;
 
 public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
@@ -90,7 +91,7 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
 
   private boolean updateMethodNameAndSignature() {
     if (myMethodName != null && myJniSignature != null) return true;
-    PositionInfo targetCodePosition = myLocation.getTargetCodePosition();
+    TraceablePositionInfo targetCodePosition = myLocation.getTargetCodePosition();
     if (targetCodePosition == null) {
       return false;
     }
