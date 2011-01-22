@@ -21,7 +21,9 @@ public class UnitPositionInfo extends PositionInfo {
   @Override
   public void saveTo(Element element) {
     super.saveTo(element);
-    element.setAttribute(UnitPositionInfo.UNIT_NAME, myUnitName);
+    if (myUnitName != null) {
+      element.setAttribute(UNIT_NAME, myUnitName);
+    }
   }
 
   public String getUnitName() {
