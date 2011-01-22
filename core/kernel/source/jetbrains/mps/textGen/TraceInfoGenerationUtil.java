@@ -56,12 +56,12 @@ public class TraceInfoGenerationUtil {
     putUserObject(nodeTextGen.getBuffer(), POSITION_INFO, node, info);
   }
 
-  public static void fillPositionInfo(SNodeTextGen nodeTextGen, SNode node) {
+  public static void fillPositionInfo(SNodeTextGen nodeTextGen, SNode node, String propertyString) {
     PositionInfo info = getUserObject(nodeTextGen.getBuffer(), POSITION_INFO, node);
     info.setEndLine(nodeTextGen.getBuffer().getLineNumber());
     info.setEndPosition(nodeTextGen.getBuffer().getPosition());
     info.setConceptFqName(node.getConceptFqName());
-    info.setPropertyString(((TraceableNodeTextGen) nodeTextGen).getTraceableProperty(node));
+    info.setPropertyString(propertyString);
   }
 
   public static void createScopeInfo(SNodeTextGen nodeTextGen, SNode node) {
@@ -71,11 +71,10 @@ public class TraceInfoGenerationUtil {
     putUserObject(nodeTextGen.getBuffer(), SCOPE_INFO, node, info);
   }
 
-  public static void fillScopeInfo(SNodeTextGen nodeTextGen, SNode node) {
+  public static void fillScopeInfo(SNodeTextGen nodeTextGen, SNode node, List<SNode> vars) {
     ScopePositionInfo info = getUserObject(nodeTextGen.getBuffer(), SCOPE_INFO, node);
     info.setEndLine(nodeTextGen.getBuffer().getLineNumber());
     info.setEndPosition(nodeTextGen.getBuffer().getPosition());
-    List<SNode> vars = ((ScopeNodeTextGen) nodeTextGen).getScopeVariables(node);
     for (SNode var : vars) {
       if (var != null) {
         info.addVarInfo(var);
@@ -90,10 +89,10 @@ public class TraceInfoGenerationUtil {
     putUserObject(nodeTextGen.getBuffer(), UNIT_INFO, node, info);
   }
 
-  public static void fillUnitInfo(SNodeTextGen nodeTextGen, SNode node) {
+  public static void fillUnitInfo(SNodeTextGen nodeTextGen, SNode node, String unitName) {
     UnitPositionInfo info = getUserObject(nodeTextGen.getBuffer(), UNIT_INFO, node);
     info.setEndLine(nodeTextGen.getBuffer().getLineNumber());
     info.setEndPosition(nodeTextGen.getBuffer().getPosition());
-    info.setUnitName(((UnitNodeTextGen) nodeTextGen).getUnitName(node));
+    info.setUnitName(unitName);
   }
 }
