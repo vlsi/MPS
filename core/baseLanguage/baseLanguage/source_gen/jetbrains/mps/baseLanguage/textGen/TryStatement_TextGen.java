@@ -5,12 +5,14 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.textGen.TraceableNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior;
 
 public class TryStatement_TextGen extends SNodeTextGen implements TraceableNodeTextGen {
   public void doGenerateText(SNode node) {
+    TraceInfoGenerationUtil.createPositionInfo(this, node);
     this.appendNewLine();
     this.indentBuffer();
     this.append("try {");
@@ -28,6 +30,7 @@ public class TryStatement_TextGen extends SNodeTextGen implements TraceableNodeT
     this.decreaseDepth();
     this.appendNewLine();
     this.appendWithIndent("}");
+    TraceInfoGenerationUtil.fillPositionInfo(this, node);
   }
 
   public String getTraceableProperty(SNode node) {

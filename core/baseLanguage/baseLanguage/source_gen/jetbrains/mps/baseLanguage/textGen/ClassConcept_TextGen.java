@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.textGen.UnitNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -14,6 +15,7 @@ import jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior;
 
 public class ClassConcept_TextGen extends SNodeTextGen implements UnitNodeTextGen {
   public void doGenerateText(SNode node) {
+    TraceInfoGenerationUtil.createUnitInfo(this, node);
     BaseLanguageTextGen.fileHeader(node, this);
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
@@ -57,6 +59,7 @@ public class ClassConcept_TextGen extends SNodeTextGen implements UnitNodeTextGe
       this.append("}");
     }
     this.appendNewLine();
+    TraceInfoGenerationUtil.fillUnitInfo(this, node);
   }
 
   public String getExtension(SNode node) {

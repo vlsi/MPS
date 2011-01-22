@@ -42,9 +42,6 @@ public class TextGenManager {
   public static final String IMPORT = "IMPORT";
   //temp hack
   public static final String ADDED_IMPORT = "ADDED_IMPORT";
-  public static final String POSITION_INFO = "POSITION_INFO";
-  public static final String SCOPE_INFO = "SCOPE_INFO";
-  public static final String UNIT_INFO = "UNIT_INFO";
 
   public static void reset() {
     ourInstance = null;
@@ -70,9 +67,9 @@ public class TextGenManager {
     int topLength = topBufferText.isEmpty() ? 1 : topBufferText.split(buffer.getLineSeparator(), -1).length + 2;
 
     // position info
-    Map<SNode, PositionInfo> positionInfo = getUserObjects(buffer, POSITION_INFO);
-    Map<SNode, ScopePositionInfo> scopeInfo = getUserObjects(buffer, SCOPE_INFO);
-    Map<SNode, UnitPositionInfo> unitInfo = getUserObjects(buffer, UNIT_INFO);
+    Map<SNode, PositionInfo> positionInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.POSITION_INFO);
+    Map<SNode, ScopePositionInfo> scopeInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.SCOPE_INFO);
+    Map<SNode, UnitPositionInfo> unitInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.UNIT_INFO);
     for (PositionInfo position : positionInfo.values()) {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
@@ -105,19 +102,6 @@ public class TextGenManager {
     return loadNodeTextGen(null, node).getExtension(node);
   }
 
-  private <T> void putUserObject(TextGenBuffer buffer, String type, SNode node, T object) {
-    Map<SNode, T> userObjects = getUserObjects(buffer, type);
-    if (userObjects == null) {
-      userObjects = new HashMap<SNode, T>();
-      buffer.putUserObject(type, userObjects);
-    }
-    userObjects.put(node, object);
-  }
-
-  private <T> Map<SNode, T> getUserObjects(TextGenBuffer buffer, String type) {
-    return (Map<SNode, T>) buffer.getUserObject(type);
-  }
-
 
   public void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, SNode contextNode) {
     if (node == null) {
@@ -138,37 +122,9 @@ public class TextGenManager {
 
     nodeTextGen.setBuffer(buffer);
     try {
-      PositionInfo info = new PositionInfo();
-      info.setStartLine(buffer.getLineNumber());
-      info.setStartPosition(buffer.getPosition());
       nodeTextGen.setSNode(node);
       nodeTextGen.doGenerateText(node);
       nodeTextGen.setSNode(null);
-      info.setEndLine(buffer.getLineNumber());
-      info.setEndPosition(buffer.getPosition());
-
-      if (nodeTextGen instanceof TraceableNodeTextGen) {
-        info.setConceptFqName(node.getConceptFqName());
-        info.setPropertyString(((TraceableNodeTextGen) nodeTextGen).getTraceableProperty(node));
-        putUserObject(buffer, POSITION_INFO, node, info);
-      }
-      if (nodeTextGen instanceof ScopeNodeTextGen) {
-        ScopePositionInfo scopePositionInfo = new ScopePositionInfo();
-        scopePositionInfo.fillFrom(info);
-        List<SNode> vars = ((ScopeNodeTextGen) nodeTextGen).getScopeVariables(node);
-        for (SNode var : vars) {
-          if (var != null) {
-            scopePositionInfo.addVarInfo(var);
-          }
-        }
-        putUserObject(buffer, SCOPE_INFO, node, scopePositionInfo);
-      }
-      if (nodeTextGen instanceof UnitNodeTextGen) {
-        UnitPositionInfo unitPositionInfo = new UnitPositionInfo();
-        unitPositionInfo.fillFrom(info);
-        unitPositionInfo.setUnitName(((UnitNodeTextGen) nodeTextGen).getUnitName(node));
-        putUserObject(buffer, UNIT_INFO, node, unitPositionInfo);
-      }
     } catch (Exception e) {
       buffer.foundError();
       LOG.error("failed to generate text for " + node.getDebugText(), e, node);

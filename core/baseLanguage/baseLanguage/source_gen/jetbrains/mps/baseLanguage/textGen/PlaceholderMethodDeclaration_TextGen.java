@@ -6,13 +6,18 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.textGen.TraceableNodeTextGen;
 import jetbrains.mps.textGen.ScopeNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior;
 import java.util.List;
 import jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior;
 
 public class PlaceholderMethodDeclaration_TextGen extends SNodeTextGen implements TraceableNodeTextGen, ScopeNodeTextGen {
   public void doGenerateText(SNode node) {
+    TraceInfoGenerationUtil.createPositionInfo(this, node);
+    TraceInfoGenerationUtil.createScopeInfo(this, node);
     this.appendNewLine();
+    TraceInfoGenerationUtil.fillPositionInfo(this, node);
+    TraceInfoGenerationUtil.fillScopeInfo(this, node);
   }
 
   public String getTraceableProperty(SNode node) {

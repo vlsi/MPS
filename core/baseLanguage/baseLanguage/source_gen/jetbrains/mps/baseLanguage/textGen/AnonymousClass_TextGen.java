@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.textGen.UnitNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -14,6 +15,7 @@ import jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior;
 
 public class AnonymousClass_TextGen extends SNodeTextGen implements UnitNodeTextGen {
   public void doGenerateText(SNode node) {
+    TraceInfoGenerationUtil.createUnitInfo(this, node);
     BaseLanguageTextGen.importPart(SLinkOperations.getTarget(node, "classifier", false), this);
     this.append(this.getReferentPresentation(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", "classifier")), true));
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
@@ -64,6 +66,7 @@ public class AnonymousClass_TextGen extends SNodeTextGen implements UnitNodeText
     BaseClassConceptTextGen.body(node, this);
     this.decreaseDepth();
     this.appendWithIndent("}");
+    TraceInfoGenerationUtil.fillUnitInfo(this, node);
   }
 
   public String getUnitName(SNode node) {

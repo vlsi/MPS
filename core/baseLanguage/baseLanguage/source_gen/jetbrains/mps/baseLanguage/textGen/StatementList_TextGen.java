@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.textGen.ScopeNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
@@ -13,11 +14,13 @@ import jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior;
 
 public class StatementList_TextGen extends SNodeTextGen implements ScopeNodeTextGen {
   public void doGenerateText(SNode node) {
+    TraceInfoGenerationUtil.createScopeInfo(this, node);
     int size = ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).count();
     for (int i = 0; i < size; i++) {
       SNode statement = ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).toListSequence()).getElement(i);
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), statement, this.getSNode());
     }
+    TraceInfoGenerationUtil.fillScopeInfo(this, node);
   }
 
   public List<SNode> getScopeVariables(SNode node) {

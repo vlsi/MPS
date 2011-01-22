@@ -6,6 +6,7 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.textGen.TraceableNodeTextGen;
 import jetbrains.mps.textGen.ScopeNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.textGen.TextGenManager;
@@ -16,6 +17,8 @@ import jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior;
 
 public class ForStatement_TextGen extends SNodeTextGen implements TraceableNodeTextGen, ScopeNodeTextGen {
   public void doGenerateText(SNode node) {
+    TraceInfoGenerationUtil.createPositionInfo(this, node);
+    TraceInfoGenerationUtil.createScopeInfo(this, node);
     if (SLinkOperations.getTarget(node, "loopLabel", true) != null) {
       this.appendNewLine();
       this.append(SPropertyOperations.getString(SLinkOperations.getTarget(node, "loopLabel", true), "name"));
@@ -57,6 +60,8 @@ public class ForStatement_TextGen extends SNodeTextGen implements TraceableNodeT
     this.decreaseDepth();
     this.appendNewLine();
     this.appendWithIndent("}");
+    TraceInfoGenerationUtil.fillPositionInfo(this, node);
+    TraceInfoGenerationUtil.fillScopeInfo(this, node);
   }
 
   public String getTraceableProperty(SNode node) {

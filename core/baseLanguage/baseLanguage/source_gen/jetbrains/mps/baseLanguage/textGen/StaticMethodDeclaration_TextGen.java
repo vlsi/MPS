@@ -6,6 +6,7 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.textGen.TraceableNodeTextGen;
 import jetbrains.mps.textGen.ScopeNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.textGen.TextGenManager;
@@ -18,6 +19,8 @@ import jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior;
 
 public class StaticMethodDeclaration_TextGen extends SNodeTextGen implements TraceableNodeTextGen, ScopeNodeTextGen {
   public void doGenerateText(SNode node) {
+    TraceInfoGenerationUtil.createPositionInfo(this, node);
+    TraceInfoGenerationUtil.createScopeInfo(this, node);
     if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), this.getSNode());
     }
@@ -70,6 +73,8 @@ public class StaticMethodDeclaration_TextGen extends SNodeTextGen implements Tra
     this.appendNewLine();
     this.appendWithIndent("}");
     this.appendNewLine();
+    TraceInfoGenerationUtil.fillPositionInfo(this, node);
+    TraceInfoGenerationUtil.fillScopeInfo(this, node);
   }
 
   public String getTraceableProperty(SNode node) {

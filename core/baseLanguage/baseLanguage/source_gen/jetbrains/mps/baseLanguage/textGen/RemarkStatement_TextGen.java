@@ -5,11 +5,13 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.textGen.TraceableNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior;
 
 public class RemarkStatement_TextGen extends SNodeTextGen implements TraceableNodeTextGen {
   public void doGenerateText(SNode node) {
+    TraceInfoGenerationUtil.createPositionInfo(this, node);
     if (SPropertyOperations.getString(node, "value") != null) {
       this.appendNewLine();
       this.appendWithIndent("// ");
@@ -18,6 +20,7 @@ public class RemarkStatement_TextGen extends SNodeTextGen implements TraceableNo
       this.appendNewLine();
       this.appendWithIndent("// ");
     }
+    TraceInfoGenerationUtil.fillPositionInfo(this, node);
   }
 
   public String getTraceableProperty(SNode node) {
