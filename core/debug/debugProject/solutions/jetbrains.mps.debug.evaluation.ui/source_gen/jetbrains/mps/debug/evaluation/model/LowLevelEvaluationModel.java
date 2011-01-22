@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.traceInfo.TraceInfoManager;
+import jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -98,11 +98,11 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     }
     List<SNode> classifiers = myScope.getNodes(new Condition<SNode>() {
       public boolean met(@NotNull SNode node) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.textGen.structure.UnitConcept"))) {
           return false;
         }
 
-        String nodesUnitName = TraceInfoManager.getInstance().getUnitName(node);
+        String nodesUnitName = UnitConcept_Behavior.call_getUnitName_3822000666564591112(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.UnitConcept"));
         if (StringUtils.isEmpty(nodesUnitName)) {
           return false;
         }

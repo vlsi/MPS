@@ -217,7 +217,7 @@
     <scopeInfo nodeId="6913517247401390069" fileName="QueriesGenerated.java" startLine="726" startPosition="39" endLine="727" endPosition="91" />
     <scopeInfo nodeId="6913517247401390068" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="QueriesGenerated.java" startLine="725" startPosition="186" endLine="729" endPosition="0" />
     <scopeInfo nodeId="6913517247401390059" fileName="QueriesGenerated.java" startLine="724" startPosition="155" endLine="729" endPosition="7" />
-    <unitInfo nodeId="6913517247401390068" fileName="QueriesGenerated.java" startLine="725" startPosition="163" endLine="729" endPosition="5" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs.IWhereFilter$anonymous" />
+    <unitInfo nodeId="6913517247401390068" fileName="QueriesGenerated.java" startLine="725" startPosition="163" endLine="729" endPosition="5" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs.QueriesGenerated$2" />
   </root>
   <root nodeId="5236594288019717287">
     <nodeInfo nodeId="9135823916307659870" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="241" startPosition="154" endLine="242" endPosition="277" />
@@ -299,7 +299,7 @@
       <varInfo nodeId="7840798570674908519" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="7840798570674946694" fileName="QueriesGenerated.java" startLine="660" startPosition="155" endLine="665" endPosition="7" />
-    <unitInfo nodeId="7840798570674946713" fileName="QueriesGenerated.java" startLine="661" startPosition="183" endLine="665" endPosition="5" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs.IWhereFilter$anonymous" />
+    <unitInfo nodeId="7840798570674946713" fileName="QueriesGenerated.java" startLine="661" startPosition="183" endLine="665" endPosition="5" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs.QueriesGenerated$1" />
   </root>
   <root nodeId="7840798570674823460">
     <nodeInfo nodeId="7840798570674951687" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="117" startPosition="154" endLine="118" endPosition="117" />

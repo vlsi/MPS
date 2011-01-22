@@ -206,8 +206,8 @@
     </scopeInfo>
     <scopeInfo nodeId="4074304533012413011" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifiers#()Ljava/util/List;" fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="42" startPosition="74" endLine="73" endPosition="0" />
     <scopeInfo nodeId="4074304533012411949" fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="38" startPosition="132" endLine="73" endPosition="6" />
-    <unitInfo nodeId="7708004186056151468" fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="62" startPosition="57" endLine="66" endPosition="11" unitName="Anonymous in getClassifiers() in jetbrains.mps.baseLanguage.constraints.VisibleClassifiersScope$anonymous" />
-    <unitInfo nodeId="4074304533012413005" fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="39" startPosition="15" endLine="73" endPosition="5" unitName="jetbrains.mps.baseLanguage.constraints.VisibleClassifiersScope$anonymous" />
+    <unitInfo nodeId="7708004186056151468" fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="62" startPosition="57" endLine="66" endPosition="11" unitName="jetbrains.mps.baseLanguage.constraints.StaticFieldReference_classifier_ReferentConstraint$2" />
+    <unitInfo nodeId="4074304533012413005" fileName="StaticFieldReference_classifier_ReferentConstraint.java" startLine="39" startPosition="15" endLine="73" endPosition="5" unitName="jetbrains.mps.baseLanguage.constraints.StaticFieldReference_classifier_ReferentConstraint$1" />
   </root>
   <root nodeId="1213104847518">
     <nodeInfo nodeId="1213104847522" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Property_alias_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="63" />
@@ -429,7 +429,7 @@
     <scopeInfo nodeId="2043122710974596224" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInNonStaticClasssifierContext#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ConstraintsUtil.java" startLine="14" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="2043122710974596229" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8986964027630473418" fileName="ConstraintsUtil.java" startLine="19" startPosition="143" endLine="23" endPosition="5" unitName="jetbrains.mps.baseLanguage.constraints.IWhereFilter$anonymous" />
+    <unitInfo nodeId="8986964027630473418" fileName="ConstraintsUtil.java" startLine="19" startPosition="143" endLine="23" endPosition="5" unitName="jetbrains.mps.baseLanguage.constraints.ConstraintsUtil$1" />
     <unitInfo nodeId="2043122710974596217" fileName="ConstraintsUtil.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.constraints.ConstraintsUtil" />
   </root>
   <root nodeId="2580416627845354229">

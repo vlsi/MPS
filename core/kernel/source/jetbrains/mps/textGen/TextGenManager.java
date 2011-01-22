@@ -130,15 +130,15 @@ public class TextGenManager {
       info.setEndLine(buffer.getLineNumber());
       info.setEndPosition(buffer.getPosition());
 
-      if (TraceInfoManager.getInstance().isTraceableNode(node)) {
+      if (nodeTextGen instanceof TraceableNodeTextGen) {
         myPositions.put(node, info);
         info.setConceptFqName(node.getConceptFqName());
-        info.setPropertyString(TraceInfoManager.getInstance().getPropertyString(node));
+        info.setPropertyString(((TraceableNodeTextGen) nodeTextGen).getTraceableProperty(node));
       }
-      if (TraceInfoManager.getInstance().isScopeNode(node)) {
+      if (nodeTextGen instanceof ScopeNodeTextGen) {
         ScopePositionInfo scopePositionInfo = new ScopePositionInfo();
         scopePositionInfo.fillFrom(info);
-        List<SNode> vars = TraceInfoManager.getInstance().getVarsInScope(node);
+        List<SNode> vars = ((ScopeNodeTextGen) nodeTextGen).getScopeVariables(node);
         for (SNode var : vars) {
           if (var != null) {
             scopePositionInfo.addVarInfo(var);
@@ -146,10 +146,10 @@ public class TextGenManager {
         }
         myScopePositions.put(node, scopePositionInfo);
       }
-      if (TraceInfoManager.getInstance().isUnitNode(node)) {
+      if (nodeTextGen instanceof UnitNodeTextGen) {
         UnitPositionInfo unitPositionInfo = new UnitPositionInfo();
         unitPositionInfo.fillFrom(info);
-        unitPositionInfo.setUnitName(TraceInfoManager.getInstance().getUnitName(node));
+        unitPositionInfo.setUnitName(((UnitNodeTextGen) nodeTextGen).getUnitName(node));
         myUnitPositions.put(node, unitPositionInfo);
       }
     } catch (Exception e) {

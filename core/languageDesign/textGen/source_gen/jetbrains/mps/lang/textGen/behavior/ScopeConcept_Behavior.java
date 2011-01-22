@@ -13,11 +13,11 @@ public class ScopeConcept_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static List<SNode> call_getDeclaredVariables_3822000666564591100(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ScopeConcept"), "virtual_getDeclaredVariables_3822000666564591100", PARAMETERS_3822000666564591100);
+  public static List<SNode> call_getScopeVariables_3822000666564591100(SNode thisNode) {
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ScopeConcept"), "virtual_getScopeVariables_3822000666564591100", PARAMETERS_3822000666564591100);
   }
 
-  public static List<SNode> callSuper_getDeclaredVariables_3822000666564591100(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ScopeConcept"), callerConceptFqName, "virtual_getDeclaredVariables_3822000666564591100", PARAMETERS_3822000666564591100);
+  public static List<SNode> callSuper_getScopeVariables_3822000666564591100(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ScopeConcept"), callerConceptFqName, "virtual_getScopeVariables_3822000666564591100", PARAMETERS_3822000666564591100);
   }
 }

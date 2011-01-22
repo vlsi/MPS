@@ -2,25 +2,14 @@
 <debugInfo>
   <unitInfo fileName="DefaultJavaApplication_Editor.java" startLine="24" startPosition="47" endLine="28" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor$2" />
   <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="65" endLine="28" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$1" />
-  <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="29" startPosition="102" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$1" />
   <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="32" startPosition="65" endLine="36" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin$2" />
-  <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="34" startPosition="108" endLine="38" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$2" />
-  <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="39" startPosition="107" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$3" />
-  <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="44" startPosition="103" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$4" />
-  <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="60" startPosition="98" endLine="64" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$6" />
-  <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="65" startPosition="94" endLine="69" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$7" />
-  <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="70" startPosition="93" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$8" />
-  <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="75" startPosition="95" endLine="79" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$9" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="150" startPosition="42" endLine="154" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="239" startPosition="45" endLine="243" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="271" startPosition="66" endLine="275" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$4" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="253" startPosition="45" endLine="258" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$3" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="139" startPosition="90" endLine="146" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
   <unitInfo fileName="DefaultJavaApplication_Editor.java" startLine="21" startPosition="74" endLine="31" endPosition="3" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor$1" />
-  <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="49" startPosition="95" endLine="59" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$5" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="280" startPosition="35" endLine="290" endPosition="9" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$5" />
-  <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="80" startPosition="90" endLine="92" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$10" />
-  <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="93" startPosition="93" endLine="105" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin$11" />
   <unitInfo fileName="DefaultJavaApplication_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Factory" />
   <unitInfo fileName="BaseLanguageNodeActionsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal_ActionGroup" />
   <unitInfo fileName="BaseLanguageEditorPopupInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal_ActionGroup" />
@@ -58,16 +47,15 @@
   <unitInfo fileName="CommentStatements_Action.java" startLine="21" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.CommentStatements_Action" />
   <unitInfo fileName="RenameVariable_Action.java" startLine="22" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.RenameVariable_Action" />
   <unitInfo fileName="ShowMembers_Action.java" startLine="24" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowMembers_Action" />
+  <unitInfo fileName="BaseLanguage_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ApplicationPlugin" />
   <unitInfo fileName="IntroduceField_Action.java" startLine="23" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IntroduceField_Action" />
   <unitInfo fileName="InlineMethod_Action.java" startLine="23" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.InlineMethod_Action" />
-  <unitInfo fileName="BaseLanguage_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ApplicationPlugin" />
   <unitInfo fileName="IntroduceConstant_Action.java" startLine="23" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IntroduceConstant_Action" />
   <unitInfo fileName="IntroduceVariable_Action.java" startLine="23" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IntroduceVariable_Action" />
   <unitInfo fileName="ExtractMethod_Action.java" startLine="27" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ExtractMethod_Action" />
   <unitInfo fileName="InlineLocalVariable_Action.java" startLine="21" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.InlineLocalVariable_Action" />
   <unitInfo fileName="CommentLine_Action.java" startLine="19" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.CommentLine_Action" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="111" startPosition="15" endLine="202" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$1" />
-  <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="20" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin" />
   <unitInfo fileName="GoToOverridenMethod_Action.java" startLine="35" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action" />
   <unitInfo fileName="GoToInheritedClassifier_Action.java" startLine="34" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action" />
   <unitInfo fileName="GoToOverridingMethod_Action.java" startLine="37" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action" />
@@ -1711,63 +1699,6 @@
     <scopeInfo nodeId="2769330170999145996" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" fileName="OverridenMethodEditorMessage.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="127250423364131827" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" fileName="OverridenMethodEditorMessage.java" startLine="25" startPosition="0" endLine="32" endPosition="0" />
     <unitInfo nodeId="5002400195358095186" fileName="OverridenMethodEditorMessage.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.OverridenMethodEditorMessage" />
-  </root>
-  <root nodeId="5191407547578461866">
-    <nodeInfo nodeId="2387409699445147318" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="30" startPosition="48" endLine="31" endPosition="68" />
-    <nodeInfo nodeId="2387409699445147327" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="35" startPosition="48" endLine="36" endPosition="68" />
-    <nodeInfo nodeId="2387409699445147336" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="40" startPosition="48" endLine="41" endPosition="160" />
-    <nodeInfo nodeId="5177675550061843795" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="45" startPosition="49" endLine="46" endPosition="72" />
-    <nodeInfo nodeId="6127114859620813416" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="50" startPosition="49" endLine="51" endPosition="52" />
-    <nodeInfo nodeId="6127114859620813451" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="53" startPosition="130" endLine="54" endPosition="221" />
-    <nodeInfo nodeId="6127114859620813462" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="56" startPosition="9" endLine="57" endPosition="22" />
-    <nodeInfo nodeId="6127114859620813487" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="61" startPosition="49" endLine="62" endPosition="125" />
-    <nodeInfo nodeId="6127114859620885236" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="66" startPosition="49" endLine="67" endPosition="125" />
-    <nodeInfo nodeId="5114497955154858872" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="71" startPosition="49" endLine="72" endPosition="126" />
-    <nodeInfo nodeId="4089570349960765078" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="76" startPosition="43" endLine="77" endPosition="86" />
-    <nodeInfo nodeId="1523981646350772692" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="81" startPosition="43" endLine="82" endPosition="86" />
-    <nodeInfo nodeId="1523981646350772698" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="83" startPosition="125" endLine="84" endPosition="24" />
-    <nodeInfo nodeId="1523981646350773067" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="85" startPosition="9" endLine="86" endPosition="44" />
-    <nodeInfo nodeId="1523981646350773121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="87" startPosition="25" endLine="88" endPosition="24" />
-    <nodeInfo nodeId="1523981646350773082" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="89" startPosition="9" endLine="90" endPosition="78" />
-    <nodeInfo nodeId="1523981646350773126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="94" startPosition="43" endLine="95" endPosition="86" />
-    <nodeInfo nodeId="1523981646350773134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="96" startPosition="125" endLine="97" endPosition="24" />
-    <nodeInfo nodeId="1523981646350773143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="98" startPosition="9" endLine="99" endPosition="44" />
-    <nodeInfo nodeId="1523981646350773152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="100" startPosition="25" endLine="101" endPosition="24" />
-    <nodeInfo nodeId="1523981646350773157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="102" startPosition="9" endLine="103" endPosition="78" />
-    <nodeInfo nodeId="6127114859620813440" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="52" startPosition="90" endLine="55" endPosition="11" />
-    <nodeInfo nodeId="1523981646350771673" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="82" startPosition="86" endLine="85" endPosition="9" />
-    <nodeInfo nodeId="1523981646350773112" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="86" startPosition="44" endLine="89" endPosition="9" />
-    <nodeInfo nodeId="1523981646350773132" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="95" startPosition="86" endLine="98" endPosition="9" />
-    <nodeInfo nodeId="1523981646350773150" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="99" startPosition="44" endLine="102" endPosition="9" />
-    <nodeInfo nodeId="6127114859620813405" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="51" startPosition="52" endLine="56" endPosition="9" />
-    <scopeInfo nodeId="2387409699445138560" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="30" startPosition="48" endLine="31" endPosition="68" />
-    <scopeInfo nodeId="2387409699445147326" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="35" startPosition="48" endLine="36" endPosition="68" />
-    <scopeInfo nodeId="2387409699445147335" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="40" startPosition="48" endLine="41" endPosition="160" />
-    <scopeInfo nodeId="5177675550061843237" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="45" startPosition="49" endLine="46" endPosition="72" />
-    <scopeInfo nodeId="6127114859620813442" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="53" startPosition="130" endLine="54" endPosition="221" />
-    <scopeInfo nodeId="6127114859620813486" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="61" startPosition="49" endLine="62" endPosition="125" />
-    <scopeInfo nodeId="6127114859620885235" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="66" startPosition="49" endLine="67" endPosition="125" />
-    <scopeInfo nodeId="5114497955154812731" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="71" startPosition="49" endLine="72" endPosition="126" />
-    <scopeInfo nodeId="4089570349960765077" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="76" startPosition="43" endLine="77" endPosition="86" />
-    <scopeInfo nodeId="1523981646350771674" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="83" startPosition="125" endLine="84" endPosition="24" />
-    <scopeInfo nodeId="1523981646350773113" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="87" startPosition="25" endLine="88" endPosition="24" />
-    <scopeInfo nodeId="1523981646350773133" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="96" startPosition="125" endLine="97" endPosition="24" />
-    <scopeInfo nodeId="1523981646350773151" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="100" startPosition="25" endLine="101" endPosition="24" />
-    <scopeInfo nodeId="6127114859620813409" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="52" startPosition="90" endLine="55" endPosition="11" />
-    <scopeInfo nodeId="6127114859620813405" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="51" startPosition="52" endLine="56" endPosition="9">
-      <varInfo nodeId="6127114859620813407" varName="statement" />
-    </scopeInfo>
-    <scopeInfo nodeId="6127114859620812847" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="50" startPosition="49" endLine="57" endPosition="22">
-      <varInfo nodeId="6127114859620813417" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4208012086501209379" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="81" startPosition="43" endLine="90" endPosition="78">
-      <varInfo nodeId="1523981646350773068" varName="index" />
-      <varInfo nodeId="1523981646350772693" varName="fqName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4089570349960820761" fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="94" startPosition="43" endLine="103" endPosition="78">
-      <varInfo nodeId="1523981646350773144" varName="index" />
-      <varInfo nodeId="1523981646350773127" varName="fqName" />
-    </scopeInfo>
   </root>
   <root nodeId="6049742529940611647">
     <nodeInfo nodeId="6049742529940666399" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowMembers_Action.java" startLine="34" startPosition="87" endLine="35" endPosition="171" />

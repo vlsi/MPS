@@ -377,7 +377,7 @@ public class MoveTraceInfoToTextGen_MigrationScript extends BaseMigrationScript 
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_6 = quotedNode_1;
         quotedNode1_6.setProperty("isVirtual", "true");
-        quotedNode1_6.setProperty("name", "getDeclaredVariables");
+        quotedNode1_6.setProperty("name", "getScopeVariables");
         quotedNode1_6.addReference(SReference.create("overriddenMethod", quotedNode1_6, SModelReference.fromString("r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)"), SNodeId.fromString("3822000666564591100")));
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, GlobalScope.getInstance(), false);
