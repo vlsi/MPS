@@ -147,6 +147,18 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.append.part" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1237305115734" resolveInfo="AbstractAppendPart" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3822000666564607196">
+      <property name="name" nameId="tpck.1169194664001" value="UnitConcept" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="traceInfo" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3822000666564607198">
+      <property name="name" nameId="tpck.1169194664001" value="ScopeConcept" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="traceInfo" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3822000666564607199">
+      <property name="name" nameId="tpck.1169194664001" value="TraceableConcept" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="traceInfo" />
+    </node>
   </roots>
   <root id="1233670071145">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7991274449437422201">
@@ -505,5 +517,8 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
   </root>
+  <root id="3822000666564607196" />
+  <root id="3822000666564607198" />
+  <root id="3822000666564607199" />
 </model>
 
