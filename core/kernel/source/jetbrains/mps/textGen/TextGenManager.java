@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
-import jetbrains.mps.traceInfo.TraceInfoManager;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
 import jetbrains.mps.util.NameUtil;
 
@@ -43,6 +42,9 @@ public class TextGenManager {
   public static final String IMPORT = "IMPORT";
   //temp hack
   public static final String ADDED_IMPORT = "ADDED_IMPORT";
+  public static final String POSITION_INFO = "POSITION_INFO";
+  public static final String SCOPE_INFO = "SCOPE_INFO";
+  public static final String UNIT_INFO = "UNIT_INFO";
 
   public static void reset() {
     ourInstance = null;
@@ -55,15 +57,9 @@ public class TextGenManager {
     return ourInstance;
   }
 
-  private Map<SNode, PositionInfo> myPositions;
-  private Map<SNode, ScopePositionInfo> myScopePositions;
-  private Map<SNode, UnitPositionInfo> myUnitPositions;
   private Map<String, Class<SNodeTextGen>> myClassesCache;
 
   /*package*/ TextGenerationResult generateText(IOperationContext context, SNode node) {
-    myPositions = new HashMap<SNode, PositionInfo>();
-    myScopePositions = new HashMap<SNode, ScopePositionInfo>();
-    myUnitPositions = new HashMap<SNode, UnitPositionInfo>();
     myClassesCache = new HashMap<String, Class<SNodeTextGen>>();
 
     TextGenBuffer buffer = new TextGenBuffer();
@@ -72,18 +68,25 @@ public class TextGenManager {
     myClassesCache = null;
     String topBufferText = buffer.getTopBufferText();
     int topLength = topBufferText.isEmpty() ? 1 : topBufferText.split(buffer.getLineSeparator(), -1).length + 2;
-    for (PositionInfo position : myPositions.values()) {
+
+    // position info
+    Map<SNode, PositionInfo> positionInfo = getUserObjects(buffer, POSITION_INFO);
+    Map<SNode, ScopePositionInfo> scopeInfo = getUserObjects(buffer, SCOPE_INFO);
+    Map<SNode, UnitPositionInfo> unitInfo = getUserObjects(buffer, UNIT_INFO);
+    for (PositionInfo position : positionInfo.values()) {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }
-    for (PositionInfo position : myScopePositions.values()) {
+    for (ScopePositionInfo position : scopeInfo.values()) {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }
-    for (PositionInfo position : myUnitPositions.values()) {
+    for (UnitPositionInfo position : unitInfo.values()) {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }
+
+    // dependencies
     List<String> dependencies = getUserObjectCollection(DEPENDENCY, node, buffer, (Set<String>) buffer.getUserObject(EXTENDS));
     List<String> extend = getUserObjectCollection(EXTENDS, node, buffer, null);
 
@@ -91,7 +94,7 @@ public class TextGenManager {
     deps.put(TextGenManager.DEPENDENCY, dependencies);
     deps.put(TextGenManager.EXTENDS, extend);
 
-    return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), myPositions, myScopePositions, myUnitPositions, deps);
+    return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), positionInfo, scopeInfo, unitInfo, deps);
   }
 
   public boolean canGenerateTextFor(SNode node) {
@@ -101,6 +104,20 @@ public class TextGenManager {
   public String getExtension(SNode node) {
     return loadNodeTextGen(null, node).getExtension(node);
   }
+
+  private <T> void putUserObject(TextGenBuffer buffer, String type, SNode node, T object) {
+    Map<SNode, T> userObjects = getUserObjects(buffer, type);
+    if (userObjects == null) {
+      userObjects = new HashMap<SNode, T>();
+      buffer.putUserObject(type, userObjects);
+    }
+    userObjects.put(node, object);
+  }
+
+  private <T> Map<SNode, T> getUserObjects(TextGenBuffer buffer, String type) {
+    return (Map<SNode, T>) buffer.getUserObject(type);
+  }
+
 
   public void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, SNode contextNode) {
     if (node == null) {
@@ -131,9 +148,9 @@ public class TextGenManager {
       info.setEndPosition(buffer.getPosition());
 
       if (nodeTextGen instanceof TraceableNodeTextGen) {
-        myPositions.put(node, info);
         info.setConceptFqName(node.getConceptFqName());
         info.setPropertyString(((TraceableNodeTextGen) nodeTextGen).getTraceableProperty(node));
+        putUserObject(buffer, POSITION_INFO, node, info);
       }
       if (nodeTextGen instanceof ScopeNodeTextGen) {
         ScopePositionInfo scopePositionInfo = new ScopePositionInfo();
@@ -144,13 +161,13 @@ public class TextGenManager {
             scopePositionInfo.addVarInfo(var);
           }
         }
-        myScopePositions.put(node, scopePositionInfo);
+        putUserObject(buffer, SCOPE_INFO, node, scopePositionInfo);
       }
       if (nodeTextGen instanceof UnitNodeTextGen) {
         UnitPositionInfo unitPositionInfo = new UnitPositionInfo();
         unitPositionInfo.fillFrom(info);
         unitPositionInfo.setUnitName(((UnitNodeTextGen) nodeTextGen).getUnitName(node));
-        myUnitPositions.put(node, unitPositionInfo);
+        putUserObject(buffer, UNIT_INFO, node, unitPositionInfo);
       }
     } catch (Exception e) {
       buffer.foundError();
