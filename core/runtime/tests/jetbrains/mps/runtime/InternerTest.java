@@ -63,7 +63,7 @@ public class InternerTest {
     double perfRatio = stats[0] / (double) refTime[0];
     Assert.assertTrue("Interner perfomance is not within bounds: "+perfRatio,  0.45 < perfRatio && perfRatio < 1.95);
 
-    double memRatio = stats[2] / (double) stats[3] / magicDivider() / MEAN_LENGTH / 1.5;
+    double memRatio = stats[2] / (double) stats[3] / magicDivider() / MEAN_LENGTH;
     Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.65 < memRatio && memRatio < 1.5);
   }
 
