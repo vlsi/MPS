@@ -64,9 +64,9 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
   public JavaBreakpoint createFromUi(@NotNull JavaBreakpointKind kind, Project project) {
     switch (kind) {
       case EXCEPTION_BREAKPOINT:
-        ExceptionChooserDialog dialog = new ExceptionChooserDialog(WindowManager.getInstance().getFrame(project));
+        ExceptionChooserDialog dialog = new ExceptionChooserDialog(WindowManager.getInstance().getFrame(project), "Choose Exception Class");
         dialog.showDialog();
-        String chosenException = dialog.getChosenException();
+        String chosenException = dialog.getSelected();
         if (chosenException == null) {
           return null;
         }
