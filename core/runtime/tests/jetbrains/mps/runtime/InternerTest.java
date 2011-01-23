@@ -37,13 +37,13 @@ public class InternerTest {
     final int maxThreads = Runtime.getRuntime().availableProcessors()*3;
     final int maxRepetitions = 2000000;
 
-    long[] refTime = computeMedian(new LongProducer() {
+    long[] refTime = computeMedian(new DataProducer() {
       public long[] produce() {
         return new long[] {computePerformanceBenchmark(maxThreads)};
       }
     });
 
-    long[] stats = computeMedian(new LongProducer() {
+    long[] stats = computeMedian(new DataProducer() {
       public long[] produce() {
         long baseLine = computeUsedHeap();
         final Interner interner = new Interner(maxObjects);
@@ -73,15 +73,15 @@ public class InternerTest {
     final int maxThreads = Runtime.getRuntime().availableProcessors()*3;
     final int maxRepetitions = 100000;
 
-    final int k = Runtime.getRuntime().availableProcessors() > 4 ? 5 : 1;
+    final int k = Runtime.getRuntime().availableProcessors() > 4 ? 3 : 1;
 
-    long [] refTime = computeMedian(new LongProducer() {
+    long [] refTime = computeMedian(new DataProducer() {
       public long [] produce() {
         return new long [] {k *computePerformanceBenchmark(maxThreads)};
       }
     });
 
-    long[] stats = computeMedian(new LongProducer() {
+    long[] stats = computeMedian(new DataProducer() {
       public long [] produce() {
         long baseLine = computeUsedHeap();
         final Interner interner = new Interner(maxObjects);
@@ -110,13 +110,13 @@ public class InternerTest {
     final int maxThreads = Runtime.getRuntime().availableProcessors() * 20;
     final int maxRepetitions = 100000;
 
-    long[] refTime = computeMedian(new LongProducer() {
+    long[] refTime = computeMedian(new DataProducer() {
       public long[] produce() {
         return new long []{computePerformanceBenchmark(maxThreads)};
       }
     });
 
-    long[] stats = computeMedian(new LongProducer() {
+    long[] stats = computeMedian(new DataProducer() {
       public long[] produce() {
         long baseLine = computeUsedHeap();
         final Interner interner = new Interner(maxObjects);
@@ -340,9 +340,9 @@ public class InternerTest {
     return hmu.getUsed();
   }
 
-  private long[] computeMedian (LongProducer lp) {
+  private long[] computeMedian (DataProducer lp) {
     List<long[]> data = new ArrayList<long[]>();
-    for (int count=16; count>0; --count) {
+    for (int count=6; count>0; --count) {
       data.add(lp.produce());
     }
 
@@ -365,7 +365,7 @@ with_samples:
     return retVal;
   }
 
-  private static interface LongProducer {
+  private static interface DataProducer {
     public long[] produce();
   }
 
