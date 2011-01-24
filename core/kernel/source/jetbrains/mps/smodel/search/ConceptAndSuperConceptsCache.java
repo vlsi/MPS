@@ -21,9 +21,10 @@ import jetbrains.mps.cache.CachesManager.CacheCreator;
 import jetbrains.mps.cache.DataSet;
 import jetbrains.mps.cache.KeyProducer;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -38,15 +39,14 @@ import java.util.*;
 class ConceptAndSuperConceptsCache extends AbstractCache {
   private static final KeyProducer keyProducer = new KeyProducer();
 
-  private static final CacheCreator<AbstractConceptDeclaration> CREATOR = new CacheCreator<AbstractConceptDeclaration>() {
-    public AbstractCache create(Object key, AbstractConceptDeclaration element) {
+  private static final CacheCreator<SNode> CREATOR = new CacheCreator<SNode>() {
+    public AbstractCache create(Object key, SNode element) {
       return new ConceptAndSuperConceptsCache(key, element);
     }
   };
 
-  public static ConceptAndSuperConceptsCache getInstance(AbstractConceptDeclaration topConcept) {
-    SNode node = topConcept.getNode();
-    Object key = keyProducer.createKey(node);
+  public static ConceptAndSuperConceptsCache getInstance(SNode topConcept) {
+    Object key = keyProducer.createKey(topConcept);
     return (ConceptAndSuperConceptsCache) CachesManager.getInstance().getCache(key, topConcept, CREATOR);
   }
 
@@ -74,9 +74,9 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
   //-----------------------
 
-  private AbstractConceptDeclaration myTopConcept;
+  private SNode myTopConcept;
 
-  protected ConceptAndSuperConceptsCache(Object key, AbstractConceptDeclaration topConcept) {
+  protected ConceptAndSuperConceptsCache(Object key, SNode topConcept) {
     super(key);
     myTopConcept = topConcept;
   }
@@ -171,7 +171,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
     public ConceptsDataSet(ConceptAndSuperConceptsCache ownerCache) {
       super(ID, ownerCache, DefaultNodeChangedProcessing.DROP_OWNER_CACHE);
-      myTopConcept = BaseAdapter.fromAdapter(ownerCache.myTopConcept);
+      myTopConcept = ownerCache.myTopConcept;
     }
 
     public SNode[] getConcepts() {
@@ -212,7 +212,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process adding of smth. to concept unless it is extended/implemented interface-concept
-        if (ConceptDeclaration.IMPLEMENTS.equals(role) || InterfaceConceptDeclaration.EXTENDS.equals(role)) {
+        if (SNodeUtil.link_ConceptDeclaration_implements.equals(role) || SNodeUtil.link_ConceptDeclaration_extends.equals(role)) {
           super.childAdded(event);
         }
       }
@@ -222,7 +222,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process removing of smth. from concept unless it is extended/implemented interface-concept
-        if (ConceptDeclaration.IMPLEMENTS.equals(role) || InterfaceConceptDeclaration.EXTENDS.equals(role)) {
+        if (SNodeUtil.link_ConceptDeclaration_implements.equals(role) || SNodeUtil.link_ConceptDeclaration_extends.equals(role)) {
           super.childRemoved(event);
         }
       }
@@ -303,7 +303,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process adding of smth. to concept unless it is property-declaration
-        if (AbstractConceptDeclaration.PROPERTY_DECLARATION.equals(role)) {
+        if (SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration.equals(role)) {
           super.childAdded(event);
         }
       }
@@ -313,7 +313,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process removing of smth. from concept unless it is property-declaration
-        if (AbstractConceptDeclaration.PROPERTY_DECLARATION.equals(role)) {
+        if (SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration.equals(role)) {
           super.childRemoved(event);
         }
       }
@@ -321,7 +321,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
     public void propertyChanged(SModelPropertyEvent event) {
       // don't process unless it is property name
-      if (event.getNode().getAdapter() instanceof PropertyDeclaration) {
+      if (SNodeUtil.isInstanceOfPropertyDeclaration(event.getNode())) {
         super.propertyChanged(event);
       }
     }
@@ -425,7 +425,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process adding of smth. to concept unless it is link-declaration
-        if (AbstractConceptDeclaration.LINK_DECLARATION.equals(role)) {
+        if (SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration.equals(role)) {
           super.childAdded(event);
         }
       }
@@ -435,7 +435,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process removing of smth. from concept unless it is link-declaration
-        if (AbstractConceptDeclaration.LINK_DECLARATION.equals(role)) {
+        if (SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration.equals(role)) {
           super.childRemoved(event);
         }
       }
@@ -443,7 +443,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
     public void propertyChanged(SModelPropertyEvent event) {
       // don't process unless it is link's role
-      if (LinkDeclaration.ROLE.equals(event.getPropertyName()) && event.getNode().getAdapter() instanceof LinkDeclaration) {
+      if (SNodeUtil.property_LinkDeclaration_role.equals(event.getPropertyName()) && SNodeUtil.isInstanceOfLinkDeclaration(event.getNode())) {
         String oldRole = event.getOldPropertyValue();
         if (oldRole != null) {
           myLinkByRole.remove(oldRole);
@@ -529,7 +529,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process adding of smth. to concept unless it is concept property
-        if (AbstractConceptDeclaration.CONCEPT_PROPERTY.equals(role)) {
+        if (SNodeUtil.link_AbstractConceptDeclaration_conceptProperty.equals(role)) {
           super.childAdded(event);
         }
       }
@@ -539,7 +539,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         // don't process removing of smth. from concept unless it is concept property
-        if (AbstractConceptDeclaration.CONCEPT_PROPERTY.equals(role)) {
+        if (SNodeUtil.link_AbstractConceptDeclaration_conceptProperty.equals(role)) {
           super.childRemoved(event);
         }
       }

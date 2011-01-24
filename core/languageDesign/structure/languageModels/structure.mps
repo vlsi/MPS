@@ -238,6 +238,9 @@
     <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="1227629144741">
       <link role="intfc" roleId="1169127628841" targetNodeId="1224848324737" resolveInfo="IStructureDeprecatable" />
     </node>
+    <node role="conceptProperty" roleId="1105725339613" type="tpce.BooleanConceptProperty" typeId="1105725574259" id="8642756583111987067">
+      <link role="conceptPropertyDeclaration" roleId="1105725439818" targetNodeId="tpck.8339862546319981473" resolveInfo="final" />
+    </node>
   </root>
   <root id="1071489288299">
     <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="9026942911489198753">
@@ -254,6 +257,9 @@
       <property name="sourceCardinality" nameId="1071599893252" value="1" />
       <property name="role" nameId="1071599776563" value="dataType" />
       <link role="target" roleId="1071599976176" targetNodeId="1082978164218" resolveInfo="DataTypeDeclaration" />
+    </node>
+    <node role="conceptProperty" roleId="1105725339613" type="tpce.BooleanConceptProperty" typeId="1105725574259" id="8642756583112042982">
+      <link role="conceptPropertyDeclaration" roleId="1105725439818" targetNodeId="tpck.8339862546319981473" resolveInfo="final" />
     </node>
   </root>
   <root id="1082978164218">
