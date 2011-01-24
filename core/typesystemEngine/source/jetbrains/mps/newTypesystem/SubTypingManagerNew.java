@@ -32,11 +32,13 @@ import java.util.*;
 public class SubTypingManagerNew extends SubtypingManager {
   private TypeChecker myTypeChecker;
   private State myState;
+  private CoercionManager myCoercionManager;
 
   public SubTypingManagerNew(TypeChecker typeChecker) {
     super(typeChecker);
     myTypeChecker = typeChecker;
     myState = null;
+    myCoercionManager = new CoercionManager(typeChecker, this);
   }
 
   public boolean isSubTypeByReplacementRules(SNode subType, SNode superType) {
@@ -93,7 +95,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     return false;
   }
 
-  private boolean searchInSuperTypes(SNode subType, INodeMatcher superType, @Nullable EquationInfo errorInfo, boolean isWeak) {
+  public boolean searchInSuperTypes(SNode subType, INodeMatcher superType, @Nullable EquationInfo errorInfo, boolean isWeak) {
     if (subType == null) {
       return false;
     }
@@ -115,7 +117,7 @@ public class SubTypingManagerNew extends SubtypingManager {
       //collecting a set of frontier's ancestors
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
-        collectImmediateSuperTypes(node, isWeak, ancestors, typeCheckingContextNew, superType.getConceptFQName());
+        collectImmediateSuperTypes(node, isWeak, ancestors, typeCheckingContextNew);
 
         yetPassedRaw.add(node);
         //    yetPassed.add(node);
@@ -171,7 +173,7 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
 
-  private void collectImmediateSuperTypes(final SNode term, boolean isWeak, StructuralNodeSet result, final TypeCheckingContext context, String superTypeConceptFQName) {
+  private void collectImmediateSuperTypes(final SNode term, boolean isWeak, StructuralNodeSet result, final TypeCheckingContext context) {
     if (term == null) {
       return;
     }
@@ -212,8 +214,6 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
   private Set<SNode> eliminateSubOrSuperTypes(Set<SNode> types, boolean sub) {
-    //todo optimize
-    types = eliminateEqual(types);
     Set<SNode> result = new HashSet<SNode>();
     Set<SNode> toRemove = new HashSet<SNode>();
     for (SNode type : types) {
@@ -232,23 +232,6 @@ public class SubTypingManagerNew extends SubtypingManager {
       }
       for (SNode removeType : toRemove) {
         result.remove(removeType);
-      }
-    }
-    return result;
-  }
-
-  public Set<SNode> eliminateEqual(Set<SNode> types) {
-    Set<SNode> result = new HashSet<SNode>();
-    for (SNode type : types) {
-      boolean toAdd = true;
-      for (SNode resultType : result) {
-        if (TypesUtil.match(resultType, type, null, null)) {
-          toAdd = false;
-          break;
-        }
-      }
-      if (toAdd) {
-        result.add(type);
       }
     }
     return result;
@@ -366,66 +349,7 @@ public class SubTypingManagerNew extends SubtypingManager {
 
 
   public SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
-    if (subtype == null) return null;
-    if (pattern.match(subtype)) return subtype;
-    if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConceptFqName())) {
-      List<SNode> children = subtype.getChildren("argument");
-      for (SNode child : children) {
-        SNode result = coerceSubTypingNew(child, pattern, isWeak, state);
-        if (result != null) return result;
-      }
-      return null;
-    }
-
-    if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConceptFqName())) {
-      List<SNode> children = subtype.getChildren("argument");
-
-      SNode lcs = createLCS(new LinkedHashSet<SNode>(children));
-      SNode result = coerceSubTypingNew(lcs, pattern, isWeak, state);
-      return result;
-    }
-
-    //asking the cache
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
-      public SNode compute() {
-
-        SubtypingCache cache = myTypeChecker.getSubtypingCache();
-        if (cache != null) {
-          Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
-          if (nodePair.o1) {
-            return nodePair.o2;
-          }
-        }
-        cache = myTypeChecker.getGlobalSubtypingCache();
-        if (cache != null) {
-          Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
-          if (nodePair.o1) {
-           
-            return nodePair.o2;
-          }
-        }
-        CoercionMatcher coercionMatcher = new CoercionMatcher(pattern);
-        boolean success = searchInSuperTypes(subtype, coercionMatcher, null, isWeak);
-        SNode result;
-        if (!success) {
-          result = null;
-        } else {
-          result = coercionMatcher.getResult();
-        }
-
-        //writing to the cache
-        SubtypingCache subtypingCache = myTypeChecker.getSubtypingCache();
-        if (subtypingCache != null) {
-          subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
-        }
-        subtypingCache = myTypeChecker.getGlobalSubtypingCache();
-        if (subtypingCache != null) {
-          subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
-        }
-
-        return result;
-      }
-    });
+    return myCoercionManager.coerceSubTypingNew(subtype, pattern, isWeak, state);
   }
 
   private Boolean getCacheAnswer(SNode subType, NodeMatcher superType, boolean isWeak) {
@@ -453,39 +377,6 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
     if (cache !=null && superType instanceof NodeMatcher) {
       cache.addCacheEntry(subType, ((NodeMatcher)superType).getNode(), answer, isWeak);
-    }
-  }
-
-  public SNode coerceSubTyping(SNode subtype, final IMatchingPattern pattern, State state) {
-    return coerceSubTypingNew(subtype, pattern, true, state);
-  }
-
-  private static class CoercionMatcher implements INodeMatcher {
-    private final IMatchingPattern myPattern;
-    private SNode myResult;
-
-    public CoercionMatcher(IMatchingPattern pattern) {
-      myPattern = pattern;
-    }
-
-    public boolean matchesWith(SNode nodeToMatch) {
-      boolean b = myPattern.match(nodeToMatch);
-      if (b) {
-        myResult = nodeToMatch;
-      }
-      return b;
-    }
-
-    public SNode getResult() {
-      return myResult;
-    }
-
-    public IMatchingPattern getMatchingPattern() {
-      return myPattern;
-    }
-
-    public String getConceptFQName() {
-      return myPattern.getConceptFQName();
     }
   }
 
