@@ -18,6 +18,7 @@ package jetbrains.mps.debug.breakpoints;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.WindowManager;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.debug.api.AbstractDebugSession;
@@ -63,7 +64,13 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
   public JavaBreakpoint createFromUi(@NotNull JavaBreakpointKind kind, Project project) {
     switch (kind) {
       case EXCEPTION_BREAKPOINT:
-        return BreakpointCreationUtil.createExceptionBreakpointFromUi(project);
+        ExceptionChooserDialog dialog = new ExceptionChooserDialog(WindowManager.getInstance().getFrame(project), "Choose Exception Class");
+        dialog.showDialog();
+        String chosenException = dialog.getSelected();
+        if (chosenException == null) {
+          return null;
+        }
+        return new ExceptionBreakpoint(chosenException, project);
       default:
         throw new IllegalArgumentException("Cannot create breakpoint for " + kind);
     }
