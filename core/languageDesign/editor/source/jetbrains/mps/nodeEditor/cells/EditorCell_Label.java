@@ -459,6 +459,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
           }
         }
       }, null, groupId, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, getOperationContext().getProject());
+      getEditor().relayout();
       if (result[0]) {
         return true;
       }
