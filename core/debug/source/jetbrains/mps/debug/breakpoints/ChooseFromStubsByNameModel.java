@@ -30,10 +30,12 @@ import javax.swing.DefaultListCellRenderer;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 abstract class ChooseFromStubsByNameModel implements ChooseByNameModel {
-  private final List<BaseSNodeDescriptor> myPossibleNodes = new ArrayList<BaseSNodeDescriptor>();
+  private final Map<String, List<BaseSNodeDescriptor>> myPossibleNodes = new LinkedHashMap<String, List<BaseSNodeDescriptor>>();
 
   ChooseFromStubsByNameModel() {
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -42,7 +44,16 @@ abstract class ChooseFromStubsByNameModel implements ChooseByNameModel {
         for (IModule m : GlobalScope.getInstance().getVisibleModules()) {
           for (SModelDescriptor sd : m.getOwnModelDescriptors()) {
             if (SModelStereotype.isStubModelStereotype(sd.getStereotype())) {
-              myPossibleNodes.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(m));
+              final List<BaseSNodeDescriptor> descriptors = StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(m);
+              for (BaseSNodeDescriptor descriptor : descriptors) {
+                String name = getName(descriptor);
+                List<BaseSNodeDescriptor> descriptorList = myPossibleNodes.get(name);
+                if (descriptorList == null) {
+                  descriptorList = new ArrayList<BaseSNodeDescriptor>();
+                  myPossibleNodes.put(name, descriptorList);
+                }
+                descriptorList.add(descriptor);
+              }
               break;
             }
           }
@@ -128,17 +139,13 @@ abstract class ChooseFromStubsByNameModel implements ChooseByNameModel {
 
   @Override
   public String[] getNames(boolean checkBoxState) {
-    List<String> allNodes = new ArrayList<String>();
-    for (BaseSNodeDescriptor descriptor : myPossibleNodes) {
-      allNodes.add(getElementName(descriptor));
-    }
-    return allNodes.toArray(new String[allNodes.size()]);
+    return myPossibleNodes.keySet().toArray(new String[myPossibleNodes.size()]);
   }
 
   @Override
   public Object[] getElementsByName(String name, boolean checkBoxState, String pattern) {
     List<BaseSNodeDescriptor> descriptors = new ArrayList<BaseSNodeDescriptor>();
-    for (BaseSNodeDescriptor descriptor : myPossibleNodes) {
+    for (BaseSNodeDescriptor descriptor : myPossibleNodes.get(name)) {
       String descriptorName = getElementName(descriptor);
       if (descriptorName != null && descriptorName.equals(name) && isValidClassifier(descriptor)) {
         descriptors.add(descriptor);
