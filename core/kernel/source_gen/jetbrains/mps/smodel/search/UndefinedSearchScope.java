@@ -7,7 +7,6 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 public class UndefinedSearchScope implements ISearchScope {
   public UndefinedSearchScope() {
@@ -37,7 +36,7 @@ public class UndefinedSearchScope implements ISearchScope {
     throw new UnsupportedOperationException();
   }
 
-  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
+  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     throw new UnsupportedOperationException();
   }
 }

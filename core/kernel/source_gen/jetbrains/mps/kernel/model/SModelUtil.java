@@ -195,8 +195,7 @@ public class SModelUtil {
     if (fromFqName == null || toFqName == null) {
       return false;
     }
-    // TODO generate conceptFqName 
-    if (SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), "name").equals(toFqName)) {
+    if ("jetbrains.mps.lang.core.structure.BaseConcept".equals(toFqName)) {
       return true;
     }
 

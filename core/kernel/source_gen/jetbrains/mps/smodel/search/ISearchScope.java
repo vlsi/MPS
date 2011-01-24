@@ -7,7 +7,6 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 public interface ISearchScope {
   @NotNull
@@ -19,5 +18,5 @@ public interface ISearchScope {
   public boolean isInScope(SNode node);
   @NotNull
   public List<SNode> getNodes();
-  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept);
+  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept);
 }

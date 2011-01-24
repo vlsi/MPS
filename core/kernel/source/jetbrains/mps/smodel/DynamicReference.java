@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.StandaloneMPSContext;
@@ -88,7 +87,7 @@ public class DynamicReference extends SReferenceBase {
     }
 
     ISearchScope searchScope = status.getSearchScope();
-    IReferenceInfoResolver infoResolver = searchScope.getReferenceInfoResolver(referenceNode, (AbstractConceptDeclaration) BaseAdapter.fromNode(SModelUtil.getLinkDeclarationTarget(mostSpecificForRole)));
+    IReferenceInfoResolver infoResolver = searchScope.getReferenceInfoResolver(referenceNode, SModelUtil.getLinkDeclarationTarget(mostSpecificForRole));
     if (infoResolver == null) {
       if (!silently) {
         error("cannot obtain resolver for reference: '" + getRole() + "'");
