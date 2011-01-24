@@ -19,6 +19,7 @@ import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
@@ -76,6 +77,11 @@ public abstract class StubsClassChooserDialog extends BaseDialog {
       mySelected = myModel.getFullName(chosenElement);
     }
     dispose();
+  }
+
+  @Override
+  public DialogDimensions getDefaultDimensionSettings() {
+    return new DialogDimensions(100, 200, 600, 300);
   }
 
   protected abstract boolean isValid(SNode node);
