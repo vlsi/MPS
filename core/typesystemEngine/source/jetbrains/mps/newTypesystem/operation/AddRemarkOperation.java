@@ -25,7 +25,7 @@ import jetbrains.mps.newTypesystem.state.State;
  */
 @Deprecated
 public class AddRemarkOperation extends AbstractOperation {
-  private String myString;
+  private final String myString;
   private Runnable myAction = null;
 
   public AddRemarkOperation(String string) {

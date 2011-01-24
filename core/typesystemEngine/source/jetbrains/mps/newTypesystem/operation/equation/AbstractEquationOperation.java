@@ -23,11 +23,10 @@ import jetbrains.mps.smodel.SNode;
  * User: Ilya.Lintsbakh
  * Date: Oct 8, 2010
  * Time: 1:17:32 PM
- * To change this template use File | Settings | File Templates.
  */
 public abstract class AbstractEquationOperation extends AbstractOperation {
-  protected SNode myChild;
-  protected SNode myParent;
+  SNode myChild;
+  SNode myParent;
 
   @Override
   public String getShortPresentation() {

@@ -29,8 +29,8 @@ import java.util.Set;
  */
 public abstract class Block {
   protected State myState;
-  protected String myNodeModel;
-  protected String myNodeId;
+  private String myNodeModel;
+  private String myNodeId;
 
   public Block(State state, String nodeModel, String nodeId) {
     myState = state;

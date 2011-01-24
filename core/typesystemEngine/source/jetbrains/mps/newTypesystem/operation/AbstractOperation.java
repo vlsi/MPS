@@ -30,7 +30,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class AbstractOperation {
-  protected List<AbstractOperation> myConsequences;
+  private List<AbstractOperation> myConsequences;
   protected SNode mySource = null;
   protected EquationInfo myEquationInfo = null;
 
@@ -76,9 +76,7 @@ public abstract class AbstractOperation {
     redo(state);
   }
 
-  public String getPresentation() {
-    return "";
-  }
+  public abstract String getPresentation();
 
   public String getShortPresentation() {
     return "";

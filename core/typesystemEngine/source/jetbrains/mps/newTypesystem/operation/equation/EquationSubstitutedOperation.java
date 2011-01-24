@@ -27,8 +27,8 @@ import jetbrains.mps.smodel.SNode;
  * To change this template use File | Settings | File Templates.
  */
 public class EquationSubstitutedOperation extends AbstractOperation {
-  EquationAddedOperation myAdded;
-  EquationRemovedOperation myRemoved;
+  private final EquationAddedOperation myAdded;
+  private final EquationRemovedOperation myRemoved;
 
   public EquationSubstitutedOperation(SNode key, SNode prev, SNode cur, SNode source) {
     myAdded = new EquationAddedOperation(key, cur, source, null);

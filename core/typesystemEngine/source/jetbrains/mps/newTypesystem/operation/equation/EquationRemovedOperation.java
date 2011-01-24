@@ -47,12 +47,4 @@ public class EquationRemovedOperation extends AbstractEquationOperation {
   public String getPresentation() {
     return "Equation removed " + getShortPresentation();
   }
-
-  public SNode getChild() {
-    return myChild;
-  }
-
-  public SNode getParent() {
-    return myParent;
-  }
 }

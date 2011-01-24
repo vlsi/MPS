@@ -60,7 +60,6 @@ public class Inequalities {
   }
 
   private List<SNode> sort(ManyToManyMap<SNode, SNode> inputsToOutputs, Set<SNode> unsorted) {
-    SNode node = unsorted.iterator().next();
     int size = unsorted.size();
     List<SNode> result = new LinkedList<SNode>();
     while (result.size() < size) {

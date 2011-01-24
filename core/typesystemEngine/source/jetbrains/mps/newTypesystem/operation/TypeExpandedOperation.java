@@ -26,7 +26,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
  * Time: 2:46:01 PM
  */
 public class TypeExpandedOperation extends TypeAssignedOperation {
-  private SNode myOldType;
+  private final SNode myOldType;
 
   public TypeExpandedOperation(SNode node, SNode type, EquationInfo info, SNode oldType) {
     super(node, type, info);

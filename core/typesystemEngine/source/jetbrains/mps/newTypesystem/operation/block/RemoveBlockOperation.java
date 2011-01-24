@@ -20,13 +20,6 @@ import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.12.10
- * Time: 16:08
- * To change this template use File | Settings | File Templates.
- */
 public class RemoveBlockOperation extends AbstractBlockOperation {
 
   public RemoveBlockOperation(Block block) {

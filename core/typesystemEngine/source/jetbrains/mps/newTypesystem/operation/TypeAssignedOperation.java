@@ -26,8 +26,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
  * Time: 1:04:39 PM
  */
 public class TypeAssignedOperation extends AbstractOperation {
-  protected SNode myNode;
-  protected SNode myType;
+  final SNode myNode;
+  final SNode myType;
 
   public TypeAssignedOperation(SNode node, SNode type, EquationInfo info) {
     myNode = node;
