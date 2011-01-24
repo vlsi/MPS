@@ -28,7 +28,7 @@ public class InternerTest {
   private static final int MEAN_LENGTH = 50;
 
   private static int magicDivider () {
-    return String.valueOf(System.getProperty("os.arch")).contains("64") ? 4 : 3;
+    return String.valueOf(System.getProperty("os.arch")).contains("64") ? 5 : 3;
   }
 
   @Test
@@ -42,6 +42,9 @@ public class InternerTest {
         return new long[] {computePerformanceBenchmark(maxThreads)};
       }
     });
+
+    // stabilize GC
+    computeUsedHeap();
 
     long[] stats = computeMedian(new DataProducer() {
       public long[] produce() {
@@ -110,9 +113,11 @@ public class InternerTest {
     final int maxThreads = Runtime.getRuntime().availableProcessors() * 20;
     final int maxRepetitions = 100000;
 
+    final int k = Runtime.getRuntime().availableProcessors() > 4 ? 3 : 1;
+
     long[] refTime = computeMedian(new DataProducer() {
       public long[] produce() {
-        return new long []{computePerformanceBenchmark(maxThreads)};
+        return new long []{k*computePerformanceBenchmark(maxThreads)};
       }
     });
 
@@ -151,7 +156,7 @@ public class InternerTest {
           listOfLists.add(list);
           for (int count=maxObjects/maxThreads/3; count > 0; --count) {
             sb.setLength(0);
-            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + MEAN_LENGTH))); size > 0; --size) {
+            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 5 + MEAN_LENGTH))); size > 0; --size) {
               sb.append ((char)(rnd.nextInt(127-32)+32));
             }
             list.add (interner.intern(sb.toString()));
@@ -179,7 +184,7 @@ public class InternerTest {
           listOfLists.add(list);
           for (int count=maxObjects*2; count > 0; --count) {
             sb.setLength(0);
-            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + MEAN_LENGTH))); size > 0; --size) {
+            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 5 + MEAN_LENGTH))); size > 0; --size) {
               sb.append ((char)(rnd.nextInt(127-32)+32));
             }
             list.add (interner.intern(sb.toString()));
@@ -208,7 +213,7 @@ public class InternerTest {
           listOfLists.add(list);
           for (int count=maxObjects*2; count > 0; --count) {
             sb.setLength(0);
-            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + MEAN_LENGTH))); size > 0; --size) {
+            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 5 + MEAN_LENGTH))); size > 0; --size) {
               sb.append ((char)(rnd.nextInt(127-32)+32));
             }
             list.add (/*interner.intern*/(sb.toString()));
