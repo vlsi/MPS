@@ -126,6 +126,11 @@ public class Transformator {
         node.removeChild(node.getChild(RTYPE));
       }
     }
+
+    // remove low-level vars 
+    for (SNode var : ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(myWhatToEvaluate), "jetbrains.mps.debug.evaluation.structure.LowLevelVariable", false, new String[]{}))) {
+      SNodeOperations.deleteNode(var);
+    }
   }
 
   private void preprocess() {
