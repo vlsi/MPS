@@ -8,12 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.errors.BaseQuickFixProvider;
@@ -33,10 +30,10 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
       if (context == null) {
         return;
       }
-      AbstractConceptDeclaration concept = ((ConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node)));
+      SNode concept = SNodeOperations.getConceptDeclaration(node);
       for (SReference ref : SNodeOperations.getReferences(node)) {
         SNode target = SLinkOperations.getTargetNode(ref);
-        LinkDeclaration linkDeclaration = ((LinkDeclaration) SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration(ref)));
+        SNode linkDeclaration = SLinkOperations.findLinkDeclaration(ref);
         // don't check unresolved and broken references, they should already have an error message 
         if ((target == null) || linkDeclaration == null) {
           continue;

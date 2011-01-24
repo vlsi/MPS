@@ -72,6 +72,7 @@ public class GenerationRootDependencies {
   }
 
   public void addGeneratedFile(String name) {
+    if(name == null) throw new IllegalArgumentException("name is null");
     myGeneratedFiles.add(name);
   }
 
