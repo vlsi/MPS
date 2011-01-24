@@ -115,7 +115,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, SModelUtil.getGenuineLinkRole(myLinkDeclaration));
 
     if (referenceCell != null && referenceCell.getContainingBigCell().getFirstLeaf() == referenceCell &&
-      ReferenceConceptUtil.getCharacteristicReference(mySourceNode.getConceptDeclarationAdapter()) == myLinkDeclaration &&
+      ReferenceConceptUtil.getCharacteristicReference(mySourceNode.getConceptDeclarationNode()) == myLinkDeclaration &&
       mySourceNode.getParent() != null && mySourceNode.getChildren().isEmpty()) {
 
       SNode parent = mySourceNode.getParent();

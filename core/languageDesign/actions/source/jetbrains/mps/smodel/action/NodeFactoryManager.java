@@ -106,6 +106,11 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     }
   }
 
+  public static void setupNode(SNode nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
+    setupNode((ConceptDeclaration) BaseAdapter.fromNode(nodeConcept), node, sampleNode, enclosingNode, model, scope);
+  }
+
+  @Deprecated
   public static void setupNode(ConceptDeclaration nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
     boolean done = setupNode_internal(nodeConcept, node, sampleNode, enclosingNode, model, scope);
     if (!done) {

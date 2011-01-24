@@ -49,7 +49,7 @@ public class ReferenceConceptUtil {
    * @param concept with is possibly 'pure reference' concept.
    * @return characteristic reference or NULL
    */
-  public static SNode getCharacteristicReference(final AbstractConceptDeclaration concept) {
+  public static SNode getCharacteristicReference(final SNode concept) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
       public SNode compute() {
         String expectedReferentRole = null;
@@ -64,7 +64,7 @@ public class ReferenceConceptUtil {
           expectedReferentRole = matches[1];
         }
 
-        List<SNode> links = SModelSearchUtil.getReferenceLinkDeclarations(concept);
+        List<SNode> links = SModelSearchUtil.getReferenceLinkDeclarations((AbstractConceptDeclaration) BaseAdapter.fromNode(concept));
         if (expectedReferentRole != null) {
           for (SNode link : links) {
             if (expectedReferentRole.equals(SModelUtil.getLinkDeclarationRole(link))) {
@@ -85,13 +85,13 @@ public class ReferenceConceptUtil {
     });
   }
 
-  public static boolean hasSmartAlias(AbstractConceptDeclaration concept) {
+  public static boolean hasSmartAlias(SNode concept) {
     String conceptAlias = concept.getConceptProperty("alias");
     // matches pattern 'xxx <{_referent_role_}> yyy' ?
     return conceptAlias != null && SMART_ALIAS.matcher(conceptAlias).matches();
   }
 
-  public static String getPresentationFromSmartAlias(AbstractConceptDeclaration concept, String referentPresentation) {
+  public static String getPresentationFromSmartAlias(SNode concept, String referentPresentation) {
     String conceptAlias = concept.getConceptProperty("alias");
     // handle pattern 'xxx <{_referent_role_}> yyy'
     String[] matches = SMART_ALIAS_SEPARATOR.split(conceptAlias, 0);
@@ -104,7 +104,7 @@ public class ReferenceConceptUtil {
   }
 
   public static String getPresentation(SNode node) {
-    AbstractConceptDeclaration nodeConcept = node.getConceptDeclarationAdapter();
+    SNode nodeConcept = node.getConceptDeclarationNode();
     SNode characteristicReference = getCharacteristicReference(nodeConcept);
     if (characteristicReference == null) return null;
     String genuineRole = SModelUtil.getGenuineLinkRole(characteristicReference);

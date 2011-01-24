@@ -16,8 +16,6 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
@@ -38,15 +36,15 @@ import java.util.List;
     IScope scope = context.getScope();
 
     // proceed with custom builders
-    ConceptDeclaration referenceNodeConcept = (ConceptDeclaration) referenceNode.getConceptDeclarationAdapter();
-    Language primaryLanguage = SModelUtil_new.getDeclaringLanguage(referenceNodeConcept, scope);
+    SNode referenceNodeConcept = referenceNode.getConceptDeclarationNode();
+    Language primaryLanguage = SModelUtil.getDeclaringLanguage(referenceNodeConcept);
     if (primaryLanguage == null) {
       LOG.error("Couldn't build actions : couldn't get declaring language for concept " + referenceNodeConcept.getDebugText());
       return new LinkedList<INodeSubstituteAction>();
     }
 
     // search scope
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, (LinkDeclaration) BaseAdapter.fromNode(linkDeclaration), context);
+    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, linkDeclaration, context);
     if (status.isError()) {
       LOG.error("Couldn't create referent search scope : " + status.getMessage());
       return new LinkedList<INodeSubstituteAction>();

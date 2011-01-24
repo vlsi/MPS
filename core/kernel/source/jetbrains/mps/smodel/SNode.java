@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -37,7 +36,7 @@ public final class SNode {
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
   @Deprecated
-  public static final String PACK = BaseConcept.VIRTUAL_PACKAGE;
+  public static final String PACK = SNodeUtil.property_BaseConcept_virtualPackage;
   private static final ModelConstraintsManager CONSTRAINTS_MANAGER = ModelConstraintsManager.getInstance();
 
   public static final SNode[] EMPTY_ARRAY = new SNode[0];
@@ -275,7 +274,7 @@ public final class SNode {
   }
 
   public String getResolveInfo() {
-    String resolveInfo = getProperty(IResolveInfo.RESOLVE_INFO);
+    String resolveInfo = SNodeUtil.getResolveInfo(this);
     if (resolveInfo != null) {
       return resolveInfo;
     }
@@ -1343,7 +1342,7 @@ public final class SNode {
 
     String s = null;
     try {
-      s = getPersistentProperty(BaseConcept.ALIAS);
+      s = getPersistentProperty(SNodeUtil.property_BaseConcept_alias);
       if (s == null) {
         s = getPresentation();
       }
@@ -1719,36 +1718,36 @@ public final class SNode {
   //------------adapters-------------
 
   public BaseAdapter getAdapter() {
-     ModelAccess.assertLegalRead(this);
-     BaseAdapter adapter = myAdapter;
-     if (adapter != null) return adapter;
-     Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
-     if (c == null) return new BaseConcept(this);
+    ModelAccess.assertLegalRead(this);
+    BaseAdapter adapter = myAdapter;
+    if (adapter != null) return adapter;
+    Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
+    if (c == null) return new BaseConcept(this);
 
-     synchronized (this) {
-       adapter = myAdapter;
-       if (adapter != null) return adapter;
-       try {
-         adapter = (BaseAdapter) c.newInstance(this);
-         assert adapter.getNode() == this;
+    synchronized (this) {
+      adapter = myAdapter;
+      if (adapter != null) return adapter;
+      try {
+        adapter = (BaseAdapter) c.newInstance(this);
+        assert adapter.getNode() == this;
 
-         if (!myRegisteredInModelFlag) {
-           UnregisteredNodesWithAdapters.getInstance().add(this);
-         }
-         myAdapter = adapter;
-         return adapter;
-       } catch (IllegalAccessException e) {
-         LOG.error(e);
-       } catch (InvocationTargetException e) {
-         LOG.error(e);
-       } catch (InstantiationException e) {
-         LOG.error(e);
-       } catch (Throwable t) {
-         LOG.error(t);
-       }
-     }
-     return new BaseConcept(this);
-   }
+        if (!myRegisteredInModelFlag) {
+          UnregisteredNodesWithAdapters.getInstance().add(this);
+        }
+        myAdapter = adapter;
+        return adapter;
+      } catch (IllegalAccessException e) {
+        LOG.error(e);
+      } catch (InvocationTargetException e) {
+        LOG.error(e);
+      } catch (InstantiationException e) {
+        LOG.error(e);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+    return new BaseConcept(this);
+  }
 
 
   void clearAdapter() {

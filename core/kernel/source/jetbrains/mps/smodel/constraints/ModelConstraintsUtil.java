@@ -17,8 +17,6 @@ package jetbrains.mps.smodel.constraints;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.ERROR;
@@ -36,10 +34,10 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 public class ModelConstraintsUtil {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsUtil.class);
 
-  public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IOperationContext context) {
-    String linkRole = SModelUtil.getGenuineLinkRole(BaseAdapter.fromAdapter(referenceLinkDeclaration));
-    AbstractConceptDeclaration linkTarget = referenceLinkDeclaration.getTarget();
-    return getSearchScope(enclosingNode, referenceNode, BaseAdapter.fromAdapter(referenceNodeConcept), linkRole, linkTarget, context);
+  public static SearchScopeStatus getSearchScope(SNode enclosingNode, SNode referenceNode, SNode referenceNodeConcept, SNode referenceLinkDeclaration, IOperationContext context) {
+    String linkRole = SModelUtil.getGenuineLinkRole(referenceLinkDeclaration);
+    SNode linkTarget = SModelUtil.getLinkDeclarationTarget(referenceLinkDeclaration);
+    return getSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, linkTarget, context);
   }
 
   /**
@@ -49,7 +47,7 @@ public class ModelConstraintsUtil {
     return getSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, null, context);
   }
 
-  private static SearchScopeStatus getSearchScope(SNode enclosingNode, final SNode referenceNode, final SNode referenceNodeConcept, final String linkRole, final AbstractConceptDeclaration linkTarget, final IOperationContext context) {
+  private static SearchScopeStatus getSearchScope(SNode enclosingNode, final SNode referenceNode, final SNode referenceNodeConcept, final String linkRole, final SNode linkTarget, final IOperationContext context) {
     final SModel model;
     if (enclosingNode != null) {
       model = enclosingNode.getModel();
@@ -90,11 +88,11 @@ public class ModelConstraintsUtil {
     SNode referenceNode,
     SNode referenceNodeConcept,
     String linkRole,
-    AbstractConceptDeclaration linkTarget,
+    SNode linkTarget,
     IOperationContext context) {
 
     INodeReferentSearchScopeProvider scopeProvider = getSearchScopeProvider(referenceNodeConcept, linkRole);
-    ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, BaseAdapter.fromAdapter(linkTarget));
+    ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget);
     DefaultReferencPresentation referencePresentation = null;
     if (scopeProvider != null) {
       referencePresentation = scopeProvider.hasPresentation() ? new DefaultReferencPresentation(context, referentConstraintContext, scopeProvider) : null;

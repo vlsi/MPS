@@ -101,7 +101,7 @@ public class Resolver {
       @Override
       public Boolean compute() {
         SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
-          referenceNode, (AbstractConceptDeclaration) BaseAdapter.fromNode(referenceNodeConcept), (LinkDeclaration)BaseAdapter.fromNode(linkDeclaration), operationContext);
+          referenceNode, referenceNodeConcept, linkDeclaration, operationContext);
         if (status.isError()) {
           LOG.error("Couldn't create referent search scope : " + status.getMessage());
           return false;

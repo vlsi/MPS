@@ -24,6 +24,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
@@ -233,17 +234,17 @@ public class ChildSubstituteActionsHelper {
     return actions;
   }
 
-  public static List<INodeSubstituteAction> createDefaultActions(@NotNull SNode applicableConcept,
+  @Deprecated
+  public static List<INodeSubstituteAction> createDefaultActions(@NotNull ConceptDeclaration applicableConcept,
                                                                  SNode parentNode,
                                                                  SNode currentChild,
                                                                  IChildNodeSetter setter,
                                                                  IOperationContext operationContext) {
-    return createDefaultActions((ConceptDeclaration) applicableConcept.getAdapter(), parentNode, currentChild, setter, operationContext);
+    return createDefaultActions(BaseAdapter.fromAdapter(applicableConcept), parentNode, currentChild, setter, operationContext);
   }
 
 
-  @Deprecated
-  public static List<INodeSubstituteAction> createDefaultActions(@NotNull ConceptDeclaration applicableConcept,
+  public static List<INodeSubstituteAction> createDefaultActions(@NotNull SNode applicableConcept,
                                                                  SNode parentNode,
                                                                  SNode currentChild,
                                                                  IChildNodeSetter setter,
@@ -271,12 +272,12 @@ public class ChildSubstituteActionsHelper {
         return Collections.emptyList();
       }
     } else {
-      return Arrays.asList((INodeSubstituteAction) new DefaultChildNodeSubstituteAction(BaseAdapter.fromAdapter(applicableConcept), parentNode, currentChild, setter, scope));
+      return Arrays.asList((INodeSubstituteAction) new DefaultChildNodeSubstituteAction(applicableConcept, parentNode, currentChild, setter, scope));
     }
   }
 
   private static List<INodeSubstituteAction> createSmartReferenceActions(
-    final ConceptDeclaration referenceNodeConcept,
+    final SNode referenceNodeConcept,
     SNode smartReference,
     final SNode parentNode,
     final SNode currentChild,
@@ -284,7 +285,7 @@ public class ChildSubstituteActionsHelper {
     final IOperationContext context) {
 
     // try to create referent-search-scope
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(parentNode, null, referenceNodeConcept, (LinkDeclaration) BaseAdapter.fromNode(smartReference), context);
+    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(parentNode, null, referenceNodeConcept, smartReference, context);
     if (status.isError()) return null;
 
     // create smart actions
@@ -303,7 +304,7 @@ public class ChildSubstituteActionsHelper {
     return actions;
   }
 
-  private static String getSmartMatchingText(ConceptDeclaration referenceNodeConcept, SNode referentNode, boolean visible) {
+  private static String getSmartMatchingText(SNode referenceNodeConcept, SNode referentNode, boolean visible) {
     String referentMatchingText = NodePresentationUtil.matchingText(referentNode, true, visible);
     if (ReferenceConceptUtil.hasSmartAlias(referenceNodeConcept)) {
       return ReferenceConceptUtil.getPresentationFromSmartAlias(referenceNodeConcept, referentMatchingText);
@@ -426,7 +427,7 @@ public class ChildSubstituteActionsHelper {
     private final SNode myParentNode;
     private final SNode myCurrentChild;
     private final SNode myReferentNode;
-    private final ConceptDeclaration myReferenceNodeConcept;
+    private final SNode myReferenceNodeConcept;
     private final SNode myReferenceLink_final;
     private IReferencePresentation myPresentation;
 
@@ -436,7 +437,7 @@ public class ChildSubstituteActionsHelper {
       SNode currentChild,
       IChildNodeSetter childSetter,
       IScope scope,
-      ConceptDeclaration referenceNodeConcept,
+      SNode referenceNodeConcept,
       SNode referenceLink_final,
       IReferencePresentation presentation) {
 
@@ -497,7 +498,7 @@ public class ChildSubstituteActionsHelper {
     }
 
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-      SNode childNode = SModelUtil_new.instantiateConceptDeclaration(myReferenceNodeConcept, model).getNode();
+      SNode childNode = SModelUtil_new.instantiateConceptDeclaration(NameUtil.nodeFQName(myReferenceNodeConcept), model, GlobalScope.getInstance());
       String referentRole = SModelUtil.getGenuineLinkRole(myReferenceLink_final);
       childNode.setReferent(referentRole, myReferentNode);
       NodeFactoryManager.setupNode(myReferenceNodeConcept, childNode, myCurrentChild, myParentNode, model, getScope());
