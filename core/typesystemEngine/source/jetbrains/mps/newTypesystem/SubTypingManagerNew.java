@@ -52,7 +52,7 @@ public class SubTypingManagerNew extends SubtypingManager {
 
   @Override
   public boolean isSubtype(SNode subType, SNode superType, boolean isWeak) {
-    return isSubType(subType, superType, null, null, isWeak);
+    return isSubType(subType, superType, null, myState, isWeak);
   }
 
   public boolean isSubType(SNode subType, SNode superType, @Nullable EquationInfo info, State state, boolean isWeak) {
@@ -63,7 +63,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (isSubTypeByReplacementRules(subType, superType)) {
       return true;
     }
-    Equations equations = state == null ? null : state.getEquations();
+    Equations equations = myState == null ? null : state.getEquations();
     if (TypesUtil.match(subType, superType, equations, info)) {
       return true;
     }
