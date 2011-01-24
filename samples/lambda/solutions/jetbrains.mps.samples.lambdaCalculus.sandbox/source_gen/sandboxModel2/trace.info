@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="qwert.java" startLine="6" startPosition="0" endLine="22" endPosition="0" unitName="sandboxModel2.qwert" />
+  <unitInfo fileName="first.java" startLine="33" startPosition="0" endLine="61" endPosition="0" unitName="sandboxModel2.first$Function_816130369292799568" />
+  <unitInfo fileName="first.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="sandboxModel2.first" />
+</debugInfo>
 
