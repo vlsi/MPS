@@ -35,13 +35,13 @@ public class RuntimeSupportNew extends RuntimeSupport {
 
   @Override
   public SNode coerce_(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
-    SubTyping subTyping = new SubTyping(null, myTypeChecker);
-    return subTyping.coerceSubtyping(subtype, pattern, isWeak, null);
+    SubTypingManagerNew subTyping = new SubTypingManagerNew(myTypeChecker);
+    return subTyping.coerceSubTypingNew(subtype, pattern, isWeak, null);
   }
 
   public SNode coerce_(SNode subtype, IMatchingPattern pattern) {
-    SubTyping subTyping = new SubTyping(null, myTypeChecker);
-    return subTyping.coerceSubtyping(subtype, pattern, true, null);
+    SubTypingManagerNew subTyping = new SubTypingManagerNew(myTypeChecker);
+    return subTyping.coerceSubTypingNew(subtype, pattern, true, null);
   }
 
   public SNode coerce_(SNode subtype, IMatchingPattern pattern, boolean isWeak, TypeCheckingContext typeCheckingContext) {
@@ -49,7 +49,7 @@ public class RuntimeSupportNew extends RuntimeSupport {
       return coerce_(subtype, pattern);
     }
     TypeCheckingContextNew tcc = ((TypeCheckingContextNew)typeCheckingContext);
-    return tcc.getSubTyping().coerceSubtyping(subtype, pattern, isWeak, tcc.getState());
+    return tcc.getSubTyping().coerceSubTypingNew(subtype, pattern, isWeak, tcc.getState());
   }
 
   public SNode coerce_(SNode subtype, IMatchingPattern pattern, TypeCheckingContext typeCheckingContext) {
@@ -57,6 +57,6 @@ public class RuntimeSupportNew extends RuntimeSupport {
       return coerce_(subtype, pattern);
     }
     TypeCheckingContextNew tcc = ((TypeCheckingContextNew)typeCheckingContext);
-    return tcc.getSubTyping().coerceSubtyping(subtype, pattern, true, tcc.getState());
+    return tcc.getSubTyping().coerceSubTypingNew(subtype, pattern, true, tcc.getState());
   }
 }

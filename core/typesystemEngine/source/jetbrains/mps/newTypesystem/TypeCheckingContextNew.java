@@ -40,7 +40,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private State myState;
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
-  private SubTyping mySubTyping;
+  private SubTypingManagerNew mySubTyping;
   private boolean myChecked = false;
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
@@ -49,7 +49,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myRootNode = rootNode;
     myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
-    mySubTyping = new SubTyping(myState, typeChecker);
   }
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker, boolean resolving) {
@@ -58,7 +57,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myRootNode = rootNode;
     myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
-    mySubTyping = new SubTyping(myState, typeChecker);
   }
 
   public void rollBack() {
@@ -215,8 +213,8 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     return myTypeChecker;
   }
 
-  public SubTyping getSubTyping() {
-    return mySubTyping;
+  public SubTypingManagerNew getSubTyping() {
+    return (SubTypingManagerNew)myTypeChecker.getSubtypingManager();
   }
 
   public Stack<AbstractOperation> getOperationStack() {

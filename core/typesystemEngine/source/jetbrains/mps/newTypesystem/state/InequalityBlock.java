@@ -19,7 +19,7 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
-import jetbrains.mps.newTypesystem.SubTyping;
+import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -101,10 +101,10 @@ public class InequalityBlock extends RelationBlock {
     if (processReplacementRules(subType, superType)) {
       return;
     }
-    final SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
+    final SubTypingManagerNew subTyping = myState.getTypeCheckingContext().getSubTyping();
     myState.executeOperation(new jetbrains.mps.newTypesystem.operation.AddRemarkOperation("checking whether " + subType + " is subtype of " + superType, new Runnable() {
       public void run() {
-        if (!subTyping.isSubType(subType, superType, myEquationInfo, myRelationKind.isWeak(), false)) {
+        if (!subTyping.isSubType(subType, superType, myEquationInfo, myState, myRelationKind.isWeak())) {
           myState.getNodeMaps().reportSubTypeError(subType, superType, myEquationInfo, myRelationKind.isWeak());
         }
       }

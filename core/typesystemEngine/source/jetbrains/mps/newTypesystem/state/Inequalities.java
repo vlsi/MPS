@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.state;
 
-import jetbrains.mps.newTypesystem.SubTyping;
+import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.block.RemoveBlockOperation;
 import jetbrains.mps.smodel.SNode;
@@ -189,7 +189,7 @@ public class Inequalities {
         typesToBlocks.put(left, block);
       }
     }
-    SubTyping subTyping = new SubTyping(myState);
+    SubTypingManagerNew subTyping = myState.getTypeCheckingContext().getSubTyping();
     SNode result = null;
     EquationInfo info = null;
     if (!subTypes.isEmpty()) {

@@ -15,19 +15,6 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import com.intellij.openapi.util.Computable;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.*;
-import jetbrains.mps.typesystem.inference.util.SubtypingCache;
-import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
@@ -104,8 +91,8 @@ public class CoercionManager {           /*
     });
   }
 
-  public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern) {
-    return coerceSubtyping(subtype, pattern, true);
+  public SNode coerceSubTypingNew(SNode subtype, final IMatchingPattern pattern) {
+    return coerceSubTypingNew(subtype, pattern, true);
   }
 
   private static class CoercionMatcher {

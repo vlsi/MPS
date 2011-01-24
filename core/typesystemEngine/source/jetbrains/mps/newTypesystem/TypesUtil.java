@@ -112,10 +112,10 @@ public class TypesUtil {
   }
 
   public static boolean match(SNode left, SNode right) {
-    return match(left, right, null, null, true);
+    return match(left, right, null, null);
   }
 
-  public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info, boolean checkOnly) {
+  public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info) {
     if (left == right) {
       return true;
     }
@@ -123,14 +123,14 @@ public class TypesUtil {
       return false;
     }
     if (TypesUtil.isVariable(left) || TypesUtil.isVariable(right)) {
-      if (!checkOnly) {
+      if (equations != null) {
         equations.addEquation(left, right, info);
       }
       return true;
     }
     TypeMatchModifier typeMatchModifier = new TypeMatchModifier();
     boolean result = MatchingUtil.matchNodes(left, right, typeMatchModifier, false);
-    if (!checkOnly && result) {
+    if (result) {
       if (equations != null) {
         equations.addEquations(typeMatchModifier.getChildEqs(), info);
       }

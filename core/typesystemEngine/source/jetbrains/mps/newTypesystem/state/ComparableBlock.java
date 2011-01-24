@@ -16,7 +16,7 @@
 package jetbrains.mps.newTypesystem.state;
 
 import com.intellij.openapi.util.Pair;
-import jetbrains.mps.newTypesystem.SubTyping;
+import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -44,14 +44,14 @@ public class ComparableBlock extends RelationBlock {
       return;
     }
 
-    SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
+    SubTypingManagerNew subTyping = myState.getTypeCheckingContext().getSubTyping();
     // if subType or superType
     boolean isWeak = myRelationKind.isWeak();
     if (subTyping.isComparableByRules(left, right, myEquationInfo, isWeak) ||
       subTyping.isSubTypeByReplacementRules(left, right) ||
       subTyping.isSubTypeByReplacementRules(right, left) ||
-      subTyping.isSubType(left, right, myEquationInfo, isWeak, true) ||
-      subTyping.isSubType(right, left, myEquationInfo, isWeak, true)) {
+      subTyping.isSubType(left, right, myEquationInfo, null, isWeak) ||
+      subTyping.isSubType(right, left, myEquationInfo, null, isWeak)) {
       myState.executeOperation(new AddRemarkOperation(left + " is comparable with " + right));
       return;
     }

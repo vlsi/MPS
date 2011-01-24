@@ -136,7 +136,7 @@ public class Equations {
     if (left == null || right == null) {
       return false;
     }
-    return TypesUtil.match(left, right, this, info, false);
+    return TypesUtil.match(left, right, this, info);
   }
 
   private void processEquation(SNode var, SNode type, EquationInfo info) {
