@@ -16,13 +16,10 @@
 package jetbrains.mps.typesystem.inference;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.*;
-import jetbrains.mps.lang.typesystem.structure.MeetType;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.util.*;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
@@ -664,11 +661,7 @@ System.out.println("alltypes = " + allTypes);*/
       return residualNodes.iterator().next();
     }
     if (residualNodes.size() > 1) {
-      MeetType meetType = MeetType.newInstance(AuxilaryRuntimeModel.getDescriptor().getSModel());
-      for (SNode node : residualNodes) {
-        meetType.addArgument((BaseConcept) node.getAdapter());
-      }
-      return meetType.getNode();
+      return LatticeUtil.meetNodes(residualNodes);
     }
     return null;
   }

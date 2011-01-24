@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.actions.generate;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.generator.OutputViewGenerationHandler;
 
+@Deprecated
 public class GenerateTextFromModelsAction extends GenerateModelsAction {
   public GenerateTextFromModelsAction() {
     super("", true);

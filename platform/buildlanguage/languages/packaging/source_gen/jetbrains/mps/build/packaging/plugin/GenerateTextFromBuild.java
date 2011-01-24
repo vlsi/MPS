@@ -25,9 +25,11 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
+@Deprecated
 public class GenerateTextFromBuild {
   private static Logger LOG = Logger.getLogger(GenerateTextFromBuild.class);
 
+  @Deprecated
   public GenerateTextFromBuild() {
   }
 

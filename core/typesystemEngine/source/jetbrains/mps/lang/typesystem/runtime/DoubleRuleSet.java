@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Pair;
 
 import java.util.Set;
@@ -28,16 +27,16 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
-  Map<Pair<AbstractConceptDeclaration, AbstractConceptDeclaration>, Set<T>> myRules =
-    new HashMap<Pair<AbstractConceptDeclaration, AbstractConceptDeclaration>, Set<T>>();
+  Map<Pair<SNode, SNode>, Set<T>> myRules =
+    new HashMap<Pair<SNode, SNode>, Set<T>>();
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
-      AbstractConceptDeclaration concept1 = SModelUtil_new.findConceptDeclaration(
+      SNode concept1 = SModelUtil.findConceptDeclaration(
         rule.getApplicableConceptFQName1(), GlobalScope.getInstance());
-      AbstractConceptDeclaration concept2 = SModelUtil_new.findConceptDeclaration(
+      SNode concept2 = SModelUtil.findConceptDeclaration(
         rule.getApplicableConceptFQName2(), GlobalScope.getInstance());
-      Pair<AbstractConceptDeclaration, AbstractConceptDeclaration> pair = new Pair<AbstractConceptDeclaration, AbstractConceptDeclaration>(concept1, concept2);
+      Pair<SNode, SNode> pair = new Pair<SNode, SNode>(concept1, concept2);
       Set<T> existingRules = myRules.get(pair);
       if (existingRules == null) {
         existingRules = new HashSet<T>();
@@ -49,21 +48,21 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
   }
 
   public Set<T> getRules(SNode node1, SNode node2) {
-    AbstractConceptDeclaration conceptDeclaration1 = node1.getConceptDeclarationAdapter();
-    AbstractConceptDeclaration conceptDeclaration2 = node2.getConceptDeclarationAdapter();
-    return get(new Pair<AbstractConceptDeclaration, AbstractConceptDeclaration>(conceptDeclaration1, conceptDeclaration2));
+    SNode conceptDeclaration1 = node1.getConceptDeclarationNode();
+    SNode conceptDeclaration2 = node2.getConceptDeclarationNode();
+    return get(new Pair<SNode, SNode>(conceptDeclaration1, conceptDeclaration2));
   }
 
-  protected Set<T> get(Pair<AbstractConceptDeclaration, AbstractConceptDeclaration> key) {
-    AbstractConceptDeclaration c1 = key.o1;
-    AbstractConceptDeclaration c2 = key.o2;
-    if (c1 instanceof ConceptDeclaration && c2 instanceof ConceptDeclaration) {
-      ConceptDeclaration conceptDeclaration1 = (ConceptDeclaration) c1;
-      ConceptDeclaration conceptDeclaration2 = (ConceptDeclaration) c2;
+  protected Set<T> get(Pair<SNode, SNode> key) {
+    SNode c1 = key.o1;
+    SNode c2 = key.o2;
+    if (SNodeUtil.isInstanceOfConceptDeclaration(c1) && SNodeUtil.isInstanceOfConceptDeclaration(c2)) {
+      SNode conceptDeclaration1 = c1;
+      SNode conceptDeclaration2 = c2;
       while (conceptDeclaration1 != null) {
         while (conceptDeclaration2 != null) {
-          Pair<AbstractConceptDeclaration, AbstractConceptDeclaration> newKey =
-            new Pair<AbstractConceptDeclaration, AbstractConceptDeclaration>(conceptDeclaration1, conceptDeclaration2);
+          Pair<SNode, SNode> newKey =
+            new Pair<SNode, SNode>(conceptDeclaration1, conceptDeclaration2);
           Set<T> rules = myRules.get(newKey);
           if (rules != null) {
             if (conceptDeclaration1 != key.o1 || conceptDeclaration2 != key.o2) {
@@ -71,10 +70,10 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
             }
             return rules;
           }
-          conceptDeclaration2 = conceptDeclaration2.getExtends();
+          conceptDeclaration2 = SNodeUtil.getConceptDeclaration_Extends(conceptDeclaration2);
         }
-        conceptDeclaration2 = (ConceptDeclaration) c2;
-        conceptDeclaration1 = conceptDeclaration1.getExtends();
+        conceptDeclaration2 = c2;
+        conceptDeclaration1 = SNodeUtil.getConceptDeclaration_Extends(conceptDeclaration1);
       }
     }
     HashSet<T> hashSet = new HashSet<T>();
@@ -83,7 +82,7 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
   }
 
   public void makeConsistent() {
-    for (Pair<AbstractConceptDeclaration, AbstractConceptDeclaration>
+    for (Pair<SNode, SNode>
       pair : myRules.keySet()) {
 
 
@@ -92,21 +91,21 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
       }
       Set<T> rules = myRules.get(pair);
       if (rules == null) continue;
-      if (!(pair.o1 instanceof ConceptDeclaration)) continue;
-      if (!(pair.o2 instanceof ConceptDeclaration)) continue;
+      if (!(SNodeUtil.isInstanceOfConceptDeclaration(pair.o1))) continue;
+      if (!(SNodeUtil.isInstanceOfConceptDeclaration(pair.o2))) continue;
 
-      ConceptDeclaration parent1 = ((ConceptDeclaration) pair.o1).getExtends();
-      ConceptDeclaration parent2 = ((ConceptDeclaration) pair.o2).getExtends();
+      SNode parent1 = SNodeUtil.getConceptDeclaration_Extends(pair.o1);
+      SNode parent2 = SNodeUtil.getConceptDeclaration_Extends(pair.o2);
 
       while (parent1 != null) {
         while (parent2 != null) {
-          Set<T> parentRules = myRules.get(new Pair<AbstractConceptDeclaration, AbstractConceptDeclaration>(parent1, parent2));
+          Set<T> parentRules = myRules.get(new Pair<SNode, SNode>(parent1, parent2));
           if (parentRules != null) {
             rules.addAll(parentRules);
           }
-          parent2 = parent2.getExtends();
+          parent2 = SNodeUtil.getConceptDeclaration_Extends(parent2);
         }
-        parent1 = parent1.getExtends();
+        parent1 = SNodeUtil.getConceptDeclaration_Extends(parent1);
       }
     }
   }

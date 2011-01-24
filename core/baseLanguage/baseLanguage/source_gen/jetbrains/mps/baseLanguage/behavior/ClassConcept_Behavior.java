@@ -35,6 +35,7 @@ public class ClassConcept_Behavior {
   private static Class[] PARAMETERS_7941158526576616766 = {SNode.class};
   private static Class[] PARAMETERS_5039675756632924553 = {SNode.class};
   private static Class[] PARAMETERS_1240936569950 = {SNode.class};
+  private static Class[] PARAMETERS_2496361171403551057 = {SNode.class};
   private static Logger LOG = Logger.getLogger(ClassConcept_Behavior.class);
 
   public static void init(SNode thisNode) {
@@ -156,6 +157,18 @@ public class ClassConcept_Behavior {
     return baseMethodDeclarations;
   }
 
+  public static String virtual_getUnitName_3822000666564591112(SNode thisNode) {
+    String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
+    if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == null) {
+      return fqName;
+    }
+    int index = fqName.lastIndexOf(".");
+    if (index <= 0) {
+      return fqName;
+    }
+    return fqName.substring(0, index) + "$" + fqName.substring(index + 1);
+  }
+
   public static boolean call_isRunnable_7941158526576616766(SNode thisNode) {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_isRunnable_7941158526576616752", PARAMETERS_7941158526576616766);
   }
@@ -168,6 +181,10 @@ public class ClassConcept_Behavior {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getSuperclass_1240936569950", PARAMETERS_1240936569950);
   }
 
+  public static String call_getUnitName_2496361171403551057(SNode thisNode) {
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getUnitName_3822000666564591112", PARAMETERS_2496361171403551057);
+  }
+
   public static boolean callSuper_isRunnable_7941158526576616766(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_isRunnable_7941158526576616752", PARAMETERS_7941158526576616766);
   }
@@ -178,6 +195,10 @@ public class ClassConcept_Behavior {
 
   public static SNode callSuper_getSuperclass_1240936569950(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_getSuperclass_1240936569950", PARAMETERS_1240936569950);
+  }
+
+  public static String callSuper_getUnitName_2496361171403551057(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_getUnitName_3822000666564591112", PARAMETERS_2496361171403551057);
   }
 
   public static SNode getContextClass_8008512149545173402(SNode expr) {

@@ -36,6 +36,9 @@ public class PresentationManager {
     if (HUtil.isRuntimeTypeVariable(typeNode)) {
       return (typeNode).getName();
     }
+    if (typeNode != null) {
+      return typeNode.getPresentation(true);
+    }
     return null;
   }
 

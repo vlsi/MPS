@@ -23,6 +23,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.HashSet;
 import java.util.Set;
 
+@Deprecated
 public class GenerateAllModulesInProjectAction extends BaseGenerateAction {
   public GenerateAllModulesInProjectAction(boolean regenerate) {
     super(regenerate);

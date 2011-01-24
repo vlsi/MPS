@@ -96,7 +96,7 @@ public class GoToRulesHelper {
   }
 
   public static Language getDeclaringLanguage(AbstractConceptDeclaration concept) {
-    String languageFqName = NameUtil.namespaceFromConcept(concept);
+    String languageFqName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(concept));
     if (languageFqName == null) return null;
     return MPSModuleRepository.getInstance().getLanguage(languageFqName);
   }

@@ -4,18 +4,13 @@ package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.util.NameUtil;
 
 public class IsInstanceCondition implements Condition<SNode> {
   private String myConceptFqName;
 
   public IsInstanceCondition(SNode node) {
-    this((AbstractConceptDeclaration) node.getAdapter());
-  }
-
-  public IsInstanceCondition(AbstractConceptDeclaration conceptDeclaration) {
-    this(NameUtil.nodeFQName(conceptDeclaration));
+    this(NameUtil.nodeFQName(node));
   }
 
   public IsInstanceCondition(String fqName) {

@@ -48,10 +48,10 @@
       <varInfo nodeId="8885943037292707713" varName="td" />
       <varInfo nodeId="8885943037292707721" varName="fd" />
     </scopeInfo>
-    <unitInfo nodeId="7017136043751665174" fileName="QueriesGenerated.java" startLine="190" startPosition="110" endLine="194" endPosition="13" unitName="jetbrains.mps.make.facet.actions.IWhereFilter$anonymous" />
-    <unitInfo nodeId="7017136043751665188" fileName="QueriesGenerated.java" startLine="194" startPosition="115" endLine="198" endPosition="13" unitName="jetbrains.mps.make.facet.actions.ITranslator2$anonymous" />
-    <unitInfo nodeId="7017136043751665199" fileName="QueriesGenerated.java" startLine="198" startPosition="34" endLine="202" endPosition="13" unitName="jetbrains.mps.make.facet.actions.ISelector$anonymous" />
-    <unitInfo nodeId="7017136043751665217" fileName="QueriesGenerated.java" startLine="202" startPosition="36" endLine="206" endPosition="13" unitName="jetbrains.mps.make.facet.actions.ITranslator2$anonymous" />
+    <unitInfo nodeId="7017136043751665174" fileName="QueriesGenerated.java" startLine="190" startPosition="110" endLine="194" endPosition="13" unitName="jetbrains.mps.make.facet.actions.QueriesGenerated$6" />
+    <unitInfo nodeId="7017136043751665188" fileName="QueriesGenerated.java" startLine="194" startPosition="115" endLine="198" endPosition="13" unitName="jetbrains.mps.make.facet.actions.QueriesGenerated$6" />
+    <unitInfo nodeId="7017136043751665199" fileName="QueriesGenerated.java" startLine="198" startPosition="34" endLine="202" endPosition="13" unitName="jetbrains.mps.make.facet.actions.QueriesGenerated$6" />
+    <unitInfo nodeId="7017136043751665217" fileName="QueriesGenerated.java" startLine="202" startPosition="36" endLine="206" endPosition="13" unitName="jetbrains.mps.make.facet.actions.QueriesGenerated$6" />
   </root>
   <root nodeId="7320828025189345688">
     <nodeInfo nodeId="7320828025189345692" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="QueriesGenerated.java" startLine="45" startPosition="161" endLine="46" endPosition="73" />
@@ -140,10 +140,10 @@
     <scopeInfo nodeId="8351679702044389585" fileName="QueriesGenerated.java" startLine="60" startPosition="37" endLine="113" endPosition="32">
       <varInfo nodeId="8351679702044391335" varName="relatedFacets" />
     </scopeInfo>
-    <unitInfo nodeId="8351679702044391355" fileName="QueriesGenerated.java" startLine="62" startPosition="201" endLine="66" endPosition="13" unitName="jetbrains.mps.make.facet.actions.IWhereFilter$anonymous" />
-    <unitInfo nodeId="8351679702044391376" fileName="QueriesGenerated.java" startLine="70" startPosition="31" endLine="109" endPosition="21" unitName="Anonymous in iterator() in Anonymous in translate() in jetbrains.mps.make.facet.actions.ITranslator2$anonymous" />
-    <unitInfo nodeId="8351679702044391376" fileName="QueriesGenerated.java" startLine="68" startPosition="27" endLine="111" endPosition="17" unitName="Anonymous in translate() in jetbrains.mps.make.facet.actions.ITranslator2$anonymous" />
-    <unitInfo nodeId="8351679702044391376" fileName="QueriesGenerated.java" startLine="66" startPosition="54" endLine="113" endPosition="13" unitName="jetbrains.mps.make.facet.actions.ITranslator2$anonymous" />
+    <unitInfo nodeId="8351679702044391355" fileName="QueriesGenerated.java" startLine="62" startPosition="201" endLine="66" endPosition="13" unitName="jetbrains.mps.make.facet.actions.QueriesGenerated$2" />
+    <unitInfo nodeId="8351679702044391376" fileName="QueriesGenerated.java" startLine="70" startPosition="31" endLine="109" endPosition="21" unitName="jetbrains.mps.make.facet.actions.QueriesGenerated$4" />
+    <unitInfo nodeId="8351679702044391376" fileName="QueriesGenerated.java" startLine="68" startPosition="27" endLine="111" endPosition="17" unitName="jetbrains.mps.make.facet.actions.QueriesGenerated$3" />
+    <unitInfo nodeId="8351679702044391376" fileName="QueriesGenerated.java" startLine="66" startPosition="54" endLine="113" endPosition="13" unitName="jetbrains.mps.make.facet.actions.QueriesGenerated$2" />
   </root>
 </debugInfo>
 

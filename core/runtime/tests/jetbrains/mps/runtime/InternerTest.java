@@ -28,7 +28,7 @@ public class InternerTest {
   private static final int MEAN_LENGTH = 50;
 
   private static int magicDivider () {
-    return String.valueOf(System.getProperty("os.arch")).contains("64") ? 4 : 3;
+    return String.valueOf(System.getProperty("os.arch")).contains("64") ? 5 : 3;
   }
 
   @Test
@@ -37,13 +37,16 @@ public class InternerTest {
     final int maxThreads = Runtime.getRuntime().availableProcessors()*3;
     final int maxRepetitions = 2000000;
 
-    long[] refTime = computeMedian(new LongProducer() {
+    long[] refTime = computeMedian(new DataProducer() {
       public long[] produce() {
         return new long[] {computePerformanceBenchmark(maxThreads)};
       }
     });
 
-    long[] stats = computeMedian(new LongProducer() {
+    // stabilize GC
+    computeUsedHeap();
+
+    long[] stats = computeMedian(new DataProducer() {
       public long[] produce() {
         long baseLine = computeUsedHeap();
         final Interner interner = new Interner(maxObjects);
@@ -63,7 +66,7 @@ public class InternerTest {
     double perfRatio = stats[0] / (double) refTime[0];
     Assert.assertTrue("Interner perfomance is not within bounds: "+perfRatio,  0.45 < perfRatio && perfRatio < 1.95);
 
-    double memRatio = stats[2] / (double) stats[3] / magicDivider() / MEAN_LENGTH / 1.5;
+    double memRatio = stats[2] / (double) stats[3] / magicDivider() / MEAN_LENGTH;
     Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.65 < memRatio && memRatio < 1.5);
   }
 
@@ -73,15 +76,15 @@ public class InternerTest {
     final int maxThreads = Runtime.getRuntime().availableProcessors()*3;
     final int maxRepetitions = 100000;
 
-    final int k = Runtime.getRuntime().availableProcessors() > 4 ? 5 : 1;
+    final int k = Runtime.getRuntime().availableProcessors() > 4 ? 3 : 1;
 
-    long [] refTime = computeMedian(new LongProducer() {
+    long [] refTime = computeMedian(new DataProducer() {
       public long [] produce() {
         return new long [] {k *computePerformanceBenchmark(maxThreads)};
       }
     });
 
-    long[] stats = computeMedian(new LongProducer() {
+    long[] stats = computeMedian(new DataProducer() {
       public long [] produce() {
         long baseLine = computeUsedHeap();
         final Interner interner = new Interner(maxObjects);
@@ -110,13 +113,15 @@ public class InternerTest {
     final int maxThreads = Runtime.getRuntime().availableProcessors() * 20;
     final int maxRepetitions = 100000;
 
-    long[] refTime = computeMedian(new LongProducer() {
+    final int k = Runtime.getRuntime().availableProcessors() > 4 ? 3 : 1;
+
+    long[] refTime = computeMedian(new DataProducer() {
       public long[] produce() {
-        return new long []{computePerformanceBenchmark(maxThreads)};
+        return new long []{k*computePerformanceBenchmark(maxThreads)};
       }
     });
 
-    long[] stats = computeMedian(new LongProducer() {
+    long[] stats = computeMedian(new DataProducer() {
       public long[] produce() {
         long baseLine = computeUsedHeap();
         final Interner interner = new Interner(maxObjects);
@@ -151,7 +156,7 @@ public class InternerTest {
           listOfLists.add(list);
           for (int count=maxObjects/maxThreads/3; count > 0; --count) {
             sb.setLength(0);
-            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + MEAN_LENGTH))); size > 0; --size) {
+            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 5 + MEAN_LENGTH))); size > 0; --size) {
               sb.append ((char)(rnd.nextInt(127-32)+32));
             }
             list.add (interner.intern(sb.toString()));
@@ -179,7 +184,7 @@ public class InternerTest {
           listOfLists.add(list);
           for (int count=maxObjects*2; count > 0; --count) {
             sb.setLength(0);
-            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + MEAN_LENGTH))); size > 0; --size) {
+            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 5 + MEAN_LENGTH))); size > 0; --size) {
               sb.append ((char)(rnd.nextInt(127-32)+32));
             }
             list.add (interner.intern(sb.toString()));
@@ -208,7 +213,7 @@ public class InternerTest {
           listOfLists.add(list);
           for (int count=maxObjects*2; count > 0; --count) {
             sb.setLength(0);
-            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + MEAN_LENGTH))); size > 0; --size) {
+            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 5 + MEAN_LENGTH))); size > 0; --size) {
               sb.append ((char)(rnd.nextInt(127-32)+32));
             }
             list.add (/*interner.intern*/(sb.toString()));
@@ -332,7 +337,7 @@ public class InternerTest {
     System.gc();
     System.gc();
     try {
-      Thread.sleep(100);
+      Thread.sleep(1000);
     } catch (InterruptedException e) {}
     System.gc();
 
@@ -340,9 +345,9 @@ public class InternerTest {
     return hmu.getUsed();
   }
 
-  private long[] computeMedian (LongProducer lp) {
+  private long[] computeMedian (DataProducer lp) {
     List<long[]> data = new ArrayList<long[]>();
-    for (int count=16; count>0; --count) {
+    for (int count=6; count>0; --count) {
       data.add(lp.produce());
     }
 
@@ -365,7 +370,7 @@ with_samples:
     return retVal;
   }
 
-  private static interface LongProducer {
+  private static interface DataProducer {
     public long[] produce();
   }
 

@@ -36,7 +36,7 @@ public class Rename_S_ActionParameters_MigrationScript extends BaseMigrationScri
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, "key", SLinkOperations.getTarget(new Rename_S_ActionParameters_MigrationScript.QuotationClass_obtej7_a0a0a0a4a0a0a1a0().createNode(), "variableDeclaration", false), false);
+        SLinkOperations.setTarget(node, "key", SLinkOperations.getTarget(new Rename_S_ActionParameters_MigrationScript.QuotationClass_obtej7_a0c0a0e0a0a0b0a().createNode(), "variableDeclaration", false), false);
       }
 
       public boolean isShowAsIntention() {
@@ -61,7 +61,7 @@ public class Rename_S_ActionParameters_MigrationScript extends BaseMigrationScri
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, "key", SLinkOperations.getTarget(new Rename_S_ActionParameters_MigrationScript.QuotationClass_obtej7_a0a0a0a4a0a0a2a0().createNode(), "variableDeclaration", false), false);
+        SLinkOperations.setTarget(node, "key", SLinkOperations.getTarget(new Rename_S_ActionParameters_MigrationScript.QuotationClass_obtej7_a0c0a0e0a0a0c0a().createNode(), "variableDeclaration", false), false);
       }
 
       public boolean isShowAsIntention() {
@@ -89,8 +89,8 @@ public class Rename_S_ActionParameters_MigrationScript extends BaseMigrationScri
     }
   }
 
-  public static class QuotationClass_obtej7_a0a0a0a4a0a0a1a0 {
-    public QuotationClass_obtej7_a0a0a0a4a0a0a1a0() {
+  public static class QuotationClass_obtej7_a0c0a0e0a0a0b0a {
+    public QuotationClass_obtej7_a0c0a0e0a0a0b0a() {
     }
 
     public SNode createNode() {
@@ -127,8 +127,8 @@ public class Rename_S_ActionParameters_MigrationScript extends BaseMigrationScri
     }
   }
 
-  public static class QuotationClass_obtej7_a0a0a0a4a0a0a2a0 {
-    public QuotationClass_obtej7_a0a0a0a4a0a0a2a0() {
+  public static class QuotationClass_obtej7_a0c0a0e0a0a0c0a {
+    public QuotationClass_obtej7_a0c0a0e0a0a0c0a() {
     }
 
     public SNode createNode() {

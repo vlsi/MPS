@@ -48,11 +48,11 @@ public abstract class ChooserType<T> {
     return result;
   }
 
-  public static class ModelChooserType extends ChooserType<SModelDescriptor> {
+  public static class ModelChooserType extends ChooserType<SModelReference> {
     public ModelChooserType() {
     }
 
-    public ChooseByNameModel createChooserModel(final IChooserSettings<SModelDescriptor> settings, final RefactoringContext context, final String paramName) {
+    public ChooseByNameModel createChooserModel(final IChooserSettings<SModelReference> settings, final RefactoringContext context, final String paramName) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
@@ -67,11 +67,9 @@ public abstract class ChooserType<T> {
 
         public SModelReference[] find(boolean checkboxState) {
           List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors();
-          List<SModelDescriptor> filteredModelDescriptors = filter(settings, modelDescriptors);
-          List<SModelReference> filteredModelRefs = new ArrayList<SModelReference>(filteredModelDescriptors.size());
-          for (SModelDescriptor md:filteredModelDescriptors){
-            filteredModelRefs.add(md.getSModelReference());
-          }
+          List<SModelReference> modelReferencess = new ArrayList<SModelReference>(modelDescriptors.size());
+          for (SModelDescriptor md:modelDescriptors) modelReferencess.add(md.getSModelReference());
+          List<SModelReference> filteredModelRefs = filter(settings, modelReferencess);
           return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
         }
 

@@ -136,7 +136,7 @@ public class SModelUtil_new implements ApplicationComponent {
   public static boolean isAssignableConcept(String fromConceptFqName, String toConceptFqName) {
     if (ObjectUtils.equals(fromConceptFqName, toConceptFqName)) return true;
     if (toConceptFqName == null || fromConceptFqName == null) return false;
-    if (toConceptFqName.equals("jetbrains.mps.lang.core.structure.BaseConcept")) return true;
+    if (toConceptFqName.equals(SNodeUtil.concept_BaseConcept)) return true;
 
     return LanguageHierarchyCache.getInstance().isAssignable(fromConceptFqName, toConceptFqName);
   }

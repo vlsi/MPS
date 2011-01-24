@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
 
 import java.util.HashMap;
@@ -29,11 +29,11 @@ import java.util.Set;
 
 public class DependenciesContainer {
 
-  Map<AbstractConceptDeclaration, Set<IDependency_Runtime>> myDependencies = new HashMap<AbstractConceptDeclaration, Set<IDependency_Runtime>>();
+  Map<SNode, Set<IDependency_Runtime>> myDependencies = new HashMap<SNode, Set<IDependency_Runtime>>();
 
   public void addDependencies(Set<IDependency_Runtime> dependencies) {
     for (IDependency_Runtime dependency : dependencies) {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(dependency.getTargetConceptFQName(), GlobalScope.getInstance());
+      SNode concept = SModelUtil.findConceptDeclaration(dependency.getTargetConceptFQName(), GlobalScope.getInstance());
       Set<IDependency_Runtime> existingRules = myDependencies.get(concept);
       if (existingRules == null) {
         existingRules = new HashSet<IDependency_Runtime>();
@@ -48,7 +48,7 @@ public class DependenciesContainer {
     if (node == null) return new HashSet<SNode>();
     Set<IDependency_Runtime> dependencies;
     synchronized (RulesManager.RULES_LOCK) {
-      AbstractConceptDeclaration conceptDeclaration = node.getConceptDeclarationAdapter();
+      SNode conceptDeclaration = node.getConceptDeclarationNode();
       dependencies = get(conceptDeclaration);
     }
     Set<SNode> result = new HashSet<SNode>();
@@ -56,7 +56,7 @@ public class DependenciesContainer {
       Set<SNode> sourceNodes = dependency_runtime.getSourceNodes(node);
       for (SNode sourceNode : sourceNodes) {
         if (sourceNode == null) continue;
-        if (SModelUtil_new.isAssignableConcept(sourceNode.getConceptFqName(), dependency_runtime.getSourceConceptFQName())) {
+        if (SModelUtil.isAssignableConcept(sourceNode.getConceptFqName(), dependency_runtime.getSourceConceptFQName())) {
           result.add(sourceNode);
         }
       }
@@ -64,9 +64,9 @@ public class DependenciesContainer {
     return result;
   }
 
-  protected Set<IDependency_Runtime> get(AbstractConceptDeclaration key) {
-    if (key instanceof ConceptDeclaration) {
-      ConceptDeclaration conceptDeclaration = (ConceptDeclaration) key;
+  protected Set<IDependency_Runtime> get(SNode key) {
+    if (SNodeUtil.isInstanceOfConceptDeclaration(key)) {
+      SNode conceptDeclaration = key;
       while (conceptDeclaration != null) {
         Set<IDependency_Runtime> rules = myDependencies.get(conceptDeclaration);
         if (rules != null) {
@@ -75,7 +75,7 @@ public class DependenciesContainer {
           }
           return rules;
         }
-        conceptDeclaration = conceptDeclaration.getExtends();
+        conceptDeclaration = SNodeUtil.getConceptDeclaration_Extends(conceptDeclaration);
       }
     }
     HashSet<IDependency_Runtime> hashSet = new HashSet<IDependency_Runtime>();
@@ -84,20 +84,20 @@ public class DependenciesContainer {
   }
 
   public void makeConsistent() {
-    for (AbstractConceptDeclaration conceptDeclaration : myDependencies.keySet()) {
+    for (SNode conceptDeclaration : myDependencies.keySet()) {
       if (conceptDeclaration == null) {
         continue;
       }
       Set<IDependency_Runtime> rules = myDependencies.get(conceptDeclaration);
       if (rules == null) continue;
-      if (!(conceptDeclaration instanceof ConceptDeclaration)) continue;
-      ConceptDeclaration parent = ((ConceptDeclaration) conceptDeclaration).getExtends();
+      if (!(SNodeUtil.isInstanceOfConceptDeclaration(conceptDeclaration))) continue;
+      SNode parent = SNodeUtil.getConceptDeclaration_Extends(conceptDeclaration);
       while (parent != null) {
         Set<IDependency_Runtime> parentRules = myDependencies.get(parent);
         if (parentRules != null) {
           rules.addAll(parentRules);
         }
-        parent = parent.getExtends();
+        parent = SNodeUtil.getConceptDeclaration_Extends(parent);
       }
     }
   }

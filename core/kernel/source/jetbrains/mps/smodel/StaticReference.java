@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -78,7 +77,7 @@ public class StaticReference extends SReferenceBase {
       Logger log = Logger.getLogger(this.getClass());
       log.error("target model " + targetModel.toString() + " is disposed ");
       SNode sourceNode = getSourceNode();
-      log.error("source node is: name = " + sourceNode.getPersistentProperty(INamedConcept.NAME) +
+      log.error("source node is: name = " + sourceNode.getPersistentProperty(SNodeUtil.property_INamedConcept_name) +
         ", model = " + sourceNode.getModel() +
         ", id = " + sourceNode.getId());
       log.error("target node id = " + targetNodeId);

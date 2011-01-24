@@ -97,10 +97,10 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
     });
   }
 
-  public ConceptProperty getConceptPropertyByName(final String name) {
+  public SNode getConceptPropertyByName(final String name) {
     if (myTopConcept == null) return null;
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ConceptProperty>() {
-      public ConceptProperty compute() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
+      public SNode compute() {
         return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getConceptPropertyByName(name);
       }
     });

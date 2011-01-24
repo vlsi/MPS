@@ -24,7 +24,6 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -112,7 +111,7 @@ public class SModelUtil {
     if (l != null) {
       return l;
     }
-    String languageFqName = NameUtil.namespaceFromConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
+    String languageFqName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(concept));
     if (languageFqName == null) {
       return null;
     }

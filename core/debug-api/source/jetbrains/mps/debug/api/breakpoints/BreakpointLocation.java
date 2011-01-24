@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.PositionInfo;
+import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -50,7 +51,7 @@ public class BreakpointLocation {
   }
 
   @Nullable
-  public PositionInfo getTargetCodePosition() {
+  public TraceablePositionInfo getTargetCodePosition() {
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(myNodePointer.getModel());
     if (debugInfo == null) {
       return null;

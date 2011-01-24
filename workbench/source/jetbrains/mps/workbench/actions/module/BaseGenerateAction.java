@@ -40,6 +40,7 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import java.util.*;
 
+@Deprecated
 public abstract class BaseGenerateAction extends BaseAction {
   private boolean myRebuildAll;
   private IOperationContext myOperationContext;

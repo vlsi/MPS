@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.logging.Logger;
@@ -268,11 +267,11 @@ public final class SNode {
   }
 
   public void setName(String name) {
-    setProperty(INamedConcept.NAME, name);
+    setProperty(SNodeUtil.property_INamedConcept_name, name);
   }
 
   public String getName() {
-    return getProperty(INamedConcept.NAME);
+    return getProperty(SNodeUtil.property_INamedConcept_name);
   }
 
   public String getResolveInfo() {
@@ -281,7 +280,7 @@ public final class SNode {
       return resolveInfo;
     }
     // tmp hack
-    return getProperty(INamedConcept.NAME);
+    return getProperty(SNodeUtil.property_INamedConcept_name);
   }
 
   public String getRole_() {
@@ -1314,7 +1313,7 @@ public final class SNode {
 
   public String getPresentation(boolean detailed) {
     if (SNodeOperations.isUnknown(this)) {
-      String persistentName = getPersistentProperty(INamedConcept.NAME);
+      String persistentName = getPersistentProperty(SNodeUtil.property_INamedConcept_name);
       if (persistentName == null) {
         return "?" + getConceptShortName() + "?";
       }

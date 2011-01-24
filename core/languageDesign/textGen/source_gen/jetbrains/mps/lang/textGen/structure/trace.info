@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="TraceableConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.TraceableConcept" />
+  <unitInfo fileName="ScopeConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.ScopeConcept" />
+  <unitInfo fileName="UnitConcept.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.UnitConcept" />
   <unitInfo fileName="TextGen_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.TextGen_Language" />
   <unitInfo fileName="NewLineAppendPart.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" />
   <unitInfo fileName="BufferParameter.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.textGen.structure.BufferParameter" />

@@ -8,7 +8,11 @@
     <projectSolutions>
       <solutionPath path="${project}/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="" />
     </projectSolutions>
-    <projectLanguages />
+    <projectLanguages>
+      <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
+      <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
+      <languagePath path="${mps_home}/core/languageDesign/textGen/textGen.mpl" />
+    </projectLanguages>
     <projectDevkits />
     <genConfs>
       <genConfModule name="info" moduleRef="jetbrains.mps.traceInfo" />

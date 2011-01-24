@@ -8,8 +8,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class SNodeUtil {
+  public static String concept_IResolveInfo = "jetbrains.mps.lang.core.structure.IResolveInfo";
+  public static String concept_BaseConcept = "jetbrains.mps.lang.core.structure.BaseConcept";
+  public static String concept_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
+  public static String concept_ConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
+  public static String link_ConceptDeclaration_extends = "extends";
+  public static String property_INamedConcept_name = "name";
+
   public SNodeUtil() {
   }
 
@@ -34,16 +42,49 @@ public class SNodeUtil {
   }
 
   public static boolean isInstanceOfConceptDeclaration(SNode node) {
+    if (node == null) {
+      return false;
+    }
     return node.getConceptFqName().equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
   }
 
   public static boolean isInstanceOfInterfaceConceptDeclaration(SNode node) {
+    if (node == null) {
+      return false;
+    }
     return node.getConceptFqName().equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
   }
 
   public static boolean isInstanceOfAbstractConceptDeclaration(SNode node) {
+    if (node == null) {
+      return false;
+    }
     String conceptFqName = node.getConceptFqName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+  }
+
+  public static boolean isInstanceOfConceptProperty(SNode node) {
+    if (node == null) {
+      return false;
+    }
+    String conceptFqName = node.getConceptFqName();
+    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.BooleanConceptProperty") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.StringConceptProperty") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.IntegerConceptProperty") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptProperty");
+  }
+
+  public static SNode getConceptProperty_Declaration(SNode property) {
+    return SLinkOperations.getTarget(property, "conceptPropertyDeclaration", false);
+  }
+
+  public static boolean getConceptPropertyDeclaration_IsInheritable(SNode propertyDeclaration) {
+    return SPropertyOperations.getBoolean(propertyDeclaration, "inheritable");
+  }
+
+  public static boolean isInstanceOfConceptPropertyDeclaration(SNode node) {
+    if (node == null) {
+      return false;
+    }
+    String conceptFqName = node.getConceptFqName();
+    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration");
   }
 
   public static boolean getConceptDeclaration_IsRootable(SNode concept) {
@@ -100,5 +141,21 @@ public class SNodeUtil {
 
   public static Iterable<SNode> getInterfaceConceptDeclaration_ExtendsReferenceNodes(SNode concept) {
     return SLinkOperations.getTargets(concept, "extends", true);
+  }
+
+  public static String getNodeShortDescription(SNode node) {
+    return SPropertyOperations.getString(node, "shortDescription");
+  }
+
+  public static String getConceptShortDescription(SNode concept) {
+    return SConceptPropertyOperations.getString(concept, "shortDescription");
+  }
+
+  public static String getConceptAlias(SNode concept) {
+    return SConceptPropertyOperations.getString(concept, "alias");
+  }
+
+  public static String getResolveInfo(SNode node) {
+    return SPropertyOperations.getString(node, "resolveInfo");
   }
 }

@@ -12,6 +12,8 @@ import jetbrains.mps.baseLanguage.icons.Icons;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.codeStyle.CodeStyleSettings;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -22,6 +24,7 @@ public class StaticFieldDeclaration_Behavior {
   private static Class[] PARAMETERS_8884554759541381553 = {SNode.class};
   private static Class[] PARAMETERS_3012473318495506818 = {SNode.class ,Project.class};
   private static Class[] PARAMETERS_3012473318495506812 = {SNode.class ,Project.class};
+  private static Class[] PARAMETERS_2496361171403550872 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -72,6 +75,11 @@ public class StaticFieldDeclaration_Behavior {
     );
   }
 
+  @Nullable
+  public static String virtual_getTraceableProperty_3822000666564591088(SNode thisNode) {
+    return SPropertyOperations.getString(thisNode, "name");
+  }
+
   public static List<Icon> call_getMarkIcons_5039675756633082276(SNode thisNode) {
     return (List<Icon>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633082276);
   }
@@ -96,6 +104,10 @@ public class StaticFieldDeclaration_Behavior {
     return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506812, project);
   }
 
+  public static String call_getTraceableProperty_2496361171403550872(SNode thisNode) {
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getTraceableProperty_3822000666564591088", PARAMETERS_2496361171403550872);
+  }
+
   public static List<Icon> callSuper_getMarkIcons_5039675756633082276(SNode thisNode, String callerConceptFqName) {
     return (List<Icon>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633082276);
   }
@@ -118,5 +130,9 @@ public class StaticFieldDeclaration_Behavior {
 
   public static String callSuper_getPrefix_3012473318495506812(SNode thisNode, String callerConceptFqName, Project project) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506812, project);
+  }
+
+  public static String callSuper_getTraceableProperty_2496361171403550872(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_3822000666564591088", PARAMETERS_2496361171403550872);
   }
 }

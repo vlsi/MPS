@@ -14,6 +14,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
+import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -27,6 +28,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.script.IConfig;
 
 public class TextGen_Facet implements IFacet {
@@ -72,6 +74,7 @@ public class TextGen_Facet implements IFacet {
               monitor.currentProgress().beginWork("Writing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
               for (IResource resource : Sequence.fromIterable(input)) {
                 final FileProcessor fileProc = new FileProcessor();
+
                 GResource gres = new GResource().assignFrom((GResource) resource);
                 monitor.currentProgress().advanceWork("Writing", 50, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
                 if (!(gres.status().isOk())) {
