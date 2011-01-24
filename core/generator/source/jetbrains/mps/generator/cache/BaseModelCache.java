@@ -68,7 +68,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   }
 
   @Nullable
-  public T get(SModelDescriptor modelDescriptor) {
+  public T get(@NotNull SModelDescriptor modelDescriptor) {
     synchronized (myCache) {
       if (myCache.containsKey(modelDescriptor)) {
         return myCache.get(modelDescriptor);
