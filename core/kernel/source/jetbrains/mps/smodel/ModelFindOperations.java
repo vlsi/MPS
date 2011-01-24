@@ -169,7 +169,7 @@ public class ModelFindOperations {
     }
   }
 
-  public Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope) {
+  public Set<SNode> findInstances(SNode concept, IScope scope) {
     if (!myFindUsagesSupported) return Collections.emptySet();
 
     SModel model = myModelDescriptor.getSModel();
@@ -182,7 +182,7 @@ public class ModelFindOperations {
     return result;
   }
 
-  public Set<SNode> findExactInstances(AbstractConceptDeclaration concept, IScope scope) {
+  public Set<SNode> findExactInstances(SNode concept, IScope scope) {
     if (!myFindUsagesSupported) return Collections.emptySet();
 
     SModel model = myModelDescriptor.getSModel();
@@ -195,14 +195,14 @@ public class ModelFindOperations {
     return result;
   }
 
-  private void addInstances(SNode current, AbstractConceptDeclaration concept, Set<SNode> result, IScope scope) {
-    if (current.isInstanceOfConcept(concept)) result.add(current);
+  private void addInstances(SNode current, SNode concept, Set<SNode> result, IScope scope) {
+    if (current.isInstanceOfConcept(NameUtil.nodeFQName(concept))) result.add(current);
     for (SNode child : current.getChildren()) {
       addInstances(child, concept, result, scope);
     }
   }
 
-  private void addExactInstances(SNode current, AbstractConceptDeclaration concept, Set<SNode> result, IScope scope) {
+  private void addExactInstances(SNode current, SNode concept, Set<SNode> result, IScope scope) {
     if (current.getConceptFqName().equals(NameUtil.nodeFQName(concept))) {
       result.add(current);
     }

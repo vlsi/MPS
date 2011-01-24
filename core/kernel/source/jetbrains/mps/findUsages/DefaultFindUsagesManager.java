@@ -140,7 +140,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
    * @return
    */
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope) {
-    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null, true);
+    Set<SNode> set = findInstances(conceptDeclaration, scope, null, true);
     return new ArrayList<SNode>(set);
   }
 
@@ -156,11 +156,11 @@ class DefaultFindUsagesManager extends FindUsagesManager {
    * @return
    */
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope, IAdaptiveProgressMonitor monitor) {
-    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, monitor, true);
+    Set<SNode> set = findInstances(conceptDeclaration, scope, monitor, true);
     return new ArrayList<SNode>(set);
   }
 
-  public Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
+  public Set<SNode> findInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
     LOG.assertCanRead();
     Set<SNode> result = new HashSet<SNode>();
     //noinspection EmptyFinallyBlock
@@ -192,7 +192,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
     }
   }
 
-  public Set<SNode> findExactInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
+  public Set<SNode> findExactInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
     LOG.assertCanRead();
     Set<SNode> result = new HashSet<SNode>();
     //noinspection EmptyFinallyBlock

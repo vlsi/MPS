@@ -46,9 +46,9 @@ public abstract class FindUsagesManager implements ApplicationComponent {
 
   public abstract List<SNode> findInstances(SNode conceptDeclaration, IScope scope, IAdaptiveProgressMonitor monitor);
 
-  public abstract Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks);
+  public abstract Set<SNode> findInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks);
 
-  public abstract Set<SNode> findExactInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks);
+  public abstract Set<SNode> findExactInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks);
 
   public static class ProgressAdapter extends NullAdaptiveProgressMonitor {
     private final ProgressIndicator myProgress;

@@ -356,16 +356,13 @@
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6937689104170748741" resolveInfo="findUsegesManager" />
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1053283424753659285">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tfzt.~FindUsagesManager%dfindInstances(jetbrains%dmps%dlang%dstructure%dstructure%dAbstractConceptDeclaration,jetbrains%dmps%dsmodel%dIScope,jetbrains%dmps%dide%dprogress%dIAdaptiveProgressMonitor,boolean)%cjava%dutil%dSet" resolveInfo="findInstances" />
-                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1053283424753659286">
-                                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAdapterOperation" typeId="tp25.1170384605257" id="1053283424753659287" />
-                                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1053283424753659288">
-                                          <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1053283424753659289">
-                                            <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="6937689104170748692" resolveInfo="myTargetConcept" />
-                                          </node>
-                                          <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1053283424753659290">
-                                            <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6937689104170748691" resolveInfo="MainNodeChooser" />
-                                          </node>
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tfzt.~FindUsagesManager%dfindInstances(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dIScope,jetbrains%dmps%dide%dprogress%dIAdaptiveProgressMonitor,boolean)%cjava%dutil%dSet" resolveInfo="findInstances" />
+                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1053283424753659288">
+                                        <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1053283424753659289">
+                                          <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="6937689104170748692" resolveInfo="myTargetConcept" />
+                                        </node>
+                                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1053283424753659290">
+                                          <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="6937689104170748691" resolveInfo="MainNodeChooser" />
                                         </node>
                                       </node>
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7247071346992921630">

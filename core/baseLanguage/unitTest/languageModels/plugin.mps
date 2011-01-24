@@ -15995,12 +15995,9 @@
                           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tfzt.~FindUsagesManager" resolveInfo="FindUsagesManager" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="403933718789067549">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tfzt.~FindUsagesManager%dfindInstances(jetbrains%dmps%dlang%dstructure%dstructure%dAbstractConceptDeclaration,jetbrains%dmps%dsmodel%dIScope,jetbrains%dmps%dide%dprogress%dIAdaptiveProgressMonitor,boolean)%cjava%dutil%dSet" resolveInfo="findInstances" />
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="403933718789067550">
-                            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAdapterOperation" typeId="tp25.1170384605257" id="403933718789067551" />
-                            <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="403933718789067552">
-                              <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpe3.1216130694486" resolveInfo="ITestCase" />
-                            </node>
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tfzt.~FindUsagesManager%dfindInstances(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dIScope,jetbrains%dmps%dide%dprogress%dIAdaptiveProgressMonitor,boolean)%cjava%dutil%dSet" resolveInfo="findInstances" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="403933718789067552">
+                            <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpe3.1216130694486" resolveInfo="ITestCase" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="403933718789067553">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jt7v.~GlobalScope%dgetInstance()%cjetbrains%dmps%dproject%dGlobalScope" resolveInfo="getInstance" />
@@ -16306,12 +16303,9 @@
                           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tfzt.~FindUsagesManager" resolveInfo="FindUsagesManager" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="403933718789067687">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tfzt.~FindUsagesManager%dfindInstances(jetbrains%dmps%dlang%dstructure%dstructure%dAbstractConceptDeclaration,jetbrains%dmps%dsmodel%dIScope,jetbrains%dmps%dide%dprogress%dIAdaptiveProgressMonitor,boolean)%cjava%dutil%dSet" resolveInfo="findInstances" />
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="403933718789067688">
-                            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAdapterOperation" typeId="tp25.1170384605257" id="403933718789067689" />
-                            <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="403933718789067690">
-                              <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpe3.1216130694486" resolveInfo="ITestCase" />
-                            </node>
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tfzt.~FindUsagesManager%dfindInstances(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dIScope,jetbrains%dmps%dide%dprogress%dIAdaptiveProgressMonitor,boolean)%cjava%dutil%dSet" resolveInfo="findInstances" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="403933718789067690">
+                            <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpe3.1216130694486" resolveInfo="ITestCase" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="403933718789067691">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jt7v.~GlobalScope%dgetInstance()%cjetbrains%dmps%dproject%dGlobalScope" resolveInfo="getInstance" />
@@ -23184,12 +23178,9 @@
                                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tfzt.~FindUsagesManager%dgetInstance()%cjetbrains%dmps%dfindUsages%dFindUsagesManager" resolveInfo="getInstance" />
                                               </node>
                                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5255410657182329127">
-                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tfzt.~FindUsagesManager%dfindInstances(jetbrains%dmps%dlang%dstructure%dstructure%dAbstractConceptDeclaration,jetbrains%dmps%dsmodel%dIScope,jetbrains%dmps%dide%dprogress%dIAdaptiveProgressMonitor,boolean)%cjava%dutil%dSet" resolveInfo="findInstances" />
-                                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5255410657182329128">
-                                                  <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="5255410657182329129">
-                                                    <link role="variable" roleId="tp2q.1153944258490" targetNodeId="5255410657182329113" resolveInfo="concept" />
-                                                  </node>
-                                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAdapterOperation" typeId="tp25.1170384605257" id="5255410657182329130" />
+                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tfzt.~FindUsagesManager%dfindInstances(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dIScope,jetbrains%dmps%dide%dprogress%dIAdaptiveProgressMonitor,boolean)%cjava%dutil%dSet" resolveInfo="findInstances" />
+                                                <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="5255410657182329129">
+                                                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="5255410657182329113" resolveInfo="concept" />
                                                 </node>
                                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5255410657182329131">
                                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jt7v.~GlobalScope%dgetInstance()%cjetbrains%dmps%dproject%dGlobalScope" resolveInfo="getInstance" />
