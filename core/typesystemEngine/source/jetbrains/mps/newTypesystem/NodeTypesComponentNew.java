@@ -43,7 +43,7 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
   private Set<SNode> myCheckedNodes = new HashSet<SNode>();
 
   private static final Logger LOG = Logger.getLogger(NodeTypesComponentNew.class);
-  boolean checked = false;
+  private boolean checked = false;
 
 
   public NodeTypesComponentNew(SNode rootNode, TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {

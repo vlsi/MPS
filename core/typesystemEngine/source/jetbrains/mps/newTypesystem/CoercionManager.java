@@ -59,8 +59,7 @@ public class CoercionManager {
       List<SNode> children = subtype.getChildren("argument");
 
       SNode lcs = mySubTyping.createLCS(new LinkedHashSet<SNode>(children));
-      SNode result = coerceSubTypingNew(lcs, pattern, isWeak, state);
-      return result;
+      return coerceSubTypingNew(lcs, pattern, isWeak, state);
     }
 
     //asking the cache

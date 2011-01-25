@@ -15,18 +15,11 @@
  */
 package jetbrains.mps.newTypesystem.state;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 02.12.10
- * Time: 16:41
- * To change this template use File | Settings | File Templates.
- */
 public enum RelationKind {
-  WEAK(" <= ", "Subtyping", true, false, false),
-  STRONG(" <<= ", "Subtyping (strong)", false, false, false),
-  WEAK_CHECK(" <=' ", "Check-only subtyping", true, true, false),
-  STRONG_CHECK(" <<=' ", "Check-only subtyping (strong)", false, true, false),
+  WEAK(" <= ", "SubTyping", true, false, false),
+  STRONG(" <<= ", "SubTyping (strong)", false, false, false),
+  WEAK_CHECK(" <=' ", "Check-only subTyping", true, true, false),
+  STRONG_CHECK(" <<=' ", "Check-only subTyping (strong)", false, true, false),
   WEAK_COMPARABLE(" ~ ", "Comparable", true, true, true),
   STRONG_COMPARABLE(" ~~ ", "Comparable (strong)", false, true, true);
 

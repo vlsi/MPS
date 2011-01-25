@@ -20,13 +20,6 @@ import jetbrains.mps.smodel.SNode;
 
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 06.12.10
- * Time: 18:23
- * To change this template use File | Settings | File Templates.
- */
 public abstract class Block {
   protected State myState;
   private String myNodeModel;

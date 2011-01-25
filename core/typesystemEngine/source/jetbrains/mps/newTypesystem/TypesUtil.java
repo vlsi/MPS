@@ -35,13 +35,6 @@ import java.util.*;
  */
 public class TypesUtil {
 
-  public SNode leastCommonSuperType(SNode left, SNode right) {
-    //left.isInstanceOfConcept()
-    //if ()
-
-    return left;
-  }
-
   public static boolean isVariable(SNode node) {
     return HUtil.isRuntimeTypeVariable(node);
   }

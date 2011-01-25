@@ -199,7 +199,7 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
 
-  private Set<SNode> collectImmediateSuperTypesSet(final SNode term, boolean isWeak, final TypeCheckingContext context, String superTypeConceptFQName) {
+  private Set<SNode> collectImmediateSuperTypesSet(final SNode term, boolean isWeak, final TypeCheckingContext context) {
     Set<SNode> result = new HashSet<SNode>();
     if (term == null) {
       return result;
@@ -264,7 +264,7 @@ public class SubTypingManagerNew extends SubtypingManager {
       Set<SNode> ancestors = new HashSet<SNode>();
       for (SNode node : frontier) {
         TypeCheckingContextNew typeCheckingContextNew = myState == null ? null : myState.getTypeCheckingContext();
-        Set<SNode> result = collectImmediateSuperTypesSet(node, true, typeCheckingContextNew, "");
+        Set<SNode> result = collectImmediateSuperTypesSet(node, true, typeCheckingContextNew);
         for (SNode test : result) {
           boolean found = false;
           for (SNode anc : yetPassed) {

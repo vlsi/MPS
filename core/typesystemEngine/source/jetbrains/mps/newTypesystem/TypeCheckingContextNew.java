@@ -40,8 +40,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private State myState;
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
-  private SubTypingManagerNew mySubTyping;
-  private boolean myChecked = false;
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
@@ -92,7 +90,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
         myNodeTypesComponent.computeTypes(refreshTypes);
         //((NodeTypesComponentNew)myNodeTypesComponent).checkNode(myRootNode, true);
         myNodeTypesComponent.setCheckedTypesystem();
-        myChecked = true;
+        //myChecked = true;
       }
    // }
   }
@@ -156,7 +154,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     EquationInfo info = new EquationInfo(node, "typeOf", ruleModel, ruleId);
     if (node == null) return null;
-    SNode type = null;
     NodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:

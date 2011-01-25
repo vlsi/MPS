@@ -27,10 +27,10 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 public class ShowTypeSystemTrace extends JDialog {
-  Checkbox myBlockDependencies;
-  Checkbox myTraceForNode;
-  Checkbox myGenerationMode;
-  TypeSystemTraceTree myTree;
+  private Checkbox myBlockDependencies;
+  private Checkbox myTraceForNode;
+  private Checkbox myGenerationMode;
+  private TypeSystemTraceTree myTree;
 
   public ShowTypeSystemTrace(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame, SNode node) {
     super(frame);
@@ -75,7 +75,7 @@ public class ShowTypeSystemTrace extends JDialog {
     return Color.WHITE;
   }
 
-  public class CheckBoxListener implements ItemListener {
+  private class CheckBoxListener implements ItemListener {
 
     @Override
     public void itemStateChanged(ItemEvent e) {

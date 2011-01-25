@@ -40,7 +40,7 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class TypeSystemStateTree extends MPSTree {
-  IOperationContext myOperationContext;
+  private IOperationContext myOperationContext;
   private jetbrains.mps.newTypesystem.state.State myState;
 
 

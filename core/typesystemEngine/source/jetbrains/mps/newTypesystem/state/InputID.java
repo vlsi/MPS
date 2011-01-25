@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.newTypesystem.state;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 06.12.10
- * Time: 21:35
- * To change this template use File | Settings | File Templates.
- */
 public final class InputID {
   private static int ourHashCode = 0;
 
