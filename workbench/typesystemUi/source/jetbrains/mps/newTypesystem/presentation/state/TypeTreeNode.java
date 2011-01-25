@@ -29,14 +29,17 @@ import java.awt.Color;
  * Time: 5:44:52 PM
  */
 public class TypeTreeNode extends TypeSystemStateTreeNode {
+  private static Color color = new Color(0x007700);
 
   public TypeTreeNode(IOperationContext operationContext, SNode node, SNode type, SNode expandedType) {
     super(operationContext);
     myNode = node;
     setNodeIdentifier(type + " --- > " + expandedType +  " : " + node);
-    setColor(Color.GREEN);
     setIcon(Icons.DEFAULT_ICON);
   }
 
-
+  @Override
+  protected void doUpdatePresentation() {
+    setColor(color);
+  }
 }

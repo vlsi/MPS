@@ -89,7 +89,7 @@ public class TypeSystemStateTree extends MPSTree {
       result.setColor(color);
     }
     for (Block block : entries) {
-      result.add(new TypeSystemStateTreeNode(block, myOperationContext, myState));
+      result.add(new BlockTreeNode(block, myOperationContext, myState));
     }
     return result;
   }
@@ -99,7 +99,7 @@ public class TypeSystemStateTree extends MPSTree {
     for (Map.Entry<Set<SNode>, Set<InequalityBlock>> entry : myState.getInequalities().getInequalityGroups(myState.getBlocks(BlockKind.INEQUALITY)).entrySet()) {
       TypeSystemStateTreeNode current = new TypeSystemStateTreeNode(entry.getKey().toString(), myOperationContext);
       for (InequalityBlock block : entry.getValue()) {
-        current.add(new TypeSystemStateTreeNode(block, myOperationContext, myState));
+        current.add(new BlockTreeNode(block, myOperationContext, myState));
       }
       result.add(current);
     }

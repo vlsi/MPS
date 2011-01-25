@@ -18,7 +18,9 @@ package jetbrains.mps.newTypesystem.presentation.state;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.operation.PresentationKind;
 import jetbrains.mps.newTypesystem.state.Block;
+import jetbrains.mps.newTypesystem.state.BlockKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -26,6 +28,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+
+import java.awt.Color;
 
 public class TypeSystemStateTreeNode extends MPSTreeNode {
   protected SNode myNode;
@@ -39,13 +43,6 @@ public class TypeSystemStateTreeNode extends MPSTreeNode {
   public TypeSystemStateTreeNode(String presentation, IOperationContext operationContext) {
     super(presentation, operationContext);
     setNodeIdentifier(userObject.toString());
-    setIcon(Icons.DEFAULT_ICON);
-    this.setAutoExpandable(true);
-  }
-
-  public TypeSystemStateTreeNode(Block block, IOperationContext operationContext, State state) {
-    super(block, operationContext);
-    setNodeIdentifier(block.getExpandedPresentation(state));
     setIcon(Icons.DEFAULT_ICON);
     this.setAutoExpandable(true);
   }
