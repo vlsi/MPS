@@ -114,13 +114,13 @@ public class FastFindUsagesManager extends FindUsagesManager {
     return result;
   }
 
-  public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, IScope scope) {
+  public Set<SNode> findDescendants(SNode node, IScope scope) {
     Set<String> fqNames = LanguageHierarchyCache.getInstance().getDescendantsOfConcept(NameUtil.nodeFQName(node));
-    Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
+    Set<SNode> result = new HashSet<SNode>();
     for (String fqName : fqNames) {
-      SNode foundNode = SModelUtil.findNodeByFQName(fqName, node.getNode(), scope);
+      SNode foundNode = SModelUtil.findNodeByFQName(fqName, node, scope);
       if (foundNode == null) continue;
-      result.add((AbstractConceptDeclaration) foundNode.getAdapter());
+      result.add(foundNode);
     }
     return result;
   }

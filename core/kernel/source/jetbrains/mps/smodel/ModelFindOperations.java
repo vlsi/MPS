@@ -103,8 +103,8 @@ public class ModelFindOperations {
     return SModelOperations.hasLanguage(model,language.getModuleReference());
   }
 
-  public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> descendantsKnownInModel) {
-    if (!myFindUsagesSupported) return new HashSet<AbstractConceptDeclaration>();
+  public Set<SNode> findDescendants(SNode node, Set<SNode> descendantsKnownInModel) {
+    if (!myFindUsagesSupported) return new HashSet<SNode>();
     boolean changed = false;
     if (myModelDescriptor instanceof EditableSModelDescriptor) {
       changed = SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor));
@@ -116,7 +116,7 @@ public class ModelFindOperations {
       return descendantsKnownInModel;
 
     SModel model = myModelDescriptor.getSModel();
-    Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
+    Set<SNode> result = new HashSet<SNode>();
     if (model != null) {
       for (SNode root : model.roots()) {
         addDescendants(root, node, result);
@@ -138,26 +138,20 @@ public class ModelFindOperations {
     }
   }
 
-  private void addDescendants(SNode current, AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> result) {
-    if (BaseAdapter.fromNode(current) instanceof ConceptDeclaration) {
-      ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(current);
-      for (InterfaceConceptReference interfaceConceptReference : concept.getImplementses()) {
-        InterfaceConceptDeclaration declaration = interfaceConceptReference.getIntfc();
-        if (declaration != null && declaration.getNode() == BaseAdapter.fromAdapter(node)) {
-          result.add(concept);
+  private void addDescendants(SNode current, SNode node, Set<SNode> result) {
+    if (SNodeUtil.isInstanceOfConceptDeclaration(current)) {
+      for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(current)) {
+        if (interfaceConcept != null && interfaceConcept == node) {
+          result.add(current);
           break;
         }
       }
-      if (BaseAdapter.fromAdapter(concept.getExtends()) == BaseAdapter.fromAdapter(node)) {
-        result.add(concept);
+      if (SNodeUtil.getConceptDeclaration_Extends(current) == node) {
+        result.add(current);
       }
-    }
-
-    if (BaseAdapter.fromNode(current) instanceof InterfaceConceptDeclaration) {
-      InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) BaseAdapter.fromNode(current);
-      for (InterfaceConceptReference interfaceConceptReference : interfaceConcept.getExtendses()) {
-        InterfaceConceptDeclaration declaration = interfaceConceptReference.getIntfc();
-        if (declaration != null && declaration.getNode() == BaseAdapter.fromAdapter(node)) {
+    } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(current)) {
+      for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(current)) {
+        if (interfaceConcept != null && interfaceConcept == node) {
           result.add(interfaceConcept);
           break;
         }
