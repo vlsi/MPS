@@ -104,6 +104,16 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
+  public void createEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
+    myState.addEquation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
+  }
+
+  @Override
+  public void createComparableEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
+    myState.addComparable(node1, node2, true, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
+  }
+
+  @Override
   public void createLessThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
     myState.addInequality(node1, node2, true, checkOnly, equationInfo, true);
   }
