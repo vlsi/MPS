@@ -84,6 +84,9 @@ public class InternerTest {
       }
     });
 
+    // stabilize GC
+    computeUsedHeap();
+
     long[] stats = computeMedian(new DataProducer() {
       public long [] produce() {
         long baseLine = computeUsedHeap();
@@ -120,6 +123,9 @@ public class InternerTest {
         return new long []{k*computePerformanceBenchmark(maxThreads)};
       }
     });
+
+    // stabilize GC
+    computeUsedHeap();
 
     long[] stats = computeMedian(new DataProducer() {
       public long[] produce() {
