@@ -142,7 +142,7 @@ public class ChildSubstituteActionsHelper {
 
     LinkDeclaration link = null;
     if (childSetter instanceof DefaultChildNodeSetter) {
-      link = ((DefaultChildNodeSetter) childSetter).getLinkDeclaration();
+      link = (LinkDeclaration) BaseAdapter.fromNode(((DefaultChildNodeSetter) childSetter).getLinkDeclaration());
     }
 
     List<Language> languages = SModelOperations.getLanguages(parentNode.getModel(), scope);
@@ -186,7 +186,7 @@ public class ChildSubstituteActionsHelper {
           continue;
         }
 
-        if (!ModelConstraintsManager.getInstance().canBeParent(parentNode, conceptNode, settter.myLinkDeclaration.getNode(), context) ||
+        if (!ModelConstraintsManager.getInstance().canBeParent(parentNode, conceptNode, settter.myLinkDeclaration, context) ||
           !ModelConstraintsManager.getInstance().canBeAncestor(parentNode, conceptNode, context)) {
           it.remove();
         }
@@ -254,7 +254,7 @@ public class ChildSubstituteActionsHelper {
     SNode link = null;
     if (setter instanceof DefaultChildNodeSetter) {
       DefaultChildNodeSetter defaultSetter = (DefaultChildNodeSetter) setter;
-      link = defaultSetter.getLinkDeclaration().getNode();
+      link = defaultSetter.getLinkDeclaration();
     }
 
     IScope scope = operationContext.getScope();
