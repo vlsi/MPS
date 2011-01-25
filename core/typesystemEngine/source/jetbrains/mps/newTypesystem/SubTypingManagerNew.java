@@ -57,6 +57,12 @@ public class SubTypingManagerNew extends SubtypingManager {
 
   public boolean isSubType(SNode subType, SNode superType, @Nullable EquationInfo info, State state, boolean isWeak) {
     myState = state;
+    if (subType == superType) {
+      return true;
+    }
+    if (null == subType || null == superType) {
+      return false;
+    }
     if (meetsAndJoins(subType, superType, info, isWeak)) {
       return true;
     }
@@ -96,9 +102,6 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
   public boolean searchInSuperTypes(SNode subType, INodeMatcher superType, @Nullable EquationInfo errorInfo, boolean isWeak) {
-    if (subType == null) {
-      return false;
-    }
     if (superType instanceof NodeMatcher && !TypesUtil.hasVariablesInside(((NodeMatcher)superType).getNode()) && !TypesUtil.hasVariablesInside(subType)) {
       Boolean answer = getCacheAnswer(subType, (NodeMatcher)superType, isWeak);
       if (answer != null) {
