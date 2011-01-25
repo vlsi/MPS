@@ -4,6 +4,7 @@ package jetbrains.mps.vcs.diff.changes;
 
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -19,6 +20,12 @@ public class AddRootChange extends ModelChange {
 
   @NotNull
   public SNodeId getNodeId() {
+    return myNodeId;
+  }
+
+  @Nullable
+  @Override
+  public SNodeId getRootId() {
     return myNodeId;
   }
 

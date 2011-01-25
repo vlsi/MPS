@@ -77,6 +77,12 @@ public abstract class NodeGroupChange extends ModelChange {
     }
   }
 
+  @Nullable
+  @Override
+  public SNodeId getRootId() {
+    return getChangeSet().getOldModel().getNodeById(myParentNodeId).getContainingRoot().getSNodeId();
+  }
+
   protected static String nodeRange(int begin, int end) {
     return (begin + 1 == end ?
       String.format("node #%d", begin) :

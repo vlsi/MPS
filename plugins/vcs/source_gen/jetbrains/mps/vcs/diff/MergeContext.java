@@ -12,9 +12,10 @@ import java.util.HashMap;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.changes.ChangeSetBuilder;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -30,7 +31,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
-import jetbrains.mps.smodel.CopyUtil;
 import java.util.ArrayList;
 
 public class MergeContext {
@@ -44,6 +44,7 @@ public class MergeContext {
   private Map<ModelChange, List<ModelChange>> mySymmetricChanges = MapSequence.fromMap(new HashMap<ModelChange, List<ModelChange>>());
   private Set<ModelChange> myAppliedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private Set<ModelChange> myExcludedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
+  private Map<SNodeId, List<ModelChange>> myRootToChanges = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
 
   public MergeContext(final SModel base, final SModel mine, final SModel repository) {
     myBaseModel = base;
@@ -53,6 +54,12 @@ public class MergeContext {
       public void run() {
         myMineChangeSet = ChangeSetBuilder.buildChangeSet(base, mine);
         myRepositoryChangeSet = ChangeSetBuilder.buildChangeSet(base, repository);
+
+        collectConflicts();
+        fillRootToChangesMap();
+
+        myResultModel = CopyUtil.copyModel(myBaseModel);
+        myResultModel.setLoading(true);
       }
     });
   }
@@ -204,6 +211,16 @@ public class MergeContext {
     collectConflictingRootAdds();
   }
 
+  private void fillRootToChangesMap() {
+    for (ModelChange change : ListSequence.fromList(myMineChangeSet.getModelChanges()).concat(ListSequence.fromList(myRepositoryChangeSet.getModelChanges()))) {
+      SNodeId rootId = change.getRootId();
+      if (MapSequence.fromMap(myRootToChanges).get(rootId) == null) {
+        MapSequence.fromMap(myRootToChanges).put(rootId, ListSequence.fromList(new ArrayList<ModelChange>()));
+      }
+      ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(rootId)).addElement(change);
+    }
+  }
+
   public void applyAllNonConflictingChanges() {
     for (ModelChange change : ListSequence.fromList(myMineChangeSet.getModelChanges()).concat(ListSequence.fromList(myRepositoryChangeSet.getModelChanges()))) {
       if (!(isChangeResolved(change)) && Sequence.fromIterable(getConflictedWith(change)).isEmpty()) {
@@ -212,7 +229,15 @@ public class MergeContext {
     }
   }
 
-  private Iterable<ModelChange> getConflictedWith(ModelChange change) {
+  public Set<SNodeId> getAffectedRoots() {
+    return MapSequence.fromMap(myRootToChanges).keySet();
+  }
+
+  public List<ModelChange> getChangesForRoot(SNodeId rootId) {
+    return MapSequence.fromMap(myRootToChanges).get(rootId);
+  }
+
+  public Iterable<ModelChange> getConflictedWith(ModelChange change) {
     return ListSequence.fromList(MapSequence.fromMap(myConflictingChanges).get(change)).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange other) {
         return !(SetSequence.fromSet(myExcludedChanges).contains(other));
@@ -220,7 +245,7 @@ public class MergeContext {
     });
   }
 
-  private boolean isChangeResolved(ModelChange change) {
+  public boolean isChangeResolved(ModelChange change) {
     return SetSequence.fromSet(myExcludedChanges).contains(change) || SetSequence.fromSet(myAppliedChanges).contains(change);
   }
 
@@ -247,13 +272,27 @@ public class MergeContext {
   public void rebuildAll() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        collectConflicts();
-        myResultModel = CopyUtil.copyModel(myBaseModel);
         myResultModel.setLoading(true);
         applyAllNonConflictingChanges();
         myResultModel.setLoading(false);
       }
     });
+  }
+
+  public SModel getResultModel() {
+    return myResultModel;
+  }
+
+  public SModel getBaseModel() {
+    return myBaseModel;
+  }
+
+  public SModel getRepositoryModel() {
+    return myRepositoryModel;
+  }
+
+  public SModel getMyModel() {
+    return myMyModel;
   }
 
   private static Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> arrangeNodeGroupChanges(ChangeSet changeSet) {
