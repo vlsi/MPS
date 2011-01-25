@@ -22,10 +22,10 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -212,7 +212,7 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static SNode call_findLinkDeclaration_1213877394467(SNode thisNode, String role) {
-    return SNodeOperations.cast(BaseAdapter.fromAdapter(SModelSearchUtil.findLinkDeclaration(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)), role)), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    return SNodeOperations.cast(SModelSearchUtil.findLinkDeclaration(thisNode, role), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
   }
 
   public static List<SNode> call_getLinkDeclarations_1213877394480(SNode thisNode) {

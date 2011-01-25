@@ -2501,21 +2501,14 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877394469">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1213877394470">
-          <node role="expression" roleId="tpee.1068581517676" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1213877394471">
+          <node role="expression" roleId="tpee.1068581517676" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="8896227849432439531">
             <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
-            <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1213877394472">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~BaseAdapter%dfromAdapter(jetbrains%dmps%dsmodel%dINodeAdapter)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="fromAdapter" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="d8ec.~BaseAdapter" resolveInfo="BaseAdapter" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1213877394473">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wt1u.~SModelSearchUtil" resolveInfo="SModelSearchUtil" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wt1u.~SModelSearchUtil%dfindLinkDeclaration(jetbrains%dmps%dlang%dstructure%dstructure%dAbstractConceptDeclaration,java%dlang%dString)%cjetbrains%dmps%dlang%dstructure%dstructure%dLinkDeclaration" resolveInfo="findLinkDeclaration" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1213877394474">
-                  <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="1213877394475" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAdapterOperation" typeId="tp25.1170384605257" id="1213877394476" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1213877394477">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877394478" resolveInfo="role" />
-                </node>
+            <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8896227849432439528">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wt1u.~SModelSearchUtil%dfindLinkDeclaration(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="findLinkDeclaration" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wt1u.~SModelSearchUtil" resolveInfo="SModelSearchUtil" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="8896227849432439529" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8896227849432439530">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877394478" resolveInfo="role" />
               </node>
             </node>
           </node>

@@ -53,12 +53,6 @@ public class SModelSearchUtil {
     return new ConceptAndSuperConceptsScope(conceptDeclaration).getLinkDeclarationByRole(role);
   }
 
-  @Deprecated
-  public static LinkDeclaration findLinkDeclaration(AbstractConceptDeclaration conceptDeclaration, String role) {
-    if (role == null) return null;
-    return (LinkDeclaration) BaseAdapter.fromNode(new ConceptAndSuperConceptsScope(BaseAdapter.fromAdapter(conceptDeclaration)).getLinkDeclarationByRole(role));
-  }
-
   public static SNode/*LinkDeclaration*/ findMostSpecificLinkDeclaration(SNode conceptDeclaration, String role) {
     if (role == null) return null;
     return new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(role);

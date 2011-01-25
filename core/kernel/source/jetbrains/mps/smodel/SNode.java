@@ -1515,13 +1515,13 @@ public final class SNode {
   }
 
   public boolean isReferentRequired(String role) {
-    AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
-    LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(conceptDeclaration, role);
+    SNode conceptDeclaration = getConceptDeclarationNode();
+    SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(conceptDeclaration, role);
     if (linkDeclaration == null) {
       LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
       return false;
     }
-    Cardinality cardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
+    Cardinality cardinality = SModelUtil_new.getGenuineLinkSourceCardinality((LinkDeclaration) linkDeclaration.getAdapter());
     if (cardinality == Cardinality._1 || cardinality == Cardinality._1__n) {
       return true;
     }
