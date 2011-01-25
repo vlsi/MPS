@@ -138,7 +138,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
 
     ProjectOperationContext context = ProjectOperationContext.get(myProject);
     new WorkbenchMakeService (context, true).make(new ModelsToResources(context, models).resources(false));
-//    GeneratorFacade.getInstance().generateModels(context, models, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true, false);
+//    GeneratorUIFacade.getInstance().generateModels(context, models, GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
   }
 
   public void goToNext() {

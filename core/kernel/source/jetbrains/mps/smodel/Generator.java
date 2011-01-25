@@ -146,17 +146,6 @@ public class Generator extends AbstractModule {
     return templateModels;
   }
 
-  @Deprecated
-  public List<SNode> getOwnMappings() {
-    List<SModelDescriptor> list = getOwnTemplateModels();
-    List<SNode> mappings = new ArrayList<SNode>();
-    for (SModelDescriptor templateModel : list) {
-      List<SNode> nodes = templateModel.getSModel().getFastNodeFinder().getNodes(MappingConfiguration.concept, true);
-      mappings.addAll(nodes);
-    }
-    return mappings;
-  }
-
   public GeneratorDescriptor getModuleDescriptor() {
     return myGeneratorDescriptor;
   }

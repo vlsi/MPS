@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.generator.OutputViewGenerationHandler;
 
@@ -17,8 +17,8 @@ public class GenerateModelPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      GenerateModelPopup_ActionGroup.this.addParameterizedAction(new GenerateModel_Action(GeneratorFacade.getInstance().getDefaultGenerationHandler(), false), PluginId.getId("jetbrains.mps.ide"), GeneratorFacade.getInstance().getDefaultGenerationHandler(), false);
-      GenerateModelPopup_ActionGroup.this.addParameterizedAction(new GenerateModel_Action(GeneratorFacade.getInstance().getDefaultGenerationHandler(), true), PluginId.getId("jetbrains.mps.ide"), GeneratorFacade.getInstance().getDefaultGenerationHandler(), true);
+      GenerateModelPopup_ActionGroup.this.addParameterizedAction(new GenerateModel_Action(GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), false), PluginId.getId("jetbrains.mps.ide"), GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), false);
+      GenerateModelPopup_ActionGroup.this.addParameterizedAction(new GenerateModel_Action(GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true), PluginId.getId("jetbrains.mps.ide"), GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true);
       GenerateModelPopup_ActionGroup.this.addParameterizedAction(new GenerateModel_Action(new OutputViewGenerationHandler(), false), PluginId.getId("jetbrains.mps.ide"), new OutputViewGenerationHandler(), false);
       GenerateModelPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowMappingsPartitioning_Action");
     } catch (Throwable t) {

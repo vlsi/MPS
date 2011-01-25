@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="8492459591399146889">
+    <unitInfo nodeId="8492459591399146889" fileName="MPSLaunch.java" startLine="10" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+  </root>
   <root nodeId="8492459591399146899">
     <nodeInfo nodeId="8492459591399146900" fileName="BaseOutputReader.java" startLine="9" startPosition="55" endLine="10" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIs" />
     <nodeInfo nodeId="8492459591399146907" fileName="BaseOutputReader.java" startLine="12" startPosition="43" endLine="13" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -314,6 +317,27 @@
     </scopeInfo>
     <unitInfo nodeId="1040213783747903287" fileName="BaseRunner.java" startLine="164" startPosition="18" endLine="172" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.run.BaseRunner$1" />
     <unitInfo nodeId="8492459591399147272" fileName="BaseRunner.java" startLine="28" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.run.BaseRunner" />
+  </root>
+  <root nodeId="8492459591399147955">
+    <nodeInfo nodeId="8492459591399147960" fileName="LayoutUtil.java" startLine="9" startPosition="66" endLine="10" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399147985" fileName="LayoutUtil.java" startLine="13" startPosition="66" endLine="14" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399148010" fileName="LayoutUtil.java" startLine="17" startPosition="66" endLine="18" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8492459591399147956" fileName="LayoutUtil.java" startLine="8" startPosition="25" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createFieldConstraints#(I)Ljava/awt/GridBagConstraints;" />
+    <nodeInfo nodeId="8492459591399147981" fileName="LayoutUtil.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createLabelConstraints#(I)Ljava/awt/GridBagConstraints;" />
+    <nodeInfo nodeId="8492459591399148006" fileName="LayoutUtil.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createPanelConstraints#(I)Ljava/awt/GridBagConstraints;" />
+    <scopeInfo nodeId="8492459591399147959" fileName="LayoutUtil.java" startLine="9" startPosition="66" endLine="10" endPosition="144" />
+    <scopeInfo nodeId="8492459591399147984" fileName="LayoutUtil.java" startLine="13" startPosition="66" endLine="14" endPosition="143" />
+    <scopeInfo nodeId="8492459591399148009" fileName="LayoutUtil.java" startLine="17" startPosition="66" endLine="18" endPosition="137" />
+    <scopeInfo nodeId="8492459591399147956" fileName="LayoutUtil.java" startLine="8" startPosition="25" endLine="12" endPosition="0">
+      <varInfo nodeId="8492459591399147979" varName="y" />
+    </scopeInfo>
+    <scopeInfo nodeId="8492459591399147981" fileName="LayoutUtil.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="8492459591399148004" varName="y" />
+    </scopeInfo>
+    <scopeInfo nodeId="8492459591399148006" fileName="LayoutUtil.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="8492459591399148029" varName="y" />
+    </scopeInfo>
+    <unitInfo nodeId="8492459591399147955" fileName="LayoutUtil.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil" />
   </root>
   <root nodeId="8492459591399148208">
     <nodeInfo nodeId="8492459591399148208" fileName="ClassRunner.java" startLine="16" startPosition="45" endLine="17" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

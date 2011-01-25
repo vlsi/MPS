@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.ide.generator.GeneratorUIFacade;
 
 public class GenerateTextFromChangeListAction extends GenerateFromChangeListAction {
   public GenerateTextFromChangeListAction() {
@@ -29,6 +29,6 @@ public class GenerateTextFromChangeListAction extends GenerateFromChangeListActi
     List<SModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
     Project project = vcsContext.getProject();
     IOperationContext context = ProjectOperationContext.get(project);
-    GeneratorFacade.getInstance().generateModels(context, modelsToGenerate, getGenerationHandler(), true, false);
+    GeneratorUIFacade.getInstance().generateModels(context, modelsToGenerate, getGenerationHandler(), true, false);
   }
 }

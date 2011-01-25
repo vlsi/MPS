@@ -147,7 +147,7 @@ public class RenameLanguageDialog extends BaseDialog {
 
         ModuleContext context = new ModuleContext(myLanguage, myProject);
         new WorkbenchMakeService (context, true).make(new ModelsToResources(context, params.getModelDescriptors()).resources(false));
-//        GeneratorFacade.getInstance().generateModels(new ModuleContext(myLanguage, myProject), params.getModelDescriptors(), GeneratorFacade.getInstance().getDefaultGenerationHandler(), true, false);
+//        GeneratorUIFacade.getInstance().generateModels(new ModuleContext(myLanguage, myProject), params.getModelDescriptors(), GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
       }
     }
 
