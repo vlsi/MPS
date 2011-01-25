@@ -117,7 +117,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
       }
     }
 
-    final List<String> suiteClasses = new ArrayList<String>();
+    final Set<String> suiteClasses = new TreeSet<String>();
 
     for (Map.Entry<File, Set<String>> en: includePathsMap.entrySet()) {
       Set<String> include = en.getValue();
