@@ -52,7 +52,10 @@ public class SubTypingManagerNew extends SubtypingManager {
 
   @Override
   public boolean isSubtype(SNode subType, SNode superType, boolean isWeak) {
-    return isSubType(subType, superType, null, myState, isWeak);
+    if (isSubTypeByReplacementRules(subType, superType)) {
+      return true;
+    }
+    return isSubType(subType, superType, null, null, isWeak);
   }
 
   public boolean isSubType(SNode subType, SNode superType, @Nullable EquationInfo info, State state, boolean isWeak) {
@@ -64,9 +67,6 @@ public class SubTypingManagerNew extends SubtypingManager {
       return false;
     }
     if (meetsAndJoins(subType, superType, info, isWeak)) {
-      return true;
-    }
-    if (isSubTypeByReplacementRules(subType, superType)) {
       return true;
     }
     Equations equations = myState == null ? null : state.getEquations();
@@ -132,7 +132,7 @@ public class SubTypingManagerNew extends SubtypingManager {
       ancestorsSorted = new ArrayList<SNode>(ancestors);
       Collections.sort(ancestorsSorted, new Comparator<SNode>() {
         public int compare(SNode o1, SNode o2) {
-          return SNodeOperations.depth(o2) - SNodeOperations.depth(o1);
+          return TypesUtil.depth(o2) - TypesUtil.depth(o1);
         }
       });
       //searching the frontier's ancestors
