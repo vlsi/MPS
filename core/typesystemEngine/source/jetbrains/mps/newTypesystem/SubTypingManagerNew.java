@@ -183,21 +183,13 @@ public class SubTypingManagerNew extends SubtypingManager {
     Set<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
     if (subtypingRule_runtimes != null) {
       for (final Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
-        List<SNode> supertypes = ModelChange.freezeAndCompute(term,new Computable<List<SNode>>() {
-          public List<SNode> compute() {
-            return UndoHelper.getInstance().runNonUndoableAction(new Computable<List<SNode>>() {
-              @Override
-              public List<SNode> compute() {
-                return subtypingRule.o1.getSubOrSuperTypes(term, context, subtypingRule.o2);
-              }
-            });
-          }
-        });
-        result.addAll(supertypes);
+        List<SNode> superTypes = subtypingRule.o1.getSubOrSuperTypes(term, context, subtypingRule.o2);
+        if (superTypes !=null) {
+          result.addAll(superTypes);
+        }
       }
     }
   }
-
 
   private Set<SNode> collectImmediateSuperTypesSet(final SNode term, boolean isWeak, final TypeCheckingContext context) {
     Set<SNode> result = new HashSet<SNode>();
