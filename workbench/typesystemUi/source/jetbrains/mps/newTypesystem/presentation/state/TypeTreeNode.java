@@ -16,8 +16,11 @@
 package jetbrains.mps.newTypesystem.presentation.state;
 
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.lang.typesystem.editor.Colors;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+
+import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,6 +34,7 @@ public class TypeTreeNode extends TypeSystemStateTreeNode {
     super(operationContext);
     myNode = node;
     setNodeIdentifier(type + " --- > " + expandedType +  " : " + node);
+    setColor(Color.GREEN);
     setIcon(Icons.DEFAULT_ICON);
   }
 

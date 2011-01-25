@@ -37,11 +37,11 @@ import java.util.*;
  * User: Ilya.Lintsbakh
  * Date: Oct 15, 2010
  * Time: 11:42:25 AM
- * To change this template use File | Settings | File Templates.
  */
+
 public class TypeSystemStateTree extends MPSTree {
   private IOperationContext myOperationContext;
-  private jetbrains.mps.newTypesystem.state.State myState;
+  private State myState;
 
 
   public TypeSystemStateTree(IOperationContext operationContext, jetbrains.mps.newTypesystem.state.State state) {
@@ -61,7 +61,7 @@ public class TypeSystemStateTree extends MPSTree {
   private TypeSystemStateTreeNode createNode() {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("State", myOperationContext);
     result.add(new TypeSystemStateTreeNode("Solving inequalities in process: " + myState.getInequalities().isSolvingInProcess(), myOperationContext));
-    result.add(createNode("Inequalities", myState.getBlocks(BlockKind.INEQUALITY), null));
+   // result.add(createNode("Inequalities", myState.getBlocks(BlockKind.INEQUALITY), null));
     result.add(createInequalitiesNode());
     result.add(createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null));
     result.add(createNode("When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null));

@@ -243,9 +243,9 @@ public class SubTypingManagerNew extends SubtypingManager {
   public SNode createMeet(Set<SNode> types) {
 
     if (types.size() > 1) {
-    //  System.out.println("meet" + types);
+
       types = eliminateSubOrSuperTypes(types, true);
-    //  System.out.println(types);
+
 
     }
 

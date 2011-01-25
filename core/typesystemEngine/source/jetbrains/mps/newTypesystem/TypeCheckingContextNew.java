@@ -62,7 +62,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
       return;
     }
     jetbrains.mps.newTypesystem.operation.AbstractOperation operation = getOperationStack().pop();
-    System.out.println("Rolled back (" + operation.getPresentation() + ")");
+    
     operation.undo(myState);
   }
 

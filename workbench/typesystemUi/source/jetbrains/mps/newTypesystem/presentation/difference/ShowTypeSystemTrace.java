@@ -48,7 +48,7 @@ public class ShowTypeSystemTrace extends JDialog {
 
     myBlockDependencies = new Checkbox("Block dependencies");
     myBlockDependencies.setState(myTree.isShowDependencyOperations());
-    myTraceForNode = new Checkbox("Trace for node");
+    myTraceForNode = new Checkbox("Trace for selected node");
     myGenerationMode = new Checkbox("Generation mode");
     checkBoxes.add(myBlockDependencies);
     checkBoxes.add(myTraceForNode);
@@ -59,11 +59,11 @@ public class ShowTypeSystemTrace extends JDialog {
     myGenerationMode.addItemListener(listener);
     myTree.setBackground(getBackground());
     myTree.setForeground(new Color(0x07025D));
-    this.setSize(500, 600);
+  //  this.setSize(500, 600);
     this.setPreferredSize(new Dimension(500, 900));
     String title = "TypeSystem trace";
-    if (node != null) {
-      title = title.concat(" for node (" + node + ")");
+    if (myTree.isTraceForNode() && node != null) {
+      title = title.concat(" for selected node (" + node + ")");
     }
     setTitle(title);
     this.pack();
@@ -91,5 +91,10 @@ public class ShowTypeSystemTrace extends JDialog {
       myTree.rebuildNow();
       myTree.expandAll();
     }
+  }
+
+  @Override
+  public Dimension getPreferredSize() {
+    return super.getPreferredSize();    //To change body of overridden methods use File | Settings | File Templates.
   }
 }

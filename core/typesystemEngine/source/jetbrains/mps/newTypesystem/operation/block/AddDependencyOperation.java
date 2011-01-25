@@ -39,11 +39,6 @@ public class AddDependencyOperation extends AbstractBlockOperation {
     return "Block dependency added: " + myVar + " -> [" + myBlock.getPresentation() + "]";
   }
 
-/*  @Override
-  public Color getColor() {
-    return Colors.WHEN_CONCRETE_ADDED;
-  }*/
-
   @Override
   public void doUndo(State state) {
     state.removeDependency(myBlock, myVar, myConditionKind);

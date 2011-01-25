@@ -242,7 +242,6 @@ public class Equations {
     List<String> result = new LinkedList<String>();
     Map<SNode, Set<SNode>> map = new HashMap<SNode, Set<SNode>>();
     all.addAll(myRepresentatives.keySet());
-    System.out.println(all);
     for (SNode node : all) {
       node = getNameRepresentative(node);
       SNode representative = getRepresentative(node);

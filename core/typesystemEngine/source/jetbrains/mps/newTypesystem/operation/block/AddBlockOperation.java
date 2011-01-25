@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.operation.block;
 
 import jetbrains.mps.newTypesystem.operation.PresentationKind;
 import jetbrains.mps.newTypesystem.state.Block;
+import jetbrains.mps.newTypesystem.state.BlockKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -25,7 +26,7 @@ public class AddBlockOperation extends AbstractBlockOperation {
   
   public AddBlockOperation(Block block) {
     myBlock = block;
-    myPresentation = "Block added : [" + myBlock.getPresentation() + "]"; 
+    myPresentation = "Added : [" + myBlock.getPresentation() + "]"; 
     myEquationInfo = new EquationInfo(null, " ", block.getNodeModel(), block.getNodeId());
   }
 
@@ -36,7 +37,11 @@ public class AddBlockOperation extends AbstractBlockOperation {
 
   @Override
   public String getPresentationKind() {
-    return PresentationKind.WHEN_CONCRETE_ADDED;
+    if (myBlock.getBlockKind() == BlockKind.WHEN_CONCRETE) {
+      return PresentationKind.WHEN_CONCRETE_ADDED;
+    } else {
+      return PresentationKind.RELATION_ADDED;
+    }
   }
 
   @Override
