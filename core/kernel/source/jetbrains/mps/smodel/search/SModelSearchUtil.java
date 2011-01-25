@@ -56,7 +56,7 @@ public class SModelSearchUtil {
   @Deprecated
   public static LinkDeclaration findLinkDeclaration(AbstractConceptDeclaration conceptDeclaration, String role) {
     if (role == null) return null;
-    return (LinkDeclaration) BaseAdapter.fromNode(new ConceptAndSuperConceptsScope(conceptDeclaration).getLinkDeclarationByRole(role));
+    return (LinkDeclaration) BaseAdapter.fromNode(new ConceptAndSuperConceptsScope(BaseAdapter.fromAdapter(conceptDeclaration)).getLinkDeclarationByRole(role));
   }
 
   public static SNode/*LinkDeclaration*/ findMostSpecificLinkDeclaration(SNode conceptDeclaration, String role) {
@@ -67,15 +67,15 @@ public class SModelSearchUtil {
   @Deprecated
   public static LinkDeclaration findMostSpecificLinkDeclaration(AbstractConceptDeclaration conceptDeclaration, String role) {
     if (role == null) return null;
-    return (LinkDeclaration) BaseAdapter.fromNode(new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(role));
+    return (LinkDeclaration) BaseAdapter.fromNode(new ConceptAndSuperConceptsScope(BaseAdapter.fromAdapter(conceptDeclaration)).getMostSpecificLinkDeclarationByRole(role));
   }
 
   public static List<SNode> getLinkDeclarations(AbstractConceptDeclaration concept) {
-    return new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
+    return new ConceptAndSuperConceptsScope(BaseAdapter.fromAdapter(concept)).getLinkDeclarationsExcludingOverridden();
   }
 
   public static List<SNode> getAggregationLinkDeclarations(AbstractConceptDeclaration concept) {
-    List<SNode> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
+    List<SNode> list = new ConceptAndSuperConceptsScope(BaseAdapter.fromAdapter(concept)).getLinkDeclarationsExcludingOverridden();
     List<SNode> result = new ArrayList<SNode>();
     for (SNode link : list) {
       if (((LinkDeclaration) link.getAdapter()).getMetaClass() == LinkMetaclass.aggregation) {
@@ -85,7 +85,7 @@ public class SModelSearchUtil {
     return result;
   }
 
-  public static List<SNode> getReferenceLinkDeclarations(final AbstractConceptDeclaration concept) {
+  public static List<SNode> getReferenceLinkDeclarations(final SNode concept) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<SNode>>() {
       public List<SNode> compute() {
         List<SNode> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
@@ -113,7 +113,7 @@ public class SModelSearchUtil {
 
   public static List<ConceptPropertyDeclaration> getConceptPropertyDeclarations(AbstractConceptDeclaration concept) {
     List<ConceptPropertyDeclaration> result = new ArrayList<ConceptPropertyDeclaration>();
-    List<SNode> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
+    List<SNode> concepts = new ConceptAndSuperConceptsScope(BaseAdapter.fromAdapter(concept)).getConcepts();
     for (SNode c : concepts) {
       // TODO get rid of adapter
       result.addAll(((AbstractConceptDeclaration) c.getAdapter()).getConceptPropertyDeclarations());
@@ -129,12 +129,12 @@ public class SModelSearchUtil {
   @Deprecated
   public static ConceptProperty findConceptProperty(AbstractConceptDeclaration concept, String propertyName) {
     if (concept == null) return null;
-    return (ConceptProperty) BaseAdapter.fromNode(new ConceptAndSuperConceptsScope(concept).getConceptPropertyByName(propertyName));
+    return (ConceptProperty) BaseAdapter.fromNode(new ConceptAndSuperConceptsScope(BaseAdapter.fromAdapter(concept)).getConceptPropertyByName(propertyName));
   }
 
   public static List<ConceptLinkDeclaration> getConceptLinkDeclarations(AbstractConceptDeclaration concept) {
     List<ConceptLinkDeclaration> result = new ArrayList<ConceptLinkDeclaration>();
-    List<SNode> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
+    List<SNode> concepts = new ConceptAndSuperConceptsScope(BaseAdapter.fromAdapter(concept)).getConcepts();
     for (SNode c : concepts) {
       result.addAll(((AbstractConceptDeclaration) c.getAdapter()).getConceptLinkDeclarations());
     }

@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.presentation;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
@@ -64,7 +63,7 @@ public class ReferenceConceptUtil {
           expectedReferentRole = matches[1];
         }
 
-        List<SNode> links = SModelSearchUtil.getReferenceLinkDeclarations((AbstractConceptDeclaration) BaseAdapter.fromNode(concept));
+        List<SNode> links = SModelSearchUtil.getReferenceLinkDeclarations(concept);
         if (expectedReferentRole != null) {
           for (SNode link : links) {
             if (expectedReferentRole.equals(SModelUtil.getLinkDeclarationRole(link))) {

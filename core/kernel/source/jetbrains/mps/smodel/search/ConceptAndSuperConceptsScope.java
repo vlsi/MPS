@@ -16,8 +16,6 @@
 package jetbrains.mps.smodel.search;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
@@ -38,11 +36,6 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
 
   public ConceptAndSuperConceptsScope(@Nullable SNode topConcept) {
     myTopConcept = topConcept;
-  }
-
-  @Deprecated
-  public ConceptAndSuperConceptsScope(@Nullable AbstractConceptDeclaration topConcept) {
-    myTopConcept = BaseAdapter.fromAdapter(topConcept);
   }
 
   public List<SNode> getConcepts() {
