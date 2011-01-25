@@ -86,8 +86,8 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     return myContainer;
   }
 
-  private DiffEditorComponent addEditor(IOperationContext context, SNode node, String revisionName) {
-    final DiffEditorComponent result = new DiffEditorComponent(context, node) {
+  private DiffEditorComponent addEditor(SNode node, String revisionName) {
+    final DiffEditorComponent result = new DiffEditorComponent(myContext, node) {
       @Override
       public void configureBlock(ChangesBlock block) {
         JComponent panel = new JPanel();
@@ -98,7 +98,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
         block.setRollbackButton(panel);
       }
     };
-    result.editNode(node, context);
+    result.editNode(node, myContext);
     result.setReadOnly(true);
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(new JLabel(revisionName), BorderLayout.NORTH);
@@ -137,9 +137,9 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     for (Change conflict : merger.getConflictingChanges()) {
       conflict.setError(true);
     }
-    myChange1EditorComponent = addEditor(myContext, change1Node[0], "My Changes");
-    myResultEditorComponent = addEditor(myContext, resultNode[0], "Merge Result");
-    myChange2EditorComponent = addEditor(myContext, change2Node[0], "Repository Changes");
+    myChange1EditorComponent = addEditor(change1Node[0], "My Changes");
+    myResultEditorComponent = addEditor(resultNode[0], "Merge Result");
+    myChange2EditorComponent = addEditor(change2Node[0], "Repository Changes");
     rebuildChangeBlocks();
     JSplitPane modelsPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopComponent, myBottomComponent);
     modelsPane.setResizeWeight(1);

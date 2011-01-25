@@ -14,12 +14,12 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.DialogWrapper;
 
 public class MergeModelsDialog extends BaseDialog {
-  private NewMergeView myMergeView;
+  private MergeView myMergeView;
   private boolean myCanceled;
 
   public MergeModelsDialog(IOperationContext context, SModel base, SModel mineModel, SModel repoModel) throws HeadlessException {
     super(context.getMainFrame(), "Merge Model Changes : " + base.getSModelReference());
-    myMergeView = new NewMergeView(context, base, mineModel, repoModel);
+    myMergeView = new MergeView(context, base, mineModel, repoModel);
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {

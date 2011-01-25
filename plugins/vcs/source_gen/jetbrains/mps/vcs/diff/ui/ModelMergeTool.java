@@ -38,17 +38,32 @@ public class ModelMergeTool implements DiffTool {
         modelDescriptor = SModelRepository.getInstance().getModelDescriptor(mineModel.getSModelFqName());
       }
       IOperationContext context = new ModuleContext(modelDescriptor.getModule(), request.getProject());
-      final MergeModelsDialog dialog = new MergeModelsDialog(context, baseModel, mineModel, newModel);
-
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          dialog.toFront();
+      if (NewMergeModelsDialog.isNewMergeEnabled()) {
+        // TODO new dialog 
+        final NewMergeModelsDialog dialog = new NewMergeModelsDialog(request.getProject(), context, baseModel, mineModel, newModel);
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            dialog.toFront();
+          }
+        });
+        dialog.showDialog();
+        if (dialog.getResultModel() != null) {
+          byte[] bytes = ModelUtils.modelToBytes(dialog.getResultModel());
+          mrequest.resolved(bytes);
         }
-      });
-      dialog.showDialog();
-      if (dialog.getResultModel() != null) {
-        byte[] bytes = ModelUtils.modelToBytes(dialog.getResultModel());
-        mrequest.resolved(bytes);
+      } else {
+        final MergeModelsDialog dialog = new MergeModelsDialog(context, baseModel, mineModel, newModel);
+
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            dialog.toFront();
+          }
+        });
+        dialog.showDialog();
+        if (dialog.getResultModel() != null) {
+          byte[] bytes = ModelUtils.modelToBytes(dialog.getResultModel());
+          mrequest.resolved(bytes);
+        }
       }
     } catch (ModelDiffTool.ReadException e) {
       LOG.warning("Can't read models. Using text based diff...", e);
