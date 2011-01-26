@@ -17,6 +17,7 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.nodeEditor.AbstractAdditionalPainter;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import javax.swing.JComponent;
@@ -72,6 +73,13 @@ public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
     component.addAdditionalPainter(this);
     if (myRollbackIcon != null) {
       component.add(myRollbackIcon);
+      component.addRebuildListener(new RebuildListener() {
+        @Override
+        public void editorRebuilt(EditorComponent editor) {
+          editor.add(myRollbackIcon);
+        }
+      });
+      component.repaint();
       myRollbackIcon.setLocation(1, myMinY + 1);
     }
   }
