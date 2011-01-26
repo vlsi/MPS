@@ -58,7 +58,7 @@ public class HierarchycalTableModel extends AbstractTableModel {
     for (int i = 0; i < getColumnCount(); i++) {
       newRow.addChild(SPropertyOperations.getString(myColumnsLinkDeclaration, "role"), SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myColumnsLinkDeclaration, "target", false)), null));
     }
-    insertElementAt(getRows(), newRow, rowNumber);
+    Utils.insertElementAt(getRows(), newRow, rowNumber);
   }
 
   @Override
@@ -72,21 +72,12 @@ public class HierarchycalTableModel extends AbstractTableModel {
   public void insertColumn(int columnNumber) {
     for (SNode row : ListSequence.fromList(getRows())) {
       SNode newColumn = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myColumnsLinkDeclaration, "target", false)), null);
-      insertElementAt(getColumns(row), newColumn, columnNumber);
+      Utils.insertElementAt(getColumns(row), newColumn, columnNumber);
     }
   }
 
   protected SNode getTableNode() {
     return myTableNode;
-  }
-
-  protected void insertElementAt(List<SNode> list, SNode newElement, int index) {
-    assert index >= 0 && index <= ListSequence.fromList(list).count();
-    if (ListSequence.fromList(list).count() == 0 || index == ListSequence.fromList(list).count()) {
-      ListSequence.fromList(list).addElement(newElement);
-    } else {
-      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(list).getElement(index), newElement);
-    }
   }
 
   protected void deleteElementAt(List<SNode> list, int index) {
