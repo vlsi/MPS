@@ -556,6 +556,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myOperationContext == null) {
       LOG.warning("Trying to notify EditorComponent creation with null operation context");
     } else {
+      if (myOperationContext.getProject() == null) {
+        return;
+      }
       EditorComponentCreateListener listener = myOperationContext.getProject().getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
       listener.editorComponentCreated(this);
     }
@@ -564,6 +567,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected void notifyDisposal() {
     if (myOperationContext == null) {
       LOG.warning("Trying to notify disposal with empty operation context");
+      return;
+    }
+    if (myOperationContext.getProject() == null) {
       return;
     }
     if (myOperationContext.getProject().isDisposed()) {
