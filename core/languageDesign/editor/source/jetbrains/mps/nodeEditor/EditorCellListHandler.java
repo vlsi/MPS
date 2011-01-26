@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 
@@ -38,7 +39,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
 
   public EditorCellListHandler(SNode ownerNode, String childRole, EditorContext editorContext) {
     super(ownerNode, childRole, editorContext);
-    myLinkDeclaration = ownerNode.getLinkDeclaration(childRole);
+    myLinkDeclaration = (LinkDeclaration) BaseAdapter.fromNode(ownerNode.getLinkDeclaration(childRole));
     myChildConcept = (ConceptDeclaration) myLinkDeclaration.getTarget();
     LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
     if (genuineLink.getMetaClass() != LinkMetaclass.aggregation) {

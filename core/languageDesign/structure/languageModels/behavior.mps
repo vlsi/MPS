@@ -2783,34 +2783,18 @@
         <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpce.1105736576531" resolveInfo="ConceptLinkDeclaration" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1213877394580">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1213877394581">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1213877394582">
-            <property name="name" nameId="tpck.1169194664001" value="list" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="1237047900874">
-              <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1237047900875">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vskm.~ConceptLinkDeclaration" resolveInfo="ConceptLinkDeclaration" />
-              </node>
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1213877394585">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wt1u.~SModelSearchUtil" resolveInfo="SModelSearchUtil" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wt1u.~SModelSearchUtil%dgetConceptLinkDeclarations(jetbrains%dmps%dlang%dstructure%dstructure%dAbstractConceptDeclaration)%cjava%dutil%dList" resolveInfo="getConceptLinkDeclarations" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1213877394586">
-                <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="1213877394587" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAdapterOperation" typeId="tp25.1170384605257" id="1213877394588" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1213877394589">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1213877394590">
-            <node role="type" roleId="tpee.1070534934091" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="1213877394591">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="4554834459336376500">
+            <node role="type" roleId="tpee.1070534934091" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="4554834459336376503">
               <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpce.1105736576531" resolveInfo="ConceptLinkDeclaration" />
             </node>
-            <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1213877394592">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="d8ec.~BaseAdapter" resolveInfo="BaseAdapter" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~BaseAdapter%dtoNodes(java%dutil%dList)%cjava%dutil%dList" resolveInfo="toNodes" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1213877394593">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877394582" resolveInfo="list" />
+            <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4554834459336376490">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ctdc.~IterableUtil%dasList(java%dlang%dIterable)%cjava%dutil%dList" resolveInfo="asList" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ctdc.~IterableUtil" resolveInfo="IterableUtil" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4554834459336376498">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wt1u.~SModelSearchUtil%dgetConceptLinkDeclarations(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dIterable" resolveInfo="getConceptLinkDeclarations" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wt1u.~SModelSearchUtil" resolveInfo="SModelSearchUtil" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="4554834459336376499" />
               </node>
             </node>
           </node>

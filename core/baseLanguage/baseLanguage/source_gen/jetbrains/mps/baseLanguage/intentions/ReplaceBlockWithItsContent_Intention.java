@@ -7,7 +7,6 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -50,7 +49,7 @@ public class ReplaceBlockWithItsContent_Intention extends BaseIntention implemen
     boolean applicable = false;
     if ((SNodeOperations.getParent(node) != null)) {
       String role = node.getRole_();
-      SNode linkDeclaration = SNodeOperations.cast(BaseAdapter.fromAdapter(SNodeOperations.getParent(node).getLinkDeclaration(role)), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+      SNode linkDeclaration = SNodeOperations.cast(SNodeOperations.getParent(node).getLinkDeclaration(role), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
       if (SConceptOperations.isSuperConceptOf(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"), NameUtil.nodeFQName(SLinkOperations.getTarget(linkDeclaration, "target", false)))) {
         int statementsCount = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true)).count();
         if (SPropertyOperations.hasValue(linkDeclaration, "sourceCardinality", "0..1", "0..1")) {

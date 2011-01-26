@@ -264,9 +264,10 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static String getStringConceptProperty(AbstractConceptDeclaration conceptDeclaration, String propertyName) {
-    ConceptProperty property = SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
-    if (property instanceof StringConceptProperty) {
-      StringConceptProperty stringConceptProperty = (StringConceptProperty) property;
+    SNode property = SModelSearchUtil.findConceptProperty(BaseAdapter.fromAdapter(conceptDeclaration), propertyName);
+
+    if (BaseAdapter.fromNode(property) instanceof StringConceptProperty) {
+      StringConceptProperty stringConceptProperty = (StringConceptProperty) BaseAdapter.fromNode(property);
       return stringConceptProperty.getValue();
     } else {
       return null;

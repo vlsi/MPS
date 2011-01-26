@@ -384,7 +384,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public LinkDeclaration getLinkDeclaration() {
     String role = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
     if (role != null) {
-      return getSNode().getLinkDeclaration(role);
+      return (LinkDeclaration) BaseAdapter.fromNode(getSNode().getLinkDeclaration(role));
     }
     return myLinkDeclaration;
   }
@@ -498,7 +498,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     while (node.isAttribute()) {
       node = node.getParent();
     }
-    LinkDeclaration link = node.getParent().getLinkDeclaration(node.getRole_());
+    LinkDeclaration link = (LinkDeclaration) BaseAdapter.fromNode(node.getParent().getLinkDeclaration(node.getRole_()));
     AbstractConceptDeclaration concept = link.getTarget();
     String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept), editorContext.getScope());
     if (node.getConceptFqName().equals(concreteConceptFqName)) {

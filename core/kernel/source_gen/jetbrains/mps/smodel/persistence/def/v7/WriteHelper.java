@@ -122,7 +122,11 @@ public class WriteHelper {
   }
 
   public String genRoleId(@NotNull SNode node) {
-    return genReferenceId(node.getRoleLink());
+    SNode roleLink = node.getRoleLink();
+    return (roleLink != null ?
+      genReferenceId(roleLink) :
+      null
+    );
   }
 
   public String genRoleId(@NotNull SReference ref) {

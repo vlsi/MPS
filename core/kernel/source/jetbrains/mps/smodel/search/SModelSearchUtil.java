@@ -16,9 +16,13 @@
 package jetbrains.mps.smodel.search;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.FlattenIterable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -114,17 +118,11 @@ public class SModelSearchUtil {
     return new ConceptAndSuperConceptsScope(concept).getConceptPropertyByName(propertyName);
   }
 
-  @Deprecated
-  public static ConceptProperty findConceptProperty(AbstractConceptDeclaration concept, String propertyName) {
-    if (concept == null) return null;
-    return (ConceptProperty) BaseAdapter.fromNode(new ConceptAndSuperConceptsScope(BaseAdapter.fromAdapter(concept)).getConceptPropertyByName(propertyName));
-  }
-
-  public static List<ConceptLinkDeclaration> getConceptLinkDeclarations(AbstractConceptDeclaration concept) {
-    List<ConceptLinkDeclaration> result = new ArrayList<ConceptLinkDeclaration>();
-    List<SNode> concepts = new ConceptAndSuperConceptsScope(BaseAdapter.fromAdapter(concept)).getConcepts();
+  public static Iterable<SNode> getConceptLinkDeclarations(SNode concept) {
+    FlattenIterable<SNode> result = new FlattenIterable<SNode>(new ArrayList<Iterable<SNode>>());
+    List<SNode> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
     for (SNode c : concepts) {
-      result.addAll(((AbstractConceptDeclaration) c.getAdapter()).getConceptLinkDeclarations());
+      result.add(SNodeUtil.getConcept_ConceptLinkDeclarations(c));
     }
     return result;
   }

@@ -611,7 +611,7 @@ public class SModel {
         } else {
           result.add(targetModelRef);
         }
-        LinkDeclaration decl = node.getLinkDeclaration(ref.getRole());
+        SNode decl = node.getLinkDeclaration(ref.getRole());
         if (decl == null) {
           LOG.error("link declaration " + ref.getRole() + " not found for node " + node);
         } else {
@@ -622,7 +622,7 @@ public class SModel {
         if (child.isAttribute()) {
           continue;   // temporary don't check annotation roles, suppose the model of AnnotationDeclaration is the same as of concept
         }
-        LinkDeclaration decl = child.getRoleLink();
+        SNode decl = child.getRoleLink();
         if (decl == null) {
           LOG.error("link declaration " + child.getRole_() + " not found for node " + node);
         } else {

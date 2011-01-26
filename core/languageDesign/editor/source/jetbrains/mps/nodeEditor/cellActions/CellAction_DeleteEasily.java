@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
@@ -33,7 +34,7 @@ public class CellAction_DeleteEasily extends CellAction_DeleteNode {
   private boolean canBeDeletedEasily() {
     for (SNode child : getSourceNode().getChildren()) {
       if (child.isAttribute()) continue;
-      LinkDeclaration link = getSourceNode().getLinkDeclaration(child.getRole_());
+      LinkDeclaration link = (LinkDeclaration) BaseAdapter.fromNode(getSourceNode().getLinkDeclaration(child.getRole_()));
       if (link != null && link.getSourceCardinality() != Cardinality._1) return false;
     }
 

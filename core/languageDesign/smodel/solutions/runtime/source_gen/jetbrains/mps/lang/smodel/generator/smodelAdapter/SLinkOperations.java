@@ -8,8 +8,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 
 public class SLinkOperations {
   public SLinkOperations() {
@@ -144,18 +144,14 @@ public class SLinkOperations {
     if (node == null) {
       return new ArrayList<SNode>();
     }
-    return node.getAdapter().getConceptLinkTargets(linkName, true);
+    return ((BaseConcept) SNodeOperations.getAdapter(node)).getConceptLinkTargets(linkName, true);
   }
 
   public static SNode findLinkDeclaration(SReference reference) {
     if (reference == null) {
       return null;
     }
-    LinkDeclaration linkDeclaration = reference.getSourceNode().getLinkDeclaration(reference.getRole());
-    return (linkDeclaration == null ?
-      null :
-      linkDeclaration.getNode()
-    );
+    return (SNode) reference.getSourceNode().getLinkDeclaration(reference.getRole());
   }
 
   public static SNode getTargetNode(SReference reference) {

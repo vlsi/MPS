@@ -666,7 +666,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    if (!(SModelUtil_new.isAssignableConcept(NameUtil.nodeFQName(node), castTo))) {
+    if (!(SModelUtil.isAssignableConcept(NameUtil.nodeFQName(node), castTo))) {
       if (ourCastsEnabled) {
         throw new NodeCastException("Can't cast " + NameUtil.nodeFQName(node) + " to " + castTo);
       } else {
@@ -680,7 +680,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    if (!(SModelUtil_new.isAssignableConcept(NameUtil.nodeFQName(node), castTo))) {
+    if (!(SModelUtil.isAssignableConcept(NameUtil.nodeFQName(node), castTo))) {
       return null;
     }
     return node;
@@ -690,11 +690,7 @@ public class SNodeOperations {
     if (childNode == null) {
       return null;
     }
-    LinkDeclaration linkDeclaration = childNode.getRoleLink();
-    return (linkDeclaration == null ?
-      null :
-      linkDeclaration.getNode()
-    );
+    return childNode.getRoleLink();
   }
 
   public static String getContainingLinkRole(SNode childNode) {

@@ -21,6 +21,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -152,7 +153,7 @@ public class NodeRangeSelection implements KeyboardHandler {
     String role = null;
     while (parentNode != null) {
       role = childNode.getRole_();
-      LinkDeclaration childDeclaration = parentNode.getLinkDeclaration(role);
+      LinkDeclaration childDeclaration = (LinkDeclaration) BaseAdapter.fromNode(parentNode.getLinkDeclaration(role));
 
       if (childDeclaration == null) {
         if (!AttributesRolesUtil.isAttributeRole(role)) {

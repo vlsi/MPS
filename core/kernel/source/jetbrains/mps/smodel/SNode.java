@@ -286,7 +286,7 @@ public final class SNode {
     return myRoleInParent;
   }
 
-  public LinkDeclaration getRoleLink() {
+  public SNode getRoleLink() {
     if (getRole_() == null) return null;
     if (getParent() == null) return null;
     return getParent().getLinkDeclaration(getRole_());
@@ -1456,8 +1456,8 @@ public final class SNode {
     return (PropertyDeclaration) BaseAdapter.fromNode(SModelSearchUtil.findPropertyDeclaration(getConceptDeclarationNode(), propertyName));
   }
 
-  public LinkDeclaration getLinkDeclaration(String role) {
-    return (LinkDeclaration) BaseAdapter.fromNode(SModelSearchUtil.findLinkDeclaration(getConceptDeclarationNode(), role));
+  public SNode getLinkDeclaration(String role) {
+    return SModelSearchUtil.findLinkDeclaration(getConceptDeclarationNode(), role);
   }
 
   public SNode findParent(Condition<SNode> condition) {
@@ -1869,7 +1869,7 @@ public final class SNode {
     } else {
       conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
     }
-    return SModelSearchUtil.findConceptProperty((AbstractConceptDeclaration) conceptDeclaration.getAdapter(), propertyName);
+    return (ConceptProperty) BaseAdapter.fromNode(SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName));
   }
 
   //------------deprecated-------------

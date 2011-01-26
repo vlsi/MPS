@@ -1363,7 +1363,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="4525791269560356743">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5817662974489429628" resolveInfo="addRoleLocation" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="4525791269560364912">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4525791269560364877" resolveInfo="ptr" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4525791269560364836" resolveInfo="ptr" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4525791269560364914">
                     <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="4525791269560364915">
                       <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4525791269560364916">
@@ -1371,7 +1371,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4525791269560364917">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNode%dgetRoleLink()%cjetbrains%dmps%dlang%dstructure%dstructure%dLinkDeclaration" resolveInfo="getRoleLink" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNode%dgetRoleLink()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getRoleLink" />
                     </node>
                   </node>
                 </node>

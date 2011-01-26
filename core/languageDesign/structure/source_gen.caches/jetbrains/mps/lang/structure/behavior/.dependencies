@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" file="AbstractConceptDeclaration_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="java.util.List" />
@@ -22,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior" />

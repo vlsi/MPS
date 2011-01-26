@@ -187,4 +187,43 @@ public class SNodeUtil {
   public static boolean getLinkDeclaration_IsReference(SNode link) {
     return SPropertyOperations.hasValue(link, "metaClass", "reference", "reference");
   }
+
+  public static boolean getLinkDeclaratio_IsExactlyOneMultiplicity(SNode link) {
+    return SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1");
+  }
+
+  public static boolean isInstanceOfIntegerConceptProperty(SNode node) {
+    if (node == null) {
+      return false;
+    }
+    String conceptFqName = node.getConceptFqName();
+    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration");
+  }
+
+  public static boolean isInstanceOfStringConceptProperty(SNode node) {
+    if (node == null) {
+      return false;
+    }
+    String conceptFqName = node.getConceptFqName();
+    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration");
+  }
+
+  public static boolean isInstanceOfBooleanConceptProperty(SNode node) {
+    if (node == null) {
+      return false;
+    }
+    String conceptFqName = node.getConceptFqName();
+    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration");
+  }
+
+  public static Object getConceptPropertyValue(SNode property) {
+    if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.structure.structure.StringConceptProperty")) {
+      return SPropertyOperations.getString(SNodeOperations.cast(property, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "value");
+    } else if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty")) {
+      return SPropertyOperations.getInteger(SNodeOperations.cast(property, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty"), "value");
+    } else if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.structure.structure.BooleanConceptProperty")) {
+      return Boolean.TRUE;
+    }
+    return null;
+  }
 }

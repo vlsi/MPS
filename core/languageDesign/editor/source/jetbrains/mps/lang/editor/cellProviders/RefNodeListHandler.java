@@ -24,10 +24,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,7 +41,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     super(ownerNode, childRole, editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
-        myLinkDeclaration = ownerNode.getLinkDeclaration(childRole);
+        myLinkDeclaration = (LinkDeclaration) BaseAdapter.fromNode(ownerNode.getLinkDeclaration(childRole));
         assert myLinkDeclaration != null : "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConceptFqName();
         LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
         myChildConcept = myLinkDeclaration.getTarget();
