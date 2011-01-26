@@ -17,7 +17,6 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import java.util.List;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -124,7 +123,7 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
 
       // Properties validation 
       SNode concept = SNodeOperations.getConceptDeclaration(node);
-      ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
+      ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(concept);
       List<PropertyDeclaration> props = chs.getAdapters(PropertyDeclaration.class);
       for (PropertyDeclaration p : ListSequence.fromList(props)) {
         PropertySupport ps = PropertySupport.getPropertySupport(p);

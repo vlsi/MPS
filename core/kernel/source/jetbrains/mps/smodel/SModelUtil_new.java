@@ -219,13 +219,13 @@ public class SModelUtil_new implements ApplicationComponent {
     if (fullNodeStructure &&
       isNotProjectModel) { //project models can be created and used
       //before project language is loaded
-      AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
+      SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, scope);
       createNodeStructure(conceptDeclaration, newNode, model);
     }
     return newNode;
   }
 
-  public static void createNodeStructure(AbstractConceptDeclaration nodeConcept,
+  private static void createNodeStructure(SNode nodeConcept,
                                          SNode newNode, SModel model) {
     for (SNode linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {
       String role = SModelUtil.getGenuineLinkRole(linkDeclaration);

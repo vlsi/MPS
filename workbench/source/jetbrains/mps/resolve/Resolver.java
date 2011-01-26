@@ -17,8 +17,6 @@ package jetbrains.mps.resolve;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -101,7 +99,7 @@ public class Resolver {
       @Override
       public Boolean compute() {
         SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
-          referenceNode, (AbstractConceptDeclaration) BaseAdapter.fromNode(referenceNodeConcept), (LinkDeclaration)BaseAdapter.fromNode(linkDeclaration), operationContext);
+          referenceNode, referenceNodeConcept, linkDeclaration, operationContext);
         if (status.isError()) {
           LOG.error("Couldn't create referent search scope : " + status.getMessage());
           return false;
@@ -137,13 +135,13 @@ public class Resolver {
     String role = reference.getRole();
     final SNode sourceNode = reference.getSourceNode();
 
-    ConceptDeclaration sourceConcept = (ConceptDeclaration) sourceNode.getConceptDeclarationAdapter();
-    LinkDeclaration refLinkDeclaration = SModelSearchUtil.findLinkDeclaration(sourceConcept, role);
+    SNode sourceConcept = sourceNode.getConceptDeclarationNode();
+    SNode refLinkDeclaration = SModelSearchUtil.findLinkDeclaration(sourceConcept, role);
     SNode sourceParent = sourceNode.getParent();
 
     if (sourceParent == null) sourceParent = sourceNode;
 
-    LinkDeclaration childLinkDeclaration = SModelSearchUtil.findLinkDeclaration(sourceParent.getConceptDeclarationAdapter(), sourceNode.getRole_());
+    SNode childLinkDeclaration = SModelSearchUtil.findLinkDeclaration(sourceParent.getConceptDeclarationNode(), sourceNode.getRole_());
 
     EditorCell editorCell = editorContext.createNodeCell(sourceParent);
     EditorCell inspectedCell = editorContext.createInspectedCell(sourceNode, null);
@@ -191,7 +189,7 @@ public class Resolver {
     return matchingActions;
   }
 
-  private static EditorCell searchForRefCell(EditorCell editorCell, SNode sourceNode, LinkDeclaration refLinkDeclaration, LinkDeclaration childLinkDeclaration) {
+  private static EditorCell searchForRefCell(EditorCell editorCell, SNode sourceNode, SNode refLinkDeclaration, SNode childLinkDeclaration) {
     Set<EditorCell> frontier = new HashSet<EditorCell>();
     Set<EditorCell> newFrontier = new HashSet<EditorCell>();
     EditorCell foundCell = null;
@@ -200,10 +198,10 @@ public class Resolver {
       for (EditorCell cell : frontier) {
         LinkDeclaration userObject = cell.getLinkDeclaration();
         if (cell.getSNode() == sourceNode) {
-          if (userObject == refLinkDeclaration) {
+          if (BaseAdapter.fromAdapter(userObject) == refLinkDeclaration) {
             return cell;
           }
-          if (childLinkDeclaration != null && userObject == childLinkDeclaration) {
+          if (childLinkDeclaration != null && BaseAdapter.fromAdapter(userObject) == childLinkDeclaration) {
             if (foundCell == null) foundCell = cell;
           }
         }

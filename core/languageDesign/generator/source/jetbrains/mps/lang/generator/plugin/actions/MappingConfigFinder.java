@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.generator.plugin.actions;
 
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -44,7 +45,7 @@ public class MappingConfigFinder implements IFinder {
 
   public SearchResults<SNode> find(SearchQuery query, ProgressIndicator indicator) {
     List<SearchResult<SNode>> results = new ArrayList<SearchResult<SNode>>();
-    List<SNode> mappingConfigs = myGenerator.getOwnMappings();
+    List<SNode> mappingConfigs = GenerationFacade.getOwnMappings(myGenerator);
     List<SNode> nodesToCheck = new ArrayList<SNode>();
     for (SNode m : mappingConfigs) {
       MappingConfiguration mappingConfig = (MappingConfiguration) BaseAdapter.fromNode(m);

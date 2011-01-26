@@ -60,7 +60,7 @@ public class EvaluationPanel extends EvaluationUi {
     }
 
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
-    splitPane.setResizeWeight(0.5);
+    splitPane.setResizeWeight(0.8);
     splitPane.setTopComponent(myEditor.getComponenet());
     splitPane.setBottomComponent(new JBScrollPane(myTree));
 

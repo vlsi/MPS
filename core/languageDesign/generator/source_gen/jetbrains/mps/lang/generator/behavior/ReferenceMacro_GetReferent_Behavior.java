@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
@@ -22,7 +21,7 @@ public class ReferenceMacro_GetReferent_Behavior {
     SNode referenceMacro = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.generator.structure.ReferenceMacro", false, false);
     SNode attributedNode = SNodeOperations.getParent(referenceMacro);
     String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(referenceMacro.getRole_());
-    ConceptAndSuperConceptsScope linkSearchScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(attributedNode))));
+    ConceptAndSuperConceptsScope linkSearchScope = new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(attributedNode));
     SNode link = SNodeOperations.cast(linkSearchScope.getMostSpecificLinkDeclarationByRole(linkRole), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SNode targetConcept = SLinkOperations.getTarget(link, "target", false);
     SNode expectedNodeType = new ReferenceMacro_GetReferent_Behavior.QuotationClass_mxwyp3_a0a6a1().createNode(targetConcept);

@@ -557,7 +557,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
 
     if (lookupHierarchy) {
-      return (List) new ConceptAndSuperConceptsScope(conceptDeclaration).
+      return (List) new ConceptAndSuperConceptsScope(BaseAdapter.fromAdapter(conceptDeclaration)).
         getAdapters(new Condition<INodeAdapter>() {
           public boolean met(INodeAdapter n) {
             if (n instanceof ConceptLink) {

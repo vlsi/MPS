@@ -30,9 +30,14 @@ import jetbrains.mps.smodel.SNode;
 public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
   private static final Logger LOG = Logger.getLogger(DefaultChildNodeSetter.class);
 
-  LinkDeclaration myLinkDeclaration;
+  SNode myLinkDeclaration;
 
+  @Deprecated
   public DefaultChildNodeSetter(LinkDeclaration linkDeclaration) {
+    this(BaseAdapter.fromAdapter(linkDeclaration));
+  }
+
+  public DefaultChildNodeSetter(SNode linkDeclaration) {
     myLinkDeclaration = linkDeclaration;
 
     if (DefaultChildSubstituteInfo.isNotAggregation(linkDeclaration)) {
@@ -40,20 +45,19 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
     }
   }
 
-  public LinkDeclaration getLinkDeclaration() {
+  public SNode getLinkDeclaration() {
     return myLinkDeclaration;
   }
 
   public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
-    SNode linkDeclaration = BaseAdapter.fromAdapter(myLinkDeclaration);
-    if (newChild != null && !SModelUtil.isAcceptableTarget(linkDeclaration, newChild)) {
+    if (newChild != null && !SModelUtil.isAcceptableTarget(myLinkDeclaration, newChild)) {
       LOG.error("couldn't set instance of " + newChild.getConceptFqName() +
-        " as child '" + myLinkDeclaration.getRole() + "' to " + parentNode.getDebugText());
+        " as child '" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration) + "' to " + parentNode.getDebugText());
       return newChild;
     }
 
     if (oldChild == null) {
-      parentNode.setChild(SModelUtil.getGenuineLinkRole(linkDeclaration), newChild);
+      parentNode.setChild(SModelUtil.getGenuineLinkRole(myLinkDeclaration), newChild);
     } else {
       parentNode.replaceChild(oldChild, newChild);
       oldChild.delete();

@@ -16,14 +16,11 @@
 package jetbrains.mps.ide.messages;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.messages.Message;
 import jetbrains.mps.workbench.search.AbstractSearchPanel;
 import jetbrains.mps.workbench.search.SearchHistoryComponent;
 
-import javax.swing.DefaultListCellRenderer;
-import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.border.EmptyBorder;
+import javax.swing.ListCellRenderer;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,11 +36,11 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
   private int myCountResult = 0;
   private List<Integer> myResults = new ArrayList<Integer>();
   private MyCellRenderer myRenderer = new MyCellRenderer();
+  private ListCellRenderer myOriginalCellRenderer;
 
   public MessageToolSearchPanel(JList list, Project project) {
     myProject = project;
     myList = list;
-    myList.setCellRenderer(myRenderer);
   }
 
   public void goToPrevious() {
@@ -82,16 +79,24 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
     myRenderer.search();
   }
 
+  @Override
+  public void activate() {
+    myOriginalCellRenderer = myList.getCellRenderer();
+    myList.setCellRenderer(myRenderer);
+    super.activate();
+  }
+
   protected void deactivate() {
     setVisible(false);
     myFindResult.setText("");
     myText.setText("");
     myText.setBackground(Color.white);
     revalidate();
+    myList.setCellRenderer(myOriginalCellRenderer);
     myList.requestFocus();
   }
 
-  private class MyCellRenderer extends DefaultListCellRenderer {
+  private class MyCellRenderer extends MessagesListCellRenderer {
     private int myIndex = -1;
     private List<Integer> myColumnResults = new ArrayList<Integer>();
 
@@ -125,45 +130,17 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
           }
         }
       }
+      updateView();
       myList.repaint();
     }
 
     public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-      JLabel component = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-
-      final Message message = (Message) value;
       myIndex = index;
-
-      component.setBackground(isSelected ? Color.LIGHT_GRAY : Color.WHITE);
-      component.setBorder(new EmptyBorder(0, 0, 0, 0));
-
-      if (message.getHintObject() != null) {
-        component.setText(message.getCreationTimeString() + "\t: " + message);
-        component.setForeground(Color.BLUE);
-      } else {
-        component.setText(message.getCreationTimeString() + "\t: " + message);
-        component.setForeground(Color.BLACK);
-      }
-
-      switch (message.getKind()) {
-        case INFORMATION:
-          component.setIcon(Icons.INFORMATION_ICON);
-          break;
-        case WARNING:
-          component.setIcon(Icons.WARNING_ICON);
-          break;
-        case ERROR:
-          component.setIcon(Icons.ERROR_ICON);
-          break;
-      }
-
-
-      return component;
+      return super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
     }
 
     public void paint(Graphics g) {
       super.paint(g);
-      updateView();
       if (myText.getText().length() == 0) {
         myFindResult.setText("");
         myText.setBackground(Color.white);

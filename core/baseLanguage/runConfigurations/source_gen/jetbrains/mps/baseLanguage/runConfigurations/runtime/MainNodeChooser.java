@@ -18,13 +18,13 @@ import java.awt.event.ActionEvent;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.util.Set;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -67,7 +67,7 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
         final Wrappers._T<List<SNode>> toChooseFrom = new Wrappers._T<List<SNode>>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            Set<SNode> instances = findUsegesManager.findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(MainNodeChooser.this.myTargetConcept)), myScope, progressAdapter, false);
+            Set<SNode> instances = findUsegesManager.findInstances(MainNodeChooser.this.myTargetConcept, myScope, progressAdapter, false);
             if (MainNodeChooser.this.myAcceptor == null) {
               toChooseFrom.value = ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).toListSequence();
             } else {

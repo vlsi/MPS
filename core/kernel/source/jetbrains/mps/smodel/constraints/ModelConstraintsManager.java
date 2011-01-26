@@ -20,8 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -274,7 +273,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
       return null;
     }
 
-    if (conceptFqName.equals(RuntimeTypeVariable.concept)) {
+    if (conceptFqName.equals("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
       // helgins ku-ku!
       return null;
     }
@@ -602,8 +601,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
     if (m != null) {
       try {
         if (!(Boolean) m.invoke(null, context, new CanBeAnAncestorContext(parentNode, childConcept))) {
-          ConceptConstraints constraints = getClassConstraints(context, m);
-          return constraints != null ? BaseAdapter.fromAdapter(constraints.getCanBeAncestor()) : null;
+          SNode constraints = getClassConstraints(context, m);
+          return constraints != null ? SConstraintsUtil.getConceptConstraints_CanBeAncestor(constraints) : null;
         }
       } catch (IllegalAccessException e) {
         LOG.error(e);
@@ -642,9 +641,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public SNode getCanBeParentBlock(IOperationContext context, Method m) {
-    ConceptConstraints constraints = getClassConstraints(context, m);
+    SNode constraints = getClassConstraints(context, m);
     if (constraints == null) return null;
-    return BaseAdapter.fromAdapter(constraints.getCanBeParent());
+    return SConstraintsUtil.getConceptConstraints_CanBeParent(constraints);
   }
 
   public Method getCanBeChildMethod(String conceptFqName, IOperationContext context) {
@@ -714,9 +713,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public SNode getCanBeChildBlock(IOperationContext context, Method m) {
-    ConceptConstraints constraints = getClassConstraints(context, m);
+    SNode constraints = getClassConstraints(context, m);
     if (constraints == null) return null;
-    return BaseAdapter.fromAdapter(constraints.getCanBeChild());
+    return SConstraintsUtil.getConceptConstraints_CanBeChild(constraints);
   }
 
   @Nullable
@@ -779,9 +778,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public SNode getCanBeRootBlock(IOperationContext context, Method m) {
     if (m == null) return null;
-    ConceptConstraints constraints = getClassConstraints(context, m);
+    SNode constraints = getClassConstraints(context, m);
     if (constraints == null) return null;
-    return BaseAdapter.fromAdapter(constraints.getCanBeRoot());
+    return SConstraintsUtil.getConceptConstraints_CanBeRoot(constraints);
   }
 
   public boolean canBeRoot(IOperationContext context, String conceptFqName, SModel model) {
@@ -811,7 +810,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return false;
   }
 
-  private ConceptConstraints getClassConstraints(IOperationContext context, Method m) {
+  private SNode getClassConstraints(IOperationContext context, Method m) {
     Class cls = m.getDeclaringClass();
     String fqName = cls.getName();
     String modelName = NameUtil.namespaceFromLongName(fqName);
@@ -824,8 +823,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
     if (sm == null) return null;
     SNode root = SModelOperations.getRootByName(sm.getSModel(), rootName);
     if (root == null) return null;
-    if (root.getAdapter() instanceof ConceptConstraints) {
-      return (ConceptConstraints) root.getAdapter();
+    if (SNodeOperations.isInstanceOf(root, SConstraintsUtil.concept_ConceptConstraints)) {
+      return root;
     }
     return null;
   }

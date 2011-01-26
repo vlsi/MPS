@@ -76,13 +76,16 @@ public class InternerTest {
     final int maxThreads = Runtime.getRuntime().availableProcessors()*3;
     final int maxRepetitions = 100000;
 
-    final int k = Runtime.getRuntime().availableProcessors() > 4 ? 3 : 1;
+    final int k = Runtime.getRuntime().availableProcessors() > 8 ? 3 : 1;
 
     long [] refTime = computeMedian(new DataProducer() {
       public long [] produce() {
         return new long [] {k *computePerformanceBenchmark(maxThreads)};
       }
     });
+
+    // stabilize GC
+    computeUsedHeap();
 
     long[] stats = computeMedian(new DataProducer() {
       public long [] produce() {
@@ -104,7 +107,7 @@ public class InternerTest {
     Assert.assertTrue("Interner perfomance is not within bounds: "+perfRatio,  0.45 < perfRatio && perfRatio < 1.95);
 
     double memRatio = stats[2] / (double) stats[3] / magicDivider() / MEAN_LENGTH;
-    Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.65 < memRatio && memRatio < 1.5);
+    Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.45 < memRatio && memRatio < 1.5);
   }
 
   @Test
@@ -113,13 +116,16 @@ public class InternerTest {
     final int maxThreads = Runtime.getRuntime().availableProcessors() * 20;
     final int maxRepetitions = 100000;
 
-    final int k = Runtime.getRuntime().availableProcessors() > 4 ? 3 : 1;
+    final int k = Runtime.getRuntime().availableProcessors() > 8 ? 3 : 1;
 
     long[] refTime = computeMedian(new DataProducer() {
       public long[] produce() {
         return new long []{k*computePerformanceBenchmark(maxThreads)};
       }
     });
+
+    // stabilize GC
+    computeUsedHeap();
 
     long[] stats = computeMedian(new DataProducer() {
       public long[] produce() {
@@ -141,7 +147,7 @@ public class InternerTest {
     Assert.assertTrue("Interner perfomance is not within bounds: "+perfRatio,  0.45 < perfRatio && perfRatio < 1.95);
 
     double memRatio = stats[2] / (double) stats[3] / magicDivider() / MEAN_LENGTH;
-    Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.65 < memRatio && memRatio < 1.5);
+    Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.45 < memRatio && memRatio < 1.5);
   }
 
 
@@ -347,7 +353,7 @@ public class InternerTest {
 
   private long[] computeMedian (DataProducer lp) {
     List<long[]> data = new ArrayList<long[]>();
-    for (int count=6; count>0; --count) {
+    for (int count=10; count>0; --count) {
       data.add(lp.produce());
     }
 

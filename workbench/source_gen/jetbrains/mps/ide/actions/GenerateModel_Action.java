@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.ide.generator.GeneratorUIFacade;
 
 public class GenerateModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -85,13 +85,13 @@ public class GenerateModel_Action extends GeneratedAction {
       }
       boolean checkSuccessful = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeGenerationIfNeeded(((IOperationContext) MapSequence.fromMap(_params).get("context")), (List) modelsToGenerate, new Runnable() {
         public void run() {
-          GeneratorFacade.getInstance().generateModels(((IOperationContext) MapSequence.fromMap(_params).get("context")), modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll, false);
+          GeneratorUIFacade.getInstance().generateModels(((IOperationContext) MapSequence.fromMap(_params).get("context")), modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll, false);
         }
       });
       if (!(checkSuccessful)) {
         return;
       }
-      GeneratorFacade.getInstance().generateModels(((IOperationContext) MapSequence.fromMap(_params).get("context")), modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll, false);
+      GeneratorUIFacade.getInstance().generateModels(((IOperationContext) MapSequence.fromMap(_params).get("context")), modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateModel", t);

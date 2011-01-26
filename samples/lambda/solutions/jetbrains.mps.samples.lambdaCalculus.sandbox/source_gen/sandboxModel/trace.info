@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="test2.java" startLine="6" startPosition="0" endLine="22" endPosition="0" unitName="sandboxModel.test2" />
+  <unitInfo fileName="letlet.java" startLine="6" startPosition="0" endLine="26" endPosition="0" unitName="sandboxModel.letlet" />
+  <unitInfo fileName="sim.java" startLine="25" startPosition="0" endLine="52" endPosition="0" unitName="sandboxModel.sim$Function_2167053794906818092" />
+  <unitInfo fileName="sumsq.java" startLine="6" startPosition="0" endLine="34" endPosition="0" unitName="sandboxModel.sumsq" />
+  <unitInfo fileName="sim.java" startLine="9" startPosition="0" endLine="53" endPosition="0" unitName="sandboxModel.sim" />
+</debugInfo>
 

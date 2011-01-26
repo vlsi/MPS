@@ -26,16 +26,14 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterator;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.SwingUtilities;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -163,12 +161,32 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   private class MyCommandListener implements SModelCommandListener {
     public void eventsHappenedInCommand(final List<SModelEvent> events) {
+      final MyModelEventVisitor visitor = new MyModelEventVisitor();
+      for (SModelEvent e : events) {
+        e.accept(visitor);
+      }
+      if (visitor.myDeletedFiles.isEmpty() && visitor.myRenamedFiles.isEmpty()) {
+        return;
+      }
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              for (SModelEvent e : events) {
-                e.accept(new MyModelEventVisitor());
+              for(MPSNodeVirtualFile deletedFile : visitor.myDeletedFiles) {
+                if (deletedFile.isValid()) {
+                  fireBeforeFileDeletion(this, deletedFile);
+                }
+                fireFileDeleted(this, deletedFile, deletedFile.getName(), null);
+                myVirtualFiles.remove(deletedFile.getSNodePointer());
+              }
+
+              for (Pair<MPSNodeVirtualFile, String> renamedFile : visitor.myRenamedFiles) {
+                MPSNodeVirtualFile vf = renamedFile.o1;
+                String oldName = vf.getName();
+                String newName = renamedFile.o2;
+                fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, oldName, newName);
+                vf.updateFields();
+                firePropertyChanged(this, vf, VirtualFile.PROP_NAME, oldName, newName);
               }
             }
           });
@@ -178,28 +196,28 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   private class MyModelEventVisitor extends SModelEventVisitorAdapter {
+    private List<MPSNodeVirtualFile> myDeletedFiles = new ArrayList<MPSNodeVirtualFile>();
+    private List<Pair<MPSNodeVirtualFile, String>> myRenamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
+
     public void visitRootEvent(SModelRootEvent event) {
       if (!event.isRemoved()) return;
 
-      VirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getRoot()));
-      if (vf == null) return;
-
-      if (vf.isValid()) {
-        fireBeforeFileDeletion(this, vf);
+      SNodePointer rootNodePointer = new SNodePointer(event.getRoot());
+      MPSNodeVirtualFile vf = myVirtualFiles.get(rootNodePointer);
+      if (vf != null) {
+        myDeletedFiles.add(vf);
       }
-      fireFileDeleted(this, vf, vf.getName(), null);
-      myVirtualFiles.remove(new SNodePointer(event.getRoot()));
     }
 
-    public void visitPropertyEvent(SModelPropertyEvent event) {
+    public void visitPropertyEvent(final SModelPropertyEvent event) {
       if (event.getNode().isDisposed()) return;
 
-      VirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getNode()));
+      MPSNodeVirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getNode()));
       if (!event.getNode().isRoot() || vf == null) return;
-
-      fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
-      ((MPSNodeVirtualFile) vf).updateFields();
-      firePropertyChanged(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
+      String newName = event.getNode().getPresentation();
+      if (!newName.equals(vf.getName())) {
+        myRenamedFiles.add(new Pair<MPSNodeVirtualFile, String>(vf, newName));
+      }
     }
   }
 

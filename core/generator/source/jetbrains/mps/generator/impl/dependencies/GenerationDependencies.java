@@ -148,7 +148,10 @@ public class GenerationDependencies {
         filesList = new ArrayList<String>();
         generatedFiles.put(inputRootId, filesList);
       }
-      filesList.add(getFileName(outputRoot));
+      String fileName = getFileName(outputRoot);
+      if(fileName != null) {
+        filesList.add(fileName);
+      }
     }
     List<GenerationRootDependencies> unchanged = null;
     List<GenerationRootDependencies> rootDependencies = new ArrayList<GenerationRootDependencies>(roots.length);

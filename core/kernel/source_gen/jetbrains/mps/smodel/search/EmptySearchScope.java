@@ -7,7 +7,6 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelReference;
 
 public class EmptySearchScope extends AbstractSearchScope {
@@ -19,7 +18,8 @@ public class EmptySearchScope extends AbstractSearchScope {
     return new ArrayList<SNode>();
   }
 
-  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
+  @Override
+  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     return new IReferenceInfoResolver() {
       public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
         return null;

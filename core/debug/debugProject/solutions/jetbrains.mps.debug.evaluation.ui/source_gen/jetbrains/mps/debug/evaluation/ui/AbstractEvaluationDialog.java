@@ -7,10 +7,10 @@ import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.runtime.SessionStopDisposer;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
-import java.awt.Dimension;
 import jetbrains.mps.debug.runtime.DebugSession;
 import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.JComponent;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 
 public abstract class AbstractEvaluationDialog extends BaseDialog {
   protected final EvaluationProvider myProvider;
@@ -20,7 +20,6 @@ public abstract class AbstractEvaluationDialog extends BaseDialog {
   public AbstractEvaluationDialog(IOperationContext context, EvaluationProvider provider, AbstractEvaluationModel model, String title) {
     super(context.getMainFrame(), title);
 
-    setSize(new Dimension(500, 500));
     setModal(false);
 
     myProvider = provider;
@@ -53,5 +52,10 @@ public abstract class AbstractEvaluationDialog extends BaseDialog {
     ApplicationManager.getApplication().assertIsDispatchThread();
     super.dispose();
     myEvaluationPanel.dispose();
+  }
+
+  @Override
+  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
+    return new DialogDimensionsSettings.DialogDimensions(100, 200, 500, 500);
   }
 }

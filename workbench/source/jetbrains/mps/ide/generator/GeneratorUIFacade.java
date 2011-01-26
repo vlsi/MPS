@@ -44,14 +44,14 @@ import java.util.*;
 /**
  * Evgeny Gryaznov, Aug 24, 2010
  */
-public class GeneratorFacade {
+public class GeneratorUIFacade {
 
-  private static final GeneratorFacade INSTANCE = new GeneratorFacade();
+  private static final GeneratorUIFacade INSTANCE = new GeneratorUIFacade();
 
-  private GeneratorFacade() {
+  private GeneratorUIFacade() {
   }
 
-  public static GeneratorFacade getInstance() {
+  public static GeneratorUIFacade getInstance() {
     return INSTANCE;
   }
 

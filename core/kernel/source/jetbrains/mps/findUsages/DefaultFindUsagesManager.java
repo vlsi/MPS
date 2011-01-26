@@ -17,7 +17,6 @@ package jetbrains.mps.findUsages;
 
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -31,7 +30,7 @@ import java.util.*;
 class DefaultFindUsagesManager extends FindUsagesManager {
   private static final Logger LOG = Logger.getLogger(DefaultFindUsagesManager.class);
 
-  private HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>> myConceptsToKnownDescendantsInModelDescriptors = new HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>>();
+  private HashMap<SNode, Map<SModelDescriptor, Set<SNode>>> myConceptsToKnownDescendantsInModelDescriptors = new HashMap<SNode, Map<SModelDescriptor, Set<SNode>>>();
   private ClassLoaderManager myClassLoaderManager;
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
@@ -57,19 +56,19 @@ class DefaultFindUsagesManager extends FindUsagesManager {
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
-  public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, IScope scope) {
+  public Set<SNode> findDescendants(SNode node, IScope scope) {
     LOG.assertCanRead();
-    HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>> knownDescendantsInModelDescriptors = myConceptsToKnownDescendantsInModelDescriptors.get(node);
+    Map<SModelDescriptor, Set<SNode>> knownDescendantsInModelDescriptors = myConceptsToKnownDescendantsInModelDescriptors.get(node);
     if (knownDescendantsInModelDescriptors == null) {
-      knownDescendantsInModelDescriptors = new HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>();
+      knownDescendantsInModelDescriptors = new HashMap<SModelDescriptor, Set<SNode>>();
       myConceptsToKnownDescendantsInModelDescriptors.put(node, knownDescendantsInModelDescriptors);
     }
-    Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
+    Set<SNode> result = new HashSet<SNode>();
     for (SModelDescriptor model : scope.getModelDescriptors()) {
       if (SModelStereotype.isStubModelStereotype(model.getStereotype())) continue;
-      HashSet<AbstractConceptDeclaration> descendantsKnownInModel = knownDescendantsInModelDescriptors.get(model);
+      Set<SNode> descendantsKnownInModel = knownDescendantsInModelDescriptors.get(model);
       if (descendantsKnownInModel == null) {
-        descendantsKnownInModel = new HashSet<AbstractConceptDeclaration>();
+        descendantsKnownInModel = new HashSet<SNode>();
         knownDescendantsInModelDescriptors.put(model, descendantsKnownInModel);
       }
       result.addAll(new ModelFindOperations(model).findDescendants(node, descendantsKnownInModel));
@@ -140,7 +139,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
    * @return
    */
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope) {
-    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null, true);
+    Set<SNode> set = findInstances(conceptDeclaration, scope, null, true);
     return new ArrayList<SNode>(set);
   }
 
@@ -156,11 +155,11 @@ class DefaultFindUsagesManager extends FindUsagesManager {
    * @return
    */
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope, IAdaptiveProgressMonitor monitor) {
-    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, monitor, true);
+    Set<SNode> set = findInstances(conceptDeclaration, scope, monitor, true);
     return new ArrayList<SNode>(set);
   }
 
-  public Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
+  public Set<SNode> findInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
     LOG.assertCanRead();
     Set<SNode> result = new HashSet<SNode>();
     //noinspection EmptyFinallyBlock
@@ -192,7 +191,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
     }
   }
 
-  public Set<SNode> findExactInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
+  public Set<SNode> findExactInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
     LOG.assertCanRead();
     Set<SNode> result = new HashSet<SNode>();
     //noinspection EmptyFinallyBlock

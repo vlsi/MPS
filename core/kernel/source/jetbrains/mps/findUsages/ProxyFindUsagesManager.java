@@ -16,7 +16,6 @@
 package jetbrains.mps.findUsages;
 
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
@@ -61,7 +60,7 @@ public class ProxyFindUsagesManager extends FindUsagesManager {
     myDefault.disposeComponent();
   }
 
-  public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, IScope scope) {
+  public Set<SNode> findDescendants(SNode node, IScope scope) {
     return getRealManager().findDescendants(node, scope);
   }
 
@@ -86,11 +85,11 @@ public class ProxyFindUsagesManager extends FindUsagesManager {
     return getRealManager().findInstances(conceptDeclaration, scope, monitor);
   }
 
-  public Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
+  public Set<SNode> findInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
     return getRealManager().findInstances(concept, scope, progress, manageTasks);
   }
 
-  public Set<SNode> findExactInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
+  public Set<SNode> findExactInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
     return getRealManager().findExactInstances(concept, scope, progress, manageTasks);
   }
 }

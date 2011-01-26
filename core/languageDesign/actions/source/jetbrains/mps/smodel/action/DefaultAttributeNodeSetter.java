@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 
 public class DefaultAttributeNodeSetter extends DefaultChildNodeSetter {
-  public DefaultAttributeNodeSetter(LinkDeclaration linkDeclaration) {
+  public DefaultAttributeNodeSetter(SNode linkDeclaration) {
     super(linkDeclaration);
   }
 

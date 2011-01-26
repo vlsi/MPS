@@ -67,7 +67,7 @@ public class FastFindUsagesManager extends FindUsagesManager {
   }
 
   @Override
-  public Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
+  public Set<SNode> findInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
     Set<SNode> result = new HashSet<SNode>();
     if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
     progressTasks(manageTasks, ModelsProgressUtil.TASK_KIND_FIND_INSTANCES, "Finding instances...", progress, scope);
@@ -91,7 +91,7 @@ public class FastFindUsagesManager extends FindUsagesManager {
   }
 
   @Override
-  public Set<SNode> findExactInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
+  public Set<SNode> findExactInstances(SNode concept, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {
     Set<SNode> result = new HashSet<SNode>();
     if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
     progressTasks(manageTasks, ModelsProgressUtil.TASK_KIND_FIND_EXACT_INSTANCES, "Finding exact instances...", progress, scope);
@@ -114,13 +114,13 @@ public class FastFindUsagesManager extends FindUsagesManager {
     return result;
   }
 
-  public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, IScope scope) {
+  public Set<SNode> findDescendants(SNode node, IScope scope) {
     Set<String> fqNames = LanguageHierarchyCache.getInstance().getDescendantsOfConcept(NameUtil.nodeFQName(node));
-    Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
+    Set<SNode> result = new HashSet<SNode>();
     for (String fqName : fqNames) {
-      SNode foundNode = SModelUtil.findNodeByFQName(fqName, node.getNode(), scope);
+      SNode foundNode = SModelUtil.findNodeByFQName(fqName, node, scope);
       if (foundNode == null) continue;
-      result.add((AbstractConceptDeclaration) foundNode.getAdapter());
+      result.add(foundNode);
     }
     return result;
   }
@@ -153,12 +153,12 @@ public class FastFindUsagesManager extends FindUsagesManager {
   }
 
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope) {
-    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, null, true);
+    Set<SNode> set = findInstances(conceptDeclaration, scope, null, true);
     return new ArrayList<SNode>(set);
   }
 
   public List<SNode> findInstances(SNode conceptDeclaration, IScope scope, IAdaptiveProgressMonitor monitor) {
-    Set<SNode> set = findInstances((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), scope, monitor, true);
+    Set<SNode> set = findInstances(conceptDeclaration, scope, monitor, true);
     return new ArrayList<SNode>(set);
   }
 
@@ -211,7 +211,7 @@ public class FastFindUsagesManager extends FindUsagesManager {
     return candidates;
   }
 
-  private Set<SNode> findInstancesOfNodeInCache(AbstractConceptDeclaration concept, final IScope scope, boolean isExact) {
+  private Set<SNode> findInstancesOfNodeInCache(SNode concept, final IScope scope, boolean isExact) {
     Set<VirtualFile> candidates = new HashSet<VirtualFile>();
     final Set<VirtualFile> scopeFiles = getScopeFiles(scope);
     // quick fix for new persistence, todo: should be persistence dependent

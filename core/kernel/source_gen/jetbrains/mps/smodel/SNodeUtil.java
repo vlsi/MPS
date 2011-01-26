@@ -16,7 +16,16 @@ public class SNodeUtil {
   public static String concept_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
   public static String concept_ConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
   public static String link_ConceptDeclaration_extends = "extends";
+  public static String link_ConceptDeclaration_implements = "implements";
+  public static String link_AbstractConceptDeclaration_conceptProperty = "conceptProperty";
+  public static String link_AbstractConceptDeclaration_linkDeclaration = "linkDeclaration";
+  public static String link_AbstractConceptDeclaration_propertyDeclaration = "propertyDeclaration";
   public static String property_INamedConcept_name = "name";
+  public static String property_LinkDeclaration_role = "role";
+  public static String property_IResolveInfo_resolveInfo = "resolveInfo";
+  public static String property_BaseConcept_virtualPackage = "virtualPackage";
+  public static String property_BaseConcept_alias = "alias";
+  public static String property_BaseConcept_shortDescription = "shortDescription";
 
   public SNodeUtil() {
   }
@@ -157,5 +166,25 @@ public class SNodeUtil {
 
   public static String getResolveInfo(SNode node) {
     return SPropertyOperations.getString(node, "resolveInfo");
+  }
+
+  public static boolean isInstanceOfLinkDeclaration(SNode node) {
+    if (node == null) {
+      return false;
+    }
+    String conceptFqName = node.getConceptFqName();
+    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.LinkDeclaration");
+  }
+
+  public static boolean isInstanceOfPropertyDeclaration(SNode node) {
+    if (node == null) {
+      return false;
+    }
+    String conceptFqName = node.getConceptFqName();
+    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+  }
+
+  public static boolean getLinkDeclaration_IsReference(SNode link) {
+    return SPropertyOperations.hasValue(link, "metaClass", "reference", "reference");
   }
 }

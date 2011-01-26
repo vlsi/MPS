@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -79,7 +79,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IGenerationHandler genHandler = GeneratorFacade.getInstance().getDefaultGenerationHandler();
+      IGenerationHandler genHandler = GeneratorUIFacade.getInstance().getDefaultGenerationHandler();
       final Wrappers._T<List<SModelDescriptor>> models = new Wrappers._T<List<SModelDescriptor>>(ListSequence.fromList(new ArrayList<SModelDescriptor>()));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -93,7 +93,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
           }
         }
       });
-      GeneratorFacade.getInstance().generateModels(((IOperationContext) MapSequence.fromMap(_params).get("context")), models.value, genHandler, true, false);
+      GeneratorUIFacade.getInstance().generateModels(((IOperationContext) MapSequence.fromMap(_params).get("context")), models.value, genHandler, true, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateTemplateQueries", t);

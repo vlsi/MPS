@@ -388,12 +388,12 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Layout_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.messages.DefaultMessageHandler" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.TextGenerationHandler" />
-    <classNode dependClassName="jetbrains.mps.textGen.TextGenerationResult" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -405,8 +405,8 @@
     <classNode dependClassName="jetbrains.mps.generator.GeneratorManager" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorFacade" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.textGen.TextGenerationResult" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorUIFacade" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.plugin.IErrorHandler" file="IErrorHandler.java">
     <classNode dependClassName="java.lang.String" />

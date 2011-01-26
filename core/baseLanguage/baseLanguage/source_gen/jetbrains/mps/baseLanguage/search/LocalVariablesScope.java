@@ -18,8 +18,8 @@ import jetbrains.mps.baseLanguage.behavior.ILocalVariableElementList_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ILocalVariableElement_Behavior;
 import jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.baseLanguage.structure.ConceptFunction;
 import jetbrains.mps.baseLanguage.structure.Closure;
@@ -120,8 +120,9 @@ public class LocalVariablesScope extends AbstractSearchScope {
     }
   }
 
-  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
-    if (SModelUtil_new.isAssignableConcept(targetConcept, LocalVariableDeclaration.concept)) {
+  @Override
+  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
+    if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
       return new IReferenceInfoResolver() {
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
           if (referenceInfo == null) {

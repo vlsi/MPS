@@ -8,7 +8,6 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -59,7 +58,7 @@ public class MoveNodes extends BaseGeneratedRefactoring {
     if (((Object) refactoringContext.getParameter("target")) instanceof SNode) {
       SNode targetNode = ((SNode) ((Object) refactoringContext.getParameter("target")));
       SNode concept = SNodeOperations.getConceptDeclaration(targetNode);
-      ConceptAndSuperConceptsScope superConceptsScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
+      ConceptAndSuperConceptsScope superConceptsScope = new ConceptAndSuperConceptsScope(concept);
       List<SNode> linkDeclarations = (List<SNode>) superConceptsScope.getLinkDeclarationsExcludingOverridden();
       Iterable<SNode> childLinkDeclarations = ListSequence.fromList(linkDeclarations).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {

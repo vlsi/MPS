@@ -159,7 +159,7 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public <T> T runWriteActionInCommand(final Computable<T> c, final String name, final UndoConfirmationPolicy policy, Project project) {
+  public <T> T runWriteActionInCommand(Computable<T> c, String name, Object groupId, UndoConfirmationPolicy policy, Project project) {
     return runWriteAction(c);
   }
 
@@ -175,7 +175,7 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public void runWriteActionInCommand(Runnable r, String name, UndoConfirmationPolicy policy, Project project) {
+  public void runWriteActionInCommand(Runnable r, String name, Object groupId, UndoConfirmationPolicy policy, Project project) {
     runWriteAction(r);
   }
 

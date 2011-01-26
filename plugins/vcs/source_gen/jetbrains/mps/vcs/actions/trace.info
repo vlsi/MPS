@@ -277,7 +277,7 @@
     <nodeInfo nodeId="1502718409600204164" fileName="GenerateTextFromChangeListAction.java" startLine="28" startPosition="57" endLine="29" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1502718409600204170" fileName="GenerateTextFromChangeListAction.java" startLine="29" startPosition="78" endLine="30" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1502718409600204176" fileName="GenerateTextFromChangeListAction.java" startLine="30" startPosition="46" endLine="31" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1502718409600204181" fileName="GenerateTextFromChangeListAction.java" startLine="31" startPosition="69" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1502718409600204181" fileName="GenerateTextFromChangeListAction.java" startLine="31" startPosition="69" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7705742079275758137" fileName="GenerateTextFromChangeListAction.java" startLine="15" startPosition="84" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerateTextFromChangeListAction#()V" />
     <nodeInfo nodeId="7705742079275758141" fileName="GenerateTextFromChangeListAction.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenerationHandler#()Ljetbrains/mps/generator/generationTypes/IGenerationHandler;" />
     <nodeInfo nodeId="7705742079275758148" fileName="GenerateTextFromChangeListAction.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWhatToGenerateName#()Ljava/lang/String;" />
@@ -288,7 +288,7 @@
     <scopeInfo nodeId="7705742079275758137" fileName="GenerateTextFromChangeListAction.java" startLine="15" startPosition="84" endLine="17" endPosition="3" />
     <scopeInfo nodeId="7705742079275758141" fileName="GenerateTextFromChangeListAction.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="7705742079275758148" fileName="GenerateTextFromChangeListAction.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1502718409600204156" fileName="GenerateTextFromChangeListAction.java" startLine="28" startPosition="57" endLine="32" endPosition="113">
+    <scopeInfo nodeId="1502718409600204156" fileName="GenerateTextFromChangeListAction.java" startLine="28" startPosition="57" endLine="32" endPosition="115">
       <varInfo nodeId="1502718409600204171" varName="project" />
       <varInfo nodeId="1502718409600204165" varName="modelsToGenerate" />
       <varInfo nodeId="1502718409600204177" varName="context" />
@@ -299,13 +299,13 @@
     <unitInfo nodeId="7705742079275758134" fileName="GenerateTextFromChangeListAction.java" startLine="15" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.vcs.actions.GenerateTextFromChangeListAction" />
   </root>
   <root nodeId="7705742079275758154">
-    <nodeInfo nodeId="7705742079275758165" fileName="GenerateFilesFromChangeListAction.java" startLine="13" startPosition="55" endLine="14" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7705742079275758165" fileName="GenerateFilesFromChangeListAction.java" startLine="13" startPosition="55" endLine="14" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7705742079275758174" fileName="GenerateFilesFromChangeListAction.java" startLine="17" startPosition="44" endLine="18" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7705742079275758157" fileName="GenerateFilesFromChangeListAction.java" startLine="8" startPosition="85" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerateFilesFromChangeListAction#()V" />
     <nodeInfo nodeId="7705742079275758170" fileName="GenerateFilesFromChangeListAction.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWhatToGenerateName#()Ljava/lang/String;" />
     <nodeInfo nodeId="7705742079275758161" fileName="GenerateFilesFromChangeListAction.java" startLine="11" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenerationHandler#()Ljetbrains/mps/generator/generationTypes/IGenerationHandler;" />
     <scopeInfo nodeId="7705742079275758160" fileName="GenerateFilesFromChangeListAction.java" startLine="9" startPosition="46" endLine="9" endPosition="46" />
-    <scopeInfo nodeId="7705742079275758164" fileName="GenerateFilesFromChangeListAction.java" startLine="13" startPosition="55" endLine="14" endPosition="71" />
+    <scopeInfo nodeId="7705742079275758164" fileName="GenerateFilesFromChangeListAction.java" startLine="13" startPosition="55" endLine="14" endPosition="73" />
     <scopeInfo nodeId="7705742079275758173" fileName="GenerateFilesFromChangeListAction.java" startLine="17" startPosition="44" endLine="18" endPosition="19" />
     <scopeInfo nodeId="7705742079275758157" fileName="GenerateFilesFromChangeListAction.java" startLine="8" startPosition="85" endLine="10" endPosition="3" />
     <scopeInfo nodeId="7705742079275758170" fileName="GenerateFilesFromChangeListAction.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />

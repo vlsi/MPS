@@ -15,16 +15,14 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
-import jetbrains.mps.smodel.action.DefaultAttributeNodeSetter;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.action.DefaultAttributeNodeSetter;
+import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 
 public class DefaultAttributeSubstituteInfo extends DefaultChildSubstituteInfo {
 
-  public DefaultAttributeSubstituteInfo(SNode parentNode, SNode currChildNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
+  public DefaultAttributeSubstituteInfo(SNode parentNode, SNode currChildNode, SNode linkDeclaration, EditorContext editorContext) {
     super(parentNode, currChildNode, linkDeclaration, editorContext);
   }
 

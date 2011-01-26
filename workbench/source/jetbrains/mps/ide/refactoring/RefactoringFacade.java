@@ -229,7 +229,7 @@ public class RefactoringFacade {
       });
       IOperationContext operationContext = ProjectOperationContext.get(refactoringContext.getSelectedProject());
       new WorkbenchMakeService (operationContext, true).make(new ModelsToResources(operationContext, descriptors).resources(false));
-//      GeneratorFacade.getInstance().generateModels(operationContext, descriptors, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true, false);
+//      GeneratorUIFacade.getInstance().generateModels(operationContext, descriptors, GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
     } finally {
       SNode.setNodeMemberAccessModifier(null);
     }

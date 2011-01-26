@@ -85,10 +85,6 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
     this.myEndPosition = endPosition;
   }
 
-  public String getFileAndLine() {
-    return this.myFileName + ":" + (this.myStartLine + 1);
-  }
-
   public int getLineDistance() {
     return this.myEndLine - this.myStartLine;
   }
@@ -109,9 +105,9 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public int compareTo(PositionInfo p) {
-    if (eq_1myh1n_a0a0q(this.getLineDistance(), p.getLineDistance())) {
-      if (eq_1myh1n_a0a0a0q(this.myStartLine, p.myStartLine)) {
-        if (eq_1myh1n_a0a0a0a0q(this.myStartPosition, p.myStartPosition)) {
+    if (eq_1myh1n_a0a0p(this.getLineDistance(), p.getLineDistance())) {
+      if (eq_1myh1n_a0a0a0p(this.myStartLine, p.myStartLine)) {
+        if (eq_1myh1n_a0a0a0a0p(this.myStartPosition, p.myStartPosition)) {
           if (myNodeId == null) {
             return -1;
           }
@@ -131,7 +127,11 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public boolean isOccupyTheSameSpace(PositionInfo p) {
-    return (eq_1myh1n_a0a0a0a0r(myStartLine, p.myStartLine)) && (eq_1myh1n_a0a0a0a0r_0(myEndLine, p.myEndLine)) && (eq_1myh1n_a0a0a0a71(myStartPosition, p.myStartPosition)) && (eq_1myh1n_a0a0a0r(myEndPosition, p.myEndPosition));
+    return (eq_1myh1n_a0a0a0a0q(myStartLine, p.myStartLine)) && (eq_1myh1n_a0a0a0a0q_0(myEndLine, p.myEndLine)) && (eq_1myh1n_a0a0a0a61(myStartPosition, p.myStartPosition)) && (eq_1myh1n_a0a0a0q(myEndPosition, p.myEndPosition));
+  }
+
+  public boolean isPositionInside(String file, int line) {
+    return eq_1myh1n_a0a0a0r(myFileName, file) && myStartLine <= line && line <= myEndLine;
   }
 
   public void fillFrom(PositionInfo position) {
@@ -157,7 +157,21 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
     return p.getValue();
   }
 
-  private static boolean eq_1myh1n_a0a0q(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0p(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_1myh1n_a0a0a0a0p(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_1myh1n_a0a0a0p(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
@@ -171,28 +185,21 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
     );
   }
 
+  private static boolean eq_1myh1n_a0a0a0a0q_0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_1myh1n_a0a0a0a61(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
   private static boolean eq_1myh1n_a0a0a0q(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_1myh1n_a0a0a0a0r(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_1myh1n_a0a0a0a0r_0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_1myh1n_a0a0a0a71(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
