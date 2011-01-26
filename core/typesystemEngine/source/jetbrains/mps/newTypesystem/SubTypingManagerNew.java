@@ -70,6 +70,13 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (null == subType || null == superType) {
       return false;
     }
+    if (!TypesUtil.hasVariablesInside(superType) && !TypesUtil.hasVariablesInside(subType)) {
+      Boolean answer = getCacheAnswer(subType, superType, isWeak);
+      if (answer != null) {
+        return answer;
+      }
+    }
+
     if (meetsAndJoins(subType, superType, info, isWeak)) {
       return true;
     }
@@ -91,7 +98,6 @@ public class SubTypingManagerNew extends SubtypingManager {
         }
       }
     }
-
     if (LatticeUtil.isMeet(subType)) {
       for (SNode argument : LatticeUtil.getMeetArguments(subType)) {
        if (!TypesUtil.hasVariablesInside(superType) && isSubTypeByReplacementRules(argument, superType)) {
@@ -116,15 +122,8 @@ public class SubTypingManagerNew extends SubtypingManager {
     return false;
   }
 
-  public boolean searchInSuperTypes(SNode subType, INodeMatcher superType, @Nullable EquationInfo errorInfo, boolean isWeak) {
-    if (superType instanceof NodeMatcher && !TypesUtil.hasVariablesInside(((NodeMatcher)superType).getNode()) && !TypesUtil.hasVariablesInside(subType)) {
-      Boolean answer = getCacheAnswer(subType, (NodeMatcher)superType, isWeak);
-      if (answer != null) {
-        return answer;
-      }
-    }
+  boolean searchInSuperTypes(SNode subType, INodeMatcher superType, @Nullable EquationInfo errorInfo, boolean isWeak) {
     TypeCheckingContextNew typeCheckingContextNew = myState == null ? null : myState.getTypeCheckingContext();
-
     StructuralNodeSet<?> frontier = new StructuralNodeSet();
     StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
@@ -182,23 +181,6 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
   }
 
-  private Set<SNode> collectImmediateSuperTypesSet(final SNode term, boolean isWeak, final TypeCheckingContext context) {
-    Set<SNode> result = new HashSet<SNode>();
-    if (term == null) {
-      return result;
-    }
-    Set<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subTypingRules = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
-    if (subTypingRules != null) {
-      for (final Pair<SubtypingRule_Runtime, IsApplicableStatus> subTypingRule : subTypingRules) {
-        List<SNode> superTypes = subTypingRule.o1.getSubOrSuperTypes(term, context, subTypingRule.o2);
-        if (superTypes != null) {
-          result.addAll(superTypes);
-        }
-      }
-    }
-    return result;
-  }
-
   private Set<SNode> eliminateSubOrSuperTypes(Set<SNode> types, boolean sub) {
     Set<SNode> result = new HashSet<SNode>();
     Set<SNode> toRemove = new HashSet<SNode>();
@@ -224,16 +206,10 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
   public SNode createMeet(Set<SNode> types) {
-
     if (types.size() > 1) {
-
-      types = eliminateSubOrSuperTypes(types, true);
-
-
+       types = eliminateSubOrSuperTypes(types, true);
     }
-
     return types.iterator().next();
-
     // todo implement meet
   }
 
@@ -312,13 +288,9 @@ public class SubTypingManagerNew extends SubtypingManager {
 
   public SNode createLCS(Set<SNode> types) {
     if (types.size() > 1) {
-    //  System.out.println("lcs" + types);
       types = eliminateSubOrSuperTypes(types, false);
-    //  System.out.println(types);
     }
     return leastCommonSuperType(new LinkedList<SNode>(types));
-
-    // todo implement least common supertype
   }
 
   public boolean isComparableByRules(SNode left, SNode right, EquationInfo info, boolean isWeak) {
@@ -345,17 +317,17 @@ public class SubTypingManagerNew extends SubtypingManager {
     return myCoercionManager.coerceSubTypingNew(subtype, pattern, isWeak, state);
   }
 
-  private Boolean getCacheAnswer(SNode subType, NodeMatcher superType, boolean isWeak) {
+  private Boolean getCacheAnswer(SNode subType, SNode superType, boolean isWeak) {
     SubtypingCache cache = myTypeChecker.getSubtypingCache();
     if (cache != null) {
-      Boolean answer = cache.getAnswer(subType,superType.getNode(), isWeak);
+      Boolean answer = cache.getAnswer(subType,superType, isWeak);
       if (answer != null) {
         return answer;
       }
     }
     cache = myTypeChecker.getGlobalSubtypingCache();
     if (cache != null) {
-      Boolean answer = cache.getAnswer(subType,superType.getNode(), isWeak);
+      Boolean answer = cache.getAnswer(subType,superType, isWeak);
       if (answer != null) {
         return answer;
       }
