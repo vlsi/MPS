@@ -259,19 +259,18 @@ public class SModelUtil_new implements ApplicationComponent {
     return SModelUtil.isAcceptableTarget(linkDeclaration, targetNode);
   }
 
-  public static String getAlias(AbstractConceptDeclaration conceptDeclaration) {
+  public static String getAlias(SNode conceptDeclaration) {
     return getStringConceptProperty(conceptDeclaration, BaseConcept.CPR_Alias);
   }
 
-  public static String getStringConceptProperty(AbstractConceptDeclaration conceptDeclaration, String propertyName) {
-    SNode property = SModelSearchUtil.findConceptProperty(BaseAdapter.fromAdapter(conceptDeclaration), propertyName);
+  public static String getStringConceptProperty(SNode conceptDeclaration, String propertyName) {
+    SNode property = SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
 
-    if (BaseAdapter.fromNode(property) instanceof StringConceptProperty) {
-      StringConceptProperty stringConceptProperty = (StringConceptProperty) BaseAdapter.fromNode(property);
-      return stringConceptProperty.getValue();
-    } else {
-      return null;
+    Object value = SNodeUtil.getConceptPropertyValue(property);
+    if (value instanceof String) {
+      return (String)value;
     }
+    return null;
   }
 
   public static boolean isEmptyPropertyValue(String s) {
