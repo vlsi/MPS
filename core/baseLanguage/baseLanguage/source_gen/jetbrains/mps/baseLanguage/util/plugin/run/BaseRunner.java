@@ -4,8 +4,11 @@ package jetbrains.mps.baseLanguage.util.plugin.run;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -69,10 +72,14 @@ public abstract class BaseRunner {
     this.addParametersString(params, myRunParameters.getProgramParameters());
   }
 
-  private void addParametersString(List<String> params, String parametersString) {
+  private void addParametersString(@NotNull List<String> params, @Nullable String parametersString) {
     if (parametersString != null && StringUtils.isNotEmpty(parametersString)) {
       String[] paramList = this.splitParams(parametersString);
-      ListSequence.fromList(params).addSequence(Sequence.fromIterable(Sequence.fromArray(paramList)));
+      ListSequence.fromList(params).addSequence(Sequence.fromIterable(Sequence.fromArray(paramList)).where(new IWhereFilter<String>() {
+        public boolean accept(String it) {
+          return it != null;
+        }
+      }));
     }
   }
 
@@ -80,7 +87,7 @@ public abstract class BaseRunner {
     this.addClassPath(params, this.getClasspath(node));
   }
 
-  protected void addClassPath(List<String> params, String classPath) {
+  protected void addClassPath(List<String> params, @Nullable String classPath) {
     if (classPath == null) {
       return;
     }
@@ -88,6 +95,7 @@ public abstract class BaseRunner {
     ListSequence.fromList(params).addElement(classPath);
   }
 
+  @Nullable
   protected String getClasspath(SNode node) {
     SModel model = SNodeOperations.getModel(node);
     if (model == null) {
@@ -168,6 +176,7 @@ public abstract class BaseRunner {
     });
   }
 
+  @NotNull
   public static String getJavaCommand(String javaHome) {
     String result = javaHome + fs() + "bin" + fs();
     String osName = System.getProperty("os.name");
