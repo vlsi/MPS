@@ -293,23 +293,25 @@ public class SubTypingManagerNew extends SubtypingManager {
     return leastCommonSuperType(new LinkedList<SNode>(types));
   }
 
+  private boolean isComparableByRules(SNode left, SNode right, Set<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRules) {
+    if (comparisonRules != null) {
+      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRules) {
+        if (comparisonRule_runtime.o1.areComparable(left, right, comparisonRule_runtime.o2)) return true;
+      }
+    }
+    return false;
+  }
+
   public boolean isComparableByRules(SNode left, SNode right, EquationInfo info, boolean isWeak) {
     if (left == null || right == null) {
       return false;
     }
     Set<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(left, right, isWeak);
-    if (comparisonRule_runtimes != null) {
-      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
-        if (comparisonRule_runtime.o1.areComparable(left, right, comparisonRule_runtime.o2)) return true;
-      }
+    if (isComparableByRules(left,right,comparisonRule_runtimes)) {
+      return true;
     }
     comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(right, left, isWeak);
-    if (comparisonRule_runtimes != null) {
-      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
-        if (comparisonRule_runtime.o1.areComparable(right, left, comparisonRule_runtime.o2)) return true;
-      }
-    }
-    return false;
+    return isComparableByRules(right, left, comparisonRule_runtimes);
   }
 
 

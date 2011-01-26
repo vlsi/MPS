@@ -104,10 +104,6 @@ public class TypesUtil {
     return result;
   }
 
-  public static boolean match(SNode left, SNode right) {
-    return match(left, right, null, null);
-  }
-
   public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info) {
     if (left == right) {
       return true;

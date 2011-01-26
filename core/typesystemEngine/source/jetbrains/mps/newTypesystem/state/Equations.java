@@ -130,12 +130,6 @@ public class Equations {
   }
 
   private boolean compareTypes(SNode left, SNode right, EquationInfo info) {
-    if (left == right) {
-      return true;
-    }
-    if (left == null || right == null) {
-      return false;
-    }
     return TypesUtil.match(left, right, this, info);
   }
 
