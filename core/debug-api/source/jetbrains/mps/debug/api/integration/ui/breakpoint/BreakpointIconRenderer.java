@@ -22,6 +22,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.AbstractAction;
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
+import javax.swing.JSeparator;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.event.ActionEvent;
@@ -120,6 +121,13 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
       @Override
       public void actionPerformed(ActionEvent e) {
         BreakpointManagerComponent.getInstance(myBreakpoint.getProject()).removeBreakpoint(myBreakpoint);
+      }
+    });
+    menu.add(new JSeparator());
+    menu.add(new AbstractAction("Properties") {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        BreakpointManagerComponent.getInstance(myBreakpoint.getProject()).editBreakpointProperties(myBreakpoint);
       }
     });
     return menu;
