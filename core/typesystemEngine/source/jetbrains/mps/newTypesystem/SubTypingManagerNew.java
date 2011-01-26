@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
+import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
@@ -80,25 +81,36 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
   private boolean meetsAndJoins(SNode subType, SNode superType, EquationInfo info, boolean isWeak) {
-    //todo use replacement rules
-    if (jetbrains.mps.typesystemEngine.util.LatticeUtil.isJoin(superType)) {
-      for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getJoinArguments(superType)) {
-  //      if (myState.isConcrete(argument) && isSubTypeByReplacementRules(subType, argument)) {
-  //        return true;
-   //     }
+    if (LatticeUtil.isJoin(superType)) {
+      for (SNode argument : LatticeUtil.getJoinArguments(superType)) {
+        if (!TypesUtil.hasVariablesInside(argument) && isSubTypeByReplacementRules(subType, argument)) {
+          return true;
+        }
         if (isSubType(subType, argument, info, myState, isWeak)) {
           return true;
         }
       }
     }
-    if (jetbrains.mps.typesystemEngine.util.LatticeUtil.isMeet(subType)) {
-      for (SNode argument : jetbrains.mps.typesystemEngine.util.LatticeUtil.getMeetArguments(subType)) {
-   //     if (myState.isConcrete(argument) && isSubTypeByReplacementRules(argument, superType)) {
-    //      return true;
-     //   }
+
+    if (LatticeUtil.isMeet(subType)) {
+      for (SNode argument : LatticeUtil.getMeetArguments(subType)) {
+       if (!TypesUtil.hasVariablesInside(superType) && isSubTypeByReplacementRules(argument, superType)) {
+          return true;
+        }
         if (isSubType(argument, superType, info, myState, isWeak)) {
           return true;
         }
+      }
+    }
+    if (LatticeUtil.isMeet(superType)) {
+      boolean result = true;
+      for (SNode argument : LatticeUtil.getMeetArguments(superType)) {
+        if (result && !isSubType(subType, argument, info, myState, isWeak)) {
+          result = false;
+        }
+      }
+      if (result) {
+        return true;
       }
     }
     return false;
@@ -108,7 +120,6 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (superType instanceof NodeMatcher && !TypesUtil.hasVariablesInside(((NodeMatcher)superType).getNode()) && !TypesUtil.hasVariablesInside(subType)) {
       Boolean answer = getCacheAnswer(subType, (NodeMatcher)superType, isWeak);
       if (answer != null) {
-        //   myHits++;
         return answer;
       }
     }
@@ -124,13 +135,8 @@ public class SubTypingManagerNew extends SubtypingManager {
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
         collectImmediateSuperTypes(node, isWeak, ancestors, typeCheckingContextNew);
-
         yetPassedRaw.add(node);
-        //    yetPassed.add(node);
       }
-      /*   for (SNode passedNode : yetPassed) {
-        ancestors.removeStructurally(passedNode);
-      }*/
       ArrayList<SNode> ancestorsSorted;
       ancestorsSorted = new ArrayList<SNode>(ancestors);
       Collections.sort(ancestorsSorted, new Comparator<SNode>() {
@@ -138,30 +144,12 @@ public class SubTypingManagerNew extends SubtypingManager {
           return TypesUtil.depth(o2) - TypesUtil.depth(o1);
         }
       });
-      //searching the frontier's ancestors
-   //   Pair<SubtypingManager, Map<SNode, Set<SNode>>> matchParameter = new Pair<SubtypingManager, Map<SNode, Set<SNode>>>(this, new HashMap<SNode, Set<SNode>>());
-      boolean wasMatch = false;
       for (SNode ancestor : ancestorsSorted) {
-        //performing a match with a "hack" parameter containing a "secret" map inside
         if (superType.matchesWith(ancestor)) {
           addToCache(subType, superType, true, isWeak);
-          return true;                     //TypesUtil.match(ancestor, superType, myState.getEquations(), info, false)
+          return true;
         }
       }
-      /*  if (wasMatch) {  //there were vars, some may be supposed to be equated with several different types;
-      // then we should equate them with a most specific type. if there's is no unique one then we choose a random one
-      Map<SNode, Set<SNode>> mapWithVars = matchParameter.o2;
-      Set<Pair<SNode, SNode>> childEqs = new HashSet<Pair<SNode, SNode>>();
-      for (SNode var : mapWithVars.keySet()) {
-        childEqs.add(new Pair<SNode, SNode>(var, mostSpecificTypes(mapWithVars.get(var)).iterator().next()));
-      }
-      if (state != null) {
-       state.getEquations().addEquations(childEqs, info);
-      }
-      return true;
-      }
-      //new:        */
-
       for (SNode passedNodeRaw : yetPassedRaw) {
         yetPassed.add(passedNodeRaw);
       }
@@ -249,62 +237,69 @@ public class SubTypingManagerNew extends SubtypingManager {
     // todo implement meet
   }
 
-  private SNode leastCommonSuperType(SNode left, SNode right) {
-    Set<SNode> frontier = new HashSet<SNode>();
-    Set<SNode> newFrontier = new HashSet<SNode>();
-    Set<SNode> yetPassed = new HashSet<SNode>();
+  private boolean isSuperType(SNode superType, Set<SNode> possibleSubTypes) {
+    for (SNode subType : possibleSubTypes) {
+      if (isSubtype(subType, superType, true)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private Set<SNode> leastCommonSuperTypes(SNode left, SNode right) {
+    TypeCheckingContextNew typeCheckingContextNew = myState == null ? null : myState.getTypeCheckingContext();
+    StructuralNodeSet<?> frontier = new StructuralNodeSet();
+    StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
+    StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
+    Set<SNode> result = new HashSet<SNode>();
     frontier.add(left);
     while (!frontier.isEmpty()) {
       Set<SNode> yetPassedRaw = new HashSet<SNode>();
-      Set<SNode> ancestors = new HashSet<SNode>();
+      //collecting a set of frontier's ancestors
+      StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
-        TypeCheckingContextNew typeCheckingContextNew = myState == null ? null : myState.getTypeCheckingContext();
-        Set<SNode> result = collectImmediateSuperTypesSet(node, true, typeCheckingContextNew);
-        for (SNode test : result) {
-          boolean found = false;
-          for (SNode anc : yetPassed) {
-            if (TypesUtil.match(anc, test)) {
-              found = true;
-            }
-          }
-          if (!found) {
-            ancestors.add(test);
-          }
-        }
+        collectImmediateSuperTypes(node, true, ancestors, typeCheckingContextNew);
         yetPassedRaw.add(node);
       }
-
       for (SNode ancestor : ancestors) {
         if (isSubtype(right, ancestor, true)) {
-          return ancestor;
+          if (!isSuperType(ancestor,result)) {
+            result.add(ancestor);
+          }
         }
       }
       for (SNode passedNodeRaw : yetPassedRaw) {
         yetPassed.add(passedNodeRaw);
       }
       for (SNode passedNode : yetPassed) {
-        ancestors.remove(passedNode);
+        ancestors.removeStructurally(passedNode);
+      }
+      for (SNode resultNode : result) {
+        ancestors.removeStructurally(resultNode);
       }
 
-      newFrontier.addAll(ancestors);
-      yetPassed.addAll(ancestors);
+      newFrontier.addAllStructurally(ancestors);
+      yetPassed.addAllStructurally(ancestors);
       frontier = newFrontier;
-      newFrontier = new HashSet<SNode>();
+      newFrontier = new StructuralNodeSet();
     }
-    return null;
+    return result;
   }
 
   private SNode leastCommonSuperType(List<SNode> types) {
     if (types.size() == 0) {
       return null;
     }
-    while (types.size() > 1) {
+    int newNodesSize = 1;
+    while (types.size() > newNodesSize) {
       int size = types.size();
-      SNode left = types.remove(size - 1);
-      SNode right = types.remove(size - 2);
-      types.add(leastCommonSuperType(left,right));
+      SNode left = types.remove(0);
+      SNode right = types.remove(0);
+      Set<SNode> newNodes = leastCommonSuperTypes(left, right);
+      newNodesSize = newNodes.size();
+      types.addAll(newNodes);
     }
-    return types.iterator().next();
+    return LatticeUtil.meetNodes(new HashSet<SNode>(types));
   }
 
   private boolean subOrSuperType(SNode left, SNode right, boolean sub, boolean isWeak) {
