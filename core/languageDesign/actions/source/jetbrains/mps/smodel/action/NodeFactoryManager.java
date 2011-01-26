@@ -55,7 +55,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
   private static SNode getTopLinkDeclaration(SNode conceptDeclaration, SNode linkDeclaration) {
     SNode result = linkDeclaration;
-    List<SNode> linkDeclarations = SModelSearchUtil.getLinkDeclarations((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration));
+    List<SNode> linkDeclarations = SModelSearchUtil.getLinkDeclarations(conceptDeclaration);
     for (SNode declaration : linkDeclarations) {
       SNode specializedLink = SModelUtil.getLinkDeclarationSpecializedLink(declaration);
       if (specializedLink == linkDeclaration) {
@@ -82,11 +82,11 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     }
     nodeConcept = newNode.getConceptDeclarationAdapter(); // default concrete concept could change nodeConcept
     setupNode((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
-    createNodeStructure((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
+    createNodeStructure(BaseAdapter.fromAdapter(nodeConcept), newNode, sampleNode, enclosingNode, model, scope);
     return newNode;
   }
 
-  private static void createNodeStructure(AbstractConceptDeclaration nodeConcept,
+  private static void createNodeStructure(SNode nodeConcept,
                                          SNode newNode, SNode sampleNode, SNode enclosingNode,
                                          SModel model, IScope scope) {
     for (SNode linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {

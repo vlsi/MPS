@@ -58,12 +58,12 @@ public class SModelSearchUtil {
     return new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(role);
   }
 
-  public static List<SNode> getLinkDeclarations(AbstractConceptDeclaration concept) {
-    return new ConceptAndSuperConceptsScope(BaseAdapter.fromAdapter(concept)).getLinkDeclarationsExcludingOverridden();
+  public static List<SNode> getLinkDeclarations(SNode concept) {
+    return new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
   }
 
-  public static List<SNode> getAggregationLinkDeclarations(AbstractConceptDeclaration concept) {
-    List<SNode> list = new ConceptAndSuperConceptsScope(BaseAdapter.fromAdapter(concept)).getLinkDeclarationsExcludingOverridden();
+  public static List<SNode> getAggregationLinkDeclarations(SNode concept) {
+    List<SNode> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
     List<SNode> result = new ArrayList<SNode>();
     for (SNode link : list) {
       if (((LinkDeclaration) link.getAdapter()).getMetaClass() == LinkMetaclass.aggregation) {

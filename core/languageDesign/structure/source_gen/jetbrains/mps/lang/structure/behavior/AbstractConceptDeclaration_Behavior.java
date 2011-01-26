@@ -23,8 +23,8 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
@@ -216,7 +216,7 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static List<SNode> call_getLinkDeclarations_1213877394480(SNode thisNode) {
-    return (List<SNode>) SModelSearchUtil.getLinkDeclarations(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)));
+    return (List<SNode>) SModelSearchUtil.getLinkDeclarations(thisNode);
   }
 
   public static List<SNode> call_getReferenceLinkDeclarations_1213877394496(SNode thisNode) {
