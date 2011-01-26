@@ -41,8 +41,8 @@ public class ModelDiffTool implements DiffTool {
     try {
       final SModel oldModel = ModelDiffTool.readModel(contents[0], ModelDiffTool.getFilePath(request));
       final SModel newModel = ModelDiffTool.readModel(contents[1], ModelDiffTool.getFilePath(request));
-      final ModelDifferenceDialog d = ModelAccess.instance().runReadAction(new Computable<ModelDifferenceDialog>() {
-        public ModelDifferenceDialog compute() {
+      final OldModelDifferenceDialog d = ModelAccess.instance().runReadAction(new Computable<OldModelDifferenceDialog>() {
+        public OldModelDifferenceDialog compute() {
           SModelDescriptor modelDescriptor = oldModel.getModelDescriptor();
           if (modelDescriptor == null) {
             modelDescriptor = newModel.getModelDescriptor();
@@ -58,7 +58,7 @@ public class ModelDiffTool implements DiffTool {
           }
           boolean modal = !(request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
           JFrame frame = WindowManager.getInstance().getFrame(request.getProject());
-          return new ModelDifferenceDialog(context, frame, oldModel, newModel, request.getWindowTitle(), modal, request.getContentTitles());
+          return new OldModelDifferenceDialog(context, frame, oldModel, newModel, request.getWindowTitle(), modal, request.getContentTitles());
         }
       });
       AnAction action = new AnAction("View as Text", "View as Text", Icons.TEXT_ICON) {

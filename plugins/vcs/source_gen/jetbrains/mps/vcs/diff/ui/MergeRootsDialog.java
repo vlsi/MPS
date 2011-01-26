@@ -16,19 +16,19 @@ import javax.swing.JLabel;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 
-public class NewMergeRootsDialog extends BaseDialog {
+public class MergeRootsDialog extends BaseDialog {
   private MergeContext myMergeContext;
   private IOperationContext myOperationContext;
   private SNodeId myRootId;
   private JPanel myContainer = new JPanel(new BorderLayout());
   private JPanel myTopComponent = new JPanel(new GridLayout(1, 3));
   private JPanel myBottomComponent = new JPanel(new GridLayout(1, 3));
-  private NewDiffEditorComponent myResultEditor;
-  private NewDiffEditorComponent myMineEditor;
-  private NewDiffEditorComponent myRepositoryEditor;
+  private DiffEditorComponent myResultEditor;
+  private DiffEditorComponent myMineEditor;
+  private DiffEditorComponent myRepositoryEditor;
   private DiffEditorComponentsGroup myDiffEditorsGroup = new DiffEditorComponentsGroup();
 
-  public NewMergeRootsDialog(NewMergeModelsDialog mergeModelsDialog, MergeContext mergeContext, SNodeId rootId, String rootName) {
+  public MergeRootsDialog(MergeModelsDialog mergeModelsDialog, MergeContext mergeContext, SNodeId rootId, String rootName) {
     super(mergeModelsDialog, "Merging " + rootName);
     myOperationContext = mergeModelsDialog.getOperationContext();
     myMergeContext = mergeContext;
@@ -42,9 +42,9 @@ public class NewMergeRootsDialog extends BaseDialog {
     myContainer.add(modelsPane);
   }
 
-  private NewDiffEditorComponent addEditor(SModel model, String revisionName) {
+  private DiffEditorComponent addEditor(SModel model, String revisionName) {
     SNode node = model.getNodeById(myRootId);
-    final NewDiffEditorComponent result = new NewDiffEditorComponent(myOperationContext, node);
+    final DiffEditorComponent result = new DiffEditorComponent(myOperationContext, node);
     result.editNode(node, myOperationContext);
     result.setReadOnly(true);
     JPanel panel = new JPanel(new BorderLayout());
@@ -72,7 +72,7 @@ public class NewMergeRootsDialog extends BaseDialog {
 
   @BaseDialog.Button(name = "Cancel", mnemonic = 'C', position = 1)
   public void cancel() {
-    // TODO revert all 
+    // TODO revert all changes applying 
     dispose();
   }
 }

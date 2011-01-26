@@ -16,13 +16,13 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import java.awt.Graphics;
 
-public class ChangeEditorMessage extends DefaultEditorMessage {
+public class OldChangeEditorMessage extends DefaultEditorMessage {
   private String myProperty;
   private String myRole;
   @NotNull
   private Change myChange;
 
-  public ChangeEditorMessage(Change change, SNode node, Color color, String message, EditorMessageOwner owner) {
+  public OldChangeEditorMessage(Change change, SNode node, Color color, String message, EditorMessageOwner owner) {
     super(node, color, message, owner);
     myChange = change;
   }
@@ -49,7 +49,7 @@ public class ChangeEditorMessage extends DefaultEditorMessage {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ChangeEditorMessage message = (ChangeEditorMessage) o;
+    OldChangeEditorMessage message = (OldChangeEditorMessage) o;
     return myChange.equals(message.myChange);
   }
 

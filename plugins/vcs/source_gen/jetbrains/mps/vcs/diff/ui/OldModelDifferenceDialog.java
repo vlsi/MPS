@@ -19,17 +19,17 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import javax.swing.JComponent;
 
-public class ModelDifferenceDialog extends BaseDialog {
-  private ModelDifferenceComponent myDifferenceComponent;
+public class OldModelDifferenceDialog extends BaseDialog {
+  private OldModelDifferenceComponent myDifferenceComponent;
   private FocusTrackback myFocusTrackback;
   private FocusWatcher myFocusWatcher;
 
-  public ModelDifferenceDialog(final IOperationContext context, final Frame parent, final SModel oldModel, final SModel newModel, String windowTitle, final boolean modal, final String[] contentTitles) throws HeadlessException {
+  public OldModelDifferenceDialog(final IOperationContext context, final Frame parent, final SModel oldModel, final SModel newModel, String windowTitle, final boolean modal, final String[] contentTitles) throws HeadlessException {
     super(parent, windowTitle);
     setModal(modal);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myDifferenceComponent = new ModelDifferenceComponent(context) {
+        myDifferenceComponent = new OldModelDifferenceComponent(context) {
           @Override
           protected void doubleClickOnNode(final SNode node) {
             final SNode rootNode = ModelAccess.instance().runReadAction(new Computable<SNode>() {
@@ -37,7 +37,7 @@ public class ModelDifferenceDialog extends BaseDialog {
                 return node.getContainingRoot();
               }
             });
-            final RootDifferenceDialog dialog = new RootDifferenceDialog(context.getMainFrame(), newModel, oldModel, false, modal);
+            final OldRootDifferenceDialog dialog = new OldRootDifferenceDialog(context.getMainFrame(), newModel, oldModel, false, modal);
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 dialog.init(context, rootNode, contentTitles[1], contentTitles[0]);

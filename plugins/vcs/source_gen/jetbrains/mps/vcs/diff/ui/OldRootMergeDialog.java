@@ -42,12 +42,12 @@ import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
+public class OldRootMergeDialog extends BaseDialog implements EditorMessageOwner {
   private JPanel myTopComponent;
   private JPanel myBottomComponent;
-  private DiffEditorComponent myResultEditorComponent;
-  private DiffEditorComponent myChange1EditorComponent;
-  private DiffEditorComponent myChange2EditorComponent;
+  private OldDiffEditorComponent myResultEditorComponent;
+  private OldDiffEditorComponent myChange1EditorComponent;
+  private OldDiffEditorComponent myChange2EditorComponent;
   private SModel myChange1Model;
   private SModel myChange2Model;
   private SModel myResultModel;
@@ -74,7 +74,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
   };
   private boolean myVeiwportSetInProgress = false;
 
-  public RootMergeDialog(IOperationContext context, SModel change1, SModel change2, boolean modal) {
+  public OldRootMergeDialog(IOperationContext context, SModel change1, SModel change2, boolean modal) {
     super(context.getMainFrame(), "Merge");
     setModal(modal);
     myContext = context;
@@ -86,15 +86,15 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     return myContainer;
   }
 
-  private DiffEditorComponent addEditor(SNode node, String revisionName) {
-    final DiffEditorComponent result = new DiffEditorComponent(myContext, node) {
+  private OldDiffEditorComponent addEditor(SNode node, String revisionName) {
+    final OldDiffEditorComponent result = new OldDiffEditorComponent(myContext, node) {
       @Override
-      public void configureBlock(ChangesBlock block) {
+      public void configureBlock(OldChangesBlock block) {
         JComponent panel = new JPanel();
         panel.setLayout(new GridLayout(1, 2));
         panel.setSize(20, 10);
-        panel.add(new RootMergeDialog.ApplyMenu(block.getChanges()));
-        panel.add(new RootMergeDialog.ExcludeMenu(block.getChanges()));
+        panel.add(new OldRootMergeDialog.ApplyMenu(block.getChanges()));
+        panel.add(new OldRootMergeDialog.ExcludeMenu(block.getChanges()));
         block.setRollbackButton(panel);
       }
     };
@@ -258,9 +258,9 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
   }
 
   /*package*/ class ApplyMenu extends JLabel {
-    private List<ChangeEditorMessage> myChanges;
+    private List<OldChangeEditorMessage> myChanges;
 
-    public ApplyMenu(List<ChangeEditorMessage> changes) {
+    public ApplyMenu(List<OldChangeEditorMessage> changes) {
       super(Icons.APPLY);
       myChanges = changes;
       setToolTipText("Apply Changes");
@@ -284,7 +284,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     protected void apply() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          for (ChangeEditorMessage m : myChanges) {
+          for (OldChangeEditorMessage m : myChanges) {
             if (myMerger.getConflictingChanges().contains(m.getChange())) {
               for (Change ch : myMerger.getConflictedWith(m.getChange())) {
                 myMerger.excludeChange(ch);
@@ -303,9 +303,9 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
   }
 
   /*package*/ class ExcludeMenu extends JLabel {
-    private List<ChangeEditorMessage> myChanges;
+    private List<OldChangeEditorMessage> myChanges;
 
-    public ExcludeMenu(List<ChangeEditorMessage> changes) {
+    public ExcludeMenu(List<OldChangeEditorMessage> changes) {
       super(Icons.EXCLUDE);
       myChanges = changes;
       setToolTipText("Exclude Changes");
@@ -329,7 +329,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     private void exclude() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          for (ChangeEditorMessage m : myChanges) {
+          for (OldChangeEditorMessage m : myChanges) {
             if (myMerger.getConflictingChanges().contains(m.getChange())) {
               for (Change ch : myMerger.getConflictedWith(m.getChange())) {
                 myMerger.getAppliedChanges().add(ch);

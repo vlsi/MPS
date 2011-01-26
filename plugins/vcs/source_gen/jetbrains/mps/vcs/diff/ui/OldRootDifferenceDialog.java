@@ -48,12 +48,12 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Cursor;
 
-public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwner {
+public class OldRootDifferenceDialog extends BaseDialog implements EditorMessageOwner {
   private JSplitPane myContainer;
   private SModel myNewModel;
   private SModel myOldModel;
-  private DiffEditorComponent myNewEditorComponent;
-  private DiffEditorComponent myOldEditorComponent;
+  private OldDiffEditorComponent myNewEditorComponent;
+  private OldDiffEditorComponent myOldEditorComponent;
   private JPanel myTopPanel;
   private JPanel myBottomPanel;
   private FocusTrackback myFocusTrackback;
@@ -75,7 +75,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   };
   private boolean myViewportSetInProgress;
 
-  public RootDifferenceDialog(Frame parent, final SModel newModel, final SModel oldModel, boolean editable, boolean modal) throws HeadlessException {
+  public OldRootDifferenceDialog(Frame parent, final SModel newModel, final SModel oldModel, boolean editable, boolean modal) throws HeadlessException {
     super(parent, "Difference");
     setModal(modal);
     myTopPanel = new JPanel(new GridLayout(1, 2));
@@ -120,12 +120,12 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     rebuildChangeBlocks();
   }
 
-  private DiffEditorComponent addEditor(IOperationContext context, final SNode node, String revisionName) {
-    final DiffEditorComponent result = new DiffEditorComponent(context, node) {
+  private OldDiffEditorComponent addEditor(IOperationContext context, final SNode node, String revisionName) {
+    final OldDiffEditorComponent result = new OldDiffEditorComponent(context, node) {
       @Override
-      public void configureBlock(ChangesBlock block) {
+      public void configureBlock(OldChangesBlock block) {
         if (!(myNewModel.isNotEditable())) {
-          block.setRollbackButton(new RootDifferenceDialog.RollbackButton(block.getChanges(), getChanges()));
+          block.setRollbackButton(new OldRootDifferenceDialog.RollbackButton(block.getChanges(), getChanges()));
         }
       }
     };
@@ -269,10 +269,10 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   }
 
   /*package*/ class RollbackButton extends JLabel {
-    private List<ChangeEditorMessage> myChangeMessages;
+    private List<OldChangeEditorMessage> myChangeMessages;
     private List<Change> myChanges;
 
-    public RollbackButton(List<ChangeEditorMessage> changeMessages, List<Change> changes) {
+    public RollbackButton(List<OldChangeEditorMessage> changeMessages, List<Change> changes) {
       super(Icons.ROLLBACK);
       myChangeMessages = changeMessages;
       myChanges = changes;
@@ -305,8 +305,8 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
             notAppliedNodes.add(change.getAffectedNodeId());
           }
           HashSet<Change> appliedChanges = new HashSet<Change>();
-          MultiMap<SNodeId, Change> dependenciesMap = RootDifferenceDialog.getChangeDependencies(myChanges);
-          for (ChangeEditorMessage m : myChangeMessages) {
+          MultiMap<SNodeId, Change> dependenciesMap = OldRootDifferenceDialog.getChangeDependencies(myChanges);
+          for (OldChangeEditorMessage m : myChangeMessages) {
             applyChange(dependenciesMap, appliedChanges, notAppliedNodes, m.getChange());
           }
         }

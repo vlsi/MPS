@@ -16,7 +16,7 @@ import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
-import jetbrains.mps.vcs.diff.ui.RootDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.OldRootDifferenceDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -50,7 +50,7 @@ public class VcsActionsHelper {
       final VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
       ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
       SModel oldModel = VcsActionsHelper.loadModel(content.getContent(), model.getModelDescriptor());
-      final RootDifferenceDialog dialog = new RootDifferenceDialog(frame, model, oldModel, true, true);
+      final OldRootDifferenceDialog dialog = new OldRootDifferenceDialog(frame, model, oldModel, true, true);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           dialog.init(context, node, "Local", revisionNumber.asString());

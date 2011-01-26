@@ -17,14 +17,14 @@ import javax.swing.event.ChangeEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class DiffEditorComponentsGroup {
-  private List<NewDiffEditorComponent> myDiffEditors = ListSequence.fromList(new ArrayList<NewDiffEditorComponent>());
+  private List<DiffEditorComponent> myDiffEditors = ListSequence.fromList(new ArrayList<DiffEditorComponent>());
   private DiffEditorComponentsGroup.MyCellSelectionListener myCellSelectionListener = new DiffEditorComponentsGroup.MyCellSelectionListener();
   private boolean myViewportSetInProgress = false;
 
   public DiffEditorComponentsGroup() {
   }
 
-  public void add(NewDiffEditorComponent diffEditor) {
+  public void add(DiffEditorComponent diffEditor) {
     ListSequence.fromList(myDiffEditors).addElement(diffEditor);
     diffEditor.addCellSelectionListener(myCellSelectionListener);
     diffEditor.getViewport().addChangeListener(new DiffEditorComponentsGroup.MyViewportChangeListener(diffEditor));
@@ -67,7 +67,7 @@ public class DiffEditorComponentsGroup {
         public void run() {
           SNodeId selectionId = check_53tvmj_a0a0a0a0a(check_53tvmj_a0a0a0a0a0(newSelection));
           if (selectionId != null) {
-            for (NewDiffEditorComponent diffEditor : ListSequence.fromList(myDiffEditors)) {
+            for (DiffEditorComponent diffEditor : ListSequence.fromList(myDiffEditors)) {
               diffEditor.inspect(check_53tvmj_a0a0a0a1a0a0a0(check_53tvmj_a0a0a0a0b0a0a0a(diffEditor.getEditedNode()), selectionId));
             }
           }
@@ -77,9 +77,9 @@ public class DiffEditorComponentsGroup {
   }
 
   private class MyViewportChangeListener implements ChangeListener {
-    private NewDiffEditorComponent myDiffEditor;
+    private DiffEditorComponent myDiffEditor;
 
-    private MyViewportChangeListener(NewDiffEditorComponent diffEditor) {
+    private MyViewportChangeListener(DiffEditorComponent diffEditor) {
       myDiffEditor = diffEditor;
     }
 
@@ -88,8 +88,8 @@ public class DiffEditorComponentsGroup {
         return;
       }
       myViewportSetInProgress = true;
-      ListSequence.fromList(myDiffEditors).visitAll(new IVisitor<NewDiffEditorComponent>() {
-        public void visit(NewDiffEditorComponent other) {
+      ListSequence.fromList(myDiffEditors).visitAll(new IVisitor<DiffEditorComponent>() {
+        public void visit(DiffEditorComponent other) {
           myDiffEditor.synchronizeViewWith(other);
         }
       });

@@ -39,9 +39,9 @@ import jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange;
 import jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange;
 import jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange;
 
-/*package*/ class ModelDifferenceComponent extends JPanel {
-  private ModelChangesTree myModelTree;
-  private MPSTree myChangesTree = new ModelDifferenceComponent.MyChangesTree();
+/*package*/ class OldModelDifferenceComponent extends JPanel {
+  private OldModelChangesTree myModelTree;
+  private MPSTree myChangesTree = new OldModelDifferenceComponent.MyChangesTree();
   private SModel myNewModel;
   private List<Change> myChanges;
   private ActionToolbar myModelTreeToolBar;
@@ -50,10 +50,10 @@ import jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange;
   private DefaultActionGroup myChangesTreeActionGroup;
   private IOperationContext myContext;
 
-  public ModelDifferenceComponent(IOperationContext context) {
+  public OldModelDifferenceComponent(IOperationContext context) {
     setLayout(new BorderLayout());
     myContext = context;
-    myModelTree = new ModelDifferenceComponent.MyModelTree(context);
+    myModelTree = new OldModelDifferenceComponent.MyModelTree(context);
     myModelTreeActionGroup = new DefaultActionGroup();
     myChangesTreeActionGroup = new DefaultActionGroup();
     createToolBarAndActions(myModelTree, myModelTreeActionGroup, "Model");
@@ -74,12 +74,12 @@ import jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange;
     updateView();
   }
 
-  public ModelChangesTree getModelTree() {
+  public OldModelChangesTree getModelTree() {
     return myModelTree;
   }
 
   private void createToolBarAndActions(MPSTree tree, DefaultActionGroup actionGroup, String name) {
-    ModelDifferenceComponent.MyTreeExpander treeExpander = new ModelDifferenceComponent.MyTreeExpander(tree);
+    OldModelDifferenceComponent.MyTreeExpander treeExpander = new OldModelDifferenceComponent.MyTreeExpander(tree);
     AnAction expandAllAction = new ExpandAllToolbarAction(treeExpander, "Expand " + name + " Tree");
     AnAction collapseAllAction = new CollapseAllToolbarAction(treeExpander, "Collapse " + name + " Tree");
     collapseAllAction.registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_COLLAPSE_ALL)), tree);
@@ -88,13 +88,13 @@ import jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange;
     actionGroup.add(collapseAllAction);
   }
 
-  public ModelDifferenceComponent showDifference(SModel oldModel, SModel newModel) {
+  public OldModelDifferenceComponent showDifference(SModel oldModel, SModel newModel) {
     DiffBuilder builder = new DiffBuilder(oldModel, newModel);
     final List<Change> changes = builder.getChanges();
     return showDifference(oldModel, newModel, changes);
   }
 
-  public ModelDifferenceComponent showDifference(SModel oldModel, SModel newModel, List<Change> changes) {
+  public OldModelDifferenceComponent showDifference(SModel oldModel, SModel newModel, List<Change> changes) {
     myNewModel = newModel;
     myModelTree.showDifference(oldModel, newModel, changes);
     myChanges = changes;
@@ -174,7 +174,7 @@ import jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange;
       if (!(filteredChanges.isEmpty())) {
         TextTreeNode changesNode = new TextTreeNode(title + " (" + filteredChanges.size() + ")");
         for (C change : filteredChanges) {
-          changesNode.add(new ModelDifferenceComponent.ChangeNode(change));
+          changesNode.add(new OldModelDifferenceComponent.ChangeNode(change));
         }
         return changesNode;
       }
@@ -207,14 +207,14 @@ import jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange;
     }
   }
 
-  private class MyModelTree extends ModelChangesTree {
+  private class MyModelTree extends OldModelChangesTree {
     public MyModelTree(IOperationContext context) {
       super(context);
     }
 
     @Override
     protected void doubleClickOnNode(SNode node) {
-      ModelDifferenceComponent.this.doubleClickOnNode(node);
+      OldModelDifferenceComponent.this.doubleClickOnNode(node);
     }
   }
 }

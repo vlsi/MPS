@@ -38,9 +38,9 @@ public class ModelMergeTool implements DiffTool {
         modelDescriptor = SModelRepository.getInstance().getModelDescriptor(mineModel.getSModelFqName());
       }
       IOperationContext context = new ModuleContext(modelDescriptor.getModule(), request.getProject());
-      if (NewMergeModelsDialog.isNewMergeEnabled()) {
+      if (MergeModelsDialog.isNewMergeEnabled()) {
         // TODO new dialog 
-        final NewMergeModelsDialog dialog = new NewMergeModelsDialog(request.getProject(), context, baseModel, mineModel, newModel);
+        final MergeModelsDialog dialog = new MergeModelsDialog(request.getProject(), context, baseModel, mineModel, newModel);
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
             dialog.toFront();
@@ -52,7 +52,7 @@ public class ModelMergeTool implements DiffTool {
           mrequest.resolved(bytes);
         }
       } else {
-        final MergeModelsDialog dialog = new MergeModelsDialog(context, baseModel, mineModel, newModel);
+        final OldMergeModelsDialog dialog = new OldMergeModelsDialog(context, baseModel, mineModel, newModel);
 
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {

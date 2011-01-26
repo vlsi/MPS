@@ -33,7 +33,7 @@ import javax.swing.tree.TreeNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
 
-/*package*/ class MergeResultView extends JPanel {
+/*package*/ class OldMergeResultView extends JPanel {
   private MPSTree myResultTree;
   private MPSTree myConflictsAndWarningsTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
@@ -43,7 +43,7 @@ import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
       } else {
         TextTreeNode warnings = new TextTreeNode("Warnings");
         for (Warning w : myMerger.getWarnings()) {
-          warnings.add(new MergeResultView.WarningNode(w));
+          warnings.add(new OldMergeResultView.WarningNode(w));
         }
         root.add(warnings);
       }
@@ -52,7 +52,7 @@ import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
       } else {
         TextTreeNode conflicts = new TextTreeNode("Conflicts");
         for (Conflict c : myMerger.getConflicts()) {
-          conflicts.add(new MergeResultView.ConflictNode(c));
+          conflicts.add(new OldMergeResultView.ConflictNode(c));
         }
         root.add(conflicts);
       }
@@ -65,14 +65,14 @@ import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
   private SModel myChange2;
   private IOperationContext myContext;
 
-  public MergeResultView(IOperationContext context, SModel baseModel, SModel change1, SModel change2, Merger merger) {
+  public OldMergeResultView(IOperationContext context, SModel baseModel, SModel change1, SModel change2, Merger merger) {
     myContext = context;
     myBaseModel = baseModel;
     myChange1 = change1;
     myChange2 = change2;
     myResultTree = new MPSTree() {
       protected MPSTreeNode rebuild() {
-        return new MergeResultView.MySModelTreeNode(myMerger.getResultModel(), "", myContext);
+        return new OldMergeResultView.MySModelTreeNode(myMerger.getResultModel(), "", myContext);
       }
     };
     myMerger = merger;
@@ -136,7 +136,7 @@ import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
       if (!(isRoot[0])) {
         return;
       }
-      final RootMergeDialog dialog = new RootMergeDialog(myContext, myChange1, myChange2, true);
+      final OldRootMergeDialog dialog = new OldRootMergeDialog(myContext, myChange1, myChange2, true);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           dialog.init(getSNode(), myMerger);
@@ -169,7 +169,7 @@ import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
 
     @NotNull
     public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
-      return new MergeResultView.MySNodeTreeNode(node, role, operationContext);
+      return new OldMergeResultView.MySNodeTreeNode(node, role, operationContext);
     }
 
     public SModel getSModel() {
@@ -209,7 +209,7 @@ import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
     }
 
     private void addNode(Change change) {
-      add(new MergeResultView.ChangeNode(change, (myMerger.isMine(change) ?
+      add(new OldMergeResultView.ChangeNode(change, (myMerger.isMine(change) ?
         "mine" :
         "theirs"
       )));

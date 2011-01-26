@@ -121,7 +121,7 @@ public class TestMergeDialog {
               }
             };
 
-            return new MergeModelsDialog(context, models[0], models[1], models[2]);
+            return new MergeModelsDialog(null, context, models[0], models[1], models[2]);
           }
         });
         dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

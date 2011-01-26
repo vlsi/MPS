@@ -337,6 +337,7 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action" file="ShowDifferencesWithModelOnDisk_Action.java">
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -348,11 +349,10 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -402,6 +402,7 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.VcsActionsHelper" file="VcsActionsHelper.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldRootDifferenceDialog" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.jdom.Document" />
@@ -429,7 +430,6 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="com.intellij.openapi.vcs.impl.VcsFileStatusProvider" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ContentRevision" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcs" />
