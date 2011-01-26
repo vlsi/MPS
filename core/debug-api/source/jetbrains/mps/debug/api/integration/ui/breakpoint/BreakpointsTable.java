@@ -131,7 +131,7 @@ public class BreakpointsTable extends BreakpointsView {
   public void selectBreakpoint(@Nullable IBreakpoint breakpoint) {
     if (breakpoint != null) {
       int index = getBreakpointsList().indexOf(breakpoint);
-      if (index > 0 && index < myBreakpointsTable.getRowCount()) {
+      if (index >= 0 && index < myBreakpointsTable.getRowCount()) {
         myBreakpointsTable.setRowSelectionInterval(index, index);
       }
     } else {
