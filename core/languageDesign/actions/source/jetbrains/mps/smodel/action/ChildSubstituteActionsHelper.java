@@ -149,8 +149,8 @@ public class ChildSubstituteActionsHelper {
     for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(languages)) {
       AbstractConceptDeclaration applicableConcept = actionsBuilder.getApplicableConcept();
       if (applicableConcept == null) continue;
-      if (SModelUtil_new.isAssignableConcept(applicableConcept, childConcept) ||
-        SModelUtil_new.isAssignableConcept(childConcept, applicableConcept)) {
+      if (SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(applicableConcept), BaseAdapter.fromAdapter(childConcept)) ||
+        SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(childConcept), BaseAdapter.fromAdapter(applicableConcept))) {
 
         if (satisfiesPrecondition(actionsBuilder, parentNode,
           applicableConcept, BaseAdapter.fromAdapter(link),

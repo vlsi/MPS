@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.actions.behavior.RemoveSTByConditionPart_Behavior;
 import jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActionsBuilder_Behavior;
 import jetbrains.mps.lang.actions.structure.*;
@@ -179,7 +180,7 @@ public class SideTransformHintSubstituteActionsHelper {
       return false;
     }
 
-    if (!SModelUtil_new.isAssignableConcept(sourceConcept, actionsBuilder.getApplicableConcept())) {
+    if (!SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(sourceConcept), BaseAdapter.fromAdapter(actionsBuilder.getApplicableConcept()))) {
       return false;
     }
 

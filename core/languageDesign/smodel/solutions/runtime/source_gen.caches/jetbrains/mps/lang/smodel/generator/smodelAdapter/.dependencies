@@ -105,7 +105,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.smodel.AttributesRolesUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ISearchScope" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />

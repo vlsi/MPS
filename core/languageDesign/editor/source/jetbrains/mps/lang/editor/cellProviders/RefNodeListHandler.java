@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -33,22 +33,22 @@ import java.util.List;
 
 public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
-  private AbstractConceptDeclaration myChildConcept;
-  private LinkDeclaration myLinkDeclaration;
+  private SNode myChildConcept;
+  private SNode myLinkDeclaration;
   private boolean myIsReverseOrder = false;
 
   public RefNodeListHandler(final SNode ownerNode, final String childRole, EditorContext editorContext) {
     super(ownerNode, childRole, editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
-        myLinkDeclaration = (LinkDeclaration) BaseAdapter.fromNode(ownerNode.getLinkDeclaration(childRole));
+        myLinkDeclaration = ownerNode.getLinkDeclaration(childRole);
         assert myLinkDeclaration != null : "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConceptFqName();
-        LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
-        myChildConcept = myLinkDeclaration.getTarget();
-        if (genuineLink.getMetaClass() != LinkMetaclass.aggregation) {
+        SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
+        myChildConcept = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
+        if (SNodeUtil.getLinkDeclaration_IsReference(genuineLink)) {
           throw new RuntimeException("Only Aggregation links can be used in list");
         }
-        myElementRole = genuineLink.getRole();
+        myElementRole = SModelUtil.getLinkDeclarationRole(genuineLink);
       }
     });
   }
@@ -59,11 +59,11 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   }
 
   public LinkDeclaration getLinkDeclaration() {
-    return myLinkDeclaration;
+    return (LinkDeclaration) BaseAdapter.fromNode(myLinkDeclaration);
   }
 
   public AbstractConceptDeclaration getChildConcept() {
-    return myChildConcept;
+    return (AbstractConceptDeclaration) BaseAdapter.fromNode(myChildConcept);
   }
 
 

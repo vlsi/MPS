@@ -33,7 +33,6 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.NameUtil;
-import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -121,14 +120,6 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
 
-  public static boolean isAssignableConcept(AbstractConceptDeclaration fromConcept, AbstractConceptDeclaration toConcept) {
-    return SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(fromConcept), BaseAdapter.fromAdapter(toConcept));
-  }
-
-  public static boolean isAssignableConcept(AbstractConceptDeclaration fromConcept, String toConceptFqName) {
-    return isAssignableConcept(NameUtil.nodeFQName(fromConcept), toConceptFqName);
-  }
-
   /**
    * use SModelUtil
    */
@@ -137,28 +128,8 @@ public class SModelUtil_new implements ApplicationComponent {
       return SModelUtil.isAssignableConcept(fromConceptFqName, toConceptFqName);
   }
 
-  /**
-   * use SModelUtil
-   */
-  @Deprecated
-  public static LinkDeclaration getGenuineLinkDeclaration(LinkDeclaration linkDeclaration) {
-    return (LinkDeclaration) BaseAdapter.fromNode(SModelUtil.getGenuineLinkDeclaration(BaseAdapter.fromAdapter(linkDeclaration)));
-  }
-
-  /**
-   * use SModelUtil
-   */
-  @Deprecated
-  public static String getGenuineLinkRole(LinkDeclaration linkDeclaration) {
-    return SModelUtil.getGenuineLinkRole(BaseAdapter.fromAdapter(linkDeclaration));
-  }
-
   public static LinkMetaclass getGenuineLinkMetaclass(LinkDeclaration linkDeclaration) {
-    return getGenuineLinkDeclaration(linkDeclaration).getMetaClass();
-  }
-
-  public static boolean isAggregation(LinkDeclaration linkDeclaration) {
-    return getGenuineLinkMetaclass(linkDeclaration) == LinkMetaclass.aggregation;
+    return ((LinkDeclaration) BaseAdapter.fromNode(SModelUtil.getGenuineLinkDeclaration(BaseAdapter.fromAdapter(linkDeclaration)))).getMetaClass();
   }
 
   public static Cardinality getGenuineLinkSourceCardinality(SNode linkDeclaration) {

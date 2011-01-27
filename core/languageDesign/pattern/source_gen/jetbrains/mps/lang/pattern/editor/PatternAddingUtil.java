@@ -9,9 +9,8 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.pattern.structure.PatternExpression;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration;
 import jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration;
 
@@ -35,10 +34,11 @@ public class PatternAddingUtil {
     EditorCell contextCell = context.getSelectedCell();
     SNode node = contextCell.getSNode();
     SModel model = node.getModel();
-    LinkDeclaration linkDeclaration = contextCell.getLinkDeclaration();
-    if (linkDeclaration != null && SModelUtil_new.getGenuineLinkMetaclass(linkDeclaration) == LinkMetaclass.reference) {
-      linkDeclaration = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
-      String role = linkDeclaration.getRole();
+    SNode linkDeclaration = (SNode) BaseAdapter.fromAdapter(contextCell.getLinkDeclaration());
+    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
+    if (linkDeclaration != null && SPropertyOperations.hasValue(genuineLinkDeclaration, "metaClass", "reference", "reference")) {
+      linkDeclaration = genuineLinkDeclaration;
+      String role = SPropertyOperations.getString(linkDeclaration, "role");
       LinkPatternVariableDeclaration linkPatternVariable = LinkPatternVariableDeclaration.newInstance(model);
       node.setLinkAttribute(role, linkPatternVariable.getNode());
     } else {

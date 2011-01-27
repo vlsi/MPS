@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.actions.nodes;
 
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.typesystem.structure.AbstractRule;
@@ -115,7 +116,7 @@ public class GoToRulesHelper {
     if (skipExact && conceptDeclaration == applicableConcept) {
       return false;
     }
-    return SModelUtil_new.isAssignableConcept(conceptDeclaration, applicableConcept);
+    return SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(conceptDeclaration), BaseAdapter.fromAdapter(applicableConcept));
   }
 
   private static AbstractConceptDeclaration getApplicableConcept(ApplicableNodeCondition applicableNode) {

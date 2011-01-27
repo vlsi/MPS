@@ -15,7 +15,6 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNodePointer;
@@ -573,14 +572,14 @@ public class SNodeOperations {
     if (node == null || node.getParent() == null || conceptOfParentFqName == null || conceptOfParentFqName.length() == 0 || role == null || role.length() == 0) {
       return false;
     }
-    AbstractConceptDeclaration expectedConcept = SModelUtil_new.findConceptDeclaration(conceptOfParentFqName, GlobalScope.getInstance());
+    SNode expectedConcept = SModelUtil.findConceptDeclaration(conceptOfParentFqName, GlobalScope.getInstance());
     if (expectedConcept == null) {
       return false;
     }
     SNode nodeParent = node.getParent();
     assert nodeParent != null;
-    AbstractConceptDeclaration conceptOfParent = nodeParent.getConceptDeclarationAdapter();
-    if (!(SModelUtil_new.isAssignableConcept(conceptOfParent, expectedConcept))) {
+    SNode conceptOfParent = (SNode) nodeParent.getConceptDeclarationNode();
+    if (!(SModelUtil.isAssignableConcept(conceptOfParent, expectedConcept))) {
       return false;
     }
     return role.equals(node.getRole_());
