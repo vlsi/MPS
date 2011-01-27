@@ -9,6 +9,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class AddAuthorBlockDocTag_Intention extends BaseIntention implements Intention {
   public AddAuthorBlockDocTag_Intention() {
@@ -48,9 +51,22 @@ public class AddAuthorBlockDocTag_Intention extends BaseIntention implements Int
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode authorTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", null);
     ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).addElement(authorTag);
-    //  TODO 
-    editorContext.getNodeEditorComponent().setSelectionDontClearStack(editorContext.getNodeEditorComponent().findNodeCellWithRole(authorTag, "text"), true, true);
-    editorContext.select(authorTag);
+    editorContext.flushEvents();
+    EditorCell authorEditorCell = editorContext.getNodeEditorComponent().findNodeCell(authorTag);
+    EditorCell cellToSelect = null;
+    if (authorEditorCell instanceof EditorCell_Collection) {
+      for (EditorCell childCell : Sequence.fromIterable((EditorCell_Collection) authorEditorCell)) {
+        String cellId = childCell.getCellId();
+        if (cellId != null && cellId.contains("text")) {
+          cellToSelect = childCell;
+          break;
+        }
+      }
+    }
+    editorContext.getNodeEditorComponent().changeSelection((cellToSelect != null ?
+      cellToSelect :
+      authorEditorCell
+    ));
   }
 
   public String getLocationString() {

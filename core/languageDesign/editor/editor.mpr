@@ -21,6 +21,7 @@
       <solutionPath path="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" />
       <solutionPath path="${project}/languages/table/runtime/jetbrains.mps.table.runtime.msd" />
       <solutionPath path="${project}/tests/table/jetbrains.mps.lang.editor.table.tests.msd" />
+      <solutionPath path="${mps_home}/plugins/mpseditor/solution/jetbrains.mps.ide.editor.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/editor.mpl" />
