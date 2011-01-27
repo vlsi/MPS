@@ -295,6 +295,10 @@ public class MergeContext {
     return myMyModel;
   }
 
+  public boolean isMyChange(ModelChange change) {
+    return change.getChangeSet() == myMineChangeSet;
+  }
+
   private static Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> arrangeNodeGroupChanges(ChangeSet changeSet) {
     Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> nodeRoleToGroupChanges = MapSequence.fromMap(new HashMap<Tuples._2<SNodeId, String>, List<NodeGroupChange>>());
     for (NodeGroupChange change : Sequence.fromIterable(changeSet.getModelChanges(NodeGroupChange.class))) {
