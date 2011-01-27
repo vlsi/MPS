@@ -174,32 +174,32 @@ public class ChangeSetBuilder {
     return new ChangeSetBuilder(oldModel, newModel).myChangeSet;
   }
 
-  private static SModelReference check_nbyrtw_a0a0c0e0b(SModel p) {
-    if (null == p) {
-      return null;
+  private static SModelReference check_nbyrtw_a0a0c0e0b(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModelReference();
     }
-    return p.getSModelReference();
+    return null;
   }
 
-  private static SNodeId check_nbyrtw_e0a0a2a2a4a1(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_nbyrtw_e0a0a2a2a4a1(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
-  private static SNodeId check_nbyrtw_a0a2a4a1(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_nbyrtw_a0a2a4a1(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
-  private static SNodeId check_nbyrtw_b0a2a4a1(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_nbyrtw_b0a2a4a1(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
   private static class DefaultPropertySupport extends PropertySupport {

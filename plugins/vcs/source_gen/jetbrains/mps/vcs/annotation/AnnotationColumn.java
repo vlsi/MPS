@@ -569,39 +569,39 @@ __switch__:
     return myVcs.getProject();
   }
 
-  private static SNodeId check_5mnya_a0b0k0a(LineContent p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_5mnya_a0b0k0a(LineContent checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNodeId();
     }
-    return p.getNodeId();
+    return null;
   }
 
-  private static FilePath check_5mnya_a0a2a2a0a0a0a1a1a0c(Pair<CommittedChangeList, FilePath> p) {
-    if (null == p) {
-      return null;
+  private static FilePath check_5mnya_a0a2a2a0a0a0a1a1a0c(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSecond();
     }
-    return p.getSecond();
+    return null;
   }
 
-  private static FilePath check_5mnya_a0a0c0c0a0a0a0b0b0a2(Pair<CommittedChangeList, FilePath> p) {
-    if (null == p) {
-      return null;
+  private static FilePath check_5mnya_a0a0c0c0a0a0a0b0b0a2(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSecond();
     }
-    return p.getSecond();
+    return null;
   }
 
-  private static CommittedChangeList check_5mnya_a0d0c0a0a0a0b0b0a2(Pair<CommittedChangeList, FilePath> p) {
-    if (null == p) {
-      return null;
+  private static CommittedChangeList check_5mnya_a0d0c0a0a0a0b0b0a2(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getFirst();
     }
-    return p.getFirst();
+    return null;
   }
 
-  private static SNodeId check_5mnya_a0a0a91a8a2a0a0a0a1a1a0c(LineContent p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_5mnya_a0a0a91a8a2a0a0a0a1a1a0c(LineContent checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNodeId();
     }
-    return p.getNodeId();
+    return null;
   }
 
   private class MyAnnotationListener implements AnnotationListener {

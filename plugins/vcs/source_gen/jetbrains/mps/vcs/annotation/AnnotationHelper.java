@@ -137,17 +137,17 @@ public class AnnotationHelper {
     return annotate(editorComponent, true);
   }
 
-  private static SModel check_19hp0u_a0d0b(SNode p) {
-    if (null == p) {
-      return null;
+  private static SModel check_19hp0u_a0d0b(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModel();
     }
-    return p.getModel();
+    return null;
   }
 
-  private static SModelDescriptor check_19hp0u_a0e0b(SModel p) {
-    if (null == p) {
-      return null;
+  private static SModelDescriptor check_19hp0u_a0e0b(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelDescriptor();
     }
-    return p.getModelDescriptor();
+    return null;
   }
 }
