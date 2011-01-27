@@ -91,16 +91,16 @@ public class IconManager {
           return Icons.UNKNOWN_ICON;
         }
 
-        if (node.getConceptDeclarationAdapter() instanceof ConceptDeclaration) {
-          ConceptDeclaration concept = (ConceptDeclaration) node.getConceptDeclarationAdapter();
-          Method alternativeIconMethod = ModelConstraintsManager.getInstance().getAlternativeIconMethod(BaseAdapter.fromAdapter(concept));
+        if (SNodeUtil.isInstanceOfConceptDeclaration(node.getConceptDeclarationNode())) {
+          SNode concept = node.getConceptDeclarationNode();
+          Method alternativeIconMethod = ModelConstraintsManager.getInstance().getAlternativeIconMethod(concept);
           Icon alternativeIcon = null;
           try {
             if (alternativeIconMethod != null) {
               Object iconObject = alternativeIconMethod.invoke(null, node);
               if (iconObject != null) {
                 String alternativeIconPath = (String) iconObject;
-                alternativeIcon = getIconFor(concept, alternativeIconPath);
+                alternativeIcon = getIconFor((ConceptDeclaration) BaseAdapter.fromNode(concept), alternativeIconPath);
               }
             }
           } catch (Throwable t) {
@@ -108,7 +108,7 @@ public class IconManager {
           if (alternativeIcon != null) {
             mainIcon = alternativeIcon;
           } else {
-            mainIcon = IconManager.getIconFor(concept);
+            mainIcon = IconManager.getIconFor((ConceptDeclaration) BaseAdapter.fromNode(concept));
           }
         }
 

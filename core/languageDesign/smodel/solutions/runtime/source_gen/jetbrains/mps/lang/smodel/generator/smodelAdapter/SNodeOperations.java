@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
@@ -588,7 +587,7 @@ public class SNodeOperations {
   public static SNode getConceptDeclaration(SNode node) {
     return (node == null ?
       null :
-      BaseAdapter.fromAdapter(node.getConceptDeclarationAdapter())
+      node.getConceptDeclarationNode()
     );
   }
 

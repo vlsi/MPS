@@ -127,7 +127,7 @@ public class GoToRulesHelper {
     } else if (applicableNode instanceof PatternCondition) {
       BaseConcept baseConcept = ((PatternCondition) applicableNode).getPattern().getPatternNode();
       if (baseConcept == null) return null;
-      return baseConcept.getNode().getConceptDeclarationAdapter();
+      return (AbstractConceptDeclaration) BaseAdapter.fromNode(baseConcept.getNode().getConceptDeclarationNode());
     } else {
       return null;
     }

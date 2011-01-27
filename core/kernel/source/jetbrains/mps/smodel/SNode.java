@@ -17,9 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -1451,8 +1448,7 @@ public final class SNode {
   }
 
   public SNode getConceptDeclarationNode() {
-    String conceptFQName = getConceptFqName();
-    return SModelUtil.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
+    return SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
   }
 
   public PropertyDeclaration getPropertyDeclaration(String propertyName) {
@@ -1525,11 +1521,7 @@ public final class SNode {
       return false;
     }
     SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    Cardinality cardinality = ((LinkDeclaration) genuineLinkDeclaration.getAdapter()).getSourceCardinality();
-    if (cardinality == Cardinality._1 || cardinality == Cardinality._1__n) {
-      return true;
-    }
-    return false;
+    return SNodeUtil.getLinkDeclaration_IsAtLeastOneMultiplicity(genuineLinkDeclaration);
   }
 
   public Language getLanguage(@NotNull IScope scope) {
@@ -1930,16 +1922,4 @@ public final class SNode {
     result = getChild(role + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE);
     return result;
   }
-
-  @Deprecated
-  public AbstractConceptDeclaration getConceptDeclarationAdapter() {
-    SNode concept = SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
-    return (AbstractConceptDeclaration) BaseAdapter.fromNode(concept);
-  }
-
-  @Deprecated
-  public boolean isInstanceOfConcept(String conceptFqName, IScope scope) {
-    return isInstanceOfConcept(conceptFqName);
-  }
-
 }

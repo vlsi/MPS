@@ -59,7 +59,7 @@ public class SideTransformHintSubstituteActionsHelper {
     TypeChecker.getInstance().enableTypesComputingForCompletion();
     try {
       IScope scope = myContext.getScope();
-      final AbstractConceptDeclaration sourceConcept = mySourceNode.getConceptDeclarationAdapter();
+      final AbstractConceptDeclaration sourceConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(mySourceNode.getConceptDeclarationNode());
       List<Language> languages = SModelOperations.getLanguages(mySourceNode.getModel(), scope);
       for (Language language : languages) {
         SModelDescriptor actionsModel = language.getActionsModelDescriptor();
@@ -144,7 +144,7 @@ public class SideTransformHintSubstituteActionsHelper {
   private List<SideTransformHintSubstituteActionsBuilder> getActionBuilders() {
     List<SideTransformHintSubstituteActionsBuilder> actionsBuilders = new LinkedList<SideTransformHintSubstituteActionsBuilder>();
     IScope scope = myContext.getScope();
-    final AbstractConceptDeclaration sourceConcept = mySourceNode.getConceptDeclarationAdapter();
+    final AbstractConceptDeclaration sourceConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(mySourceNode.getConceptDeclarationNode());
 
     List<Language> languages = SModelOperations.getLanguages(mySourceNode.getModel(), scope);
     for (Language language : languages) {

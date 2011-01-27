@@ -66,23 +66,24 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     return result;
   }
 
-  public static SNode createNode(@NotNull AbstractConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
+  public static SNode createNode(@NotNull AbstractConceptDeclaration nodeConcept1, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
+    SNode nodeConcept = BaseAdapter.fromAdapter(nodeConcept1);
     if (model == null) {
       model = AuxilaryRuntimeModel.getDescriptor().getSModel();
     }
 
-    if (nodeConcept instanceof InterfaceConceptDeclaration) {
+    if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
       return new SNode(model, NameUtil.nodeFQName(nodeConcept));
     }
-    SNode newNode = SModelUtil_new.instantiateConceptDeclaration(BaseAdapter.fromAdapter(nodeConcept), model, false);
+    SNode newNode = SModelUtil_new.instantiateConceptDeclaration(nodeConcept, model, false);
     if (newNode == null) return null;
     BehaviorManager.getInstance().initNode(newNode);
     if (sampleNode != null) {
       sampleNode = CopyUtil.copy(sampleNode);
     }
-    nodeConcept = newNode.getConceptDeclarationAdapter(); // default concrete concept could change nodeConcept
-    setupNode((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
-    createNodeStructure(BaseAdapter.fromAdapter(nodeConcept), newNode, sampleNode, enclosingNode, model, scope);
+    nodeConcept = newNode.getConceptDeclarationNode(); // default concrete concept could change nodeConcept
+    setupNode(nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
+    createNodeStructure(nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
     return newNode;
   }
 

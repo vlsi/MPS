@@ -117,7 +117,6 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
