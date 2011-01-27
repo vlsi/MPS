@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -44,6 +45,7 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
         {
           BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
+          errorTarget = new PropertyMessageTarget("name");
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(iVariableDeclaration, "Variable " + SPropertyOperations.getString(iVariableDeclaration, "name") + " is already defined in the scope", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4164094338984214928", intentionProvider, errorTarget);
         }
       }
