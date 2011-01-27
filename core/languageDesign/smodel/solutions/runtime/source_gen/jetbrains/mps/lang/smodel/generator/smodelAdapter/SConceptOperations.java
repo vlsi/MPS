@@ -4,14 +4,14 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.kernel.model.SModelUtil;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.GlobalScope;
 import java.util.List;
+import jetbrains.mps.smodel.SNodeUtil;
+import java.util.Collections;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 import java.util.Set;
@@ -38,7 +38,7 @@ public final class SConceptOperations {
     if (conceptDeclarationNode == null || fromConceptDeclarationNode == null) {
       return false;
     }
-    return SModelUtil_new.isAssignableConcept(NameUtil.nodeFQName(fromConceptDeclarationNode), NameUtil.nodeFQName(conceptDeclarationNode));
+    return SModelUtil.isAssignableConcept(NameUtil.nodeFQName(fromConceptDeclarationNode), NameUtil.nodeFQName(conceptDeclarationNode));
   }
 
   public static boolean isSuperConceptOf(SNode superConcept, String subConceptFQName) {
@@ -46,7 +46,7 @@ public final class SConceptOperations {
       return false;
     }
     String superConceptFQName = NameUtil.nodeFQName(superConcept);
-    return SModelUtil_new.isAssignableConcept(subConceptFQName, superConceptFQName);
+    return SModelUtil.isAssignableConcept(subConceptFQName, superConceptFQName);
   }
 
   public static boolean isSubConceptOf(SNode subConcept, String superConceptFQName) {
@@ -54,7 +54,7 @@ public final class SConceptOperations {
       return false;
     }
     String subConceptFQName = NameUtil.nodeFQName(subConcept);
-    return SModelUtil_new.isAssignableConcept(subConceptFQName, superConceptFQName);
+    return SModelUtil.isAssignableConcept(subConceptFQName, superConceptFQName);
   }
 
   public static SNode findConceptDeclaration(@NotNull String conceptFqName) {
@@ -67,19 +67,15 @@ public final class SConceptOperations {
   }
 
   public static List<SNode> getDirectSuperConcepts(SNode conceptDeclarationNode, boolean inclusion) {
-    if (conceptDeclarationNode == null) {
-      return new ArrayList<SNode>();
+    if (conceptDeclarationNode == null || !(SNodeUtil.isInstanceOfAbstractConceptDeclaration(conceptDeclarationNode))) {
+      return Collections.emptyList();
     }
-    BaseAdapter adapter = conceptDeclarationNode.getAdapter();
-    if (!((adapter instanceof AbstractConceptDeclaration))) {
-      return new ArrayList<SNode>();
-    }
-    List<AbstractConceptDeclaration> list = SModelUtil_new.getDirectSuperConcepts((AbstractConceptDeclaration) adapter);
-    List<SNode> result = BaseAdapter.toNodes(list);
+    List<SNode> result = (List<SNode>) SModelUtil.getDirectSuperConcepts((SNode) conceptDeclarationNode);
     if (inclusion) {
+      result = new ArrayList<SNode>(result);
       result.add(0, conceptDeclarationNode);
     }
-    return result;
+    return Collections.unmodifiableList(result);
   }
 
   @Deprecated

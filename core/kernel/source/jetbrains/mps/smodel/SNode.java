@@ -1521,7 +1521,7 @@ public final class SNode {
       LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
       return false;
     }
-    Cardinality cardinality = SModelUtil_new.getGenuineLinkSourceCardinality((LinkDeclaration) linkDeclaration.getAdapter());
+    Cardinality cardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
     if (cardinality == Cardinality._1 || cardinality == Cardinality._1__n) {
       return true;
     }

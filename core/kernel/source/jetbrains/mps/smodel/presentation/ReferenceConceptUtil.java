@@ -74,7 +74,8 @@ public class ReferenceConceptUtil {
         } else {
           // if concept declares exactly ONE REQUIRED reference link...
           if (links.size() == 1) {
-            if (SModelUtil_new.getGenuineLinkSourceCardinality((LinkDeclaration) BaseAdapter.fromNode(links.get(0))) == Cardinality._1) {
+            SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(links.get(0));
+            if (SNodeUtil.getLinkDeclaratio_IsExactlyOneMultiplicity(genuineLinkDeclaration)) {
               return links.get(0);
             }
           }

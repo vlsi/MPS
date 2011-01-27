@@ -52,7 +52,7 @@ public class SModelUtil_new implements ApplicationComponent {
   private SModelAdapter myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
     public void rootRemoved(SModelRootEvent p0) {
       if (!LanguageAspect.STRUCTURE.is(p0.getModel())) { return; }
-      if (!(p0.getRoot().getAdapter() instanceof AbstractConceptDeclaration)) { return; }
+      if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(p0.getRoot()))) { return; }
 
       SModelUtil.clearCaches();
     }
@@ -64,7 +64,7 @@ public class SModelUtil_new implements ApplicationComponent {
 
     public void propertyChanged(SModelPropertyEvent p0) {
       if (!LanguageAspect.STRUCTURE.is(p0.getModel())) { return; }
-      if (!(p0.getNode().getAdapter() instanceof AbstractConceptDeclaration)) { return; }
+      if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(p0.getNode()))) { return; }
       if (!p0.getPropertyName().equals("name")) { return; }
 
       String modelName = p0.getNode().getModel().getLongName();
@@ -134,11 +134,7 @@ public class SModelUtil_new implements ApplicationComponent {
    */
   @Deprecated
   public static boolean isAssignableConcept(String fromConceptFqName, String toConceptFqName) {
-    if (ObjectUtils.equals(fromConceptFqName, toConceptFqName)) return true;
-    if (toConceptFqName == null || fromConceptFqName == null) return false;
-    if (toConceptFqName.equals(SNodeUtil.concept_BaseConcept)) return true;
-
-    return LanguageHierarchyCache.getInstance().isAssignable(fromConceptFqName, toConceptFqName);
+      return SModelUtil.isAssignableConcept(fromConceptFqName, toConceptFqName);
   }
 
   /**
@@ -165,20 +161,12 @@ public class SModelUtil_new implements ApplicationComponent {
     return getGenuineLinkMetaclass(linkDeclaration) == LinkMetaclass.aggregation;
   }
 
-  public static Cardinality getGenuineLinkSourceCardinality(LinkDeclaration linkDeclaration) {
-    return ((LinkDeclaration) SModelUtil.getGenuineLinkDeclaration(BaseAdapter.fromAdapter(linkDeclaration)).getAdapter()).getSourceCardinality();
+  public static Cardinality getGenuineLinkSourceCardinality(SNode linkDeclaration) {
+    return ((LinkDeclaration) SModelUtil.getGenuineLinkDeclaration(linkDeclaration).getAdapter()).getSourceCardinality();
   }
 
   public static List<SNode> getConceptAndSuperConcepts(SNode topConcept) {
     return new ConceptAndSuperConceptsScope(topConcept).getConcepts();
-  }
-
-  public static List<AbstractConceptDeclaration> getDirectSuperInterfacesAndTheySupers(AbstractConceptDeclaration concept) {
-    return BaseAdapter.toAdapters(SModelUtil.getDirectSuperInterfacesAndTheirSupers(BaseAdapter.fromAdapter(concept)));
-  }
-
-  public static List<AbstractConceptDeclaration> getDirectSuperConcepts(AbstractConceptDeclaration concept) {
-    return BaseAdapter.toAdapters(SModelUtil.getDirectSuperConcepts(BaseAdapter.fromAdapter(concept)));
   }
 
   public static SNode instantiateConceptDeclaration(String conceptFQName, SModel model, IScope scope) {
@@ -230,7 +218,7 @@ public class SModelUtil_new implements ApplicationComponent {
     for (SNode linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {
       String role = SModelUtil.getGenuineLinkRole(linkDeclaration);
       LinkMetaclass metaClass = getGenuineLinkMetaclass((LinkDeclaration) linkDeclaration.getAdapter());
-      Cardinality sourceCardinality = getGenuineLinkSourceCardinality((LinkDeclaration) linkDeclaration.getAdapter());
+      Cardinality sourceCardinality = getGenuineLinkSourceCardinality(linkDeclaration);
       if (metaClass == LinkMetaclass.aggregation &&
         (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._1__n)) {
 

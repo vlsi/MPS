@@ -92,7 +92,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     for (SNode linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {
       String role = SModelUtil.getGenuineLinkRole(linkDeclaration);
       LinkMetaclass metaClass = SModelUtil_new.getGenuineLinkMetaclass((LinkDeclaration) BaseAdapter.fromNode(linkDeclaration));
-      Cardinality sourceCardinality = SModelUtil_new.getGenuineLinkSourceCardinality((LinkDeclaration) BaseAdapter.fromNode(linkDeclaration));
+      Cardinality sourceCardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
       if (metaClass == LinkMetaclass.aggregation &&
         (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._1__n)) {
 
