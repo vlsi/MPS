@@ -12,7 +12,10 @@
       <languagePath path="${project}/languages/checkedDots/checkedDots.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="checkedDots" moduleRef="jetbrains.mps.baseLanguage.checkedDots" />
+      <genConfModule name="checkedDots.sandbox" moduleRef="jetbrains.mps.baseLanguage.checkedDots.sandbox" />
+    </genConfs>
   </component>
   <component name="ProjectModuleManager">
     <modules />

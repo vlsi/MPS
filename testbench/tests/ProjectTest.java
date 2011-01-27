@@ -41,7 +41,7 @@ public class ProjectTest {
       "/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr",
       "/core/baseLanguage/closures/closures.mpr",
       "/core/baseLanguage/collections/collections.mpr",
-
+      "/core/baseLanguage/checkDot/checkedDots.mpr",
       "/core/baseLanguage/javadoc/javadoc.mpr",
       "/core/baseLanguage/logging/logging.mpr",
       "/core/baseLanguage/tuples/tuples.mpr",
