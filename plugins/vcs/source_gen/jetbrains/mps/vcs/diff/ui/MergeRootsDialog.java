@@ -48,16 +48,12 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
   }
 
   private void higlightChange(DiffEditorComponent diffEditor, ModelChange change) {
-    ChangeEditorMessage message = new ChangeEditorMessage(diffEditor, change, this) {
+    diffEditor.highlightChange(new ChangeEditorMessage(diffEditor, change, diffEditor) {
       @Override
       public boolean isConflicted() {
         return Sequence.fromIterable(myMergeContext.getConflictedWith(getChange())).isNotEmpty();
       }
-    };
-    if (message.getNode() == null) {
-      return;
-    }
-    diffEditor.getHighlightManager().mark(message);
+    });
   }
 
   private void highlightAllChanges() {

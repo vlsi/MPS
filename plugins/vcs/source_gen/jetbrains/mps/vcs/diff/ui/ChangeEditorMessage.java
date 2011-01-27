@@ -20,6 +20,8 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import java.awt.Rectangle;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
@@ -75,6 +77,12 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
 
   @Override
   public void paint(Graphics graphics, EditorComponent component, EditorCell cell) {
+    // TODO 
+    graphics.setColor(Color.BLACK);
+    int yy = getStart(component);
+    graphics.drawPolygon(new int[]{0, 3, 0}, new int[]{yy, yy, yy + 3}, 3);
+    yy += getHeight(component);
+    graphics.drawPolygon(new int[]{0, 3, 0}, new int[]{yy, yy, yy - 3}, 3);
     boolean targetIsNode = myMessageTarget.getTarget() == MessageTargetEnum.NODE;
     if (ObjectUtils.equals(getNode(), cell.getSNode()) && targetIsNode || !(targetIsNode) && !(cell instanceof EditorCell_Collection)) {
       cell.paintSelection(graphics, getColor(), false);
@@ -138,6 +146,49 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       graphics.setColor(ChangeType.CHANGE.getColor());
       Rectangle bounds = cell.getBounds();
       graphics.drawRect(bounds.x, bounds.y, bounds.width, bounds.height);
+    }
+  }
+
+  private Tuples._2<Integer, Integer> getVerticalBounds(EditorComponent editorComponent) {
+    EditorCell cell = getCell(editorComponent);
+    assert myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN;
+    if (!(hasChildrenWithDifferentNode(cell) && eq_myu41h_a0a0c0f(((ChildrenMessageTarget) myMessageTarget).getRole(), cell.getRole()))) {
+      return MultiTuple.<Integer,Integer>from(super.getStart(editorComponent), super.getHeight(editorComponent));
+    } else {
+
+    }
+    EditorCell_Collection collectionCell = ((EditorCell_Collection) cell);
+    int beginIndex = ((ChildrenMessageTarget) myMessageTarget).getBeginIndex();
+    int endIndex = ((ChildrenMessageTarget) myMessageTarget).getEndIndex();
+    assert beginIndex < collectionCell.getChildCount();
+    assert endIndex < collectionCell.getChildCount();
+    int minY = (int) collectionCell.getCellAt(beginIndex).getBounds().getMinY();
+    int maxY = (isVertical(cell) ?
+      minY + 1 :
+      (int) collectionCell.getCellAt(beginIndex).getBounds().getMaxY()
+    );
+    for (int i = beginIndex; i < endIndex; i++) {
+      minY = Math.min(minY, (int) collectionCell.getCellAt(i).getBounds().getMinY());
+      maxY = Math.max(maxY, (int) collectionCell.getCellAt(i).getBounds().getMaxY());
+    }
+    return MultiTuple.<Integer,Integer>from(minY, maxY - minY);
+  }
+
+  @Override
+  public int getStart(EditorComponent component) {
+    if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN) {
+      return getVerticalBounds(component)._0();
+    } else {
+      return super.getStart(component);
+    }
+  }
+
+  @Override
+  public int getHeight(EditorComponent component) {
+    if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN) {
+      return getVerticalBounds(component)._1();
+    } else {
+      return super.getStart(component);
     }
   }
 
@@ -233,5 +284,16 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     } else {
       return false;
     }
+  }
+
+  private static boolean isVertical(EditorCell cell) {
+    return cell instanceof EditorCell_Collection && (((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Vertical || cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE));
+  }
+
+  private static boolean eq_myu41h_a0a0c0f(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }
