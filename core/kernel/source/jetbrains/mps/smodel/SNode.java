@@ -1439,7 +1439,12 @@ public final class SNode {
     SModelRepository.getInstance().markChanged(getModel());
   }
 
+  @Deprecated
   public boolean isInstanceOfConcept(AbstractConceptDeclaration concept) {
+    return isInstanceOfConcept(NameUtil.nodeFQName(concept));
+  }
+
+  public boolean isInstanceOfConcept(SNode concept) {
     return isInstanceOfConcept(NameUtil.nodeFQName(concept));
   }
 
@@ -1521,7 +1526,8 @@ public final class SNode {
       LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
       return false;
     }
-    Cardinality cardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
+    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
+    Cardinality cardinality = ((LinkDeclaration) genuineLinkDeclaration.getAdapter()).getSourceCardinality();
     if (cardinality == Cardinality._1 || cardinality == Cardinality._1__n) {
       return true;
     }
@@ -1940,9 +1946,8 @@ public final class SNode {
 
   @Deprecated
   public AbstractConceptDeclaration getConceptDeclarationAdapter() {
-    String conceptFQName = getConceptFqName();
-    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
-    return concept;
+    SNode concept = SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
+    return (AbstractConceptDeclaration) BaseAdapter.fromNode(concept);
   }
 
   @Deprecated

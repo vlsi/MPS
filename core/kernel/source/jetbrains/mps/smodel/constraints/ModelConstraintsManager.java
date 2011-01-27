@@ -21,6 +21,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -688,7 +689,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
     Method method = getCanBeChildMethod(fqName, context);
     if (method != null) {
-      SNode concept = BaseAdapter.fromAdapter(SModelUtil_new.findConceptDeclaration(fqName, context.getScope()));
+      SNode concept = SModelUtil.findConceptDeclaration(fqName, context.getScope());
       return canBeChild(concept, method, context, parentNode, link);
     }
     return true;

@@ -17,8 +17,6 @@ package jetbrains.mps.smodel.action;
 
 import com.intellij.util.containers.HashMap;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
@@ -43,7 +41,8 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     myCurrentReferent = currentReferent;
     myLinkDeclaration = linkDeclaration;
     myPresentation = presentation;
-    if (SModelUtil_new.getGenuineLinkMetaclass((LinkDeclaration) BaseAdapter.fromNode(linkDeclaration)) != LinkMetaclass.reference) {
+    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
+    if (!SNodeUtil.getLinkDeclaration_IsReference(genuineLinkDeclaration)) {
       throw new RuntimeException("Only reference links are allowed here.");
     }
   }

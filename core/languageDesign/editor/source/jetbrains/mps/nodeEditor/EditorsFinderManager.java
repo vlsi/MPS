@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -95,7 +96,7 @@ public class EditorsFinderManager implements ApplicationComponent {
         return new DefaultNodeEditor();
       }
 
-      INodeEditor result = findEditor(node, context);
+      INodeEditor result = findEditor(node);
 
       if (result == null) {
         myCachedEditors.put(node.getConceptFqName(), null);
@@ -117,14 +118,13 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
   }
 
-  public INodeEditor findEditor(final SNode nodeToEdit, final EditorContext context) {
+  public INodeEditor findEditor(final SNode nodeToEdit) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<INodeEditor>() {
       public INodeEditor compute() {
-        IScope scope = context.getOperationContext().getScope();
-        AbstractConceptDeclaration abstractConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(BaseAdapter.fromAdapter(nodeToEdit.getConceptDeclarationAdapter()));
+        AbstractConceptDeclaration abstractConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(nodeToEdit.getConceptDeclarationNode());
         if (abstractConcept == null) {
           LOG.error("error loading editor for node " + nodeToEdit.getDebugText() + "\n" +
-            "couldn't find node concept in scope " + scope);
+            "couldn't find node concept");
           return null;
         }
 
@@ -136,13 +136,13 @@ public class EditorsFinderManager implements ApplicationComponent {
         List<AbstractConceptDeclaration> newFrontier = new ArrayList<AbstractConceptDeclaration>();
         Set<AbstractConceptDeclaration> processed = new HashSet<AbstractConceptDeclaration>();
         currentConcepts.add(abstractConcept);
-        ConceptDeclaration baseConcept = SModelUtil_new.getBaseConcept();
+        ConceptDeclaration baseConcept = (ConceptDeclaration) BaseAdapter.fromNode(SModelUtil.getBaseConcept());
         while (!currentConcepts.isEmpty()) {
           for (AbstractConceptDeclaration currentConcept : currentConcepts) {
             if (processed.contains(currentConcept)) {
               continue;
             }
-            INodeEditor nodeEditor = findEditor(currentConcept, scope);
+            INodeEditor nodeEditor = findEditor(currentConcept);
             if (nodeEditor != null) {
               return nodeEditor;
             }
@@ -167,15 +167,15 @@ public class EditorsFinderManager implements ApplicationComponent {
           currentConcepts = newFrontier;
           newFrontier = new ArrayList<AbstractConceptDeclaration>();
         }
-        return findEditor(baseConcept, scope);
+        return findEditor(baseConcept);
         //LOG.error("Couldn't load editor for node " + nodeToEdit.getDebugText());
         //return null;
       }
     });
   }
 
-  private INodeEditor findEditor(AbstractConceptDeclaration nodeConcept, IScope scope) {
-    Language language = SModelUtil_new.getDeclaringLanguage(nodeConcept, scope);
+  private INodeEditor findEditor(AbstractConceptDeclaration nodeConcept) {
+    Language language = SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(nodeConcept));
     if (language == null) {
       return null;
     }

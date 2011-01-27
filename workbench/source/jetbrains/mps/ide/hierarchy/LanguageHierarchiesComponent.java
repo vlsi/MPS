@@ -23,6 +23,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.hierarchy.icons.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.project.ModuleContext;
@@ -189,7 +190,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     List<ConceptContainer> result = new ArrayList<ConceptContainer>();
     Map<ConceptDeclaration, ConceptContainer> processed = new HashMap<ConceptDeclaration, ConceptContainer>();
     SModel structureModel = myLanguage.getStructureModelDescriptor().getSModel();
-    ConceptDeclaration baseConcept = SModelUtil_new.getBaseConcept();
+    ConceptDeclaration baseConcept = (ConceptDeclaration) BaseAdapter.fromNode(SModelUtil.getBaseConcept());
     outer:
     for (ConceptDeclaration concept : structureModel.getRootsAdapters(ConceptDeclaration.class)) {
       ConceptDeclaration parentConcept = concept;
@@ -356,7 +357,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       myOperationContext = myComponent.myOperationContext;
       myRootable = conceptDeclaration.getRootable();
       myIsAbstract = conceptDeclaration.getConceptProperty("abstract") != null;
-      myNamespace = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, myOperationContext.getScope()).getModuleFqName();
+      myNamespace = SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(conceptDeclaration)).getModuleFqName();
       myNodePointer = new SNodePointer(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {

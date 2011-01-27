@@ -107,6 +107,9 @@ public class SModelUtil {
   }
 
   public static synchronized Language getDeclaringLanguage(SNode concept) {
+    if (concept == null) {
+      return null;
+    }
     Language l = MapSequence.fromMap(myConceptToLanguage).get(concept);
     if (l != null) {
       return l;

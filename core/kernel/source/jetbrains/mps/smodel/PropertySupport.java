@@ -16,12 +16,12 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.DataTypeDeclaration;
 import jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.constraints.INodePropertyValidator;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.JavaNameUtil;
@@ -121,7 +121,7 @@ public abstract class PropertySupport {
     DataTypeDeclaration propertyDataType = propertyDeclaration.getDataType();
 
     AbstractConceptDeclaration cd = (AbstractConceptDeclaration) propertyDeclaration.getParent();
-    Language l = SModelUtil_new.getDeclaringLanguage(cd, GlobalScope.getInstance());
+    Language l = SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(cd));
 
     String propertySupportClassName = JavaNameUtil.fqClassName(propertyDataType.getModel(), getClassName(propertyDataType));
     PropertySupport propertySupport = null;

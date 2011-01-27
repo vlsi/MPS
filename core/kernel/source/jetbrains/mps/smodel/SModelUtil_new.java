@@ -18,7 +18,8 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
@@ -50,26 +51,38 @@ public class SModelUtil_new implements ApplicationComponent {
   };
   private SModelAdapter myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
     public void rootRemoved(SModelRootEvent p0) {
-      if (!LanguageAspect.STRUCTURE.is(p0.getModel())) { return; }
-      if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(p0.getRoot()))) { return; }
+      if (!LanguageAspect.STRUCTURE.is(p0.getModel())) {
+        return;
+      }
+      if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(p0.getRoot()))) {
+        return;
+      }
 
       SModelUtil.clearCaches();
     }
 
     public void modelReplaced(SModelDescriptor descriptor) {
-      if (Language.getModelAspect(descriptor) != LanguageAspect.STRUCTURE) { return; }
+      if (Language.getModelAspect(descriptor) != LanguageAspect.STRUCTURE) {
+        return;
+      }
       SModelUtil.clearCaches();
     }
 
     public void propertyChanged(SModelPropertyEvent p0) {
-      if (!LanguageAspect.STRUCTURE.is(p0.getModel())) { return; }
-      if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(p0.getNode()))) { return; }
-      if (!p0.getPropertyName().equals("name")) { return; }
+      if (!LanguageAspect.STRUCTURE.is(p0.getModel())) {
+        return;
+      }
+      if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(p0.getNode()))) {
+        return;
+      }
+      if (!p0.getPropertyName().equals("name")) {
+        return;
+      }
 
       String modelName = p0.getNode().getModel().getLongName();
       String newName = modelName + "." + p0.getNewPropertyValue();
       String oldName = modelName + "." + p0.getOldPropertyValue();
-      SModelUtil.conceptRenamed(oldName,newName);
+      SModelUtil.conceptRenamed(oldName, newName);
     }
   };
 
@@ -125,15 +138,7 @@ public class SModelUtil_new implements ApplicationComponent {
    */
   @Deprecated
   public static boolean isAssignableConcept(String fromConceptFqName, String toConceptFqName) {
-      return SModelUtil.isAssignableConcept(fromConceptFqName, toConceptFqName);
-  }
-
-  public static LinkMetaclass getGenuineLinkMetaclass(LinkDeclaration linkDeclaration) {
-    return ((LinkDeclaration) BaseAdapter.fromNode(SModelUtil.getGenuineLinkDeclaration(BaseAdapter.fromAdapter(linkDeclaration)))).getMetaClass();
-  }
-
-  public static Cardinality getGenuineLinkSourceCardinality(SNode linkDeclaration) {
-    return ((LinkDeclaration) SModelUtil.getGenuineLinkDeclaration(linkDeclaration).getAdapter()).getSourceCardinality();
+    return SModelUtil.isAssignableConcept(fromConceptFqName, toConceptFqName);
   }
 
   public static List<SNode> getConceptAndSuperConcepts(SNode topConcept) {
@@ -144,13 +149,12 @@ public class SModelUtil_new implements ApplicationComponent {
     return instantiateConceptDeclaration(conceptFQName, model, scope, true);
   }
 
-  public static INodeAdapter instantiateConceptDeclaration(AbstractConceptDeclaration conceptDeclaration, SModel model) {
-    return instantiateConceptDeclaration(conceptDeclaration, model, true);
+  public static SNode instantiateConceptDeclaration(SNode conceptDeclaration, SModel model) {
+    return instantiateConceptDeclaration(NameUtil.nodeFQName(conceptDeclaration), model, GlobalScope.getInstance());
   }
 
-  public static INodeAdapter instantiateConceptDeclaration(@NotNull AbstractConceptDeclaration conceptDeclaration, @Nullable SModel model, boolean fullNodeStructure) {
-    SNode node = instantiateConceptDeclaration(NameUtil.nodeFQName(conceptDeclaration), model, GlobalScope.getInstance(), fullNodeStructure);
-    return BaseAdapter.fromNode(node);
+  public static SNode instantiateConceptDeclaration(SNode conceptDeclaration, SModel model, boolean fullNodeStructure) {
+    return instantiateConceptDeclaration(NameUtil.nodeFQName(conceptDeclaration), model, GlobalScope.getInstance(), fullNodeStructure);
   }
 
   public static SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, IScope scope, boolean fullNodeStructure) {
@@ -185,27 +189,22 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   private static void createNodeStructure(SNode nodeConcept,
-                                         SNode newNode, SModel model) {
+                                          SNode newNode, SModel model) {
     for (SNode linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {
       String role = SModelUtil.getGenuineLinkRole(linkDeclaration);
-      LinkMetaclass metaClass = getGenuineLinkMetaclass((LinkDeclaration) linkDeclaration.getAdapter());
-      Cardinality sourceCardinality = getGenuineLinkSourceCardinality(linkDeclaration);
-      if (metaClass == LinkMetaclass.aggregation &&
+      SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
+      Cardinality sourceCardinality = ((LinkDeclaration) BaseAdapter.fromNode(genuineLinkDeclaration)).getSourceCardinality();
+      if (!SNodeUtil.getLinkDeclaration_IsReference(genuineLinkDeclaration) &&
         (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._1__n)) {
 
         SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
         LOG.assertLog(targetConcept != null, "link target is null");
         if (newNode.getChildren(role).isEmpty()) {
-          SNode childNode = BaseAdapter.fromAdapter(instantiateConceptDeclaration((AbstractConceptDeclaration) BaseAdapter.fromNode(targetConcept), model));
+          SNode childNode = instantiateConceptDeclaration(targetConcept, model);
           newNode.addChild(role, childNode);
         }
       }
     }
-  }
-
-  public static Language getDeclaringLanguage(AbstractConceptDeclaration concept, IScope scope) {
-    if (concept == null) return null;
-    return SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(concept));
   }
 
   public static boolean isAcceptableTarget(SNode sourceNode, String role, SNode targetNode) {
@@ -227,21 +226,13 @@ public class SModelUtil_new implements ApplicationComponent {
 
     Object value = SNodeUtil.getConceptPropertyValue(property);
     if (value instanceof String) {
-      return (String)value;
+      return (String) value;
     }
     return null;
   }
 
   public static boolean isEmptyPropertyValue(String s) {
     return s == null || s.equals("");
-  }
-
-  public static AbstractConceptDeclaration findConceptDeclaration(String conceptFqName, IScope scope) {
-    return (AbstractConceptDeclaration) BaseAdapter.fromNode(SModelUtil.findConceptDeclaration(conceptFqName, scope));
-  }
-
-  public static ConceptDeclaration getBaseConcept() {
-    return (ConceptDeclaration) BaseAdapter.fromNode(SModelUtil.getBaseConcept());
   }
 
   public static int getMetaLevel(SNode node) {
