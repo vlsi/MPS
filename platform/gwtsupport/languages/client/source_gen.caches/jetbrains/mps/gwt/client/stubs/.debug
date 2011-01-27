@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="GWTModuleStubs.java" startLine="50" startPosition="77" endLine="54" endPosition="5" unitName="jetbrains.mps.gwt.client.stubs.GWTModuleStubs$1" />
+  <unitInfo fileName="GWTModuleStubs.java" startLine="41" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
   <root nodeId="1952954857169826366">
     <nodeInfo nodeId="1952954857169826372" fileName="PathItemsReloadableCache.java" startLine="11" startPosition="39" endLine="12" endPosition="52" />
     <nodeInfo nodeId="1952954857169826466" fileName="PathItemsReloadableCache.java" startLine="22" startPosition="59" endLine="23" endPosition="74" />
@@ -116,7 +118,13 @@
     <nodeInfo nodeId="5420647633057638478" fileName="PathItem.java" startLine="104" startPosition="0" endLine="126" endPosition="0" />
     <nodeInfo nodeId="317177617693876481" fileName="PathItem.java" startLine="143" startPosition="26" endLine="169" endPosition="5" />
     <nodeInfo nodeId="317177617693835410" fileName="PathItem.java" startLine="137" startPosition="0" endLine="171" endPosition="0" />
+    <scopeInfo nodeId="317177617693876487" fileName="PathItem.java" startLine="161" startPosition="0" endLine="161" endPosition="36">
+      <varInfo nodeId="317177617693876488" varName="ignore" />
+    </scopeInfo>
     <scopeInfo nodeId="317177617693876490" fileName="PathItem.java" startLine="161" startPosition="36" endLine="161" endPosition="36" />
+    <scopeInfo nodeId="317177617693876521" fileName="PathItem.java" startLine="167" startPosition="0" endLine="167" endPosition="36">
+      <varInfo nodeId="317177617693876522" varName="ignore" />
+    </scopeInfo>
     <scopeInfo nodeId="317177617693876524" fileName="PathItem.java" startLine="167" startPosition="36" endLine="167" endPosition="36" />
     <scopeInfo nodeId="5420647633057638349" fileName="PathItem.java" startLine="46" startPosition="32" endLine="47" endPosition="33" />
     <scopeInfo nodeId="5420647633057638366" fileName="PathItem.java" startLine="50" startPosition="22" endLine="51" endPosition="33" />
@@ -136,6 +144,9 @@
     <scopeInfo nodeId="6096693818321927186" fileName="PathItem.java" startLine="134" startPosition="37" endLine="135" endPosition="58" />
     <scopeInfo nodeId="317177617693838382" fileName="PathItem.java" startLine="139" startPosition="42" endLine="140" endPosition="48" />
     <scopeInfo nodeId="317177617693876589" fileName="PathItem.java" startLine="150" startPosition="37" endLine="151" endPosition="20" />
+    <scopeInfo nodeId="317177617693876540" fileName="PathItem.java" startLine="154" startPosition="0" endLine="155" endPosition="37">
+      <varInfo nodeId="317177617693876541" varName="ex" />
+    </scopeInfo>
     <scopeInfo nodeId="317177617693876543" fileName="PathItem.java" startLine="154" startPosition="30" endLine="155" endPosition="37" />
     <scopeInfo nodeId="317177617693876494" fileName="PathItem.java" startLine="158" startPosition="25" endLine="159" endPosition="21" />
     <scopeInfo nodeId="317177617693876516" fileName="PathItem.java" startLine="164" startPosition="25" endLine="165" endPosition="21" />
@@ -309,11 +320,23 @@
     <nodeInfo nodeId="6487379123666154212" fileName="GWTModuleStubs.java" startLine="120" startPosition="70" endLine="136" endPosition="5" />
     <nodeInfo nodeId="6487379123666449544" fileName="GWTModuleStubs.java" startLine="85" startPosition="7" endLine="104" endPosition="5" />
     <nodeInfo nodeId="6487379123666154166" fileName="GWTModuleStubs.java" startLine="117" startPosition="0" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="6487379123666460728" fileName="GWTModuleStubs.java" startLine="101" startPosition="0" endLine="101" endPosition="33">
+      <varInfo nodeId="6487379123666460729" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="6487379123666460731" fileName="GWTModuleStubs.java" startLine="101" startPosition="33" endLine="101" endPosition="33" />
     <scopeInfo nodeId="6487379123666460884" fileName="GWTModuleStubs.java" startLine="78" startPosition="60" endLine="79" endPosition="51" />
     <scopeInfo nodeId="6487379123666460893" fileName="GWTModuleStubs.java" startLine="82" startPosition="60" endLine="83" endPosition="55" />
+    <scopeInfo nodeId="6487379123666460667" fileName="GWTModuleStubs.java" startLine="91" startPosition="0" endLine="92" endPosition="28">
+      <varInfo nodeId="6487379123666460668" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="6487379123666460670" fileName="GWTModuleStubs.java" startLine="91" startPosition="31" endLine="92" endPosition="28" />
+    <scopeInfo nodeId="6487379123666502187" fileName="GWTModuleStubs.java" startLine="93" startPosition="0" endLine="94" endPosition="28">
+      <varInfo nodeId="6487379123666502188" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="6487379123666502190" fileName="GWTModuleStubs.java" startLine="93" startPosition="33" endLine="94" endPosition="28" />
+    <scopeInfo nodeId="6487379123666461976" fileName="GWTModuleStubs.java" startLine="95" startPosition="0" endLine="96" endPosition="28">
+      <varInfo nodeId="6487379123666461977" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="6487379123666461979" fileName="GWTModuleStubs.java" startLine="95" startPosition="44" endLine="96" endPosition="28" />
     <scopeInfo nodeId="6487379123666460726" fileName="GWTModuleStubs.java" startLine="99" startPosition="13" endLine="100" endPosition="21" />
     <scopeInfo nodeId="6487379123666157443" fileName="GWTModuleStubs.java" startLine="146" startPosition="59" endLine="147" endPosition="98" />

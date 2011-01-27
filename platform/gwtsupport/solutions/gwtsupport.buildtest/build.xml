@@ -4,7 +4,7 @@
   <dirname property="buildtest.basedir" file="${ant.file.gwtsupport.buildtest}"/>
   
   <!-- Configure path to GWT SDK -->
-  <property name="gwt.sdk" location="${buildtest.basedir}/../../tools/gwt20" />
+  <property name="gwt.sdk" location="${buildtest.basedir}/../../tools/gwt21" />
   <!-- Path to MPS home dir -->
   <property name="mps.home" value="${buildtest.basedir}/../../../.."/>
 

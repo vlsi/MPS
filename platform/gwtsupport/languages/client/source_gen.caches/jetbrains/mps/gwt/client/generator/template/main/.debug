@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="QueriesGenerated.java" startLine="29" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.gwt.client.generator.template.main.QueriesGenerated" />
   <root nodeId="1220369573364037345">
     <nodeInfo nodeId="1220369573364040172" fileName="QueriesGenerated.java" startLine="115" startPosition="155" endLine="116" endPosition="48" />
     <nodeInfo nodeId="1220369573364066180" fileName="QueriesGenerated.java" startLine="119" startPosition="67" endLine="120" endPosition="43" />
