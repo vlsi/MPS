@@ -75,7 +75,7 @@ public class ReferenceConceptUtil {
           // if concept declares exactly ONE REQUIRED reference link...
           if (links.size() == 1) {
             SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(links.get(0));
-            if (SNodeUtil.getLinkDeclaratio_IsExactlyOneMultiplicity(genuineLinkDeclaration)) {
+            if (SNodeUtil.getLinkDeclaration_IsExactlyOneMultiplicity(genuineLinkDeclaration)) {
               return links.get(0);
             }
           }

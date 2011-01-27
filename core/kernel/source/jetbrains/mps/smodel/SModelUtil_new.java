@@ -17,9 +17,6 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
@@ -193,9 +190,8 @@ public class SModelUtil_new implements ApplicationComponent {
     for (SNode linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {
       String role = SModelUtil.getGenuineLinkRole(linkDeclaration);
       SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-      Cardinality sourceCardinality = ((LinkDeclaration) BaseAdapter.fromNode(genuineLinkDeclaration)).getSourceCardinality();
       if (!SNodeUtil.getLinkDeclaration_IsReference(genuineLinkDeclaration) &&
-        (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._1__n)) {
+        SNodeUtil.getLinkDeclaration_IsAtLeastOneMultiplicity(genuineLinkDeclaration)) {
 
         SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
         LOG.assertLog(targetConcept != null, "link target is null");
@@ -218,7 +214,7 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static String getAlias(SNode conceptDeclaration) {
-    return getStringConceptProperty(conceptDeclaration, BaseConcept.CPR_Alias);
+    return getStringConceptProperty(conceptDeclaration, SNodeUtil.CPR_BaseConcept_alias);
   }
 
   public static String getStringConceptProperty(SNode conceptDeclaration, String propertyName) {

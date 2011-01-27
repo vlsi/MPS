@@ -42,6 +42,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.search.SModelSearchUtil" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration" />
+    <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptProperty" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.StringConceptProperty" />

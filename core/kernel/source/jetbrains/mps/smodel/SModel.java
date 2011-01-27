@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;

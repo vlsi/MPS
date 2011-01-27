@@ -740,120 +740,120 @@
     <unitInfo nodeId="6599163591527280390" fileName="SModelOperations.java" startLine="21" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
   </root>
   <root nodeId="6599163591527282020">
-    <nodeInfo nodeId="6599163591527282039" fileName="SConceptPropertyOperations.java" startLine="20" startPosition="23" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6599163591527282041" fileName="SConceptPropertyOperations.java" startLine="22" startPosition="5" endLine="23" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6599163591527282053" fileName="SConceptPropertyOperations.java" startLine="24" startPosition="59" endLine="25" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6599163591527282060" fileName="SConceptPropertyOperations.java" startLine="26" startPosition="5" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6599163591527282075" fileName="SConceptPropertyOperations.java" startLine="31" startPosition="23" endLine="32" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6599163591527282077" fileName="SConceptPropertyOperations.java" startLine="33" startPosition="5" endLine="34" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6599163591527282089" fileName="SConceptPropertyOperations.java" startLine="35" startPosition="60" endLine="36" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6599163591527282096" fileName="SConceptPropertyOperations.java" startLine="37" startPosition="5" endLine="38" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6599163591527282111" fileName="SConceptPropertyOperations.java" startLine="42" startPosition="23" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6599163591527282113" fileName="SConceptPropertyOperations.java" startLine="44" startPosition="5" endLine="45" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6599163591527282120" fileName="SConceptPropertyOperations.java" startLine="45" startPosition="77" endLine="46" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6599163591527282139" fileName="SConceptPropertyOperations.java" startLine="50" startPosition="23" endLine="51" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6599163591527282151" fileName="SConceptPropertyOperations.java" startLine="52" startPosition="61" endLine="53" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6599163591527282174" fileName="SConceptPropertyOperations.java" startLine="59" startPosition="23" endLine="60" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6599163591527282186" fileName="SConceptPropertyOperations.java" startLine="61" startPosition="62" endLine="62" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6599163591527282209" fileName="SConceptPropertyOperations.java" startLine="68" startPosition="23" endLine="69" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6599163591527282278" fileName="SConceptPropertyOperations.java" startLine="70" startPosition="74" endLine="71" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6599163591527282230" fileName="SConceptPropertyOperations.java" startLine="73" startPosition="45" endLine="74" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6599163591527282257" fileName="SConceptPropertyOperations.java" startLine="77" startPosition="67" endLine="78" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6599163591527282264" fileName="SConceptPropertyOperations.java" startLine="78" startPosition="95" endLine="79" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6599163591527282271" fileName="SConceptPropertyOperations.java" startLine="79" startPosition="96" endLine="80" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6599163591527282276" fileName="SConceptPropertyOperations.java" startLine="80" startPosition="42" endLine="81" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6599163591527282022" fileName="SConceptPropertyOperations.java" startLine="15" startPosition="41" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SConceptPropertyOperations#()V" />
-    <nodeInfo nodeId="6599163591527282034" fileName="SConceptPropertyOperations.java" startLine="19" startPosition="67" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6599163591527282048" fileName="SConceptPropertyOperations.java" startLine="23" startPosition="77" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6599163591527282070" fileName="SConceptPropertyOperations.java" startLine="30" startPosition="65" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6599163591527282084" fileName="SConceptPropertyOperations.java" startLine="34" startPosition="77" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6599163591527282106" fileName="SConceptPropertyOperations.java" startLine="41" startPosition="69" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6599163591527282146" fileName="SConceptPropertyOperations.java" startLine="51" startPosition="79" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6599163591527282181" fileName="SConceptPropertyOperations.java" startLine="60" startPosition="79" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6599163591527282134" fileName="SConceptPropertyOperations.java" startLine="49" startPosition="79" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6599163591527282169" fileName="SConceptPropertyOperations.java" startLine="58" startPosition="77" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6599163591527282252" fileName="SConceptPropertyOperations.java" startLine="76" startPosition="51" endLine="82" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6599163591527282098" fileName="SConceptPropertyOperations.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBoolean#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="6599163591527282244" fileName="SConceptPropertyOperations.java" startLine="75" startPosition="101" endLine="83" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6599163591527282124" fileName="SConceptPropertyOperations.java" startLine="48" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setString#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6599163591527282159" fileName="SConceptPropertyOperations.java" startLine="57" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setInteger#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;I)V" />
-    <nodeInfo nodeId="6599163591527282238" fileName="SConceptPropertyOperations.java" startLine="74" startPosition="88" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6599163591527282026" fileName="SConceptPropertyOperations.java" startLine="18" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getString#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6599163591527282062" fileName="SConceptPropertyOperations.java" startLine="29" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInteger#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)I" />
-    <nodeInfo nodeId="6599163591527282223" fileName="SConceptPropertyOperations.java" startLine="72" startPosition="12" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6599163591527282216" fileName="SConceptPropertyOperations.java" startLine="69" startPosition="79" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6599163591527282204" fileName="SConceptPropertyOperations.java" startLine="67" startPosition="81" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6599163591527282194" fileName="SConceptPropertyOperations.java" startLine="66" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setBoolean#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Z)V" />
-    <scopeInfo nodeId="6599163591527282025" fileName="SConceptPropertyOperations.java" startLine="16" startPosition="39" endLine="16" endPosition="39" />
-    <scopeInfo nodeId="6599163591527282038" fileName="SConceptPropertyOperations.java" startLine="20" startPosition="23" endLine="21" endPosition="18" />
-    <scopeInfo nodeId="6599163591527282052" fileName="SConceptPropertyOperations.java" startLine="24" startPosition="59" endLine="25" endPosition="66" />
-    <scopeInfo nodeId="6599163591527282074" fileName="SConceptPropertyOperations.java" startLine="31" startPosition="23" endLine="32" endPosition="15" />
-    <scopeInfo nodeId="6599163591527282088" fileName="SConceptPropertyOperations.java" startLine="35" startPosition="60" endLine="36" endPosition="67" />
-    <scopeInfo nodeId="6599163591527282110" fileName="SConceptPropertyOperations.java" startLine="42" startPosition="23" endLine="43" endPosition="19" />
-    <scopeInfo nodeId="6599163591527282150" fileName="SConceptPropertyOperations.java" startLine="52" startPosition="61" endLine="53" endPosition="66" />
-    <scopeInfo nodeId="6599163591527282185" fileName="SConceptPropertyOperations.java" startLine="61" startPosition="62" endLine="62" endPosition="67" />
-    <scopeInfo nodeId="6599163591527282277" fileName="SConceptPropertyOperations.java" startLine="70" startPosition="74" endLine="71" endPosition="52" />
-    <scopeInfo nodeId="6599163591527282022" fileName="SConceptPropertyOperations.java" startLine="15" startPosition="41" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="6599163591527282138" fileName="SConceptPropertyOperations.java" startLine="50" startPosition="23" endLine="54" endPosition="7">
+    <nodeInfo nodeId="6599163591527282039" fileName="SConceptPropertyOperations.java" startLine="21" startPosition="23" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6599163591527282041" fileName="SConceptPropertyOperations.java" startLine="23" startPosition="5" endLine="24" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6599163591527282053" fileName="SConceptPropertyOperations.java" startLine="25" startPosition="59" endLine="26" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6599163591527282060" fileName="SConceptPropertyOperations.java" startLine="27" startPosition="5" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6599163591527282075" fileName="SConceptPropertyOperations.java" startLine="32" startPosition="23" endLine="33" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6599163591527282077" fileName="SConceptPropertyOperations.java" startLine="34" startPosition="5" endLine="35" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6599163591527282089" fileName="SConceptPropertyOperations.java" startLine="36" startPosition="60" endLine="37" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6599163591527282096" fileName="SConceptPropertyOperations.java" startLine="38" startPosition="5" endLine="39" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6599163591527282111" fileName="SConceptPropertyOperations.java" startLine="43" startPosition="23" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6599163591527282113" fileName="SConceptPropertyOperations.java" startLine="45" startPosition="5" endLine="46" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6599163591527282120" fileName="SConceptPropertyOperations.java" startLine="46" startPosition="117" endLine="47" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6599163591527282139" fileName="SConceptPropertyOperations.java" startLine="51" startPosition="23" endLine="52" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6599163591527282151" fileName="SConceptPropertyOperations.java" startLine="53" startPosition="61" endLine="54" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6599163591527282174" fileName="SConceptPropertyOperations.java" startLine="60" startPosition="23" endLine="61" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6599163591527282186" fileName="SConceptPropertyOperations.java" startLine="62" startPosition="62" endLine="63" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6599163591527282209" fileName="SConceptPropertyOperations.java" startLine="69" startPosition="23" endLine="70" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6599163591527282278" fileName="SConceptPropertyOperations.java" startLine="71" startPosition="74" endLine="72" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6599163591527282230" fileName="SConceptPropertyOperations.java" startLine="74" startPosition="45" endLine="75" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6599163591527282257" fileName="SConceptPropertyOperations.java" startLine="78" startPosition="67" endLine="79" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6599163591527282264" fileName="SConceptPropertyOperations.java" startLine="79" startPosition="95" endLine="80" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6599163591527282271" fileName="SConceptPropertyOperations.java" startLine="80" startPosition="96" endLine="81" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6599163591527282276" fileName="SConceptPropertyOperations.java" startLine="81" startPosition="42" endLine="82" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="6599163591527282022" fileName="SConceptPropertyOperations.java" startLine="16" startPosition="41" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SConceptPropertyOperations#()V" />
+    <nodeInfo nodeId="6599163591527282034" fileName="SConceptPropertyOperations.java" startLine="20" startPosition="67" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6599163591527282048" fileName="SConceptPropertyOperations.java" startLine="24" startPosition="117" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6599163591527282070" fileName="SConceptPropertyOperations.java" startLine="31" startPosition="65" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6599163591527282084" fileName="SConceptPropertyOperations.java" startLine="35" startPosition="117" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6599163591527282106" fileName="SConceptPropertyOperations.java" startLine="42" startPosition="69" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6599163591527282146" fileName="SConceptPropertyOperations.java" startLine="52" startPosition="119" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6599163591527282181" fileName="SConceptPropertyOperations.java" startLine="61" startPosition="119" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6599163591527282134" fileName="SConceptPropertyOperations.java" startLine="50" startPosition="79" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6599163591527282169" fileName="SConceptPropertyOperations.java" startLine="59" startPosition="77" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6599163591527282252" fileName="SConceptPropertyOperations.java" startLine="77" startPosition="51" endLine="83" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6599163591527282098" fileName="SConceptPropertyOperations.java" startLine="41" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBoolean#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="6599163591527282244" fileName="SConceptPropertyOperations.java" startLine="76" startPosition="101" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6599163591527282124" fileName="SConceptPropertyOperations.java" startLine="49" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setString#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6599163591527282159" fileName="SConceptPropertyOperations.java" startLine="58" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setInteger#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;I)V" />
+    <nodeInfo nodeId="6599163591527282238" fileName="SConceptPropertyOperations.java" startLine="75" startPosition="88" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6599163591527282026" fileName="SConceptPropertyOperations.java" startLine="19" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getString#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6599163591527282062" fileName="SConceptPropertyOperations.java" startLine="30" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInteger#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)I" />
+    <nodeInfo nodeId="6599163591527282223" fileName="SConceptPropertyOperations.java" startLine="73" startPosition="12" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6599163591527282216" fileName="SConceptPropertyOperations.java" startLine="70" startPosition="119" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6599163591527282204" fileName="SConceptPropertyOperations.java" startLine="68" startPosition="81" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6599163591527282194" fileName="SConceptPropertyOperations.java" startLine="67" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setBoolean#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Z)V" />
+    <scopeInfo nodeId="6599163591527282025" fileName="SConceptPropertyOperations.java" startLine="17" startPosition="39" endLine="17" endPosition="39" />
+    <scopeInfo nodeId="6599163591527282038" fileName="SConceptPropertyOperations.java" startLine="21" startPosition="23" endLine="22" endPosition="18" />
+    <scopeInfo nodeId="6599163591527282052" fileName="SConceptPropertyOperations.java" startLine="25" startPosition="59" endLine="26" endPosition="66" />
+    <scopeInfo nodeId="6599163591527282074" fileName="SConceptPropertyOperations.java" startLine="32" startPosition="23" endLine="33" endPosition="15" />
+    <scopeInfo nodeId="6599163591527282088" fileName="SConceptPropertyOperations.java" startLine="36" startPosition="60" endLine="37" endPosition="67" />
+    <scopeInfo nodeId="6599163591527282110" fileName="SConceptPropertyOperations.java" startLine="43" startPosition="23" endLine="44" endPosition="19" />
+    <scopeInfo nodeId="6599163591527282150" fileName="SConceptPropertyOperations.java" startLine="53" startPosition="61" endLine="54" endPosition="66" />
+    <scopeInfo nodeId="6599163591527282185" fileName="SConceptPropertyOperations.java" startLine="62" startPosition="62" endLine="63" endPosition="67" />
+    <scopeInfo nodeId="6599163591527282277" fileName="SConceptPropertyOperations.java" startLine="71" startPosition="74" endLine="72" endPosition="52" />
+    <scopeInfo nodeId="6599163591527282022" fileName="SConceptPropertyOperations.java" startLine="16" startPosition="41" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="6599163591527282138" fileName="SConceptPropertyOperations.java" startLine="51" startPosition="23" endLine="55" endPosition="7">
       <varInfo nodeId="6599163591527282140" varName="conceptProperty" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527282173" fileName="SConceptPropertyOperations.java" startLine="59" startPosition="23" endLine="63" endPosition="7">
+    <scopeInfo nodeId="6599163591527282173" fileName="SConceptPropertyOperations.java" startLine="60" startPosition="23" endLine="64" endPosition="7">
       <varInfo nodeId="6599163591527282175" varName="conceptProperty" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527282256" fileName="SConceptPropertyOperations.java" startLine="77" startPosition="67" endLine="81" endPosition="20">
+    <scopeInfo nodeId="6599163591527282256" fileName="SConceptPropertyOperations.java" startLine="78" startPosition="67" endLine="82" endPosition="20">
       <varInfo nodeId="6599163591527282258" varName="bcp" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527282105" fileName="SConceptPropertyOperations.java" startLine="41" startPosition="69" endLine="46" endPosition="61">
+    <scopeInfo nodeId="6599163591527282105" fileName="SConceptPropertyOperations.java" startLine="42" startPosition="69" endLine="47" endPosition="61">
       <varInfo nodeId="6599163591527282114" varName="conceptProperty" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527282133" fileName="SConceptPropertyOperations.java" startLine="49" startPosition="79" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="6599163591527282168" fileName="SConceptPropertyOperations.java" startLine="58" startPosition="77" endLine="64" endPosition="5" />
-    <scopeInfo nodeId="6599163591527282251" fileName="SConceptPropertyOperations.java" startLine="76" startPosition="51" endLine="82" endPosition="13" />
-    <scopeInfo nodeId="6599163591527282033" fileName="SConceptPropertyOperations.java" startLine="19" startPosition="67" endLine="27" endPosition="16">
+    <scopeInfo nodeId="6599163591527282133" fileName="SConceptPropertyOperations.java" startLine="50" startPosition="79" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="6599163591527282168" fileName="SConceptPropertyOperations.java" startLine="59" startPosition="77" endLine="65" endPosition="5" />
+    <scopeInfo nodeId="6599163591527282251" fileName="SConceptPropertyOperations.java" startLine="77" startPosition="51" endLine="83" endPosition="13" />
+    <scopeInfo nodeId="6599163591527282033" fileName="SConceptPropertyOperations.java" startLine="20" startPosition="67" endLine="28" endPosition="16">
       <varInfo nodeId="6599163591527282042" varName="conceptProperty" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527282069" fileName="SConceptPropertyOperations.java" startLine="30" startPosition="65" endLine="38" endPosition="13">
+    <scopeInfo nodeId="6599163591527282069" fileName="SConceptPropertyOperations.java" startLine="31" startPosition="65" endLine="39" endPosition="13">
       <varInfo nodeId="6599163591527282078" varName="conceptProperty" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527282098" fileName="SConceptPropertyOperations.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="6599163591527282098" fileName="SConceptPropertyOperations.java" startLine="41" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="6599163591527282103" varName="propertyName" />
       <varInfo nodeId="6599163591527282101" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527282243" fileName="SConceptPropertyOperations.java" startLine="75" startPosition="101" endLine="83" endPosition="11" />
-    <scopeInfo nodeId="6599163591527282124" fileName="SConceptPropertyOperations.java" startLine="48" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="6599163591527282243" fileName="SConceptPropertyOperations.java" startLine="76" startPosition="101" endLine="84" endPosition="11" />
+    <scopeInfo nodeId="6599163591527282124" fileName="SConceptPropertyOperations.java" startLine="49" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="6599163591527282129" varName="propertyName" />
       <varInfo nodeId="6599163591527282127" varName="node" />
       <varInfo nodeId="6599163591527282131" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527282159" fileName="SConceptPropertyOperations.java" startLine="57" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="6599163591527282159" fileName="SConceptPropertyOperations.java" startLine="58" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="6599163591527282164" varName="propertyName" />
       <varInfo nodeId="6599163591527282162" varName="node" />
       <varInfo nodeId="6599163591527282166" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527282238" fileName="SConceptPropertyOperations.java" startLine="74" startPosition="88" endLine="84" endPosition="9">
+    <scopeInfo nodeId="6599163591527282238" fileName="SConceptPropertyOperations.java" startLine="75" startPosition="88" endLine="85" endPosition="9">
       <varInfo nodeId="6599163591527282241" varName="cpd" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527282026" fileName="SConceptPropertyOperations.java" startLine="18" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="6599163591527282026" fileName="SConceptPropertyOperations.java" startLine="19" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="6599163591527282031" varName="propertyName" />
       <varInfo nodeId="6599163591527282029" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527282062" fileName="SConceptPropertyOperations.java" startLine="29" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="6599163591527282062" fileName="SConceptPropertyOperations.java" startLine="30" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="6599163591527282067" varName="propertyName" />
       <varInfo nodeId="6599163591527282065" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527282229" fileName="SConceptPropertyOperations.java" startLine="73" startPosition="45" endLine="84" endPosition="9">
+    <scopeInfo nodeId="6599163591527282229" fileName="SConceptPropertyOperations.java" startLine="74" startPosition="45" endLine="85" endPosition="9">
       <varInfo nodeId="6599163591527282231" varName="acd" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527282208" fileName="SConceptPropertyOperations.java" startLine="68" startPosition="23" endLine="85" endPosition="7">
+    <scopeInfo nodeId="6599163591527282208" fileName="SConceptPropertyOperations.java" startLine="69" startPosition="23" endLine="86" endPosition="7">
       <varInfo nodeId="6599163591527282210" varName="conceptProperty" />
     </scopeInfo>
-    <scopeInfo nodeId="6599163591527282203" fileName="SConceptPropertyOperations.java" startLine="67" startPosition="81" endLine="86" endPosition="5" />
-    <scopeInfo nodeId="6599163591527282194" fileName="SConceptPropertyOperations.java" startLine="66" startPosition="0" endLine="88" endPosition="0">
+    <scopeInfo nodeId="6599163591527282203" fileName="SConceptPropertyOperations.java" startLine="68" startPosition="81" endLine="87" endPosition="5" />
+    <scopeInfo nodeId="6599163591527282194" fileName="SConceptPropertyOperations.java" startLine="67" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="6599163591527282199" varName="propertyName" />
       <varInfo nodeId="6599163591527282197" varName="node" />
       <varInfo nodeId="6599163591527282201" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="6599163591527282020" fileName="SConceptPropertyOperations.java" startLine="15" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
+    <unitInfo nodeId="6599163591527282020" fileName="SConceptPropertyOperations.java" startLine="16" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
   </root>
   <root nodeId="6599163591527282285">
     <nodeInfo nodeId="6599163591527282308" fileName="SearchScopeOperations.java" startLine="13" startPosition="46" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

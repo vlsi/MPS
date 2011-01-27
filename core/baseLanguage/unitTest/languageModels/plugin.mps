@@ -30605,12 +30605,9 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7524575410242167261">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNode%disInstanceOfConcept(jetbrains%dmps%dlang%dstructure%dstructure%dAbstractConceptDeclaration)%cboolean" resolveInfo="isInstanceOfConcept" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5045945802326367293">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5045945802326201690">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7524575410242134197" resolveInfo="getWrappedConcept" />
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAdapterOperation" typeId="tp25.1170384605257" id="5045945802326367297" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNode%disInstanceOfConcept(jetbrains%dmps%dsmodel%dSNode)%cboolean" resolveInfo="isInstanceOfConcept" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5045945802326201690">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7524575410242134197" resolveInfo="getWrappedConcept" />
               </node>
             </node>
           </node>

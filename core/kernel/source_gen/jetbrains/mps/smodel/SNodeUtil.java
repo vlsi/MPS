@@ -11,21 +11,24 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class SNodeUtil {
-  public static String concept_IResolveInfo = "jetbrains.mps.lang.core.structure.IResolveInfo";
-  public static String concept_BaseConcept = "jetbrains.mps.lang.core.structure.BaseConcept";
-  public static String concept_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
-  public static String concept_ConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
-  public static String link_ConceptDeclaration_extends = "extends";
-  public static String link_ConceptDeclaration_implements = "implements";
-  public static String link_AbstractConceptDeclaration_conceptProperty = "conceptProperty";
-  public static String link_AbstractConceptDeclaration_linkDeclaration = "linkDeclaration";
-  public static String link_AbstractConceptDeclaration_propertyDeclaration = "propertyDeclaration";
+  public static final String concept_IResolveInfo = "jetbrains.mps.lang.core.structure.IResolveInfo";
+  public static final String concept_BaseConcept = "jetbrains.mps.lang.core.structure.BaseConcept";
+  public static final String concept_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
+  public static final String concept_ConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
+  public static final String concept_InterfaceConceptDeclaration = "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration";
+  public static final String link_ConceptDeclaration_extends = "extends";
+  public static final String link_ConceptDeclaration_implements = "implements";
+  public static final String link_AbstractConceptDeclaration_conceptProperty = "conceptProperty";
+  public static final String link_AbstractConceptDeclaration_linkDeclaration = "linkDeclaration";
+  public static final String link_AbstractConceptDeclaration_propertyDeclaration = "propertyDeclaration";
   public static String property_INamedConcept_name = "name";
-  public static String property_LinkDeclaration_role = "role";
-  public static String property_IResolveInfo_resolveInfo = "resolveInfo";
-  public static String property_BaseConcept_virtualPackage = "virtualPackage";
-  public static String property_BaseConcept_alias = "alias";
-  public static String property_BaseConcept_shortDescription = "shortDescription";
+  public static final String property_LinkDeclaration_role = "role";
+  public static final String property_IResolveInfo_resolveInfo = "resolveInfo";
+  public static final String property_BaseConcept_virtualPackage = "virtualPackage";
+  public static final String property_BaseConcept_alias = "alias";
+  public static final String property_BaseConcept_shortDescription = "shortDescription";
+  public static final String link_ReferenceMacro_AnnotationLink = "referenceMacro";
+  public static final String CPR_BaseConcept_alias = "alias";
 
   public SNodeUtil() {
   }
@@ -188,8 +191,12 @@ public class SNodeUtil {
     return SPropertyOperations.hasValue(link, "metaClass", "reference", "reference");
   }
 
-  public static boolean getLinkDeclaratio_IsExactlyOneMultiplicity(SNode link) {
+  public static boolean getLinkDeclaration_IsExactlyOneMultiplicity(SNode link) {
     return SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1");
+  }
+
+  public static boolean getLinkDeclaration_IsAtLeastOneMultiplicity(SNode link) {
+    return SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1..n", "0..1");
   }
 
   public static boolean isInstanceOfIntegerConceptProperty(SNode node) {
@@ -214,6 +221,18 @@ public class SNodeUtil {
     }
     String conceptFqName = node.getConceptFqName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration");
+  }
+
+  public static boolean isInstanceOfConceptLink(SNode node) {
+    if (node == null) {
+      return false;
+    }
+    String conceptFqName = node.getConceptFqName();
+    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.AggregationConceptLink") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ReferenceConceptLink") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptLink");
+  }
+
+  public static SNode getConceptLink_Declaration(SNode link) {
+    return SLinkOperations.getTarget(link, "conceptLinkDeclaration", false);
   }
 
   public static Object getConceptPropertyValue(SNode property) {

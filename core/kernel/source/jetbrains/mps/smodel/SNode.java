@@ -17,7 +17,10 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -1439,11 +1442,6 @@ public final class SNode {
     SModelRepository.getInstance().markChanged(getModel());
   }
 
-  @Deprecated
-  public boolean isInstanceOfConcept(AbstractConceptDeclaration concept) {
-    return isInstanceOfConcept(NameUtil.nodeFQName(concept));
-  }
-
   public boolean isInstanceOfConcept(SNode concept) {
     return isInstanceOfConcept(NameUtil.nodeFQName(concept));
   }
@@ -1837,45 +1835,34 @@ public final class SNode {
 
   public boolean hasConceptProperty(String propertyName) {
     if ("root".equals(propertyName)) {
-      if (getAdapter() instanceof ConceptDeclaration) {
-        return ((ConceptDeclaration) getAdapter()).getRootable();
+      if (SNodeUtil.isInstanceOfConceptDeclaration(this)) {
+        return SNodeUtil.getConceptDeclaration_IsRootable(this);
       } else {
-        AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
-        if (conceptDeclaration instanceof ConceptDeclaration) {
-          return ((ConceptDeclaration) conceptDeclaration).getRootable();
+        SNode conceptDeclaration = getConceptDeclarationNode();
+        if (SNodeUtil.isInstanceOfConceptDeclaration(conceptDeclaration)) {
+          return SNodeUtil.getConceptDeclaration_IsRootable(conceptDeclaration);
         }
       }
       return false;
     }
 
-    ConceptProperty conceptProperty = findConceptProperty(propertyName);
-    return conceptProperty != null;
+    return findConceptProperty(propertyName) != null;
   }
 
   public String getConceptProperty(String propertyName) {
-    ConceptProperty conceptProperty = findConceptProperty(propertyName);
-    if (conceptProperty instanceof StringConceptProperty) {
-      return ((StringConceptProperty) conceptProperty).getValue();
-    }
-
-    if (conceptProperty instanceof IntegerConceptProperty) {
-      return "" + ((IntegerConceptProperty) conceptProperty).getValue();
-    }
-
-    if (conceptProperty instanceof BooleanConceptProperty) {
-      return "true";
-    }
-    return null;
+    SNode conceptProperty = findConceptProperty(propertyName);
+    Object o = SNodeUtil.getConceptPropertyValue(conceptProperty);
+    return o != null ? o.toString() : null;
   }
 
-  public ConceptProperty findConceptProperty(String propertyName) {
+  public SNode findConceptProperty(String propertyName) {
     SNode conceptDeclaration;
-    if (myConceptFqName.equals(ConceptDeclaration.concept) || myConceptFqName.equals(InterfaceConceptDeclaration.concept)) {
+    if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
       conceptDeclaration = this;
     } else {
       conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
     }
-    return (ConceptProperty) BaseAdapter.fromNode(SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName));
+    return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
   //------------deprecated-------------
