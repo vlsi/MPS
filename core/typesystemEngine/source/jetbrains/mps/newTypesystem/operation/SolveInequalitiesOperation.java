@@ -47,6 +47,9 @@ public class SolveInequalitiesOperation extends AbstractOperation {
 
   public void execute(State state) {
     state.getInequalities().setSolvingInProcess(true);
-    super.execute(state);
+     if (myAction != null) {
+      myAction.run();
+      myAction = null;
+    }
   }
 }

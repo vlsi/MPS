@@ -51,4 +51,13 @@ public class RemoveBlockOperation extends AbstractBlockOperation {
     super.execute(state);
     myBlock.performAction();
   }
+
+  @Override
+  public String getPresentationKind() {
+    if (myBlock.getBlockKind() == BlockKind.WHEN_CONCRETE) {
+      return PresentationKind.WHEN_CONCRETE_REMOVED;
+    } else {
+      return PresentationKind.RELATION_REMOVED;
+    }
+  }
 }

@@ -16,9 +16,7 @@
 package jetbrains.mps.newTypesystem.operation.block;
 
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
-import jetbrains.mps.newTypesystem.operation.PresentationKind;
 import jetbrains.mps.newTypesystem.state.Block;
-import jetbrains.mps.newTypesystem.state.BlockKind;
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,14 +30,5 @@ public abstract class AbstractBlockOperation extends AbstractOperation {
 
   public Block getBlock() {
     return myBlock;
-  }
-
-  @Override
-  public String getPresentationKind() {
-    if (myBlock.getBlockKind() == BlockKind.WHEN_CONCRETE) {
-      return PresentationKind.WHEN_CONCRETE_REMOVED;
-    } else {
-      return PresentationKind.RELATION_REMOVED;
-    }
   }
 }

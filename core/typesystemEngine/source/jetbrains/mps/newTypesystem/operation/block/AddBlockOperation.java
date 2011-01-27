@@ -36,6 +36,15 @@ public class AddBlockOperation extends AbstractBlockOperation {
   }
 
   @Override
+  public String getPresentationKind() {
+    if (myBlock.getBlockKind() == BlockKind.WHEN_CONCRETE) {
+      return PresentationKind.WHEN_CONCRETE_ADDED;
+    } else {
+      return PresentationKind.RELATION_ADDED;
+    }
+  }
+
+  @Override
   public void doUndo(jetbrains.mps.newTypesystem.state.State state) {
     state.removeBlockNoVars(myBlock);
   }
