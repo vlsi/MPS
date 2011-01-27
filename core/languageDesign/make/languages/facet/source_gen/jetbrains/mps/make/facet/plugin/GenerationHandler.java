@@ -14,6 +14,7 @@ import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.generator.GenerationCanceledException;
 import java.io.IOException;
 import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.smodel.SModelStereotype;
 
 public class GenerationHandler extends GenerationHandlerBase {
@@ -39,6 +40,6 @@ public class GenerationHandler extends GenerationHandlerBase {
   }
 
   public boolean canHandle(SModelDescriptor descriptor) {
-    return SModelStereotype.isUserModel(descriptor);
+    return descriptor != null && (ProjectModels.isProjectModel(descriptor.getSModelReference()) || SModelStereotype.isUserModel(descriptor));
   }
 }
