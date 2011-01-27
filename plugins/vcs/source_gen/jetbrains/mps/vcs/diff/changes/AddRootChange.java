@@ -35,6 +35,10 @@ public class AddRootChange extends ModelChange {
     SModelOperations.addRootNode(model, CopyUtil.copy(newNode));
   }
 
+  public ChangeType getType() {
+    return ChangeType.ADD;
+  }
+
   @Override
   public String toString() {
     return "Add root " + myNodeId;

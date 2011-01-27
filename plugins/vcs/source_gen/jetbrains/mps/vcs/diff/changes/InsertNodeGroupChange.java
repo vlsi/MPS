@@ -26,6 +26,14 @@ public class InsertNodeGroupChange extends NodeGroupChange {
     return myPosition;
   }
 
+  public int getResultEnd() {
+    return myResultEnd;
+  }
+
+  public int getResultBegin() {
+    return myResultBegin;
+  }
+
   @Override
   protected Tuples._2<Integer, Integer> getNodesToInsert() {
     return MultiTuple.<Integer,Integer>from(myResultBegin, myResultEnd);
@@ -34,5 +42,9 @@ public class InsertNodeGroupChange extends NodeGroupChange {
   @Override
   public String toString() {
     return String.format("Insert %s into position #%d in role %s of node %s", nodeRange(myResultBegin, myResultEnd), myPosition, getRole(), getParentNodeId());
+  }
+
+  public ChangeType getType() {
+    return ChangeType.ADD;
   }
 }

@@ -30,6 +30,10 @@ public class DeleteRootChange extends ModelChange {
     model.getNodeById(myNodeId).delete();
   }
 
+  public ChangeType getType() {
+    return ChangeType.DELETE;
+  }
+
   @Override
   public String toString() {
     return "Delete root " + myNodeId;

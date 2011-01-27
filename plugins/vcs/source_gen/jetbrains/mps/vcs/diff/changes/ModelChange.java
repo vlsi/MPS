@@ -25,4 +25,6 @@ public abstract class ModelChange {
   }
 
   public abstract void apply(@NotNull SModel model);
+
+  public abstract ChangeType getType();
 }

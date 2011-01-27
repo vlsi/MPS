@@ -7,11 +7,13 @@ import jetbrains.mps.smodel.SNodeId;
 public class DeleteNodeGroupChange extends NodeGroupChange {
   private int myBegin;
   private int myEnd;
+  private int myResultPosition;
 
-  public DeleteNodeGroupChange(ChangeSet changeSet, SNodeId parentNodeId, String role, int begin, int end) {
+  public DeleteNodeGroupChange(ChangeSet changeSet, SNodeId parentNodeId, String role, int begin, int end, int resultPosition) {
     super(changeSet, parentNodeId, role);
     myBegin = begin;
     myEnd = end;
+    myResultPosition = resultPosition;
   }
 
   public int getBegin() {
@@ -22,8 +24,16 @@ public class DeleteNodeGroupChange extends NodeGroupChange {
     return myEnd;
   }
 
+  public int getResultPosition() {
+    return myResultPosition;
+  }
+
   @Override
   public String toString() {
     return String.format("Delete %s in role %s of node %s", nodeRange(myBegin, myEnd), getRole(), getParentNodeId());
+  }
+
+  public ChangeType getType() {
+    return ChangeType.DELETE;
   }
 }

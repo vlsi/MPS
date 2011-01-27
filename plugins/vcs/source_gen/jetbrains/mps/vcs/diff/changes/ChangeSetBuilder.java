@@ -120,7 +120,7 @@ public class ChangeSetBuilder {
         if (oldIndices._0() == oldIndices._1()) {
           myChangeSet.add(new InsertNodeGroupChange(myChangeSet, nodeId, role, oldIndices._0(), newIndices._0(), newIndices._1()));
         } else if (newIndices._0() == newIndices._1()) {
-          myChangeSet.add(new DeleteNodeGroupChange(myChangeSet, nodeId, role, oldIndices._0(), oldIndices._1()));
+          myChangeSet.add(new DeleteNodeGroupChange(myChangeSet, nodeId, role, oldIndices._0(), oldIndices._1(), newIndices._0()));
         } else {
           myChangeSet.add(new ReplaceNodeGroupChange(myChangeSet, nodeId, role, oldIndices._0(), oldIndices._1(), newIndices._0(), newIndices._1()));
         }
