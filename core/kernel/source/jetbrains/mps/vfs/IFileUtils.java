@@ -71,6 +71,13 @@ public class IFileUtils {
 
   public static String getCanonicalPath(IFile file) {
     if (file == null) return null;
-    return FileUtil.getCanonicalPath(file.getAbsolutePath());
+    final String absolutePath = file.getAbsolutePath();
+    final int index = absolutePath.indexOf('!');
+    if (index == -1) {
+      return FileUtil.getCanonicalPath(absolutePath);
+    } else {
+      return FileUtil.getCanonicalPath(absolutePath.substring(0, index))
+        + "!" + absolutePath.substring(index + 1);
+    }
   }
 }
