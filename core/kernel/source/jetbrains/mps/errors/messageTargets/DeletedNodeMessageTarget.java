@@ -4,6 +4,7 @@ import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 
+@Deprecated
 public class DeletedNodeMessageTarget implements MessageTarget {
   private String myRole;
   private int myNextChildIndex = -1; // -1 for deleted in single role

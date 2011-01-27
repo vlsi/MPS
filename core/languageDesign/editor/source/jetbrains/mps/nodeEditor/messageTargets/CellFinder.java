@@ -71,7 +71,7 @@ public class CellFinder {
   }
 
   @Nullable
-  public static EditorCell getCellForDeletedChild(@Nullable EditorComponent editorComponent, @Nullable final SNode node, final String role) {
+  public static EditorCell getCellForChild(@Nullable EditorComponent editorComponent, @Nullable final SNode node, final String role) {
     EditorCell rawCell = getRawCell(editorComponent, node);
     if (rawCell == null) { return null; }
     EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {

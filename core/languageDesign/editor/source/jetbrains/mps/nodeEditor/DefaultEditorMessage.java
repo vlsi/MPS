@@ -146,8 +146,7 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
-    Color color = getColor();
-    paintWithColor(g, cell, color);
+    paintWithColor(g, cell, getColor());
   }
 
   protected void paintWithColor(Graphics g, EditorCell cell, Color color) {
