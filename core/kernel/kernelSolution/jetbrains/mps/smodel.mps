@@ -7,14 +7,13 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" version="-1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <languageAspect modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <maxImportIndex value="9" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -22,6 +21,8 @@
   <import index="7" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
+  <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="11" modelUID="r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5073169472575923460">
     <property name="name:3" value="BootstrapLanguages" />
     <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="5073169472575947667">
@@ -275,6 +276,51 @@
       </node>
       <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.CheckedModuleReference:16" id="5073169472575947658">
         <property name="moduleId:16" value="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
+      </node>
+    </node>
+    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="2140928436687214082">
+      <property name="isFinal:3" value="true" />
+      <property name="name:3" value="concept_baseLanguage_Annotation" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2140928436687214086" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2140928436687214085" />
+      <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression:16" id="2140928436687214088">
+        <link role="conceptDeclaration:16" targetNodeId="10.1188206331916:3" resolveInfo="Annotation" />
+      </node>
+    </node>
+    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="2140928436687214089">
+      <property name="isFinal:3" value="true" />
+      <property name="name:3" value="concept_baseLanguage_ClassConcept" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2140928436687214090" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2140928436687214091" />
+      <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression:16" id="2140928436687214092">
+        <link role="conceptDeclaration:16" targetNodeId="10.1068390468198:3" resolveInfo="ClassConcept" />
+      </node>
+    </node>
+    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="2140928436687214093">
+      <property name="isFinal:3" value="true" />
+      <property name="name:3" value="concept_baseLanguage_EnumClass" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2140928436687214094" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2140928436687214095" />
+      <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression:16" id="2140928436687214096">
+        <link role="conceptDeclaration:16" targetNodeId="10.1083245097125:3" resolveInfo="EnumClass" />
+      </node>
+    </node>
+    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="2140928436687214097">
+      <property name="isFinal:3" value="true" />
+      <property name="name:3" value="concept_baseLanguage_Interface" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2140928436687214098" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2140928436687214099" />
+      <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression:16" id="2140928436687214100">
+        <link role="conceptDeclaration:16" targetNodeId="10.1107796713796:3" resolveInfo="Interface" />
+      </node>
+    </node>
+    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="2140928436687217673">
+      <property name="isFinal:3" value="true" />
+      <property name="name:3" value="concept_stubs_LibraryStubDescriptor" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2140928436687217674" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2140928436687217675" />
+      <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression:16" id="2140928436687217676">
+        <link role="conceptDeclaration:16" targetNodeId="11.8529737993487825733" resolveInfo="LibraryStubDescriptor" />
       </node>
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5073169472575923461" />

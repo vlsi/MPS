@@ -9,7 +9,7 @@ import jetbrains.mps.lang.structure.structure.StringConceptProperty;
 import jetbrains.mps.lang.structure.structure.IntegerConceptProperty;
 import jetbrains.mps.lang.structure.structure.BooleanConceptProperty;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
+import java.util.List;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration;
 
@@ -72,12 +72,12 @@ public class SConceptPropertyOperations {
         node.removeChild(conceptProperty.getNode());
       } else
       if (conceptProperty == null && value) {
-        AbstractConceptDeclaration acd = (AbstractConceptDeclaration) node.getAdapter();
-        for (ConceptPropertyDeclaration cpd : SModelSearchUtil.getConceptPropertyDeclarations(acd)) {
-          if (cpd.getName().equals(propertyName)) {
-            if (cpd instanceof BooleanConceptPropertyDeclaration) {
-              BooleanConceptProperty bcp = BooleanConceptProperty.newInstance(node.getModel());
-              bcp.setBooleanConceptPropertyDeclaration((BooleanConceptPropertyDeclaration) cpd);
+        AbstractConceptDeclaration acd = ((AbstractConceptDeclaration) SNodeOperations.getAdapter(node));
+        for (SNode cpd : (List<SNode>) SModelSearchUtil.getConceptPropertyDeclarations(node)) {
+          if (SPropertyOperations.getString(cpd, "name").equals(propertyName)) {
+            if (SNodeOperations.isInstanceOf(cpd, "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration")) {
+              BooleanConceptProperty bcp = BooleanConceptProperty.newInstance(SNodeOperations.getModel(node));
+              bcp.setBooleanConceptPropertyDeclaration(((BooleanConceptPropertyDeclaration) SNodeOperations.getAdapter(SNodeOperations.cast(cpd, "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration"))));
               acd.addConceptProperty(bcp);
               break;
             }

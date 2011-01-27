@@ -17,8 +17,6 @@ package jetbrains.mps.smodel.presentation;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
