@@ -77,31 +77,31 @@ public class ExportScope_Behavior {
     ));
   }
 
-  private static IModule check_ogf5a0_a0a0a(SModelDescriptor p) {
-    if (null == p) {
-      return null;
+  private static IModule check_ogf5a0_a0a0a(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
     }
-    return p.getModule();
+    return null;
   }
 
-  private static SModelDescriptor check_ogf5a0_a0a0a0(SModel p) {
-    if (null == p) {
-      return null;
+  private static SModelDescriptor check_ogf5a0_a0a0a0(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelDescriptor();
     }
-    return p.getModelDescriptor();
+    return null;
   }
 
-  private static String check_ogf5a0_a2a0(ModuleDescriptor p) {
-    if (null == p) {
-      return null;
+  private static String check_ogf5a0_a2a0(ModuleDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNamespace();
     }
-    return p.getNamespace();
+    return null;
   }
 
-  private static ModuleDescriptor check_ogf5a0_a0c0a(IModule p) {
-    if (null == p) {
-      return null;
+  private static ModuleDescriptor check_ogf5a0_a0c0a(IModule checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModuleDescriptor();
     }
-    return p.getModuleDescriptor();
+    return null;
   }
 }

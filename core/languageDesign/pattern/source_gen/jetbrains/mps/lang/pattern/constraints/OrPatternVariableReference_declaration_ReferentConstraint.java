@@ -34,10 +34,10 @@ public class OrPatternVariableReference_declaration_ReferentConstraint extends B
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)", "5642650895629225739");
   }
 
-  private static List<SNode> check_8aolto_a1a0a(SNode p) {
-    if (null == p) {
-      return null;
+  private static List<SNode> check_8aolto_a1a0a(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return SLinkOperations.getTargets(checkedDotOperand, "variable", true);
     }
-    return SLinkOperations.getTargets(p, "variable", true);
+    return null;
   }
 }

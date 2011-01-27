@@ -42,17 +42,17 @@ public class ModelPropertiesChecker extends SpecificChecker {
     return results;
   }
 
-  private static IScope check_t4d01o_a0g0a(IModule p) {
-    if (null == p) {
-      return null;
+  private static IScope check_t4d01o_a0g0a(IModule checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getScope();
     }
-    return p.getScope();
+    return null;
   }
 
-  private static IModule check_t4d01o_a0a6a0(SModelDescriptor p) {
-    if (null == p) {
-      return null;
+  private static IModule check_t4d01o_a0a6a0(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
     }
-    return p.getModule();
+    return null;
   }
 }

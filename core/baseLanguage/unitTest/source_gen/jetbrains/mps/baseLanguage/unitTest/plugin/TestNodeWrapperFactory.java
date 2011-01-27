@@ -187,11 +187,11 @@ public enum TestNodeWrapperFactory {
     }).distinct();
   }
 
-  private static SNode check_kl7j79_a0a0b0a0b2(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNode check_kl7j79_a0a0b0a0b2(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return SLinkOperations.getTarget(checkedDotOperand, "classifier", false);
     }
-    return SLinkOperations.getTarget(p, "classifier", false);
+    return null;
   }
 
   private static boolean eq_kl7j79_a0a0b2(Object a, Object b) {

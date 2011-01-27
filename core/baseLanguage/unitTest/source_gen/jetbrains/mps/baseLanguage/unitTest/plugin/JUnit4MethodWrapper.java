@@ -51,11 +51,11 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
     return false;
   }
 
-  private static SNode check_lclll2_a0a0a0a0a0a0a(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNode check_lclll2_a0a0a0a0a0a0a(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return SLinkOperations.getTarget(checkedDotOperand, "annotation", false);
     }
-    return SLinkOperations.getTarget(p, "annotation", false);
+    return null;
   }
 
   private static boolean eq_lclll2_a0a0a0a0a0a0a0a0(Object a, Object b) {

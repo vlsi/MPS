@@ -53,10 +53,10 @@ public class TraceablePositionInfo extends PositionInfo {
     myPropertyString = propertyString;
   }
 
-  private static String check_cke0sr_a0a1a1(Attribute p) {
-    if (null == p) {
-      return null;
+  private static String check_cke0sr_a0a1a1(Attribute checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getValue();
     }
-    return p.getValue();
+    return null;
   }
 }

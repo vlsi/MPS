@@ -80,10 +80,10 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     return VisibilityUtil.isVisible(myContextNode, member);
   }
 
-  private static SNode check_y8c6cm_a0a0a(ClassifierType p) {
-    if (null == p) {
-      return null;
+  private static SNode check_y8c6cm_a0a0a(ClassifierType checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNode();
     }
-    return p.getNode();
+    return null;
   }
 }
