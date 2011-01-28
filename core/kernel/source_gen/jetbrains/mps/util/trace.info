@@ -146,5 +146,65 @@
     <unitInfo nodeId="4972886494893402205" fileName="LongestCommonSubsequenceFinder.java" startLine="88" startPosition="118" endLine="120" endPosition="7" unitName="jetbrains.mps.util.LongestCommonSubsequenceFinder$1" />
     <unitInfo nodeId="4972886494893373483" fileName="LongestCommonSubsequenceFinder.java" startLine="18" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.util.LongestCommonSubsequenceFinder" />
   </root>
+  <root nodeId="8018595893829093050">
+    <nodeInfo nodeId="8018595893829093195" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" fileName="DisjointSets.java" startLine="14" startPosition="30" endLine="15" endPosition="72" />
+    <nodeInfo nodeId="8018595893829093204" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRank" fileName="DisjointSets.java" startLine="15" startPosition="72" endLine="16" endPosition="82" />
+    <nodeInfo nodeId="8018595893829093222" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DisjointSets.java" startLine="19" startPosition="49" endLine="20" endPosition="46" />
+    <nodeInfo nodeId="8018595893829093228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DisjointSets.java" startLine="20" startPosition="46" endLine="21" endPosition="44" />
+    <nodeInfo nodeId="8018595893829093064" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DisjointSets.java" startLine="26" startPosition="52" endLine="27" endPosition="90" />
+    <nodeInfo nodeId="8018595893829093073" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DisjointSets.java" startLine="28" startPosition="5" endLine="29" endPosition="48" />
+    <nodeInfo nodeId="8018595893829093085" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DisjointSets.java" startLine="32" startPosition="31" endLine="33" endPosition="19" />
+    <nodeInfo nodeId="8018595893829093090" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DisjointSets.java" startLine="33" startPosition="19" endLine="34" endPosition="19" />
+    <nodeInfo nodeId="8018595893829093097" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DisjointSets.java" startLine="35" startPosition="82" endLine="36" endPosition="46" />
+    <nodeInfo nodeId="8018595893829093112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DisjointSets.java" startLine="37" startPosition="12" endLine="38" endPosition="46" />
+    <nodeInfo nodeId="8018595893829093120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DisjointSets.java" startLine="39" startPosition="85" endLine="40" endPosition="83" />
+    <nodeInfo nodeId="8018595893829093143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DisjointSets.java" startLine="45" startPosition="37" endLine="46" endPosition="83" />
+    <nodeInfo nodeId="8018595893829093162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DisjointSets.java" startLine="48" startPosition="30" endLine="49" endPosition="25" />
+    <nodeInfo nodeId="8018595893829093169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DisjointSets.java" startLine="50" startPosition="60" endLine="51" endPosition="87" />
+    <nodeInfo nodeId="8018595893829093182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DisjointSets.java" startLine="52" startPosition="9" endLine="53" endPosition="81" />
+    <nodeInfo nodeId="8018595893829093191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DisjointSets.java" startLine="55" startPosition="7" endLine="56" endPosition="51" />
+    <nodeInfo nodeId="8018595893829093057" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DisjointSets.java" startLine="25" startPosition="26" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="8018595893829093118" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DisjointSets.java" startLine="38" startPosition="46" endLine="41" endPosition="7" />
+    <nodeInfo nodeId="8018595893829093167" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DisjointSets.java" startLine="49" startPosition="25" endLine="52" endPosition="9" />
+    <nodeInfo nodeId="8018595893829093218" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="DisjointSets.java" startLine="18" startPosition="45" endLine="22" endPosition="5" />
+    <nodeInfo nodeId="8018595893829093110" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="DisjointSets.java" startLine="37" startPosition="10" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="8018595893829093214" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DisjointSets#(Ljava/lang/Iterable;)V" fileName="DisjointSets.java" startLine="17" startPosition="0" endLine="23" endPosition="3" />
+    <nodeInfo nodeId="8018595893829093051" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoot#(null)null" fileName="DisjointSets.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
+    <nodeInfo nodeId="8018595893829093095" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DisjointSets.java" startLine="34" startPosition="19" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="8018595893829093160" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(null)V" fileName="DisjointSets.java" startLine="47" startPosition="92" endLine="55" endPosition="0" />
+    <nodeInfo nodeId="8018595893829093154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DisjointSets.java" startLine="46" startPosition="83" endLine="55" endPosition="7" />
+    <nodeInfo nodeId="8018595893829093077" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unite#(nullnull)V" fileName="DisjointSets.java" startLine="31" startPosition="0" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="8018595893829093137" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSets#()Ljava/lang/Iterable;" fileName="DisjointSets.java" startLine="44" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="8018595893829093063" fileName="DisjointSets.java" startLine="26" startPosition="52" endLine="27" endPosition="90" />
+    <scopeInfo nodeId="8018595893829093096" fileName="DisjointSets.java" startLine="35" startPosition="82" endLine="36" endPosition="46" />
+    <scopeInfo nodeId="8018595893829093119" fileName="DisjointSets.java" startLine="39" startPosition="85" endLine="40" endPosition="83" />
+    <scopeInfo nodeId="8018595893829093168" fileName="DisjointSets.java" startLine="50" startPosition="60" endLine="51" endPosition="87" />
+    <scopeInfo nodeId="8018595893829093221" fileName="DisjointSets.java" startLine="19" startPosition="49" endLine="21" endPosition="44" />
+    <scopeInfo nodeId="8018595893829093217" fileName="DisjointSets.java" startLine="18" startPosition="45" endLine="22" endPosition="5" />
+    <scopeInfo nodeId="8018595893829093218" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="DisjointSets.java" startLine="18" startPosition="45" endLine="22" endPosition="5" />
+    <scopeInfo nodeId="8018595893829093056" fileName="DisjointSets.java" startLine="25" startPosition="26" endLine="29" endPosition="48" />
+    <scopeInfo nodeId="8018595893829093111" fileName="DisjointSets.java" startLine="37" startPosition="12" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="8018595893829093161" fileName="DisjointSets.java" startLine="48" startPosition="30" endLine="53" endPosition="81">
+      <varInfo nodeId="8018595893829093163" varName="r" />
+    </scopeInfo>
+    <scopeInfo nodeId="8018595893829093214" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DisjointSets#(Ljava/lang/Iterable;)V" fileName="DisjointSets.java" startLine="17" startPosition="0" endLine="23" endPosition="3">
+      <varInfo nodeId="8018595893829093234" varName="elements" />
+    </scopeInfo>
+    <scopeInfo nodeId="8018595893829093051" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoot#(null)null" fileName="DisjointSets.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="8018595893829093052" varName="x" />
+    </scopeInfo>
+    <scopeInfo nodeId="8018595893829093160" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(null)V" fileName="DisjointSets.java" startLine="47" startPosition="92" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="8018595893829093084" fileName="DisjointSets.java" startLine="32" startPosition="31" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="8018595893829093142" fileName="DisjointSets.java" startLine="45" startPosition="37" endLine="56" endPosition="51">
+      <varInfo nodeId="8018595893829093144" varName="rootToSet" />
+    </scopeInfo>
+    <scopeInfo nodeId="8018595893829093077" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unite#(nullnull)V" fileName="DisjointSets.java" startLine="31" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="8018595893829093080" varName="b" />
+      <varInfo nodeId="8018595893829093078" varName="a" />
+    </scopeInfo>
+    <scopeInfo nodeId="8018595893829093137" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSets#()Ljava/lang/Iterable;" fileName="DisjointSets.java" startLine="44" startPosition="0" endLine="58" endPosition="0" />
+    <unitInfo nodeId="8018595893829093160" fileName="DisjointSets.java" startLine="47" startPosition="77" endLine="55" endPosition="5" unitName="jetbrains.mps.util.DisjointSets$1" />
+    <unitInfo nodeId="8018595893829093050" fileName="DisjointSets.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.util.DisjointSets" />
+  </root>
 </debugInfo>
 
