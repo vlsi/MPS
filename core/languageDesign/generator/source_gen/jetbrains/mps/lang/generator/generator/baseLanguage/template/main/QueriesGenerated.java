@@ -1100,7 +1100,7 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("contextVar"));
   }
 
-  public static Object referenceMacro_GetReferent_2895393989835683978(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_6553698511994325700(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if (SPropertyOperations.hasValue(SLinkOperations.getTarget(_context.getNode(), "generatorMessage", true), "messageType", "error", "info")) {
       return "error";
     }
@@ -1876,7 +1876,7 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
   }
 
-  public static boolean ifMacro_Condition_8439346252333565680(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5363042723710946852(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "generatorMessage", true) != null);
   }
 

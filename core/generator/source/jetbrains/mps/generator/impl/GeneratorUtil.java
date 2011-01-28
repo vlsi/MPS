@@ -21,6 +21,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -145,7 +146,7 @@ public class GeneratorUtil {
 
     if (ruleConsequence instanceof DismissTopMappingRule) {
       GeneratorMessage message = ((DismissTopMappingRule) ruleConsequence).getGeneratorMessage();
-      GeneratorMessageType messageType = processGeneratorMessage(message, inputNode, null, ruleNode, generator);
+      MessageType messageType = processGeneratorMessage(message, inputNode, null, ruleNode, generator);
       throw new DismissTopMappingRuleException(messageType);
 
     } else if (ruleConsequence instanceof AbandonInput_RuleConsequence) {
@@ -287,20 +288,23 @@ public class GeneratorUtil {
    */
   /*package*/
   @Nullable
-  public static GeneratorMessageType processGeneratorMessage(GeneratorMessage message, SNode inputNode, SNode templateNode, SNode ruleNode, ITemplateGenerator generator) {
-    GeneratorMessageType messageType = null;
+  public static MessageType processGeneratorMessage(GeneratorMessage message, SNode inputNode, SNode templateNode, SNode ruleNode, ITemplateGenerator generator) {
+    MessageType result = null;
     if (message != null) {
-      messageType = message.getMessageType();
+      GeneratorMessageType messageType = message.getMessageType();
       String text = message.getMessageText();
       if (messageType == GeneratorMessageType.error) {
         generator.showErrorMessage(inputNode, templateNode, ruleNode, text);
+        result = MessageType.error;
       } else if (messageType == GeneratorMessageType.warning) {
         generator.getLogger().warning(inputNode, text);
+        result = MessageType.warning;
       } else {
         generator.getLogger().info(inputNode, text);
+        result = MessageType.info;
       }
     }
-    return messageType;
+    return result;
   }
 
   public static void logCurrentGenerationBranch(IGeneratorLogger logger, IGenerationTracer generationTracer, boolean error) {
