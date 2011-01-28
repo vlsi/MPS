@@ -41,6 +41,7 @@ import jetbrains.mps.vcs.diff.changes.ReplaceNodeGroupChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.annotations.NotNull;
 
 public class ChangeEditorMessage extends EditorMessageWithTarget {
   private static final Color CONFLICT_BACKGROUND_COLOR = new Color(245, 164, 164);
@@ -77,12 +78,6 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
 
   @Override
   public void paint(Graphics graphics, EditorComponent component, EditorCell cell) {
-    // TODO 
-    graphics.setColor(Color.BLACK);
-    int yy = getStart(component);
-    graphics.drawPolygon(new int[]{0, 3, 0}, new int[]{yy, yy, yy + 3}, 3);
-    yy += getHeight(component);
-    graphics.drawPolygon(new int[]{0, 3, 0}, new int[]{yy, yy, yy - 3}, 3);
     boolean targetIsNode = myMessageTarget.getTarget() == MessageTargetEnum.NODE;
     if (ObjectUtils.equals(getNode(), cell.getSNode()) && targetIsNode || !(targetIsNode) && !(cell instanceof EditorCell_Collection)) {
       cell.paintSelection(graphics, getColor(), false);
@@ -93,7 +88,9 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
         if (beginIndex != endIndex) {
           assert cell instanceof EditorCell_Collection;
           EditorCell_Collection collectionCell = ((EditorCell_Collection) cell);
-          for (int i = beginIndex; i < endIndex; i++) {
+          int beginCellIndex = getChildCellIndex(collectionCell, beginIndex);
+          int endCellIndex = getChildCellIndex(collectionCell, endIndex - 1) + 1;
+          for (int i = beginCellIndex; i < endCellIndex; i++) {
             collectionCell.getChildAt(i).paintSelection(graphics, getColor(), false);
           }
           return;
@@ -109,10 +106,11 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
 
             boolean vertical = collectionCell.getCellLayout() instanceof CellLayout_Vertical || cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
             Rectangle bounds = cell.getBounds();
+            int cellIndex = getChildCellIndex(collectionCell, beginIndex);
             if (vertical) {
               int y;
-              if (collectionCell.getChildCount() > beginIndex) {
-                y = collectionCell.getChildAt(beginIndex).getY();
+              if (cellIndex != -1) {
+                y = collectionCell.getChildAt(cellIndex).getY();
               } else {
                 y = ((int) collectionCell.getChildAt(collectionCell.getChildCount() - 1).getBounds().getMaxY());
               }
@@ -121,8 +119,8 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
             } else {
               // horizontal collection: draw vertical line 
               int x;
-              if (collectionCell.getChildCount() > beginIndex) {
-                x = collectionCell.getChildAt(beginIndex).getX();
+              if (cellIndex != -1) {
+                x = collectionCell.getChildAt(cellIndex).getX();
               } else {
                 x = ((int) collectionCell.getChildAt(collectionCell.getChildCount() - 1).getBounds().getMaxX());
               }
@@ -158,18 +156,33 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
 
     }
     EditorCell_Collection collectionCell = ((EditorCell_Collection) cell);
-    int beginIndex = ((ChildrenMessageTarget) myMessageTarget).getBeginIndex();
-    int endIndex = ((ChildrenMessageTarget) myMessageTarget).getEndIndex();
-    assert beginIndex < collectionCell.getChildCount();
-    assert endIndex < collectionCell.getChildCount();
-    int minY = (int) collectionCell.getCellAt(beginIndex).getBounds().getMinY();
-    int maxY = (isVertical(cell) ?
-      minY + 1 :
-      (int) collectionCell.getCellAt(beginIndex).getBounds().getMaxY()
-    );
-    for (int i = beginIndex; i < endIndex; i++) {
-      minY = Math.min(minY, (int) collectionCell.getCellAt(i).getBounds().getMinY());
-      maxY = Math.max(maxY, (int) collectionCell.getCellAt(i).getBounds().getMaxY());
+    int beginCellIndex = getChildCellIndex(collectionCell, ((ChildrenMessageTarget) myMessageTarget).getBeginIndex());
+    int endCellIndex = getChildCellIndex(collectionCell, ((ChildrenMessageTarget) myMessageTarget).getEndIndex() - 1) + 1;
+    endCellIndex = Math.max(beginCellIndex, endCellIndex);
+    int lastCellIndex = collectionCell.getChildCount() - 1;
+
+    int minY;
+    int maxY;
+    if (beginCellIndex > lastCellIndex) {
+      Rectangle lastCellBounds = collectionCell.getChildAt(lastCellIndex).getBounds();
+      minY = (isVertical(cell) ?
+        (int) lastCellBounds.getMaxY() :
+        (int) lastCellBounds.getMinY()
+      );
+      maxY = (int) lastCellBounds.getMaxY();
+      if (maxY == minY) {
+        maxY++;
+      }
+    } else {
+      minY = (int) collectionCell.getChildAt(beginCellIndex).getBounds().getMinY();
+      maxY = (isVertical(cell) ?
+        minY + 1 :
+        (int) collectionCell.getCellAt(beginCellIndex).getBounds().getMaxY()
+      );
+    }
+    for (int i = beginCellIndex; i < endCellIndex; i++) {
+      minY = Math.min(minY, (int) collectionCell.getChildAt(i).getBounds().getMinY());
+      maxY = Math.max(maxY, (int) collectionCell.getChildAt(i).getBounds().getMaxY());
     }
     return MultiTuple.<Integer,Integer>from(minY, maxY - minY);
   }
@@ -188,7 +201,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN) {
       return getVerticalBounds(component)._1();
     } else {
-      return super.getStart(component);
+      return super.getHeight(component);
     }
   }
 
@@ -288,6 +301,23 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
 
   private static boolean isVertical(EditorCell cell) {
     return cell instanceof EditorCell_Collection && (((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Vertical || cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE));
+  }
+
+  private static int getChildCellIndex(@NotNull EditorCell_Collection collectionCell, int nodeIndex) {
+    int currentNodeIndex = -1;
+    for (int i = 0; i < collectionCell.getChildCount(); i++) {
+      if (collectionCell.getChildAt(i).getSNode() != collectionCell.getSNode()) {
+        currentNodeIndex++;
+      }
+      if (currentNodeIndex == nodeIndex) {
+        return i;
+      }
+    }
+    if (currentNodeIndex == nodeIndex - 1) {
+      return collectionCell.getChildCount();
+    }
+    assert false;
+    return -1;
   }
 
   private static boolean eq_myu41h_a0a0c0f(Object a, Object b) {

@@ -11874,6 +11874,34 @@
         </node>
       </node>
     </node>
+    <node role="3.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="742766381634681662">
+      <property name="1.name:0" value="getMyChangeSet" />
+      <node role="3.returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="742766381634681666">
+        <link role="3.classifier:3" targetNodeId="32.8813828754313712698" resolveInfo="ChangeSet" />
+      </node>
+      <node role="3.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="742766381634681664" />
+      <node role="3.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="742766381634681665">
+        <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="742766381634681667">
+          <node role="3.expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="742766381634681669">
+            <link role="3.variableDeclaration:3" targetNodeId="5694687812506990198" resolveInfo="myMineChangeSet" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="3.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="742766381634681658">
+      <property name="1.name:0" value="getRepositoryChangeSet" />
+      <node role="3.returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="742766381634681670">
+        <link role="3.classifier:3" targetNodeId="32.8813828754313712698" resolveInfo="ChangeSet" />
+      </node>
+      <node role="3.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="742766381634681660" />
+      <node role="3.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="742766381634681661">
+        <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="742766381634681671">
+          <node role="3.expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="742766381634681672">
+            <link role="3.variableDeclaration:3" targetNodeId="5694687812506990206" resolveInfo="myRepositoryChangeSet" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="3.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8401260027345477146">
       <property name="1.name:0" value="isMyChange" />
       <node role="3.returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8401260027345477150" />

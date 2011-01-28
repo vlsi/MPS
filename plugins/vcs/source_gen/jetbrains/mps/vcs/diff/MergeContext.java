@@ -295,6 +295,14 @@ public class MergeContext {
     return myMyModel;
   }
 
+  public ChangeSet getMyChangeSet() {
+    return myMineChangeSet;
+  }
+
+  public ChangeSet getRepositoryChangeSet() {
+    return myRepositoryChangeSet;
+  }
+
   public boolean isMyChange(ModelChange change) {
     return change.getChangeSet() == myMineChangeSet;
   }
