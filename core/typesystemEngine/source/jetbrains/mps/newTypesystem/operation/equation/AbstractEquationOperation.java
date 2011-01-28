@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.operation.equation;
 
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,10 +28,19 @@ import jetbrains.mps.smodel.SNode;
 public abstract class AbstractEquationOperation extends AbstractOperation {
   SNode myChild;
   SNode myParent;
+  protected final String myPresentation;
+
+  public AbstractEquationOperation(SNode child, SNode parent, SNode source, EquationInfo info) {
+    myChild = child;
+    mySource = source;
+    myParent = parent;
+    myEquationInfo = info;
+    myPresentation = myChild + " = " + myParent;
+  }
 
   @Override
   public String getShortPresentation() {
-    return myChild + " = " + myParent;
+    return myPresentation;
   }
 
 

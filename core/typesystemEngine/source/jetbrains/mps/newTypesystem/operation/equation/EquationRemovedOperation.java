@@ -28,9 +28,7 @@ import jetbrains.mps.smodel.SNode;
 public class EquationRemovedOperation extends AbstractEquationOperation {
 
   public EquationRemovedOperation(SNode child, SNode parent, SNode source) {
-    myChild = child;
-    myParent = parent;
-    mySource = source;
+    super(child, parent, source, null);
   }
 
   @Override

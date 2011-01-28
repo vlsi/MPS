@@ -266,6 +266,9 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (types.size() == 0) {
       return null;
     }
+    if (types.size() == 1) {
+      return types.iterator().next();
+    }
     int newNodesSize = 1;
     while (types.size() > newNodesSize) {
       int size = types.size();

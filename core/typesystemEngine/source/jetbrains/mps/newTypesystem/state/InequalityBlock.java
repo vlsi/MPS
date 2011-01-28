@@ -20,6 +20,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_R
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -84,17 +85,12 @@ public class InequalityBlock extends RelationBlock {
     return false;
   }
 
-  public boolean processReplacementRules() {
-    final SNode subType = getResolvedInput(myLeftNode);
-    final SNode superType = getResolvedInput(myRightNode);
-    if (subType == null || superType == null || subType == superType) {
-      return false;
-    }
-    return processReplacementRules(subType, superType);
-  }
-
   public void processInequality(final SNode subType, final SNode superType) {
     if (subType == null || superType == null || subType == superType) {
+      return;
+    }
+    if (TypesUtil.isVariable(subType) && TypesUtil.isVariable(superType)) {
+      // for final solving
       return;
     }
     //replacement rules
