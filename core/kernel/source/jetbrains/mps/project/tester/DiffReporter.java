@@ -58,6 +58,9 @@ public class DiffReporter {
         continue;
       }
       files.addAll(Arrays.asList(dir.list()));
+
+      Map<String, String> generatedViaFileGenerationListener = genHandler.getFileGeneratorSources();
+
       for (String outputRoot : genHandler.getRoots(outputModel)) {
         String outputFileName = genHandler.getName(outputRoot, outputModel);
         if (outputFileName == null) {
@@ -74,17 +77,21 @@ public class DiffReporter {
         }
 
         String newContent = genHandler.getSourceByNode(outputRoot, outputModel);
+        String newContentGeneratedViaListener = generatedViaFileGenerationListener.get(outputFileName);
+        if (newContentGeneratedViaListener != null) {
+          newContent = newContentGeneratedViaListener;
+        }
         if (addDiffReport(filePath, outputRoot, newContent, result)) {
           files.remove(outputFileName);
         }
       }
-      Map<String, String> sources = genHandler.getFileGeneratorSources();
+
       for (String fileName : files) {
         int dotPosition = fileName.indexOf(".");
         if (dotPosition == 0 || dotPosition == -1) {
           continue;
         }
-        String newContent = sources.get(fileName);
+        String newContent = generatedViaFileGenerationListener.get(fileName);
 
         if (newContent != null) {
           addDiffReport(getFilePath(genHandler, outputModel, fileName), fileName, newContent, result);
