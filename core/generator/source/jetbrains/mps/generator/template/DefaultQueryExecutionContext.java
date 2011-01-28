@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.*;
@@ -101,17 +102,11 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   }
 
   public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
-    MapSrcMacro_PostMapperFunction postMapperFunction;
-    if (adapter instanceof MapSrcNodeMacro) {
-      postMapperFunction = ((MapSrcNodeMacro) adapter).getPostMapperFunction();
-    } else {
-      postMapperFunction = ((MapSrcListMacro) adapter).getPostMapperFunction();
-    }
+    SNode postMapperFunction = RuleUtil.getMapSrc_PostMapperFunction(mapSrcNodeOrListMacro);
     // post-proc function is optional
     if (postMapperFunction == null) return;
 
-    String methodName = TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(postMapperFunction.getNode());
+    String methodName = TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(postMapperFunction);
     try {
       QueryMethodGenerated.invoke(
         methodName,

@@ -5,6 +5,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -93,6 +94,15 @@ public class RuleUtil {
 
   public static SNode getPatternReductionRuleConsequence(SNode reductionRule) {
     return SLinkOperations.getTarget(reductionRule, "ruleConsequence", true);
+  }
+
+  public static SNode getMapSrc_PostMapperFunction(SNode node) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "postMapperFunction", true);
+    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), "postMapperFunction", true);
+    }
+    return null;
   }
 
   public static SNode getPatternReductionRulePatternNode(SNode reductionRule) {
