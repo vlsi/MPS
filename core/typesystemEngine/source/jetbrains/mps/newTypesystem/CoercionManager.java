@@ -58,7 +58,7 @@ public class CoercionManager {
     if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConceptFqName())) {
       List<SNode> children = subtype.getChildren("argument");
 
-      SNode lcs = mySubTyping.createLCS(new LinkedHashSet<SNode>(children));
+      SNode lcs = mySubTyping.createLCS(children);
       return coerceSubTypingNew(lcs, pattern, isWeak, state);
     }
 

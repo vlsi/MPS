@@ -192,11 +192,11 @@ public class Inequalities {
     SNode result = null;
     EquationInfo info = null;
     if (!subTypes.isEmpty()) {
-      result = subTyping.createLCS(subTypes);
+      result = subTyping.createLCS(new LinkedList<SNode>(subTypes));
       InequalityBlock block = typesToBlocks.get(result);
       info = (block != null) ? block.getEquationInfo() : typesToBlocks.get(subTypes.iterator().next()).getEquationInfo();
     } else if (!superTypes.isEmpty()) {
-      result = subTyping.createMeet(superTypes);
+      result = subTyping.createMeet(new LinkedList<SNode>(superTypes));
       InequalityBlock block = typesToBlocks.get(result);
       info = (block != null) ? block.getEquationInfo() : typesToBlocks.get(superTypes.iterator().next()).getEquationInfo();
     }

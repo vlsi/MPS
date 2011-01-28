@@ -181,8 +181,8 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
   }
 
-  private Set<SNode> eliminateSubOrSuperTypes(Set<SNode> types, boolean sub) {
-    Set<SNode> result = new HashSet<SNode>();
+  private List<SNode> eliminateSubOrSuperTypes(List<SNode> types, boolean sub) {
+    List<SNode> result = new LinkedList<SNode>();
     Set<SNode> toRemove = new HashSet<SNode>();
     for (SNode type : types) {
       boolean toAdd = true;
@@ -205,7 +205,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     return result;
   }
 
-  public SNode createMeet(Set<SNode> types) {
+  public SNode createMeet(List<SNode> types) {
     if (types.size() > 1) {
        types = eliminateSubOrSuperTypes(types, true);
     }
@@ -266,9 +266,6 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (types.size() == 0) {
       return null;
     }
-    if (types.size() == 1) {
-      return types.iterator().next();
-    }
     int newNodesSize = 1;
     while (types.size() > newNodesSize) {
       int size = types.size();
@@ -289,11 +286,19 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
   }  
 
-  public SNode createLCS(Set<SNode> types) {
+  public SNode createLCS(List<SNode> types) {
+    if (types.size() == 1) {
+      return types.iterator().next();
+    }
     if (types.size() > 1) {
+      Collections.sort(types, new Comparator<SNode>() {
+        public int compare(SNode node1, SNode node2) {
+          return node1.getPresentation().compareTo(node2.getPresentation());
+        }
+      }) ;
       types = eliminateSubOrSuperTypes(types, false);
     }
-    return leastCommonSuperType(new LinkedList<SNode>(types));
+    return leastCommonSuperType(types);
   }
 
   public boolean isComparableByRules(SNode left, SNode right, EquationInfo info, boolean isWeak) {
