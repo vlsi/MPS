@@ -37,19 +37,19 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <roots>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="671853460608595937">
-      <property name="name" nameId="tpck.1169194664001" value="Maker" />
+      <property name="name" nameId="tpck.1169194664001" value="Maker_" />
     </node>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="671853460608595941">
-      <property name="name" nameId="tpck.1169194664001" value="Generator" />
+      <property name="name" nameId="tpck.1169194664001" value="Generator_" />
     </node>
     <node type="tpe3.BTestCase" typeId="tpe3.1171931851043" id="671853460608703866">
       <property name="testCaseName" nameId="tpe3.1171931851045" value="Generator" />
     </node>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="2551169102353069011">
-      <property name="name" nameId="tpck.1169194664001" value="TextGen" />
+      <property name="name" nameId="tpck.1169194664001" value="TextGen_" />
     </node>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="9000373783400844597">
-      <property name="name" nameId="tpck.1169194664001" value="Worker" />
+      <property name="name" nameId="tpck.1169194664001" value="Worker_" />
     </node>
   </roots>
   <root id="671853460608595937">

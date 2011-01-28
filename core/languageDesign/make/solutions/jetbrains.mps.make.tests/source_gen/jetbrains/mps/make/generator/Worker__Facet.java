@@ -14,14 +14,13 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
-import jetbrains.mps.make.script.IConfigMonitor;
 
-public class TextGen_Facet implements IFacet {
+public class Worker__Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("TextGen");
+  private IFacet.Name name = new IFacet.Name("Worker_");
 
-  public TextGen_Facet() {
-    ListSequence.fromList(targets).addElement(new TextGen_Facet.Target_21gswx_a());
+  public Worker__Facet() {
+    ListSequence.fromList(targets).addElement(new Worker__Facet.Target_qdke9s_a());
   }
 
   public Iterable<ITarget> targets() {
@@ -33,7 +32,7 @@ public class TextGen_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Maker")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Maker_")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -44,42 +43,34 @@ public class TextGen_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_21gswx_a implements ITarget {
-    private ITarget.Name name = new ITarget.Name("ConditionallyGenerate");
+  public static class Target_qdke9s_a implements ITarget {
+    private ITarget.Name name = new ITarget.Name("work");
 
-    public Target_21gswx_a() {
+    public Target_qdke9s_a() {
     }
 
     public IJob createJob() {
       return new IJob() {
         public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
-          Iterable<IResource> _output_21gswx_a0a = null;
+          Iterable<IResource> _output_qdke9s_a0a = null;
           switch (0) {
             case 0:
+              monitor.currentProgress().beginWork("WORK", 100, monitor.currentProgress().workLeft());
+              monitor.currentProgress().advanceWork("WORK", 50);
+              monitor.currentProgress().beginWork("WORKWORK", 10, monitor.currentProgress().workLeft() / 2);
+              monitor.currentProgress().advanceWork("WORKWORK", 5);
+              monitor.currentProgress().advanceWork("WORKWORK", 5);
+              monitor.currentProgress().finishWork("WORKWORK");
+              monitor.currentProgress().finishWork("WORK");
             default:
-              return new IResult.SUCCESS(_output_21gswx_a0a);
+              return new IResult.SUCCESS(_output_qdke9s_a0a);
           }
         }
       };
     }
 
     public IConfig createConfig() {
-      return new IConfig() {
-        public boolean configure(final IConfigMonitor cmonitor, final IParametersPool pool) {
-          switch (0) {
-            case 0:
-              switch (cmonitor.<Bar_Option>relayQuery(new Askfoo_Query())) {
-                case GOAHEAD_21gswx_a0a0a:
-                  return true;
-                case NOWAY_21gswx_b0a0a:
-                  return false;
-                default:
-              }
-            default:
-              return true;
-          }
-        }
-      };
+      return null;
     }
 
     public Iterable<ITarget.Name> notAfter() {
@@ -103,11 +94,11 @@ public class TextGen_Facet implements IFacet {
     }
 
     public boolean requiresInput() {
-      return true;
+      return false;
     }
 
     public boolean producesOutput() {
-      return true;
+      return false;
     }
 
     public Class<? extends IResource> expectedResources() {

@@ -7,19 +7,21 @@ import java.util.List;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.make.script.IConfigMonitor;
 
-public class Maker_Facet implements IFacet {
+public class TextGen__Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("Maker");
+  private IFacet.Name name = new IFacet.Name("TextGen_");
 
-  public Maker_Facet() {
-    ListSequence.fromList(targets).addElement(new Maker_Facet.Target_m26mq_a());
+  public TextGen__Facet() {
+    ListSequence.fromList(targets).addElement(new TextGen__Facet.Target_rqwvem_a());
   }
 
   public Iterable<ITarget> targets() {
@@ -31,7 +33,7 @@ public class Maker_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return null;
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Maker_")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -42,27 +44,42 @@ public class Maker_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_m26mq_a implements ITarget {
-    private ITarget.Name name = new ITarget.Name("Make");
+  public static class Target_rqwvem_a implements ITarget {
+    private ITarget.Name name = new ITarget.Name("ConditionallyGenerate");
 
-    public Target_m26mq_a() {
+    public Target_rqwvem_a() {
     }
 
     public IJob createJob() {
       return new IJob() {
         public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
-          Iterable<IResource> _output_m26mq_a0a = null;
+          Iterable<IResource> _output_rqwvem_a0a = null;
           switch (0) {
             case 0:
             default:
-              return new IResult.SUCCESS(_output_m26mq_a0a);
+              return new IResult.SUCCESS(_output_rqwvem_a0a);
           }
         }
       };
     }
 
     public IConfig createConfig() {
-      return null;
+      return new IConfig() {
+        public boolean configure(final IConfigMonitor cmonitor, final IParametersPool pool) {
+          switch (0) {
+            case 0:
+              switch (cmonitor.<Bar_Option>relayQuery(new Askfoo_Query())) {
+                case GOAHEAD_rqwvem_a0a0a:
+                  return true;
+                case NOWAY_rqwvem_b0a0a:
+                  return false;
+                default:
+              }
+            default:
+              return true;
+          }
+        }
+      };
     }
 
     public Iterable<ITarget.Name> notAfter() {
@@ -78,7 +95,7 @@ public class Maker_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> before() {
-      return null;
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("Make")});
     }
 
     public ITarget.Name getName() {
@@ -86,11 +103,11 @@ public class Maker_Facet implements IFacet {
     }
 
     public boolean requiresInput() {
-      return false;
+      return true;
     }
 
     public boolean producesOutput() {
-      return false;
+      return true;
     }
 
     public Class<? extends IResource> expectedResources() {

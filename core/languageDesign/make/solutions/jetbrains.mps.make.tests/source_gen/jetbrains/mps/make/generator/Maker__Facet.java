@@ -7,7 +7,6 @@ import java.util.List;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
@@ -15,12 +14,12 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IConfig;
 
-public class Worker_Facet implements IFacet {
+public class Maker__Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("Worker");
+  private IFacet.Name name = new IFacet.Name("Maker_");
 
-  public Worker_Facet() {
-    ListSequence.fromList(targets).addElement(new Worker_Facet.Target_lh0o9b_a());
+  public Maker__Facet() {
+    ListSequence.fromList(targets).addElement(new Maker__Facet.Target_izvplp_a());
   }
 
   public Iterable<ITarget> targets() {
@@ -32,7 +31,7 @@ public class Worker_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Maker")});
+    return null;
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -43,27 +42,20 @@ public class Worker_Facet implements IFacet {
     return this.name;
   }
 
-  public static class Target_lh0o9b_a implements ITarget {
-    private ITarget.Name name = new ITarget.Name("work");
+  public static class Target_izvplp_a implements ITarget {
+    private ITarget.Name name = new ITarget.Name("Make");
 
-    public Target_lh0o9b_a() {
+    public Target_izvplp_a() {
     }
 
     public IJob createJob() {
       return new IJob() {
         public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
-          Iterable<IResource> _output_lh0o9b_a0a = null;
+          Iterable<IResource> _output_izvplp_a0a = null;
           switch (0) {
             case 0:
-              monitor.currentProgress().beginWork("WORK", 100, monitor.currentProgress().workLeft());
-              monitor.currentProgress().advanceWork("WORK", 50);
-              monitor.currentProgress().beginWork("WORKWORK", 10, monitor.currentProgress().workLeft() / 2);
-              monitor.currentProgress().advanceWork("WORKWORK", 5);
-              monitor.currentProgress().advanceWork("WORKWORK", 5);
-              monitor.currentProgress().finishWork("WORKWORK");
-              monitor.currentProgress().finishWork("WORK");
             default:
-              return new IResult.SUCCESS(_output_lh0o9b_a0a);
+              return new IResult.SUCCESS(_output_izvplp_a0a);
           }
         }
       };
@@ -86,7 +78,7 @@ public class Worker_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("Make")});
+      return null;
     }
 
     public ITarget.Name getName() {
