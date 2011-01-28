@@ -111,7 +111,7 @@ class IdeaFile implements IFileEx {
   public IFile child(String suffix) {
     String path = getAbsolutePath();
     String separator = path.contains("!") ? "/" : File.separator;
-    return new IdeaFile(path + separator + suffix);
+    return new IdeaFile(path + (path.endsWith(separator) ? "" : separator) + suffix);
   }
 
   @Override
@@ -252,7 +252,11 @@ class IdeaFile implements IFileEx {
 
   @Override
   public boolean isPackaged() {
-    return findVirtualFile() && myVirtualFile.getFileSystem() instanceof JarFileSystem;
+    if (findVirtualFile()) {
+      return myVirtualFile.getFileSystem() instanceof JarFileSystem;
+    } else {
+      return myPath.contains("!");
+    }
   }
 
   @Override
