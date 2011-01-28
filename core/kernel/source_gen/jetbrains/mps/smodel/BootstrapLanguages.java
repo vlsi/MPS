@@ -33,6 +33,7 @@ public class BootstrapLanguages {
   public static final String concept_baseLanguage_EnumClass = "jetbrains.mps.baseLanguage.structure.EnumClass";
   public static final String concept_baseLanguage_Interface = "jetbrains.mps.baseLanguage.structure.Interface";
   public static final String concept_stubs_LibraryStubDescriptor = "jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor";
+  public static final String concept_generator_MappingConfiguration = "jetbrains.mps.lang.generator.structure.MappingConfiguration";
 
   public BootstrapLanguages() {
   }

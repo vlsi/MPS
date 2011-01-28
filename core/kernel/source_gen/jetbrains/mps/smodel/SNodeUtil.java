@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 
 public class SNodeUtil {
   public static final String concept_IResolveInfo = "jetbrains.mps.lang.core.structure.IResolveInfo";
+  public static final String concept_INamedConcept = "jetbrains.mps.lang.core.structure.INamedConcept";
   public static final String concept_BaseConcept = "jetbrains.mps.lang.core.structure.BaseConcept";
   public static final String concept_AbstractConceptDeclaration = "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
   public static final String concept_ConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
@@ -29,6 +30,7 @@ public class SNodeUtil {
   public static final String property_BaseConcept_shortDescription = "shortDescription";
   public static final String link_ReferenceMacro_AnnotationLink = "referenceMacro";
   public static final String CPR_BaseConcept_alias = "alias";
+  public static final String CPR_BaseConcept_abstract = "abstract";
 
   public SNodeUtil() {
   }
@@ -185,6 +187,26 @@ public class SNodeUtil {
     }
     String conceptFqName = node.getConceptFqName();
     return conceptFqName.equals("jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+  }
+
+  public static SNode getPropertyDeclaration_DataType(SNode decl) {
+    return SLinkOperations.getTarget(decl, "dataType", false);
+  }
+
+  public static boolean isInstanceOfPrimitiveDataTypeDeclaration(SNode node) {
+    if (node == null) {
+      return false;
+    }
+    String conceptFqName = node.getConceptFqName();
+    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration");
+  }
+
+  public static boolean isInstanceOfEnumerationDataTypeDeclaration(SNode node) {
+    if (node == null) {
+      return false;
+    }
+    String conceptFqName = node.getConceptFqName();
+    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
   }
 
   public static boolean getLinkDeclaration_IsReference(SNode link) {

@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -1444,15 +1443,15 @@ public final class SNode {
   }
 
   public boolean isInstanceOfConcept(String conceptFqName) {
-    return SModelUtil_new.isAssignableConcept(myConceptFqName, conceptFqName);
+    return SModelUtil.isAssignableConcept(myConceptFqName, conceptFqName);
   }
 
   public SNode getConceptDeclarationNode() {
     return SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
   }
 
-  public PropertyDeclaration getPropertyDeclaration(String propertyName) {
-    return (PropertyDeclaration) BaseAdapter.fromNode(SModelSearchUtil.findPropertyDeclaration(getConceptDeclarationNode(), propertyName));
+  public SNode getPropertyDeclaration(String propertyName) {
+    return SModelSearchUtil.findPropertyDeclaration(getConceptDeclarationNode(), propertyName);
   }
 
   public SNode getLinkDeclaration(String role) {

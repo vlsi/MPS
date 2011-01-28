@@ -17,8 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
-import jetbrains.mps.smodel.INodeAdapter;
 
 public class AddPropertyMacroParam_property_Intention extends BaseIntention implements Intention {
   private SNode myParameter;
@@ -92,12 +90,12 @@ public class AddPropertyMacroParam_property_Intention extends BaseIntention impl
     }
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode propertySource : AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(sourceNode)) {
-      PropertyDeclaration propertyDeclaration = node.getPropertyDeclaration(propertyName);
+      SNode propertyDeclaration = SNodeOperations.cast(node.getPropertyDeclaration(propertyName), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
       if (propertyDeclaration == null) {
         continue;
       }
-      INodeAdapter property = propertyDeclaration.getDataType();
-      if (property.equals(SLinkOperations.getTarget(propertySource, "dataType", false).getAdapter())) {
+      SNode property = SLinkOperations.getTarget(propertyDeclaration, "dataType", false);
+      if (property == SLinkOperations.getTarget(propertySource, "dataType", false)) {
         ListSequence.fromList(result).addElement(propertySource);
       }
     }

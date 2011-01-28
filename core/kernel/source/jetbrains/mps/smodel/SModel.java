@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
@@ -596,7 +595,7 @@ public class SModel {
         result.add(concept.getModel().getSModelReference());
       }
       for (String propname : node.getProperties().keySet()) {
-        PropertyDeclaration decl = node.getPropertyDeclaration(propname);
+        SNode decl = node.getPropertyDeclaration(propname);
         if (decl == null) {
           LOG.error("property declaration " + propname + " not found for node " + node);
         } else {

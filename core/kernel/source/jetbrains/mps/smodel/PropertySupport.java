@@ -17,9 +17,6 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.DataTypeDeclaration;
-import jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.constraints.INodePropertyValidator;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
@@ -74,16 +71,16 @@ public abstract class PropertySupport {
     return value;
   }
 
-  public static PropertySupport getPropertySupport(@NotNull final PropertyDeclaration propertyDeclaration) {
+  public static PropertySupport getPropertySupport(@NotNull final SNode propertyDeclaration) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<PropertySupport>() {
       public PropertySupport compute() {
-        DataTypeDeclaration dataType = propertyDeclaration.getDataType();
+        SNode dataType = SNodeUtil.getPropertyDeclaration_DataType(propertyDeclaration);
         if (dataType != null) {
-          PropertySupport propertySupport = (PropertySupport) dataType.getNode().getUserObject(PROPERTY_SUPPORT);
+          PropertySupport propertySupport = (PropertySupport) dataType.getUserObject(PROPERTY_SUPPORT);
           if (propertySupport != null) {
             return propertySupport;
           }
-          if (dataType instanceof PrimitiveDataTypeDeclaration) {
+          if (SNodeUtil.isInstanceOfPrimitiveDataTypeDeclaration(dataType)) {
             String dataTypeName = dataType.getName();
             if (Primitives.STRING_TYPE.equals(dataTypeName)) {
               propertySupport = new DefaultPropertySupport();
@@ -101,7 +98,7 @@ public abstract class PropertySupport {
           if (propertySupport == null) {
             propertySupport = new DefaultPropertySupport();
           }
-          dataType.getNode().putUserObject(PROPERTY_SUPPORT, propertySupport);
+          dataType.putUserObject(PROPERTY_SUPPORT, propertySupport);
           return propertySupport;
         }
         return new DefaultPropertySupport();
@@ -109,17 +106,14 @@ public abstract class PropertySupport {
     });
   }
 
-  /**
-   * @return short class name
-   */
-  public static String getClassName(DataTypeDeclaration propertyDataType) {
+  private static String getClassName(SNode propertyDataType) {
     return propertyDataType.getName() + "_PropertySupport";
   }
 
-  private static PropertySupport loadPropertySupport(PropertyDeclaration propertyDeclaration) {
-    DataTypeDeclaration propertyDataType = propertyDeclaration.getDataType();
+  private static PropertySupport loadPropertySupport(SNode propertyDeclaration) {
+    SNode propertyDataType = SNodeUtil.getPropertyDeclaration_DataType(propertyDeclaration);
 
-    SNode cd = BaseAdapter.fromAdapter(propertyDeclaration.getParent());
+    SNode cd = propertyDeclaration.getParent();
     Language l = SModelUtil.getDeclaringLanguage(cd);
 
     String propertySupportClassName = JavaNameUtil.fqClassName(propertyDataType.getModel(), getClassName(propertyDataType));
@@ -142,24 +136,6 @@ public abstract class PropertySupport {
       LOG.error(e);
     }
     return propertySupport;
-  }
-
-  //todo remove method - moved to PrimitiveDatatypeDeclaration
-
-  public static boolean isString(PrimitiveDataTypeDeclaration datatype) {
-    return Primitives.STRING_TYPE.equals(datatype.getName());
-  }
-
-  //todo remove method - moved to PrimitiveDatatypeDeclaration
-
-  public static boolean isInteger(PrimitiveDataTypeDeclaration datatype) {
-    return Primitives.INTEGER_TYPE.equals(datatype.getName());
-  }
-
-  //todo remove method - moved to PrimitiveDatatypeDeclaration
-
-  public static boolean isBoolean(PrimitiveDataTypeDeclaration datatype) {
-    return Primitives.BOOLEAN_TYPE.equals(datatype.getName());
   }
 
   private static class DefaultPropertySupport extends PropertySupport {

@@ -389,9 +389,7 @@
             <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2732852465125685244">
               <node role="2.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2732852465125685245">
                 <property name="1.name:0" value="propertyDeclaration" />
-                <node role="2.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2732852465125685246">
-                  <link role="2.classifier:3" targetNodeId="13.~PropertyDeclaration" resolveInfo="PropertyDeclaration" />
-                </node>
+                <node role="2.type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="6146258535356893211" />
                 <node role="2.initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2732852465125685247">
                   <node role="2.operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="2732852465125685248">
                     <node role="3.leftExpression:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2732852465125685249">
@@ -399,7 +397,7 @@
                     </node>
                   </node>
                   <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2732852465125685250">
-                    <link role="2.baseMethodDeclaration:3" targetNodeId="6.~SNode.getPropertyDeclaration(java.lang.String):jetbrains.mps.lang.structure.structure.PropertyDeclaration" resolveInfo="getPropertyDeclaration" />
+                    <link role="2.baseMethodDeclaration:3" targetNodeId="6.~SNode.getPropertyDeclaration(java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="getPropertyDeclaration" />
                     <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2732852465125685251">
                       <link role="5.variable:7" targetNodeId="2732852465125684149" resolveInfo="name" />
                     </node>
@@ -412,8 +410,8 @@
                 <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2732852465125728817">
                   <node role="2.expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2732852465125728818">
                     <node role="2.rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2732852465125728815">
-                      <link role="2.baseMethodDeclaration:3" targetNodeId="6.~PropertySupport.getPropertySupport(jetbrains.mps.lang.structure.structure.PropertyDeclaration):jetbrains.mps.smodel.PropertySupport" resolveInfo="getPropertySupport" />
                       <link role="2.classConcept:3" targetNodeId="6.~PropertySupport" resolveInfo="PropertySupport" />
+                      <link role="2.baseMethodDeclaration:3" targetNodeId="6.~PropertySupport.getPropertySupport(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.PropertySupport" resolveInfo="getPropertySupport" />
                       <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2732852465125728816">
                         <link role="2.variableDeclaration:3" targetNodeId="2732852465125685245" resolveInfo="propertyDeclaration" />
                       </node>

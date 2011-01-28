@@ -78,7 +78,6 @@ import jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.vcs.diff.oldchanges.UsedDevkitsChange;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.vcs.diff.oldchanges.DeleteReferenceChange;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -1276,7 +1275,7 @@ __switch__:
               });
 
               String baseValue = check_fh1co9_a0h0a3a0a0b0m0(myBaseVersionModel.getNodeById(nodeId), e);
-              PropertyDeclaration propertyDeclaration = e.getNode().getPropertyDeclaration(e.getPropertyName());
+              SNode propertyDeclaration = e.getNode().getPropertyDeclaration(e.getPropertyName());
               if (propertyDeclaration == null) {
                 if (ObjectUtils.equals(baseValue, e.getNewPropertyValue())) {
                   return;

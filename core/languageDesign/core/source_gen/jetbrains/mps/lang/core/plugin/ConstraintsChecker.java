@@ -93,7 +93,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     }
     List<PropertyDeclaration> props = chs.getAdapters(PropertyDeclaration.class);
     for (PropertyDeclaration p : ListSequence.fromList(props)) {
-      final PropertySupport ps = PropertySupport.getPropertySupport(p);
+      final PropertySupport ps = PropertySupport.getPropertySupport(p.getNode());
       final String propertyName = p.getName();
       if (propertyName == null) {
         LOG.error("Property declaration has a null name, declaration id: " + p.getNode().getSNodeId() + ", model: " + p.getModel().getSModelFqName());

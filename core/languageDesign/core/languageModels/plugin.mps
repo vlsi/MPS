@@ -1807,10 +1807,15 @@
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d8ec.~PropertySupport" resolveInfo="PropertySupport" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9077133196728706439">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~PropertySupport%dgetPropertySupport(jetbrains%dmps%dlang%dstructure%dstructure%dPropertyDeclaration)%cjetbrains%dmps%dsmodel%dPropertySupport" resolveInfo="getPropertySupport" />
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="d8ec.~PropertySupport" resolveInfo="PropertySupport" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="9077133196728706440">
-                    <link role="variable" roleId="tp2q.1153944258490" targetNodeId="9077133196728706433" resolveInfo="p" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~PropertySupport%dgetPropertySupport(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dPropertySupport" resolveInfo="getPropertySupport" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5495461770284981447">
+                    <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="9077133196728706440">
+                      <link role="variable" roleId="tp2q.1153944258490" targetNodeId="9077133196728706433" resolveInfo="p" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5495461770284981458">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~BaseAdapter%dgetNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getNode" />
+                    </node>
                   </node>
                 </node>
               </node>

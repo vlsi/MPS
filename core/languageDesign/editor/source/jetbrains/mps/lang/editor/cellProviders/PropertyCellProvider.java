@@ -17,8 +17,6 @@ package jetbrains.mps.lang.editor.cellProviders;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.structure.structure.DataTypeDeclaration;
-import jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
@@ -34,17 +32,14 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.Primitives;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeOperations;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.InternUtil;
 
 public class PropertyCellProvider extends CellProviderWithRole {
   private static final Logger LOG = Logger.getLogger(PropertyCellProvider.class);
 
   private String myPropertyName;
-  private PropertyDeclaration myPropertyDeclaration;
+  private SNode myPropertyDeclaration;
 
   public void setRole(Object role) {
     myPropertyName = InternUtil.intern(role.toString());
@@ -89,12 +84,12 @@ public class PropertyCellProvider extends CellProviderWithRole {
         if (myPropertyDeclaration == null) {
           return null;
         }
-        DataTypeDeclaration dataType = myPropertyDeclaration.getDataType();
+        SNode dataType = SNodeUtil.getPropertyDeclaration_DataType(myPropertyDeclaration);
 
         if (Primitives.BOOLEAN_TYPE.equals(dataType.getName())) {
           return new BooleanPropertySubstituteInfo(getSNode(), myPropertyName, myEditorContext);
         }
-        if (dataType instanceof EnumerationDataTypeDeclaration) {
+        if (SNodeUtil.isInstanceOfEnumerationDataTypeDeclaration(dataType)) {
           return new EnumPropertySubstituteInfo(getSNode(), myPropertyDeclaration, myEditorContext);
         }
         return null;

@@ -126,7 +126,7 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
       ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(concept);
       List<PropertyDeclaration> props = chs.getAdapters(PropertyDeclaration.class);
       for (PropertyDeclaration p : ListSequence.fromList(props)) {
-        PropertySupport ps = PropertySupport.getPropertySupport(p);
+        PropertySupport ps = PropertySupport.getPropertySupport(p.getNode());
         String propertyName = p.getName();
         if (propertyName == null) {
           LOG.error("Property declaration has a null name, declaration id: " + p.getNode().getSNodeId() + ", model: " + p.getModel().getSModelFqName());
