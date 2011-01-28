@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
-import jetbrains.mps.generator.impl.AbandonRuleInputException;
-import jetbrains.mps.generator.impl.GeneratorUtil;
-import jetbrains.mps.generator.impl.RuleUtil;
-import jetbrains.mps.generator.impl.TemplateProcessor;
+import jetbrains.mps.generator.impl.*;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.lang.generator.structure.GeneratorMessage;
@@ -91,7 +88,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
 
     List<SNode> collection = new ArrayList<SNode>();
     try {
-      List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence((RuleConsequence) defaultConsequence.getAdapter(), context.getInput(), templateSwitch.getNode(), environment.getReductionContext(), environment.getGenerator());
+      List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(defaultConsequence, context.getInput(), templateSwitch.getNode(), environment.getReductionContext(), environment.getGenerator());
       if (nodeAndMappingNamePairs == null) {
         environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.getNode(), defaultConsequence, "error processing $SWITCH$/default");
         return null;

@@ -259,7 +259,7 @@ public class TemplateProcessor {
         RuleConsequence altConsequence = ((IfMacro) nodeMacro).getAlternativeConsequence();
         if (altConsequence != null) {
           try {
-            List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(altConsequence, templateContext.getInput(), nodeMacro.getNode(), myReductionContext, myGenerator);
+            List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(altConsequence.getNode(), templateContext.getInput(), nodeMacro.getNode(), myReductionContext, myGenerator);
             if (nodeAndMappingNamePairs == null) {
               myGenerator.showErrorMessage(templateContext.getInput(), null, nodeMacro.getNode(), "error processing $IF$/alternative");
               return null;
@@ -414,8 +414,8 @@ public class TemplateProcessor {
         return null;
       }
 */
-      List<TemplateFragment> fragments = GeneratorUtil.getTemplateFragments(includeTemplate);
-      if (!GeneratorUtil.checkIfOneOrMaryAdjacentFragments(fragments, BaseAdapter.fromAdapter(includeTemplate), newInputNode, nodeMacro.getNode(), myGenerator)) {
+      List<SNode> fragments = GeneratorUtilEx.getTemplateFragments(includeTemplate.getNode());
+      if (!GeneratorUtilEx.checkIfOneOrMaryAdjacentFragments(fragments, includeTemplate.getNode(), newInputNode, nodeMacro.getNode(), myGenerator)) {
         myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLUDE$");
         return null;
       }
@@ -427,9 +427,9 @@ public class TemplateProcessor {
       generationTracer.pushTemplateNode(new SNodePointer(includeTemplate.getNode()));
 
       try {
-        for (TemplateFragment fragment : fragments) {
-          SNode templateForInclude = fragment.getParent().getNode();
-          mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
+        for (SNode fragment : fragments) {
+          SNode templateForInclude = fragment.getParent();
+          mappingName = GeneratorUtilEx.getMappingName(fragment, mappingName);
           List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, templateContext.subContext(mappingName, newInputNode));
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
         }
@@ -463,8 +463,8 @@ public class TemplateProcessor {
         return null;
       }
 */
-      List<TemplateFragment> fragments = GeneratorUtil.getTemplateFragments(template);
-      if (!GeneratorUtil.checkIfOneOrMaryAdjacentFragments(fragments, BaseAdapter.fromAdapter(template), newInputNode, nodeMacro.getNode(), myGenerator)) {
+      List<SNode> fragments = GeneratorUtilEx.getTemplateFragments(template.getNode());
+      if (!GeneratorUtilEx.checkIfOneOrMaryAdjacentFragments(fragments, BaseAdapter.fromAdapter(template), newInputNode, nodeMacro.getNode(), myGenerator)) {
         myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $CALL$");
         return null;
       }
@@ -476,9 +476,9 @@ public class TemplateProcessor {
       generationTracer.pushTemplateNode(new SNodePointer(template.getNode()));
 
       try {
-        for (TemplateFragment fragment : fragments) {
-          SNode templateForInclude = fragment.getParent().getNode();
-          mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
+        for (SNode fragment : fragments) {
+          SNode templateForInclude = fragment.getParent();
+          mappingName = GeneratorUtilEx.getMappingName(fragment, mappingName);
           List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, newcontext.subContext(mappingName));
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
         }

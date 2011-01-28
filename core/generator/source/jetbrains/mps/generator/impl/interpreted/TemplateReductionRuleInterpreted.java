@@ -122,7 +122,7 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule {
     }
     TemplateContext conseqContext = GeneratorUtil.createTemplateContext(context.getInput(), context, environment.getReductionContext(), (RuleConsequence) ruleConsequence.getAdapter(), context.getInput(), environment.getGenerator());
 
-    List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence((RuleConsequence) ruleConsequence.getAdapter(), context.getInput(), ruleNode, environment.getReductionContext(), environment.getGenerator());
+    List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(ruleConsequence, context.getInput(), ruleNode, environment.getReductionContext(), environment.getGenerator());
     if (nodeAndMappingNamePairs == null) {
       environment.getGenerator().showErrorMessage(context.getInput(), null, ruleConsequence, "error processing reduction rule consequence");
       return null;
