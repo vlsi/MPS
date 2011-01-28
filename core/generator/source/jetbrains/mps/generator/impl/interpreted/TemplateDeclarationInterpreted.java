@@ -66,7 +66,7 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
     TemplateContext applyContext = myArguments.length == 0 ? context : context.subContext(getArgumentsAsMap());
 
     if (myTemplateNode.isInstanceOfConcept(jetbrains.mps.lang.generator.structure.TemplateDeclaration.concept)) {
-      List<TemplateFragment> fragments = GeneratorUtil.getTemplateFragments((jetbrains.mps.lang.generator.structure.TemplateDeclaration) myTemplateNode.getAdapter());
+      List<TemplateFragment> fragments = GeneratorUtil.getTemplateFragments(myTemplateNode.getAdapter());
       if (!GeneratorUtil.checkIfOneOrMaryAdjacentFragments(fragments, myTemplateNode, context.getInput(), null, environment.getGenerator())) {
         environment.getGenerator().showErrorMessage(context.getInput(), myTemplateNode, "error processing template declaration");
         return null;

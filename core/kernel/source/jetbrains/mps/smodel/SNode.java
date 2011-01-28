@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -1717,7 +1716,8 @@ public final class SNode {
     BaseAdapter adapter = myAdapter;
     if (adapter != null) return adapter;
     Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
-    if (c == null) return new BaseConcept(this);
+    if (c == null) c = QueryMethodGenerated.getAdapterConstructor(SNodeUtil.concept_BaseConcept);
+    if (c == null) return new BaseAdapter(this) {};
 
     synchronized (this) {
       adapter = myAdapter;
@@ -1741,7 +1741,7 @@ public final class SNode {
         LOG.error(t);
       }
     }
-    return new BaseConcept(this);
+    return new BaseAdapter(this) {};
   }
 
 

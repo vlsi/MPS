@@ -18,12 +18,8 @@ package jetbrains.mps.generator;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
-import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.project.StandaloneMPSContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
@@ -176,7 +172,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       SNode topmostNamed = null;
       SNode node_ = contextNode;
       while (node_ != null) {
-        if (node_.isInstanceOfConcept(INamedConcept.concept)) {
+        if (node_.isInstanceOfConcept(SNodeUtil.concept_INamedConcept)) {
           topmostNamed = node_;
         }
         node_ = node_.getParent();
@@ -217,7 +213,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       SNode topmostNamed = null;
       SNode node_ = contextNode;
       while (node_ != null) {
-        if (node_.isInstanceOfConcept(INamedConcept.concept)) {
+        if (node_.isInstanceOfConcept(SNodeUtil.concept_INamedConcept)) {
           topmostNamed = node_;
         }
         node_ = node_.getParent();
