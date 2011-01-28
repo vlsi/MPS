@@ -49,16 +49,32 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip" file="ChangeTrapeciumStrip.java">
-    <classNode dependClassName="javax.swing.event.ChangeEvent" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditorComponent" />
-    <classNode dependClassName="java.awt.Graphics" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeSet" />
-    <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Dimension" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage" />
+    <classNode dependClassName="javax.swing.event.ChangeEvent" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeSet" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.util.DisjointSets" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.MergeContext" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode extendsClassName="javax.swing.event.ChangeListener" />
     <classNode extendsClassName="javax.swing.JComponent" />
   </dependency>

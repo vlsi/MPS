@@ -437,18 +437,19 @@
     <unitInfo nodeId="6359197607515894913" fileName="DeleteRootChange.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.DeleteRootChange" />
   </root>
   <root nodeId="8401260027345476466">
-    <nodeInfo nodeId="8401260027345476486" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myColor" fileName="ChangeType.java" startLine="11" startPosition="0" endLine="12" endPosition="24" />
-    <nodeInfo nodeId="8401260027345476495" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangeType.java" startLine="14" startPosition="23" endLine="15" endPosition="16" />
-    <nodeInfo nodeId="8401260027345476503" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangeType.java" startLine="18" startPosition="27" endLine="19" endPosition="19" />
-    <nodeInfo nodeId="8401260027345476489" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeType#(Ljava/awt/Color;)V" fileName="ChangeType.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <nodeInfo nodeId="8401260027345476499" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" fileName="ChangeType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="8401260027345476494" fileName="ChangeType.java" startLine="14" startPosition="23" endLine="15" endPosition="16" />
-    <scopeInfo nodeId="8401260027345476502" fileName="ChangeType.java" startLine="18" startPosition="27" endLine="19" endPosition="19" />
-    <scopeInfo nodeId="8401260027345476489" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeType#(Ljava/awt/Color;)V" fileName="ChangeType.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+    <nodeInfo nodeId="4965236727523006472" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONFLICT_COLOR" fileName="ChangeType.java" startLine="11" startPosition="0" endLine="12" endPosition="70" />
+    <nodeInfo nodeId="8401260027345476486" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myColor" fileName="ChangeType.java" startLine="13" startPosition="0" endLine="14" endPosition="24" />
+    <nodeInfo nodeId="8401260027345476495" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangeType.java" startLine="16" startPosition="23" endLine="17" endPosition="16" />
+    <nodeInfo nodeId="8401260027345476503" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ChangeType.java" startLine="20" startPosition="27" endLine="21" endPosition="19" />
+    <nodeInfo nodeId="8401260027345476489" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeType#(Ljava/awt/Color;)V" fileName="ChangeType.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <nodeInfo nodeId="8401260027345476499" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" fileName="ChangeType.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="8401260027345476494" fileName="ChangeType.java" startLine="16" startPosition="23" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="8401260027345476502" fileName="ChangeType.java" startLine="20" startPosition="27" endLine="21" endPosition="19" />
+    <scopeInfo nodeId="8401260027345476489" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeType#(Ljava/awt/Color;)V" fileName="ChangeType.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
       <varInfo nodeId="8401260027345476492" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="8401260027345476499" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" fileName="ChangeType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <unitInfo nodeId="8401260027345476466" fileName="ChangeType.java" startLine="7" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ChangeType" />
+    <scopeInfo nodeId="8401260027345476499" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColor#()Ljava/awt/Color;" fileName="ChangeType.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <unitInfo nodeId="8401260027345476466" fileName="ChangeType.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.vcs.diff.changes.ChangeType" />
   </root>
   <root nodeId="8813828754313712692">
     <nodeInfo nodeId="6359197607515881709" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeSet" fileName="ModelChange.java" startLine="10" startPosition="35" endLine="11" endPosition="32" />

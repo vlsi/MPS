@@ -81,7 +81,7 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
   }
 
   private ChangeTrapeciumStrip addTrapeciumStrip(int index, ChangeSet changeSet, DiffEditorComponent leftEditor, DiffEditorComponent rightEditor) {
-    ChangeTrapeciumStrip strip = new ChangeTrapeciumStrip(changeSet, leftEditor, rightEditor);
+    ChangeTrapeciumStrip strip = new ChangeTrapeciumStrip(myMergeContext, changeSet, leftEditor, rightEditor);
     ((GridBagLayout) myTopComponent.getLayout()).setConstraints(strip, new GridBagConstraints(index * 2 + 1, 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0));
     myTopComponent.add(strip);
     return strip;

@@ -4389,6 +4389,28 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.EnumClass:3" id="8401260027345476466">
     <property name="1.name:0" value="ChangeType" />
+    <node role="2.staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="4965236727523006472">
+      <property name="1.name:0" value="CONFLICT_COLOR" />
+      <property name="2.isFinal:3" value="true" />
+      <node role="2.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4965236727523006475" />
+      <node role="2.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4965236727523006476">
+        <link role="2.classifier:3" targetNodeId="18.~Color" resolveInfo="Color" />
+      </node>
+      <node role="2.initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4965236727523006478">
+        <node role="2.creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4965236727523006479">
+          <link role="2.baseMethodDeclaration:3" targetNodeId="18.~Color.&lt;init&gt;(int,int,int)" resolveInfo="Color" />
+          <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4965236727523006480">
+            <property name="2.value:3" value="245" />
+          </node>
+          <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4965236727523006481">
+            <property name="2.value:3" value="164" />
+          </node>
+          <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4965236727523006482">
+            <property name="2.value:3" value="164" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="2.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8401260027345476467" />
     <node role="2.enumConstant:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration:3" id="8401260027345476468">
       <property name="1.name:0" value="ADD" />

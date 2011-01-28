@@ -9,6 +9,8 @@ public enum ChangeType {
   DELETE(new Color(203, 203, 203)),
   CHANGE(new Color(188, 207, 249));
 
+  public static final Color CONFLICT_COLOR = new Color(245, 164, 164);
+
   private Color myColor;
 
   ChangeType(Color c) {
