@@ -21,8 +21,6 @@ import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
-import jetbrains.mps.smodel.persistence.def.v1.ReferencePersister1;
-import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -50,7 +48,7 @@ public class ModelReader3 implements IModelReader {
   }
 
   protected IReferencePersister createReferencePersister() {
-    return new ReferencePersister1();
+    return new ReferencePersister3();
   }
 
   protected String upgradeStereotype(String stereotype) {

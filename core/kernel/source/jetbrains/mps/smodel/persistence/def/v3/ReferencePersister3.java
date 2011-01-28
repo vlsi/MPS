@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.persistence.def.v1;
+package jetbrains.mps.smodel.persistence.def.v3;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
@@ -22,9 +22,9 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import org.jdom.Element;
 
-public class ReferencePersister1 implements IReferencePersister {
+public class ReferencePersister3 implements IReferencePersister {
 
-  private static final Logger LOG = Logger.getLogger(ReferencePersister1.class);
+  private static final Logger LOG = Logger.getLogger(ReferencePersister3.class);
 
   protected SNode mySourceNode;
   protected String myRole;
