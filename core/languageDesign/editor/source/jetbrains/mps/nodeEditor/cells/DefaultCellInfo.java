@@ -171,7 +171,7 @@ public class DefaultCellInfo implements CellInfo {
   }
 
   public boolean equals(Object o) {
-    if (!(o instanceof CellInfo)) return false;
+    if (!(o instanceof DefaultCellInfo)) return false;
     DefaultCellInfo cellInfo = (DefaultCellInfo) o;
     if (!ObjectUtils.equals(cellInfo.myParentInfo, myParentInfo)) return false;
     if (cellInfo.myNodePointer == null) return false;

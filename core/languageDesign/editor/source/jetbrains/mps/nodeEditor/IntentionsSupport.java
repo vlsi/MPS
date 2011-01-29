@@ -30,6 +30,8 @@ import jetbrains.mps.intentions.*;
 import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -105,9 +107,10 @@ public class IntentionsSupport {
     });
 
 
-    myEditor.addCellSelectionListener(new CellSelectionListener() {
-      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
-        if (!editor.isFocusOwner()) return;
+    myEditor.getSelectionManager().addSelectionListener(new SelectionListener() {
+      @Override
+      public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+        if (!editorComponent.isFocusOwner()) return;
         updateIntentionsStatus();
       }
     });

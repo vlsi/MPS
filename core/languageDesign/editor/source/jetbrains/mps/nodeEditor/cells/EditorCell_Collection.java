@@ -16,6 +16,8 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -263,7 +265,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   private void removeBraces() {
     removeCell(myOpeningBrace);
     removeCell(myClosingBrace);
-    getEditor().removeCellSelectionListener(myLastCellSelectionListener);
+    getEditor().getSelectionManager().removeSelectionListener(myLastCellSelectionListener);
 
     myOpeningBrace = null;
     myClosingBrace = null;
@@ -782,7 +784,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       ((EditorCell_Basic) getFoldedCell()).onAdd();
     }
     if (myLastCellSelectionListener != null) {
-      getEditor().addCellSelectionListener(myLastCellSelectionListener);
+      getEditor().getSelectionManager().addSelectionListener(myLastCellSelectionListener);
     }
 
     if (canBePossiblyFolded()) {
@@ -796,7 +798,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     }
     if (myLastCellSelectionListener != null) {
       setBracesEnabled(false);
-      getEditor().removeCellSelectionListener(myLastCellSelectionListener);
+      getEditor().getSelectionManager().removeSelectionListener(myLastCellSelectionListener);
     }
     for (EditorCell child : getEditorCells()) {
       ((EditorCell_Basic) child).onRemove();
@@ -965,13 +967,14 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
 
-  private class MyLastCellSelectionListener implements CellSelectionListener {
-    public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
+  private class MyLastCellSelectionListener implements SelectionListener {
+    @Override
+    public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
       if (myClosingBrace.isSelected() || myOpeningBrace.isSelected()) {
         notifyBraceSelected();
         return;
       }
-      EditorCell deepestSelection = editor.getDeepestSelectedCell();
+      EditorCell deepestSelection = editorComponent.getDeepestSelectedCell();
       EditorCell lastSelectableLeaf = findChild(CellFinders.LAST_SELECTABLE_LEAF);
       EditorCell firstSelectableLeaf = findChild(CellFinders.FIRST_SELECTABLE_LEAF);
       if (deepestSelection instanceof EditorCell_Brace) {

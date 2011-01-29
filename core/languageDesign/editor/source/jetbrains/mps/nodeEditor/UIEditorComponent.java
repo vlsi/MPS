@@ -18,6 +18,8 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -38,11 +40,10 @@ public class UIEditorComponent extends EditorComponent {
     myInspector.getExternalComponent().setBorder(new LineBorder(Color.DARK_GRAY));
     getExternalComponent().setBorder(new LineBorder(Color.DARK_GRAY));
 
-    addCellSelectionListener(new CellSelectionListener() {
-      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
-        if (newSelection != null) {
-          myInspector.inspectNode(newSelection.getSNode(), editor.getOperationContext());
-        }
+    getSelectionManager().addSelectionListener(new SingularSelectionListenerAdapter() {
+      @Override
+      protected void selectionChangedTo(EditorComponent editorComponent, SingularSelection newSelection) {
+        myInspector.inspectNode(newSelection.getEditorCell().getSNode(), editorComponent.getOperationContext());
       }
     });
   }

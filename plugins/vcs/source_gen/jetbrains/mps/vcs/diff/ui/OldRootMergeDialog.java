@@ -9,9 +9,10 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vcs.diff.Merger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.CellSelectionListener;
+import jetbrains.mps.nodeEditor.selection.SelectionListener;
+import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JComponent;
 import java.awt.GridLayout;
@@ -55,21 +56,23 @@ public class OldRootMergeDialog extends BaseDialog implements EditorMessageOwner
   private JPanel myContainer;
   private Merger myMerger;
   private SNode myRoot;
-  private CellSelectionListener myCellSelectionListener = new CellSelectionListener() {
-    public void selectionChanged(EditorComponent editor, EditorCell oldSelection, final EditorCell newSelection) {
+  private SelectionListener myCellSelectionListener = new SingularSelectionListenerAdapter() {
+    @Override
+    protected void selectionChangedTo(EditorComponent component, final SingularSelection newSelection) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          if (newSelection != null && newSelection.getSNode() != null) {
+          if (newSelection != null && newSelection.getEditorCell().getSNode() != null) {
             SNode sNode;
-            sNode = myChange1Model.getNodeById(newSelection.getSNode().getSNodeId());
+            sNode = myChange1Model.getNodeById(newSelection.getEditorCell().getSNode().getSNodeId());
             myChange1EditorComponent.inspect(sNode);
-            sNode = myResultModel.getNodeById(newSelection.getSNode().getSNodeId());
+            sNode = myResultModel.getNodeById(newSelection.getEditorCell().getSNode().getSNodeId());
             myResultEditorComponent.inspect(sNode);
-            sNode = myChange2Model.getNodeById(newSelection.getSNode().getSNodeId());
+            sNode = myChange2Model.getNodeById(newSelection.getEditorCell().getSNode().getSNodeId());
             myChange2EditorComponent.inspect(sNode);
           }
         }
       });
+      super.selectionChangedTo(component, newSelection);
     }
   };
   private boolean myVeiwportSetInProgress = false;
@@ -105,7 +108,7 @@ public class OldRootMergeDialog extends BaseDialog implements EditorMessageOwner
     panel.add(result.getExternalComponent(), BorderLayout.CENTER);
     myTopComponent.add(panel);
     myBottomComponent.add(result.getInspector().getExternalComponent());
-    result.addCellSelectionListener(myCellSelectionListener);
+    result.getSelectionManager().addSelectionListener(myCellSelectionListener);
     result.getViewport().addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
         if (myVeiwportSetInProgress) {

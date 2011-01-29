@@ -159,6 +159,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.DiffEditorsGroup" file="DiffEditorsGroup.java">
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -169,14 +170,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditor" />
     <classNode dependClassName="javax.swing.event.ChangeEvent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SingularSelection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.awt.Point" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="javax.swing.event.ChangeListener" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.CellSelectionListener" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.GoToNeighbourMergeRoot" file="GoToNeighbourMergeRoot.java">
     <classNode dependClassName="java.lang.String" />
@@ -753,12 +755,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.DiffBuilder" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.awt.HeadlessException" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.CellSelectionListener" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange" />
     <classNode dependClassName="java.awt.event.WindowAdapter" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
@@ -774,7 +774,7 @@
     <classNode dependClassName="java.awt.event.WindowEvent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddRootChange" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -786,8 +786,11 @@
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.GridLayout" />
     <classNode dependClassName="java.awt.Cursor" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SingularSelection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SelectionListener" />
     <classNode dependClassName="javax.swing.event.ChangeEvent" />
     <classNode dependClassName="javax.swing.event.ChangeListener" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
     <classNode dependClassName="java.awt.event.FocusEvent" />
@@ -809,7 +812,7 @@
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldChangesBlock" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.CellSelectionListener" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldDiffEditorComponent" />
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
@@ -818,7 +821,6 @@
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldChangeEditorMessage" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="javax.swing.JSplitPane" />
     <classNode dependClassName="java.util.HashSet" />
@@ -831,19 +833,21 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="javax.swing.AbstractAction" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldDiffEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="java.awt.GridLayout" />
     <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SelectionListener" />
     <classNode dependClassName="javax.swing.event.ChangeEvent" />
     <classNode dependClassName="javax.swing.event.ChangeListener" />
     <classNode dependClassName="javax.swing.JButton" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
     <classNode dependClassName="java.awt.FlowLayout" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.Merger" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SingularSelection" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
     <classNode extendsClassName="javax.swing.JLabel" />

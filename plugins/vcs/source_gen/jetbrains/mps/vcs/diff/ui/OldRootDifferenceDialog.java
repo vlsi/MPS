@@ -9,9 +9,10 @@ import jetbrains.mps.smodel.SModel;
 import javax.swing.JPanel;
 import com.intellij.ui.FocusTrackback;
 import com.intellij.openapi.wm.FocusWatcher;
-import jetbrains.mps.nodeEditor.CellSelectionListener;
+import jetbrains.mps.nodeEditor.selection.SelectionListener;
+import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
@@ -58,15 +59,16 @@ public class OldRootDifferenceDialog extends BaseDialog implements EditorMessage
   private JPanel myBottomPanel;
   private FocusTrackback myFocusTrackback;
   private FocusWatcher myFocusWatcher;
-  private CellSelectionListener myCellSelectionListener = new CellSelectionListener() {
-    public void selectionChanged(EditorComponent editor, EditorCell oldSelection, final EditorCell newSelection) {
+  private SelectionListener myCellSelectionListener = new SingularSelectionListenerAdapter() {
+    @Override
+    protected void selectionChangedTo(EditorComponent component, final SingularSelection newSelection) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          if (newSelection != null && newSelection.getSNode() != null) {
+          if (newSelection != null && newSelection.getEditorCell().getSNode() != null) {
             SNode sNode;
-            sNode = myNewModel.getNodeById(newSelection.getSNode().getSNodeId());
+            sNode = myNewModel.getNodeById(newSelection.getEditorCell().getSNode().getSNodeId());
             myNewEditorComponent.inspect(sNode);
-            sNode = myOldModel.getNodeById(newSelection.getSNode().getSNodeId());
+            sNode = myOldModel.getNodeById(newSelection.getEditorCell().getSNode().getSNodeId());
             myOldEditorComponent.inspect(sNode);
           }
         }
@@ -134,7 +136,7 @@ public class OldRootDifferenceDialog extends BaseDialog implements EditorMessage
     panel.add(result.getExternalComponent(), BorderLayout.CENTER);
     myTopPanel.add(panel);
     myBottomPanel.add(result.getInspector().getExternalComponent());
-    result.addCellSelectionListener(myCellSelectionListener);
+    result.getSelectionManager().addSelectionListener(myCellSelectionListener);
     result.getViewport().addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
         if (myViewportSetInProgress) {

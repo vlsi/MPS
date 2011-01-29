@@ -13,7 +13,8 @@ import jetbrains.mps.smodel.SNodeId;
 import java.awt.Point;
 import java.awt.Rectangle;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.nodeEditor.CellSelectionListener;
+import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
+import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -28,7 +29,7 @@ public class DiffEditorsGroup {
 
   public void add(DiffEditor diffEditor) {
     ListSequence.fromList(myDiffEditors).addElement(diffEditor);
-    diffEditor.getMainEditor().addCellSelectionListener(myCellSelectionListener);
+    diffEditor.getMainEditor().getSelectionManager().addSelectionListener(myCellSelectionListener);
     diffEditor.getMainEditor().getViewport().addChangeListener(new DiffEditorsGroup.MyViewportChangeListener(diffEditor));
   }
 
@@ -114,14 +115,15 @@ public class DiffEditorsGroup {
     return null;
   }
 
-  private class MyCellSelectionListener implements CellSelectionListener {
+  private class MyCellSelectionListener extends SingularSelectionListenerAdapter {
     public MyCellSelectionListener() {
     }
 
-    public void selectionChanged(EditorComponent component, EditorCell oldSelection, final EditorCell newSelection) {
+    @Override
+    protected void selectionChangedTo(EditorComponent component, final SingularSelection newSelection) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SNodeId selectionId = check_s6qw4f_a0a0a0a0a(check_s6qw4f_a0a0a0a0a0(newSelection));
+          SNodeId selectionId = check_s6qw4f_a0a0a0a0a(check_s6qw4f_a0a0a0a0a0(newSelection.getEditorCell()));
           if (selectionId != null) {
             for (DiffEditor diffEditor : ListSequence.fromList(myDiffEditors)) {
               diffEditor.inspect(check_s6qw4f_a0a0a0a1a0a0a0(check_s6qw4f_a0a0a0a0b0a0a0a(diffEditor.getMainEditor().getEditedNode()), selectionId));

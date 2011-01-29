@@ -22,19 +22,17 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import java.awt.event.*;
+import java.awt.event.HierarchyEvent;
+import java.awt.event.HierarchyListener;
 import java.util.List;
-
-import org.jetbrains.annotations.NotNull;
 
 public class NodeEditorComponent extends EditorComponent {
   private SNode myLastInspectedNode = null;
@@ -42,12 +40,10 @@ public class NodeEditorComponent extends EditorComponent {
   public NodeEditorComponent(final IOperationContext operationContext) {
     super(operationContext, true);
 
-    addCellSelectionListener(new CellSelectionListener() {
-      public void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
-        final SNode[] toSelect = new SNode[1];
-        if (newSelection != null) {
-          toSelect[0] = newSelection.getSNode();
-        }
+    getSelectionManager().addSelectionListener(new SingularSelectionListenerAdapter() {
+      @Override
+      protected void selectionChangedTo(EditorComponent editorComponent, SingularSelection newSelection) {
+        final SNode[] toSelect = new SNode[]{newSelection.getEditorCell().getSNode()};
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             if (isShowing() || IdeMain.getTestMode() != TestMode.NO_TEST) {

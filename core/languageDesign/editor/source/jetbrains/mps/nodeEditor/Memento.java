@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.selection.SelectionInfo;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
 
 import java.util.*;
@@ -25,7 +26,7 @@ import java.util.Map.Entry;
 
 class Memento {
   private CellInfo mySelectedCellInfo;
-  private Stack<CellInfo> mySelectedStack = new Stack<CellInfo>();
+  private Stack<SelectionInfo> mySelectionStack = new Stack<SelectionInfo>();
   private List<CellInfo> myCollectionsWithEnabledBraces = new ArrayList<CellInfo>();
   private Set<CellInfo> myFolded = new HashSet<CellInfo>();
 
@@ -55,7 +56,7 @@ class Memento {
       if (deepestSelectedCell instanceof EditorCell_Label && deepestSelectedCell.isErrorState()) {
       }
       mySelectedCellInfo = selectedCell.getCellInfo();
-      mySelectedStack = nodeEditor.getSelectedStackForMemento();
+      mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
 
       for (EditorCell foldedCell : nodeEditor.getFoldedCells()) {
         myFolded.add(foldedCell.getCellInfo());
@@ -99,7 +100,7 @@ class Memento {
       editor.changeSelection(cellToSelect);
     }
     
-    editor.setSelectedStackFromMemento(mySelectedStack);
+    editor.getSelectionManager().setSelectionInfoStack(mySelectionStack);
     for (CellInfo collectionInfo : myCollectionsWithEnabledBraces) {
       EditorCell collection = collectionInfo.findCell(editor);
       if (!(collection instanceof EditorCell_Collection)) continue;
@@ -166,7 +167,7 @@ class Memento {
         EqualUtil.equals(mySelectionEnd, m.mySelectionEnd) &&
         EqualUtil.equals(myFirstRangeSelectionNode, m.myFirstRangeSelectionNode) &&
         EqualUtil.equals(myLastRangeSelectionNode, m.myLastRangeSelectionNode) &&
-        EqualUtil.equals(mySelectedStack, m.mySelectedStack) &&
+        EqualUtil.equals(mySelectionStack, m.mySelectionStack) &&
         EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
         EqualUtil.equals(myFolded, m.myFolded)) {
 
@@ -191,14 +192,14 @@ class Memento {
       "  selectionStart = " + mySelectionStart + "\n" +
       "  selectionEnd = " + mySelectionEnd + "\n" +
       "  cellInfo = " + mySelectedCellInfo + "\n" +
-      "  selectedStack = " + mySelectedStack + "\n" +
+      "  selectedStack = " + mySelectionStack + "\n" +
       "  collectionsWithBraces = " + myCollectionsWithEnabledBraces + "\n" +
       "  foldedCells = " + myFolded + "\n" +
       "]\n";
   }
 
   private static final String SELECTED_CELL = "selectedCell";
-  private static final String SELECTED_STACK = "selectedStack";
+  private static final String SELECTION_STACK = "selectionStack";
   private static final String STACK_ELEMENT = "stackElement";
   private static final String FOLDED = "folded";
   private static final String FOLDED_ELEMENT = "foldedElement";
@@ -213,22 +214,16 @@ class Memento {
         ((DefaultCellInfo)mySelectedCellInfo).saveTo(cellElem);
         e.addContent(cellElem);
     }
-    Element selectedStack = new Element(SELECTED_STACK);
+
+    Element selectionStack = new Element(SELECTION_STACK);
+    e.addContent(selectionStack);
+    for (SelectionInfo selectionInfo : mySelectionStack) {
+      Element stackElement = new Element(STACK_ELEMENT);
+      selectionInfo.persistToXML(stackElement);
+      selectionStack.addContent(stackElement);
+    }
+
     boolean success = true;
-    for (CellInfo cellInfo : mySelectedStack) {
-      if (cellInfo instanceof DefaultCellInfo) {
-        Element stackElement = new Element(STACK_ELEMENT);
-        ((DefaultCellInfo)cellInfo).saveTo(stackElement);
-        selectedStack.addContent(stackElement);
-      } else {
-        success = false;
-        break;
-      }
-    }
-    if (success) {
-      e.addContent(selectedStack);
-    }
-    success = true;
     Element folded = new Element(FOLDED);
     for (CellInfo cellInfo : myFolded) {
       if (cellInfo instanceof DefaultCellInfo) {
@@ -256,11 +251,11 @@ class Memento {
     if (selectedCell != null) {
       memento.mySelectedCellInfo = DefaultCellInfo.loadFrom(selectedCell);
     }
-    Element selectedStack = e.getChild(SELECTED_STACK);
-    if (selectedStack != null) {
-      List children = selectedStack.getChildren(STACK_ELEMENT);
+    Element selectionStack = e.getChild(SELECTION_STACK);
+    if (selectionStack != null) {
+      List children = selectionStack.getChildren(STACK_ELEMENT);
       for (Object o : children) {
-        memento.mySelectedStack.add(DefaultCellInfo.loadFrom((Element) o));
+        memento.mySelectionStack.push(new SelectionInfo((Element) o)) ;
       }
     }
     Element folded = e.getChild(FOLDED);

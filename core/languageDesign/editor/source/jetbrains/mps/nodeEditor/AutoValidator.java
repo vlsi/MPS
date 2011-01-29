@@ -15,48 +15,68 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.cells.CellInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.nodeEditor.selection.SelectionListener;
+import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 
 import javax.swing.SwingUtilities;
 
 class AutoValidator {
   AutoValidator(EditorComponent editorComponent) {
-    editorComponent.addCellSelectionListener(new MyCellSelectionListener());
+    editorComponent.getSelectionManager().addSelectionListener(new MyCellSelectionListener());
   }
 
-  private class MyCellSelectionListener implements CellSelectionListener {
-    public void selectionChanged(final EditorComponent editor, final EditorCell oldSelection, EditorCell newSelection) {
-      if (editor.isCellSwapInProgress()) return;
-      if (oldSelection != null && (!!oldSelection.isErrorState() || oldSelection instanceof EditorCell_STHint)) {
-        final SNode node = oldSelection.getSNode();
-        final CellInfo cellInfo = oldSelection.getCellInfo();
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                if (oldSelection.isErrorState()) {
-                  EditorCell cell = cellInfo.findCell(editor);
-                  if (cell != null) {
-                    Object memento = editor.getEditorContext().createMemento();
-                    cell.validate(true, false);
-                    editor.flushEvents();
-                    editor.getEditorContext().setMemento(memento);
-                  }
-                }
+  private class MyCellSelectionListener implements SelectionListener {
+    @Override
+    public void selectionChanged(final EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
+      if (!(oldSelection instanceof SingularSelection)) {
+        return;
+      }
+      final EditorCell editorCell = ((SingularSelection) oldSelection).getEditorCell();
 
-                if (oldSelection instanceof EditorCell_STHint) {
-                  SNodeEditorUtil.removeRightTransformHint(node);
-                  SNodeEditorUtil.removeLeftTransformHint(node);
+      if (editorComponent.isCellSwapInProgress()) {
+        return;
+      }
+      if (!editorCell.isErrorState() && !(editorCell instanceof EditorCell_STHint)) {
+        return;
+      }
+
+      if (newSelection instanceof SingularSelection) {
+        // Do not perform any actions on moving within same EditorCell.
+        if (((SingularSelection) newSelection).getEditorCell() == editorCell) {
+          return;
+        }
+      }
+
+      final SNode node = editorCell.getSNode();
+      final CellInfo cellInfo = editorCell.getCellInfo();
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              if (editorCell.isErrorState()) {
+                EditorCell cell = cellInfo.findCell(editorComponent);
+                if (cell != null) {
+                  Object memento = editorComponent.getEditorContext().createMemento();
+                  cell.validate(true, false);
+                  editorComponent.flushEvents();
+                  editorComponent.getEditorContext().setMemento(memento);
                 }
               }
-            });
-          }
-        });
-      }
+
+              if (editorCell instanceof EditorCell_STHint) {
+                SNodeEditorUtil.removeRightTransformHint(node);
+                SNodeEditorUtil.removeLeftTransformHint(node);
+              }
+            }
+          });
+        }
+      });
     }
   }
 }

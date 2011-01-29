@@ -13,10 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import org.jdom.Element;
 
-public interface CellSelectionListener {
-  void selectionChanged(EditorComponent editor, EditorCell oldSelection, EditorCell newSelection);
+import java.util.Properties;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: Alexander Shatalin
+ * Date: 1/13/11
+ * Time: 6:40 PM
+ * To change this template use File | Settings | File Templates.
+ */
+public interface Selection {
+  void activate();
+
+  void deactivate();
+
+  SelectionInfo getSelectionInfo() throws SelectionStoreException;
+
+  //void paintSelection();
+
+  //void getSelectedNode();
+
+  //void ensureSelectionVisible();
 }
