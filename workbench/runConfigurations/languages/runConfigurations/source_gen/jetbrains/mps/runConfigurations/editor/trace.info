@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="RunConfigurationExecutor_Editor.java" startLine="56" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfigurationExecutor_Editor$_Inline_g7zihj_a1a" />
+  <unitInfo fileName="RunConfiguration_Editor.java" startLine="124" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfiguration_Editor$_Inline_ryg3k0_a3a0" />
+  <unitInfo fileName="RunConfigurationType_Editor.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfigurationType_Editor" />
+  <unitInfo fileName="RunConfigurationExecutor_Editor.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfigurationExecutor_Editor" />
+  <unitInfo fileName="RunConfiguration_Editor.java" startLine="21" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfiguration_Editor" />
+</debugInfo>
+

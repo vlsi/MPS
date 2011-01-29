@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="RunConfigurationExecutor_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.RunConfigurationExecutor_name_PropertyConstraint" />
+  <root nodeId="1048802521465134864">
+    <nodeInfo nodeId="1048802521465134904" fileName="RunConfigurationExecutor_name_PropertyConstraint.java" startLine="26" startPosition="77" endLine="27" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1048802521465134902" fileName="RunConfigurationExecutor_name_PropertyConstraint.java" startLine="28" startPosition="5" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1048802521465134875" fileName="RunConfigurationExecutor_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1048802521465134877" fileName="RunConfigurationExecutor_name_PropertyConstraint.java" startLine="26" startPosition="77" endLine="27" endPosition="125" />
+    <scopeInfo nodeId="1048802521465134867" fileName="RunConfigurationExecutor_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="29" endPosition="16" />
+  </root>
+</debugInfo>
+
