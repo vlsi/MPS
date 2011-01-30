@@ -20,7 +20,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ProjectPluginDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_Behavior" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -43,7 +42,7 @@
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
     <classNode dependClassName="java.lang.Comparable" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ProjectPluginDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ApplicationPluginDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior" />
