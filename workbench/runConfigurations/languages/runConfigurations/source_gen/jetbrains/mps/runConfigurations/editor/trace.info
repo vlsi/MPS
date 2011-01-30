@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="RunConfigurationExecutor_Editor.java" startLine="56" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfigurationExecutor_Editor$_Inline_g7zihj_a1a" />
-  <unitInfo fileName="RunConfiguration_Editor.java" startLine="124" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfiguration_Editor$_Inline_ryg3k0_a3a0" />
-  <unitInfo fileName="RunConfigurationType_Editor.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfigurationType_Editor" />
-  <unitInfo fileName="RunConfigurationExecutor_Editor.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfigurationExecutor_Editor" />
-  <unitInfo fileName="RunConfiguration_Editor.java" startLine="21" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfiguration_Editor" />
+  <unitInfo fileName="RunConfigurationExecutor_Editor.java" startLine="58" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfigurationExecutor_Editor$_Inline_g7zihj_a1a" />
+  <unitInfo fileName="RunConfiguration_Editor.java" startLine="278" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfiguration_Editor$_Inline_ryg3k0_a3a0" />
+  <unitInfo fileName="PersistentEditor_Editor.java" startLine="50" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.PersistentEditor_Editor$contentsListHandler_s7v5p0_b0" />
+  <unitInfo fileName="RunConfiguration_Editor.java" startLine="311" startPosition="0" endLine="348" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfiguration_Editor$persistentPropertyListHandler_ryg3k0_b1b2a" />
+  <unitInfo fileName="RunConfigurationType_Editor.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfigurationType_Editor" />
+  <unitInfo fileName="PersistentEditor_Editor.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.PersistentEditor_Editor" />
+  <unitInfo fileName="RunConfigurationExecutor_Editor.java" startLine="19" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfigurationExecutor_Editor" />
+  <unitInfo fileName="PersistentPropertyDeclaration_Editor.java" startLine="23" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.PersistentPropertyDeclaration_Editor" />
+  <unitInfo fileName="RunConfiguration_Editor.java" startLine="32" startPosition="0" endLine="349" endPosition="0" unitName="jetbrains.mps.runConfigurations.editor.RunConfiguration_Editor" />
+  <root nodeId="3754890006475755518">
+    <nodeInfo nodeId="3754890006475755526" fileName="PersistentPropertyDeclaration_Editor.java" startLine="111" startPosition="111" endLine="112" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="3754890006475755525" fileName="PersistentPropertyDeclaration_Editor.java" startLine="111" startPosition="111" endLine="112" endPosition="72" />
+  </root>
 </debugInfo>
 

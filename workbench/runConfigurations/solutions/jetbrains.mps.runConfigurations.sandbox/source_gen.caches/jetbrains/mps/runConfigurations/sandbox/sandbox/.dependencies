@@ -19,6 +19,17 @@
     <classNode dependClassName="com.intellij.openapi.util.JDOMExternalizable" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunConfigurationBase" />
   </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.sandbox.sandbox.Test_Configuration_Editor_Swing" file="Test_Configuration_Editor_Swing.java">
+    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.sandbox.sandbox.Test_Configuration" />
+    <classNode dependClassName="javax.swing.JLabel" />
+    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="javax.swing.ButtonGroup" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode extendsClassName="com.intellij.openapi.options.SettingsEditor" />
+  </dependency>
   <dependency className="jetbrains.mps.runConfigurations.sandbox.sandbox.Test_Configuration_RunProfileState" file="Test_Configuration_RunProfileState.java">
     <classNode dependClassName="com.intellij.execution.Executor" />
     <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />

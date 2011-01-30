@@ -31,6 +31,7 @@
       <languagePath path="${mps_home}/platform/ui/languages/testdata/testdata.mpl" folder="ui" />
       <languagePath path="${mps_home}/platform/ui/languages/ui/ui.mpl" folder="ui" />
       <languagePath path="${mps_home}/platform/ui/languages/internal/internal.mpl" folder="ui" />
+      <languagePath path="${project}/languages/demo/demo.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs />

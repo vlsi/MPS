@@ -18,7 +18,7 @@ public class RunConfiguration_Behavior {
     if (SPropertyOperations.getString(thisNode, "name") == null) {
       return null;
     }
-    return SPropertyOperations.getString(thisNode, "name").replace(" ", "_") + "_Configuration";
+    return SPropertyOperations.getString(thisNode, "name").replace(" ", "") + "_Configuration";
   }
 
   public static SNode call_getExecutor_3754890006475713427(final SNode thisNode) {

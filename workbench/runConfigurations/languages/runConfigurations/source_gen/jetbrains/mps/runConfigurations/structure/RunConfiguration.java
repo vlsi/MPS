@@ -6,6 +6,8 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +19,8 @@ public class RunConfiguration extends BaseConcept implements INamedConcept, ICla
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONFIGURATION_TYPE = "configurationType";
+  public static final String EDITOR = "editor";
+  public static final String PERSISTENT_PROPERTY = "persistentProperty";
 
   public RunConfiguration(SNode node) {
     super(node);
@@ -60,6 +64,34 @@ public class RunConfiguration extends BaseConcept implements INamedConcept, ICla
 
   public void setConfigurationType(RunConfigurationType node) {
     super.setReferent(RunConfiguration.CONFIGURATION_TYPE, node);
+  }
+
+  public PersistentEditor getEditor() {
+    return (PersistentEditor) this.getChild(PersistentEditor.class, RunConfiguration.EDITOR);
+  }
+
+  public void setEditor(PersistentEditor node) {
+    super.setChild(RunConfiguration.EDITOR, node);
+  }
+
+  public int getPersistentPropertiesCount() {
+    return this.getChildCount(RunConfiguration.PERSISTENT_PROPERTY);
+  }
+
+  public Iterator<PersistentPropertyDeclaration> persistentProperties() {
+    return this.children(PersistentPropertyDeclaration.class, RunConfiguration.PERSISTENT_PROPERTY);
+  }
+
+  public List<PersistentPropertyDeclaration> getPersistentProperties() {
+    return this.getChildren(PersistentPropertyDeclaration.class, RunConfiguration.PERSISTENT_PROPERTY);
+  }
+
+  public void addPersistentProperty(PersistentPropertyDeclaration node) {
+    this.addChild(RunConfiguration.PERSISTENT_PROPERTY, node);
+  }
+
+  public void insertPersistentProperty(PersistentPropertyDeclaration prev, PersistentPropertyDeclaration node) {
+    this.insertChild(prev, RunConfiguration.PERSISTENT_PROPERTY, node);
   }
 
   public static RunConfiguration newInstance(SModel sm, boolean init) {
