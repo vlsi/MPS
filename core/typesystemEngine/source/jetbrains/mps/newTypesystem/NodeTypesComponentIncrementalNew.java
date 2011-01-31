@@ -13,7 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.typesystem.inference;
+package jetbrains.mps.newTypesystem;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: Ilya.Lintsbakh
+ * Date: 1/28/11
+ * Time: 6:53 PM
+ */
+/*
+ * Copyright 2003-2010 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
@@ -21,45 +43,33 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.typesystem.debug.ISlicer;
-import jetbrains.mps.typesystem.debug.NullSlicer;
+import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.UseCarefully;
-import org.jetbrains.annotations.NotNull;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.*;
-import java.util.Map.Entry;
 
-public class NodeTypesComponent {
-
-  private static final char A_CHAR = 'a';
-  private static final char Z_CHAR = 'z';
-
-  private int myVariableIndex = 0;
-  private char myVariableChar = A_CHAR;
-
+public class NodeTypesComponentIncrementalNew extends NodeTypesComponent {
   private final Object ACCESS_LOCK = new Object();
 
   private SNode myRootNode;
   private boolean myIsCheckedTypesystem = false;
   private boolean myIsCheckedNonTypesystem = false;
   private TypeChecker myTypeChecker;
-  private Map<SNode, SNode> myNodesToTypesMap = new THashMap<SNode, SNode>();
-  private Map<SNode, List<IErrorReporter>> myNodesToErrorsMap = new THashMap<SNode, List<IErrorReporter>>();
 
   private Map<SNode, List<IErrorReporter>> myNodesToNonTypesystemErrorsMap = new THashMap<SNode, List<IErrorReporter>>();
 
-  private Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
-  private Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
+  protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
+  protected Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
 
   private Set<Pair<SNode, NonTypesystemRule_Runtime>> myCheckedNodesNonTypesystem
     = new THashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
@@ -68,16 +78,6 @@ public class NodeTypesComponent {
   private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodes_B = new WeakHashMap<SNode, WeakSet<SNode>>();
 
   private WeakSet<SNode> myNodesDependentOnCaches = new WeakSet<SNode>();
-
-  private EquationManager myEquationManager;
-  private Stack<EquationManager> myMasterEquationManagers = new Stack<EquationManager>();
-
-  private Stack<SNode> myCurrentSlaveComputedNodes = new Stack<SNode>();
-  //key is a blocking node
-  private Map<SNode, Set<SNode>> myBlockedOnSlaveComputation = new THashMap<SNode, Set<SNode>>();
-  private Set<SNode> myComputedBlockingTerms = new THashSet<SNode>();
-
-  private Map<String, Set<SNode>> myRegisteredVariables = new THashMap<String, Set<SNode>>();
 
   private MyModelListener myModelListener = new MyModelListener();
   private MyModelListenerManager myModelListenerManager = new MyModelListenerManager(myModelListener);
@@ -94,8 +94,6 @@ public class NodeTypesComponent {
   private Set<SNode> myCurrentTypedTermsToInvalidateNonTypesystem = new THashSet<SNode>();
   private boolean myCacheWasCurrentlyRebuiltNonTypesystem = false;
 
-  //temp
- // private Map<NonTypesystemRule_Runtime, Integer> myRulesCounter = new HashMap<NonTypesystemRule_Runtime, Integer>();
 
   // nodes to rules which depend on this nodes
   private Map<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> myNodesToDependentNodesWithNTRules =
@@ -123,6 +121,8 @@ public class NodeTypesComponent {
   private boolean myInvalidationWasPerformed = false;
   private boolean myInvalidationResult = false;
 
+  private State myState;
+
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
   protected Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
   private SNode myCurrentCheckedNode;
@@ -132,19 +132,16 @@ public class NodeTypesComponent {
 
   boolean myIsNonTypesystemCheckingInProgress = false;
 
+  private Set<SNode> myJustInvalidatedNodes = new HashSet<SNode>();
+
   private TypeCheckingContext myTypeCheckingContext;
 
-  private ISlicer mySlicer;
-  private boolean myIsSmartCompletion = false;
-  private SNode myHole = null;
-  private HoleWrapper myHoleTypeWrapper = null;
-  private boolean myHoleIsAType = false;
-
-  public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
+  public NodeTypesComponentIncrementalNew(SNode rootNode, TypeChecker typeChecker, TypeCheckingContextNew typeCheckingContext) {
+    super(rootNode, typeChecker, typeCheckingContext);
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
     myTypeCheckingContext = typeCheckingContext;
-    myEquationManager = new EquationManager(myTypeChecker, myTypeCheckingContext);
+    myState = typeCheckingContext.getState();
     myModelListenerManager.track(myRootNode);
   }
 
@@ -157,92 +154,15 @@ public class NodeTypesComponent {
   }
 
   public void clear() {
-    clearEquationManager();
+    clearState();
     clearNodesTypes();
-    myRegisteredVariables.clear();
     clearCaches();
     myIsCheckedTypesystem = false;
     myIsCheckedNonTypesystem = false;
   }
 
-  private boolean isForSlaveComputation(SNode node) {
-    if (myComputedBlockingTerms.contains(node)) return false;
-    if (!myCurrentSlaveComputedNodes.isEmpty() && myCurrentSlaveComputedNodes.peek() == node) return false;
-    return myTypeChecker.getRulesManager().isBlockingDependentComputationNode(node);
-  }
-
-  private boolean testAndBlockOnSlaveComputation(SNode node) {
-    boolean result = false;
-    Set<AbstractDependentComputation_Runtime> dependentComputations =
-      myTypeChecker.getRulesManager().getDependentComputations(node);
-    for (AbstractDependentComputation_Runtime dependentComputation : dependentComputations) {
-      SNode blockingNode = dependentComputation.getBlockingNode(node);
-      if (blockingNode != null) {
-        if (!myComputedBlockingTerms.contains(blockingNode)) {
-          if (blockingNode.getAncestors(true).contains(node)) {
-            LOG.warning("blocking node is a descendant of blocked node, will be never unblocked ", blockingNode);
-            LOG.warning("MPS typesystem will not block node type computation ", node);
-            continue;
-          }
-          result = true;
-          Set<SNode> nodes = myBlockedOnSlaveComputation.get(blockingNode);
-          if (nodes == null) {
-            nodes = new HashSet<SNode>(1);
-            myBlockedOnSlaveComputation.put(blockingNode, nodes);
-          }
-          nodes.add(node);
-        }
-      }
-    }
-    return result;
-  }
-
-  private void performSlaveComputation(SNode node) {
-    startSlaveComputation(node);
-    computeTypesForNode(node, true, new ArrayList<SNode>(0));
-    SNode newNode = finishSlaveComputation();
-    assert newNode == node;
-    unblockNodesOnSlaveComputation(node);
-  }
-
-  private void clearEquationManager() {
-    myEquationManager = new EquationManager(myTypeChecker, myTypeCheckingContext);
-    myMasterEquationManagers.clear();
-    myCurrentSlaveComputedNodes.clear();
-    myComputedBlockingTerms.clear();
-    myBlockedOnSlaveComputation.clear();
-  }
-
-  private void startSlaveComputation(SNode node) {
-    myCurrentSlaveComputedNodes.push(node);
-    myMasterEquationManagers.push(myEquationManager);
-    myEquationManager = new EquationManager(myTypeChecker, myTypeCheckingContext, myMasterEquationManagers.peek());
-  }
-
-  private SNode finishSlaveComputation() {
-    EquationManager slaveManager = myEquationManager;
-    myEquationManager = myMasterEquationManagers.pop();
-    slaveManager.solveInequations();
-    myEquationManager.fillWithEquations(slaveManager);
-    SNode result = myCurrentSlaveComputedNodes.pop();
-    myComputedBlockingTerms.add(result);
-    expandTypeAndPutToContext(result);
-    return result;
-  }
-
-  private void unblockNodesOnSlaveComputation() {
-    for (SNode node : myComputedBlockingTerms) {
-      Set<SNode> blockedNodes = myBlockedOnSlaveComputation.get(node);
-      if (blockedNodes != null) {
-        for (SNode blocked : blockedNodes) {
-          unblockNodesOnSlaveComputation(blocked);
-        }
-      }
-    }
-  }
-
-  private void unblockNodesOnSlaveComputation(SNode node) {
-    myCurrentFrontiers.peek().add(node);
+  private void clearState() {
+    myState.clear(true);
   }
 
   public SNode getNode() {
@@ -265,22 +185,20 @@ public class NodeTypesComponent {
   }
 
   private void clearNodesTypes() {
-    myNodesToTypesMap.clear();
-    myNodesToErrorsMap.clear();
+    myState.getNodeMaps().clear();
     myNodesToNonTypesystemErrorsMap.clear();
     myCurrentNodesToInvalidate.clear();
     myCurrentNodesToInvalidateNonTypesystem.clear();
     myCurrentPropertiesToInvalidateNonTypesystem.clear();
     myCurrentTypedTermsToInvalidateNonTypesystem.clear();
-    myVariableChar = A_CHAR;
-    myVariableIndex = 0;
   }
 
-  private void invalidateNodeTypesystem(SNode node, boolean typeWillBeRecalculated) {
+  private void invalidateNodeTypeSystem(SNode node, boolean typeWillBeRecalculated) {
     myFullyCheckedNodes.remove(node);
     myPartlyCheckedNodes.remove(node);
-    myNodesToTypesMap.remove(node);
-    myNodesToErrorsMap.remove(node);
+    if (myState.clearNode(node)) {
+      myJustInvalidatedNodes.add(node);
+    }
     if (typeWillBeRecalculated) {
       TypeChecker.getInstance().fireTypeWillBeRecalculatedForTerm(node);
     }
@@ -296,33 +214,37 @@ public class NodeTypesComponent {
 
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
     if (nodeWithError != null) {
-      putError(nodeWithError, errorReporter);
+      if (myIsNonTypesystemCheckingInProgress) {
+        putError(nodeWithError, errorReporter);
+      } else {
+        if (!ErrorReportUtil.shouldReportError(nodeWithError)) return;
+        myState.addError(nodeWithError, errorReporter, null);
+      }
     }
   }
 
   private void putError(SNode node, IErrorReporter errorReporter) {
-    if (myIsSpecial) {
-      return;
-    }
-    if (!ErrorReportUtil.shouldReportError(node)) return;
-
-    Map<SNode, List<IErrorReporter>> errorMap =
-      myIsNonTypesystemCheckingInProgress ? myNodesToNonTypesystemErrorsMap : myNodesToErrorsMap;
-
-    List<IErrorReporter> iErrorReporters = errorMap.get(node);
-    if (iErrorReporters == null) {
-      iErrorReporters = new ArrayList<IErrorReporter>(1);
-      errorMap.put(node, iErrorReporters);
-    }
-    iErrorReporters.add(errorReporter);
-
-    Collections.sort(iErrorReporters, new Comparator<IErrorReporter>() {
-      public int compare(IErrorReporter o1, IErrorReporter o2) {
-        return o1.getMessageStatus().compareTo(o2.getMessageStatus());
-      }
-    });
-
     if (myIsNonTypesystemCheckingInProgress) {
+      if (myIsSpecial) {
+        return;
+      }
+      if (!ErrorReportUtil.shouldReportError(node)) return;
+
+      Map<SNode, List<IErrorReporter>> errorMap = myNodesToNonTypesystemErrorsMap;
+
+      List<IErrorReporter> iErrorReporters = errorMap.get(node);
+      if (iErrorReporters == null) {
+        iErrorReporters = new ArrayList<IErrorReporter>(1);
+        errorMap.put(node, iErrorReporters);
+      }
+      iErrorReporters.add(errorReporter);
+
+      Collections.sort(iErrorReporters, new Comparator<IErrorReporter>() {
+        public int compare(IErrorReporter o1, IErrorReporter o2) {
+          return o1.getMessageStatus().compareTo(o2.getMessageStatus());
+        }
+      });
+
       //dependencies
       if (myNonTypesystemRuleAndNodeBeingChecked != null) {
         SNode currentNode = myNonTypesystemRuleAndNodeBeingChecked.o1;
@@ -376,26 +298,18 @@ public class NodeTypesComponent {
       if (!loadTypesystemRules(nodeToCheck)) {
         return;
       }
-      clearEquationManager();
-      if (inferenceMode) {
-        getEquationManager().setInferenceMode();
-      }
-      if (myIsSmartCompletion) {
-        myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager, myHoleTypeWrapper);
-        if (!myHoleIsAType) {
-          myNodesToTypesMap.put(myHole, myHoleTypeWrapper.getNode());
-        }
-      }
+
       computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
-      solveInequationsAndExpandTypes();
+      solveInequalitiesAndExpandTypes();
       performActionsAfterChecking();
     } finally {
-      clearEquationManager();
       myInvalidationWasPerformed = false;
     }
   }
 
   private void performActionsAfterChecking() {
+    //todo myState.performActionsAfterChecking();
+    /*
     Map<SNode, List<IErrorReporter>> toAdd = new HashMap<SNode, List<IErrorReporter>>(8);
 
     // setting expanded errors
@@ -422,34 +336,17 @@ public class NodeTypesComponent {
     myModelListenerManager.updateGCedNodes();
 
     TypeChecker.getInstance().addTypeRecalculatedListener(myTypeRecalculatedListener);//method checks if already exists
-    LanguageHierarchyCache.getInstance().addCacheChangeListener(myLanguageCacheListener);
+    LanguageHierarchyCache.getInstance().addCacheChangeListener(myLanguageCacheListener);      */
   }
 
-  public void solveInequationsAndExpandTypes() {
-    // solve residual inequations
-    myEquationManager.solveInequations();
-    getSlicer().beforeTypesExpanded(myNodesToTypesMap);
-
-    if (myIsSmartCompletion) {
-      myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager, myHoleTypeWrapper);
-      myHoleTypeWrapper.getInequationSystem().normalize();
+  public void solveInequalitiesAndExpandTypes() {
+    myState.solveInequalities();
+    if (!isIncrementalMode()) {
+      myState.expandAll(null);
+    } else {
+      myState.expandAll(myJustInvalidatedNodes);
+      myJustInvalidatedNodes.clear();
     }
-
-    // setting expanded types to nodes
-    for (Entry<SNode, SNode> contextEntry : new HashSet<Entry<SNode, SNode>>(myNodesToTypesMap.entrySet())) {
-      SNode term = contextEntry.getKey();
-      if (term == null) continue;
-      SNode type = expandTypeAndPutToContext(term);
-      if (HUtil.isRuntimeErrorType(type)) {
-        reportTypeError(term, HUtil.getErrorText(type), null, null);
-      }
-    }
-  }
-
-  private SNode expandTypeAndPutToContext(SNode term) {
-    SNode type = expandType(term, myNodesToTypesMap.get(term), AuxilaryRuntimeModel.getDescriptor().getSModel());
-    myNodesToTypesMap.put(term, type);
-    return type;
   }
 
   private boolean isIncrementalMode() {
@@ -466,37 +363,6 @@ public class NodeTypesComponent {
 
   public SNode computeTypesForNodeInferenceMode(SNode initialNode) {
     return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0), true);
-  }
-
-  public InequationSystem computeInequationsForHole(SNode hole, boolean holeIsAType) {
-    List<SNode> additionalNodes = new ArrayList<SNode>(1);
-    additionalNodes.add(hole);
-
-    try {
-      myIsSmartCompletion = true;
-      myHole = hole;
-      myHoleIsAType = holeIsAType;
-      computeTypesForNode_special(hole.getParent(), additionalNodes, false);
-      return myHoleTypeWrapper.getInequationSystem();
-    } finally {
-      myIsSmartCompletion = false;
-      myHoleTypeWrapper = null;
-      myHole = null;
-      myHoleIsAType = false;
-    }
-  }
-
-  public IWrapper getHoleWrapperRepresentator(IWrapper wrapper) {
-    if (wrapper == null) {
-      return null;
-    }
-    if (myIsSmartCompletion && wrapper instanceof HoleWrapper) {
-      return myHoleTypeWrapper;
-    }
-    if (myIsSmartCompletion && myHoleIsAType && wrapper.getNode() == myHole) {
-      return myHoleTypeWrapper;
-    }
-    return null;
   }
 
   protected SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
@@ -539,10 +405,7 @@ public class NodeTypesComponent {
     while (!(frontier.isEmpty())) {
       myCurrentFrontiers.push(newFrontier);
       for (SNode sNode : frontier) {
-        if (isForSlaveComputation(sNode)) {
-          performSlaveComputation(sNode);
-          continue;
-        }
+
         if (myFullyCheckedNodes.contains(sNode)) {
           continue;
         }
@@ -554,9 +417,7 @@ public class NodeTypesComponent {
           candidatesForFrontier.addAll(sNode.getChildren());
         }
         for (SNode candidate : candidatesForFrontier) {
-          if (!testAndBlockOnSlaveComputation(candidate)) {
             newFrontier.add(candidate);
-          }
         }
         if (!myPartlyCheckedNodes.contains(sNode)) {
           MyLanguageCachesReadListener languageCachesReadListener = null;
@@ -709,10 +570,6 @@ public class NodeTypesComponent {
     addDepedentNodesTypesystem(myCurrentCheckedNode, hashSet, true);
   }
 
-  public Map<SNode, SNode> getMainContext() {
-    return myNodesToTypesMap;
-  }
-
   protected boolean applyRulesToNode(SNode node) {
     Set<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
     boolean result = false;
@@ -859,59 +716,13 @@ public class NodeTypesComponent {
   }
 
   public void markUnchecked(SNode node) {
-    invalidateNodeTypesystem(node, true);
+    invalidateNodeTypeSystem(node, true);
   }
 
   public SNode getRawTypeFromContext(SNode node) {
-    return myNodesToTypesMap.get(node);
+    return myTypeCheckingContext.getTypeDontCheck(node);
   }
 
-  @NotNull
-  public List<IErrorReporter> getErrors(SNode node) {
-    List<IErrorReporter> result = new ArrayList<IErrorReporter>(4);
-    List<IErrorReporter> iErrorReporters = myNodesToErrorsMap.get(node);
-    if (iErrorReporters != null) {
-      result.addAll(iErrorReporters);
-    }
-    iErrorReporters = myNodesToNonTypesystemErrorsMap.get(node);
-    if (iErrorReporters != null) {
-      result.addAll(iErrorReporters);
-    }
-    return result;
-  }
-
-  private SNode expandType(SNode term, SNode type, SModel typesModel) {
-    return myEquationManager.expandType(term, type, typesModel, true, this);
-  }
-
-
-  public EquationManager getEquationManager() {
-    return myEquationManager;
-  }
-
-  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
-    Set<Pair<SNode, List<IErrorReporter>>> result = new HashSet<Pair<SNode, List<IErrorReporter>>>(1);
-    Set<SNode> keySet = new HashSet<SNode>(myNodesToErrorsMap.keySet());
-    keySet.addAll(myNodesToNonTypesystemErrorsMap.keySet());
-    for (SNode key : keySet) {
-      List<IErrorReporter> reporter = getErrors(key);
-      if (!reporter.isEmpty()) {
-        result.add(new Pair<SNode, List<IErrorReporter>>(key, reporter));
-      }
-    }
-    return result;
-  }
-
-  public String getNewVarName() {
-    String result = myVariableChar + (myVariableIndex == 0 ? "" : "" + myVariableIndex);
-    if (myVariableChar == Z_CHAR) {
-      myVariableIndex++;
-      myVariableChar = A_CHAR;
-    } else {
-      myVariableChar++;
-    }
-    return result;
-  }
 
   //returns true if something was invalidated
   private boolean doInvalidateNonTypesystem() {
@@ -1022,7 +833,7 @@ public class NodeTypesComponent {
     while (!currentNodesToInvalidate_A.isEmpty() || !currentNodesToInvalidate_B.isEmpty()) {
       for (SNode nodeToInvalidate : currentNodesToInvalidate_A) {
         if (invalidatedNodes_A.contains(nodeToInvalidate)) continue;
-        invalidateNodeTypesystem(nodeToInvalidate, true);
+        invalidateNodeTypeSystem(nodeToInvalidate, true);
         invalidatedNodes_A.add(nodeToInvalidate);
         WeakSet<SNode> nodes = myNodesToDependentNodes_A.get(nodeToInvalidate);
         if (nodes != null) {
@@ -1037,7 +848,7 @@ public class NodeTypesComponent {
       for (SNode nodeToInvalidate : currentNodesToInvalidate_B) {
         if (invalidatedNodes_A.contains(nodeToInvalidate)) continue;
         if (invalidatedNodes_B.contains(nodeToInvalidate)) continue;
-        invalidateNodeTypesystem(nodeToInvalidate, false);
+        invalidateNodeTypeSystem(nodeToInvalidate, false);
         invalidatedNodes_B.add(nodeToInvalidate);
         WeakSet<SNode> nodes = myNodesToDependentNodes_A.get(nodeToInvalidate);
         if (nodes != null) {
@@ -1074,36 +885,6 @@ public class NodeTypesComponent {
     Set<Pair<String, String>> set = myNodesToRules.get(node);
     if (set == null) return null;
     return new HashSet<Pair<String, String>>(set);
-  }
-
-  public void registerTypeVariable(SNode variable) {
-    String name = variable.getName();
-    Set<SNode> variables = myRegisteredVariables.get(name);
-    if (variables == null) {
-      variables = new HashSet<SNode>(1);
-      myRegisteredVariables.put(name, variables);
-    }
-    variables.add(variable);
-  }
-
-  public SNode[] getVariables(String varName) {
-    final Set<SNode> variables = myRegisteredVariables.get(varName);
-    if (variables == null) {
-      return SNode.EMPTY_ARRAY;
-    } else {
-      return variables.toArray(new SNode[variables.size()]);
-    }
-  }
-
-  public ISlicer getSlicer() {
-    if (mySlicer == null) {
-      return new NullSlicer();
-    }
-    return mySlicer;
-  }
-
-  public void setSlicer(ISlicer slicer) {
-    mySlicer = slicer;
   }
 
   public boolean isChecked(boolean considerNonTypesystemRules) {
@@ -1197,10 +978,6 @@ public class NodeTypesComponent {
         myCurrentNodesToInvalidateNonTypesystem.add(eventNode);
         myInvalidationWasPerformedNT = false;
       } else {
-        /*     Set<SNode> nodes = myNodesToDependentNodes_A.get(eventNode);    // todo don't use here myNodesToDependentNodes
-        if (nodes != null) {
-          myCurrentNodesToInvalidate.addAll(nodes);
-        }*/
         myCurrentNodesToInvalidate.add(eventNode);
         myInvalidationWasPerformed = false;
       }
@@ -1387,3 +1164,4 @@ public class NodeTypesComponent {
   }
 
 }
+

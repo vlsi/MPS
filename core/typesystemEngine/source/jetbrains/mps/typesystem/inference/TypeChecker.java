@@ -322,7 +322,7 @@ public class TypeChecker implements ApplicationComponent {
     }
   }
 
-  /* package */ void fireTypeWillBeRecalculatedForTerm(SNode term) {
+  public void fireTypeWillBeRecalculatedForTerm(SNode term) {
     for (TypeRecalculatedListener typeRecalculatedListener : copyTypeRecalculatedListeners()) {
       typeRecalculatedListener.typeWillBeRecalculatedForTerm(term);
     }

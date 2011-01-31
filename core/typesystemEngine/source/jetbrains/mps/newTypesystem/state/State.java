@@ -21,14 +21,8 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
-import jetbrains.mps.newTypesystem.operation.AbstractOperation;
-import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
-import jetbrains.mps.newTypesystem.operation.CheckAllOperation;
-import jetbrains.mps.newTypesystem.operation.SolveInequalitiesOperation;
-import jetbrains.mps.newTypesystem.operation.block.AddBlockOperation;
-import jetbrains.mps.newTypesystem.operation.block.AddDependencyOperation;
-import jetbrains.mps.newTypesystem.operation.block.RemoveBlockOperation;
-import jetbrains.mps.newTypesystem.operation.block.RemoveDependencyOperation;
+import jetbrains.mps.newTypesystem.operation.*;
+import jetbrains.mps.newTypesystem.operation.block.*;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
@@ -54,8 +48,8 @@ public class State {
 
   private final VariableIdentifier myVariableIdentifier;
 
-  private final Stack<AbstractOperation> myOperationStack = new Stack<AbstractOperation>();
-  private AbstractOperation myOperation = new CheckAllOperation();
+  private final Stack<AbstractOperation> myOperationStack;
+  private AbstractOperation myOperation;
   private boolean myInsideStateChangeAction = false;
 
   @StateObject
@@ -75,8 +69,10 @@ public class State {
       myBlocksAndInputs.put(ConditionKind.SHALLOW, new ManyToManyMap<SNode, Block>());
       myBlocksAndInputs.put(ConditionKind.CONCRETE, new ManyToManyMap<SNode, Block>());
     }
+    myOperationStack = new Stack<AbstractOperation>();
+    myOperation = new CheckAllOperation();
+    myOperationStack.push(myOperation);
   }
-
 
   @StateMethod
   public void addDependency(Block dataFlowBlock, SNode var, ConditionKind condition) {
@@ -153,6 +149,16 @@ public class State {
 
   public void addBlock(Block block) {
     executeOperation(new AddBlockOperation(block));
+  }
+
+  public boolean clearNode(SNode node) {
+    SNode type = myNodeMaps.getType(node);
+    List<IErrorReporter> nodeErrors = myNodeMaps.getNodeErrors(node);
+    if (type != null || (nodeErrors != null && !nodeErrors.isEmpty())) {
+      executeOperation(new ClearNodeTypeOperation(node, type, nodeErrors));
+      return true;
+    }
+    return false;
   }
 
   private void testInputsResolved(Block block) {
@@ -261,11 +267,13 @@ public class State {
   }
 
   public void solveInequalities() {
-    executeOperation(new SolveInequalitiesOperation(new Runnable() {
-      public void run() {
-        myInequalities.solveInequalities();
-      }
-    }));
+    if (!myInequalities.getInequalitiesToSolve().isEmpty()) {
+      executeOperation(new SolveInequalitiesOperation(new Runnable() {
+        public void run() {
+          myInequalities.solveInequalities();
+        }
+      }));
+    }
   }
 
   public void checkNonConcreteWhenConcretes() {
@@ -284,12 +292,14 @@ public class State {
     return myOperation;
   }
 
-  public void expandAll() {
-    executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
-      public void run() {
-        myNodeMaps.expandAll();
-      }
-    }));
+  public void expandAll(final Set<SNode> nodes) {
+    if (nodes != null && !nodes.isEmpty()) {
+      executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
+        public void run() {
+          myNodeMaps.expandAll(nodes);
+        }
+      }));
+    }
   }
 
   public boolean executeOperationsBeforeAnchor(AbstractOperation firstOp, Object anchor) {

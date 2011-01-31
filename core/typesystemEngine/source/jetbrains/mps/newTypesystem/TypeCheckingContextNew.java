@@ -45,7 +45,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     super(rootNode, typeChecker);
     myState = new State(this);
     myRootNode = rootNode;
-    myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
+    myNodeTypesComponent = new NodeTypesComponentIncrementalNew(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
   }
 
@@ -53,7 +53,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     super(rootNode, typeChecker, resolving);
     myState = new State(this);
     myRootNode = rootNode;
-    myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
+    myNodeTypesComponent = new NodeTypesComponentIncrementalNew(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
   }
 
@@ -68,10 +68,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void checkRoot() {
-
-      checkRoot(true);
-   
-    // myState.solveInequalities();
+      checkRoot(false);
   }
      /*
   @Override
@@ -85,19 +82,16 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void checkRoot(final boolean refreshTypes) {
    // synchronized (TYPECHECKING_LOCK) {
-      if (refreshTypes) {
-        myState.clear(true);
+
         myNodeTypesComponent.computeTypes(refreshTypes);
-        //((NodeTypesComponentNew)myNodeTypesComponent).checkNode(myRootNode, true);
         myNodeTypesComponent.setCheckedTypesystem();
-        //myChecked = true;
-      }
+
    // }
   }
 
   public void solveAndExpand() {
     myState.solveInequalities();
-    myState.expandAll();
+    myState.expandAll(null);
     myState.checkNonConcreteWhenConcretes();
   }
 
@@ -183,16 +177,14 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public List<IErrorReporter> getTypeMessagesDontCheck(SNode node) {
-    return myState.getNodeMaps().getNodeErrors(node);
+    return myState.getNodeMaps().getNodeErrors(node);   //todo non-typeSystem
   }
 
   @Override
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
-    if (nodeWithError == null) {
-      return;
-    }
-    if (!ErrorReportUtil.shouldReportError(nodeWithError)) return;
-    myState.addError(nodeWithError, errorReporter, null);
+    getNodeTypesComponent().reportTypeError(nodeWithError, errorReporter);
+    getNodeTypesComponent().addDependcyOnCurrent(nodeWithError, false);
+
   }
 
   @Override
@@ -259,10 +251,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     return null;
   }
 
-  @Override
-  public boolean isIncrementalMode() {
-    return false;
-  }
   /*
   @Override
   public SNode computeTypeInferenceMode(SNode node) {

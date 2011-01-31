@@ -74,7 +74,7 @@ public class Inequalities {
     return result;
   }
 
-  private List<InequalityBlock> getInequalitiesToSolve() {
+  public List<InequalityBlock> getInequalitiesToSolve() {
     List<InequalityBlock> result = new LinkedList<InequalityBlock>();
     Set<Block> set = myState.getBlocks(BlockKind.INEQUALITY);
     for (Block block : set) {
@@ -93,6 +93,7 @@ public class Inequalities {
     while (iteration(inequalities)) {
       inequalities = getInequalitiesToSolve();
     }
+    solvingInProcess = false;
   }
 
   private void addVariablesLink(SNode input, SNode output) {
