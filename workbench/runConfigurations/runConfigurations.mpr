@@ -23,7 +23,10 @@
       <languagePath path="${project}/languages/runConfigurations/runConfigurations.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="demo" moduleRef="jetbrains.mps.runConfigurations.demo" />
+      <genConfModule name="runConfigurations" moduleRef="jetbrains.mps.runConfigurations" />
+    </genConfs>
   </component>
   <component name="ProjectModuleManager">
     <modules />
