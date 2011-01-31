@@ -9,10 +9,6 @@
       <solutionPath path="${mps_home}/core/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="usages.baselang" />
       <solutionPath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="usages.lambda" />
       <solutionPath path="${project}/solutions/jetbrains.mps.runConfigurations.sandbox/jetbrains.mps.runConfigurations.sandbox.msd" />
-      <solutionPath path="${mps_home}/platform/ui/languages/swt/runtime/runtime.msd" folder="ui" />
-      <solutionPath path="${mps_home}/platform/ui/languages/swing/runtime/runtime.msd" folder="ui" />
-      <solutionPath path="${mps_home}/platform/ui/solutions/jetbrains.mps.ui.unittest/jetbrains.mps.ui.unittest.msd" folder="ui" />
-      <solutionPath path="${mps_home}/platform/ui/solutions/ui.sandbox/ui.sandbox.msd" folder="ui" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="usages.baselang" />
@@ -23,15 +19,8 @@
       <languagePath path="${mps_home}/platform/buildlanguage/languages/custommps/custommps.mpl" folder="usages.build" />
       <languagePath path="${mps_home}/platform/buildlanguage/languages/packaging/packaging.mpl" folder="usages.build" />
       <languagePath path="${mps_home}/samples/lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="usages.lambda" />
-      <languagePath path="${project}/languages/runConfigurations/runConfigurations.mpl" />
-      <languagePath path="${mps_home}/platform/ui/languages/gwt/gwt.mpl" folder="ui" />
-      <languagePath path="${mps_home}/platform/ui/languages/meta/meta.mpl" folder="ui" />
-      <languagePath path="${mps_home}/platform/ui/languages/swing/swing.mpl" folder="ui" />
-      <languagePath path="${mps_home}/platform/ui/languages/swt/swt.mpl" folder="ui" />
-      <languagePath path="${mps_home}/platform/ui/languages/testdata/testdata.mpl" folder="ui" />
-      <languagePath path="${mps_home}/platform/ui/languages/ui/ui.mpl" folder="ui" />
-      <languagePath path="${mps_home}/platform/ui/languages/internal/internal.mpl" folder="ui" />
       <languagePath path="${project}/languages/demo/demo.mpl" folder="" />
+      <languagePath path="${project}/languages/runConfigurations/runConfigurations.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs />
