@@ -128,7 +128,11 @@ public class WriteHelper {
   }
 
   public String genNameId(@NotNull SNode node, @NotNull String prop) {
-    return genReferenceId(node.getPropertyDeclaration(prop));
+    SNode propLink = node.getPropertyDeclaration(prop);
+    return (propLink == null ?
+      null :
+      genReferenceId(propLink)
+    );
   }
 
   public String genTarget(@NotNull SReference ref) {
