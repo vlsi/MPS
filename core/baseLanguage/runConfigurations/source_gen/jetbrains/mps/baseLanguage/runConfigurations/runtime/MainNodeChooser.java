@@ -9,6 +9,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
@@ -30,12 +31,16 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
   @NotNull
-  private final C myTargetConcept;
+  private C myTargetConcept;
   @Nullable
-  private final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myAcceptor;
+  private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myAcceptor;
   private SNode myNode;
   private final List<IJavaNodeChangeListener> myListeners = ListSequence.fromList(new ArrayList<IJavaNodeChangeListener>());
   private final GlobalFilteredScope myScope;
+
+  public MainNodeChooser() {
+    this((C) SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), null);
+  }
 
   public MainNodeChooser(@NotNull final C targetConcept, @Nullable _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> acceptor) {
     super();
@@ -181,5 +186,21 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
         it.nodeChanged(MainNodeChooser.this.myNode);
       }
     });
+  }
+
+  public C getTargetConcept() {
+    return myTargetConcept;
+  }
+
+  public void setTargetConcept(C targetConcept) {
+    myTargetConcept = targetConcept;
+  }
+
+  public _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> getAcceptor() {
+    return myAcceptor;
+  }
+
+  public void setAcceptor(_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> acceptor) {
+    myAcceptor = acceptor;
   }
 }

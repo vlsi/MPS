@@ -13,6 +13,8 @@
   <import index="2yj1" modelUID="r:c1b84d62-80cc-499b-b655-943c00c7ba88(jetbrains.mps.ui.widgets)" version="1" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="fb0y" modelUID="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" version="0" implicit="yes" />
+  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
+  <import index="uugc" modelUID="r:5a5a8ea6-0872-4d47-bacc-bd0ac76e7147(jetbrains.mps.runConfigurations.ui)" version="-1" implicit="yes" />
   <roots>
     <node type="uhxm.RunConfigurationType" typeId="uhxm.2401501559171345994" id="8750596094204760415">
       <property name="name" nameId="tpck.1169194664001" value="Demo" />
@@ -27,6 +29,12 @@
   </roots>
   <root id="8750596094204760415" />
   <root id="8750596094204760417">
+    <node role="persistentProperty" roleId="uhxm.3754890006475720714" type="uhxm.PersistentPropertyDeclaration" typeId="uhxm.1048802521465149470" id="4928971978190294533">
+      <property name="name" nameId="tpck.1169194664001" value="node" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4928971978190304899">
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="f1er.4928971978190304900" resolveInfo="SomeConcept" />
+      </node>
+    </node>
     <node role="editor" roleId="uhxm.3754890006475816675" type="uhxm.PersistentEditor" typeId="uhxm.3754890006475816671" id="8750596094204760418">
       <node role="contents" roleId="uhxm.8750596094204776672" type="fb0y.AppendUIObjectStatement" typeId="fb0y.4981225789809472779" id="7460665385311771388">
         <link role="uiObject" roleId="fb0y.8381258131358446226" targetNodeId="2yj1.262873202871588254" resolveInfo="Label" />
@@ -38,6 +46,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node role="contents" roleId="uhxm.8750596094204776672" type="fb0y.AppendUIObjectStatement" typeId="fb0y.4981225789809472779" id="4928971978190682148">
+        <link role="uiObject" roleId="fb0y.8381258131358446226" targetNodeId="uugc.4928971978190510068" resolveInfo="NodeChooser" />
       </node>
     </node>
   </root>

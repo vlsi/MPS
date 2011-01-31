@@ -3,7 +3,9 @@
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.runConfigurations" />
   </models>
-  <accessoryModels />
+  <accessoryModels>
+    <model modelUID="r:5a5a8ea6-0872-4d47-bacc-bd0ac76e7147(jetbrains.mps.runConfigurations.ui)" />
+  </accessoryModels>
   <generators>
     <generator name="" generatorUID="jetbrains.mps.runConfigurations#3754890006475631525" uuid="d84d74f3-ca7f-48ba-ab57-d22a60cad837">
       <models>
@@ -43,6 +45,9 @@
     </generator>
   </generators>
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">82c32a3b-4a54-4fc1-b551-7ff9f198d7c1(jetbrains.mps.baseLanguage.runConfigurations)</dependency>
+  </dependencies>
   <usedLanguages>
     <usedLanguage>fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)</usedLanguage>
   </usedLanguages>

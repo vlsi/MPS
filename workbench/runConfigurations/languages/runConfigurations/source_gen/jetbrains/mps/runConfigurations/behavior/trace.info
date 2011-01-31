@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="RunConfigurationType_Behavior.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.RunConfigurationType_Behavior" />
+  <unitInfo fileName="PersistentEditor_Behavior.java" startLine="35" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentEditor_Behavior$QuotationClass_iwwuxy_a0a0a1" />
   <unitInfo fileName="RunConfiguration_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.RunConfiguration_Behavior" />
+  <unitInfo fileName="PersistentEditor_Behavior.java" startLine="17" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentEditor_Behavior" />
   <root nodeId="3754890006475666593">
     <nodeInfo nodeId="3754890006475666614" fileName="RunConfiguration_Behavior.java" startLine="18" startPosition="66" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3754890006475666620" fileName="RunConfiguration_Behavior.java" startLine="20" startPosition="5" endLine="21" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -24,6 +26,14 @@
     <scopeInfo nodeId="3754890006475720279" fileName="RunConfigurationType_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="3754890006475720295" fileName="RunConfigurationType_Behavior.java" startLine="13" startPosition="66" endLine="14" endPosition="18" />
     <scopeInfo nodeId="3754890006475720283" fileName="RunConfigurationType_Behavior.java" startLine="12" startPosition="87" endLine="16" endPosition="87" />
+  </root>
+  <root nodeId="4928971978190611809">
+    <nodeInfo nodeId="4928971978190613085" fileName="PersistentEditor_Behavior.java" startLine="24" startPosition="80" endLine="25" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4928971978190627429" fileName="PersistentEditor_Behavior.java" startLine="28" startPosition="88" endLine="29" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4928971978190627423" fileName="PersistentEditor_Behavior.java" startLine="29" startPosition="29" endLine="30" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="4928971978190611811" fileName="PersistentEditor_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
+    <scopeInfo nodeId="4928971978190611814" fileName="PersistentEditor_Behavior.java" startLine="24" startPosition="80" endLine="25" endPosition="132" />
+    <scopeInfo nodeId="4928971978190627417" fileName="PersistentEditor_Behavior.java" startLine="28" startPosition="88" endLine="30" endPosition="84" />
   </root>
 </debugInfo>
 

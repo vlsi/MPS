@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="RunConfigurations_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.RunConfigurations_Language" />
-  <unitInfo fileName="PersistentEditor.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.PersistentEditor" />
+  <unitInfo fileName="PersistentPropertyDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.PersistentPropertyDeclaration" />
+  <unitInfo fileName="PersistentPropertyReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.PersistentPropertyReference" />
   <unitInfo fileName="RunConfigurationType.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.RunConfigurationType" />
-  <unitInfo fileName="PersistentPropertyDeclaration.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.PersistentPropertyDeclaration" />
   <unitInfo fileName="RunConfigurationExecutor.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.RunConfigurationExecutor" />
-  <unitInfo fileName="RunConfiguration.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.RunConfiguration" />
+  <unitInfo fileName="PersistentEditor.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.PersistentEditor" />
+  <unitInfo fileName="RunConfiguration.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.RunConfiguration" />
 </debugInfo>
 

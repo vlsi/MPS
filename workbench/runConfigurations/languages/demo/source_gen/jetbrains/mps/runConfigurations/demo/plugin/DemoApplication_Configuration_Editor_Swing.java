@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import com.intellij.openapi.options.ConfigurationException;
 import javax.swing.JLabel;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class DemoApplication_Configuration_Editor_Swing extends SettingsEditor<DemoApplication_Configuration> {
   public DemoApplication_Configuration_Editor_Swing() {
@@ -34,5 +35,11 @@ public class DemoApplication_Configuration_Editor_Swing extends SettingsEditor<D
     final JLabel widget_9rbnmb_a0a0e = new JLabel();
     widget_9rbnmb_a0a0e.setText("some text");
     panel.add(widget_9rbnmb_a0a0e);
+    final JComponent widget_9rbnmb_b0a0e = new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        throw new RuntimeException("NOT IMPLEMENTED");
+      }
+    }.invoke();
+    panel.add(widget_9rbnmb_b0a0e);
   }
 }

@@ -29,6 +29,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="uhxm.3754890006475816671" resolveInfo="PersistentEditor" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4928971978190606411">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="uhxm.4928971978190606409" resolveInfo="PersistentPropertyReference" />
+    </node>
   </roots>
   <root id="2401501559171353315">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="2401501559171392600">
@@ -214,7 +218,19 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="8750596094204776674">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="uhxm.8750596094204776672" />
-        <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="8750596094204776675" />
+        <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="4928971978190565342" />
+      </node>
+    </node>
+  </root>
+  <root id="4928971978190606411">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="4928971978190606413">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="uhxm.4928971978190606410" />
+      <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="4928971978190606414">
+        <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4928971978190606416">
+          <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1198595398954" resolveInfo="Field" />
+        </node>
       </node>
     </node>
   </root>

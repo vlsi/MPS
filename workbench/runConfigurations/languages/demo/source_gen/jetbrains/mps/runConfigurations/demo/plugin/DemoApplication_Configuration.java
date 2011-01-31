@@ -16,8 +16,11 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ExecutionException;
+import jetbrains.mps.smodel.SNode;
 
 public class DemoApplication_Configuration extends RunConfigurationBase {
+  private DemoApplication_Configuration.MyState myState;
+
   public DemoApplication_Configuration(Project project, DemoApplication_Configuration_Factory factory, String name) {
     super(project, factory, name);
   }
@@ -41,5 +44,12 @@ public class DemoApplication_Configuration extends RunConfigurationBase {
   @Nullable
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
     return new DemoApplication_Configuration_RunProfileState(this, executor, environment);
+  }
+
+  /*package*/ class MyState {
+    private SNode node;
+
+    public MyState() {
+    }
   }
 }
