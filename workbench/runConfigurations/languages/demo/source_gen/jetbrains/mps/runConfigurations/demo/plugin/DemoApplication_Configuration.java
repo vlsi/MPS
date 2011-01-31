@@ -12,6 +12,10 @@ import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import com.intellij.execution.configurations.RunConfiguration;
+import org.jdom.Element;
+import com.intellij.openapi.util.WriteExternalException;
+import com.intellij.util.xmlb.XmlSerializer;
+import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
@@ -40,6 +44,16 @@ public class DemoApplication_Configuration extends RunConfigurationBase {
 
   public SettingsEditor<? extends RunConfiguration> getConfigurationEditor() {
     return new DemoApplication_Configuration_Editor();
+  }
+
+  @Override
+  public void writeExternal(Element element) throws WriteExternalException {
+    element.addContent(XmlSerializer.serialize(myState));
+  }
+
+  @Override
+  public void readExternal(Element element) throws InvalidDataException {
+    XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
   }
 
   @Nullable

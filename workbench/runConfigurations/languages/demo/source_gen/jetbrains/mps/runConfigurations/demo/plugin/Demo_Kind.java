@@ -24,6 +24,7 @@ public class Demo_Kind implements ConfigurationType {
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
     ListSequence.fromList(result).addElement(new DemoApplication_Configuration_Factory(this));
+    // todo foreign configurations 
     return ListSequence.fromList(result).toGenericArray(ConfigurationFactory.class);
   }
 
