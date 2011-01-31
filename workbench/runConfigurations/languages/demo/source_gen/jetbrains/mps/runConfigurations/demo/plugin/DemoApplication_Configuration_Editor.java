@@ -17,11 +17,11 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import com.intellij.openapi.options.ConfigurationException;
 
-public class DemoApplication_Configuration_Editor_Swing extends SettingsEditor<DemoApplication_Configuration> {
+public class DemoApplication_Configuration_Editor extends SettingsEditor<DemoApplication_Configuration> {
   private MainNodeChooser<SNode> myChooser;
   private JLabel myLabel;
 
-  public DemoApplication_Configuration_Editor_Swing() {
+  public DemoApplication_Configuration_Editor() {
   }
 
   protected void disposeEditor() {

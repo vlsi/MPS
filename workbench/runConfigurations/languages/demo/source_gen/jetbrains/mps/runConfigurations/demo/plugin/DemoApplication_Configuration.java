@@ -39,7 +39,7 @@ public class DemoApplication_Configuration extends RunConfigurationBase {
   }
 
   public SettingsEditor<? extends RunConfiguration> getConfigurationEditor() {
-    return new DemoApplication_Configuration_Editor_Swing();
+    return new DemoApplication_Configuration_Editor();
   }
 
   @Nullable

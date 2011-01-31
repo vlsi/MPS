@@ -10,15 +10,13 @@
         <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.runConfigurations.generator.template" />
       </models>
       <external-templates>
-        <generator generatorUID="da5e4290-fe8f-4051-99eb-423e4107c1b4(jetbrains.mps.ui#5725024602606565468)" />
+        <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
       </external-templates>
       <dependencies>
-        <dependency reexport="false">51805413-e01e-4f51-bf62-a054ab51eb54(jetbrains.mps.ui.swing)</dependency>
-        <dependency reexport="false">1d6e05d7-9de9-40a7-9dad-7b8444280942(jetbrains.mps.lang.plugin#1203080439937)</dependency>
         <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
+        <dependency reexport="false">1d6e05d7-9de9-40a7-9dad-7b8444280942(jetbrains.mps.lang.plugin#1203080439937)</dependency>
       </dependencies>
       <usedLanguages>
-        <usedLanguage>fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)</usedLanguage>
         <usedLanguage>51805413-e01e-4f51-bf62-a054ab51eb54(jetbrains.mps.ui.swing)</usedLanguage>
       </usedLanguages>
       <usedDevKits>
@@ -33,7 +31,7 @@
             </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <generator generatorUID="da5e4290-fe8f-4051-99eb-423e4107c1b4(jetbrains.mps.ui#5725024602606565468)" />
+            <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
             <external-mapping>
               <all-local-mappings />
             </external-mapping>
@@ -43,9 +41,6 @@
     </generator>
   </generators>
   <sourcePath />
-  <dependencies>
-    <dependency reexport="false">82c32a3b-4a54-4fc1-b551-7ff9f198d7c1(jetbrains.mps.baseLanguage.runConfigurations)</dependency>
-  </dependencies>
   <usedLanguages>
     <usedLanguage>13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)</usedLanguage>
   </usedLanguages>
