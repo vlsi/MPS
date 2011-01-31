@@ -1,3 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="typeof_PersistentPropertyReferenceOperation_InferenceRule.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.typeof_PersistentPropertyReferenceOperation_InferenceRule" />
+  <unitInfo fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.typeof_Configuration_Parameter_InferenceRule" />
+  <root nodeId="4777576391478107089">
+    <nodeInfo nodeId="4777576391478317712" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4777576391478317712" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="21" startPosition="64" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4777576391478317712" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="22" startPosition="52" endLine="23" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4777576391478317712" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="23" startPosition="221" endLine="24" endPosition="349" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4777576391478317712" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="19" startPosition="135" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="4777576391478317712" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="20" startPosition="5" endLine="24" endPosition="349" />
+    <scopeInfo nodeId="4777576391478107090" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="19" startPosition="135" endLine="25" endPosition="5" />
+  </root>
+  <root nodeId="4777576391478349960">
+    <nodeInfo nodeId="4777576391478349967" fileName="typeof_PersistentPropertyReferenceOperation_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4777576391478349967" fileName="typeof_PersistentPropertyReferenceOperation_InferenceRule.java" startLine="21" startPosition="78" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4777576391478349967" fileName="typeof_PersistentPropertyReferenceOperation_InferenceRule.java" startLine="22" startPosition="52" endLine="23" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4777576391478349967" fileName="typeof_PersistentPropertyReferenceOperation_InferenceRule.java" startLine="23" startPosition="221" endLine="24" endPosition="383" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4777576391478349967" fileName="typeof_PersistentPropertyReferenceOperation_InferenceRule.java" startLine="19" startPosition="149" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="4777576391478349967" fileName="typeof_PersistentPropertyReferenceOperation_InferenceRule.java" startLine="20" startPosition="5" endLine="24" endPosition="383" />
+    <scopeInfo nodeId="4777576391478349961" fileName="typeof_PersistentPropertyReferenceOperation_InferenceRule.java" startLine="19" startPosition="149" endLine="25" endPosition="5" />
+  </root>
+</debugInfo>
 

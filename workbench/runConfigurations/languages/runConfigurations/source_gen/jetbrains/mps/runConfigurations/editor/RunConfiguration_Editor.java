@@ -128,7 +128,7 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ryg3k0_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "of type");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "of kind");
     editorCell.setCellId("Constant_ryg3k0_c0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

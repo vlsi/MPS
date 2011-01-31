@@ -7,7 +7,7 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.project.Project;
 
 public class DemoApplication_Configuration_Factory extends ConfigurationFactory {
-  public DemoApplication_Configuration_Factory(Demo_Type type) {
+  public DemoApplication_Configuration_Factory(Demo_Kind type) {
     super(type);
   }
 

@@ -57,11 +57,11 @@ public class RunConfiguration extends BaseConcept implements INamedConcept {
     this.setProperty(RunConfiguration.VIRTUAL_PACKAGE, value);
   }
 
-  public RunConfigurationType getConfigurationType() {
-    return (RunConfigurationType) this.getReferent(RunConfigurationType.class, RunConfiguration.CONFIGURATION_TYPE);
+  public RunConfigurationKind getConfigurationType() {
+    return (RunConfigurationKind) this.getReferent(RunConfigurationKind.class, RunConfiguration.CONFIGURATION_TYPE);
   }
 
-  public void setConfigurationType(RunConfigurationType node) {
+  public void setConfigurationType(RunConfigurationKind node) {
     super.setReferent(RunConfiguration.CONFIGURATION_TYPE, node);
   }
 

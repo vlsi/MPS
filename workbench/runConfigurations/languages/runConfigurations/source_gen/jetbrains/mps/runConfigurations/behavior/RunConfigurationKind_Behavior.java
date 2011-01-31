@@ -5,7 +5,7 @@ package jetbrains.mps.runConfigurations.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class RunConfigurationType_Behavior {
+public class RunConfigurationKind_Behavior {
   public static void init(SNode thisNode) {
   }
 
@@ -13,6 +13,6 @@ public class RunConfigurationType_Behavior {
     if (SPropertyOperations.getString(thisNode, "name") == null) {
       return null;
     }
-    return SPropertyOperations.getString(thisNode, "name").replace(" ", "_") + "_Type";
+    return SPropertyOperations.getString(thisNode, "name").replace(" ", "_") + "_Kind";
   }
 }

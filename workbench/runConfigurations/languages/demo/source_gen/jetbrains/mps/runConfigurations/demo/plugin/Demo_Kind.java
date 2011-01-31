@@ -15,10 +15,10 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 
-public class Demo_Type implements ConfigurationType {
+public class Demo_Kind implements ConfigurationType {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/runApp.png", "jetbrains.mps.lang.plugin"), true);
 
-  public Demo_Type() {
+  public Demo_Kind() {
   }
 
   public ConfigurationFactory[] getConfigurationFactories() {
@@ -45,7 +45,7 @@ public class Demo_Type implements ConfigurationType {
     return "Demo";
   }
 
-  public static Demo_Type getInstance() {
-    return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), Demo_Type.class);
+  public static Demo_Kind getInstance() {
+    return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), Demo_Kind.class);
   }
 }
