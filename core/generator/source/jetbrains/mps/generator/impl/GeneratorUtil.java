@@ -25,6 +25,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -120,7 +121,7 @@ public class GeneratorUtil {
         }
       } else if (expr instanceof TemplateArgumentQueryExpression) {
         TemplateArgumentQuery query = ((TemplateArgumentQueryExpression) expr).getQuery();
-        value = reductionContext.getQueryExecutor().evaluateArgumentQuery(inputNode, query, outerContext);
+        value = reductionContext.getQueryExecutor().evaluateArgumentQuery(inputNode, BaseAdapter.fromAdapter(query), outerContext);
       } else {
         generator.showErrorMessage(inputNode, templateCall.getNode(), "cannot evaluate template argument #" + (i + 1));
       }

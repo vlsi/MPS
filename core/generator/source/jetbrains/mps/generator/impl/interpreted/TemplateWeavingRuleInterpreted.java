@@ -139,7 +139,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
         return false;
       }
       TemplateDeclaration template = weaveEach.getTemplate();
-      Collection<SNode> queryNodes = environment.getReductionContext().getQueryExecutor().evaluateSourceNodesQuery(context.getInput(), ruleNode, null, query, context);
+      Collection<SNode> queryNodes = environment.getReductionContext().getQueryExecutor().evaluateSourceNodesQuery(context.getInput(), ruleNode, null, BaseAdapter.fromAdapter(query), context);
       if (queryNodes.isEmpty()) {
         return false;
       }

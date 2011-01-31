@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class RuleUtil {
   public RuleUtil() {
@@ -105,6 +106,15 @@ public class RuleUtil {
     return null;
   }
 
+  public static SNode getMapSrc_MapperFunction(SNode node) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "mapperFunction", true);
+    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), "mapperFunction", true);
+    }
+    return null;
+  }
+
   public static SNode getPatternReductionRulePatternNode(SNode reductionRule) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(reductionRule, "pattern", true), "patternNode", true);
   }
@@ -123,5 +133,25 @@ public class RuleUtil {
       }
     }
     return result;
+  }
+
+  public static SNode getIfMacro_ConditionFunction(SNode macro) {
+    return SLinkOperations.getTarget(macro, "conditionFunction", true);
+  }
+
+  public static SNode getReferenceMacro_GetReferent(SNode macro) {
+    return SLinkOperations.getTarget(macro, "referentFunction", true);
+  }
+
+  public static SNode getPropertyMacro_ValueFunction(SNode macro) {
+    return SLinkOperations.getTarget(macro, "propertyValueFunction", true);
+  }
+
+  public static SNode getTemplateFragment_ContextNodeQuery(SNode tf) {
+    return SLinkOperations.getTarget(tf, "contextNodeQuery", true);
+  }
+
+  public static SNode getTemplateFragmentByAnnotatedNode(SNode node) {
+    return SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true);
   }
 }

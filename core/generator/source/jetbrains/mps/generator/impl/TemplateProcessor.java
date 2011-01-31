@@ -150,13 +150,13 @@ public class TemplateProcessor {
     }
 
     // process property and reference macros
-    List<INodeAdapter> templateChildNodes = new ArrayList<INodeAdapter>();
-    for (INodeAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
-      if (templateChildNode instanceof PropertyMacro) {
-        myReductionContext.getQueryExecutor().expandPropertyMacro((PropertyMacro) templateChildNode, context.getInput(), templateNode, outputNode, context);
-      } else if (templateChildNode instanceof ReferenceMacro) {
+    List<SNode> templateChildNodes = new ArrayList<SNode>();
+    for (SNode templateChildNode : templateNode.getChildren()) {
+      if (templateChildNode.getAdapter() instanceof PropertyMacro) {
+        myReductionContext.getQueryExecutor().expandPropertyMacro(templateChildNode, context.getInput(), templateNode, outputNode, context);
+      } else if (templateChildNode.getAdapter() instanceof ReferenceMacro) {
         ReferenceInfo_Macro refInfo = new ReferenceInfo_MacroNode(
-          outputNode, (ReferenceMacro) templateChildNode,
+          outputNode, templateChildNode,
           templateNode,
           context, myReductionContext
         );
@@ -165,15 +165,15 @@ public class TemplateProcessor {
           myGenerator
         );
         outputNode.addReference(postponedReference);
-      } else if (!GeneratorUtil.isTemplateLanguageElement(templateChildNode)) {
+      } else if (!GeneratorUtilEx.isTemplateLanguageElement(templateChildNode)) {
         templateChildNodes.add(templateChildNode);
       }
     }
 
     // process children
     try {
-      for (INodeAdapter templateChildNode : templateChildNodes) {
-        List<SNode> outputChildNodes = createOutputNodesForTemplateNode(null, templateChildNode.getNode(), context, 0);
+      for (SNode templateChildNode : templateChildNodes) {
+        List<SNode> outputChildNodes = createOutputNodesForTemplateNode(null, templateChildNode, context, 0);
         if (outputChildNodes != null) {
           String role = templateChildNode.getRole_();
           for (SNode outputChildNode : outputChildNodes) {
@@ -183,7 +183,7 @@ public class TemplateProcessor {
               status.reportProblem(false, "",
                 GeneratorUtil.describe(context.getInput(), "input"),
                 GeneratorUtil.describe(templateNode, "parent in template"),
-                GeneratorUtil.describe(templateChildNode.getNode(), "child in template"));
+                GeneratorUtil.describe(templateChildNode, "child in template"));
             }
             outputNode.addChild(role, outputChildNode);
           }
@@ -252,7 +252,7 @@ public class TemplateProcessor {
     } else if (nodeMacro instanceof IfMacro) {
       // $IF$
       List<SNode> _outputNodes = null;
-      if (myReductionContext.getQueryExecutor().checkConditionForIfMacro(templateContext.getInput(), (IfMacro) nodeMacro, templateContext)) {
+      if (myReductionContext.getQueryExecutor().checkConditionForIfMacro(templateContext.getInput(), BaseAdapter.fromAdapter(nodeMacro), templateContext)) {
         _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, templateContext.subContext(mappingName), nodeMacrosToSkip + 1);
       } else {
         // alternative consequence
