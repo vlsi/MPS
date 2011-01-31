@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import com.sun.istack.internal.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
