@@ -2098,6 +2098,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Nullable
   public EditorCell getSelectedCell() {
+    if (isDisposed()) {
+      return null;
+    }
     Selection currentSelection = getSelectionManager().getSelection();
     return currentSelection instanceof SingularSelection ? ((SingularSelection) currentSelection).getEditorCell() : null;
   }
