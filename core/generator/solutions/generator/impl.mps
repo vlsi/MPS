@@ -953,17 +953,14 @@
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3381130103055922328">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~QueryExecutionContext%dcheckCondition(jetbrains%dmps%dlang%dgenerator%dstructure%dBaseMappingRule_Condition,boolean,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)%cboolean" resolveInfo="checkCondition" />
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3381130103055954233">
-                                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3381130103055922329">
-                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3381130103055922330">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3381130103055922320" resolveInfo="switchCase" />
-                                  </node>
-                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3381130103055954232">
-                                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpf8.1195158608805" />
-                                  </node>
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~QueryExecutionContext%dcheckCondition(jetbrains%dmps%dsmodel%dSNode,boolean,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)%cboolean" resolveInfo="checkCondition" />
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3381130103055922329">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3381130103055922330">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3381130103055922320" resolveInfo="switchCase" />
                                 </node>
-                                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAdapterOperation" typeId="tp25.1170384605257" id="3381130103055954237" />
+                                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3381130103055954232">
+                                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tpf8.1195158608805" />
+                                </node>
                               </node>
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3381130103055922332">
                                 <property name="value" nameId="tpee.1068580123138" value="true" />

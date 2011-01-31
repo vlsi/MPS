@@ -175,21 +175,21 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       return;
     }
 
-    List<TemplateFragment> templateFragments = GeneratorUtil.getTemplateFragments(template);
+    List<SNode> templateFragments = GeneratorUtilEx.getTemplateFragments(template.getNode());
     if (templateFragments.isEmpty()) {
       environment.getGenerator().showErrorMessage(context.getInput(), template.getNode(), ruleNode, "nothing to weave: no template fragments found in template");
       return;
     }
 
     // check fragments: all fragments with <default context> should have the same parent
-    checkTemplateFragmentsForWeaving(template, templateFragments, environment);
+    checkTemplateFragmentsForWeaving(template.getNode(), templateFragments, environment);
 
     String ruleMappingName = RuleUtil.getBaseRuleLabel(ruleNode);
 
     // for each template fragment create output nodes
     TemplateProcessor templateProcessor = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
-    for (TemplateFragment templateFragment : templateFragments) {
-      SNode templateFragmentNode = BaseAdapter.fromAdapter(templateFragment.getParent());
+    for (SNode templateFragment : templateFragments) {
+      SNode templateFragmentNode = templateFragment.getParent();
       SNode contextParentNode = null;
       try {
         contextParentNode = environment.getReductionContext().getQueryExecutor().getContextNodeForTemplateFragment(templateFragmentNode, outputContextNode, context);
@@ -199,33 +199,33 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       if (contextParentNode != null) {
         try {
           List<SNode> outputNodesToWeave = templateProcessor.processTemplateNode(
-            GeneratorUtil.getMappingName(templateFragment, ruleMappingName),
+            GeneratorUtilEx.getMappingName(templateFragment, ruleMappingName),
             templateFragmentNode, context);
           String childRole = templateFragmentNode.getRole_();
           for (SNode outputNodeToWeave : outputNodesToWeave) {
             environment.weaveNode(contextParentNode, childRole, outputNodeToWeave, new SNodePointer(templateFragment), context.getInput());
           }
         } catch (DismissTopMappingRuleException e) {
-          environment.getGenerator().showErrorMessage(context.getInput(), templateFragment.getNode(), ruleNode, "wrong template: dismission of weaving rule is not supported");
+          environment.getGenerator().showErrorMessage(context.getInput(), templateFragment, ruleNode, "wrong template: dismission of weaving rule is not supported");
         } catch (TemplateProcessingFailureException e) {
           // FIXME
-          environment.getGenerator().showErrorMessage(context.getInput(), templateFragment.getNode(), ruleNode, "error processing template fragment");
+          environment.getGenerator().showErrorMessage(context.getInput(), templateFragment, ruleNode, "error processing template fragment");
           environment.getGenerator().getLogger().info(contextParentNode, " -- was output context node:");
         }
       } else {
-        environment.getGenerator().showErrorMessage(context.getInput(), templateFragment.getNode(), ruleNode, "couldn't define 'context' for template fragment");
+        environment.getGenerator().showErrorMessage(context.getInput(), templateFragment, ruleNode, "couldn't define 'context' for template fragment");
       }
     }
   }
 
-  private void checkTemplateFragmentsForWeaving(TemplateDeclaration template, List<TemplateFragment> templateFragments, TemplateExecutionEnvironment environment) {
+  private void checkTemplateFragmentsForWeaving(SNode template, List<SNode> templateFragments, TemplateExecutionEnvironment environment) {
 
     // all fragments with <default context> should have the same parent
     boolean sameParent = true;
     SNode defaultContext = null;
-    for (TemplateFragment templateFragment : templateFragments) {
-      if (templateFragment.getContextNodeQuery() == null) { // uses <default context>
-        SNode fragmentContextNode = BaseAdapter.fromAdapter(templateFragment.getParent().getParent());
+    for (SNode templateFragment : templateFragments) {
+      if (((TemplateFragment)BaseAdapter.fromNode(templateFragment)).getContextNodeQuery() == null) { // uses <default context>
+        SNode fragmentContextNode = templateFragment.getParent().getParent();
         if (defaultContext == null) {
           defaultContext = fragmentContextNode;
         } else if (defaultContext != fragmentContextNode) {
@@ -236,12 +236,12 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     }
     if (!sameParent) {
       List<ProblemDescription> list = new ArrayList<ProblemDescription>();
-      for (TemplateFragment templateFragment : templateFragments) {
-        if (templateFragment.getContextNodeQuery() == null) { // uses <default context>
-          list.add(GeneratorUtil.describe(templateFragment.getNode(), "template fragment"));
+      for (SNode templateFragment : templateFragments) {
+        if (((TemplateFragment)BaseAdapter.fromNode(templateFragment)).getContextNodeQuery() == null) { // uses <default context>
+          list.add(GeneratorUtil.describe(templateFragment, "template fragment"));
         }
       }
-      environment.getGenerator().getLogger().error(template.getNode(), "all fragments with <default context> should have the same parent",
+      environment.getGenerator().getLogger().error(template, "all fragments with <default context> should have the same parent",
         list.toArray(new ProblemDescription[list.size()]));
     }
   }

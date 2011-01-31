@@ -200,7 +200,7 @@ public class TemplateProcessor {
   private List<SNode> createOutputNodesForTemplateNodeWithMacro(NodeMacro nodeMacro, SNode templateNode, @NotNull TemplateContext templateContext, int nodeMacrosToSkip) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
     IGenerationTracer generationTracer = myGenerator.getGenerationTracer();
     List<SNode> outputNodes = new ArrayList<SNode>();
-    String mappingName = GeneratorUtil.getMappingName(nodeMacro, null);
+    String mappingName = GeneratorUtilEx.getMappingName(BaseAdapter.fromAdapter(nodeMacro), null);
 
     if (nodeMacro instanceof LoopMacro) {
       // $LOOP$
@@ -337,7 +337,7 @@ public class TemplateProcessor {
       SNode newInputNode = getNewInputNode(nodeMacro, templateContext);
       if (newInputNode == null) {
         TemplateSwitchMapping tswitch = myGenerator.getSwitch(switchPtr);
-        if(tswitch != null) {
+        if (tswitch != null) {
           tswitch.processNull(new TemplateExecutionEnvironmentImpl(myGenerator, myReductionContext, myGenerator.getOperationContext(), myGenerator.getGenerationTracer()), switchPtr, templateContext);
         }
         return Collections.emptyList(); // skip template
@@ -355,20 +355,20 @@ public class TemplateProcessor {
         if (collection == null) {
           // try the default case
           TemplateSwitchMapping tswitch = myGenerator.getSwitch(switchPtr);
-          if(tswitch != null) {
+          if (tswitch != null) {
             TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myGenerator, myReductionContext, myGenerator.getOperationContext(), myGenerator.getGenerationTracer());
             try {
               collection = tswitch.applyDefault(environment, switchPtr, mappingName, switchContext);
             } catch (GenerationException e) {
-              if(e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
-              if(e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-              if(e instanceof DismissTopMappingRuleException) throw (DismissTopMappingRuleException) e;
+              if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
+              if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
+              if (e instanceof DismissTopMappingRuleException) throw (DismissTopMappingRuleException) e;
               myGenerator.showErrorMessage(null, tswitch.getSwitchNode().getNode(), "internal error in switch.applyDefault: " + e.toString());
             }
           }
 
           // no switch-case found for the inputNode - continue with templateNode under the $switch$
-          if(collection == null) {
+          if (collection == null) {
             collection = createOutputNodesForTemplateNode(mappingName, templateNode, templateContext.subContext(mappingName, newInputNode), nodeMacrosToSkip + 1);
           }
         }

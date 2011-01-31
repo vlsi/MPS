@@ -16,7 +16,6 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.ArrayList;
 import java.util.Collections;
-import jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition;
 
 public class GeneratorUtilEx {
   private static final Logger LOG = Logger.getLogger(GeneratorUtilEx.class);
@@ -131,7 +130,7 @@ public class GeneratorUtilEx {
     if (SNodeOperations.isInstanceOf(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence")) {
       SNode inlineSwitch = SNodeOperations.cast(ruleConsequence, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence");
       for (SNode switchCase : SLinkOperations.getTargets(inlineSwitch, "case", true)) {
-        if (reductionContext.getQueryExecutor().checkCondition(((BaseMappingRule_Condition) SNodeOperations.getAdapter(SLinkOperations.getTarget(switchCase, "conditionFunction", true))), true, inputNode, switchCase)) {
+        if (reductionContext.getQueryExecutor().checkCondition(SLinkOperations.getTarget(switchCase, "conditionFunction", true), true, inputNode, switchCase)) {
           return GeneratorUtilEx.getTemplateNodesFromRuleConsequence(SLinkOperations.getTarget(switchCase, "caseConsequence", true), inputNode, switchCase, reductionContext, generator);
         }
       }

@@ -28,7 +28,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     this.generator = generator;
   }
 
-  public boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
+  public boolean checkCondition(SNode condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
     if (condition == null) {
       if (required) {
         generator.showErrorMessage(inputNode, null, ruleNode, "rule condition required");
@@ -37,7 +37,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return true;
     }
 
-    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition.getNode());
+    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition);
     try {
       return (Boolean) QueryMethodGenerated.invoke(
         methodName,
@@ -46,11 +46,11 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      generator.getLogger().warning(BaseAdapter.fromAdapter(condition), "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+      generator.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (NoSuchMethodException e) {
-      generator.getLogger().warning(BaseAdapter.fromAdapter(condition), "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+      generator.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (Throwable t) {
-      throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
+      throw new GenerationFailureException("error executing condition ", condition, t);
     }
     return false;
   }

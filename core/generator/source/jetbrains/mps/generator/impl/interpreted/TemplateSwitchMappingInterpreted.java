@@ -115,7 +115,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
 
     SNode generatorMessage = mySwitch.getChild(TemplateSwitch.NULL_INPUT_MESSAGE);
     if (generatorMessage != null) {
-      GeneratorUtil.processGeneratorMessage((GeneratorMessage) generatorMessage.getAdapter(), context.getInput(), templateSwitch.getNode(), null, environment.getGenerator());
+      GeneratorUtilEx.processGeneratorMessage(generatorMessage, context.getInput(), templateSwitch.getNode(), null, environment.getGenerator());
     }
   }
 }
