@@ -94,7 +94,6 @@
     <node type="tpce.ConceptDeclaration" typeId="1071489090640" id="1105736576531">
       <property name="name" nameId="tpck.1169194664001" value="ConceptLinkDeclaration" />
       <property name="rootable" nameId="1096454100552" value="false" />
-      <property name="build" value="122" />
       <link role="extends" roleId="1071489389519" targetNodeId="tpck.1133920641626" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="1071489090640" id="1105736674127">
@@ -304,7 +303,6 @@
   <root id="1082978499127">
     <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="1083066089218">
       <property name="name" nameId="tpck.1169194664001" value="constraint" />
-      <property name="propertyType" value="string" />
       <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983041843" />
     </node>
     <node role="conceptProperty" roleId="1105725339613" type="tpce.StringConceptProperty" typeId="1105725638761" id="1194565683319">
@@ -315,12 +313,10 @@
   <root id="1083171877298">
     <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="1083923523171">
       <property name="name" nameId="tpck.1169194664001" value="internalValue" />
-      <property name="propertyType" value="string" />
       <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983041843" />
     </node>
     <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="1083923523172">
       <property name="name" nameId="tpck.1169194664001" value="externalValue" />
-      <property name="propertyType" value="string" />
       <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983041843" />
     </node>
     <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="1192116978809">
@@ -353,12 +349,10 @@
   </root>
   <root id="1084199179703">
     <node role="member" roleId="1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="1083171877298" id="1084199179704">
-      <property name="name" value="reference" />
       <property name="externalValue" nameId="1083923523172" value="reference" />
       <property name="internalValue" nameId="1083923523171" value="reference" />
     </node>
     <node role="member" roleId="1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="1083171877298" id="1084199179705">
-      <property name="name" value="aggregation" />
       <property name="externalValue" nameId="1083923523172" value="aggregation" />
       <property name="internalValue" nameId="1083923523171" value="aggregation" />
     </node>
@@ -561,17 +555,14 @@
   </root>
   <root id="1149608316235">
     <node role="member" roleId="1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="1083171877298" id="1149608364144">
-      <property name="name" value="node" />
       <property name="externalValue" nameId="1083923523172" value="node" />
       <property name="internalValue" nameId="1083923523171" value="node" />
     </node>
     <node role="member" roleId="1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="1083171877298" id="1149608316236">
-      <property name="name" value="link" />
       <property name="externalValue" nameId="1083923523172" value="link" />
       <property name="internalValue" nameId="1083923523171" value="link" />
     </node>
     <node role="member" roleId="1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="1083171877298" id="1149608344284">
-      <property name="name" value="property" />
       <property name="externalValue" nameId="1083923523172" value="property" />
       <property name="internalValue" nameId="1083923523171" value="property" />
     </node>
