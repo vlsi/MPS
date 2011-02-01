@@ -16,8 +16,6 @@
 package jetbrains.mps.generator.test;
 
 import jetbrains.mps.TestMain;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -46,8 +44,8 @@ public class IncrementalGenerationTest extends GenerationTestBase {
           SNode root = SModelOperations.getRootByName(model,"User");
           Assert.assertNotNull("No root in model", root);
 
-          InstanceMethodDeclaration found = null;
-          for(InstanceMethodDeclaration md : ((ClassConcept) root.getAdapter()).getMethods()) {
+          SNode found = null;
+          for(SNode md : root.getChildren("method")) {
             if(md.getName().equals("testRename2")) {
               found = md;
             }
