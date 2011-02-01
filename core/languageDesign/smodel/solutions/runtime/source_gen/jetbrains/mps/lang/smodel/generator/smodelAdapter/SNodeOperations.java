@@ -15,9 +15,7 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
@@ -573,14 +571,14 @@ public class SNodeOperations {
     if (node == null || node.getParent() == null || conceptOfParentFqName == null || conceptOfParentFqName.length() == 0 || role == null || role.length() == 0) {
       return false;
     }
-    AbstractConceptDeclaration expectedConcept = SModelUtil_new.findConceptDeclaration(conceptOfParentFqName, GlobalScope.getInstance());
+    SNode expectedConcept = SModelUtil.findConceptDeclaration(conceptOfParentFqName, GlobalScope.getInstance());
     if (expectedConcept == null) {
       return false;
     }
     SNode nodeParent = node.getParent();
     assert nodeParent != null;
-    AbstractConceptDeclaration conceptOfParent = nodeParent.getConceptDeclarationAdapter();
-    if (!(SModelUtil_new.isAssignableConcept(conceptOfParent, expectedConcept))) {
+    SNode conceptOfParent = (SNode) nodeParent.getConceptDeclarationNode();
+    if (!(SModelUtil.isAssignableConcept(conceptOfParent, expectedConcept))) {
       return false;
     }
     return role.equals(node.getRole_());
@@ -589,7 +587,7 @@ public class SNodeOperations {
   public static SNode getConceptDeclaration(SNode node) {
     return (node == null ?
       null :
-      BaseAdapter.fromAdapter(node.getConceptDeclarationAdapter())
+      node.getConceptDeclarationNode()
     );
   }
 
@@ -666,7 +664,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    if (!(SModelUtil_new.isAssignableConcept(NameUtil.nodeFQName(node), castTo))) {
+    if (!(SModelUtil.isAssignableConcept(NameUtil.nodeFQName(node), castTo))) {
       if (ourCastsEnabled) {
         throw new NodeCastException("Can't cast " + NameUtil.nodeFQName(node) + " to " + castTo);
       } else {
@@ -680,7 +678,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    if (!(SModelUtil_new.isAssignableConcept(NameUtil.nodeFQName(node), castTo))) {
+    if (!(SModelUtil.isAssignableConcept(NameUtil.nodeFQName(node), castTo))) {
       return null;
     }
     return node;
@@ -690,11 +688,7 @@ public class SNodeOperations {
     if (childNode == null) {
       return null;
     }
-    LinkDeclaration linkDeclaration = childNode.getRoleLink();
-    return (linkDeclaration == null ?
-      null :
-      linkDeclaration.getNode()
-    );
+    return childNode.getRoleLink();
   }
 
   public static String getContainingLinkRole(SNode childNode) {

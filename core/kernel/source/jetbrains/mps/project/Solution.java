@@ -181,13 +181,13 @@ public class Solution extends AbstractModule {
     String generatorOutputPath = mySolutionDescriptor.getOutputPath();
     if (generatorOutputPath != null) return generatorOutputPath;
     assert myDescriptorFile != null;
-    generatorOutputPath = myDescriptorFile.getParent().getAbsolutePath() + File.separatorChar + "source_gen";
+    generatorOutputPath = myDescriptorFile.getParent().child("source_gen").getAbsolutePath();
     return generatorOutputPath;
   }
 
   public String getTestsGeneratorOutputPath() {
     assert myDescriptorFile != null;
-    return myDescriptorFile.getParent().getAbsolutePath() + File.separatorChar + "test_gen";
+    return myDescriptorFile.getParent().child("test_gen").getAbsolutePath();
   }
 
   public boolean reloadClassesAfterGeneration() {

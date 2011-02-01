@@ -91,8 +91,8 @@ public class ChildSubstituteActionsHelper {
     }
 
     // special case
-    if (childConcept == SModelUtil_new.getBaseConcept()) {
-      if ((currentChild == null || currentChild.getConceptFqName().equals(BaseConcept.concept))) {
+    if (BaseAdapter.fromAdapter(childConcept) == SModelUtil.getBaseConcept()) {
+      if ((currentChild == null || currentChild.getConceptFqName().equals(SNodeUtil.concept_BaseConcept))) {
         resultActions = new ArrayList<INodeSubstituteAction>();
         ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, context.getScope());
         List<SNode> allVisibleConcepts = conceptsSearchScope.getNodes();
@@ -120,9 +120,9 @@ public class ChildSubstituteActionsHelper {
       }
 
       // pretend we are going to substitute more concrete concept
-      childConcept = currentChild.getConceptDeclarationAdapter();
+      childConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(currentChild.getConceptDeclarationNode());
       if (childConcept instanceof ConceptDeclaration) {
-        ConceptDeclaration baseConcept = SModelUtil_new.getBaseConcept();
+        ConceptDeclaration baseConcept = (ConceptDeclaration) BaseAdapter.fromNode(SModelUtil.getBaseConcept());
         while (((ConceptDeclaration) childConcept).getExtends() != null) {
           ConceptDeclaration extendedConcept = ((ConceptDeclaration) childConcept).getExtends();
           if (extendedConcept == baseConcept) break;
@@ -132,7 +132,7 @@ public class ChildSubstituteActionsHelper {
     }
 
     IScope scope = context.getScope();
-    Language primaryLanguage = SModelUtil_new.getDeclaringLanguage(childConcept, scope);
+    Language primaryLanguage = SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(childConcept));
     if (primaryLanguage == null) {
       LOG.error("Couldn't build actions : couldn't get declaring language for concept " + childConcept.getDebugText());
       return resultActions;
@@ -149,8 +149,8 @@ public class ChildSubstituteActionsHelper {
     for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(languages)) {
       AbstractConceptDeclaration applicableConcept = actionsBuilder.getApplicableConcept();
       if (applicableConcept == null) continue;
-      if (SModelUtil_new.isAssignableConcept(applicableConcept, childConcept) ||
-        SModelUtil_new.isAssignableConcept(childConcept, applicableConcept)) {
+      if (SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(applicableConcept), BaseAdapter.fromAdapter(childConcept)) ||
+        SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(childConcept), BaseAdapter.fromAdapter(applicableConcept))) {
 
         if (satisfiesPrecondition(actionsBuilder, parentNode,
           applicableConcept, BaseAdapter.fromAdapter(link),
@@ -226,23 +226,13 @@ public class ChildSubstituteActionsHelper {
 
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     for (String fqName : concepts) {
-      ConceptDeclaration applicableConcept = (ConceptDeclaration) SModelUtil_new.findConceptDeclaration(fqName, scope);
+      SNode applicableConcept = SModelUtil.findConceptDeclaration(fqName, scope);
       assert applicableConcept != null : "No concept " + fqName;
       actions.addAll(createDefaultActions(applicableConcept, parentNode, currentChild, childSetter, context));
     }
 
     return actions;
   }
-
-  @Deprecated
-  public static List<INodeSubstituteAction> createDefaultActions(@NotNull ConceptDeclaration applicableConcept,
-                                                                 SNode parentNode,
-                                                                 SNode currentChild,
-                                                                 IChildNodeSetter setter,
-                                                                 IOperationContext operationContext) {
-    return createDefaultActions(BaseAdapter.fromAdapter(applicableConcept), parentNode, currentChild, setter, operationContext);
-  }
-
 
   public static List<INodeSubstituteAction> createDefaultActions(@NotNull SNode applicableConcept,
                                                                  SNode parentNode,

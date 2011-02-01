@@ -37,19 +37,19 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <roots>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="671853460608595937">
-      <property name="name" nameId="tpck.1169194664001" value="Maker" />
+      <property name="name" nameId="tpck.1169194664001" value="Maker_" />
     </node>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="671853460608595941">
-      <property name="name" nameId="tpck.1169194664001" value="Generator" />
+      <property name="name" nameId="tpck.1169194664001" value="Generator_" />
     </node>
     <node type="tpe3.BTestCase" typeId="tpe3.1171931851043" id="671853460608703866">
       <property name="testCaseName" nameId="tpe3.1171931851045" value="Generator" />
     </node>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="2551169102353069011">
-      <property name="name" nameId="tpck.1169194664001" value="TextGen" />
+      <property name="name" nameId="tpck.1169194664001" value="TextGen_" />
     </node>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="9000373783400844597">
-      <property name="name" nameId="tpck.1169194664001" value="Worker" />
+      <property name="name" nameId="tpck.1169194664001" value="Worker_" />
     </node>
   </roots>
   <root id="671853460608595937">
@@ -863,7 +863,7 @@
                           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="671853460608828980">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ud0o.6168415856807657099" resolveInfo="IFacet.Name" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="671853460608828981">
-                              <property name="value" nameId="tpee.1070475926801" value="Maker" />
+                              <property name="value" nameId="tpee.1070475926801" value="Maker_" />
                             </node>
                           </node>
                         </node>
@@ -875,7 +875,7 @@
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="671853460608828984">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ud0o.6168415856807657099" resolveInfo="IFacet.Name" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="671853460608828985">
-                            <property name="value" nameId="tpee.1070475926801" value="Generator" />
+                            <property name="value" nameId="tpee.1070475926801" value="Generator_" />
                           </node>
                         </node>
                       </node>
@@ -1537,7 +1537,7 @@
                             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5646063728432371659">
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ud0o.6168415856807657099" resolveInfo="IFacet.Name" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5646063728432371660">
-                                <property name="value" nameId="tpee.1070475926801" value="Maker" />
+                                <property name="value" nameId="tpee.1070475926801" value="Maker_" />
                               </node>
                             </node>
                           </node>
@@ -1549,7 +1549,7 @@
                           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5646063728432371663">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ud0o.6168415856807657099" resolveInfo="IFacet.Name" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5646063728432371664">
-                              <property name="value" nameId="tpee.1070475926801" value="Generator" />
+                              <property name="value" nameId="tpee.1070475926801" value="Generator_" />
                             </node>
                           </node>
                         </node>
@@ -1561,7 +1561,7 @@
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5646063728432371667">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ud0o.6168415856807657099" resolveInfo="IFacet.Name" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5646063728432371668">
-                            <property name="value" nameId="tpee.1070475926801" value="TextGen" />
+                            <property name="value" nameId="tpee.1070475926801" value="TextGen_" />
                           </node>
                         </node>
                       </node>
@@ -2224,7 +2224,7 @@
                             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5646063728432375706">
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ud0o.6168415856807657099" resolveInfo="IFacet.Name" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5646063728432375707">
-                                <property name="value" nameId="tpee.1070475926801" value="Maker" />
+                                <property name="value" nameId="tpee.1070475926801" value="Maker_" />
                               </node>
                             </node>
                           </node>
@@ -2236,7 +2236,7 @@
                           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5646063728432375710">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ud0o.6168415856807657099" resolveInfo="IFacet.Name" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5646063728432375711">
-                              <property name="value" nameId="tpee.1070475926801" value="Generator" />
+                              <property name="value" nameId="tpee.1070475926801" value="Generator_" />
                             </node>
                           </node>
                         </node>
@@ -2248,7 +2248,7 @@
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5646063728432375714">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ud0o.6168415856807657099" resolveInfo="IFacet.Name" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5646063728432375715">
-                            <property name="value" nameId="tpee.1070475926801" value="TextGen" />
+                            <property name="value" nameId="tpee.1070475926801" value="TextGen_" />
                           </node>
                         </node>
                       </node>
@@ -3216,7 +3216,7 @@
                           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9000373783400844729">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ud0o.6168415856807657099" resolveInfo="IFacet.Name" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="9000373783400844730">
-                              <property name="value" nameId="tpee.1070475926801" value="Maker" />
+                              <property name="value" nameId="tpee.1070475926801" value="Maker_" />
                             </node>
                           </node>
                         </node>
@@ -3228,7 +3228,7 @@
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9000373783400844733">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ud0o.6168415856807657099" resolveInfo="IFacet.Name" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="9000373783400844734">
-                            <property name="value" nameId="tpee.1070475926801" value="Worker" />
+                            <property name="value" nameId="tpee.1070475926801" value="Worker_" />
                           </node>
                         </node>
                       </node>
@@ -4014,7 +4014,7 @@
                           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9000373783400861977">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ud0o.6168415856807657099" resolveInfo="IFacet.Name" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="9000373783400861978">
-                              <property name="value" nameId="tpee.1070475926801" value="Maker" />
+                              <property name="value" nameId="tpee.1070475926801" value="Maker_" />
                             </node>
                           </node>
                         </node>
@@ -4026,7 +4026,7 @@
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9000373783400861981">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ud0o.6168415856807657099" resolveInfo="IFacet.Name" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="9000373783400861982">
-                            <property name="value" nameId="tpee.1070475926801" value="Worker" />
+                            <property name="value" nameId="tpee.1070475926801" value="Worker_" />
                           </node>
                         </node>
                       </node>

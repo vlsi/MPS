@@ -185,7 +185,7 @@ public class NodePaster {
     }
 
     // delete original anchor if it was abstract concept
-    if (anchorNode != null && anchorNode.getConceptDeclarationAdapter().hasConceptProperty(AbstractConceptDeclaration.CPR_Abstract)) {
+    if (anchorNode != null && anchorNode.getConceptDeclarationNode().hasConceptProperty(AbstractConceptDeclaration.CPR_Abstract)) {
       anchorNode.delete();
     }
   }

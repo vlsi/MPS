@@ -24,7 +24,6 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -106,7 +105,7 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
               SModel smodel = descriptor.getSModel();
               Iterable<SNode> nodes = ListSequence.fromList(SModelOperations.getNodes(smodel, null)).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  if (!(it.isInstanceOfConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(MainNodeChooser.this.myTargetConcept))))) {
+                  if (!(it.isInstanceOfConcept(MainNodeChooser.this.myTargetConcept))) {
                     return false;
                   }
                   if (myAcceptor == null) {

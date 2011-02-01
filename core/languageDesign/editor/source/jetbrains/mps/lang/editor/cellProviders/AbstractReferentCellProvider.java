@@ -58,7 +58,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
 
   public void setRole(Object role) {
-    myLinkDeclaration = BaseAdapter.fromAdapter(getSNode().getLinkDeclaration(role.toString()));
+    myLinkDeclaration = getSNode().getLinkDeclaration(role.toString());
     if (myLinkDeclaration == null) {
       myErrorText = "?" + role.toString() + "?";
       LOG.error("can't find a link declaration '" + role.toString() + "' in " + getSNode(), getSNode());

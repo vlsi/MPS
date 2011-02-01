@@ -33,6 +33,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethods
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
@@ -146,8 +147,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   public void showConceptNode(final String fqName) throws RemoteException {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(fqName, GlobalScope.getInstance());
-        myProject.getComponent(MPSEditorOpener.class).openNode(concept.getNode());
+        SNode concept = SModelUtil.findConceptDeclaration(fqName, GlobalScope.getInstance());
+        myProject.getComponent(MPSEditorOpener.class).openNode(concept);
         FrameUtil.activateFrame(getMainFrame());
       }
     });

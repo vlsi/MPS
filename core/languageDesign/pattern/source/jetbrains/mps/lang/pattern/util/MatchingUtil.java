@@ -56,7 +56,7 @@ public class MatchingUtil {
           return false;
         }
       } else {
-        PropertySupport propertySupport = PropertySupport.getPropertySupport((PropertyDeclaration) propertyDeclaration.getAdapter());
+        PropertySupport propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
         if (!ObjectUtils.equals(propertySupport.fromInternalValue(propertyValue1),
           propertySupport.fromInternalValue(propertyValue2))) return false;
       }

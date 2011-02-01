@@ -12,11 +12,10 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.smodel.IScope;
 import java.util.Collections;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class SModelOperations {
@@ -59,7 +58,7 @@ public class SModelOperations {
     if (conceptFqName == null) {
       return allRootsIncludingImported(model, scope);
     }
-    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
     if (concept == null) {
       return Collections.emptyList();
     }
@@ -141,8 +140,8 @@ public class SModelOperations {
     if (conceptFqName == null) {
       return null;
     }
-    AbstractConceptDeclaration nodeConcept = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-    if (nodeConcept instanceof InterfaceConceptDeclaration) {
+    SNode nodeConcept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
       return new SNode(model, conceptFqName);
     }
     SNode result = SModelUtil_new.instantiateConceptDeclaration(conceptFqName, model, GlobalScope.getInstance(), false);

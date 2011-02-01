@@ -21,6 +21,7 @@ import jetbrains.mps.build.ant.IBuildServerMessageFormat;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
 import jetbrains.mps.build.ant.WhatToDo;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
 import jetbrains.mps.project.GlobalScope;
@@ -118,7 +119,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
 
     for (SNode node : sm.getSModel().nodes()) {
       debug("Checking node " + node);
-      if (SModelUtil_new.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
+      if (SModelUtil.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
         errorMessages.append(node.getConceptFqName());
         errorMessages.append("\n");

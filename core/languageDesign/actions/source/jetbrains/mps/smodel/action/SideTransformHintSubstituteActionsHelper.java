@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.actions.behavior.RemoveSTByConditionPart_Behavior;
 import jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActionsBuilder_Behavior;
 import jetbrains.mps.lang.actions.structure.*;
@@ -58,7 +59,7 @@ public class SideTransformHintSubstituteActionsHelper {
     TypeChecker.getInstance().enableTypesComputingForCompletion();
     try {
       IScope scope = myContext.getScope();
-      final AbstractConceptDeclaration sourceConcept = mySourceNode.getConceptDeclarationAdapter();
+      final AbstractConceptDeclaration sourceConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(mySourceNode.getConceptDeclarationNode());
       List<Language> languages = SModelOperations.getLanguages(mySourceNode.getModel(), scope);
       for (Language language : languages) {
         SModelDescriptor actionsModel = language.getActionsModelDescriptor();
@@ -143,7 +144,7 @@ public class SideTransformHintSubstituteActionsHelper {
   private List<SideTransformHintSubstituteActionsBuilder> getActionBuilders() {
     List<SideTransformHintSubstituteActionsBuilder> actionsBuilders = new LinkedList<SideTransformHintSubstituteActionsBuilder>();
     IScope scope = myContext.getScope();
-    final AbstractConceptDeclaration sourceConcept = mySourceNode.getConceptDeclarationAdapter();
+    final AbstractConceptDeclaration sourceConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(mySourceNode.getConceptDeclarationNode());
 
     List<Language> languages = SModelOperations.getLanguages(mySourceNode.getModel(), scope);
     for (Language language : languages) {
@@ -179,7 +180,7 @@ public class SideTransformHintSubstituteActionsHelper {
       return false;
     }
 
-    if (!SModelUtil_new.isAssignableConcept(sourceConcept, actionsBuilder.getApplicableConcept())) {
+    if (!SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(sourceConcept), BaseAdapter.fromAdapter(actionsBuilder.getApplicableConcept()))) {
       return false;
     }
 

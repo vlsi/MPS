@@ -896,6 +896,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public IOperationContext getOperationContext() {
+    assert myOperationContext == null || myOperationContext.getModule() != null :  "No module for operation context: " + myOperationContext;
     return myOperationContext;
   }
 

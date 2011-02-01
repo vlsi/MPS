@@ -16,6 +16,7 @@
 package jetbrains.mps.resolve;
 
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 
@@ -50,7 +51,7 @@ public class ResolveResult {
     } else {
       SNode parent = mySourceNode.getParent();
       if (parent != null) {
-        SNode newNode = SModelUtil_new.instantiateConceptDeclaration(mySmartRefConcept, mySourceNode.getModel()).getNode();
+        SNode newNode = SModelUtil_new.instantiateConceptDeclaration(BaseAdapter.fromAdapter(mySmartRefConcept), mySourceNode.getModel());
         newNode.setReferent(myRole, myTargetNode);
         parent.replaceChild(mySourceNode, newNode);
       }

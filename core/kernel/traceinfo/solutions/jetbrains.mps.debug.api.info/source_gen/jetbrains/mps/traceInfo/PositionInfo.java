@@ -143,18 +143,18 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
     this.myEndPosition = position.myEndPosition;
   }
 
-  private static String check_1myh1n_a0a0a1(Attribute p) {
-    if (null == p) {
-      return null;
+  private static String check_1myh1n_a0a0a1(Attribute checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getValue();
     }
-    return p.getValue();
+    return null;
   }
 
-  private static String check_1myh1n_a0a1a1(Attribute p) {
-    if (null == p) {
-      return null;
+  private static String check_1myh1n_a0a1a1(Attribute checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getValue();
     }
-    return p.getValue();
+    return null;
   }
 
   private static boolean eq_1myh1n_a0a0p(Object a, Object b) {

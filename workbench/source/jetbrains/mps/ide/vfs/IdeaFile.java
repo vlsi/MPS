@@ -111,7 +111,7 @@ class IdeaFile implements IFileEx {
   public IFile child(String suffix) {
     String path = getAbsolutePath();
     String separator = path.contains("!") ? "/" : File.separator;
-    return new IdeaFile(path + separator + suffix);
+    return new IdeaFile(path + (path.endsWith(separator) ? "" : separator) + suffix);
   }
 
   @Override
@@ -252,7 +252,11 @@ class IdeaFile implements IFileEx {
 
   @Override
   public boolean isPackaged() {
-    return findVirtualFile() && myVirtualFile.getFileSystem() instanceof JarFileSystem;
+    if (findVirtualFile()) {
+      return myVirtualFile.getFileSystem() instanceof JarFileSystem;
+    } else {
+      return myPath.contains("!");
+    }
   }
 
   @Override
@@ -292,7 +296,7 @@ class IdeaFile implements IFileEx {
         String jarPath = myPath.substring(0, index);
         String entryPath = myPath.substring(index + 1);
 
-        assert entryPath.indexOf('\\') == -1 : "No backslashes are allowed in JAR entry path";
+        assert entryPath.indexOf('\\') == -1 : "No backslashes are allowed in JAR entry path: " + myPath;
         entryPath = entryPath.replace('\\', '/');
         if (entryPath.startsWith("/")) {
           entryPath = entryPath.substring(1);

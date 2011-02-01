@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.lang.generator.structure.MappingConfiguration;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -32,7 +32,7 @@ public class GenerationFacade {
     List<SModelDescriptor> list = generator.getOwnTemplateModels();
     List<SNode> mappings = new ArrayList<SNode>();
     for (SModelDescriptor templateModel : list) {
-      List<SNode> nodes = templateModel.getSModel().getFastNodeFinder().getNodes(MappingConfiguration.concept, true);
+      List<SNode> nodes = templateModel.getSModel().getFastNodeFinder().getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true);
       mappings.addAll(nodes);
     }
     return mappings;

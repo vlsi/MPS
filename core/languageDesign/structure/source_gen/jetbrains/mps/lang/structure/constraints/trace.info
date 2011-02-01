@@ -14,9 +14,9 @@
   <unitInfo fileName="EnumerationDataTypeDeclaration_hasNoDefaultMember_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_hasNoDefaultMember_PropertyConstraint" />
   <unitInfo fileName="ConceptDeclaration_extends_ReferentConstraint.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConceptDeclaration_extends_ReferentConstraint" />
   <unitInfo fileName="EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint" />
-  <unitInfo fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="15" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConceptProperty_conceptPropertyDeclaration_ReferentConstraint" />
   <unitInfo fileName="ConceptLink_conceptLinkDeclaration_ReferentConstraint.java" startLine="15" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConceptLink_conceptLinkDeclaration_ReferentConstraint" />
   <unitInfo fileName="ReferenceConceptLink_target_ReferentConstraint.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ReferenceConceptLink_target_ReferentConstraint" />
+  <unitInfo fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="18" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConceptProperty_conceptPropertyDeclaration_ReferentConstraint" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="LinkDeclaration_specializedLink_ReferentConstraint.java" startLine="21" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.LinkDeclaration_specializedLink_ReferentConstraint" />
   <root nodeId="1213104840673">
@@ -97,12 +97,21 @@
     </scopeInfo>
   </root>
   <root nodeId="1213104860717">
-    <nodeInfo nodeId="7376433222636454087" fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1213104860721" fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="28" startPosition="69" endLine="29" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213104860730" fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="29" startPosition="160" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1213104860720" fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="27" startPosition="132" endLine="30" endPosition="62">
+    <nodeInfo nodeId="7376433222636454087" fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1213104860721" fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="31" startPosition="69" endLine="32" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="51477320717001198" fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="32" startPosition="168" endLine="33" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="51477320717001185" fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="35" startPosition="38" endLine="36" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="51477320717001171" fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="34" startPosition="109" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1213104860730" fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="33" startPosition="138" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="51477320717001176" fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="35" startPosition="38" endLine="36" endPosition="280" />
+    <scopeInfo nodeId="51477320717001171" fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="34" startPosition="109" endLine="38" endPosition="0">
+      <varInfo nodeId="51477320717001174" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104860720" fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="38" endPosition="7">
+      <varInfo nodeId="51477320717001199" varName="isConcept" />
       <varInfo nodeId="1213104860722" varName="enclosingConcept" />
     </scopeInfo>
+    <unitInfo nodeId="51477320717001169" fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="34" startPosition="89" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.structure.constraints.ConceptProperty_conceptPropertyDeclaration_ReferentConstraint$1" />
   </root>
   <root nodeId="1227087670687">
     <nodeInfo nodeId="1227087672330" fileName="InterfaceConceptDeclaration_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

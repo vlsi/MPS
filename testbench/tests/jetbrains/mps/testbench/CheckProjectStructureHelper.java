@@ -9,6 +9,7 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
 import jetbrains.mps.project.GlobalScope;
@@ -233,7 +234,7 @@ public class CheckProjectStructureHelper {
 
     for (SNode node : sm.getSModel().nodes()) {
       Testbench.LOG.debug("Checking node " + node);
-      if (SModelUtil_new.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
+      if (SModelUtil.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
         errorMessages.append(node.getConceptFqName());
         errorMessages.append("\n");

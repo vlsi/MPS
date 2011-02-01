@@ -124,7 +124,7 @@ public final class ChooseNodeDialog extends BaseDialog {
       for (LinkDeclaration linkDeclaration : ((AbstractConceptDeclaration)abstractConceptDeclaration.getAdapter()).getLinkDeclarations()) {
         if (linkDeclaration.getMetaClass() == LinkMetaclass.reference) continue;
         AbstractConceptDeclaration targetConcept = linkDeclaration.getTarget();
-        if (SModelUtil_new.isAssignableConcept((AbstractConceptDeclaration) nodeToMoveDeclaration.getAdapter(), targetConcept)) {
+        if (SModelUtil.isAssignableConcept(nodeToMoveDeclaration, BaseAdapter.fromAdapter(targetConcept))) {
           roleInParent = linkDeclaration.getRole();
           break;
         }

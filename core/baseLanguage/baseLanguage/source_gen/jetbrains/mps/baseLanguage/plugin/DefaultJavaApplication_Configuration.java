@@ -155,8 +155,8 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
 
             final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
             // create process handler 
-            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E0<DefaultProcessHandler>() {
-              public DefaultProcessHandler invoke() {
+            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E1<DefaultProcessHandler, ExecutionException>() {
+              public DefaultProcessHandler invoke() throws ExecutionException {
                 try {
                   ClassRunner classRunner = new ClassRunner(javaRunParameters);
                   final Wrappers._T<String> className = new Wrappers._T<String>();
@@ -165,6 +165,9 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
                       className.value = INamedConcept_Behavior.call_getFqName_1213877404258(node);
                     }
                   });
+                  if (className.value == null) {
+                    throw new ExecutionException("Class name of a node is null. Cant run.");
+                  }
                   Process process = classRunner.run(node, className.value);
                   return new DefaultProcessHandler(consoleView_22042010, process, classRunner.getCommandString());
                 } catch (ExecutionException e) {

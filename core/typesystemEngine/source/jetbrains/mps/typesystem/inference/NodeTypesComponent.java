@@ -1380,7 +1380,7 @@ public class NodeTypesComponent {
     }
 
     void dispose() {
-      for (SModelDescriptor sm : myNodesCount.keySet()) {
+      for (SModelDescriptor sm : new HashSet<SModelDescriptor>(myNodesCount.keySet())) {
         sm.removeModelListener(myListener);
       }
     }

@@ -41,10 +41,10 @@ public class typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule extend
     return false;
   }
 
-  private static SNode check_vmwfy8_a0a0a(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNode check_vmwfy8_a0a0a(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return SLinkOperations.getTarget(checkedDotOperand, "valueType", true);
     }
-    return SLinkOperations.getTarget(p, "valueType", true);
+    return null;
   }
 }

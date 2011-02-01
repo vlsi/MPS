@@ -19,10 +19,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorContext;
 
@@ -53,8 +50,8 @@ public class CellAction_DeleteSmart extends EditorCellAction {
       myTarget.delete();
       Cardinality sourceCardinality = genuineLink.getSourceCardinality();
       if (sourceCardinality == Cardinality._1) {
-        AbstractConceptDeclaration defaultTargetConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(SModelUtil.getLinkDeclarationTarget(myLink));
-        SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(defaultTargetConcept, model).getNode();
+        SNode defaultTargetConcept = SModelUtil.getLinkDeclarationTarget(myLink);
+        SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(defaultTargetConcept, model);
         String role = genuineLink.getRole();
         mySource.setChild(role, defaultTarget);
       }

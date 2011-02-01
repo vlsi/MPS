@@ -29,10 +29,10 @@ public class TestModel {
     d.print();
   }
 
-  private static String check_6o96ff_a1a0(String p) {
-    if (null == p) {
-      return null;
+  private static String check_6o96ff_a1a0(String checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.concat("a");
     }
-    return p.concat("a");
+    return null;
   }
 }

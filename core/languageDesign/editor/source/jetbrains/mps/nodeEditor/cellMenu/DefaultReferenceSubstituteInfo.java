@@ -120,7 +120,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
 
       SNode parent = mySourceNode.getParent();
       String role = mySourceNode.getRole_();
-      LinkDeclaration roleLink = parent.getLinkDeclaration(role);
+      LinkDeclaration roleLink = (LinkDeclaration) BaseAdapter.fromNode(parent.getLinkDeclaration(role));
       return ModelActions.createChildSubstituteActions(parent, mySourceNode, roleLink.getTarget().getNode(), new DefaultChildNodeSetter(roleLink), getOperationContext());
     }
 

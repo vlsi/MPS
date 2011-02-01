@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.HackSNodeUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.INodeAdapter;
 
 public class ModelLinkMap {
   private SModel myModel;
@@ -236,13 +235,6 @@ public class ModelLinkMap {
 
   private static SNodePointer ptr(SNode node) {
     return ((node == null) ?
-      null :
-      new SNodePointer(node)
-    );
-  }
-
-  private static SNodePointer ptr(INodeAdapter node) {
-    return (node == null ?
       null :
       new SNodePointer(node)
     );

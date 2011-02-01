@@ -40,8 +40,8 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   private static final Logger LOG = Logger.getLogger(NodeFactoryManager.class);
 
   public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
-    AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-    return createNode(conceptDeclaration, sampleNode, enclosingNode, model, GlobalScope.getInstance());
+    SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    return createNode((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration), sampleNode, enclosingNode, model, GlobalScope.getInstance());
   }
 
   public static SNode createNode(SNode enclosingNode, EditorContext editorContext, String linkRole) {
@@ -66,23 +66,24 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     return result;
   }
 
-  public static SNode createNode(@NotNull AbstractConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
+  public static SNode createNode(@NotNull AbstractConceptDeclaration nodeConcept1, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
+    SNode nodeConcept = BaseAdapter.fromAdapter(nodeConcept1);
     if (model == null) {
       model = AuxilaryRuntimeModel.getDescriptor().getSModel();
     }
 
-    if (nodeConcept instanceof InterfaceConceptDeclaration) {
+    if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
       return new SNode(model, NameUtil.nodeFQName(nodeConcept));
     }
-    SNode newNode = BaseAdapter.fromAdapter(SModelUtil_new.instantiateConceptDeclaration(nodeConcept, model, false));
+    SNode newNode = SModelUtil_new.instantiateConceptDeclaration(nodeConcept, model, false);
     if (newNode == null) return null;
     BehaviorManager.getInstance().initNode(newNode);
     if (sampleNode != null) {
       sampleNode = CopyUtil.copy(sampleNode);
     }
-    nodeConcept = newNode.getConceptDeclarationAdapter(); // default concrete concept could change nodeConcept
-    setupNode((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
-    createNodeStructure(BaseAdapter.fromAdapter(nodeConcept), newNode, sampleNode, enclosingNode, model, scope);
+    nodeConcept = newNode.getConceptDeclarationNode(); // default concrete concept could change nodeConcept
+    setupNode(nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
+    createNodeStructure(nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
     return newNode;
   }
 
@@ -91,9 +92,10 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
                                          SModel model, IScope scope) {
     for (SNode linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {
       String role = SModelUtil.getGenuineLinkRole(linkDeclaration);
-      LinkMetaclass metaClass = SModelUtil_new.getGenuineLinkMetaclass((LinkDeclaration) BaseAdapter.fromNode(linkDeclaration));
-      Cardinality sourceCardinality = SModelUtil_new.getGenuineLinkSourceCardinality((LinkDeclaration) BaseAdapter.fromNode(linkDeclaration));
-      if (metaClass == LinkMetaclass.aggregation &&
+
+      SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
+      Cardinality sourceCardinality = ((LinkDeclaration) BaseAdapter.fromNode(genuineLinkDeclaration)).getSourceCardinality();
+      if (!SNodeUtil.getLinkDeclaration_IsReference(genuineLinkDeclaration) &&
         (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._1__n)) {
 
         SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
@@ -121,15 +123,15 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   private static boolean setupNode_internal(ConceptDeclaration nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
     List<NodeFactory> nodeFactories = new ArrayList<NodeFactory>();
     for (String ancestor : LanguageHierarchyCache.getInstance().getAncestorsNames(NameUtil.nodeFQName(nodeConcept))) {
-      AbstractConceptDeclaration acd = SModelUtil_new.findConceptDeclaration(ancestor, scope);
-      Language language = SModelUtil_new.getDeclaringLanguage(acd, scope);
+      SNode acd = SModelUtil.findConceptDeclaration(ancestor, scope);
+      Language language = SModelUtil.getDeclaringLanguage(acd);
       if (language == null) break;
       SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
       if (actionsModelDescriptor != null) {
         List<NodeFactories> nodeFactoriesList = actionsModelDescriptor.getSModel().getRootsAdapters(NodeFactories.class);
         for (NodeFactories nodeFactoriesContainer : nodeFactoriesList) {
           for (NodeFactory nodeFactory : nodeFactoriesContainer.getNodeFactories()) {
-            if (nodeFactory.getApplicableConcept() == acd) {
+            if (nodeFactory.getApplicableConcept() == BaseAdapter.fromNode(acd)) {
               nodeFactories.add(nodeFactory);
             }
           }

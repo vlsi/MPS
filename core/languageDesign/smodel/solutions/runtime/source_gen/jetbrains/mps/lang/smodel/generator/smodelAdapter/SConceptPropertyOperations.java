@@ -4,11 +4,12 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.ConceptProperty;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.structure.structure.StringConceptProperty;
 import jetbrains.mps.lang.structure.structure.IntegerConceptProperty;
 import jetbrains.mps.lang.structure.structure.BooleanConceptProperty;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
+import java.util.List;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration;
 
@@ -20,7 +21,7 @@ public class SConceptPropertyOperations {
     if (node == null) {
       return null;
     }
-    ConceptProperty conceptProperty = node.findConceptProperty(propertyName);
+    ConceptProperty conceptProperty = (ConceptProperty) BaseAdapter.fromNode(node.findConceptProperty(propertyName));
     if (conceptProperty instanceof StringConceptProperty) {
       return ((StringConceptProperty) conceptProperty).getValue();
     }
@@ -31,7 +32,7 @@ public class SConceptPropertyOperations {
     if (node == null) {
       return 0;
     }
-    ConceptProperty conceptProperty = node.findConceptProperty(propertyName);
+    ConceptProperty conceptProperty = (ConceptProperty) BaseAdapter.fromNode(node.findConceptProperty(propertyName));
     if (conceptProperty instanceof IntegerConceptProperty) {
       return ((IntegerConceptProperty) conceptProperty).getValue();
     }
@@ -42,13 +43,13 @@ public class SConceptPropertyOperations {
     if (node == null) {
       return false;
     }
-    ConceptProperty conceptProperty = node.findConceptProperty(propertyName);
+    ConceptProperty conceptProperty = (ConceptProperty) BaseAdapter.fromNode(node.findConceptProperty(propertyName));
     return conceptProperty instanceof BooleanConceptProperty;
   }
 
   public static void setString(SNode node, String propertyName, String value) {
     if (node != null) {
-      ConceptProperty conceptProperty = node.findConceptProperty(propertyName);
+      ConceptProperty conceptProperty = (ConceptProperty) BaseAdapter.fromNode(node.findConceptProperty(propertyName));
       if (conceptProperty instanceof StringConceptProperty) {
         ((StringConceptProperty) conceptProperty).setValue(value);
       }
@@ -57,7 +58,7 @@ public class SConceptPropertyOperations {
 
   public static void setInteger(SNode node, String propertyName, int value) {
     if (node != null) {
-      ConceptProperty conceptProperty = node.findConceptProperty(propertyName);
+      ConceptProperty conceptProperty = (ConceptProperty) BaseAdapter.fromNode(node.findConceptProperty(propertyName));
       if (conceptProperty instanceof IntegerConceptProperty) {
         ((IntegerConceptProperty) conceptProperty).setValue(value);
       }
@@ -66,17 +67,17 @@ public class SConceptPropertyOperations {
 
   public static void setBoolean(SNode node, String propertyName, boolean value) {
     if (node != null) {
-      ConceptProperty conceptProperty = node.findConceptProperty(propertyName);
+      ConceptProperty conceptProperty = (ConceptProperty) BaseAdapter.fromNode(node.findConceptProperty(propertyName));
       if (conceptProperty instanceof BooleanConceptProperty && !(value)) {
         node.removeChild(conceptProperty.getNode());
       } else
       if (conceptProperty == null && value) {
-        AbstractConceptDeclaration acd = (AbstractConceptDeclaration) node.getAdapter();
-        for (ConceptPropertyDeclaration cpd : SModelSearchUtil.getConceptPropertyDeclarations(acd)) {
-          if (cpd.getName().equals(propertyName)) {
-            if (cpd instanceof BooleanConceptPropertyDeclaration) {
-              BooleanConceptProperty bcp = BooleanConceptProperty.newInstance(node.getModel());
-              bcp.setBooleanConceptPropertyDeclaration((BooleanConceptPropertyDeclaration) cpd);
+        AbstractConceptDeclaration acd = ((AbstractConceptDeclaration) SNodeOperations.getAdapter(node));
+        for (SNode cpd : (List<SNode>) SModelSearchUtil.getConceptPropertyDeclarations(node)) {
+          if (SPropertyOperations.getString(cpd, "name").equals(propertyName)) {
+            if (SNodeOperations.isInstanceOf(cpd, "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration")) {
+              BooleanConceptProperty bcp = BooleanConceptProperty.newInstance(SNodeOperations.getModel(node));
+              bcp.setBooleanConceptPropertyDeclaration(((BooleanConceptPropertyDeclaration) SNodeOperations.getAdapter(SNodeOperations.cast(cpd, "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration"))));
               acd.addConceptProperty(bcp);
               break;
             }

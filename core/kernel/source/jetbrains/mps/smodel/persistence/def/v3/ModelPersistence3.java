@@ -15,14 +15,22 @@
  */
 package jetbrains.mps.smodel.persistence.def.v3;
 
+import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
+import jetbrains.mps.smodel.persistence.def.IModelPersistence;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.smodel.persistence.def.v2.ModelPersistence2;
+import jetbrains.mps.smodel.persistence.lines.LineContent;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
 
-public class ModelPersistence3 extends ModelPersistence2 {
+import java.util.List;
+
+public class ModelPersistence3 implements IModelPersistence {
   public IModelWriter getModelWriter() {
     return new ModelWriter3();
   }
@@ -33,6 +41,33 @@ public class ModelPersistence3 extends ModelPersistence2 {
 
   public IHashProvider getHashProvider() {
     return new HashProvider3();
+  }
+
+  public boolean needsRecreating(IFile file) {
+    String fileName = file.getName();
+    int index = fileName.indexOf('.');
+    String rawModelName = (index >= 0) ? fileName.substring(0, index) : fileName;
+    String modelStereotype = "";
+    int index1 = rawModelName.indexOf("@");
+    if (index1 >= 0) {
+      modelStereotype = rawModelName.substring(index1 + 1);
+    }
+    return SModelStereotype.TEMPLATES.equals(modelStereotype);
+  }
+
+  protected String upgradeStereotype(String stereotype) {
+    if (SModelStereotype.TEMPLATES.equals(stereotype)) {
+      return SModelStereotype.GENERATOR;
+    }
+    return stereotype;
+  }
+
+  public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state) {
+    return null;
+  }
+
+  public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
+    return null;
   }
 
   public SModelReference upgradeModelUID(SModelReference modelReference) {

@@ -298,11 +298,11 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     }
   }
 
-  private static String check_kvu3z4_a0a61(ChangesFoldingAreaPainter.MessageGroup p) {
-    if (null == p) {
-      return null;
+  private static String check_kvu3z4_a0a61(ChangesFoldingAreaPainter.MessageGroup checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getToolTipText();
     }
-    return p.getToolTipText();
+    return null;
   }
 
   public class MessageGroup {

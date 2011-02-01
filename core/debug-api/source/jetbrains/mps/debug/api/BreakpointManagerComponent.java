@@ -378,6 +378,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
         try {
           IBreakpoint breakpoint = provider.loadFromState((Element) breakpointElement.getChildren().get(0), kind, myProject);
           if (breakpoint != null) {
+            breakpoint.addBreakpointListener(myBreakpointListener);
             myBreakpoints.add(breakpoint);
           }
         } catch (Throwable t) {
@@ -488,7 +489,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   private class MyBreakpointListener implements IBreakpointListener {
     @Override
-    public void breakpointToggled(final IBreakpoint breakpoint, boolean enabled) {
+    public void breakpointEnabledStateToggled(final IBreakpoint breakpoint, boolean enabled) {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {

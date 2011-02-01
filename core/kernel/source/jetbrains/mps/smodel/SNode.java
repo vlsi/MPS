@@ -16,8 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -286,7 +284,7 @@ public final class SNode {
     return myRoleInParent;
   }
 
-  public LinkDeclaration getRoleLink() {
+  public SNode getRoleLink() {
     if (getRole_() == null) return null;
     if (getParent() == null) return null;
     return getParent().getLinkDeclaration(getRole_());
@@ -1439,25 +1437,24 @@ public final class SNode {
     SModelRepository.getInstance().markChanged(getModel());
   }
 
-  public boolean isInstanceOfConcept(AbstractConceptDeclaration concept) {
+  public boolean isInstanceOfConcept(SNode concept) {
     return isInstanceOfConcept(NameUtil.nodeFQName(concept));
   }
 
   public boolean isInstanceOfConcept(String conceptFqName) {
-    return SModelUtil_new.isAssignableConcept(myConceptFqName, conceptFqName);
+    return SModelUtil.isAssignableConcept(myConceptFqName, conceptFqName);
   }
 
   public SNode getConceptDeclarationNode() {
-    String conceptFQName = getConceptFqName();
-    return SModelUtil.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
+    return SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
   }
 
-  public PropertyDeclaration getPropertyDeclaration(String propertyName) {
-    return (PropertyDeclaration) BaseAdapter.fromNode(SModelSearchUtil.findPropertyDeclaration(getConceptDeclarationNode(), propertyName));
+  public SNode getPropertyDeclaration(String propertyName) {
+    return SModelSearchUtil.findPropertyDeclaration(getConceptDeclarationNode(), propertyName);
   }
 
-  public LinkDeclaration getLinkDeclaration(String role) {
-    return (LinkDeclaration) BaseAdapter.fromNode(SModelSearchUtil.findLinkDeclaration(getConceptDeclarationNode(), role));
+  public SNode getLinkDeclaration(String role) {
+    return SModelSearchUtil.findLinkDeclaration(getConceptDeclarationNode(), role);
   }
 
   public SNode findParent(Condition<SNode> condition) {
@@ -1521,11 +1518,8 @@ public final class SNode {
       LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
       return false;
     }
-    Cardinality cardinality = SModelUtil_new.getGenuineLinkSourceCardinality((LinkDeclaration) linkDeclaration.getAdapter());
-    if (cardinality == Cardinality._1 || cardinality == Cardinality._1__n) {
-      return true;
-    }
-    return false;
+    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
+    return SNodeUtil.getLinkDeclaration_IsAtLeastOneMultiplicity(genuineLinkDeclaration);
   }
 
   public Language getLanguage(@NotNull IScope scope) {
@@ -1722,7 +1716,8 @@ public final class SNode {
     BaseAdapter adapter = myAdapter;
     if (adapter != null) return adapter;
     Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
-    if (c == null) return new BaseConcept(this);
+    if (c == null) c = QueryMethodGenerated.getAdapterConstructor(SNodeUtil.concept_BaseConcept);
+    if (c == null) return new BaseAdapter(this) {};
 
     synchronized (this) {
       adapter = myAdapter;
@@ -1746,7 +1741,7 @@ public final class SNode {
         LOG.error(t);
       }
     }
-    return new BaseConcept(this);
+    return new BaseAdapter(this) {};
   }
 
 
@@ -1831,45 +1826,34 @@ public final class SNode {
 
   public boolean hasConceptProperty(String propertyName) {
     if ("root".equals(propertyName)) {
-      if (getAdapter() instanceof ConceptDeclaration) {
-        return ((ConceptDeclaration) getAdapter()).getRootable();
+      if (SNodeUtil.isInstanceOfConceptDeclaration(this)) {
+        return SNodeUtil.getConceptDeclaration_IsRootable(this);
       } else {
-        AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
-        if (conceptDeclaration instanceof ConceptDeclaration) {
-          return ((ConceptDeclaration) conceptDeclaration).getRootable();
+        SNode conceptDeclaration = getConceptDeclarationNode();
+        if (SNodeUtil.isInstanceOfConceptDeclaration(conceptDeclaration)) {
+          return SNodeUtil.getConceptDeclaration_IsRootable(conceptDeclaration);
         }
       }
       return false;
     }
 
-    ConceptProperty conceptProperty = findConceptProperty(propertyName);
-    return conceptProperty != null;
+    return findConceptProperty(propertyName) != null;
   }
 
   public String getConceptProperty(String propertyName) {
-    ConceptProperty conceptProperty = findConceptProperty(propertyName);
-    if (conceptProperty instanceof StringConceptProperty) {
-      return ((StringConceptProperty) conceptProperty).getValue();
-    }
-
-    if (conceptProperty instanceof IntegerConceptProperty) {
-      return "" + ((IntegerConceptProperty) conceptProperty).getValue();
-    }
-
-    if (conceptProperty instanceof BooleanConceptProperty) {
-      return "true";
-    }
-    return null;
+    SNode conceptProperty = findConceptProperty(propertyName);
+    Object o = SNodeUtil.getConceptPropertyValue(conceptProperty);
+    return o != null ? o.toString() : null;
   }
 
-  public ConceptProperty findConceptProperty(String propertyName) {
+  public SNode findConceptProperty(String propertyName) {
     SNode conceptDeclaration;
-    if (myConceptFqName.equals(ConceptDeclaration.concept) || myConceptFqName.equals(InterfaceConceptDeclaration.concept)) {
+    if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
       conceptDeclaration = this;
     } else {
       conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
     }
-    return SModelSearchUtil.findConceptProperty((AbstractConceptDeclaration) conceptDeclaration.getAdapter(), propertyName);
+    return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
   //------------deprecated-------------
@@ -1937,17 +1921,4 @@ public final class SNode {
     result = getChild(role + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE);
     return result;
   }
-
-  @Deprecated
-  public AbstractConceptDeclaration getConceptDeclarationAdapter() {
-    String conceptFQName = getConceptFqName();
-    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
-    return concept;
-  }
-
-  @Deprecated
-  public boolean isInstanceOfConcept(String conceptFqName, IScope scope) {
-    return isInstanceOfConcept(conceptFqName);
-  }
-
 }

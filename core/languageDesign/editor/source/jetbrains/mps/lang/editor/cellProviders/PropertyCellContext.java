@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -27,8 +26,8 @@ import org.jetbrains.annotations.NotNull;
 public class PropertyCellContext extends BasicCellContext {
   public static final Object PROPERTY_DECLARATION = new Object();
 
-  public PropertyCellContext(SNode node, @NotNull PropertyDeclaration propertyDeclaration) {
+  public PropertyCellContext(SNode node, @NotNull SNode propertyDeclaration) {
     super(node);
-    put(PROPERTY_DECLARATION, propertyDeclaration.getNode());
+    put(PROPERTY_DECLARATION, propertyDeclaration);
   }
 }

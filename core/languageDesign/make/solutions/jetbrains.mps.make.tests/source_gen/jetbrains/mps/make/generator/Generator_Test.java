@@ -63,7 +63,7 @@ public class Generator_Test extends MockTestCase {
     });
 
     final IMonitors mons = new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
-    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Generator")).withTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Generator_")).withTarget(new ITarget.Name("Make")).toScript();
     scr = new IScript.StubBoss(scr) {
       public IMonitors monitors() {
         return mons;
@@ -133,7 +133,7 @@ public class Generator_Test extends MockTestCase {
       }
     });
     Mockups.allowing(context, mons);
-    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Generator")).withFacet(new IFacet.Name("TextGen")).withTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Generator_")).withFacet(new IFacet.Name("TextGen_")).withTarget(new ITarget.Name("Make")).toScript();
     scr = new IScript.StubBoss(scr) {
       public IMonitors monitors() {
         return mons;
@@ -204,7 +204,7 @@ public class Generator_Test extends MockTestCase {
     });
     Mockups.allowing(context, mons);
 
-    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Generator")).withFacet(new IFacet.Name("TextGen")).withTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Generator_")).withFacet(new IFacet.Name("TextGen_")).withTarget(new ITarget.Name("Make")).toScript();
     scr = new IScript.StubBoss(scr) {
       public IMonitors monitors() {
         return mons;
@@ -262,7 +262,7 @@ public class Generator_Test extends MockTestCase {
     });
 
     final IMonitors mons = new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
-    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Worker")).withTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Worker_")).withTarget(new ITarget.Name("Make")).toScript();
     scr = new IScript.StubBoss(scr) {
       public IMonitors monitors() {
         return mons;
@@ -318,7 +318,7 @@ public class Generator_Test extends MockTestCase {
     };
 
     final IMonitors mons = new IMonitors.Stub(new IConfigMonitor.Stub(), jmon);
-    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Worker")).withTarget(new ITarget.Name("Make")).toScript();
+    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Worker_")).withTarget(new ITarget.Name("Make")).toScript();
     scr = new IScript.StubBoss(scr) {
       public IMonitors monitors() {
         return mons;

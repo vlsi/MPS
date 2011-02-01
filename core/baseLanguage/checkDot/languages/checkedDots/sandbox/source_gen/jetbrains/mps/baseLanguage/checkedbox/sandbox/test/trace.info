@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="53796356308657384">
+    <nodeInfo nodeId="53796356308657402" fileName="FooCheckedDots.java" startLine="10" startPosition="60" endLine="11" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="53796356308657436" fileName="FooCheckedDots.java" startLine="12" startPosition="34" endLine="13" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="53796356308817622" fileName="FooCheckedDots.java" startLine="13" startPosition="44" endLine="14" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="19" startPosition="36" endLine="20" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="21" startPosition="5" endLine="22" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="26" startPosition="36" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="28" startPosition="5" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="33" startPosition="36" endLine="34" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="35" startPosition="5" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="40" startPosition="36" endLine="41" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="42" startPosition="5" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="53796356308657386" fileName="FooCheckedDots.java" startLine="6" startPosition="29" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FooCheckedDots#()V" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="18" startPosition="67" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="25" startPosition="118" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="32" startPosition="81" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="39" startPosition="80" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="53796356308657414" fileName="FooCheckedDots.java" startLine="11" startPosition="25" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="17" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_7013wl_a0a0#(Ljava/lang/String;)C" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_7013wl_a0a1a0#(Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;Ljava/lang/String;Ljava/lang/Object;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)V" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="31" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_7013wl_a1a1a0#(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_7013wl_a1a0#(Ljava/lang/Object;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="53796356308657390" fileName="FooCheckedDots.java" startLine="9" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="bar#(Ljava/lang/String;Ljava/lang/Object;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)V" />
+    <scopeInfo nodeId="53796356308657389" fileName="FooCheckedDots.java" startLine="7" startPosition="27" endLine="7" endPosition="27" />
+    <scopeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="19" startPosition="36" endLine="20" endPosition="41" />
+    <scopeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="26" startPosition="36" endLine="27" endPosition="40" />
+    <scopeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="33" startPosition="36" endLine="34" endPosition="41" />
+    <scopeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="40" startPosition="36" endLine="41" endPosition="41" />
+    <scopeInfo nodeId="53796356308657386" fileName="FooCheckedDots.java" startLine="6" startPosition="29" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="53796356308657415" fileName="FooCheckedDots.java" startLine="12" startPosition="34" endLine="14" endPosition="32" />
+    <scopeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="18" startPosition="67" endLine="22" endPosition="13" />
+    <scopeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="25" startPosition="118" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="32" startPosition="81" endLine="36" endPosition="16" />
+    <scopeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="39" startPosition="80" endLine="43" endPosition="17" />
+    <scopeInfo nodeId="53796356308657393" fileName="FooCheckedDots.java" startLine="10" startPosition="60" endLine="15" endPosition="5" />
+    <scopeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="17" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="53796356308657390" fileName="FooCheckedDots.java" startLine="9" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="53796356308657399" varName="foo2" />
+      <varInfo nodeId="53796356308657396" varName="t" />
+      <varInfo nodeId="53796356308657394" varName="s" />
+    </scopeInfo>
+    <unitInfo nodeId="53796356308657384" fileName="FooCheckedDots.java" startLine="6" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedbox.sandbox.test.FooCheckedDots" />
+  </root>
+</debugInfo>
+

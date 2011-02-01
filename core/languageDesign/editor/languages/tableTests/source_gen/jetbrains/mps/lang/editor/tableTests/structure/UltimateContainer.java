@@ -14,6 +14,7 @@ public class UltimateContainer extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.editor.tableTests.structure.UltimateContainer";
   public static final String STATE_MACHINES = "stateMachines";
   public static final String TABLES = "tables";
+  public static final String MATRIXES = "matrixes";
 
   public UltimateContainer(SNode node) {
     super(node);
@@ -57,6 +58,26 @@ public class UltimateContainer extends BaseConcept {
 
   public void insertTables(Table prev, Table node) {
     this.insertChild(prev, UltimateContainer.TABLES, node);
+  }
+
+  public int getMatrixesesCount() {
+    return this.getChildCount(UltimateContainer.MATRIXES);
+  }
+
+  public Iterator<Matrix> matrixeses() {
+    return this.children(Matrix.class, UltimateContainer.MATRIXES);
+  }
+
+  public List<Matrix> getMatrixeses() {
+    return this.getChildren(Matrix.class, UltimateContainer.MATRIXES);
+  }
+
+  public void addMatrixes(Matrix node) {
+    this.addChild(UltimateContainer.MATRIXES, node);
+  }
+
+  public void insertMatrixes(Matrix prev, Matrix node) {
+    this.insertChild(prev, UltimateContainer.MATRIXES, node);
   }
 
   public static UltimateContainer newInstance(SModel sm, boolean init) {

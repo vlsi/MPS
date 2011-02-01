@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
@@ -597,7 +595,7 @@ public class SModel {
         result.add(concept.getModel().getSModelReference());
       }
       for (String propname : node.getProperties().keySet()) {
-        PropertyDeclaration decl = node.getPropertyDeclaration(propname);
+        SNode decl = node.getPropertyDeclaration(propname);
         if (decl == null) {
           LOG.error("property declaration " + propname + " not found for node " + node);
         } else {
@@ -611,7 +609,7 @@ public class SModel {
         } else {
           result.add(targetModelRef);
         }
-        LinkDeclaration decl = node.getLinkDeclaration(ref.getRole());
+        SNode decl = node.getLinkDeclaration(ref.getRole());
         if (decl == null) {
           LOG.error("link declaration " + ref.getRole() + " not found for node " + node);
         } else {
@@ -622,7 +620,7 @@ public class SModel {
         if (child.isAttribute()) {
           continue;   // temporary don't check annotation roles, suppose the model of AnnotationDeclaration is the same as of concept
         }
-        LinkDeclaration decl = child.getRoleLink();
+        SNode decl = child.getRoleLink();
         if (decl == null) {
           LOG.error("link declaration " + child.getRole_() + " not found for node " + node);
         } else {

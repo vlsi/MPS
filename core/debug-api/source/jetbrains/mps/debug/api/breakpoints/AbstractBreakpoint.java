@@ -16,9 +16,6 @@
 package jetbrains.mps.debug.api.breakpoints;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
-import jetbrains.mps.debug.api.breakpoints.IBreakpointListener;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -63,7 +60,7 @@ public abstract class AbstractBreakpoint implements IBreakpoint {
   public void setEnabled(final boolean enabled) {
     boolean toggled = setEnabledInternal(enabled);
     if (toggled) {
-      fireBreakpointToggled(enabled);
+      fireBreakpointEnabledStateToggled(enabled);
     }
   }
 
@@ -94,9 +91,10 @@ public abstract class AbstractBreakpoint implements IBreakpoint {
     addToRunningSessions();
   }
 
-  protected void fireBreakpointToggled(boolean enabled) {
+  // todo come up with better name
+  protected void fireBreakpointEnabledStateToggled(boolean enabled) {
     for (IBreakpointListener listener : myListeners) {
-      listener.breakpointToggled(this, enabled);
+      listener.breakpointEnabledStateToggled(this, enabled);
     }
   }
 

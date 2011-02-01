@@ -23,6 +23,7 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationHelper;
 import jetbrains.mps.smodel.IScope;
@@ -121,7 +122,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
       final Wrappers._T<ConceptDeclaration> conceptDeclaration = new Wrappers._T<ConceptDeclaration>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          conceptDeclaration.value = ((ConceptDeclaration) ((SNode) MapSequence.fromMap(_params).get("node")).getConceptDeclarationAdapter());
+          conceptDeclaration.value = ((ConceptDeclaration) BaseAdapter.fromNode(((SNode) MapSequence.fromMap(_params).get("node")).getConceptDeclarationNode()));
         }
       });
       SModelDescriptor editorModel = GoToEditorDeclarationHelper.getOrCreateEditorAspect(l.value, conceptDeclaration.value, ((IScope) MapSequence.fromMap(_params).get("scope")));

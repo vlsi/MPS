@@ -688,7 +688,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
     Method method = getCanBeChildMethod(fqName, context);
     if (method != null) {
-      SNode concept = BaseAdapter.fromAdapter(SModelUtil_new.findConceptDeclaration(fqName, context.getScope()));
+      SNode concept = SModelUtil.findConceptDeclaration(fqName, context.getScope());
       return canBeChild(concept, method, context, parentNode, link);
     }
     return true;
