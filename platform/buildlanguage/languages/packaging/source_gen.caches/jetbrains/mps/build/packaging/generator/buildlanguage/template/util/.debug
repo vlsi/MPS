@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1210761300056">
+    <nodeInfo nodeId="1210761316257" fileName="Util.java" startLine="17" startPosition="19" endLine="18" endPosition="45" />
+    <nodeInfo nodeId="3972275930950030294" fileName="Util.java" startLine="20" startPosition="58" endLine="21" endPosition="45" />
+    <nodeInfo nodeId="3972275930950030365" fileName="Util.java" startLine="21" startPosition="45" endLine="22" endPosition="66" />
+    <nodeInfo nodeId="3972275930950030383" fileName="Util.java" startLine="25" startPosition="55" endLine="26" endPosition="74" />
+    <nodeInfo nodeId="3972275930950101991" fileName="Util.java" startLine="29" startPosition="62" endLine="30" endPosition="172" />
+    <nodeInfo nodeId="3972275930950030316" fileName="Util.java" startLine="33" startPosition="57" endLine="34" endPosition="131" />
+    <nodeInfo nodeId="3972275930950030321" fileName="Util.java" startLine="34" startPosition="131" endLine="35" endPosition="103" />
+    <nodeInfo nodeId="3972275930950030330" fileName="Util.java" startLine="35" startPosition="103" endLine="36" endPosition="97" />
+    <nodeInfo nodeId="3972275930950030344" fileName="Util.java" startLine="36" startPosition="97" endLine="37" endPosition="122" />
+    <nodeInfo nodeId="3972275930950030349" fileName="Util.java" startLine="37" startPosition="122" endLine="38" endPosition="65" />
+    <nodeInfo nodeId="3972275930950030356" fileName="Util.java" startLine="38" startPosition="65" endLine="39" endPosition="118" />
+    <nodeInfo nodeId="3972275930950030363" fileName="Util.java" startLine="39" startPosition="118" endLine="40" endPosition="25" />
+    <nodeInfo nodeId="3972275930950030372" fileName="Util.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="3972275930950101986" fileName="Util.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="3972275930950030258" fileName="Util.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <nodeInfo nodeId="3972275930950030311" fileName="Util.java" startLine="32" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="3972275930950030376" fileName="Util.java" startLine="25" startPosition="55" endLine="26" endPosition="74" />
+    <scopeInfo nodeId="3972275930950101990" fileName="Util.java" startLine="29" startPosition="62" endLine="30" endPosition="172" />
+    <scopeInfo nodeId="3972275930950030181" fileName="Util.java" startLine="20" startPosition="58" endLine="22" endPosition="66">
+      <varInfo nodeId="3972275930950030295" varName="moduleHome" />
+    </scopeInfo>
+    <scopeInfo nodeId="3972275930950030372" fileName="Util.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="3972275930950030374" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="3972275930950101986" fileName="Util.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="3972275930950101985" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="3972275930950030258" fileName="Util.java" startLine="19" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="3972275930950030183" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="3972275930950030315" fileName="Util.java" startLine="33" startPosition="57" endLine="40" endPosition="25">
+      <varInfo nodeId="3972275930950030309" varName="compositePath" />
+      <varInfo nodeId="3972275930950030308" varName="pathComponent" />
+      <varInfo nodeId="3972275930950030307" varName="relativePath" />
+    </scopeInfo>
+    <scopeInfo nodeId="3972275930950030311" fileName="Util.java" startLine="32" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="3972275930950030310" varName="path" />
+    </scopeInfo>
+    <unitInfo nodeId="1210761300056" fileName="Util.java" startLine="17" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.build.packaging.generator.buildlanguage.template.util.Util" />
+  </root>
+</debugInfo>
+

@@ -105,7 +105,7 @@ public class Module_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     String projectBasedir = "";
     // search for project if needed 
-    if (onlyUnderProjectBasedir) {
+    if (onlyUnderProjectBasedir && !(Module_Behavior.call_getModule_1213877515148(thisNode).isPackaged())) {
       projectBasedir = Module_Behavior.call_getProjectBasedir_1213877514893(thisNode);
       if (projectBasedir == null) {
         projectBasedir = Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().getAbsolutePath();

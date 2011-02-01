@@ -19,10 +19,7 @@ public class MPSModule_Behavior {
 
   public static boolean call_isPackaged_1240033962874(SNode thisNode) {
     IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
-    if (module != null) {
-      return module.isPackaged();
-    }
-    return false;
+    return module == null || module.isPackaged();
   }
 
   public static SNode call_createPathFromMPSHome_1240033962895(SNode thisNode) {

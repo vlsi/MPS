@@ -4031,8 +4031,23 @@
               </node>
             </node>
           </node>
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1218642591993">
-            <link role="variableDeclaration:3" targetNodeId="1218642494882" resolveInfo="onlyUnderProjectBasedir" />
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1125684705004205893">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1125684705004205896">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1125684705004205901">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1125684705004205898">
+                  <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1125684705004205899" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1125684705004205900">
+                    <link role="baseMethodDeclaration:16" targetNodeId="1213877515148" resolveInfo="getModule" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1125684705004205905">
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~IModule.isPackaged():boolean" resolveInfo="isPackaged" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1218642591993">
+              <link role="variableDeclaration:3" targetNodeId="1218642494882" resolveInfo="onlyUnderProjectBasedir" />
+            </node>
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="7376433222636454371">
