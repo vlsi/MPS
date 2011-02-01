@@ -80,6 +80,7 @@ public class NonTypeSystemComponent extends Component {
 
   public void clear() {
     myIsCheckedNonTypeSystem = false;
+    clearCaches();
   }
 
   public void clearNodeTypes() {

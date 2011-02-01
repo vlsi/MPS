@@ -80,7 +80,10 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (meetsAndJoins(subType, superType, info, isWeak)) {
       return true;
     }
-    Equations equations = myState == null ? null : state.getEquations();
+    Equations equations = null;
+    if (myState!=null) {
+      equations = state.getEquations();
+    }
     if (TypesUtil.match(subType, superType, equations, info)) {
       return true;
     }

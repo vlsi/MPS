@@ -21,21 +21,7 @@ package jetbrains.mps.newTypesystem;
  * Date: 1/28/11
  * Time: 6:53 PM
  */
-/*
- * Copyright 2003-2010 JetBrains s.r.o.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.SimpleErrorReporter;
@@ -91,8 +77,6 @@ public class NodeTypesComponentIncrementalNew extends NodeTypesComponent {
   public void clear() {
 
     clearNodesTypes();
-    clearCaches();
-
     myNonTypeSystemComponent.clear();
     myTypeSystemComponent.clear();
   }
@@ -107,11 +91,6 @@ public class NodeTypesComponentIncrementalNew extends NodeTypesComponent {
 
   public MyTypeRecalculatedListener getTypeRecalculatedListener() {
     return myTypeRecalculatedListener;
-  }
-
-  private void clearCaches() {
-    myNonTypeSystemComponent.clearCaches();
-    myTypeSystemComponent.clearCaches();
   }
 
   private void clearNodesTypes() {

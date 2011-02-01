@@ -180,6 +180,7 @@ public class TypeSystemComponent extends Component {
   public void clear() {
     myIsCheckedTypeSystem = false;
     myFirstCheck = true;
+    clearCaches();
     clearState();
   }
 
