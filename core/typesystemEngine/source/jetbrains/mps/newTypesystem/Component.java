@@ -41,7 +41,7 @@ public class Component {
   protected MyEventsReadListener myNodesReadListener = new MyEventsReadListener();
   protected NodeTypesComponentIncrementalNew myNodeTypesComponent;
 
-  private MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
+  protected MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
 
   protected Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
 

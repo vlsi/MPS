@@ -57,27 +57,10 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myTypeChecker = typeChecker;
   }
 
-  public void rollBack() {
-    if (getOperationStack().isEmpty()) {
-      return;
-    }
-    jetbrains.mps.newTypesystem.operation.AbstractOperation operation = getOperationStack().pop();
-    
-    operation.undo(myState);
-  }
-
   @Override
   public void checkRoot() {
       checkRoot(false);
   }
-     /*
-  @Override
-  public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
-    synchronized (TYPECHECKING_LOCK) {
-      return myState.typeOf(node, null);
-    }
-  }
-     */
 
   @Override
   public void checkRoot(final boolean refreshTypes) {
@@ -85,12 +68,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
       myNodeTypesComponent.computeTypes(refreshTypes);
       myNodeTypesComponent.setCheckedTypesystem();
     }
-  }
-
-  public void solveAndExpand() {
-  //  myState.solveInequalities();
-  //  myState.expandAll();
-  //  myState.checkNonConcreteWhenConcretes();
   }
 
   @Override
@@ -229,7 +206,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void clear() {
-    myState.clear(true);
+    myNodeTypesComponent.clear();
   }
 
   @Override
@@ -248,12 +225,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public EquationManager getEquationManager() {
     return null;
   }
-
-  /*
-  @Override
-  public SNode computeTypeInferenceMode(SNode node) {
-    return super.computeTypeInferenceMode(node);    //To change body of overridden methods use File | Settings | File Templates.
-  } */
 
   @Override
   public void createEquation(SNode node1, IWrapper wrapper2, EquationInfo equationInfo) {
@@ -318,7 +289,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public SubtypingManager getSubtypingManager() {
-    return null;
+    return myTypeChecker.getSubtypingManager();
   }
 
   @Override
@@ -329,6 +300,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   protected SNode getTypeOf_normalMode(SNode node) {
-    return super.getTypeOf_normalMode(node);    //To change body of overridden methods use File | Settings | File Templates.
-  }
+    if (!checkIfNotChecked(node, false)) return null;
+    return getTypeDontCheck(node);  }
 }

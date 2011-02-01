@@ -57,6 +57,7 @@ public class NodeTypesComponentIncrementalNew extends NodeTypesComponent {
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
 
   private MyTypeRecalculatedListener myTypeRecalculatedListener = new MyTypeRecalculatedListener();
+
   private MyModelListener myModelListener = new MyModelListener();
   private MyModelListenerManager myModelListenerManager = new MyModelListenerManager(myModelListener);
 
@@ -100,6 +101,14 @@ public class NodeTypesComponentIncrementalNew extends NodeTypesComponent {
     return myRootNode;
   }
 
+  public MyModelListenerManager getModelListenerManager() {
+    return myModelListenerManager;
+  }
+
+  public MyTypeRecalculatedListener getTypeRecalculatedListener() {
+    return myTypeRecalculatedListener;
+  }
+
   private void clearCaches() {
     myNonTypeSystemComponent.clearCaches();
     myTypeSystemComponent.clearCaches();
@@ -133,10 +142,6 @@ public class NodeTypesComponentIncrementalNew extends NodeTypesComponent {
     }
   }
 
-  private boolean isIncrementalMode() {
-    return myTypeCheckingContext.isIncrementalMode();
-  }
-
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
     return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0), false);
   }
@@ -155,7 +160,6 @@ public class NodeTypesComponentIncrementalNew extends NodeTypesComponent {
     myIsSpecial = false;
     return result;
   }
-
 
   public void setNonTypeSystemCheckingInProgress(boolean inProgress) {
     myIsNonTypeSystemCheckingInProgress = inProgress;
@@ -388,7 +392,7 @@ public class NodeTypesComponentIncrementalNew extends NodeTypesComponent {
     }
   }
 
-  private class MyModelListenerManager {
+ class MyModelListenerManager {
     private ReferenceQueue<SNode> myReferenceQueue = new ReferenceQueue<SNode>();
     private Map<SModelDescriptor, Integer> myNodesCount = new HashMap<SModelDescriptor, Integer>();
     private Map<WeakReference, SModelDescriptor> myDescriptors = new HashMap<WeakReference, SModelDescriptor>();

@@ -17,18 +17,23 @@ package jetbrains.mps.newTypesystem;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.UseCarefully;
 
+import java.lang.ref.ReferenceQueue;
+import java.lang.ref.WeakReference;
 import java.util.*;
 
 /**
@@ -255,7 +260,7 @@ public class TypeSystemComponent extends Component {
       type = getType(initialNode);
       if (type == null || HUtil.hasVariablesInside(type)) {
         if (node.isRoot()) {
-          computeTypes(node, true, true, new ArrayList<SNode>(0), inferenceMode); //the last possibility: check the whole root
+          computeTypes(node, true, true, new ArrayList<SNode>(0), inferenceMode);
           type = getType(initialNode);
           return type;
         }
@@ -400,35 +405,10 @@ public class TypeSystemComponent extends Component {
   }
 
   private void performActionsAfterChecking() {
-    //todo myState.performActionsAfterChecking();
-    /*
-    Map<SNode, List<IErrorReporter>> toAdd = new HashMap<SNode, List<IErrorReporter>>(8);
-
-    // setting expanded errors
-    for (SNode node : myNodesToErrorsMap.keySet()) {
-      List<IErrorReporter> iErrorReporters = myNodesToErrorsMap.get(node);
-      if (iErrorReporters != null) {
-        for (IErrorReporter iErrorReporter : iErrorReporters) {
-          String errorString = iErrorReporter.reportError();
-          SimpleErrorReporter reporter = new SimpleErrorReporter(node, errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(),
-            iErrorReporter.getMessageStatus(), iErrorReporter.getErrorTarget());
-          reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
-          reporter.setAdditionalRulesIds(iErrorReporter.getAdditionalRulesIds());
-          List<IErrorReporter> errorReporterList = toAdd.get(node);
-          if (errorReporterList == null) {
-            errorReporterList = new ArrayList<IErrorReporter>(1);
-            toAdd.put(node, errorReporterList);
-          }
-          errorReporterList.add(iErrorReporter);
-        }
-      }
-    }
-    myNodesToErrorsMap.putAll(toAdd);
-
-    myModelListenerManager.updateGCedNodes();
-
-    TypeChecker.getInstance().addTypeRecalculatedListener(myTypeRecalculatedListener);//method checks if already exists
-    LanguageHierarchyCache.getInstance().addCacheChangeListener(myLanguageCacheListener);      */
+    myState.performActionsAfterChecking();
+    myNodeTypesComponent.getModelListenerManager().updateGCedNodes();
+    TypeChecker.getInstance().addTypeRecalculatedListener(myNodeTypesComponent.getTypeRecalculatedListener());//method checks if already exists
+    LanguageHierarchyCache.getInstance().addCacheChangeListener(myLanguageCacheListener);
   }
 
   protected boolean applyRulesToNode(SNode node) {
@@ -460,5 +440,8 @@ public class TypeSystemComponent extends Component {
   private void addCacheDependentNodesTypesystem(SNode node) {
     myNodesDependentOnCaches.add(node);
   }
+
+
+
 
 }

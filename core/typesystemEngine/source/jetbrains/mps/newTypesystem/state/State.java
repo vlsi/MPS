@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem.state;
 
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
@@ -278,6 +279,32 @@ public class State {
 
   public void checkNonConcreteWhenConcretes() {
     // todo
+  }
+
+  public void performActionsAfterChecking() {
+    /*
+    Map<SNode, List<IErrorReporter>> toAdd = new HashMap<SNode, List<IErrorReporter>>(8);
+
+    // setting expanded errors
+    for (SNode node : myNodesToErrorsMap.keySet()) {
+      List<IErrorReporter> iErrorReporters = myNodesToErrorsMap.get(node);
+      if (iErrorReporters != null) {
+        for (IErrorReporter iErrorReporter : iErrorReporters) {
+          String errorString = iErrorReporter.reportError();
+          SimpleErrorReporter reporter = new SimpleErrorReporter(node, errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(),
+            iErrorReporter.getMessageStatus(), iErrorReporter.getErrorTarget());
+          reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
+          reporter.setAdditionalRulesIds(iErrorReporter.getAdditionalRulesIds());
+          List<IErrorReporter> errorReporterList = toAdd.get(node);
+          if (errorReporterList == null) {
+            errorReporterList = new ArrayList<IErrorReporter>(1);
+            toAdd.put(node, errorReporterList);
+          }
+          errorReporterList.add(iErrorReporter);
+        }
+      }
+    }                                          todo ????
+    myNodesToErrorsMap.putAll(toAdd);       */
   }
 
   public SNode expand(SNode node) {
