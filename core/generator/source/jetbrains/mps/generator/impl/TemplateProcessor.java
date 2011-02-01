@@ -28,7 +28,6 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
-import jetbrains.mps.lang.generator.structure.NodeMacro;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
 import jetbrains.mps.lang.generator.structure.TemplateCallMacro;
 import jetbrains.mps.smodel.*;
@@ -509,11 +508,11 @@ public class TemplateProcessor {
   }
 
   private SNode getNewInputNode(SNode nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    return InputQueryUtil.getNewInputNode((NodeMacro) BaseAdapter.fromNode(nodeMacro), context.getInput(), context, myReductionContext);
+    return InputQueryUtil.getNewInputNode(nodeMacro, context.getInput(), context, myReductionContext);
   }
 
   private List<SNode> getNewInputNodes(SNode nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    return InputQueryUtil.getNewInputNodes((NodeMacro)BaseAdapter.fromNode(nodeMacro), context.getInput(), context, myReductionContext);
+    return InputQueryUtil.getNewInputNodes(nodeMacro, context.getInput(), context, myReductionContext);
   }
 
   @Nullable

@@ -82,10 +82,26 @@
     <nodeInfo nodeId="7126105700439175473" fileName="RuleUtil.java" startLine="228" startPosition="70" endLine="229" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2441057693881476600" fileName="RuleUtil.java" startLine="232" startPosition="72" endLine="233" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2441057693881476613" fileName="RuleUtil.java" startLine="236" startPosition="70" endLine="237" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5590278813170625677" fileName="RuleUtil.java" startLine="241" startPosition="23" endLine="242" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5590278813170625682" fileName="RuleUtil.java" startLine="243" startPosition="5" endLine="244" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5590278813170626246" fileName="RuleUtil.java" startLine="245" startPosition="83" endLine="246" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5590278813170626276" fileName="RuleUtil.java" startLine="247" startPosition="97" endLine="248" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5590278813170626290" fileName="RuleUtil.java" startLine="249" startPosition="96" endLine="250" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5590278813170626265" fileName="RuleUtil.java" startLine="251" startPosition="5" endLine="252" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5590278813170626308" fileName="RuleUtil.java" startLine="256" startPosition="23" endLine="257" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5590278813170626313" fileName="RuleUtil.java" startLine="258" startPosition="5" endLine="259" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5590278813170626322" fileName="RuleUtil.java" startLine="260" startPosition="90" endLine="261" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5590278813170626333" fileName="RuleUtil.java" startLine="262" startPosition="96" endLine="263" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5590278813170626364" fileName="RuleUtil.java" startLine="264" startPosition="92" endLine="265" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5590278813170626375" fileName="RuleUtil.java" startLine="266" startPosition="93" endLine="267" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5590278813170626388" fileName="RuleUtil.java" startLine="268" startPosition="98" endLine="269" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5590278813170626353" fileName="RuleUtil.java" startLine="270" startPosition="5" endLine="271" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1733398552130474121" fileName="RuleUtil.java" startLine="43" startPosition="0" endLine="45" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RuleUtil#()V" />
     <nodeInfo nodeId="1733398552130483594" fileName="RuleUtil.java" startLine="47" startPosition="76" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1733398552130495409" fileName="RuleUtil.java" startLine="160" startPosition="64" endLine="163" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1733398552130495438" fileName="RuleUtil.java" startLine="164" startPosition="63" endLine="167" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5590278813170625668" fileName="RuleUtil.java" startLine="240" startPosition="55" endLine="243" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5590278813170626306" fileName="RuleUtil.java" startLine="255" startPosition="54" endLine="258" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1733398552130483617" fileName="RuleUtil.java" startLine="51" startPosition="83" endLine="55" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1733398552130483559" fileName="RuleUtil.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCreateRootRuleLabel#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1733398552130483630" fileName="RuleUtil.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTemplateFragmentLabel#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
@@ -126,11 +142,15 @@
     <nodeInfo nodeId="2441057693881476607" fileName="RuleUtil.java" startLine="235" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTemplateDeclaration_ContentNode#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="6414589636559797566" fileName="RuleUtil.java" startLine="134" startPosition="64" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5535664898596391456" fileName="RuleUtil.java" startLine="143" startPosition="60" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5590278813170588938" fileName="RuleUtil.java" startLine="244" startPosition="51" endLine="251" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6414589636559797560" fileName="RuleUtil.java" startLine="133" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMapSrc_PostMapperFunction#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="5535664898596391452" fileName="RuleUtil.java" startLine="142" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMapSrc_MapperFunction#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1733398552130495372" fileName="RuleUtil.java" startLine="158" startPosition="72" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="1733398552130483587" fileName="RuleUtil.java" startLine="46" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMappingLabelName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5590278813170626320" fileName="RuleUtil.java" startLine="259" startPosition="51" endLine="270" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5590278813170580828" fileName="RuleUtil.java" startLine="239" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSourceNodesQuery#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1733398552130495326" fileName="RuleUtil.java" startLine="155" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTemplateDeclarationParameterNames#(Ljetbrains/mps/smodel/SNode;)[Ljava/lang/String;" />
+    <nodeInfo nodeId="5590278813170626302" fileName="RuleUtil.java" startLine="254" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSourceNodeQuery#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="1733398552130474124" fileName="RuleUtil.java" startLine="44" startPosition="21" endLine="44" endPosition="21" />
     <scopeInfo nodeId="1733398552130483596" fileName="RuleUtil.java" startLine="48" startPosition="42" endLine="49" endPosition="18" />
     <scopeInfo nodeId="1733398552130483562" fileName="RuleUtil.java" startLine="58" startPosition="59" endLine="59" endPosition="80" />
@@ -176,6 +196,16 @@
     <scopeInfo nodeId="7126105700439175470" fileName="RuleUtil.java" startLine="228" startPosition="70" endLine="229" endPosition="74" />
     <scopeInfo nodeId="2441057693881468505" fileName="RuleUtil.java" startLine="232" startPosition="72" endLine="233" endPosition="71" />
     <scopeInfo nodeId="2441057693881476610" fileName="RuleUtil.java" startLine="236" startPosition="70" endLine="237" endPosition="64" />
+    <scopeInfo nodeId="5590278813170625669" fileName="RuleUtil.java" startLine="241" startPosition="23" endLine="242" endPosition="18" />
+    <scopeInfo nodeId="5590278813170588940" fileName="RuleUtil.java" startLine="245" startPosition="83" endLine="246" endPosition="145" />
+    <scopeInfo nodeId="5590278813170626260" fileName="RuleUtil.java" startLine="247" startPosition="97" endLine="248" endPosition="152" />
+    <scopeInfo nodeId="5590278813170626263" fileName="RuleUtil.java" startLine="249" startPosition="96" endLine="250" endPosition="151" />
+    <scopeInfo nodeId="5590278813170626307" fileName="RuleUtil.java" startLine="256" startPosition="23" endLine="257" endPosition="18" />
+    <scopeInfo nodeId="5590278813170626321" fileName="RuleUtil.java" startLine="260" startPosition="90" endLine="261" endPosition="151" />
+    <scopeInfo nodeId="5590278813170626332" fileName="RuleUtil.java" startLine="262" startPosition="96" endLine="263" endPosition="150" />
+    <scopeInfo nodeId="5590278813170626363" fileName="RuleUtil.java" startLine="264" startPosition="92" endLine="265" endPosition="146" />
+    <scopeInfo nodeId="5590278813170626374" fileName="RuleUtil.java" startLine="266" startPosition="93" endLine="267" endPosition="147" />
+    <scopeInfo nodeId="5590278813170626387" fileName="RuleUtil.java" startLine="268" startPosition="98" endLine="269" endPosition="152" />
     <scopeInfo nodeId="1733398552130474121" fileName="RuleUtil.java" startLine="43" startPosition="0" endLine="45" endPosition="3" />
     <scopeInfo nodeId="1733398552130483559" fileName="RuleUtil.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1733398552130483563" varName="rule" />
@@ -308,14 +338,26 @@
     <scopeInfo nodeId="1733398552130483587" fileName="RuleUtil.java" startLine="46" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1733398552130483592" varName="mappingLabelDeclaration" />
     </scopeInfo>
+    <scopeInfo nodeId="5590278813170580831" fileName="RuleUtil.java" startLine="240" startPosition="55" endLine="252" endPosition="16">
+      <varInfo nodeId="5590278813170625683" varName="conceptFqName" />
+    </scopeInfo>
     <scopeInfo nodeId="1733398552130495329" fileName="RuleUtil.java" startLine="156" startPosition="90" endLine="169" endPosition="18">
       <varInfo nodeId="1733398552130495354" varName="result" />
       <varInfo nodeId="1733398552130495338" varName="params" />
     </scopeInfo>
+    <scopeInfo nodeId="5590278813170580828" fileName="RuleUtil.java" startLine="239" startPosition="0" endLine="254" endPosition="0">
+      <varInfo nodeId="5590278813170588936" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1733398552130495326" fileName="RuleUtil.java" startLine="155" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="1733398552130495331" varName="templateDeclaration" />
     </scopeInfo>
-    <unitInfo nodeId="1733398552130474119" fileName="RuleUtil.java" startLine="13" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.generator.impl.RuleUtil" />
+    <scopeInfo nodeId="5590278813170626305" fileName="RuleUtil.java" startLine="255" startPosition="54" endLine="271" endPosition="16">
+      <varInfo nodeId="5590278813170626314" varName="conceptFqName" />
+    </scopeInfo>
+    <scopeInfo nodeId="5590278813170626302" fileName="RuleUtil.java" startLine="254" startPosition="0" endLine="273" endPosition="0">
+      <varInfo nodeId="5590278813170626355" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="1733398552130474119" fileName="RuleUtil.java" startLine="13" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.generator.impl.RuleUtil" />
   </root>
   <root nodeId="4814657600604696799">
     <nodeInfo nodeId="4814657600604696802" fileName="DismissTopMappingRuleException.java" startLine="7" startPosition="73" endLine="8" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageType" />

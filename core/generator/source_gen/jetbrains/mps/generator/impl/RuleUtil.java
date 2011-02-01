@@ -236,4 +236,38 @@ public class RuleUtil {
   public static SNode getTemplateDeclaration_ContentNode(SNode decl) {
     return SLinkOperations.getTarget(decl, "contentNode", true);
   }
+
+  public static SNode getSourceNodesQuery(SNode node) {
+    if (node == null) {
+      return null;
+    }
+    String conceptFqName = node.getConceptFqName();
+    if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.LoopMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.LoopMacro"), "sourceNodesQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.CopySrcListMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.CopySrcListMacro"), "sourceNodesQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.MapSrcListMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), "sourceNodesQuery", true);
+    }
+    return null;
+  }
+
+  public static SNode getSourceNodeQuery(SNode node) {
+    if (node == null) {
+      return null;
+    }
+    String conceptFqName = node.getConceptFqName();
+    if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.CopySrcNodeMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"), "sourceNodeQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "sourceNodeQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.SwitchMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.SwitchMacro"), "sourceNodeQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.IncludeMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.IncludeMacro"), "sourceNodeQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.TemplateCallMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateCallMacro"), "sourceNodeQuery", true);
+    }
+    return null;
+  }
 }
