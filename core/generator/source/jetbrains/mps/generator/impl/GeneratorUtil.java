@@ -60,7 +60,8 @@ public class GeneratorUtil {
   }
 
   @NotNull
-  public static TemplateContext createTemplateContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, RuleConsequence consequence, SNode newInputNode, ITemplateGenerator generator) {
+  public static TemplateContext createTemplateContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, @NotNull SNode consequence1, SNode newInputNode, ITemplateGenerator generator) {
+    RuleConsequence consequence = (RuleConsequence) consequence1.getAdapter();
     if (consequence instanceof ITemplateCall) {
       return createTemplateContext(inputNode, outerContext, reductionContext, (ITemplateCall) consequence, newInputNode, generator);
     }

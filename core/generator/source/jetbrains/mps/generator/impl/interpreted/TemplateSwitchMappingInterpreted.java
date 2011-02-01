@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
-import jetbrains.mps.generator.impl.*;
+import jetbrains.mps.generator.impl.AbandonRuleInputException;
+import jetbrains.mps.generator.impl.GeneratorUtilEx;
+import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.generator.impl.TemplateProcessor;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.*;
-import jetbrains.mps.lang.generator.structure.GeneratorMessage;
-import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
-import jetbrains.mps.lang.generator.structure.RuleConsequence;
-import jetbrains.mps.lang.generator.structure.TemplateSwitch;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
@@ -44,7 +43,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
     rules = new ArrayList<TemplateReductionRule>();
     for (SNode child : mySwitch.getChildrenIterable()) {
       String conceptName = child.getConceptFqName();
-      if (conceptName.equals(Reduction_MappingRule.concept)) {
+      if (conceptName.equals(RuleUtil.concept_Reduction_MappingRule)) {
         rules.add(new TemplateReductionRuleInterpreted(child));
       }
     }
@@ -57,7 +56,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
 
   @Override
   public SNodePointer getModifiesSwitch() {
-    SReference ref = mySwitch.getReference(TemplateSwitch.MODIFIED_SWITCH);
+    SReference ref = mySwitch.getReference(RuleUtil.link_TemplateSwitch_modifiedSwitch);
     if (ref == null) {
       return null;
     }
@@ -113,7 +112,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
   @Override
   public void processNull(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, TemplateContext context) {
 
-    SNode generatorMessage = mySwitch.getChild(TemplateSwitch.NULL_INPUT_MESSAGE);
+    SNode generatorMessage = RuleUtil.getSwitch_NullInputMessage(mySwitch);
     if (generatorMessage != null) {
       GeneratorUtilEx.processGeneratorMessage(generatorMessage, context.getInput(), templateSwitch.getNode(), null, environment.getGenerator());
     }

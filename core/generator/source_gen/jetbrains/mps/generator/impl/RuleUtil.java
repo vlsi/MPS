@@ -29,11 +29,16 @@ public class RuleUtil {
   public static final String concept_Reduction_MappingRule = "jetbrains.mps.lang.generator.structure.Reduction_MappingRule";
   public static final String concept_Root_MappingRule = "jetbrains.mps.lang.generator.structure.Root_MappingRule";
   public static final String concept_Weaving_MappingRule = "jetbrains.mps.lang.generator.structure.Weaving_MappingRule";
+  public static final String concept_TemplateSwitch = "jetbrains.mps.lang.generator.structure.TemplateSwitch";
   public static final String concept_PatternReduction_MappingRule = "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule";
   public static final String concept_CreateRootRule = "jetbrains.mps.lang.generator.structure.CreateRootRule";
   public static final String concept_DropRootRule = "jetbrains.mps.lang.generator.structure.DropRootRule";
   public static final String concept_MappingScriptReference = "jetbrains.mps.lang.generator.structure.MappingScriptReference";
+  public static final String concept_TemplateDeclarationReference = "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference";
+  public static final String concept_WeaveEach_RuleConsequence = "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence";
+  public static final String concept_MappingConfiguration = "jetbrains.mps.lang.generator.structure.MappingConfiguration";
   public static final String link_MappingConfiguration_preMappingScript = "preMappingScript";
+  public static final String link_TemplateSwitch_modifiedSwitch = "modifiedSwitch";
 
   public RuleUtil() {
   }
@@ -115,6 +120,10 @@ public class RuleUtil {
 
   public static SNode getSwitchDefaultConsequence(SNode switchNode) {
     return SLinkOperations.getTarget(switchNode, "defaultConsequence", true);
+  }
+
+  public static SNode getSwitch_NullInputMessage(SNode switch_) {
+    return SLinkOperations.getTarget(switch_, "nullInputMessage", true);
   }
 
   public static SNode getPatternReductionRuleConsequence(SNode reductionRule) {
@@ -205,5 +214,17 @@ public class RuleUtil {
 
   public static SNode getTemplateFragmentByAnnotatedNode(SNode node) {
     return SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true);
+  }
+
+  public static SNode getTemplateDeclarationReference_Template(SNode ref) {
+    return SLinkOperations.getTarget(ref, "template", false);
+  }
+
+  public static SNode getWeaveEach_Template(SNode weaveEach) {
+    return SLinkOperations.getTarget(weaveEach, "template", false);
+  }
+
+  public static SNode getWeaveEach_SourceNodesQuery(SNode weaveEach) {
+    return SLinkOperations.getTarget(weaveEach, "sourceNodesQuery", true);
   }
 }
