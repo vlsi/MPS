@@ -2,6 +2,7 @@
 <debugInfo>
   <unitInfo fileName="FacetRegistry_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.make.unittest.FacetRegistry_Test" />
   <unitInfo fileName="LogReporting_Test.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.make.unittest.LogReporting_Test" />
+  <unitInfo fileName="Script_Test.java" startLine="19" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.make.unittest.Script_Test" />
   <unitInfo fileName="ScriptBuilder_Test.java" startLine="25" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.make.unittest.ScriptBuilder_Test" />
   <unitInfo fileName="Cycles_Test.java" startLine="18" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.make.unittest.Cycles_Test" />
   <unitInfo fileName="Targets_Test.java" startLine="16" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.make.unittest.Targets_Test" />

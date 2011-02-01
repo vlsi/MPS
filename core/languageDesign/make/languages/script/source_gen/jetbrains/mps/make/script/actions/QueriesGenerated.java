@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -19,10 +21,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
+import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -52,6 +55,10 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_3297237684108627751(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.make.script.structure.BeginWorkStatement") && SLinkOperations.findLinkDeclaration("jetbrains.mps.make.script.structure.BeginWorkStatement", "ofTotal") == _context.getLink();
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Option_3681941909241126023(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.getIndexInParent(_context.getSourceNode()) != SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.make.script.structure.ExpectedOption"), "defaultOption");
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_7077360340906499515(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -126,7 +133,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0j().createNode(SEnumOperations.getEnumMemberValue((item)));
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0k().createNode(SEnumOperations.getEnumMemberValue((item)));
               }
 
               public String getMatchingText(String pattern) {
@@ -152,7 +159,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0c0a0b0k().createNode();
+            return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0c0a0b0l().createNode();
           }
 
           public String getMatchingText(String pattern) {
@@ -189,7 +196,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0e0k().createNode((item));
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0e0l().createNode((item));
               }
 
               public String getMatchingText(String pattern) {
@@ -218,7 +225,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0f0k().createNode((item));
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0f0l().createNode((item));
               }
 
               public String getMatchingText(String pattern) {
@@ -246,8 +253,34 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0j {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0j() {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Option_3681941909241126021(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.Option");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.make.script.structure.ExpectedOption"), "defaultOption", "" + SNodeOperations.getIndexInParent(_context.getSourceNode()));
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "default";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "make default";
+        }
+      });
+    }
+    return result;
+  }
+
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0k {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0k() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -270,8 +303,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0c0a0b0k {
-    public QuotationClass_x583g4_a0a0a0a0a0a0c0a0b0k() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0c0a0b0l {
+    public QuotationClass_x583g4_a0a0a0a0a0a0c0a0b0l() {
     }
 
     public SNode createNode() {
@@ -299,8 +332,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0e0k {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0e0k() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0e0l {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0e0l() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -323,8 +356,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0f0k {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0f0k() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0f0l {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0f0l() {
     }
 
     public SNode createNode(Object parameter_3) {

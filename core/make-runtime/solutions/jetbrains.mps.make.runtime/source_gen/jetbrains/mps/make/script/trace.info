@@ -629,12 +629,12 @@
       <varInfo nodeId="7797884084018559910" varName="estimate" />
     </scopeInfo>
     <scopeInfo nodeId="7797884084018559887" fileName="IProgress.java" startLine="8" startPosition="64" endLine="9" endPosition="49">
-      <varInfo nodeId="7797884084018559888" varName="done" />
       <varInfo nodeId="7797884084018582129" varName="name" />
+      <varInfo nodeId="7797884084018559888" varName="done" />
     </scopeInfo>
     <scopeInfo nodeId="8530713690800023560" fileName="IProgress.java" startLine="9" startPosition="49" endLine="10" endPosition="65">
-      <varInfo nodeId="8530713690800023563" varName="done" />
       <varInfo nodeId="8530713690800023561" varName="name" />
+      <varInfo nodeId="8530713690800023563" varName="done" />
       <varInfo nodeId="8530713690800023568" varName="comment" />
     </scopeInfo>
     <scopeInfo nodeId="7797884084018559893" fileName="IProgress.java" startLine="10" startPosition="65" endLine="11" endPosition="38">
@@ -646,12 +646,12 @@
       <varInfo nodeId="9000373783400679488" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="9000373783400679491" fileName="IProgress.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="9000373783400679494" varName="done" />
       <varInfo nodeId="9000373783400679492" varName="name" />
+      <varInfo nodeId="9000373783400679494" varName="done" />
     </scopeInfo>
     <scopeInfo nodeId="8530713690800023571" fileName="IProgress.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="8530713690800023576" varName="done" />
       <varInfo nodeId="8530713690800023572" varName="name" />
+      <varInfo nodeId="8530713690800023576" varName="done" />
       <varInfo nodeId="8530713690800023574" varName="comment" />
     </scopeInfo>
     <scopeInfo nodeId="9000373783400679499" fileName="IProgress.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
@@ -693,18 +693,20 @@
     <nodeInfo nodeId="2551169102353050445" fileName="IQuery.java" startLine="8" startPosition="31" endLine="9" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
     <nodeInfo nodeId="2551169102353050438" fileName="IQuery.java" startLine="9" startPosition="26" endLine="10" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="options#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="3294363946766303614" fileName="IQuery.java" startLine="10" startPosition="31" endLine="11" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="voidOption#()null" />
-    <nodeInfo nodeId="2551169102352991963" fileName="IQuery.java" startLine="13" startPosition="30" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2551169102352991954" fileName="IQuery.java" startLine="12" startPosition="57" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Name#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1048225073237482444" fileName="IQuery.java" startLine="11" startPosition="24" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultOption#()null" />
+    <nodeInfo nodeId="2551169102352991963" fileName="IQuery.java" startLine="14" startPosition="30" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2551169102352991954" fileName="IQuery.java" startLine="13" startPosition="57" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Name#(Ljava/lang/String;)V" />
     <scopeInfo nodeId="2551169102352991965" fileName="IQuery.java" startLine="7" startPosition="44" endLine="8" endPosition="31" />
     <scopeInfo nodeId="2551169102353050445" fileName="IQuery.java" startLine="8" startPosition="31" endLine="9" endPosition="26" />
     <scopeInfo nodeId="2551169102353050438" fileName="IQuery.java" startLine="9" startPosition="26" endLine="10" endPosition="31" />
     <scopeInfo nodeId="3294363946766303614" fileName="IQuery.java" startLine="10" startPosition="31" endLine="11" endPosition="24" />
-    <scopeInfo nodeId="2551169102352991957" fileName="IQuery.java" startLine="13" startPosition="30" endLine="14" endPosition="18" />
-    <scopeInfo nodeId="2551169102352991954" fileName="IQuery.java" startLine="12" startPosition="57" endLine="15" endPosition="5">
+    <scopeInfo nodeId="1048225073237482444" fileName="IQuery.java" startLine="11" startPosition="24" endLine="12" endPosition="27" />
+    <scopeInfo nodeId="2551169102352991957" fileName="IQuery.java" startLine="14" startPosition="30" endLine="15" endPosition="18" />
+    <scopeInfo nodeId="2551169102352991954" fileName="IQuery.java" startLine="13" startPosition="57" endLine="16" endPosition="5">
       <varInfo nodeId="2551169102352991961" varName="name" />
     </scopeInfo>
-    <unitInfo nodeId="2551169102352991952" fileName="IQuery.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.make.script.IQuery$Name" />
-    <unitInfo nodeId="8486446835277348318" fileName="IQuery.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.make.script.IQuery" />
+    <unitInfo nodeId="2551169102352991952" fileName="IQuery.java" startLine="13" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.make.script.IQuery$Name" />
+    <unitInfo nodeId="8486446835277348318" fileName="IQuery.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.make.script.IQuery" />
   </root>
 </debugInfo>
 
