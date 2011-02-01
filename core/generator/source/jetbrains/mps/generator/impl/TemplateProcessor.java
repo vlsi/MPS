@@ -450,7 +450,7 @@ public class TemplateProcessor {
         return null;
       }
 
-      TemplateContext newcontext = GeneratorUtil.createTemplateContext(templateContext.getInput(), templateContext, myReductionContext, (TemplateCallMacro) macro.getAdapter(), newInputNode, myGenerator);
+      TemplateContext newcontext = GeneratorUtil.createTemplateCallContext(templateContext.getInput(), templateContext, myReductionContext, macro, newInputNode, myGenerator);
 
 /*
       TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(template, newInputNode, macro, myGenerator);

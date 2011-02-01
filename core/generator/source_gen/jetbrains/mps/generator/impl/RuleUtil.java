@@ -38,6 +38,9 @@ public class RuleUtil {
   public static final String concept_TemplateDeclaration = "jetbrains.mps.lang.generator.structure.TemplateDeclaration";
   public static final String concept_WeaveEach_RuleConsequence = "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence";
   public static final String concept_MappingConfiguration = "jetbrains.mps.lang.generator.structure.MappingConfiguration";
+  public static final String concept_TemplateArgumentPatternRef = "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef";
+  public static final String concept_TemplateArgumentQueryExpression = "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression";
+  public static final String concept_TemplateArgumentParameterExpression = "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression";
   public static final String link_MappingConfiguration_preMappingScript = "preMappingScript";
   public static final String link_TemplateSwitch_modifiedSwitch = "modifiedSwitch";
 
@@ -269,5 +272,35 @@ public class RuleUtil {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateCallMacro"), "sourceNodeQuery", true);
     }
     return null;
+  }
+
+  public static List<SNode> getTemplateCall_Arguments(SNode macro) {
+    return SLinkOperations.getTargets(macro, "actualArgument", true);
+
+  }
+
+  public static SNode getTemplateCall_Template(SNode macro) {
+    return SLinkOperations.getTarget(macro, "template", false);
+  }
+
+  public static Object evaluateBaseLanguageExpression(SNode expr) {
+    if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
+      return SPropertyOperations.getBoolean(SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value");
+    } else if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.IntegerConstant")) {
+      return SPropertyOperations.getInteger(SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value");
+    } else if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral")) {
+      return SPropertyOperations.getString(SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
+    } else if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.NullLiteral")) {
+      return null;
+    }
+    throw new IllegalArgumentException();
+  }
+
+  public static SNode getTemplateArgumentQueryExpression_Query(SNode expr) {
+    return SLinkOperations.getTarget(expr, "query", true);
+  }
+
+  public static SNode getTemplateArgumentParameterExpression_Parameter(SNode expr) {
+    return SLinkOperations.getTarget(expr, "parameter", false);
   }
 }

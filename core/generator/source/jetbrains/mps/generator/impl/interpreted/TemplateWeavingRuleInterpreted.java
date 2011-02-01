@@ -126,7 +126,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
     if (consequenceConceptFQName.equals(RuleUtil.concept_TemplateDeclarationReference)) {
       SNode template = RuleUtil.getTemplateDeclarationReference_Template(consequence);
       weaveTemplateDeclaration(template, outputContextNode,
-        GeneratorUtil.createTemplateContext(context.getInput(), null, environment.getReductionContext(), consequence, context.getInput(), environment.getGenerator()), environment);
+        GeneratorUtil.createConsequenceContext(context.getInput(), null, environment.getReductionContext(), consequence, context.getInput(), environment.getGenerator()), environment);
       return true;
 
     } else if (consequenceConceptFQName.equals(RuleUtil.concept_WeaveEach_RuleConsequence)) {
@@ -142,7 +142,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       }
       for (SNode queryNode : queryNodes) {
         weaveTemplateDeclaration(template, outputContextNode,
-          GeneratorUtil.createTemplateContext(queryNode, null, environment.getReductionContext(), consequence, queryNode, environment.getGenerator()), environment);
+          GeneratorUtil.createConsequenceContext(queryNode, null, environment.getReductionContext(), consequence, queryNode, environment.getGenerator()), environment);
       }
 
       return true;
