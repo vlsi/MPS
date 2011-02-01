@@ -66,11 +66,22 @@
       <property name="virtualPackage" nameId="1193676396447" value="export" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5425021671150136555" resolveInfo="ExportScope" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5169995583184591161">
+      <property name="name" nameId="1169194664001" value="Attribute" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${mps_home}/core/languageDesign/structure/icons/annotationLink.png" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
+    </node>
   </roots>
   <root id="1082983041843" />
   <root id="1082983657062" />
   <root id="1082983657063" />
   <root id="1133920641626">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5169995583184591170">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="_$attribute" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5169995583184591161" resolveInfo="Attribute" />
+    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1156234966388">
       <property name="name" nameId="1169194664001" value="shortDescription" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1082983041843" resolveInfo="string" />
@@ -158,6 +169,21 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1137473891462" resolveInfo="alias" />
     </node>
     <node role="export$attribute" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="4075196924244431952" />
+  </root>
+  <root id="5169995583184591161">
+    <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.ReferenceConceptLinkDeclaration" typeId="tpce.1105741578420" id="5169995583184591169">
+      <property name="name" nameId="1169194664001" value="attributed" />
+      <link role="targetType" roleId="tpce.1105736621938" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="5169995583184591164">
+      <property name="name" nameId="1169194664001" value="role" />
+    </node>
+    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="5169995583184591167">
+      <property name="name" nameId="1169194664001" value="multiple" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="5169995583184591165">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1137473854053" resolveInfo="abstract" />
+    </node>
   </root>
 </model>
 

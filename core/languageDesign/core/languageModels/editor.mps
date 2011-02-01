@@ -34,6 +34,9 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="export" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpck.5425021671150136555" resolveInfo="ExportScope" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5169995583184591171">
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpck.5169995583184591161" resolveInfo="Attribute" />
+    </node>
   </roots>
   <root id="1133921100033">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1133921115694">
@@ -188,6 +191,9 @@
         </node>
       </node>
     </node>
+  </root>
+  <root id="5169995583184591171">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_AttributedNodeCell" typeId="tpc2.1149850725784" id="5169995583184599672" />
   </root>
 </model>
 
