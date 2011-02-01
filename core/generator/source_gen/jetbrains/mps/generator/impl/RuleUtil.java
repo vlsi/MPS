@@ -35,6 +35,7 @@ public class RuleUtil {
   public static final String concept_DropRootRule = "jetbrains.mps.lang.generator.structure.DropRootRule";
   public static final String concept_MappingScriptReference = "jetbrains.mps.lang.generator.structure.MappingScriptReference";
   public static final String concept_TemplateDeclarationReference = "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference";
+  public static final String concept_TemplateDeclaration = "jetbrains.mps.lang.generator.structure.TemplateDeclaration";
   public static final String concept_WeaveEach_RuleConsequence = "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence";
   public static final String concept_MappingConfiguration = "jetbrains.mps.lang.generator.structure.MappingConfiguration";
   public static final String link_MappingConfiguration_preMappingScript = "preMappingScript";
@@ -226,5 +227,13 @@ public class RuleUtil {
 
   public static SNode getWeaveEach_SourceNodesQuery(SNode weaveEach) {
     return SLinkOperations.getTarget(weaveEach, "sourceNodesQuery", true);
+  }
+
+  public static boolean getMappingConfiguration_TopPrio(SNode mapping) {
+    return SPropertyOperations.getBoolean(mapping, "topPriorityGroup");
+  }
+
+  public static SNode getTemplateDeclaration_ContentNode(SNode decl) {
+    return SLinkOperations.getTarget(decl, "contentNode", true);
   }
 }
