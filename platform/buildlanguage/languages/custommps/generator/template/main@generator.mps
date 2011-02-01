@@ -771,8 +771,11 @@
           <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="4062013737453621613">
             <link role="block:7" targetNodeId="5v.4062013737453621585" resolveInfo="platform" />
           </node>
-          <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="7323513735995989012">
-            <link role="block:7" targetNodeId="4v.7323513735995989010" resolveInfo="generate.ant.task.jar" />
+          <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.CreateIfNotExists" id="7500205751045205909">
+            <property name="artifactName" value="platform/generate.ant.task.jar" />
+            <node role="create" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="7500205751045205910">
+              <link role="block:7" targetNodeId="4v.7323513735995989010" resolveInfo="generate.ant.task.jar" />
+            </node>
           </node>
           <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="1234971270540">
             <property name="name:7" value="platform" />
