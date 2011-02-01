@@ -131,21 +131,14 @@ public class NodeMaps {
     return result;
   }
 
-  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
-    Set<Pair<SNode, List<IErrorReporter>>> result = new HashSet<Pair<SNode, List<IErrorReporter>>>();
-    for (SNode key : myNodesToErrors.keySet()) {
-      List<IErrorReporter> reporter = getNodeErrors(key);
-      if (key != null && !reporter.isEmpty()) {
-        result.add(new Pair<SNode, List<IErrorReporter>>(key, reporter));
-      }
-    }
-    return result;
-  }
-
   public void clear() {
     myNodesToErrors.clear();
     myNodesToTypes.clear();
     myTypesToNodes.clear();
+  }
+
+  public Map<SNode, List<IErrorReporter>> getNodesToErrorsMap() {
+    return Collections.unmodifiableMap(myNodesToErrors);
   }
 
   public SNode getType(SNode node) {
@@ -176,14 +169,15 @@ public class NodeMaps {
   }
 
   public void expandAll(Set<SNode> nodes) {
-    if (nodes == null) {
-      nodes = new HashSet<SNode>(myNodesToTypes.keySet());
-    }
     for (SNode node : nodes) {
       SNode var = myNodesToTypes.get(node);
       SNode type = myState.getEquations().expandNode(var, true);
       updateNodeToType(node, type, null);
     }
+  }
+
+  public void expandAll() {
+     expandAll(new HashSet<SNode>(myNodesToTypes.keySet()));
   }
 
   public SNode getNode(SNode type) {

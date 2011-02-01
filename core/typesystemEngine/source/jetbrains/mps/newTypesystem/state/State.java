@@ -302,6 +302,15 @@ public class State {
     }
   }
 
+  public void expandAll() {
+    executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
+      public void run() {
+        myNodeMaps.expandAll();
+      }
+    }));
+  }
+
+
   public boolean executeOperationsBeforeAnchor(AbstractOperation firstOp, Object anchor) {
     firstOp.redo(this);
     if (firstOp.equals(anchor)) {

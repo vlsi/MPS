@@ -81,18 +81,16 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void checkRoot(final boolean refreshTypes) {
-   // synchronized (TYPECHECKING_LOCK) {
-
-        myNodeTypesComponent.computeTypes(refreshTypes);
-        myNodeTypesComponent.setCheckedTypesystem();
-
-   // }
+    synchronized (TYPECHECKING_LOCK) {
+      myNodeTypesComponent.computeTypes(refreshTypes);
+      myNodeTypesComponent.setCheckedTypesystem();
+    }
   }
 
   public void solveAndExpand() {
-    myState.solveInequalities();
-    myState.expandAll(null);
-    myState.checkNonConcreteWhenConcretes();
+  //  myState.solveInequalities();
+  //  myState.expandAll();
+  //  myState.checkNonConcreteWhenConcretes();
   }
 
   @Override
@@ -167,7 +165,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
-    return myState.getNodeMaps().getNodesWithErrors();
+    return myNodeTypesComponent.getNodesWithErrors();
   }
 
   @Override

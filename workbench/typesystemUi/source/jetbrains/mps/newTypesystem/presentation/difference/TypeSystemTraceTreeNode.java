@@ -44,6 +44,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
     result.put(PresentationKind.ERROR_ADDED, Color.RED);
     result.put(PresentationKind.TYPE_ASSIGNED, new Color(0x007700));
     result.put(PresentationKind.TYPE_EXPANDED, new Color(0x008704));
+    result.put(PresentationKind.TYPE_REMOVED, new Color(0x999999));
     result.put(PresentationKind.DEFAULT, Color.BLACK);
     return result;
   }

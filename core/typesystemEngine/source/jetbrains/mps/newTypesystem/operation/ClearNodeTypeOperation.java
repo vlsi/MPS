@@ -33,8 +33,14 @@ public class ClearNodeTypeOperation extends AbstractOperation {
   private SNode myType;
   private List<IErrorReporter> myErrors;
 
+  @Override
+  public String getPresentationKind() {
+    return PresentationKind.TYPE_REMOVED;
+  }
+
   public ClearNodeTypeOperation(SNode node, SNode type, List<IErrorReporter> errors) {
     myNode = node;
+    mySource = node;
     myType = type;
     myErrors = errors;
   }

@@ -25,5 +25,6 @@ public class PresentationKind {
   public static final String ERROR_ADDED = "error_added";
   public static final String TYPE_ASSIGNED = "type_assigned";
   public static final String TYPE_EXPANDED = "type_expanded";
+  public static final String TYPE_REMOVED = "type_removed";    //incremental
   public static final String DEFAULT = "default";
 }

@@ -107,7 +107,6 @@ public class TypeSystemTraceTree extends MPSTree {
     this(operationContext, tcc, frame, null);
   }
 
-
   @Override
   protected MPSTreeNode rebuild() {
     setRootVisible(false);
