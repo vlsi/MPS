@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.SNode;
  * User: Ilya.Lintsbakh
  * Date: Oct 8, 2010
  * Time: 1:19:19 PM
- * To change this template use File | Settings | File Templates.
  */
 public class EquationSubstitutedOperation extends AbstractOperation {
   private final EquationAddedOperation myAdded;

@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SNode;
  * User: Ilya.Lintsbakh
  * Date: Oct 8, 2010
  * Time: 1:17:49 PM
- * To change this template use File | Settings | File Templates.
  */
 public class EquationRemovedOperation extends AbstractEquationOperation {
 

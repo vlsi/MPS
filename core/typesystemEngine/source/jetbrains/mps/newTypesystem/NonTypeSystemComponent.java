@@ -231,11 +231,11 @@ public class NonTypeSystemComponent extends Component {
   }
 
 
-  private void addDepedentTypeTermsNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> typesToDependOn) {
-    addDependentNodesNonTypesystem(sNode, rule, typesToDependOn, true);
+  private void addDependentTypeTerms(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> typesToDependOn) {
+    addDependentNodes(sNode, rule, typesToDependOn, true);
   }
 
-  private void addDepedentPropertiesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<Pair<SNode, String>> propertiesToDependOn) {
+  private void addDependentProperties(SNode sNode, NonTypesystemRule_Runtime rule, Set<Pair<SNode, String>> propertiesToDependOn) {
     Map<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> mapToNodesWithNTRules
       = myPropertiesToDependentNodesWithNTRules;
     for (Pair<SNode, String> propertyToDependOn : propertiesToDependOn) {
@@ -254,7 +254,7 @@ public class NonTypeSystemComponent extends Component {
     }
   }
 
-  private void addDependentNodesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn, boolean isTypedTerm) {
+  private void addDependentNodes(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn, boolean isTypedTerm) {
     Map<SNode,Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> mapToNodesWithNTRules =
       isTypedTerm ? myTypedTermsToDependentNodesWithNTRules : myNodesToDependentNodesWithNTRules;
     for (SNode nodeToDependOn : nodesToDependOn) {
@@ -283,8 +283,8 @@ public class NonTypeSystemComponent extends Component {
     rules.add(rule);
   }
 
-  private void addDepedentNodesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn) {
-    addDependentNodesNonTypesystem(sNode, rule, nodesToDependOn, false);
+  private void addDependentNodes(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn) {
+    addDependentNodes(sNode, rule, nodesToDependOn, false);
    }
 
   public void applyNonTypeSystemRulesToRoot(IOperationContext context) {
@@ -351,8 +351,8 @@ public class NonTypeSystemComponent extends Component {
         if (isIncrementalMode()) {
           synchronized (ACCESS_LOCK) {
             myNodesReadListener.setAccessReport(true);
-            addDepedentNodesNonTypesystem(node, rule.o1, new HashSet<SNode>(myNodesReadListener.myAccessedNodes));
-            addDepedentPropertiesNonTypesystem(node, rule.o1, new HashSet<Pair<SNode, String>>(myNodesReadListener.myAccessedProperties));
+            addDependentNodes(node, rule.o1, new HashSet<SNode>(myNodesReadListener.myAccessedNodes));
+            addDependentProperties(node, rule.o1, new HashSet<Pair<SNode, String>>(myNodesReadListener.myAccessedProperties));
             myNodesReadListener.setAccessReport(false);
 
             languageCachesReadListener.setAccessReport(true);
@@ -362,7 +362,7 @@ public class NonTypeSystemComponent extends Component {
             languageCachesReadListener.setAccessReport(false);
 
             typesReadListener.setAccessReport(true);
-            addDepedentTypeTermsNonTypesystem(node, rule.o1, new HashSet<SNode>(typesReadListener.myAccessedNodes));
+            addDependentTypeTerms(node, rule.o1, new HashSet<SNode>(typesReadListener.myAccessedNodes));
             typesReadListener.setAccessReport(false);
           }
           myNodesReadListener.clear();

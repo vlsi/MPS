@@ -23,7 +23,7 @@ import jetbrains.mps.newTypesystem.state.State;
  * Date: Oct 14, 2010
  * Time: 1:42:37 PM
  */
-@Deprecated
+
 public class AddRemarkOperation extends AbstractOperation {
   private final String myString;
   private Runnable myAction = null;

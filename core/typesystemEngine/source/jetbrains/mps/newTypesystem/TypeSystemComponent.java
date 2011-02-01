@@ -93,7 +93,7 @@ public class TypeSystemComponent extends Component {
     if (myInvalidationWasPerformed) {
       return myInvalidationResult;
     }
-    boolean result = false;
+    boolean result;
     Set<SNode> invalidatedNodes_A = new HashSet<SNode>();
     Set<SNode> invalidatedNodes_B = new HashSet<SNode>();
     Set<SNode> newNodesToInvalidate_A = new HashSet<SNode>();

@@ -31,11 +31,11 @@ public class CheckAllOperation extends AbstractOperation {
 
   @Override
   public void doUndo(jetbrains.mps.newTypesystem.state.State state) {
-    //To change body of implemented methods use File | Settings | File Templates.
+
   }
 
   @Override
   public void doRedo(jetbrains.mps.newTypesystem.state.State state) {
-    //To change body of implemented methods use File | Settings | File Templates.
+
   }
 }

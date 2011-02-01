@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
@@ -49,7 +50,7 @@ public class NodeTypesComponentIncrementalNew extends NodeTypesComponent {
 
   private NonTypeSystemComponent myNonTypeSystemComponent;
   private TypeSystemComponent myTypeSystemComponent;
-  protected boolean myIsSpecial = false;
+  private boolean myIsSpecial = false;
 
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
 
@@ -234,6 +235,24 @@ public class NodeTypesComponentIncrementalNew extends NodeTypesComponent {
     return myTypeSystemComponent.getRawTypeFromContext(node);
   }
 
+  @NotNull
+  @Override
+  public List<IErrorReporter> getErrors(SNode node) {
+    Map<SNode, List<IErrorReporter>> nodesToErrorsMap = myTypeSystemComponent.getNodesToErrorsMap();
+    Map<SNode, List<IErrorReporter>> nodesToErrorsMapNT = myNonTypeSystemComponent.getNodesToErrorsMap();
+
+    List<IErrorReporter> result = new ArrayList<IErrorReporter>(4);
+    List<IErrorReporter> iErrorReporters = nodesToErrorsMap.get(node);
+    if (iErrorReporters != null) {
+      result.addAll(iErrorReporters);
+    }
+    iErrorReporters = nodesToErrorsMapNT.get(node);
+    if (iErrorReporters != null) {
+      result.addAll(iErrorReporters);
+    }
+    return result;
+  }
+
 
   @Override
   public EquationManager getEquationManager() {
@@ -248,17 +267,12 @@ public class NodeTypesComponentIncrementalNew extends NodeTypesComponent {
     Set<SNode> keySet = new HashSet<SNode>(nodesToErrorsMap.keySet());
     keySet.addAll(nodesToErrorsMapNT.keySet());
     for (SNode key : keySet) {
-      List<IErrorReporter> reporters = nodesToErrorsMap.get(key);
-      List<IErrorReporter> iErrorReporters = nodesToErrorsMapNT.get(key);
-      if (reporters == null) {
-        reporters = iErrorReporters;
-      } else if (iErrorReporters != null) {
-        reporters.addAll(iErrorReporters);
-      }
-      if (reporters != null && !reporters.isEmpty()) {
-        result.add(new Pair<SNode, List<IErrorReporter>>(key, reporters));
+      List<IErrorReporter> reporter = getErrors(key);
+      if (!reporter.isEmpty()) {
+        result.add(new Pair<SNode, List<IErrorReporter>>(key, reporter));
       }
     }
+
     return result;
   }
 
