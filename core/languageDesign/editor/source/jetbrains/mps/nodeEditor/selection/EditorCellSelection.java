@@ -76,6 +76,11 @@ public class EditorCellSelection implements SingularSelection {
     return selectionInfo;
   }
 
+  @Override
+  public boolean validate() {
+    return myEditorCell.getCellInfo().findCell(myEditorCell.getEditor()) != null;
+  }
+
   protected boolean isEditable() {
     return myEditorCell.getEditor().isEditable();
   }

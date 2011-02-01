@@ -33,6 +33,8 @@ public interface Selection {
 
   SelectionInfo getSelectionInfo() throws SelectionStoreException;
 
+  boolean validate();
+
   //void paintSelection();
 
   //void getSelectedNode();

@@ -102,10 +102,16 @@ public class SelectionManager {
   }
 
   public void setSelectionInfoStack(@NotNull Stack<SelectionInfo> selectionStack) {
+    Selection oldSelection = getSelection();
     if (isSameSelectionStack(selectionStack)) {
+      if (!isSelectionStackValid()) {
+        // some of selection elements are not valid anymore
+        // most probably as a result of Editor update: e.g. some cells were added/removed
+        mySelectionStack.clear();
+        doChangeSelection(oldSelection, getSelection());
+      }
       return;
     }
-    Selection oldSelection = getSelection();
     mySelectionStack.clear();
     for (SelectionInfo nextSelectionInfo : selectionStack) {
       Selection selection = nextSelectionInfo.createSelection(myEditorComponent);
@@ -117,6 +123,15 @@ public class SelectionManager {
       mySelectionStack.push(selection);
     }
     doChangeSelection(oldSelection, getSelection());
+  }
+
+  private boolean isSelectionStackValid() {
+    for (Selection selection : mySelectionStack) {
+      if (!selection.validate()) {
+        return false;
+      }
+    }
+    return true;
   }
 
   private boolean isSameSelectionStack(Stack<SelectionInfo> newSelectionStack) {

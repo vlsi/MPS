@@ -92,6 +92,12 @@ public class EditorCellLabelSelection extends EditorCellSelection {
     return selectionInfo;
   }
 
+  @Override
+  public boolean validate() {
+    // TODO: validate caret position & selection here
+    return super.validate();
+  }
+
   public int getSelectionEnd() {
     return mySelectionEnd;
   }

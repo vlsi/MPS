@@ -105,6 +105,12 @@ public class NodeRangeSelection implements MultipleSelection {
   }
 
   @Override
+  public boolean validate() {
+    // TODO: implement this method
+    return true;
+  }
+
+  @Override
   public Iterable<EditorCell> getSelectedSells() {
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
