@@ -597,7 +597,7 @@ public class SModel {
       for (String propname : node.getProperties().keySet()) {
         SNode decl = node.getPropertyDeclaration(propname);
         if (decl == null) {
-          LOG.error("property declaration " + propname + " not found for node " + node);
+          LOG.error("property declaration " + propname + " not found for node " + node + " in model " + model.getLongName());
         } else {
           result.add(decl.getModel().getSModelReference());
         }
@@ -605,13 +605,13 @@ public class SModel {
       for (SReference ref : node.getReferencesIterable()) {
         SModelReference targetModelRef = ref.getTargetSModelReference();
         if (targetModelRef == null) {
-          LOG.error("target model reference " + ref.getRole() + " is null for node " + node);
+          LOG.error("target model reference " + ref.getRole() + " is null for node " + node + " in model " + model.getLongName());
         } else {
           result.add(targetModelRef);
         }
         SNode decl = node.getLinkDeclaration(ref.getRole());
         if (decl == null) {
-          LOG.error("link declaration " + ref.getRole() + " not found for node " + node);
+          LOG.error("link declaration " + ref.getRole() + " not found for node " + node + " in model " + model.getLongName());
         } else {
           result.add(decl.getModel().getSModelReference());
         }
@@ -622,7 +622,7 @@ public class SModel {
         }
         SNode decl = child.getRoleLink();
         if (decl == null) {
-          LOG.error("link declaration " + child.getRole_() + " not found for node " + node);
+          LOG.error("link declaration " + child.getRole_() + " not found for node " + node + " in model " + model.getLongName());
         } else {
           result.add(decl.getModel().getSModelReference());
         }
