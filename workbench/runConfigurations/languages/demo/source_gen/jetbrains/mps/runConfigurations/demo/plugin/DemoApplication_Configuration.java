@@ -20,7 +20,6 @@ import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ExecutionException;
-import jetbrains.mps.smodel.SNode;
 
 public class DemoApplication_Configuration extends RunConfigurationBase {
   @NotNull
@@ -62,7 +61,8 @@ public class DemoApplication_Configuration extends RunConfigurationBase {
   }
 
   /*package*/ class MyState {
-    /*package*/ SNode myNode;
+    /*package*/ String myNodeId;
+    /*package*/ String myModelId;
 
     public MyState() {
     }

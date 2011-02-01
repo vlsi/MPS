@@ -8,11 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import javax.swing.JLabel;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JComponent;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.runConfigurations.runtime.IJavaNodeChangeListener;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import com.intellij.openapi.options.ConfigurationException;
@@ -30,35 +25,17 @@ public class DemoApplication_Configuration_Editor extends SettingsEditor<DemoApp
   @NotNull
   protected JComponent createEditor() {
     myLabel = new JLabel();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        myChooser = new MainNodeChooser<SNode>(SConceptOperations.findConceptDeclaration("jetbrains.mps.runConfigurations.demo.structure.SomeConcept"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
-          public Boolean invoke(SNode node) {
-            return SPropertyOperations.getBoolean(node, "valid");
-          }
-        });
-      }
-    });
-    myChooser.addNodeChangeListener(new IJavaNodeChangeListener() {
-      public void nodeChanged(final SNode node) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            myLabel.setText(SPropertyOperations.getString(node, "name"));
-          }
-        });
-      }
-    });
+    // <node> 
+    // <node> 
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(myLabel, BorderLayout.NORTH);
-    panel.add(myChooser, BorderLayout.CENTER);
+    // <node> 
     return panel;
   }
 
-  protected void applyEditorTo(DemoApplication_Configuration configuration) throws ConfigurationException {
-    configuration.myState.myNode = myChooser.getNode();
+  protected void applyEditorTo(final DemoApplication_Configuration configuration) throws ConfigurationException {
   }
 
-  protected void resetEditorFrom(DemoApplication_Configuration configuration) {
-    myChooser.setNode(configuration.myState.myNode);
+  protected void resetEditorFrom(final DemoApplication_Configuration configuration) {
   }
 }

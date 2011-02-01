@@ -48,10 +48,10 @@ public class RunConfiguration_Behavior {
 
   public static List<SNode> getContextPersistentProperties_4777576391478338580(SNode node) {
     SNode configurationType = RunConfiguration_Behavior.getContextRunConfigurationType_4777576391478317632(node);
-    if ((configurationType == null) || (SLinkOperations.getTarget(configurationType, "runConfiguration", false) == null)) {
+    if ((configurationType == null) || (SLinkOperations.getTarget(configurationType, "persistentPropertyHolder", false) == null)) {
       return new ArrayList<SNode>();
     }
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(configurationType, "runConfiguration", false), "persistentProperty", true);
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(configurationType, "persistentPropertyHolder", false), "persistentProperty", true);
   }
 
   public static class QuotationClass_g3syr7_a0c0d {
