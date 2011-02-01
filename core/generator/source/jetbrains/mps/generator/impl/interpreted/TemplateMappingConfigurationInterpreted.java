@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.*;
-import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -47,24 +47,24 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
 
     for (SNode child : mappingConfiguration.getChildrenIterable()) {
       String conceptName = child.getConceptFqName();
-      if (conceptName.equals(Reduction_MappingRule.concept)) {
+      if (conceptName.equals(RuleUtil.concept_Reduction_MappingRule)) {
         myReductionRules.add(new TemplateReductionRuleInterpreted(child));
-      } else if (conceptName.equals(Root_MappingRule.concept)) {
+      } else if (conceptName.equals(RuleUtil.concept_Root_MappingRule)) {
         myRootMappingRules.add(new TemplateRootMappingRuleInterpreted(child));
-      } else if (conceptName.equals(PatternReduction_MappingRule.concept)) {
+      } else if (conceptName.equals(RuleUtil.concept_PatternReduction_MappingRule)) {
         myReductionRules.add(new TemplateReductionPatternRuleInterpreted(child));
-      } else if (conceptName.equals(CreateRootRule.concept)) {
+      } else if (conceptName.equals(RuleUtil.concept_CreateRootRule)) {
         myCreateRootRules.add(new TemplateCreateRootRuleInterpreted(child));
-      } else if (conceptName.equals(Weaving_MappingRule.concept)) {
+      } else if (conceptName.equals(RuleUtil.concept_Weaving_MappingRule)) {
         myWeaving_MappingRules.add(new TemplateWeavingRuleInterpreted(child));
-      } else if (conceptName.equals(DropRootRule.concept)) {
+      } else if (conceptName.equals(RuleUtil.concept_DropRootRule)) {
         myDropRootRules.add(new TemplateDropRuleInterpreted(child));
-      } else if (conceptName.equals(MappingScriptReference.concept)) {
-        SNode mappingScript = child.getReferent(MappingScriptReference.MAPPING_SCRIPT);
+      } else if (conceptName.equals(RuleUtil.concept_MappingScriptReference)) {
+        SNode mappingScript = RuleUtil.getMappingScriptReference_Script(child);
         if(mappingScript == null) {
           continue;
         }
-        if(child.getRole_().equals(MappingConfiguration.PRE_MAPPING_SCRIPT)) {
+        if(child.getRole_().equals(RuleUtil.link_MappingConfiguration_preMappingScript)) {
           myPreScripts.add(new TemplateMappingScriptInterpreted(mappingScript));
         } else {
           myPostScripts.add(new TemplateMappingScriptInterpreted(mappingScript));

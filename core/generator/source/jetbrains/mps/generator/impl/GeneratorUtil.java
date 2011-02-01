@@ -24,9 +24,7 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
@@ -40,15 +38,6 @@ import java.util.Map;
 
 
 public class GeneratorUtil {
-  private static final Logger LOG = Logger.getLogger(GeneratorUtil.class);
-
-  public static boolean isTemplateLanguageElement(INodeAdapter n) {
-    return n instanceof NodeMacro ||
-      n instanceof ReferenceMacro ||
-      n instanceof PropertyMacro ||
-      n instanceof TemplateFragment ||
-      n instanceof RootTemplateAnnotation;
-  }
 
   private static Expression[] getArguments(ITemplateCall templateCall) {
     final List<Expression> args = templateCall.getActualArguments();

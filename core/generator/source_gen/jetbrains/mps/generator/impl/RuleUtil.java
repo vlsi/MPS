@@ -11,6 +11,30 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class RuleUtil {
+  public static final String concept_AbstractMacro = "jetbrains.mps.lang.generator.structure.AbstractMacro";
+  public static final String concept_NodeMacro = "jetbrains.mps.lang.generator.structure.NodeMacro";
+  public static final String concept_IfMacro = "jetbrains.mps.lang.generator.structure.IfMacro";
+  public static final String concept_SourceSubstituteMacro = "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro";
+  public static final String concept_CopySrcNodeMacro = "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro";
+  public static final String concept_CopySrcListMacro = "jetbrains.mps.lang.generator.structure.CopySrcListMacro";
+  public static final String concept_IncludeMacro = "jetbrains.mps.lang.generator.structure.IncludeMacro";
+  public static final String concept_LoopMacro = "jetbrains.mps.lang.generator.structure.LoopMacro";
+  public static final String concept_MapSrcNodeMacro = "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro";
+  public static final String concept_MapSrcListMacro = "jetbrains.mps.lang.generator.structure.MapSrcListMacro";
+  public static final String concept_SwitchMacro = "jetbrains.mps.lang.generator.structure.SwitchMacro";
+  public static final String concept_TemplateCallMacro = "jetbrains.mps.lang.generator.structure.TemplateCallMacro";
+  public static final String concept_PropertyMacro = "jetbrains.mps.lang.generator.structure.PropertyMacro";
+  public static final String concept_ReferenceMacro = "jetbrains.mps.lang.generator.structure.ReferenceMacro";
+  public static final String concept_BaseMappingRule = "jetbrains.mps.lang.generator.structure.BaseMappingRule";
+  public static final String concept_Reduction_MappingRule = "jetbrains.mps.lang.generator.structure.Reduction_MappingRule";
+  public static final String concept_Root_MappingRule = "jetbrains.mps.lang.generator.structure.Root_MappingRule";
+  public static final String concept_Weaving_MappingRule = "jetbrains.mps.lang.generator.structure.Weaving_MappingRule";
+  public static final String concept_PatternReduction_MappingRule = "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule";
+  public static final String concept_CreateRootRule = "jetbrains.mps.lang.generator.structure.CreateRootRule";
+  public static final String concept_DropRootRule = "jetbrains.mps.lang.generator.structure.DropRootRule";
+  public static final String concept_MappingScriptReference = "jetbrains.mps.lang.generator.structure.MappingScriptReference";
+  public static final String link_MappingConfiguration_preMappingScript = "preMappingScript";
+
   public RuleUtil() {
   }
 
@@ -139,6 +163,10 @@ public class RuleUtil {
     return SLinkOperations.getTarget(macro, "conditionFunction", true);
   }
 
+  public static SNode getIfMacro_AlternativeConsequence(SNode macro) {
+    return SLinkOperations.getTarget(macro, "alternativeConsequence", true);
+  }
+
   public static SNode getReferenceMacro_GetReferent(SNode macro) {
     return SLinkOperations.getTarget(macro, "referentFunction", true);
   }
@@ -149,6 +177,30 @@ public class RuleUtil {
 
   public static SNode getTemplateFragment_ContextNodeQuery(SNode tf) {
     return SLinkOperations.getTarget(tf, "contextNodeQuery", true);
+  }
+
+  public static SNode getMappingScriptReference_Script(SNode ref) {
+    return SLinkOperations.getTarget(ref, "mappingScript", false);
+  }
+
+  public static SNode getSwitchMacro_TemplateSwitch(SNode macro) {
+    return SLinkOperations.getTarget(macro, "templateSwitch", false);
+  }
+
+  public static SNode getIncludeMacro_Template(SNode macro) {
+    return SLinkOperations.getTarget(macro, "includeTemplate", false);
+  }
+
+  public static SNode getCallMacro_Template(SNode macro) {
+    return SLinkOperations.getTarget(macro, "template", false);
+  }
+
+  public static SNode getWeaving_ContextNodeQuery(SNode rule) {
+    return SLinkOperations.getTarget(rule, "contextNodeQuery", true);
+  }
+
+  public static SNode getWeaving_Consequence(SNode rule) {
+    return SLinkOperations.getTarget(rule, "ruleConsequence", true);
   }
 
   public static SNode getTemplateFragmentByAnnotatedNode(SNode node) {
