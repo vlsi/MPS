@@ -44,10 +44,10 @@ public class NonTypeSystemComponent extends Component {
   private boolean myIsCheckedNonTypeSystem = false;
   private boolean myInvalidationResultNT = false;
 
-  private Set<Pair<SNode, String>> myCurrentPropertiesToInvalidateNonTypesystem = new THashSet<Pair<SNode, String>>();
-  private Set<SNode> myCurrentTypedTermsToInvalidateNonTypesystem = new THashSet<SNode>();
+  private Set<Pair<SNode, String>> myCurrentPropertiesToInvalidate = new THashSet<Pair<SNode, String>>();
+  private Set<SNode> myCurrentTypedTermsToInvalidate = new THashSet<SNode>();
 
-    private Set<Pair<SNode, NonTypesystemRule_Runtime>> myCheckedNodesNonTypesystem
+  private Set<Pair<SNode, NonTypesystemRule_Runtime>> myCheckedNodesNonTypesystem
     = new THashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
 
   private Map<SNode, List<IErrorReporter>> myNodesToNonTypesystemErrorsMap = new THashMap<SNode, List<IErrorReporter>>();
@@ -71,11 +71,7 @@ public class NonTypeSystemComponent extends Component {
   private Map<SNode, Map<NonTypesystemRule_Runtime, Set<IErrorReporter>>> myNodesAndNTRulesToErrors =
     new WeakHashMap<SNode, Map<NonTypesystemRule_Runtime, Set<IErrorReporter>>>();
 
-  private Pair<SNode, NonTypesystemRule_Runtime> myNonTypesystemRuleAndNodeBeingChecked = null;
-
-
-
-  private TypeChecker myTypeChecker;
+  private Pair<SNode, NonTypesystemRule_Runtime> myRuleAndNodeBeingChecked = null;
 
   public NonTypeSystemComponent(TypeChecker typeChecker, NodeTypesComponentIncrementalNew nodeTypesComponent) {
     myTypeChecker = typeChecker;
@@ -88,8 +84,8 @@ public class NonTypeSystemComponent extends Component {
 
   public void clearNodeTypes() {
     myCurrentNodesToInvalidate.clear();
-    myCurrentPropertiesToInvalidateNonTypesystem.clear();
-    myCurrentTypedTermsToInvalidateNonTypesystem.clear();
+    myCurrentPropertiesToInvalidate.clear();
+    myCurrentTypedTermsToInvalidate.clear();
     myNodesToNonTypesystemErrorsMap.clear();
   }
 
@@ -101,14 +97,6 @@ public class NonTypeSystemComponent extends Component {
     myTypedTermsToDependentNodesWithNTRules.clear();
     myNodesDependentOnCachesWithNTRules.clear();
   }
-
-  private void clearNodesTypes() {
-    myNodesToNonTypesystemErrorsMap.clear();
-    myCurrentNodesToInvalidate.clear();
-    myCurrentPropertiesToInvalidateNonTypesystem.clear();
-    myCurrentTypedTermsToInvalidateNonTypesystem.clear();
-  }
-
 
   public boolean isCheckedNonTypesystem() {
      if (!myIsCheckedNonTypeSystem) {
@@ -126,6 +114,19 @@ public class NonTypeSystemComponent extends Component {
     myIsCheckedNonTypeSystem = true;
   }
 
+  private void doInvalidate(Map<NonTypesystemRule_Runtime, WeakSet<SNode>> nodesAndRules, Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules) {
+    if (nodesAndRules != null) {
+      for (NonTypesystemRule_Runtime ruleOfNode : nodesAndRules.keySet()) {
+        WeakSet<SNode> nodes = nodesAndRules.get(ruleOfNode);
+        if (nodes != null) {
+          for (SNode depNode : nodes) {
+            invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(depNode, ruleOfNode));
+          }
+        }
+      }
+    }
+  }
+
   //returns true if something was invalidated
   private boolean doInvalidateNonTypesystem() {
     if (myInvalidationWasPerformed) {
@@ -134,47 +135,16 @@ public class NonTypeSystemComponent extends Component {
     Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>(1);
     //nodes
     for (SNode node : myCurrentNodesToInvalidate) {
-      Map<NonTypesystemRule_Runtime, WeakSet<SNode>> nodesAndRules = myNodesToDependentNodesWithNTRules.get(node);
-      if (nodesAndRules != null) {
-        for (NonTypesystemRule_Runtime ruleOfNode : nodesAndRules.keySet()) {
-          Set<SNode> nodes = nodesAndRules.get(ruleOfNode);
-          if (nodes != null) {
-            for (SNode depNode : nodes) {
-              invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(depNode, ruleOfNode));
-            }
-          }
-        }
-      }
+      doInvalidate(myNodesToDependentNodesWithNTRules.get(node), invalidatedNodesAndRules);
     }
-
     //properties
-    for (Pair<SNode, String> pair : myCurrentPropertiesToInvalidateNonTypesystem) {
-      Map<NonTypesystemRule_Runtime, WeakSet<SNode>> nodesAndRules = myPropertiesToDependentNodesWithNTRules.get(pair);
-      if (nodesAndRules != null) {
-        for (NonTypesystemRule_Runtime ruleOfNode : nodesAndRules.keySet()) {
-          WeakSet<SNode> nodes = nodesAndRules.get(ruleOfNode);
-          if (nodes != null) {
-            for (SNode depNode : nodes) {
-              invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(depNode, ruleOfNode));
-            }
-          }
-        }
-      }
+    for (Pair<SNode, String> pair : myCurrentPropertiesToInvalidate) {
+      doInvalidate(myPropertiesToDependentNodesWithNTRules.get(pair), invalidatedNodesAndRules);
     }
 
     //typed terms
-    for (SNode node : myCurrentTypedTermsToInvalidateNonTypesystem) {
-      Map<NonTypesystemRule_Runtime, WeakSet<SNode>> nodesAndRules = myTypedTermsToDependentNodesWithNTRules.get(node);
-      if (nodesAndRules != null) {
-        for (NonTypesystemRule_Runtime ruleOfNode : nodesAndRules.keySet()) {
-          Set<SNode> nodes = nodesAndRules.get(ruleOfNode);
-          if (nodes != null) {
-            for (SNode depNode : nodes) {
-              invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(depNode, ruleOfNode));
-            }
-          }
-        }
-      }
+    for (SNode node : myCurrentTypedTermsToInvalidate) {
+      doInvalidate(myTypedTermsToDependentNodesWithNTRules.get(node), invalidatedNodesAndRules);
     }
 
     //cache-dependent
@@ -206,8 +176,8 @@ public class NonTypeSystemComponent extends Component {
       }
     }
     myCurrentNodesToInvalidate.clear();
-    myCurrentPropertiesToInvalidateNonTypesystem.clear();
-    myCurrentTypedTermsToInvalidateNonTypesystem.clear();
+    myCurrentPropertiesToInvalidate.clear();
+    myCurrentTypedTermsToInvalidate.clear();
     myCacheWasRebuilt = false;
     myInvalidationWasPerformed = true;
     myInvalidationResultNT = result;
@@ -215,12 +185,12 @@ public class NonTypeSystemComponent extends Component {
   }
 
   public void addPropertyToInvalidate(SNode eventNode, String propertyName) {
-    myCurrentPropertiesToInvalidateNonTypesystem.add(new Pair<SNode, String>(eventNode, propertyName));
+    myCurrentPropertiesToInvalidate.add(new Pair<SNode, String>(eventNode, propertyName));
     setInvalidationWasPerformed(false);
   }
 
   public void typeWillBeRecalculatedForTerm(SNode term) {
-    myCurrentTypedTermsToInvalidateNonTypesystem.add(term);
+    myCurrentTypedTermsToInvalidate.add(term);
     setInvalidationWasPerformed(false);
   }
 
@@ -242,9 +212,9 @@ public class NonTypeSystemComponent extends Component {
     });
 
     //dependencies
-    if (myNonTypesystemRuleAndNodeBeingChecked != null) {
-      SNode currentNode = myNonTypesystemRuleAndNodeBeingChecked.o1;
-      NonTypesystemRule_Runtime currentRule = myNonTypesystemRuleAndNodeBeingChecked.o2;
+    if (myRuleAndNodeBeingChecked != null) {
+      SNode currentNode = myRuleAndNodeBeingChecked.o1;
+      NonTypesystemRule_Runtime currentRule = myRuleAndNodeBeingChecked.o2;
       Map<NonTypesystemRule_Runtime, Set<IErrorReporter>> rulesToErrorsMap = myNodesAndNTRulesToErrors.get(currentNode);
       if (rulesToErrorsMap == null) {
         rulesToErrorsMap = new HashMap<NonTypesystemRule_Runtime, Set<IErrorReporter>>(1);
@@ -364,12 +334,12 @@ public class NonTypeSystemComponent extends Component {
           NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
           TypeChecker.getInstance().addTypesReadListener(typesReadListener);
           LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
-          myNonTypesystemRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
+          myRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
         }
         try {
           myNodeTypesComponent.applyRuleToNode(node, rule.o1, rule.o2);
         } finally {
-          myNonTypesystemRuleAndNodeBeingChecked = null;
+          myRuleAndNodeBeingChecked = null;
           if (isIncrementalMode()) {
             LanguageHierarchyCache.getInstance().removeReadAccessListener();
             TypeChecker.getInstance().removeTypesReadListener(typesReadListener);
@@ -401,7 +371,6 @@ public class NonTypeSystemComponent extends Component {
     }
   }
 
-
   private class MyTypesReadListener implements TypesReadListener {
     private Set<SNode> myAccessedNodes = new HashSet<SNode>(1);
     private boolean myIsSetAccessReport = false;
@@ -423,6 +392,4 @@ public class NonTypeSystemComponent extends Component {
       }
     }
   }
-
-
 }

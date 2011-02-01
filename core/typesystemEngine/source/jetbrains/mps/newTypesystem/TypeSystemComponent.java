@@ -57,11 +57,8 @@ public class TypeSystemComponent extends Component {
 
   private WeakSet<SNode> myNodesDependentOnCaches = new WeakSet<SNode>();
   protected Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
-
-
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
-  private TypeChecker myTypeChecker;
 
   public TypeSystemComponent(TypeChecker typeChecker, State state, NodeTypesComponentIncrementalNew component) {
     myState = state;
@@ -163,7 +160,7 @@ public class TypeSystemComponent extends Component {
     if (!myIsCheckedTypeSystem) {
       return false;
     }
-    return doInvalidateTypesystem();
+    return !doInvalidateTypesystem();
   }
 
   public Map<SNode, List<IErrorReporter>> getNodesToErrorsMap() {

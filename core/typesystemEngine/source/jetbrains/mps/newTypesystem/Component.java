@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 
 import java.util.HashSet;
@@ -35,6 +36,7 @@ import java.util.Set;
 public class Component {
   protected boolean myInvalidationWasPerformed = false;
   protected boolean myCacheWasRebuilt = false;
+  protected TypeChecker myTypeChecker;
   protected final Object ACCESS_LOCK = new Object();
   protected MyEventsReadListener myNodesReadListener = new MyEventsReadListener();
   protected NodeTypesComponentIncrementalNew myNodeTypesComponent;
@@ -52,7 +54,7 @@ public class Component {
   }
 
   public void addNodeToInvalidate(SNode node) {
-     myCurrentNodesToInvalidate.add(node);
+    myCurrentNodesToInvalidate.add(node);
     setInvalidationWasPerformed(false);
   }
 
