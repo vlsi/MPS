@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="RunConfigurationExecutor_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.RunConfigurationExecutor_name_PropertyConstraint" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="19" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint" />
+  <unitInfo fileName="EditorOperation_editorOperationDeclaration_ReferentConstraint.java" startLine="20" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.EditorOperation_editorOperationDeclaration_ReferentConstraint" />
   <root nodeId="1048802521465134864">
     <nodeInfo nodeId="1048802521465134904" fileName="RunConfigurationExecutor_name_PropertyConstraint.java" startLine="26" startPosition="77" endLine="27" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1048802521465134902" fileName="RunConfigurationExecutor_name_PropertyConstraint.java" startLine="28" startPosition="5" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -20,6 +21,18 @@
     <scopeInfo nodeId="4777576391478273475" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="31" startPosition="132" endLine="37" endPosition="147">
       <varInfo nodeId="4777576391478305671" varName="propertyHolderType" />
       <varInfo nodeId="4777576391478273477" varName="instance" />
+    </scopeInfo>
+  </root>
+  <root nodeId="7902226081039506341">
+    <nodeInfo nodeId="7902226081039506347" fileName="EditorOperation_editorOperationDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="33" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7902226081039506354" fileName="EditorOperation_editorOperationDeclaration_ReferentConstraint.java" startLine="33" startPosition="169" endLine="34" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7902226081039506364" fileName="EditorOperation_editorOperationDeclaration_ReferentConstraint.java" startLine="35" startPosition="106" endLine="36" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7902226081039506377" fileName="EditorOperation_editorOperationDeclaration_ReferentConstraint.java" startLine="37" startPosition="5" endLine="38" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7902226081039506362" fileName="EditorOperation_editorOperationDeclaration_ReferentConstraint.java" startLine="34" startPosition="239" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="7902226081039506363" fileName="EditorOperation_editorOperationDeclaration_ReferentConstraint.java" startLine="35" startPosition="106" endLine="36" endPosition="67" />
+    <scopeInfo nodeId="7902226081039506344" fileName="EditorOperation_editorOperationDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="38" endPosition="188">
+      <varInfo nodeId="7902226081039506348" varName="instance" />
+      <varInfo nodeId="7902226081039506355" varName="editorType" />
     </scopeInfo>
   </root>
 </debugInfo>

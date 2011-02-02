@@ -44,22 +44,22 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4777576391477887149">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
       <property name="name" nameId="tpck.1169194664001" value="CreateEditor_Function" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7902226081039505551" resolveInfo="EditorOperationDeclaration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4777576391477979223">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
       <property name="name" nameId="tpck.1169194664001" value="ApplyTo_Function" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7902226081039505551" resolveInfo="EditorOperationDeclaration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4777576391477979226">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
       <property name="name" nameId="tpck.1169194664001" value="ResetFrom_Function" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7902226081039505551" resolveInfo="EditorOperationDeclaration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4777576391477979238">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
       <property name="name" nameId="tpck.1169194664001" value="Dispose_Function" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7902226081039505551" resolveInfo="EditorOperationDeclaration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4777576391478289762">
       <property name="name" nameId="tpck.1169194664001" value="PersistentConfigurationType" />
@@ -112,6 +112,26 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="223733852661704505">
       <property name="name" nameId="tpck.1169194664001" value="PersistentConfiguration" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7902226081039505551">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="name" nameId="tpck.1169194664001" value="EditorOperationDeclaration" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7902226081039505552">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="name" nameId="tpck.1169194664001" value="EditorOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7902226081039506383">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="name" nameId="tpck.1169194664001" value="SettingsEditorType" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7902226081039521575">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <property name="name" nameId="tpck.1169194664001" value="GetEditorOperation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </roots>
@@ -326,7 +346,7 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="4157833584164830749" resolveInfo="SmartPersistentPropertyTemplate" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4157833584164924500">
-      <property name="value" nameId="tpce.1105725733873" value="smart persistent property" />
+      <property name="value" nameId="tpce.1105725733873" value="persistent configuration reference" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4157833584164911570">
@@ -385,6 +405,39 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="223733852661704506">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </root>
+  <root id="7902226081039505551" />
+  <root id="7902226081039505552">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7902226081039505553">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7902226081039505554">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="editorOperationDeclaration" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="7902226081039505551" resolveInfo="EditorOperationDeclaration" />
+    </node>
+  </root>
+  <root id="7902226081039506383">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7902226081039506396">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="configuration" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="223733852661704505" resolveInfo="PersistentConfiguration" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7902226081039506384">
+      <property name="value" nameId="tpce.1105725733873" value="editor" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="7902226081039521575">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7902226081039521576">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7902226081039521577">
+      <property name="value" nameId="tpce.1105725733873" value="editor" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
 </model>

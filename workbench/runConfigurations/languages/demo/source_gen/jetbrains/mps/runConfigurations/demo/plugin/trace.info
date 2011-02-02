@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DemoApplication_Configuration.java" startLine="63" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration$MyState" />
+  <unitInfo fileName="DemoApplication_Configuration.java" startLine="63" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration$MyState" />
   <unitInfo fileName="Demo_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.Demo_ApplicationPlugin" />
   <unitInfo fileName="DemoApplication_Configuration_Factory.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_Factory" />
   <unitInfo fileName="Demo_ProjectPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.Demo_ProjectPlugin" />
@@ -8,7 +8,7 @@
   <unitInfo fileName="DemoApplication_Configuration_RunProfileState.java" startLine="16" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_RunProfileState" />
   <unitInfo fileName="DemoApplication_Configuration_Editor.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_Editor" />
   <unitInfo fileName="Demo_Kind.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.Demo_Kind" />
-  <unitInfo fileName="DemoApplication_Configuration.java" startLine="24" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration" />
+  <unitInfo fileName="DemoApplication_Configuration.java" startLine="24" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration" />
   <root nodeId="8750596094204760417">
     <nodeInfo nodeId="1529002684853847150" fileName="DemoApplication_Configuration_Editor.java" startLine="15" startPosition="105" endLine="16" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
     <nodeInfo nodeId="3347833162492362904" fileName="DemoApplication_Configuration_Editor.java" startLine="16" startPosition="43" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLabel" />
@@ -19,6 +19,7 @@
     <nodeInfo nodeId="3347833162492362934" fileName="DemoApplication_Configuration_Editor.java" startLine="30" startPosition="50" endLine="31" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="77193491200334700" fileName="DemoApplication_Configuration_Editor.java" startLine="31" startPosition="43" endLine="32" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1529002684853853979" fileName="DemoApplication_Configuration_Editor.java" startLine="32" startPosition="14" endLine="33" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7902226081039505530" fileName="DemoApplication_Configuration.java" startLine="63" startPosition="29" endLine="64" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
     <scopeInfo nodeId="4777576391478076304" fileName="DemoApplication_Configuration_Editor.java" startLine="22" startPosition="34" endLine="22" endPosition="34" />
     <scopeInfo nodeId="4777576391478076302" fileName="DemoApplication_Configuration_Editor.java" startLine="36" startPosition="113" endLine="36" endPosition="113" />
     <scopeInfo nodeId="4777576391478076300" fileName="DemoApplication_Configuration_Editor.java" startLine="39" startPosition="85" endLine="39" endPosition="85" />

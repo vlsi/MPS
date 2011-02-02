@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="SettingsEditor_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.SettingsEditor_Behavior" />
   <unitInfo fileName="RunConfigurationKind_Behavior.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.RunConfigurationKind_Behavior" />
   <unitInfo fileName="PersistentPropertyDeclaration_Behavior.java" startLine="21" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentPropertyDeclaration_Behavior$QuotationClass_ex141d_a1a0a0b" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="39" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0c0b" />
@@ -64,6 +65,11 @@
     <nodeInfo nodeId="77193491200360818" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="17" startPosition="72" endLine="18" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="77193491200360812" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="77193491200360816" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="17" startPosition="72" endLine="18" endPosition="209" />
+  </root>
+  <root nodeId="7902226081039506464">
+    <nodeInfo nodeId="7902226081039510327" fileName="SettingsEditor_Behavior.java" startLine="13" startPosition="92" endLine="14" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7902226081039506466" fileName="SettingsEditor_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="7902226081039506470" fileName="SettingsEditor_Behavior.java" startLine="13" startPosition="92" endLine="14" endPosition="147" />
   </root>
 </debugInfo>
 

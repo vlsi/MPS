@@ -38,6 +38,10 @@
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="223733852661818461">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="uhxm.223733852661704505" resolveInfo="PersistentConfiguration" />
     </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="7902226081039506464">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="uhxm.3754890006475816671" resolveInfo="SettingsEditor" />
+    </node>
   </roots>
   <root id="3754890006475666593">
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="3754890006475666596">
@@ -422,6 +426,32 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="7902226081039506464">
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="7902226081039506467">
+      <property name="name" nameId="tpck.1169194664001" value="getDeclaredOperations" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7902226081039506468" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="7902226081039506471">
+        <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="uhxm.7902226081039505551" resolveInfo="EditorOperationDeclaration" />
+      </node>
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7902226081039506470">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7902226081039510327">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7902226081039510329">
+            <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="7902226081039510328" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetDescendantsOperation" typeId="tp25.1171305280644" id="7902226081039510333">
+              <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="7902226081039510334">
+                <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="7902226081039510338">
+                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="uhxm.7902226081039505551" resolveInfo="EditorOperationDeclaration" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="7902226081039506465">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7902226081039506466" />
     </node>
   </root>
 </model>

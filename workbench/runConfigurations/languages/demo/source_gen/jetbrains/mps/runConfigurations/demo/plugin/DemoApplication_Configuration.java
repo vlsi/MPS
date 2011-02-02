@@ -61,6 +61,8 @@ public class DemoApplication_Configuration extends RunConfigurationBase {
   }
 
   /*package*/ class MyState {
+    /*package*/ String myText;
+
     public MyState() {
     }
   }
