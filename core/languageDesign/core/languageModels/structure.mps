@@ -3,8 +3,8 @@
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpce.PrimitiveDataTypeDeclaration" typeId="tpce.1083243159079" id="1082983041843">
       <property name="name" nameId="1169194664001" value="string" />
@@ -69,7 +69,23 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5169995583184591161">
       <property name="name" nameId="1169194664001" value="Attribute" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${mps_home}/core/languageDesign/structure/icons/annotationLink.png" />
+      <property name="virtualPackage" nameId="1193676396447" value="attributes" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3364660638048049745">
+      <property name="virtualPackage" nameId="1193676396447" value="attributes" />
+      <property name="name" nameId="1169194664001" value="LinkAttribute" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5169995583184591161" resolveInfo="Attribute" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3364660638048049748">
+      <property name="virtualPackage" nameId="1193676396447" value="attributes" />
+      <property name="name" nameId="1169194664001" value="NodeAttribute" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5169995583184591161" resolveInfo="Attribute" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3364660638048049750">
+      <property name="virtualPackage" nameId="1193676396447" value="attributes" />
+      <property name="name" nameId="1169194664001" value="PropertyAttribute" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5169995583184591161" resolveInfo="Attribute" />
     </node>
   </roots>
   <root id="1082983041843" />
@@ -177,12 +193,31 @@
     </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="5169995583184591164">
       <property name="name" nameId="1169194664001" value="role" />
+      <property name="inheritable" nameId="tpce.1218571350029" value="true" />
     </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="5169995583184591167">
       <property name="name" nameId="1169194664001" value="multiple" />
+      <property name="inheritable" nameId="tpce.1218571350029" value="true" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="5169995583184591165">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1137473854053" resolveInfo="abstract" />
+    </node>
+  </root>
+  <root id="3364660638048049745">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3364660638048049746">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="link" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
+    </node>
+  </root>
+  <root id="3364660638048049748" />
+  <root id="3364660638048049750">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3364660638048049751">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="property" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
     </node>
   </root>
 </model>

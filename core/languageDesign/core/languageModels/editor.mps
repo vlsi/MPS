@@ -35,6 +35,7 @@
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpck.5425021671150136555" resolveInfo="ExportScope" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5169995583184591171">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="attributes" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpck.5169995583184591161" resolveInfo="Attribute" />
     </node>
   </roots>
