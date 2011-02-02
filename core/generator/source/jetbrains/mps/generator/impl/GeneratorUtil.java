@@ -22,7 +22,6 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.lang.generator.structure.ITemplateCall;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
@@ -60,7 +59,7 @@ public class GeneratorUtil {
 
   @NotNull
   public static TemplateContext createConsequenceContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, @NotNull SNode consequence, SNode newInputNode, ITemplateGenerator generator) {
-    if (consequence.isInstanceOfConcept(ITemplateCall.concept)) {
+    if (consequence.isInstanceOfConcept(RuleUtil.concept_ITemplateCall)) {
       return createTemplateCallContext(inputNode, outerContext, reductionContext, consequence, newInputNode, generator);
     }
     return outerContext != null ? outerContext : new DefaultTemplateContext(newInputNode);

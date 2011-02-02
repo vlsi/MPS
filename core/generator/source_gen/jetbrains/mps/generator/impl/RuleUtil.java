@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class RuleUtil {
   public static final String concept_AbstractMacro = "jetbrains.mps.lang.generator.structure.AbstractMacro";
+  public static final String concept_ITemplateCall = "jetbrains.mps.lang.generator.structure.ITemplateCall";
   public static final String concept_NodeMacro = "jetbrains.mps.lang.generator.structure.NodeMacro";
   public static final String concept_IfMacro = "jetbrains.mps.lang.generator.structure.IfMacro";
   public static final String concept_SourceSubstituteMacro = "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro";
