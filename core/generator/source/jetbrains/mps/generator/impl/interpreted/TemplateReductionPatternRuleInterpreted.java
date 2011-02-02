@@ -24,7 +24,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
-import jetbrains.mps.lang.generator.structure.RuleConsequence;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -113,9 +112,9 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
       environment.getGenerator().showErrorMessage(inputNode, null, ruleNode, "error processing reduction rule: no rule consequence");
       return null;
     }
-    TemplateContext conseqContext = GeneratorUtil.createTemplateContext(inputNode, new DefaultTemplateContext(pattern, null, inputNode), environment.getReductionContext(), (RuleConsequence) ruleConsequence.getAdapter(), inputNode, environment.getGenerator());
+    TemplateContext conseqContext = GeneratorUtil.createConsequenceContext(inputNode, new DefaultTemplateContext(pattern, null, inputNode), environment.getReductionContext(), ruleConsequence, inputNode, environment.getGenerator());
 
-    List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence((RuleConsequence) ruleConsequence.getAdapter(), inputNode, ruleNode, environment.getReductionContext(), environment.getGenerator());
+    List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(ruleConsequence, inputNode, ruleNode, environment.getReductionContext(), environment.getGenerator());
     if (nodeAndMappingNamePairs == null) {
       environment.getGenerator().showErrorMessage(inputNode, null, ruleConsequence, "error processing reduction rule consequence");
       return null;

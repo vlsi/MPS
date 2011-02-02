@@ -20,7 +20,6 @@
     <projectSolutions>
       <solutionPath path="${project}/languages/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains.mps.smodel.test.msd" />
       <solutionPath path="${project}/solutions/jetbrains.mps.lang.smodel.unittest/jetbrains.mps.lang.smodel.unittest.msd" folder="" />
-      <solutionPath path="${project}/solutions/runtime/runtime.msd" />
       <solutionPath path="${project}/solutions/samples/smodelLanguage-samples.msd" />
       <solutionPath path="${project}/solutions/sandbox/sandbox.msd" />
       <solutionPath path="${project}/solutions/typetest/smodelLanguage_typetest.msd" />
@@ -44,29 +43,7 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="SvnBranchConfigurationManager">
-    <option name="myConfigurationMap">
-      <map>
-        <entry key="$APPLICATION_HOME_DIR$">
-          <value>
-            <SvnBranchConfiguration>
-              <option name="branchUrls">
-                <list>
-                  <option value="http://svn.jetbrains.org/mps/branches" />
-                  <option value="http://svn.jetbrains.org/mps/tags" />
-                </list>
-              </option>
-              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="myVersion" value="124" />
-    <option name="mySupportsUserInfoFilter" value="true" />
-  </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>

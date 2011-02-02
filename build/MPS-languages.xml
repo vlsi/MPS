@@ -553,6 +553,14 @@
       <zipfileset dir="core/make-runtime/solutions/jetbrains.mps.make.runtime" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
+  <target name="pack.jetbrains.mps.smodel.resources">
+    <mkdir dir="core/kernel/classes" />
+    <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.smodel.resources.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/kernel/resources/jetbrains.mps.smodel.resources.msd" prefix="module" />
+      <zipfileset dir="core/kernel/resources" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/kernel/classes" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.kernel">
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.kernel.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/kernel/kernelSolution/jetbrains.mps.kernel.msd" prefix="module" />
@@ -1006,6 +1014,12 @@
     <jar destfile="${deploy.dir}/MPS/workbench/jetbrains.mps.ide.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="workbench/ideSolution/jetbrains.mps.ide.msd" prefix="module" />
       <zipfileset dir="workbench/ideSolution" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.workbench.make">
+    <jar destfile="${deploy.dir}/MPS/workbench/jetbrains.mps.workbench.make.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="workbench/make/jetbrains.mps.workbench.make.msd" prefix="module" />
+      <zipfileset dir="workbench/make" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
 </project>

@@ -76,7 +76,7 @@
     <nodeInfo nodeId="7388979241613383643" fileName="SModelUtil.java" startLine="242" startPosition="59" endLine="243" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238267641602" fileName="SModelUtil.java" startLine="58" startPosition="92" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238267713264" fileName="SModelUtil.java" startLine="63" startPosition="88" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1238267943026" fileName="SModelUtil.java" startLine="68" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238267943026" fileName="SModelUtil.java" startLine="68" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1237995590726" fileName="SModelUtil.java" startLine="76" startPosition="76" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1237995590733" fileName="SModelUtil.java" startLine="79" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8796902844914174217" fileName="SModelUtil.java" startLine="86" startPosition="83" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
