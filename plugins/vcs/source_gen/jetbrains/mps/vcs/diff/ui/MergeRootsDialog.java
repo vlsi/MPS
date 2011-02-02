@@ -15,7 +15,6 @@ import javax.swing.JSplitPane;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.vcs.diff.changes.ChangeSet;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import jetbrains.mps.smodel.SModel;
@@ -34,8 +33,8 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
   private DiffEditorComponent myResultEditor;
   private DiffEditorComponent myMineEditor;
   private DiffEditorComponent myRepositoryEditor;
-  private ChangeTrapeciumStrip myMineStrip;
-  private ChangeTrapeciumStrip myRepositoryStrip;
+  private ChangeGroupBuilder myMineChangeGroupBuilder;
+  private ChangeGroupBuilder myRepositoryChangeGroupBuilder;
   private DiffEditorComponentsGroup myDiffEditorsGroup = new DiffEditorComponentsGroup();
 
   public MergeRootsDialog(MergeModelsDialog mergeModelsDialog, MergeContext mergeContext, SNodeId rootId, String rootName) {
@@ -47,8 +46,14 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     myMineEditor = addEditor(0, myMergeContext.getMyModel(), "My Changes");
     myResultEditor = addEditor(1, myMergeContext.getResultModel(), "Merge Result");
     myRepositoryEditor = addEditor(2, myMergeContext.getRepositoryModel(), "Repository Changes");
-    myMineStrip = addTrapeciumStrip(0, myMergeContext.getMyChangeSet(), myMineEditor, myResultEditor);
-    myRepositoryStrip = addTrapeciumStrip(1, myMergeContext.getRepositoryChangeSet(), myResultEditor, myRepositoryEditor);
+
+    myMineChangeGroupBuilder = new ChangeGroupBuilder(myMergeContext, myMergeContext.getMyChangeSet(), myMineEditor, myResultEditor);
+    myRepositoryChangeGroupBuilder = new ChangeGroupBuilder(myMergeContext, myMergeContext.getRepositoryChangeSet(), myResultEditor, myRepositoryEditor);
+
+    addTrapeciumStrip(0, myMineChangeGroupBuilder);
+    addTrapeciumStrip(1, myRepositoryChangeGroupBuilder);
+    MergeButtonsPainter.addTo(myMineEditor, myMineChangeGroupBuilder);
+    MergeButtonsPainter.addTo(myRepositoryEditor, myRepositoryChangeGroupBuilder);
 
     JSplitPane modelsPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopComponent, myBottomComponent);
     modelsPane.setResizeWeight(1);
@@ -80,11 +85,10 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     myRepositoryEditor.getHighlightManager().repaintAndRebuildEditorMessages();
   }
 
-  private ChangeTrapeciumStrip addTrapeciumStrip(int index, ChangeSet changeSet, DiffEditorComponent leftEditor, DiffEditorComponent rightEditor) {
-    ChangeTrapeciumStrip strip = new ChangeTrapeciumStrip(myMergeContext, changeSet, leftEditor, rightEditor);
+  private void addTrapeciumStrip(int index, ChangeGroupBuilder changeGroupBuilder) {
+    ChangeTrapeciumStrip strip = new ChangeTrapeciumStrip(changeGroupBuilder);
     ((GridBagLayout) myTopComponent.getLayout()).setConstraints(strip, new GridBagConstraints(index * 2 + 1, 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0));
     myTopComponent.add(strip);
-    return strip;
   }
 
   private DiffEditorComponent addEditor(int index, SModel model, String revisionName) {
