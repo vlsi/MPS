@@ -29,7 +29,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
-import jetbrains.mps.lang.generator.structure.TemplateCallMacro;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;

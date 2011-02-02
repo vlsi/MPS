@@ -303,4 +303,16 @@ public class RuleUtil {
   public static SNode getTemplateArgumentParameterExpression_Parameter(SNode expr) {
     return SLinkOperations.getTarget(expr, "parameter", false);
   }
+
+  public static boolean getMappingScript_IsPreProcess(SNode script) {
+    return SPropertyOperations.hasValue(script, "scriptKind", "pre_processing", "post_processing");
+  }
+
+  public static boolean getMappingScript_ModifiesModel(SNode script) {
+    return SPropertyOperations.getBoolean(script, "modifiesModel");
+  }
+
+  public static SNode getMappingScript_CodeBlock(SNode script) {
+    return SLinkOperations.getTarget(script, "codeBlock", true);
+  }
 }
