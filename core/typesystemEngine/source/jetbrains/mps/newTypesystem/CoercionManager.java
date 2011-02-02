@@ -77,7 +77,6 @@ public class CoercionManager {
         if (cache != null) {
           Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
           if (nodePair.o1) {
-
             return nodePair.o2;
           }
         }

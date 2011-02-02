@@ -54,7 +54,9 @@ public class NodeMaps {
 
   public void updateNodeToType(SNode node, SNode type, EquationInfo info) {
     SNode oldType = myNodesToTypes.get(node);
-    myState.executeOperation(new TypeExpandedOperation(node, type, info, oldType));
+    if (oldType != null) {
+      myState.executeOperation(new TypeExpandedOperation(node, type, info, oldType));
+    }
   }
 
   @StateMethod

@@ -151,10 +151,8 @@ public class TypeSystemComponent extends Component {
   private void invalidateNodeTypeSystem(SNode node, boolean typeWillBeRecalculated) {
     myFullyCheckedNodes.remove(node);
     myPartlyCheckedNodes.remove(node);
-    if (myState.clearNode(node)) {
-      myJustInvalidatedNodes.add(node);
-      myFirstCheck = false;
-    }
+    myState.clearNode(node);
+    myFirstCheck = false;
     if (typeWillBeRecalculated) {
       TypeChecker.getInstance().fireTypeWillBeRecalculatedForTerm(node);
     }
@@ -182,6 +180,7 @@ public class TypeSystemComponent extends Component {
     myFirstCheck = true;
     clearCaches();
     clearState();
+    clearNodeTypes();
   }
 
   private void clearState() {
@@ -333,6 +332,7 @@ public class TypeSystemComponent extends Component {
           }
           boolean typeAffected = false;
           try {
+            myJustInvalidatedNodes.add(sNode);
             typeAffected = applyRulesToNode(sNode);
           } finally {
             if (isIncrementalMode()) {
@@ -385,13 +385,8 @@ public class TypeSystemComponent extends Component {
 
   public void solveInequalitiesAndExpandTypes() {
     myState.solveInequalities();
-    if (!isIncrementalMode() || myFirstCheck) {
-      myState.expandAll();
-      myFirstCheck = false;
-    } else {
-      myState.expandAll(myJustInvalidatedNodes);
-      myJustInvalidatedNodes.clear();
-    }
+    myState.expandAll(myJustInvalidatedNodes);
+    myJustInvalidatedNodes.clear();
   }
 
   public void addError(SNode node, IErrorReporter reporter)   {
