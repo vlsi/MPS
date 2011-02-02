@@ -49,6 +49,28 @@
   <component name="ProjectDetails">
     <option name="projectName" value="BuildLanguage" />
   </component>
+  <component name="ProjectLibraryManager">
+    <option name="libraries">
+      <map>
+        <entry key="customfields-common">
+          <value>
+            <Library>
+              <option name="name" value="customfields-common" />
+              <option name="path" value="${charisma}/youtrack-customfields-common-rest" />
+            </Library>
+          </value>
+        </entry>
+        <entry key="youtrack-workflow">
+          <value>
+            <Library>
+              <option name="name" value="youtrack-workflow" />
+              <option name="path" value="${youtrack-workflow}/" />
+            </Library>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="ProjectModuleManager">
     <modules />
   </component>

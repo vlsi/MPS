@@ -807,6 +807,9 @@
             <link role="block:7" targetNodeId="5v.4062013737453621618" resolveInfo="workbench" />
           </node>
         </node>
+        <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="8934235897214288609">
+          <link role="block:7" targetNodeId="5v.2429961990328796139" resolveInfo="youtrack-workflow" />
+        </node>
         <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.IfProjectComponent" id="1234971270550">
           <node role="condition" type="jetbrains.mps.build.packaging.structure.FileExistsCondition:7" id="1234971270551">
             <node role="pathToCheck:7" type="jetbrains.mps.build.packaging.structure.NonExistingPath:7" id="1234971270552">

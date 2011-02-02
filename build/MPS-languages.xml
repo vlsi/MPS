@@ -281,7 +281,6 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.unitTest.lib_x2f0">
-    <mkdir dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <mkdir dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/source_gen.caches" />
     <mkdir dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/test_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -289,7 +288,6 @@
       <zipfileset dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/test_gen.caches" prefix="test_gen.caches" />
       <zipfileset dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.test_y2f0">
@@ -1147,6 +1145,46 @@
       <zipfileset dir="workbench/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="workbench/ideSolution/test_gen.caches" prefix="test_gen.caches" />
       <zipfileset dir="workbench/ideSolution" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.youtrack.workflow_b9a">
+    <fail unless="youtrack-workflow" message="Property youtrack-workflow unspecified." />
+    <mkdir dir="${youtrack-workflow}/languages/workflow/classes_gen" />
+    <mkdir dir="${youtrack-workflow}/languages/workflow/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/youtrack-workflow/jetbrains.youtrack.workflow.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${youtrack-workflow}/languages/workflow/workflow.mpl" prefix="module" />
+      <zipfileset dir="${youtrack-workflow}/languages/workflow/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="${youtrack-workflow}/languages/workflow" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset file="${youtrack-workflow}/lib/commons-compress/commons-compress-1.0.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/commons-io/commons-io-1.3-sources.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/commons-io/commons-io-1.3.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/jaxb/jaxb-api.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/jaxb/jaxb-impl.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/jaxb/jaxb-xjc.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/jersey/asm-3.1.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/jersey/jackson-core-asl-1.1.1.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/jersey/jersey-client-1.1.4.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/jersey/jersey-core-1.1.4.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/jersey/jersey-json-1.1.4.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/jersey/jersey-multipart-1.1.4.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/jersey/jettison-1.1.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/jersey/jsr173_1.0_api.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/jersey/jsr311-api-1.1.1.jar" />
+      <zipfileset file="${youtrack-workflow}/lib/jersey/mimepull-1.4.jar" />
+      <zipfileset dir="${youtrack-workflow}/languages/workflow/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.youtrack.workflow.designtime_c9a">
+    <fail unless="youtrack-workflow" message="Property youtrack-workflow unspecified." />
+    <mkdir dir="${youtrack-workflow}/solutions/jetbrains.youtrack.workflow.designtime/classes_gen" />
+    <mkdir dir="${youtrack-workflow}/solutions/jetbrains.youtrack.workflow.designtime/source_gen.caches" />
+    <mkdir dir="${youtrack-workflow}/solutions/jetbrains.youtrack.workflow.designtime/test_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/youtrack-workflow/jetbrains.youtrack.workflow.designtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="${youtrack-workflow}/solutions/jetbrains.youtrack.workflow.designtime/jetbrains.youtrack.workflow.designtime.msd" prefix="module" />
+      <zipfileset dir="${youtrack-workflow}/solutions/jetbrains.youtrack.workflow.designtime/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="${youtrack-workflow}/solutions/jetbrains.youtrack.workflow.designtime/test_gen.caches" prefix="test_gen.caches" />
+      <zipfileset dir="${youtrack-workflow}/solutions/jetbrains.youtrack.workflow.designtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="${youtrack-workflow}/solutions/jetbrains.youtrack.workflow.designtime/classes_gen" />
     </jar>
   </target>
 </project>
