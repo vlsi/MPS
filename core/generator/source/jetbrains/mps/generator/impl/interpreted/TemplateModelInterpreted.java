@@ -69,7 +69,7 @@ public class TemplateModelInterpreted implements TemplateModel {
   public TemplateDeclaration loadTemplate(SNodePointer template, Object... arguments) {
     assert template.getModelReference().equals(getSModelReference());
     SNode templateNode = myModel.getNodeById(template.getNodeId());
-    if(templateNode == null || !jetbrains.mps.lang.generator.structure.TemplateDeclaration.concept.equals(templateNode.getConceptFqName())) {
+    if(templateNode == null || !RuleUtil.concept_TemplateDeclaration.equals(templateNode.getConceptFqName())) {
       return null;
     }
 

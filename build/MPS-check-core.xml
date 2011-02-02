@@ -34,27 +34,6 @@
     <path path="core/baseLanguage/closures/runtime/source_gen"/>
     <path path="core/baseLanguage/tuples/runtime/source_gen"/>
     <path path="core/languageDesign/pattern/source"/> <!-- TODO rename to runtime -->
-
-    <!-- structures -->
-    <path path="core/languageDesign/behavior/source_gen/jetbrains/mps/lang/behavior/structure"/>
-    <path path="core/languageDesign/constraints/source_gen/jetbrains/mps/lang/constraints/structure"/>
-    <path path="core/languageDesign/core/source_gen/jetbrains/mps/lang/core/structure"/>
-    <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/generationContext/structure"/>
-    <path path="core/languageDesign/generator/source_gen/jetbrains/mps/lang/generator/structure"/>
-    <path path="core/languageDesign/pattern/source_gen/jetbrains/mps/lang/pattern/structure"/>
-    <path path="core/languageDesign/quotation/source_gen/jetbrains/mps/lang/quotation/structure"/>
-    <path path="core/languageDesign/sharedConcepts/source_gen/jetbrains/mps/lang/sharedConcepts/structure"/>
-    <path path="core/languageDesign/structure/source_gen/jetbrains/mps/lang/structure/structure"/>
-    <path path="core/languageDesign/stubs/source_gen/jetbrains/mps/lang/stubs/structure"/>  <!-- LibraryStubDescriptor.concept usage in StubReloadManager -->
-    <path path="core/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/structure"/>
-    <path path="core/languageDesign/smodel/source_gen/jetbrains/mps/lang/smodel/structure"/> <!-- required by typesystem structure -->
-    <path path="core/languageDesign/textGen/source_gen/jetbrains/mps/lang/textGen/structure"/>
-
-    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/structure"/>
-    <path path="core/baseLanguage/classifiers/source_gen/jetbrains/mps/baseLanguage/classifiers/structure"/>
-    <path path="core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/structure"/>
-    <path path="core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/structure"/>
-
   </path>
 
   <path id="core.behavior.sources">
