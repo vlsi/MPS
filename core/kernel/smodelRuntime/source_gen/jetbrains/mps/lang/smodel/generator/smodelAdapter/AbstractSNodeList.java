@@ -47,7 +47,7 @@ import java.util.Collection;
         get(index - 1) :
         null
       );
-      insertBefore(node, anchorNode);
+      insertAfter(node, anchorNode);
     }
   }
 
@@ -55,7 +55,7 @@ import java.util.Collection;
 
   protected abstract void doAddReference(SNode node);
 
-  protected abstract void insertBefore(SNode node, SNode anchorNode);
+  protected abstract void insertAfter(SNode node, SNode anchorNode);
 
   @Override
   protected void removeRange(int fromIndex, int toIndex) {
@@ -137,7 +137,7 @@ import java.util.Collection;
     }
 
     @Override
-    protected void insertBefore(SNode node, SNode anchorNode) {
+    protected void insertAfter(SNode node, SNode anchorNode) {
       if (node.getParent() != null) {
         node.getParent().removeChild(node);
       }
@@ -161,7 +161,7 @@ import java.util.Collection;
     }
 
     @Override
-    protected void insertBefore(SNode node, SNode anchorNode) {
+    protected void insertAfter(SNode node, SNode anchorNode) {
       doAddReference(node);
     }
   }
