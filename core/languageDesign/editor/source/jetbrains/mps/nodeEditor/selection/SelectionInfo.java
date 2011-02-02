@@ -127,26 +127,4 @@ public class SelectionInfo {
       element.addContent(cellInfoElement);
     }
   }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-
-    SelectionInfo that = (SelectionInfo) o;
-
-    if (!mySelectionClassName.equals(that.mySelectionClassName)) return false;
-    if (myCellInfo != null ? !myCellInfo.equals(that.myCellInfo) : that.myCellInfo != null) return false;
-    if (!myProperties.equals(that.myProperties)) return false;
-
-    return true;
-  }
-
-  @Override
-  public int hashCode() {
-    int result = mySelectionClassName.hashCode();
-    result = 31 * result + myProperties.hashCode();
-    result = 31 * result + (myCellInfo != null ? myCellInfo.hashCode() : 0);
-    return result;
-  }
 }

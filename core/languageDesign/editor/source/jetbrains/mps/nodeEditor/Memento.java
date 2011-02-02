@@ -31,7 +31,6 @@ class Memento {
 
   private Map<CellInfo, String> myErrorTexts = new HashMap<CellInfo, String>();
 
-  private Integer myCaretX;
   private SNode myFirstRangeSelectionNode;
   private SNode myLastRangeSelectionNode;
 
@@ -40,14 +39,7 @@ class Memento {
   Memento(EditorContext context, boolean full) {
     EditorComponent nodeEditor = context.getNodeEditorComponent();
     EditorCell selectedCell = nodeEditor.getSelectedCell();
-    EditorCell deepestSelectedCell = nodeEditor.getDeepestSelectedCell();
-    if (selectedCell != null && selectedCell.getSNode() != null && !selectedCell.getSNode().isDisposed()) {
-      if (deepestSelectedCell != null) {
-        myCaretX = deepestSelectedCell.getCaretX();
-      }
-
-      if (deepestSelectedCell instanceof EditorCell_Label && deepestSelectedCell.isErrorState()) {
-      }
+    if (selectedCell != null) {
       mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
 
       for (EditorCell foldedCell : nodeEditor.getFoldedCells()) {
@@ -104,10 +96,6 @@ class Memento {
     
     needsRelayout = restoreErrors(editor) || needsRelayout;
 
-    EditorCell deepestSelectedCell = editor.getDeepestSelectedCell();
-    if (deepestSelectedCell != null && myCaretX != null) {
-      deepestSelectedCell.setCaretX(myCaretX);
-    }
     if (myFirstRangeSelectionNode != null &&
         editor.findNodeCell(myFirstRangeSelectionNode) != null &&
         editor.findNodeCell(myLastRangeSelectionNode) != null &&
@@ -139,8 +127,7 @@ class Memento {
     if (object == this) return true;
     if (object instanceof Memento) {
       Memento m = (Memento) object;
-      if (EqualUtil.equals(myCaretX, m.myCaretX) &&
-        EqualUtil.equals(myFirstRangeSelectionNode, m.myFirstRangeSelectionNode) &&
+      if (EqualUtil.equals(myFirstRangeSelectionNode, m.myFirstRangeSelectionNode) &&
         EqualUtil.equals(myLastRangeSelectionNode, m.myLastRangeSelectionNode) &&
         EqualUtil.equals(mySelectionStack, m.mySelectionStack) &&
         EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
@@ -154,14 +141,12 @@ class Memento {
 
   public int hashCode() {
     return (mySelectionStack != null ? mySelectionStack.hashCode() : 0) +
-           (myCaretX != null ? myCaretX.hashCode() : 0) +
            (myFirstRangeSelectionNode != null ? myFirstRangeSelectionNode.hashCode() : 0) +
            (myLastRangeSelectionNode != null ? myLastRangeSelectionNode.hashCode() : 0);
   }
 
   public String toString() {
     return "Editor Memento[\n" +
-      "  caretX = " + myCaretX + "\n" +
       "  selectedStack = " + mySelectionStack + "\n" +
       "  collectionsWithBraces = " + myCollectionsWithEnabledBraces + "\n" +
       "  foldedCells = " + myFolded + "\n" +
@@ -172,8 +157,6 @@ class Memento {
   private static final String STACK_ELEMENT = "stackElement";
   private static final String FOLDED = "folded";
   private static final String FOLDED_ELEMENT = "foldedElement";
-  private static final String TEXT_LINE = "textLine";
-  private static final String CARET_POSITION = "caretPosition";
 
   public void save(Element e) {
     Element selectionStack = new Element(SELECTION_STACK);
@@ -199,9 +182,6 @@ class Memento {
     if (success) {
       e.addContent(folded);
     }
-    Element textLine = new Element(TEXT_LINE);
-    textLine.setAttribute(CARET_POSITION, myCaretX + "");
-    e.addContent(textLine);
   }
 
   public static Memento load(Element e) {
@@ -218,14 +198,6 @@ class Memento {
       List children = folded.getChildren(FOLDED_ELEMENT);
       for (Object o : children) {
         memento.myFolded.add(DefaultCellInfo.loadFrom((Element) o));
-      }
-    }
-    Element textLine = e.getChild(TEXT_LINE);
-    if (textLine != null) {
-      try {
-        memento.myCaretX = Integer.parseInt(textLine.getAttributeValue(CARET_POSITION));
-      } catch (NumberFormatException ex) {
-        memento.myCaretX = 0;
       }
     }
     return memento;

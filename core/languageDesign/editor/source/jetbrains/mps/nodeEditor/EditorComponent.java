@@ -1883,7 +1883,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       resetLastCaretX();
     }
 
-    EditorCellSelection newSelection = newSelectedCell != null ? new EditorCellSelection(newSelectedCell) : null;
+    EditorCellSelection newSelection;
+    if (newSelectedCell instanceof EditorCell_Label) {
+      newSelection = new EditorCellLabelSelection((EditorCell_Label) newSelectedCell);
+    } else if (newSelectedCell != null) {
+      newSelection = new EditorCellSelection(newSelectedCell);
+    } else {
+      newSelection = null;
+    }
     if (clearStack) {
       myNodeSubstituteChooser.setVisible(false);
       myNodeRangeSelection.deactivate();

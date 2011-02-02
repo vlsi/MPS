@@ -105,8 +105,27 @@ public class NodeRangeSelection implements MultipleSelection {
   }
 
   @Override
-  public boolean validate() {
-    // TODO: implement this method
+  public boolean isSame(Selection another) {
+    if (this == another) {
+      return true;
+    }
+    if (another == null || getClass() != another.getClass()) {
+      return false;
+    }
+
+    NodeRangeSelection that = (NodeRangeSelection) another;
+    if (!myFirstNode.equals(that.myFirstNode)) {
+      return false;
+    }
+    if (!myLastNode.equals(that.myLastNode)) {
+      return false;
+    }
+    if (!myParentNode.equals(that.myParentNode)) {
+      return false;
+    }
+    if (!myRole.equals(that.myRole)) {
+      return false;
+    }
     return true;
   }
 
@@ -123,15 +142,14 @@ public class NodeRangeSelection implements MultipleSelection {
     return null;
   }
 
-  private SNode findNode(SModel sModel, Map<String, String> properties, String propertyName) throws SelectionStoreException {
+  private SNode findNode(SModel sModel, Map<String, String> properties, String propertyName) throws SelectionStoreException, SelectionRestoreException {
     String sNodeId = properties.get(propertyName);
     if (sNodeId == null) {
       throw new SelectionStoreException("Required node Id property missed, propertyName = " + propertyName);
     }
     SNode sNode = sModel.getNodeById(sNodeId);
     if (sNode == null) {
-      // TODO: do not log this exception
-      throw new SelectionStoreException("Canot find node using property name = " + propertyName + ", value = " + sNodeId);
+      throw new SelectionRestoreException();
     }
     return sNode;
   }

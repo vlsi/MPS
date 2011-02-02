@@ -33,7 +33,7 @@ public interface Selection {
 
   SelectionInfo getSelectionInfo() throws SelectionStoreException;
 
-  boolean validate();
+  boolean isSame(Selection another);
 
   //void paintSelection();
 

@@ -48,7 +48,6 @@ public class NodeEditorActions {
     public void execute(EditorContext context) {
       EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
       EditorCell selection = nodeEditorComponent.getDeepestSelectedCell();
-      nodeEditorComponent.clearSelectionStack();
       EditorCell target = findTarget(selection);
       nodeEditorComponent.changeSelection(target);
       if (target instanceof EditorCell_Label) {
@@ -79,7 +78,6 @@ public class NodeEditorActions {
     }
 
     public void execute(EditorContext context) {
-      context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       context.getNodeEditorComponent().changeSelection(findTarget(selection));
     }
@@ -101,7 +99,6 @@ public class NodeEditorActions {
     }
 
     public void execute(EditorContext context) {
-      context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       context.getNodeEditorComponent().changeSelection(findTarget(selection));
     }
@@ -123,7 +120,6 @@ public class NodeEditorActions {
     }
 
     public void execute(EditorContext context) {
-      context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       EditorCell target = findTarget(selection);
       if (target instanceof EditorCell_Label) {
@@ -148,7 +144,6 @@ public class NodeEditorActions {
     }
 
     public void execute(EditorContext context) {
-      context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       EditorCell target = findTarget(selection);
       if (target instanceof EditorCell_Label) {
@@ -172,7 +167,6 @@ public class NodeEditorActions {
 
     public void execute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
-      context.getNodeEditorComponent().clearSelectionStack();
       EditorCell target = findTarget(selection);
       context.getNodeEditorComponent().changeSelection(target);
       if (target.isPunctuationLayout() && ((EditorCell_Label) target).isCaretPositionAllowed(1)) {
@@ -200,7 +194,6 @@ public class NodeEditorActions {
 
     public void execute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
-      context.getNodeEditorComponent().clearSelectionStack();
       int caretX = selection.getCaretX();
       if (context.getNodeEditorComponent().hasLastCaretX()) {
         caretX = context.getNodeEditorComponent().getLastCaretX();
@@ -224,7 +217,6 @@ public class NodeEditorActions {
 
     public void execute(EditorContext context) {
       EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
-      context.getNodeEditorComponent().clearSelectionStack();
       int caretX = selection.getCaretX();
       if (context.getNodeEditorComponent().hasLastCaretX()) {
         caretX = context.getNodeEditorComponent().getLastCaretX();
@@ -247,7 +239,6 @@ public class NodeEditorActions {
     }
 
     public void execute(EditorContext context) {
-      context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       context.getNodeEditorComponent().changeSelection(selection.getNextLeaf(CellConditions.EDITABLE));
     }
@@ -260,7 +251,6 @@ public class NodeEditorActions {
     }
 
     public void execute(EditorContext context) {
-      context.getNodeEditorComponent().clearSelectionStack();
       EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
       context.getNodeEditorComponent().changeSelection(selection.getPrevLeaf(CellConditions.EDITABLE));
     }

@@ -37,7 +37,8 @@ public class EditorCellSelection implements SingularSelection {
     if (cellInfo == null) {
       throw new SelectionStoreException("Requred CellInfo parameter is null");
     }
-    myEditorCell = cellInfo.findCell(editorComponent);
+    // TODO: think about better way to restore relevant selection in case of deleted cell (EditorManager.EditorCell_STHint)
+    myEditorCell = cellInfo.findClosestCell(editorComponent);
     if (myEditorCell == null) {
       throw new SelectionRestoreException();
     }
@@ -47,6 +48,7 @@ public class EditorCellSelection implements SingularSelection {
     myEditorCell = editorCell;
   }
 
+  @NotNull
   @Override
   public EditorCell getEditorCell() {
     return myEditorCell;
@@ -76,12 +78,22 @@ public class EditorCellSelection implements SingularSelection {
     return selectionInfo;
   }
 
-  @Override
-  public boolean validate() {
-    return myEditorCell.getCellInfo().findCell(myEditorCell.getEditor()) != null;
-  }
-
   protected boolean isEditable() {
     return myEditorCell.getEditor().isEditable();
+  }
+
+  @Override
+  public boolean isSame(Selection another) {
+    if (this == another) {
+      return true;
+    }
+    if (another == null || getClass() != another.getClass()) {
+      return false;
+    }
+    EditorCellSelection that = (EditorCellSelection) another;
+    if (!myEditorCell.equals(that.myEditorCell)) {
+      return false;
+    }
+    return true;
   }
 }

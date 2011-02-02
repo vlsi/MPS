@@ -102,52 +102,36 @@ public class SelectionManager {
   }
 
   public void setSelectionInfoStack(@NotNull Stack<SelectionInfo> selectionStack) {
-    Selection oldSelection = getSelection();
-    if (isSameSelectionStack(selectionStack)) {
-      if (!isSelectionStackValid()) {
-        // some of selection elements are not valid anymore
-        // most probably as a result of Editor update: e.g. some cells were added/removed
-        mySelectionStack.clear();
-        doChangeSelection(oldSelection, getSelection());
-      }
-      return;
-    }
-    mySelectionStack.clear();
+    Stack<Selection> newSelectionStack = new Stack<Selection>();
     for (SelectionInfo nextSelectionInfo : selectionStack) {
       Selection selection = nextSelectionInfo.createSelection(myEditorComponent);
       if (selection == null) {
         // unable to instantiate selection - cleaning selection stack
-        mySelectionStack.clear();
+        newSelectionStack.clear();
         break;
       }
-      mySelectionStack.push(selection);
+      newSelectionStack.push(selection);
+    }
+    if (isSameSelectionStack(newSelectionStack)) {
+      return;
+    }
+
+    Selection oldSelection = getSelection();
+    mySelectionStack.clear();
+    for (Selection nextSelection : newSelectionStack) {
+      mySelectionStack.push(nextSelection);
     }
     doChangeSelection(oldSelection, getSelection());
   }
 
-  private boolean isSelectionStackValid() {
-    for (Selection selection : mySelectionStack) {
-      if (!selection.validate()) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  private boolean isSameSelectionStack(Stack<SelectionInfo> newSelectionStack) {
+  private boolean isSameSelectionStack(Stack<Selection> newSelectionStack) {
     if (newSelectionStack.size() != mySelectionStack.size()) {
       return false;
     }
     for (int i = 0; i < mySelectionStack.size(); i++) {
-      SelectionInfo oldSelectionInfo;
-      try {
-        oldSelectionInfo = mySelectionStack.get(i).getSelectionInfo();
-      } catch (SelectionStoreException e) {
-        LOG.error(e);
-        return false;
-      }
-      SelectionInfo newSelectionInfo = newSelectionStack.get(i);
-      if (!oldSelectionInfo.equals(newSelectionInfo)) {
+      Selection oldSelection = mySelectionStack.get(i);
+      Selection newSelection = newSelectionStack.get(i);
+      if (!oldSelection.isSame(newSelection)) {
         return false;
       }
     }

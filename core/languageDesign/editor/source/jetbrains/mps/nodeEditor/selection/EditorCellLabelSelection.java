@@ -29,34 +29,48 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class EditorCellLabelSelection extends EditorCellSelection {
-  private static final String CARET_POSITION_PROPERTY_NAME = "caretPosition";
+  private static final String CARET_X_PROPERTY_NAME = "caretX";
+  private static final String HAS_NON_TRIVIAL_SELECTION_PROPERTY_NAME = "hasNonTrivialSelection";
   private static final String SELECTION_START_PROPERTY_NAME = "selectionStart";
   private static final String SELECTION_END_PROPERTY_NAME = "selectionEnd";
 
-  private int myCaretPosition;
-  private int mySelectionStart;
-  private int mySelectionEnd;
+  private int myCaretX;
+  private int mySelectionStart = -1;
+  private int mySelectionEnd = -1;
+  private boolean myHasNonTrivialSelection = false;
 
   public EditorCellLabelSelection(EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException, SelectionRestoreException {
     super(editorComponent, properties, cellInfo);
-    myCaretPosition = getIntProperty(properties, CARET_POSITION_PROPERTY_NAME);
-    mySelectionStart = getIntProperty(properties, SELECTION_START_PROPERTY_NAME);
-    mySelectionEnd = getIntProperty(properties, SELECTION_END_PROPERTY_NAME);
+    myCaretX = getIntProperty(properties, CARET_X_PROPERTY_NAME);
+    myHasNonTrivialSelection = getBooleanProperty(properties, HAS_NON_TRIVIAL_SELECTION_PROPERTY_NAME);
+    if (getEditorCell().getCellInfo().equals(cellInfo)) {
+      if (myHasNonTrivialSelection) {
+        /*
+         This is kind of hack for EditorManager.STHintCellInfo - if located cell is different from the original one
+         then we do not restore selection.
+         */
+        mySelectionStart = getIntProperty(properties, SELECTION_START_PROPERTY_NAME);
+        mySelectionEnd = getIntProperty(properties, SELECTION_END_PROPERTY_NAME);
+      }
+    } else {
+      myHasNonTrivialSelection = false;
+    }
   }
 
   public EditorCellLabelSelection(EditorCell_Label editorCell) {
     super(editorCell);
-    myCaretPosition = editorCell.getCaretPosition();
+    myCaretX = editorCell.getCaretX();
     mySelectionStart = editorCell.getSelectionStart();
     mySelectionEnd = editorCell.getSelectionEnd();
+    myHasNonTrivialSelection = mySelectionStart != mySelectionEnd;
   }
 
   public EditorCell_Label getEditorCellLabel() {
     return (EditorCell_Label) getEditorCell();
   }
 
-  public int getCaretPosition() {
-    return myCaretPosition;
+  public int getCaretX() {
+    return myCaretX;
   }
 
   public int getSelectionStart() {
@@ -69,9 +83,11 @@ public class EditorCellLabelSelection extends EditorCellSelection {
       return;
     }
     super.activate();
-    getEditorCellLabel().setCaretPosition(getCaretPosition());
-    getEditorCellLabel().setSelectionStart(getSelectionStart());
-    getEditorCellLabel().setSelectionEnd(getSelectionEnd());
+    getEditorCellLabel().setCaretX(getCaretX());
+    if (myHasNonTrivialSelection) {
+      getEditorCellLabel().setSelectionStart(getSelectionStart());
+      getEditorCellLabel().setSelectionEnd(getSelectionEnd());
+    }
   }
 
   @Override
@@ -86,16 +102,13 @@ public class EditorCellLabelSelection extends EditorCellSelection {
   @Override
   public SelectionInfo getSelectionInfo() throws SelectionStoreException {
     SelectionInfo selectionInfo = super.getSelectionInfo();
-    selectionInfo.getPropertiesMap().put(CARET_POSITION_PROPERTY_NAME, Integer.toString(myCaretPosition));
-    selectionInfo.getPropertiesMap().put(SELECTION_START_PROPERTY_NAME, Integer.toString(mySelectionStart));
-    selectionInfo.getPropertiesMap().put(SELECTION_END_PROPERTY_NAME, Integer.toString(mySelectionEnd));
+    selectionInfo.getPropertiesMap().put(CARET_X_PROPERTY_NAME, Integer.toString(myCaretX));
+    selectionInfo.getPropertiesMap().put(HAS_NON_TRIVIAL_SELECTION_PROPERTY_NAME, Boolean.toString(myHasNonTrivialSelection));
+    if (myHasNonTrivialSelection) {
+      selectionInfo.getPropertiesMap().put(SELECTION_START_PROPERTY_NAME, Integer.toString(mySelectionStart));
+      selectionInfo.getPropertiesMap().put(SELECTION_END_PROPERTY_NAME, Integer.toString(mySelectionEnd));
+    }
     return selectionInfo;
-  }
-
-  @Override
-  public boolean validate() {
-    // TODO: validate caret position & selection here
-    return super.validate();
   }
 
   public int getSelectionEnd() {
@@ -112,5 +125,43 @@ public class EditorCellLabelSelection extends EditorCellSelection {
     } catch (NumberFormatException e) {
       throw new SelectionStoreException("Unable to parse integer position value: " + propertyValue);
     }
+  }
+
+  private boolean getBooleanProperty(Map<String, String> properties, String propertyName) throws SelectionStoreException {
+    String propertyValue = properties.get(propertyName);
+    if (propertyValue == null) {
+      throw new SelectionStoreException("Canot load int property - property value was not specified for propertyName = " + propertyName);
+    }
+    return Boolean.parseBoolean(propertyValue);
+  }
+
+  @Override
+  public boolean isSame(Selection another) {
+    if (this == another) {
+      return true;
+    }
+    if (another == null || getClass() != another.getClass()) {
+      return false;
+    }
+
+    EditorCellLabelSelection that = (EditorCellLabelSelection) another;
+    if (!getEditorCell().equals(that.getEditorCell())) {
+      return false;
+    }
+    if (myCaretX != that.myCaretX) {
+      return false;
+    }
+    if (myHasNonTrivialSelection != that.myHasNonTrivialSelection) {
+      return false;
+    }
+    if (myHasNonTrivialSelection) {
+      if (mySelectionEnd != that.mySelectionEnd) {
+        return false;
+      }
+      if (mySelectionStart != that.mySelectionStart) {
+        return false;
+      }
+    }
+    return true;
   }
 }
