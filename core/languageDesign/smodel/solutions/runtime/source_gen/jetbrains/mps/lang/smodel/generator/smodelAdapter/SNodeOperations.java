@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -310,7 +309,7 @@ public class SNodeOperations {
       return new ArrayList<SNode>(0);
     }
     linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    return SLinkOperations.getTargets(node, ((LinkDeclaration) linkDeclaration.getAdapter()).getRole(), true);
+    return SLinkOperations.getTargets(node, SPropertyOperations.getString(linkDeclaration, "role"), true);
   }
 
   public static SModel getModel(SNode node) {
@@ -710,6 +709,6 @@ public class SNodeOperations {
       return null;
     }
     linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    return node.getReference(((LinkDeclaration) linkDeclaration.getAdapter()).getRole());
+    return node.getReference(SPropertyOperations.getString(linkDeclaration, "role"));
   }
 }

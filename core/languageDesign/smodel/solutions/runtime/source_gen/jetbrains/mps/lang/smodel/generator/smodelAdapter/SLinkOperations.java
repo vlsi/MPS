@@ -8,7 +8,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SReference;
 
 public class SLinkOperations {
@@ -68,7 +68,7 @@ public class SLinkOperations {
         new AbstractSNodeList.LinkedSNodesList(node, role)
       );
     }
-    return new ArrayList(0);
+    return new ArrayList<SNode>();
   }
 
   public static SNode addNewChild(SNode node, String role, String childConceptFQName) {
@@ -144,7 +144,7 @@ public class SLinkOperations {
     if (node == null) {
       return new ArrayList<SNode>();
     }
-    return ((BaseConcept) SNodeOperations.getAdapter(node)).getConceptLinkTargets(linkName, true);
+    return BaseAdapter.getConceptLinkTargets(node, linkName, true);
   }
 
   public static SNode findLinkDeclaration(SReference reference) {
