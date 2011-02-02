@@ -637,10 +637,14 @@ public final class SNode {
     fireNodeReadAccess();
     int count = 0;
     SNode foundChild = null;
+//    boolean isOldAttributeRole = AttributesRolesUtil.isAttributeRole(role);
     for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
       if (role.equals(child.getRole_())) {
         foundChild = child;
         count++;
+//      } else if (isOldAttributeRole && AttributeOperations.isNewAttributeInOldRole(child, role)) {
+//        foundChild = child;
+//        count++;
       }
     }
     if (count > 1) {
