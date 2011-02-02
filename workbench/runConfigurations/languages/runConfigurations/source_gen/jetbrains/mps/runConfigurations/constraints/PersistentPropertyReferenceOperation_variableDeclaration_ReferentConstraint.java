@@ -30,11 +30,11 @@ public class PersistentPropertyReferenceOperation_variableDeclaration_ReferentCo
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode instance = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-    SNode propertyHolderType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.runConfigurations.structure.PersistentPropertyHolderType"), false);
-    if ((propertyHolderType == null) || (SLinkOperations.getTarget(propertyHolderType, "persistentPropertyHolder", false) == null)) {
+    SNode propertyHolderType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.runConfigurations.structure.PersistentConfigurationType"), false);
+    if ((propertyHolderType == null) || (SLinkOperations.getTarget(propertyHolderType, "persistentConfiguration", false) == null)) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(propertyHolderType, "persistentPropertyHolder", false), "persistentProperty", true);
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(propertyHolderType, "persistentConfiguration", false), "persistentProperty", true);
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

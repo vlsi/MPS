@@ -16,11 +16,11 @@ public class SmartPersistentPropertyType extends Type {
     super(node);
   }
 
-  public SmartPersistentPropertyTemplate getPropertyTemplate() {
-    return (SmartPersistentPropertyTemplate) this.getReferent(SmartPersistentPropertyTemplate.class, SmartPersistentPropertyType.PROPERTY_TEMPLATE);
+  public PersistentConfigurationTemplate getPropertyTemplate() {
+    return (PersistentConfigurationTemplate) this.getReferent(PersistentConfigurationTemplate.class, SmartPersistentPropertyType.PROPERTY_TEMPLATE);
   }
 
-  public void setPropertyTemplate(SmartPersistentPropertyTemplate node) {
+  public void setPropertyTemplate(PersistentConfigurationTemplate node) {
     super.setReferent(SmartPersistentPropertyType.PROPERTY_TEMPLATE, node);
   }
 

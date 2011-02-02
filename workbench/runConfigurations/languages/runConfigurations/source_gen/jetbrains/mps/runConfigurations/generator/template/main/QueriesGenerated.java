@@ -217,7 +217,7 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_77193491200355210(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for (SNode template : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.runConfigurations.structure.SmartPersistentPropertyTemplate"))) {
+    for (SNode template : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplate"))) {
       SNodeOperations.deleteNode(template);
     }
   }

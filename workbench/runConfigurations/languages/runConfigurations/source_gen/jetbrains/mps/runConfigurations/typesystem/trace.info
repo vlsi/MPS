@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="SmartPropertyIsSubtypeOfType_SubtypingRule.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.SmartPropertyIsSubtypeOfType_SubtypingRule" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.TypesystemDescriptor" />
   <unitInfo fileName="typeof_PersistentPropertyReferenceOperation_InferenceRule.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.typeof_PersistentPropertyReferenceOperation_InferenceRule" />
   <unitInfo fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.typeof_Configuration_Parameter_InferenceRule" />
   <unitInfo fileName="typeof_SmartPropertyValue_Parameter_InferenceRule.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.typeof_SmartPropertyValue_Parameter_InferenceRule" />
   <unitInfo fileName="SmartPropertyIsSubtypeOfSmartProperty_SubtypingRule.java" startLine="42" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.SmartPropertyIsSubtypeOfSmartProperty_SubtypingRule$QuotationClass_9l0euc_a0a0a" />
-  <unitInfo fileName="RunConfigurationIsPropertyHolder_SubtypingRule.java" startLine="39" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.RunConfigurationIsPropertyHolder_SubtypingRule$QuotationClass_h3fjol_a0a0a" />
-  <unitInfo fileName="typeof_ThisExpression_InferenceRule.java" startLine="46" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.typeof_ThisExpression_InferenceRule$QuotationClass_dzbtrx_a0a0a0" />
   <unitInfo fileName="typeof_PersistentPropertyDeclaration_InferenceRule.java" startLine="52" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.typeof_PersistentPropertyDeclaration_InferenceRule$QuotationClass_sacma3_a0a0a0a" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.TypesystemDescriptor" />
-  <unitInfo fileName="RunConfigurationIsPropertyHolder_SubtypingRule.java" startLine="16" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.RunConfigurationIsPropertyHolder_SubtypingRule" />
   <unitInfo fileName="SmartPropertyIsSubtypeOfSmartProperty_SubtypingRule.java" startLine="15" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.SmartPropertyIsSubtypeOfSmartProperty_SubtypingRule" />
-  <unitInfo fileName="typeof_ThisExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.typeof_ThisExpression_InferenceRule" />
   <unitInfo fileName="typeof_PersistentPropertyDeclaration_InferenceRule.java" startLine="83" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.typeof_PersistentPropertyDeclaration_InferenceRule$QuotationClass_sacma3_a0a1a0" />
   <unitInfo fileName="typeof_PersistentPropertyDeclaration_InferenceRule.java" startLine="22" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.runConfigurations.typesystem.typeof_PersistentPropertyDeclaration_InferenceRule" />
   <root nodeId="4157833584164919228">
@@ -22,9 +18,9 @@
     <nodeInfo nodeId="4777576391478317712" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4777576391478317712" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="21" startPosition="64" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4777576391478317712" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="22" startPosition="52" endLine="23" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4777576391478317712" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="23" startPosition="221" endLine="24" endPosition="349" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4777576391478317712" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="23" startPosition="221" endLine="24" endPosition="362" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4777576391478317712" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="19" startPosition="135" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="4777576391478317712" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="20" startPosition="5" endLine="24" endPosition="349" />
+    <scopeInfo nodeId="4777576391478317712" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="20" startPosition="5" endLine="24" endPosition="362" />
     <scopeInfo nodeId="4777576391478107090" fileName="typeof_Configuration_Parameter_InferenceRule.java" startLine="19" startPosition="135" endLine="25" endPosition="5" />
   </root>
   <root nodeId="4777576391478349960">
@@ -61,19 +57,6 @@
     <nodeInfo nodeId="77193491200291513" fileName="typeof_SmartPropertyValue_Parameter_InferenceRule.java" startLine="20" startPosition="141" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="77193491200291513" fileName="typeof_SmartPropertyValue_Parameter_InferenceRule.java" startLine="21" startPosition="5" endLine="25" endPosition="458" />
     <scopeInfo nodeId="77193491200291507" fileName="typeof_SmartPropertyValue_Parameter_InferenceRule.java" startLine="20" startPosition="141" endLine="26" endPosition="5" />
-  </root>
-  <root nodeId="77193491200310945">
-    <nodeInfo nodeId="77193491200310948" fileName="RunConfigurationIsPropertyHolder_SubtypingRule.java" startLine="20" startPosition="130" endLine="21" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="77193491200310946" fileName="RunConfigurationIsPropertyHolder_SubtypingRule.java" startLine="20" startPosition="130" endLine="21" endPosition="208" />
-  </root>
-  <root nodeId="77193491200323609">
-    <nodeInfo nodeId="77193491200323616" fileName="typeof_ThisExpression_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="77193491200323616" fileName="typeof_ThisExpression_InferenceRule.java" startLine="24" startPosition="56" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="77193491200323616" fileName="typeof_ThisExpression_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="77193491200323616" fileName="typeof_ThisExpression_InferenceRule.java" startLine="26" startPosition="219" endLine="27" endPosition="400" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="77193491200323616" fileName="typeof_ThisExpression_InferenceRule.java" startLine="22" startPosition="127" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="77193491200323616" fileName="typeof_ThisExpression_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="400" />
-    <scopeInfo nodeId="77193491200323610" fileName="typeof_ThisExpression_InferenceRule.java" startLine="22" startPosition="127" endLine="28" endPosition="5" />
   </root>
 </debugInfo>
 

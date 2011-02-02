@@ -9,12 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class RunConfiguration_Behavior {
   public static void init(SNode thisNode) {
@@ -33,42 +27,5 @@ public class RunConfiguration_Behavior {
         return SLinkOperations.getTarget(it, "runConfiguration", false) == thisNode;
       }
     });
-  }
-
-  public static SNode getContextRunConfigurationType_4777576391478317632(SNode node) {
-    SNode runConfiguration = SNodeOperations.getAncestor(node, "jetbrains.mps.runConfigurations.structure.RunConfiguration", false, false);
-    if (runConfiguration == null) {
-      SNode executor = SNodeOperations.getAncestor(node, "jetbrains.mps.runConfigurations.structure.RunConfigurationExecutor", false, false);
-      if (executor != null) {
-        runConfiguration = SLinkOperations.getTarget(executor, "runConfiguration", false);
-      }
-    }
-    return new RunConfiguration_Behavior.QuotationClass_g3syr7_a0c0d().createNode(runConfiguration);
-  }
-
-  public static List<SNode> getContextPersistentProperties_4777576391478338580(SNode node) {
-    SNode configurationType = RunConfiguration_Behavior.getContextRunConfigurationType_4777576391478317632(node);
-    if ((configurationType == null) || (SLinkOperations.getTarget(configurationType, "persistentPropertyHolder", false) == null)) {
-      return new ArrayList<SNode>();
-    }
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(configurationType, "persistentPropertyHolder", false), "persistentProperty", true);
-  }
-
-  public static class QuotationClass_g3syr7_a0c0d {
-    public QuotationClass_g3syr7_a0c0d() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.RunConfigurationType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("runConfiguration", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
   }
 }

@@ -14,7 +14,7 @@ public class GetSmartPropertyValue_Function_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.runConfigurations.structure.SmartPersistentPropertyTemplate"), "externalType", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplate"), "externalType", true);
   }
 
   public static SNode call_getExpectedReturnType_77193491200288912(SNode thisNode) {

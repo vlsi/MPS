@@ -22,7 +22,7 @@ public class typeof_SmartPropertyValue_Parameter_InferenceRule extends AbstractI
       SNode _nodeToCheck_1029348928467 = smartPropertyValue_Parameter;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "77193491200291513", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "77193491200291510", true), (SNode) SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(smartPropertyValue_Parameter), "jetbrains.mps.runConfigurations.structure.SmartPersistentPropertyTemplate"), "externalType", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "77193491200291510", true), (SNode) SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(smartPropertyValue_Parameter), "jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplate"), "externalType", true), _info_12389875345);
     }
   }
 

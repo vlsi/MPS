@@ -13,7 +13,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2401501559171345993">
       <property name="name" nameId="tpck.1169194664001" value="RunConfiguration" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="223733852661704505" resolveInfo="PersistentEditor" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2401501559171345994">
       <property name="name" nameId="tpck.1169194664001" value="RunConfigurationKind" />
@@ -33,7 +33,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3754890006475816671">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
-      <property name="name" nameId="tpck.1169194664001" value="PersistentEditor" />
+      <property name="name" nameId="tpck.1169194664001" value="SettingsEditor" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4928971978190606409">
@@ -62,8 +62,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4777576391478289762">
-      <property name="name" nameId="tpck.1169194664001" value="RunConfigurationType" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="77193491200310915" resolveInfo="PersistentPropertyHolderType" />
+      <property name="name" nameId="tpck.1169194664001" value="PersistentConfigurationType" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4777576391478268202">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.editor" />
@@ -82,9 +82,9 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4157833584164830749">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.smart" />
-      <property name="name" nameId="tpck.1169194664001" value="SmartPersistentPropertyTemplate" />
+      <property name="name" nameId="tpck.1169194664001" value="PersistentConfigurationTemplate" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="223733852661704505" resolveInfo="PersistentEditor" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4157833584164911568">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.smart" />
@@ -110,36 +110,18 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
       <property name="name" nameId="tpck.1169194664001" value="IPersistentPropertyHolder" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="77193491200310915">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
-      <property name="name" nameId="tpck.1169194664001" value="PersistentPropertyHolderType" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="77193491200323586">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.smart" />
-      <property name="name" nameId="tpck.1169194664001" value="ThisExpression" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="223733852661704505">
+      <property name="name" nameId="tpck.1169194664001" value="PersistentConfiguration" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </roots>
   <root id="2401501559171345993">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3754890006475720714">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="persistentProperty" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1048802521465149470" resolveInfo="PersistentPropertyDeclaration" />
-      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="77193491200308914" />
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3754890006475816675">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="editor" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3754890006475816671" resolveInfo="PersistentEditor" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2401501559171345995">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="77193491200308916">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="77193491200308913" resolveInfo="IPersistentPropertyHolder" />
+      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="223733852661704509" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2401501559171353314">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
@@ -280,17 +262,16 @@
   <root id="4777576391478289762">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4777576391478289767">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="runConfiguration" />
+      <property name="role" nameId="tpce.1071599776563" value="persistentConfiguration" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="2401501559171345993" resolveInfo="RunConfiguration" />
-      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="77193491200310916" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="223733852661704505" resolveInfo="PersistentConfiguration" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="77193491200310934">
       <property name="value" nameId="tpce.1105725733873" value="configuration" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="77193491200310936">
-      <property name="value" nameId="tpce.1105725733873" value="run configuration type" />
+      <property name="value" nameId="tpce.1105725733873" value="persistent configuration type" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
   </root>
@@ -315,27 +296,14 @@
   </root>
   <root id="4157833584164830749">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4157833584164854553">
-      <property name="value" nameId="tpce.1105725733873" value="smart persistent property template" />
+      <property name="value" nameId="tpce.1105725733873" value="persistent configuration template" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4157833584164830750">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="77193491200308918">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="77193491200308913" resolveInfo="IPersistentPropertyHolder" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4157833584164830752">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="externalType" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="77193491200187324">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="outputPersistentProperty" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1048802521465149470" resolveInfo="PersistentPropertyDeclaration" />
-      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="77193491200308914" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="77193491200291531">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -405,29 +373,18 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </root>
-  <root id="77193491200310915">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="77193491200310916">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="persistentPropertyHolder" />
+  <root id="223733852661704505">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="223733852661704509">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="editor" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="77193491200308913" resolveInfo="IPersistentPropertyHolder" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3754890006475816671" resolveInfo="SettingsEditor" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="77193491200310933">
-      <property name="value" nameId="tpce.1105725733873" value="property holder" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="223733852661704508">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="77193491200308913" resolveInfo="IPersistentPropertyHolder" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="77193491200310938">
-      <property name="value" nameId="tpce.1105725733873" value="persistent property holder type" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
-    </node>
-  </root>
-  <root id="77193491200323586">
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="77193491200323587">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1224609861009" resolveInfo="IThisExpression" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="77193491200323588">
-      <property name="value" nameId="tpce.1105725733873" value="this" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="223733852661704506">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </root>
 </model>

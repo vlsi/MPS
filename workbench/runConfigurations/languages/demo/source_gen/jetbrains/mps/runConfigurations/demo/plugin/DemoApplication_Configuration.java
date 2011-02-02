@@ -61,9 +61,6 @@ public class DemoApplication_Configuration extends RunConfigurationBase {
   }
 
   /*package*/ class MyState {
-    /*package*/ String myNodeId;
-    /*package*/ String myModelId;
-
     public MyState() {
     }
   }

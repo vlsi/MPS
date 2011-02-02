@@ -25,14 +25,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ThisExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new RunConfigurationIsPropertyHolder_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
       SubtypingRule_Runtime subtypingRule = new SmartPropertyIsSubtypeOfSmartProperty_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ThisExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ThisExpression_Constraints" />
   <unitInfo fileName="RunConfigurationExecutor_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.RunConfigurationExecutor_name_PropertyConstraint" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="19" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint" />
@@ -13,19 +12,15 @@
   </root>
   <root nodeId="4777576391478273472">
     <nodeInfo nodeId="4777576391478273476" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4777576391478305670" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="32" startPosition="169" endLine="33" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4777576391478305690" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="34" startPosition="133" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4777576391478305697" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="36" startPosition="5" endLine="37" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4777576391478305679" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="33" startPosition="257" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="4777576391478305680" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="34" startPosition="133" endLine="35" endPosition="67" />
-    <scopeInfo nodeId="4777576391478273475" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="31" startPosition="132" endLine="37" endPosition="148">
+    <nodeInfo nodeId="4777576391478305670" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="32" startPosition="169" endLine="33" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4777576391478305690" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="34" startPosition="132" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4777576391478305697" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="36" startPosition="5" endLine="37" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4777576391478305679" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="33" startPosition="256" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="4777576391478305680" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="34" startPosition="132" endLine="35" endPosition="67" />
+    <scopeInfo nodeId="4777576391478273475" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="31" startPosition="132" endLine="37" endPosition="147">
       <varInfo nodeId="4777576391478305671" varName="propertyHolderType" />
       <varInfo nodeId="4777576391478273477" varName="instance" />
     </scopeInfo>
-  </root>
-  <root nodeId="77193491200323592">
-    <nodeInfo nodeId="77193491200323595" fileName="ThisExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="77193491200323594" fileName="ThisExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="178" />
   </root>
 </debugInfo>
 
