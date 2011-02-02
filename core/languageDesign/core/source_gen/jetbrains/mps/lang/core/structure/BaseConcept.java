@@ -4,6 +4,8 @@ package jetbrains.mps.lang.core.structure;
 
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +22,7 @@ public class BaseConcept extends BaseAdapter {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BaseConcept(SNode node) {
     super(node);
@@ -47,6 +50,26 @@ public class BaseConcept extends BaseAdapter {
 
   public void setVirtualPackage(String value) {
     this.setProperty(BaseConcept.VIRTUAL_PACKAGE, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(BaseConcept._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BaseConcept._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BaseConcept._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(BaseConcept._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BaseConcept._$ATTRIBUTE, node);
   }
 
   public static BaseConcept newInstance(SModel sm, boolean init) {
