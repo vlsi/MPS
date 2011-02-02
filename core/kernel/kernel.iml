@@ -11,6 +11,7 @@
       <sourceFolder url="file://$MODULE_DIR$/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/resources/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/smodelRuntime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/patternRuntime/source" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
