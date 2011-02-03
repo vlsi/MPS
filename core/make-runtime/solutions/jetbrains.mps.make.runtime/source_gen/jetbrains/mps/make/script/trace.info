@@ -128,7 +128,7 @@
     <nodeInfo nodeId="1479818508463261555" fileName="ScriptBuilder.java" startLine="104" startPosition="150" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/facet/IFacet/Name;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1479818508463261591" fileName="ScriptBuilder.java" startLine="113" startPosition="5" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1479818508463261619" fileName="ScriptBuilder.java" startLine="118" startPosition="67" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1479818508463261654" fileName="ScriptBuilder.java" startLine="127" startPosition="138" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/facet/IFacet;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1479818508463261654" fileName="ScriptBuilder.java" startLine="127" startPosition="148" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/facet/IFacet;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1479818508463261785" fileName="ScriptBuilder.java" startLine="154" startPosition="140" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/make/facet/IFacet;)Ljetbrains/mps/make/facet/IFacet/Name;" />
     <nodeInfo nodeId="1479818508463261809" fileName="ScriptBuilder.java" startLine="163" startPosition="138" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/make/facet/IFacet;)Ljetbrains/mps/make/facet/IFacet/Name;" />
     <nodeInfo nodeId="1479818508463261829" fileName="ScriptBuilder.java" startLine="174" startPosition="6" endLine="178" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -210,7 +210,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1479818508463261555" fileName="ScriptBuilder.java" startLine="104" startPosition="150" endLine="108" endPosition="0" />
     <scopeInfo nodeId="1479818508463261618" fileName="ScriptBuilder.java" startLine="118" startPosition="67" endLine="122" endPosition="7" />
-    <scopeInfo nodeId="1479818508463261654" fileName="ScriptBuilder.java" startLine="127" startPosition="138" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="1479818508463261654" fileName="ScriptBuilder.java" startLine="127" startPosition="148" endLine="131" endPosition="0" />
     <scopeInfo nodeId="1479818508463261734" fileName="ScriptBuilder.java" startLine="145" startPosition="123" endLine="149" endPosition="7">
       <varInfo nodeId="1479818508463261736" varName="fct" />
     </scopeInfo>
@@ -303,7 +303,7 @@
       <varInfo nodeId="1479818508463261724" varName="refs" />
     </scopeInfo>
     <unitInfo nodeId="1479818508463261555" fileName="ScriptBuilder.java" startLine="104" startPosition="112" endLine="108" endPosition="5" unitName="jetbrains.mps.make.script.ScriptBuilder$1" />
-    <unitInfo nodeId="1479818508463261654" fileName="ScriptBuilder.java" startLine="127" startPosition="105" endLine="131" endPosition="5" unitName="jetbrains.mps.make.script.ScriptBuilder$2" />
+    <unitInfo nodeId="1479818508463261654" fileName="ScriptBuilder.java" startLine="127" startPosition="115" endLine="131" endPosition="5" unitName="jetbrains.mps.make.script.ScriptBuilder$2" />
     <unitInfo nodeId="1479818508463261785" fileName="ScriptBuilder.java" startLine="154" startPosition="106" endLine="158" endPosition="9" unitName="jetbrains.mps.make.script.ScriptBuilder$4" />
     <unitInfo nodeId="1479818508463261809" fileName="ScriptBuilder.java" startLine="163" startPosition="104" endLine="167" endPosition="9" unitName="jetbrains.mps.make.script.ScriptBuilder$4" />
     <unitInfo nodeId="1479818508463261983" fileName="ScriptBuilder.java" startLine="215" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.make.script.ScriptBuilder$FacetRefs" />
@@ -635,12 +635,12 @@
       <varInfo nodeId="7797884084018559910" varName="estimate" />
     </scopeInfo>
     <scopeInfo nodeId="7797884084018559887" fileName="IProgress.java" startLine="8" startPosition="64" endLine="9" endPosition="49">
-      <varInfo nodeId="7797884084018559888" varName="done" />
       <varInfo nodeId="7797884084018582129" varName="name" />
+      <varInfo nodeId="7797884084018559888" varName="done" />
     </scopeInfo>
     <scopeInfo nodeId="8530713690800023560" fileName="IProgress.java" startLine="9" startPosition="49" endLine="10" endPosition="65">
-      <varInfo nodeId="8530713690800023563" varName="done" />
       <varInfo nodeId="8530713690800023561" varName="name" />
+      <varInfo nodeId="8530713690800023563" varName="done" />
       <varInfo nodeId="8530713690800023568" varName="comment" />
     </scopeInfo>
     <scopeInfo nodeId="7797884084018559893" fileName="IProgress.java" startLine="10" startPosition="65" endLine="11" endPosition="38">
@@ -652,12 +652,12 @@
       <varInfo nodeId="9000373783400679488" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="9000373783400679491" fileName="IProgress.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="9000373783400679494" varName="done" />
       <varInfo nodeId="9000373783400679492" varName="name" />
+      <varInfo nodeId="9000373783400679494" varName="done" />
     </scopeInfo>
     <scopeInfo nodeId="8530713690800023571" fileName="IProgress.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="8530713690800023576" varName="done" />
       <varInfo nodeId="8530713690800023572" varName="name" />
+      <varInfo nodeId="8530713690800023576" varName="done" />
       <varInfo nodeId="8530713690800023574" varName="comment" />
     </scopeInfo>
     <scopeInfo nodeId="9000373783400679499" fileName="IProgress.java" startLine="24" startPosition="0" endLine="27" endPosition="0">

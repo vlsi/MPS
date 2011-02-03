@@ -5,10 +5,10 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode extendsClassName="jetbrains.mps.make.script.IProgress" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.script.CompositeResult" file="CompositeResult.java">
