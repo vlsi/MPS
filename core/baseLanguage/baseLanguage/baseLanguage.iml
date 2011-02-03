@@ -21,7 +21,7 @@
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="debug" />
-    <orderEntry type="module" module-name="runConfigurations" />
+    <orderEntry type="module" module-name="javaRunConfigurations" />
     <orderEntry type="module" module-name="analyzers" />
   </component>
 </module>

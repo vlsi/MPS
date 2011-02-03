@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d6ivdxozjwyjf8bwvbd9bk16bciqxx7">
+<dependencies version="2" modelHash="-caohy6giak753ruiifu5n50nyik7dv5">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9yg2bpo4lvwy8lmo0gxukbtzy5b5kuw" />
   <dep model="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" hash="-a9ra6tzt2rafrje31vg9yhz9vn4z98b" />
   <dep model="r:00000000-0000-4000-0000-011c895904c9(jetbrains.mps.buildlanguage.generator.xml.template.main@generator)" hash="-6m436swnqsyef4isckg9syadyqf459f" />
@@ -44,7 +44,6 @@
     <dep root="8431776905956472981" />
     <dep root="8431776905956472985" />
     <dep root="8431776905956472996" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590576(jetbrains.mps.gtext.generator.baseLanguage.template.main@generator)" />
@@ -116,8 +115,8 @@
   <source id="8431776905956472441" name="external.libs" hash="-d1tuk4jgl9rc6hlwlce1lm2xaa4jm21" />
   <source id="8431776905956472682" name="generate.ant.task.jar" hash="7826oc73h7na4vhmubxna3xmskflljg" />
   <source id="8431776905956472694" name="idea-patch.jar" hash="-86uanduxfgg18fi74gxhxyuafb7rjee" />
-  <source id="8431776905956472723" name="mps.jar" hash="-c4eep7kz8srkxv15dnqeely06hhwcnk" />
-  <source id="8431776905956472851" name="workbench" hash="ak2r8q9k89qirjcbms943cp0j5lczos" />
+  <source id="8431776905956472723" name="mps.jar" hash="2vslmexw1najv998s7ufviyddx4ohjh" />
+  <source id="8431776905956472851" name="workbench" hash="-9imipxlsbi20920kfwyvb9o0i74te5p" />
   <source id="8431776905956472858" name="core" hash="-cy07g7gl8ym9u3f5oj1bs0fya7998cw">
     <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
   </source>
