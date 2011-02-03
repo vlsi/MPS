@@ -635,12 +635,12 @@
       <varInfo nodeId="7797884084018559910" varName="estimate" />
     </scopeInfo>
     <scopeInfo nodeId="7797884084018559887" fileName="IProgress.java" startLine="8" startPosition="64" endLine="9" endPosition="49">
-      <varInfo nodeId="7797884084018582129" varName="name" />
       <varInfo nodeId="7797884084018559888" varName="done" />
+      <varInfo nodeId="7797884084018582129" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="8530713690800023560" fileName="IProgress.java" startLine="9" startPosition="49" endLine="10" endPosition="65">
-      <varInfo nodeId="8530713690800023561" varName="name" />
       <varInfo nodeId="8530713690800023563" varName="done" />
+      <varInfo nodeId="8530713690800023561" varName="name" />
       <varInfo nodeId="8530713690800023568" varName="comment" />
     </scopeInfo>
     <scopeInfo nodeId="7797884084018559893" fileName="IProgress.java" startLine="10" startPosition="65" endLine="11" endPosition="38">
@@ -652,12 +652,12 @@
       <varInfo nodeId="9000373783400679488" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="9000373783400679491" fileName="IProgress.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="9000373783400679492" varName="name" />
       <varInfo nodeId="9000373783400679494" varName="done" />
+      <varInfo nodeId="9000373783400679492" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="8530713690800023571" fileName="IProgress.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="8530713690800023572" varName="name" />
       <varInfo nodeId="8530713690800023576" varName="done" />
+      <varInfo nodeId="8530713690800023572" varName="name" />
       <varInfo nodeId="8530713690800023574" varName="comment" />
     </scopeInfo>
     <scopeInfo nodeId="9000373783400679499" fileName="IProgress.java" startLine="24" startPosition="0" endLine="27" endPosition="0">

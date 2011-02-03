@@ -26,56 +26,6 @@
     <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
   </dependency>
-  <dependency className="jetbrains.mps.internal.make.runtime.java.InMemoryJavaGenerationHandler" file="InMemoryJavaGenerationHandler.java">
-    <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.ide.progress.ITaskProgressHelper" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationCanceledException" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="java.lang.StringBuffer" />
-    <classNode dependClassName="jetbrains.mps.smodel.INodeAdapter" />
-    <classNode dependClassName="jetbrains.mps.util.ConditionalIterable" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="jetbrains.mps.compiler.CompilationResultListener" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.ide.progress.util.ModelsProgressUtil" />
-    <classNode dependClassName="jetbrains.mps.util.Pair" />
-    <classNode dependClassName="jetbrains.mps.reloading.CompositeClassPathItem" />
-    <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Annotation" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
-    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.EnumClass" />
-    <classNode dependClassName="org.eclipse.jdt.core.compiler.CategorizedProblem" />
-    <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
-    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="org.eclipse.jdt.internal.compiler.CompilationResult" />
-    <classNode dependClassName="jetbrains.mps.generator.IGeneratorLogger" />
-    <classNode dependClassName="jetbrains.mps.textGen.TextGenerationUtil" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Interface" />
-    <classNode dependClassName="jetbrains.mps.textGen.TextGenerationResult" />
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.compiler.JavaCompiler" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.generator.generationTypes.GenerationHandlerBase" />
-    <classNode extendsClassName="jetbrains.mps.compiler.CompilationResultAdapter" />
-  </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.java.JavaGenerationHandler" file="JavaGenerationHandler.java">
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
