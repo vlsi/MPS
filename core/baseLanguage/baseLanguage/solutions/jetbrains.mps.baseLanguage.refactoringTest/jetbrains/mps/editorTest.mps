@@ -1747,6 +1747,9 @@
               <property name="value" nameId="tpee.1068580320021" value="10" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1232033543704">
                 <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+                <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+                <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
+                <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
                 <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
               </node>
             </node>
@@ -1765,6 +1768,9 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1232033545832" />
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1232033548974">
               <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+              <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+              <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
+              <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
               <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
             </node>
           </node>

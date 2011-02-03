@@ -1037,8 +1037,8 @@
         <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348551176">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
-          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="3" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="3" />
           <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
         </node>
       </node>
