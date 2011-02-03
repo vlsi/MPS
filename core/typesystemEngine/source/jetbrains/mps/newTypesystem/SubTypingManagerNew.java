@@ -82,7 +82,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
     Equations equations = null;
     if (myState!=null) {
-      equations = state.getEquations();
+      equations = myState.getEquations();
     }
     if (TypesUtil.match(subType, superType, equations, info)) {
       return true;

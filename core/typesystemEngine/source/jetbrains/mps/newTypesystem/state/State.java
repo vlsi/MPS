@@ -236,11 +236,8 @@ public class State {
       myOperationStack.peek().addConsequence(operation);
     }
     myOperationStack.push(operation);
-    try {
-      operation.execute(this);
-    } finally {
-      myOperationStack.pop();
-    }
+    operation.execute(this);
+    myOperationStack.pop();
   }
 
   public void addError(SNode node, IErrorReporter error, EquationInfo info) {
