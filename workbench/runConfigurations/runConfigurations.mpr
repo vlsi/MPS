@@ -8,6 +8,7 @@
     <projectSolutions>
       <solutionPath path="${mps_home}/core/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="usages.baselang" />
       <solutionPath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="usages.lambda" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.runConfigurations.runtime/jetbrains.mps.runConfigurations.runtime.msd" folder="" />
       <solutionPath path="${project}/solutions/jetbrains.mps.runConfigurations.sandbox/jetbrains.mps.runConfigurations.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
@@ -26,6 +27,7 @@
     <genConfs>
       <genConfModule name="demo" moduleRef="jetbrains.mps.runConfigurations.demo" />
       <genConfModule name="runConfigurations" moduleRef="jetbrains.mps.runConfigurations" />
+      <genConfModule name="runtime" moduleRef="jetbrains.mps.runConfigurations.runtime" />
     </genConfs>
   </component>
   <component name="ProjectModuleManager">

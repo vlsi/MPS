@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration" file="DemoApplication_Configuration.java">
+    <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_Factory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -11,7 +12,6 @@
     <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
     <classNode dependClassName="com.intellij.execution.Executor" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
     <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
     <classNode dependClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode dependClassName="java.lang.String" />
@@ -21,20 +21,20 @@
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_RunProfileState" />
     <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationInfoProvider" />
-    <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
+    <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
     <classNode dependClassName="com.intellij.openapi.util.JDOMExternalizable" />
+    <classNode extendsClassName="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunConfigurationBase" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_Editor" file="DemoApplication_Configuration_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration_Editor" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="javax.swing.JComponent" />
     <classNode extendsClassName="com.intellij.openapi.options.SettingsEditor" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_Factory" file="DemoApplication_Configuration_Factory.java">
@@ -88,6 +88,20 @@
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.RunConfigurationsInitializer_CustomProjectPlugin" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration" file="Node_Configuration.java">
+    <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration_Editor" />
+    <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" />
+  </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration_Editor" file="Node_Configuration_Editor.java">
+    <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration" />
+    <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
+    <classNode extendsClassName="com.intellij.openapi.options.SettingsEditor" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.RunConfigurationsInitializer_CustomProjectPlugin" file="RunConfigurationsInitializer_CustomProjectPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
