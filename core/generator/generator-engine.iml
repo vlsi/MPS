@@ -12,7 +12,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="JDOM" level="project" />
-    <orderEntry type="module" module-name="idea-patch" />
+    <orderEntry type="module" module-name="idea-patch" scope="RUNTIME" />
     <orderEntry type="library" name="IDEA-plaform" level="project" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" name="JUnit4" level="project" />
