@@ -32,6 +32,7 @@ import java.util.Map;
  */
 public class EditorCellSelection implements SingularSelection {
   private EditorCell myEditorCell;
+  private boolean myActive = false;
 
   public EditorCellSelection(EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException, SelectionRestoreException {
     if (cellInfo == null) {
@@ -60,11 +61,17 @@ public class EditorCellSelection implements SingularSelection {
       return;
     }
     myEditorCell.setSelected(true);
+    myActive = true;
   }
 
   @Override
   public void deactivate() {
     myEditorCell.setSelected(false);
+    myActive = false;
+  }
+
+  public boolean isActive() {
+    return myActive;
   }
 
   @Override
