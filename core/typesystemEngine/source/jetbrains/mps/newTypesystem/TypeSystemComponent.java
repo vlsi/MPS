@@ -408,7 +408,7 @@ public class TypeSystemComponent extends Component {
   }
 
   protected boolean applyRulesToNode(SNode node) {
-    Set<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
+    List<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
     boolean result = false;
     if (newRules != null) {
       myCurrentTypeAffected = false;

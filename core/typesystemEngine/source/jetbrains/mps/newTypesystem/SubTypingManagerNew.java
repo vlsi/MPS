@@ -62,32 +62,36 @@ public class SubTypingManagerNew extends SubtypingManager {
     return isSubType(subType, superType, null, null, isWeak);
   }
 
-  public boolean isSubType(SNode subType, SNode superType, @Nullable EquationInfo info, State state, boolean isWeak) {
-    myState = state;
-    if (subType == superType) {
-      return true;
-    }
-    if (null == subType || null == superType) {
-      return false;
-    }
-    if (!TypesUtil.hasVariablesInside(superType) && !TypesUtil.hasVariablesInside(subType)) {
-      Boolean answer = getCacheAnswer(subType, superType, isWeak);
-      if (answer != null) {
-        return answer;
-      }
-    }
+  public boolean isSubType(final SNode subType, final SNode superType, @Nullable final EquationInfo info, final State state, final boolean isWeak) {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        myState = state;
+        if (subType == superType) {
+          return true;
+        }
+        if (null == subType || null == superType) {
+          return false;
+        }
+        if (!TypesUtil.hasVariablesInside(superType) && !TypesUtil.hasVariablesInside(subType)) {
+          Boolean answer = getCacheAnswer(subType, superType, isWeak);
+          if (answer != null) {
+            return answer;
+          }
+        }
 
-    if (meetsAndJoins(subType, superType, info, isWeak)) {
-      return true;
-    }
-    Equations equations = null;
-    if (myState!=null) {
-      equations = myState.getEquations();
-    }
-    if (TypesUtil.match(subType, superType, equations, info)) {
-      return true;
-    }
-    return searchInSuperTypes(subType, new NodeMatcher(superType, equations, info), info, isWeak);
+        if (meetsAndJoins(subType, superType, info, isWeak)) {
+          return true;
+        }
+        Equations equations = null;
+        if (myState!=null) {
+          equations = myState.getEquations();
+        }
+        if (TypesUtil.match(subType, superType, equations, info)) {
+          return true;
+        }
+        return searchInSuperTypes(subType, new NodeMatcher(superType, equations, info), info, isWeak);
+      }
+    });
   }
 
   private boolean meetsAndJoins(SNode subType, SNode superType, EquationInfo info, boolean isWeak) {
@@ -173,7 +177,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (term == null) {
       return;
     }
-    Set<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
+    List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
     if (subtypingRule_runtimes != null) {
       for (final Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
         List<SNode> superTypes = subtypingRule.o1.getSubOrSuperTypes(term, context, subtypingRule.o2);
@@ -307,7 +311,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (left == null || right == null) {
       return false;
     }
-    Set<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(left, right, isWeak);
+    List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(left, right, isWeak);
     if (comparisonRule_runtimes != null) {
       for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
         if (comparisonRule_runtime.o1.areComparable(left, right, comparisonRule_runtime.o2)) return true;
