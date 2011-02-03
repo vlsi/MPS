@@ -15,6 +15,7 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="editor" />
+    <orderEntry type="module" module-name="idea-patch" />
     <orderEntry type="library" name="IDEA-plaform" level="project" />
     <orderEntry type="module" module-name="typesystemEngine" />
   </component>
