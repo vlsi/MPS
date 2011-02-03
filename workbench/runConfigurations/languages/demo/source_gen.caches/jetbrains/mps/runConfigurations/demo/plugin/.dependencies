@@ -90,10 +90,16 @@
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration" file="Node_Configuration.java">
-    <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration_Editor" />
+    <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
+    <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
+    <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
+    <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jdom.Element" />
     <classNode extendsClassName="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration_Editor" file="Node_Configuration_Editor.java">

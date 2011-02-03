@@ -12,7 +12,7 @@ import com.intellij.openapi.options.ConfigurationException;
 
 public class DemoApplication_Configuration_Editor extends SettingsEditor<DemoApplication_Configuration> {
   private JLabel myLabel;
-  private Node_Configuration_Editor myEditor;
+  private Node_Configuration_Editor myNode = new Node_Configuration_Editor();
 
   public DemoApplication_Configuration_Editor() {
   }
@@ -23,7 +23,7 @@ public class DemoApplication_Configuration_Editor extends SettingsEditor<DemoApp
   @NotNull
   protected JPanel createEditor() {
     myLabel = new JLabel();
-    MainNodeChooser nodeChooser = myEditor.createEditor();
+    MainNodeChooser nodeChooser = myNode.createEditor();
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(myLabel, BorderLayout.NORTH);
     panel.add(nodeChooser, BorderLayout.CENTER);
@@ -31,10 +31,10 @@ public class DemoApplication_Configuration_Editor extends SettingsEditor<DemoApp
   }
 
   protected void applyEditorTo(final DemoApplication_Configuration configuration) throws ConfigurationException {
-    myEditor.applyEditorTo(configuration.myNode);
+    myNode.applyEditorTo(configuration.myNode);
   }
 
   protected void resetEditorFrom(final DemoApplication_Configuration configuration) {
-    myEditor.resetEditorFrom(configuration.myNode);
+    myNode.resetEditorFrom(configuration.myNode);
   }
 }

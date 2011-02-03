@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-71mdiuzera6v5kju0rc4qfqgzhzweuo">
+<dependencies version="2" modelHash="d15tal70zcv9k88tuwdox0k91czdhi6">
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-5nztix013gb61szha7d69foggfwbn4z" />
-  <common hash="-9filt90268zz4d7fd9mdu834j1bugly" />
-  <source id="1252300412034470124" name="IPersistentConfiguration" hash="-7nz8ujec4siots7hi2dpq7avdv8f8rw">
+  <common hash="6b209yj312z43vf3ycpvr4riworhw2b" />
+  <source id="1252300412034470124" name="IPersistentConfiguration" hash="-a20nfopyjnunzwmwxsgqpdniy7a8mfs">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="IPersistentConfiguration.java" />
   </source>

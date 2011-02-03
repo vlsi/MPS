@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1252300412034470124">
-    <nodeInfo nodeId="1252300412034470130" fileName="IPersistentConfiguration.java" startLine="8" startPosition="43" endLine="9" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkConfiguration#()V" />
-    <nodeInfo nodeId="1252300412034523368" fileName="IPersistentConfiguration.java" startLine="9" startPosition="72" endLine="10" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditor#()Lcom/intellij/openapi/options/SettingsEditor;" />
-    <scopeInfo nodeId="1252300412034470130" fileName="IPersistentConfiguration.java" startLine="8" startPosition="43" endLine="9" endPosition="72" />
-    <scopeInfo nodeId="1252300412034523368" fileName="IPersistentConfiguration.java" startLine="9" startPosition="72" endLine="10" endPosition="77" />
-    <unitInfo nodeId="1252300412034470124" fileName="IPersistentConfiguration.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" />
+    <nodeInfo nodeId="1252300412034470130" fileName="IPersistentConfiguration.java" startLine="9" startPosition="70" endLine="10" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkConfiguration#()V" />
+    <nodeInfo nodeId="1252300412034523368" fileName="IPersistentConfiguration.java" startLine="10" startPosition="72" endLine="11" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditor#()Lcom/intellij/openapi/options/SettingsEditor;" />
+    <scopeInfo nodeId="1252300412034470130" fileName="IPersistentConfiguration.java" startLine="9" startPosition="70" endLine="10" endPosition="72" />
+    <scopeInfo nodeId="1252300412034523368" fileName="IPersistentConfiguration.java" startLine="10" startPosition="72" endLine="11" endPosition="72" />
+    <unitInfo nodeId="1252300412034470124" fileName="IPersistentConfiguration.java" startLine="9" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" />
   </root>
 </debugInfo>
 

@@ -6,45 +6,32 @@ import com.intellij.execution.configurations.RunConfigurationBase;
 import jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.options.SettingsEditor;
-import com.intellij.openapi.util.JDOMExternalizable;
-import com.intellij.execution.runners.ProgramRunner;
-import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import com.intellij.openapi.options.SettingsEditor;
+import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ExecutionException;
+import com.intellij.openapi.util.JDOMExternalizable;
+import com.intellij.execution.runners.ProgramRunner;
+import com.intellij.execution.configurations.ConfigurationInfoProvider;
 
 public class DemoApplication_Configuration extends RunConfigurationBase implements IPersistentConfiguration {
+  private DemoApplication_Configuration_Editor myPersistentEditor = new DemoApplication_Configuration_Editor();
   @NotNull
   /*package*/ DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
-  /*package*/ Node_Configuration myNode;
+  /*package*/ Node_Configuration myNode = new Node_Configuration();
 
   public DemoApplication_Configuration(Project project, DemoApplication_Configuration_Factory factory, String name) {
     super(project, factory, name);
-    myNode = new Node_Configuration();
-  }
-
-  @Nullable
-  public SettingsEditor<JDOMExternalizable> getRunnerSettingsEditor(ProgramRunner runner) {
-    return null;
-  }
-
-  public JDOMExternalizable createRunnerSettings(ConfigurationInfoProvider provider) {
-    return null;
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-  }
-
-  public SettingsEditor<DemoApplication_Configuration> getConfigurationEditor() {
-    return (SettingsEditor<DemoApplication_Configuration>) getEditor();
   }
 
   @Override
@@ -57,13 +44,26 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
   }
 
+  public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
+    return myPersistentEditor;
+  }
+
   @Nullable
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
     return new DemoApplication_Configuration_RunProfileState(this, executor, environment);
   }
 
-  public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
-    return new DemoApplication_Configuration_Editor();
+  @Nullable
+  public SettingsEditor<JDOMExternalizable> getRunnerSettingsEditor(ProgramRunner runner) {
+    return null;
+  }
+
+  public JDOMExternalizable createRunnerSettings(ConfigurationInfoProvider provider) {
+    return null;
+  }
+
+  public SettingsEditor<DemoApplication_Configuration> getConfigurationEditor() {
+    return (SettingsEditor<DemoApplication_Configuration>) getEditor();
   }
 
   /*package*/ class MyState {
