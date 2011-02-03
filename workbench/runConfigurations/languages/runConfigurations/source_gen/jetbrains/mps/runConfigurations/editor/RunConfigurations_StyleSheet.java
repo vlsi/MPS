@@ -26,8 +26,25 @@ public class RunConfigurations_StyleSheet {
 
   public static Style getOperation(final EditorCell cell) {
     Style style = new Style(cell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    return style;
+  }
+
+  public static Style getLeftOperationBrace(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.putAll(RunConfigurations_StyleSheet.getOperation(null));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.MATCHING_LABEL, "operation.brace");
+    return style;
+  }
+
+  public static Style getRightOperationBrace(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.putAll(RunConfigurations_StyleSheet.getOperation(null));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.MATCHING_LABEL, "operation.brace");
     return style;
   }
 }

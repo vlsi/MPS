@@ -13,6 +13,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_EditorExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_GetEditorOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -34,6 +38,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       SubtypingRule_Runtime subtypingRule = new PersistentConfigurationIsPersistentConfiguration_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new SmartPersistentPropertyisSubtypeOfPersistentConfiguration_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {

@@ -5,6 +5,9 @@ package jetbrains.mps.runConfigurations.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class EditorOperation extends BaseConcept implements IOperation {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EDITOR_OPERATION_DECLARATION = "editorOperationDeclaration";
+  public static final String ARGUMENTS = "arguments";
 
   public EditorOperation(SNode node) {
     super(node);
@@ -50,6 +54,26 @@ public class EditorOperation extends BaseConcept implements IOperation {
 
   public void setEditorOperationDeclaration(EditorOperationDeclaration node) {
     super.setReferent(EditorOperation.EDITOR_OPERATION_DECLARATION, node);
+  }
+
+  public int getArgumentsesCount() {
+    return this.getChildCount(EditorOperation.ARGUMENTS);
+  }
+
+  public Iterator<Expression> argumentses() {
+    return this.children(Expression.class, EditorOperation.ARGUMENTS);
+  }
+
+  public List<Expression> getArgumentses() {
+    return this.getChildren(Expression.class, EditorOperation.ARGUMENTS);
+  }
+
+  public void addArguments(Expression node) {
+    this.addChild(EditorOperation.ARGUMENTS, node);
+  }
+
+  public void insertArguments(Expression prev, Expression node) {
+    this.insertChild(prev, EditorOperation.ARGUMENTS, node);
   }
 
   public static EditorOperation newInstance(SModel sm, boolean init) {
