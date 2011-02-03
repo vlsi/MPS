@@ -372,7 +372,7 @@
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.ide_a8a" />
     <mkdir dir="${deploy.dir}/MPS/workbench" />
-    <copy file="${mps_home}/artifacts/MPS/youtrack-workflow/youtrack-customfields-common-rest.mpsarch.jar" tofile="${deploy.dir}/MPS/youtrack-workflow/youtrack-customfields-common-rest.mpsarch.jar" />
+    <antcall target="MPS-languages.pack.youtrack-customfields-common-rest_a9a" />
     <antcall target="MPS-languages.pack.jetbrains.youtrack.workflow_b9a" />
     <antcall target="MPS-languages.pack.jetbrains.youtrack.workflow.designtime_c9a" />
     <mkdir dir="${deploy.dir}/MPS/youtrack-workflow" />
