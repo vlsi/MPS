@@ -17,6 +17,8 @@ package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -57,6 +59,34 @@ public class SelectionManager {
 
   public Selection getDeepestSelection() {
     return isSelectionStackEmpty() ? null : mySelectionStack.firstElement();
+  }
+
+  public Selection createSelection(EditorCell editorCell) {
+    Selection selection;
+    if (editorCell instanceof EditorCell_Label) {
+      selection = new EditorCellLabelSelection((EditorCell_Label) editorCell);
+    } else if (editorCell != null) {
+      selection = new EditorCellSelection(editorCell);
+    } else {
+      selection = null;
+    }
+    return selection;
+  }
+
+  public void setSelection(EditorCell editorCell) {
+    setSelection(createSelection(editorCell));
+  }
+
+  public void setSelection(EditorCell_Label label, int caretPosition) {
+    label.setCaretPosition(caretPosition);
+    setSelection(new EditorCellLabelSelection(label));
+  }
+
+  public void setSelection(EditorCell_Label label, int caretPosition, int selectionStart, int selectionEnd) {
+    label.setCaretPosition(caretPosition);
+    label.setSelectionStart(selectionStart);
+    label.setSelectionEnd(selectionEnd);
+    setSelection(new EditorCellLabelSelection(label));
   }
 
   public void setSelection(Selection selection) {
