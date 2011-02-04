@@ -374,9 +374,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.ide_a8a" />
     <mkdir dir="${deploy.dir}/MPS/workbench" />
     <antcall target="MPS-languages.pack.youtrack-customfields-common-rest_a9a" />
-    <copy todir="${deploy.dir}/MPS/custom-fields-rest">
-      <fileset dir="/" excludes="**/*.iml, **/*.iws" />
-    </copy>
+    <mkdir dir="${deploy.dir}/MPS/custom-fields-rest" />
     <antcall target="MPS-languages.pack.jetbrains.youtrack.workflow_a01a" />
     <antcall target="MPS-languages.pack.jetbrains.youtrack.workflow.designtime_b01a" />
     <mkdir dir="${deploy.dir}/MPS/youtrack-workflow" />
