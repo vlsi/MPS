@@ -189,7 +189,7 @@
   <root id="5169995583184591161">
     <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.ReferenceConceptLinkDeclaration" typeId="tpce.1105741578420" id="5169995583184591169">
       <property name="name" nameId="1169194664001" value="attributed" />
-      <link role="targetType" roleId="tpce.1105736621938" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
+      <link role="targetType" roleId="tpce.1105736621938" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="5169995583184591164">
       <property name="name" nameId="1169194664001" value="role" />
