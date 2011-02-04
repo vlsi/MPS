@@ -83,8 +83,8 @@ public class Node_Configuration implements IPersistentConfiguration {
   }
 
   public class MyState {
-    /*package*/ String myNodeId;
-    /*package*/ String myModelId;
+    public String myNodeId;
+    public String myModelId;
 
     public MyState() {
     }

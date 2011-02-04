@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8i6ynfwjfanpa8bnn2ltfm06amrwx36">
+<dependencies version="2" modelHash="-eneonn3rsksx6fiy85vm69rly1y3rg4">
   <dep model="f:java_stub#com.intellij.execution.configurations(com.intellij.execution.configurations@java_stub)" />
   <dep model="f:java_stub#com.intellij.openapi.options(com.intellij.openapi.options@java_stub)" />
   <dep model="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" />
@@ -33,7 +33,7 @@
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-ajvf5lxae1xhsojrbc5w19vapmo22hn" />
   <dep model="r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)" hash="-9nxu9m902g3nbv3wmw24onvhflp1grn" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-5270hxz0z8ox2f5llr4811lx3e9mwov" />
-  <dep model="r:d91dc8be-68f3-42d9-b558-87a2756c080a(jetbrains.mps.runConfigurations.generator.template.main@generator)" hash="d4237fjtt281fg94im82iy6o2rx0c4u" />
+  <dep model="r:d91dc8be-68f3-42d9-b558-87a2756c080a(jetbrains.mps.runConfigurations.generator.template.main@generator)" hash="420rk3qiq7v8bg6s7uehg2ogfay1oka" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="7onuy7ras5spdyysdm2zbxch2b4ail7" />
   <dep model="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.runConfigurations.structure)" hash="75tuuamo30mbbo6ieb3751fv0403m8l" />
   <common hash="33sicwz65irekjq8eps3b3lefxd8rpo">
@@ -80,7 +80,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Demo_Kind.java" />
   </source>
-  <source id="8750596094204760417" name="Demo Application" hash="-8h8g6mkr2qy33wrdqf0jxpdbyugsrto">
+  <source id="8750596094204760417" name="Demo Application" hash="6aakmz1zgvs0livvm1w4r24l8m4x4g">
     <dep root="223733852661754512" />
     <dep root="8750596094204760415" />
     <dep root="8750596094204764240" />

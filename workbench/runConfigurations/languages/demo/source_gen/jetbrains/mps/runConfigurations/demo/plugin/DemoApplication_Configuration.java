@@ -37,11 +37,20 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
+    {
+      Element fieldElement = new Element("myNode");
+      myNode.writeExternal(fieldElement);
+      element.addContent(fieldElement);
+    }
   }
 
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
+    {
+      Element fieldElement = element.getChild("myNode");
+      myNode.readExternal(fieldElement);
+    }
   }
 
   public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
@@ -50,9 +59,6 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
 
   public Node_Configuration getNode() {
     return myNode;
-  }
-
-  public void setNode(Node_Configuration value) {
   }
 
   @Nullable
