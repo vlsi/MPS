@@ -562,12 +562,6 @@
         <property name="id" value="f1599fd5-8fba-4bb0-9f04-967b49d9068d" />
         <property name="name" value="youtrack-customfields-common-rest" />
       </node>
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="6902313300262917833">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="6902313300262917834">
-          <property name="name:7" value="basedir" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="6902313300262917835" />
-      </node>
       <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="6902313300262917836">
         <property name="name:7" value="custom-fields-rest" />
       </node>
