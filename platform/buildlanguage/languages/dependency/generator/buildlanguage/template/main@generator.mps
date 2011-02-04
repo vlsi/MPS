@@ -150,31 +150,15 @@
       <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1216910634579">
         <node role="value:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1216910634580">
           <property name="value:21" value="" />
-          <node role="propertyMacro$property_attribute$value:21" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1216910679653">
-            <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1216910679654">
-              <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216910679655">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1216910683422">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7266929446532793055">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216911053799">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216910683629">
-                        <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1216910683423" />
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1216910686795">
-                          <link role="link:16" targetNodeId="1.1216907884130:0" />
-                        </node>
-                      </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1216911057876">
-                        <link role="property:16" targetNodeId="1.1216907465733:0" resolveInfo="path" />
-                      </node>
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7266929446532804793">
-                      <link role="baseMethodDeclaration:3" targetNodeId="8.~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolveInfo="replace" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7266929446532806972">
-                        <property name="value:3" value="\\" />
-                      </node>
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7266929446532806975">
-                        <property name="value:3" value="/" />
-                      </node>
-                    </node>
+        </node>
+        <node role="nodeMacro$attribute:21" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="3791907277386824348">
+          <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="3791907277386824349">
+            <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3791907277386824350">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3791907277386824351">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3791907277386824352">
+                  <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="3791907277386824353" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="3791907277386824354">
+                    <link role="link:16" targetNodeId="1.1216907884130:0" />
                   </node>
                 </node>
               </node>
