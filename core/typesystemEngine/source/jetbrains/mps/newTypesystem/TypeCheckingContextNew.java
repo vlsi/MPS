@@ -179,7 +179,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, isShallow));
   }
 
-  public jetbrains.mps.newTypesystem.state.State getState() {
+  public State getState() {
     return myState;
   }
 

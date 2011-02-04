@@ -162,14 +162,6 @@ public class NodeMaps {
     return result;
   }
 
-  public List<String> getTypeListPresentation() {
-    List<String> result = new LinkedList<String>();
-    for (Map.Entry<SNode, SNode> entry : myNodesToTypes.entrySet()) {
-      result.add(entry.getKey() + " : " + entry.getValue() + " ---> " + myState.getRepresentative(entry.getValue()));
-    }
-    return result;
-  }
-
   public void expandAll(Set<SNode> nodes) {
     for (SNode node : nodes) {
       SNode var = myNodesToTypes.get(node);
@@ -214,7 +206,8 @@ public class NodeMaps {
     if (info != null) {
       errorReporter.setAdditionalRulesIds(info.getAdditionalRulesIds());
     }
-    addNodeToError(nodeWithError, errorReporter, info);
+   // addNodeToError(nodeWithError, errorReporter, info);
+    myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
 
   public void reportSubTypeError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
@@ -232,8 +225,7 @@ public class NodeMaps {
     }
     errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
     errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
-    // myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
-    myState.addError(nodeWithError, errorReporter, equationInfo);
+    myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
 
   public void reportComparableError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
@@ -251,7 +243,6 @@ public class NodeMaps {
     }
     errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
     errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
-    // myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
-    myState.addError(nodeWithError, errorReporter, equationInfo);
+    myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
 }

@@ -272,7 +272,6 @@ public class NodeTypesComponentIncrementalNew extends NodeTypesComponent {
         result.add(new Pair<SNode, List<IErrorReporter>>(key, reporter));
       }
     }
-
     return result;
   }
 
