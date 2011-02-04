@@ -10,6 +10,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="module" module-name="idea-patch" />
+    <orderEntry type="library" name="JUnit4" level="project" />
+    <orderEntry type="library" name="ant" level="project" />
+    <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="library" name="IDEA-plaform" level="project" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ant" />
@@ -23,7 +27,6 @@
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="Tuples" />
     <orderEntry type="module" module-name="baseLanguage.test" />
-    <orderEntry type="library" name="ant" level="project" />
     <orderEntry type="module" module-name="analyzers" />
     <orderEntry type="module" module-name="debugTests" />
     <orderEntry type="module" module-name="actions" />
@@ -76,8 +79,6 @@
     <orderEntry type="module" module-name="YPath" />
     <orderEntry type="module" module-name="YPath-runtime" />
     <orderEntry type="module" module-name="YPath-solutions" />
-    <orderEntry type="library" name="Eclipse-compiler" level="project" />
-    <orderEntry type="library" name="IDEA-plaform" level="project" />
     <orderEntry type="module" module-name="vcs" />
     <orderEntry type="module" module-name="make" />
     <orderEntry type="module" module-name="editor.table.tests" />

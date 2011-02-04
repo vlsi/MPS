@@ -27,6 +27,6 @@
   <unitInfo fileName="Option.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.make.script.structure.Option" />
   <unitInfo fileName="QueryParameterDeclaration.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.make.script.structure.QueryParameterDeclaration" />
   <unitInfo fileName="QueryDefinition.java" startLine="13" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.make.script.structure.QueryDefinition" />
-  <unitInfo fileName="ExpectedOption.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.make.script.structure.ExpectedOption" />
+  <unitInfo fileName="ExpectedOption.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.make.script.structure.ExpectedOption" />
 </debugInfo>
 

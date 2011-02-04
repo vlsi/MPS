@@ -7,6 +7,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class WontAskAgain_Query implements IQuery<rrr_Option> {
   private IQuery.Name name = new IQuery.Name("WontAskAgain");
+  private int defaultOption = 0;
 
   public WontAskAgain_Query() {
   }
@@ -25,5 +26,12 @@ public class WontAskAgain_Query implements IQuery<rrr_Option> {
 
   public rrr_Option voidOption() {
     return Sequence.fromIterable(Sequence.fromArray(rrr_Option.class.getEnumConstants())).last();
+  }
+
+  public rrr_Option defaultOption() {
+    return (defaultOption >= 0 ?
+      rrr_Option.class.getEnumConstants()[defaultOption] :
+      null
+    );
   }
 }

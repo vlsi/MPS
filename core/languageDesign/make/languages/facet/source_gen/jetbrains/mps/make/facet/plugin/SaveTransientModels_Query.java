@@ -7,6 +7,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class SaveTransientModels_Query implements IQuery<SaveTransient_Option> {
   private IQuery.Name name = new IQuery.Name("SaveTransientModels");
+  private int defaultOption = 0;
 
   public SaveTransientModels_Query() {
   }
@@ -25,5 +26,12 @@ public class SaveTransientModels_Query implements IQuery<SaveTransient_Option> {
 
   public SaveTransient_Option voidOption() {
     return Sequence.fromIterable(Sequence.fromArray(SaveTransient_Option.class.getEnumConstants())).last();
+  }
+
+  public SaveTransient_Option defaultOption() {
+    return (defaultOption >= 0 ?
+      SaveTransient_Option.class.getEnumConstants()[defaultOption] :
+      null
+    );
   }
 }

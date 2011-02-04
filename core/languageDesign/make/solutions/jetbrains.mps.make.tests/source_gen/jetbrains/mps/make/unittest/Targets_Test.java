@@ -75,6 +75,42 @@ public class Targets_Test extends MockTestCase {
   }
 
   @Test
+  public void test_availablePrecursors() throws Exception {
+    TargetRange tr = new TargetRange();
+    final ITarget make = Mockups.target(context, "make");
+    final ITarget gen = Mockups.target(context, "gen");
+    final ITarget text = Mockups.target(context, "text");
+    final ITarget compile = Mockups.target(context, "compile");
+    context.checking(new Expectations() {
+      {
+        atLeast(1).of(text).after();
+        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("gen")})));
+        atLeast(1).of(text).before();
+        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        atLeast(1).of(gen).before();
+        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        atLeast(1).of(compile).after();
+        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("text")})));
+      }
+    });
+    Mockups.allowing(context, gen);
+    Mockups.allowing(context, text);
+    Mockups.allowing(context, make);
+    Mockups.allowing(context, compile);
+
+    tr.addTarget(compile);
+    tr.addRelatedPrecursors(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text, make));
+
+    Assert.assertTrue(tr.hasTarget(new ITarget.Name("gen")));
+    Assert.assertTrue(tr.hasTarget(new ITarget.Name("text")));
+    Assert.assertTrue(tr.hasTarget(new ITarget.Name("compile")));
+    Assert.assertFalse(tr.hasTarget(new ITarget.Name("make")));
+
+    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text, compile), tr.sortedTargets());
+    Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text, compile), tr.targetAndSortedPrecursors(compile.getName()));
+  }
+
+  @Test
   public void test_cycles() throws Exception {
     TargetRange tr = new TargetRange();
     final ITarget make = Mockups.target(context, "make", new ITarget.Name("make"));

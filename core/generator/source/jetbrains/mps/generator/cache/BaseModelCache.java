@@ -146,4 +146,10 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
       saveCache(cache, model, handler);
     }
   }
+
+  protected void cleanup () {
+    synchronized (myCache) {
+      myCache.clear();
+    }
+  }
 }

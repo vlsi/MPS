@@ -7,10 +7,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
-import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
@@ -99,42 +95,6 @@ public class ModelsExtractor {
           modules.add(gen);
         }
       }
-    }
-  }
-
-  private Set<SModelDescriptor> collectFromModelFiles(Iterable<File> files) {
-    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
-    for (File f : files) {
-      if (f.getPath().endsWith(MPSExtentions.DOT_MODEL)) {
-        processModelFile(models, f);
-      }
-    }
-    return models;
-  }
-
-  private void processModelFile(Collection<SModelDescriptor> modelDescriptors, File f) {
-    final IFile ifile = FileSystem.getInstance().getFileByPath(f.getAbsolutePath());
-
-    // try to find if model is loaded
-    SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
-    if (model != null) {
-      modelDescriptors.add(model);
-      return;
-    }
-
-    // if model is not loaded, read it
-    try {
-      SModel smodel = ModelAccess.instance().runReadAction(new Computable<SModel>() {
-        public SModel compute() {
-          return ModelPersistence.readModel(ifile);
-        }
-      });
-      SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new DefaultModelRootManager(), ifile, smodel.getSModelReference());
-      modelDescriptors.add(smodelDescriptor);
-    } catch (ModelFileReadException e) {
-      Testbench.LOG.error(e);
-    } catch (PersistenceVersionNotFoundException e) {
-      Testbench.LOG.error(e);
     }
   }
 
