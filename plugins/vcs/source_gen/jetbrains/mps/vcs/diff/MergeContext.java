@@ -59,7 +59,6 @@ public class MergeContext {
         fillRootToChangesMap();
 
         myResultModel = CopyUtil.copyModel(myBaseModel);
-        myResultModel.setLoading(true);
       }
     });
   }
@@ -250,7 +249,10 @@ public class MergeContext {
   }
 
   public void applyChange(ModelChange change) {
-    assert !(isChangeResolved(change));
+    if (isChangeResolved(change)) {
+      assert SetSequence.fromSet(myAppliedChanges).contains(change);
+      return;
+    }
     change.apply(myResultModel);
     SetSequence.fromSet(myAppliedChanges).addElement(change);
     for (ModelChange conflicted : Sequence.fromIterable(getConflictedWith(change))) {
@@ -260,7 +262,10 @@ public class MergeContext {
   }
 
   public void excludeChange(ModelChange change) {
-    assert !(isChangeResolved(change));
+    if (isChangeResolved(change)) {
+      assert SetSequence.fromSet(myExcludedChanges).contains(change);
+      return;
+    }
     SetSequence.fromSet(myExcludedChanges).addElement(change);
     for (ModelChange conflicted : Sequence.fromIterable(getConflictedWith(change))) {
       if (!(isChangeResolved(conflicted)) && Sequence.fromIterable(getConflictedWith(conflicted)).isEmpty()) {
