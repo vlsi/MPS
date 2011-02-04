@@ -218,7 +218,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1502718409600210262">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="w0kr.~WorkbenchMakeService%dmake(java%dlang%dIterable)%cboolean" resolveInfo="make" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="w0kr.~WorkbenchMakeService%dmake(java%dlang%dIterable)%cjetbrains%dmps%dmake%dscript%dIResult" resolveInfo="make" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9190111818814693000">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9190111818814692833">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9190111818814692998">

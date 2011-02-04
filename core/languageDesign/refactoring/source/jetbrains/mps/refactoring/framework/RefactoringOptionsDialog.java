@@ -58,7 +58,7 @@ public class RefactoringOptionsDialog extends BaseDialog {
     }
 
     if (hasModelsToGenerate) {
-      myGenerateModelsCheckBox = new JCheckBox("generate models");
+      myGenerateModelsCheckBox = new JCheckBox("rebuild models");
       myInnerPanel.add(myGenerateModelsCheckBox, c);
       myGenerateModelsCheckBox.setSelected(true);
       myNeedToBeShown = true;

@@ -37,7 +37,7 @@ public interface IScript {
     }
   }
 
-  public static abstract class StubBoss implements IScript {
+  public static abstract class StubBoss extends IScript.Stub implements IScript {
     private IScript delegate;
 
     public StubBoss(IScript delegate) {
@@ -48,6 +48,11 @@ public interface IScript {
       if (delegate instanceof IScript.Stub) {
         ((IScript.Stub) delegate).setBoss(this);
       }
+    }
+
+    @Override
+    public void init(IParametersPool ppool) {
+      super.init(ppool);
     }
 
     public IResult execute(Iterable<? extends IResource> input) {

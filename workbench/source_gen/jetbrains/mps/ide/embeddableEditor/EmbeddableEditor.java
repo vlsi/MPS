@@ -17,10 +17,25 @@ import javax.swing.JComponent;
 import java.awt.Color;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.compiler.IClassesData;
 import java.util.Set;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
+import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.make.script.ScriptBuilder;
+import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.make.script.IOption;
+import jetbrains.mps.make.script.IQuery;
+import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.workbench.make.WorkbenchMakeService;
+import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.resources.CResource;
+import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.generator.GeneratorUIFacade;
@@ -121,6 +136,30 @@ public class EmbeddableEditor {
     return myFileNodeEditor.getNodeEditor();
   }
 
+  public IClassesData make(final Set<IClassPathItem> classPath) {
+    IScript scr = new ScriptBuilder().withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("compileToMemory")).toScript();
+    scr = new IScript.StubBoss(scr) {
+      @Override
+      public void init(IParametersPool ppool) {
+        Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.parameters(new ITarget.Name("compileToMemory"), Object.class);
+        params._0(classPath);
+        super.init(ppool);
+      }
+    };
+    IConfigMonitor cmon = new IConfigMonitor() {
+      public <T extends IOption> T relayQuery(IQuery<T> query) {
+        return query.defaultOption();
+      }
+    };
+    IResult res = new WorkbenchMakeService(myContext, cmon, true).make(new ModelsToResources(myContext, Sequence.<SModelDescriptor>singleton(myModel)).resources(false), scr);
+    if (res.isSucessful()) {
+      CResource out = new CResource().assignFrom((CResource) Sequence.fromIterable(res.output()).first());
+      return out.classes();
+    }
+    return null;
+  }
+
+  @Deprecated
   public GenerationResult generate(final Set<IClassPathItem> additionalClasspath) {
     if (myRootNode == null) {
       return null;

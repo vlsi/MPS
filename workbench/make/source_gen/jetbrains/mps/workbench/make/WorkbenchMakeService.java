@@ -4,21 +4,23 @@ package jetbrains.mps.workbench.make;
 
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IProgress;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy;
-import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy;
@@ -38,13 +40,19 @@ import jetbrains.mps.make.facet.IFacet;
 public class WorkbenchMakeService implements IMakeService {
   private IOperationContext context;
   private boolean cleanMake;
+  private IConfigMonitor configMon;
 
   public WorkbenchMakeService(IOperationContext context, boolean cleanMake) {
-    this.context = context;
-    this.cleanMake = cleanMake;
+    this(context, null, cleanMake);
   }
 
-  public boolean make(Iterable<? extends IResource> resources) {
+  public WorkbenchMakeService(IOperationContext context, IConfigMonitor cmon, boolean cleanMake) {
+    this.context = context;
+    this.cleanMake = cleanMake;
+    this.configMon = cmon;
+  }
+
+  public IResult make(Iterable<? extends IResource> resources) {
     return doMake(resources, WorkbenchMakeService.defaultMakeScript(), new IMakeService.Executor() {
       public void doExecute(Runnable runnable) {
         runnable.run();
@@ -52,7 +60,7 @@ public class WorkbenchMakeService implements IMakeService {
     });
   }
 
-  public boolean make(Iterable<? extends IResource> resources, IScript script) {
+  public IResult make(Iterable<? extends IResource> resources, IScript script) {
     return doMake(resources, script, new IMakeService.Executor() {
       public void doExecute(Runnable runnable) {
         runnable.run();
@@ -60,23 +68,38 @@ public class WorkbenchMakeService implements IMakeService {
     });
   }
 
-  public boolean make(Iterable<? extends IResource> resources, IScript script, IMakeService.Executor executor) {
+  public IResult make(Iterable<? extends IResource> resources, IScript script, IMakeService.Executor executor) {
     return doMake(resources, script, executor);
   }
 
-  public boolean make(Iterable<? extends IResource> resources, IMakeService.Executor executor) {
+  public IResult make(Iterable<? extends IResource> resources, IMakeService.Executor executor) {
     return doMake(resources, WorkbenchMakeService.defaultMakeScript(), executor);
   }
 
-  private boolean doMake(final Iterable<? extends IResource> inputRes, IScript script, IMakeService.Executor executor) {
+  private IResult doMake(final Iterable<? extends IResource> inputRes, IScript script, IMakeService.Executor executor) {
+    if (Sequence.fromIterable(inputRes).isEmpty()) {
+      if (cleanMake) {
+        String msg = "Rebuild aborted";
+        context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, msg + ": nothing to do."));
+        WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo(msg);
+        return new IResult.FAILURE(null);
+      } else {
+        WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo("Everything up to date");
+        return new IResult.SUCCESS(null);
+      }
+    }
+
     final IScript scr = this.completeScript(script);
 
     if (!(scr.isValid())) {
-      context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, (cleanMake ?
+      String msg = ((cleanMake ?
         "Rebuild" :
         "Make"
-      ) + " failed. Invalid script."));
-      return false;
+      )) + " failed";
+
+      context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, msg + ". Invalid script."));
+      WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo(msg);
+      return new IResult.FAILURE(null);
     }
 
     // save all before launching the script 
@@ -94,13 +117,19 @@ public class WorkbenchMakeService implements IMakeService {
     });
 
     if (!(res.value.isSucessful())) {
-      context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, (cleanMake ?
+      String msg = ((cleanMake ?
         "Rebuild" :
         "Make"
-      ) + " failed. See previous messages for details."));
-      return false;
+      )) + " failed";
+      context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, msg + ". See previous messages for details."));
+      WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo(msg);
+    } else {
+      WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo(((cleanMake ?
+        "Rebuild" :
+        "Make"
+      )) + " successful");
     }
-    return true;
+    return res.value;
   }
 
   private IScript completeScript(IScript scr) {
@@ -121,11 +150,14 @@ public class WorkbenchMakeService implements IMakeService {
         new LoggingFeedbackStrategy().reportFeedback(fdbk);
       }
     };
-    final IConfigMonitor cmon = new IConfigMonitor() {
-      public <T extends IOption> T relayQuery(IQuery<T> query) {
-        return new UIQueryRelayStrategy().relayQuery(query, WorkbenchMakeService.this.context);
+    final IConfigMonitor cmon = (configMon != null ?
+      configMon :
+      new IConfigMonitor() {
+        public <T extends IOption> T relayQuery(IQuery<T> query) {
+          return new UIQueryRelayStrategy().relayQuery(query, WorkbenchMakeService.this.context);
+        }
       }
-    };
+    );
 
     final Wrappers._T<ProgressIndicator> pind = new Wrappers._T<ProgressIndicator>(null);
     final IMonitors mons = new IMonitors.Stub(cmon, jmon) {
@@ -163,6 +195,7 @@ public class WorkbenchMakeService implements IMakeService {
       @Override
       public void init(IParametersPool ppool) {
         init.invoke(ppool);
+        super.init(ppool);
       }
 
       @Override

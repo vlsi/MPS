@@ -96,6 +96,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1048225073237450825(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption"), "defaultOption");
+  }
+
   public static Object propertyMacro_GetPropertyValue_8486446835277382806(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(_context.getNode());
   }
@@ -212,12 +216,24 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption"), "ExpectedOption_enum");
   }
 
+  public static Object referenceMacro_GetReferent_1048225073237482565(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption"), "ExpectedOption_enum");
+  }
+
+  public static Object referenceMacro_GetReferent_1048225073237482478(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption"), "ExpectedOption_enum");
+  }
+
   public static boolean ifMacro_Condition_3916013743093752785(final IOperationContext operationContext, final IfMacroContext _context) {
     return true;
   }
 
   public static boolean ifMacro_Condition_1977954644795311606(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "query", false), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption");
+  }
+
+  public static boolean ifMacro_Condition_1048225073237482414(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption");
   }
 
   public static boolean ifMacro_Condition_8486446835277407067(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -237,6 +253,14 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_3868725017587293280(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption");
+  }
+
+  public static boolean ifMacro_Condition_1048225073237482550(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption");
+  }
+
+  public static boolean ifMacro_Condition_1048225073237482489(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption");
   }
 

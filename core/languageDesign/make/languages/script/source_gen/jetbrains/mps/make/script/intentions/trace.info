@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="Option_makeDefault_Intention.java" startLine="12" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.make.script.intentions.Option_makeDefault_Intention" />
+  <root nodeId="8626841540115943116">
+    <nodeInfo nodeId="8626841540116025441" fileName="Option_makeDefault_Intention.java" startLine="39" startPosition="76" endLine="40" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8626841540116022203" fileName="Option_makeDefault_Intention.java" startLine="32" startPosition="85" endLine="36" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8626841540116022224" fileName="Option_makeDefault_Intention.java" startLine="40" startPosition="223" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="8626841540115943118" fileName="Option_makeDefault_Intention.java" startLine="32" startPosition="85" endLine="36" endPosition="6" />
+    <scopeInfo nodeId="8626841540115943120" fileName="Option_makeDefault_Intention.java" startLine="39" startPosition="76" endLine="44" endPosition="7">
+      <varInfo nodeId="8626841540116025442" varName="makeDefault" />
+    </scopeInfo>
+  </root>
+</debugInfo>
+

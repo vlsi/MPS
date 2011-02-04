@@ -18,6 +18,7 @@ public class ExpectedOption extends BaseConcept implements IExpected, INamedConc
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NAME = "name";
+  public static final String DEFAULT_OPTION = "defaultOption";
   public static final String OPTION = "option";
 
   public ExpectedOption(SNode node) {
@@ -54,6 +55,14 @@ public class ExpectedOption extends BaseConcept implements IExpected, INamedConc
 
   public void setName(String value) {
     this.setProperty(ExpectedOption.NAME, value);
+  }
+
+  public int getDefaultOption() {
+    return this.getIntegerProperty(ExpectedOption.DEFAULT_OPTION);
+  }
+
+  public void setDefaultOption(int value) {
+    this.setIntegerProperty(ExpectedOption.DEFAULT_OPTION, value);
   }
 
   public int getOptionsCount() {

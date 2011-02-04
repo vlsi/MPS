@@ -7,6 +7,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class DOH_Query implements IQuery<what_Option> {
   private IQuery.Name name = new IQuery.Name("DOH");
+  private int defaultOption = 0;
 
   public DOH_Query() {
   }
@@ -25,5 +26,12 @@ public class DOH_Query implements IQuery<what_Option> {
 
   public what_Option voidOption() {
     return Sequence.fromIterable(Sequence.fromArray(what_Option.class.getEnumConstants())).last();
+  }
+
+  public what_Option defaultOption() {
+    return (defaultOption >= 0 ?
+      what_Option.class.getEnumConstants()[defaultOption] :
+      null
+    );
   }
 }
