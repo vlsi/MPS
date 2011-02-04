@@ -4,6 +4,7 @@ package jetbrains.mps.runConfigurations.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
@@ -11,13 +12,14 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class PersistentConfiguration extends BaseConcept implements IPersistentPropertyHolder, INamedConcept {
+public class PersistentConfiguration extends BaseConcept implements IPersistentPropertyHolder, INamedConcept, IClassifier {
   public static final String concept = "jetbrains.mps.runConfigurations.structure.PersistentConfiguration";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EDITOR = "editor";
+  public static final String METHODS = "methods";
   public static final String PERSISTENT_PROPERTY = "persistentProperty";
 
   public PersistentConfiguration(SNode node) {
@@ -62,6 +64,26 @@ public class PersistentConfiguration extends BaseConcept implements IPersistentP
 
   public void setEditor(SettingsEditor node) {
     super.setChild(PersistentConfiguration.EDITOR, node);
+  }
+
+  public int getMethodsesCount() {
+    return this.getChildCount(PersistentConfiguration.METHODS);
+  }
+
+  public Iterator<PersistentConfigurationMethod> methodses() {
+    return this.children(PersistentConfigurationMethod.class, PersistentConfiguration.METHODS);
+  }
+
+  public List<PersistentConfigurationMethod> getMethodses() {
+    return this.getChildren(PersistentConfigurationMethod.class, PersistentConfiguration.METHODS);
+  }
+
+  public void addMethods(PersistentConfigurationMethod node) {
+    this.addChild(PersistentConfiguration.METHODS, node);
+  }
+
+  public void insertMethods(PersistentConfigurationMethod prev, PersistentConfigurationMethod node) {
+    this.insertChild(prev, PersistentConfiguration.METHODS, node);
   }
 
   public int getPersistentPropertiesCount() {

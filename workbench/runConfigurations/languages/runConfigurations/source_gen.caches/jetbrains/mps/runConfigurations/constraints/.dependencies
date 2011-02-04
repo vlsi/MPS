@@ -47,6 +47,11 @@
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.constraints.EditorPropertyReference_Constraints" file="EditorPropertyReference_Constraints.java">
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+  </dependency>
   <dependency className="jetbrains.mps.runConfigurations.constraints.PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint" file="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
@@ -73,6 +78,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodePropertyGetter" />
+  </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.constraints.SettingsEditor_Constraints" file="SettingsEditor_Constraints.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAnAncestorContext" />
   </dependency>
 </dependenciesRoot>
 

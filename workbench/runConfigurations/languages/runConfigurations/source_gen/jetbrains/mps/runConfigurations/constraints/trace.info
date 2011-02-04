@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="EditorPropertyReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.EditorPropertyReference_Constraints" />
+  <unitInfo fileName="SettingsEditor_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.SettingsEditor_Constraints" />
   <unitInfo fileName="EditorExpression_persistentPropertyDeclaration_ReferentConstraint.java" startLine="46" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.EditorExpression_persistentPropertyDeclaration_ReferentConstraint$QuotationClass_wdxcx5_a1a0a0a0a0a2" />
   <unitInfo fileName="RunConfigurationExecutor_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.RunConfigurationExecutor_name_PropertyConstraint" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ConstraintsDescriptor" />
@@ -33,6 +35,14 @@
       <varInfo nodeId="4777576391478305671" varName="propertyHolderType" />
       <varInfo nodeId="4777576391478273477" varName="instance" />
     </scopeInfo>
+  </root>
+  <root nodeId="587410464426980827">
+    <nodeInfo nodeId="587410464426980830" fileName="SettingsEditor_Constraints.java" startLine="10" startPosition="122" endLine="11" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="587410464426980829" fileName="SettingsEditor_Constraints.java" startLine="10" startPosition="122" endLine="11" endPosition="160" />
+  </root>
+  <root nodeId="587410464426983340">
+    <nodeInfo nodeId="587410464426983343" fileName="EditorPropertyReference_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="587410464426983342" fileName="EditorPropertyReference_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="149" />
   </root>
   <root nodeId="7902226081039506341">
     <nodeInfo nodeId="7902226081039506347" fileName="EditorOperation_editorOperationDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="33" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

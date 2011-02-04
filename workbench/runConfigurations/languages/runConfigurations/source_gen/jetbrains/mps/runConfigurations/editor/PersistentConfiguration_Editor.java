@@ -31,6 +31,8 @@ public class PersistentConfiguration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_q65xye_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_q65xye_d0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_q65xye_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_q65xye_f0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_q65xye_g0(editorContext, node));
     return editorCell;
   }
 
@@ -58,6 +60,12 @@ public class PersistentConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createComponent_q65xye_g0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new PersistentMethodsComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
   private EditorCell createConstant_q65xye_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_q65xye_b0");
@@ -72,6 +80,17 @@ public class PersistentConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_q65xye_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_q65xye_d0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_q65xye_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_q65xye_f0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);

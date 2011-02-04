@@ -24,8 +24,8 @@ import com.intellij.execution.configurations.ConfigurationInfoProvider;
 public class DemoApplication_Configuration extends RunConfigurationBase implements IPersistentConfiguration {
   private DemoApplication_Configuration_Editor myPersistentEditor = new DemoApplication_Configuration_Editor();
   @NotNull
-  /*package*/ DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
-  /*package*/ Node_Configuration myNode = new Node_Configuration();
+  private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
+  private final Node_Configuration myNode = new Node_Configuration();
 
   public DemoApplication_Configuration(Project project, DemoApplication_Configuration_Factory factory, String name) {
     super(project, factory, name);
@@ -48,6 +48,13 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
     return myPersistentEditor;
   }
 
+  public Node_Configuration getNode() {
+    return myNode;
+  }
+
+  public void setNode(Node_Configuration value) {
+  }
+
   @Nullable
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
     return new DemoApplication_Configuration_RunProfileState(this, executor, environment);
@@ -66,7 +73,7 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
     return (SettingsEditor<DemoApplication_Configuration>) getEditor();
   }
 
-  /*package*/ class MyState {
+  public class MyState {
     public MyState() {
     }
   }

@@ -30,10 +30,6 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_PersistentPropertyReferenceOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
     </node>
-    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="4157833584164919228">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.smart" />
-      <property name="name" nameId="tpck.1169194664001" value="SmartPropertyIsSubtypeOfType" />
-    </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="77193491200187817">
       <property name="name" nameId="tpck.1169194664001" value="typeof_PersistentPropertyDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
@@ -41,10 +37,6 @@
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="77193491200242728">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.smart" />
       <property name="name" nameId="tpck.1169194664001" value="SmartPropertyIsSubtypeOfSmartProperty" />
-    </node>
-    <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="77193491200291506">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_SmartPropertyValue_Parameter" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.smart" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="7902226081039521607">
       <property name="name" nameId="tpck.1169194664001" value="typeof_GetEditorOperation" />
@@ -128,29 +120,6 @@
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.4928971978190606409" resolveInfo="PersistentPropertyReferenceOperation" />
     </node>
   </root>
-  <root id="4157833584164919228">
-    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="4157833584164919229">
-      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4157833584164923622">
-        <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4157833584164923624">
-          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4157833584164923625">
-            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="4157833584164923626">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="4157833584164919230" resolveInfo="smartPropertyType" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="4157833584164923627">
-              <link role="link" roleId="tp25.1138056516764" targetNodeId="uhxm.4157833584164911569" />
-            </node>
-          </node>
-          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="4157833584164923628">
-            <link role="link" roleId="tp25.1138056516764" targetNodeId="uhxm.4157833584164830752" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4157833584164919230">
-      <property name="name" nameId="tpck.1169194664001" value="smartPropertyType" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.4157833584164911568" resolveInfo="SmartPersistentPropertyType" />
-    </node>
-  </root>
   <root id="77193491200187817">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="77193491200187818">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="77193491200204432">
@@ -224,39 +193,6 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="77193491200242731">
       <property name="name" nameId="tpck.1169194664001" value="smartPersistentPropertyType" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.4157833584164911568" resolveInfo="SmartPersistentPropertyType" />
-    </node>
-  </root>
-  <root id="77193491200291506">
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="77193491200291507">
-      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="77193491200291513">
-        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="77193491200291517">
-          <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="77193491200291524">
-            <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="77193491200291528">
-              <link role="concept" roleId="tp25.1140138128738" targetNodeId="uhxm.4157833584164830749" resolveInfo="SmartPersistentPropertyTemplate" />
-              <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="77193491200291519">
-                <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="77193491200291518">
-                  <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="77193491200291508" resolveInfo="smartPropertyValue_Parameter" />
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetContainingRootOperation" typeId="tp25.1171310072040" id="77193491200291523" />
-              </node>
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="77193491200291530">
-              <link role="link" roleId="tp25.1138056516764" targetNodeId="uhxm.4157833584164830752" />
-            </node>
-          </node>
-        </node>
-        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="77193491200291516">
-          <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="77193491200291510">
-            <node role="term" roleId="tpd4.1174657509053" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="77193491200291512">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="77193491200291508" resolveInfo="smartPropertyValue_Parameter" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="77193491200291508">
-      <property name="name" nameId="tpck.1169194664001" value="smartPropertyValue_Parameter" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.77193491200268148" resolveInfo="SmartPropertyValue_Parameter" />
     </node>
   </root>
   <root id="7902226081039521607">

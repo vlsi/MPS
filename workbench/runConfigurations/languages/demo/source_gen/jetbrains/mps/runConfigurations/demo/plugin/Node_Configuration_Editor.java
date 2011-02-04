@@ -18,13 +18,15 @@ public class Node_Configuration_Editor extends SettingsEditor<Node_Configuration
 
   @NotNull
   protected MainNodeChooser createEditor() {
-    MainNodeChooser chooser = new MainNodeChooser();
-    return chooser;
+    myChooser = new MainNodeChooser();
+    return myChooser;
   }
 
   protected void applyEditorTo(final Node_Configuration configuration) throws ConfigurationException {
+    configuration.setNode(myChooser.getNode());
   }
 
   protected void resetEditorFrom(final Node_Configuration configuration) {
+    myChooser.setNode(configuration.getNode());
   }
 }
