@@ -1152,7 +1152,7 @@
     <mkdir dir="${charisma}/youtrack-customfields-common-rest/classes_gen" />
     <mkdir dir="${charisma}/youtrack-customfields-common-rest/source_gen.caches" />
     <mkdir dir="${charisma}/youtrack-customfields-common-rest/test_gen.caches" />
-    <jar destfile="${deploy.dir}/MPS/youtrack-workflow/youtrack-customfields-common-rest.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+    <jar destfile="${deploy.dir}/MPS/custom-fields-rest/youtrack-customfields-common-rest.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="${charisma}/youtrack-customfields-common-rest/youtrack-customfields-common-rest.msd" prefix="module" />
       <zipfileset dir="${charisma}/youtrack-customfields-common-rest/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="${charisma}/youtrack-customfields-common-rest/test_gen.caches" prefix="test_gen.caches" />
@@ -1160,7 +1160,7 @@
       <zipfileset dir="${charisma}/youtrack-customfields-common-rest/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.youtrack.workflow_b9a">
+  <target name="pack.jetbrains.youtrack.workflow_a01a">
     <fail unless="youtrack-workflow" message="Property youtrack-workflow unspecified." />
     <mkdir dir="${youtrack-workflow}/languages/workflow/classes_gen" />
     <mkdir dir="${youtrack-workflow}/languages/workflow/source_gen.caches" />
@@ -1187,7 +1187,7 @@
       <zipfileset dir="${youtrack-workflow}/languages/workflow/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.youtrack.workflow.designtime_c9a">
+  <target name="pack.jetbrains.youtrack.workflow.designtime_b01a">
     <fail unless="youtrack-workflow" message="Property youtrack-workflow unspecified." />
     <mkdir dir="${youtrack-workflow}/solutions/jetbrains.youtrack.workflow.designtime/classes_gen" />
     <mkdir dir="${youtrack-workflow}/solutions/jetbrains.youtrack.workflow.designtime/source_gen.caches" />

@@ -539,6 +539,22 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="2429961990328796139">
     <property name="name:7" value="youtrack-workflow" />
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="6902313300262879939">
+      <property name="excludes:7" value="" />
+      <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="6902313300262879944">
+        <property name="id" value="f1599fd5-8fba-4bb0-9f04-967b49d9068d" />
+        <property name="name" value="youtrack-customfields-common-rest" />
+      </node>
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="6902313300262879940">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="6902313300262879941">
+          <property name="name:7" value="basedir" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="6902313300262879942" />
+      </node>
+      <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="6902313300262879943">
+        <property name="name:7" value="custom-fields-rest" />
+      </node>
+    </node>
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="2429961990328796140">
       <property name="excludes:7" value="" />
       <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="2429961990328796146">

@@ -70,6 +70,7 @@
     <mkdir dir="${deploy.dir}/MPS/platform" />
     <mkdir dir="${deploy.dir}/MPS/plugin" />
     <mkdir dir="${deploy.dir}/MPS/workbench" />
+    <mkdir dir="${deploy.dir}/MPS/custom-fields-rest" />
     <mkdir dir="${deploy.dir}/MPS/youtrack-workflow" />
     <mkdir dir="${deploy.dir}/MPS/help-build.append.idea.version" />
     <mkdir dir="${deploy.dir}/MPS" />
@@ -373,8 +374,11 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.ide_a8a" />
     <mkdir dir="${deploy.dir}/MPS/workbench" />
     <antcall target="MPS-languages.pack.youtrack-customfields-common-rest_a9a" />
-    <antcall target="MPS-languages.pack.jetbrains.youtrack.workflow_b9a" />
-    <antcall target="MPS-languages.pack.jetbrains.youtrack.workflow.designtime_c9a" />
+    <copy todir="${deploy.dir}/MPS/custom-fields-rest">
+      <fileset dir="/" excludes="**/*.iml, **/*.iws" />
+    </copy>
+    <antcall target="MPS-languages.pack.jetbrains.youtrack.workflow_a01a" />
+    <antcall target="MPS-languages.pack.jetbrains.youtrack.workflow.designtime_b01a" />
     <mkdir dir="${deploy.dir}/MPS/youtrack-workflow" />
     <echo file="${deploy.dir}/MPS/help-build.append.idea.version/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
     <antcall target="help-build.append.idea.version" inheritall="true">
