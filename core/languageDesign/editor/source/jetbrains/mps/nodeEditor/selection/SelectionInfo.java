@@ -149,4 +149,26 @@ public class SelectionInfo {
     result = 31 * result + (myCellInfo != null ? myCellInfo.hashCode() : 0);
     return result;
   }
+
+  static class Util {
+    static int getIntProperty(Map<String, String> properties, String propertyName) throws SelectionStoreException {
+      String propertyValue = properties.get(propertyName);
+      if (propertyValue == null) {
+        throw new SelectionStoreException("Canot load int property - property value was not specified for propertyName = " + propertyName);
+      }
+      try {
+        return Integer.parseInt(propertyValue);
+      } catch (NumberFormatException e) {
+        throw new SelectionStoreException("Unable to parse integer position value: " + propertyValue);
+      }
+    }
+
+    static boolean getBooleanProperty(Map<String, String> properties, String propertyName) throws SelectionStoreException {
+      String propertyValue = properties.get(propertyName);
+      if (propertyValue == null) {
+        throw new SelectionStoreException("Canot load int property - property value was not specified for propertyName = " + propertyName);
+      }
+      return Boolean.parseBoolean(propertyValue);
+    }
+  }
 }

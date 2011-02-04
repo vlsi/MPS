@@ -15,10 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import org.jdom.Element;
-
-import java.util.Properties;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Alexander Shatalin

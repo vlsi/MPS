@@ -31,7 +31,10 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class EditorCellSelection implements SingularSelection {
+  private static final String CARET_X_PROPERTY_NAME = "caretX";
+
   private EditorCell myEditorCell;
+  private int myCaretX;
   private boolean myActive = false;
 
   public EditorCellSelection(EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException, SelectionRestoreException {
@@ -43,10 +46,12 @@ public class EditorCellSelection implements SingularSelection {
     if (myEditorCell == null) {
       throw new SelectionRestoreException();
     }
+    myCaretX = SelectionInfo.Util.getIntProperty(properties, CARET_X_PROPERTY_NAME);
   }
 
   public EditorCellSelection(@NotNull EditorCell editorCell) {
     myEditorCell = editorCell;
+    myCaretX = editorCell.getCaretX();
   }
 
   @NotNull
@@ -55,19 +60,25 @@ public class EditorCellSelection implements SingularSelection {
     return myEditorCell;
   }
 
+  public int getCaretX() {
+    return isActive() ? myEditorCell.getCaretX() : myCaretX;
+  }
+
   @Override
   public void activate() {
     if (!isEditable()) {
       return;
     }
     myEditorCell.setSelected(true);
+    myEditorCell.setCaretX(getCaretX());
     myActive = true;
   }
 
   @Override
   public void deactivate() {
-    myEditorCell.setSelected(false);
     myActive = false;
+    myEditorCell.setSelected(false);
+    myCaretX = myEditorCell.getCaretX();
   }
 
   public boolean isActive() {
@@ -82,6 +93,7 @@ public class EditorCellSelection implements SingularSelection {
       throw new SelectionStoreException("EditorCellSelection is referencing Editor cell having CellInfo different from DefaultCellInfo: " + cellInfo);
     }
     selectionInfo.setCellInfo((DefaultCellInfo) cellInfo);
+    selectionInfo.getPropertiesMap().put(CARET_X_PROPERTY_NAME, Integer.toString(getCaretX()));
     return selectionInfo;
   }
 
@@ -99,6 +111,9 @@ public class EditorCellSelection implements SingularSelection {
     }
     EditorCellSelection that = (EditorCellSelection) another;
     if (!myEditorCell.equals(that.myEditorCell)) {
+      return false;
+    }
+    if (getCaretX() != that.getCaretX()) {
       return false;
     }
     return true;
