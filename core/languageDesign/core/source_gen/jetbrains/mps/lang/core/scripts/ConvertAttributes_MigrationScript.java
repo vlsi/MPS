@@ -43,11 +43,11 @@ public class ConvertAttributes_MigrationScript extends BaseMigrationScript {
           String link = role.substring(role.indexOf("$link_attribute$") + "$link_attribute$".length());
           SNode attribute = SNodeOperations.as(node, "jetbrains.mps.lang.core.structure.LinkAttribute");
           if ((attribute == null)) {
-            // error 
+            LOG.error("Incompatible attribute concept type and stereotype" + (role + " in model " + SNodeOperations.getModel(node).getSModelFqName() + ", node " + node + "[" + node.getId() + "]"));
           }
           SLinkOperations.setTarget(attribute, "link", SNodeOperations.as(SNodeOperations.getParent(node).getLinkDeclaration(link), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
           if ((SLinkOperations.getTarget(attribute, "link", false) == null)) {
-            LOG.error("No link declaration was found for link attribute " + role);
+            LOG.error("No link declaration was found for link attribute " + (role + " in model " + SNodeOperations.getModel(node).getSModelFqName() + ", node " + node + "[" + node.getId() + "]"));
           }
 
         } else if (role.indexOf("$property_attribute$") > 0) {
@@ -55,13 +55,20 @@ public class ConvertAttributes_MigrationScript extends BaseMigrationScript {
 
           SNode attribute = SNodeOperations.as(node, "jetbrains.mps.lang.core.structure.PropertyAttribute");
           if ((attribute == null)) {
-            // error 
+            LOG.error("Incompatible attribute concept type and stereotype for " + (role + " in model " + SNodeOperations.getModel(node).getSModelFqName() + ", node " + node + "[" + node.getId() + "]"));
           }
           SLinkOperations.setTarget(attribute, "property", SNodeOperations.as(SNodeOperations.getParent(node).getPropertyDeclaration(prop), "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), false);
           if ((SLinkOperations.getTarget(attribute, "property", false) == null)) {
-            LOG.error("No property declaration was found for property attribute " + role);
+            LOG.error("No property declaration was found for property attribute " + (role + " in model " + SNodeOperations.getModel(node).getSModelFqName() + ", node " + node + "[" + node.getId() + "]"));
           }
         } else if (role.endsWith("$attribute")) {
+          // nothing to do 
+          if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.NodeAttribute"))) {
+            LOG.error("Incompatible attribute concept type and stereotype for " + (role + " in model " + SNodeOperations.getModel(node).getSModelFqName() + ", node " + node + "[" + node.getId() + "]"));
+
+          }
+        } else {
+          LOG.warning("Link looks similar to attribute: " + role + " in model " + SNodeOperations.getModel(node).getSModelFqName() + ", node " + node + "[" + node.getId() + "]");
         }
         node.setRoleInParent("_$attribute");
       }
