@@ -8,9 +8,11 @@ import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -75,13 +77,28 @@ public class WorkbenchMakeService implements IMakeService {
   }
 
   private IResult doMake(final Iterable<? extends IResource> inputRes, IScript script, IMakeService.Executor executor) {
+    if (Sequence.fromIterable(inputRes).isEmpty()) {
+      if (cleanMake) {
+        String msg = "Rebuild aborted";
+        context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, msg + ": nothing to do."));
+        WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo(msg);
+        return new IResult.FAILURE(null);
+      } else {
+        WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo("Everything up to date");
+        return new IResult.SUCCESS(null);
+      }
+    }
+
     final IScript scr = this.completeScript(script);
 
     if (!(scr.isValid())) {
-      context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, (cleanMake ?
+      String msg = ((cleanMake ?
         "Rebuild" :
         "Make"
-      ) + " failed. Invalid script."));
+      )) + " failed";
+
+      context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, msg + ". Invalid script."));
+      WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo(msg);
       return new IResult.FAILURE(null);
     }
 
@@ -100,10 +117,17 @@ public class WorkbenchMakeService implements IMakeService {
     });
 
     if (!(res.value.isSucessful())) {
-      context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, (cleanMake ?
+      String msg = ((cleanMake ?
         "Rebuild" :
         "Make"
-      ) + " failed. See previous messages for details."));
+      )) + " failed";
+      context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, msg + ". See previous messages for details."));
+      WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo(msg);
+    } else {
+      WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo(((cleanMake ?
+        "Rebuild" :
+        "Make"
+      )) + " successful");
     }
     return res.value;
   }
