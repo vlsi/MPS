@@ -49,9 +49,9 @@
   <property name="jetbrains.mps.xmlSchema.classes" value="platform/xml/xmlSchema/classes_gen" />
   <property name="jetbrains.mps.xmlUnitTest.classes" value="platform/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
   <property name="jetbrains.mps.ypath.classes" value="platform/ypath/classes_gen" />
-  <property name="jetbrains.youtrack.workflow.classes" value="{youtrack-workflow}/languages/workflow/classes_gen" />
-  <property name="jetbrains.youtrack.workflow.designtime.classes" value="{youtrack-workflow}/solutions/jetbrains.youtrack.workflow.designtime/classes_gen" />
-  <property name="youtrack-customfields-common-rest.classes" value="{charisma}/youtrack-customfields-common-rest/classes_gen" />
+  <property name="jetbrains.youtrack.workflow.classes" value="${youtrack-workflow}/languages/workflow/classes_gen" />
+  <property name="jetbrains.youtrack.workflow.designtime.classes" value="${youtrack-workflow}/solutions/jetbrains.youtrack.workflow.designtime/classes_gen" />
+  <property name="youtrack-customfields-common-rest.classes" value="${charisma}/youtrack-customfields-common-rest/classes_gen" />
   <property name="ypath.main.classes" value="platform/ypath/solutions/main/classes_gen" />
   <property name="ypath.test.classes" value="platform/ypath/solutions/test/classes_gen" />
   <path id="common.classpath">
