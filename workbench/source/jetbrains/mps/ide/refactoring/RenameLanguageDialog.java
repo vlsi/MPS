@@ -63,7 +63,7 @@ public class RenameLanguageDialog extends BaseDialog {
     myMainPanel.add(myLanguageNameField, cNameField);
 
     GridBagConstraints cCheckbox = new GridBagConstraints(0, 1, 2, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
-    myRegenerateLanguage = new JCheckBox("Regenerate Language");
+    myRegenerateLanguage = new JCheckBox("Rebuild Language");
     myRegenerateLanguage.getModel().setSelected(ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         return !myLanguage.isBootstrap();
@@ -141,7 +141,7 @@ public class RenameLanguageDialog extends BaseDialog {
         });
 
         if (params == null) {
-          setErrorText("Generator configuration is invalid");
+          setErrorText("Rebuild configuration is invalid");
           return;
         }
 
