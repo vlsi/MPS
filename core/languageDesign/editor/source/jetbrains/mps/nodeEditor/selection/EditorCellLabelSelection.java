@@ -82,11 +82,11 @@ public class EditorCellLabelSelection extends EditorCellSelection {
     if (!isEditable()) {
       return;
     }
+    super.activate();
     if (myNonTrivialSelection) {
       getEditorCellLabel().setSelectionStart(mySelectionStart);
       getEditorCellLabel().setSelectionEnd(mySelectionEnd);
     }
-    super.activate();
   }
 
   @Override
