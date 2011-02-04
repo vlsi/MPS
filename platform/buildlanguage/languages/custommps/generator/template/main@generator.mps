@@ -808,6 +808,9 @@
           </node>
         </node>
         <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="8934235897214288609">
+          <link role="block:7" targetNodeId="5v.6902313300262917830" resolveInfo="custom-fields" />
+        </node>
+        <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="6902313300262917839">
           <link role="block:7" targetNodeId="5v.2429961990328796139" resolveInfo="youtrack-workflow" />
         </node>
         <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.IfProjectComponent" id="1234971270550">
