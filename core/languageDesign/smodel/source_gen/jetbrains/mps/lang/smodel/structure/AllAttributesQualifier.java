@@ -4,6 +4,9 @@ package jetbrains.mps.lang.smodel.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -13,6 +16,7 @@ public class AllAttributesQualifier extends BaseConcept implements IAttributeAcc
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AllAttributesQualifier(SNode node) {
     super(node);
@@ -40,6 +44,26 @@ public class AllAttributesQualifier extends BaseConcept implements IAttributeAcc
 
   public void setVirtualPackage(String value) {
     this.setProperty(AllAttributesQualifier.VIRTUAL_PACKAGE, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AllAttributesQualifier._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AllAttributesQualifier._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AllAttributesQualifier._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AllAttributesQualifier._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AllAttributesQualifier._$ATTRIBUTE, node);
   }
 
   public static AllAttributesQualifier newInstance(SModel sm, boolean init) {

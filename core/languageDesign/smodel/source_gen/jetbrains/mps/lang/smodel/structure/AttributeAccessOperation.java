@@ -4,6 +4,9 @@ package jetbrains.mps.lang.smodel.structure;
 
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -14,6 +17,7 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ATTRIBUTE_QUALIFIER = "attributeQualifier";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AttributeAccessOperation(SNode node) {
     super(node);
@@ -49,6 +53,26 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
 
   public void setAttributeQualifier(IAttributeAccessQualifier node) {
     super.setChild(AttributeAccessOperation.ATTRIBUTE_QUALIFIER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AttributeAccessOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AttributeAccessOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AttributeAccessOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AttributeAccessOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AttributeAccessOperation._$ATTRIBUTE, node);
   }
 
   public static AttributeAccessOperation newInstance(SModel sm, boolean init) {

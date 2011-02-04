@@ -39,14 +39,16 @@ public class AttributeOperations {
     );
   }
 
-  public static void addAttribute(SNode node, IAttributeDescriptor descriptor, SNode value) {
+  public static SNode addAttribute(SNode node, IAttributeDescriptor descriptor, SNode value) {
     ListSequence.fromList(SLinkOperations.getTargets(node, "_$attribute", true)).addElement(value);
     descriptor.update(value);
+    return value;
   }
 
-  public static void insertAttribute(SNode node, SNode anchor, IAttributeDescriptor descriptor, SNode value) {
+  public static SNode insertAttribute(SNode node, SNode anchor, IAttributeDescriptor descriptor, SNode value) {
     node.insertChild(anchor, "_$attribute", value);
     descriptor.update(value);
+    return value;
   }
 
   public static void deleteAttribute(SNode node, IAttributeDescriptor descriptor, SNode value) {
@@ -87,8 +89,11 @@ public class AttributeOperations {
   }
 
   public static SNode createAndSetAttrbiute(SNode node, IAttributeDescriptor descriptor, String newConceptFqname) {
-    setAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(SNodeOperations.getModel(node), newConceptFqname));
-    return node;
+    return setAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(SNodeOperations.getModel(node), newConceptFqname));
+  }
+
+  public static SNode createAndAddAttribute(SNode node, IAttributeDescriptor descriptor, String newConceptFqname) {
+    return addAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(SNodeOperations.getModel(node), newConceptFqname));
   }
 
   public static void $$$$$$$$$$$$$$$$$$$$() {

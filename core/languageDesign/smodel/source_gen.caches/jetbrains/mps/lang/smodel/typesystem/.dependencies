@@ -61,7 +61,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SNodeCreator_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_DeleteOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Concept_IsSuperConceptOfOperation_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SEnum_MemberForValueOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_ReplaceWithAnotherOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_LinkList_AddNewChildOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Concept_FindInstances_InferenceRule" />
@@ -74,13 +74,13 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeListType_ListType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_ConceptFqNameRefExpression_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_ReplaceWithAnotherOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_AttributeAccess_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_SConceptLinkAccess_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Reference_GetLinkDeclarationOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.check_SConceptPropertyAccess_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_GetDescendantsOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Concept_GetAllSubConcepts_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SearchScope_ContainsOperation_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SEnum_MemberForValueOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Property_SetOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_NodeRefExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule" />
@@ -132,6 +132,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeOf_Model_NodesIncludingImportedOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_InsertNextSiblingOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeListType_ClassifierListType_SubtypingRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_SearchScope_ContainsOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_ListType_ListType_elementSNode_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule" />
     <classNode dependClassName="java.lang.String" />
@@ -991,6 +992,24 @@
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.typeof_AttributeAccess_InferenceRule" file="typeof_AttributeAccess_InferenceRule.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>

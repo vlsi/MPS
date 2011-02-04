@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class SearchScope_ContainsOperation extends BaseConcept implements IOpera
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NODE_TO_CHECK = "nodeToCheck";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SearchScope_ContainsOperation(SNode node) {
     super(node);
@@ -51,6 +55,26 @@ public class SearchScope_ContainsOperation extends BaseConcept implements IOpera
 
   public void setNodeToCheck(Expression node) {
     super.setChild(SearchScope_ContainsOperation.NODE_TO_CHECK, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(SearchScope_ContainsOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SearchScope_ContainsOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SearchScope_ContainsOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(SearchScope_ContainsOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SearchScope_ContainsOperation._$ATTRIBUTE, node);
   }
 
   public static SearchScope_ContainsOperation newInstance(SModel sm, boolean init) {
