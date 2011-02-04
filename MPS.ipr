@@ -26,6 +26,21 @@
       <maximumStackSize value="32" />
       <properties />
     </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/build/MPS-buildserver.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <maximumStackSize value="2" />
+      <properties>
+        <property name="build.number" value="42" />
+        <property name="build.vcs.number" value="45" />
+        <property name="version" value="1.5" />
+        <property name="teamcity.buildConfName" value="ackage MPS Configuration" />
+        <property name="mps_home" value="$PROJECT_DIR$" />
+        <property name="" value="" />
+      </properties>
+    </buildFile>
   </component>
   <component name="BuildJarProjectSettings">
     <option name="BUILD_JARS_ON_MAKE" value="false" />

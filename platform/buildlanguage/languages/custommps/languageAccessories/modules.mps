@@ -541,10 +541,6 @@
     <property name="name:7" value="youtrack-workflow" />
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="2429961990328796140">
       <property name="excludes:7" value="" />
-      <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="2429961990328796144">
-        <property name="id" value="f1599fd5-8fba-4bb0-9f04-967b49d9068d" />
-        <property name="name" value="youtrack-customfields-common-rest" />
-      </node>
       <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="2429961990328796146">
         <property name="id" value="355b8814-6452-42a9-99ba-bf48a86484df" />
         <property name="name" value="jetbrains.youtrack.workflow" />
