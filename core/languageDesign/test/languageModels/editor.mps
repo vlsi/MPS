@@ -158,6 +158,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="actions" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.4239542196496927193" resolveInfo="MPSActionReference" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7187651930235281605">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="asserts" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.7187651930235281603" resolveInfo="CheckTypeInGenerationMode" />
+    </node>
   </roots>
   <root id="1210673785657">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1210673789911">
@@ -1130,6 +1134,27 @@
         </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="4239542196496929816" />
+    </node>
+  </root>
+  <root id="7187651930235281605">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7187651930235281607">
+      <property name="vertical" nameId="tpc2.1073389446425" value="false" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7187651930235281608">
+        <property name="text" nameId="tpc2.1073389577007" value="check" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7187651930235281609">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp5g.1214846370530" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7187651930235281610">
+        <property name="text" nameId="tpc2.1073389577007" value="type in generation mode" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7187651930235281611">
+        <property name="text" nameId="tpc2.1073389577007" value=";" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1215094139260" resolveInfo="Semicolon" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7187651930235281612" />
     </node>
   </root>
 </model>

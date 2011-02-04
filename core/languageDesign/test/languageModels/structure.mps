@@ -243,6 +243,11 @@
       <property name="name" nameId="tpck.1169194664001" value="MPSActionReference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1101347953350122484" resolveInfo="ActionReference" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7187651930235281603">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="asserts" />
+      <property name="name" nameId="tpck.1169194664001" value="CheckTypeInGenerationMode" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1214846310980" resolveInfo="AbstractNodeAssert" />
+    </node>
   </roots>
   <root id="1210673592080" />
   <root id="1210673684636">
@@ -697,6 +702,12 @@
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4239542196496978646">
       <property name="value" nameId="tpce.1105725733873" value="-&gt;" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="7187651930235281603">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7187651930235281604">
+      <property name="value" nameId="tpce.1105725733873" value="check type in generation mode" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
