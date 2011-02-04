@@ -164,6 +164,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   public void projectClosed() {
     myProjectManager.removeProjectManagerListener(myProjectCloseListener);
+// was: stopUpdater();    
     ModelAccess.instance().removeCommandListener(myCommandListener);
     myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
     myGlobalSModelEventsManager.removeGlobalModelListener(myModelReloadListener);
@@ -252,10 +253,17 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   public void stopUpdater() {
     myStopThread = true;
+    try {
+      while (myThread.isAlive()) {
+        Thread.sleep(10);
+      }
+    } catch (InterruptedException e) {
+      LOG.error(e);
+    }
   }
 
   protected void doUpdate() {
-    if (ApplicationManager.getApplication().isDisposed()) {
+    if ( ApplicationManager.getApplication().isDisposed()) {
       return;
     }
     // SwingUtilities.invokeLater(new Runnable() {
@@ -286,11 +294,17 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     try {
       TypeChecker.getInstance().enableGlobalSubtypingCache();
       for (EditorComponent editorComponent : allEditorComponents) {
+        if (myStopThread) {
+          return;
+        }
         if (updateEditorComponent(editorComponent, events, checkers, checkersToRemove, false)) {
           isUpdated = true;
         }
       }
 
+      if (myStopThread) {
+        return;
+      }
       if (myInspectorTool != null && myInspectorTool.getInspector() != null) {
         inspector = myInspectorTool.getInspector();
         if (updateEditorComponent(inspector, events, checkers, checkersToRemove, isUpdated)) {
@@ -299,6 +313,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       }
     } finally {
       TypeChecker.getInstance().clearGlobalSubtypingCache();
+    }
+    if (myStopThread) {
+      return;
     }
 
     if (isUpdated) {
@@ -378,7 +395,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             });
           }
 
-          if (checkersToRecheck.isEmpty() && checkersToRemove.isEmpty()) {
+          if ((checkersToRecheck.isEmpty() && checkersToRemove.isEmpty()) || myStopThread) {
             return false;
           }
           List<IEditorChecker> checkersToRecheckList = new ArrayList<IEditorChecker>(checkersToRecheck);
@@ -461,6 +478,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         }
       };
       ModelAccess.instance().runReadAction(runnable);
+      if (myStopThread) {
+        return false;
+      }
       boolean messagesChanged = messagesChangedContainer[0];
       if (editor instanceof InspectorEditorComponent && recreateInspectorMessages) {
         messagesChanged = true;
@@ -490,6 +510,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       highlightManager.clearForOwner(owners[0], false);
       anyMessageChanged = true;
     }
+    if (myStopThread) {
+      return false;
+    }
 
     if (anyMessageChanged) {
       highlightManager.repaintAndRebuildEditorMessages();
@@ -514,9 +537,15 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         try {
           while (true) {
             while (commandProcessor.getCurrentCommand() != null) {
+              if (myStopThread) {
+                return;
+              }
               Thread.sleep(200);
             }
             while (dumbService.isDumb()) {
+              if (myStopThread) {
+                return;
+              }
               Thread.sleep(600);
             }
             long current = System.currentTimeMillis();
@@ -529,6 +558,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
               break;
             }
           }
+          if (myStopThread) {
+            return;
+          }
 
           try {
             doUpdate();
@@ -538,7 +570,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           }
           processPendingActions();
           if (myStopThread) {
-            break;
+            return;
           }
           Thread.sleep(300);
         } catch (Throwable t) {
