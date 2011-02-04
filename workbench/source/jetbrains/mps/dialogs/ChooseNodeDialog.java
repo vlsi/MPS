@@ -23,9 +23,6 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.ToStringComparator;
@@ -121,11 +118,11 @@ public final class ChooseNodeDialog extends BaseDialog {
     SNode conceptDeclaration = SModelUtil.findConceptDeclaration(targetNode.getConceptFqName(), scope);
     String roleInParent = null;
     for (SNode abstractConceptDeclaration : SModelUtil_new.getConceptAndSuperConcepts(conceptDeclaration)) {
-      for (LinkDeclaration linkDeclaration : ((AbstractConceptDeclaration)abstractConceptDeclaration.getAdapter()).getLinkDeclarations()) {
-        if (linkDeclaration.getMetaClass() == LinkMetaclass.reference) continue;
-        AbstractConceptDeclaration targetConcept = linkDeclaration.getTarget();
-        if (SModelUtil.isAssignableConcept(nodeToMoveDeclaration, BaseAdapter.fromAdapter(targetConcept))) {
-          roleInParent = linkDeclaration.getRole();
+      for (SNode linkDeclaration : SNodeUtil.getConcept_LinkDeclarations(abstractConceptDeclaration)) {
+        if (SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) continue;
+        SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
+        if (SModelUtil.isAssignableConcept(nodeToMoveDeclaration, targetConcept)) {
+          roleInParent = SModelUtil.getLinkDeclarationRole(linkDeclaration);
           break;
         }
       }

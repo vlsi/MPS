@@ -25,7 +25,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.BaseNodeEditor;
 import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.editorTabs.tabs.TabsComponent;
-import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
@@ -134,7 +133,7 @@ public class TabbedEditor extends BaseNodeEditor {
   private class MyNameListener extends SModelAdapter {
     public void propertyChanged(SModelPropertyEvent event) {
       SNodePointer pointer = new SNodePointer(event.getNode());
-      if (event.getPropertyName().equals(INamedConcept.NAME) && pointer.equals(getCurrentlyEditedNode())) {
+      if (event.getPropertyName().equals(SNodeUtil.property_INamedConcept_name) && pointer.equals(getCurrentlyEditedNode())) {
         updateProperties();
       }
     }
