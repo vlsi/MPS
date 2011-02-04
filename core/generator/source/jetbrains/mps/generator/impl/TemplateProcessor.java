@@ -28,9 +28,6 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
-import jetbrains.mps.lang.generator.structure.NodeMacro;
-import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
-import jetbrains.mps.lang.generator.structure.TemplateCallMacro;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -126,7 +123,7 @@ public class TemplateProcessor {
 
     SModel templateModel = templateNode.getModel();
     for (SReference reference : templateNode.getReferencesIterable()) {
-      if (templateNode.getLinkAttribute(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, reference.getRole()) != null) {
+      if (templateNode.getLinkAttribute("referenceMacro" /* TODO refactor */, reference.getRole()) != null) {
         continue;
       }
       SNode templateReferentNode = reference.getTargetNode();
@@ -451,7 +448,7 @@ public class TemplateProcessor {
         return null;
       }
 
-      TemplateContext newcontext = GeneratorUtil.createTemplateContext(templateContext.getInput(), templateContext, myReductionContext, (TemplateCallMacro) macro.getAdapter(), newInputNode, myGenerator);
+      TemplateContext newcontext = GeneratorUtil.createTemplateCallContext(templateContext.getInput(), templateContext, myReductionContext, macro, newInputNode, myGenerator);
 
 /*
       TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(template, newInputNode, macro, myGenerator);
@@ -509,11 +506,11 @@ public class TemplateProcessor {
   }
 
   private SNode getNewInputNode(SNode nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    return InputQueryUtil.getNewInputNode((NodeMacro) BaseAdapter.fromNode(nodeMacro), context.getInput(), context, myReductionContext);
+    return InputQueryUtil.getNewInputNode(nodeMacro, context.getInput(), context, myReductionContext);
   }
 
   private List<SNode> getNewInputNodes(SNode nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    return InputQueryUtil.getNewInputNodes((NodeMacro)BaseAdapter.fromNode(nodeMacro), context.getInput(), context, myReductionContext);
+    return InputQueryUtil.getNewInputNodes(nodeMacro, context.getInput(), context, myReductionContext);
   }
 
   @Nullable

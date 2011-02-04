@@ -112,7 +112,7 @@ public class TemplateReductionPatternRuleInterpreted implements TemplateReductio
       environment.getGenerator().showErrorMessage(inputNode, null, ruleNode, "error processing reduction rule: no rule consequence");
       return null;
     }
-    TemplateContext conseqContext = GeneratorUtil.createTemplateContext(inputNode, new DefaultTemplateContext(pattern, null, inputNode), environment.getReductionContext(), ruleConsequence, inputNode, environment.getGenerator());
+    TemplateContext conseqContext = GeneratorUtil.createConsequenceContext(inputNode, new DefaultTemplateContext(pattern, null, inputNode), environment.getReductionContext(), ruleConsequence, inputNode, environment.getGenerator());
 
     List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(ruleConsequence, inputNode, ruleNode, environment.getReductionContext(), environment.getGenerator());
     if (nodeAndMappingNamePairs == null) {

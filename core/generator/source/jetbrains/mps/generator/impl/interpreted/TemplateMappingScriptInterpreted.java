@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
-import jetbrains.mps.lang.generator.structure.MappingScript;
-import jetbrains.mps.lang.generator.structure.MappingScriptKind;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -49,20 +48,15 @@ public class TemplateMappingScriptInterpreted implements TemplateMappingScript {
 
   @Override
   public int getKind() {
-    String value = scriptNode.getProperty(MappingScript.SCRIPT_KIND);
-    MappingScriptKind mappingScriptKind = MappingScriptKind.parseValue(value);
-    switch (mappingScriptKind) {
-      case post_process_output_model:
-        return POSTPROCESS;
-      case pre_process_input_model:
-        return PREPROCESS;
-    }
-    return 0;
+    return
+      RuleUtil.getMappingScript_IsPreProcess(scriptNode)
+        ? PREPROCESS
+        : POSTPROCESS;
   }
 
   @Override
   public void apply(SModel model, ITemplateGenerator generator) {
-    SNode codeBlock = scriptNode.getChild(MappingScript.CODE_BLOCK);
+    SNode codeBlock = RuleUtil.getMappingScript_CodeBlock(scriptNode);
     if (codeBlock == null) {
       generator.getLogger().warning(scriptNode, "cannot run script '" + scriptNode.getName() + "' : no code-block");
       return;
@@ -83,13 +77,8 @@ public class TemplateMappingScriptInterpreted implements TemplateMappingScript {
     }
   }
 
-  @Deprecated
-  public MappingScript getNode() {
-    return (MappingScript) scriptNode.getAdapter();
-  }
-
   @Override
   public boolean modifiesModel() {
-    return scriptNode.getBooleanProperty(MappingScript.MODIFIES_MODEL);
+    return RuleUtil.getMappingScript_ModifiesModel(scriptNode);
   }
 }

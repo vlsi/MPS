@@ -16,15 +16,12 @@
 package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
@@ -39,81 +36,78 @@ import java.util.Map;
 
 public class GeneratorUtil {
 
-  private static Expression[] getArguments(ITemplateCall templateCall) {
-    final List<Expression> args = templateCall.getActualArguments();
+  private static SNode[] getArguments(SNode templateCall) {
+    final List<SNode> args = RuleUtil.getTemplateCall_Arguments(templateCall);
     if (args == null || args.size() == 0) {
       return null;
     }
-    return args.toArray(new Expression[args.size()]);
+    return args.toArray(new SNode[args.size()]);
   }
 
-  private static TemplateParameterDeclaration[] getParameters(ITemplateCall templateCall) {
-    final TemplateDeclaration template = templateCall.getTemplate();
+  private static String[] getParameters(SNode templateCall, ITemplateGenerator generator) {
+    final SNode template = RuleUtil.getTemplateCall_Template(templateCall);
     if (template == null) {
       return null;
     }
-    final List<TemplateParameterDeclaration> parameterDeclarations = template.getParameters();
-    if (parameterDeclarations == null || parameterDeclarations.size() == 0) {
+    String[] templateDeclarationParameterNames = RuleUtil.getTemplateDeclarationParameterNames(template);
+    if(templateDeclarationParameterNames == null) {
+      generator.showErrorMessage(null, template, "broken template");
       return null;
     }
-    return parameterDeclarations.toArray(new TemplateParameterDeclaration[parameterDeclarations.size()]);
+    return templateDeclarationParameterNames.length == 0 ? null : templateDeclarationParameterNames;
   }
 
   @NotNull
-  public static TemplateContext createTemplateContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, @NotNull SNode consequence1, SNode newInputNode, ITemplateGenerator generator) {
-    RuleConsequence consequence = (RuleConsequence) consequence1.getAdapter();
-    if (consequence instanceof ITemplateCall) {
-      return createTemplateContext(inputNode, outerContext, reductionContext, (ITemplateCall) consequence, newInputNode, generator);
+  public static TemplateContext createConsequenceContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, @NotNull SNode consequence, SNode newInputNode, ITemplateGenerator generator) {
+    if (consequence.isInstanceOfConcept(RuleUtil.concept_ITemplateCall)) {
+      return createTemplateCallContext(inputNode, outerContext, reductionContext, consequence, newInputNode, generator);
     }
     return outerContext != null ? outerContext : new DefaultTemplateContext(newInputNode);
   }
 
   @NotNull
-  static TemplateContext createTemplateContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, ITemplateCall templateCall, SNode newInputNode, ITemplateGenerator generator) {
-    final Expression[] arguments = getArguments(templateCall);
-    final TemplateParameterDeclaration[] parameters = getParameters(templateCall);
+  static TemplateContext createTemplateCallContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, SNode templateCall, SNode newInputNode, ITemplateGenerator generator) {
+    final SNode[] arguments = getArguments(templateCall);
+    final String[] parameters = getParameters(templateCall, generator);
 
     if (arguments == null && parameters == null) {
       return outerContext != null ? outerContext.subContext(null, newInputNode) : new DefaultTemplateContext(newInputNode);
     }
     if (arguments == null || parameters == null || arguments.length != parameters.length) {
-      generator.showErrorMessage(inputNode, templateCall.getNode(), "number of arguments doesn't match template");
+      generator.showErrorMessage(inputNode, templateCall, "number of arguments doesn't match template");
       return outerContext != null ? outerContext.subContext(null, newInputNode) : new DefaultTemplateContext(newInputNode);
     }
 
     final Map<String, Object> vars = new HashMap<String, Object>(arguments.length);
     for (int i = 0; i < arguments.length; i++) {
-      Expression expr = arguments[i];
-      String name = parameters[i].getName();
+      SNode exprNode = arguments[i];
+      String name = parameters[i];
       Object value = null;
-      if (expr instanceof BooleanConstant) {
-        value = ((BooleanConstant) expr).getValue();
-      } else if (expr instanceof IntegerConstant) {
-        value = ((IntegerConstant) expr).getValue();
-      } else if (expr instanceof StringLiteral) {
-        value = ((StringLiteral) expr).getValue();
-      } else if (expr instanceof NullLiteral) {
-        /* ok */
-      } else if (expr instanceof TemplateArgumentParameterExpression && outerContext != null) {
-        TemplateParameterDeclaration parameter = ((TemplateArgumentParameterExpression) expr).getParameter();
+
+      if (exprNode.isInstanceOfConcept(RuleUtil.concept_TemplateArgumentParameterExpression) && outerContext != null) {
+        SNode parameter = RuleUtil.getTemplateArgumentParameterExpression_Parameter(exprNode);
         if (parameter == null) {
-          generator.showErrorMessage(inputNode, expr.getNode(), "cannot evaluate template argument #" + (i + 1) + ": invalid parameter reference");
+          generator.showErrorMessage(inputNode, exprNode, "cannot evaluate template argument #" + (i + 1) + ": invalid parameter reference");
         } else {
           value = outerContext.getVariable(parameter.getName());
         }
-      } else if (expr instanceof TemplateArgumentPatternRef && outerContext != null) {
-        String patternVar = GeneratorUtilEx.getPatternVariableName(expr.getNode());
+      } else if (exprNode.isInstanceOfConcept(RuleUtil.concept_TemplateArgumentPatternRef) && outerContext != null) {
+        String patternVar = GeneratorUtilEx.getPatternVariableName(exprNode);
         if (patternVar == null) {
-          generator.showErrorMessage(inputNode, expr.getNode(), "cannot evaluate template argument #" + (i + 1) + ": invalid pattern reference");
+          generator.showErrorMessage(inputNode, exprNode, "cannot evaluate template argument #" + (i + 1) + ": invalid pattern reference");
         } else {
           // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
           value = outerContext.getPatternVariable(patternVar);
         }
-      } else if (expr instanceof TemplateArgumentQueryExpression) {
-        TemplateArgumentQuery query = ((TemplateArgumentQueryExpression) expr).getQuery();
-        value = reductionContext.getQueryExecutor().evaluateArgumentQuery(inputNode, BaseAdapter.fromAdapter(query), outerContext);
+      } else if (exprNode.isInstanceOfConcept(RuleUtil.concept_TemplateArgumentQueryExpression)) {
+        SNode query = RuleUtil.getTemplateArgumentQueryExpression_Query(exprNode);
+        value = reductionContext.getQueryExecutor().evaluateArgumentQuery(inputNode, query, outerContext);
       } else {
-        generator.showErrorMessage(inputNode, templateCall.getNode(), "cannot evaluate template argument #" + (i + 1));
+        try {
+          value = RuleUtil.evaluateBaseLanguageExpression(exprNode);
+        } catch(IllegalArgumentException ex) {
+          generator.showErrorMessage(inputNode, templateCall, "cannot evaluate template argument #" + (i + 1));
+        }
       }
 
       vars.put(name, value);

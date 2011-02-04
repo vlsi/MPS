@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class RuleUtil {
   public static final String concept_AbstractMacro = "jetbrains.mps.lang.generator.structure.AbstractMacro";
+  public static final String concept_ITemplateCall = "jetbrains.mps.lang.generator.structure.ITemplateCall";
   public static final String concept_NodeMacro = "jetbrains.mps.lang.generator.structure.NodeMacro";
   public static final String concept_IfMacro = "jetbrains.mps.lang.generator.structure.IfMacro";
   public static final String concept_SourceSubstituteMacro = "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro";
@@ -38,6 +39,9 @@ public class RuleUtil {
   public static final String concept_TemplateDeclaration = "jetbrains.mps.lang.generator.structure.TemplateDeclaration";
   public static final String concept_WeaveEach_RuleConsequence = "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence";
   public static final String concept_MappingConfiguration = "jetbrains.mps.lang.generator.structure.MappingConfiguration";
+  public static final String concept_TemplateArgumentPatternRef = "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef";
+  public static final String concept_TemplateArgumentQueryExpression = "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression";
+  public static final String concept_TemplateArgumentParameterExpression = "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression";
   public static final String link_MappingConfiguration_preMappingScript = "preMappingScript";
   public static final String link_TemplateSwitch_modifiedSwitch = "modifiedSwitch";
 
@@ -235,5 +239,81 @@ public class RuleUtil {
 
   public static SNode getTemplateDeclaration_ContentNode(SNode decl) {
     return SLinkOperations.getTarget(decl, "contentNode", true);
+  }
+
+  public static SNode getSourceNodesQuery(SNode node) {
+    if (node == null) {
+      return null;
+    }
+    String conceptFqName = node.getConceptFqName();
+    if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.LoopMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.LoopMacro"), "sourceNodesQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.CopySrcListMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.CopySrcListMacro"), "sourceNodesQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.MapSrcListMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), "sourceNodesQuery", true);
+    }
+    return null;
+  }
+
+  public static SNode getSourceNodeQuery(SNode node) {
+    if (node == null) {
+      return null;
+    }
+    String conceptFqName = node.getConceptFqName();
+    if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.CopySrcNodeMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"), "sourceNodeQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "sourceNodeQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.SwitchMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.SwitchMacro"), "sourceNodeQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.IncludeMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.IncludeMacro"), "sourceNodeQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.TemplateCallMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateCallMacro"), "sourceNodeQuery", true);
+    }
+    return null;
+  }
+
+  public static List<SNode> getTemplateCall_Arguments(SNode macro) {
+    return SLinkOperations.getTargets(macro, "actualArgument", true);
+
+  }
+
+  public static SNode getTemplateCall_Template(SNode macro) {
+    return SLinkOperations.getTarget(macro, "template", false);
+  }
+
+  public static Object evaluateBaseLanguageExpression(SNode expr) {
+    if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
+      return SPropertyOperations.getBoolean(SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value");
+    } else if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.IntegerConstant")) {
+      return SPropertyOperations.getInteger(SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value");
+    } else if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral")) {
+      return SPropertyOperations.getString(SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
+    } else if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.NullLiteral")) {
+      return null;
+    }
+    throw new IllegalArgumentException();
+  }
+
+  public static SNode getTemplateArgumentQueryExpression_Query(SNode expr) {
+    return SLinkOperations.getTarget(expr, "query", true);
+  }
+
+  public static SNode getTemplateArgumentParameterExpression_Parameter(SNode expr) {
+    return SLinkOperations.getTarget(expr, "parameter", false);
+  }
+
+  public static boolean getMappingScript_IsPreProcess(SNode script) {
+    return SPropertyOperations.hasValue(script, "scriptKind", "pre_processing", "post_processing");
+  }
+
+  public static boolean getMappingScript_ModifiesModel(SNode script) {
+    return SPropertyOperations.getBoolean(script, "modifiesModel");
+  }
+
+  public static SNode getMappingScript_CodeBlock(SNode script) {
+    return SLinkOperations.getTarget(script, "codeBlock", true);
   }
 }
