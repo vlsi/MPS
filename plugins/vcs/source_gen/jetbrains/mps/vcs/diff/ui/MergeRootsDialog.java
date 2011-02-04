@@ -13,8 +13,8 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import javax.swing.JSplitPane;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import jetbrains.mps.smodel.SModel;
@@ -25,6 +25,7 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 
 public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
   private MergeContext myMergeContext;
+  private MergeModelsDialog myModelsDialog;
   private IOperationContext myOperationContext;
   private SNodeId myRootId;
   private JPanel myContainer = new JPanel(new BorderLayout());
@@ -33,12 +34,17 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
   private DiffEditorComponent myResultEditor;
   private DiffEditorComponent myMineEditor;
   private DiffEditorComponent myRepositoryEditor;
-  private ChangeGroupBuilder myMineChangeGroupBuilder;
-  private ChangeGroupBuilder myRepositoryChangeGroupBuilder;
+  private ChangeGroupBuilder myMineBuilder;
+  private ChangeGroupBuilder myRepositoryBuilder;
+  private ChangeTrapeciumStrip myMineStrip;
+  private ChangeTrapeciumStrip myRepositoryStrip;
+  private MergeButtonsPainter myMinePainter;
+  private MergeButtonsPainter myRepositoryPainter;
   private DiffEditorComponentsGroup myDiffEditorsGroup = new DiffEditorComponentsGroup();
 
   public MergeRootsDialog(MergeModelsDialog mergeModelsDialog, MergeContext mergeContext, SNodeId rootId, String rootName) {
     super(mergeModelsDialog, "Merging " + rootName);
+    myModelsDialog = mergeModelsDialog;
     myOperationContext = mergeModelsDialog.getOperationContext();
     myMergeContext = mergeContext;
     myRootId = rootId;
@@ -47,19 +53,53 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     myResultEditor = addEditor(1, myMergeContext.getResultModel(), "Merge Result");
     myRepositoryEditor = addEditor(2, myMergeContext.getRepositoryModel(), "Repository Changes");
 
-    myMineChangeGroupBuilder = new ChangeGroupBuilder(myMergeContext, myMergeContext.getMyChangeSet(), myMineEditor, myResultEditor);
-    myRepositoryChangeGroupBuilder = new ChangeGroupBuilder(myMergeContext, myMergeContext.getRepositoryChangeSet(), myResultEditor, myRepositoryEditor);
+    myMineBuilder = new ChangeGroupBuilder(myMergeContext, myMergeContext.getMyChangeSet(), myMineEditor, myResultEditor);
+    myRepositoryBuilder = new ChangeGroupBuilder(myMergeContext, myMergeContext.getRepositoryChangeSet(), myResultEditor, myRepositoryEditor);
 
-    addTrapeciumStrip(0, myMineChangeGroupBuilder);
-    addTrapeciumStrip(1, myRepositoryChangeGroupBuilder);
-    MergeButtonsPainter.addTo(myMineEditor, myMineChangeGroupBuilder);
-    MergeButtonsPainter.addTo(myRepositoryEditor, myRepositoryChangeGroupBuilder);
+    myMineStrip = addTrapeciumStrip(0, myMineBuilder);
+    myRepositoryStrip = addTrapeciumStrip(1, myRepositoryBuilder);
+    myMinePainter = MergeButtonsPainter.addTo(this, myMineEditor, myMineBuilder);
+    myRepositoryPainter = MergeButtonsPainter.addTo(this, myRepositoryEditor, myRepositoryBuilder);
 
     JSplitPane modelsPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopComponent, myBottomComponent);
     modelsPane.setResizeWeight(1);
     myContainer = new JPanel(new BorderLayout());
     myContainer.add(modelsPane);
     highlightAllChanges();
+  }
+
+  public void rehighlight() {
+    myMineEditor.unhighlightAllChanges();
+    myResultEditor.unhighlightAllChanges();
+    myRepositoryEditor.unhighlightAllChanges();
+
+    myResultEditor.rebuildEditorContent();
+
+    myMineBuilder.invalidate();
+    myRepositoryBuilder.invalidate();
+
+    highlightAllChanges();
+
+    myMineStrip.repaint();
+    myRepositoryStrip.repaint();
+    myMinePainter.relayout();
+    myRepositoryPainter.relayout();
+  }
+
+  private void highlightAllChanges() {
+    for (ModelChange change : ListSequence.fromList(myMergeContext.getChangesForRoot(myRootId))) {
+      if (!(myMergeContext.isChangeResolved(change))) {
+        higlightChange(myResultEditor, change);
+        if (myMergeContext.isMyChange(change)) {
+          higlightChange(myMineEditor, change);
+        } else {
+          higlightChange(myRepositoryEditor, change);
+        }
+      }
+    }
+    myMineEditor.getHighlightManager().repaintAndRebuildEditorMessages();
+    myResultEditor.getHighlightManager().repaintAndRebuildEditorMessages();
+    myRepositoryEditor.getHighlightManager().repaintAndRebuildEditorMessages();
   }
 
   private void higlightChange(DiffEditorComponent diffEditor, ModelChange change) {
@@ -71,24 +111,11 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     });
   }
 
-  private void highlightAllChanges() {
-    for (ModelChange change : ListSequence.fromList(myMergeContext.getChangesForRoot(myRootId))) {
-      higlightChange(myResultEditor, change);
-      if (myMergeContext.isMyChange(change)) {
-        higlightChange(myMineEditor, change);
-      } else {
-        higlightChange(myRepositoryEditor, change);
-      }
-    }
-    myMineEditor.getHighlightManager().repaintAndRebuildEditorMessages();
-    myResultEditor.getHighlightManager().repaintAndRebuildEditorMessages();
-    myRepositoryEditor.getHighlightManager().repaintAndRebuildEditorMessages();
-  }
-
-  private void addTrapeciumStrip(int index, ChangeGroupBuilder changeGroupBuilder) {
+  private ChangeTrapeciumStrip addTrapeciumStrip(int index, ChangeGroupBuilder changeGroupBuilder) {
     ChangeTrapeciumStrip strip = new ChangeTrapeciumStrip(changeGroupBuilder);
     ((GridBagLayout) myTopComponent.getLayout()).setConstraints(strip, new GridBagConstraints(index * 2 + 1, 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0));
     myTopComponent.add(strip);
+    return strip;
   }
 
   private DiffEditorComponent addEditor(int index, SModel model, String revisionName) {
@@ -132,5 +159,11 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
   public void cancel() {
     // TODO revert all changes applying 
     dispose();
+  }
+
+  @Override
+  public void dispose() {
+    myModelsDialog.rebuildLater();
+    super.dispose();
   }
 }

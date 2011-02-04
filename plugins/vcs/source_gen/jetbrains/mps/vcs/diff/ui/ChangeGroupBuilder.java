@@ -80,11 +80,19 @@ public class ChangeGroupBuilder {
     return myChangeGroups;
   }
 
+  public void invalidate() {
+    myChangeGroups = null;
+  }
+
   public DiffEditorComponent getLeftEditorComponent() {
     return myLeftEditorComponent;
   }
 
   public DiffEditorComponent getRightEditorComponent() {
     return myRightEditorComponent;
+  }
+
+  public MergeContext getMergeContext() {
+    return myMergeContext;
   }
 }

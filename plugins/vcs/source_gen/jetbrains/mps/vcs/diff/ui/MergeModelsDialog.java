@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import javax.swing.JComponent;
+import javax.swing.JScrollPane;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -33,7 +34,6 @@ import jetbrains.mps.ide.icons.IconManager;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import javax.swing.SwingUtilities;
 
 public class MergeModelsDialog extends BaseDialog {
   private Project myProject;
@@ -51,12 +51,12 @@ public class MergeModelsDialog extends BaseDialog {
   }
 
   protected JComponent getMainComponent() {
-    return myMergeModelsTree;
+    return new JScrollPane(myMergeModelsTree);
   }
 
   @Override
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(10, 10, 300, 500);
+    return new DialogDimensionsSettings.DialogDimensions(10, 10, 500, 700);
   }
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
@@ -75,6 +75,10 @@ public class MergeModelsDialog extends BaseDialog {
       null :
       myMergeContext.getResultModel()
     );
+  }
+
+  /*package*/ void rebuildLater() {
+    myMergeModelsTree.rebuildLater();
   }
 
   /*package*/ IOperationContext getOperationContext() {
@@ -103,6 +107,7 @@ public class MergeModelsDialog extends BaseDialog {
   private class MyModelTreeNode extends MPSTreeNode {
     public MyModelTreeNode() {
       super(myOperationContext);
+      setNodeIdentifier("model");
     }
 
     @Override
@@ -119,6 +124,7 @@ public class MergeModelsDialog extends BaseDialog {
     public MyRootTreeNode(SNodeId rootId) {
       super(myOperationContext);
       myRootId = rootId;
+      setNodeIdentifier("" + myRootId);
     }
 
     @Override
@@ -136,6 +142,8 @@ public class MergeModelsDialog extends BaseDialog {
 
       if (Sequence.fromIterable(conflictedChanges).isNotEmpty()) {
         setColor(Color.RED);
+      } else if (ListSequence.fromList(changes).isEmpty()) {
+        // skip 
       } else if (ListSequence.fromList(changes).all(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return ch instanceof AddRootChange;
@@ -152,7 +160,10 @@ public class MergeModelsDialog extends BaseDialog {
         setColor(FileStatus.MODIFIED.getColor());
       }
 
-      String changesText = NameUtil.formatNumericalString(ListSequence.fromList(changes).count(), "change");
+      String changesText = (ListSequence.fromList(changes).isEmpty() ?
+        null :
+        NameUtil.formatNumericalString(ListSequence.fromList(changes).count(), "change")
+      );
       if (Sequence.fromIterable(conflictedChanges).isEmpty()) {
         setAdditionalText(changesText);
       } else {
@@ -186,12 +197,8 @@ public class MergeModelsDialog extends BaseDialog {
           mergeRootsDialog.value = new MergeRootsDialog(MergeModelsDialog.this, myMergeContext, myRootId, myPresentations);
         }
       });
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          mergeRootsDialog.value.showDialog();
-          mergeRootsDialog.value.toFront();
-        }
-      });
+      mergeRootsDialog.value.showDialog();
+      mergeRootsDialog.value.toFront();
     }
   }
 }

@@ -7,14 +7,19 @@ import javax.swing.Icon;
 import java.util.Map;
 import java.awt.Point;
 import java.awt.Graphics;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.awt.Color;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.projectPane.Icons;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.awt.Cursor;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vcs.diff.MergeContext;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -35,9 +40,13 @@ public class MergeButtonsPainter extends AbstractFoldingAreaPainter {
   private Map<ChangeGroup, Point> myGroupToButtonCoord = null;
   private ChangeGroup myCurrentGroup = null;
   private MergeButtonsPainter.Action myCurrentAction = null;
+  private MergeRootsDialog myDialog;
+  private boolean myWithButtons;
 
-  public MergeButtonsPainter(DiffEditorComponent diffEditor, ChangeGroupBuilder changeGroupBuilder) {
+  public MergeButtonsPainter(boolean withButtons, MergeRootsDialog dialog, DiffEditorComponent diffEditor, ChangeGroupBuilder changeGroupBuilder) {
     super(diffEditor.getLeftEditorHighlighter());
+    myWithButtons = withButtons;
+    myDialog = dialog;
     myChangeGroupBuilder = changeGroupBuilder;
     myHighlightLeft = changeGroupBuilder.getLeftEditorComponent() == diffEditor;
   }
@@ -53,7 +62,19 @@ public class MergeButtonsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   protected void paintInLocalCoordinates(Graphics graphics) {
-    ensureYsCalculated();
+    ensureCoordsCalculated();
+    /*
+      graphics.setColor(Color.GRAY);
+      for (ChangeGroup g : SetSequence.fromSet(MapSequence.fromMap(myGroupToButtonCoord).keySet())) {
+        int start = g.getStart(myHighlightLeft);
+        int end = g.getEnd(myHighlightLeft);
+        int x1 = -getLeftHighlighter().getFoldingLineX();
+        int x2 = getLeftHighlighter().getRightFoldingAreaWidth();
+        graphics.drawLine(x1, start - 1, x2, start - 1);
+        graphics.drawLine(x1, end - 1, x2, end - 1);
+      }
+    */
+
     for (Point p : Sequence.fromIterable(MapSequence.fromMap(myGroupToButtonCoord).values())) {
       Icon leftIcon = (myHighlightLeft ?
         Icons.EXCLUDE :
@@ -64,12 +85,12 @@ public class MergeButtonsPainter extends AbstractFoldingAreaPainter {
         Icons.EXCLUDE
       );
 
-      leftIcon.paintIcon(null, graphics, p.x, p.y);
-      rightIcon.paintIcon(null, graphics, p.x + GAP + ICON_SIZE, p.y);
+      leftIcon.paintIcon(null, graphics, p.x, p.y + 1);
+      rightIcon.paintIcon(null, graphics, p.x + GAP + ICON_SIZE, p.y + 1);
     }
   }
 
-  private void ensureYsCalculated() {
+  private void ensureCoordsCalculated() {
     if (myGroupToButtonCoord != null) {
       return;
     }
@@ -113,7 +134,27 @@ public class MergeButtonsPainter extends AbstractFoldingAreaPainter {
     if (event.getButton() != MouseEvent.BUTTON1) {
       return;
     }
-    // TODO 
+    if (myCurrentGroup == null || myCurrentAction == null) {
+      return;
+    }
+
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        MergeContext mergeContext = myChangeGroupBuilder.getMergeContext();
+        for (ModelChange change : ListSequence.fromList(myCurrentGroup.getChanges())) {
+          switch (myCurrentAction) {
+            case APPLY:
+              mergeContext.applyChange(change);
+              break;
+            case EXCLUDE:
+              mergeContext.excludeChange(change);
+              break;
+            default:
+          }
+        }
+        myDialog.rehighlight();
+      }
+    });
   }
 
   @Override
@@ -125,11 +166,11 @@ public class MergeButtonsPainter extends AbstractFoldingAreaPainter {
 
   @NotNull
   private Tuples._2<ChangeGroup, MergeButtonsPainter.Action> findGroupAndActionUnder(@NotNull final Point p) {
-    ensureYsCalculated();
+    ensureCoordsCalculated();
 
     ChangeGroup changeGroup = ListSequence.fromList(myChangeGroupBuilder.getChangeGroups()).findFirst(new IWhereFilter<ChangeGroup>() {
       public boolean accept(ChangeGroup cg) {
-        return MapSequence.fromMap(myGroupToButtonCoord).get(cg).y - MergeButtonsPainter.GAP / 2 < p.getY() && p.getY() < MapSequence.fromMap(myGroupToButtonCoord).get(cg).y + MergeButtonsPainter.ICON_SIZE + MergeButtonsPainter.GAP / 2;
+        return MapSequence.fromMap(myGroupToButtonCoord).get(cg).y - GAP / 2 < p.getY() && p.getY() < MapSequence.fromMap(myGroupToButtonCoord).get(cg).y + ICON_SIZE + GAP / 2;
       }
     });
     MergeButtonsPainter.Action action = null;
@@ -154,8 +195,15 @@ public class MergeButtonsPainter extends AbstractFoldingAreaPainter {
     return MultiTuple.<ChangeGroup,MergeButtonsPainter.Action>from(changeGroup, action);
   }
 
-  public static void addTo(DiffEditorComponent diffEditor, ChangeGroupBuilder changeGroupBuilder) {
-    diffEditor.getLeftEditorHighlighter().addFoldingAreaPainter(new MergeButtonsPainter(diffEditor, changeGroupBuilder));
+  @Override
+  public void relayout() {
+    myGroupToButtonCoord = null;
+  }
+
+  public static MergeButtonsPainter addTo(MergeRootsDialog dialog, DiffEditorComponent diffEditor, ChangeGroupBuilder changeGroupBuilder) {
+    MergeButtonsPainter painter = new MergeButtonsPainter(true, dialog, diffEditor, changeGroupBuilder);
+    diffEditor.getLeftEditorHighlighter().addFoldingAreaPainter(painter);
+    return painter;
   }
 
   private static String check_85dz7l_a0a5(MergeButtonsPainter.Action p) {

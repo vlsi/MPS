@@ -20,6 +20,7 @@ import com.intellij.openapi.util.Computable;
 
 import static jetbrains.mps.TestMain.configureMPS;
 
+import com.intellij.openapi.util.IconLoader;
 import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -49,6 +50,7 @@ public class TestMergeDialog {
   public static void main(final String[] args) throws JDOMException, IOException {
     IdeMain.setTestMode(TestMode.NO_TEST);
     configureMPS();
+    IconLoader.activate();
 
     final SModel models[] = new SModel[3];
 

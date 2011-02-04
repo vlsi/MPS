@@ -21,6 +21,9 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SNodeId;
 import java.awt.Point;
 import java.awt.Rectangle;
+import jetbrains.mps.nodeEditor.NodeHighlightManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class DiffEditorComponent extends EditorComponent implements EditorMessageOwner {
   private InspectorEditorComponent myInspector;
@@ -129,5 +132,15 @@ public class DiffEditorComponent extends EditorComponent implements EditorMessag
 
   public ChangeEditorMessage getMessageForChange(ModelChange change) {
     return MapSequence.fromMap(myChangeToMessage).get(change);
+  }
+
+  public void unhighlightAllChanges() {
+    final NodeHighlightManager hm = getHighlightManager();
+    Sequence.fromIterable(MapSequence.fromMap(myChangeToMessage).values()).visitAll(new IVisitor<ChangeEditorMessage>() {
+      public void visit(ChangeEditorMessage m) {
+        hm.unmark(m);
+      }
+    });
+    MapSequence.fromMap(myChangeToMessage).clear();
   }
 }

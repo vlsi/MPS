@@ -185,6 +185,10 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     return myEditorComponent;
   }
 
+  public int getRightFoldingAreaWidth() {
+    return myRightFoldingAreaWidth;
+  }
+
   public int getFoldingLineX() {
     return myFoldingLineX;
   }
