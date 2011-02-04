@@ -251,12 +251,16 @@ public class QueriesGenerated {
     return PathHolder_Behavior.call_getPathWithoutMacro_1219770843283(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1217518689738(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Module_Behavior.call_getClassesGen_1216909316753(SLinkOperations.getTarget(_context.getNode(), "module", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1217518534457(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name").replace(File.separator, "_");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3315989002810591812(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return PathHolder_Behavior.call_getValue_1219231432401(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3315989002810591788(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return PathHolder_Behavior.call_getPathWithoutMacro_1219770843283(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1216902460852(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -433,6 +437,10 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1220024351671(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "macro", false), "MacroToMacro");
+  }
+
+  public static Object referenceMacro_GetReferent_3315989002810591775(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "macro", false), "MacroToMacro");
   }
 
@@ -631,6 +639,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "macro", false) != null);
   }
 
+  public static boolean ifMacro_Condition_3315989002810591753(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "macro", false) != null);
+  }
+
   public static boolean ifMacro_Condition_1220032434961(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "macro", false) != null);
   }
@@ -708,6 +720,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1219156936386(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "message", true);
+  }
+
+  public static SNode sourceNodeQuery_3315989002810591731(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return Module_Behavior.call_getClassesGen_3315989002810564857(SLinkOperations.getTarget(_context.getNode(), "module", false));
   }
 
   public static SNode sourceNodeQuery_1219156054317(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1006,11 +1022,11 @@ public class QueriesGenerated {
       if (module != null && module.isPackaged()) {
 
 
-        SNode fileComponent = new QueriesGenerated.QuotationClass_x583g4_a0a2a1a0a181().createNode();
+        SNode fileComponent = new QueriesGenerated.QuotationClass_x583g4_a0a2a1a0a581().createNode();
         SLinkOperations.setTarget(SLinkOperations.getTarget(fileComponent, "sourcePath", true), "compositePathComponent", Util.getPackagedJarPath(module), true);
 
         if (new File(Util.getRuntimeJarPathString(moduleNode)).exists()) {
-          SNode fileRuntimeComponent = new QueriesGenerated.QuotationClass_x583g4_a0a0a5a1a0a181().createNode();
+          SNode fileRuntimeComponent = new QueriesGenerated.QuotationClass_x583g4_a0a0a5a1a0a581().createNode();
           SLinkOperations.setTarget(SLinkOperations.getTarget(fileRuntimeComponent, "sourcePath", true), "compositePathComponent", Util.getRuntimeJarPath(moduleNode), true);
           SNodeOperations.insertNextSiblingChild(moduleNode, fileRuntimeComponent);
         }
@@ -1019,8 +1035,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a2a1a0a181 {
-    public QuotationClass_x583g4_a0a2a1a0a181() {
+  public static class QuotationClass_x583g4_a0a2a1a0a581 {
+    public QuotationClass_x583g4_a0a2a1a0a581() {
     }
 
     public SNode createNode() {
@@ -1055,8 +1071,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a5a1a0a181 {
-    public QuotationClass_x583g4_a0a0a5a1a0a181() {
+  public static class QuotationClass_x583g4_a0a0a5a1a0a581 {
+    public QuotationClass_x583g4_a0a0a5a1a0a581() {
     }
 
     public SNode createNode() {

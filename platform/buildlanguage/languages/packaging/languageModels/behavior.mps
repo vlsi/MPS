@@ -4432,7 +4432,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724381" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1216909316753">
-      <property name="name" value="getClassesGen" />
+      <property name="name" value="getClassesGenString" />
       <property name="isPrivate" value="false" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216909316755">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1218707822277">
@@ -4471,6 +4471,40 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724359" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1219235451470" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3315989002810564857">
+      <property name="name" value="getClassesGen" />
+      <property name="isPrivate" value="false" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3315989002810564858">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3315989002810586208">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3315989002810586209">
+            <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="3315989002810586210" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3315989002810586211">
+              <link role="baseMethodDeclaration:16" targetNodeId="1239195000114" resolveInfo="getPathHolder" />
+              <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5419177948393669110">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5419177948393669111">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5419177948393669112">
+                    <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5419177948393669113" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="5419177948393669114">
+                      <link role="baseMethodDeclaration:16" targetNodeId="1213877515148" resolveInfo="getModule" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5419177948393669115">
+                    <link role="baseMethodDeclaration:3" targetNodeId="6.~IModule.getClassesGen():jetbrains.mps.vfs.IFile" resolveInfo="getClassesGen" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5419177948393669116">
+                  <link role="baseMethodDeclaration:3" targetNodeId="7.~IFile.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3315989002810564873" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3315989002810564875">
+        <link role="concept:16" targetNodeId="1.1204737220833:7" resolveInfo="PathHolder" />
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1216909568805">
       <property name="name" value="getSources" />
