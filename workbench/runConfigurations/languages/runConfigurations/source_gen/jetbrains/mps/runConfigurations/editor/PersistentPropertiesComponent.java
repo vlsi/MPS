@@ -14,6 +14,10 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -35,65 +39,119 @@ public class PersistentPropertiesComponent extends AbstractCellProvider {
   }
 
   private EditorCell createCollection_42zii1_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_42zii1_a");
-    editorCell.addEditorCell(this.createIndentCell_42zii1_a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_42zii1_b0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_42zii1_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_42zii1_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_42zii1_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_42zii1_b1a(editorContext, node));
+    editorCell.setCellId("Collection_42zii1_a");
+    editorCell.addEditorCell(this.createCollection_42zii1_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_42zii1_b1a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_42zii1_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_42zii1_b1a");
+    editorCell.setCellId("Collection_42zii1_a0");
+    editorCell.addEditorCell(this.createIndentCell_42zii1_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_42zii1_b0a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_42zii1_b0a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_42zii1_b0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createIndentCell_42zii1_a1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_42zii1_b1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_42zii1_a1a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_42zii1_b1a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_42zii1_c1a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_42zii1_d1a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_42zii1_a1a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_42zii1_b1a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_42zii1_b1a0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createIndentCell_42zii1_a1b0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_42zii1_b1b0a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_42zii1_d1a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_42zii1_d1a0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createIndentCell_42zii1_a3b0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_42zii1_b3b0a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_42zii1_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "persistent properties:");
-    editorCell.setCellId("Constant_42zii1_a1a");
+    editorCell.setCellId("Constant_42zii1_a1a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_42zii1_b1b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new PersistentPropertiesComponent.persistentPropertyListHandler_42zii1_b1b0(node, "persistentProperty", editorContext);
+  private EditorCell createConstant_42zii1_c1a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_42zii1_c1a0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_42zii1_b1b0a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new PersistentPropertiesComponent.persistentPropertyListHandler_42zii1_b1b0a(node, "persistentProperty", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_persistentProperty");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createIndentCell_42zii1_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_42zii1_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createIndentCell_42zii1_a1b0(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_42zii1_a1b0a(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private static class persistentPropertyListHandler_42zii1_b1b0 extends RefNodeListHandler {
-    public persistentPropertyListHandler_42zii1_b1b0(SNode ownerNode, String childRole, EditorContext context) {
+  private EditorCell createIndentCell_42zii1_a3b0a(EditorContext editorContext, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    return result;
+  }
+
+  private EditorCell createRefNode_42zii1_b3b0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("checkProperties");
+    provider.setNoTargetText("<no check>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static class persistentPropertyListHandler_42zii1_b1b0a extends RefNodeListHandler {
+    public persistentPropertyListHandler_42zii1_b1b0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -34,18 +34,6 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="Unnamed" type="Demo" factoryName="Demo Application">
-      <MyState />
-      <myNode>
-        <MyState>
-          <option name="myNodeId" value="3347833162492309204" />
-          <option name="myModelId" value="r:083e94e2-32c5-4a88-902d-b272b908f95e(jetbrains.mps.runConfigurations.sandbox.sandbox)" />
-        </MyState>
-      </myNode>
-      <method />
-    </configuration>
-  </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>

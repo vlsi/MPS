@@ -19,6 +19,7 @@ public class PersistentConfiguration extends BaseConcept implements IPersistentP
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EDITOR = "editor";
+  public static final String CHECK_PROPERTIES = "checkProperties";
   public static final String METHODS = "methods";
   public static final String PERSISTENT_PROPERTY = "persistentProperty";
 
@@ -64,6 +65,14 @@ public class PersistentConfiguration extends BaseConcept implements IPersistentP
 
   public void setEditor(SettingsEditor node) {
     super.setChild(PersistentConfiguration.EDITOR, node);
+  }
+
+  public CheckProperties_Function getCheckProperties() {
+    return (CheckProperties_Function) this.getChild(CheckProperties_Function.class, PersistentConfiguration.CHECK_PROPERTIES);
+  }
+
+  public void setCheckProperties(CheckProperties_Function node) {
+    super.setChild(PersistentConfiguration.CHECK_PROPERTIES, node);
   }
 
   public int getMethodsesCount() {

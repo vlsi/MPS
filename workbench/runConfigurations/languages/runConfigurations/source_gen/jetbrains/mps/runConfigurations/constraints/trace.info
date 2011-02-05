@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ReportConfigurationErrorStatement_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ReportConfigurationErrorStatement_Constraints" />
   <unitInfo fileName="EditorPropertyReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.EditorPropertyReference_Constraints" />
   <unitInfo fileName="SettingsEditor_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.SettingsEditor_Constraints" />
   <unitInfo fileName="EditorExpression_persistentPropertyDeclaration_ReferentConstraint.java" startLine="46" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.EditorExpression_persistentPropertyDeclaration_ReferentConstraint$QuotationClass_wdxcx5_a1a0a0a0a0a2" />
@@ -55,6 +56,10 @@
       <varInfo nodeId="7902226081039506348" varName="instance" />
       <varInfo nodeId="7902226081039506355" varName="editorType" />
     </scopeInfo>
+  </root>
+  <root nodeId="974940122351439092">
+    <nodeInfo nodeId="974940122351439095" fileName="ReportConfigurationErrorStatement_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="974940122351439094" fileName="ReportConfigurationErrorStatement_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="159" />
   </root>
 </debugInfo>
 

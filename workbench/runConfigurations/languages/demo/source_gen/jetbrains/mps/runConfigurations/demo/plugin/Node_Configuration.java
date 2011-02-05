@@ -24,6 +24,9 @@ public class Node_Configuration implements IPersistentConfiguration {
   private Node_Configuration.MyState myState = new Node_Configuration.MyState();
 
   public void checkConfiguration() throws RuntimeConfigurationException {
+    if (this.getNode() != null) {
+      throw new RuntimeConfigurationException("Node is not specified.");
+    }
   }
 
   @Override

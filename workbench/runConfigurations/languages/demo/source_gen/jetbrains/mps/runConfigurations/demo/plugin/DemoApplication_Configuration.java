@@ -8,6 +8,11 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -34,6 +39,18 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
+    {
+      final SNode node = this.getNode().getNode();
+      final Wrappers._boolean valid = new Wrappers._boolean();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          valid.value = SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.runConfigurations.demo.structure.SomeConcept"), "valid");
+        }
+      });
+      if (!(valid.value)) {
+        throw new RuntimeConfigurationException("Node " + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.runConfigurations.demo.structure.SomeConcept"), "name") + " is not valid.");
+      }
+    }
   }
 
   @Override

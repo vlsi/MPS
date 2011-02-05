@@ -33,6 +33,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_ReportConfigurationErrorStatement_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new EditorIsSusbtypeOfEditor_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
