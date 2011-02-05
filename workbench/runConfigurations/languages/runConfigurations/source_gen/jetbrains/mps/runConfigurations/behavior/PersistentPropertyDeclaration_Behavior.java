@@ -6,12 +6,16 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PersistentPropertyDeclaration_Behavior {
+  private static Class[] PARAMETERS_1448685625140326362 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -20,12 +24,33 @@ public class PersistentPropertyDeclaration_Behavior {
   }
 
   public static String call_getAccessorName_6458115119415160800(SNode thisNode) {
+    String name = PersistentPropertyDeclaration_Behavior.removeMyPrefixInternal_3930860252539497072(SPropertyOperations.getString(thisNode, "name"));
+    return name.substring(0, 1).toUpperCase() + name.substring(1);
+  }
+
+  public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
+    return true;
+  }
+
+  public static boolean call_isInitializable_1448685625140326362(SNode thisNode) {
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.PersistentPropertyDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_1448685625140326362);
+  }
+
+  public static boolean callSuper_isInitializable_1448685625140326362(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.PersistentPropertyDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", PARAMETERS_1448685625140326362);
+  }
+
+  public static String removeMyPrefix_1448685625140440554(String name) {
+    name = PersistentPropertyDeclaration_Behavior.removeMyPrefixInternal_3930860252539497072(name);
+    return name.substring(0, 1).toLowerCase() + name.substring(1);
+  }
+
+  public static String removeMyPrefixInternal_3930860252539497072(String name) {
     String prefix = "my";
-    String accesorName = SPropertyOperations.getString(thisNode, "name");
-    if (accesorName.startsWith(prefix) && accesorName.length() > 2) {
-      accesorName = accesorName.substring(prefix.length());
+    if (name.startsWith(prefix) && name.length() > 2) {
+      name = name.substring(prefix.length());
     }
-    return accesorName.substring(0, 1).toUpperCase() + accesorName.substring(1);
+    return name;
   }
 
   public static class QuotationClass_ex141d_a1a0a0b {

@@ -6,13 +6,15 @@ import com.intellij.execution.configurations.RunConfigurationBase;
 import jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.project.Project;
-import com.intellij.execution.configurations.RuntimeConfigurationException;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import com.intellij.openapi.project.Project;
+import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -32,26 +34,28 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
 
   @NotNull
   private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
-  private Node_Configuration myNode = new Node_Configuration();
+  private Node_Configuration myNode = new Node_Configuration(new _FunctionTypes._return_P0_E0<SNode>() {
+    public SNode invoke() {
+      final Wrappers._T<SNode> concept = new Wrappers._T<SNode>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          concept.value = SConceptOperations.findConceptDeclaration("jetbrains.mps.runConfigurations.demo.structure.SomeConcept");
+        }
+      });
+      return concept.value;
+    }
+  }.invoke(), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+    public Boolean invoke(SNode node) {
+      return SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.runConfigurations.demo.structure.SomeConcept"), "valid");
+    }
+  });
 
   public DemoApplication_Configuration(Project project, DemoApplication_Configuration_Factory factory, String name) {
     super(project, factory, name);
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    {
-      this.getNode().checkConfiguration();
-      final SNode node = this.getNode().getNode();
-      final Wrappers._boolean valid = new Wrappers._boolean();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          valid.value = SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.runConfigurations.demo.structure.SomeConcept"), "valid");
-        }
-      });
-      if (!(valid.value)) {
-        throw new RuntimeConfigurationException("Node " + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.runConfigurations.demo.structure.SomeConcept"), "name") + " is not valid.");
-      }
-    }
+    this.getNode().checkConfiguration();
   }
 
   @Override

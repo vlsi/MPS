@@ -4,13 +4,22 @@ package jetbrains.mps.runConfigurations.demo.plugin;
 
 import com.intellij.openapi.options.SettingsEditor;
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class Node_Configuration_Editor extends SettingsEditor<Node_Configuration> {
   private MainNodeChooser myChooser;
+  private SNode myConcept;
+  private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
 
   public Node_Configuration_Editor() {
+  }
+
+  public Node_Configuration_Editor(SNode concept, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
+    myConcept = concept;
+    myIsValid = isValid;
   }
 
   protected void disposeEditor() {
@@ -19,6 +28,8 @@ public class Node_Configuration_Editor extends SettingsEditor<Node_Configuration
   @NotNull
   protected MainNodeChooser createEditor() {
     myChooser = new MainNodeChooser();
+    myChooser.setTargetConcept(myConcept);
+    myChooser.setAcceptor(myIsValid);
     return myChooser;
   }
 

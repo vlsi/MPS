@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ConstructorParameterReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ConstructorParameterReference_Constraints" />
   <unitInfo fileName="ReportConfigurationErrorStatement_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ReportConfigurationErrorStatement_Constraints" />
   <unitInfo fileName="EditorPropertyReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.EditorPropertyReference_Constraints" />
   <unitInfo fileName="SettingsEditor_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.SettingsEditor_Constraints" />
   <unitInfo fileName="EditorExpression_persistentPropertyDeclaration_ReferentConstraint.java" startLine="46" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.EditorExpression_persistentPropertyDeclaration_ReferentConstraint$QuotationClass_wdxcx5_a1a0a0a0a0a2" />
   <unitInfo fileName="RunConfigurationExecutor_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.RunConfigurationExecutor_name_PropertyConstraint" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="ConstructorParameterReference_constructorParameterDeclaration_ReferentConstraint.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ConstructorParameterReference_constructorParameterDeclaration_ReferentConstraint" />
   <unitInfo fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="19" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint" />
   <unitInfo fileName="EditorOperation_editorOperationDeclaration_ReferentConstraint.java" startLine="20" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.EditorOperation_editorOperationDeclaration_ReferentConstraint" />
   <unitInfo fileName="EditorExpression_persistentPropertyDeclaration_ReferentConstraint.java" startLine="22" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.EditorExpression_persistentPropertyDeclaration_ReferentConstraint" />
@@ -24,6 +26,18 @@
     <scopeInfo nodeId="1252300412034435604" fileName="EditorExpression_persistentPropertyDeclaration_ReferentConstraint.java" startLine="35" startPosition="179" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1252300412034435594" fileName="EditorExpression_persistentPropertyDeclaration_ReferentConstraint.java" startLine="34" startPosition="132" endLine="39" endPosition="7" />
     <unitInfo nodeId="1252300412034435604" fileName="EditorExpression_persistentPropertyDeclaration_ReferentConstraint.java" startLine="35" startPosition="156" endLine="39" endPosition="5" unitName="jetbrains.mps.runConfigurations.constraints.EditorExpression_persistentPropertyDeclaration_ReferentConstraint$1" />
+  </root>
+  <root nodeId="1448685625140415342">
+    <nodeInfo nodeId="1448685625140415345" fileName="ConstructorParameterReference_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1448685625140416178" fileName="ConstructorParameterReference_constructorParameterDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1448685625140416198" fileName="ConstructorParameterReference_constructorParameterDeclaration_ReferentConstraint.java" startLine="31" startPosition="29" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1448685625140416154" fileName="ConstructorParameterReference_constructorParameterDeclaration_ReferentConstraint.java" startLine="33" startPosition="5" endLine="34" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1448685625140416188" fileName="ConstructorParameterReference_constructorParameterDeclaration_ReferentConstraint.java" startLine="30" startPosition="169" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1448685625140415344" fileName="ConstructorParameterReference_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="178" />
+    <scopeInfo nodeId="1448685625140416189" fileName="ConstructorParameterReference_constructorParameterDeclaration_ReferentConstraint.java" startLine="31" startPosition="29" endLine="32" endPosition="67" />
+    <scopeInfo nodeId="1448685625140415373" fileName="ConstructorParameterReference_constructorParameterDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="34" endPosition="78">
+      <varInfo nodeId="1448685625140416179" varName="template" />
+    </scopeInfo>
   </root>
   <root nodeId="4777576391478273472">
     <nodeInfo nodeId="4777576391478273476" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class RunConfigurations_StyleSheet {
   public static Style getLessThen(final EditorCell cell) {
@@ -45,6 +46,13 @@ public class RunConfigurations_StyleSheet {
     style.putAll(RunConfigurations_StyleSheet.getOperation(null));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.MATCHING_LABEL, "operation.brace");
+    return style;
+  }
+
+  public static Style getConstructorParameter(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getField(null));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }
 }

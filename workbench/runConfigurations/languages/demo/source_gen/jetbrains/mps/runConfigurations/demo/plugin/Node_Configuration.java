@@ -5,6 +5,8 @@ package jetbrains.mps.runConfigurations.demo.plugin;
 import jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -12,7 +14,6 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.options.SettingsEditor;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
@@ -22,10 +23,23 @@ public class Node_Configuration implements IPersistentConfiguration {
 
   @NotNull
   private Node_Configuration.MyState myState = new Node_Configuration.MyState();
+  private final SNode myConcept;
+  private final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
+
+  public Node_Configuration(SNode concept, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
+    myConcept = concept;
+    myIsValid = isValid;
+  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if (this.getNode() == null) {
-      throw new RuntimeConfigurationException("Node is not specified.");
+    {
+      SNode node = this.getNode();
+      if (node == null) {
+        throw new RuntimeConfigurationException("Node is not specified.");
+      }
+      if (!(myIsValid.invoke(node))) {
+        throw new RuntimeConfigurationException("Node is not valid.");
+      }
     }
   }
 
@@ -91,7 +105,7 @@ public class Node_Configuration implements IPersistentConfiguration {
   public Node_Configuration clone() {
     Node_Configuration clone = null;
     try {
-      clone = new Node_Configuration();
+      clone = new Node_Configuration(myConcept, myIsValid);
       clone.myState = (Node_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {

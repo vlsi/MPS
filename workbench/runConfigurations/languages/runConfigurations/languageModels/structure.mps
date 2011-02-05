@@ -145,6 +145,21 @@
       <property name="name" nameId="tpck.1169194664001" value="CheckCallOperation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1448685625140377431">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.smart" />
+      <property name="name" nameId="tpck.1169194664001" value="ConstructorParameter" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431474542" resolveInfo="VariableDeclaration" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1448685625140401539">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.smart" />
+      <property name="name" nameId="tpck.1169194664001" value="ConstructorParameterReference" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068498886296" resolveInfo="VariableReference" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1448685625140421524">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.smart" />
+      <property name="name" nameId="tpck.1169194664001" value="PersistentConfigurationTemplateInitializer" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1145552809883" resolveInfo="AbstractCreator" />
+    </node>
   </roots>
   <root id="2401501559171345993">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3754890006475816675">
@@ -330,6 +345,12 @@
       <property name="value" nameId="tpce.1105725733873" value="persistent configuration template" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1448685625140377459">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="constructorParameter" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1448685625140377431" resolveInfo="NonPersistentProperty" />
+    </node>
   </root>
   <root id="4157833584164911568">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4157833584164911569">
@@ -473,6 +494,35 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="974940122351326363" resolveInfo="CheckProperties_Function" />
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="tp4f.1205756909548" />
+    </node>
+  </root>
+  <root id="1448685625140377431">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1448685625140377469">
+      <property name="value" nameId="tpce.1105725733873" value="constructor parameter" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="1448685625140401539">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1448685625140401540">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="constructorParameterDeclaration" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1448685625140377431" resolveInfo="ConstructorParameter" />
+      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="tpee.1068581517664" />
+    </node>
+  </root>
+  <root id="1448685625140421524">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1448685625140421525">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="template" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4157833584164830749" resolveInfo="PersistentConfigurationTemplate" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1448685625140421526">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="parameter" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
   </root>
 </model>

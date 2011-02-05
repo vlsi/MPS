@@ -8,14 +8,6 @@ import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.runConfigurations.runtime.IJavaNodeChangeListener;
 import java.awt.BorderLayout;
 import com.intellij.openapi.options.ConfigurationException;
 
@@ -32,29 +24,8 @@ public class DemoApplication_Configuration_Editor extends SettingsEditor<DemoApp
 
   @NotNull
   protected JPanel createEditor() {
-    myLabel = new JLabel();
+    myLabel = new JLabel("Select some node:");
     MainNodeChooser nodeChooser = myNode.createEditor();
-    final Wrappers._T<SNode> concept = new Wrappers._T<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        concept.value = SConceptOperations.findConceptDeclaration("jetbrains.mps.runConfigurations.demo.structure.SomeConcept");
-      }
-    });
-    nodeChooser.setTargetConcept(concept.value);
-    nodeChooser.setAcceptor(new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
-      public Boolean invoke(SNode node) {
-        return SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.runConfigurations.demo.structure.SomeConcept"), "valid");
-      }
-    });
-    nodeChooser.addNodeChangeListener(new IJavaNodeChangeListener() {
-      public void nodeChanged(final SNode node) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            myLabel.setText(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.runConfigurations.demo.structure.SomeConcept"), "name"));
-          }
-        });
-      }
-    });
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(myLabel, BorderLayout.NORTH);
     panel.add(nodeChooser, BorderLayout.CENTER);
