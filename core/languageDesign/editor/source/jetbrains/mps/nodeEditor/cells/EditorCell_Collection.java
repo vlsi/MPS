@@ -272,18 +272,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     myLastCellSelectionListener = null;
   }
 
-  private void notifyBraceSelected() {
-    if (!isSelectable()) return;
-    EditorContext context = getEditorContext();
-    EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
-    assert selection != null;
-    int caretX = selection.getCaretX();
-    context.getNodeEditorComponent().pushSelection(selection);
-    EditorCell target = this;
-    target.setCaretX(caretX);
-    context.getNodeEditorComponent().setSelectionDontClearStack(target, true);
-  }
-
   private void setBracesEnabled(boolean enabled) {
     myBracesEnabled = enabled;
     getEditor().setBracesEnabled(this, enabled);
@@ -898,7 +886,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       setSelectable(enabled);
     }
 
-    public void paintContent(Graphics g) {
+    public void paintContent(Graphics g, ParentSettings parentSettings) {
       if (!myIsEnabled) return;
       TextLine textLine = getRenderedTextLine();
       boolean toShowCaret = toShowCaret();
@@ -968,22 +956,34 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
 
   private class MyLastCellSelectionListener implements SelectionListener {
+    public final CellFinder<EditorCell> FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE = CellFinders.byCondition(new Condition<EditorCell>() {
+      @Override
+      public boolean met(EditorCell cell) {
+        return myOpeningBrace != cell && cell.isSelectable() && !(cell instanceof EditorCell_Collection);
+      }
+    }, true);
+    public final CellFinder<EditorCell> LAST_SELECTABLE_LEAF_EXCLUDING_BRACE = CellFinders.byCondition(new Condition<EditorCell>() {
+      @Override
+      public boolean met(EditorCell cell) {
+        return myClosingBrace != cell && cell.isSelectable() && !(cell instanceof EditorCell_Collection);
+      }
+    }, false);
     @Override
     public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
       if (myClosingBrace.isSelected() || myOpeningBrace.isSelected()) {
-        notifyBraceSelected();
+        enableBraces();
         return;
       }
       EditorCell deepestSelection = editorComponent.getDeepestSelectedCell();
-      EditorCell lastSelectableLeaf = findChild(CellFinders.LAST_SELECTABLE_LEAF);
-      EditorCell firstSelectableLeaf = findChild(CellFinders.FIRST_SELECTABLE_LEAF);
+      EditorCell lastSelectableLeaf = findChild(LAST_SELECTABLE_LEAF_EXCLUDING_BRACE);
+      EditorCell firstSelectableLeaf = findChild(FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE);
       if (deepestSelection instanceof EditorCell_Brace) {
         EditorCell_Collection braceOwner = deepestSelection.getParent();
-        if (braceOwner.myClosingBrace == deepestSelection && braceOwner.findChild(CellFinders.LAST_SELECTABLE_LEAF) == lastSelectableLeaf) {
+        if (braceOwner.myClosingBrace == deepestSelection && braceOwner.findChild(LAST_SELECTABLE_LEAF_EXCLUDING_BRACE) == lastSelectableLeaf) {
           enableBraces();
           return;
         }
-        if (braceOwner.myOpeningBrace == deepestSelection && braceOwner.findChild(CellFinders.FIRST_SELECTABLE_LEAF) == firstSelectableLeaf) {
+        if (braceOwner.myOpeningBrace == deepestSelection && braceOwner.findChild(FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE) == firstSelectableLeaf) {
           enableBraces();
           return;
         }
