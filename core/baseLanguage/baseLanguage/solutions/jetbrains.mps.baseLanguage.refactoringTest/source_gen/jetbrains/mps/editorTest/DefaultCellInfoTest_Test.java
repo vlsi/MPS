@@ -37,7 +37,7 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest {
           return c instanceof EditorCell_Error;
         }
       });
-      inspector.setSelectionDontClearStack(editorCell, false);
+      inspector.getSelectionManager().setSelection(editorCell);
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " LEFT"));
     }
   }
