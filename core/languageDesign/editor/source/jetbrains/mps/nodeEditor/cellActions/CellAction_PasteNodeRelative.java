@@ -79,20 +79,17 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     editorComponent.flushEvents();
     EditorCell nodeCell = editorComponent.findNodeCell(pasteNodes.get(0));
     if (nodeCell == null) return; // after 'set reference'?
-    editorComponent.changeSelection(nodeCell);
     EditorCell_Label labelCell = nodeCell.findChild(CellFinders.byClass(EditorCell_Label.class, true));
 
     if (labelCell != null) {
       editorComponent.changeSelection(labelCell);
-      if (pasteNodes.size() == 1) {
-        editorComponent.pushSelection(labelCell);
-        editorComponent.setSelectionDontClearStack(nodeCell, true);
-      }
     }
 
-    if (pasteNodes.size() > 1) {
+    if (pasteNodes.size() == 1) {
+      editorComponent.pushSelection(nodeCell);
+    } else {
+      // TODO: push node range selection using selection manager here
       editorComponent.getNodeRangeSelection().setRange(pasteNodes.get(0), pasteNodes.get(pasteNodes.size() - 1));
     }
-
   }
 }

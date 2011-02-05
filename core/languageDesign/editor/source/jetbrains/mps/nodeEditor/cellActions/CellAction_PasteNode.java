@@ -97,19 +97,15 @@ public class CellAction_PasteNode extends EditorCellAction {
             editorComponent.flushEvents();
             EditorCell nodeCell = editorComponent.findNodeCell(pasteNodes.get(0));
             if (nodeCell == null) return; // after 'set reference'?
-            editorComponent.changeSelection(nodeCell);
 
             EditorCell_Label labelCell = nodeCell.findChild(CellFinders.byClass(EditorCell_Label.class, true));
-
             if (labelCell != null) {
               editorComponent.changeSelection(labelCell);
-              if (pasteNodes.size() == 1) {
-                editorComponent.pushSelection(labelCell);
-                editorComponent.setSelectionDontClearStack(nodeCell, true);
-              }
             }
 
-            if (pasteNodes.size() > 1) {
+            if (pasteNodes.size() == 1) {
+              editorComponent.pushSelection(nodeCell);
+            } else {
               SNode firstNodeToSelect = pasteNodes.get(0);
               SNode lastNodeToSelect = null;
               for (int i = pasteNodes.size() - 1; i > 0 && lastNodeToSelect == null; i--) {
@@ -118,6 +114,7 @@ public class CellAction_PasteNode extends EditorCellAction {
                 }
               }
               if (lastNodeToSelect != null) {
+                // TODO: push node range selection using selection manager here
                 editorComponent.getNodeRangeSelection().setRange(firstNodeToSelect, lastNodeToSelect);
               }
             }
