@@ -281,7 +281,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myScrollPane.getViewport().addChangeListener(new ChangeListener() {
 
       public void stateChanged(ChangeEvent e) {
-        myNodeSubstituteChooser.setVisible(false);
+        deactivateSubstituteChooser();
       }
     });
 
@@ -512,7 +512,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (myNodeSubstituteChooser.getWindow() != null &&
           (myNodeSubstituteChooser.getWindow().isAncestorOf(e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
           return;
-        myNodeSubstituteChooser.setVisible(false);
+        deactivateSubstituteChooser();
       }
     });
 
@@ -1823,7 +1823,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     EditorCell selectedCell = getSelectedCell();
     if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || selectedCell == null || !selectedCell.isAncestorOf(newSelectedCell))) {
-      changeSelection(newSelectedCell, true, false);
+      if (myNodeRangeSelection.isActive()) {
+        myNodeRangeSelection.deactivate();
+      }
+      resetLastCaretX();
+      deactivateSubstituteChooser();
+      mySelectionManager.setSelection(newSelectedCell);
       newSelectedCell.processMousePressed(mouseEvent);
       revalidateAndRepaint();
     }
@@ -1858,62 +1863,68 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void changeSelection(EditorCell newSelectedCell) {
-    changeSelection(newSelectedCell, true);
-  }
-
-  void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX) {
-    changeSelection(newSelectedCell, resetLastCaretX, true);
-  }
-
-  void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX, boolean scroll) {
     if (myNodeRangeSelection.isActive()) {
       myNodeRangeSelection.deactivate();
     }
-    setSelection(newSelectedCell, resetLastCaretX, scroll, true);
+    resetLastCaretX();
+    deactivateSubstituteChooser();
+    mySelectionManager.setSelection(newSelectedCell);
+    showCellInViewPort(newSelectedCell);
+    repaint();
+  }
+
+  void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX) {
+    if (myNodeRangeSelection.isActive()) {
+      myNodeRangeSelection.deactivate();
+    }
+    setSelection(newSelectedCell, resetLastCaretX, true);
   }
 
   @UseCarefully
   public void setSelectionDontClearStack(EditorCell newSelectedCell, boolean resetLastCaretX) {
-    setSelection(newSelectedCell, resetLastCaretX, true, false);
+    setSelection(newSelectedCell, resetLastCaretX, false);
   }
 
   @UseCarefully
-  public void setSelection(EditorCell newSelectedCell, boolean resetLastCaretX, boolean scrollToCell, boolean clearStack) {
+  private void setSelection(EditorCell newSelectedCell, boolean resetLastCaretX, boolean clearStack) {
     if (resetLastCaretX) {
       resetLastCaretX();
     }
 
     if (clearStack) {
-      myNodeSubstituteChooser.setVisible(false);
+      deactivateSubstituteChooser();
       myNodeRangeSelection.deactivate();
       mySelectionManager.setSelection(newSelectedCell);
     } else if (getSelectedCell() != newSelectedCell) {
-      myNodeSubstituteChooser.setVisible(false);
+      deactivateSubstituteChooser();
       myNodeRangeSelection.deactivate();
       mySelectionManager.pushSelection(mySelectionManager.createSelection(newSelectedCell));
     }
 
     if (newSelectedCell != null) {
-      if (scrollToCell) {
-        if (getVisibleRect().isEmpty()) {
-          final JViewport viewport = getViewport();
-          viewport.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-              if (!getVisibleRect().isEmpty()) {
-                if (getSelectedCell() != null) {
-                  scrollToCell(getSelectedCell());
-                }
-                viewport.removeChangeListener(this);
-              }
-            }
-          });
-        } else {
-          scrollToCell(newSelectedCell);
-        }
-      }
+      showCellInViewPort(newSelectedCell);
     }
     repaint();
+  }
+
+  // TODO: think about replacing this method with one of ensureVisible()/scrollToCell()
+  private void showCellInViewPort(EditorCell newSelectedCell) {
+    if (getVisibleRect().isEmpty()) {
+      final JViewport viewport = getViewport();
+      viewport.addChangeListener(new ChangeListener() {
+        @Override
+        public void stateChanged(ChangeEvent e) {
+          if (!getVisibleRect().isEmpty()) {
+            if (getSelectedCell() != null) {
+              scrollToCell(getSelectedCell());
+            }
+            viewport.removeChangeListener(this);
+          }
+        }
+      });
+    } else {
+      scrollToCell(newSelectedCell);
+    }
   }
 
   public void scrollToNode(SNode node) {
@@ -2354,6 +2365,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myNodeSubstituteChooser.setContextCell(editorCell);
     myNodeSubstituteChooser.setVisible(true);
     return true;
+  }
+
+  private void deactivateSubstituteChooser() {
+    myNodeSubstituteChooser.setVisible(false);
   }
 
   public NodeSubstituteChooser getNodeSubstituteChooser() {
