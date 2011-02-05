@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -637,14 +638,14 @@ public final class SNode {
     fireNodeReadAccess();
     int count = 0;
     SNode foundChild = null;
-//    boolean isOldAttributeRole = AttributesRolesUtil.isAttributeRole(role);
+    boolean isOldAttributeRole = AttributesRolesUtil.isAttributeRole(role);
     for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
       if (role.equals(child.getRole_())) {
         foundChild = child;
         count++;
-//      } else if (isOldAttributeRole && AttributeOperations.isNewAttributeInOldRole(child, role)) {
-//        foundChild = child;
-//        count++;
+      } else if (isOldAttributeRole && AttributeOperations.isNewAttributeInOldRole(child, role)) {
+        foundChild = child;
+        count++;
       }
     }
     if (count > 1) {
@@ -684,8 +685,11 @@ public final class SNode {
     }
     int count = 0;
 
+    boolean isOldAttributeRole = AttributesRolesUtil.isAttributeRole(role);
     for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
       if (role.equals(child.getRole_())) {
+        count++;
+      } else if (isOldAttributeRole && AttributeOperations.isNewAttributeInOldRole(child, role)) {
         count++;
       }
     }
@@ -790,8 +794,13 @@ public final class SNode {
     if (firstChild == null) return Collections.emptyList();
     List<SNode> result = new ArrayList<SNode>();
 
+    boolean isOldAttributeRole = AttributesRolesUtil.isAttributeRole(role);
     for (SNode child = firstChild; child != null; child = child.myNextSibling) {
       if (role.equals(child.getRole_())) {
+        result.add(child);
+        child.fireNodeReadAccess();
+        NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);
+      } else if (isOldAttributeRole && AttributeOperations.isNewAttributeInOldRole(child, role)) {
         result.add(child);
         child.fireNodeReadAccess();
         NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);

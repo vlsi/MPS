@@ -9,6 +9,29 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.util.ArrayList" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" file="AttributeOperations.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.smodel.AttributesRolesUtil" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AbstractSNodeList" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" file="IAttributeDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.NodeCastException" file="NodeCastException.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="java.lang.RuntimeException" />
