@@ -40,6 +40,7 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
+      this.getNode().checkConfiguration();
       final SNode node = this.getNode().getNode();
       final Wrappers._boolean valid = new Wrappers._boolean();
       ModelAccess.instance().runReadAction(new Runnable() {
