@@ -3,15 +3,17 @@
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration" file="DemoApplication_Configuration.java">
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_Factory" />
+    <classNode dependClassName="java.lang.CloneNotSupportedException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
-    <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_Editor" />
+    <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
     <classNode dependClassName="com.intellij.execution.Executor" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_Factory" />
     <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
     <classNode dependClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode dependClassName="java.lang.String" />
@@ -21,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_RunProfileState" />
     <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationInfoProvider" />
+    <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
     <classNode dependClassName="com.intellij.openapi.util.JDOMExternalizable" />
     <classNode extendsClassName="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" />
@@ -102,20 +105,23 @@
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration" file="Node_Configuration.java">
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.CloneNotSupportedException" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration_Editor" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
-    <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
-    <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jdom.Element" />
     <classNode extendsClassName="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration_Editor" file="Node_Configuration_Editor.java">

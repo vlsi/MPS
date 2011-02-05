@@ -4,6 +4,7 @@ package jetbrains.mps.runConfigurations.demo.plugin;
 
 import com.intellij.execution.configurations.RunConfigurationBase;
 import jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
@@ -22,10 +23,11 @@ import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 
 public class DemoApplication_Configuration extends RunConfigurationBase implements IPersistentConfiguration {
-  private DemoApplication_Configuration_Editor myPersistentEditor = new DemoApplication_Configuration_Editor();
+  private static final Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);
+
   @NotNull
   private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
-  private final Node_Configuration myNode = new Node_Configuration();
+  private Node_Configuration myNode = new Node_Configuration();
 
   public DemoApplication_Configuration(Project project, DemoApplication_Configuration_Factory factory, String name) {
     super(project, factory, name);
@@ -54,11 +56,25 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
   }
 
   public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
-    return myPersistentEditor;
+    return new DemoApplication_Configuration_Editor();
   }
 
   public Node_Configuration getNode() {
     return myNode;
+  }
+
+  @Override
+  public DemoApplication_Configuration clone() {
+    DemoApplication_Configuration clone = null;
+    try {
+      clone = (DemoApplication_Configuration) super.clone();
+      clone.myState = (DemoApplication_Configuration.MyState) myState.clone();
+      clone.myNode = (Node_Configuration) myNode.clone();
+      return clone;
+    } catch (CloneNotSupportedException ex) {
+      LOG.error(ex);
+    }
+    return clone;
   }
 
   @Nullable
@@ -81,6 +97,12 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
 
   public class MyState {
     public MyState() {
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      DemoApplication_Configuration.MyState state = new DemoApplication_Configuration.MyState();
+      return state;
     }
   }
 }
