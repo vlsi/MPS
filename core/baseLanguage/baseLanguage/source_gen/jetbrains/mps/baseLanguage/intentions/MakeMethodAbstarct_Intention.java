@@ -7,8 +7,8 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -51,6 +51,10 @@ public class MakeMethodAbstarct_Intention extends BaseIntention implements Inten
     SNode contextNode = editorContext.getSelectedNode();
     if (contextNode == null) {
       return true;
+    }
+    SNode containingClassifier = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    if (!(SNodeOperations.isInstanceOf(containingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+      return false;
     }
     List<SNode> includingStatementLists = SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.StatementList", true);
     Iterable<SNode> includingBodies = ListSequence.fromList(includingStatementLists).where(new IWhereFilter<SNode>() {
