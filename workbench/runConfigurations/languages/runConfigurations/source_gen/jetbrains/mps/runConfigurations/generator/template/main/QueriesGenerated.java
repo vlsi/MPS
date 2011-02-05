@@ -200,6 +200,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
   }
 
+  public static Object referenceMacro_GetReferent_8917835950015924548(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "SmartPropertyToEditor");
+  }
+
   public static Object referenceMacro_GetReferent_3754890006475838097(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
   }
@@ -270,7 +274,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6625880169118140908(final IOperationContext operationContext, final IfMacroContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "type", true), new QueriesGenerated.QuotationClass_x583g4_a1a0a0fc().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "type", true), new QueriesGenerated.QuotationClass_x583g4_a1a0a0gc().createNode());
   }
 
   public static boolean ifMacro_Condition_974940122351450738(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -486,6 +490,14 @@ public class QueriesGenerated {
     });
   }
 
+  public static Iterable sourceNodesQuery_8917835950015924530(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "persistentProperty", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return PersistentPropertyDeclaration_Behavior.call_isSmart_77193491200360813(it);
+      }
+    });
+  }
+
   public static Iterable sourceNodesQuery_7525857397534005720(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.runConfigurations.structure.RunConfigurationKind");
   }
@@ -510,8 +522,8 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
   }
 
-  public static class QuotationClass_x583g4_a1a0a0fc {
-    public QuotationClass_x583g4_a1a0a0fc() {
+  public static class QuotationClass_x583g4_a1a0a0gc {
+    public QuotationClass_x583g4_a1a0a0gc() {
     }
 
     public SNode createNode() {

@@ -4,6 +4,7 @@ package jetbrains.mps.runConfigurations.demo.plugin;
 
 import com.intellij.openapi.options.SettingsEditor;
 import javax.swing.JLabel;
+import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser;
@@ -26,6 +27,7 @@ public class DemoApplication_Configuration_Editor extends SettingsEditor<DemoApp
   }
 
   protected void disposeEditor() {
+    Disposer.dispose(myNode);
   }
 
   @NotNull

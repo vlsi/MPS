@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1f5fukel7syx4vu5b56bo1umryrmkkn">
+<dependencies version="2" modelHash="48vpmh3zqbat5dwro6emcz206gi71yf">
   <dep model="f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-egnwdab69w8hivxpzbwqh1nlzvmor2k" />
@@ -91,7 +91,7 @@
   <source id="3754890006475702959" name="ExecutorRunProfileStateTemplate" hash="-acwac8yrfhog0y6zlrjbtu552hdyn3">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="3754890006475823067" name="PersistentEditorTemplate" hash="-eoafz3rv2ls7zx5wlh4nux0qxl3xcbz">
+  <source id="3754890006475823067" name="PersistentEditorTemplate" hash="-6wxvxw5p70dhpir9qa3i8yt5wd7rti1">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="7460665385311861254" name="RunConfigurationFactoryTemplate" hash="5s8vuve4mhsmfgy6nftzj3uvfgfohzz">
