@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.runconfigs.runner;
+package jetbrains.mps.runconfigurations.runner;
 
 import com.intellij.execution.runners.DefaultProgramRunner;
 import com.intellij.execution.configurations.RunProfile;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.runconfigs;
+package jetbrains.mps.runconfigurations;
 
 import com.intellij.execution.ExecutionManager;
 import com.intellij.execution.RunManagerEx;
@@ -46,19 +46,19 @@ import org.jetbrains.annotations.NotNull;
 import java.lang.reflect.Method;
 import java.util.*;
 
-public class RunConfigManager implements ProjectComponent {
-  private static final Logger LOG = Logger.getLogger(RunConfigManager.class);
+public class RunConfigurationsReloader implements ProjectComponent {
+  private static final Logger LOG = Logger.getLogger(RunConfigurationsReloader.class);
   private static List<BaseConfigCreator> myRegisteredCreators = new ArrayList<BaseConfigCreator>();
 
-  private final Object myConfigsLock = new Object();
-  private List<ConfigurationType> mySortedConfigs = new ArrayList<ConfigurationType>();
+  private final Object myConfigurationsLock = new Object();
+  private List<ConfigurationType> mySortedConfigurations = new ArrayList<ConfigurationType>();
   private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
   private Element myState = null;
   private Element mySharedState = null;
   private final MPSProject myMpsProject;
 
-  public RunConfigManager(Project project, MPSProject mpsProject) {
+  public RunConfigurationsReloader(Project project, MPSProject mpsProject) {
     myProject = project;
     myMpsProject = mpsProject;
   }
@@ -73,18 +73,18 @@ public class RunConfigManager implements ProjectComponent {
 
   //----------------RELOAD STUFF---------------------
 
-  public void initRunConfigs() {
+  public void initRunConfigurations() {
     //assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     if (myProject.isDisposed()) return;
     if (myLoaded) return;
     if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
 
     final ExtensionPoint<ConfigurationType> epConfigType = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
-    synchronized (myConfigsLock) {
+    synchronized (myConfigurationsLock) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          mySortedConfigs = createConfigs(myProject);
-          for (ConfigurationType ct : mySortedConfigs) {
+          mySortedConfigurations = createConfigs(myProject);
+          for (ConfigurationType ct : mySortedConfigurations) {
             epConfigType.registerExtension(ct);
           }
         }
@@ -94,15 +94,7 @@ public class RunConfigManager implements ProjectComponent {
     final ConfigurationType[] configurationTypes = getConfigurationTypes();
     getRunManager().initializeConfigurationTypes(configurationTypes);
 
-    Element newState = new Element("root");
-    try {
-      getRunManager().writeExternal(newState);
-      getRunManager().readExternal(newState);
-    } catch (WriteExternalException e1) {
-      LOG.error(e1);
-    } catch (InvalidDataException e11) {
-      LOG.error(e11);
-    }
+    reInitializeRunManager();
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -142,7 +134,7 @@ public class RunConfigManager implements ProjectComponent {
     return result.toArray(new ConfigurationType[result.size()]);
   }
 
-  public void disposeRunConfigs() {
+  public void disposeRunConfigurations() {
     //assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     assert !myProject.isDisposed();
     if (!myLoaded) return;
@@ -159,7 +151,7 @@ public class RunConfigManager implements ProjectComponent {
       }
     }
 
-    synchronized (myConfigsLock) {
+    synchronized (myConfigurationsLock) {
       final ExtensionPoint<RuntimeConfigurationProducer> epCreator = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
       RuntimeConfigurationProducer[] extensions = epCreator.getExtensions();
       for (RuntimeConfigurationProducer producer : extensions) {
@@ -167,7 +159,7 @@ public class RunConfigManager implements ProjectComponent {
         myRegisteredCreators.remove(producer);
       }
 
-      Collections.reverse(mySortedConfigs);
+      Collections.reverse(mySortedConfigurations);
 
       Element newState = new Element("root");
       try {
@@ -179,19 +171,19 @@ public class RunConfigManager implements ProjectComponent {
 
       getRunManager().clearAll();
 
-      final ExtensionPoint<ConfigurationType> epConfigType = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
+      final ExtensionPoint<ConfigurationType> epConfigurationType = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          for (ConfigurationType ct : mySortedConfigs) {
-            epConfigType.unregisterExtension(ct);
+          for (ConfigurationType ct : mySortedConfigurations) {
+            epConfigurationType.unregisterExtension(ct);
           }
         }
       });
-      mySortedConfigs.clear();
+      mySortedConfigurations.clear();
     }
 
     mySharedState = getSharedConfigurationManager().getState();
-    reinitRunManager();
+    reInitializeRunManager();
 
     myLoaded = false;
   }
@@ -270,15 +262,18 @@ public class RunConfigManager implements ProjectComponent {
     }
   }
 
-  private void reinitRunManager() {
+  private void reInitializeRunManager() {
     Element newState = new Element("root");
+    Element newSharedState = new Element("root");
     try {
       getRunManager().writeExternal(newState);
+      getSharedConfigurationManager().writeExternal(newSharedState);
       getRunManager().readExternal(newState);
-    } catch (WriteExternalException e) {
-      LOG.error(e);
-    } catch (InvalidDataException e) {
-      LOG.error(e);
+      getSharedConfigurationManager().readExternal(newSharedState);
+    } catch (WriteExternalException wee) {
+      LOG.error(wee);
+    } catch (InvalidDataException ide) {
+      LOG.error(ide);
     }
   }
 

@@ -544,7 +544,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.runconfigs.RunConfigManager</implementation-class>
+      <implementation-class>jetbrains.mps.runconfigurations.RunConfigurationsReloader</implementation-class>
     </component>
 
     <component>
