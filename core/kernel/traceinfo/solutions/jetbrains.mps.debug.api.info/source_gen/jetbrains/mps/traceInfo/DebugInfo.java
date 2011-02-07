@@ -35,11 +35,11 @@ public class DebugInfo {
   }
 
   public SModel getModel() {
-    return this.myModel;
+    return myModel;
   }
 
   public void setModel(SModel model) {
-    this.myModel = model;
+    myModel = model;
   }
 
   public void addPosition(TraceablePositionInfo position, String rootId) {
@@ -253,11 +253,11 @@ public class DebugInfo {
   }
 
   public List<String> getRoots() {
-    return SetSequence.fromSet(MapSequence.fromMap(this.myRoots).keySet()).toListSequence();
+    return SetSequence.fromSet(MapSequence.fromMap(myRoots).keySet()).toListSequence();
   }
 
   public Set<TraceablePositionInfo> getPositions(String rootId) {
-    DebugInfoRoot infoRoot = MapSequence.fromMap(this.myRoots).get(rootId);
+    DebugInfoRoot infoRoot = MapSequence.fromMap(myRoots).get(rootId);
     return (infoRoot != null ?
       infoRoot.getPositions() :
       null
