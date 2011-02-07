@@ -31,7 +31,7 @@ public class typeof_PersistentConfigurationTemplateInitializer_InferenceRule ext
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "1448685625140421554", 0, intentionProvider);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "1448685625140421551", true), (SNode) new typeof_PersistentConfigurationTemplateInitializer_InferenceRule.QuotationClass_xmb8fa_a0a0a0().createNode(SLinkOperations.getTarget(configurationTemplateInitializer, "template", false), typeCheckingContext), _info_12389875345);
     }
-    List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(configurationTemplateInitializer, "template", false), "constructorParameter", true);
+    List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(configurationTemplateInitializer, "template", false), "templateParameter", true);
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(configurationTemplateInitializer, "parameter", true)).count(); i++) {
       if (i >= ListSequence.fromList(parameters).count()) {
         {

@@ -14,16 +14,16 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class ConstructorParameterReference_constructorParameterDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-  public ConstructorParameterReference_constructorParameterDeclaration_ReferentConstraint() {
+public class TemplateParameterReference_constructorParameterDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
+  public TemplateParameterReference_constructorParameterDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.runConfigurations.structure.ConstructorParameterReference", "variableDeclaration", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.runConfigurations.structure.TemplateParameterReference", "variableDeclaration", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.runConfigurations.structure.ConstructorParameterReference", "variableDeclaration");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.runConfigurations.structure.TemplateParameterReference", "variableDeclaration");
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
@@ -31,7 +31,7 @@ public class ConstructorParameterReference_constructorParameterDeclaration_Refer
     if ((template == null)) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
-    return SLinkOperations.getTargets(template, "constructorParameter", true);
+    return SLinkOperations.getTargets(template, "templateParameter", true);
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

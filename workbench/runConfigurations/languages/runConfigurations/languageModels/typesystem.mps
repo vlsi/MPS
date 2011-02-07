@@ -12,6 +12,7 @@
   <import index="tpdt" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
+  <import index="t1ti" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="rt7p" modelUID="r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)" version="-1" implicit="yes" />
@@ -19,7 +20,6 @@
   <import index="tpdu" modelUID="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" version="-1" implicit="yes" />
   <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
-  <import index="t1ti" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4777576391478107089">
@@ -35,7 +35,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="77193491200242728">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.smart" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
       <property name="name" nameId="tpck.1169194664001" value="SmartPropertyIsSubtypeOfSmartProperty" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="7902226081039521607">
@@ -50,7 +50,7 @@
       <property name="name" nameId="tpck.1169194664001" value="EditorIsSusbtypeOfEditor" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="3815075966210453316">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.smart" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
       <property name="name" nameId="tpck.1169194664001" value="SmartPersistentPropertyisSubtypeOfPersistentConfiguration" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="3815075966210467077">
@@ -67,7 +67,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1448685625140421547">
       <property name="name" nameId="tpck.1169194664001" value="typeof_PersistentConfigurationTemplateInitializer" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.smart" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
     </node>
   </roots>
   <root id="4777576391478107089">

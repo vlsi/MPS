@@ -15,24 +15,24 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
-public class ConstructorParameterReference_Editor extends DefaultNodeEditor {
+public class TemplateParameterReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_hxusco_a(editorContext, node);
+    return this.createCollection_6oagtk_a(editorContext, node);
   }
 
-  private EditorCell createCollection_hxusco_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6oagtk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_hxusco_a");
-    editorCell.addEditorCell(this.createRefCell_hxusco_a0(editorContext, node));
+    editorCell.setCellId("Collection_6oagtk_a");
+    editorCell.addEditorCell(this.createRefCell_6oagtk_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_hxusco_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_6oagtk_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("constructorParameterDeclaration");
     provider.setNoTargetText("<no constructorParameterDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConstructorParameterReference_Editor._Inline_hxusco_a0a());
+    provider.setAuxiliaryCellProvider(new TemplateParameterReference_Editor._Inline_6oagtk_a0a());
     editorCell = provider.createEditorCell(editorContext);
     RunConfigurations_StyleSheet.getConstructorParameter(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -46,8 +46,8 @@ public class ConstructorParameterReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_hxusco_a0a extends InlineCellProvider {
-    public _Inline_hxusco_a0a() {
+  public static class _Inline_6oagtk_a0a extends InlineCellProvider {
+    public _Inline_6oagtk_a0a() {
       super();
     }
 
@@ -56,10 +56,10 @@ public class ConstructorParameterReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_hxusco_a0a0(editorContext, node);
+      return this.createProperty_6oagtk_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_hxusco_a0a0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_6oagtk_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

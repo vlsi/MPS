@@ -11,30 +11,30 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PersistentConfigurationTemplate extends PersistentConfiguration {
   public static final String concept = "jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplate";
-  public static final String CONSTRUCTOR_PARAMETER = "constructorParameter";
+  public static final String TEMPLATE_PARAMETER = "templateParameter";
 
   public PersistentConfigurationTemplate(SNode node) {
     super(node);
   }
 
-  public int getConstructorParametersCount() {
-    return this.getChildCount(PersistentConfigurationTemplate.CONSTRUCTOR_PARAMETER);
+  public int getTemplateParametersCount() {
+    return this.getChildCount(PersistentConfigurationTemplate.TEMPLATE_PARAMETER);
   }
 
-  public Iterator<ConstructorParameter> constructorParameters() {
-    return this.children(ConstructorParameter.class, PersistentConfigurationTemplate.CONSTRUCTOR_PARAMETER);
+  public Iterator<TemplateParameter> templateParameters() {
+    return this.children(TemplateParameter.class, PersistentConfigurationTemplate.TEMPLATE_PARAMETER);
   }
 
-  public List<ConstructorParameter> getConstructorParameters() {
-    return this.getChildren(ConstructorParameter.class, PersistentConfigurationTemplate.CONSTRUCTOR_PARAMETER);
+  public List<TemplateParameter> getTemplateParameters() {
+    return this.getChildren(TemplateParameter.class, PersistentConfigurationTemplate.TEMPLATE_PARAMETER);
   }
 
-  public void addConstructorParameter(ConstructorParameter node) {
-    this.addChild(PersistentConfigurationTemplate.CONSTRUCTOR_PARAMETER, node);
+  public void addTemplateParameter(TemplateParameter node) {
+    this.addChild(PersistentConfigurationTemplate.TEMPLATE_PARAMETER, node);
   }
 
-  public void insertConstructorParameter(ConstructorParameter prev, ConstructorParameter node) {
-    this.insertChild(prev, PersistentConfigurationTemplate.CONSTRUCTOR_PARAMETER, node);
+  public void insertTemplateParameter(TemplateParameter prev, TemplateParameter node) {
+    this.insertChild(prev, PersistentConfigurationTemplate.TEMPLATE_PARAMETER, node);
   }
 
   public static PersistentConfigurationTemplate newInstance(SModel sm, boolean init) {

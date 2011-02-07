@@ -48,7 +48,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uhxm.974940122351427315" resolveInfo="ReportConfigurationErrorStatement" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1448685625140415342">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.smart" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uhxm.1448685625140401539" resolveInfo="ConstructorParameterReference" />
     </node>
   </roots>

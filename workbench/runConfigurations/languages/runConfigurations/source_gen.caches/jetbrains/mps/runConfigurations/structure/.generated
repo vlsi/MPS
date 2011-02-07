@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="88j81wszjjsu5fguuoc6v389tm9zhs0">
+<dependencies version="2" modelHash="-ds4y7d9nzsrcybi4mr6a93sq7lsvjlm">
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9yg2bpo4lvwy8lmo0gxukbtzy5b5kuw" />
@@ -221,7 +221,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Configuration_Parameter.java" />
   </source>
-  <source id="4157833584164830749" name="PersistentConfigurationTemplate" hash="-c7k1aymzpuzkemrxl0uvy1qq2vb24pe">
+  <source id="4157833584164830749" name="PersistentConfigurationTemplate" hash="-4hsrp91kr521hmx7czfuy1aoq27e709">
     <dep root="1448685625140377431" />
     <dep root="223733852661704505" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -236,7 +236,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PersistentConfigurationTemplate.java" />
   </source>
-  <source id="4157833584164911568" name="SmartPersistentPropertyType" hash="-8pe37vgx0r4nt0v5eeerf93jgsihy67">
+  <source id="4157833584164911568" name="SmartPersistentPropertyType" hash="-btna7xzlmol8iy7nf62miwty2b9j47m">
     <dep root="4157833584164830749" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -418,7 +418,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CheckCallOperation.java" />
   </source>
-  <source id="1448685625140377431" name="ConstructorParameter" hash="4arjaxe48uhb204ot5lou47pm1hvvqy">
+  <source id="1448685625140377431" name="TemplateParameter" hash="-7bevmb53yp9czun02tgb4257oioxv1f">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -427,9 +427,9 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="ConstructorParameter.java" />
+    <file name="TemplateParameter.java" />
   </source>
-  <source id="1448685625140401539" name="ConstructorParameterReference" hash="-7su3y99zhhdapg1094e6n2otl3shwqb">
+  <source id="1448685625140401539" name="TemplateParameterReference" hash="-e5ewhcnrpgts2zj6vqq7yjhwh5tu6xs">
     <dep root="1448685625140377431" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -440,9 +440,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="ConstructorParameterReference.java" />
+    <file name="TemplateParameterReference.java" />
   </source>
-  <source id="1448685625140421524" name="PersistentConfigurationTemplateInitializer" hash="631e89h39hsg21jyx3z4woq86zsl9oj">
+  <source id="1448685625140421524" name="PersistentConfigurationTemplateInitializer" hash="-d1mb7c1blnc74vub75o55kod2cjwjb">
     <dep root="4157833584164830749" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />

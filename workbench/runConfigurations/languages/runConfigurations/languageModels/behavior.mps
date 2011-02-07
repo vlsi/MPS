@@ -66,7 +66,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="uhxm.4777576391478289762" resolveInfo="PersistentConfigurationType" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="587410464426976712">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.smart" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="uhxm.4157833584164830749" resolveInfo="PersistentConfigurationTemplate" />
     </node>
   </roots>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-101em5fdwgpp0lgk73zwm4kyh9dllt">
+<dependencies version="2" modelHash="7qjvwiq1kyvyfuxcw96vm2z8qx7294k">
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.lang.typesystem.runtime(jetbrains.mps.lang.typesystem.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9yg2bpo4lvwy8lmo0gxukbtzy5b5kuw" />
@@ -20,14 +20,14 @@
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-46bk7hipwpuntiw75olthtqnexz5xkj" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="222hfoec4eclho8dndo8bvi3jfygysm" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-3zm2fh55oana6cj2rz9a0jwguuq016v" />
-  <dep model="r:36b91d42-5119-45a8-b801-6a4d645ce20b(jetbrains.mps.runConfigurations.behavior)" hash="awxqybcxl2n4naa5sgkarqyzba9ytph" />
+  <dep model="r:36b91d42-5119-45a8-b801-6a4d645ce20b(jetbrains.mps.runConfigurations.behavior)" hash="-71cw0z5sv42id42q81iwpws0dm0dd17" />
   <dep model="r:9e14a2a5-2074-4212-bc2f-81b31dc2b4fd(jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs@generator)" hash="cb3elpchstwpyn7h5tgc91e2ozgw6bt" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-ajvf5lxae1xhsojrbc5w19vapmo22hn" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-5270hxz0z8ox2f5llr4811lx3e9mwov" />
   <dep model="r:d91dc8be-68f3-42d9-b558-87a2756c080a(jetbrains.mps.runConfigurations.generator.template.main@generator)" hash="-xtakpgwot8n6xpoldho5dm05knxyp" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="7onuy7ras5spdyysdm2zbxch2b4ail7" />
-  <dep model="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.runConfigurations.structure)" hash="88j81wszjjsu5fguuoc6v389tm9zhs0" />
-  <common hash="47blj62rzcjekyk7kl7ysx59l5lmhpe">
+  <dep model="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.runConfigurations.structure)" hash="-ds4y7d9nzsrcybi4mr6a93sq7lsvjlm" />
+  <common hash="3t4eq3yl0j0g0b6qe40v1k9k3861e54">
     <dep root="1448685625140421547" />
     <dep root="3815075966210453316" />
     <dep root="3815075966210467077" />
@@ -58,7 +58,6 @@
   </common>
   <source id="4777576391478107089" name="typeof_Configuration_Parameter" hash="-bpk9rbrkle50lv9udop6ldj0bnggutm">
     <dep model="f:java_stub#jetbrains.mps.lang.typesystem.runtime(jetbrains.mps.lang.typesystem.runtime@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -122,7 +121,7 @@
     <dep model="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.runConfigurations.structure)" />
     <file name="typeof_PersistentPropertyDeclaration_InferenceRule.java" />
   </source>
-  <source id="77193491200242728" name="SmartPropertyIsSubtypeOfSmartProperty" hash="-dg9dwevld3liu5hat27to2dz938uovx">
+  <source id="77193491200242728" name="SmartPropertyIsSubtypeOfSmartProperty" hash="exo05a363yi1n0qoqkhnj6wiqmieqe8">
     <dep model="f:java_stub#jetbrains.mps.lang.typesystem.runtime(jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -220,7 +219,7 @@
     <dep model="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.runConfigurations.structure)" />
     <file name="EditorIsSusbtypeOfEditor_SubtypingRule.java" />
   </source>
-  <source id="3815075966210453316" name="SmartPersistentPropertyisSubtypeOfPersistentConfiguration" hash="8ym0lsd0f3f2ylqdt57hhh65yb2mkyx">
+  <source id="3815075966210453316" name="SmartPersistentPropertyisSubtypeOfPersistentConfiguration" hash="-94076q8xggwzlnyfjg9ztil897kddcv">
     <dep model="f:java_stub#jetbrains.mps.lang.typesystem.runtime(jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
@@ -314,7 +313,7 @@
     <dep model="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.runConfigurations.structure)" />
     <file name="typeof_ReportConfigurationErrorStatement_InferenceRule.java" />
   </source>
-  <source id="1448685625140421547" name="typeof_PersistentConfigurationTemplateInitializer" hash="5bntmt6akiecaw0khs3npl95e6i387q">
+  <source id="1448685625140421547" name="typeof_PersistentConfigurationTemplateInitializer" hash="-51rzn0d5r4fxqwbdlkspp2wfbjbl3c8">
     <dep model="f:java_stub#jetbrains.mps.lang.typesystem.runtime(jetbrains.mps.lang.typesystem.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />

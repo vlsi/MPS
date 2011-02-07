@@ -491,7 +491,7 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1448685625140421465">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fmpm.4928971978190541372" resolveInfo="setTargetConcept" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="uhxm.ConstructorParameterReference" typeId="uhxm.1448685625140401539" id="1448685625140421466">
+                <node role="actualArgument" roleId="tpee.1068499141038" type="uhxm.TemplateParameterReference" typeId="uhxm.1448685625140401539" id="1448685625140421466">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1448685625140391171" resolveInfo="myConcept" />
                 </node>
               </node>
@@ -504,7 +504,7 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1448685625140421513">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fmpm.4928971978190541390" resolveInfo="setAcceptor" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="uhxm.ConstructorParameterReference" typeId="uhxm.1448685625140401539" id="1448685625140421514">
+                <node role="actualArgument" roleId="tpee.1068499141038" type="uhxm.TemplateParameterReference" typeId="uhxm.1448685625140401539" id="1448685625140421514">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1448685625140421467" resolveInfo="myIsValid" />
                 </node>
               </node>
@@ -607,7 +607,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6589514334700374007">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6589514334700374008">
                   <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6589514334700374009">
-                    <node role="operand" roleId="tpee.1197027771414" type="uhxm.ConstructorParameterReference" typeId="uhxm.1448685625140401539" id="6589514334700374010">
+                    <node role="operand" roleId="tpee.1197027771414" type="uhxm.TemplateParameterReference" typeId="uhxm.1448685625140401539" id="6589514334700374010">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1448685625140421467" resolveInfo="myIsValid" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp2c.InvokeFunctionOperation" typeId="tp2c.1225797177491" id="6589514334700374011">
@@ -640,11 +640,11 @@
         </node>
       </node>
     </node>
-    <node role="constructorParameter" roleId="uhxm.1448685625140377459" type="uhxm.ConstructorParameter" typeId="uhxm.1448685625140377431" id="1448685625140391171">
+    <node role="templateParameter" roleId="uhxm.1448685625140377459" type="uhxm.TemplateParameter" typeId="uhxm.1448685625140377431" id="1448685625140391171">
       <property name="name" nameId="tpck.1169194664001" value="myConcept" />
       <node role="type" roleId="tpee.5680397130376446158" type="tp25.SConceptType" typeId="tp25.1172420572800" id="1448685625140391173" />
     </node>
-    <node role="constructorParameter" roleId="uhxm.1448685625140377459" type="uhxm.ConstructorParameter" typeId="uhxm.1448685625140377431" id="1448685625140421467">
+    <node role="templateParameter" roleId="uhxm.1448685625140377459" type="uhxm.TemplateParameter" typeId="uhxm.1448685625140377431" id="1448685625140421467">
       <property name="name" nameId="tpck.1169194664001" value="myIsValid" />
       <node role="type" roleId="tpee.5680397130376446158" type="tp2c.FunctionType" typeId="tp2c.1199542442495" id="1448685625140421469">
         <node role="resultType" roleId="tp2c.1199542457201" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1448685625140421472" />

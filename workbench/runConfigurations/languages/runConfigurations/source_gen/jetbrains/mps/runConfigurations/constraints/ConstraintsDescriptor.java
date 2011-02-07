@@ -16,7 +16,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new EditorOperation_editorOperationDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new EditorExpression_persistentPropertyDeclaration_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new ConstructorParameterReference_constructorParameterDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TemplateParameterReference_constructorParameterDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

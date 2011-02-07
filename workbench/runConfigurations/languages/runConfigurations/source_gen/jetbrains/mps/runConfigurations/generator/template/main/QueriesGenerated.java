@@ -363,7 +363,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1448685625140488861(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplate")) || ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplate"), "constructorParameter", true)).isNotEmpty();
+    return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplate")) || ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplate"), "templateParameter", true)).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_6458115119415163987(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -540,7 +540,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1448685625140489070(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplate"), "constructorParameter", true);
+    return SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplate"), "templateParameter", true);
   }
 
   public static Iterable sourceNodesQuery_6458115119415160046(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -572,7 +572,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1448685625140503129(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplate"), "constructorParameter", true);
+    return SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplate"), "templateParameter", true);
   }
 
   public static Iterable sourceNodesQuery_4534318291878215290(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -624,15 +624,15 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1448685625140440369(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "constructorParameter", true);
+    return SLinkOperations.getTargets(_context.getNode(), "templateParameter", true);
   }
 
   public static Iterable sourceNodesQuery_1448685625140440454(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "constructorParameter", true);
+    return SLinkOperations.getTargets(_context.getNode(), "templateParameter", true);
   }
 
   public static Iterable sourceNodesQuery_1448685625140440642(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "constructorParameter", true);
+    return SLinkOperations.getTargets(_context.getNode(), "templateParameter", true);
   }
 
   public static Iterable sourceNodesQuery_1448685625140460903(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -640,15 +640,15 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1448685625140488673(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "constructorParameter", true);
+    return SLinkOperations.getTargets(_context.getNode(), "templateParameter", true);
   }
 
   public static Iterable sourceNodesQuery_1448685625140488728(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "constructorParameter", true);
+    return SLinkOperations.getTargets(_context.getNode(), "templateParameter", true);
   }
 
   public static Iterable sourceNodesQuery_1448685625140488766(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "constructorParameter", true);
+    return SLinkOperations.getTargets(_context.getNode(), "templateParameter", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_666608846720189931(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
