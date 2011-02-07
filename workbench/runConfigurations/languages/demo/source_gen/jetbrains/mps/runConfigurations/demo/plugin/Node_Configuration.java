@@ -14,9 +14,9 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
-import com.intellij.openapi.options.SettingsEditor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodePointer;
+import com.intellij.openapi.options.SettingsEditor;
 
 public class Node_Configuration implements IPersistentConfiguration {
   private static final Logger LOG = Logger.getLogger(Node_Configuration.class);
@@ -57,10 +57,6 @@ public class Node_Configuration implements IPersistentConfiguration {
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
-  }
-
-  public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
-    return new Node_Configuration_Editor();
   }
 
   public String getNodeId() {
@@ -111,13 +107,21 @@ public class Node_Configuration implements IPersistentConfiguration {
   public Node_Configuration clone() {
     Node_Configuration clone = null;
     try {
-      clone = new Node_Configuration(myConcept, myIsValid);
+      clone = createCloneTemplate();
       clone.myState = (Node_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
       LOG.error(ex);
     }
     return clone;
+  }
+
+  public Node_Configuration createCloneTemplate() {
+    return new Node_Configuration(myConcept, myIsValid);
+  }
+
+  public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
+    return new Node_Configuration_Editor(myConcept, myIsValid);
   }
 
   public class MyState {

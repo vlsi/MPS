@@ -19,12 +19,12 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
-import com.intellij.openapi.options.SettingsEditor;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ExecutionException;
+import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
@@ -77,10 +77,6 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
     }
   }
 
-  public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
-    return new DemoApplication_Configuration_Editor();
-  }
-
   public Node_Configuration getNode() {
     return myNode;
   }
@@ -89,7 +85,7 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
   public DemoApplication_Configuration clone() {
     DemoApplication_Configuration clone = null;
     try {
-      clone = (DemoApplication_Configuration) super.clone();
+      clone = createCloneTemplate();
       clone.myState = (DemoApplication_Configuration.MyState) myState.clone();
       clone.myNode = (Node_Configuration) myNode.clone();
       return clone;
@@ -115,6 +111,14 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
 
   public SettingsEditor<DemoApplication_Configuration> getConfigurationEditor() {
     return (SettingsEditor<DemoApplication_Configuration>) getEditor();
+  }
+
+  public DemoApplication_Configuration createCloneTemplate() {
+    return (DemoApplication_Configuration) super.clone();
+  }
+
+  public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
+    return new DemoApplication_Configuration_Editor();
   }
 
   public class MyState {
