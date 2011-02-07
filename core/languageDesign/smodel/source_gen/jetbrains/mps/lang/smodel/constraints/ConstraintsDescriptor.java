@@ -41,6 +41,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new PropertyAttributeQualifier_attributeConcept_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PropertyQualifier_property_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new LinkQualifier_link_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ConceptPropertyNameRefExpression_conceptPropertyDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

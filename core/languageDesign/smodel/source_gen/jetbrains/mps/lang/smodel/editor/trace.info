@@ -89,12 +89,14 @@
   <unitInfo fileName="SConceptType_Editor.java" startLine="93" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.SConceptType_Editor$_Inline_6of1q_a2a" />
   <unitInfo fileName="StaticConceptMethodCall_Editor.java" startLine="102" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.StaticConceptMethodCall_Editor$_Inline_fn54i1_a0a" />
   <unitInfo fileName="SNodeTypeCastExpression_Editor.java" startLine="111" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.SNodeTypeCastExpression_Editor$_Inline_x0l1fn_a3a" />
+  <unitInfo fileName="ConceptPropertyNameRefExpression_Editor.java" startLine="126" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.ConceptPropertyNameRefExpression_Editor$_Inline_h02ftw_a2a" />
   <unitInfo fileName="PropertyNameRefExpression_Editor.java" startLine="126" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.PropertyNameRefExpression_Editor$_Inline_x4eqv4_a2a" />
   <unitInfo fileName="LinkNameRefExpression_Editor.java" startLine="126" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.LinkNameRefExpression_Editor$_Inline_vnocnn_a2a" />
   <unitInfo fileName="LinkRefExpression_Editor.java" startLine="126" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.LinkRefExpression_Editor$_Inline_jsiyl_a2a" />
   <unitInfo fileName="Model_CreateNewRootNodeOperation_Editor.java" startLine="130" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Model_CreateNewRootNodeOperation_Editor$_Inline_uze3jf_a2a" />
   <unitInfo fileName="Model_CreateNewNodeOperation_Editor.java" startLine="130" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Model_CreateNewNodeOperation_Editor$_Inline_tsmvai_a2a" />
   <unitInfo fileName="StaticConceptMethodCall_Editor.java" startLine="140" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.StaticConceptMethodCall_Editor$_Inline_fn54i1_a2a" />
+  <unitInfo fileName="ConceptPropertyNameRefExpression_Editor.java" startLine="164" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.ConceptPropertyNameRefExpression_Editor$_Inline_h02ftw_a4a" />
   <unitInfo fileName="PropertyNameRefExpression_Editor.java" startLine="164" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.PropertyNameRefExpression_Editor$_Inline_x4eqv4_a4a" />
   <unitInfo fileName="LinkNameRefExpression_Editor.java" startLine="164" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.LinkNameRefExpression_Editor$_Inline_vnocnn_a4a" />
   <unitInfo fileName="LinkRefExpression_Editor.java" startLine="164" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.LinkRefExpression_Editor$_Inline_jsiyl_a4a" />
@@ -195,6 +197,7 @@
   <unitInfo fileName="Node_IsRoleOperation_Editor.java" startLine="26" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Node_IsRoleOperation_Editor" />
   <unitInfo fileName="StaticConceptMethodCall_Editor.java" startLine="33" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.StaticConceptMethodCall_Editor" />
   <unitInfo fileName="ReplaceableAliasAndParms_Comp.java" startLine="36" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp" />
+  <unitInfo fileName="ConceptPropertyNameRefExpression_Editor.java" startLine="25" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.ConceptPropertyNameRefExpression_Editor" />
   <unitInfo fileName="PropertyNameRefExpression_Editor.java" startLine="25" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.PropertyNameRefExpression_Editor" />
   <unitInfo fileName="LinkNameRefExpression_Editor.java" startLine="25" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.LinkNameRefExpression_Editor" />
   <unitInfo fileName="LinkRefExpression_Editor.java" startLine="25" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.LinkRefExpression_Editor" />
