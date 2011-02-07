@@ -50,35 +50,36 @@
     <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.ModelUtils" file="ModelUtils.java">
-    <classNode dependClassName="org.jdom.Document" />
-    <classNode dependClassName="java.io.ByteArrayOutputStream" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.vcs.Version" />
+    <classNode dependClassName="org.xml.sax.InputSource" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.io.OutputStream" />
-    <classNode dependClassName="jetbrains.mps.util.UnzipUtil" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="jetbrains.mps.vcs.Version" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="org.jdom.Document" />
+    <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDiffTool" />
+    <classNode dependClassName="java.io.StringReader" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.ByteArrayOutputStream" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelLoadingState" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.io.ByteArrayInputStream" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="java.io.FileInputStream" />
-    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="java.io.FilenameFilter" />
-    <classNode dependClassName="java.io.ByteArrayInputStream" />
-    <classNode dependClassName="java.io.StringReader" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDiffTool" />
-    <classNode dependClassName="com.intellij.openapi.util.Computable" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
+    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="com.intellij.openapi.util.Ref" />
-    <classNode dependClassName="org.xml.sax.InputSource" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="jetbrains.mps.util.UnzipUtil" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.ModuleVcsPathPresenter" file="ModuleVcsPathPresenter.java">
     <classNode dependClassName="java.lang.String" />

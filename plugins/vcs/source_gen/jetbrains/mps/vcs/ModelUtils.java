@@ -26,6 +26,7 @@ import java.io.ByteArrayInputStream;
 import java.io.StringReader;
 import jetbrains.mps.smodel.SModelReference;
 import com.intellij.openapi.util.Ref;
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
 
 public class ModelUtils {
@@ -177,7 +178,7 @@ public class ModelUtils {
       SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
         public SModel compute() {
           try {
-            return ModelPersistence.readModel(ModelPersistence.getPersistenceVersion(inputSourceFactory.create()), inputSourceFactory.create(), modelName, modelStereotype);
+            return ModelPersistence.readModel(ModelPersistence.getPersistenceVersion(inputSourceFactory.create()), inputSourceFactory.create(), modelName, modelStereotype, ModelLoadingState.FULLY_LOADED).getModel();
           } catch (IOException e) {
             ex.set(e);
             return null;

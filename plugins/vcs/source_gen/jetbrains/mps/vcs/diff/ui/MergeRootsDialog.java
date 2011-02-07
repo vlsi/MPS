@@ -12,6 +12,11 @@ import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import javax.swing.JSplitPane;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.ActionUtils;
+import com.intellij.openapi.actionSystem.ActionToolbar;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -61,10 +66,15 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     myMinePainter = MergeButtonsPainter.addTo(this, myMineEditor, myMineBuilder);
     myRepositoryPainter = MergeButtonsPainter.addTo(this, myRepositoryEditor, myRepositoryBuilder);
 
-    JSplitPane modelsPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopComponent, myBottomComponent);
-    modelsPane.setResizeWeight(1);
+    JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopComponent, myBottomComponent);
+    splitPane.setResizeWeight(1);
     myContainer = new JPanel(new BorderLayout());
-    myContainer.add(modelsPane);
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ApplyNonConflictsForRoot(myMergeContext, this));
+    ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
+    toolbar.updateActionsImmediately();
+
+    myContainer.add(toolbar.getComponent(), BorderLayout.NORTH);
+    myContainer.add(splitPane, BorderLayout.CENTER);
     highlightAllChanges();
   }
 
