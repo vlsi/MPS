@@ -3,7 +3,7 @@
   <unitInfo fileName="SettingsEditor_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.SettingsEditor_Behavior" />
   <unitInfo fileName="RunConfigurationKind_Behavior.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.RunConfigurationKind_Behavior" />
   <unitInfo fileName="RunConfiguration_Behavior.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.RunConfiguration_Behavior" />
-  <unitInfo fileName="PersistentPropertyDeclaration_Behavior.java" startLine="50" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentPropertyDeclaration_Behavior$QuotationClass_ex141d_a1a0a0b" />
+  <unitInfo fileName="PersistentPropertyDeclaration_Behavior.java" startLine="56" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentPropertyDeclaration_Behavior$QuotationClass_ex141d_a1a0a0b" />
   <unitInfo fileName="PersistentConfigurationTemplate_Behavior.java" startLine="31" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfigurationTemplate_Behavior$QuotationClass_3swbqk_a0a0b" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="62" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0a0c" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="80" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0c0f" />
@@ -14,7 +14,7 @@
   <unitInfo fileName="PersistentConfigurationType_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfigurationType_Behavior" />
   <unitInfo fileName="EditorOperationDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.EditorOperationDeclaration_Behavior" />
   <unitInfo fileName="PersistentConfigurationTemplate_Behavior.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfigurationTemplate_Behavior" />
-  <unitInfo fileName="PersistentPropertyDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentPropertyDeclaration_Behavior" />
+  <unitInfo fileName="PersistentPropertyDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentPropertyDeclaration_Behavior" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="17" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior" />
   <root nodeId="223733852661818461">
     <nodeInfo nodeId="1252300412034469148" fileName="PersistentConfiguration_Behavior.java" startLine="24" startPosition="66" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
