@@ -8,14 +8,14 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.options.SettingsEditor;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class Node_Configuration implements IPersistentConfiguration {
@@ -33,11 +33,17 @@ public class Node_Configuration implements IPersistentConfiguration {
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
-      SNode node = this.getNode();
+      final SNode node = this.getNode();
       if (node == null) {
         throw new RuntimeConfigurationException("Node is not specified.");
       }
-      if (!(myIsValid.invoke(node))) {
+      final Wrappers._boolean accept = new Wrappers._boolean();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          accept.value = myIsValid.invoke(node);
+        }
+      });
+      if (!(accept.value)) {
         throw new RuntimeConfigurationException("Node is not valid.");
       }
     }
