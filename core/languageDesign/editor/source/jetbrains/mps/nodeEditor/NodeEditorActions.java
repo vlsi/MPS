@@ -16,6 +16,10 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.selection.MultipleSelection;
+import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.util.Condition;
 
 import java.awt.*;
@@ -297,28 +301,26 @@ public class NodeEditorActions {
 
   public static class SelectUp extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+      EditorCell anchorCell = getAnchorCell(selectionManager.getSelection());
 
-      if (selection instanceof EditorCell_Label && !((EditorCell_Label) selection).isEverythingSelected()) {
+      if (anchorCell instanceof EditorCell_Label && !((EditorCell_Label) anchorCell).isEverythingSelected()) {
         return true;
       }
-
-      return selection != null && selection.getParent() != null && findTarget(selection) != null;
+      return anchorCell != null && anchorCell.getParent() != null && findTarget(anchorCell) != null;
     }
 
     public void execute(EditorContext context) {
-      EditorCell selection = context.getNodeEditorComponent().getSelectedCell();
+      SelectionManager selectionManager = context.getNodeEditorComponent().getSelectionManager();
+      EditorCell anchorCell = getAnchorCell(selectionManager.getSelection());
 
-      if (selection instanceof EditorCell_Label && !((EditorCell_Label) selection).isEverythingSelected()) {
-        ((EditorCell_Label) selection).selectAll();
-        return;
+      if (anchorCell instanceof EditorCell_Label && !((EditorCell_Label) anchorCell).isEverythingSelected()) {
+        EditorCell_Label label = (EditorCell_Label) anchorCell;
+        selectionManager.pushSelection(selectionManager.createSelection(label));
+        label.selectAll();
+      } else {
+        selectionManager.pushSelection(selectionManager.createSelection(findTarget(anchorCell)));
       }
-
-      int caretX = selection.getCaretX();
-      context.getNodeEditorComponent().pushSelection(selection);
-      EditorCell target = findTarget(selection);
-      target.setCaretX(caretX);
-      context.getNodeEditorComponent().setSelectionDontClearStack(target, true);
     }
 
     private EditorCell findTarget(EditorCell cell) {
@@ -337,28 +339,25 @@ public class NodeEditorActions {
       }
       return null;
     }
+
+    private EditorCell getAnchorCell(Selection selection) {
+      if (selection instanceof SingularSelection) {
+        return ((SingularSelection) selection).getEditorCell();
+      } else if (selection instanceof MultipleSelection) {
+        // TODO: process MultipleSelection here
+        return null;
+      }
+      return null;
+    }
   }
 
   public static class SelectDown extends EditorCellAction {
     public boolean canExecute(EditorContext context) {
-      EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
-      if (selectedCell instanceof EditorCell_Label &&
-        ((EditorCell_Label) selectedCell).isEverythingSelected()) {
-        return true;
-      }
-
-      return context.getNodeEditorComponent().peekSelection() != null;
+      return context.getNodeEditorComponent().getSelectionManager().getSelectionStackSize() > 1;
     }
 
     public void execute(EditorContext context) {
-      EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
-      if (selectedCell instanceof EditorCell_Label &&
-        ((EditorCell_Label) selectedCell).isEverythingSelected()) {
-        ((EditorCell_Label) selectedCell).deselectAll();
-        return;
-      }
-
-      context.getNodeEditorComponent().setSelectionDontClearStack(context.getNodeEditorComponent().popSelection(), true);
+      context.getNodeEditorComponent().getSelectionManager().popSelection();
     }
   }
 

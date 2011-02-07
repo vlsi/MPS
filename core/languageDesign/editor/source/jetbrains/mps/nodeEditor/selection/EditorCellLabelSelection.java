@@ -94,11 +94,11 @@ public class EditorCellLabelSelection extends EditorCellSelection {
     if (!isEditable()) {
       return;
     }
-    getEditorCellLabel().deselectAll();
     super.deactivate();
     mySelectionStart = getEditorCellLabel().getSelectionStart();
     mySelectionEnd = getEditorCellLabel().getSelectionEnd();
     myNonTrivialSelection = mySelectionStart != mySelectionEnd;
+    getEditorCellLabel().deselectAll();
   }
 
   @Override

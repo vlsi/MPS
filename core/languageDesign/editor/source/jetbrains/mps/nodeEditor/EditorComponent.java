@@ -1839,7 +1839,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void pushSelection(EditorCell cell) {
-    getSelectionManager().pushSelection(new EditorCellSelection(cell));
+    getSelectionManager().pushSelection(getSelectionManager().createSelection(cell));
   }
 
   public EditorCell popSelection() {
