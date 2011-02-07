@@ -116,7 +116,13 @@ public class WorkbenchMakeService implements IMakeService {
       }
     });
 
-    if (!(res.value.isSucessful())) {
+    if (res.value == null) {
+      String msg = ((cleanMake ?
+        "Rebuild" :
+        "Make"
+      )) + " aborted";
+      WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo(msg);
+    } else if (!(res.value.isSucessful())) {
       String msg = ((cleanMake ?
         "Rebuild" :
         "Make"
