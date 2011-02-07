@@ -14,11 +14,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class NodeAttributeQualifier_attributeConcept_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public NodeAttributeQualifier_attributeConcept_ReferentConstraint() {
@@ -36,7 +37,19 @@ public class NodeAttributeQualifier_attributeConcept_ReferentConstraint extends 
     final SNode containerConcept = SLinkOperations.getTarget(AttributeAccess_Behavior.call_getAttributeContainerType_6960953357954139822(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.AttributeAccess")), "concept", false);
     return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.NodeAttribute"), _context.getModel(), operationContext.getScope())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode attr) {
-        return StringUtils.isNotEmpty(SConceptPropertyOperations.getString(attr, "role")) && ListSequence.fromList(SLinkOperations.getConceptLinkTargets(attr, "attributed")).any(new IWhereFilter<SNode>() {
+        return ListSequence.fromList(SLinkOperations.getTargets(attr, "conceptProperty", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (SLinkOperations.getTarget(it, "conceptPropertyDeclaration", false) != null);
+          }
+        }).<SNode>select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(it, "conceptPropertyDeclaration", false);
+          }
+        }).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SPropertyOperations.hasValue(it, "name", "role");
+          }
+        }) && ListSequence.fromList(SLinkOperations.getConceptLinkTargets(attr, "attributed")).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SConceptOperations.isSubConceptOf(containerConcept, NameUtil.nodeFQName(it));
           }

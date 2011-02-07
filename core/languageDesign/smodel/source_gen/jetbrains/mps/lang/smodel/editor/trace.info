@@ -34,7 +34,7 @@
   <unitInfo fileName="SemanticDowncastExpression_Symbol_Actions.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.SemanticDowncastExpression_Symbol_Actions$SemanticDowncastExpression_Symbol_Actions_DELETE" />
   <unitInfo fileName="SNodeTypeCastExpression_Concept_Actions.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.SNodeTypeCastExpression_Concept_Actions$SNodeTypeCastExpression_Concept_Actions_DELETE" />
   <unitInfo fileName="NodeAttributeQualifier_Editor.java" startLine="48" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.NodeAttributeQualifier_Editor$_Inline_b8v8vy_a0a" />
-  <unitInfo fileName="PropertyAttributeQualifier_Editor.java" startLine="105" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.PropertyAttributeQualifier_Editor$_Inline_wc9pc4_a0a" />
+  <unitInfo fileName="PropertyAttributeQualifier_Editor.java" startLine="108" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.PropertyAttributeQualifier_Editor$_Inline_wc9pc4_a0a" />
   <unitInfo fileName="LinkAttributeQualifier_Editor.java" startLine="108" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.LinkAttributeQualifier_Editor$_Inline_mg3hvm_a0a" />
   <unitInfo fileName="Node_DetachOperation_Editor.java" startLine="16" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Node_DetachOperation_Editor" />
   <unitInfo fileName="Node_GetConceptOperation_Editor.java" startLine="16" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Node_GetConceptOperation_Editor" />
@@ -173,11 +173,11 @@
   <unitInfo fileName="Node_InsertNewNextSiblingOperation_Editor.java" startLine="25" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Node_InsertNewNextSiblingOperation_Editor" />
   <unitInfo fileName="Link_SetNewChildOperation_Editor.java" startLine="25" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.Link_SetNewChildOperation_Editor" />
   <unitInfo fileName="NodeRefExpression_Editor.java" startLine="24" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.NodeRefExpression_Editor" />
-  <unitInfo fileName="PropertyAttributeQualifier_Editor.java" startLine="25" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.PropertyAttributeQualifier_Editor" />
   <unitInfo fileName="EnumMemberReference_Editor.java" startLine="25" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.EnumMemberReference_Editor" />
   <unitInfo fileName="ConceptFqNameRefExpression_Editor.java" startLine="24" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.ConceptFqNameRefExpression_Editor" />
   <unitInfo fileName="ConceptRefExpression_Editor.java" startLine="24" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.ConceptRefExpression_Editor" />
   <unitInfo fileName="SNodeListType_Editor.java" startLine="24" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.SNodeListType_Editor" />
+  <unitInfo fileName="PropertyAttributeQualifier_Editor.java" startLine="25" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.PropertyAttributeQualifier_Editor" />
   <unitInfo fileName="LinkAttributeQualifier_Editor.java" startLine="25" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.LinkAttributeQualifier_Editor" />
   <unitInfo fileName="SEnumMemberType_Editor.java" startLine="25" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.SEnumMemberType_Editor" />
   <unitInfo fileName="SNodeType_Editor.java" startLine="25" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.smodel.editor.SNodeType_Editor" />
