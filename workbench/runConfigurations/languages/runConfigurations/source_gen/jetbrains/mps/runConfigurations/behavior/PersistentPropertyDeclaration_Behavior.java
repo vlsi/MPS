@@ -6,6 +6,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.util.NodeNameUtil;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
@@ -30,6 +33,12 @@ public class PersistentPropertyDeclaration_Behavior {
 
   public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return true;
+  }
+
+  public static String call_getTypeFqName_6589514334700622462(SNode thisNode) {
+    assert PersistentPropertyDeclaration_Behavior.call_isTemplate_77193491200360813(thisNode);
+    SNode template = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(thisNode, "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType"), true), "propertyTemplate", false);
+    return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(template)) + "." + PersistentConfiguration_Behavior.call_getGeneratedClassName_1252300412034469137(template);
   }
 
   public static boolean call_isInitializable_1448685625140326362(SNode thisNode) {
