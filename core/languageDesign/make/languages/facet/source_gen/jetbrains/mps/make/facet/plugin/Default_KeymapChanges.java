@@ -12,6 +12,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     // simple 
     addSimpleShortcut("jetbrains.mps.make.facet.plugin.MakeSelectedModels_Action", getShortcut("ctrl shift F9"));
     addSimpleShortcut("jetbrains.mps.make.facet.plugin.MakeSelectedModules_Action", getShortcut("ctrl F9"));
+    addSimpleShortcut("jetbrains.mps.make.facet.plugin.TextPreviewModel_Action", getShortcut("ctrl alt shift F9"));
     // simple parameterized 
     // complex 
   }

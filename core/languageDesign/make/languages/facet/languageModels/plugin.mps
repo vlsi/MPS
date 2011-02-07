@@ -6417,6 +6417,13 @@
         <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
       </node>
     </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="6541008062397331667">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="2956674153315535063" resolveInfo="TextPreviewModel" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="6541008062397331669">
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_F9" />
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt+shift" />
+      </node>
+    </node>
   </root>
   <root id="1347231559998412406">
     <node role="constructionParameter" roleId="tp4k.1227008813498" type="tp4k.ActionConstructionParameterDeclaration" typeId="tp4k.1227008846812" id="1347231559998415124">
