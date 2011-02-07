@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.generator" uuid="5fa23c0a-216d-4571-a163-e286643e6f5f" compileInMPS="false" java-stubs-enabled="false" generatorOutputPath="${mps_home}/core/generator/source_gen">
   <models>
-    <modelRoot path="${solution_descriptor}/generator" namespacePrefix="" />
+    <modelRoot path="${solution_descriptor}/generator" namespacePrefix="jetbrains.mps" />
   </models>
   <sourcePath />
   <dependencies>
