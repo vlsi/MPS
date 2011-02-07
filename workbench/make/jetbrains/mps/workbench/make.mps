@@ -2360,7 +2360,7 @@
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1897969573100092480">
                   <link role="classifier:3" targetNodeId="20.~SwingConstants" resolveInfo="SwingConstants" />
-                  <link role="variableDeclaration:3" targetNodeId="20.~SwingConstants.TOP" resolveInfo="TOP" />
+                  <link role="variableDeclaration:3" targetNodeId="20.~SwingConstants.BOTTOM" resolveInfo="BOTTOM" />
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1897969573100092481">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1897969573100092482">
@@ -2523,13 +2523,13 @@
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6582938312171144509">
                   <link role="baseMethodDeclaration:3" targetNodeId="28.~EmptyBorder.&lt;init&gt;(int,int,int,int)" resolveInfo="EmptyBorder" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6582938312171144510">
-                    <property name="value:3" value="1" />
+                    <property name="value:3" value="0" />
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6582938312171144512">
                     <property name="value:3" value="0" />
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6582938312171144514">
-                    <property name="value:3" value="0" />
+                    <property name="value:3" value="1" />
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6582938312171144516">
                     <property name="value:3" value="0" />

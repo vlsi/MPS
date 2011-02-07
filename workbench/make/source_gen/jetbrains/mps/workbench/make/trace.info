@@ -194,16 +194,16 @@
     </scopeInfo>
     <scopeInfo nodeId="1312638714832611903" fileName="WorkbenchMakeService.java" startLine="78" startPosition="0" endLine="140" endPosition="0">
       <varInfo nodeId="1312638714832611910" varName="executor" />
-      <varInfo nodeId="1312638714832611906" varName="inputRes" />
       <varInfo nodeId="1312638714832611904" varName="script" />
+      <varInfo nodeId="1312638714832611906" varName="inputRes" />
     </scopeInfo>
     <scopeInfo nodeId="1312638714832612005" fileName="WorkbenchMakeService.java" startLine="141" startPosition="47" endLine="211" endPosition="6">
-      <varInfo nodeId="1312638714832612012" varName="jmon" />
       <varInfo nodeId="1312638714832612142" varName="pindGet" />
+      <varInfo nodeId="1312638714832612012" varName="jmon" />
       <varInfo nodeId="1312638714832612082" varName="pind" />
-      <varInfo nodeId="1312638714832612056" varName="cmon" />
-      <varInfo nodeId="1312638714832612086" varName="mons" />
       <varInfo nodeId="1312638714832612150" varName="init" />
+      <varInfo nodeId="1312638714832612086" varName="mons" />
+      <varInfo nodeId="1312638714832612056" varName="cmon" />
       <varInfo nodeId="1312638714832612007" varName="progStrat" />
     </scopeInfo>
     <scopeInfo nodeId="1312638714832612000" fileName="WorkbenchMakeService.java" startLine="140" startPosition="0" endLine="213" endPosition="0">
@@ -244,8 +244,8 @@
     <nodeInfo nodeId="2956674153315784069" fileName="GeneratedTextPreviewEditor.java" startLine="128" startPosition="23" endLine="129" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2956674153315784099" fileName="GeneratedTextPreviewEditor.java" startLine="133" startPosition="7" endLine="134" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7391893726628611088" fileName="GeneratedTextPreviewEditor.java" startLine="135" startPosition="39" endLine="136" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1897969573100092474" fileName="GeneratedTextPreviewEditor.java" startLine="140" startPosition="51" endLine="141" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1897969573100111542" fileName="GeneratedTextPreviewEditor.java" startLine="141" startPosition="213" endLine="142" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1897969573100092474" fileName="GeneratedTextPreviewEditor.java" startLine="140" startPosition="51" endLine="141" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1897969573100111542" fileName="GeneratedTextPreviewEditor.java" startLine="141" startPosition="216" endLine="142" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1897969573100092469" fileName="GeneratedTextPreviewEditor.java" startLine="142" startPosition="33" endLine="143" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6582938312171144476" fileName="GeneratedTextPreviewEditor.java" startLine="149" startPosition="55" endLine="150" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6582938312171144495" fileName="GeneratedTextPreviewEditor.java" startLine="152" startPosition="7" endLine="153" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

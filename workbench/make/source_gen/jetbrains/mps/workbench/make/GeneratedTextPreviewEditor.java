@@ -138,7 +138,7 @@ public class GeneratedTextPreviewEditor extends UserDataHolderBase implements Fi
   }
 
   private TabbedPaneWrapper.AsJBTabs createTabs() {
-    TabbedPaneWrapper.AsJBTabs asjbtabs = new TabbedPaneWrapper.AsJBTabs(project, SwingConstants.TOP, new PrevNextActionsDescriptor(IdeActions.ACTION_NEXT_EDITOR_TAB, IdeActions.ACTION_PREVIOUS_EDITOR_TAB), this);
+    TabbedPaneWrapper.AsJBTabs asjbtabs = new TabbedPaneWrapper.AsJBTabs(project, SwingConstants.BOTTOM, new PrevNextActionsDescriptor(IdeActions.ACTION_NEXT_EDITOR_TAB, IdeActions.ACTION_PREVIOUS_EDITOR_TAB), this);
     decorate(asjbtabs.getTabs());
     return asjbtabs;
   }
@@ -150,7 +150,7 @@ public class GeneratedTextPreviewEditor extends UserDataHolderBase implements Fi
         return new UiDecorator.UiDecoration(null, new Insets(0, 8, 0, 8));
       }
     });
-    jbTabs.getComponent().setBorder(new EmptyBorder(1, 0, 0, 0));
+    jbTabs.getComponent().setBorder(new EmptyBorder(0, 0, 1, 0));
   }
 
   private JComponent createTabContents(CharSequence text) {
