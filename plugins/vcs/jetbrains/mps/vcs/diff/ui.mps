@@ -85,102 +85,102 @@
   <root_stubs>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247567127">
       <property name="29.name:0" value="OldMergeView" />
-      <property name="29.virtualPackage:0" value="old_merge" />
+      <property name="29.virtualPackage:0" value="old.merge" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247567125">
       <property name="29.name:0" value="OldMergeModelsDialog" />
-      <property name="29.virtualPackage:0" value="old_merge" />
+      <property name="29.virtualPackage:0" value="old.merge" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247559468">
       <property name="29.name:0" value="OldMergeResultView" />
-      <property name="29.virtualPackage:0" value="old_merge" />
+      <property name="29.virtualPackage:0" value="old.merge" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247568950">
       <property name="29.name:0" value="OldRootMergeDialog" />
-      <property name="29.virtualPackage:0" value="old_merge" />
+      <property name="29.virtualPackage:0" value="old.merge" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247567124">
       <property name="29.name:0" value="OldModelDifferenceDialog" />
-      <property name="29.virtualPackage:0" value="old_diff" />
+      <property name="29.virtualPackage:0" value="old.diff" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247567126">
       <property name="29.name:0" value="OldChangeEditorMessage" />
-      <property name="29.virtualPackage:0" value="old_common" />
+      <property name="29.virtualPackage:0" value="old" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247570715">
       <property name="29.name:0" value="ModelDiffTool" />
-      <property name="29.virtualPackage:0" value="old_diff" />
+      <property name="29.virtualPackage:0" value="old.diff" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247571106">
       <property name="29.name:0" value="OldRootDifferenceDialog" />
-      <property name="29.virtualPackage:0" value="old_diff" />
+      <property name="29.virtualPackage:0" value="old.diff" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247572191">
       <property name="29.name:0" value="ModelMergeTool" />
-      <property name="29.virtualPackage:0" value="old_merge" />
+      <property name="29.virtualPackage:0" value="old.merge" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247572408">
       <property name="29.name:0" value="OldChangesBlock" />
-      <property name="29.virtualPackage:0" value="old_common" />
+      <property name="29.virtualPackage:0" value="old" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247567123">
       <property name="29.name:0" value="OldModelDifferenceComponent" />
-      <property name="29.virtualPackage:0" value="old_diff" />
+      <property name="29.virtualPackage:0" value="old.diff" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247573403">
       <property name="29.name:0" value="OldModelChangesTree" />
-      <property name="29.virtualPackage:0" value="old_common" />
+      <property name="29.virtualPackage:0" value="old" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247567122">
       <property name="4.abstractClass:3" value="true" />
       <property name="29.name:0" value="OldDiffEditorComponent" />
-      <property name="29.virtualPackage:0" value="old_common" />
+      <property name="29.virtualPackage:0" value="old" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6597367365621429713">
       <property name="29.name:0" value="MergeModelsDialog" />
-      <property name="29.virtualPackage:0" value="new_merge" />
+      <property name="29.virtualPackage:0" value="new.merge" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5019828647791385835">
-      <property name="29.virtualPackage:0" value="new_merge" />
+      <property name="29.virtualPackage:0" value="new.merge" />
       <property name="29.name:0" value="MergeRootsDialog" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5019828647791439260">
       <property name="4.abstractClass:3" value="false" />
       <property name="29.name:0" value="DiffEditorComponent" />
-      <property name="29.virtualPackage:0" value="new_merge" />
+      <property name="29.virtualPackage:0" value="new" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5019828647791521160">
-      <property name="29.virtualPackage:0" value="new_merge" />
+      <property name="29.virtualPackage:0" value="new" />
       <property name="29.name:0" value="DiffEditorComponentsGroup" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8401260027345469827">
-      <property name="29.virtualPackage:0" value="new_merge" />
+      <property name="29.virtualPackage:0" value="new" />
       <property name="29.name:0" value="ChangeEditorMessage" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="742766381634604040">
-      <property name="29.virtualPackage:0" value="new_merge" />
+      <property name="29.virtualPackage:0" value="new.merge" />
       <property name="29.name:0" value="ChangeTrapeciumStrip" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3021948350273402851">
-      <property name="29.virtualPackage:0" value="new_merge" />
+      <property name="29.virtualPackage:0" value="new.merge" />
       <property name="29.name:0" value="MergeButtonsPainter" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3021948350273458186">
       <property name="29.name:0" value="ChangeGroupBuilder" />
-      <property name="29.virtualPackage:0" value="new_merge" />
+      <property name="29.virtualPackage:0" value="new.merge" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3021948350273458192">
-      <property name="29.virtualPackage:0" value="new_merge" />
+      <property name="29.virtualPackage:0" value="new" />
       <property name="29.name:0" value="ChangeGroup" />
     </node>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="2446520860650368827">
-      <property name="29.virtualPackage:0" value="new_merge" />
+      <property name="29.virtualPackage:0" value="new.merge" />
       <property name="29.name:0" value="ApplyNonConflictsForRoot" />
     </node>
   </root_stubs>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247567127">
     <property name="29.name:0" value="OldMergeView" />
-    <property name="29.virtualPackage:0" value="old_merge" />
+    <property name="29.virtualPackage:0" value="old.merge" />
     <node role="4.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247567128" />
     <node role="4.superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247567129">
       <link role="4.classifier:3" targetNodeId="5.~JPanel" />
@@ -1525,7 +1525,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247567125">
     <property name="29.name:0" value="OldMergeModelsDialog" />
-    <property name="29.virtualPackage:0" value="old_merge" />
+    <property name="29.virtualPackage:0" value="old.merge" />
     <node role="4.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247567649" />
     <node role="4.superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247567650">
       <link role="4.classifier:3" targetNodeId="51.~BaseDialog" />
@@ -1903,7 +1903,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247559468">
     <property name="29.name:0" value="OldMergeResultView" />
-    <property name="29.virtualPackage:0" value="old_merge" />
+    <property name="29.virtualPackage:0" value="old.merge" />
     <node role="4.superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247567797">
       <link role="4.classifier:3" targetNodeId="5.~JPanel" />
     </node>
@@ -4011,7 +4011,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247568950">
     <property name="29.name:0" value="OldRootMergeDialog" />
-    <property name="29.virtualPackage:0" value="old_merge" />
+    <property name="29.virtualPackage:0" value="old.merge" />
     <node role="4.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247568951" />
     <node role="4.superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247568952">
       <link role="4.classifier:3" targetNodeId="51.~BaseDialog" />
@@ -7099,7 +7099,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247567124">
     <property name="29.name:0" value="OldModelDifferenceDialog" />
-    <property name="29.virtualPackage:0" value="old_diff" />
+    <property name="29.virtualPackage:0" value="old.diff" />
     <node role="4.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247570207" />
     <node role="4.superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247570208">
       <link role="4.classifier:3" targetNodeId="51.~BaseDialog" />
@@ -7792,7 +7792,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247567126">
     <property name="29.name:0" value="OldChangeEditorMessage" />
-    <property name="29.virtualPackage:0" value="old_common" />
+    <property name="29.virtualPackage:0" value="old" />
     <node role="4.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247570479" />
     <node role="4.superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247570480">
       <link role="4.classifier:3" targetNodeId="50.~DefaultEditorMessage" />
@@ -8354,7 +8354,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247570715">
     <property name="29.name:0" value="ModelDiffTool" />
-    <property name="29.virtualPackage:0" value="old_diff" />
+    <property name="29.virtualPackage:0" value="old.diff" />
     <node role="4.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247570716" />
     <node role="4.implementedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247570717">
       <link role="4.classifier:3" targetNodeId="41.~DiffTool" />
@@ -9350,7 +9350,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247571106">
     <property name="29.name:0" value="OldRootDifferenceDialog" />
-    <property name="29.virtualPackage:0" value="old_diff" />
+    <property name="29.virtualPackage:0" value="old.diff" />
     <node role="4.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247571107" />
     <node role="4.superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247571108">
       <link role="4.classifier:3" targetNodeId="51.~BaseDialog" />
@@ -12103,7 +12103,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247572191">
     <property name="29.name:0" value="ModelMergeTool" />
-    <property name="29.virtualPackage:0" value="old_merge" />
+    <property name="29.virtualPackage:0" value="old.merge" />
     <node role="4.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247572192" />
     <node role="4.implementedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247572193">
       <link role="4.classifier:3" targetNodeId="41.~DiffTool" />
@@ -12750,7 +12750,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247572408">
     <property name="29.name:0" value="OldChangesBlock" />
-    <property name="29.virtualPackage:0" value="old_common" />
+    <property name="29.virtualPackage:0" value="old" />
     <node role="4.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247572409" />
     <node role="4.superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247572410">
       <link role="4.classifier:3" targetNodeId="50.~AbstractAdditionalPainter" />
@@ -13349,7 +13349,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247567123">
     <property name="29.name:0" value="OldModelDifferenceComponent" />
-    <property name="29.virtualPackage:0" value="old_diff" />
+    <property name="29.virtualPackage:0" value="old.diff" />
     <node role="4.superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247572671">
       <link role="4.classifier:3" targetNodeId="5.~JPanel" />
     </node>
@@ -14983,7 +14983,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247573403">
     <property name="29.name:0" value="OldModelChangesTree" />
-    <property name="29.virtualPackage:0" value="old_common" />
+    <property name="29.virtualPackage:0" value="old" />
     <node role="4.superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247573404">
       <link role="4.classifier:3" targetNodeId="21.~MPSTree" />
     </node>
@@ -19117,7 +19117,7 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247567122">
     <property name="4.abstractClass:3" value="true" />
     <property name="29.name:0" value="OldDiffEditorComponent" />
-    <property name="29.virtualPackage:0" value="old_common" />
+    <property name="29.virtualPackage:0" value="old" />
     <node role="4.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247574979" />
     <node role="4.superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247574980">
       <link role="4.classifier:3" targetNodeId="50.~EditorComponent" />
@@ -21824,7 +21824,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6597367365621429713">
     <property name="29.name:0" value="MergeModelsDialog" />
-    <property name="29.virtualPackage:0" value="new_merge" />
+    <property name="29.virtualPackage:0" value="new.merge" />
     <node role="4.staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="4453118635377413920">
       <property name="29.name:0" value="isNewMergeEnabled" />
       <node role="4.returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="4453118635377413924" />
@@ -22975,7 +22975,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5019828647791385835">
-    <property name="29.virtualPackage:0" value="new_merge" />
+    <property name="29.virtualPackage:0" value="new.merge" />
     <property name="29.name:0" value="MergeRootsDialog" />
     <node role="4.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7702536061215834973">
       <property name="29.name:0" value="rehighlight" />
@@ -24528,7 +24528,7 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5019828647791439260">
     <property name="4.abstractClass:3" value="false" />
     <property name="29.name:0" value="DiffEditorComponent" />
-    <property name="29.virtualPackage:0" value="new_merge" />
+    <property name="29.virtualPackage:0" value="new" />
     <node role="4.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5019828647791439261" />
     <node role="4.superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5019828647791439262">
       <link role="4.classifier:3" targetNodeId="50.~EditorComponent" resolveInfo="EditorComponent" />
@@ -25547,7 +25547,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5019828647791521160">
-    <property name="29.virtualPackage:0" value="new_merge" />
+    <property name="29.virtualPackage:0" value="new" />
     <property name="29.name:0" value="DiffEditorComponentsGroup" />
     <node role="4.staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5019828647791521201">
       <property name="4.nonStatic:3" value="true" />
@@ -25876,7 +25876,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8401260027345469827">
-    <property name="29.virtualPackage:0" value="new_merge" />
+    <property name="29.virtualPackage:0" value="new" />
     <property name="29.name:0" value="ChangeEditorMessage" />
     <node role="4.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8401260027345476315">
       <property name="29.name:0" value="isConflicted" />
@@ -29128,7 +29128,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="742766381634604040">
-    <property name="29.virtualPackage:0" value="new_merge" />
+    <property name="29.virtualPackage:0" value="new.merge" />
     <property name="29.name:0" value="ChangeTrapeciumStrip" />
     <node role="4.staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4294451483718547796">
       <property name="4.nonStatic:3" value="true" />
@@ -29674,7 +29674,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3021948350273402851">
-    <property name="29.virtualPackage:0" value="new_merge" />
+    <property name="29.virtualPackage:0" value="new.merge" />
     <property name="29.name:0" value="MergeButtonsPainter" />
     <node role="4.staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="3021948350273469377">
       <property name="29.name:0" value="addTo" />
@@ -31411,7 +31411,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3021948350273458186">
     <property name="29.name:0" value="ChangeGroupBuilder" />
-    <property name="29.virtualPackage:0" value="new_merge" />
+    <property name="29.virtualPackage:0" value="new.merge" />
     <node role="4.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3021948350273458583">
       <property name="29.name:0" value="calculateChangeGroups" />
       <node role="4.returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3021948350273458584" />
@@ -32195,7 +32195,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3021948350273458192">
-    <property name="29.virtualPackage:0" value="new_merge" />
+    <property name="29.virtualPackage:0" value="new" />
     <property name="29.name:0" value="ChangeGroup" />
     <node role="4.field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="3021948350273458198">
       <property name="29.name:0" value="myLeftStart" />
@@ -32791,7 +32791,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="2446520860650368827">
-    <property name="29.virtualPackage:0" value="new_merge" />
+    <property name="29.virtualPackage:0" value="new.merge" />
     <property name="29.name:0" value="ApplyNonConflictsForRoot" />
     <node role="4.field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="2446520860650380101">
       <property name="29.name:0" value="myMergeContext" />
@@ -32815,7 +32815,7 @@
         <node role="4.statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="2446520860650374517">
           <link role="4.baseMethodDeclaration:3" targetNodeId="11.~BaseAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolveInfo="BaseAction" />
           <node role="4.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2446520860650374518">
-            <property name="4.value:3" value="Apply Non-Conflicting changes" />
+            <property name="4.value:3" value="Apply Non-Conflicting Changes" />
           </node>
           <node role="4.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2446520860650374520" />
           <node role="4.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2446520860650374522">

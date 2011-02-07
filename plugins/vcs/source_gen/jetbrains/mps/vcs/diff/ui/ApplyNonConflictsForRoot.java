@@ -14,7 +14,7 @@ public class ApplyNonConflictsForRoot extends BaseAction {
   private MergeRootsDialog myMergeRootsDialog;
 
   public ApplyNonConflictsForRoot(MergeContext mergeContext, MergeRootsDialog mergeRootsDialog) {
-    super("Apply Non-Conflicting changes", null, IconLoader.getIcon("/diff/applyNotConflicts.png", Icons.class));
+    super("Apply Non-Conflicting Changes", null, IconLoader.getIcon("/diff/applyNotConflicts.png", Icons.class));
     myMergeContext = mergeContext;
     myMergeRootsDialog = mergeRootsDialog;
     setDisableOnNoProject(false);
