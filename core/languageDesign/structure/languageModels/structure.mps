@@ -163,7 +163,7 @@
     <node type="tpce.ConceptDeclaration" typeId="1071489090640" id="1224240836180">
       <property name="name" nameId="tpck.1169194664001" value="DeprecatedNodeAnnotation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecatedAnnotation" />
-      <link role="extends" roleId="1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <link role="extends" roleId="1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     </node>
     <node type="tpce.AnnotationLinkDeclaration" typeId="1149608206811" id="1224241293279">
       <property name="role" nameId="1204740973143" value="deprecatedNode" />
@@ -675,6 +675,14 @@
     <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="1225118933224">
       <property name="name" nameId="tpck.1169194664001" value="comment" />
       <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="conceptProperty" roleId="1105725339613" type="tpce.StringConceptProperty" typeId="1105725638761" id="5216537374825317499">
+      <property name="value" nameId="1105725733873" value="deprecatedNode" />
+      <link role="conceptPropertyDeclaration" roleId="1105725439818" targetNodeId="tpck.5169995583184591164" resolveInfo="role" />
+    </node>
+    <node role="conceptLink" roleId="1105736949336" type="tpce.ReferenceConceptLink" typeId="1105736778597" id="5216537374825317500">
+      <link role="conceptLinkDeclaration" roleId="1105736734721" targetNodeId="tpck.5169995583184591169" resolveInfo="attributed" />
+      <link role="target" roleId="1105736807942" targetNodeId="1224848324737" resolveInfo="IStructureDeprecatable" />
     </node>
   </root>
   <root id="1224241293279" />
