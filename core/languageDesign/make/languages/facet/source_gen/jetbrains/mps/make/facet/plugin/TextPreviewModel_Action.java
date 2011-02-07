@@ -7,10 +7,10 @@ import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
@@ -28,6 +28,8 @@ import jetbrains.mps.workbench.make.TextPreviewFile;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import java.util.List;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class TextPreviewModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -40,7 +42,8 @@ public class TextPreviewModel_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return TextPreviewModel_Action.this.modelToGenerate(_params) != null;
+    SModelDescriptor md = TextPreviewModel_Action.this.modelToGenerate(_params);
+    return md != null && TextPreviewModel_Action.this.isUserEditableModel(md, _params);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -98,5 +101,12 @@ public class TextPreviewModel_Action extends GeneratedAction {
       md = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0);
     }
     return md;
+  }
+
+  private boolean isUserEditableModel(SModelDescriptor md, final Map<String, Object> _params) {
+    if (!(SModelStereotype.isUserModel(md))) {
+      return false;
+    }
+    return md instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) md).isPackaged());
   }
 }
