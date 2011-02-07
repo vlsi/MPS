@@ -133,7 +133,7 @@ public class GeneratedTextPreviewEditor extends UserDataHolderBase implements Fi
     });
     this.panel = new GeneratedTextPreviewEditor.Panel(tabs.getComponent());
     for (String n : file.forkNames()) {
-      tabs.addTab(file.forkShortName(n), this.createTabContents(file.fork(n)));
+      tabs.addTab(n, this.createTabContents(file.fork(n)));
     }
   }
 

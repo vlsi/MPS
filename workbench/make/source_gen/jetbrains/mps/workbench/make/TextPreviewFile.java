@@ -32,17 +32,6 @@ public class TextPreviewFile extends StubVirtualFile {
     return forks.keySet().toArray(new String[forks.size()]);
   }
 
-  public String forkShortName(String fork) {
-    if (fork == null) {
-      return null;
-    }
-    int lastDot = fork.lastIndexOf(".");
-    return (lastDot >= 0 ?
-      fork.substring(lastDot + 1) :
-      fork
-    );
-  }
-
   public CharSequence fork(String name) {
     return forks.get(name);
   }

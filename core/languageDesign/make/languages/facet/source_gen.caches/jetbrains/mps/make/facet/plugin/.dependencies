@@ -472,6 +472,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.generator.TransientModelsModule" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
+    <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.Generate_Facet" />
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
