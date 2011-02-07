@@ -771,6 +771,12 @@
           <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="4062013737453621613">
             <link role="block:7" targetNodeId="5v.4062013737453621585" resolveInfo="platform" />
           </node>
+          <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="254831431668699338">
+            <link role="block:7" targetNodeId="5v.6902313300262917830" resolveInfo="custom-fields" />
+          </node>
+          <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="254831431668699336">
+            <link role="block:7" targetNodeId="5v.2429961990328796139" resolveInfo="youtrack-workflow" />
+          </node>
           <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.CreateIfNotExists" id="7500205751045205909">
             <property name="artifactName" value="platform/generate.ant.task.jar" />
             <node role="create" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="7500205751045205910">
@@ -806,12 +812,6 @@
           <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="4062013737453621619">
             <link role="block:7" targetNodeId="5v.4062013737453621618" resolveInfo="workbench" />
           </node>
-        </node>
-        <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="8934235897214288609">
-          <link role="block:7" targetNodeId="5v.6902313300262917830" resolveInfo="custom-fields" />
-        </node>
-        <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="6902313300262917839">
-          <link role="block:7" targetNodeId="5v.2429961990328796139" resolveInfo="youtrack-workflow" />
         </node>
         <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.IfProjectComponent" id="1234971270550">
           <node role="condition" type="jetbrains.mps.build.packaging.structure.FileExistsCondition:7" id="1234971270551">
