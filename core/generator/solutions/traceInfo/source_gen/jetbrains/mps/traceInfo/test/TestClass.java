@@ -23,8 +23,9 @@ public class TestClass {
   }
 
   public static void forTest() {
+    int j = 0;
     for (int i = 0; i < 100; i += (Integer) null) {
-      System.err.println("test for");
+      j++;
     }
   }
 
