@@ -73,7 +73,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_666608846720245889(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode template = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.runConfigurations.structure.SmartPersistentPropertyType"), true), "propertyTemplate", false);
+    SNode template = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType"), true), "propertyTemplate", false);
     return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(template)) + "." + PersistentConfiguration_Behavior.call_getGeneratedClassName_1252300412034469137(template);
   }
 
@@ -110,7 +110,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1252300412034529358(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode template = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.runConfigurations.structure.SmartPersistentPropertyType"), true), "propertyTemplate", false);
+    SNode template = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType"), true), "propertyTemplate", false);
     return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(template)) + "." + PersistentConfiguration_Behavior.call_getGeneratedClassName_1252300412034469137(template) + "_Editor";
   }
 
@@ -119,7 +119,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5434256334231667341(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode template = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.runConfigurations.structure.SmartPersistentPropertyType"), true), "propertyTemplate", false);
+    SNode template = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType"), true), "propertyTemplate", false);
     return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(template)) + "." + PersistentConfiguration_Behavior.call_getGeneratedClassName_1252300412034469137(template) + "_Editor";
   }
 
@@ -144,7 +144,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6458115119415175540(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode template = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(_context.getNode(), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.runConfigurations.structure.SmartPersistentPropertyType"), true), "propertyTemplate", false);
+    SNode template = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(_context.getNode(), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType"), true), "propertyTemplate", false);
     return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(template)) + "." + PersistentConfiguration_Behavior.call_getGeneratedClassName_1252300412034469137(template);
   }
 
@@ -367,11 +367,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6458115119415163987(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(PersistentPropertyDeclaration_Behavior.call_isSmart_77193491200360813(_context.getNode()));
+    return !(PersistentPropertyDeclaration_Behavior.call_isTemplate_77193491200360813(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_6458115119415164069(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(PersistentPropertyDeclaration_Behavior.call_isSmart_77193491200360813(_context.getNode()));
+    return !(PersistentPropertyDeclaration_Behavior.call_isTemplate_77193491200360813(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_8014547209683658372(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -502,7 +502,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_4928971978190680336(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "persistentProperty", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(PersistentPropertyDeclaration_Behavior.call_isSmart_77193491200360813(it));
+        return !(PersistentPropertyDeclaration_Behavior.call_isTemplate_77193491200360813(it));
       }
     });
   }
@@ -510,7 +510,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_6625880169118140837(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "persistentProperty", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(PersistentPropertyDeclaration_Behavior.call_isSmart_77193491200360813(it));
+        return !(PersistentPropertyDeclaration_Behavior.call_isTemplate_77193491200360813(it));
       }
     });
   }
@@ -518,7 +518,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_5796870907455371427(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "persistentProperty", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return PersistentPropertyDeclaration_Behavior.call_isSmart_77193491200360813(it);
+        return PersistentPropertyDeclaration_Behavior.call_isTemplate_77193491200360813(it);
       }
     });
   }
@@ -526,7 +526,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_5796870907455371524(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "persistentProperty", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return PersistentPropertyDeclaration_Behavior.call_isSmart_77193491200360813(it);
+        return PersistentPropertyDeclaration_Behavior.call_isTemplate_77193491200360813(it);
       }
     });
   }
@@ -534,7 +534,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1252300412034510088(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "persistentProperty", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return PersistentPropertyDeclaration_Behavior.call_isSmart_77193491200360813(it);
+        return PersistentPropertyDeclaration_Behavior.call_isTemplate_77193491200360813(it);
       }
     });
   }
@@ -550,7 +550,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_6458115119415164088(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "persistentProperty", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(PersistentPropertyDeclaration_Behavior.call_isSmart_77193491200360813(it));
+        return !(PersistentPropertyDeclaration_Behavior.call_isTemplate_77193491200360813(it));
       }
     });
   }
@@ -578,7 +578,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_4534318291878215290(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "persistentProperty", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return PersistentPropertyDeclaration_Behavior.call_isSmart_77193491200360813(it);
+        return PersistentPropertyDeclaration_Behavior.call_isTemplate_77193491200360813(it);
       }
     });
   }
@@ -598,7 +598,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1252300412034529326(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "persistentProperty", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return PersistentPropertyDeclaration_Behavior.call_isSmart_77193491200360813(it);
+        return PersistentPropertyDeclaration_Behavior.call_isTemplate_77193491200360813(it);
       }
     });
   }
@@ -606,7 +606,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_8917835950015924530(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "persistentProperty", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return PersistentPropertyDeclaration_Behavior.call_isSmart_77193491200360813(it);
+        return PersistentPropertyDeclaration_Behavior.call_isTemplate_77193491200360813(it);
       }
     });
   }

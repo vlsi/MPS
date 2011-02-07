@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ds4y7d9nzsrcybi4mr6a93sq7lsvjlm">
+<dependencies version="2" modelHash="e2c7ukg929x199fzcsldydh0lhvoifg">
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9yg2bpo4lvwy8lmo0gxukbtzy5b5kuw" />
@@ -236,7 +236,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PersistentConfigurationTemplate.java" />
   </source>
-  <source id="4157833584164911568" name="SmartPersistentPropertyType" hash="-btna7xzlmol8iy7nf62miwty2b9j47m">
+  <source id="4157833584164911568" name="TemplatePersistentPropertyType" hash="-dih4w11adoahsqp7alp90qvpzajdaxl">
     <dep root="4157833584164830749" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -249,7 +249,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="SmartPersistentPropertyType.java" />
+    <file name="TemplatePersistentPropertyType.java" />
   </source>
   <source id="77193491200308913" name="IPersistentPropertyHolder" hash="-ex8lj3leeq90yvujt5iewutskbozs80">
     <dep root="1048802521465149470" />

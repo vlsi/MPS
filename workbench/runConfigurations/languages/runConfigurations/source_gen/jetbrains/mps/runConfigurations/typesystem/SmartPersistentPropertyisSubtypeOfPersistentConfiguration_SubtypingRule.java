@@ -22,7 +22,7 @@ public class SmartPersistentPropertyisSubtypeOfPersistentConfiguration_Subtyping
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.SmartPersistentPropertyType";
+    return "jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

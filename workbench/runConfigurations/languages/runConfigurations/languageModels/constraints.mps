@@ -312,7 +312,7 @@
                           </node>
                         </node>
                         <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1252300412034435618">
-                          <node role="quotedNode" roleId="tp3r.1196350785114" type="uhxm.SmartPersistentPropertyType" typeId="uhxm.4157833584164911568" id="1252300412034435620" />
+                          <node role="quotedNode" roleId="tp3r.1196350785114" type="uhxm.TemplatePersistentPropertyType" typeId="uhxm.4157833584164911568" id="1252300412034435620" />
                         </node>
                       </node>
                     </node>

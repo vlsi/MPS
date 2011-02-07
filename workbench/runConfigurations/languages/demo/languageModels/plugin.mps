@@ -181,7 +181,7 @@
     </node>
     <node role="persistentProperty" roleId="uhxm.77193491200308914" type="uhxm.PersistentPropertyDeclaration" typeId="uhxm.1048802521465149470" id="7902226081039505530">
       <property name="name" nameId="tpck.1169194664001" value="myNode" />
-      <node role="type" roleId="tpee.5680397130376446158" type="uhxm.SmartPersistentPropertyType" typeId="uhxm.4157833584164911568" id="7902226081039505532">
+      <node role="type" roleId="tpee.5680397130376446158" type="uhxm.TemplatePersistentPropertyType" typeId="uhxm.4157833584164911568" id="7902226081039505532">
         <link role="propertyTemplate" roleId="uhxm.4157833584164911569" targetNodeId="223733852661754512" resolveInfo="Node" />
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1448685625140330122">

@@ -128,7 +128,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
           }
         }
         {
-          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.SmartPersistentPropertyType", null, GlobalScope.getInstance(), false);
+          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_12 = quotedNode_6;
           quotedNode_1.addChild("argument", quotedNode1_12);
         }
@@ -181,7 +181,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
           }
         }
         {
-          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.SmartPersistentPropertyType", null, GlobalScope.getInstance(), false);
+          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_12 = quotedNode_6;
           quotedNode_1.addChild("argument", quotedNode1_12);
         }

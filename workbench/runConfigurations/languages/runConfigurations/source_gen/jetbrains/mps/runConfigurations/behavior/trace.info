@@ -107,7 +107,7 @@
     <scopeInfo nodeId="666608846720031997" fileName="ResetFrom_Function_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="106" />
   </root>
   <root nodeId="77193491200360810">
-    <nodeInfo nodeId="77193491200360818" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="22" startPosition="72" endLine="23" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="77193491200360818" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="22" startPosition="75" endLine="23" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3930860252539485273" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1448685625140440548" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="27" startPosition="149" endLine="28" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1448685625140326370" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="31" startPosition="79" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -118,7 +118,7 @@
     <nodeInfo nodeId="3930860252539497101" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="52" startPosition="5" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3930860252539497080" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="49" startPosition="25" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="77193491200360812" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
-    <scopeInfo nodeId="77193491200360816" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="22" startPosition="72" endLine="23" endPosition="209" />
+    <scopeInfo nodeId="77193491200360816" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="22" startPosition="75" endLine="23" endPosition="209" />
     <scopeInfo nodeId="1448685625140326364" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="31" startPosition="79" endLine="32" endPosition="16" />
     <scopeInfo nodeId="3930860252539497091" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="50" startPosition="55" endLine="51" endPosition="45" />
     <scopeInfo nodeId="6458115119415160803" fileName="PersistentPropertyDeclaration_Behavior.java" startLine="26" startPosition="81" endLine="28" endPosition="66">

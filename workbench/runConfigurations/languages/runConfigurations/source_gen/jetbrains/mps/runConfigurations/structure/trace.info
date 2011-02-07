@@ -17,7 +17,7 @@
   <unitInfo fileName="RunConfiguration.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.RunConfiguration" />
   <unitInfo fileName="SettingsEditorType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.SettingsEditorType" />
   <unitInfo fileName="PersistentConfigurationType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.PersistentConfigurationType" />
-  <unitInfo fileName="SmartPersistentPropertyType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.SmartPersistentPropertyType" />
+  <unitInfo fileName="TemplatePersistentPropertyType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType" />
   <unitInfo fileName="EditorExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.EditorExpression" />
   <unitInfo fileName="ReportConfigurationErrorStatement.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.ReportConfigurationErrorStatement" />
   <unitInfo fileName="PersistentConfigurationTemplate.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplate" />

@@ -19,7 +19,7 @@ public class PersistentPropertyDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static boolean call_isSmart_77193491200360813(SNode thisNode) {
+  public static boolean call_isTemplate_77193491200360813(SNode thisNode) {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "type", true), new PersistentPropertyDeclaration_Behavior.QuotationClass_ex141d_a1a0a0b().createNode());
   }
 
@@ -62,7 +62,7 @@ public class PersistentPropertyDeclaration_Behavior {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.SmartPersistentPropertyType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }

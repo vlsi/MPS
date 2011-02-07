@@ -179,7 +179,7 @@
                   </node>
                 </node>
               </node>
-              <node role="argument" roleId="tpd4.1179479418730" type="uhxm.SmartPersistentPropertyType" typeId="uhxm.4157833584164911568" id="77193491200208835" />
+              <node role="argument" roleId="tpd4.1179479418730" type="uhxm.TemplatePersistentPropertyType" typeId="uhxm.4157833584164911568" id="77193491200208835" />
             </node>
           </node>
         </node>
@@ -194,7 +194,7 @@
     <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="77193491200242729">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="77193491200242732">
         <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="77193491200242734">
-          <node role="quotedNode" roleId="tp3r.1196350785114" type="uhxm.SmartPersistentPropertyType" typeId="uhxm.4157833584164911568" id="77193491200242736" />
+          <node role="quotedNode" roleId="tp3r.1196350785114" type="uhxm.TemplatePersistentPropertyType" typeId="uhxm.4157833584164911568" id="77193491200242736" />
         </node>
       </node>
     </node>
@@ -551,7 +551,7 @@
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="1448685625140421554">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1448685625140421558">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1448685625140421559">
-            <node role="quotedNode" roleId="tp3r.1196350785114" type="uhxm.SmartPersistentPropertyType" typeId="uhxm.4157833584164911568" id="1448685625140421561">
+            <node role="quotedNode" roleId="tp3r.1196350785114" type="uhxm.TemplatePersistentPropertyType" typeId="uhxm.4157833584164911568" id="1448685625140421561">
               <node role="referenceAntiquotation$link_attribute$propertyTemplate" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1448685625140421562">
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1448685625140421565">
                   <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1448685625140421564">

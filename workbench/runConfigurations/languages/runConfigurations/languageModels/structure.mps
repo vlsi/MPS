@@ -90,7 +90,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4157833584164911568">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence.template" />
-      <property name="name" nameId="tpck.1169194664001" value="SmartPersistentPropertyType" />
+      <property name="name" nameId="tpck.1169194664001" value="TemplatePersistentPropertyType" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="77193491200308913">

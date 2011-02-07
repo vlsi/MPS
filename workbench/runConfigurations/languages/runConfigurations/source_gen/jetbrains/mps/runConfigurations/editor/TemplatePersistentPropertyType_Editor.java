@@ -19,24 +19,24 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
-public class SmartPersistentPropertyType_Editor extends DefaultNodeEditor {
+public class TemplatePersistentPropertyType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_v316ge_a(editorContext, node);
+    return this.createCollection_izasee_a(editorContext, node);
   }
 
-  private EditorCell createCollection_v316ge_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_izasee_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_v316ge_a");
-    editorCell.addEditorCell(this.createConceptProperty_v316ge_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_v316ge_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_v316ge_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_v316ge_d0(editorContext, node));
+    editorCell.setCellId("Collection_izasee_a");
+    editorCell.addEditorCell(this.createConceptProperty_izasee_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_izasee_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_izasee_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_izasee_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_v316ge_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_izasee_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_v316ge_b0");
+    editorCell.setCellId("Constant_izasee_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -47,9 +47,9 @@ public class SmartPersistentPropertyType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_v316ge_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_izasee_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_v316ge_d0");
+    editorCell.setCellId("Constant_izasee_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -59,12 +59,12 @@ public class SmartPersistentPropertyType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_v316ge_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_izasee_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("propertyTemplate");
     provider.setNoTargetText("<no propertyTemplate>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SmartPersistentPropertyType_Editor._Inline_v316ge_a2a());
+    provider.setAuxiliaryCellProvider(new TemplatePersistentPropertyType_Editor._Inline_izasee_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -77,7 +77,7 @@ public class SmartPersistentPropertyType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_v316ge_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_izasee_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -96,8 +96,8 @@ public class SmartPersistentPropertyType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_v316ge_a2a extends InlineCellProvider {
-    public _Inline_v316ge_a2a() {
+  public static class _Inline_izasee_a2a extends InlineCellProvider {
+    public _Inline_izasee_a2a() {
       super();
     }
 
@@ -106,10 +106,10 @@ public class SmartPersistentPropertyType_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_v316ge_a0c0(editorContext, node);
+      return this.createProperty_izasee_a0c0(editorContext, node);
     }
 
-    private EditorCell createProperty_v316ge_a0c0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_izasee_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
