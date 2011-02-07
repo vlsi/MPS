@@ -2,14 +2,15 @@
 <debugInfo>
   <unitInfo fileName="Facet_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ProjectPlugin" />
   <unitInfo fileName="rrr_Option.java" startLine="7" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.rrr_Option" />
+  <unitInfo fileName="TextPreviewGroup_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.TextPreviewGroup_ActionGroup" />
   <unitInfo fileName="ToolbarMake_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.ToolbarMake_ActionGroup" />
   <unitInfo fileName="SaveTransient_Option.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.SaveTransient_Option" />
   <unitInfo fileName="ProjectMake_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.ProjectMake_ActionGroup" />
   <unitInfo fileName="NamespaceMake_ActionGroup.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.NamespaceMake_ActionGroup" />
-  <unitInfo fileName="Make_ActionGroup.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_ActionGroup" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Default_KeymapChanges" />
   <unitInfo fileName="GlobalMake_ActionGroup.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.GlobalMake_ActionGroup" />
   <unitInfo fileName="FacetManifest.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.FacetManifest" />
+  <unitInfo fileName="Make_ActionGroup.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_ActionGroup" />
   <unitInfo fileName="WontAskAgain_Query.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.WontAskAgain_Query" />
   <unitInfo fileName="SaveTransientModels_Query.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.SaveTransientModels_Query" />
   <unitInfo fileName="Facets_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facets_CustomApplicationPlugin" />
@@ -19,8 +20,9 @@
   <unitInfo fileName="MakeSelectedModels_Action.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeSelectedModels_Action" />
   <unitInfo fileName="RebuildSelectedModels_Action.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.RebuildSelectedModels_Action" />
   <unitInfo fileName="MakeSelectedModules_Action.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeSelectedModules_Action" />
-  <unitInfo fileName="Facet_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ApplicationPlugin" />
+  <unitInfo fileName="Facet_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ApplicationPlugin" />
   <unitInfo fileName="MakeSelection_Action.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeSelection_Action" />
+  <unitInfo fileName="TextPreviewModel_Action.java" startLine="32" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.TextPreviewModel_Action" />
   <unitInfo fileName="MakeNamespace_Action.java" startLine="21" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeNamespace_Action" />
   <unitInfo fileName="Make_Facet.java" startLine="17" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet" />
   <unitInfo fileName="TextGen_Facet.java" startLine="43" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet" />
@@ -200,6 +202,46 @@
     <scopeInfo nodeId="2383991756720456890" fileName="Make_Facet.java" startLine="50" startPosition="0" endLine="63" endPosition="0" />
     <unitInfo nodeId="2383991756720456892" fileName="Make_Facet.java" startLine="52" startPosition="17" endLine="61" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$1" />
     <unitInfo nodeId="2383991756720456890" fileName="Make_Facet.java" startLine="45" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet$Target_pm9z_a" />
+  </root>
+  <root nodeId="2956674153315525138">
+    <nodeInfo nodeId="2956674153315570044" fileName="TextPreviewGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="2956674153315535063">
+    <nodeInfo nodeId="7488918483500658831" fileName="TextPreviewModel_Action.java" startLine="42" startPosition="87" endLine="43" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2956674153315641730" fileName="TextPreviewModel_Action.java" startLine="72" startPosition="9" endLine="73" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6331518427218098111" fileName="TextPreviewModel_Action.java" startLine="73" startPosition="82" endLine="74" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6331518427218101564" fileName="TextPreviewModel_Action.java" startLine="76" startPosition="66" endLine="77" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6331518427218102543" fileName="TextPreviewModel_Action.java" startLine="79" startPosition="8" endLine="80" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6331518427218098110" fileName="TextPreviewModel_Action.java" startLine="80" startPosition="283" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6331518427218102602" fileName="TextPreviewModel_Action.java" startLine="82" startPosition="30" endLine="83" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1680202944201144643" fileName="TextPreviewModel_Action.java" startLine="83" startPosition="109" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6331518427218155705" fileName="TextPreviewModel_Action.java" startLine="84" startPosition="0" endLine="85" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6331518427218155716" fileName="TextPreviewModel_Action.java" startLine="85" startPosition="218" endLine="86" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7488918483500658790" fileName="TextPreviewModel_Action.java" startLine="93" startPosition="79" endLine="94" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7488918483500658801" fileName="TextPreviewModel_Action.java" startLine="95" startPosition="82" endLine="96" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7488918483500658816" fileName="TextPreviewModel_Action.java" startLine="97" startPosition="98" endLine="98" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7488918483500658826" fileName="TextPreviewModel_Action.java" startLine="99" startPosition="5" endLine="100" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6331518427218101555" fileName="TextPreviewModel_Action.java" startLine="75" startPosition="50" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" />
+    <nodeInfo nodeId="6331518427218101548" fileName="TextPreviewModel_Action.java" startLine="74" startPosition="224" endLine="79" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7488918483500658794" fileName="TextPreviewModel_Action.java" startLine="94" startPosition="31" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6331518427218102570" fileName="TextPreviewModel_Action.java" startLine="81" startPosition="0" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7488918483500620029" fileName="TextPreviewModel_Action.java" startLine="92" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelToGenerate#(Ljava/util/Map;)Ljetbrains/mps/smodel/SModelDescriptor;" />
+    <scopeInfo nodeId="7488918483500620028" fileName="TextPreviewModel_Action.java" startLine="42" startPosition="87" endLine="43" endPosition="73" />
+    <scopeInfo nodeId="6331518427218101563" fileName="TextPreviewModel_Action.java" startLine="76" startPosition="66" endLine="77" endPosition="39" />
+    <scopeInfo nodeId="7488918483500658800" fileName="TextPreviewModel_Action.java" startLine="95" startPosition="82" endLine="96" endPosition="75" />
+    <scopeInfo nodeId="7488918483500658815" fileName="TextPreviewModel_Action.java" startLine="97" startPosition="98" endLine="98" endPosition="88" />
+    <scopeInfo nodeId="6331518427218101555" fileName="TextPreviewModel_Action.java" startLine="75" startPosition="50" endLine="79" endPosition="0">
+      <varInfo nodeId="6331518427218101556" varName="query" />
+    </scopeInfo>
+    <scopeInfo nodeId="6331518427218102571" fileName="TextPreviewModel_Action.java" startLine="82" startPosition="30" endLine="86" endPosition="250">
+      <varInfo nodeId="6331518427218102603" varName="fres" />
+      <varInfo nodeId="6331518427218155706" varName="tfile" />
+    </scopeInfo>
+    <scopeInfo nodeId="7488918483500620031" fileName="TextPreviewModel_Action.java" startLine="93" startPosition="79" endLine="100" endPosition="14">
+      <varInfo nodeId="7488918483500658791" varName="md" />
+    </scopeInfo>
+    <scopeInfo nodeId="7488918483500620029" fileName="TextPreviewModel_Action.java" startLine="92" startPosition="0" endLine="102" endPosition="0" />
+    <unitInfo nodeId="6331518427218101553" fileName="TextPreviewModel_Action.java" startLine="75" startPosition="32" endLine="79" endPosition="7" unitName="jetbrains.mps.make.facet.plugin.TextPreviewModel_Action$1" />
   </root>
   <root nodeId="3444277034854792404">
     <nodeInfo nodeId="3444277034854792407" fileName="ToolbarMake_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1624,8 +1666,14 @@
     <nodeInfo nodeId="8230822688952448230" fileName="MakeProject_Action.java" startLine="53" startPosition="9" endLine="54" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="8163946392710004057">
-    <nodeInfo nodeId="3439781066828844368" fileName="Make_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8163946392710004059" fileName="Make_ActionGroup.java" startLine="18" startPosition="135" endLine="19" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3439781066828844368" fileName="Make_ActionGroup.java" startLine="20" startPosition="9" endLine="21" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8163946392710004059" fileName="Make_ActionGroup.java" startLine="21" startPosition="135" endLine="22" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6331518427218024646" fileName="Make_ActionGroup.java" startLine="23" startPosition="7" endLine="24" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6331518427218024646" fileName="Make_ActionGroup.java" startLine="24" startPosition="86" endLine="25" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6331518427218024646" fileName="Make_ActionGroup.java" startLine="25" startPosition="66" endLine="26" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6331518427218024646" fileName="Make_ActionGroup.java" startLine="26" startPosition="99" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6331518427218024646" fileName="Make_ActionGroup.java" startLine="22" startPosition="133" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="6331518427218024646" fileName="Make_ActionGroup.java" startLine="23" startPosition="7" endLine="27" endPosition="48" />
   </root>
   <root nodeId="8163946392710004061">
     <nodeInfo nodeId="8230822688952455821" fileName="MakeSelection_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cleanMake" />
