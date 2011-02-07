@@ -40,7 +40,7 @@ public class ConceptPropertyNameRefExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_h02ftw_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "link name");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept property name");
     editorCell.setCellId("Constant_h02ftw_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
