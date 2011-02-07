@@ -429,6 +429,7 @@ import org.junit.runners.Suite.SuiteClasses;
   jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test.class,
   jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test.class,
   jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test.class,
+  jetbrains.mps.traceInfo.test.TraceInfoTest.class,
   jetbrains.mps.vcs.diff.MergeConceptAndImportsTest.class,
   jetbrains.mps.vcs.diff.MergeNotLoseExternalChangesTest.class,
   jetbrains.mps.vcs.diff.MergeRefactoringTest.class,
