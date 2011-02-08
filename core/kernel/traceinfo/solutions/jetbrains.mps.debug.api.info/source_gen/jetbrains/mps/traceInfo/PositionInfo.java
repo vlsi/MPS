@@ -27,102 +27,102 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public PositionInfo(Element element) throws DataConversionException {
-    this.myNodeId = InternUtil.intern(check_1myh1n_a0a0a1(element.getAttribute(NODE_ID)));
-    this.myFileName = InternUtil.intern(check_1myh1n_a0a1a1(element.getAttribute(FILE_NAME)));
-    this.myStartLine = element.getAttribute(PositionInfo.START_LINE).getIntValue();
-    this.myStartPosition = element.getAttribute(PositionInfo.START_POSITION).getIntValue();
-    this.myEndLine = element.getAttribute(PositionInfo.END_LINE).getIntValue();
-    this.myEndPosition = element.getAttribute(PositionInfo.END_POSITION).getIntValue();
+    myNodeId = InternUtil.intern(check_1myh1n_a0a0a1(element.getAttribute(NODE_ID)));
+    myFileName = InternUtil.intern(check_1myh1n_a0a1a1(element.getAttribute(FILE_NAME)));
+    myStartLine = element.getAttribute(PositionInfo.START_LINE).getIntValue();
+    myStartPosition = element.getAttribute(PositionInfo.START_POSITION).getIntValue();
+    myEndLine = element.getAttribute(PositionInfo.END_LINE).getIntValue();
+    myEndPosition = element.getAttribute(PositionInfo.END_POSITION).getIntValue();
   }
 
   @Nullable
   public String getFileName() {
-    return this.myFileName;
+    return myFileName;
   }
 
   @Nullable
   public String getNodeId() {
-    return this.myNodeId;
+    return myNodeId;
   }
 
   public int getStartLine() {
-    return this.myStartLine;
+    return myStartLine;
   }
 
   public int getStartPosition() {
-    return this.myStartPosition;
+    return myStartPosition;
   }
 
   public int getEndLine() {
-    return this.myEndLine;
+    return myEndLine;
   }
 
   public int getEndPosition() {
-    return this.myEndPosition;
+    return myEndPosition;
   }
 
   public void setFileName(String fileName) {
-    this.myFileName = InternUtil.intern(fileName);
+    myFileName = InternUtil.intern(fileName);
   }
 
   public void setNodeId(String nodeId) {
-    this.myNodeId = InternUtil.intern(nodeId);
+    myNodeId = InternUtil.intern(nodeId);
   }
 
   public void setStartLine(int startLine) {
-    this.myStartLine = startLine;
+    myStartLine = startLine;
   }
 
   public void setStartPosition(int startPosition) {
-    this.myStartPosition = startPosition;
+    myStartPosition = startPosition;
   }
 
   public void setEndLine(int endLine) {
-    this.myEndLine = endLine;
+    myEndLine = endLine;
   }
 
   public void setEndPosition(int endPosition) {
-    this.myEndPosition = endPosition;
+    myEndPosition = endPosition;
   }
 
   public int getLineDistance() {
-    return this.myEndLine - this.myStartLine;
+    return myEndLine - myStartLine;
   }
 
   public void saveTo(Element element) {
     if (myNodeId != null) {
-      element.setAttribute(PositionInfo.NODE_ID, this.myNodeId);
+      element.setAttribute(PositionInfo.NODE_ID, myNodeId);
     }
-    element.setAttribute(PositionInfo.FILE_NAME, this.myFileName);
-    element.setAttribute(PositionInfo.START_LINE, Integer.toString(this.myStartLine));
-    element.setAttribute(PositionInfo.START_POSITION, Integer.toString(this.myStartPosition));
-    element.setAttribute(PositionInfo.END_LINE, Integer.toString(this.myEndLine));
-    element.setAttribute(PositionInfo.END_POSITION, Integer.toString(this.myEndPosition));
+    element.setAttribute(PositionInfo.FILE_NAME, myFileName);
+    element.setAttribute(PositionInfo.START_LINE, Integer.toString(myStartLine));
+    element.setAttribute(PositionInfo.START_POSITION, Integer.toString(myStartPosition));
+    element.setAttribute(PositionInfo.END_LINE, Integer.toString(myEndLine));
+    element.setAttribute(PositionInfo.END_POSITION, Integer.toString(myEndPosition));
   }
 
   public String toString() {
-    return this.myFileName + "(" + this.myStartLine + ":" + this.myStartPosition + " " + this.myEndLine + ":" + this.myEndPosition + ")";
+    return myFileName + "(" + myStartLine + ":" + myStartPosition + " " + myEndLine + ":" + myEndPosition + ")";
   }
 
   public int compareTo(PositionInfo p) {
-    if (eq_1myh1n_a0a0p(this.getLineDistance(), p.getLineDistance())) {
-      if (eq_1myh1n_a0a0a0p(this.myStartLine, p.myStartLine)) {
-        if (eq_1myh1n_a0a0a0a0p(this.myStartPosition, p.myStartPosition)) {
+    if (eq_1myh1n_a0a0p(getLineDistance(), p.getLineDistance())) {
+      if (eq_1myh1n_a0a0a0p(myStartLine, p.myStartLine)) {
+        if (eq_1myh1n_a0a0a0a0p(myStartPosition, p.myStartPosition)) {
           if (myNodeId == null) {
             return -1;
           }
           if (p.myNodeId == null) {
             return 1;
           }
-          return this.myNodeId.compareTo(p.myNodeId);
+          return myNodeId.compareTo(p.myNodeId);
         } else {
-          return this.myStartPosition - p.myStartPosition;
+          return myStartPosition - p.myStartPosition;
         }
       } else {
-        return this.myStartLine - p.myStartLine;
+        return myStartLine - p.myStartLine;
       }
     } else {
-      return this.getLineDistance() - p.getLineDistance();
+      return getLineDistance() - p.getLineDistance();
     }
   }
 
@@ -135,12 +135,12 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public void fillFrom(PositionInfo position) {
-    this.myNodeId = position.myNodeId;
-    this.myFileName = position.myFileName;
-    this.myStartLine = position.myStartLine;
-    this.myStartPosition = position.myStartPosition;
-    this.myEndLine = position.myEndLine;
-    this.myEndPosition = position.myEndPosition;
+    myNodeId = position.myNodeId;
+    myFileName = position.myFileName;
+    myStartLine = position.myStartLine;
+    myStartPosition = position.myStartPosition;
+    myEndLine = position.myEndLine;
+    myEndPosition = position.myEndPosition;
   }
 
   private static String check_1myh1n_a0a0a1(Attribute checkedDotOperand) {

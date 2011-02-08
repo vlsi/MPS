@@ -15,20 +15,20 @@ public class VarPositionInfo extends PositionInfo {
 
   public VarPositionInfo(Element element) throws DataConversionException {
     super(element);
-    this.myVarName = element.getAttribute(VarPositionInfo.VAR_NAME).getValue();
+    myVarName = element.getAttribute(VarPositionInfo.VAR_NAME).getValue();
   }
 
   @Override
   public void saveTo(Element element) {
     super.saveTo(element);
-    element.setAttribute(VarPositionInfo.VAR_NAME, this.myVarName);
+    element.setAttribute(VarPositionInfo.VAR_NAME, myVarName);
   }
 
   public String getVarName() {
-    return this.myVarName;
+    return myVarName;
   }
 
   public void setVarName(String varName) {
-    this.myVarName = varName;
+    myVarName = varName;
   }
 }

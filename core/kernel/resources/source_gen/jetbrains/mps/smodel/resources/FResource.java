@@ -9,41 +9,49 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class FResource extends MultiTuple._3<Map<String, String>, IModule, SModelDescriptor> implements IResource {
+public class FResource extends MultiTuple._4<String, Map<String, String>, IModule, SModelDescriptor> implements IResource {
   public FResource() {
     super();
   }
 
-  public FResource(Map<String, String> contents, IModule module, SModelDescriptor model) {
-    super(contents, module, model);
+  public FResource(String packageName, Map<String, String> contents, IModule module, SModelDescriptor model) {
+    super(packageName, contents, module, model);
   }
 
-  public Map<String, String> contents(Map<String, String> value) {
+  public String packageName(String value) {
     return super._0(value);
   }
 
-  public IModule module(IModule value) {
+  public Map<String, String> contents(Map<String, String> value) {
     return super._1(value);
   }
 
-  public SModelDescriptor model(SModelDescriptor value) {
+  public IModule module(IModule value) {
     return super._2(value);
   }
 
-  public Map<String, String> contents() {
+  public SModelDescriptor model(SModelDescriptor value) {
+    return super._3(value);
+  }
+
+  public String packageName() {
     return super._0();
   }
 
-  public IModule module() {
+  public Map<String, String> contents() {
     return super._1();
   }
 
-  public SModelDescriptor model() {
+  public IModule module() {
     return super._2();
   }
 
+  public SModelDescriptor model() {
+    return super._3();
+  }
+
   @SuppressWarnings(value = "unchecked")
-  public FResource assignFrom(Tuples._3<Map<String, String>, IModule, SModelDescriptor> from) {
+  public FResource assignFrom(Tuples._4<String, Map<String, String>, IModule, SModelDescriptor> from) {
     return (FResource) super.assign(from);
   }
 }

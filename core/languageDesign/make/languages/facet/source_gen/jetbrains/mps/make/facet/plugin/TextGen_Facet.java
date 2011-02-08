@@ -38,6 +38,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
+import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.smodel.resources.FResource;
 
 public class TextGen_Facet implements IFacet {
@@ -199,10 +200,15 @@ public class TextGen_Facet implements IFacet {
                   if (tgr.hasErrors()) {
                     return new IResult.FAILURE(_output_21gswx_a0b);
                   }
-                  MapSequence.fromMap(texts).put(prefix + "." + root.getName(), tgr.getText());
+                  String ext = TextGenManager.instance().getExtension(root);
+                  String fname = ((ext != null ?
+                    root.getName() + "." + ext :
+                    root.getName()
+                  ));
+                  MapSequence.fromMap(texts).put(fname, tgr.getText());
                 }
 
-                _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new FResource(texts, gres.module(), gres.model()))));
+                _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new FResource(prefix, texts, gres.module(), gres.model()))));
               }
             default:
               return new IResult.SUCCESS(_output_21gswx_a0b);

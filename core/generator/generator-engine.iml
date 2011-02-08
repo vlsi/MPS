@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/solutions/traceInfo/source_gen" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -21,6 +22,8 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="testbench" scope="TEST" />
+    <orderEntry type="module" module-name="workbench" scope="TEST" />
   </component>
 </module>
 

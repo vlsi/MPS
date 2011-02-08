@@ -550,6 +550,11 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration:2" id="695262645445904871">
     <property name="name:2" value="FResource" />
+    <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="6913581993695011141">
+      <property name="final:2" value="false" />
+      <property name="name:2" value="packageName" />
+      <node role="type:2" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="6913581993695011143" />
+    </node>
     <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="695262645445911151">
       <property name="final:2" value="false" />
       <property name="name:2" value="contents" />

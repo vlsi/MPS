@@ -28,11 +28,11 @@ public class ForeignReferencesConvertor {
 
   static {
     ourAllowedClassifierConcepts = new HashSet<String>();
-    ourAllowedClassifierConcepts.add(ClassConcept.concept);
-    ourAllowedClassifierConcepts.add(Interface.concept);
-    ourAllowedClassifierConcepts.add(EnumClass.concept);
+    ourAllowedClassifierConcepts.add(BootstrapLanguages.concept_baseLanguage_ClassConcept);
+    ourAllowedClassifierConcepts.add(BootstrapLanguages.concept_baseLanguage_Interface);
+    ourAllowedClassifierConcepts.add(BootstrapLanguages.concept_baseLanguage_EnumClass);
     ourAllowedClassifierConcepts.add(AnonymousClass.concept);
-    ourAllowedClassifierConcepts.add(Annotation.concept);
+    ourAllowedClassifierConcepts.add(BootstrapLanguages.concept_baseLanguage_Annotation);
   }
 
   public SNodePointer createFromForeignId(SModelReference modelReference, SNodeId nodeId, FeatureKind targetKind) {
@@ -77,12 +77,12 @@ public class ForeignReferencesConvertor {
       idString = idString.substring(Foreign.ID_PREFIX.length());
     }
     String className = idString;    //todo inner classes
-    INodeAdapter nodeAdapter = BaseAdapter.fromNode(SModelOperations.getRootByName(model,className));
-    if (nodeAdapter == null) {
+    SNode node = SModelOperations.getRootByName(model,className);
+    if (node == null) {
       return null;
     }
-    if (ourAllowedClassifierConcepts.contains(nodeAdapter.getConceptFQName())) {
-      return (Classifier) nodeAdapter;
+    if (ourAllowedClassifierConcepts.contains(node.getConceptFqName())) {
+      return (Classifier) node.getAdapter();
     } else {
       return null;
     }

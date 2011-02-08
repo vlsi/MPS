@@ -123,14 +123,16 @@ public class FindersManager implements ApplicationComponent {
           SModelDescriptor findUsagesModelDescriptor = LanguageAspect.FIND_USAGES.get(l);
           if (findUsagesModelDescriptor != null) {
             SModel smodel = findUsagesModelDescriptor.getSModel();
-            for (FinderDeclaration finderDeclaration : smodel.getRootsAdapters(FinderDeclaration.class)) {
+
+            // FIXME
+            for (SNode finderDeclaration : BaseAdapter.toNodes(smodel.getRootsAdapters(FinderDeclaration.class))) {
 /*
  Warning:
  FinderDeclaration_Behavior class will be loaded using platform classloader here.
  As a result this class will be loaded twice - once using own BundleClassLoader and one more time - here.
  */
-              String className = smodel.getSModelReference().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(finderDeclaration.getNode());
-              String conceptName = FinderDeclaration_Behavior.call_getConceptName_1213877240111(finderDeclaration.getNode());
+              String className = smodel.getSModelReference().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(finderDeclaration);
+              String conceptName = FinderDeclaration_Behavior.call_getConceptName_1213877240111(finderDeclaration);
               try {
                 Class<?> cls = l.getClass(className);
 
@@ -142,7 +144,7 @@ public class FindersManager implements ApplicationComponent {
                   }
                   finders.add((GeneratedFinder) finder);
                   myFinders.put(InternUtil.intern(conceptName), finders);
-                  myNodesByFinder.put((GeneratedFinder) finder, finderDeclaration.getNode());
+                  myNodesByFinder.put((GeneratedFinder) finder, finderDeclaration);
                 }
               } catch (Throwable t) {
                 LOG.error(t, finderDeclaration);
