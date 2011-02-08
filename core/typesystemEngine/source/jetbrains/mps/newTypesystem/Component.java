@@ -39,7 +39,7 @@ public class Component {
   protected TypeChecker myTypeChecker;
   protected final Object ACCESS_LOCK = new Object();
   protected MyEventsReadListener myNodesReadListener = new MyEventsReadListener();
-  protected NodeTypesComponentIncrementalNew myNodeTypesComponent;
+  protected NodeTypesComponentNew myNodeTypesComponent;
 
   protected MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
 

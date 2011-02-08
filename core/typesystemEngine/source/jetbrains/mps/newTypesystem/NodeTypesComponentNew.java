@@ -37,7 +37,7 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.*;
 
-public class NodeTypesComponentIncrementalNew extends NodeTypesComponent {
+public class NodeTypesComponentNew extends NodeTypesComponent {
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
 
@@ -57,7 +57,7 @@ public class NodeTypesComponentIncrementalNew extends NodeTypesComponent {
   private boolean myIsNonTypeSystemCheckingInProgress = false;
   private TypeCheckingContext myTypeCheckingContext;
 
-  public NodeTypesComponentIncrementalNew(SNode rootNode, TypeChecker typeChecker, TypeCheckingContextNew typeCheckingContext) {
+  public NodeTypesComponentNew(SNode rootNode, TypeChecker typeChecker, TypeCheckingContextNew typeCheckingContext) {
     super(rootNode, typeChecker, typeCheckingContext);
     myRootNode = rootNode;
     myTypeChecker = typeChecker;

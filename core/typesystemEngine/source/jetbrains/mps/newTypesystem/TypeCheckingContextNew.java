@@ -45,7 +45,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     super(rootNode, typeChecker);
     myState = new State(this);
     myRootNode = rootNode;
-    myNodeTypesComponent = new NodeTypesComponentIncrementalNew(myRootNode, typeChecker, this);
+    myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
   }
 
@@ -53,7 +53,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     super(rootNode, typeChecker, resolving);
     myState = new State(this);
     myRootNode = rootNode;
-    myNodeTypesComponent = new NodeTypesComponentIncrementalNew(myRootNode, typeChecker, this);
+    myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
   }
 

@@ -17,23 +17,18 @@ package jetbrains.mps.newTypesystem;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.UseCarefully;
 
-import java.lang.ref.ReferenceQueue;
-import java.lang.ref.WeakReference;
 import java.util.*;
 
 /**
@@ -65,7 +60,7 @@ public class TypeSystemComponent extends Component {
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
 
-  public TypeSystemComponent(TypeChecker typeChecker, State state, NodeTypesComponentIncrementalNew component) {
+  public TypeSystemComponent(TypeChecker typeChecker, State state, NodeTypesComponentNew component) {
     myState = state;
     myTypeChecker = typeChecker;
     myNodeTypesComponent = component;

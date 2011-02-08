@@ -73,7 +73,7 @@ public class NonTypeSystemComponent extends Component {
 
   private Pair<SNode, NonTypesystemRule_Runtime> myRuleAndNodeBeingChecked = null;
 
-  public NonTypeSystemComponent(TypeChecker typeChecker, NodeTypesComponentIncrementalNew nodeTypesComponent) {
+  public NonTypeSystemComponent(TypeChecker typeChecker, NodeTypesComponentNew nodeTypesComponent) {
     myTypeChecker = typeChecker;
     myNodeTypesComponent = nodeTypesComponent;
   }
