@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.IMetaLevelChanger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class AbstractAntiquotation extends BaseConcept implements IMetaLevelChan
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXPRESSION = "expression";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AbstractAntiquotation(SNode node) {
     super(node);
@@ -60,6 +64,26 @@ public class AbstractAntiquotation extends BaseConcept implements IMetaLevelChan
 
   public void setExpression(Expression node) {
     super.setChild(AbstractAntiquotation.EXPRESSION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AbstractAntiquotation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AbstractAntiquotation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AbstractAntiquotation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AbstractAntiquotation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AbstractAntiquotation._$ATTRIBUTE, node);
   }
 
   public static AbstractAntiquotation newInstance(SModel sm, boolean init) {
