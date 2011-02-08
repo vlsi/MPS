@@ -25,6 +25,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.wm.ex.WindowManagerEx;
 import com.intellij.openapi.wm.impl.IdeFrameImpl;
+import jetbrains.mps.ide.actions.FileActions_ActionGroup;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.IdeMain;
@@ -45,6 +46,7 @@ public class GroupAdjuster {
   public static void adjustTopLevelGroups(BaseApplicationPlugin idePlugin) {
     ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_NODE_ACTIONS).addPlace(ActionPlace.PROJECT_PANE_SNODE, null);
     ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_MODEL_ACTIONS).addPlace(ActionPlace.PROJECT_PANE_SMODEL, null);
+    ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_MODULE_ACTIONS).addPlace(ActionPlace.PROJECT_PANE_MODULE, null);
     ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_LANGUAGE_ACTIONS).addPlace(ActionPlace.PROJECT_PANE_LANGUAGE, null);
     ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_DEVKIT_ACTIONS).addPlace(ActionPlace.PROJECT_PANE_DEVKIT, null);
     ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_PROJECT_ACTIONS).addPlace(ActionPlace.PROJECT_PANE_PROJECT, null);
@@ -59,6 +61,9 @@ public class GroupAdjuster {
     ActionUtils.getGroup(ProjectPaneActionGroups.SOLUTION_NEW_ACTIONS).addPlace(ActionPlace.PROJECT_PANE_SOLUTION, null);
     ActionUtils.getGroup(ProjectPaneActionGroups.LANGUAGE_NEW_ACTIONS).addPlace(ActionPlace.PROJECT_PANE_LANGUAGE, null);
     ActionUtils.getGroup(ProjectPaneActionGroups.GENERATOR_NEW_ACTIONS).addPlace(ActionPlace.PROJECT_PANE_GENERATOR, null);
+
+    ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_FILE_ACTIONS).addPlace(ActionPlace.PROJECT_PANE_FILE, null);
+    ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_FOLDER_ACTIONS).addPlace(ActionPlace.PROJECT_PANE_FOLDER, null);
 
     List<BaseGroup> editorGroups = new ArrayList<BaseGroup>();
     editorGroups.add(ActionUtils.getGroup(EditorComponent.EDITOR_POPUP_MENU_ACTIONS));
