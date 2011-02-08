@@ -9,7 +9,7 @@
   <import file="${ant.file}/../../tests/jetbrains/mps/mps.tests.xml"/>
   <target name="test.and.build" depends="test, build"/>
   <target name="test" depends="mps.tests.all"/>
-  <target name="upload" depends="MPS-external-dist.default"> 
+  <target name="upload" depends="MPS-external-dist.default">
     <java jar="${ant.home}/lib/ant-launcher.jar"
             fork="true"
             dir="${mps.home}/build"
@@ -24,7 +24,7 @@
        <arg value="${mps.home}/build/upload.xml"/>
     </java>
   </target>
-  <target name="build" depends="MPS-external-dist.default,upload">
+  <target name="build" depends="MPS-external-dist.default">
     <delete dir="${real.deploy.dir}"/>
     <mkdir dir="${real.deploy.dir}"/>
     <copydir src="${deploy.dir}" dest="${real.deploy.dir}"/>
