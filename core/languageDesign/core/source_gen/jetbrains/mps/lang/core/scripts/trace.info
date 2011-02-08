@@ -407,5 +407,23 @@
     <scopeInfo nodeId="6243486444683604047" fileName="ShowGetNameUsages_MigrationScript.java" startLine="32" startPosition="52" endLine="32" endPosition="52" />
     <scopeInfo nodeId="6243486444683690986" fileName="ShowGetNameUsages_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="148" />
   </root>
+  <root nodeId="7374212827370262906">
+    <nodeInfo nodeId="7118207596056310760" fileName="ShowAttributes_MigrationScript.java" startLine="29" startPosition="96" endLine="30" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7374212827370332056" fileName="ShowAttributes_MigrationScript.java" startLine="31" startPosition="9" endLine="32" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7374212827370332062" fileName="ShowAttributes_MigrationScript.java" startLine="32" startPosition="66" endLine="33" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7118207596056301039" fileName="ShowAttributes_MigrationScript.java" startLine="56" startPosition="59" endLine="57" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7118207596056301046" fileName="ShowAttributes_MigrationScript.java" startLine="57" startPosition="66" endLine="58" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7118207596056301045" fileName="ShowAttributes_MigrationScript.java" startLine="58" startPosition="207" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7118207596056310752" fileName="ShowAttributes_MigrationScript.java" startLine="28" startPosition="59" endLine="31" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="7374212827370262909" fileName="ShowAttributes_MigrationScript.java" startLine="36" startPosition="52" endLine="36" endPosition="52" />
+    <scopeInfo nodeId="7118207596056285489" fileName="ShowAttributes_MigrationScript.java" startLine="62" startPosition="52" endLine="62" endPosition="52" />
+    <scopeInfo nodeId="7118207596056310753" fileName="ShowAttributes_MigrationScript.java" startLine="29" startPosition="96" endLine="30" endPosition="23" />
+    <scopeInfo nodeId="7118207596056301037" fileName="ShowAttributes_MigrationScript.java" startLine="56" startPosition="59" endLine="59" endPosition="0">
+      <varInfo nodeId="7118207596056301040" varName="role" />
+    </scopeInfo>
+    <scopeInfo nodeId="7374212827370332054" fileName="ShowAttributes_MigrationScript.java" startLine="28" startPosition="59" endLine="33" endPosition="207">
+      <varInfo nodeId="7374212827370332057" varName="role" />
+    </scopeInfo>
+  </root>
 </debugInfo>
 
