@@ -9,6 +9,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 
 public class AttributeOperations {
   private AttributeOperations() {
@@ -39,11 +42,11 @@ public class AttributeOperations {
 
   public static SNode getAttribute(SNode node, IAttributeDescriptor descriptor) {
     Iterable<SNode> list = getAttributes(node, descriptor);
+    if (Sequence.fromIterable(list).isEmpty()) {
+      return null;
+    }
     // todo: error if more than 1 attribute found 
-    return (Sequence.fromIterable(list).isEmpty() ?
-      null :
-      Sequence.fromIterable(list).first()
-    );
+    return Sequence.fromIterable(list).first();
   }
 
   public static SNode addAttribute(SNode node, IAttributeDescriptor descriptor, SNode value) {
@@ -91,10 +94,6 @@ public class AttributeOperations {
     );
   }
 
-  public static boolean isAttribute(SNode node) {
-    return SNodeOperations.hasRole(node, "jetbrains.mps.lang.core.structure.BaseConcept", "_$attribute");
-  }
-
   public static SNode createAndSetAttrbiute(SNode node, IAttributeDescriptor descriptor, String newConceptFqname) {
     return setAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(SNodeOperations.getModel(node), newConceptFqname));
   }
@@ -106,11 +105,80 @@ public class AttributeOperations {
   public static void $$$$$$$$$$$$$$$$$$$$() {
   }
 
+  public static boolean isAttribute(SNode node) {
+    return SNodeOperations.hasRole(node, "jetbrains.mps.lang.core.structure.BaseConcept", "_$attribute") || AttributesRolesUtil.isAttributeRole(SNodeOperations.getContainingLinkRole(node));
+  }
+
+  public static List<SNode> getAllAttributes(SNode node) {
+    return SLinkOperations.getTargets(node, "_$attribute", true);
+  }
+
+  public static List<SNode> getNodeAttributes(SNode node) {
+    return Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.NodeAttributeString(null))).toListSequence();
+    // <node> 
+  }
+
+  public static SNode getNodeAttribute(SNode node, String role) {
+    return getAttribute(node, new IAttributeDescriptor.NodeAttributeString(role));
+  }
+
+  public static List<SNode> getNodeAttributes(SNode node, String role) {
+    return Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.NodeAttributeString(role))).toListSequence();
+  }
+
+  public static void setNodeAttribute(SNode node, String role, SNode attribute) {
+    setAttribute(node, new IAttributeDescriptor.NodeAttributeString(role), attribute);
+  }
+
+  public static void addNodeAttribute(SNode node, String role, SNode attribute) {
+    addAttribute(node, new IAttributeDescriptor.NodeAttributeString(role), attribute);
+  }
+
+  public static void setPropertyAttribute(SNode node, String role, String propertyName, SNode propertyAttribute) {
+    setAttribute(node, new IAttributeDescriptor.PropertyAttributeString(role, propertyName), propertyAttribute);
+  }
+
+  public static void addPropertyAttribute(SNode node, String role, String propertyName, SNode propertyAttribute) {
+    addAttribute(node, new IAttributeDescriptor.PropertyAttributeString(role, propertyName), propertyAttribute);
+  }
+
+  public static SNode getPropertyAttribute(SNode node, String role, String propertyName) {
+    return getAttribute(node, new IAttributeDescriptor.PropertyAttributeString(role, propertyName));
+  }
+
+  public static List<SNode> getPropertyAttributes(SNode node, String role, String propertyName) {
+    return Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(role, propertyName))).toListSequence();
+  }
+
+  public static Set<SNode> getPropertyAttributeForPropertyName(SNode node, String propertyName) {
+    return SetSequence.fromSetWithValues(new HashSet<SNode>(), getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(null, propertyName)));
+  }
+
+  public static void setLinkAttribute(SNode node, String role, String linkRole, SNode linkAttribute) {
+    setAttribute(node, new IAttributeDescriptor.LinkAttributeString(role, linkRole), linkAttribute);
+  }
+
+  public static void addLinkAttribute(SNode node, String role, String linkRole, SNode linkAttribute) {
+    addAttribute(node, new IAttributeDescriptor.LinkAttributeString(role, linkRole), linkAttribute);
+  }
+
+  public static SNode getLinkAttribute(SNode node, String role, String linkRole) {
+    return getAttribute(node, new IAttributeDescriptor.LinkAttributeString(role, linkRole));
+  }
+
+  public static List<SNode> getLinkAttributes(SNode node, String role, String linkRole) {
+    return Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.LinkAttributeString(role, linkRole))).toListSequence();
+  }
+
+  public static Set<SNode> getLinkAttributeForLinkRole(SNode node, String linkRole) {
+    return SetSequence.fromSetWithValues(new HashSet<SNode>(), getAttributes(node, new IAttributeDescriptor.LinkAttributeString(null, linkRole)));
+  }
+
   public static class AttributeList extends AbstractSNodeList {
     private IAttributeDescriptor myAttributeDescriptor;
 
     public AttributeList(SNode attributed, IAttributeDescriptor descriptor) {
-      super(attributed, null, AttributeOperations.getAttribute(SNodeOperations.cast(attributed, "jetbrains.mps.lang.core.structure.BaseConcept"), descriptor));
+      super(attributed, "_$attribute", AttributeOperations.getAttribute(SNodeOperations.cast(attributed, "jetbrains.mps.lang.core.structure.BaseConcept"), descriptor));
       myAttributeDescriptor = descriptor;
     }
 

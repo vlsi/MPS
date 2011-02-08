@@ -38,7 +38,7 @@ public interface IAttributeDescriptor {
   public static class LinkAttribute extends IAttributeDescriptor.AttributeDescriptor {
     private SNode myLinkDeclaration;
 
-    public LinkAttribute(SNode attributeDeclaration, SNode linkDeclaration) {
+    public LinkAttribute(@NotNull SNode attributeDeclaration, SNode linkDeclaration) {
       super(attributeDeclaration);
       myLinkDeclaration = linkDeclaration;
     }
@@ -55,7 +55,7 @@ public interface IAttributeDescriptor {
   public static class PropertyAttribute extends IAttributeDescriptor.AttributeDescriptor {
     private SNode myPropertyDeclaration;
 
-    public PropertyAttribute(SNode attributeDeclaration, SNode propertyDeclaration) {
+    public PropertyAttribute(@NotNull SNode attributeDeclaration, SNode propertyDeclaration) {
       super(attributeDeclaration);
       myPropertyDeclaration = propertyDeclaration;
     }
@@ -66,6 +66,67 @@ public interface IAttributeDescriptor {
 
     public void update(@NotNull SNode attribute) {
       attribute.setReferent("property", myPropertyDeclaration);
+    }
+  }
+
+  public static class AttributeDescriptorString implements IAttributeDescriptor {
+    protected String myAttributeRole;
+
+    public AttributeDescriptorString(String attributeRole) {
+      myAttributeRole = attributeRole;
+    }
+
+    public boolean match(@NotNull SNode attribute) {
+      return myAttributeRole == null || myAttributeRole.equals(SConceptPropertyOperations.getString(attribute, "role"));
+    }
+
+    public void update(@NotNull SNode attribute) {
+    }
+  }
+
+  public static class NodeAttributeString extends IAttributeDescriptor.AttributeDescriptorString {
+    public NodeAttributeString(String attributeRole) {
+      super(attributeRole);
+    }
+
+    public boolean match(@NotNull SNode attribute) {
+      return SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.core.structure.NodeAttribute") && super.match(attribute);
+    }
+  }
+
+  public static class LinkAttributeString extends IAttributeDescriptor.AttributeDescriptorString {
+    private String myLinkRole;
+
+    public LinkAttributeString(String attributeRole, String linkRole) {
+      super(attributeRole);
+      myLinkRole = linkRole;
+    }
+
+    public boolean match(@NotNull SNode attribute) {
+      SNode attr = SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute");
+      return (attr != null) && super.match(attr) && (myLinkRole == null || myLinkRole.equals(SPropertyOperations.getString(SLinkOperations.getTarget(attr, "link", false), "role")));
+    }
+
+    public void update(@NotNull SNode attribute) {
+      SLinkOperations.setTarget(SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute"), "link", SNodeOperations.as(SNodeOperations.getParent(attribute).getLinkDeclaration(myLinkRole), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
+    }
+  }
+
+  public static class PropertyAttributeString extends IAttributeDescriptor.AttributeDescriptorString {
+    private String myPropertyName;
+
+    public PropertyAttributeString(String attributeRole, String propertyName) {
+      super(attributeRole);
+      myPropertyName = propertyName;
+    }
+
+    public boolean match(@NotNull SNode attribute) {
+      SNode attr = SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute");
+      return (attr != null) && super.match(attr) && (myPropertyName == null || myPropertyName.equals(SPropertyOperations.getString(SLinkOperations.getTarget(attr, "property", false), "name")));
+    }
+
+    public void update(@NotNull SNode attribute) {
+      SLinkOperations.setTarget(SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute"), "property", SNodeOperations.as(SNodeOperations.getParent(attribute).getPropertyDeclaration(myPropertyName), "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), false);
     }
   }
 
