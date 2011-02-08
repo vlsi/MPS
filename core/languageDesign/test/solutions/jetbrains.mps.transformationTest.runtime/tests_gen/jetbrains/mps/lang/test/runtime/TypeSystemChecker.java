@@ -18,9 +18,10 @@ public class TypeSystemChecker {
   public static void checkGenerationMode(SNode node) {
     TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(node.getContainingRoot());
     typeCheckingContext.checkRoot(true);
+    TypeCheckingContext typeCheckingContext2 = TypeContextManager.getInstance().createTypeCheckingContext(node.getContainingRoot());
     for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       SNode type1 = typeCheckingContext.getTypeDontCheck(child);
-      SNode type2 = TypeContextManager.getInstance().getTypeOf(child, true, null);
+      SNode type2 = typeCheckingContext2.getTypeInGenerationMode(child);
       Assert.assertTrue(TypesUtil.match(type1, type2));
     }
   }
