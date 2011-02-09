@@ -122,7 +122,7 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
   }
 
   public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
-    return new DemoApplication_Configuration_Editor();
+    return new DemoApplication_Configuration_Editor(myNode.getEditor());
   }
 
   public Icon getIcon() {

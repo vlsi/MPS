@@ -16,7 +16,6 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodePointer;
-import com.intellij.openapi.options.SettingsEditor;
 
 public class Node_Configuration implements IPersistentConfiguration {
   private static final Logger LOG = Logger.getLogger(Node_Configuration.class);
@@ -120,7 +119,7 @@ public class Node_Configuration implements IPersistentConfiguration {
     return new Node_Configuration(myConcept, myIsValid);
   }
 
-  public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
+  public Node_Configuration_Editor getEditor() {
     return new Node_Configuration_Editor(myConcept, myIsValid);
   }
 
