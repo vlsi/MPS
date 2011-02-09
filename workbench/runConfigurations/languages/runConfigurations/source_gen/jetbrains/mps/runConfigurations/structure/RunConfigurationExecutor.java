@@ -16,6 +16,7 @@ public class RunConfigurationExecutor extends BaseConcept implements INamedConce
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RUN_CONFIGURATION = "runConfiguration";
+  public static final String EXECUTE = "execute";
 
   public RunConfigurationExecutor(SNode node) {
     super(node);
@@ -59,6 +60,14 @@ public class RunConfigurationExecutor extends BaseConcept implements INamedConce
 
   public void setRunConfiguration(RunConfiguration node) {
     super.setReferent(RunConfigurationExecutor.RUN_CONFIGURATION, node);
+  }
+
+  public Execute_Function getExecute() {
+    return (Execute_Function) this.getChild(Execute_Function.class, RunConfigurationExecutor.EXECUTE);
+  }
+
+  public void setExecute(Execute_Function node) {
+    super.setChild(RunConfigurationExecutor.EXECUTE, node);
   }
 
   public static RunConfigurationExecutor newInstance(SModel sm, boolean init) {

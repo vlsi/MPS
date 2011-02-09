@@ -108,13 +108,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.runConfigurations.structure.GetEditorOperation" file="GetEditorOperation.java">
+  <dependency className="jetbrains.mps.runConfigurations.structure.Execute_Function" file="Execute_Function.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IOperation" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.structure.IPersistentPropertyHolder" file="IPersistentPropertyHolder.java">
@@ -213,13 +213,22 @@
     <classNode dependClassName="jetbrains.mps.runConfigurations.structure.PersistentPropertyDeclaration" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.structure.Project_Parameter" file="Project_Parameter.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.runConfigurations.structure.ReportConfigurationErrorStatement" file="ReportConfigurationErrorStatement.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Statement" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
@@ -245,12 +254,13 @@
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.structure.RunConfigurationExecutor" file="RunConfigurationExecutor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.structure.Execute_Function" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.structure.RunConfiguration" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.structure.RunConfiguration" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.structure.RunConfigurationKind" file="RunConfigurationKind.java">

@@ -14,9 +14,6 @@ public class Node_Configuration_Editor extends SettingsEditor<Node_Configuration
   private SNode myConcept;
   private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
 
-  public Node_Configuration_Editor() {
-  }
-
   public Node_Configuration_Editor(SNode concept, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
     myConcept = concept;
     myIsValid = isValid;

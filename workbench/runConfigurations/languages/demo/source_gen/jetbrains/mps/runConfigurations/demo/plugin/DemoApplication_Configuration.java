@@ -53,6 +53,7 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
       return SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.runConfigurations.demo.structure.SomeConcept"), "valid");
     }
   });
+  private Make_Configuration myMake = new Make_Configuration();
 
   public DemoApplication_Configuration(Project project, DemoApplication_Configuration_Factory factory, String name) {
     super(project, factory, name);
@@ -70,6 +71,11 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
       myNode.writeExternal(fieldElement);
       element.addContent(fieldElement);
     }
+    {
+      Element fieldElement = new Element("myMake");
+      myMake.writeExternal(fieldElement);
+      element.addContent(fieldElement);
+    }
   }
 
   @Override
@@ -79,10 +85,18 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
       Element fieldElement = element.getChild("myNode");
       myNode.readExternal(fieldElement);
     }
+    {
+      Element fieldElement = element.getChild("myMake");
+      myMake.readExternal(fieldElement);
+    }
   }
 
   public Node_Configuration getNode() {
     return myNode;
+  }
+
+  public Make_Configuration getMake() {
+    return myMake;
   }
 
   @Override
@@ -92,6 +106,7 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
       clone = createCloneTemplate();
       clone.myState = (DemoApplication_Configuration.MyState) myState.clone();
       clone.myNode = (Node_Configuration) myNode.clone();
+      clone.myMake = (Make_Configuration) myMake.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
       LOG.error(ex);
@@ -122,7 +137,7 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
   }
 
   public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
-    return new DemoApplication_Configuration_Editor(myNode.getEditor());
+    return new DemoApplication_Configuration_Editor(myNode.getEditor(), myMake.getEditor());
   }
 
   public Icon getIcon() {

@@ -6,9 +6,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
@@ -36,9 +36,18 @@ public class PersistentPropertyDeclaration_Behavior {
   }
 
   public static String call_getTypeFqName_6589514334700622462(SNode thisNode) {
-    assert PersistentPropertyDeclaration_Behavior.call_isTemplate_77193491200360813(thisNode);
-    SNode template = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(thisNode, "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType"), true), "propertyTemplate", false);
+    SNode template = PersistentPropertyDeclaration_Behavior.call_getTemplate_3257967158569673046(thisNode);
     return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(template)) + "." + PersistentConfiguration_Behavior.call_getGeneratedClassName_1252300412034469137(template);
+  }
+
+  public static String call_getTypeEditorFqName_3257967158569673018(SNode thisNode) {
+    SNode template = PersistentPropertyDeclaration_Behavior.call_getTemplate_3257967158569673046(thisNode);
+    return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(template)) + "." + PersistentConfiguration_Behavior.call_getGeneratedEditorName_3257967158569669322(template);
+  }
+
+  public static SNode call_getTemplate_3257967158569673046(SNode thisNode) {
+    assert PersistentPropertyDeclaration_Behavior.call_isTemplate_77193491200360813(thisNode);
+    return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(thisNode, "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType"), true), "propertyTemplate", false);
   }
 
   public static boolean call_isInitializable_1448685625140326362(SNode thisNode) {

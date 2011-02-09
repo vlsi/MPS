@@ -36,6 +36,9 @@
     <node type="uhxm.PersistentConfigurationTemplate" typeId="uhxm.4157833584164830749" id="223733852661754512">
       <property name="name" nameId="tpck.1169194664001" value="Node" />
     </node>
+    <node type="uhxm.PersistentConfigurationTemplate" typeId="uhxm.4157833584164830749" id="7684700299064222828">
+      <property name="name" nameId="tpck.1169194664001" value="Make" />
+    </node>
   </roots>
   <root id="8750596094204760415">
     <node role="iconPath" roleId="uhxm.4806795137173723123" type="uhxm.IconPath" typeId="uhxm.4806795137173575894" id="1754312393817076264" />
@@ -133,6 +136,28 @@
               </node>
             </node>
           </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7684700299064312803">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064312805">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7684700299064312804">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1529002684853853985" resolveInfo="panel" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7684700299064312809">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5p1m.~Container%dadd(java%dawt%dComponent,java%dlang%dObject)%cvoid" resolveInfo="add" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064312832">
+                  <node role="operand" roleId="tpee.1197027771414" type="uhxm.EditorExpression" typeId="uhxm.3815075966210455705" id="7684700299064312810">
+                    <link role="persistentPropertyDeclaration" roleId="uhxm.3815075966210455719" targetNodeId="7684700299064312799" resolveInfo="myMake" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="uhxm.EditorOperation" typeId="uhxm.7902226081039505552" id="7684700299064312840">
+                    <link role="editorOperationDeclaration" roleId="uhxm.7902226081039505554" targetNodeId="7684700299064222830" />
+                  </node>
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7684700299064312856">
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5p1m.~BorderLayout" resolveInfo="BorderLayout" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5p1m.~BorderLayout%dSOUTH" resolveInfo="SOUTH" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1529002684853853979">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1529002684853853989">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1529002684853853985" resolveInfo="panel" />
@@ -158,6 +183,22 @@
               </node>
             </node>
           </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5405427851768165016">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5405427851768165022">
+              <node role="operand" roleId="tpee.1197027771414" type="uhxm.EditorExpression" typeId="uhxm.3815075966210455705" id="5405427851768165017">
+                <link role="persistentPropertyDeclaration" roleId="uhxm.3815075966210455719" targetNodeId="7684700299064312799" resolveInfo="myMake" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="uhxm.EditorOperation" typeId="uhxm.7902226081039505552" id="5405427851768165029">
+                <link role="editorOperationDeclaration" roleId="uhxm.7902226081039505554" targetNodeId="7684700299064309952" />
+                <node role="arguments" roleId="uhxm.3815075966210398769" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5405427851768191403">
+                  <node role="operand" roleId="tpee.1197027771414" type="uhxm.Configuration_Parameter" typeId="uhxm.4777576391478077373" id="5405427851768191402" />
+                  <node role="operation" roleId="tpee.1197027833540" type="uhxm.PersistentPropertyReferenceOperation" typeId="uhxm.4928971978190606409" id="5405427851768191407">
+                    <link role="variableDeclaration" roleId="uhxm.4928971978190606410" targetNodeId="7684700299064312799" resolveInfo="myMake" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="applyTo" roleId="uhxm.4777576391477979222" type="uhxm.ApplyTo_Function" typeId="uhxm.4777576391477979223" id="4777576391478076301">
@@ -173,6 +214,22 @@
                   <node role="operand" roleId="tpee.1197027771414" type="uhxm.Configuration_Parameter" typeId="uhxm.4777576391478077373" id="1252300412034435576" />
                   <node role="operation" roleId="tpee.1197027833540" type="uhxm.PersistentPropertyReferenceOperation" typeId="uhxm.4928971978190606409" id="1252300412034435583">
                     <link role="variableDeclaration" roleId="uhxm.4928971978190606410" targetNodeId="7902226081039505530" resolveInfo="myNode" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5405427851768191409">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5405427851768191410">
+              <node role="operand" roleId="tpee.1197027771414" type="uhxm.EditorExpression" typeId="uhxm.3815075966210455705" id="5405427851768191411">
+                <link role="persistentPropertyDeclaration" roleId="uhxm.3815075966210455719" targetNodeId="7684700299064312799" resolveInfo="myMake" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="uhxm.EditorOperation" typeId="uhxm.7902226081039505552" id="5405427851768191412">
+                <link role="editorOperationDeclaration" roleId="uhxm.7902226081039505554" targetNodeId="7684700299064312766" />
+                <node role="arguments" roleId="uhxm.3815075966210398769" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5405427851768191413">
+                  <node role="operand" roleId="tpee.1197027771414" type="uhxm.Configuration_Parameter" typeId="uhxm.4777576391478077373" id="5405427851768191414" />
+                  <node role="operation" roleId="tpee.1197027833540" type="uhxm.PersistentPropertyReferenceOperation" typeId="uhxm.4928971978190606409" id="5405427851768191415">
+                    <link role="variableDeclaration" roleId="uhxm.4928971978190606410" targetNodeId="7684700299064312799" resolveInfo="myMake" />
                   </node>
                 </node>
               </node>
@@ -249,6 +306,12 @@
         </node>
       </node>
     </node>
+    <node role="persistentProperty" roleId="uhxm.77193491200308914" type="uhxm.PersistentPropertyDeclaration" typeId="uhxm.1048802521465149470" id="7684700299064312799">
+      <property name="name" nameId="tpck.1169194664001" value="myMake" />
+      <node role="type" roleId="tpee.5680397130376446158" type="uhxm.TemplatePersistentPropertyType" typeId="uhxm.4157833584164911568" id="7684700299064312801">
+        <link role="propertyTemplate" roleId="uhxm.4157833584164911569" targetNodeId="7684700299064222828" resolveInfo="Make" />
+      </node>
+    </node>
     <node role="checkProperties" roleId="uhxm.974940122351326368" type="uhxm.CheckProperties_Function" typeId="uhxm.974940122351326363" id="974940122351373408">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="974940122351373409">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1448685625140199409">
@@ -270,7 +333,11 @@
       <property name="path" nameId="uhxm.4806795137173575895" value="${mps_home}/core/baseLanguage/baseLanguage/icons/run.png" />
     </node>
   </root>
-  <root id="8750596094204764240" />
+  <root id="8750596094204764240">
+    <node role="execute" roleId="uhxm.7945003362267213473" type="uhxm.Execute_Function" typeId="uhxm.6139196002333163564" id="7684700299064207173">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7684700299064207174" />
+    </node>
+  </root>
   <root id="223733852661754512">
     <node role="methods" roleId="uhxm.587410464426829527" type="uhxm.PersistentConfigurationMethod" typeId="uhxm.587410464426801915" id="587410464426947116">
       <property name="name" nameId="tpck.1169194664001" value="getNode" />
@@ -655,6 +722,86 @@
         <node role="resultType" roleId="tp2c.1199542457201" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1448685625140421472" />
         <node role="parameterType" roleId="tp2c.1199542501692" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1448685625140421471" />
       </node>
+    </node>
+  </root>
+  <root id="7684700299064222828">
+    <node role="editor" roleId="uhxm.223733852661704509" type="uhxm.SettingsEditor" typeId="uhxm.3754890006475816671" id="7684700299064222829">
+      <node role="propertyDeclaration" roleId="uhxm.1529002684853821488" type="uhxm.EditorPropertyDeclaration" typeId="uhxm.4777576391478268201" id="7684700299064309934">
+        <property name="name" nameId="tpck.1169194664001" value="myCheckBox" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7684700299064309936">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i09a.~JCheckBox" resolveInfo="JCheckBox" />
+        </node>
+      </node>
+      <node role="createEditor" roleId="uhxm.4777576391477979221" type="uhxm.CreateEditor_Function" typeId="uhxm.4777576391477887149" id="7684700299064222830">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7684700299064222831">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7684700299064309937">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7684700299064309939">
+              <node role="lValue" roleId="tpee.1068498886295" type="uhxm.EditorPropertyReference" typeId="uhxm.4777576391478268202" id="7684700299064309938">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7684700299064309934" resolveInfo="myCheckBox" />
+              </node>
+              <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7684700299064309944">
+                <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7684700299064309946">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i09a.~JCheckBox%d&lt;init&gt;(java%dlang%dString)" resolveInfo="JCheckBox" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7684700299064309947">
+                    <property name="value" nameId="tpee.1070475926801" value="Make Before Run" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7684700299064309949">
+            <node role="expression" roleId="tpee.1068581517676" type="uhxm.EditorPropertyReference" typeId="uhxm.4777576391478268202" id="7684700299064309951">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7684700299064309934" resolveInfo="myCheckBox" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="resetFrom" roleId="uhxm.4777576391477979229" type="uhxm.ResetFrom_Function" typeId="uhxm.4777576391477979226" id="7684700299064309952">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7684700299064309953">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7684700299064309954">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064309956">
+              <node role="operand" roleId="tpee.1197027771414" type="uhxm.EditorPropertyReference" typeId="uhxm.4777576391478268202" id="7684700299064309955">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7684700299064309934" resolveInfo="myCheckBox" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7684700299064312759">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i09a.~AbstractButton%dsetSelected(boolean)%cvoid" resolveInfo="setSelected" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064312761">
+                  <node role="operand" roleId="tpee.1197027771414" type="uhxm.Configuration_Parameter" typeId="uhxm.4777576391478077373" id="7684700299064312760" />
+                  <node role="operation" roleId="tpee.1197027833540" type="uhxm.PersistentPropertyReferenceOperation" typeId="uhxm.4928971978190606409" id="7684700299064312765">
+                    <link role="variableDeclaration" roleId="uhxm.4928971978190606410" targetNodeId="7684700299064222832" resolveInfo="myMake" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="applyTo" roleId="uhxm.4777576391477979222" type="uhxm.ApplyTo_Function" typeId="uhxm.4777576391477979223" id="7684700299064312766">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7684700299064312767">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7684700299064312768">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7684700299064312779">
+              <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064312783">
+                <node role="operand" roleId="tpee.1197027771414" type="uhxm.EditorPropertyReference" typeId="uhxm.4777576391478268202" id="7684700299064312782">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7684700299064309934" resolveInfo="myCheckBox" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7684700299064312787">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i09a.~AbstractButton%disSelected()%cboolean" resolveInfo="isSelected" />
+                </node>
+              </node>
+              <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7684700299064312770">
+                <node role="operand" roleId="tpee.1197027771414" type="uhxm.Configuration_Parameter" typeId="uhxm.4777576391478077373" id="7684700299064312769" />
+                <node role="operation" roleId="tpee.1197027833540" type="uhxm.PersistentPropertyReferenceOperation" typeId="uhxm.4928971978190606409" id="7684700299064312774">
+                  <link role="variableDeclaration" roleId="uhxm.4928971978190606410" targetNodeId="7684700299064222832" resolveInfo="myMake" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="persistentProperty" roleId="uhxm.77193491200308914" type="uhxm.PersistentPropertyDeclaration" typeId="uhxm.1048802521465149470" id="7684700299064222832">
+      <property name="name" nameId="tpck.1169194664001" value="myMake" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="7684700299064222834" />
     </node>
   </root>
 </model>
