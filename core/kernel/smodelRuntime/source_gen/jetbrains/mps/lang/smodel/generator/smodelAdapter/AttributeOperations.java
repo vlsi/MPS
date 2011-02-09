@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -107,14 +108,26 @@ public class AttributeOperations {
   }
 
   public static String getLinkRole(SNode attribute) {
+    if (!(SNodeOperations.hasRole(attribute, "jetbrains.mps.lang.core.structure.BaseConcept", "_$attribute"))) {
+      // compatibility with old attributes 
+      return AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(SNodeOperations.getContainingLinkRole(attribute));
+    }
     return SPropertyOperations.getString(SLinkOperations.getTarget(attribute, "link", false), "role");
   }
 
   public static SNode getPropertyDeclaration(SNode attribute) {
+    if (!(SNodeOperations.hasRole(attribute, "jetbrains.mps.lang.core.structure.BaseConcept", "_$attribute"))) {
+      // compatibility with old attributes 
+      return SNodeOperations.as(SModelSearchUtil.findPropertyDeclaration(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(attribute)), getPropertyName(attribute)), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+    }
     return SLinkOperations.getTarget(attribute, "property", false);
   }
 
   public static String getPropertyName(SNode attribute) {
+    if (!(SNodeOperations.hasRole(attribute, "jetbrains.mps.lang.core.structure.BaseConcept", "_$attribute"))) {
+      // compatibility with old attributes 
+      return AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(SNodeOperations.getContainingLinkRole(attribute));
+    }
     return SPropertyOperations.getString(SLinkOperations.getTarget(attribute, "property", false), "name");
   }
 
