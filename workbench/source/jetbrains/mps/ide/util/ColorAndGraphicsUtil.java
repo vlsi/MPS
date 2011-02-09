@@ -31,8 +31,8 @@ public class ColorAndGraphicsUtil {
     saturation = saturation * factor;
     if (saturation > 1.0f) saturation = 1.0f;
     hsb[1] = saturation;
-    int rgb = Color.HSBtoRGB(hsb[0], hsb[1], hsb[2]);
-    return new Color(rgb);
+    final Color result = Color.getHSBColor(hsb[0], hsb[1], hsb[2]);
+    return new Color(result.getRed(), result.getGreen(), result.getBlue(), c.getAlpha());
   }
 
   public static Color brightenColor(Color c, float factor) {
@@ -42,8 +42,8 @@ public class ColorAndGraphicsUtil {
     brightness = brightness * factor;
     if (brightness > 1.0f) brightness = 1.0f;
     hsb[2] = brightness;
-    int rgb = Color.HSBtoRGB(hsb[0], hsb[1], hsb[2]);
-    return new Color(rgb);
+    final Color result = Color.getHSBColor(hsb[0], hsb[1], hsb[2]);
+    return new Color(result.getRed(), result.getGreen(), result.getBlue(), c.getAlpha());
   }
 
   public static BasicStroke dashedStroke() {
