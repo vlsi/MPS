@@ -37,7 +37,9 @@
       <property name="name" nameId="tpck.1169194664001" value="Node" />
     </node>
   </roots>
-  <root id="8750596094204760415" />
+  <root id="8750596094204760415">
+    <node role="iconPath" roleId="uhxm.4806795137173723123" type="uhxm.IconPath" typeId="uhxm.4806795137173575894" id="1754312393817076264" />
+  </root>
   <root id="8750596094204760417">
     <node role="editor" roleId="uhxm.3754890006475816675" type="uhxm.SettingsEditor" typeId="uhxm.3754890006475816671" id="8750596094204760418">
       <node role="propertyDeclaration" roleId="uhxm.1529002684853821488" type="uhxm.EditorPropertyDeclaration" typeId="uhxm.4777576391478268201" id="3347833162492362904">
@@ -263,6 +265,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="iconPath" roleId="uhxm.4806795137173723122" type="uhxm.IconPath" typeId="uhxm.4806795137173575894" id="1754312393817076263">
+      <property name="path" nameId="uhxm.4806795137173575895" value="${mps_home}/core/baseLanguage/baseLanguage/icons/run.png" />
     </node>
   </root>
   <root id="8750596094204764240" />

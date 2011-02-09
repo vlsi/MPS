@@ -5,6 +5,9 @@ package jetbrains.mps.runConfigurations.demo.plugin;
 import com.intellij.execution.configurations.RunConfigurationBase;
 import jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration;
 import jetbrains.mps.logging.Logger;
+import javax.swing.Icon;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.plugins.MacrosUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
@@ -31,6 +34,7 @@ import com.intellij.execution.configurations.ConfigurationInfoProvider;
 
 public class DemoApplication_Configuration extends RunConfigurationBase implements IPersistentConfiguration {
   private static final Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/core/baseLanguage/baseLanguage/icons/run.png", "jetbrains.mps.runConfigurations.demo"), true);
 
   @NotNull
   private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
@@ -119,6 +123,10 @@ public class DemoApplication_Configuration extends RunConfigurationBase implemen
 
   public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
     return new DemoApplication_Configuration_Editor();
+  }
+
+  public Icon getIcon() {
+    return ICON;
   }
 
   public class MyState {

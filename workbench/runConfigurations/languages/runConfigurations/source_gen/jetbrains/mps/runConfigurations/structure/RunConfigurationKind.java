@@ -15,6 +15,7 @@ public class RunConfigurationKind extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String ICON_PATH = "iconPath";
 
   public RunConfigurationKind(SNode node) {
     super(node);
@@ -50,6 +51,14 @@ public class RunConfigurationKind extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(RunConfigurationKind.VIRTUAL_PACKAGE, value);
+  }
+
+  public IconPath getIconPath() {
+    return (IconPath) this.getChild(IconPath.class, RunConfigurationKind.ICON_PATH);
+  }
+
+  public void setIconPath(IconPath node) {
+    super.setChild(RunConfigurationKind.ICON_PATH, node);
   }
 
   public static RunConfigurationKind newInstance(SModel sm, boolean init) {

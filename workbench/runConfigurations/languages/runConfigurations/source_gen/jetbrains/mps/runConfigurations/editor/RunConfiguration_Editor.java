@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -29,12 +30,13 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ryg3k0_a");
     editorCell.addEditorCell(this.createCollection_ryg3k0_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ryg3k0_b0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_ryg3k0_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ryg3k0_d0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_ryg3k0_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ryg3k0_f0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_ryg3k0_g0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ryg3k0_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ryg3k0_c0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_ryg3k0_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ryg3k0_e0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_ryg3k0_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ryg3k0_g0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_ryg3k0_h0(editorContext, node));
     return editorCell;
   }
 
@@ -52,19 +54,19 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_ryg3k0_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_ryg3k0_d0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new PersistentPropertiesComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createComponent_ryg3k0_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_ryg3k0_f0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new EditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createComponent_ryg3k0_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_ryg3k0_h0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new PersistentMethodsComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
@@ -78,9 +80,9 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_ryg3k0_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ryg3k0_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_ryg3k0_b0");
+    editorCell.setCellId("Constant_ryg3k0_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -89,9 +91,9 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_ryg3k0_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ryg3k0_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_ryg3k0_d0");
+    editorCell.setCellId("Constant_ryg3k0_e0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -100,9 +102,9 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_ryg3k0_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ryg3k0_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_ryg3k0_f0");
+    editorCell.setCellId("Constant_ryg3k0_g0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -119,6 +121,23 @@ public class RunConfiguration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new RunConfiguration_Editor._Inline_ryg3k0_a3a0());
     editorCell = provider.createEditorCell(editorContext);
     BaseLanguageStyle_StyleSheet.getClassName(editorCell).apply(editorCell);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_ryg3k0_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("iconPath");
+    provider.setNoTargetText("<no iconPath>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

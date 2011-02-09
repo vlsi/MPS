@@ -8,6 +8,8 @@
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="com.intellij.execution.configurations.RunProfileState" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationInfoProvider" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
     <classNode dependClassName="com.intellij.openapi.util.JDOMExternalizable" />
@@ -23,12 +25,13 @@
     <classNode dependClassName="java.lang.CloneNotSupportedException" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_Factory" />
+    <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationInfoProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
+    <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_RunProfileState" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
