@@ -102,6 +102,22 @@ public class AttributeOperations {
     return addAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(SNodeOperations.getModel(node), newConceptFqname));
   }
 
+  public static SNode getLinkDeclaration(SNode attribute) {
+    return SLinkOperations.getTarget(attribute, "link", false);
+  }
+
+  public static String getLinkRole(SNode attribute) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(attribute, "link", false), "role");
+  }
+
+  public static SNode getPropertyDeclaration(SNode attribute) {
+    return SLinkOperations.getTarget(attribute, "property", false);
+  }
+
+  public static String getPropertyName(SNode attribute) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(attribute, "property", false), "name");
+  }
+
   public static void $$$$$$$$$$$$$$$$$$$$() {
   }
 
