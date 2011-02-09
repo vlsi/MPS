@@ -115,12 +115,11 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                         public void run() {
                           EditorCell selectedCell = editorContext.getSelectedCell();
                           if (selectedCell == null) return;
-                          //  SNode selectedNode = selectedCell.getSNode();
-                          //  Integer caretPosition = null;
-                          //  if (selectedCell instanceof EditorCell_Label) {
-                          //    caretPosition = ((EditorCell_Label)selectedCell).getCaretPosition();
-                          //  }
-                          // Pair<SNode, Integer> wasSelected = new Pair<SNode, Integer>(selectedNode, caretPosition);
+
+                          boolean restoreCaretPosition = selectedCell.getSNode().getAncestors(true).contains(quickFixNode);
+                          int caretX = selectedCell.getCaretX();
+                          int caretY = selectedCell.getBaseline();
+
                           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                             public void run() {
                               CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {
@@ -130,8 +129,16 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                               });
                             }
                           });
-                          editorContext.flushEvents();
-                          // intention.setSelection(node, editorContext, wasSelected);
+
+                          if (restoreCaretPosition) {
+                            editorContext.flushEvents();
+                            EditorCell rootCell = editorContext.getNodeEditorComponent().getRootCell();
+                            EditorCell leaf = rootCell.findLeaf(caretX, caretY);
+                            if (leaf != null) {
+                              editorContext.getNodeEditorComponent().changeSelection(leaf);
+                              leaf.setCaretX(caretX);
+                            }
+                          }
                         }
                       }, ModalityState.NON_MODAL);
                     }
