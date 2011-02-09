@@ -38,6 +38,7 @@ public class DiffEditorComponent extends EditorComponent implements EditorMessag
 
   public void inspect(SNode node) {
     myInspector.inspectNode(node, getOperationContext());
+    myInspector.getHighlightManager().repaintAndRebuildEditorMessages();
   }
 
   public EditorCell createRootCell() {
@@ -128,6 +129,12 @@ public class DiffEditorComponent extends EditorComponent implements EditorMessag
     }
     MapSequence.fromMap(myChangeToMessage).put(message.getChange(), message);
     getHighlightManager().mark(message);
+    myInspector.getHighlightManager().mark(message);
+  }
+
+  public void repaintAndRebuildEditorMessages() {
+    getHighlightManager().repaintAndRebuildEditorMessages();
+    myInspector.getHighlightManager().repaintAndRebuildEditorMessages();
   }
 
   public ChangeEditorMessage getMessageForChange(ModelChange change) {

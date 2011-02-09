@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.leftHighlighter.AbstractFoldingAreaPainter;
 import javax.swing.Icon;
 import java.util.Map;
 import java.awt.Point;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Graphics;
 import java.awt.Color;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -41,14 +42,17 @@ public class MergeButtonsPainter extends AbstractFoldingAreaPainter {
   private ChangeGroup myCurrentGroup = null;
   private MergeButtonsPainter.Action myCurrentAction = null;
   private MergeRootsDialog myDialog;
-  private boolean myWithButtons;
 
-  public MergeButtonsPainter(boolean withButtons, MergeRootsDialog dialog, DiffEditorComponent diffEditor, ChangeGroupBuilder changeGroupBuilder) {
-    super(diffEditor.getLeftEditorHighlighter());
-    myWithButtons = withButtons;
+  public MergeButtonsPainter(MergeRootsDialog dialog, EditorComponent editorComponent, ChangeGroupBuilder changeGroupBuilder) {
+    super(editorComponent.getLeftEditorHighlighter());
     myDialog = dialog;
     myChangeGroupBuilder = changeGroupBuilder;
-    myHighlightLeft = changeGroupBuilder.getLeftEditorComponent() == diffEditor;
+    myHighlightLeft = changeGroupBuilder.getLeftComponent() == editorComponent;
+    myChangeGroupBuilder.addInvalidateListener(new ChangeGroupInvalidateListener() {
+      public void changeGroupsInvalidated() {
+        relayout();
+      }
+    });
   }
 
   public int getWeight() {
@@ -200,9 +204,13 @@ public class MergeButtonsPainter extends AbstractFoldingAreaPainter {
     myGroupToButtonCoord = null;
   }
 
-  public static MergeButtonsPainter addTo(MergeRootsDialog dialog, DiffEditorComponent diffEditor, ChangeGroupBuilder changeGroupBuilder) {
-    MergeButtonsPainter painter = new MergeButtonsPainter(true, dialog, diffEditor, changeGroupBuilder);
-    diffEditor.getLeftEditorHighlighter().addFoldingAreaPainter(painter);
+  public static MergeButtonsPainter addTo(MergeRootsDialog dialog, DiffEditorComponent diffEditor, ChangeGroupBuilder changeGroupBuilder, boolean inspector) {
+    EditorComponent editorComponent = (inspector ?
+      diffEditor.getInspector() :
+      diffEditor
+    );
+    MergeButtonsPainter painter = new MergeButtonsPainter(dialog, editorComponent, changeGroupBuilder);
+    editorComponent.getLeftEditorHighlighter().addFoldingAreaPainter(painter);
     return painter;
   }
 

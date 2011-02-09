@@ -5,30 +5,59 @@ package jetbrains.mps.vcs.diff.ui;
 import jetbrains.mps.vcs.diff.MergeContext;
 import jetbrains.mps.vcs.diff.changes.ChangeSet;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.Map;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.DisjointSets;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Set;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class ChangeGroupBuilder {
   private MergeContext myMergeContext;
   private ChangeSet myChangeSet;
+  private boolean myInspector = false;
   private DiffEditorComponent myLeftEditorComponent;
   private DiffEditorComponent myRightEditorComponent;
   private List<ChangeGroup> myChangeGroups = null;
+  private List<ChangeGroupInvalidateListener> myInvalidateListeners = ListSequence.fromList(new ArrayList<ChangeGroupInvalidateListener>());
 
-  public ChangeGroupBuilder(MergeContext mergeContext, ChangeSet changeSet, DiffEditorComponent leftEditorComponent, DiffEditorComponent rightEditorComponent) {
+  public ChangeGroupBuilder(MergeContext mergeContext, ChangeSet changeSet, DiffEditorComponent leftEditorComponent, DiffEditorComponent rightEditorComponent, boolean inspector) {
     myMergeContext = mergeContext;
     myChangeSet = changeSet;
     myLeftEditorComponent = leftEditorComponent;
     myRightEditorComponent = rightEditorComponent;
+    myInspector = inspector;
+    if (myInspector) {
+      EditorComponent.RebuildListener rebuildListener = new EditorComponent.RebuildListener() {
+        public void editorRebuilt(EditorComponent editor) {
+          invalidate();
+        }
+      };
+      myLeftEditorComponent.getInspector().addRebuildListener(rebuildListener);
+      myRightEditorComponent.getInspector().addRebuildListener(rebuildListener);
+    }
+  }
+
+  public EditorComponent getLeftComponent() {
+    return (myInspector ?
+      myLeftEditorComponent.getInspector() :
+      myLeftEditorComponent
+    );
+  }
+
+  public EditorComponent getRightComponent() {
+    return (myInspector ?
+      myRightEditorComponent.getInspector() :
+      myRightEditorComponent
+    );
   }
 
   private void calculateChangeGroups() {
@@ -45,10 +74,17 @@ public class ChangeGroupBuilder {
         continue;
       }
 
-      MapSequence.fromMap(leftStarts).put(change, leftMessage.getStart(myLeftEditorComponent));
-      MapSequence.fromMap(leftEnds).put(change, MapSequence.fromMap(leftStarts).get(change) + leftMessage.getHeight(myLeftEditorComponent));
-      MapSequence.fromMap(rightStarts).put(change, rightMessage.getStart(myRightEditorComponent));
-      MapSequence.fromMap(rightEnds).put(change, MapSequence.fromMap(rightStarts).get(change) + rightMessage.getHeight(myRightEditorComponent));
+      int leftHeight = leftMessage.getHeight(getLeftComponent());
+      int rightHeight = rightMessage.getHeight(getRightComponent());
+      assert leftHeight == -1 && rightHeight == -1 || leftHeight != -1 && rightHeight != -1;
+      if (leftHeight == -1) {
+        continue;
+      }
+
+      MapSequence.fromMap(leftStarts).put(change, leftMessage.getStart(getLeftComponent()));
+      MapSequence.fromMap(leftEnds).put(change, MapSequence.fromMap(leftStarts).get(change) + leftHeight);
+      MapSequence.fromMap(rightStarts).put(change, rightMessage.getStart(getRightComponent()));
+      MapSequence.fromMap(rightEnds).put(change, MapSequence.fromMap(rightStarts).get(change) + rightHeight);
     }
     DisjointSets<ModelChange> ds = new DisjointSets<ModelChange>(MapSequence.fromMap(leftStarts).keySet());
     for (ModelChange a : SetSequence.fromSet(MapSequence.fromMap(leftStarts).keySet())) {
@@ -73,6 +109,14 @@ public class ChangeGroupBuilder {
     }, true).toListSequence();
   }
 
+  public void addInvalidateListener(@NotNull ChangeGroupInvalidateListener listener) {
+    ListSequence.fromList(myInvalidateListeners).addElement(listener);
+  }
+
+  public void removeInvalidateListener(@NotNull ChangeGroupInvalidateListener listener) {
+    ListSequence.fromList(myInvalidateListeners).removeElement(listener);
+  }
+
   public List<ChangeGroup> getChangeGroups() {
     if (myChangeGroups == null) {
       calculateChangeGroups();
@@ -82,13 +126,18 @@ public class ChangeGroupBuilder {
 
   public void invalidate() {
     myChangeGroups = null;
+    ListSequence.fromList(myInvalidateListeners).visitAll(new IVisitor<ChangeGroupInvalidateListener>() {
+      public void visit(ChangeGroupInvalidateListener it) {
+        it.changeGroupsInvalidated();
+      }
+    });
   }
 
-  public DiffEditorComponent getLeftEditorComponent() {
+  public DiffEditorComponent getLeftDiffEditorComponent() {
     return myLeftEditorComponent;
   }
 
-  public DiffEditorComponent getRightEditorComponent() {
+  public DiffEditorComponent getRightDiffEditorComponent() {
     return myRightEditorComponent;
   }
 

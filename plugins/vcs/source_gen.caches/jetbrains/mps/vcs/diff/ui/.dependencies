@@ -78,35 +78,41 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.util.DisjointSets" />
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroup" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupInvalidateListener" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditorComponent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.MergeContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.diff.ui.ChangeGroupInvalidateListener" file="ChangeGroupInvalidateListener.java" />
   <dependency className="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip" file="ChangeTrapeciumStrip.java">
     <classNode dependClassName="javax.swing.event.ChangeEvent" />
+    <classNode dependClassName="javax.swing.event.ChangeListener" />
     <classNode dependClassName="java.awt.Graphics" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupInvalidateListener" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroup" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder" />
-    <classNode extendsClassName="javax.swing.event.ChangeListener" />
     <classNode extendsClassName="javax.swing.JComponent" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.DiffEditorComponent" file="DiffEditorComponent.java">
@@ -156,18 +162,19 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.CellSelectionListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.MergeButtonsPainter" file="MergeButtonsPainter.java">
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroup" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupInvalidateListener" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="java.awt.image.BufferedImage" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroup" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.MergeContext" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.MergeRootsDialog" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -175,6 +182,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditorComponent" />
     <classNode dependClassName="java.awt.Cursor" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
@@ -231,38 +239,41 @@
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.MergeRootsDialog" file="MergeRootsDialog.java">
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditorComponentsGroup" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.MergeModelsDialog" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="javax.swing.JLabel" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="java.awt.Dimension" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.MergeContext" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffEditorComponent" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="javax.swing.JSplitPane" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeEditorMessage" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="java.awt.GridBagLayout" />
-    <classNode dependClassName="java.awt.GridLayout" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeTrapeciumStrip" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ChangeGroupBuilder" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.MergeButtonsPainter" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ApplyNonConflictsForRoot" />
     <classNode dependClassName="java.awt.Insets" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ApplyNonConflictsForRoot" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />

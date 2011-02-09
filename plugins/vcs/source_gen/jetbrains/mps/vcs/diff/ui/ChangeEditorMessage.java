@@ -5,12 +5,12 @@ package jetbrains.mps.vcs.diff.ui;
 import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.errors.MessageStatus;
 import java.awt.Color;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import java.awt.Graphics;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.errors.messageTargets.MessageTargetEnum;
 import org.apache.commons.lang.ObjectUtils;
@@ -45,12 +45,10 @@ import org.jetbrains.annotations.NotNull;
 
 public class ChangeEditorMessage extends EditorMessageWithTarget {
   private ModelChange myChange;
-  private SModel myThisModel;
 
-  public ChangeEditorMessage(EditorComponent editor, ModelChange change, EditorMessageOwner owner) {
-    super(computeNode(editor, change), MessageStatus.OK, computeMessageTarget(editor, change), null, "", owner);
+  public ChangeEditorMessage(SModel editedModel, ModelChange change, EditorMessageOwner owner) {
+    super(computeNode(editedModel, change), MessageStatus.OK, computeMessageTarget(editedModel, change), null, "", owner);
     myChange = change;
-    myThisModel = editor.getEditedNode().getModel();
   }
 
   public boolean isConflicted() {
@@ -80,7 +78,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     if (ObjectUtils.equals(getNode(), cell.getSNode()) && targetIsNode || !(targetIsNode) && !(cell instanceof EditorCell_Collection)) {
       cell.paintSelection(graphics, getColor(), false);
     } else {
-      if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN) {
+      if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN && eq_myu41h_a0a0a0b0e(myMessageTarget.getRole(), cell.getRole())) {
         int beginIndex = ((ChildrenMessageTarget) myMessageTarget).getBeginIndex();
         int endIndex = ((ChildrenMessageTarget) myMessageTarget).getEndIndex();
         if (beginIndex != endIndex) {
@@ -141,7 +139,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       }
       graphics.setColor(ChangeType.CHANGE.getColor());
       Rectangle bounds = cell.getBounds();
-      graphics.drawRect(bounds.x, bounds.y, bounds.width, bounds.height);
+      graphics.drawRect(bounds.x + 1, bounds.y + 1, bounds.width - 2, bounds.height - 2);
     }
   }
 
@@ -205,7 +203,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     }
   }
 
-  private static SNode computeNode(EditorComponent editor, ModelChange change) {
+  private static SNode computeNode(SModel editedModel, ModelChange change) {
     SNodeId id;
     if (change instanceof AddRootChange || change instanceof DeleteRootChange) {
       id = change.getRootId();
@@ -216,11 +214,10 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     } else {
       return null;
     }
-    SNode node = editor.getEditedNode().getModel().getNodeById(id);
-    return node;
+    return editedModel.getNodeById(id);
   }
 
-  private static MessageTarget computeMessageTarget(EditorComponent editor, ModelChange change) {
+  private static MessageTarget computeMessageTarget(SModel editedModel, ModelChange change) {
     if (change instanceof AddRootChange || change instanceof DeleteRootChange) {
       return new NodeMessageTarget();
     } else if (change instanceof SetPropertyChange) {
@@ -230,8 +227,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     } else if (change instanceof NodeGroupChange) {
       SModel changeModel = change.getChangeSet().getNewModel();
       NodeGroupChange nodeGroupChange = ((NodeGroupChange) change);
-      SModel currentModel = editor.getEditedNode().getModel();
-      boolean reversed = changeModel != currentModel;
+      boolean reversed = changeModel != editedModel;
       if (reversed) {
         changeModel = change.getChangeSet().getOldModel();
       }
@@ -269,15 +265,15 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
         changeChildren.get(changeEnd).getSNodeId() :
         null
       );
-      int currentChildrenSize = currentModel.getNodeById(parentId).getChildren(role).size();
+      int currentChildrenSize = editedModel.getNodeById(parentId).getChildren(role).size();
 
       int beginIndex = (beginId == null ?
         currentChildrenSize :
-        SNodeOperations.getIndexInParent(((SNode) currentModel.getNodeById(beginId)))
+        SNodeOperations.getIndexInParent(((SNode) editedModel.getNodeById(beginId)))
       );
       int endIndex = (endId == null ?
         currentChildrenSize :
-        SNodeOperations.getIndexInParent(((SNode) currentModel.getNodeById(endId)))
+        SNodeOperations.getIndexInParent(((SNode) editedModel.getNodeById(endId)))
       );
 
       assert 0 <= beginIndex && beginIndex <= endIndex && endIndex < currentChildrenSize;
@@ -318,6 +314,13 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     }
     assert false;
     return -1;
+  }
+
+  private static boolean eq_myu41h_a0a0a0b0e(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   private static boolean eq_myu41h_a0a0c0f(Object a, Object b) {

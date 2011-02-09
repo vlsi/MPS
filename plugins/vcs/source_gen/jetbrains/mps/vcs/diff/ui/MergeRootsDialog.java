@@ -10,21 +10,24 @@ import jetbrains.mps.smodel.SNodeId;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import javax.swing.JSplitPane;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import javax.swing.JLabel;
+import java.awt.Dimension;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 
@@ -34,17 +37,12 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
   private IOperationContext myOperationContext;
   private SNodeId myRootId;
   private JPanel myContainer = new JPanel(new BorderLayout());
-  private JPanel myTopComponent = new JPanel(new GridBagLayout());
-  private JPanel myBottomComponent = new JPanel(new GridLayout(1, 3));
+  private JPanel myTopPanel = new JPanel(new GridBagLayout());
+  private JPanel myBottomPanel = new JPanel(new GridBagLayout());
   private DiffEditorComponent myResultEditor;
   private DiffEditorComponent myMineEditor;
   private DiffEditorComponent myRepositoryEditor;
-  private ChangeGroupBuilder myMineBuilder;
-  private ChangeGroupBuilder myRepositoryBuilder;
-  private ChangeTrapeciumStrip myMineStrip;
-  private ChangeTrapeciumStrip myRepositoryStrip;
-  private MergeButtonsPainter myMinePainter;
-  private MergeButtonsPainter myRepositoryPainter;
+  private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.fromList(new ArrayList<ChangeGroupBuilder>());
   private DiffEditorComponentsGroup myDiffEditorsGroup = new DiffEditorComponentsGroup();
 
   public MergeRootsDialog(MergeModelsDialog mergeModelsDialog, MergeContext mergeContext, SNodeId rootId, String rootName) {
@@ -58,16 +56,13 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     myResultEditor = addEditor(1, myMergeContext.getResultModel(), "Merge Result");
     myRepositoryEditor = addEditor(2, myMergeContext.getRepositoryModel(), "Repository Changes");
 
-    myMineBuilder = new ChangeGroupBuilder(myMergeContext, myMergeContext.getMyChangeSet(), myMineEditor, myResultEditor);
-    myRepositoryBuilder = new ChangeGroupBuilder(myMergeContext, myMergeContext.getRepositoryChangeSet(), myResultEditor, myRepositoryEditor);
+    linkEditors(true, false);
+    linkEditors(false, false);
+    linkEditors(true, true);
+    linkEditors(false, true);
 
-    myMineStrip = addTrapeciumStrip(0, myMineBuilder);
-    myRepositoryStrip = addTrapeciumStrip(1, myRepositoryBuilder);
-    myMinePainter = MergeButtonsPainter.addTo(this, myMineEditor, myMineBuilder);
-    myRepositoryPainter = MergeButtonsPainter.addTo(this, myRepositoryEditor, myRepositoryBuilder);
-
-    JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopComponent, myBottomComponent);
-    splitPane.setResizeWeight(1);
+    JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
+    splitPane.setResizeWeight(0.7);
     myContainer = new JPanel(new BorderLayout());
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ApplyNonConflictsForRoot(myMergeContext, this));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
@@ -78,6 +73,19 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     highlightAllChanges();
   }
 
+  private ChangeGroupBuilder createChangeGroupBuilder(boolean mine, boolean inspector) {
+    return new ChangeGroupBuilder(myMergeContext, (mine ?
+      myMergeContext.getMyChangeSet() :
+      myMergeContext.getRepositoryChangeSet()
+    ), (mine ?
+      myMineEditor :
+      myResultEditor
+    ), (mine ?
+      myResultEditor :
+      myRepositoryEditor
+    ), inspector);
+  }
+
   public void rehighlight() {
     myMineEditor.unhighlightAllChanges();
     myResultEditor.unhighlightAllChanges();
@@ -85,15 +93,13 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
 
     myResultEditor.rebuildEditorContent();
 
-    myMineBuilder.invalidate();
-    myRepositoryBuilder.invalidate();
+    ListSequence.fromList(myChangeGroupBuilders).visitAll(new IVisitor<ChangeGroupBuilder>() {
+      public void visit(ChangeGroupBuilder b) {
+        b.invalidate();
+      }
+    });
 
     highlightAllChanges();
-
-    myMineStrip.repaint();
-    myRepositoryStrip.repaint();
-    myMinePainter.relayout();
-    myRepositoryPainter.relayout();
   }
 
   private void highlightAllChanges() {
@@ -107,13 +113,13 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
         }
       }
     }
-    myMineEditor.getHighlightManager().repaintAndRebuildEditorMessages();
-    myResultEditor.getHighlightManager().repaintAndRebuildEditorMessages();
-    myRepositoryEditor.getHighlightManager().repaintAndRebuildEditorMessages();
+    myMineEditor.repaintAndRebuildEditorMessages();
+    myResultEditor.repaintAndRebuildEditorMessages();
+    myRepositoryEditor.repaintAndRebuildEditorMessages();
   }
 
   private void higlightChange(DiffEditorComponent diffEditor, ModelChange change) {
-    diffEditor.highlightChange(new ChangeEditorMessage(diffEditor, change, diffEditor) {
+    diffEditor.highlightChange(new ChangeEditorMessage(diffEditor.getEditedNode().getModel(), change, diffEditor) {
       @Override
       public boolean isConflicted() {
         return Sequence.fromIterable(myMergeContext.getConflictedWith(getChange())).isNotEmpty();
@@ -121,11 +127,25 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     });
   }
 
-  private ChangeTrapeciumStrip addTrapeciumStrip(int index, ChangeGroupBuilder changeGroupBuilder) {
+  private void linkEditors(boolean mine, boolean inspector) {
+    // create change group builder, trapecium strip and merge buttons painter 
+    // 'mine' parameter means mine changeset, 'inspector' - highlight inspector editor component 
+    ChangeGroupBuilder changeGroupBuilder = createChangeGroupBuilder(mine, inspector);
+    ListSequence.fromList(myChangeGroupBuilders).addElement(changeGroupBuilder);
     ChangeTrapeciumStrip strip = new ChangeTrapeciumStrip(changeGroupBuilder);
-    ((GridBagLayout) myTopComponent.getLayout()).setConstraints(strip, new GridBagConstraints(index * 2 + 1, 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0));
-    myTopComponent.add(strip);
-    return strip;
+    JPanel panel = (inspector ?
+      myBottomPanel :
+      myTopPanel
+    );
+    ((GridBagLayout) panel.getLayout()).setConstraints(strip, new GridBagConstraints((mine ?
+      1 :
+      3
+    ), 0, 1, 1, 0, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, 0, 5, 0), 0, 0));
+    panel.add(strip);
+    MergeButtonsPainter.addTo(this, (mine ?
+      myMineEditor :
+      myRepositoryEditor
+    ), changeGroupBuilder, inspector);
   }
 
   private DiffEditorComponent addEditor(int index, SModel model, String revisionName) {
@@ -133,20 +153,26 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     final DiffEditorComponent result = new DiffEditorComponent(myOperationContext, node);
     result.editNode(node, myOperationContext);
     result.setReadOnly(true);
+
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(new JLabel(revisionName), BorderLayout.NORTH);
     panel.add(result.getExternalComponent(), BorderLayout.CENTER);
+    panel.setPreferredSize(new Dimension());
 
-    ((GridBagLayout) myTopComponent.getLayout()).setConstraints(panel, new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
+    GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
       5 :
       0
     ), 5, (index == 2 ?
       5 :
       0
-    )), 0, 0));
-    myTopComponent.add(panel);
+    )), 0, 0);
+    ((GridBagLayout) myTopPanel.getLayout()).setConstraints(panel, gbc);
+    myTopPanel.add(panel);
+    JComponent inspector = result.getInspector().getExternalComponent();
+    inspector.setPreferredSize(new Dimension());
+    ((GridBagLayout) myBottomPanel.getLayout()).setConstraints(inspector, gbc);
+    myBottomPanel.add(inspector);
 
-    myBottomComponent.add(result.getInspector().getExternalComponent());
     myDiffEditorsGroup.add(result);
     return result;
   }
