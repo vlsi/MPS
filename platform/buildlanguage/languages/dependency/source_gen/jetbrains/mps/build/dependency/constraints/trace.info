@@ -3,7 +3,7 @@
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.dependency.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="ProjectDescriptionReference_description_ReferentConstraint.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.dependency.constraints.ProjectDescriptionReference_description_ReferentConstraint" />
   <root nodeId="1224776365671">
-    <nodeInfo nodeId="1224776422011" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ProjectDescriptionReference_description_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="121" />
+    <nodeInfo nodeId="1224776422011" fileName="ProjectDescriptionReference_description_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1224776378345" fileName="ProjectDescriptionReference_description_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="121" />
   </root>
 </debugInfo>

@@ -161,8 +161,12 @@ public class Module_Behavior {
     return MacrosFactory.moduleDescriptor(Module_Behavior.call_getModule_1213877515148(thisNode));
   }
 
-  public static String call_getClassesGen_1216909316753(SNode thisNode) {
+  public static String call_getClassesGenString_1216909316753(SNode thisNode) {
     return ModuleUtil.getRelativePath(Module_Behavior.call_getModule_1213877515148(thisNode).getClassesGen().getAbsolutePath(), AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getAbsolutePath());
+  }
+
+  public static SNode call_getClassesGen_3315989002810564857(SNode thisNode) {
+    return Module_Behavior.call_getPathHolder_1239195000114(thisNode, Module_Behavior.call_getModule_1213877515148(thisNode).getClassesGen().getAbsolutePath());
   }
 
   public static List<SNode> call_getSources_1216909568805(SNode thisNode) {

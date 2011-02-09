@@ -12,10 +12,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.openapi.wm.IdeFrame;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IProgress;
@@ -81,10 +82,10 @@ public class WorkbenchMakeService implements IMakeService {
       if (cleanMake) {
         String msg = "Rebuild aborted";
         context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, msg + ": nothing to do."));
-        WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo(msg);
+        this.displayInfo(msg);
         return new IResult.FAILURE(null);
       } else {
-        WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo("Everything up to date");
+        this.displayInfo("Everything up to date");
         return new IResult.SUCCESS(null);
       }
     }
@@ -98,7 +99,7 @@ public class WorkbenchMakeService implements IMakeService {
       )) + " failed";
 
       context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, msg + ". Invalid script."));
-      WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo(msg);
+      this.displayInfo(msg);
       return new IResult.FAILURE(null);
     }
 
@@ -116,20 +117,34 @@ public class WorkbenchMakeService implements IMakeService {
       }
     });
 
-    if (!(res.value.isSucessful())) {
+    if (res.value == null) {
+      String msg = ((cleanMake ?
+        "Rebuild" :
+        "Make"
+      )) + " aborted";
+      this.displayInfo(msg);
+    } else if (!(res.value.isSucessful())) {
       String msg = ((cleanMake ?
         "Rebuild" :
         "Make"
       )) + " failed";
       context.getProject().getComponent(MessagesViewTool.class).add(new Message(MessageKind.ERROR, msg + ". See previous messages for details."));
-      WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo(msg);
+      this.displayInfo(msg);
     } else {
-      WindowManager.getInstance().getIdeFrame(context.getProject()).getStatusBar().setInfo(((cleanMake ?
+      String msg = ((cleanMake ?
         "Rebuild" :
         "Make"
-      )) + " successful");
+      )) + " successful";
+      this.displayInfo(msg);
     }
     return res.value;
+  }
+
+  private void displayInfo(String info) {
+    IdeFrame frame = WindowManager.getInstance().getIdeFrame(context.getProject());
+    if (frame != null) {
+      frame.getStatusBar().setInfo(info);
+    }
   }
 
   private IScript completeScript(IScript scr) {

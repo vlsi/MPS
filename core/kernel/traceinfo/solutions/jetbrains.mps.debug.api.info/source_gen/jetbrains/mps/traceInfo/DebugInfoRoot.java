@@ -24,7 +24,7 @@ public class DebugInfoRoot {
   private Set<UnitPositionInfo> myUnitPositions;
 
   public DebugInfoRoot(String rootId) {
-    this.myRootId = rootId;
+    myRootId = rootId;
   }
 
   public void addPosition(TraceablePositionInfo position) {
@@ -49,19 +49,19 @@ public class DebugInfoRoot {
   }
 
   public String getRootId() {
-    return this.myRootId;
+    return myRootId;
   }
 
   public Set<TraceablePositionInfo> getPositions() {
-    return this.myPositions;
+    return myPositions;
   }
 
   public Set<ScopePositionInfo> getScopePositions() {
-    return this.myScopePositions;
+    return myScopePositions;
   }
 
   public Set<UnitPositionInfo> getUnitPositions() {
-    return this.myUnitPositions;
+    return myUnitPositions;
   }
 
   public void toXml(Element container) {

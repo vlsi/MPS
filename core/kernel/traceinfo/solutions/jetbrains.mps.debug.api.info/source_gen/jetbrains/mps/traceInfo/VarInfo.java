@@ -15,28 +15,28 @@ public class VarInfo {
   }
 
   public VarInfo(Element element) {
-    this.myNodeId = element.getAttribute(VarInfo.NODE_ID).getValue();
-    this.myVarName = element.getAttribute(VarInfo.VAR_NAME).getValue();
+    myNodeId = element.getAttribute(VarInfo.NODE_ID).getValue();
+    myVarName = element.getAttribute(VarInfo.VAR_NAME).getValue();
   }
 
   public String getNodeId() {
-    return this.myNodeId;
+    return myNodeId;
   }
 
   public String getVarName() {
-    return this.myVarName;
+    return myVarName;
   }
 
   public void setVarName(String varName) {
-    this.myVarName = varName;
+    myVarName = varName;
   }
 
   public void setNodeId(String nodeId) {
-    this.myNodeId = nodeId;
+    myNodeId = nodeId;
   }
 
   public void saveTo(Element element) {
-    element.setAttribute(VarInfo.NODE_ID, this.myNodeId);
-    element.setAttribute(VarInfo.VAR_NAME, this.myVarName);
+    element.setAttribute(VarInfo.NODE_ID, myNodeId);
+    element.setAttribute(VarInfo.VAR_NAME, myVarName);
   }
 }

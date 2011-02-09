@@ -5,10 +5,13 @@ package jetbrains.mps.make.facet.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 
 public class Make_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Make_ActionGroup.class);
   public static final String ID = "jetbrains.mps.make.facet.plugin.Make_ActionGroup";
+  public static final String LABEL_ID_preview = ID + "preview";
 
   public Make_ActionGroup() {
     super("Make", ID);
@@ -17,6 +20,12 @@ public class Make_ActionGroup extends GeneratedActionGroup {
     try {
       Make_ActionGroup.this.addParameterizedAction(new MakeSelection_Action(false), PluginId.getId("jetbrains.mps.make.facet"), false);
       Make_ActionGroup.this.addParameterizedAction(new MakeSelection_Action(true), PluginId.getId("jetbrains.mps.make.facet"), true);
+      {
+        LabelledAnchor action = new LabelledAnchor(Make_ActionGroup.LABEL_ID_preview);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.make.facet"));
+        Make_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

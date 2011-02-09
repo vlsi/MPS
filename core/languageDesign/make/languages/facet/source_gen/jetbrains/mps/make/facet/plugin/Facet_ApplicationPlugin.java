@@ -36,16 +36,19 @@ public class Facet_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RebuildProject_Action());
     addAction(new RebuildSelectedModels_Action());
     addAction(new RebuildSelectedModules_Action());
+    addAction(new TextPreviewModel_Action());
     // groups 
     addGroup(new GlobalMake_ActionGroup());
     addGroup(new Make_ActionGroup());
     addGroup(new NamespaceMake_ActionGroup());
     addGroup(new ProjectMake_ActionGroup());
+    addGroup(new TextPreviewGroup_ActionGroup());
     addGroup(new ToolbarMake_ActionGroup());
   }
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(NamespaceMake_ActionGroup.ID, NamespaceMakeActions_ActionGroup.ID, NamespaceMakeActions_ActionGroup.LABEL_ID_make);
+    insertGroupIntoAnother(TextPreviewGroup_ActionGroup.ID, Make_ActionGroup.ID, Make_ActionGroup.LABEL_ID_preview);
     insertGroupIntoAnother(ToolbarMake_ActionGroup.ID, "MPSToolbarRunGroup", null);
     insertGroupIntoAnother(ProjectMake_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_make);
     insertGroupIntoAnother(Make_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_make);

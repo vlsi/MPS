@@ -2,7 +2,6 @@
 <dependencies version="2" modelHash="1u11u0iwqfliw63x4cywxtdo6a1jp1i">
   <dep model="f:java_stub#java.io(java.io@java_stub)" />
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
-  <dep model="f:java_stub#java.util(java.util@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
   <dep model="f:java_stub#org.apache.commons.lang(org.apache.commons.lang@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9yg2bpo4lvwy8lmo0gxukbtzy5b5kuw" />
@@ -26,7 +25,6 @@
   <source id="7551811584090935086" name="MergeDriverMain" hash="2ksln14uqv4cqces8yc44gu8923ji7">
     <dep model="f:java_stub#java.io(java.io@java_stub)" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
-    <dep model="f:java_stub#java.util(java.util@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
     <dep model="f:java_stub#org.apache.commons.lang(org.apache.commons.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />

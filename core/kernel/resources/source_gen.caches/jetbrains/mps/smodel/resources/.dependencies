@@ -2,8 +2,8 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.smodel.resources.CResource" file="CResource.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.compiler.IClassesData" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
@@ -16,44 +16,44 @@
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.resources.GResource" file="GResource.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
-    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.resources.MResource" file="MResource.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.resources.ModelsToResources" file="ModelsToResources.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.MResource" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="java.lang.Comparable" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
@@ -61,8 +61,8 @@
   </dependency>
   <dependency className="jetbrains.mps.smodel.resources.TResource" file="TResource.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />

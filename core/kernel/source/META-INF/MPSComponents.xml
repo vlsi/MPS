@@ -365,6 +365,11 @@
     <component>
       <implementation-class>jetbrains.mps.ide.generator.GeneratorCacheComponent</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.workbench.make.GeneratedTextPreviewEditorProvider</implementation-class>
+    </component>
+
   </application-components>
 
   <project-components>

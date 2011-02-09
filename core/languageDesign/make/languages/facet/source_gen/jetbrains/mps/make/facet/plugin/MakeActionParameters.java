@@ -6,17 +6,19 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class MakeActionParameters {
   private IOperationContext context;
@@ -42,13 +44,43 @@ public class MakeActionParameters {
     IModule module = this.moduleToMake();
     SModelDescriptor model = this.modelToMake();
     if (model != null) {
+      if (!(isUserEditableModel(model))) {
+        return null;
+      }
+
       sb.append("Model '").append(model.getSModelReference().getSModelFqName().getCompactPresentation()).append("'");
+
     } else if (this.models != null && this.models.size() > 1) {
+      Iterable<SModelDescriptor> mds = this.models;
+      if (!(Sequence.fromIterable(mds).any(new IWhereFilter<SModelDescriptor>() {
+        public boolean accept(SModelDescriptor md) {
+          return isUserEditableModel(md);
+        }
+      }))) {
+        return null;
+      }
+
       sb.append("Selected Models");
+
     } else if (module != null) {
+      if (module.isPackaged()) {
+        return null;
+      }
+
       sb.append(NameUtil.shortNameFromLongName(module.getClass().getName().replaceAll("\\$.*", ""))).append(" '").append(NameUtil.compactNamespace(module.getModuleReference().getModuleFqName())).append("'");
+
     } else if (this.modules != null && this.modules.size() > 1) {
+      Iterable<IModule> mods = this.modules;
+      if (Sequence.fromIterable(mods).all(new IWhereFilter<IModule>() {
+        public boolean accept(IModule m) {
+          return m.isPackaged();
+        }
+      })) {
+        return null;
+      }
+
       sb.append("Selected Modules");
+
     } else {
       return null;
     }
@@ -62,11 +94,12 @@ public class MakeActionParameters {
           public Iterator<SModelDescriptor> iterator() {
             return new YieldingIterator<SModelDescriptor>() {
               private int __CP__ = 0;
-              private SModelDescriptor _4__yield_nk3wxj_a0a0a0a0a0a1;
-              private Iterator<SModelDescriptor> _4__yield_nk3wxj_a0a0a0a0a0a1_it;
-              private Iterable<SModelDescriptor> _12_modelsFromModules;
-              private SModelDescriptor _13__yield_nk3wxj_c0a0a0a0a0a0b;
-              private Iterator<SModelDescriptor> _13__yield_nk3wxj_c0a0a0a0a0a0b_it;
+              private Iterable<SModelDescriptor> _5_models;
+              private SModelDescriptor _6__yield_nk3wxj_b0a0a0a0a0a1;
+              private Iterator<SModelDescriptor> _6__yield_nk3wxj_b0a0a0a0a0a1_it;
+              private Iterable<SModelDescriptor> _16_modelsFromModules;
+              private SModelDescriptor _17__yield_nk3wxj_c0a0a0a0a0a0b;
+              private Iterator<SModelDescriptor> _17__yield_nk3wxj_c0a0a0a0a0a0b_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -76,77 +109,92 @@ __switch__:
                     case -1:
                       assert false : "Internal error";
                       return false;
-                    case 4:
-                      this._4__yield_nk3wxj_a0a0a0a0a0a1_it = Sequence.fromIterable(MakeActionParameters.this.models).iterator();
-                    case 5:
-                      if (!(this._4__yield_nk3wxj_a0a0a0a0a0a1_it.hasNext())) {
+                    case 6:
+                      this._6__yield_nk3wxj_b0a0a0a0a0a1_it = Sequence.fromIterable(Sequence.fromIterable(_5_models).where(new IWhereFilter<SModelDescriptor>() {
+                        public boolean accept(SModelDescriptor md) {
+                          return isUserEditableModel(md);
+                        }
+                      })).iterator();
+                    case 7:
+                      if (!(this._6__yield_nk3wxj_b0a0a0a0a0a1_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
-                      this._4__yield_nk3wxj_a0a0a0a0a0a1 = this._4__yield_nk3wxj_a0a0a0a0a0a1_it.next();
-                      this.__CP__ = 6;
+                      this._6__yield_nk3wxj_b0a0a0a0a0a1 = this._6__yield_nk3wxj_b0a0a0a0a0a1_it.next();
+                      this.__CP__ = 8;
                       break;
-                    case 13:
-                      this._13__yield_nk3wxj_c0a0a0a0a0a0b_it = Sequence.fromIterable(_12_modelsFromModules).iterator();
-                    case 14:
-                      if (!(this._13__yield_nk3wxj_c0a0a0a0a0a0b_it.hasNext())) {
+                    case 17:
+                      this._17__yield_nk3wxj_c0a0a0a0a0a0b_it = Sequence.fromIterable(_16_modelsFromModules).iterator();
+                    case 18:
+                      if (!(this._17__yield_nk3wxj_c0a0a0a0a0a0b_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
-                      this._13__yield_nk3wxj_c0a0a0a0a0a0b = this._13__yield_nk3wxj_c0a0a0a0a0a0b_it.next();
-                      this.__CP__ = 15;
+                      this._17__yield_nk3wxj_c0a0a0a0a0a0b = this._17__yield_nk3wxj_c0a0a0a0a0a0b_it.next();
+                      this.__CP__ = 19;
                       break;
                     case 2:
                       if (MakeActionParameters.this.models != null && models.size() > 0) {
                         this.__CP__ = 3;
                         break;
                       } else if (MakeActionParameters.this.cmodel != null) {
-                        this.__CP__ = 8;
+                        this.__CP__ = 10;
                         break;
                       }
-                      this.__CP__ = 10;
+                      this.__CP__ = 14;
                       break;
-                    case 7:
-                      this.__CP__ = 5;
-                      this.yield(_4__yield_nk3wxj_a0a0a0a0a0a1);
-                      return true;
+                    case 11:
+                      if (isUserEditableModel(cmodel)) {
+                        this.__CP__ = 12;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
                     case 9:
+                      this.__CP__ = 7;
+                      this.yield(_6__yield_nk3wxj_b0a0a0a0a0a1);
+                      return true;
+                    case 13:
                       this.__CP__ = 1;
                       this.yield(MakeActionParameters.this.cmodel);
                       return true;
-                    case 16:
-                      this.__CP__ = 14;
-                      this.yield(_13__yield_nk3wxj_c0a0a0a0a0a0b);
+                    case 20:
+                      this.__CP__ = 18;
+                      this.yield(_17__yield_nk3wxj_c0a0a0a0a0a0b);
                       return true;
                     case 0:
                       this.__CP__ = 2;
                       break;
                     case 3:
-                      this.__CP__ = 4;
-                      break;
-                    case 6:
-                      this.__CP__ = 7;
+                      this._5_models = MakeActionParameters.this.models;
+                      this.__CP__ = 6;
                       break;
                     case 8:
                       this.__CP__ = 9;
                       break;
                     case 10:
-                      this._12_modelsFromModules = null;
+                      this.__CP__ = 11;
+                      break;
+                    case 12:
+                      this.__CP__ = 13;
+                      break;
+                    case 14:
+                      this._16_modelsFromModules = null;
                       ModelAccess.instance().runReadAction(new Runnable() {
                         public void run() {
                           if (MakeActionParameters.this.modules != null) {
                             for (IModule mod : ListSequence.fromList(MakeActionParameters.this.modules)) {
-                              _12_modelsFromModules = Sequence.fromIterable(_12_modelsFromModules).concat(ListSequence.fromList(mod.getEditableUserModels()));
+                              _16_modelsFromModules = Sequence.fromIterable(_16_modelsFromModules).concat(ListSequence.fromList(mod.getEditableUserModels()));
                             }
                           } else if (MakeActionParameters.this.cmodule != null) {
-                            _12_modelsFromModules = Sequence.fromIterable(_12_modelsFromModules).concat(ListSequence.fromList(MakeActionParameters.this.cmodule.getEditableUserModels()));
+                            _16_modelsFromModules = Sequence.fromIterable(_16_modelsFromModules).concat(ListSequence.fromList(MakeActionParameters.this.cmodule.getEditableUserModels()));
                           }
                         }
                       });
-                      this.__CP__ = 13;
+                      this.__CP__ = 17;
                       break;
-                    case 15:
-                      this.__CP__ = 16;
+                    case 19:
+                      this.__CP__ = 20;
                       break;
                     default:
                       break __loop__;
@@ -164,6 +212,13 @@ __switch__:
       }
     });
     return new ModelsToResources(context, smds).resources(dirtyOnly);
+  }
+
+  public boolean isUserEditableModel(SModelDescriptor md) {
+    if (!(SModelStereotype.isUserModel(md))) {
+      return false;
+    }
+    return md instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) md).isPackaged());
   }
 
   private IModule moduleToMake() {

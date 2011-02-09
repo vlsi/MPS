@@ -20,7 +20,6 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.structure.IMethodCall;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
