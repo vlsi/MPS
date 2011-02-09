@@ -22,9 +22,8 @@ import jetbrains.mps.cache.DataSet;
 import jetbrains.mps.cache.KeyProducer;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -64,10 +63,22 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
   }
 
   private String getAssertionMessage(Object element, SNode concept) {
-    SNode conceptFromModelUtil = SModelUtil.findConceptDeclaration(NameUtil.nodeFQName(concept), GlobalScope.getInstance());
+    String conceptFQName = NameUtil.nodeFQName(concept);
+    GlobalScope scope = GlobalScope.getInstance();
+    SNode conceptFromModelUtil = SModelUtil.findConceptDeclaration(conceptFQName, scope);
+
+    String languageFqName = NameUtil.namespaceFromConceptFQName(conceptFQName);
+    String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
+    Language language = scope.getLanguage(new ModuleReference(languageFqName));
+    SNode conceptFromScope = null;
+    if (language != null) {
+      conceptFromScope = language.findConceptDeclaration(conceptName);
+    }
+
     return "Model descriptor is null for concept: " +
       concept + "(" + System.identityHashCode(concept) + ")  same concept from SModelUtil_new: " +
-      conceptFromModelUtil + "(" + System.identityHashCode(conceptFromModelUtil) + "), element: " +
+      conceptFromModelUtil + "(" + System.identityHashCode(conceptFromModelUtil) + ") same concept from Scope:"
+      + conceptFromScope + "(" + System.identityHashCode(conceptFromScope) + "), element: " +
       element + "(" + System.identityHashCode(element) + "), myTopConcept: " +
       myTopConcept + "(" + System.identityHashCode(element) + ")";
   }
