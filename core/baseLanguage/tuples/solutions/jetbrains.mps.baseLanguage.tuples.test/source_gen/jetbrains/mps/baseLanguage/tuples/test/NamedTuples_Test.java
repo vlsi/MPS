@@ -90,7 +90,7 @@ public class NamedTuples_Test extends TestCase {
 
   public void test_boolean() throws Exception {
     Bool truth = new Bool(true);
-    Assert.assertTrue(truth.isTrue());
+    Assert.assertTrue((boolean) truth.isTrue());
   }
 
   public void test_filter() throws Exception {
@@ -174,6 +174,13 @@ public class NamedTuples_Test extends TestCase {
   public void test_record() throws Exception {
     Record r = new Record("Foo", 567, 0.5f);
     Assert.assertEquals("Foo:567:0.5", r.toString());
+  }
+
+  public void test_mps11134() throws Exception {
+    IntPair ip = new IntPair(7, 7);
+    Assert.assertTrue((int) ip.a() == (int) ip.b());
+    IntPair ip2 = new IntPair(9999 + 1, 10001 - 1);
+    Assert.assertTrue((int) ip2.a() == (int) ip2.b());
   }
 
   public String getString(SharedPair<String, String>... tuples) {
