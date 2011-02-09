@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.reference;
 
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.InternUtil;
@@ -36,9 +37,7 @@ public class ReferenceInfo_MacroNode extends ReferenceInfo_Macro {
   }
 
   private static String getReferenceRole(SNode macro) {
-    String attributeRole = macro.getRole_();
-    String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(attributeRole);
-    return linkRole;
+    return AttributeOperations.getLinkRole(macro);
   }
 
   public SNode getInputTargetNode() {

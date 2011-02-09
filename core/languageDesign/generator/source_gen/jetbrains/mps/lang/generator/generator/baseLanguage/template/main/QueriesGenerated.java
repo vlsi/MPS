@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.generator.impl.GeneratorUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -224,12 +225,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4155486055398183606(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String role = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(_context.getNode().getRole_());
+    String role = AttributeOperations.getPropertyName(_context.getNode());
     return role;
   }
 
   public static Object propertyMacro_GetPropertyValue_2053864656213145643(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String role = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(_context.getNode().getRole_());
+    String role = AttributeOperations.getPropertyName(_context.getNode());
     SNode original = SNodeOperations.getParent(_context.getNode());
     return original.getProperty(role);
   }
@@ -263,11 +264,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1503590073461987862(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(_context.getNode().getRole_());
+    return AttributeOperations.getLinkRole(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_3231277868798079492(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SReference ref = SNodeOperations.getParent(_context.getNode()).getReference(AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(_context.getNode().getRole_()));
+    SReference ref = SNodeOperations.getParent(_context.getNode()).getReference(AttributeOperations.getLinkRole(_context.getNode()));
     if (ref == null) {
       return "";
     }
@@ -283,7 +284,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4155486055398184118(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(_context.getNode().getRole_());
+    return AttributeOperations.getLinkRole(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1246578104714226066(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1436,7 +1437,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2053864656213145666(final IOperationContext operationContext, final IfMacroContext _context) {
-    String role = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(_context.getNode().getRole_());
+    String role = AttributeOperations.getPropertyName(_context.getNode());
     SNode original = SNodeOperations.getParent(_context.getNode());
     return original.getProperty(role) != null;
   }
@@ -3025,7 +3026,7 @@ public class QueriesGenerated {
     List<String> propertyNames = ListSequence.fromListWithValues(new ArrayList<String>(), _context.getNode().getPropertyNames());
     for (SNode child : _context.getNode().getChildren(true)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.generator.structure.PropertyMacro")) {
-        String role = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(child.getRole_());
+        String role = AttributeOperations.getPropertyName(SNodeOperations.cast(child, "jetbrains.mps.lang.generator.structure.PropertyMacro"));
         ListSequence.fromList(propertyNames).removeElement(role);
       }
     }

@@ -7,9 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -23,14 +21,12 @@ public class typeof_LinkPatternVariableDeclaration_InferenceRule extends Abstrac
   }
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode parent = SNodeOperations.getParent(nodeToCheck);
-    String role = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(nodeToCheck.getRole_());
-    SNode linkDeclaration = AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(parent), role);
+    SNode linkDeclaration = AttributeOperations.getLinkDeclaration(nodeToCheck);
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202486181555", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202486174317", true), (SNode) new typeof_LinkPatternVariableDeclaration_InferenceRule.QuotationClass_onvofq_a0a3a0().createNode(SLinkOperations.getTarget(linkDeclaration, "target", false), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202486174317", true), (SNode) new typeof_LinkPatternVariableDeclaration_InferenceRule.QuotationClass_onvofq_a0a1a0().createNode(SLinkOperations.getTarget(linkDeclaration, "target", false), typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -49,8 +45,8 @@ public class typeof_LinkPatternVariableDeclaration_InferenceRule extends Abstrac
     return false;
   }
 
-  public static class QuotationClass_onvofq_a0a3a0 {
-    public QuotationClass_onvofq_a0a3a0() {
+  public static class QuotationClass_onvofq_a0a1a0 {
+    public QuotationClass_onvofq_a0a1a0() {
     }
 
     public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
@@ -60,7 +56,7 @@ public class typeof_LinkPatternVariableDeclaration_InferenceRule extends Abstrac
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        quotedNode1_2.setReferent("", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -73,7 +69,7 @@ public class typeof_LinkPatternVariableDeclaration_InferenceRule extends Abstrac
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        quotedNode1_2.setReferent("", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

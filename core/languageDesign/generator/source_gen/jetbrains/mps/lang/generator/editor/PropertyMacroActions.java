@@ -8,8 +8,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.structure.behavior.PropertyDeclaration_Behavior;
 
 public class PropertyMacroActions {
@@ -30,8 +29,7 @@ public class PropertyMacroActions {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode attributedNode = SNodeOperations.getParent(node);
-      String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(node.getRole_());
-      SNode propertyDeclaration = AbstractConceptDeclaration_Behavior.call_findPropertyDeclaration_1219835742593(SNodeOperations.getConceptDeclaration(attributedNode), propertyName);
+      SNode propertyDeclaration = AttributeOperations.getPropertyDeclaration(SNodeOperations.as(node, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
       EditorCell cell = editorContext.getNodeEditorComponent().findCellWithId(attributedNode, PropertyDeclaration_Behavior.call_getCellId_1216822951265(propertyDeclaration));
       editorContext.getNodeEditorComponent().changeSelection(cell);
       SNodeOperations.deleteNode(node);
