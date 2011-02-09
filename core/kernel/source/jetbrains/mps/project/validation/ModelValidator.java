@@ -1,7 +1,8 @@
-package jetbrains.mps.smodel;
+package jetbrains.mps.project.validation;
 
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.IterableUtil;
 
 import java.util.ArrayList;
