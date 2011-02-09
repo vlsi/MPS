@@ -9,6 +9,7 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.behavior.ILinkAccess_Behavior;
 
@@ -71,6 +72,8 @@ public class ConvertAttributes_MigrationScript extends BaseMigrationScript {
           LOG.warning("Link looks similar to attribute: " + role + " in model " + SNodeOperations.getModel(node).getSModelFqName() + ", node " + node + "[" + node.getId() + "]");
         }
         node.setRoleInParent("_$attribute");
+        // doesn't want to save all models without this: 
+        SModelRepository.getInstance().markChanged(SNodeOperations.getModel(node));
       }
 
       public boolean isShowAsIntention() {
