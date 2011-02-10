@@ -158,7 +158,7 @@ public class TypeSystemComponent extends Component {
   }
 
   public Map<SNode, List<IErrorReporter>> getNodesToErrorsMap() {
-    return myState.getNodeMaps().getNodesToErrorsMap();
+    return myState.getNodeMaps().getNodesToErrors();
   }
 
   @UseCarefully

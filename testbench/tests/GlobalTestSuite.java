@@ -1,3 +1,4 @@
+import jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test;
 import jetbrains.mps.baseLanguage.test.TestGenerationMode_Test;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import jetbrains.mps.testbench.MpsMakeHelper;
@@ -43,6 +44,7 @@ import org.junit.runners.Suite.SuiteClasses;
   jetbrains.mps.baseLanguage.test.TestSafeEquals_Test.class,
   jetbrains.mps.baseLanguage.test.TypesTest_BL_Test.class,
   jetbrains.mps.baseLanguage.test.TestGenerationMode_Test.class,
+  jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test.class,
   jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test.class,
   jetbrains.mps.baseLanguage.test.UnreachableStatements_Test.class,
   jetbrains.mps.baseLanguage.test.UnusedAssignmentWithIF_Test.class,

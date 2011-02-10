@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.newTypesystem.test;
 
+import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.Equations;
+import jetbrains.mps.newTypesystem.state.NodeMaps;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.smodel.SNode;
 
-import java.util.Map.Entry;
 import java.util.Set;
 
 /**
@@ -31,13 +31,22 @@ import java.util.Set;
 public class StateMatcher {
 
   public static boolean match (State state1, State state2) {
-    if (!matchEquations(state1.getEquations(), state2.getEquations())) {
-      return false;
-    }
-    return true;
+    return matchEquations(state1.getEquations(), state2.getEquations()) &&
+      matchBlocks(state1.getBlocks(), state2.getBlocks()) &&
+      matchNodeMaps(state1.getNodeMaps(), state2.getNodeMaps());
   }
 
   private static boolean matchEquations(Equations equations1, Equations equations2) {
     return equations1.getRepresentatives().equals(equations2.getRepresentatives());
+  }
+
+  private static boolean matchBlocks(Set<Block> blocks1, Set<Block> blocks2) {
+    return blocks1.equals(blocks2);
+  }
+
+  private static boolean matchNodeMaps(NodeMaps nodeMaps1, NodeMaps nodeMaps2) {
+
+    return nodeMaps1.getNodesToErrors().equals(nodeMaps2.getNodesToErrors()) &&
+      nodeMaps1.getNodesToTypes().equals(nodeMaps2.getNodesToTypes());
   }
 }

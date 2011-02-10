@@ -139,10 +139,6 @@ public class NodeMaps {
     myTypesToNodes.clear();
   }
 
-  public Map<SNode, List<IErrorReporter>> getNodesToErrorsMap() {
-    return Collections.unmodifiableMap(myNodesToErrors);
-  }
-
   public SNode getType(SNode node) {
     SNode type = myNodesToTypes.get(node);
     return myState.getRepresentative(type);
@@ -244,5 +240,13 @@ public class NodeMaps {
     errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
     errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
     myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
+  }
+
+  public Map<SNode, SNode> getNodesToTypes() {
+    return Collections.unmodifiableMap(myNodesToTypes);
+  }
+
+  public Map<SNode, List<IErrorReporter>> getNodesToErrors() {
+    return Collections.unmodifiableMap(myNodesToErrors);
   }
 }
