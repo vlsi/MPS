@@ -501,13 +501,14 @@
     <nodeInfo nodeId="6543581031674024306" fileName="Sequence.java" startLine="238" startPosition="19" endLine="239" endPosition="25" />
     <nodeInfo nodeId="6543581031674023565" fileName="Sequence.java" startLine="243" startPosition="49" endLine="244" endPosition="33" />
     <nodeInfo nodeId="6543581031674023579" fileName="Sequence.java" startLine="247" startPosition="50" endLine="248" endPosition="38" />
-    <nodeInfo nodeId="6543581031674023590" fileName="Sequence.java" startLine="251" startPosition="56" endLine="252" endPosition="54" />
-    <nodeInfo nodeId="6543581031674023605" fileName="Sequence.java" startLine="255" startPosition="145" endLine="256" endPosition="47" />
-    <nodeInfo nodeId="6543581031674023627" fileName="Sequence.java" startLine="261" startPosition="29" endLine="262" endPosition="39" />
-    <nodeInfo nodeId="6543581031674023634" fileName="Sequence.java" startLine="265" startPosition="40" endLine="266" endPosition="37" />
-    <nodeInfo nodeId="6543581031674023639" fileName="Sequence.java" startLine="267" startPosition="5" endLine="268" endPosition="42" />
-    <nodeInfo nodeId="6543581031674023660" fileName="Sequence.java" startLine="273" startPosition="26" endLine="274" endPosition="39" />
-    <nodeInfo nodeId="6543581031674023662" fileName="Sequence.java" startLine="276" startPosition="5" endLine="277" endPosition="62" />
+    <nodeInfo nodeId="6869654011218083071" fileName="Sequence.java" startLine="253" startPosition="26" endLine="254" endPosition="39" />
+    <nodeInfo nodeId="6543581031674023590" fileName="Sequence.java" startLine="256" startPosition="5" endLine="257" endPosition="54" />
+    <nodeInfo nodeId="6543581031674023605" fileName="Sequence.java" startLine="260" startPosition="145" endLine="261" endPosition="47" />
+    <nodeInfo nodeId="6543581031674023627" fileName="Sequence.java" startLine="266" startPosition="29" endLine="267" endPosition="39" />
+    <nodeInfo nodeId="6543581031674023634" fileName="Sequence.java" startLine="270" startPosition="40" endLine="271" endPosition="37" />
+    <nodeInfo nodeId="6543581031674023639" fileName="Sequence.java" startLine="272" startPosition="5" endLine="273" endPosition="42" />
+    <nodeInfo nodeId="6543581031674023660" fileName="Sequence.java" startLine="278" startPosition="26" endLine="279" endPosition="39" />
+    <nodeInfo nodeId="6543581031674023662" fileName="Sequence.java" startLine="281" startPosition="5" endLine="282" endPosition="62" />
     <nodeInfo nodeId="6543581031674023555" fileName="Sequence.java" startLine="31" startPosition="0" endLine="33" endPosition="3" />
     <nodeInfo nodeId="6543581031674023949" fileName="Sequence.java" startLine="105" startPosition="28" endLine="108" endPosition="7" />
     <nodeInfo nodeId="6543581031674023973" fileName="Sequence.java" startLine="114" startPosition="28" endLine="117" endPosition="7" />
@@ -516,9 +517,10 @@
     <nodeInfo nodeId="6543581031674024048" fileName="Sequence.java" startLine="141" startPosition="28" endLine="144" endPosition="7" />
     <nodeInfo nodeId="6543581031674024091" fileName="Sequence.java" startLine="158" startPosition="28" endLine="161" endPosition="7" />
     <nodeInfo nodeId="6543581031674024266" fileName="Sequence.java" startLine="228" startPosition="40" endLine="231" endPosition="5" />
-    <nodeInfo nodeId="6543581031674023622" fileName="Sequence.java" startLine="260" startPosition="28" endLine="263" endPosition="7" />
-    <nodeInfo nodeId="6543581031674023629" fileName="Sequence.java" startLine="264" startPosition="5" endLine="267" endPosition="5" />
-    <nodeInfo nodeId="6543581031674023655" fileName="Sequence.java" startLine="272" startPosition="29" endLine="275" endPosition="7" />
+    <nodeInfo nodeId="6869654011218083030" fileName="Sequence.java" startLine="252" startPosition="28" endLine="255" endPosition="7" />
+    <nodeInfo nodeId="6543581031674023622" fileName="Sequence.java" startLine="265" startPosition="28" endLine="268" endPosition="7" />
+    <nodeInfo nodeId="6543581031674023629" fileName="Sequence.java" startLine="269" startPosition="5" endLine="272" endPosition="5" />
+    <nodeInfo nodeId="6543581031674023655" fileName="Sequence.java" startLine="277" startPosition="29" endLine="280" endPosition="7" />
     <nodeInfo nodeId="6543581031674023668" fileName="Sequence.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
     <nodeInfo nodeId="6543581031674023682" fileName="Sequence.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
     <nodeInfo nodeId="6543581031674023694" fileName="Sequence.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
@@ -554,8 +556,7 @@
     <nodeInfo nodeId="6543581031674024247" fileName="Sequence.java" startLine="221" startPosition="0" endLine="225" endPosition="0" />
     <nodeInfo nodeId="6543581031674024283" fileName="Sequence.java" startLine="233" startPosition="20" endLine="237" endPosition="5" />
     <nodeInfo nodeId="6543581031674023573" fileName="Sequence.java" startLine="246" startPosition="0" endLine="250" endPosition="0" />
-    <nodeInfo nodeId="6543581031674023581" fileName="Sequence.java" startLine="250" startPosition="0" endLine="254" endPosition="0" />
-    <nodeInfo nodeId="6543581031674023596" fileName="Sequence.java" startLine="254" startPosition="0" endLine="258" endPosition="0" />
+    <nodeInfo nodeId="6543581031674023596" fileName="Sequence.java" startLine="259" startPosition="0" endLine="263" endPosition="0" />
     <nodeInfo nodeId="6543581031674023917" fileName="Sequence.java" startLine="98" startPosition="0" endLine="103" endPosition="0" />
     <nodeInfo nodeId="6543581031674023946" fileName="Sequence.java" startLine="104" startPosition="49" endLine="109" endPosition="5" />
     <nodeInfo nodeId="6543581031674023970" fileName="Sequence.java" startLine="113" startPosition="52" endLine="118" endPosition="5" />
@@ -564,16 +565,18 @@
     <nodeInfo nodeId="6543581031674024045" fileName="Sequence.java" startLine="140" startPosition="54" endLine="145" endPosition="5" />
     <nodeInfo nodeId="6543581031674024088" fileName="Sequence.java" startLine="157" startPosition="54" endLine="162" endPosition="5" />
     <nodeInfo nodeId="6543581031674023559" fileName="Sequence.java" startLine="241" startPosition="0" endLine="246" endPosition="0" />
-    <nodeInfo nodeId="6543581031674023619" fileName="Sequence.java" startLine="259" startPosition="69" endLine="264" endPosition="5" />
-    <nodeInfo nodeId="6543581031674023652" fileName="Sequence.java" startLine="271" startPosition="53" endLine="276" endPosition="5" />
+    <nodeInfo nodeId="6869654011218083027" fileName="Sequence.java" startLine="251" startPosition="56" endLine="256" endPosition="5" />
+    <nodeInfo nodeId="6543581031674023619" fileName="Sequence.java" startLine="264" startPosition="69" endLine="269" endPosition="5" />
+    <nodeInfo nodeId="6543581031674023652" fileName="Sequence.java" startLine="276" startPosition="53" endLine="281" endPosition="5" />
     <nodeInfo nodeId="6543581031674023938" fileName="Sequence.java" startLine="103" startPosition="0" endLine="112" endPosition="0" />
     <nodeInfo nodeId="6543581031674023962" fileName="Sequence.java" startLine="112" startPosition="0" endLine="121" endPosition="0" />
     <nodeInfo nodeId="6543581031674023987" fileName="Sequence.java" startLine="121" startPosition="0" endLine="130" endPosition="0" />
     <nodeInfo nodeId="6543581031674024012" fileName="Sequence.java" startLine="130" startPosition="0" endLine="139" endPosition="0" />
     <nodeInfo nodeId="6543581031674024037" fileName="Sequence.java" startLine="139" startPosition="0" endLine="148" endPosition="0" />
     <nodeInfo nodeId="6543581031674024081" fileName="Sequence.java" startLine="156" startPosition="0" endLine="165" endPosition="0" />
-    <nodeInfo nodeId="6543581031674023644" fileName="Sequence.java" startLine="270" startPosition="0" endLine="279" endPosition="0" />
-    <nodeInfo nodeId="6543581031674023610" fileName="Sequence.java" startLine="258" startPosition="0" endLine="270" endPosition="0" />
+    <nodeInfo nodeId="6543581031674023581" fileName="Sequence.java" startLine="250" startPosition="0" endLine="259" endPosition="0" />
+    <nodeInfo nodeId="6543581031674023644" fileName="Sequence.java" startLine="275" startPosition="0" endLine="284" endPosition="0" />
+    <nodeInfo nodeId="6543581031674023610" fileName="Sequence.java" startLine="263" startPosition="0" endLine="275" endPosition="0" />
     <nodeInfo nodeId="6543581031674024257" fileName="Sequence.java" startLine="225" startPosition="0" endLine="241" endPosition="0" />
     <scopeInfo nodeId="6543581031674023558" fileName="Sequence.java" startLine="32" startPosition="21" endLine="32" endPosition="21" />
     <scopeInfo nodeId="6543581031674023675" fileName="Sequence.java" startLine="35" startPosition="134" endLine="36" endPosition="50" />
@@ -618,11 +621,11 @@
     <scopeInfo nodeId="6543581031674024270" fileName="Sequence.java" startLine="229" startPosition="27" endLine="230" endPosition="20" />
     <scopeInfo nodeId="6543581031674023564" fileName="Sequence.java" startLine="243" startPosition="49" endLine="244" endPosition="33" />
     <scopeInfo nodeId="6543581031674023578" fileName="Sequence.java" startLine="247" startPosition="50" endLine="248" endPosition="38" />
-    <scopeInfo nodeId="6543581031674023589" fileName="Sequence.java" startLine="251" startPosition="56" endLine="252" endPosition="54" />
-    <scopeInfo nodeId="6543581031674023604" fileName="Sequence.java" startLine="255" startPosition="145" endLine="256" endPosition="47" />
-    <scopeInfo nodeId="6543581031674023626" fileName="Sequence.java" startLine="261" startPosition="29" endLine="262" endPosition="39" />
-    <scopeInfo nodeId="6543581031674023633" fileName="Sequence.java" startLine="265" startPosition="40" endLine="266" endPosition="37" />
-    <scopeInfo nodeId="6543581031674023659" fileName="Sequence.java" startLine="273" startPosition="26" endLine="274" endPosition="39" />
+    <scopeInfo nodeId="6869654011218083070" fileName="Sequence.java" startLine="253" startPosition="26" endLine="254" endPosition="39" />
+    <scopeInfo nodeId="6543581031674023604" fileName="Sequence.java" startLine="260" startPosition="145" endLine="261" endPosition="47" />
+    <scopeInfo nodeId="6543581031674023626" fileName="Sequence.java" startLine="266" startPosition="29" endLine="267" endPosition="39" />
+    <scopeInfo nodeId="6543581031674023633" fileName="Sequence.java" startLine="270" startPosition="40" endLine="271" endPosition="37" />
+    <scopeInfo nodeId="6543581031674023659" fileName="Sequence.java" startLine="278" startPosition="26" endLine="279" endPosition="39" />
     <scopeInfo nodeId="6543581031674023555" fileName="Sequence.java" startLine="31" startPosition="0" endLine="33" endPosition="3" />
     <scopeInfo nodeId="6543581031674023925" fileName="Sequence.java" startLine="99" startPosition="56" endLine="101" endPosition="33">
       <varInfo nodeId="6543581031674023927" varName="take" />
@@ -634,8 +637,9 @@
     <scopeInfo nodeId="6543581031674024022" fileName="Sequence.java" startLine="132" startPosition="28" endLine="135" endPosition="7" />
     <scopeInfo nodeId="6543581031674024047" fileName="Sequence.java" startLine="141" startPosition="28" endLine="144" endPosition="7" />
     <scopeInfo nodeId="6543581031674024090" fileName="Sequence.java" startLine="158" startPosition="28" endLine="161" endPosition="7" />
-    <scopeInfo nodeId="6543581031674023621" fileName="Sequence.java" startLine="260" startPosition="28" endLine="263" endPosition="7" />
-    <scopeInfo nodeId="6543581031674023654" fileName="Sequence.java" startLine="272" startPosition="29" endLine="275" endPosition="7" />
+    <scopeInfo nodeId="6869654011218083029" fileName="Sequence.java" startLine="252" startPosition="28" endLine="255" endPosition="7" />
+    <scopeInfo nodeId="6543581031674023621" fileName="Sequence.java" startLine="265" startPosition="28" endLine="268" endPosition="7" />
+    <scopeInfo nodeId="6543581031674023654" fileName="Sequence.java" startLine="277" startPosition="29" endLine="280" endPosition="7" />
     <scopeInfo nodeId="6543581031674023668" fileName="Sequence.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="7730170264858257863" varName="filter" />
     </scopeInfo>
@@ -722,10 +726,7 @@
       <varInfo nodeId="6543581031674024285" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674023573" fileName="Sequence.java" startLine="246" startPosition="0" endLine="250" endPosition="0" />
-    <scopeInfo nodeId="6543581031674023581" fileName="Sequence.java" startLine="250" startPosition="0" endLine="254" endPosition="0">
-      <varInfo nodeId="6543581031674023586" varName="array" />
-    </scopeInfo>
-    <scopeInfo nodeId="6543581031674023596" fileName="Sequence.java" startLine="254" startPosition="0" endLine="258" endPosition="0">
+    <scopeInfo nodeId="6543581031674023596" fileName="Sequence.java" startLine="259" startPosition="0" endLine="263" endPosition="0">
       <varInfo nodeId="3473971317150294658" varName="cls" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674023917" fileName="Sequence.java" startLine="98" startPosition="0" endLine="103" endPosition="0">
@@ -739,7 +740,8 @@
     <scopeInfo nodeId="6543581031674024019" fileName="Sequence.java" startLine="131" startPosition="48" endLine="137" endPosition="78" />
     <scopeInfo nodeId="6543581031674024044" fileName="Sequence.java" startLine="140" startPosition="54" endLine="146" endPosition="84" />
     <scopeInfo nodeId="6543581031674024087" fileName="Sequence.java" startLine="157" startPosition="54" endLine="163" endPosition="41" />
-    <scopeInfo nodeId="6543581031674023651" fileName="Sequence.java" startLine="271" startPosition="53" endLine="277" endPosition="62" />
+    <scopeInfo nodeId="6543581031674023589" fileName="Sequence.java" startLine="251" startPosition="56" endLine="257" endPosition="54" />
+    <scopeInfo nodeId="6543581031674023651" fileName="Sequence.java" startLine="276" startPosition="53" endLine="282" endPosition="62" />
     <scopeInfo nodeId="6543581031674023938" fileName="Sequence.java" startLine="103" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="6543581031674023942" varName="that" />
     </scopeInfo>
@@ -758,8 +760,11 @@
     <scopeInfo nodeId="6543581031674024081" fileName="Sequence.java" startLine="156" startPosition="0" endLine="165" endPosition="0">
       <varInfo nodeId="6543581031674024084" varName="that" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674023618" fileName="Sequence.java" startLine="259" startPosition="69" endLine="268" endPosition="42" />
-    <scopeInfo nodeId="6543581031674023644" fileName="Sequence.java" startLine="270" startPosition="0" endLine="279" endPosition="0">
+    <scopeInfo nodeId="6543581031674023581" fileName="Sequence.java" startLine="250" startPosition="0" endLine="259" endPosition="0">
+      <varInfo nodeId="6543581031674023586" varName="array" />
+    </scopeInfo>
+    <scopeInfo nodeId="6543581031674023618" fileName="Sequence.java" startLine="264" startPosition="69" endLine="273" endPosition="42" />
+    <scopeInfo nodeId="6543581031674023644" fileName="Sequence.java" startLine="275" startPosition="0" endLine="284" endPosition="0">
       <varInfo nodeId="6543581031674023649" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674024260" fileName="Sequence.java" startLine="227" startPosition="28" endLine="239" endPosition="25">
@@ -767,11 +772,11 @@
       <varInfo nodeId="6543581031674024280" varName="sep" />
       <varInfo nodeId="6543581031674024262" varName="iterable" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674023610" fileName="Sequence.java" startLine="258" startPosition="0" endLine="270" endPosition="0">
+    <scopeInfo nodeId="6543581031674023610" fileName="Sequence.java" startLine="263" startPosition="0" endLine="275" endPosition="0">
       <varInfo nodeId="6543581031674023615" varName="iterable" />
     </scopeInfo>
     <scopeInfo nodeId="6543581031674024257" fileName="Sequence.java" startLine="225" startPosition="0" endLine="241" endPosition="0" />
-    <unitInfo nodeId="6543581031674023524" fileName="Sequence.java" startLine="25" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <unitInfo nodeId="6543581031674023524" fileName="Sequence.java" startLine="25" startPosition="0" endLine="285" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </root>
   <root nodeId="6543581031674024311">
     <nodeInfo nodeId="6543581031674024318" fileName="ISequence.java" startLine="9" startPosition="67" endLine="10" endPosition="133" />
@@ -1751,6 +1756,9 @@
     <nodeInfo nodeId="6543581031674029265" fileName="IterableUtils.java" startLine="64" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="6543581031674029079" fileName="IterableUtils.java" startLine="11" startPosition="26" endLine="11" endPosition="26" />
     <scopeInfo nodeId="6543581031674029108" fileName="IterableUtils.java" startLine="16" startPosition="11" endLine="17" endPosition="34" />
+    <scopeInfo nodeId="6543581031674029103" fileName="IterableUtils.java" startLine="18" startPosition="0" endLine="19" endPosition="14">
+      <varInfo nodeId="6543581031674029106" varName="stop" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674029104" fileName="IterableUtils.java" startLine="18" startPosition="45" endLine="19" endPosition="14" />
     <scopeInfo nodeId="6543581031674029125" fileName="IterableUtils.java" startLine="24" startPosition="60" endLine="25" endPosition="46" />
     <scopeInfo nodeId="6543581031674029165" fileName="IterableUtils.java" startLine="31" startPosition="43" endLine="32" endPosition="21" />
@@ -3337,179 +3345,183 @@
     <unitInfo nodeId="6543581031674032858" fileName="SetSequence.java" startLine="14" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.SetSequence" />
   </root>
   <root nodeId="6543581031674033682">
-    <nodeInfo nodeId="6543581031674033725" fileName="ArrayUtils.java" startLine="12" startPosition="76" endLine="13" endPosition="72" />
-    <nodeInfo nodeId="6543581031674033741" fileName="ArrayUtils.java" startLine="16" startPosition="67" endLine="17" endPosition="66" />
-    <nodeInfo nodeId="6543581031674033757" fileName="ArrayUtils.java" startLine="20" startPosition="72" endLine="21" endPosition="71" />
-    <nodeInfo nodeId="6543581031674033773" fileName="ArrayUtils.java" startLine="24" startPosition="73" endLine="25" endPosition="70" />
-    <nodeInfo nodeId="6543581031674033789" fileName="ArrayUtils.java" startLine="28" startPosition="70" endLine="29" endPosition="68" />
-    <nodeInfo nodeId="6543581031674033805" fileName="ArrayUtils.java" startLine="32" startPosition="68" endLine="33" endPosition="68" />
-    <nodeInfo nodeId="6543581031674033821" fileName="ArrayUtils.java" startLine="36" startPosition="67" endLine="37" endPosition="66" />
-    <nodeInfo nodeId="6543581031674033837" fileName="ArrayUtils.java" startLine="40" startPosition="70" endLine="41" endPosition="68" />
-    <nodeInfo nodeId="6543581031674033852" fileName="ArrayUtils.java" startLine="44" startPosition="70" endLine="45" endPosition="88" />
-    <nodeInfo nodeId="6543581031674033866" fileName="ArrayUtils.java" startLine="48" startPosition="61" endLine="49" endPosition="82" />
-    <nodeInfo nodeId="6543581031674033880" fileName="ArrayUtils.java" startLine="52" startPosition="71" endLine="53" endPosition="92" />
-    <nodeInfo nodeId="6543581031674033894" fileName="ArrayUtils.java" startLine="56" startPosition="67" endLine="57" endPosition="86" />
-    <nodeInfo nodeId="6543581031674033908" fileName="ArrayUtils.java" startLine="60" startPosition="64" endLine="61" endPosition="84" />
-    <nodeInfo nodeId="6543581031674033922" fileName="ArrayUtils.java" startLine="64" startPosition="66" endLine="65" endPosition="88" />
-    <nodeInfo nodeId="6543581031674033936" fileName="ArrayUtils.java" startLine="68" startPosition="61" endLine="69" endPosition="82" />
-    <nodeInfo nodeId="6543581031674033950" fileName="ArrayUtils.java" startLine="72" startPosition="64" endLine="73" endPosition="84" />
-    <nodeInfo nodeId="6543581031674033965" fileName="ArrayUtils.java" startLine="76" startPosition="77" endLine="77" endPosition="52" />
-    <nodeInfo nodeId="6543581031674033979" fileName="ArrayUtils.java" startLine="80" startPosition="78" endLine="81" endPosition="50" />
-    <nodeInfo nodeId="6543581031674033992" fileName="ArrayUtils.java" startLine="84" startPosition="42" endLine="85" endPosition="14" />
-    <nodeInfo nodeId="6543581031674034006" fileName="ArrayUtils.java" startLine="88" startPosition="91" endLine="89" endPosition="54" />
-    <nodeInfo nodeId="6543581031674034014" fileName="ArrayUtils.java" startLine="89" startPosition="54" endLine="90" endPosition="16" />
-    <nodeInfo nodeId="6543581031674034023" fileName="ArrayUtils.java" startLine="91" startPosition="26" endLine="92" endPosition="31" />
-    <nodeInfo nodeId="6543581031674034029" fileName="ArrayUtils.java" startLine="93" startPosition="5" endLine="94" endPosition="15" />
-    <nodeInfo nodeId="6543581031674034038" fileName="ArrayUtils.java" startLine="97" startPosition="72" endLine="98" endPosition="0" />
-    <nodeInfo nodeId="6543581031674034084" fileName="ArrayUtils.java" startLine="100" startPosition="37" endLine="101" endPosition="54" />
-    <nodeInfo nodeId="6543581031674033689" fileName="ArrayUtils.java" startLine="106" startPosition="64" endLine="107" endPosition="24" />
-    <nodeInfo nodeId="6543581031674033692" fileName="ArrayUtils.java" startLine="107" startPosition="24" endLine="108" endPosition="25" />
-    <nodeInfo nodeId="6543581031674033695" fileName="ArrayUtils.java" startLine="108" startPosition="25" endLine="109" endPosition="23" />
-    <nodeInfo nodeId="6543581031674034050" fileName="ArrayUtils.java" startLine="111" startPosition="41" endLine="112" endPosition="25" />
-    <nodeInfo nodeId="6543581031674034056" fileName="ArrayUtils.java" startLine="112" startPosition="25" endLine="113" endPosition="43" />
-    <nodeInfo nodeId="6543581031674034064" fileName="ArrayUtils.java" startLine="116" startPosition="30" endLine="117" endPosition="26" />
-    <nodeInfo nodeId="6543581031674034069" fileName="ArrayUtils.java" startLine="121" startPosition="21" endLine="122" endPosition="41" />
-    <nodeInfo nodeId="6543581031674034080" fileName="ArrayUtils.java" startLine="125" startPosition="26" endLine="126" endPosition="48" />
-    <nodeInfo nodeId="6543581031674033712" fileName="ArrayUtils.java" startLine="8" startPosition="25" endLine="10" endPosition="3" />
-    <nodeInfo nodeId="6543581031674034018" fileName="ArrayUtils.java" startLine="90" startPosition="16" endLine="93" endPosition="5" />
-    <nodeInfo nodeId="6543581031674033716" fileName="ArrayUtils.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033732" fileName="ArrayUtils.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033748" fileName="ArrayUtils.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033764" fileName="ArrayUtils.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033780" fileName="ArrayUtils.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033796" fileName="ArrayUtils.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033812" fileName="ArrayUtils.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033828" fileName="ArrayUtils.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033844" fileName="ArrayUtils.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033858" fileName="ArrayUtils.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033872" fileName="ArrayUtils.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033886" fileName="ArrayUtils.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033900" fileName="ArrayUtils.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033914" fileName="ArrayUtils.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033928" fileName="ArrayUtils.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033942" fileName="ArrayUtils.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033956" fileName="ArrayUtils.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033969" fileName="ArrayUtils.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033983" fileName="ArrayUtils.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <nodeInfo nodeId="6543581031674034044" fileName="ArrayUtils.java" startLine="99" startPosition="30" endLine="103" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033698" fileName="ArrayUtils.java" startLine="110" startPosition="0" endLine="114" endPosition="5" />
-    <nodeInfo nodeId="6543581031674033703" fileName="ArrayUtils.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033709" fileName="ArrayUtils.java" startLine="124" startPosition="0" endLine="128" endPosition="0" />
-    <nodeInfo nodeId="6543581031674034039" fileName="ArrayUtils.java" startLine="98" startPosition="0" endLine="103" endPosition="6" />
-    <nodeInfo nodeId="6543581031674033706" fileName="ArrayUtils.java" startLine="119" startPosition="0" endLine="124" endPosition="0" />
-    <nodeInfo nodeId="6543581031674033994" fileName="ArrayUtils.java" startLine="87" startPosition="0" endLine="96" endPosition="0" />
-    <nodeInfo nodeId="6543581031674034031" fileName="ArrayUtils.java" startLine="96" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="6543581031674033715" fileName="ArrayUtils.java" startLine="9" startPosition="23" endLine="9" endPosition="23" />
-    <scopeInfo nodeId="6543581031674033724" fileName="ArrayUtils.java" startLine="12" startPosition="76" endLine="13" endPosition="72" />
-    <scopeInfo nodeId="6543581031674033740" fileName="ArrayUtils.java" startLine="16" startPosition="67" endLine="17" endPosition="66" />
-    <scopeInfo nodeId="6543581031674033756" fileName="ArrayUtils.java" startLine="20" startPosition="72" endLine="21" endPosition="71" />
-    <scopeInfo nodeId="6543581031674033772" fileName="ArrayUtils.java" startLine="24" startPosition="73" endLine="25" endPosition="70" />
-    <scopeInfo nodeId="6543581031674033788" fileName="ArrayUtils.java" startLine="28" startPosition="70" endLine="29" endPosition="68" />
-    <scopeInfo nodeId="6543581031674033804" fileName="ArrayUtils.java" startLine="32" startPosition="68" endLine="33" endPosition="68" />
-    <scopeInfo nodeId="6543581031674033820" fileName="ArrayUtils.java" startLine="36" startPosition="67" endLine="37" endPosition="66" />
-    <scopeInfo nodeId="6543581031674033836" fileName="ArrayUtils.java" startLine="40" startPosition="70" endLine="41" endPosition="68" />
-    <scopeInfo nodeId="6543581031674033851" fileName="ArrayUtils.java" startLine="44" startPosition="70" endLine="45" endPosition="88" />
-    <scopeInfo nodeId="6543581031674033865" fileName="ArrayUtils.java" startLine="48" startPosition="61" endLine="49" endPosition="82" />
-    <scopeInfo nodeId="6543581031674033879" fileName="ArrayUtils.java" startLine="52" startPosition="71" endLine="53" endPosition="92" />
-    <scopeInfo nodeId="6543581031674033893" fileName="ArrayUtils.java" startLine="56" startPosition="67" endLine="57" endPosition="86" />
-    <scopeInfo nodeId="6543581031674033907" fileName="ArrayUtils.java" startLine="60" startPosition="64" endLine="61" endPosition="84" />
-    <scopeInfo nodeId="6543581031674033921" fileName="ArrayUtils.java" startLine="64" startPosition="66" endLine="65" endPosition="88" />
-    <scopeInfo nodeId="6543581031674033935" fileName="ArrayUtils.java" startLine="68" startPosition="61" endLine="69" endPosition="82" />
-    <scopeInfo nodeId="6543581031674033949" fileName="ArrayUtils.java" startLine="72" startPosition="64" endLine="73" endPosition="84" />
-    <scopeInfo nodeId="6543581031674033964" fileName="ArrayUtils.java" startLine="76" startPosition="77" endLine="77" endPosition="52" />
-    <scopeInfo nodeId="6543581031674033978" fileName="ArrayUtils.java" startLine="80" startPosition="78" endLine="81" endPosition="50" />
-    <scopeInfo nodeId="6543581031674033991" fileName="ArrayUtils.java" startLine="84" startPosition="42" endLine="85" endPosition="14" />
-    <scopeInfo nodeId="6543581031674034022" fileName="ArrayUtils.java" startLine="91" startPosition="26" endLine="92" endPosition="31" />
-    <scopeInfo nodeId="6543581031674034083" fileName="ArrayUtils.java" startLine="100" startPosition="37" endLine="101" endPosition="54" />
-    <scopeInfo nodeId="6543581031674034063" fileName="ArrayUtils.java" startLine="116" startPosition="30" endLine="117" endPosition="26" />
-    <scopeInfo nodeId="6543581031674034068" fileName="ArrayUtils.java" startLine="121" startPosition="21" endLine="122" endPosition="41" />
-    <scopeInfo nodeId="6543581031674034079" fileName="ArrayUtils.java" startLine="125" startPosition="26" endLine="126" endPosition="48" />
-    <scopeInfo nodeId="6543581031674033712" fileName="ArrayUtils.java" startLine="8" startPosition="25" endLine="10" endPosition="3" />
-    <scopeInfo nodeId="6543581031674034049" fileName="ArrayUtils.java" startLine="111" startPosition="41" endLine="113" endPosition="43" />
-    <scopeInfo nodeId="6543581031674034018" fileName="ArrayUtils.java" startLine="90" startPosition="16" endLine="93" endPosition="5">
+    <nodeInfo nodeId="6543581031674033725" fileName="ArrayUtils.java" startLine="13" startPosition="76" endLine="14" endPosition="72" />
+    <nodeInfo nodeId="6543581031674033741" fileName="ArrayUtils.java" startLine="17" startPosition="67" endLine="18" endPosition="66" />
+    <nodeInfo nodeId="6543581031674033757" fileName="ArrayUtils.java" startLine="21" startPosition="72" endLine="22" endPosition="71" />
+    <nodeInfo nodeId="6543581031674033773" fileName="ArrayUtils.java" startLine="25" startPosition="73" endLine="26" endPosition="70" />
+    <nodeInfo nodeId="6543581031674033789" fileName="ArrayUtils.java" startLine="29" startPosition="70" endLine="30" endPosition="68" />
+    <nodeInfo nodeId="6543581031674033805" fileName="ArrayUtils.java" startLine="33" startPosition="68" endLine="34" endPosition="68" />
+    <nodeInfo nodeId="6543581031674033821" fileName="ArrayUtils.java" startLine="37" startPosition="67" endLine="38" endPosition="66" />
+    <nodeInfo nodeId="6543581031674033837" fileName="ArrayUtils.java" startLine="41" startPosition="70" endLine="42" endPosition="68" />
+    <nodeInfo nodeId="6543581031674033852" fileName="ArrayUtils.java" startLine="45" startPosition="70" endLine="46" endPosition="88" />
+    <nodeInfo nodeId="6543581031674033866" fileName="ArrayUtils.java" startLine="49" startPosition="61" endLine="50" endPosition="82" />
+    <nodeInfo nodeId="6543581031674033880" fileName="ArrayUtils.java" startLine="53" startPosition="71" endLine="54" endPosition="92" />
+    <nodeInfo nodeId="6543581031674033894" fileName="ArrayUtils.java" startLine="57" startPosition="67" endLine="58" endPosition="86" />
+    <nodeInfo nodeId="6543581031674033908" fileName="ArrayUtils.java" startLine="61" startPosition="64" endLine="62" endPosition="84" />
+    <nodeInfo nodeId="6543581031674033922" fileName="ArrayUtils.java" startLine="65" startPosition="66" endLine="66" endPosition="88" />
+    <nodeInfo nodeId="6543581031674033936" fileName="ArrayUtils.java" startLine="69" startPosition="61" endLine="70" endPosition="82" />
+    <nodeInfo nodeId="6543581031674033950" fileName="ArrayUtils.java" startLine="73" startPosition="64" endLine="74" endPosition="84" />
+    <nodeInfo nodeId="6543581031674033965" fileName="ArrayUtils.java" startLine="77" startPosition="77" endLine="78" endPosition="52" />
+    <nodeInfo nodeId="6543581031674033979" fileName="ArrayUtils.java" startLine="81" startPosition="78" endLine="82" endPosition="50" />
+    <nodeInfo nodeId="6543581031674033992" fileName="ArrayUtils.java" startLine="85" startPosition="42" endLine="86" endPosition="14" />
+    <nodeInfo nodeId="6543581031674034006" fileName="ArrayUtils.java" startLine="89" startPosition="91" endLine="90" endPosition="54" />
+    <nodeInfo nodeId="6543581031674034014" fileName="ArrayUtils.java" startLine="90" startPosition="54" endLine="91" endPosition="16" />
+    <nodeInfo nodeId="6543581031674034023" fileName="ArrayUtils.java" startLine="92" startPosition="26" endLine="93" endPosition="31" />
+    <nodeInfo nodeId="6543581031674034029" fileName="ArrayUtils.java" startLine="94" startPosition="5" endLine="95" endPosition="15" />
+    <nodeInfo nodeId="7641395635257297108" fileName="ArrayUtils.java" startLine="100" startPosition="26" endLine="101" endPosition="39" />
+    <nodeInfo nodeId="6543581031674034084" fileName="ArrayUtils.java" startLine="105" startPosition="37" endLine="106" endPosition="54" />
+    <nodeInfo nodeId="6543581031674033689" fileName="ArrayUtils.java" startLine="111" startPosition="64" endLine="112" endPosition="24" />
+    <nodeInfo nodeId="6543581031674033692" fileName="ArrayUtils.java" startLine="112" startPosition="24" endLine="113" endPosition="25" />
+    <nodeInfo nodeId="6543581031674033695" fileName="ArrayUtils.java" startLine="113" startPosition="25" endLine="114" endPosition="23" />
+    <nodeInfo nodeId="6543581031674034050" fileName="ArrayUtils.java" startLine="116" startPosition="41" endLine="117" endPosition="25" />
+    <nodeInfo nodeId="6543581031674034056" fileName="ArrayUtils.java" startLine="117" startPosition="25" endLine="118" endPosition="43" />
+    <nodeInfo nodeId="6543581031674034064" fileName="ArrayUtils.java" startLine="121" startPosition="30" endLine="122" endPosition="26" />
+    <nodeInfo nodeId="6543581031674034069" fileName="ArrayUtils.java" startLine="126" startPosition="21" endLine="127" endPosition="41" />
+    <nodeInfo nodeId="6543581031674034080" fileName="ArrayUtils.java" startLine="130" startPosition="26" endLine="131" endPosition="48" />
+    <nodeInfo nodeId="6543581031674033712" fileName="ArrayUtils.java" startLine="9" startPosition="25" endLine="11" endPosition="3" />
+    <nodeInfo nodeId="6543581031674034018" fileName="ArrayUtils.java" startLine="91" startPosition="16" endLine="94" endPosition="5" />
+    <nodeInfo nodeId="7641395635257297099" fileName="ArrayUtils.java" startLine="99" startPosition="37" endLine="102" endPosition="7" />
+    <nodeInfo nodeId="6543581031674033716" fileName="ArrayUtils.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033732" fileName="ArrayUtils.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033748" fileName="ArrayUtils.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033764" fileName="ArrayUtils.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033780" fileName="ArrayUtils.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033796" fileName="ArrayUtils.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033812" fileName="ArrayUtils.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033828" fileName="ArrayUtils.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033844" fileName="ArrayUtils.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033858" fileName="ArrayUtils.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033872" fileName="ArrayUtils.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033886" fileName="ArrayUtils.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033900" fileName="ArrayUtils.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033914" fileName="ArrayUtils.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033928" fileName="ArrayUtils.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033942" fileName="ArrayUtils.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033956" fileName="ArrayUtils.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033969" fileName="ArrayUtils.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033983" fileName="ArrayUtils.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <nodeInfo nodeId="6543581031674034044" fileName="ArrayUtils.java" startLine="104" startPosition="30" endLine="108" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033698" fileName="ArrayUtils.java" startLine="115" startPosition="0" endLine="119" endPosition="5" />
+    <nodeInfo nodeId="6543581031674033703" fileName="ArrayUtils.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033709" fileName="ArrayUtils.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
+    <nodeInfo nodeId="7641395635257297094" fileName="ArrayUtils.java" startLine="98" startPosition="72" endLine="103" endPosition="5" />
+    <nodeInfo nodeId="6543581031674034039" fileName="ArrayUtils.java" startLine="103" startPosition="5" endLine="108" endPosition="6" />
+    <nodeInfo nodeId="6543581031674033706" fileName="ArrayUtils.java" startLine="124" startPosition="0" endLine="129" endPosition="0" />
+    <nodeInfo nodeId="6543581031674033994" fileName="ArrayUtils.java" startLine="88" startPosition="0" endLine="97" endPosition="0" />
+    <nodeInfo nodeId="6543581031674034031" fileName="ArrayUtils.java" startLine="97" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="6543581031674033715" fileName="ArrayUtils.java" startLine="10" startPosition="23" endLine="10" endPosition="23" />
+    <scopeInfo nodeId="6543581031674033724" fileName="ArrayUtils.java" startLine="13" startPosition="76" endLine="14" endPosition="72" />
+    <scopeInfo nodeId="6543581031674033740" fileName="ArrayUtils.java" startLine="17" startPosition="67" endLine="18" endPosition="66" />
+    <scopeInfo nodeId="6543581031674033756" fileName="ArrayUtils.java" startLine="21" startPosition="72" endLine="22" endPosition="71" />
+    <scopeInfo nodeId="6543581031674033772" fileName="ArrayUtils.java" startLine="25" startPosition="73" endLine="26" endPosition="70" />
+    <scopeInfo nodeId="6543581031674033788" fileName="ArrayUtils.java" startLine="29" startPosition="70" endLine="30" endPosition="68" />
+    <scopeInfo nodeId="6543581031674033804" fileName="ArrayUtils.java" startLine="33" startPosition="68" endLine="34" endPosition="68" />
+    <scopeInfo nodeId="6543581031674033820" fileName="ArrayUtils.java" startLine="37" startPosition="67" endLine="38" endPosition="66" />
+    <scopeInfo nodeId="6543581031674033836" fileName="ArrayUtils.java" startLine="41" startPosition="70" endLine="42" endPosition="68" />
+    <scopeInfo nodeId="6543581031674033851" fileName="ArrayUtils.java" startLine="45" startPosition="70" endLine="46" endPosition="88" />
+    <scopeInfo nodeId="6543581031674033865" fileName="ArrayUtils.java" startLine="49" startPosition="61" endLine="50" endPosition="82" />
+    <scopeInfo nodeId="6543581031674033879" fileName="ArrayUtils.java" startLine="53" startPosition="71" endLine="54" endPosition="92" />
+    <scopeInfo nodeId="6543581031674033893" fileName="ArrayUtils.java" startLine="57" startPosition="67" endLine="58" endPosition="86" />
+    <scopeInfo nodeId="6543581031674033907" fileName="ArrayUtils.java" startLine="61" startPosition="64" endLine="62" endPosition="84" />
+    <scopeInfo nodeId="6543581031674033921" fileName="ArrayUtils.java" startLine="65" startPosition="66" endLine="66" endPosition="88" />
+    <scopeInfo nodeId="6543581031674033935" fileName="ArrayUtils.java" startLine="69" startPosition="61" endLine="70" endPosition="82" />
+    <scopeInfo nodeId="6543581031674033949" fileName="ArrayUtils.java" startLine="73" startPosition="64" endLine="74" endPosition="84" />
+    <scopeInfo nodeId="6543581031674033964" fileName="ArrayUtils.java" startLine="77" startPosition="77" endLine="78" endPosition="52" />
+    <scopeInfo nodeId="6543581031674033978" fileName="ArrayUtils.java" startLine="81" startPosition="78" endLine="82" endPosition="50" />
+    <scopeInfo nodeId="6543581031674033991" fileName="ArrayUtils.java" startLine="85" startPosition="42" endLine="86" endPosition="14" />
+    <scopeInfo nodeId="6543581031674034022" fileName="ArrayUtils.java" startLine="92" startPosition="26" endLine="93" endPosition="31" />
+    <scopeInfo nodeId="7641395635257297100" fileName="ArrayUtils.java" startLine="100" startPosition="26" endLine="101" endPosition="39" />
+    <scopeInfo nodeId="6543581031674034083" fileName="ArrayUtils.java" startLine="105" startPosition="37" endLine="106" endPosition="54" />
+    <scopeInfo nodeId="6543581031674034063" fileName="ArrayUtils.java" startLine="121" startPosition="30" endLine="122" endPosition="26" />
+    <scopeInfo nodeId="6543581031674034068" fileName="ArrayUtils.java" startLine="126" startPosition="21" endLine="127" endPosition="41" />
+    <scopeInfo nodeId="6543581031674034079" fileName="ArrayUtils.java" startLine="130" startPosition="26" endLine="131" endPosition="48" />
+    <scopeInfo nodeId="6543581031674033712" fileName="ArrayUtils.java" startLine="9" startPosition="25" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="6543581031674034049" fileName="ArrayUtils.java" startLine="116" startPosition="41" endLine="118" endPosition="43" />
+    <scopeInfo nodeId="6543581031674034018" fileName="ArrayUtils.java" startLine="91" startPosition="16" endLine="94" endPosition="5">
       <varInfo nodeId="6543581031674034020" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033716" fileName="ArrayUtils.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="7641395635257297095" fileName="ArrayUtils.java" startLine="99" startPosition="37" endLine="102" endPosition="7" />
+    <scopeInfo nodeId="6543581031674033716" fileName="ArrayUtils.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="6543581031674033720" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033732" fileName="ArrayUtils.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="6543581031674033732" fileName="ArrayUtils.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="6543581031674033736" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033748" fileName="ArrayUtils.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="6543581031674033748" fileName="ArrayUtils.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="6543581031674033752" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033764" fileName="ArrayUtils.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="6543581031674033764" fileName="ArrayUtils.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="6543581031674033768" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033780" fileName="ArrayUtils.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="6543581031674033780" fileName="ArrayUtils.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="6543581031674033784" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033796" fileName="ArrayUtils.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="6543581031674033796" fileName="ArrayUtils.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="6543581031674033800" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033812" fileName="ArrayUtils.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="6543581031674033812" fileName="ArrayUtils.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="6543581031674033816" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033828" fileName="ArrayUtils.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="6543581031674033828" fileName="ArrayUtils.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="6543581031674033832" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033844" fileName="ArrayUtils.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="6543581031674033844" fileName="ArrayUtils.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="6543581031674033848" varName="array" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033858" fileName="ArrayUtils.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="6543581031674033858" fileName="ArrayUtils.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="6543581031674033862" varName="array" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033872" fileName="ArrayUtils.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="6543581031674033872" fileName="ArrayUtils.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="6543581031674033876" varName="array" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033886" fileName="ArrayUtils.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="6543581031674033886" fileName="ArrayUtils.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="6543581031674033890" varName="array" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033900" fileName="ArrayUtils.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="6543581031674033900" fileName="ArrayUtils.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="6543581031674033904" varName="array" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033914" fileName="ArrayUtils.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="6543581031674033914" fileName="ArrayUtils.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="6543581031674033918" varName="array" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033928" fileName="ArrayUtils.java" startLine="67" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="6543581031674033928" fileName="ArrayUtils.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="6543581031674033932" varName="array" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033942" fileName="ArrayUtils.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="6543581031674033942" fileName="ArrayUtils.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="6543581031674033946" varName="array" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033956" fileName="ArrayUtils.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="6543581031674033956" fileName="ArrayUtils.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="6543581031674033962" varName="length" />
       <varInfo nodeId="6543581031674033959" varName="componentType" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033969" fileName="ArrayUtils.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="6543581031674033969" fileName="ArrayUtils.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="6543581031674033975" varName="dims" />
       <varInfo nodeId="6543581031674033972" varName="componentType" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033983" fileName="ArrayUtils.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="6543581031674033983" fileName="ArrayUtils.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="6543581031674033988" varName="ts" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034044" fileName="ArrayUtils.java" startLine="99" startPosition="30" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="6543581031674033698" fileName="ArrayUtils.java" startLine="110" startPosition="0" endLine="114" endPosition="5">
+    <scopeInfo nodeId="6543581031674034044" fileName="ArrayUtils.java" startLine="104" startPosition="30" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="6543581031674033698" fileName="ArrayUtils.java" startLine="115" startPosition="0" endLine="119" endPosition="5">
       <varInfo nodeId="6543581031674033701" varName="array" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674033703" fileName="ArrayUtils.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="6543581031674033709" fileName="ArrayUtils.java" startLine="124" startPosition="0" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="6543581031674033706" fileName="ArrayUtils.java" startLine="119" startPosition="0" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="6543581031674034005" fileName="ArrayUtils.java" startLine="88" startPosition="91" endLine="94" endPosition="15">
+    <scopeInfo nodeId="6543581031674033703" fileName="ArrayUtils.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="6543581031674033709" fileName="ArrayUtils.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="6543581031674033706" fileName="ArrayUtils.java" startLine="124" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="6543581031674034005" fileName="ArrayUtils.java" startLine="89" startPosition="91" endLine="95" endPosition="15">
       <varInfo nodeId="6543581031674034015" varName="idx" />
       <varInfo nodeId="6543581031674034007" varName="arr" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034037" fileName="ArrayUtils.java" startLine="97" startPosition="72" endLine="103" endPosition="6" />
-    <scopeInfo nodeId="6543581031674033994" fileName="ArrayUtils.java" startLine="87" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="6543581031674033994" fileName="ArrayUtils.java" startLine="88" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="6543581031674034001" varName="seq" />
       <varInfo nodeId="6543581031674033998" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674034031" fileName="ArrayUtils.java" startLine="96" startPosition="0" endLine="105" endPosition="0">
+    <scopeInfo nodeId="6543581031674034037" fileName="ArrayUtils.java" startLine="98" startPosition="72" endLine="108" endPosition="6" />
+    <scopeInfo nodeId="6543581031674034031" fileName="ArrayUtils.java" startLine="97" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="6543581031674034035" varName="array" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674034042" fileName="ArrayUtils.java" startLine="99" startPosition="15" endLine="103" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.ArrayUtils$1" />
-    <unitInfo nodeId="6543581031674033684" fileName="ArrayUtils.java" startLine="106" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.ArrayUtils$ArrayIterator" />
-    <unitInfo nodeId="6543581031674033682" fileName="ArrayUtils.java" startLine="8" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.ArrayUtils" />
+    <unitInfo nodeId="6543581031674034042" fileName="ArrayUtils.java" startLine="104" startPosition="15" endLine="108" endPosition="5" unitName="jetbrains.mps.internal.collections.runtime.ArrayUtils$1" />
+    <unitInfo nodeId="6543581031674033684" fileName="ArrayUtils.java" startLine="111" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.ArrayUtils$ArrayIterator" />
+    <unitInfo nodeId="6543581031674033682" fileName="ArrayUtils.java" startLine="9" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.ArrayUtils" />
   </root>
   <root nodeId="6543581031674034565">
     <nodeInfo nodeId="6543581031674034572" fileName="ISequenceIterableAdapter.java" startLine="7" startPosition="94" endLine="9" endPosition="3" />

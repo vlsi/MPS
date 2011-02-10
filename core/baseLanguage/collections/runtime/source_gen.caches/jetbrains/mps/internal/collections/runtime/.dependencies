@@ -17,6 +17,7 @@
     <classNode dependClassName="java.lang.reflect.Array" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullSequence" />
     <classNode extendsClassName="java.util.Iterator" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.CaseInsensitiveStringComparison" file="CaseInsensitiveStringComparison.java">
