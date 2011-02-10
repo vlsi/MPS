@@ -49,7 +49,8 @@ class TypeSystemComponent extends Component {
   private Set<SNode> myJustInvalidatedNodes = new HashSet<SNode>();
 
   private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
-  private Set<SNode> myCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
+  private Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
+  private Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
 
   private boolean myIsCheckedTypeSystem = false;
 
@@ -142,7 +143,8 @@ class TypeSystemComponent extends Component {
   }
 
   private void invalidateNodeTypeSystem(SNode node, boolean typeWillBeRecalculated) {
-    myCheckedNodes.remove(node);
+    myPartlyCheckedNodes.remove(node);
+    myFullyCheckedNodes.remove(node);
     myState.clearNode(node);
     if (typeWillBeRecalculated) {
       TypeChecker.getInstance().fireTypeWillBeRecalculatedForTerm(node);
@@ -210,6 +212,8 @@ class TypeSystemComponent extends Component {
       } else {
         myState.clearOperations();
         doInvalidateTypesystem();
+        myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
+        myFullyCheckedNodes.clear();
       }
 
       if (!loadTypesystemRules(nodeToCheck)) {
@@ -228,7 +232,8 @@ class TypeSystemComponent extends Component {
     myNodesToDependentNodes_A.clear();
     myNodesToDependentNodes_B.clear();
     myNodesDependentOnCaches.clear();
-    myCheckedNodes.clear();
+    myFullyCheckedNodes.clear();
+    myPartlyCheckedNodes.clear();
     myNodesToRules.clear();
   }
 
@@ -259,7 +264,7 @@ class TypeSystemComponent extends Component {
   }
 
   public SNode getType(SNode node) {
-    if (myCheckedNodes.contains(node)) {
+    if (myFullyCheckedNodes.contains(node)) {
       return getRawTypeFromContext(node);
     }
     return null;
@@ -294,7 +299,7 @@ class TypeSystemComponent extends Component {
     while (!(frontier.isEmpty())) {
       myCurrentFrontiers.push(newFrontier);
       for (SNode sNode : frontier) {
-        if (myCheckedNodes.contains(sNode)) {
+        if (myFullyCheckedNodes.contains(sNode)) {
           continue;
         }
         Set<SNode> candidatesForFrontier = new LinkedHashSet<SNode>();
@@ -307,42 +312,43 @@ class TypeSystemComponent extends Component {
         for (SNode candidate : candidatesForFrontier) {
             newFrontier.add(candidate);
         }
-
-        MyLanguageCachesReadListener languageCachesReadListener = null;
-        if (isIncrementalMode()) {
-          languageCachesReadListener = new MyLanguageCachesReadListener();
-          nodesReadListener.clear();
-          NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
-          LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
-        }
-        boolean typeAffected = false;
-        try {
-          myJustInvalidatedNodes.add(sNode);
-          typeAffected = applyRulesToNode(sNode);
-        } finally {
+        if (!myPartlyCheckedNodes.contains(sNode)) {
+          MyLanguageCachesReadListener languageCachesReadListener = null;
           if (isIncrementalMode()) {
-            NodeReadEventsCaster.removeNodesReadListener();
+            languageCachesReadListener = new MyLanguageCachesReadListener();
+            nodesReadListener.clear();
+            NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
+            LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
           }
-        }
-        if (isIncrementalMode()) {
-          synchronized (ACCESS_LOCK) {
-            nodesReadListener.setAccessReport(true);
-            Set<SNode> accessedNodes = nodesReadListener.getAccessedNodes();
-            addDependentNodesTypeSystem(sNode, accessedNodes, typeAffected);
-            nodesReadListener.setAccessReport(false);
-            if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
-              languageCachesReadListener.setAccessReport(true);
-              if (languageCachesReadListener.myIsCacheAccessed) {
-                addCacheDependentNodesTypesystem(sNode);
-              }
-              languageCachesReadListener.setAccessReport(false);
+          boolean typeAffected = false;
+          try {
+            myJustInvalidatedNodes.add(sNode);
+            typeAffected = applyRulesToNode(sNode);
+          } finally {
+            if (isIncrementalMode()) {
+              NodeReadEventsCaster.removeNodesReadListener();
             }
           }
-          nodesReadListener.clear();
+          if (isIncrementalMode()) {
+            synchronized (ACCESS_LOCK) {
+              nodesReadListener.setAccessReport(true);
+              Set<SNode> accessedNodes = nodesReadListener.getAccessedNodes();
+              addDependentNodesTypeSystem(sNode, accessedNodes, typeAffected);
+              nodesReadListener.setAccessReport(false);
+              if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
+                languageCachesReadListener.setAccessReport(true);
+                if (languageCachesReadListener.myIsCacheAccessed) {
+                  addCacheDependentNodesTypesystem(sNode);
+                }
+                languageCachesReadListener.setAccessReport(false);
+              }
+            }
+            nodesReadListener.clear();
+          }
+          myPartlyCheckedNodes.add(sNode);
         }
-        myCheckedNodes.add(sNode);
+        myFullyCheckedNodes.add(sNode);
       }
-
       Set<SNode> newFrontierPopped = myCurrentFrontiers.pop();
       assert newFrontierPopped == newFrontier;
       frontier = newFrontier;
@@ -408,7 +414,7 @@ class TypeSystemComponent extends Component {
   }
 
   public void addNodeToFrontier(SNode node) {
-    if (myCheckedNodes.contains(node)) {
+    if (myPartlyCheckedNodes.contains(node)) {
       return;
     }
     if (!myCurrentFrontiers.isEmpty()) {
