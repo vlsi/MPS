@@ -15,6 +15,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.errors.messageTargets.MessageTargetEnum;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.ChildrenMessageTarget;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -34,13 +38,11 @@ import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
-import java.util.List;
 import jetbrains.mps.vcs.diff.changes.InsertNodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.DeleteNodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.ReplaceNodeGroupChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
 
 public class ChangeEditorMessage extends EditorMessageWithTarget {
@@ -77,6 +79,20 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     boolean targetIsNode = myMessageTarget.getTarget() == MessageTargetEnum.NODE;
     if (ObjectUtils.equals(getNode(), cell.getSNode()) && targetIsNode || !(targetIsNode) && !(cell instanceof EditorCell_Collection)) {
       cell.paintSelection(graphics, getColor(), false);
+
+      // This is a workaround for case when any change message is going to be painted over 
+      // "conflicted" red frame. In this case, we repaint conflicted red frame again 
+      EditorCell_Collection parent = cell.getParent();
+      if (check_myu41h_a0f0b0e(parent) == 1) {
+        EditorMessage messageToRepaint = ListSequence.fromList(((List<EditorMessage>) parent.getMessages())).findFirst(new IWhereFilter<EditorMessage>() {
+          public boolean accept(EditorMessage m) {
+            return m instanceof ChangeEditorMessage && ((ChangeEditorMessage) m).isConflicted();
+          }
+        });
+        if (messageToRepaint != null) {
+          messageToRepaint.paint(graphics, component, parent);
+        }
+      }
     } else {
       if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN && eq_myu41h_a0a0a0b0e(myMessageTarget.getRole(), cell.getRole())) {
         int beginIndex = ((ChildrenMessageTarget) myMessageTarget).getBeginIndex();
@@ -137,7 +153,10 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
 
         }
       }
-      graphics.setColor(ChangeType.CHANGE.getColor());
+      graphics.setColor((isConflicted() ?
+        ChangeType.CONFLICT_COLOR :
+        ChangeType.CHANGE.getColor()
+      ));
       Rectangle bounds = cell.getBounds();
       graphics.drawRect(bounds.x + 1, bounds.y + 1, bounds.width - 2, bounds.height - 2);
     }
@@ -314,6 +333,13 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     }
     assert false;
     return -1;
+  }
+
+  private static Integer check_myu41h_a0f0b0e(EditorCell_Collection p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getChildCount();
   }
 
   private static boolean eq_myu41h_a0a0a0b0e(Object a, Object b) {
