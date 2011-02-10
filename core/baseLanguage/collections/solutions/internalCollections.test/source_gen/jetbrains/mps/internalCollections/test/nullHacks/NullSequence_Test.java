@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 
 public class NullSequence_Test extends Util_Test {
   public void test_nullSequence() throws Exception {
@@ -74,10 +75,16 @@ public class NullSequence_Test extends Util_Test {
 
   public void test_nullArray() throws Exception {
     int[] arr = null;
-    /*
-      for (int i : arr) {
-        Assert.assertTrue(false);
-      }
-    */
+    for (int i : Sequence.fromIterable(ArrayUtils.fromIntegerArray(arr))) {
+      Assert.assertTrue(false);
+    }
+    Integer[] iarr = null;
+    for (Integer i : Sequence.fromIterable(Sequence.fromArray(iarr))) {
+      Assert.assertTrue(false);
+    }
+    Object[] oarr = null;
+    for (Object i : Sequence.fromIterable(Sequence.fromArray(oarr))) {
+      Assert.assertTrue(false);
+    }
   }
 }
