@@ -188,7 +188,8 @@ public final class SNode {
         result.add(ref.getRole());
       }
     }
-    result.addAll(getLinkNamesFromAttributes());
+    result.addAll(AttributeOperations.getLinkNamesFromAttributes(this));
+    result.addAll(getLinkNamesFromAttributes());  // compatibility
     return result;
   }
 
@@ -422,7 +423,8 @@ public final class SNode {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
-    Set<String> result = getPropertyNamesFromAttributes();
+    Set<String> result = AttributeOperations.getPropertyNamesFromAttributes(this);
+    result.addAll(getPropertyNamesFromAttributes());  // compatibility
     if (myProperties != null) {
       for (int i = 0; i < myProperties.length; i += 2) {
         result.add(myProperties[i]);

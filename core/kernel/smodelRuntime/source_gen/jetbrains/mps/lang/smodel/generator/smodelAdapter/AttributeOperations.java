@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class AttributeOperations {
   private AttributeOperations() {
@@ -183,6 +184,14 @@ public class AttributeOperations {
     return SetSequence.fromSetWithValues(new HashSet<SNode>(), getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(null, propertyName)));
   }
 
+  public static Set<String> getPropertyNamesFromAttributes(SNode node) {
+    return SetSequence.fromSetWithValues(new HashSet<String>(), Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.PropertyAttributeString(null, null))).<String>select(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return getPropertyName(SNodeOperations.as(it, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
+      }
+    }));
+  }
+
   public static void setLinkAttribute(SNode node, String role, String linkRole, SNode linkAttribute) {
     setAttribute(node, new IAttributeDescriptor.LinkAttributeString(role, linkRole), linkAttribute);
   }
@@ -201,6 +210,14 @@ public class AttributeOperations {
 
   public static Set<SNode> getLinkAttributeForLinkRole(SNode node, String linkRole) {
     return SetSequence.fromSetWithValues(new HashSet<SNode>(), getAttributes(node, new IAttributeDescriptor.LinkAttributeString(null, linkRole)));
+  }
+
+  public static Set<String> getLinkNamesFromAttributes(SNode node) {
+    return SetSequence.fromSetWithValues(new HashSet<String>(), Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.LinkAttributeString(null, null))).<String>select(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return getLinkRole(SNodeOperations.as(it, "jetbrains.mps.lang.core.structure.LinkAttribute"));
+      }
+    }));
   }
 
   public static class AttributeList extends AbstractSNodeList {
