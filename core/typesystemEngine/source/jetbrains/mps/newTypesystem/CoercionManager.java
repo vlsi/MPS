@@ -24,7 +24,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Pair;
 
-import java.util.LinkedHashSet;
 import java.util.List;
 
 /**

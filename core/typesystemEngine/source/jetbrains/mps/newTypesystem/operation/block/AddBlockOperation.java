@@ -19,7 +19,6 @@ import jetbrains.mps.newTypesystem.operation.PresentationKind;
 import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.BlockKind;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
 public class AddBlockOperation extends AbstractBlockOperation {

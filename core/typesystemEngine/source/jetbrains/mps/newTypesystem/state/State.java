@@ -18,12 +18,14 @@ package jetbrains.mps.newTypesystem.state;
 
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
 import jetbrains.mps.newTypesystem.operation.*;
-import jetbrains.mps.newTypesystem.operation.block.*;
+import jetbrains.mps.newTypesystem.operation.block.AddBlockOperation;
+import jetbrains.mps.newTypesystem.operation.block.AddDependencyOperation;
+import jetbrains.mps.newTypesystem.operation.block.RemoveBlockOperation;
+import jetbrains.mps.newTypesystem.operation.block.RemoveDependencyOperation;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;

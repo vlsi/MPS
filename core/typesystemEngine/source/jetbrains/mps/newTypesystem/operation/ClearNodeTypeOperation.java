@@ -16,7 +16,6 @@
 package jetbrains.mps.newTypesystem.operation;
 
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 

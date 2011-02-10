@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import com.intellij.openapi.util.Computable;
 import gnu.trove.THashSet;
 import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;

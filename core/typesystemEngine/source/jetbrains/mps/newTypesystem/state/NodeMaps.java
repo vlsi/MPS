@@ -19,12 +19,11 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
-import jetbrains.mps.newTypesystem.operation.TypeAssignedOperation;
 import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
+import jetbrains.mps.newTypesystem.operation.TypeAssignedOperation;
 import jetbrains.mps.newTypesystem.operation.TypeExpandedOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.util.Pair;
 
 import java.util.*;
 

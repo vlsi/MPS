@@ -15,10 +15,6 @@
  */
 package jetbrains.mps.newTypesystem.state;
 
-import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.errors.SimpleErrorReporter;
-import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.equation.EquationAddedOperation;
 import jetbrains.mps.newTypesystem.operation.equation.EquationSubstitutedOperation;
@@ -28,10 +24,8 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 import jetbrains.mps.util.Pair;
-import org.apache.commons.collections.map.UnmodifiableMap;
 
 import java.util.*;
-import java.util.Map.Entry;
 
 /**
  * Created by IntelliJ IDEA.

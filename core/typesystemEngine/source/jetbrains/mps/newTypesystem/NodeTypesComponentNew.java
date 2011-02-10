@@ -25,7 +25,8 @@ package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.SimpleErrorReporter;
-import jetbrains.mps.lang.typesystem.runtime.*;
+import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;

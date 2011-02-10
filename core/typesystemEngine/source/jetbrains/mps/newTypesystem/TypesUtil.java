@@ -24,7 +24,10 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
