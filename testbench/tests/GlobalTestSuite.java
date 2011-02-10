@@ -1,5 +1,3 @@
-import jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test;
-import jetbrains.mps.baseLanguage.test.TestGenerationMode_Test;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.junit.runners.WatchingSuite;
