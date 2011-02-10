@@ -32,9 +32,9 @@ import java.util.*;
  */
 public class Inequalities {
   private final State myState;
-  ManyToManyMap<SNode, SNode> myInputsToOutputs = new ManyToManyMap<SNode, SNode>();
-  ManyToManyMap<SNode, InequalityBlock> myNodesToBlocks = new ManyToManyMap<SNode, InequalityBlock>();
-  Set<SNode> myNodes = new LinkedHashSet<SNode>();
+  private ManyToManyMap<SNode, SNode> myInputsToOutputs = new ManyToManyMap<SNode, SNode>();
+  private ManyToManyMap<SNode, InequalityBlock> myNodesToBlocks = new ManyToManyMap<SNode, InequalityBlock>();
+  private Set<SNode> myNodes = new LinkedHashSet<SNode>();
 
   private boolean solvingInProcess = false;
 

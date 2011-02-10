@@ -39,7 +39,7 @@ import java.util.*;
  * Date: 1/31/11
  * Time: 4:40 PM
  */
-public class NonTypeSystemComponent extends Component {
+class NonTypeSystemComponent extends Component {
 
   private boolean myIsCheckedNonTypeSystem = false;
   private boolean myInvalidationResultNT = false;
@@ -100,11 +100,8 @@ public class NonTypeSystemComponent extends Component {
   }
 
   public boolean isCheckedNonTypesystem() {
-     if (!myIsCheckedNonTypeSystem) {
-       return false;
-     }
-     return !doInvalidateNonTypesystem();
-   }
+    return myIsCheckedNonTypeSystem && !doInvalidateNonTypesystem();
+  }
 
   public Map<SNode, List<IErrorReporter>> getNodesToErrorsMap() {
     return Collections.unmodifiableMap(myNodesToNonTypesystemErrorsMap);

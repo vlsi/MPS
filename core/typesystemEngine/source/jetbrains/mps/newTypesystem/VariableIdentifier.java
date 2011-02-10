@@ -20,7 +20,6 @@ package jetbrains.mps.newTypesystem;
  * User: Ilya.Lintsbakh
  * Date: Oct 15, 2010
  * Time: 11:28:26 AM
- * To change this template use File | Settings | File Templates.
  */
 public class VariableIdentifier {
   private char myVariableChar;

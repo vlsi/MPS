@@ -32,7 +32,6 @@ import java.util.*;
  * User: Ilya.Lintsbakh
  * Date: Sep 10, 2010
  * Time: 6:38:28 PM
- * To change this template use File | Settings | File Templates.
  */
 public class NodeMaps {
   @StateObject

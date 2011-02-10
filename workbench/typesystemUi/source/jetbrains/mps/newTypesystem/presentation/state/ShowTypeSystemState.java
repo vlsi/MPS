@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.presentation.state;
 
+import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
@@ -43,7 +44,7 @@ public class ShowTypeSystemState extends JDialog {
 
     myTree = new TypeSystemStateTree(operationContext, s);
 
-    this.myScrollPane = new JScrollPane(myTree);
+    this.myScrollPane = new JBScrollPane(myTree);
     this.myScrollPane.setBackground(this.getBackground());
     this.add(this.myScrollPane, BorderLayout.CENTER);
     myTree.setBackground(getBackground());

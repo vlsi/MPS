@@ -28,9 +28,9 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 public abstract class AbstractEquationOperation extends AbstractOperation {
   SNode myChild;
   SNode myParent;
-  protected final String myPresentation;
+  private final String myPresentation;
 
-  public AbstractEquationOperation(SNode child, SNode parent, SNode source, EquationInfo info) {
+  AbstractEquationOperation(SNode child, SNode parent, SNode source, EquationInfo info) {
     myChild = child;
     mySource = source;
     myParent = parent;

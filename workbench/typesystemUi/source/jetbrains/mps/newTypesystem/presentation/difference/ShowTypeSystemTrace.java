@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.presentation.difference;
 
+import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -38,7 +39,7 @@ public class ShowTypeSystemTrace extends JDialog {
     this.setLayout(new BorderLayout());
     this.getContentPane().setBackground(this.getBackground());
     myTree = new TypeSystemTraceTree(operationContext, t, frame, node);
-    JScrollPane scrollPane = new JScrollPane(myTree);
+    JScrollPane scrollPane = new JBScrollPane(myTree);
     scrollPane.setBackground(this.getBackground());
 
     this.add(scrollPane, BorderLayout.CENTER);
@@ -91,10 +92,5 @@ public class ShowTypeSystemTrace extends JDialog {
       myTree.rebuildNow();
       myTree.expandAll();
     }
-  }
-
-  @Override
-  public Dimension getPreferredSize() {
-    return super.getPreferredSize();    //To change body of overridden methods use File | Settings | File Templates.
   }
 }

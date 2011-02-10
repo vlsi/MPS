@@ -37,7 +37,7 @@ import java.util.*;
  * Date: 1/31/11
  * Time: 4:58 PM
  */
-public class TypeSystemComponent extends Component {
+class TypeSystemComponent extends Component {
 
   private boolean myInvalidationResult = false;
 
@@ -49,12 +49,12 @@ public class TypeSystemComponent extends Component {
   private Set<SNode> myJustInvalidatedNodes = new HashSet<SNode>();
 
   private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
-  protected Set<SNode> myCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
+  private Set<SNode> myCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
 
   private boolean myIsCheckedTypeSystem = false;
 
   private WeakSet<SNode> myNodesDependentOnCaches = new WeakSet<SNode>();
-  protected Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
+  private Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
 
@@ -151,10 +151,7 @@ public class TypeSystemComponent extends Component {
   }
 
   public boolean isCheckedTypeSystem() {
-    if (!myIsCheckedTypeSystem) {
-      return false;
-    }
-    return !doInvalidateTypesystem();
+    return myIsCheckedTypeSystem && !doInvalidateTypesystem();
   }
 
   public Map<SNode, List<IErrorReporter>> getNodesToErrorsMap() {
