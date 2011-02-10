@@ -285,10 +285,14 @@ public class State {
       map.clear();
     }
     if (clearDiff) {
-      myOperationStack.clear();
-      myOperation = new CheckAllOperation();
-      myOperationStack.push(myOperation);
+      clearOperations();
     }
+  }
+
+  public void clearOperations() {
+    myOperationStack.clear();
+    myOperation = new CheckAllOperation();
+    myOperationStack.push(myOperation);
   }
 
   public void solveInequalities() {

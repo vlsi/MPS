@@ -181,11 +181,6 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
   }
 
   @Override
-  protected void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes) {
-    myTypeSystemComponent.computeTypesForNode(node, forceChildrenCheck, additionalNodes);
-  }
-
-  @Override
   public void typeOfNodeCalled(SNode node) {
     myTypeSystemComponent.typeOfNodeCalled(node);
   }

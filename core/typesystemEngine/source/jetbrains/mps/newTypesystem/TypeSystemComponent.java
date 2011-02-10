@@ -49,8 +49,7 @@ public class TypeSystemComponent extends Component {
   private Set<SNode> myJustInvalidatedNodes = new HashSet<SNode>();
 
   private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
-  protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
-  protected Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
+  protected Set<SNode> myCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
 
   private boolean myIsCheckedTypeSystem = false;
 
@@ -143,8 +142,7 @@ public class TypeSystemComponent extends Component {
   }
 
   private void invalidateNodeTypeSystem(SNode node, boolean typeWillBeRecalculated) {
-    myFullyCheckedNodes.remove(node);
-    myPartlyCheckedNodes.remove(node);
+    myCheckedNodes.remove(node);
     myState.clearNode(node);
     if (typeWillBeRecalculated) {
       TypeChecker.getInstance().fireTypeWillBeRecalculatedForTerm(node);
@@ -213,9 +211,8 @@ public class TypeSystemComponent extends Component {
       if (!isIncrementalMode() || refreshTypes) {
         clear();
       } else {
+        myState.clearOperations();
         doInvalidateTypesystem();
-        myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
-        myFullyCheckedNodes.clear();
       }
 
       if (!loadTypesystemRules(nodeToCheck)) {
@@ -234,8 +231,7 @@ public class TypeSystemComponent extends Component {
     myNodesToDependentNodes_A.clear();
     myNodesToDependentNodes_B.clear();
     myNodesDependentOnCaches.clear();
-    myFullyCheckedNodes.clear();
-    myPartlyCheckedNodes.clear();
+    myCheckedNodes.clear();
     myNodesToRules.clear();
   }
 
@@ -266,7 +262,7 @@ public class TypeSystemComponent extends Component {
   }
 
   public SNode getType(SNode node) {
-    if (myFullyCheckedNodes.contains(node)) {
+    if (myCheckedNodes.contains(node)) {
       return getRawTypeFromContext(node);
     }
     return null;
@@ -291,7 +287,7 @@ public class TypeSystemComponent extends Component {
     return new HashSet<Pair<String, String>>(set);
   }
 
-  protected void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes) {
+  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes) {
     if (node == null) return;
     Set<SNode> frontier = new LinkedHashSet<SNode>();
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
@@ -301,10 +297,6 @@ public class TypeSystemComponent extends Component {
     while (!(frontier.isEmpty())) {
       myCurrentFrontiers.push(newFrontier);
       for (SNode sNode : frontier) {
-
-        if (myFullyCheckedNodes.contains(sNode)) {
-          continue;
-        }
         Set<SNode> candidatesForFrontier = new LinkedHashSet<SNode>();
         if (myNodeTypesComponent.isSpecial()) {
           candidatesForFrontier.addAll(myTypeChecker.getRulesManager().getDependencies(sNode));
@@ -315,7 +307,7 @@ public class TypeSystemComponent extends Component {
         for (SNode candidate : candidatesForFrontier) {
             newFrontier.add(candidate);
         }
-        if (!myPartlyCheckedNodes.contains(sNode)) {
+        if (!myCheckedNodes.contains(sNode)) {
           MyLanguageCachesReadListener languageCachesReadListener = null;
           if (isIncrementalMode()) {
             languageCachesReadListener = new MyLanguageCachesReadListener();
@@ -348,9 +340,8 @@ public class TypeSystemComponent extends Component {
             }
             nodesReadListener.clear();
           }
-          myPartlyCheckedNodes.add(sNode);
+          myCheckedNodes.add(sNode);
         }
-        myFullyCheckedNodes.add(sNode);
       }
       Set<SNode> newFrontierPopped = myCurrentFrontiers.pop();
       assert newFrontierPopped == newFrontier;
@@ -417,7 +408,7 @@ public class TypeSystemComponent extends Component {
   }
 
   public void addNodeToFrontier(SNode node) {
-    if (myPartlyCheckedNodes.contains(node)) {
+    if (myCheckedNodes.contains(node)) {
       return;
     }
     if (!myCurrentFrontiers.isEmpty()) {

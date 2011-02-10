@@ -71,7 +71,6 @@ public class Component {
     private Set<SNode> myAccessedNodes = new HashSet<SNode>(1);
     protected Set<Pair<SNode, String>> myAccessedProperties = new HashSet<Pair<SNode, String>>(1);
     protected boolean myIsSetAccessReport = false;
-    private Thread myThread = null;
 
     public void setAccessReport(boolean accessReport) {
       myIsSetAccessReport = accessReport;
@@ -81,13 +80,6 @@ public class Component {
       if (myIsSetAccessReport) {
         new Throwable().printStackTrace();
       }
-      if (myThread == null) {
-        myThread = Thread.currentThread();
-      }
-      if (myThread != Thread.currentThread()) {
-        System.out.println(myThread + " " + Thread.currentThread());
-      }
-
     }
 
     public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
@@ -95,7 +87,6 @@ public class Component {
         reportAccess();
         myAccessedNodes.add(node);
         myAccessedNodes.add(child);
-      //  System.out.println("child" );
       }
     }
 
@@ -111,7 +102,6 @@ public class Component {
         reportAccess();
         myAccessedNodes.add(node);
         myAccessedNodes.add(referent);
-      //  System.out.println("referent");
       }
     }
 
@@ -119,7 +109,6 @@ public class Component {
       synchronized (ACCESS_LOCK) {
         reportAccess();
         myAccessedNodes.add(node);
-      //  System.out.println("unclassified");
       }
     }
 

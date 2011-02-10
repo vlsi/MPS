@@ -530,7 +530,7 @@ public class NodeTypesComponent {
     return type;
   }
 
-  protected void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes) {
+  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes) {
     if (node == null) return;
     Set<SNode> frontier = new LinkedHashSet<SNode>();
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
