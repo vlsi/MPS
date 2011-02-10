@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.CopyUtil;
@@ -58,11 +60,30 @@ public class SNodeFactoryOperations {
     return null;
   }
 
+  public static SNode addNewAttribute(SNode node, IAttributeDescriptor descriptor, String childConceptFQName) {
+    if (node != null) {
+      SNode newChild = NodeFactoryManager.createNode(childConceptFQName, null, node, node.getModel());
+      AttributeOperations.addAttribute(node, descriptor, newChild);
+      return newChild;
+    }
+    return null;
+  }
+
   public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
       SNode prototypeNode = node.getChild(role);
       SNode newChild = NodeFactoryManager.createNode(childConceptFQName, prototypeNode, node, node.getModel());
       node.setChild(role, newChild);
+      return newChild;
+    }
+    return null;
+  }
+
+  public static SNode setNewAttribute(SNode node, IAttributeDescriptor descriptor, String childConceptFQName) {
+    if (node != null) {
+      SNode prototypeNode = AttributeOperations.getAttribute(node, descriptor);
+      SNode newChild = NodeFactoryManager.createNode(childConceptFQName, prototypeNode, node, node.getModel());
+      AttributeOperations.setAttribute(node, descriptor, newChild);
       return newChild;
     }
     return null;
