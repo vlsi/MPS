@@ -47,7 +47,6 @@ public class TypeSystemComponent extends Component {
   private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodes_B = new WeakHashMap<SNode, WeakSet<SNode>>();
 
   private Set<SNode> myJustInvalidatedNodes = new HashSet<SNode>();
-  private boolean myFirstCheck = true;
 
   private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
   protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
@@ -147,14 +146,13 @@ public class TypeSystemComponent extends Component {
     myFullyCheckedNodes.remove(node);
     myPartlyCheckedNodes.remove(node);
     myState.clearNode(node);
-    myFirstCheck = false;
     if (typeWillBeRecalculated) {
       TypeChecker.getInstance().fireTypeWillBeRecalculatedForTerm(node);
     }
     myNodesToRules.remove(node);
   }
 
-  public boolean isCheckedTypesystem() {
+  public boolean isCheckedTypeSystem() {
     if (!myIsCheckedTypeSystem) {
       return false;
     }
@@ -166,13 +164,12 @@ public class TypeSystemComponent extends Component {
   }
 
   @UseCarefully
-  public void setCheckedTypesystem() {
+  public void setCheckedTypeSystem() {
     myIsCheckedTypeSystem = true;
   }
 
   public void clear() {
     myIsCheckedTypeSystem = false;
-    myFirstCheck = true;
     clearCaches();
     clearState();
     clearNodeTypes();
@@ -300,6 +297,7 @@ public class TypeSystemComponent extends Component {
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
     frontier.add(node);
     frontier.addAll(additionalNodes);
+    MyEventsReadListener nodesReadListener = new MyEventsReadListener();
     while (!(frontier.isEmpty())) {
       myCurrentFrontiers.push(newFrontier);
       for (SNode sNode : frontier) {
@@ -321,8 +319,8 @@ public class TypeSystemComponent extends Component {
           MyLanguageCachesReadListener languageCachesReadListener = null;
           if (isIncrementalMode()) {
             languageCachesReadListener = new MyLanguageCachesReadListener();
-            myNodesReadListener.clear();
-            NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
+            nodesReadListener.clear();
+            NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
             LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
           }
           boolean typeAffected = false;
@@ -331,16 +329,15 @@ public class TypeSystemComponent extends Component {
             typeAffected = applyRulesToNode(sNode);
           } finally {
             if (isIncrementalMode()) {
-              LanguageHierarchyCache.getInstance().removeReadAccessListener();
               NodeReadEventsCaster.removeNodesReadListener();
             }
           }
           if (isIncrementalMode()) {
             synchronized (ACCESS_LOCK) {
-              myNodesReadListener.setAccessReport(true);
-              Set<SNode> accessedNodes = myNodesReadListener.myAccessedNodes;
+              nodesReadListener.setAccessReport(true);
+              Set<SNode> accessedNodes = nodesReadListener.getAccessedNodes();
               addDependentNodesTypeSystem(sNode, accessedNodes, typeAffected);
-              myNodesReadListener.setAccessReport(false);
+              nodesReadListener.setAccessReport(false);
               if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
                 languageCachesReadListener.setAccessReport(true);
                 if (languageCachesReadListener.myIsCacheAccessed) {
@@ -349,7 +346,7 @@ public class TypeSystemComponent extends Component {
                 languageCachesReadListener.setAccessReport(false);
               }
             }
-            myNodesReadListener.clear();
+            nodesReadListener.clear();
           }
           myPartlyCheckedNodes.add(sNode);
         }
@@ -431,8 +428,4 @@ public class TypeSystemComponent extends Component {
   private void addCacheDependentNodesTypesystem(SNode node) {
     myNodesDependentOnCaches.add(node);
   }
-
-
-
-
 }

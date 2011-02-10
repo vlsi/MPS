@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import com.intellij.openapi.util.Computable;
 import gnu.trove.THashSet;
 import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
@@ -38,7 +40,6 @@ public class Component {
   protected boolean myCacheWasRebuilt = false;
   protected TypeChecker myTypeChecker;
   protected final Object ACCESS_LOCK = new Object();
-  protected MyEventsReadListener myNodesReadListener = new MyEventsReadListener();
   protected NodeTypesComponentNew myNodeTypesComponent;
 
   protected MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
@@ -66,10 +67,11 @@ public class Component {
     LanguageHierarchyCache.getInstance().removeCacheChangeListener(myLanguageCacheListener);
   }
 
-  class MyEventsReadListener extends AbstractNodesReadListener {
-    protected Set<SNode> myAccessedNodes = new HashSet<SNode>(1);
+  protected class MyEventsReadListener extends AbstractNodesReadListener {
+    private Set<SNode> myAccessedNodes = new HashSet<SNode>(1);
     protected Set<Pair<SNode, String>> myAccessedProperties = new HashSet<Pair<SNode, String>>(1);
     protected boolean myIsSetAccessReport = false;
+    private Thread myThread = null;
 
     public void setAccessReport(boolean accessReport) {
       myIsSetAccessReport = accessReport;
@@ -79,6 +81,13 @@ public class Component {
       if (myIsSetAccessReport) {
         new Throwable().printStackTrace();
       }
+      if (myThread == null) {
+        myThread = Thread.currentThread();
+      }
+      if (myThread != Thread.currentThread()) {
+        System.out.println(myThread + " " + Thread.currentThread());
+      }
+
     }
 
     public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
@@ -86,6 +95,7 @@ public class Component {
         reportAccess();
         myAccessedNodes.add(node);
         myAccessedNodes.add(child);
+      //  System.out.println("child" );
       }
     }
 
@@ -96,19 +106,25 @@ public class Component {
       }
     }
 
-    public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
+    public void nodeReferentReadAccess(final SNode node, String referentRole, final SNode referent) {
       synchronized (ACCESS_LOCK) {
         reportAccess();
         myAccessedNodes.add(node);
         myAccessedNodes.add(referent);
+      //  System.out.println("referent");
       }
     }
 
-    public void nodeUnclassifiedReadAccess(SNode node) {
+      public void nodeUnclassifiedReadAccess(SNode node) {
       synchronized (ACCESS_LOCK) {
         reportAccess();
         myAccessedNodes.add(node);
+      //  System.out.println("unclassified");
       }
+    }
+
+    public Set<SNode> getAccessedNodes() {
+      return myAccessedNodes;
     }
 
     public void clear() {

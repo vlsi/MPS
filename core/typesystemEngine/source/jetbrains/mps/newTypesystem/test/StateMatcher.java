@@ -30,14 +30,14 @@ import java.util.Set;
  */
 public class StateMatcher {
 
-  public boolean match (State state1, State state2) {
+  public static boolean match (State state1, State state2) {
     if (!matchEquations(state1.getEquations(), state2.getEquations())) {
       return false;
     }
     return true;
   }
 
-  private boolean matchEquations(Equations equations1, Equations equations2) {
+  private static boolean matchEquations(Equations equations1, Equations equations2) {
     return equations1.getRepresentatives().equals(equations2.getRepresentatives());
   }
 }

@@ -240,6 +240,33 @@ public class State {
     myOperationStack.pop();
   }
 
+  public AbstractOperation getLastOperation() {
+    AbstractOperation operation = myOperationStack.peek();
+    List<AbstractOperation> consequences = operation.getConsequences();
+    while (!(consequences == null || consequences.isEmpty())) {
+      operation = consequences.get(consequences.size()-1);
+      consequences = operation.getConsequences();
+    }
+    return operation;
+  }
+
+  private void visit(AbstractOperation operation, List<AbstractOperation> result) {
+    result.add(operation);
+    for (AbstractOperation child : operation.getConsequences()) {
+      visit(child, result);
+    }
+  }
+
+  public List<AbstractOperation> getOperationsAsList() {
+    List<AbstractOperation> result = new LinkedList<AbstractOperation>();
+    visit(myOperation, result);
+    return result;
+  }
+
+  public void revertLastOperation() {
+    getLastOperation().undo(this);
+  }
+
   public void addError(SNode node, IErrorReporter error, EquationInfo info) {
     myNodeMaps.addNodeToError(node, error, info);
   }

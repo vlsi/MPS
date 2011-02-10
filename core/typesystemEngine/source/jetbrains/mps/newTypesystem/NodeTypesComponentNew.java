@@ -292,12 +292,12 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
 
   @Override
   public void setCheckedTypesystem() {
-    myTypeSystemComponent.setCheckedTypesystem();
+    myTypeSystemComponent.setCheckedTypeSystem();
   }
 
   public boolean isChecked(boolean considerNonTypeSystemRules) {
     processPendingEvents();
-    boolean b = myTypeSystemComponent.isCheckedTypesystem();
+    boolean b = myTypeSystemComponent.isCheckedTypeSystem();
     if (considerNonTypeSystemRules) {
       return b && myNonTypeSystemComponent.isCheckedNonTypesystem();
     } else {

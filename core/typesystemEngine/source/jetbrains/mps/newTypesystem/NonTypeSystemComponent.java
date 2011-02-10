@@ -319,6 +319,7 @@ public class NonTypeSystemComponent extends Component {
 
   private void applyNonTypesystemRulesToNode(SNode node) {
     List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
+    MyEventsReadListener nodesReadListener = new MyEventsReadListener();
     if (nonTypesystemRules != null) {
       for (Pair<NonTypesystemRule_Runtime, IsApplicableStatus> rule : nonTypesystemRules) {
         Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
@@ -331,8 +332,8 @@ public class NonTypeSystemComponent extends Component {
           if (myCheckedNodesNonTypesystem.contains(nodeAndRule)) {
             continue;
           }
-          myNodesReadListener.clear();
-          NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
+          nodesReadListener.clear();
+          NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
           TypeChecker.getInstance().addTypesReadListener(typesReadListener);
           LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
           myRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
@@ -347,13 +348,12 @@ public class NonTypeSystemComponent extends Component {
             NodeReadEventsCaster.removeNodesReadListener();
           }
         }
-
         if (isIncrementalMode()) {
           synchronized (ACCESS_LOCK) {
-            myNodesReadListener.setAccessReport(true);
-            addDependentNodes(node, rule.o1, new HashSet<SNode>(myNodesReadListener.myAccessedNodes));
-            addDependentProperties(node, rule.o1, new HashSet<Pair<SNode, String>>(myNodesReadListener.myAccessedProperties));
-            myNodesReadListener.setAccessReport(false);
+            nodesReadListener.setAccessReport(true);
+            addDependentNodes(node, rule.o1, new HashSet<SNode>(nodesReadListener.getAccessedNodes()));
+            addDependentProperties(node, rule.o1, new HashSet<Pair<SNode, String>>(nodesReadListener.myAccessedProperties));
+            nodesReadListener.setAccessReport(false);
 
             languageCachesReadListener.setAccessReport(true);
             if (languageCachesReadListener.myIsCacheAccessed) {
@@ -365,7 +365,7 @@ public class NonTypeSystemComponent extends Component {
             addDependentTypeTerms(node, rule.o1, new HashSet<SNode>(typesReadListener.myAccessedNodes));
             typesReadListener.setAccessReport(false);
           }
-          myNodesReadListener.clear();
+          nodesReadListener.clear();
         }
         myCheckedNodesNonTypesystem.add(nodeAndRule);
       }
