@@ -305,10 +305,8 @@ public final class SNode {
   public List<SNode> getAllAttributes() {
     List<SNode> attributes = new ArrayList<SNode>(0);
     for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
-      String role = child.getRole_();
-      if (AttributesRolesUtil.isNodeAttributeRole(role) ||
-        AttributesRolesUtil.isLinkAttributeRole(role) ||
-        AttributesRolesUtil.isPropertyAttributeRole(role)) {
+      // for migration period:
+      if (AttributeOperations.isAttribute(child)) {
         attributes.add(child);
       }
     }
@@ -316,8 +314,9 @@ public final class SNode {
   }
 
   public boolean isAttribute() {
-    String role_ = getRole_();
-    return (role_ != null && AttributesRolesUtil.isAttributeRole(role_));
+    return AttributeOperations.isAttribute(this);
+//    String role_ = getRole_();
+//    return (role_ != null && AttributesRolesUtil.isAttributeRole(role_));
   }
 
   public SNode getAttribute(String role) {
@@ -1902,6 +1901,9 @@ public final class SNode {
     SNode result = getPropertyAttribute(null, propertyName);
     if (result != null) return result;
 
+    result = AttributeOperations.getPropertyAttribute(this, null, propertyName);
+    if (result != null) return result;
+
     // back compatibility with some obsolete property attributes?
     for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
       if (AttributesRolesUtil.isChildRoleOfPropertyAttributeForPropertyName(propertyName, child.getRole_())) {
@@ -1924,6 +1926,9 @@ public final class SNode {
   public SNode getLinkAttribute(String role) {
     // 'default' link attr
     SNode result = getLinkAttribute(null, role);
+    if (result != null) return result;
+
+    result = AttributeOperations.getLinkAttribute(this, null, role);
     if (result != null) return result;
 
     // back compatibility with some obsolete link attributes?
