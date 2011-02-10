@@ -1846,7 +1846,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6407023681583065838(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(_context.getNode());
+    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(_context.getNode()), "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "qualifier", true);
   }
 
   public static SNode sourceNodeQuery_6960953357954129040(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1854,7 +1854,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6960953357954129053(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(_context.getNode());
+    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(_context.getNode()), "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "qualifier", true);
   }
 
   public static SNode sourceNodeQuery_6407023681583040811(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
