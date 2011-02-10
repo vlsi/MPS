@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.ModelValidator;
+import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.IModule;
 

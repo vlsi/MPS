@@ -25,7 +25,7 @@ public class IndexedTuples_Test extends TestCase {
 
   public void test_creatingAndAssigning() throws Exception {
     Tuples._2<Integer, String> pair = MultiTuple.<Integer,String>from(1, "a");
-    Assert.assertSame(1, pair._0());
+    Assert.assertSame(1, (int) pair._0());
     Assert.assertEquals("a", pair._1());
     Tuples._2<Integer, String> anotherPair = pair;
     /*
@@ -35,17 +35,17 @@ public class IndexedTuples_Test extends TestCase {
     Assert.assertTrue(((Object) anotherPair) == ((Object) pair));
     Assert.assertTrue(MultiTuple.eq(anotherPair, pair));
     Assert.assertEquals(pair, anotherPair);
-    Assert.assertSame(1, anotherPair._0());
+    Assert.assertSame(1, (int) anotherPair._0());
     Assert.assertEquals("a", anotherPair._1());
     pair._0(111);
     pair._1("aaaa");
     /*
-      Assert.assertSame(1, anotherPair._0());
+      Assert.assertSame(1, (int) anotherPair._0());
       Assert.assertEquals("a", anotherPair._1());
     */
-    Assert.assertSame(111, anotherPair._0());
+    Assert.assertSame(111, (int) anotherPair._0());
     Assert.assertEquals("aaaa", anotherPair._1());
-    Assert.assertSame(111, pair._0());
+    Assert.assertSame(111, (int) pair._0());
     Assert.assertEquals("aaaa", pair._1());
   }
 
@@ -81,7 +81,7 @@ public class IndexedTuples_Test extends TestCase {
   public void test_multiValueReturn() throws Exception {
     Tuples._2<String, Character> pair = this.toTuple("abc", 'd');
     Assert.assertEquals("abc", pair._0());
-    Assert.assertSame('d', pair._1());
+    Assert.assertSame('d', (char) pair._1());
   }
 
   public void test_equalsOperator() throws Exception {
@@ -114,18 +114,18 @@ public class IndexedTuples_Test extends TestCase {
     Tuples._3<String, Integer, Boolean>[] arr1 = ArrayUtils.asArray(MultiTuple.<String,Integer,Boolean>from("foo", 1, false), MultiTuple.<String,Integer,Boolean>from("bar", 2, true), MultiTuple.<String,Integer,Boolean>from("baz", 3, false));
     Assert.assertSame(3, arr1.length);
     Assert.assertEquals("foo", arr1[0]._0());
-    Assert.assertTrue(arr1[1]._2());
+    Assert.assertTrue((boolean) arr1[1]._2());
     Assert.assertEquals("baz", arr1[2]._0());
-    Assert.assertSame(3, arr1[2]._1());
+    Assert.assertSame(3, (int) arr1[2]._1());
     Tuples._3<String, Integer, Boolean>[] arr2 = (Tuples._3<String, Integer, Boolean>[]) ArrayUtils.newArrayInstance(Tuples._3.class, 3);
     Assert.assertSame(3, arr2.length);
     for (int idx = 0; idx < arr1.length; idx++) {
       arr2[idx] = arr1[idx];
     }
     Assert.assertEquals("bar", arr2[1]._0());
-    Assert.assertFalse(arr2[2]._2());
+    Assert.assertFalse((boolean) arr2[2]._2());
     Assert.assertEquals("baz", arr2[2]._0());
-    Assert.assertSame(2, arr2[1]._1());
+    Assert.assertSame(2, (int) arr2[1]._1());
   }
 
   public void test_tupleDecl() throws Exception {
@@ -160,7 +160,7 @@ public class IndexedTuples_Test extends TestCase {
   public void test_mps8674() throws Exception {
     Tuples._2<Integer, String> t = MultiTuple.<Integer,String>from(0, null);
     Assert.assertNotNull(t);
-    Assert.assertSame(0, t._0());
+    Assert.assertSame(0, (int) t._0());
     Assert.assertNull(t._1());
   }
 
@@ -169,6 +169,14 @@ public class IndexedTuples_Test extends TestCase {
     for (Tuples._2<Integer, String> tt : MPS11114.returnTuples()) {
       Assert.assertNotNull(tt);
     }
+  }
+
+  public void test_mps11134() throws Exception {
+    Tuples._2<Integer, Integer> pair = MultiTuple.<Integer,Integer>from(1, 1);
+    Assert.assertSame((int) pair._0(), (int) pair._1());
+    Tuples._2<Integer, Integer> pair2 = MultiTuple.<Integer,Integer>from(9999 + 1, 10001 - 1);
+    Assert.assertTrue((int) pair2._0() == 10000);
+    Assert.assertTrue(10000 == (int) pair2._1());
   }
 
   public Tuples._2<String, Character> toTuple(String s, char c) {

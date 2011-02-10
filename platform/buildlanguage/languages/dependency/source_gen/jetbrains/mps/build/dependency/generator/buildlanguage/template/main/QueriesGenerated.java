@@ -5,9 +5,9 @@ package jetbrains.mps.build.dependency.generator.buildlanguage.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.apache.commons.lang.StringUtils;
@@ -19,10 +19,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1219773202905(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1216910679654(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "classes", true), "path").replace("\\", "/");
   }
 
   public static Object propertyMacro_GetPropertyValue_1216910654589(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -107,6 +103,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1219772493889(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "macro", false) != null);
+  }
+
+  public static SNode sourceNodeQuery_3791907277386824349(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "classes", true);
   }
 
   public static SNode sourceNodeQuery_1219772645177(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

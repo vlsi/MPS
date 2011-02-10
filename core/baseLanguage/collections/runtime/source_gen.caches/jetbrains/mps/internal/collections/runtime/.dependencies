@@ -9,6 +9,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Float" />
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.impl.NullSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Class" />

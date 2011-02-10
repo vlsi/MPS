@@ -28,6 +28,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 

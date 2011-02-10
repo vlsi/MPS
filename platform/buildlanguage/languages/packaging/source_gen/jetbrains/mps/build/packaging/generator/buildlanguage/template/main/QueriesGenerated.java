@@ -245,12 +245,16 @@ public class QueriesGenerated {
     return PathHolder_Behavior.call_getPathWithoutMacro_1219770843283(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1217518689738(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Module_Behavior.call_getClassesGen_1216909316753(SLinkOperations.getTarget(_context.getNode(), "module", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1217518534457(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name").replace(File.separator, "_");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3315989002810591812(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return PathHolder_Behavior.call_getValue_1219231432401(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3315989002810591788(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return PathHolder_Behavior.call_getPathWithoutMacro_1219770843283(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1216902460852(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -442,6 +446,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "macro", false), "MacroToMacro");
   }
 
+  public static Object referenceMacro_GetReferent_3315989002810591775(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "macro", false), "MacroToMacro");
+  }
+
   public static Object referenceMacro_GetReferent_1220032480105(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "macro", false), "MacroToMacro");
   }
@@ -629,6 +637,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "macro", false) != null);
   }
 
+  public static boolean ifMacro_Condition_3315989002810591753(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "macro", false) != null);
+  }
+
   public static boolean ifMacro_Condition_1220032434961(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "macro", false) != null);
   }
@@ -698,6 +710,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1219156936386(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "message", true);
+  }
+
+  public static SNode sourceNodeQuery_3315989002810591731(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return Module_Behavior.call_getClassesGen_3315989002810564857(SLinkOperations.getTarget(_context.getNode(), "module", false));
   }
 
   public static SNode sourceNodeQuery_1219156054317(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -773,7 +789,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1204020868967(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Layout_Behavior.call_getModules_1213877228340(_context.getNode());
+    return ListSequence.fromList(Layout_Behavior.call_getModules_1213877228340(_context.getNode())).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return Module_Behavior.call_getModule_1213877515148(it) != null && !(Module_Behavior.call_getModule_1213877515148(it).isPackaged());
+      }
+    });
   }
 
   public static Iterable sourceNodesQuery_1210254517273(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -855,8 +875,8 @@ public class QueriesGenerated {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _7__yield_x583g4_a0a0a0a0a0tg;
-              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0tg_it;
+              private SNode _7__yield_x583g4_a0a0a0a0a0xg;
+              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0xg_it;
               private SNode _2_apc;
               private Iterator<SNode> _2_apc_it;
 
@@ -879,13 +899,13 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 7:
-                      this._7__yield_x583g4_a0a0a0a0a0tg_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
+                      this._7__yield_x583g4_a0a0a0a0a0xg_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
                     case 8:
-                      if (!(this._7__yield_x583g4_a0a0a0a0a0tg_it.hasNext())) {
+                      if (!(this._7__yield_x583g4_a0a0a0a0a0xg_it.hasNext())) {
                         this.__CP__ = 3;
                         break;
                       }
-                      this._7__yield_x583g4_a0a0a0a0a0tg = this._7__yield_x583g4_a0a0a0a0a0tg_it.next();
+                      this._7__yield_x583g4_a0a0a0a0a0xg = this._7__yield_x583g4_a0a0a0a0a0xg_it.next();
                       this.__CP__ = 9;
                       break;
                     case 5:
@@ -897,7 +917,7 @@ __switch__:
                       break;
                     case 10:
                       this.__CP__ = 8;
-                      this.yield(_7__yield_x583g4_a0a0a0a0a0tg);
+                      this.yield(_7__yield_x583g4_a0a0a0a0a0xg);
                       return true;
                     case 12:
                       this.__CP__ = 3;
