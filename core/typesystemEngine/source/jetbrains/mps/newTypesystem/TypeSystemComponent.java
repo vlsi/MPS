@@ -297,6 +297,9 @@ public class TypeSystemComponent extends Component {
     while (!(frontier.isEmpty())) {
       myCurrentFrontiers.push(newFrontier);
       for (SNode sNode : frontier) {
+        if (myCheckedNodes.contains(sNode)) {
+          continue;
+        }
         Set<SNode> candidatesForFrontier = new LinkedHashSet<SNode>();
         if (myNodeTypesComponent.isSpecial()) {
           candidatesForFrontier.addAll(myTypeChecker.getRulesManager().getDependencies(sNode));
@@ -307,42 +310,42 @@ public class TypeSystemComponent extends Component {
         for (SNode candidate : candidatesForFrontier) {
             newFrontier.add(candidate);
         }
-        if (!myCheckedNodes.contains(sNode)) {
-          MyLanguageCachesReadListener languageCachesReadListener = null;
-          if (isIncrementalMode()) {
-            languageCachesReadListener = new MyLanguageCachesReadListener();
-            nodesReadListener.clear();
-            NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
-            LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
-          }
-          boolean typeAffected = false;
-          try {
-            myJustInvalidatedNodes.add(sNode);
-            typeAffected = applyRulesToNode(sNode);
-          } finally {
-            if (isIncrementalMode()) {
-              NodeReadEventsCaster.removeNodesReadListener();
-            }
-          }
-          if (isIncrementalMode()) {
-            synchronized (ACCESS_LOCK) {
-              nodesReadListener.setAccessReport(true);
-              Set<SNode> accessedNodes = nodesReadListener.getAccessedNodes();
-              addDependentNodesTypeSystem(sNode, accessedNodes, typeAffected);
-              nodesReadListener.setAccessReport(false);
-              if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
-                languageCachesReadListener.setAccessReport(true);
-                if (languageCachesReadListener.myIsCacheAccessed) {
-                  addCacheDependentNodesTypesystem(sNode);
-                }
-                languageCachesReadListener.setAccessReport(false);
-              }
-            }
-            nodesReadListener.clear();
-          }
-          myCheckedNodes.add(sNode);
+
+        MyLanguageCachesReadListener languageCachesReadListener = null;
+        if (isIncrementalMode()) {
+          languageCachesReadListener = new MyLanguageCachesReadListener();
+          nodesReadListener.clear();
+          NodeReadEventsCaster.setNodesReadListener(nodesReadListener);
+          LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
         }
+        boolean typeAffected = false;
+        try {
+          myJustInvalidatedNodes.add(sNode);
+          typeAffected = applyRulesToNode(sNode);
+        } finally {
+          if (isIncrementalMode()) {
+            NodeReadEventsCaster.removeNodesReadListener();
+          }
+        }
+        if (isIncrementalMode()) {
+          synchronized (ACCESS_LOCK) {
+            nodesReadListener.setAccessReport(true);
+            Set<SNode> accessedNodes = nodesReadListener.getAccessedNodes();
+            addDependentNodesTypeSystem(sNode, accessedNodes, typeAffected);
+            nodesReadListener.setAccessReport(false);
+            if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
+              languageCachesReadListener.setAccessReport(true);
+              if (languageCachesReadListener.myIsCacheAccessed) {
+                addCacheDependentNodesTypesystem(sNode);
+              }
+              languageCachesReadListener.setAccessReport(false);
+            }
+          }
+          nodesReadListener.clear();
+        }
+        myCheckedNodes.add(sNode);
       }
+
       Set<SNode> newFrontierPopped = myCurrentFrontiers.pop();
       assert newFrontierPopped == newFrontier;
       frontier = newFrontier;

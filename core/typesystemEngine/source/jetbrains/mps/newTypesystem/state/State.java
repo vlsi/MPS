@@ -252,8 +252,10 @@ public class State {
 
   private void visit(AbstractOperation operation, List<AbstractOperation> result) {
     result.add(operation);
-    for (AbstractOperation child : operation.getConsequences()) {
-      visit(child, result);
+    if (operation.getConsequences() != null) {
+      for (AbstractOperation child : operation.getConsequences()) {
+        visit(child, result);
+      }
     }
   }
 

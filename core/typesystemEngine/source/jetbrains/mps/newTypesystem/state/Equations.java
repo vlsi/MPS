@@ -264,8 +264,8 @@ public class Equations {
     return result;
   }
 
-  public UnmodifiableMap getRepresentatives() {
-    return (UnmodifiableMap)myRepresentatives;
+  public Map<SNode, SNode> getRepresentatives() {
+    return Collections.unmodifiableMap(myRepresentatives);
   }
 
 }
