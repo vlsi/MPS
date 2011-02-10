@@ -6,7 +6,6 @@
   <unitInfo fileName="NodeOpraretionsMark_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodeOpraretionsMark_AnnotationLink" />
   <unitInfo fileName="NodePropertiesMarker_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodePropertiesMarker_AnnotationLink" />
   <unitInfo fileName="TestNode_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.test.structure.TestNode_AnnotationLink" />
-  <unitInfo fileName="CheckTypeInGenerationMode.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.test.structure.CheckTypeInGenerationMode" />
   <unitInfo fileName="SimpleNodeTest.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.test.structure.SimpleNodeTest" />
   <unitInfo fileName="CheckNodeDataflow.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.test.structure.CheckNodeDataflow" />
   <unitInfo fileName="NodeUnreachable.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.test.structure.NodeUnreachable" />

@@ -10,6 +10,10 @@ import junit.framework.Assert;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import java.util.List;
+import java.util.Collections;
+import jetbrains.mps.newTypesystem.test.StateMatcher;
 
 public class TypeSystemChecker {
   public TypeSystemChecker() {
@@ -31,7 +35,20 @@ public class TypeSystemChecker {
     typeCheckingContext.checkIfNotChecked(node, true);
     if (typeCheckingContext instanceof TypeCheckingContextNew) {
       State state = ((TypeCheckingContextNew) typeCheckingContext).getState();
-
+      State state2 = new State(state.getTypeCheckingContext());
+      AbstractOperation rootOperation = state.getOperation();
+      List<AbstractOperation> operations = state.getOperationsAsList();
+      int num = operations.size() / 3;
+      AbstractOperation operation = operations.get(num);
+      Collections.reverse(operations);
+      state2.executeOperationsBeforeAnchor(rootOperation, operation);
+      for (AbstractOperation toRevert : operations) {
+        if (toRevert.equals(operation)) {
+          break;
+        }
+        toRevert.undo(state);
+      }
+      Assert.assertTrue(StateMatcher.match(state, state2));
     }
   }
 }

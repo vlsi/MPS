@@ -32,7 +32,6 @@
   <unitInfo fileName="NodesTestCase_Editor.java" startLine="299" startPosition="0" endLine="346" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodesTestCase_Editor$methodsListHandler_58c6e4_b8a" />
   <unitInfo fileName="InvokeActionStatement_Editor.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.test.editor.InvokeActionStatement_Editor" />
   <unitInfo fileName="TestNode_Editor.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.test.editor.TestNode_Editor" />
-  <unitInfo fileName="CheckTypeInGenerationMode_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.test.editor.CheckTypeInGenerationMode_Editor" />
   <unitInfo fileName="CheckNodeForErrors_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.test.editor.CheckNodeForErrors_Editor" />
   <unitInfo fileName="BootstrapActionReference_Editor.java" startLine="27" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.test.editor.BootstrapActionReference_Editor" />
   <unitInfo fileName="CheckNodeDataflow_Editor.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.test.editor.CheckNodeDataflow_Editor" />
