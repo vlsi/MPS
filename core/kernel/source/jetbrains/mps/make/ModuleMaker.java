@@ -276,6 +276,13 @@ public class ModuleMaker {
       myClassPathItems = classPathItems;
     }
 
+    @Override
+    public void onFatalError(String error) {
+      LOG.error("Fatal error. "+error);
+      LOG.debug("Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n");
+      myErrorCount += 1;
+    }
+
     public void onCompilationResult(CompilationResult cr) {
       Set<String> classesWithErrors = new HashSet<String>();
       if (cr.getErrors() != null) {

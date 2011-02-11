@@ -26,4 +26,8 @@ public class CompilationResultAdapter implements CompilationResultListener {
   public void onClass(ClassFile f) {
 
   }
+
+  public void onFatalError(String error) {
+
+  }
 }
