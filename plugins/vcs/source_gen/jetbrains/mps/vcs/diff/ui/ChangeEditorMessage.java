@@ -297,7 +297,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
         SNodeOperations.getIndexInParent(((SNode) editedModel.getNodeById(endId)))
       );
 
-      assert 0 <= beginIndex && beginIndex <= endIndex && endIndex < currentChildrenSize;
+      assert 0 <= beginIndex && beginIndex <= endIndex && endIndex <= currentChildrenSize;
       return new ChildrenMessageTarget(role, beginIndex, endIndex, changeChildren);
     }
     return null;
@@ -321,6 +321,9 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   }
 
   private static int getChildCellIndex(@NotNull EditorCell_Collection collectionCell, int nodeIndex) {
+    if (nodeIndex == -1) {
+      return -1;
+    }
     int currentNodeIndex = -1;
     for (int i = 0; i < collectionCell.getChildCount(); i++) {
       if (collectionCell.getChildAt(i).getSNode() != collectionCell.getSNode()) {
