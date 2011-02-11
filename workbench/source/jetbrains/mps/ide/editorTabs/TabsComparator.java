@@ -34,6 +34,6 @@ public class TabsComparator implements Comparator<EditorTabDescriptor> {
 
     if (i1 == -1 || i2 == -1) return 0;
 
-    return -(i1 - i2);
+    return i1 - i2;
   }
 }
