@@ -51,7 +51,8 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   private List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
   private List<EditorTabDescriptor> myTabDescriptors = new ArrayList<EditorTabDescriptor>();
   private MPSEditorOpenHandler myTabsHandler = new TabsMPSEditorOpenHandler();
-
+  private MPSEditorOpener myEditorOpener;
+  private GeneratorManager myGenManager;
 
   public Project getProject() {
     return myProject;
@@ -80,16 +81,17 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   public final void init(final Project project) {
     myProject = project;
 
+    myEditorOpener = myProject.getComponent(MPSEditorOpener.class);
+    myGenManager = myProject.getComponent(GeneratorManager.class);
+
     myCustomPartsToDispose = initCustomParts(project);
 
-    GeneratorManager manager = myProject.getComponent(GeneratorManager.class);
     myGenerationListeners = new ArrayList<GenerationListener>();
     for (GenerationListener listener : myGenerationListeners) {
-      manager.addGenerationListener(listener);
+      myGenManager.addGenerationListener(listener);
     }
 
-    MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
-    opener.registerOpenHandler(myTabsHandler, this);
+    myEditorOpener.registerOpenHandler(myTabsHandler, this);
 
     for (EditorTabDescriptor d : initTabbedEditors(project)) {
       myTabDescriptors.add(d);
@@ -132,16 +134,14 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     }
     myTools.clear();
 
-    MPSEditorOpener opener = myProject.getComponent(MPSEditorOpener.class);
-    if (opener != null) {
-      opener.unregisterOpenHandlers(BaseProjectPlugin.this);
+    if (myEditorOpener != null) {
+      myEditorOpener.unregisterOpenHandlers(BaseProjectPlugin.this);
     }
 
     myTabDescriptors.clear();
 
-    GeneratorManager manager = myProject.getComponent(GeneratorManager.class);
     for (GenerationListener listener : myGenerationListeners) {
-      manager.removeGenerationListener(listener);
+      myGenManager.removeGenerationListener(listener);
     }
 
     for (BaseCustomProjectPlugin customPart : myCustomPartsToDispose) {
