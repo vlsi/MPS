@@ -3,12 +3,12 @@
   <unitInfo fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.intentions.SurroundWithExecuteLightweightCommandStatement_Intention" />
   <unitInfo fileName="ExtractGroup_Intention.java" startLine="14" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.plugin.intentions.ExtractGroup_Intention" />
   <root nodeId="1204990433124">
-    <nodeInfo nodeId="1204990483179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExtractGroup_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="27" />
-    <nodeInfo nodeId="1205510388542" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExtractGroup_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="51" />
-    <nodeInfo nodeId="1204990880223" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ExtractGroup_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="163" />
-    <nodeInfo nodeId="1204990896326" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExtractGroup_Intention.java" startLine="50" startPosition="163" endLine="51" endPosition="92" />
-    <nodeInfo nodeId="1204990992075" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExtractGroup_Intention.java" startLine="51" startPosition="92" endLine="52" endPosition="110" />
-    <nodeInfo nodeId="1204991034776" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExtractGroup_Intention.java" startLine="52" startPosition="110" endLine="53" endPosition="37" />
+    <nodeInfo nodeId="1204990483179" fileName="ExtractGroup_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1205510388542" fileName="ExtractGroup_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204990880223" fileName="ExtractGroup_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1204990896326" fileName="ExtractGroup_Intention.java" startLine="50" startPosition="163" endLine="51" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1204990992075" fileName="ExtractGroup_Intention.java" startLine="51" startPosition="92" endLine="52" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1204991034776" fileName="ExtractGroup_Intention.java" startLine="52" startPosition="110" endLine="53" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1204990433126" fileName="ExtractGroup_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="27" />
     <scopeInfo nodeId="1205510378351" fileName="ExtractGroup_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="51" />
     <scopeInfo nodeId="1204990433128" fileName="ExtractGroup_Intention.java" startLine="49" startPosition="76" endLine="53" endPosition="37">
@@ -16,16 +16,16 @@
     </scopeInfo>
   </root>
   <root nodeId="1616052750811363739">
-    <nodeInfo nodeId="8821725594354763760" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="25" />
-    <nodeInfo nodeId="8821725594354763764" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="39" startPosition="76" endLine="40" endPosition="149" />
-    <nodeInfo nodeId="8821725594354779344" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="40" startPosition="149" endLine="41" endPosition="65" />
-    <nodeInfo nodeId="8821725594354779355" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="41" startPosition="65" endLine="42" endPosition="70" />
-    <nodeInfo nodeId="8821725594354779372" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="43" startPosition="69" endLine="44" endPosition="312" />
-    <nodeInfo nodeId="8821725594354779428" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="45" startPosition="5" endLine="46" endPosition="223" />
-    <nodeInfo nodeId="8821725594354779365" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="42" startPosition="70" endLine="45" endPosition="5" />
+    <nodeInfo nodeId="8821725594354763760" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8821725594354763764" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="39" startPosition="76" endLine="40" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8821725594354779344" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="40" startPosition="149" endLine="41" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8821725594354779355" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="41" startPosition="65" endLine="42" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8821725594354779372" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="43" startPosition="69" endLine="44" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8821725594354779428" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="45" startPosition="5" endLine="46" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8821725594354779365" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="42" startPosition="70" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="1616052750811363741" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="25" />
     <scopeInfo nodeId="8821725594354779368" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="43" startPosition="69" endLine="44" endPosition="312" />
-    <scopeInfo nodeId="8821725594354779365" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="42" startPosition="70" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="8821725594354779365" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="42" startPosition="70" endLine="45" endPosition="5" />
     <scopeInfo nodeId="1616052750811363743" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="39" startPosition="76" endLine="46" endPosition="223">
       <varInfo nodeId="8821725594354763765" varName="readActionStatement" />
       <varInfo nodeId="8821725594354779345" varName="selectedNodes" />
