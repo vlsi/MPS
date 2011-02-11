@@ -117,7 +117,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(attributeRole);
 
     SNode function = RuleUtil.getPropertyMacro_ValueFunction(propertyMacro);
-    if (function == null) {
+    if (propertyName == null || function == null) {
       throw new GenerationFailureException("cannot evaluate property macro", inputNode, templateNode, propertyMacro);
     }
 
