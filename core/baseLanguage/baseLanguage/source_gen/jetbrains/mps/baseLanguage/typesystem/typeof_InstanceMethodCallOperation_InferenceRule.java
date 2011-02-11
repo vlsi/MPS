@@ -25,10 +25,11 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
   }
 
   public void applyRule(final SNode imco, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SLinkOperations.getTarget(imco, "baseMethodDeclaration", false) == null) {
+    SNode methodDeclaration = SLinkOperations.getTarget(imco, "baseMethodDeclaration", false);
+    if (methodDeclaration == null) {
       return;
     }
-    final SNode methodClassifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    final SNode methodClassifier = SNodeOperations.getAncestor(methodDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     // --- 
     final SNode instanceType_typevar_1204064731338 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -42,11 +43,11 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204065906120", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), (SNode) new typeof_InstanceMethodCallOperation_InferenceRule.QuotationClass_ecn83h_a0a5a0().createNode(methodClassifier, typeCheckingContext), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), (SNode) new typeof_InstanceMethodCallOperation_InferenceRule.QuotationClass_ecn83h_a0a6a0().createNode(methodClassifier, typeCheckingContext), true, _info_12389875345);
     }
     // --- following piece of cake is identical for any method call --- 
     //  no more when_concrete 
-    final SNode returnType = SLinkOperations.getTarget(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "returnType", true);
+    final SNode returnType = SLinkOperations.getTarget(methodDeclaration, "returnType", true);
     if (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(returnType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isNotEmpty() || SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       {
         final SNode IT = typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338);
@@ -80,8 +81,8 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
     return true;
   }
 
-  public static class QuotationClass_ecn83h_a0a5a0 {
-    public QuotationClass_ecn83h_a0a5a0() {
+  public static class QuotationClass_ecn83h_a0a6a0 {
+    public QuotationClass_ecn83h_a0a6a0() {
     }
 
     public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
