@@ -57,7 +57,12 @@ public class JavaCompiler {
     org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(classPath), new MyErrorHandlingPolicy(), options, new MyCompilerRequestor(), new DefaultProblemFactory(), null);
     //c.options.verbose = true;
 
-    c.compile(myCompilationUnits.values().toArray(new CompilationUnit[0]));
+    try {
+      c.compile(myCompilationUnits.values().toArray(new CompilationUnit[0]));
+    }
+    catch (RuntimeException ex) {
+      LOG.fatal("Compilation failed", ex);
+    }
   }
 
   public ClassLoader getClassLoader(ClassLoader parent) {
