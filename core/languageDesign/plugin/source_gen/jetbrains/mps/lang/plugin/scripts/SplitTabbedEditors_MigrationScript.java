@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -66,14 +67,23 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
         });
         ListSequence.fromList(SLinkOperations.getTargets(helperClass, "staticMethod", true)).addElement(method);
 
+        SNode order = SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.plugin.structure.Order", null);
+        SPropertyOperations.set(order, "name", SPropertyOperations.getString(node, "name"));
+        ListSequence.fromList(SLinkOperations.getTargets(order, "tab", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "tabs", true)).<SNode>select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0a0a0a41a4a0a0a1a0().createNode(it);
+          }
+        }));
+
         List<SNode> tabs = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(node, "tabs", true));
         for (SNode tab : ListSequence.fromList(tabs)) {
           SNodeOperations.detachNode(tab);
           SModelOperations.addRootNode(model, tab);
+          SLinkOperations.setTarget(tab, "order", new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a2a2a71a4a0a0a1a0().createNode(order), true);
           SLinkOperations.setTarget(tab, "baseNodeConcept", SLinkOperations.getTarget(node, "mainConcept", false), false);
           SNode bnb = SLinkOperations.setNewChild(tab, "baseNodeBlock", "jetbrains.mps.lang.plugin.structure.GetBaseNodeBlock");
           SLinkOperations.setNewChild(bnb, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(bnb, "body", true), "statement", true)).addElement(new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0f0n0e0a0a0b0a().createNode(helperClass, SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", null), SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", null), method));
+          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(bnb, "body", true), "statement", true)).addElement(new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0g0r0e0a0a0b0a().createNode(helperClass, SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", null), SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", null), method));
         }
         SNodeOperations.deleteNode(node);
       }
@@ -243,8 +253,44 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_w50lnh_a0a0f0n0e0a0a0b0a {
-    public QuotationClass_w50lnh_a0a0f0n0e0a0a0b0a() {
+  public static class QuotationClass_w50lnh_a0a0a0a0a41a4a0a0a1a0 {
+    public QuotationClass_w50lnh_a0a0a0a0a41a4a0a0a1a0() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.EditorTabReference", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("editorTab", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_w50lnh_a2a2a71a4a0a0a1a0 {
+    public QuotationClass_w50lnh_a2a2a71a4a0a0a1a0() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.OrderReference", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("order", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_w50lnh_a0a0g0r0e0a0a0b0a {
+    public QuotationClass_w50lnh_a0a0g0r0e0a0a0b0a() {
     }
 
     public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12) {
