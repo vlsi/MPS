@@ -50,6 +50,10 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
     return 'G';
   }
 
+  public int compareTo(EditorTabDescriptor descriptor) {
+    return new ConceptDeclaration_Order().compare(this, descriptor);
+  }
+
   public void startListening() {
   }
 

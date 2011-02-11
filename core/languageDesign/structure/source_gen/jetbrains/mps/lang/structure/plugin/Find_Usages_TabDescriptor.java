@@ -21,6 +21,10 @@ public class Find_Usages_TabDescriptor extends EditorTabDescriptor {
     return 'F';
   }
 
+  public int compareTo(EditorTabDescriptor descriptor) {
+    return new ConceptDeclaration_Order().compare(this, descriptor);
+  }
+
   public void startListening() {
   }
 

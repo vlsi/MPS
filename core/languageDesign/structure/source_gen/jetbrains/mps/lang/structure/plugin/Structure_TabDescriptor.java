@@ -21,6 +21,10 @@ public class Structure_TabDescriptor extends EditorTabDescriptor {
     return 'S';
   }
 
+  public int compareTo(EditorTabDescriptor descriptor) {
+    return new ConceptDeclaration_Order().compare(this, descriptor);
+  }
+
   public void startListening() {
   }
 
