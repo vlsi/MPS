@@ -189,6 +189,10 @@ public class AttributeOperations {
       public String select(SNode it) {
         return getPropertyName(SNodeOperations.as(it, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
       }
+    }).where(new IWhereFilter<String>() {
+      public boolean accept(String name) {
+        return name != null;
+      }
     }));
   }
 
@@ -216,6 +220,10 @@ public class AttributeOperations {
     return SetSequence.fromSetWithValues(new HashSet<String>(), Sequence.fromIterable(getAttributes(node, new IAttributeDescriptor.LinkAttributeString(null, null))).<String>select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return getLinkRole(SNodeOperations.as(it, "jetbrains.mps.lang.core.structure.LinkAttribute"));
+      }
+    }).where(new IWhereFilter<String>() {
+      public boolean accept(String role) {
+        return role != null;
       }
     }));
   }
