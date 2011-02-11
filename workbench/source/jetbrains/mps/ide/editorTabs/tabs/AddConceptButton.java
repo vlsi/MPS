@@ -93,7 +93,7 @@ abstract class AddConceptTab {
     private final EditorTabDescriptor myD;
 
     public CreateAction(SNode concept, EditorTabDescriptor d) {
-      super(concept.getName(), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
+      super(concept.getName().replaceAll("_","__"), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
       myConcept = concept;
       myD = d;
     }
