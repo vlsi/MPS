@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.presentation.difference;
 
+import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -27,18 +28,18 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 public class ShowTypeSystemTrace extends JDialog {
-  Checkbox myBlockDependencies;
-  Checkbox myTraceForNode;
-  Checkbox myGenerationMode;
-  TypeSystemTraceTree myTree;
+  private Checkbox myBlockDependencies;
+  private Checkbox myTraceForNode;
+  private Checkbox myGenerationMode;
+  private TypeSystemTraceTree myTree;
 
   public ShowTypeSystemTrace(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame, SNode node) {
     super(frame);
-    t.checkRoot(true);
+  //  t.checkRoot(true);
     this.setLayout(new BorderLayout());
     this.getContentPane().setBackground(this.getBackground());
     myTree = new TypeSystemTraceTree(operationContext, t, frame, node);
-    JScrollPane scrollPane = new JScrollPane(myTree);
+    JScrollPane scrollPane = new JBScrollPane(myTree);
     scrollPane.setBackground(this.getBackground());
 
     this.add(scrollPane, BorderLayout.CENTER);
@@ -48,7 +49,7 @@ public class ShowTypeSystemTrace extends JDialog {
 
     myBlockDependencies = new Checkbox("Block dependencies");
     myBlockDependencies.setState(myTree.isShowDependencyOperations());
-    myTraceForNode = new Checkbox("Trace for node");
+    myTraceForNode = new Checkbox("Trace for selected node");
     myGenerationMode = new Checkbox("Generation mode");
     checkBoxes.add(myBlockDependencies);
     checkBoxes.add(myTraceForNode);
@@ -59,11 +60,11 @@ public class ShowTypeSystemTrace extends JDialog {
     myGenerationMode.addItemListener(listener);
     myTree.setBackground(getBackground());
     myTree.setForeground(new Color(0x07025D));
-    this.setSize(500, 600);
+  //  this.setSize(500, 600);
     this.setPreferredSize(new Dimension(500, 900));
     String title = "TypeSystem trace";
-    if (node != null) {
-      title = title.concat(" for node (" + node + ")");
+    if (myTree.isTraceForNode() && node != null) {
+      title = title.concat(" for selected node (" + node + ")");
     }
     setTitle(title);
     this.pack();
@@ -75,7 +76,7 @@ public class ShowTypeSystemTrace extends JDialog {
     return Color.WHITE;
   }
 
-  public class CheckBoxListener implements ItemListener {
+  private class CheckBoxListener implements ItemListener {
 
     @Override
     public void itemStateChanged(ItemEvent e) {

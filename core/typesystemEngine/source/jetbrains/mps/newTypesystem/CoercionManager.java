@@ -17,16 +17,14 @@ package jetbrains.mps.newTypesystem;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.*;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -34,20 +32,23 @@ import java.util.Set;
  * Date: Dec 13, 2010
  * Time: 1:43:09 PM
  */
-public class CoercionManager {           /*
+public class CoercionManager {
   private TypeChecker myTypeChecker;
+  private SubTypingManagerNew mySubTyping;
 
-  public CoercionManager(TypeChecker typeChecker) {
+  public CoercionManager(TypeChecker typeChecker, SubTypingManagerNew subTyping) {
     myTypeChecker = typeChecker;
+    mySubTyping = subTyping;
   }
 
-  public SNode coerceSubTyping(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak) {
+
+  public SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
     if (subtype == null) return null;
     if (pattern.match(subtype)) return subtype;
     if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConceptFqName())) {
       List<SNode> children = subtype.getChildren("argument");
       for (SNode child : children) {
-        SNode result = coerceSubTyping(child, pattern, isWeak);
+        SNode result = coerceSubTypingNew(child, pattern, isWeak, state);
         if (result != null) return result;
       }
       return null;
@@ -56,9 +57,8 @@ public class CoercionManager {           /*
     if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConceptFqName())) {
       List<SNode> children = subtype.getChildren("argument");
 
-      IWrapper lcs = leastCommonSupertype(children, isWeak);
-      SNode result = coerceSubTyping(lcs.getNode(), pattern, isWeak);
-      return result;
+      SNode lcs = mySubTyping.createLCS(children);
+      return coerceSubTypingNew(lcs, pattern, isWeak, state);
     }
 
     //asking the cache
@@ -79,9 +79,8 @@ public class CoercionManager {           /*
             return nodePair.o2;
           }
         }
-
         CoercionMatcher coercionMatcher = new CoercionMatcher(pattern);
-        boolean success = searchInSupertypes(subtype, coercionMatcher, equationManager, null, isWeak);
+        boolean success = mySubTyping.searchInSuperTypes(subtype, coercionMatcher, null, isWeak);
         SNode result;
         if (!success) {
           result = null;
@@ -104,11 +103,12 @@ public class CoercionManager {           /*
     });
   }
 
-  public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern) {
-    return coerceSubtyping(subtype, pattern, true);
+
+  public SNode coerceSubTyping(SNode subtype, final IMatchingPattern pattern, State state) {
+    return coerceSubTypingNew(subtype, pattern, true, state);
   }
 
-  private static class CoercionMatcher {
+  private static class CoercionMatcher implements INodeMatcher {
     private final IMatchingPattern myPattern;
     private SNode myResult;
 
@@ -135,6 +135,6 @@ public class CoercionManager {           /*
     public String getConceptFQName() {
       return myPattern.getConceptFQName();
     }
-  }                      */
-  
+  }
+
 }

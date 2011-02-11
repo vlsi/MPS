@@ -23,6 +23,7 @@ import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
+import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -76,11 +77,13 @@ public class TypeChecker implements ApplicationComponent {
   public TypeChecker(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
 
-    mySubtypingManager = new SubtypingManager(this);
+
     if (useNewTypeSystem) {
       myRuntimeSupport = new RuntimeSupportNew(this);
+      mySubtypingManager = new SubTypingManagerNew(this);
     } else {
       myRuntimeSupport = new RuntimeSupport(this);
+      mySubtypingManager = new SubtypingManager(this);
     }
     myRulesManager = new RulesManager(this);
   }
@@ -319,7 +322,7 @@ public class TypeChecker implements ApplicationComponent {
     }
   }
 
-  /* package */ void fireTypeWillBeRecalculatedForTerm(SNode term) {
+  public void fireTypeWillBeRecalculatedForTerm(SNode term) {
     for (TypeRecalculatedListener typeRecalculatedListener : copyTypeRecalculatedListeners()) {
       typeRecalculatedListener.typeWillBeRecalculatedForTerm(term);
     }

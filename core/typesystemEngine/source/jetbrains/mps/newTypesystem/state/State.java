@@ -20,11 +20,8 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
-import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
-import jetbrains.mps.newTypesystem.operation.AbstractOperation;
-import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
-import jetbrains.mps.newTypesystem.operation.CheckAllOperation;
+import jetbrains.mps.newTypesystem.operation.*;
 import jetbrains.mps.newTypesystem.operation.block.AddBlockOperation;
 import jetbrains.mps.newTypesystem.operation.block.AddDependencyOperation;
 import jetbrains.mps.newTypesystem.operation.block.RemoveBlockOperation;
@@ -54,8 +51,8 @@ public class State {
 
   private final VariableIdentifier myVariableIdentifier;
 
-  private final Stack<AbstractOperation> myOperationStack = new Stack<AbstractOperation>();
-  private AbstractOperation myOperation = new CheckAllOperation();
+  private final Stack<AbstractOperation> myOperationStack;
+  private AbstractOperation myOperation;
   private boolean myInsideStateChangeAction = false;
 
   @StateObject
@@ -75,8 +72,10 @@ public class State {
       myBlocksAndInputs.put(ConditionKind.SHALLOW, new ManyToManyMap<SNode, Block>());
       myBlocksAndInputs.put(ConditionKind.CONCRETE, new ManyToManyMap<SNode, Block>());
     }
+    myOperationStack = new Stack<AbstractOperation>();
+    myOperation = new CheckAllOperation();
+    myOperationStack.push(myOperation);
   }
-
 
   @StateMethod
   public void addDependency(Block dataFlowBlock, SNode var, ConditionKind condition) {
@@ -95,8 +94,11 @@ public class State {
   @StateMethod
   public void removeBlockNoVars(Block dataFlowBlock) {
     assertIsInStateChangeAction();
+    if (myInequalities.isSolvingInProcess() && !myBlocks.contains(dataFlowBlock)) {
+      return;
+    }
     for (ManyToManyMap<SNode, Block> map : myBlocksAndInputs.values()) {
-      assert !map.containsSecond(dataFlowBlock);
+      assert !map.containsSecond(dataFlowBlock) || myInequalities.isSolvingInProcess();
     }
     boolean removed = myBlocks.remove(dataFlowBlock);
     assert removed;
@@ -105,7 +107,6 @@ public class State {
   @StateMethod
   public void removeInequalityBlock(InequalityBlock block) {
     assertIsInStateChangeAction();
-   
     boolean removed = myBlocks.remove(block);
     assert removed;
   }
@@ -114,7 +115,7 @@ public class State {
   public void addBlockNoVars(Block dataFlowBlock) {
     assertIsInStateChangeAction();
     for (ManyToManyMap<SNode, Block> map : myBlocksAndInputs.values()) {
-      assert !map.containsSecond(dataFlowBlock);
+      assert !map.containsSecond(dataFlowBlock) || myInequalities.isSolvingInProcess();
     }
     boolean addedAnew = myBlocks.add(dataFlowBlock);
     assert addedAnew;
@@ -151,6 +152,16 @@ public class State {
 
   public void addBlock(Block block) {
     executeOperation(new AddBlockOperation(block));
+  }
+
+  public boolean clearNode(SNode node) {
+    SNode type = myNodeMaps.getType(node);
+    List<IErrorReporter> nodeErrors = myNodeMaps.getNodeErrors(node);
+    if (type != null || (nodeErrors != null && !nodeErrors.isEmpty())) {
+      executeOperation(new ClearNodeTypeOperation(node, type, nodeErrors));
+      return true;
+    }
+    return false;
   }
 
   private void testInputsResolved(Block block) {
@@ -194,11 +205,11 @@ public class State {
      addBlock(new ComparableBlock(this, left, right, RelationKind.fromFlags(isWeak, true, true), info));
   }
 
-  public jetbrains.mps.newTypesystem.state.NodeMaps getNodeMaps() {
+  public NodeMaps getNodeMaps() {
     return myNodeMaps;
   }
 
-  public jetbrains.mps.newTypesystem.state.Inequalities getInequalities() {
+  public Inequalities getInequalities() {
     return myInequalities;
   }
 
@@ -227,11 +238,37 @@ public class State {
       myOperationStack.peek().addConsequence(operation);
     }
     myOperationStack.push(operation);
-    try {
-      operation.execute(this);
-    } finally {
-      myOperationStack.pop();
+    operation.execute(this);
+    myOperationStack.pop();
+  }
+
+  public AbstractOperation getLastOperation() {
+    AbstractOperation operation = myOperationStack.peek();
+    List<AbstractOperation> consequences = operation.getConsequences();
+    while (!(consequences == null || consequences.isEmpty())) {
+      operation = consequences.get(consequences.size()-1);
+      consequences = operation.getConsequences();
     }
+    return operation;
+  }
+
+  private void visit(AbstractOperation operation, List<AbstractOperation> result) {
+    result.add(operation);
+    if (operation.getConsequences() != null) {
+      for (AbstractOperation child : operation.getConsequences()) {
+        visit(child, result);
+      }
+    }
+  }
+
+  public List<AbstractOperation> getOperationsAsList() {
+    List<AbstractOperation> result = new LinkedList<AbstractOperation>();
+    visit(myOperation, result);
+    return result;
+  }
+
+  public void revertLastOperation() {
+    getLastOperation().undo(this);
   }
 
   public void addError(SNode node, IErrorReporter error, EquationInfo info) {
@@ -252,23 +289,54 @@ public class State {
       map.clear();
     }
     if (clearDiff) {
-      myOperationStack.clear();
-      myOperation = new CheckAllOperation();
-      myOperationStack.push(myOperation);
+      clearOperations();
     }
   }
 
-  public void solveInequalities() {
-    executeOperation(new AddRemarkOperation("Solving inequalities", new Runnable() {
+  public void clearOperations() {
+    myOperationStack.clear();
+    myOperation = new CheckAllOperation();
+    myOperationStack.push(myOperation);
+  }
 
-      public void run() {
-        myInequalities.solveInequalities();
-      }
-    }));
+  public void solveInequalities() {
+    if (!myInequalities.getInequalitiesToSolve().isEmpty()) {
+      executeOperation(new SolveInequalitiesOperation(new Runnable() {
+        public void run() {
+          myInequalities.solveInequalities();
+        }
+      }));
+    }
   }
 
   public void checkNonConcreteWhenConcretes() {
     // todo
+  }
+
+  public void performActionsAfterChecking() {
+    /*
+    Map<SNode, List<IErrorReporter>> toAdd = new HashMap<SNode, List<IErrorReporter>>(8);
+
+    // setting expanded errors
+    for (SNode node : myNodesToErrorsMap.keySet()) {
+      List<IErrorReporter> iErrorReporters = myNodesToErrorsMap.get(node);
+      if (iErrorReporters != null) {
+        for (IErrorReporter iErrorReporter : iErrorReporters) {
+          String errorString = iErrorReporter.reportError();
+          SimpleErrorReporter reporter = new SimpleErrorReporter(node, errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(),
+            iErrorReporter.getMessageStatus(), iErrorReporter.getErrorTarget());
+          reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
+          reporter.setAdditionalRulesIds(iErrorReporter.getAdditionalRulesIds());
+          List<IErrorReporter> errorReporterList = toAdd.get(node);
+          if (errorReporterList == null) {
+            errorReporterList = new ArrayList<IErrorReporter>(1);
+            toAdd.put(node, errorReporterList);
+          }
+          errorReporterList.add(iErrorReporter);
+        }
+      }
+    }                                          todo ????
+    myNodesToErrorsMap.putAll(toAdd);       */
   }
 
   public SNode expand(SNode node) {
@@ -283,6 +351,16 @@ public class State {
     return myOperation;
   }
 
+  public void expandAll(final Set<SNode> nodes) {
+    if (nodes != null && !nodes.isEmpty()) {
+      executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
+        public void run() {
+          myNodeMaps.expandAll(nodes);
+        }
+      }));
+    }
+  }
+
   public void expandAll() {
     executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
       public void run() {
@@ -290,6 +368,7 @@ public class State {
       }
     }));
   }
+
 
   public boolean executeOperationsBeforeAnchor(AbstractOperation firstOp, Object anchor) {
     firstOp.redo(this);

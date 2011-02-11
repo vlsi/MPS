@@ -41,6 +41,8 @@ import org.junit.runners.Suite.SuiteClasses;
   jetbrains.mps.baseLanguage.test.ReadAction_Test.class,
   jetbrains.mps.baseLanguage.test.TestSafeEquals_Test.class,
   jetbrains.mps.baseLanguage.test.TypesTest_BL_Test.class,
+  jetbrains.mps.baseLanguage.test.TestGenerationMode_Test.class,
+  jetbrains.mps.baseLanguage.test.RollBacksNewTypeSystem_Test.class,
   jetbrains.mps.baseLanguage.test.UnexpectedReturnInAnonymousClass_Test.class,
   jetbrains.mps.baseLanguage.test.UnreachableStatements_Test.class,
   jetbrains.mps.baseLanguage.test.UnusedAssignmentWithIF_Test.class,

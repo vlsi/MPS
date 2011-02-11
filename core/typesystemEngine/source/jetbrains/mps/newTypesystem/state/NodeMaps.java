@@ -19,12 +19,11 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
-import jetbrains.mps.newTypesystem.operation.TypeAssignedOperation;
 import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
+import jetbrains.mps.newTypesystem.operation.TypeAssignedOperation;
 import jetbrains.mps.newTypesystem.operation.TypeExpandedOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
@@ -33,7 +32,6 @@ import java.util.*;
  * User: Ilya.Lintsbakh
  * Date: Sep 10, 2010
  * Time: 6:38:28 PM
- * To change this template use File | Settings | File Templates.
  */
 public class NodeMaps {
   @StateObject
@@ -54,7 +52,9 @@ public class NodeMaps {
 
   public void updateNodeToType(SNode node, SNode type, EquationInfo info) {
     SNode oldType = myNodesToTypes.get(node);
-    myState.executeOperation(new TypeExpandedOperation(node, type, info, oldType));
+    if (oldType != null) {
+      myState.executeOperation(new TypeExpandedOperation(node, type, info, oldType));
+    }
   }
 
   @StateMethod
@@ -69,6 +69,18 @@ public class NodeMaps {
     myState.assertIsInStateChangeAction();
     SNode type = myNodesToTypes.remove(node);
     myTypesToNodes.remove(type);
+  }
+
+  @StateMethod
+  public void removeNodeErrors(SNode node) {
+    myState.assertIsInStateChangeAction();
+    myNodesToErrors.remove(node);
+  }
+
+  @StateMethod
+  public void addNodeErrors(SNode node, List<IErrorReporter> errors) {
+    myState.assertIsInStateChangeAction();
+    myNodesToErrors.put(node, errors);
   }
 
   @StateMethod
@@ -119,17 +131,6 @@ public class NodeMaps {
     return result;
   }
 
-  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
-    Set<Pair<SNode, List<IErrorReporter>>> result = new HashSet<Pair<SNode, List<IErrorReporter>>>();
-    for (SNode key : myNodesToErrors.keySet()) {
-      List<IErrorReporter> reporter = getNodeErrors(key);
-      if (key != null && !reporter.isEmpty()) {
-        result.add(new Pair<SNode, List<IErrorReporter>>(key, reporter));
-      }
-    }
-    return result;
-  }
-
   public void clear() {
     myNodesToErrors.clear();
     myNodesToTypes.clear();
@@ -155,20 +156,16 @@ public class NodeMaps {
     return result;
   }
 
-  public List<String> getTypeListPresentation() {
-    List<String> result = new LinkedList<String>();
-    for (Map.Entry<SNode, SNode> entry : myNodesToTypes.entrySet()) {
-      result.add(entry.getKey() + " : " + entry.getValue() + " ---> " + myState.getRepresentative(entry.getValue()));
-    }
-    return result;
-  }
-
-  public void expandAll() {
-    for (SNode node : new HashSet<SNode>(myNodesToTypes.keySet())) {
+  public void expandAll(Set<SNode> nodes) {
+    for (SNode node : nodes) {
       SNode var = myNodesToTypes.get(node);
       SNode type = myState.getEquations().expandNode(var, true);
       updateNodeToType(node, type, null);
     }
+  }
+
+  public void expandAll() {
+     expandAll(new HashSet<SNode>(myNodesToTypes.keySet()));
   }
 
   public SNode getNode(SNode type) {
@@ -203,7 +200,8 @@ public class NodeMaps {
     if (info != null) {
       errorReporter.setAdditionalRulesIds(info.getAdditionalRulesIds());
     }
-    addNodeToError(nodeWithError, errorReporter, info);
+   // addNodeToError(nodeWithError, errorReporter, info);
+    myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
 
   public void reportSubTypeError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
@@ -221,8 +219,7 @@ public class NodeMaps {
     }
     errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
     errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
-    // myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
-    myState.addError(nodeWithError, errorReporter, equationInfo);
+    myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
 
   public void reportComparableError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
@@ -240,7 +237,14 @@ public class NodeMaps {
     }
     errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
     errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
-    // myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
-    myState.addError(nodeWithError, errorReporter, equationInfo);
+    myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
+  }
+
+  public Map<SNode, SNode> getNodesToTypes() {
+    return Collections.unmodifiableMap(myNodesToTypes);
+  }
+
+  public Map<SNode, List<IErrorReporter>> getNodesToErrors() {
+    return Collections.unmodifiableMap(myNodesToErrors);
   }
 }

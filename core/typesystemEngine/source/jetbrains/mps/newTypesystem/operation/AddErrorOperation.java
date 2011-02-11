@@ -27,8 +27,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
  * Time: 12:41:21 PM
  */
 public class AddErrorOperation extends AbstractOperation {
-  private SNode myNode;
-  private IErrorReporter myError;
+  private final SNode myNode;
+  private final IErrorReporter myError;
 
   public AddErrorOperation(SNode node, IErrorReporter error, EquationInfo info) {
     myNode = node;

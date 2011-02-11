@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="LinkRefQualifier_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.LinkRefQualifier_Behavior" />
-  <unitInfo fileName="EnumMemberReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.EnumMemberReference_Behavior" />
   <unitInfo fileName="PropertyRefQualifier_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.PropertyRefQualifier_Behavior" />
+  <unitInfo fileName="EnumMemberReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.EnumMemberReference_Behavior" />
+  <unitInfo fileName="LinkRefQualifier_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.LinkRefQualifier_Behavior" />
   <unitInfo fileName="SModelType_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SModelType_Behavior" />
-  <unitInfo fileName="Node_GetChildrenOperation_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.Node_GetChildrenOperation_Behavior" />
-  <unitInfo fileName="SEnumOperation_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SEnumOperation_Behavior" />
-  <unitInfo fileName="SConceptPropertyAccess_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SConceptPropertyAccess_Behavior" />
-  <unitInfo fileName="SPropertyAccess_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SPropertyAccess_Behavior" />
   <unitInfo fileName="SConceptLinkAccess_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SConceptLinkAccess_Behavior" />
+  <unitInfo fileName="SPropertyAccess_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SPropertyAccess_Behavior" />
+  <unitInfo fileName="SConceptPropertyAccess_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SConceptPropertyAccess_Behavior" />
+  <unitInfo fileName="SEnumOperation_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SEnumOperation_Behavior" />
+  <unitInfo fileName="Node_GetChildrenOperation_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.Node_GetChildrenOperation_Behavior" />
   <unitInfo fileName="ILinkAccessQualifierContainer_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.ILinkAccessQualifierContainer_Behavior" />
   <unitInfo fileName="StaticConceptMethodCall_Behavior.java" startLine="15" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.StaticConceptMethodCall_Behavior" />
-  <unitInfo fileName="NodeAttributeAccessQualifier_Behavior.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.NodeAttributeAccessQualifier_Behavior" />
   <unitInfo fileName="PropertyAttributeAccessQualifier_Behavior.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.PropertyAttributeAccessQualifier_Behavior" />
+  <unitInfo fileName="NodeAttributeAccessQualifier_Behavior.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.NodeAttributeAccessQualifier_Behavior" />
   <unitInfo fileName="SNodeTypeCastExpression_Behavior.java" startLine="42" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeTypeCastExpression_Behavior$QuotationClass_cjhknp_a1a0a0b0b" />
   <unitInfo fileName="_LinkAccessT_Behavior.java" startLine="45" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior._LinkAccessT_Behavior$QuotationClass_bquv25_a0a0a0c" />
-  <unitInfo fileName="SNodeType_Behavior.java" startLine="61" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeType_Behavior$QuotationClass_4ouf01_a0a0e" />
   <unitInfo fileName="SNodeListType_Behavior.java" startLine="61" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeListType_Behavior$QuotationClass_r176b6_a0a0f" />
+  <unitInfo fileName="SNodeType_Behavior.java" startLine="61" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeType_Behavior$QuotationClass_4ouf01_a0a0e" />
   <unitInfo fileName="_LinkAccessT_Behavior.java" startLine="63" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior._LinkAccessT_Behavior$QuotationClass_bquv25_a0b0c" />
-  <unitInfo fileName="SLinkAccess_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SLinkAccess_Behavior" />
   <unitInfo fileName="SLinkListAccess_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SLinkListAccess_Behavior" />
+  <unitInfo fileName="SLinkAccess_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SLinkAccess_Behavior" />
   <unitInfo fileName="SEnumMemberType_Behavior.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SEnumMemberType_Behavior" />
   <unitInfo fileName="SConceptType_Behavior.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SConceptType_Behavior" />
   <unitInfo fileName="OperationParm_LinkQualifier_Behavior.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.OperationParm_LinkQualifier_Behavior" />
@@ -29,8 +29,8 @@
   <unitInfo fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="17" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.LinkAttributeAccessQualifier_Behavior" />
   <unitInfo fileName="SNodeTypeCastExpression_Behavior.java" startLine="16" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeTypeCastExpression_Behavior" />
   <unitInfo fileName="SNodeOperation_Behavior.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior" />
-  <unitInfo fileName="SNodeType_Behavior.java" startLine="22" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeType_Behavior" />
   <unitInfo fileName="SNodeListType_Behavior.java" startLine="22" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeListType_Behavior" />
+  <unitInfo fileName="SNodeType_Behavior.java" startLine="22" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SNodeType_Behavior" />
   <unitInfo fileName="_LinkAccessT_Behavior.java" startLine="15" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior._LinkAccessT_Behavior" />
   <root nodeId="1213877246679">
     <scopeInfo nodeId="1213877246681" fileName="PropertyRefQualifier_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />

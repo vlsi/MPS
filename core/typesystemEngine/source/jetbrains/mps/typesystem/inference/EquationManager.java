@@ -317,7 +317,7 @@ public class EquationManager {
     if (subtypeRepresentator instanceof NodeWrapper && supertypeRepresentator instanceof NodeWrapper) {
       SNode node1 = subtypeRepresentator.getNode();
       SNode node2 = supertypeRepresentator.getNode();
-      Set<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(node1, node2);
+      List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(node1, node2);
       for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequationReplacementRule : inequationReplacementRules) {
         if (skippedRules.contains(inequationReplacementRule.o1.getClass().getName())) {
           continue;

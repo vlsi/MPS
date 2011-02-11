@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.constraints;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.newTypesystem.TypeSystemException;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.ERROR;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.OK;
@@ -73,6 +74,9 @@ public class ModelConstraintsUtil {
               status[0] = getSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, context);
             } catch (Exception t) {
               LOG.error(t, referenceNode != null ? referenceNode : enclosingNode_);
+              if (t instanceof TypeSystemException) {
+                throw new TypeSystemException(t.getMessage());
+              }
               status[0] = new SearchScopeStatus.ERROR("can't create search scope for role '" + linkRole + "' in '" + referenceNodeConcept.getName() + "'");
             }
           }

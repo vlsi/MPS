@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.newTypesystem.state;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 02.12.10
- * Time: 16:41
- * To change this template use File | Settings | File Templates.
- */
 public enum BlockKind {
   INEQUALITY(),
   COMPARABLE(),

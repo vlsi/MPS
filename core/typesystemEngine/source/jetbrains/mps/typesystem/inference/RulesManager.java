@@ -24,8 +24,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class RulesManager {
 
@@ -155,10 +154,10 @@ public class RulesManager {
     }
   }
 
-  public Set<Pair<InferenceRule_Runtime, IsApplicableStatus>> getInferenceRules(final SNode node) {
+  public List<Pair<InferenceRule_Runtime, IsApplicableStatus>> getInferenceRules(final SNode node) {
     synchronized (RULES_LOCK) {
-      Set<Pair<InferenceRule_Runtime, IsApplicableStatus>> result =
-        new HashSet<Pair<InferenceRule_Runtime, IsApplicableStatus>>();
+      List<Pair<InferenceRule_Runtime, IsApplicableStatus>> result =
+        new LinkedList<Pair<InferenceRule_Runtime, IsApplicableStatus>>();
       Set<InferenceRule_Runtime> ruleSet = myInferenceRules.getRules(node);
       for (InferenceRule_Runtime rule : ruleSet) {
         IsApplicableStatus status = rule.isApplicableAndPattern(node);
@@ -170,10 +169,10 @@ public class RulesManager {
     }
   }
 
-  public Set<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> getNonTypesystemRules(final SNode node) {
+  public List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> getNonTypesystemRules(final SNode node) {
     synchronized (RULES_LOCK) {
-    Set<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> result =
-        new HashSet<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>();
+    List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> result =
+        new LinkedList<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>();
       Set<NonTypesystemRule_Runtime> ruleSet = myNonTypesystemRules.getRules(node);
       for (NonTypesystemRule_Runtime rule : ruleSet) {
         IsApplicableStatus status = rule.isApplicableAndPattern(node);
@@ -185,11 +184,11 @@ public class RulesManager {
     }
   }
 
-  public Set<Pair<SubtypingRule_Runtime, IsApplicableStatus>> getSubtypingRules(final SNode node, final boolean isWeak) {
+  public List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> getSubtypingRules(final SNode node, final boolean isWeak) {
     synchronized (RULES_LOCK) {
       loadLanguage(node.getLanguageNamespace());
-      Set<Pair<SubtypingRule_Runtime, IsApplicableStatus>> result =
-        new HashSet<Pair<SubtypingRule_Runtime, IsApplicableStatus>>();
+      List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> result =
+        new LinkedList<Pair<SubtypingRule_Runtime, IsApplicableStatus>>();
       Set<SubtypingRule_Runtime> ruleSet = mySubtypingRules.getRules(node);
       for (SubtypingRule_Runtime rule : ruleSet) {
         if ((isWeak || !rule.isWeak())) {
@@ -218,11 +217,11 @@ public class RulesManager {
     }
   }
 
-  public Set<Pair<ComparisonRule_Runtime, IsApplicable2Status>> getComparisonRules(final SNode node1, final SNode node2, final boolean isWeak) {
+  public List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> getComparisonRules(final SNode node1, final SNode node2, final boolean isWeak) {
     synchronized (RULES_LOCK) {
       loadLanguage(node1.getLanguageNamespace());
       loadLanguage(node2.getLanguageNamespace());
-      Set<Pair<ComparisonRule_Runtime, IsApplicable2Status>> result = new HashSet<Pair<ComparisonRule_Runtime, IsApplicable2Status>>();
+      List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> result = new LinkedList<Pair<ComparisonRule_Runtime, IsApplicable2Status>>();
       Set<ComparisonRule_Runtime> ruleSet = myComparisonRules.getRules(node1, node2);
       for (ComparisonRule_Runtime rule : ruleSet) {
         if (isWeak || !rule.isWeak()) {
@@ -236,9 +235,9 @@ public class RulesManager {
     }
   }
 
-  public Set<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> getReplacementRules(final SNode node1, final SNode node2) {
+  public List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> getReplacementRules(final SNode node1, final SNode node2) {
     synchronized (RULES_LOCK) {
-      Set<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> result = new HashSet<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>>();
+      List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> result = new LinkedList<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>>();
       Set<InequationReplacementRule_Runtime> ruleSet = myReplacementRules.getRules(node1, node2);
       for (InequationReplacementRule_Runtime rule : ruleSet) {
         IsApplicable2Status status = rule.isApplicableAndPatterns(node1, node2);

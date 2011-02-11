@@ -24,23 +24,18 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
  * Date: Sep 24, 2010
  * Time: 12:42:45 PM
- * To change this template use File | Settings | File Templates.
  */
 public class TypesUtil {
-
-  public SNode leastCommonSuperType(SNode left, SNode right) {
-    //left.isInstanceOfConcept()
-    //if ()
-
-    return left;
-  }
 
   public static boolean isVariable(SNode node) {
     return HUtil.isRuntimeTypeVariable(node);
@@ -64,6 +59,9 @@ public class TypesUtil {
   }
 
   private static void getVariablesInside(SNode node, List<SNode> result) {
+    if (node == null) {
+      return;
+    }
     if (isVariable(node)) {
       result.add(node);
       return;
@@ -108,22 +106,26 @@ public class TypesUtil {
     return result;
   }
 
-  public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info, boolean checkOnly) {
+  public static boolean match(SNode left, SNode right) {
+    return match(left, right, null, null);
+  }
+
+  public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info) {
     if (left == right) {
       return true;
     }
     if (left == null || right == null) {
       return false;
-    }
+    }   /*
     if (TypesUtil.isVariable(left) || TypesUtil.isVariable(right)) {
-      if (!checkOnly) {
+      if (equations != null) {
         equations.addEquation(left, right, info);
+        return true;
       }
-      return true;
-    }
+    } */
     TypeMatchModifier typeMatchModifier = new TypeMatchModifier();
     boolean result = MatchingUtil.matchNodes(left, right, typeMatchModifier, false);
-    if (!checkOnly && result) {
+    if (result) {
       if (equations != null) {
         equations.addEquations(typeMatchModifier.getChildEqs(), info);
       }

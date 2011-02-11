@@ -19,7 +19,6 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 
-import java.util.Collections;
 import java.util.Set;
 
 /**
@@ -44,6 +43,10 @@ public class WhenConcreteBlock extends Block {
   public String toString() {
     return myArgument.toString();
   }
+
+  public SNode getArgument() {
+    return myArgument;
+  }  
 
   @Override
   public void performAction() {

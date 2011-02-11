@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.newTypesystem.operation;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 02.12.10
- * Time: 20:03
- * To change this template use File | Settings | File Templates.
- */
 public class PresentationKind {
 
   public static final String EQUATION_ADDED = "equation_added";
@@ -32,5 +25,6 @@ public class PresentationKind {
   public static final String ERROR_ADDED = "error_added";
   public static final String TYPE_ASSIGNED = "type_assigned";
   public static final String TYPE_EXPANDED = "type_expanded";
+  public static final String TYPE_REMOVED = "type_removed";    //incremental
   public static final String DEFAULT = "default";
 }

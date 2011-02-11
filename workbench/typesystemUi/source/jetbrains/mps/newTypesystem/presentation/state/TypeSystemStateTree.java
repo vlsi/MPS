@@ -37,11 +37,11 @@ import java.util.*;
  * User: Ilya.Lintsbakh
  * Date: Oct 15, 2010
  * Time: 11:42:25 AM
- * To change this template use File | Settings | File Templates.
  */
+
 public class TypeSystemStateTree extends MPSTree {
-  IOperationContext myOperationContext;
-  private jetbrains.mps.newTypesystem.state.State myState;
+  private IOperationContext myOperationContext;
+  private State myState;
 
 
   public TypeSystemStateTree(IOperationContext operationContext, jetbrains.mps.newTypesystem.state.State state) {
@@ -60,8 +60,8 @@ public class TypeSystemStateTree extends MPSTree {
 
   private TypeSystemStateTreeNode createNode() {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("State", myOperationContext);
-   //todo: show info from blocks grouped by class
-    result.add(createNode("Inequalities", myState.getBlocks(BlockKind.INEQUALITY), null));
+    result.add(new TypeSystemStateTreeNode("Solving inequalities in process: " + myState.getInequalities().isSolvingInProcess(), myOperationContext));
+   // result.add(createNode("Inequalities", myState.getBlocks(BlockKind.INEQUALITY), null));
     result.add(createInequalitiesNode());
     result.add(createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null));
     result.add(createNode("When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null));
@@ -89,7 +89,7 @@ public class TypeSystemStateTree extends MPSTree {
       result.setColor(color);
     }
     for (Block block : entries) {
-      result.add(new TypeSystemStateTreeNode(block, myOperationContext, myState));
+      result.add(new BlockTreeNode(block, myOperationContext, myState));
     }
     return result;
   }
@@ -99,7 +99,7 @@ public class TypeSystemStateTree extends MPSTree {
     for (Map.Entry<Set<SNode>, Set<InequalityBlock>> entry : myState.getInequalities().getInequalityGroups(myState.getBlocks(BlockKind.INEQUALITY)).entrySet()) {
       TypeSystemStateTreeNode current = new TypeSystemStateTreeNode(entry.getKey().toString(), myOperationContext);
       for (InequalityBlock block : entry.getValue()) {
-        current.add(new TypeSystemStateTreeNode(block, myOperationContext, myState));
+        current.add(new BlockTreeNode(block, myOperationContext, myState));
       }
       result.add(current);
     }
