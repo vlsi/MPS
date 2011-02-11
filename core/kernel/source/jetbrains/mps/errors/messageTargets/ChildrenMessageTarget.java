@@ -15,8 +15,13 @@
  */
 package jetbrains.mps.errors.messageTargets;
 
+import jetbrains.mps.smodel.SNode;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author Evgeny Gerashchenko
@@ -26,11 +31,24 @@ public class ChildrenMessageTarget implements MessageTarget {
   private String myRole;
   private int myBeginIndex = -1;
   private int myEndIndex = -1;
+  private Set<SNode> myChildren = null;
 
   public ChildrenMessageTarget(String role, int beginIndex, int endIndex) {
     myRole = role;
     myBeginIndex = beginIndex;
     myEndIndex = endIndex;
+  }
+
+  public ChildrenMessageTarget(String role, int beginIndex, int endIndex, List<SNode> allChildren) {
+    this(role, beginIndex, endIndex);
+    myChildren = new HashSet<SNode>();
+    for (int i = beginIndex; i < endIndex; i++) {
+      myChildren.add(allChildren.get(i));
+    }
+  }
+
+  public Set<SNode> getChildren() {
+    return myChildren;
   }
 
   public MessageTargetEnum getTarget() {

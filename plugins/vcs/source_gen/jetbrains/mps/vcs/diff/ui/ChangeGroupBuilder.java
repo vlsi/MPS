@@ -12,6 +12,8 @@ import java.util.Map;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.DisjointSets;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -74,17 +76,32 @@ public class ChangeGroupBuilder {
         continue;
       }
 
+      int leftStart = leftMessage.getStart(getLeftComponent());
+      int rightStart = rightMessage.getStart(getRightComponent());
       int leftHeight = leftMessage.getHeight(getLeftComponent());
       int rightHeight = rightMessage.getHeight(getRightComponent());
-      assert leftHeight == -1 && rightHeight == -1 || leftHeight != -1 && rightHeight != -1;
-      if (leftHeight == -1) {
+      if (leftHeight == -1 && rightHeight == -1) {
         continue;
       }
+      if (leftHeight == -1) {
+        {
+          Tuples._2<Integer, Integer> _tmp_a1l5hi_a0l0e0c = MultiTuple.<Integer,Integer>from(getLeftComponent().getRootCell().getY(), 0);
+          leftStart = _tmp_a1l5hi_a0l0e0c._0();
+          leftHeight = _tmp_a1l5hi_a0l0e0c._1();
+        }
+      }
+      if (rightHeight == -1) {
+        {
+          Tuples._2<Integer, Integer> _tmp_a1l5hi_a0m0e0c = MultiTuple.<Integer,Integer>from(getRightComponent().getRootCell().getY(), 0);
+          rightStart = _tmp_a1l5hi_a0m0e0c._0();
+          rightHeight = _tmp_a1l5hi_a0m0e0c._1();
+        }
+      }
 
-      MapSequence.fromMap(leftStarts).put(change, leftMessage.getStart(getLeftComponent()));
-      MapSequence.fromMap(leftEnds).put(change, MapSequence.fromMap(leftStarts).get(change) + leftHeight);
-      MapSequence.fromMap(rightStarts).put(change, rightMessage.getStart(getRightComponent()));
-      MapSequence.fromMap(rightEnds).put(change, MapSequence.fromMap(rightStarts).get(change) + rightHeight);
+      MapSequence.fromMap(leftStarts).put(change, leftStart);
+      MapSequence.fromMap(leftEnds).put(change, leftStart + leftHeight);
+      MapSequence.fromMap(rightStarts).put(change, rightStart);
+      MapSequence.fromMap(rightEnds).put(change, rightStart + rightHeight);
     }
     DisjointSets<ModelChange> ds = new DisjointSets<ModelChange>(MapSequence.fromMap(leftStarts).keySet());
     for (ModelChange a : SetSequence.fromSet(MapSequence.fromMap(leftStarts).keySet())) {

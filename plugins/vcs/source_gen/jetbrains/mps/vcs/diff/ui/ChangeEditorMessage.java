@@ -14,12 +14,12 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.errors.messageTargets.MessageTargetEnum;
 import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.errors.messageTargets.ChildrenMessageTarget;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.errors.messageTargets.ChildrenMessageTarget;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import java.awt.Rectangle;
@@ -44,6 +44,7 @@ import jetbrains.mps.vcs.diff.changes.ReplaceNodeGroupChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
+import java.util.Set;
 
 public class ChangeEditorMessage extends EditorMessageWithTarget {
   private ModelChange myChange;
@@ -77,7 +78,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   @Override
   public void paint(Graphics graphics, EditorComponent component, EditorCell cell) {
     boolean targetIsNode = myMessageTarget.getTarget() == MessageTargetEnum.NODE;
-    if (ObjectUtils.equals(getNode(), cell.getSNode()) && targetIsNode || !(targetIsNode) && !(cell instanceof EditorCell_Collection)) {
+    if (ObjectUtils.equals(getNode(), cell.getSNode()) && targetIsNode || myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN && check_myu41h_a0a0b0e(((ChildrenMessageTarget) myMessageTarget).getChildren(), cell) || !(targetIsNode) && !(cell instanceof EditorCell_Collection)) {
       cell.paintSelection(graphics, getColor(), false);
 
       // This is a workaround for case when any change message is going to be painted over 
@@ -165,14 +166,15 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   private Tuples._2<Integer, Integer> getVerticalBounds(EditorComponent editorComponent) {
     EditorCell cell = getCell(editorComponent);
     assert myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN;
-    if (!(hasChildrenWithDifferentNode(cell) && eq_myu41h_a0a0c0f(((ChildrenMessageTarget) myMessageTarget).getRole(), cell.getRole()))) {
+    ChildrenMessageTarget cmt = ((ChildrenMessageTarget) myMessageTarget);
+    if (!(hasChildrenWithDifferentNode(cell) && eq_myu41h_a0a0a3a5(cmt.getRole(), cell.getRole())) || check_myu41h_a0d0f(cmt.getChildren(), cell)) {
       return MultiTuple.<Integer,Integer>from(super.getStart(editorComponent), super.getHeight(editorComponent));
     } else {
 
     }
     EditorCell_Collection collectionCell = ((EditorCell_Collection) cell);
-    int beginCellIndex = getChildCellIndex(collectionCell, ((ChildrenMessageTarget) myMessageTarget).getBeginIndex());
-    int endCellIndex = getChildCellIndex(collectionCell, ((ChildrenMessageTarget) myMessageTarget).getEndIndex() - 1) + 1;
+    int beginCellIndex = getChildCellIndex(collectionCell, cmt.getBeginIndex());
+    int endCellIndex = getChildCellIndex(collectionCell, cmt.getEndIndex() - 1) + 1;
     endCellIndex = Math.max(beginCellIndex, endCellIndex);
     int lastCellIndex = collectionCell.getChildCount() - 1;
 
@@ -296,7 +298,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       );
 
       assert 0 <= beginIndex && beginIndex <= endIndex && endIndex < currentChildrenSize;
-      return new ChildrenMessageTarget(role, beginIndex, endIndex);
+      return new ChildrenMessageTarget(role, beginIndex, endIndex, changeChildren);
     }
     return null;
   }
@@ -342,6 +344,20 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     return p.getChildCount();
   }
 
+  private static Boolean check_myu41h_a0a0b0e(Set<SNode> p, EditorCell cell) {
+    if (null == p) {
+      return null;
+    }
+    return p.contains(cell.getSNode());
+  }
+
+  private static Boolean check_myu41h_a0d0f(Set<SNode> p, EditorCell cell) {
+    if (null == p) {
+      return null;
+    }
+    return p.contains(cell.getSNode());
+  }
+
   private static boolean eq_myu41h_a0a0a0b0e(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
@@ -349,7 +365,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     );
   }
 
-  private static boolean eq_myu41h_a0a0c0f(Object a, Object b) {
+  private static boolean eq_myu41h_a0a0a3a5(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

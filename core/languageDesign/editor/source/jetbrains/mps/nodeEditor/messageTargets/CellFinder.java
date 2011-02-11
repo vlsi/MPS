@@ -19,7 +19,10 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Set;
 
 /**
  * @author Evgeny Gerashchenko
@@ -71,9 +74,14 @@ public class CellFinder {
   }
 
   @Nullable
-  public static EditorCell getCellForChild(@Nullable EditorComponent editorComponent, @Nullable final SNode node, final String role) {
+  public static EditorCell getCellForChild(@Nullable EditorComponent editorComponent, @Nullable final SNode node, final String role, @Nullable Set<SNode> children) {
     EditorCell rawCell = getRawCell(editorComponent, node);
-    if (rawCell == null) { return null; }
+    if (rawCell == null) {
+      if (children != null && editorComponent != null && children.contains(editorComponent.getEditedNode()) ) {
+        return editorComponent.getRootCell();
+      }
+      return null;
+    }
     EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
       @Override
       public boolean met(EditorCell cell) {

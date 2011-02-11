@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="59xcbl1lrlxdxmiwcnuqkezvsauisz4">
+<dependencies version="2" modelHash="1ahwxnw2a798orsg0204lqjon553lpc">
   <dep model="f:java_stub#com.intellij.ide.dnd(com.intellij.ide.dnd@java_stub)" />
   <dep model="f:java_stub#com.intellij.ide.dnd.aware(com.intellij.ide.dnd.aware@java_stub)" />
   <dep model="f:java_stub#com.intellij.openapi(com.intellij.openapi@java_stub)" />
@@ -631,7 +631,8 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DiffEditorComponentsGroup.java" />
   </source>
-  <source id="8401260027345469827" name="ChangeEditorMessage" hash="-2w64tb4f39n1squ4ouzhg9bchkfdeqm">
+  <source id="8401260027345469827" name="ChangeEditorMessage" hash="-b5wuv3rpayo0o9th0piwrkzp368dsmd">
+    <dep model="f:java_stub#java.awt(java.awt@java_stub)" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#java.util(java.util@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.baseLanguage.tuples.runtime(jetbrains.mps.baseLanguage.tuples.runtime@java_stub)" />
@@ -721,12 +722,13 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MergeButtonsPainter.java" />
   </source>
-  <source id="3021948350273458186" name="ChangeGroupBuilder" hash="ehdmuucqxevjavdeab8qgqea2z0a58u">
+  <source id="3021948350273458186" name="ChangeGroupBuilder" hash="-46i8c88fg7m1h39b5vnvr6w7rwkd7hq">
     <dep root="1270946566396265091" />
     <dep root="3021948350273458192" />
     <dep root="5019828647791439260" />
     <dep root="8401260027345469827" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.baseLanguage.tuples.runtime(jetbrains.mps.baseLanguage.tuples.runtime@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />

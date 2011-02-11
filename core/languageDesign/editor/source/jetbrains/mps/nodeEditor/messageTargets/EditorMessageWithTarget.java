@@ -1,7 +1,9 @@
 package jetbrains.mps.nodeEditor.messageTargets;
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.messageTargets.ChildrenMessageTarget;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -13,6 +15,7 @@ import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.smodel.SNode;
 
 import java.awt.Color;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -70,8 +73,10 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
       case PROPERTY:
         return CellFinder.getCellForProperty(editor, getNode(), myMessageTarget.getRole());
       case CHILDREN:
+        final Set<SNode> children = ((ChildrenMessageTarget) myMessageTarget).getChildren();
+        return CellFinder.getCellForChild(editor, getNode(), myMessageTarget.getRole(), children);
       case DELETED_CHILD:
-        return CellFinder.getCellForChild(editor, getNode(), myMessageTarget.getRole());
+        return CellFinder.getCellForChild(editor, getNode(), myMessageTarget.getRole(), null);
       default:
         return null;
     }
