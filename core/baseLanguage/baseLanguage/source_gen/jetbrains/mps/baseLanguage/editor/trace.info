@@ -50,6 +50,7 @@
   <unitInfo fileName="Number_Editor.java" startLine="14" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Number_Editor" />
   <unitInfo fileName="TypeVariableDeclaration_deleteBound.java" startLine="18" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TypeVariableDeclaration_deleteBound$TypeVariableDeclaration_deleteBound_DELETE" />
   <unitInfo fileName="ReturnStatement_Actions.java" startLine="41" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ReturnStatement_Actions$ReturnStatement_Actions_DELETE" />
+  <unitInfo fileName="StaticMethodCall_Actions.java" startLine="17" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.StaticMethodCall_Actions$StaticMethodCall_Actions_DELETE" />
   <unitInfo fileName="ClassifierClassExpression_DeleteClass.java" startLine="19" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassifierClassExpression_DeleteClass$ClassifierClassExpression_DeleteClass_DELETE" />
   <unitInfo fileName="StaticFieldReference_DeleteDot.java" startLine="37" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.StaticFieldReference_DeleteDot.StaticFieldReference_DeleteDot_DELETE$QuotationClass_65e73j_a1a0a1a" />
   <unitInfo fileName="NullLiteral_Editor.java" startLine="13" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.NullLiteral_Editor" />
@@ -103,10 +104,10 @@
   <unitInfo fileName="ReturnStatement_Actions.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ReturnStatement_Actions$ReturnStatement_Actions_RIGHT_TRANSFORM" />
   <unitInfo fileName="TypeVariableDeclaration_deleteBound.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TypeVariableDeclaration_deleteBound" />
   <unitInfo fileName="CommentedStatementsBlock_Actions.java" startLine="19" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.CommentedStatementsBlock_Actions$CommentedStatementsBlock_Actions_DELETE" />
+  <unitInfo fileName="StaticMethodCall_Actions.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.StaticMethodCall_Actions" />
   <unitInfo fileName="ClassifierClassExpression_DeleteClass.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassifierClassExpression_DeleteClass" />
   <unitInfo fileName="ValueParameter_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ValueParameter_Editor" />
   <unitInfo fileName="WildCardType_Editor.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.WildCardType_Editor" />
-  <unitInfo fileName="StaticMethodCall_Actions.java" startLine="20" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.StaticMethodCall_Actions$StaticMethodCall_Actions_DELETE" />
   <unitInfo fileName="IfStatement_elseBlockStatement_delete.java" startLine="21" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.IfStatement_elseBlockStatement_delete$IfStatement_elseBlockStatement_delete_DELETE" />
   <unitInfo fileName="LocalVariableDeclaration_delete_name.java" startLine="40" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_delete_name.LocalVariableDeclaration_delete_name_DELETE$QuotationClass_f3i3w9_a1a1a0a1a" />
   <unitInfo fileName="VariableDeclaration_NameCellComponent.java" startLine="80" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent$VariableDeclaration_name_postfixCellMenu_a0a" />
@@ -147,7 +148,6 @@
   <unitInfo fileName="ConceptFunctionParameter_Editor.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ConceptFunctionParameter_Editor" />
   <unitInfo fileName="ElseifClause_DeletePrevious.java" startLine="18" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ElseifClause_DeletePrevious$ElseifClause_DeletePrevious_DELETE" />
   <unitInfo fileName="ClosureParameter_Editor.java" startLine="18" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClosureParameter_Editor" />
-  <unitInfo fileName="StaticMethodCall_Actions.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.StaticMethodCall_Actions" />
   <unitInfo fileName="ImplicitAnnotationInstanceValue_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ImplicitAnnotationInstanceValue_Editor" />
   <unitInfo fileName="AnnotationInstanceExpression_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AnnotationInstanceExpression_Editor" />
   <unitInfo fileName="IfStatement_elseBlockStatement_delete.java" startLine="16" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.IfStatement_elseBlockStatement_delete" />
@@ -1178,22 +1178,10 @@
     </scopeInfo>
   </root>
   <root nodeId="1172061831827">
-    <nodeInfo nodeId="1172061934541" fileName="StaticMethodCall_Actions.java" startLine="31" startPosition="75" endLine="32" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1172061934547" fileName="StaticMethodCall_Actions.java" startLine="32" startPosition="83" endLine="33" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1172061934559" fileName="StaticMethodCall_Actions.java" startLine="34" startPosition="43" endLine="35" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1172061934565" fileName="StaticMethodCall_Actions.java" startLine="35" startPosition="149" endLine="36" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1172062186842" fileName="StaticMethodCall_Actions.java" startLine="37" startPosition="118" endLine="38" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1172062166210" fileName="StaticMethodCall_Actions.java" startLine="36" startPosition="154" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1172061934554" fileName="StaticMethodCall_Actions.java" startLine="33" startPosition="129" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1172062166213" fileName="StaticMethodCall_Actions.java" startLine="37" startPosition="118" endLine="38" endPosition="134" />
-    <scopeInfo nodeId="1172062166210" fileName="StaticMethodCall_Actions.java" startLine="36" startPosition="154" endLine="39" endPosition="9" />
-    <scopeInfo nodeId="1172061934558" fileName="StaticMethodCall_Actions.java" startLine="34" startPosition="43" endLine="39" endPosition="9">
-      <varInfo nodeId="1172061934560" varName="localStaticMethodCall" />
-    </scopeInfo>
-    <scopeInfo nodeId="1172061911018" fileName="StaticMethodCall_Actions.java" startLine="31" startPosition="75" endLine="40" endPosition="7">
-      <varInfo nodeId="1172061934542" varName="classConcept1" />
-      <varInfo nodeId="1172061934548" varName="classConcept2" />
-    </scopeInfo>
+    <nodeInfo nodeId="3299924278393509551" fileName="StaticMethodCall_Actions.java" startLine="29" startPosition="91" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3299924278393509541" fileName="StaticMethodCall_Actions.java" startLine="28" startPosition="75" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="3299924278393509542" fileName="StaticMethodCall_Actions.java" startLine="29" startPosition="91" endLine="30" endPosition="80" />
+    <scopeInfo nodeId="1172061911018" fileName="StaticMethodCall_Actions.java" startLine="28" startPosition="75" endLine="31" endPosition="7" />
   </root>
   <root nodeId="1173187381459">
     <nodeInfo nodeId="1173187415542" fileName="ArrayAccessExpression_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -7,10 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.behavior.StaticMethodCall_Behavior;
 
 public class StaticMethodCall_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -29,14 +26,8 @@ public class StaticMethodCall_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode classConcept1 = SLinkOperations.getTarget(node, "classConcept", false);
-      SNode classConcept2 = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-      if (classConcept1 == classConcept2) {
-        SNode localStaticMethodCall = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall");
-        SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
-        for (SNode actualArgument : ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true))) {
-          ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)).addElement(actualArgument);
-        }
+      if (StaticMethodCall_Behavior.call_canBeConvertedToLocal_3299924278393499101(node)) {
+        StaticMethodCall_Behavior.call_convertToLocal_3299924278393509387(node);
       }
     }
   }
