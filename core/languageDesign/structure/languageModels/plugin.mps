@@ -176,6 +176,10 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6388164970935848749">
       <property name="name" nameId="tpck.1169194664001" value="ConceptEditorHelper" />
     </node>
+    <node type="tp4k.Order" typeId="tp4k.2450897840534683975" id="3038738109028822686">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="name" nameId="tpck.1169194664001" value="ConceptDeclaration" />
+    </node>
   </roots>
   <root id="1216648908320">
     <node role="methodDeclaration" roleId="tp4k.6547237850567462848" type="tp4f.DefaultClassifierMethodDeclaration" typeId="tp4f.1205769003971" id="1216649373054">
@@ -2292,6 +2296,9 @@
         </node>
       </node>
     </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028888969">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
+    </node>
   </root>
   <root id="2542706524531725524">
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2542706524531725525">
@@ -2368,6 +2375,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028888967">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="2542706524531725557">
@@ -2446,6 +2456,9 @@
         </node>
       </node>
     </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028888966">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
+    </node>
   </root>
   <root id="2542706524531725575">
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2542706524531725576">
@@ -2522,6 +2535,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028836234">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="2542706524531725593">
@@ -2621,6 +2637,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028836231">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="2542706524531725625">
@@ -3797,6 +3816,9 @@
         </node>
       </node>
     </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028888963">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
+    </node>
   </root>
   <root id="2542706524531725643">
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2542706524531725644">
@@ -3896,6 +3918,9 @@
         </node>
       </node>
     </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028836232">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
+    </node>
   </root>
   <root id="2542706524531725660">
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2542706524531725661">
@@ -3932,6 +3957,9 @@
           <node role="expression" roleId="tpee.1068580123156" type="tp4k.ConceptFunctionParameter_node" typeId="tp4k.1203853034639" id="6388164970935847744" />
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028888968">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="2542706524531725676">
@@ -4009,6 +4037,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028836229">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="2542706524531725694">
@@ -4108,6 +4139,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028836230">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="2542706524531725759">
@@ -4425,6 +4459,9 @@
         </node>
       </node>
     </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028888975">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
+    </node>
   </root>
   <root id="2542706524531725777">
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2542706524531725778">
@@ -4551,6 +4588,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028836233">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="6388164970935848749">
@@ -5270,6 +5310,44 @@
           <node role="componentType" roleId="tpee.1070534760952" type="tp25.SConceptType" typeId="tp25.1172420572800" id="1214823353927928445" />
         </node>
       </node>
+    </node>
+  </root>
+  <root id="3038738109028822686">
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836204">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725660" resolveInfo="Structure" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836206">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725777" resolveInfo="Editor" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836207">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725593" resolveInfo="Constraints" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836209">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725694" resolveInfo="Behavior" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836211">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725759" resolveInfo="Typesystem" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836214">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725676" resolveInfo="Actions" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836216">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725524" resolveInfo="Refactorings" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836218">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725557" resolveInfo="Intentions" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836220">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725575" resolveInfo="Find Usages" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836222">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725643" resolveInfo="Data Flow" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836224">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725625" resolveInfo="Generator" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836226">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725492" resolveInfo="Textgen" />
     </node>
   </root>
 </model>
