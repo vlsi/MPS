@@ -21,12 +21,17 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class EditorTabDescriptor {
+public abstract class EditorTabDescriptor implements Comparable<EditorTabDescriptor> {
   public abstract String getTitle();
 
   @Nullable
   public Character getShortcutChar() {
     return null;
+  }
+
+  //is is assumed that if returns 0, this means "I don't know"
+  public int compareTo(EditorTabDescriptor o) {
+    return 0;
   }
 
   public SNode getBaseNode(SNode aspect) {
