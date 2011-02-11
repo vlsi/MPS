@@ -3503,15 +3503,11 @@
       <property name="name" nameId="tpck.1169194664001" value="typeOfMatrixScalarMultiplication" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6444548310667088329">
         <property name="name" nameId="tpck.1169194664001" value="scalarType" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6444548310667092389">
-          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
-        </node>
+        <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6444548310667092389" />
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6444548310667088331">
         <property name="name" nameId="tpck.1169194664001" value="vT" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6444548310667092390">
-          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
-        </node>
+        <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6444548310667092390" />
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6444548310667092391">
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
@@ -3537,8 +3533,11 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="6444548310667092477">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6444548310667092485">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6444548310667092487">
-                <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6444548310667092490">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6444548310667088329" resolveInfo="scalarType" />
+                <node role="rValue" roleId="tpee.1068498886297" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="6472238859451993569">
+                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
+                  <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6444548310667092490">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6444548310667088329" resolveInfo="scalarType" />
+                  </node>
                 </node>
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6444548310667092486">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6444548310667092407" resolveInfo="e" />
@@ -3546,12 +3545,24 @@
               </node>
             </node>
           </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpd4.IsSubtypeExpression" typeId="tpd4.1176543928247" id="6444548310667092480">
-            <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6444548310667092483">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6444548310667092407" resolveInfo="e" />
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.AndExpression" typeId="tpee.1080120340718" id="6472238859451989179">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6472238859451993562">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6472238859451993561">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6444548310667088329" resolveInfo="scalarType" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="6472238859451993566">
+                <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="6472238859451993568">
+                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
+                </node>
+              </node>
             </node>
-            <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6444548310667092484">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6444548310667088329" resolveInfo="scalarType" />
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpd4.IsSubtypeExpression" typeId="tpd4.1176543928247" id="6444548310667092480">
+              <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6444548310667092483">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6444548310667092407" resolveInfo="e" />
+              </node>
+              <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6444548310667092484">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6444548310667088329" resolveInfo="scalarType" />
+              </node>
             </node>
           </node>
         </node>
