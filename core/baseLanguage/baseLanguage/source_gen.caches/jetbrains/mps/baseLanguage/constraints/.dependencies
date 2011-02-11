@@ -429,6 +429,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.constraints.LocalInstanceFieldReference_Constraints" file="LocalInstanceFieldReference_Constraints.java">
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.ConstraintsUtil" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.constraints.LocalInstanceFieldReference_fieldDeclaration_ReferentConstraint" file="LocalInstanceFieldReference_fieldDeclaration_ReferentConstraint.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
@@ -452,6 +457,11 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.constraints.LocalInstanceMethodCall_Constraints" file="LocalInstanceMethodCall_Constraints.java">
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.ConstraintsUtil" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.constraints.LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint" file="LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
