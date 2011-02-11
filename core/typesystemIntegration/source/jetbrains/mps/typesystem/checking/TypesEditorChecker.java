@@ -115,10 +115,24 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                         public void run() {
                           EditorCell selectedCell = editorContext.getSelectedCell();
                           if (selectedCell == null) return;
+                          boolean restoreCaretPosition = false;
+                          int caretX = 0;
+                          int caretY = 0;
 
-                          boolean restoreCaretPosition = selectedCell.getSNode().getAncestors(true).contains(quickFixNode);
-                          int caretX = selectedCell.getCaretX();
-                          int caretY = selectedCell.getBaseline();
+                          if (selectedCell instanceof EditorCell_Label) {
+                            EditorCell_Label cell_label = (EditorCell_Label) selectedCell;
+                            restoreCaretPosition = cell_label.getSNode().getAncestors(true).contains(quickFixNode);
+                            caretX = cell_label.getCaretX();
+                            caretY = cell_label.getBaseline();
+                            boolean last = cell_label.getCaretPosition() == cell_label.getText().length();
+                            boolean first = cell_label.getCaretPosition() == 0;
+                            if (last) {
+                              caretX = caretX - 1;
+                            }
+                            if (first) {
+                              caretY = caretY + 1;
+                            }
+                          }
 
                           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                             public void run() {
