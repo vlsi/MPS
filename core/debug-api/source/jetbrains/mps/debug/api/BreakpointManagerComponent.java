@@ -76,6 +76,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private final EditorsProvider myEditorsProvider;
   private final Map<SNodePointer, Set<ILocationBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodePointer, Set<ILocationBreakpoint>>();
   private final Set<IBreakpoint> myBreakpoints = new HashSet<IBreakpoint>();
+  private final List<Element> myUnreadBreakpoints = new ArrayList<Element>();
 
   private final MyBreakpointListener myBreakpointListener = new MyBreakpointListener();
   private final LeftMarginMouseListener myMouseListener = new MyLeftMarginMouseListener();
@@ -341,6 +342,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     synchronized (myBreakpoints) {
       myRootsToBreakpointsMap.clear();
       myBreakpoints.clear();
+      myUnreadBreakpoints.clear();
     }
   }
 
@@ -366,12 +368,13 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
         IBreakpointKind kind = myProvidersManager.getKind(kindName);
         if (kind == null) {
-          // todo we might save whatever we cant read for later?
+          myUnreadBreakpoints.add(breakpointElement);
           continue;
         }
 
         IBreakpointsProvider provider = myProvidersManager.getProvider(kind);
         if (provider == null) {
+          myUnreadBreakpoints.add(breakpointElement);
           continue;
         }
 
@@ -380,6 +383,8 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           if (breakpoint != null) {
             breakpoint.addBreakpointListener(myBreakpointListener);
             myBreakpoints.add(breakpoint);
+          } else {
+            myUnreadBreakpoints.add(breakpointElement);
           }
         } catch (Throwable t) {
           LOG.error("Error while loading breakpoint from " + breakpointElement, t);
@@ -401,8 +406,8 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   }
 
   public Element getState() {
+    Element rootElement = new Element(BREAKPOINTS_LIST_ELEMENT);
     synchronized (myBreakpoints) {
-      Element rootElement = new Element(BREAKPOINTS_LIST_ELEMENT);
 
       for (IBreakpoint breakpoint : myBreakpoints) {
         IBreakpointKind kind = breakpoint.getKind();
@@ -423,8 +428,11 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           LOG.error("Error while saving breakpoint " + breakpoint.getPresentation(), t);
         }
       }
-      return rootElement;
     }
+    for (Element el : myUnreadBreakpoints) {
+      rootElement.addContent((Element) el.clone());
+    }
+    return rootElement;
   }
 
   //this is called when a breakpoint is hit
