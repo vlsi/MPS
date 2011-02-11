@@ -24,6 +24,10 @@ public class Data_Flow_TabDescriptor extends EditorTabDescriptor {
     return 'D';
   }
 
+  public int compareTo(EditorTabDescriptor descriptor) {
+    return new ConceptDeclaration_Order().compare(this, descriptor);
+  }
+
   public void startListening() {
   }
 

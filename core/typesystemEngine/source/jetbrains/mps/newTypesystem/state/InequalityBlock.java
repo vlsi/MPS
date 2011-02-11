@@ -19,7 +19,8 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
-import jetbrains.mps.newTypesystem.SubTyping;
+import jetbrains.mps.newTypesystem.SubTypingManagerNew;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -68,11 +69,7 @@ public class InequalityBlock extends RelationBlock {
     processInequality(left, right);
   }
 
-  public void processInequality(final SNode subType, final SNode superType) {
-    if (subType == null || superType == null || subType == superType) {
-      return;
-    }
-    //replacement rules
+  private boolean processReplacementRules(final SNode subType, final SNode superType) {
     TypeChecker typeChecker = myState.getTypeCheckingContext().getTypeChecker();
     for (jetbrains.mps.util.Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequalityReplacementRule : typeChecker.getRulesManager().getReplacementRules(subType, superType)) {
       final InequationReplacementRule_Runtime rule = inequalityReplacementRule.o1;
@@ -83,12 +80,27 @@ public class InequalityBlock extends RelationBlock {
           ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, myEquationInfo, myState.getTypeCheckingContext(), status);
         }
       }));
+      return true;
+    }
+    return false;
+  }
+
+  public void processInequality(final SNode subType, final SNode superType) {
+    if (subType == null || superType == null || subType == superType) {
       return;
     }
-    final SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
+    if (TypesUtil.isVariable(subType) && TypesUtil.isVariable(superType)) {
+      // for final solving
+      return;
+    }
+    //replacement rules
+    if (processReplacementRules(subType, superType)) {
+      return;
+    }
+    final SubTypingManagerNew subTyping = myState.getTypeCheckingContext().getSubTyping();
     myState.executeOperation(new jetbrains.mps.newTypesystem.operation.AddRemarkOperation("checking whether " + subType + " is subtype of " + superType, new Runnable() {
       public void run() {
-        if (!subTyping.isSubType(subType, superType, myEquationInfo, myRelationKind.isWeak(), false)) {
+        if (!subTyping.isSubType(subType, superType, myEquationInfo, myState, myRelationKind.isWeak())) {
           myState.getNodeMaps().reportSubTypeError(subType, superType, myEquationInfo, myRelationKind.isWeak());
         }
       }

@@ -8,6 +8,7 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation_Behavior;
 import jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_Behavior;
+import jetbrains.mps.baseLanguage.behavior.StaticMethodCall_Behavior;
 
 public class ConvertToLocal_MigrationScript extends BaseMigrationScript {
   public ConvertToLocal_MigrationScript(IOperationContext operationContext) {
@@ -56,6 +57,31 @@ public class ConvertToLocal_MigrationScript extends BaseMigrationScript {
 
       public void doUpdateInstanceNode(SNode node) {
         InstanceMethodCallOperation_Behavior.call_convertToLocal_5311267937735269230(node);
+      }
+
+      public boolean isShowAsIntention() {
+        return true;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "ConvertLocalStaticMethodCall";
+      }
+
+      public String getAdditionalInfo() {
+        return "ConvertLocalStaticMethodCall";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.StaticMethodCall";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return StaticMethodCall_Behavior.call_canBeConvertedToLocal_3299924278393499101(node);
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        StaticMethodCall_Behavior.call_convertToLocal_3299924278393509387(node);
       }
 
       public boolean isShowAsIntention() {

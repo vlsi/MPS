@@ -9,14 +9,14 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -35,18 +35,18 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
     // --- 
     SNode methodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
     final SNode methodClassifier = SNodeOperations.getAncestor(methodDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
+    RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, methodCall, SLinkOperations.getTarget(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "returnType", true), mmap);
     SNode currentClassifier = SNodeOperations.getAncestor(methodCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    while (currentClassifier != null && !(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(currentClassifier, methodCall, IClassifiersSearchScope.INSTANCE_METHOD)).contains(methodDeclaration))) {
+    while (currentClassifier != null && currentClassifier != methodClassifier && !(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(currentClassifier, methodCall, IClassifiersSearchScope.INSTANCE_METHOD)).contains(methodDeclaration))) {
       currentClassifier = SNodeOperations.getAncestor(currentClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     }
-    SNode constructedType = new typeof_LocalInstanceMethodCall_InferenceRule.QuotationClass_h4n2qb_a0a6a0().createNode(currentClassifier, typeCheckingContext);
+    SNode constructedType = new typeof_LocalInstanceMethodCall_InferenceRule.QuotationClass_h4n2qb_a0a8a0().createNode(currentClassifier, typeCheckingContext);
     for (SNode tvd : SLinkOperations.getTargets(currentClassifier, "typeVariableDeclaration", true)) {
       SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
       SLinkOperations.setTarget(tvr, "typeVariableDeclaration", tvd, false);
       ListSequence.fromList(SLinkOperations.getTargets(constructedType, "parameter", true)).addElement(tvr);
     }
-    Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
-    RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, methodCall, SLinkOperations.getTarget(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "returnType", true), mmap);
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithMethodTypeVariables(typeCheckingContext, methodCall, mmap);
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, constructedType, mmap);
     RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
@@ -77,8 +77,8 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
     return true;
   }
 
-  public static class QuotationClass_h4n2qb_a0a6a0 {
-    public QuotationClass_h4n2qb_a0a6a0() {
+  public static class QuotationClass_h4n2qb_a0a8a0 {
+    public QuotationClass_h4n2qb_a0a8a0() {
     }
 
     public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {

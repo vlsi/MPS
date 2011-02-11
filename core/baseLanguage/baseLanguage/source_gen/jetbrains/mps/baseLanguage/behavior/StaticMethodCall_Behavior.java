@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class StaticMethodCall_Behavior {
   public static void init(SNode thisNode) {
@@ -34,5 +35,19 @@ public class StaticMethodCall_Behavior {
       ListSequence.fromList(result).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
     }
     return result;
+  }
+
+  public static boolean call_canBeConvertedToLocal_3299924278393499101(SNode thisNode) {
+    SNode classConcept1 = SLinkOperations.getTarget(thisNode, "classConcept", false);
+    SNode classConcept2 = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    return classConcept1 == classConcept2;
+  }
+
+  public static void call_convertToLocal_3299924278393509387(SNode thisNode) {
+    SNode localStaticMethodCall = SNodeFactoryOperations.replaceWithNewChild(thisNode, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall");
+    SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), false);
+    for (SNode actualArgument : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true))) {
+      ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)).addElement(actualArgument);
+    }
   }
 }

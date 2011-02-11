@@ -115,12 +115,25 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                         public void run() {
                           EditorCell selectedCell = editorContext.getSelectedCell();
                           if (selectedCell == null) return;
-                          //  SNode selectedNode = selectedCell.getSNode();
-                          //  Integer caretPosition = null;
-                          //  if (selectedCell instanceof EditorCell_Label) {
-                          //    caretPosition = ((EditorCell_Label)selectedCell).getCaretPosition();
-                          //  }
-                          // Pair<SNode, Integer> wasSelected = new Pair<SNode, Integer>(selectedNode, caretPosition);
+                          boolean restoreCaretPosition = false;
+                          int caretX = 0;
+                          int caretY = 0;
+
+                          if (selectedCell instanceof EditorCell_Label) {
+                            EditorCell_Label cell_label = (EditorCell_Label) selectedCell;
+                            restoreCaretPosition = cell_label.getSNode().getAncestors(true).contains(quickFixNode);
+                            caretX = cell_label.getCaretX();
+                            caretY = cell_label.getBaseline();
+                            boolean last = cell_label.getCaretPosition() == cell_label.getText().length();
+                            boolean first = cell_label.getCaretPosition() == 0;
+                            if (last) {
+                              caretX = caretX - 1;
+                            }
+                            if (first) {
+                              caretY = caretY + 1;
+                            }
+                          }
+
                           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                             public void run() {
                               CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {
@@ -130,8 +143,16 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                               });
                             }
                           });
-                          editorContext.flushEvents();
-                          // intention.setSelection(node, editorContext, wasSelected);
+
+                          if (restoreCaretPosition) {
+                            editorContext.flushEvents();
+                            EditorCell rootCell = editorContext.getNodeEditorComponent().getRootCell();
+                            EditorCell leaf = rootCell.findLeaf(caretX, caretY);
+                            if (leaf != null) {
+                              editorContext.getNodeEditorComponent().changeSelection(leaf);
+                              leaf.setCaretX(caretX);
+                            }
+                          }
                         }
                       }, ModalityState.NON_MODAL);
                     }

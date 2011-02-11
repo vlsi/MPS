@@ -15,23 +15,15 @@
  */
 package jetbrains.mps.newTypesystem.operation.block;
 
-import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.ConditionKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.12.10
- * Time: 16:09
- * To change this template use File | Settings | File Templates.
- */
 public class RemoveDependencyOperation extends AbstractBlockOperation {
-  private SNode myVar;
-  private ConditionKind myConditionKind;
+  private final SNode myVar;
+  private final ConditionKind myConditionKind;
 
   public RemoveDependencyOperation(Block block, SNode var, ConditionKind conditionKind) {
     myVar = var;

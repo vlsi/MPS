@@ -34,7 +34,6 @@ import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -97,6 +96,7 @@ public class TypeSystemTraceTree extends MPSTree {
     myFrame = frame;
     mySelectedNode = node;
     myNodes = new HashSet<SNode>();
+    myNodes.addAll(node.getDescendants());
     myNodes.add(node);
     myCurrentContext = tcc;
     this.rebuildNow();
@@ -107,12 +107,11 @@ public class TypeSystemTraceTree extends MPSTree {
     this(operationContext, tcc, frame, null);
   }
 
-
   @Override
   protected MPSTreeNode rebuild() {
     setRootVisible(false);
     if (traceForNode && mySelectedNode !=null) {
-      getEquivalentVars(myDifference);
+      getSliceVars(myDifference);
       return createListTraceForNode();
     }
     return createNode(myDifference);
@@ -159,7 +158,7 @@ public class TypeSystemTraceTree extends MPSTree {
     if (mySelectedNode == null && traceForNode) {
       return true;
     }
-    if (diff.getSource() == mySelectedNode) {
+    if (myNodes.contains(diff.getSource())) {
       return true;
     }
     if (diff instanceof EquationAddedOperation) {
@@ -190,7 +189,7 @@ public class TypeSystemTraceTree extends MPSTree {
     return true;
   }
 
-  private void getEquivalentVars(AbstractOperation diff) {
+  private void getSliceVars(AbstractOperation diff) {
     if (diff == null) {
       return;
     }
@@ -198,22 +197,22 @@ public class TypeSystemTraceTree extends MPSTree {
       EquationAddedOperation eq = (jetbrains.mps.newTypesystem.operation.equation.EquationAddedOperation) diff;
       SNode child = eq.getChild();
       SNode parent = eq.getParent();
-      if (myNodes.contains(child) && TypesUtil.isVariable(parent)) {
-        myNodes.add(parent);
+      if (myNodes.contains(child)) {
+        myNodes.addAll(TypesUtil.getVariables(parent));
       }
-      if (myNodes.contains(parent) && TypesUtil.isVariable(child)) {
-        myNodes.add(child);
+      if (myNodes.contains(parent)) {
+        myNodes.addAll(TypesUtil.getVariables(child));
       }
     }
     if (diff instanceof TypeAssignedOperation) {
       TypeAssignedOperation typeDifference = (TypeAssignedOperation) diff;
-      if (mySelectedNode == typeDifference.getNode() && TypesUtil.isVariable(typeDifference.getType())) {
+      if (myNodes.contains(typeDifference.getNode()) && TypesUtil.isVariable(typeDifference.getType())) {
         myNodes.add(typeDifference.getType());
       }
     }
     if (diff.getConsequences() != null) {
       for (AbstractOperation childDiff : diff.getConsequences()) {
-        getEquivalentVars(childDiff);
+        getSliceVars(childDiff);
       }
     }
   }

@@ -219,74 +219,6 @@ public class TypeCheckingContext {
   }
 
   @Deprecated
-  public void createEquation(SNode node1,
-                             IWrapper wrapper2,
-                             SNode nodeToCheck,
-                             String errorString,
-                             String ruleModel,
-                             String ruleId,
-                             QuickFixProvider intentionProvider) {
-    EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
-    getCurrentSlicer().beforeUserEquationAdded(node1, wrapper2.getNode(), equationInfo);
-    EquationManager equationManager = getNodeTypesComponent().getEquationManager();
-    equationManager.addEquation(
-      NodeWrapper.fromNode(node1, equationManager),
-      wrapper2,
-      equationInfo);
-  }
-
-  @Deprecated
-  public void createEquation(IWrapper wrapper1,
-                             SNode node2,
-                             SNode nodeToCheck,
-                             String errorString,
-                             String ruleModel,
-                             String ruleId,
-                             QuickFixProvider intentionProvider) {
-    EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
-    getCurrentSlicer().beforeUserEquationAdded(wrapper1.getNode(), node2, equationInfo);
-    EquationManager equationManager = getNodeTypesComponent().getEquationManager();
-    equationManager.addEquation(
-      wrapper1,
-      NodeWrapper.fromNode(node2, equationManager),
-      equationInfo);
-  }
-
-  @Deprecated
-  public void createEquation(IWrapper wrapper1,
-                             IWrapper wrapper2,
-                             SNode nodeToCheck,
-                             String errorString,
-                             String ruleModel,
-                             String ruleId,
-                             QuickFixProvider intentionProvider) {
-    EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
-    getCurrentSlicer().beforeUserEquationAdded(wrapper1.getNode(), wrapper2.getNode(), equationInfo);
-    getNodeTypesComponent().getEquationManager().addEquation(
-      wrapper1,
-      wrapper2,
-      equationInfo);
-  }
-
-  @Deprecated
-  public void createLessThanInequation(SNode node1,
-                                       SNode node2,
-                                       SNode nodeToCheck,
-                                       String errorString,
-                                       String ruleModel,
-                                       String ruleId,
-                                       boolean checkOnly,
-                                       int inequationPriority,
-                                       QuickFixProvider intentionProvider) {
-    getNodeTypesComponent().getEquationManager().addInequation(
-      node1,
-      node2,
-      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority, intentionProvider),
-      true,
-      checkOnly);
-  }
-
-  @Deprecated
   public void createLessThanInequationStrong(SNode node1,
                                              SNode node2,
                                              SNode nodeToCheck,
@@ -334,21 +266,6 @@ public class TypeCheckingContext {
       node1,
       node2,
       new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
-  }
-
-  @Deprecated
-  public void createComparableEquationStrong(SNode node1,
-                                             SNode node2,
-                                             SNode nodeToCheck,
-                                             String errorString,
-                                             String ruleModel,
-                                             String ruleId,
-                                             QuickFixProvider intentionProvider) {
-    getNodeTypesComponent().getEquationManager().addInequationComparable(
-      node1,
-      node2,
-      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider),
-      false);
   }
 
   //new eqs

@@ -118,11 +118,11 @@ __switch__:
           };
         }
       }.invoke()))) {
-        if (!(i == f._0() && j == f._1())) {
-          ListSequence.fromList(myDifferentIndices).addElement(MultiTuple.<Tuples._2<Integer, Integer>,Tuples._2<Integer, Integer>>from(MultiTuple.<Integer,Integer>from(i, f._0()), MultiTuple.<Integer,Integer>from(j, f._1())));
+        if (!(i == (int) f._0() && j == (int) f._1())) {
+          ListSequence.fromList(myDifferentIndices).addElement(MultiTuple.<Tuples._2<Integer, Integer>,Tuples._2<Integer, Integer>>from(MultiTuple.<Integer,Integer>from(i, (int) f._0()), MultiTuple.<Integer,Integer>from(j, (int) f._1())));
         }
-        i = f._0() + 1;
-        j = f._1() + 1;
+        i = (int) f._0() + 1;
+        j = (int) f._1() + 1;
       }
     }
     return myDifferentIndices;
@@ -135,7 +135,7 @@ __switch__:
     if (myDifferentSubsequences == null) {
       myDifferentSubsequences = ListSequence.fromList(getDifferentIndices()).<Tuples._2<Iterable<E>, Iterable<E>>>select(new ISelector<Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>>, Tuples._2<Iterable<E>, Iterable<E>>>() {
         public Tuples._2<Iterable<E>, Iterable<E>> select(Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>> pair) {
-          return MultiTuple.<Iterable<E>,Iterable<E>>from(ListSequence.fromList(myA).page(pair._0()._0(), pair._0()._1()), ListSequence.fromList(myB).page(pair._1()._0(), pair._1()._1()));
+          return MultiTuple.<Iterable<E>,Iterable<E>>from(ListSequence.fromList(myA).page((int) pair._0()._0(), (int) pair._0()._1()), ListSequence.fromList(myB).page((int) pair._1()._0(), (int) pair._1()._1()));
         }
       }).toListSequence();
     }

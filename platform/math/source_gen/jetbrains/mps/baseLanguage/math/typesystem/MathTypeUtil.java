@@ -280,8 +280,8 @@ public class MathTypeUtil {
 
   public static SNode typeOfMatrixScalarMultiplication(SNode scalarType, SNode vT) {
     SNode e = MathTypeUtil.getElementType(vT);
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(e, scalarType)) {
-      e = scalarType;
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(e, scalarType) && SNodeOperations.isInstanceOf(scalarType, "jetbrains.mps.baseLanguage.structure.Type")) {
+      e = SNodeOperations.cast(scalarType, "jetbrains.mps.baseLanguage.structure.Type");
     }
     do {
       SNode matchedNode_i9t80i_c0o = vT;

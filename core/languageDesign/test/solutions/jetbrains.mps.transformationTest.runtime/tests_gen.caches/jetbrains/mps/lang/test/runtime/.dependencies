@@ -164,5 +164,20 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.runtime.TestRunner" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.test.runtime.TypeSystemChecker" file="TypeSystemChecker.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeContextManager" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.TypesUtil" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.test.StateMatcher" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.state.State" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.TypeCheckingContextNew" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.operation.AbstractOperation" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
 </dependenciesRoot>
 

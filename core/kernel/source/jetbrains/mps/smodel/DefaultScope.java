@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
@@ -45,7 +44,7 @@ public abstract class DefaultScope extends BaseScope {
     if (model == null) {
       //this is because we have modules (such as TransientModelsModule) not publishing their models
       //todo move this logic to corresponding scopes
-      for (SModelDescriptor md:getModelDescriptors()){
+      for (SModelDescriptor md : getModelDescriptors()) {
         if (md.getSModelReference().equals(modelReference)) return md;
       }
       return null;
@@ -182,9 +181,13 @@ public abstract class DefaultScope extends BaseScope {
         if (m instanceof DevKit) {
           DevKit dk = (DevKit) m;
           myUsedDevkits.add(dk);
+          myUsedDevkits.addAll(dk.getAllExtendedDevkits());
         }
 
-        myUsedDevkits.addAll(ModuleUtil.refsToDevkits(m.getUsedDevkitReferences()));
+        for (DevKit dk : ModuleUtil.refsToDevkits(m.getUsedDevkitReferences())) {
+          myUsedDevkits.add(dk);
+          myUsedDevkits.addAll(dk.getAllExtendedDevkits());
+        }
       }
 
       for (DevKit dk : myUsedDevkits) {

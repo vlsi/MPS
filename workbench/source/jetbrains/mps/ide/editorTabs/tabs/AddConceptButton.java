@@ -28,9 +28,7 @@ import javax.swing.JComponent;
 import javax.swing.JPopupMenu;
 import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 abstract class AddConceptTab {
   private SNodePointer myBaseNode;
@@ -58,7 +56,10 @@ abstract class AddConceptTab {
     DefaultActionGroup currentGroup = null;
     List<DefaultActionGroup> groups = new ArrayList<DefaultActionGroup>();
 
-    for (final EditorTabDescriptor d : myPossibleTabs) {
+    List<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
+    Collections.sort(tabs, new EditorTabComparator());
+
+    for (final EditorTabDescriptor d : tabs) {
       List<SNode> concepts = d.getConcepts(myBaseNode.getNode());
       if (concepts.isEmpty()) continue;
 
@@ -76,7 +77,6 @@ abstract class AddConceptTab {
       }
     }
 
-    //todo sort tabs
     if (currentGroup != null) {
       result.add(currentGroup);
       result.add(new Separator());
@@ -93,7 +93,7 @@ abstract class AddConceptTab {
     private final EditorTabDescriptor myD;
 
     public CreateAction(SNode concept, EditorTabDescriptor d) {
-      super(concept.getName(), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
+      super(concept.getName().replaceAll("_","__"), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
       myConcept = concept;
       myD = d;
     }
@@ -127,6 +127,19 @@ abstract class AddConceptTab {
           popupComponent.show(e.getInputEvent().getComponent(), 0, 0);
         }
       });
+    }
+  }
+
+  private static class EditorTabComparator implements Comparator<EditorTabDescriptor> {
+    public int compare(EditorTabDescriptor d1, EditorTabDescriptor d2) {
+      int r1 = d1.compareTo(d2);
+      int r2 = d2.compareTo(d1);
+
+      if ((r1 == 0) ^ (r2 == 0)) return r1 - r2;
+
+      assert r1 * r2 <= 0 : "can't determine order";
+
+      return r1;
     }
   }
 }

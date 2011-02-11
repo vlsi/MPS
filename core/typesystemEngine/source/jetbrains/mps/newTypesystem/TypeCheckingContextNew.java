@@ -40,8 +40,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private State myState;
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
-  private SubTyping mySubTyping;
-  private boolean myChecked = false;
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
@@ -49,7 +47,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myRootNode = rootNode;
     myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
-    mySubTyping = new SubTyping(myState, typeChecker);
   }
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker, boolean resolving) {
@@ -58,62 +55,29 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myRootNode = rootNode;
     myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
-    mySubTyping = new SubTyping(myState, typeChecker);
-  }
-
-  public void rollBack() {
-    if (getOperationStack().isEmpty()) {
-      return;
-    }
-    jetbrains.mps.newTypesystem.operation.AbstractOperation operation = getOperationStack().pop();
-    System.out.println("Rolled back (" + operation.getPresentation() + ")");
-    operation.undo(myState);
   }
 
   @Override
   public void checkRoot() {
-    if (!myChecked) {
-      myChecked = true;
-      checkRoot(true);
-    }
-    // myState.solveInequalities();
+      checkRoot(false);
   }
-     /*
-  @Override
-  public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
-    synchronized (TYPECHECKING_LOCK) {
-      return myState.typeOf(node, null);
-    }
-  }
-     */
-  /*
-@Override
-public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-SNode left = myState.expand(leftOperandType);
-SNode right = myState.expand(rightOperandType);
-return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
-}
-  */
 
   @Override
   public void checkRoot(final boolean refreshTypes) {
-   // synchronized (TYPECHECKING_LOCK) {
-      if (refreshTypes) {
-        myState.clear(true);
-        myNodeTypesComponent.computeTypes(refreshTypes);
-        //((NodeTypesComponentNew)myNodeTypesComponent).checkNode(myRootNode, true);
-        solveAndExpand();
-        myNodeTypesComponent.setCheckedTypesystem();
-      }
-   // }
-
-
+    synchronized (TYPECHECKING_LOCK) {
+      myNodeTypesComponent.computeTypes(refreshTypes);
+      myNodeTypesComponent.setCheckedTypesystem();
+    }
   }
 
-  public void solveAndExpand() {
-    myState.solveInequalities();
-    myState.expandAll();
-    myState.checkNonConcreteWhenConcretes();
+  @Override
+  public void createEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
+    myState.addEquation(node1, node2, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
+  }
+
+  @Override
+  public void createComparableEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider) {
+    myState.addComparable(node1, node2, true, new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
   }
 
   @Override
@@ -159,7 +123,6 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     EquationInfo info = new EquationInfo(node, "typeOf", ruleModel, ruleId);
     if (node == null) return null;
-    SNode type = null;
     NodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
@@ -179,7 +142,7 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
-    return myState.getNodeMaps().getNodesWithErrors();
+    return myNodeTypesComponent.getNodesWithErrors();
   }
 
   @Override
@@ -189,16 +152,14 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   public List<IErrorReporter> getTypeMessagesDontCheck(SNode node) {
-    return myState.getNodeMaps().getNodeErrors(node);
+    return getBaseNodeTypesComponent().getErrors(node);
   }
 
   @Override
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
-    if (nodeWithError == null) {
-      return;
-    }
-    if (!ErrorReportUtil.shouldReportError(nodeWithError)) return;
-    myState.addError(nodeWithError, errorReporter, null);
+    getNodeTypesComponent().reportTypeError(nodeWithError, errorReporter);
+    getNodeTypesComponent().addDependcyOnCurrent(nodeWithError, false);
+
   }
 
   @Override
@@ -218,7 +179,7 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
     myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, isShallow));
   }
 
-  public jetbrains.mps.newTypesystem.state.State getState() {
+  public State getState() {
     return myState;
   }
 
@@ -226,8 +187,8 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
     return myTypeChecker;
   }
 
-  public SubTyping getSubTyping() {
-    return mySubTyping;
+  public SubTypingManagerNew getSubTyping() {
+    return (SubTypingManagerNew)myTypeChecker.getSubtypingManager();
   }
 
   public Stack<AbstractOperation> getOperationStack() {
@@ -245,8 +206,7 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   public void clear() {
-    myState.clear(true);
-    myChecked = false;
+    myNodeTypesComponent.clear();
   }
 
   @Override
@@ -265,16 +225,6 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
   public EquationManager getEquationManager() {
     return null;
   }
-
-  @Override
-  public boolean isIncrementalMode() {
-    return false;
-  }
-  /*
-  @Override
-  public SNode computeTypeInferenceMode(SNode node) {
-    return super.computeTypeInferenceMode(node);    //To change body of overridden methods use File | Settings | File Templates.
-  } */
 
   @Override
   public void createEquation(SNode node1, IWrapper wrapper2, EquationInfo equationInfo) {
@@ -339,7 +289,7 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   public SubtypingManager getSubtypingManager() {
-    return null;
+    return myTypeChecker.getSubtypingManager();
   }
 
   @Override
@@ -350,6 +300,6 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   protected SNode getTypeOf_normalMode(SNode node) {
-    return super.getTypeOf_normalMode(node);    //To change body of overridden methods use File | Settings | File Templates.
-  }
+    if (!checkIfNotChecked(node, false)) return null;
+    return getTypeDontCheck(node);  }
 }

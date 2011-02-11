@@ -8,9 +8,9 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModel;
 
 public class ScopePositionInfo extends PositionInfo {
@@ -23,7 +23,7 @@ public class ScopePositionInfo extends PositionInfo {
   public ScopePositionInfo() {
   }
 
-  public ScopePositionInfo(Element element) throws DataConversionException {
+  public ScopePositionInfo(@NotNull Element element) throws DataConversionException {
     super(element);
     for (Object varInfoElement_ : element.getChildren(ScopePositionInfo.VAR_INFO)) {
       Element varInfoElement = (Element) varInfoElement_;

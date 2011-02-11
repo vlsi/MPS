@@ -408,7 +408,7 @@ public class JavaCompile_Facet implements IFacet {
                 }
               });
               jc.compile(ccp);
-              if (pool.parameters(Target_wf1ya0_d.this.getName(), JavaCompile_Facet.Target_wf1ya0_d.Parameters.class).errors()) {
+              if ((boolean) pool.parameters(Target_wf1ya0_d.this.getName(), JavaCompile_Facet.Target_wf1ya0_d.Parameters.class).errors()) {
                 return new IResult.FAILURE(_output_wf1ya0_a0d);
               }
               _output_wf1ya0_a0d = Sequence.fromIterable(_output_wf1ya0_a0d).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CResource(new IClassesData() {

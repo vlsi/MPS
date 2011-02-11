@@ -28,10 +28,6 @@ import java.util.Map;
  * Created Nov 13, 2003
  */
 public abstract class SNodeTextGen<BA extends INodeAdapter> {
-  public static String TRACEABLE_PROPERTY = "TraceableProperty";
-  public static String UNIT_NAME = "UnitName";
-  public static String SCOPE_VARIABLES = "ScopeVariables";
-
   private static final Logger LOG = Logger.getLogger(SNodeTextGen.class);
 
   private TextGenBuffer myBuffer;

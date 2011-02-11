@@ -15,23 +15,18 @@
  */
 package jetbrains.mps.newTypesystem.operation.block;
 
-import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.operation.PresentationKind;
 import jetbrains.mps.newTypesystem.state.Block;
+import jetbrains.mps.newTypesystem.state.BlockKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.12.10
- * Time: 16:08
- * To change this template use File | Settings | File Templates.
- */
 public class RemoveBlockOperation extends AbstractBlockOperation {
 
   public RemoveBlockOperation(Block block) {
     myBlock = block;
-    myPresentation = "Block executed : [" + myBlock.getPresentation() + "]";
+    String prefix = myBlock.getBlockKind() == BlockKind.WHEN_CONCRETE ? "Executed : [" : "Solved : [";
+    myPresentation = prefix + myBlock.getPresentation() + "]";
     myEquationInfo = new EquationInfo(null, " ", block.getNodeModel(), block.getNodeId());
   }
 
@@ -54,5 +49,14 @@ public class RemoveBlockOperation extends AbstractBlockOperation {
   public void execute(State state) {
     super.execute(state);
     myBlock.performAction();
+  }
+
+  @Override
+  public String getPresentationKind() {
+    if (myBlock.getBlockKind() == BlockKind.WHEN_CONCRETE) {
+      return PresentationKind.WHEN_CONCRETE_REMOVED;
+    } else {
+      return PresentationKind.RELATION_REMOVED;
+    }
   }
 }

@@ -24,6 +24,10 @@ public class Behavior_TabDescriptor extends EditorTabDescriptor {
     return 'B';
   }
 
+  public int compareTo(EditorTabDescriptor descriptor) {
+    return new ConceptDeclaration_Order().compare(this, descriptor);
+  }
+
   public void startListening() {
   }
 

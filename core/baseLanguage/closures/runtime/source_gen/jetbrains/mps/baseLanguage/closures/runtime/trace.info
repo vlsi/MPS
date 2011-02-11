@@ -1215,8 +1215,8 @@
   <unitInfo fileName="_UnrestrictedFunctionTypes.java" startLine="6" startPosition="0" endLine="1943" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes" />
   <unitInfo fileName="_UnrestrictedClosures.java" startLine="6" startPosition="0" endLine="6325" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedClosures" />
   <root nodeId="8649343297855554552">
-    <nodeInfo nodeId="8649343297855554553" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="value#()Ljava/lang/String;" fileName="AdapterClass.java" startLine="6" startPosition="32" endLine="7" endPosition="17" />
-    <scopeInfo nodeId="8649343297855554553" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="value#()Ljava/lang/String;" fileName="AdapterClass.java" startLine="6" startPosition="32" endLine="7" endPosition="17" />
+    <nodeInfo nodeId="8649343297855554553" fileName="AdapterClass.java" startLine="6" startPosition="32" endLine="7" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="value#()Ljava/lang/String;" />
+    <scopeInfo nodeId="8649343297855554553" fileName="AdapterClass.java" startLine="6" startPosition="32" endLine="7" endPosition="17" />
     <unitInfo nodeId="8649343297855554552" fileName="AdapterClass.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.runtime.AdapterClass" />
   </root>
 </debugInfo>

@@ -37,7 +37,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
-public abstract class TabsComponent extends JPanel{
+public abstract class TabsComponent extends JPanel {
   private SNodePointer myBaseNode;
   private SNodePointer myLastNode = null;
   private Set<EditorTabDescriptor> myPossibleTabs;
@@ -147,13 +147,7 @@ public abstract class TabsComponent extends JPanel{
       myRealTabs.add(tab);
     }
 
-    //todo comparator in language
-    Collections.sort(myRealTabs, new Comparator<EditorTab>() {
-      public int compare(EditorTab o1, EditorTab o2) {
-        List<String> list = Arrays.asList(new String[]{"Structure", "Editor", "Constraints", "Behavior", "Typesystem", "Actions", "Refactorings", "Intentions", "Find Usages", "Data Flow", "Generator", "Textgen"});
-        return list.indexOf(o1.getDescriptor().getTitle()) - list.indexOf(o2.getDescriptor().getTitle());
-      }
-    });
+    Collections.sort(myRealTabs, new EditorTabComparator());
 
     DefaultActionGroup group = new DefaultActionGroup();
     for (EditorTab tab : myRealTabs) {
@@ -263,6 +257,22 @@ public abstract class TabsComponent extends JPanel{
   private void listenModelForAdditions(SModelDescriptor descriptor, SModelListener listener) {
     descriptor.addModelListener(listener);
     myModelAdditionListeners.putValue(descriptor.getSModelReference(), listener);
+  }
+
+  private static class EditorTabComparator implements Comparator<EditorTab> {
+    public int compare(EditorTab o1, EditorTab o2) {
+      EditorTabDescriptor d1 = o1.getDescriptor();
+      EditorTabDescriptor d2 = o2.getDescriptor();
+
+      int r1 = d1.compareTo(d2);
+      int r2 = d2.compareTo(d1);
+
+      if ((r1 == 0) ^ (r2 == 0)) return r1 - r2;
+
+      assert r1 * r2 <= 0 : "can't determine order";
+
+      return r1;
+    }
   }
 
   private class ModelAddedListener extends SModelRepositoryAdapter {
