@@ -36,6 +36,9 @@ public class PluginReloader implements ApplicationComponent {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           disposePlugins();
+          if (myProjectManager.getOpenProjects().length > 1) {
+            loadPlugins();
+          }
         }
       });
     }
