@@ -9,5 +9,43 @@
     <scopeInfo nodeId="143080135592810950" fileName="IPersistentConfiguration.java" startLine="11" startPosition="72" endLine="12" endPosition="56" />
     <unitInfo nodeId="1252300412034470124" fileName="IPersistentConfiguration.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" />
   </root>
+  <root nodeId="8265043642382446572">
+    <nodeInfo nodeId="8265043642382453554" fileName="DefaultProcessHandler.java" startLine="10" startPosition="101" endLine="11" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8265043642382453571" fileName="DefaultProcessHandler.java" startLine="11" startPosition="31" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8265043642382453562" fileName="DefaultProcessHandler.java" startLine="12" startPosition="40" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8265043642382446574" fileName="DefaultProcessHandler.java" startLine="9" startPosition="61" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultProcessHandler#(Ljava/lang/Process;Ljava/lang/String;Lcom/intellij/execution/process/ProcessListener;)V" />
+    <scopeInfo nodeId="8265043642382446577" fileName="DefaultProcessHandler.java" startLine="10" startPosition="101" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="8265043642382446574" fileName="DefaultProcessHandler.java" startLine="9" startPosition="61" endLine="14" endPosition="3">
+      <varInfo nodeId="8265043642382453548" varName="process" />
+      <varInfo nodeId="8265043642382453558" varName="processListener" />
+      <varInfo nodeId="8265043642382453550" varName="parameters" />
+    </scopeInfo>
+    <unitInfo nodeId="8265043642382446572" fileName="DefaultProcessHandler.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.DefaultProcessHandler" />
+  </root>
+  <root nodeId="8265043642382453574">
+    <nodeInfo nodeId="8265043642382454257" fileName="ConsoleProcessListener.java" startLine="12" startPosition="60" endLine="13" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConsoleView" />
+    <nodeInfo nodeId="8265043642382454261" fileName="ConsoleProcessListener.java" startLine="15" startPosition="58" endLine="16" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8265043642382454251" fileName="ConsoleProcessListener.java" startLine="21" startPosition="48" endLine="22" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8265043642382454244" fileName="ConsoleProcessListener.java" startLine="24" startPosition="48" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8265043642382454237" fileName="ConsoleProcessListener.java" startLine="27" startPosition="48" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8265043642382453576" fileName="ConsoleProcessListener.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConsoleProcessListener#(Lcom/intellij/execution/ui/ConsoleView;)V" />
+    <nodeInfo nodeId="8265043642382454231" fileName="ConsoleProcessListener.java" startLine="26" startPosition="10" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8265043642382454226" fileName="ConsoleProcessListener.java" startLine="23" startPosition="10" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8265043642382454221" fileName="ConsoleProcessListener.java" startLine="20" startPosition="60" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8265043642382453581" fileName="ConsoleProcessListener.java" startLine="18" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onTextAvailable#(Lcom/intellij/execution/process/ProcessEvent;Lcom/intellij/openapi/util/Key;)V" />
+    <scopeInfo nodeId="8265043642382453579" fileName="ConsoleProcessListener.java" startLine="15" startPosition="58" endLine="16" endPosition="32" />
+    <scopeInfo nodeId="8265043642382454250" fileName="ConsoleProcessListener.java" startLine="21" startPosition="48" endLine="22" endPosition="80" />
+    <scopeInfo nodeId="8265043642382454243" fileName="ConsoleProcessListener.java" startLine="24" startPosition="48" endLine="25" endPosition="81" />
+    <scopeInfo nodeId="8265043642382454236" fileName="ConsoleProcessListener.java" startLine="27" startPosition="48" endLine="28" endPosition="81" />
+    <scopeInfo nodeId="8265043642382453576" fileName="ConsoleProcessListener.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="8265043642382453594" varName="consoleView" />
+    </scopeInfo>
+    <scopeInfo nodeId="8265043642382453588" fileName="ConsoleProcessListener.java" startLine="20" startPosition="60" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="8265043642382453581" fileName="ConsoleProcessListener.java" startLine="18" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="8265043642382453584" varName="event" />
+      <varInfo nodeId="8265043642382453586" varName="key" />
+    </scopeInfo>
+    <unitInfo nodeId="8265043642382453574" fileName="ConsoleProcessListener.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener" />
+  </root>
 </debugInfo>
 

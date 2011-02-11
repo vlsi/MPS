@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="RunConfigurationExecutor_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.RunConfigurationExecutor_Behavior" />
   <unitInfo fileName="SettingsEditor_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.SettingsEditor_Behavior" />
   <unitInfo fileName="RunConfigurationKind_Behavior.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.RunConfigurationKind_Behavior" />
   <unitInfo fileName="RunConfiguration_Behavior.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.RunConfiguration_Behavior" />
   <unitInfo fileName="PersistentPropertyDeclaration_Behavior.java" startLine="74" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentPropertyDeclaration_Behavior$QuotationClass_ex141d_a1a0a0b" />
   <unitInfo fileName="PersistentConfigurationTemplate_Behavior.java" startLine="31" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfigurationTemplate_Behavior$QuotationClass_3swbqk_a0a0b" />
+  <unitInfo fileName="ProcessStatement_Behavior.java" startLine="63" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ProcessStatement_Behavior$QuotationClass_cvery0_a0a0b" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="84" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0a0d" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="102" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0c0i" />
+  <unitInfo fileName="ProcessStatement_Behavior.java" startLine="106" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ProcessStatement_Behavior$QuotationClass_cvery0_a1a0a3" />
   <unitInfo fileName="ResetFrom_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ResetFrom_Function_Behavior" />
   <unitInfo fileName="Dispose_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.Dispose_Function_Behavior" />
   <unitInfo fileName="CreateEditor_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CreateEditor_Function_Behavior" />
   <unitInfo fileName="ApplyTo_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ApplyTo_Function_Behavior" />
   <unitInfo fileName="PersistentConfigurationType_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfigurationType_Behavior" />
   <unitInfo fileName="EditorOperationDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.EditorOperationDeclaration_Behavior" />
+  <unitInfo fileName="ProcessStatement_Behavior.java" startLine="81" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ProcessStatement_Behavior$QuotationClass_cvery0_a1a0a2" />
   <unitInfo fileName="PersistentConfigurationTemplate_Behavior.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfigurationTemplate_Behavior" />
+  <unitInfo fileName="IMacroStatement_Behavior.java" startLine="20" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.IMacroStatement_Behavior" />
   <unitInfo fileName="PersistentPropertyDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentPropertyDeclaration_Behavior" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="19" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior" />
+  <unitInfo fileName="ProcessStatement_Behavior.java" startLine="19" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ProcessStatement_Behavior" />
   <root nodeId="223733852661818461">
     <nodeInfo nodeId="1252300412034469148" fileName="PersistentConfiguration_Behavior.java" startLine="26" startPosition="66" endLine="27" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1252300412034469150" fileName="PersistentConfiguration_Behavior.java" startLine="28" startPosition="5" endLine="29" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -63,6 +69,40 @@
     </scopeInfo>
     <unitInfo nodeId="3257967158569718528" fileName="PersistentConfiguration_Behavior.java" startLine="41" startPosition="109" endLine="45" endPosition="5" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$1" />
     <unitInfo nodeId="3257967158569718556" fileName="PersistentConfiguration_Behavior.java" startLine="49" startPosition="109" endLine="53" endPosition="5" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$2" />
+  </root>
+  <root nodeId="2866018809101548655">
+    <nodeInfo nodeId="2866018809101548663" fileName="IMacroStatement_Behavior.java" startLine="30" startPosition="82" endLine="31" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2866018809101689718" fileName="IMacroStatement_Behavior.java" startLine="34" startPosition="83" endLine="35" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2866018809101764599" fileName="IMacroStatement_Behavior.java" startLine="38" startPosition="97" endLine="39" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2866018809101764951" fileName="IMacroStatement_Behavior.java" startLine="39" startPosition="78" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2866018809101764972" fileName="IMacroStatement_Behavior.java" startLine="40" startPosition="63" endLine="41" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2866018809101765014" fileName="IMacroStatement_Behavior.java" startLine="43" startPosition="51" endLine="44" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2866018809101765029" fileName="IMacroStatement_Behavior.java" startLine="44" startPosition="74" endLine="45" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2866018809101765039" fileName="IMacroStatement_Behavior.java" startLine="47" startPosition="5" endLine="48" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2866018809101764990" fileName="IMacroStatement_Behavior.java" startLine="42" startPosition="73" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2866018809101764959" fileName="IMacroStatement_Behavior.java" startLine="41" startPosition="75" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="2866018809101548657" fileName="IMacroStatement_Behavior.java" startLine="27" startPosition="43" endLine="27" endPosition="43" />
+    <scopeInfo nodeId="2866018809101548661" fileName="IMacroStatement_Behavior.java" startLine="30" startPosition="82" endLine="31" endPosition="179" />
+    <scopeInfo nodeId="2866018809101689716" fileName="IMacroStatement_Behavior.java" startLine="34" startPosition="83" endLine="35" endPosition="34" />
+    <scopeInfo nodeId="2866018809101764992" fileName="IMacroStatement_Behavior.java" startLine="43" startPosition="51" endLine="45" endPosition="55">
+      <varInfo nodeId="2866018809101765015" varName="var" />
+    </scopeInfo>
+    <scopeInfo nodeId="2866018809101764962" fileName="IMacroStatement_Behavior.java" startLine="42" startPosition="73" endLine="46" endPosition="7" />
+    <scopeInfo nodeId="2866018809101764959" fileName="IMacroStatement_Behavior.java" startLine="41" startPosition="75" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="2866018809101764588" fileName="IMacroStatement_Behavior.java" startLine="38" startPosition="97" endLine="48" endPosition="59">
+      <varInfo nodeId="2866018809101764952" varName="instructions" />
+      <varInfo nodeId="2866018809101764600" varName="program" />
+      <varInfo nodeId="2866018809101764973" varName="variables" />
+    </scopeInfo>
+  </root>
+  <root nodeId="2866018809101550414">
+    <nodeInfo nodeId="2866018809101550421" fileName="ProcessStatement_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2866018809101567764" fileName="ProcessStatement_Behavior.java" startLine="31" startPosition="95" endLine="32" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2866018809101689731" fileName="ProcessStatement_Behavior.java" startLine="35" startPosition="83" endLine="36" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2866018809101550416" fileName="ProcessStatement_Behavior.java" startLine="24" startPosition="43" endLine="24" endPosition="43" />
+    <scopeInfo nodeId="2866018809101550419" fileName="ProcessStatement_Behavior.java" startLine="27" startPosition="81" endLine="28" endPosition="84" />
+    <scopeInfo nodeId="2866018809101567762" fileName="ProcessStatement_Behavior.java" startLine="31" startPosition="95" endLine="32" endPosition="140" />
+    <scopeInfo nodeId="2866018809101689725" fileName="ProcessStatement_Behavior.java" startLine="35" startPosition="83" endLine="36" endPosition="140" />
   </root>
   <root nodeId="3754890006475666593">
     <nodeInfo nodeId="3754890006475713443" fileName="RunConfiguration_Behavior.java" startLine="18" startPosition="39" endLine="19" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -162,6 +202,11 @@
     <nodeInfo nodeId="7902226081039510327" fileName="SettingsEditor_Behavior.java" startLine="13" startPosition="92" endLine="14" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="7902226081039506466" fileName="SettingsEditor_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="7902226081039506470" fileName="SettingsEditor_Behavior.java" startLine="13" startPosition="92" endLine="14" endPosition="147" />
+  </root>
+  <root nodeId="8265043642382454448">
+    <nodeInfo nodeId="8265043642382454456" fileName="RunConfigurationExecutor_Behavior.java" startLine="12" startPosition="87" endLine="13" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="8265043642382454450" fileName="RunConfigurationExecutor_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="8265043642382454454" fileName="RunConfigurationExecutor_Behavior.java" startLine="12" startPosition="87" endLine="13" endPosition="176" />
   </root>
 </debugInfo>
 

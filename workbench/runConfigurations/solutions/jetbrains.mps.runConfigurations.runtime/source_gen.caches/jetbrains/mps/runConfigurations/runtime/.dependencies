@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener" file="ConsoleProcessListener.java">
+    <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
+    <classNode dependClassName="com.intellij.openapi.util.Key" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
+    <classNode dependClassName="com.intellij.execution.ui.ConsoleViewContentType" />
+    <classNode dependClassName="com.intellij.execution.ui.ConsoleView" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode extendsClassName="com.intellij.execution.process.ProcessAdapter" />
+  </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.runtime.DefaultProcessHandler" file="DefaultProcessHandler.java">
+    <classNode dependClassName="com.intellij.execution.process.ProcessListener" />
+    <classNode dependClassName="java.lang.Process" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessTerminatedListener" />
+    <classNode extendsClassName="com.intellij.execution.process.OSProcessHandler" />
+  </dependency>
   <dependency className="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" file="IPersistentConfiguration.java">
     <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />

@@ -63,7 +63,7 @@ public class Make_Configuration implements IPersistentConfiguration {
   }
 
   public class MyState {
-    public boolean myMake;
+    public boolean myMake = true;
 
     public MyState() {
     }

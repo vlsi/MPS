@@ -1,10 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="34" startPosition="27" endLine="38" endPosition="7" unitName="jetbrains.mps.runConfigurations.actions.QueriesGenerated$1" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="22" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.runConfigurations.actions.QueriesGenerated" />
-  <root nodeId="7902226081039533987">
-    <nodeInfo nodeId="7902226081039534077" fileName="QueriesGenerated.java" startLine="35" startPosition="43" endLine="36" endPosition="385" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="7902226081039533991" fileName="QueriesGenerated.java" startLine="35" startPosition="43" endLine="36" endPosition="385" />
-  </root>
-</debugInfo>
+<debugInfo />
 

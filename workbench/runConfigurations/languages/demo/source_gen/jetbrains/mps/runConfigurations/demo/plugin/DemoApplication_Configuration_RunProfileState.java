@@ -4,20 +4,43 @@ package jetbrains.mps.runConfigurations.demo.plugin;
 
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
+import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.configurations.RunnerSettings;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
+import com.intellij.openapi.project.Project;
+import com.intellij.execution.impl.ConsoleViewImpl;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.NameUtil;
+import com.intellij.execution.process.ProcessHandler;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.execution.ui.ConsoleView;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.runConfigurations.runtime.DefaultProcessHandler;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener;
+import java.io.IOException;
+import com.intellij.execution.ui.ExecutionConsole;
+import com.intellij.openapi.actionSystem.AnAction;
+import javax.swing.JComponent;
 
 public class DemoApplication_Configuration_RunProfileState implements RunProfileState {
+  @NotNull
   private final DemoApplication_Configuration myRunConfiguration;
+  @NotNull
+  private final ExecutionEnvironment myEnvironment;
 
   public DemoApplication_Configuration_RunProfileState(@NotNull DemoApplication_Configuration configuration, @NotNull Executor executor, @NotNull ExecutionEnvironment environment) {
     myRunConfiguration = configuration;
+    myEnvironment = environment;
   }
 
   public ConfigurationPerRunnerSettings getConfigurationSettings() {
@@ -30,6 +53,90 @@ public class DemoApplication_Configuration_RunProfileState implements RunProfile
 
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
-    return null;
+    Project project = myEnvironment.getProject();
+    final ConsoleViewImpl consoleView = new ConsoleViewImpl(project, false);
+    final Wrappers._T<String> fqName = new Wrappers._T<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        fqName.value = NameUtil.nodeFQName(myRunConfiguration.getNode().getNode());
+      }
+    });
+    String java = "java";
+    ProcessHandler process = createProcess(consoleView, java);
+    return new DemoApplication_Configuration_RunProfileState.MyExecutionResult(process, new DemoApplication_Configuration_RunProfileState.MyExecutionConsole(consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        consoleView.dispose();
+      }
+    }));
+
+  }
+
+  private ProcessHandler createProcess(ConsoleView consoleView, String java) throws ExecutionException {
+    List<String> arguments = ListSequence.fromListAndArray(new ArrayList<String>(), java, "-version");
+    ProcessBuilder builder = new ProcessBuilder(ListSequence.fromList(arguments).toGenericArray(String.class));
+    try {
+      Process process = builder.start();
+      DefaultProcessHandler processHandler = new DefaultProcessHandler(process, ListSequence.fromList(arguments).foldLeft("", new ILeftCombinator<String, String>() {
+        public String combine(String s, String it) {
+          return (StringUtils.isEmpty(s) ?
+            it :
+            s + " " + it
+          );
+        }
+      }), new ConsoleProcessListener(consoleView));
+      return processHandler;
+    } catch (IOException e) {
+      throw new ExecutionException("Start Process Failed", e);
+    }
+  }
+
+  private static class MyExecutionResult implements ExecutionResult {
+    @NotNull
+    private final ProcessHandler myProcessHandler;
+    @NotNull
+    private final ExecutionConsole myConsole;
+
+    public MyExecutionResult(@NotNull ProcessHandler process, @NotNull ExecutionConsole console) {
+      myProcessHandler = process;
+      myConsole = console;
+    }
+
+    public ProcessHandler getProcessHandler() {
+      return myProcessHandler;
+    }
+
+    public AnAction[] getActions() {
+      return new AnAction[0];
+    }
+
+    public ExecutionConsole getExecutionConsole() {
+      return myConsole;
+    }
+  }
+
+  private static class MyExecutionConsole implements ExecutionConsole {
+    @Nullable
+    private final _FunctionTypes._void_P0_E0 myDispose;
+    private final JComponent myComponent;
+
+    public MyExecutionConsole(JComponent component, @Nullable _FunctionTypes._void_P0_E0 dispose) {
+      myDispose = dispose;
+      myComponent = component;
+    }
+
+    public JComponent getPreferredFocusableComponent() {
+      return myComponent;
+    }
+
+    public void dispose() {
+      if (myDispose == null) {
+        return;
+      }
+      myDispose.invoke();
+    }
+
+    public JComponent getComponent() {
+      return myComponent;
+    }
   }
 }
