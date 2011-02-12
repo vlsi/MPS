@@ -22,11 +22,11 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import org.apache.commons.lang.ObjectUtils;
@@ -94,31 +94,41 @@ public class MergeContext {
 
   private void collectGroupChangesWithOthersConflicts(Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> arrangedChanges, ChangeSet thisChangeSet, ChangeSet otherChangeSet) {
     Map<SNodeId, DeleteRootChange> deleteRootChanges = arrangeDeleteRootChanges(thisChangeSet);
-    for (NodeChange change : Sequence.fromIterable(otherChangeSet.getModelChanges(NodeChange.class))) {
-      if (!(MapSequence.fromMap(myConflictingChanges).containsKey(change))) {
-        SNode node = myBaseModel.getNodeById(change.getAffectedNodeId());
-        while (node != null) {
-          SNodeId nodeId = node.getSNodeId();
-          if (SNodeOperations.getParent(node) == null) {
-            DeleteRootChange conflicting = MapSequence.fromMap(deleteRootChanges).get(nodeId);
-            if (conflicting != null) {
-              addConflict(change, conflicting);
-            }
-          } else {
-            Tuples._2<SNodeId, String> nodeRole = MultiTuple.<SNodeId,String>from(SNodeOperations.getParent(node).getSNodeId(), SNodeOperations.getContainingLinkRole(node));
-            final int index = SNodeOperations.getIndexInParent(node);
-            NodeGroupChange conflicting = ListSequence.fromList(MapSequence.fromMap(arrangedChanges).get(nodeRole)).findFirst(new IWhereFilter<NodeGroupChange>() {
-              public boolean accept(NodeGroupChange ch) {
-                return ch.getBegin() <= index && index < ch.getEnd();
-              }
-            });
-            if (conflicting != null) {
-              addConflict(change, conflicting);
-              break;
-            }
+    for (ModelChange change : ListSequence.fromList(otherChangeSet.getModelChanges())) {
+      if (MapSequence.fromMap(myConflictingChanges).containsKey(change)) {
+        continue;
+      }
+
+      SNodeId nodeId = null;
+      if (change instanceof NodeChange) {
+        nodeId = ((NodeChange) change).getAffectedNodeId();
+      } else if (change instanceof NodeGroupChange) {
+        nodeId = ((NodeGroupChange) change).getParentNodeId();
+      }
+      if (nodeId == null) {
+        continue;
+      }
+      SNode node = myBaseModel.getNodeById(nodeId);
+      while (node != null) {
+        if (SNodeOperations.getParent(node) == null) {
+          DeleteRootChange conflicting = MapSequence.fromMap(deleteRootChanges).get(nodeId);
+          if (conflicting != null) {
+            addConflict(change, conflicting);
           }
-          node = SNodeOperations.getParent(node);
+        } else {
+          Tuples._2<SNodeId, String> nodeRole = MultiTuple.<SNodeId,String>from(SNodeOperations.getParent(node).getSNodeId(), SNodeOperations.getContainingLinkRole(node));
+          final int index = SNodeOperations.getIndexInParent(node);
+          NodeGroupChange conflicting = ListSequence.fromList(MapSequence.fromMap(arrangedChanges).get(nodeRole)).findFirst(new IWhereFilter<NodeGroupChange>() {
+            public boolean accept(NodeGroupChange ch) {
+              return ch.getBegin() <= index && index < ch.getEnd();
+            }
+          });
+          if (conflicting != null) {
+            addConflict(change, conflicting);
+            break;
+          }
         }
+        node = SNodeOperations.getParent(node);
       }
     }
   }
