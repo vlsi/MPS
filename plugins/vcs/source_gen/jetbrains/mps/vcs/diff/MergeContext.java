@@ -32,6 +32,7 @@ import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import java.util.ArrayList;
+import org.jetbrains.annotations.Nullable;
 
 public class MergeContext {
   private SModel myBaseModel;
@@ -221,7 +222,14 @@ public class MergeContext {
   }
 
   public void applyAllNonConflictingChanges() {
+    applyAllNonConflictingChanges(null);
+  }
+
+  public void applyAllNonConflictingChanges(@Nullable SNodeId rootId) {
     for (ModelChange change : ListSequence.fromList(myMineChangeSet.getModelChanges()).concat(ListSequence.fromList(myRepositoryChangeSet.getModelChanges()))) {
+      if (rootId != null && neq_358wfv_a0a0a0a41(change.getRootId(), rootId)) {
+        continue;
+      }
       if (!(isChangeResolved(change)) && Sequence.fromIterable(getConflictedWith(change)).isEmpty()) {
         applyChange(change);
       }
@@ -272,16 +280,6 @@ public class MergeContext {
         applyChange(conflicted);
       }
     }
-  }
-
-  public void rebuildAll() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        myResultModel.setLoading(true);
-        applyAllNonConflictingChanges();
-        myResultModel.setLoading(false);
-      }
-    });
   }
 
   public SModel getResultModel() {
@@ -345,5 +343,12 @@ public class MergeContext {
     assert a.getChangeSet() != b.getChangeSet();
     addOneWayChangeLink(map, a, b);
     addOneWayChangeLink(map, b, a);
+  }
+
+  private static boolean neq_358wfv_a0a0a0a41(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
   }
 }

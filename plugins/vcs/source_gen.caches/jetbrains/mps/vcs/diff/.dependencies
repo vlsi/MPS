@@ -67,6 +67,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetPropertyChange" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.DeleteRootChange" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="java.util.HashMap" />
@@ -75,7 +76,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.AddRootChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
@@ -94,6 +95,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
   </dependency>

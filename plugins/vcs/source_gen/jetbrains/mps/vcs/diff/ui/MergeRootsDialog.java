@@ -31,6 +31,10 @@ import javax.swing.JLabel;
 import java.awt.Dimension;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
   private MergeContext myMergeContext;
@@ -187,6 +191,10 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     return result;
   }
 
+  public SNodeId getRootId() {
+    return myRootId;
+  }
+
   protected JComponent getMainComponent() {
     return myContainer;
   }
@@ -198,6 +206,38 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
 
   @BaseDialog.Button(name = "OK", mnemonic = 'O', position = 0, defaultButton = true)
   public void ok() {
+    List<ModelChange> changes = ListSequence.fromList(myMergeContext.getChangesForRoot(myRootId)).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return !(myMergeContext.isChangeResolved(ch));
+      }
+    }).toListSequence();
+    Iterable<ModelChange> conflictedChanges = ListSequence.fromList(changes).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
+      }
+    });
+    if (Sequence.fromIterable(conflictedChanges).isNotEmpty()) {
+      if (Messages.showYesNoDialog(this, String.format("You have %s left. You should resolve them manually.\n" + "Are you sure want to close merge roots dialog without resolving them?", NameUtil.formatNumericalString(Sequence.fromIterable(conflictedChanges).count(), "unresolved conflicting changes")), "Unresolved Conflicting Changes", Messages.getWarningIcon()) != 0) {
+        return;
+      }
+    } else if (ListSequence.fromList(changes).isNotEmpty()) {
+      int answer = Messages.showYesNoCancelDialog(this, String.format("You have %s left. Do you want to resolve them automatically?", NameUtil.formatNumericalString(ListSequence.fromList(changes).count(), "unresolved changes")), "Unresolved Changes", Messages.getQuestionIcon());
+      if (answer == 0) {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            myMergeContext.applyAllNonConflictingChanges(myRootId);
+            myStateToRestore = null;
+            dispose();
+          }
+        });
+        return;
+      } else if (answer == 1) {
+        // Do nothing, leave unresolved changes as is 
+      } else {
+        return;
+      }
+    }
+
     myStateToRestore = null;
     dispose();
   }

@@ -21,7 +21,7 @@ public class ApplyNonConflictsForRoot extends BaseAction {
   }
 
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-    myMergeContext.applyAllNonConflictingChanges();
+    myMergeContext.applyAllNonConflictingChanges(myMergeRootsDialog.getRootId());
     myMergeRootsDialog.rehighlight();
   }
 }
