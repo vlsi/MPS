@@ -4,8 +4,6 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.vcs.diff.MergeContext;
-import com.intellij.openapi.util.IconLoader;
-import com.intellij.util.Icons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 
@@ -14,7 +12,7 @@ public class ApplyNonConflictsForRoot extends BaseAction {
   private MergeRootsDialog myMergeRootsDialog;
 
   public ApplyNonConflictsForRoot(MergeContext mergeContext, MergeRootsDialog mergeRootsDialog) {
-    super("Apply Non-Conflicting Changes", null, IconLoader.getIcon("/diff/applyNotConflicts.png", Icons.class));
+    super("Apply Non-Conflicting Changes", null, MergeModelsDialog.APPLY_NON_CONFLICTS);
     myMergeContext = mergeContext;
     myMergeRootsDialog = mergeRootsDialog;
     setDisableOnNoProject(false);
