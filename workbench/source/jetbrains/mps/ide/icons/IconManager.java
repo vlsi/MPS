@@ -26,6 +26,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -126,7 +127,8 @@ public class IconManager {
           return mainIcon;
         }
 
-        if (model.isNotEditable()) {
+        if (!SModelStereotype.isUserModel(model) || model.getModelDepsManager() instanceof EditableSModelDescriptor
+            && ((EditableSModelDescriptor) model.getModelDescriptor()).isPackaged()) {
           mainIcon = new LayeredIcon(mainIcon, com.intellij.util.Icons.LOCKED_ICON);
         }
 
