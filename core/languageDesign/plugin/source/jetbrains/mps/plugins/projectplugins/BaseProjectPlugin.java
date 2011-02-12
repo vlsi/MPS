@@ -158,6 +158,9 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     return Collections.unmodifiableList(myTools);
   }
 
+  public List<EditorTabDescriptor> getTabDescriptors() {
+    return Collections.unmodifiableList(myTabDescriptors);
+  }
   //----------------STATE STUFF------------------------
 
   public PluginState getState() {

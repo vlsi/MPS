@@ -179,7 +179,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
 
   public void recreateEditor() {
     if (myProject.isDisposed() || !isValid()) return;
-    if (myNodeEditor instanceof NodeEditor) return;
+    //if (myNodeEditor instanceof NodeEditor) return;
 
     myComponent.removeAll();
 
