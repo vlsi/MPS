@@ -312,6 +312,16 @@ public class MergeContext {
     return change.getChangeSet() == myMineChangeSet;
   }
 
+  public MergeContextState getCurrentState() {
+    return new MergeContextState(myResultModel, myAppliedChanges, myExcludedChanges);
+  }
+
+  public void restoreState(MergeContextState state) {
+    myResultModel = state.myResultModel;
+    myAppliedChanges = state.myAppliedChanges;
+    myExcludedChanges = state.myExcludedChanges;
+  }
+
   private static Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> arrangeNodeGroupChanges(ChangeSet changeSet) {
     Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> nodeRoleToGroupChanges = MapSequence.fromMap(new HashMap<Tuples._2<SNodeId, String>, List<NodeGroupChange>>());
     for (NodeGroupChange change : Sequence.fromIterable(changeSet.getModelChanges(NodeGroupChange.class))) {

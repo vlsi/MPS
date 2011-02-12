@@ -13,6 +13,7 @@ import java.awt.GridBagLayout;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.vcs.diff.MergeContextState;
 import javax.swing.JSplitPane;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -44,6 +45,7 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
   private DiffEditorComponent myRepositoryEditor;
   private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.fromList(new ArrayList<ChangeGroupBuilder>());
   private DiffEditorComponentsGroup myDiffEditorsGroup = new DiffEditorComponentsGroup();
+  private MergeContextState myStateToRestore;
 
   public MergeRootsDialog(MergeModelsDialog mergeModelsDialog, MergeContext mergeContext, SNodeId rootId, String rootName) {
     super(mergeModelsDialog, "Merging " + rootName);
@@ -51,6 +53,7 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     myOperationContext = mergeModelsDialog.getOperationContext();
     myMergeContext = mergeContext;
     myRootId = rootId;
+    myStateToRestore = myMergeContext.getCurrentState();
 
     myMineEditor = addEditor(0, myMergeContext.getMyModel(), "My Changes");
     myResultEditor = addEditor(1, myMergeContext.getResultModel(), "Merge Result");
@@ -195,18 +198,22 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
 
   @BaseDialog.Button(name = "OK", mnemonic = 'O', position = 0, defaultButton = true)
   public void ok() {
+    myStateToRestore = null;
     dispose();
   }
 
   @BaseDialog.Button(name = "Cancel", mnemonic = 'C', position = 1)
   public void cancel() {
-    // TODO revert all changes applying 
     dispose();
   }
 
   @Override
   public void dispose() {
-    myModelsDialog.rebuildLater();
+    if (myStateToRestore == null) {
+      myModelsDialog.rebuildLater();
+    } else {
+      myMergeContext.restoreState(myStateToRestore);
+    }
     super.dispose();
   }
 }
