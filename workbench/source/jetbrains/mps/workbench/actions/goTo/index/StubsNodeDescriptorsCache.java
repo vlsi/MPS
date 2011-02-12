@@ -18,12 +18,6 @@ import java.util.List;
 import java.util.Map;
 
 public class StubsNodeDescriptorsCache implements ApplicationComponent {
-  private ModuleRepositoryAdapter myModuleRepoListener = new ModuleRepositoryAdapter(){
-    public void moduleRemoved(IModule module) {
-      myCache.remove(module);
-    }
-  };
-
   public StubsNodeDescriptorsCache() {
   }
 
@@ -38,6 +32,12 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
 
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       clearCache(modelDescriptor);
+    }
+  };
+
+  private ModuleRepositoryAdapter myModuleRepoListener = new ModuleRepositoryAdapter(){
+    public void moduleRemoved(IModule module) {
+      myCache.remove(module);
     }
   };
 
