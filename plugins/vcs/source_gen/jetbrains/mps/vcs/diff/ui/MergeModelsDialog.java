@@ -102,6 +102,12 @@ public class MergeModelsDialog extends BaseDialog {
       }
       return modelNode;
     }
+
+    @Override
+    public void rebuildNow() {
+      super.rebuildNow();
+      expandAll();
+    }
   }
 
   private class MyModelTreeNode extends MPSTreeNode {
@@ -140,10 +146,11 @@ public class MergeModelsDialog extends BaseDialog {
         }
       });
 
+      boolean deleted = false;
       if (Sequence.fromIterable(conflictedChanges).isNotEmpty()) {
         setColor(Color.RED);
       } else if (ListSequence.fromList(changes).isEmpty()) {
-        // skip 
+        deleted = myMergeContext.getResultModel().getNodeById(myRootId) == null;
       } else if (ListSequence.fromList(changes).all(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return ch instanceof AddRootChange;
@@ -185,7 +192,10 @@ public class MergeModelsDialog extends BaseDialog {
         }
       }
       myPresentations = StringUtils.join(presentations, " / ");
-      setText(myPresentations);
+      setText((deleted ?
+        String.format("<html><s>%s</s></html>", myPresentations) :
+        myPresentations
+      ));
       setIcon(icon);
     }
 

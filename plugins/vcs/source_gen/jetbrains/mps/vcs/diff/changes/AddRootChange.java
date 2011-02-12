@@ -32,7 +32,7 @@ public class AddRootChange extends ModelChange {
   public void apply(@NotNull SModel model) {
     // TODO handle IDs specifically 
     SNode newNode = getChangeSet().getNewModel().getNodeById(myNodeId);
-    SModelOperations.addRootNode(model, CopyUtil.copy(newNode));
+    SModelOperations.addRootNode(model, CopyUtil.copyAndPreserveId(newNode));
   }
 
   public ChangeType getType() {

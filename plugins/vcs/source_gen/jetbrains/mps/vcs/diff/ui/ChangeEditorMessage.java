@@ -84,7 +84,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       // This is a workaround for case when any change message is going to be painted over 
       // "conflicted" red frame. In this case, we repaint conflicted red frame again 
       EditorCell_Collection parent = cell.getParent();
-      if (check_myu41h_a0f0b0e(parent) == 1) {
+      if (parent != null && parent.getChildCount() == 1) {
         EditorMessage messageToRepaint = ListSequence.fromList(((List<EditorMessage>) parent.getMessages())).findFirst(new IWhereFilter<EditorMessage>() {
           public boolean accept(EditorMessage m) {
             return m instanceof ChangeEditorMessage && ((ChangeEditorMessage) m).isConflicted();
@@ -338,13 +338,6 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     }
     assert false;
     return -1;
-  }
-
-  private static Integer check_myu41h_a0f0b0e(EditorCell_Collection p) {
-    if (null == p) {
-      return null;
-    }
-    return p.getChildCount();
   }
 
   private static Boolean check_myu41h_a0a0b0e(Set<SNode> p, EditorCell cell) {

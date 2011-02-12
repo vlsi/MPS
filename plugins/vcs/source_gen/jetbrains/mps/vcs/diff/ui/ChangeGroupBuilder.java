@@ -71,15 +71,19 @@ public class ChangeGroupBuilder {
       ChangeEditorMessage leftMessage = myLeftEditorComponent.getMessageForChange(change);
       ChangeEditorMessage rightMessage = myRightEditorComponent.getMessageForChange(change);
 
-      assert leftMessage == null && rightMessage == null || leftMessage != null && rightMessage != null;
-      if (leftMessage == null) {
-        continue;
-      }
+      int leftStart = -1;
+      int rightStart = -1;
+      int leftHeight = -1;
+      int rightHeight = -1;
 
-      int leftStart = leftMessage.getStart(getLeftComponent());
-      int rightStart = rightMessage.getStart(getRightComponent());
-      int leftHeight = leftMessage.getHeight(getLeftComponent());
-      int rightHeight = rightMessage.getHeight(getRightComponent());
+      if (leftMessage != null) {
+        leftStart = leftMessage.getStart(getLeftComponent());
+        leftHeight = leftMessage.getHeight(getLeftComponent());
+      }
+      if (rightMessage != null) {
+        rightStart = rightMessage.getStart(getRightComponent());
+        rightHeight = rightMessage.getHeight(getRightComponent());
+      }
       if (leftHeight == -1 && rightHeight == -1) {
         continue;
       }

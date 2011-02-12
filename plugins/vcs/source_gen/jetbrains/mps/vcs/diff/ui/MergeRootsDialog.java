@@ -19,13 +19,13 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
 import javax.swing.JLabel;
 import java.awt.Dimension;
 import javax.swing.JComponent;
@@ -91,6 +91,13 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     myResultEditor.unhighlightAllChanges();
     myRepositoryEditor.unhighlightAllChanges();
 
+    if (myResultEditor.getEditedNode() == null) {
+      SNode node = myMergeContext.getResultModel().getNodeById(myRootId);
+      if (node != null) {
+        myResultEditor.editNode(node, myOperationContext);
+      }
+    }
+
     myResultEditor.rebuildEditorContent();
 
     ListSequence.fromList(myChangeGroupBuilders).visitAll(new IVisitor<ChangeGroupBuilder>() {
@@ -105,11 +112,11 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
   private void highlightAllChanges() {
     for (ModelChange change : ListSequence.fromList(myMergeContext.getChangesForRoot(myRootId))) {
       if (!(myMergeContext.isChangeResolved(change))) {
-        higlightChange(myResultEditor, change);
+        higlightChange(myResultEditor, myMergeContext.getResultModel(), change);
         if (myMergeContext.isMyChange(change)) {
-          higlightChange(myMineEditor, change);
+          higlightChange(myMineEditor, myMergeContext.getMyModel(), change);
         } else {
-          higlightChange(myRepositoryEditor, change);
+          higlightChange(myRepositoryEditor, myMergeContext.getRepositoryModel(), change);
         }
       }
     }
@@ -118,8 +125,8 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     myRepositoryEditor.repaintAndRebuildEditorMessages();
   }
 
-  private void higlightChange(DiffEditorComponent diffEditor, ModelChange change) {
-    diffEditor.highlightChange(new ChangeEditorMessage(diffEditor.getEditedNode().getModel(), change, diffEditor) {
+  private void higlightChange(DiffEditorComponent diffEditor, SModel model, ModelChange change) {
+    diffEditor.highlightChange(new ChangeEditorMessage(model, change, diffEditor) {
       @Override
       public boolean isConflicted() {
         return Sequence.fromIterable(myMergeContext.getConflictedWith(getChange())).isNotEmpty();

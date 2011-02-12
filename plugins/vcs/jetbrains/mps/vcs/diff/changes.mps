@@ -2117,10 +2117,10 @@
               <link role="2.variableDeclaration:3" targetNodeId="3396946986144280529" resolveInfo="model" />
             </node>
             <node role="2.operation:3" type="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation:16" id="3396946986144281913">
-              <node role="3.nodeArgument:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3396946986144281915">
+              <node role="3.nodeArgument:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3930789558090996243">
+                <link role="2.baseMethodDeclaration:3" targetNodeId="6.~CopyUtil.copyAndPreserveId(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="copyAndPreserveId" />
                 <link role="2.classConcept:3" targetNodeId="6.~CopyUtil" resolveInfo="CopyUtil" />
-                <link role="2.baseMethodDeclaration:3" targetNodeId="6.~CopyUtil.copy(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="copy" />
-                <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3396946986144281916">
+                <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3930789558090996244">
                   <link role="2.variableDeclaration:3" targetNodeId="3396946986144281896" resolveInfo="newNode" />
                 </node>
               </node>

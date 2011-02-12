@@ -371,7 +371,7 @@
     <nodeInfo nodeId="4453118635377434934" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AddRootChange.java" startLine="28" startPosition="30" endLine="29" endPosition="20" />
     <nodeInfo nodeId="3396946986144281887" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AddRootChange.java" startLine="32" startPosition="44" endLine="33" endPosition="36" />
     <nodeInfo nodeId="3396946986144281895" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddRootChange.java" startLine="33" startPosition="36" endLine="34" endPosition="71" />
-    <nodeInfo nodeId="3396946986144281907" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddRootChange.java" startLine="34" startPosition="71" endLine="35" endPosition="64" />
+    <nodeInfo nodeId="3396946986144281907" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddRootChange.java" startLine="34" startPosition="71" endLine="35" endPosition="77" />
     <nodeInfo nodeId="8401260027345476550" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AddRootChange.java" startLine="38" startPosition="31" endLine="39" endPosition="26" />
     <nodeInfo nodeId="6359197607515894941" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AddRootChange.java" startLine="43" startPosition="28" endLine="44" endPosition="34" />
     <nodeInfo nodeId="6359197607515881765" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddRootChange#(Ljetbrains/mps/vcs/diff/changes/ChangeSet;Ljetbrains/mps/smodel/SNodeId;)V" fileName="AddRootChange.java" startLine="15" startPosition="0" endLine="19" endPosition="3" />
@@ -385,7 +385,7 @@
     <scopeInfo nodeId="8401260027345476546" fileName="AddRootChange.java" startLine="38" startPosition="31" endLine="39" endPosition="26" />
     <scopeInfo nodeId="6359197607515894940" fileName="AddRootChange.java" startLine="43" startPosition="28" endLine="44" endPosition="34" />
     <scopeInfo nodeId="6359197607515881769" fileName="AddRootChange.java" startLine="16" startPosition="79" endLine="18" endPosition="22" />
-    <scopeInfo nodeId="3396946986144280532" fileName="AddRootChange.java" startLine="32" startPosition="44" endLine="35" endPosition="64">
+    <scopeInfo nodeId="3396946986144280532" fileName="AddRootChange.java" startLine="32" startPosition="44" endLine="35" endPosition="77">
       <varInfo nodeId="3396946986144281896" varName="newNode" />
     </scopeInfo>
     <scopeInfo nodeId="6359197607515881765" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddRootChange#(Ljetbrains/mps/vcs/diff/changes/ChangeSet;Ljetbrains/mps/smodel/SNodeId;)V" fileName="AddRootChange.java" startLine="15" startPosition="0" endLine="19" endPosition="3">
