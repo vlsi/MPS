@@ -239,7 +239,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public EditorComponent(final IOperationContext operationContext, boolean showErrorsGutter) {
-    assert operationContext == null || operationContext.getModule() != null : "No module for operation context: " + operationContext;
+    assert operationContext == null || operationContext.getModule() != null || operationContext.isTestMode() : "No module for operation context: " + operationContext;
     myOperationContext = operationContext;
     setEditorContext(new EditorContext(this,null,operationContext));
 
@@ -906,7 +906,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void setOperationContext(IOperationContext operationContext) {
-    assert operationContext == null || operationContext.getModule() != null;
+    assert operationContext == null || operationContext.getModule() != null || operationContext.isTestMode();
     myOperationContext = operationContext;
   }
 
@@ -2510,7 +2510,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   protected void setEditorContext(EditorContext editorContext) {
-    assert editorContext == null || editorContext.getOperationContext() == null || editorContext.getOperationContext().getModule() != null;
+    assert editorContext == null || editorContext.getOperationContext() == null
+      || editorContext.getOperationContext().getModule() != null || editorContext.getOperationContext().isTestMode();
     myEditorContext = editorContext;
   }
 

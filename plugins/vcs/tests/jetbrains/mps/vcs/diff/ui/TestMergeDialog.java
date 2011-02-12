@@ -115,6 +115,11 @@ public class TestMergeDialog {
               }
 
               @Override
+              public boolean isTestMode() {
+                return true;
+              }
+
+              @Override
               public <T> T getComponent(Class<T> clazz) {
                 if (clazz == EditorManager.class) {
                   return (T) ourEditorManager;
