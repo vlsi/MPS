@@ -24,22 +24,24 @@ import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.List;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.icons.IconManager;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.awt.Color;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.util.NameUtil;
-import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.icons.IconManager;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -113,10 +115,20 @@ public class MergeModelsDialog extends BaseDialog {
     }
 
     protected MPSTreeNode rebuild() {
-      MergeModelsDialog.MyModelTreeNode modelNode = new MergeModelsDialog.MyModelTreeNode();
-      for (SNodeId rootId : SetSequence.fromSet(myMergeContext.getAffectedRoots())) {
-        modelNode.add(new MergeModelsDialog.MyRootTreeNode(rootId));
-      }
+      final MergeModelsDialog.MyModelTreeNode modelNode = new MergeModelsDialog.MyModelTreeNode();
+      SetSequence.fromSet(myMergeContext.getAffectedRoots()).<MergeModelsDialog.MyRootTreeNode>select(new ISelector<SNodeId, MergeModelsDialog.MyRootTreeNode>() {
+        public MergeModelsDialog.MyRootTreeNode select(SNodeId r) {
+          return new MergeModelsDialog.MyRootTreeNode(r);
+        }
+      }).sort(new ISelector<MergeModelsDialog.MyRootTreeNode, Comparable<?>>() {
+        public Comparable<?> select(MergeModelsDialog.MyRootTreeNode rtn) {
+          return rtn.myPresentations;
+        }
+      }, true).visitAll(new IVisitor<MergeModelsDialog.MyRootTreeNode>() {
+        public void visit(MergeModelsDialog.MyRootTreeNode rtn) {
+          modelNode.add(rtn);
+        }
+      });
       return modelNode;
     }
 
@@ -148,6 +160,23 @@ public class MergeModelsDialog extends BaseDialog {
       super(myOperationContext);
       myRootId = rootId;
       setNodeIdentifier("" + myRootId);
+
+      List<String> presentations = ListSequence.fromList(new ArrayList<String>());
+      Icon icon = null;
+      for (SModel model : Sequence.fromIterable(Sequence.fromArray(new SModel[]{myMergeContext.getBaseModel(), myMergeContext.getMyModel(), myMergeContext.getRepositoryModel()}))) {
+        SNode root = model.getNodeById(myRootId);
+        if (root != null) {
+          String presentation = root.getPresentation();
+          if (!(ListSequence.fromList(presentations).contains(presentation))) {
+            ListSequence.fromList(presentations).addElement(presentation);
+          }
+          if (icon == null) {
+            icon = IconManager.getIconFor(root);
+          }
+        }
+      }
+      myPresentations = StringUtils.join(presentations, " / ");
+      setIcon(icon);
     }
 
     @Override
@@ -184,14 +213,14 @@ public class MergeModelsDialog extends BaseDialog {
         setColor(FileStatus.MODIFIED.getColor());
       }
 
-      String changesText = (ListSequence.fromList(changes).isEmpty() ?
-        null :
-        NameUtil.formatNumericalString(ListSequence.fromList(changes).count(), "change")
-      );
-      if (Sequence.fromIterable(conflictedChanges).isEmpty()) {
-        setAdditionalText(changesText);
-      } else {
-        setAdditionalText(changesText + ", " + NameUtil.formatNumericalString(Sequence.fromIterable(conflictedChanges).count(), "conflicted change"));
+      int conflictedCount = Sequence.fromIterable(conflictedChanges).count();
+      int nonConflctedCount = ListSequence.fromList(changes).count() - conflictedCount;
+      if (Sequence.fromIterable(conflictedChanges).isNotEmpty()) {
+        setAdditionalText(nonConflctedCount + "+" + conflictedCount);
+        setTooltipText(NameUtil.formatNumericalString(nonConflctedCount, "non-conficting change") + ", " + NameUtil.formatNumericalString(conflictedCount, "conficting change"));
+      } else if (ListSequence.fromList(changes).isNotEmpty()) {
+        setAdditionalText("" + nonConflctedCount);
+        setTooltipText(NameUtil.formatNumericalString(nonConflctedCount, "non-conficting change"));
       }
 
       List<String> presentations = ListSequence.fromList(new ArrayList<String>());
@@ -208,12 +237,10 @@ public class MergeModelsDialog extends BaseDialog {
           }
         }
       }
-      myPresentations = StringUtils.join(presentations, " / ");
       setText((deleted ?
         String.format("<html><s>%s</s></html>", myPresentations) :
         myPresentations
       ));
-      setIcon(icon);
     }
 
     @Override
