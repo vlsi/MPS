@@ -19,6 +19,16 @@ import java.util.Map;
 
 public class StubsNodeDescriptorsCache implements ApplicationComponent {
 
+  private ModuleRepositoryAdapter myModuleRepoListener;
+
+  public StubsNodeDescriptorsCache() {
+    myModuleRepoListener = new ModuleRepositoryAdapter(){
+      public void moduleRemoved(IModule module) {
+        myCache.remove(module);
+      }
+    };
+  }
+
   public static StubsNodeDescriptorsCache getInstance() {
     return ApplicationManager.getApplication().getComponent(StubsNodeDescriptorsCache.class);
   }
@@ -32,6 +42,8 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
       clearCache(modelDescriptor);
     }
   };
+
+
   private Map<IModule, List<BaseSNodeDescriptor>> myCache = new THashMap<IModule, List<BaseSNodeDescriptor>>();
 
   @NotNull
@@ -40,11 +52,13 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
   }
 
   public void initComponent() {
+    MPSModuleRepository.getInstance().addModuleRepositoryListener(myModuleRepoListener);
     SModelRepository.getInstance().addModelRepositoryListener(myListener);
   }
 
   public void disposeComponent() {
     SModelRepository.getInstance().removeModelRepositoryListener(myListener);
+    MPSModuleRepository.getInstance().removeModuleRepositoryListener(myModuleRepoListener);
   }
 
   public List<BaseSNodeDescriptor> getSNodeDescriptors(IModule m) {
