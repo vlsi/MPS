@@ -56,6 +56,19 @@ public abstract class TabsComponent extends JPanel{
   };
   private JComponent myToolbar = null;
   private JComponent myShortcutComponent;
+  private SModelCommandListener myModelCommandListener = new SModelCommandListener() {
+    public void eventsHappenedInCommand(List<SModelEvent> events) {
+      outer:
+      for (EditorTabDescriptor d : myPossibleTabs) {
+        for (EditorTab tab : myRealTabs) {
+          if (tab.getDescriptor() == d) continue outer;
+        }
+
+        if (d.getNodes(myBaseNode.getNode()).isEmpty()) continue;
+        updateTabs();
+      }
+    }
+  };
 
   public TabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent) {
     myBaseNode = baseNode;
@@ -81,20 +94,6 @@ public abstract class TabsComponent extends JPanel{
         });
       }
     }, KeyStroke.getKeyStroke("ctrl alt shift RIGHT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
-
-    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
-      public void eventsHappenedInCommand(List<SModelEvent> events) {
-        outer:
-        for (EditorTabDescriptor d : myPossibleTabs) {
-          for (EditorTab tab : myRealTabs) {
-            if (tab.getDescriptor() == d) continue outer;
-          }
-
-          if (d.getNodes(myBaseNode.getNode()).isEmpty()) continue;
-          updateTabs();
-        }
-      }
-    });
 
     setLayout(new BorderLayout());
 
@@ -219,11 +218,15 @@ public abstract class TabsComponent extends JPanel{
   private void addListeners() {
     myListener.startListening();
 
+    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myModelCommandListener);
+
     SModelRepository.getInstance().addModelRepositoryListener(myModelAddedListener);
   }
 
   private void removeListeners() {
     SModelRepository.getInstance().removeModelRepositoryListener(myModelAddedListener);
+
+    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myModelCommandListener);
 
     for (SModelReference modelRef : myModelAdditionListeners.keySet()) {
       for (SModelListener listener : myModelAdditionListeners.get(modelRef)) {
