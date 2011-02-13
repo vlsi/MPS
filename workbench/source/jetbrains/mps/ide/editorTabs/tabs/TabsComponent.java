@@ -34,10 +34,11 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
-public abstract class TabsComponent extends JPanel {
+public abstract class TabsComponent extends JPanel{
   private SNodePointer myBaseNode;
   private SNodePointer myLastNode = null;
   private Set<EditorTabDescriptor> myPossibleTabs;
@@ -116,6 +117,10 @@ public abstract class TabsComponent extends JPanel {
     updateTabs();
   }
 
+  public Component getComponentForTabIndex(int index){
+    return myToolbar.getComponent(index);
+  }
+
   public void dispose() {
     removeListeners();
   }
@@ -143,7 +148,7 @@ public abstract class TabsComponent extends JPanel {
         myListener.aspectAdded(node);
       }
 
-      final EditorTab tab = new EditorTab(this, d, myBaseNode);
+      final EditorTab tab = new EditorTab(this,myRealTabs.size(), d, myBaseNode);
       myRealTabs.add(tab);
     }
 
@@ -204,13 +209,7 @@ public abstract class TabsComponent extends JPanel {
 
   private void performTabAction(final int index) {
     final DataContext context = DataManager.getInstance().getDataContext(this);
-    DataContext changedContext = new DataContext() {
-      public Object getData(@NonNls String dataId) {
-        if (dataId.equals(EditorTab.COMPONENT_KEY.getName())) return myToolbar.getComponent(index);
-        return context.getData(dataId);
-      }
-    };
-    AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, changedContext);
+    AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, context);
 
     myRealTabs.get(index).getAction(myShortcutComponent).actionPerformed(event);
   }
