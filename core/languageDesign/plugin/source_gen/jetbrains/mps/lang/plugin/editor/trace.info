@@ -15,18 +15,18 @@
   <unitInfo fileName="EditorTab_Editor.java" startLine="258" startPosition="83" endLine="269" endPosition="5" unitName="jetbrains.mps.lang.plugin.editor.EditorTab_Editor$1" />
   <unitInfo fileName="TabbedToolDeclaration_Editor.java" startLine="341" startPosition="83" endLine="352" endPosition="5" unitName="jetbrains.mps.lang.plugin.editor.TabbedToolDeclaration_Editor$2" />
   <unitInfo fileName="ToolDeclaration_Editor.java" startLine="357" startPosition="83" endLine="368" endPosition="5" unitName="jetbrains.mps.lang.plugin.editor.ToolDeclaration_Editor$2" />
-  <unitInfo fileName="KeyStrokeType_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.KeyStrokeType_Editor" />
-  <unitInfo fileName="MultitabbedEditorTabType_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.MultitabbedEditorTabType_Editor" />
-  <unitInfo fileName="SingletabbedEditorTabType_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.SingletabbedEditorTabType_Editor" />
-  <unitInfo fileName="PropertyRefType_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PropertyRefType_Editor" />
   <unitInfo fileName="Separator_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.Separator_Editor" />
-  <unitInfo fileName="ProjectCreatorTarget_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProjectCreatorTarget_Editor" />
-  <unitInfo fileName="ModuleCreatorTarget_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ModuleCreatorTarget_Editor" />
-  <unitInfo fileName="ModelCreatorTarget_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ModelCreatorTarget_Editor" />
-  <unitInfo fileName="ConsoleExpression_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ConsoleExpression_Editor" />
-  <unitInfo fileName="ConsoleType_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ConsoleType_Editor" />
-  <unitInfo fileName="EverywhereActionPlace_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.EverywhereActionPlace_Editor" />
+  <unitInfo fileName="PropertyRefType_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PropertyRefType_Editor" />
+  <unitInfo fileName="SingletabbedEditorTabType_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.SingletabbedEditorTabType_Editor" />
+  <unitInfo fileName="MultitabbedEditorTabType_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.MultitabbedEditorTabType_Editor" />
+  <unitInfo fileName="KeyStrokeType_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.KeyStrokeType_Editor" />
   <unitInfo fileName="ComponentReference_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ComponentReference_Editor" />
+  <unitInfo fileName="EverywhereActionPlace_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.EverywhereActionPlace_Editor" />
+  <unitInfo fileName="ConsoleType_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ConsoleType_Editor" />
+  <unitInfo fileName="ConsoleExpression_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ConsoleExpression_Editor" />
+  <unitInfo fileName="ModelCreatorTarget_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ModelCreatorTarget_Editor" />
+  <unitInfo fileName="ModuleCreatorTarget_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ModuleCreatorTarget_Editor" />
+  <unitInfo fileName="ProjectCreatorTarget_Editor.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProjectCreatorTarget_Editor" />
   <unitInfo fileName="ActionParameter_IsOptional.java" startLine="43" startPosition="83" endLine="57" endPosition="5" unitName="jetbrains.mps.lang.plugin.editor.ActionParameter_IsOptional$1" />
   <unitInfo fileName="ToolInstanceExpression_Editor.java" startLine="14" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ToolInstanceExpression_Editor" />
   <unitInfo fileName="ActionParameter_Hint.java" startLine="157" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a1a0a0f" />
@@ -34,39 +34,39 @@
   <unitInfo fileName="ParameterizedShortcutChange_Editor.java" startLine="113" startPosition="83" endLine="131" endPosition="5" unitName="jetbrains.mps.lang.plugin.editor.ParameterizedShortcutChange_Editor$1" />
   <unitInfo fileName="PersistenPropertyDeclaration_Actions.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PersistenPropertyDeclaration_Actions$PersistenPropertyDeclaration_Actions_RIGHT_TRANSFORM" />
   <unitInfo fileName="ActionParameter_NameCellComponent.java" startLine="55" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameter_NameCellComponent$ActionParameter_name_postfixCellMenu_a0a" />
-  <unitInfo fileName="ProjectExpression_Editor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProjectExpression_Editor" />
   <unitInfo fileName="VariableNodeExpression_Editor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.VariableNodeExpression_Editor" />
+  <unitInfo fileName="ProjectExpression_Editor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProjectExpression_Editor" />
   <unitInfo fileName="PersistenPropertyDeclaration_Actions.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PersistenPropertyDeclaration_Actions" />
   <unitInfo fileName="ActionParameter_Hint.java" startLine="76" startPosition="83" endLine="104" endPosition="5" unitName="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$1" />
   <unitInfo fileName="ActionParameter_Hint.java" startLine="115" startPosition="83" endLine="143" endPosition="5" unitName="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$2" />
   <unitInfo fileName="CommandClosureLiteral_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.CommandClosureLiteral_Editor" />
-  <unitInfo fileName="OrderReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.OrderReference_Editor$_Inline_7oy693_a0a" />
-  <unitInfo fileName="EditorTabReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.EditorTabReference_Editor$_Inline_9xkbg4_a0a" />
   <unitInfo fileName="ActionConstructorParameterReferenceOperation_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionConstructorParameterReferenceOperation_Editor$_Inline_mohbt1_a0a" />
-  <unitInfo fileName="UnitNodeItem_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.UnitNodeItem_Editor$_Inline_jmzs5l_a0a" />
-  <unitInfo fileName="GroupAccessOperation_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GroupAccessOperation_Editor$_Inline_sxst1w_a2a" />
-  <unitInfo fileName="ActionAccessOperation_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionAccessOperation_Editor$_Inline_nefofj_a2a" />
-  <unitInfo fileName="ScopeNodeItem_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ScopeNodeItem_Editor$_Inline_nb4jcx_a0a" />
+  <unitInfo fileName="EditorTabReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.EditorTabReference_Editor$_Inline_9xkbg4_a0a" />
+  <unitInfo fileName="OrderReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.OrderReference_Editor$_Inline_7oy693_a0a" />
   <unitInfo fileName="VariableNodeItem_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.VariableNodeItem_Editor$_Inline_7rkevh_a0a" />
-  <unitInfo fileName="NodesCreatorTarget_Editor.java" startLine="76" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.NodesCreatorTarget_Editor$_Inline_rvtiuo_a2a" />
-  <unitInfo fileName="NodeCreatorTarget_Editor.java" startLine="76" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.NodeCreatorTarget_Editor$_Inline_zf58oo_a2a" />
+  <unitInfo fileName="ScopeNodeItem_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ScopeNodeItem_Editor$_Inline_nb4jcx_a0a" />
+  <unitInfo fileName="ActionAccessOperation_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionAccessOperation_Editor$_Inline_nefofj_a2a" />
+  <unitInfo fileName="GroupAccessOperation_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GroupAccessOperation_Editor$_Inline_sxst1w_a2a" />
+  <unitInfo fileName="UnitNodeItem_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.UnitNodeItem_Editor$_Inline_jmzs5l_a0a" />
   <unitInfo fileName="GetGroupOperation_Editor.java" startLine="76" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetGroupOperation_Editor$_Inline_wwk5yv_a2a" />
+  <unitInfo fileName="NodeCreatorTarget_Editor.java" startLine="76" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.NodeCreatorTarget_Editor$_Inline_zf58oo_a2a" />
+  <unitInfo fileName="NodesCreatorTarget_Editor.java" startLine="76" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.NodesCreatorTarget_Editor$_Inline_rvtiuo_a2a" />
   <unitInfo fileName="SimpleShortcutChange_Editor.java" startLine="81" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.SimpleShortcutChange_Editor$_Inline_x0wya_a0a" />
   <unitInfo fileName="ModificationStatement_Editor.java" startLine="83" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ModificationStatement_Editor$_Inline_9t39jw_a1a" />
-  <unitInfo fileName="GetPreferencesComponentInProjectOperation_Editor.java" startLine="87" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetPreferencesComponentInProjectOperation_Editor$_Inline_7v7srj_a2a" />
   <unitInfo fileName="GetPreferencesComponentOperation_Editor.java" startLine="87" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetPreferencesComponentOperation_Editor$_Inline_dhbgio_a2a" />
-  <unitInfo fileName="ApplicationPluginType_Editor.java" startLine="92" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ApplicationPluginType_Editor$_Inline_w3h4nr_a2a" />
+  <unitInfo fileName="GetPreferencesComponentInProjectOperation_Editor.java" startLine="87" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetPreferencesComponentInProjectOperation_Editor$_Inline_7v7srj_a2a" />
   <unitInfo fileName="ProjectPluginType_Editor.java" startLine="92" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProjectPluginType_Editor$_Inline_1zp5kz_a2a" />
+  <unitInfo fileName="ApplicationPluginType_Editor.java" startLine="92" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ApplicationPluginType_Editor$_Inline_w3h4nr_a2a" />
   <unitInfo fileName="RunConfigurationHeader.java" startLine="99" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationHeader$_Inline_bqmo2k_a3a" />
   <unitInfo fileName="RunConfigExecutionParameterDeclaration_Editor.java" startLine="104" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigExecutionParameterDeclaration_Editor$_Inline_ystr20_a3a" />
-  <unitInfo fileName="ActionDataParameterDeclaration_Editor.java" startLine="107" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionDataParameterDeclaration_Editor$_Inline_d8l4wt_a3a" />
   <unitInfo fileName="ActionInstance_Editor.java" startLine="107" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionInstance_Editor$_Inline_lu5mzk_a0a" />
+  <unitInfo fileName="ActionDataParameterDeclaration_Editor.java" startLine="107" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionDataParameterDeclaration_Editor$_Inline_d8l4wt_a3a" />
   <unitInfo fileName="ModificationStatement_Editor.java" startLine="116" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ModificationStatement_Editor$_Inline_9t39jw_a3a" />
   <unitInfo fileName="CreateRunConfigStatement_Editor.java" startLine="151" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.CreateRunConfigStatement_Editor$_Inline_u5c1mf_a1a" />
   <unitInfo fileName="UniversalRunConfigCreator_Editor.java" startLine="177" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.UniversalRunConfigCreator_Editor$_Inline_5cdmsx_a1b0" />
-  <unitInfo fileName="RunNodeConfigCreator_Editor.java" startLine="182" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunNodeConfigCreator_Editor$_Inline_o2so93_a3a0a" />
-  <unitInfo fileName="RunModuleConfigCreator_Editor.java" startLine="182" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunModuleConfigCreator_Editor$_Inline_2e5ul8_a3a0a" />
   <unitInfo fileName="RunModelConfigCreator_Editor.java" startLine="182" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunModelConfigCreator_Editor$_Inline_ptxxhc_a3a0a" />
+  <unitInfo fileName="RunModuleConfigCreator_Editor.java" startLine="182" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunModuleConfigCreator_Editor$_Inline_2e5ul8_a3a0a" />
+  <unitInfo fileName="RunNodeConfigCreator_Editor.java" startLine="182" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunNodeConfigCreator_Editor$_Inline_o2so93_a3a0a" />
   <unitInfo fileName="ParameterizedShortcutChange_Editor.java" startLine="189" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ParameterizedShortcutChange_Editor$_Inline_ecw4ny_a0a" />
   <unitInfo fileName="DebuggableNodeItem_Editor.java" startLine="200" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.DebuggableNodeItem_Editor$_Inline_dx7uys_a0a0" />
   <unitInfo fileName="AbstractEditorTabShortcut.java" startLine="216" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.AbstractEditorTabShortcut$_Inline_b2s42e_a1c0" />
@@ -76,15 +76,15 @@
   <unitInfo fileName="EditorTab_Editor.java" startLine="472" startPosition="0" endLine="504" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.EditorTab_Editor$_Inline_gp0hv6_a1d1b0" />
   <unitInfo fileName="RunConfigParameterReferenceOperation_Editor.java" startLine="48" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigParameterReferenceOperation_Editor$_Inline_utb8p6_a0a" />
   <unitInfo fileName="ActionParameter_IsOptional.java" startLine="69" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameter_IsOptional$ActionParameter_generic_cellMenu_a0a" />
-  <unitInfo fileName="ActionDataParameterReferenceOperation_Editor.java" startLine="51" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionDataParameterReferenceOperation_Editor$_Inline_867j1v_a0a" />
   <unitInfo fileName="ActionParameterReferenceOperation_Editor.java" startLine="51" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameterReferenceOperation_Editor$_Inline_keprta_a0a" />
-  <unitInfo fileName="GetToolInProjectOperation_Editor.java" startLine="80" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetToolInProjectOperation_Editor$_Inline_xenzxx_a2a" />
+  <unitInfo fileName="ActionDataParameterReferenceOperation_Editor.java" startLine="51" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionDataParameterReferenceOperation_Editor$_Inline_867j1v_a0a" />
   <unitInfo fileName="GetToolOperation_Editor.java" startLine="80" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetToolOperation_Editor$_Inline_nfscs9_a2a" />
-  <unitInfo fileName="RunConfigType_Editor.java" startLine="93" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigType_Editor$_Inline_dibbxu_a2a" />
-  <unitInfo fileName="PreferencesComponentType_Editor.java" startLine="93" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PreferencesComponentType_Editor$_Inline_xn1cdy_a2a" />
-  <unitInfo fileName="ToolType_Editor.java" startLine="93" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ToolType_Editor$_Inline_cy4bsd_a2a" />
-  <unitInfo fileName="GroupType_Editor.java" startLine="93" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GroupType_Editor$_Inline_5vhand_a2a" />
+  <unitInfo fileName="GetToolInProjectOperation_Editor.java" startLine="80" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetToolInProjectOperation_Editor$_Inline_xenzxx_a2a" />
   <unitInfo fileName="ActionType_Editor.java" startLine="93" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionType_Editor$_Inline_2pbgfy_a2a" />
+  <unitInfo fileName="GroupType_Editor.java" startLine="93" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GroupType_Editor$_Inline_5vhand_a2a" />
+  <unitInfo fileName="ToolType_Editor.java" startLine="93" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ToolType_Editor$_Inline_cy4bsd_a2a" />
+  <unitInfo fileName="PreferencesComponentType_Editor.java" startLine="93" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PreferencesComponentType_Editor$_Inline_xn1cdy_a2a" />
+  <unitInfo fileName="RunConfigType_Editor.java" startLine="93" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigType_Editor$_Inline_dibbxu_a2a" />
   <unitInfo fileName="FileGeneratorDeclaration_Editor.java" startLine="296" startPosition="0" endLine="332" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.FileGeneratorDeclaration_Editor$_Inline_lmd0ms_a3a0a" />
   <unitInfo fileName="PersistentPropertyReference_Editor.java" startLine="52" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PersistentPropertyReference_Editor$_Inline_7qnrl2_a0a" />
   <unitInfo fileName="ActionsStatement_Editor.java" startLine="58" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionsStatement_Editor$actionListHandler_nerc8d_b0" />
@@ -96,8 +96,8 @@
   <unitInfo fileName="Order_Editor.java" startLine="151" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.Order_Editor$tabListHandler_yh3zz3_d0a" />
   <unitInfo fileName="DebugInfoInitializer_Editor.java" startLine="182" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.DebugInfoInitializer_Editor$conceptsToDebugListHandler_dqg0vp_a2a" />
   <unitInfo fileName="CreateRunConfigStatement_Editor.java" startLine="184" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.CreateRunConfigStatement_Editor$propertyListHandler_u5c1mf_d0" />
-  <unitInfo fileName="ApplicationPluginDeclaration_Editor.java" startLine="218" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ApplicationPluginDeclaration_Editor$fieldDeclarationListHandler_n7kiqy_a1b0" />
   <unitInfo fileName="ProjectPluginDeclaration_Editor.java" startLine="218" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProjectPluginDeclaration_Editor$fieldDeclarationListHandler_904nkf_a1b0" />
+  <unitInfo fileName="ApplicationPluginDeclaration_Editor.java" startLine="218" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ApplicationPluginDeclaration_Editor$fieldDeclarationListHandler_n7kiqy_a1b0" />
   <unitInfo fileName="DebugInfoInitializer_Editor.java" startLine="220" startPosition="0" endLine="257" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.DebugInfoInitializer_Editor$scopeConceptsListHandler_dqg0vp_a5a" />
   <unitInfo fileName="DebugInfoInitializer_Editor.java" startLine="258" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.DebugInfoInitializer_Editor$unitConceptsListHandler_dqg0vp_a8a" />
   <unitInfo fileName="RunConfigurationBody.java" startLine="287" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationBody$propertyListHandler_mrxxs6_a0" />
@@ -105,11 +105,11 @@
   <unitInfo fileName="GroupAnchor_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GroupAnchor_Editor" />
   <unitInfo fileName="RunConfigMainNodeStatement_Editor.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigMainNodeStatement_Editor" />
   <unitInfo fileName="SmartDisposeClosureParameterDeclaration_Editor.java" startLine="19" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.SmartDisposeClosureParameterDeclaration_Editor" />
-  <unitInfo fileName="ReportErrorStatement_Editor.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ReportErrorStatement_Editor" />
-  <unitInfo fileName="ActionListStatement_Editor.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionListStatement_Editor" />
-  <unitInfo fileName="ProcessHandlerStatement_Editor.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProcessHandlerStatement_Editor" />
-  <unitInfo fileName="AddStatement_Editor.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.AddStatement_Editor" />
   <unitInfo fileName="AddElementStatement_Editor.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.AddElementStatement_Editor" />
+  <unitInfo fileName="AddStatement_Editor.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.AddStatement_Editor" />
+  <unitInfo fileName="ProcessHandlerStatement_Editor.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProcessHandlerStatement_Editor" />
+  <unitInfo fileName="ActionListStatement_Editor.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionListStatement_Editor" />
+  <unitInfo fileName="ReportErrorStatement_Editor.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ReportErrorStatement_Editor" />
   <unitInfo fileName="PrepareConceptFunction_Editor.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PrepareConceptFunction_Editor" />
   <unitInfo fileName="ActionInstance_Editor.java" startLine="140" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionInstance_Editor$actualParameterListHandler_lu5mzk_b1a" />
   <unitInfo fileName="Order_Editor.java" startLine="189" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.Order_Editor$tabListHandler_yh3zz3_b0a" />
@@ -127,18 +127,18 @@
   <unitInfo fileName="ToolDeclaration_Editor.java" startLine="603" startPosition="0" endLine="655" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ToolDeclaration_Editor$fieldDeclarationListHandler_du6pr9_e1b0" />
   <unitInfo fileName="UpdateGroupBlock_Editor.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.UpdateGroupBlock_Editor" />
   <unitInfo fileName="IRunConfigPropertyInstance_Editor.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.IRunConfigPropertyInstance_Editor" />
-  <unitInfo fileName="OrderReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.OrderReference_Editor" />
-  <unitInfo fileName="EditorTabReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.EditorTabReference_Editor" />
   <unitInfo fileName="ActionConstructorParameterReferenceOperation_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionConstructorParameterReferenceOperation_Editor" />
+  <unitInfo fileName="EditorTabReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.EditorTabReference_Editor" />
+  <unitInfo fileName="OrderReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.OrderReference_Editor" />
   <unitInfo fileName="RunConfigParameterReferenceOperation_Editor.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigParameterReferenceOperation_Editor" />
   <unitInfo fileName="AddKeystrokeStatement_Editor.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.AddKeystrokeStatement_Editor" />
   <unitInfo fileName="AddTabOperation_Editor.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.AddTabOperation_Editor" />
-  <unitInfo fileName="ActionDataParameterReferenceOperation_Editor.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionDataParameterReferenceOperation_Editor" />
   <unitInfo fileName="ActionParameterReferenceOperation_Editor.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameterReferenceOperation_Editor" />
+  <unitInfo fileName="ActionDataParameterReferenceOperation_Editor.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionDataParameterReferenceOperation_Editor" />
   <unitInfo fileName="PersistentPropertyReference_Editor.java" startLine="22" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PersistentPropertyReference_Editor" />
   <unitInfo fileName="ProcessStatement_Editor.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProcessStatement_Editor" />
-  <unitInfo fileName="GetUserDataExpression_Editor.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetUserDataExpression_Editor" />
   <unitInfo fileName="ActionsStatement_Editor.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionsStatement_Editor" />
+  <unitInfo fileName="GetUserDataExpression_Editor.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetUserDataExpression_Editor" />
   <unitInfo fileName="ActionParameter_IsOptional.java" startLine="29" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameter_IsOptional" />
   <unitInfo fileName="CloseTabOperation_Editor.java" startLine="18" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.CloseTabOperation_Editor" />
   <unitInfo fileName="InterfaceExtentionPoint_Editor.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.InterfaceExtentionPoint_Editor" />
@@ -146,35 +146,35 @@
   <unitInfo fileName="ActionParameterDeclaration_Editor.java" startLine="28" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameterDeclaration_Editor" />
   <unitInfo fileName="ExecutionConsoleStatement_Editor.java" startLine="17" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ExecutionConsoleStatement_Editor" />
   <unitInfo fileName="RunConfigurationMethods.java" startLine="21" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationMethods" />
-  <unitInfo fileName="UnitNodeItem_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.UnitNodeItem_Editor" />
-  <unitInfo fileName="GroupAccessOperation_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GroupAccessOperation_Editor" />
-  <unitInfo fileName="ActionAccessOperation_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionAccessOperation_Editor" />
-  <unitInfo fileName="ScopeNodeItem_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ScopeNodeItem_Editor" />
   <unitInfo fileName="VariableNodeItem_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.VariableNodeItem_Editor" />
-  <unitInfo fileName="NodesCreatorTarget_Editor.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.NodesCreatorTarget_Editor" />
-  <unitInfo fileName="NodeCreatorTarget_Editor.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.NodeCreatorTarget_Editor" />
+  <unitInfo fileName="ScopeNodeItem_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ScopeNodeItem_Editor" />
+  <unitInfo fileName="ActionAccessOperation_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionAccessOperation_Editor" />
+  <unitInfo fileName="GroupAccessOperation_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GroupAccessOperation_Editor" />
+  <unitInfo fileName="UnitNodeItem_Editor.java" startLine="19" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.UnitNodeItem_Editor" />
   <unitInfo fileName="GetGroupOperation_Editor.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetGroupOperation_Editor" />
+  <unitInfo fileName="NodeCreatorTarget_Editor.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.NodeCreatorTarget_Editor" />
+  <unitInfo fileName="NodesCreatorTarget_Editor.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.NodesCreatorTarget_Editor" />
   <unitInfo fileName="ElementListContents_Editor.java" startLine="22" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ElementListContents_Editor" />
   <unitInfo fileName="PersistentPropertyDeclaration_Editor.java" startLine="23" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PersistentPropertyDeclaration_Editor" />
   <unitInfo fileName="ActionConstructionParameterDeclaration_Editor.java" startLine="21" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionConstructionParameterDeclaration_Editor" />
-  <unitInfo fileName="GetToolInProjectOperation_Editor.java" startLine="23" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetToolInProjectOperation_Editor" />
   <unitInfo fileName="GetToolOperation_Editor.java" startLine="23" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetToolOperation_Editor" />
-  <unitInfo fileName="GetPreferencesComponentInProjectOperation_Editor.java" startLine="21" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetPreferencesComponentInProjectOperation_Editor" />
+  <unitInfo fileName="GetToolInProjectOperation_Editor.java" startLine="23" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetToolInProjectOperation_Editor" />
   <unitInfo fileName="GetPreferencesComponentOperation_Editor.java" startLine="21" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetPreferencesComponentOperation_Editor" />
+  <unitInfo fileName="GetPreferencesComponentInProjectOperation_Editor.java" startLine="21" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GetPreferencesComponentInProjectOperation_Editor" />
   <unitInfo fileName="ModificationsEditor.java" startLine="22" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ModificationsEditor" />
   <unitInfo fileName="DisposeConsoleBlock_Editor.java" startLine="22" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.DisposeConsoleBlock_Editor" />
-  <unitInfo fileName="ApplicationPluginType_Editor.java" startLine="21" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ApplicationPluginType_Editor" />
   <unitInfo fileName="ProjectPluginType_Editor.java" startLine="21" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProjectPluginType_Editor" />
+  <unitInfo fileName="ApplicationPluginType_Editor.java" startLine="21" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ApplicationPluginType_Editor" />
   <unitInfo fileName="ExecuteParameterQuery_Editor.java" startLine="21" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ExecuteParameterQuery_Editor" />
-  <unitInfo fileName="RunConfigType_Editor.java" startLine="23" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigType_Editor" />
-  <unitInfo fileName="PreferencesComponentType_Editor.java" startLine="23" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PreferencesComponentType_Editor" />
-  <unitInfo fileName="ToolType_Editor.java" startLine="23" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ToolType_Editor" />
-  <unitInfo fileName="GroupType_Editor.java" startLine="23" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GroupType_Editor" />
   <unitInfo fileName="ActionType_Editor.java" startLine="23" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionType_Editor" />
+  <unitInfo fileName="GroupType_Editor.java" startLine="23" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GroupType_Editor" />
+  <unitInfo fileName="ToolType_Editor.java" startLine="23" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ToolType_Editor" />
+  <unitInfo fileName="PreferencesComponentType_Editor.java" startLine="23" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PreferencesComponentType_Editor" />
+  <unitInfo fileName="RunConfigType_Editor.java" startLine="23" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigType_Editor" />
   <unitInfo fileName="ConfigurationEditorDeclaration_BasicEditor.java" startLine="18" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ConfigurationEditorDeclaration_BasicEditor" />
   <unitInfo fileName="RunConfigExecutionParameterDeclaration_Editor.java" startLine="27" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigExecutionParameterDeclaration_Editor" />
-  <unitInfo fileName="RunConfigurationHeader.java" startLine="21" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationHeader" />
   <unitInfo fileName="AskStatement_Editor.java" startLine="21" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.AskStatement_Editor" />
+  <unitInfo fileName="RunConfigurationHeader.java" startLine="21" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationHeader" />
   <unitInfo fileName="ExecuteCommandInEDTStatement_Editor.java" startLine="20" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ExecuteCommandInEDTStatement_Editor" />
   <unitInfo fileName="ActionDataParameterDeclaration_Editor.java" startLine="26" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionDataParameterDeclaration_Editor" />
   <unitInfo fileName="SimpleShortcutChange_Editor.java" startLine="30" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.SimpleShortcutChange_Editor" />
@@ -189,16 +189,16 @@
   <unitInfo fileName="ParameterizedShortcutChange_Editor.java" startLine="35" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ParameterizedShortcutChange_Editor" />
   <unitInfo fileName="ToolTab_Editor.java" startLine="19" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ToolTab_Editor" />
   <unitInfo fileName="UniversalRunConfigCreator_Editor.java" startLine="22" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.UniversalRunConfigCreator_Editor" />
-  <unitInfo fileName="RunNodeConfigCreator_Editor.java" startLine="25" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunNodeConfigCreator_Editor" />
-  <unitInfo fileName="RunModuleConfigCreator_Editor.java" startLine="25" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunModuleConfigCreator_Editor" />
   <unitInfo fileName="RunModelConfigCreator_Editor.java" startLine="25" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunModelConfigCreator_Editor" />
+  <unitInfo fileName="RunModuleConfigCreator_Editor.java" startLine="25" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunModuleConfigCreator_Editor" />
+  <unitInfo fileName="RunNodeConfigCreator_Editor.java" startLine="25" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunNodeConfigCreator_Editor" />
   <unitInfo fileName="CreateRunConfigStatement_Editor.java" startLine="27" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.CreateRunConfigStatement_Editor" />
   <unitInfo fileName="RunConfigurationPresentation.java" startLine="29" startPosition="0" endLine="234" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationPresentation" />
   <unitInfo fileName="Order_Editor.java" startLine="30" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.Order_Editor" />
   <unitInfo fileName="DebuggableNodeItem_Editor.java" startLine="24" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.DebuggableNodeItem_Editor" />
   <unitInfo fileName="GenerationListenerDeclaration_Editor.java" startLine="24" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GenerationListenerDeclaration_Editor" />
-  <unitInfo fileName="ApplicationPluginDeclaration_Editor.java" startLine="31" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ApplicationPluginDeclaration_Editor" />
   <unitInfo fileName="ProjectPluginDeclaration_Editor.java" startLine="31" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProjectPluginDeclaration_Editor" />
+  <unitInfo fileName="ApplicationPluginDeclaration_Editor.java" startLine="31" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ApplicationPluginDeclaration_Editor" />
   <unitInfo fileName="AbstractEditorTabShortcut.java" startLine="30" startPosition="0" endLine="282" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.AbstractEditorTabShortcut" />
   <unitInfo fileName="ParametrizedExecuteBlock_Editor.java" startLine="20" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ParametrizedExecuteBlock_Editor" />
   <unitInfo fileName="DebugInfoInitializer_Editor.java" startLine="22" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.DebugInfoInitializer_Editor" />
@@ -484,6 +484,22 @@
     <scopeInfo nodeId="8415911927033050361" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="321" startPosition="114" endLine="327" endPosition="81">
       <varInfo nodeId="8415911927033050367" varName="module" />
       <varInfo nodeId="8415911927033050363" varName="path" />
+    </scopeInfo>
+  </root>
+  <root nodeId="7043625615963447694">
+    <nodeInfo nodeId="7043625615963447774" fileName="ActionDeclaration_Editor.java" startLine="512" startPosition="30" endLine="513" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7043625615963447733" fileName="ActionDeclaration_Editor.java" startLine="746" startPosition="115" endLine="747" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7043625615963447737" fileName="ActionDeclaration_Editor.java" startLine="747" startPosition="23" endLine="748" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7043625615963447744" fileName="ActionDeclaration_Editor.java" startLine="749" startPosition="25" endLine="750" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7043625615963447757" fileName="ActionDeclaration_Editor.java" startLine="751" startPosition="5" endLine="752" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7043625615963447784" fileName="ActionDeclaration_Editor.java" startLine="759" startPosition="111" endLine="760" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7043625615963447742" fileName="ActionDeclaration_Editor.java" startLine="748" startPosition="55" endLine="751" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="7043625615963447773" fileName="ActionDeclaration_Editor.java" startLine="512" startPosition="30" endLine="513" endPosition="63" />
+    <scopeInfo nodeId="7043625615963447743" fileName="ActionDeclaration_Editor.java" startLine="749" startPosition="25" endLine="750" endPosition="110" />
+    <scopeInfo nodeId="7043625615963447783" fileName="ActionDeclaration_Editor.java" startLine="759" startPosition="111" endLine="760" endPosition="78" />
+    <scopeInfo nodeId="7043625615963447732" fileName="ActionDeclaration_Editor.java" startLine="746" startPosition="115" endLine="752" endPosition="81">
+      <varInfo nodeId="7043625615963447738" varName="module" />
+      <varInfo nodeId="7043625615963447734" varName="path" />
     </scopeInfo>
   </root>
   <root nodeId="8456022385895659119">
