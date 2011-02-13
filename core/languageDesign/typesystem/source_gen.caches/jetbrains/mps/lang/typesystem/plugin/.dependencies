@@ -191,7 +191,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.plugin.TypesystemPlugin_CustomProjectPlugin" file="TypesystemPlugin_CustomProjectPlugin.java">
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode dependClassName="jetbrains.mps.typesystem.checking.TypesEditorChecker" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />

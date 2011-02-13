@@ -28,7 +28,7 @@
   <unitInfo fileName="BaseLanguage_ProjectPlugin.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ProjectPlugin" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="365" startPosition="0" endLine="388" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionResult" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="389" startPosition="0" endLine="414" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionConsole" />
-  <unitInfo fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
+  <unitInfo fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.Default_KeymapChanges" />
   <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin" />
   <unitInfo fileName="AnalyzeStacktrace_Tool.java" startLine="22" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Tool" />
@@ -284,27 +284,27 @@
     <unitInfo nodeId="1208785739646" fileName="ToDoMessage.java" startLine="13" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ToDoMessage" />
   </root>
   <root nodeId="1208787586603">
-    <nodeInfo nodeId="1215438553604" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="13" startPosition="0" endLine="14" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToDoHighlighter" />
-    <nodeInfo nodeId="2345890179797527164" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="14" startPosition="68" endLine="15" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethodDeclFixer" />
-    <nodeInfo nodeId="5002400195358004832" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="15" startPosition="84" endLine="16" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOverrideMethodsChecker" />
-    <nodeInfo nodeId="1208787714852" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="21" startPosition="42" endLine="22" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1208787714861" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="23" startPosition="30" endLine="24" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3912187081988067498" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="24" startPosition="98" endLine="25" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5002400195358049314" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="25" startPosition="98" endLine="26" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1751532732861406176" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="26" startPosition="105" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1208787749003" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="31" startPosition="45" endLine="32" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1751532732861406187" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="33" startPosition="30" endLine="34" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3912187081988067534" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="34" startPosition="84" endLine="35" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1208787749012" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="35" startPosition="101" endLine="36" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5002400195358049332" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="36" startPosition="101" endLine="37" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1208787714859" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="22" startPosition="70" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1208787749010" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="32" startPosition="70" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1208787714860" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="23" startPosition="30" endLine="27" endPosition="81" />
-    <scopeInfo nodeId="1208787749011" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="33" startPosition="30" endLine="37" endPosition="108" />
-    <scopeInfo nodeId="1208787699615" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="21" startPosition="42" endLine="28" endPosition="5">
+    <nodeInfo nodeId="1215438553604" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="10" startPosition="91" endLine="11" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToDoHighlighter" />
+    <nodeInfo nodeId="2345890179797527164" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="11" startPosition="68" endLine="12" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethodDeclFixer" />
+    <nodeInfo nodeId="5002400195358004832" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="12" startPosition="84" endLine="13" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOverrideMethodsChecker" />
+    <nodeInfo nodeId="1208787714852" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="18" startPosition="42" endLine="19" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1208787714861" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="20" startPosition="30" endLine="21" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3912187081988067498" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="21" startPosition="98" endLine="22" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5002400195358049314" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="22" startPosition="98" endLine="23" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1751532732861406176" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="23" startPosition="105" endLine="24" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1208787749003" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="28" startPosition="45" endLine="29" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1751532732861406187" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="30" startPosition="30" endLine="31" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3912187081988067534" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="31" startPosition="84" endLine="32" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1208787749012" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="32" startPosition="101" endLine="33" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5002400195358049332" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="33" startPosition="101" endLine="34" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1208787714859" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="19" startPosition="70" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1208787749010" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="29" startPosition="70" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1208787714860" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="20" startPosition="30" endLine="24" endPosition="81" />
+    <scopeInfo nodeId="1208787749011" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="30" startPosition="30" endLine="34" endPosition="108" />
+    <scopeInfo nodeId="1208787699615" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="18" startPosition="42" endLine="25" endPosition="5">
       <varInfo nodeId="1208787714853" varName="highlighter" />
     </scopeInfo>
-    <scopeInfo nodeId="1208787738782" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="31" startPosition="45" endLine="38" endPosition="5">
+    <scopeInfo nodeId="1208787738782" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="28" startPosition="45" endLine="35" endPosition="5">
       <varInfo nodeId="1208787749004" varName="highlighter" />
     </scopeInfo>
   </root>

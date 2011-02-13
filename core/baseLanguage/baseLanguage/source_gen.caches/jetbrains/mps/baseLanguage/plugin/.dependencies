@@ -92,12 +92,11 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" file="BaseLanguageCustomPlugin_CustomProjectPlugin.java">
+    <classNode dependClassName="jetbrains.mps.resolve.MethodDeclarationsFixer" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ToDoHighlighter" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.resolve.MethodDeclarationsFixer" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal_ActionGroup" file="BaseLanguageEditorPopupInternal_ActionGroup.java">
