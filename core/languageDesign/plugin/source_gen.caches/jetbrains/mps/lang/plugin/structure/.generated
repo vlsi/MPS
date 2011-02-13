@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bafsxu4xtoapu5tbspehho1mc2qq7fm">
+<dependencies version="2" modelHash="-y8w80ys4nqz8p2knlj274yt259r42b">
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9yg2bpo4lvwy8lmo0gxukbtzy5b5kuw" />
@@ -16,7 +16,6 @@
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="cv4v4yu2mg2qwn3qgmp4opgx2qhvapi" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="222hfoec4eclho8dndo8bvi3jfygysm" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-ajvf5lxae1xhsojrbc5w19vapmo22hn" />
-  <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" hash="-2vvy0ol2j0l75ifhg1hkj107r1ppo0n" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="7onuy7ras5spdyysdm2zbxch2b4ail7" />
   <common hash="-ehoqv74dfi1mugitemzsvufyu6iixue">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -30,34 +29,6 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Plugin_Language.java" />
   </common>
-  <source id="1203071646776" name="ActionDeclaration" hash="-9jyfv7uwjp6yr175o6yh11m9q1pctrx">
-    <dep root="1203083511112" />
-    <dep root="1205681149025" />
-    <dep root="1207318242772" />
-    <dep root="1217413147516" />
-    <dep root="1227008846812" />
-    <dep root="1628770029971140533" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
-    <dep root="394857668356997868" />
-    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
-    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="ActionDeclaration.java" />
-  </source>
   <source id="1203071663527" name="SingletabbedEditorTab" hash="-buuf838ij9hine0urfub9xu66bf78gl">
     <dep root="1203851787677" />
     <dep root="1203851983563" />
@@ -132,12 +103,11 @@
     <file name="ExecuteBlock.java" />
   </source>
   <source id="1203087890642" name="ActionGroupDeclaration" hash="-7l8hxvddgmbu9a4sc71inqponoauprb">
+    <dep root="1203071646776" />
     <dep root="1203092361741" />
     <dep root="1204391079391" />
     <dep root="1207145102141" />
     <dep root="1628770029971140533" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -158,7 +128,6 @@
   <source id="1203088046679" name="ActionInstance" hash="7zx2zp8zxw45y5lxyeoif076rjr8dfg">
     <dep root="1203071646776" />
     <dep root="1204391079391" />
-    <dep root="2450897840534688273" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -194,9 +163,8 @@
     <file name="ModificationStatement.java" />
   </source>
   <source id="1203680534665" name="GroupAnchor" hash="6o63v6iuo70s00ehhzglhusc8unavvv">
+    <dep root="1203071646776" />
     <dep root="1204391079391" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -230,11 +198,10 @@
     <file name="MultitabbedEditorTab.java" />
   </source>
   <source id="1203851787677" name="AbstractEditorTab" hash="-erkw4pqosixik4okvig451g70mbkqw6">
+    <dep root="1203071646776" />
     <dep root="1203851854402" />
     <dep root="1204038435236" />
     <dep root="1628770029971140533" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep root="5703381818025946290" />
     <dep root="929556153838351528" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
@@ -267,7 +234,7 @@
     <file name="CreateBlock.java" />
   </source>
   <source id="1203851983563" name="GetNodeBlock" hash="6harfjbndmbnjlv6ck1k2ewzqdjrrsx">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="3743831881070612962" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -282,7 +249,7 @@
     <file name="GetNodeBlock.java" />
   </source>
   <source id="1203852029150" name="GetNodesBlock" hash="-e08a8jil5l25os097zejgvte2g6tz8j">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="3743831881070612962" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -322,10 +289,9 @@
     <file name="ConceptFunctionParameter_node.java" />
   </source>
   <source id="1203866019489" name="TabbedEditorDeclaration" hash="-azfh2z8bh8btu9xik0qljyew950a07k">
+    <dep root="1203071646776" />
     <dep root="1203851787677" />
     <dep root="1204038435236" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -443,8 +409,8 @@
     <file name="ConceptFunctionParameter_MPSProject.java" />
   </source>
   <source id="1204908117386" name="Separator" hash="c2zmwhkmrdhgbmnqb7qu6aao7aic24j">
+    <dep root="1203071646776" />
     <dep root="1204391079391" />
-    <dep root="2450897840534688273" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -470,10 +436,9 @@
     <file name="mnemonic_PropertySupport.java" />
   </source>
   <source id="1205679047295" name="ActionParameterDeclaration" hash="-7mxavf85t6zvq88q0ymogqn5zkg1uar">
+    <dep root="1203071646776" />
     <dep root="1217252042208" />
     <dep root="1217413147516" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -530,8 +495,8 @@
     <file name="ActionType.java" />
   </source>
   <source id="1206092561075" name="ActionParameterReferenceOperation" hash="-64jqac9nk3s7qzkk3lxjzqgyrm6ink">
+    <dep root="1203071646776" />
     <dep root="1205679047295" />
-    <dep root="2450897840534688273" />
     <dep root="8179323502814656936" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -550,10 +515,9 @@
     <file name="ActionParameterReferenceOperation.java" />
   </source>
   <source id="1206110063106" name="ProjectPluginDeclaration" hash="-35l72pf4elk1tdd0bllh6adzq5qx2cd">
+    <dep root="1203071646776" />
     <dep root="1206110093589" />
     <dep root="1206110108761" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -619,8 +583,8 @@
     <file name="GroupContents.java" />
   </source>
   <source id="1207145360364" name="BuildGroupBlock" hash="efeo87xedtyn1rntqlir0lmm4dx0j6f">
+    <dep root="1203071646776" />
     <dep root="1207145102141" />
-    <dep root="2450897840534688273" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -649,9 +613,9 @@
     <file name="AddElementStatement.java" />
   </source>
   <source id="1207145163717" name="ElementListContents" hash="cwuxacoy6bhr4icd2dfuzh19um4dgrd">
+    <dep root="1203071646776" />
     <dep root="1204391079391" />
     <dep root="1207145102141" />
-    <dep root="2450897840534688273" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -680,8 +644,8 @@
     <file name="KeyMapKeystroke.java" />
   </source>
   <source id="1207489456631" name="DoUpdateGroupBlock" hash="-27tvejq43ll8v4k3gz1io99c0nvlkiy">
+    <dep root="1203071646776" />
     <dep root="1207145102141" />
-    <dep root="2450897840534688273" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -729,7 +693,7 @@
     <file name="ToolType.java" />
   </source>
   <source id="1209909558075" name="ProjectOperation" hash="4u9hg005i6ic1fwf31dv3l7umlh54r8">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -776,11 +740,10 @@
     <file name="GetGroupOperation.java" />
   </source>
   <source id="1210070489991" name="GenerationListenerDeclaration" hash="bi6yc8xrx3p74hj5i0vokfv3ws7g4w4">
+    <dep root="1203071646776" />
     <dep root="1210070546769" />
     <dep root="1210094300689" />
     <dep root="1213048754923" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -834,12 +797,11 @@
     <file name="GenerationListener_models.java" />
   </source>
   <source id="1210179134063" name="PreferencesComponentDeclaration" hash="-baxzo3u9wjqz3vh9brpdiwipm1mk5qg">
+    <dep root="1203071646776" />
     <dep root="1210179190070" />
     <dep root="1210676672555" />
     <dep root="1210676879526" />
     <dep root="1210684385183" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -858,8 +820,7 @@
     <file name="PreferencesComponentDeclaration.java" />
   </source>
   <source id="1210179190070" name="PersistentPropertyDeclaration" hash="2lmmuwh1cgirr12jim1v6rnedppkvgc">
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -874,8 +835,8 @@
     <file name="PersistentPropertyDeclaration.java" />
   </source>
   <source id="1210180874794" name="PersistentPropertyReference" hash="3g2b3y0df9q3dvsz1i2ojmg0rtab4f7">
+    <dep root="1203071646776" />
     <dep root="1210179190070" />
-    <dep root="2450897840534688273" />
     <dep root="8179323502814656936" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -952,12 +913,11 @@
     <file name="OnAfterReadBlock.java" />
   </source>
   <source id="1210684385183" name="PreferencePage" hash="-ck9poiyjl492m8oeyr3rznt8dqu1z9w">
+    <dep root="1203071646776" />
     <dep root="1210686882550" />
     <dep root="1210686969356" />
     <dep root="1210763550007" />
     <dep root="1628770029971140533" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1135,10 +1095,9 @@
     <file name="ApplicationPluginType.java" />
   </source>
   <source id="1215279937187" name="ApplicationPluginDeclaration" hash="-9w3pv1mdujahc86cbsk2kanp2ezr9tk">
+    <dep root="1203071646776" />
     <dep root="1215278261851" />
     <dep root="1215278396618" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1170,9 +1129,8 @@
     <file name="GeneratePlugins.java" />
   </source>
   <source id="1217252042208" name="ActionDataParameterDeclaration" hash="1liubem5pd8okox87czq7kf1biflmet">
+    <dep root="1203071646776" />
     <dep root="1217413147516" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1190,8 +1148,8 @@
     <file name="ActionDataParameterDeclaration.java" />
   </source>
   <source id="1217252428768" name="ActionDataParameterReferenceOperation" hash="bh4a3mhzgc7gefa6a4pk8qxp382t1ve">
+    <dep root="1203071646776" />
     <dep root="1217252042208" />
-    <dep root="2450897840534688273" />
     <dep root="8179323502814656936" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -1219,11 +1177,10 @@
     <file name="ActionParameter.java" />
   </source>
   <source id="1218035894314" name="FileGeneratorDeclaration" hash="7ykifn23l04uup2nyunga2zp5ipbxs">
+    <dep root="1203071646776" />
     <dep root="1218035947926" />
     <dep root="1218036560363" />
     <dep root="1218036578306" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1464,9 +1421,8 @@
     <file name="ExecuteWriteActionStatement.java" />
   </source>
   <source id="1227008846812" name="ActionConstructionParameterDeclaration" hash="7k1bz0c3drohka7ysttqoeai33keta1">
+    <dep root="1203071646776" />
     <dep root="1227019068586" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1484,8 +1440,8 @@
     <file name="ActionConstructionParameterDeclaration.java" />
   </source>
   <source id="1227008925923" name="ActionConstructorParameterReferenceOperation" hash="-a1z8esu0tlsjpekzthdqz8jestn5jyy">
+    <dep root="1203071646776" />
     <dep root="1227008846812" />
-    <dep root="2450897840534688273" />
     <dep root="8179323502814656936" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -1563,10 +1519,10 @@
     <file name="BaseExecuteCommandStatementSync.java" />
   </source>
   <source id="1239975356883" name="UpdateGroupBlock" hash="9n0l6x9np9m6pen842bmzer4lc13tqx">
+    <dep root="1203071646776" />
     <dep root="1207145102141" />
     <dep root="1239975436002" />
     <dep root="1239975563668" />
-    <dep root="2450897840534688273" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1860,7 +1816,6 @@
   <source id="1562714432501166198" name="SimpleShortcutChange" hash="-d3rkqg3ocu911kfcula4yw9j9z31zzh">
     <dep root="1203071646776" />
     <dep root="1207318242772" />
-    <dep root="2450897840534688273" />
     <dep root="6193305307616715384" />
     <dep root="6193305307616734266" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
@@ -1906,7 +1861,6 @@
   </source>
   <source id="6193305307616734266" name="ParameterizedShortcutChange" hash="-5hs4k0egbtd5v2q86lwb6rwfgq7mirl">
     <dep root="1203071646776" />
-    <dep root="2450897840534688273" />
     <dep root="6193305307616715384" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -1924,9 +1878,8 @@
     <file name="ParameterizedShortcutChange.java" />
   </source>
   <source id="7035278950562850663" name="RunConfigurationTypeDeclaration" hash="c2crvw9gn2lnvvoxjinxkyzwu6ru1x2">
+    <dep root="1203071646776" />
     <dep root="1628770029971140533" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -1940,12 +1893,11 @@
     <file name="RunConfigurationTypeDeclaration.java" />
   </source>
   <source id="7035278950562851062" name="RunConfigurationDeclaration" hash="bm4h19hrfyzrb417eytf3b5h3ioqs8o">
+    <dep root="1203071646776" />
     <dep root="1210179190070" />
     <dep root="1347772807199150767" />
     <dep root="162872405267681132" />
     <dep root="1628770029971140533" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep root="3018238135942601771" />
     <dep root="678887849223472871" />
     <dep root="7035278950562850663" />
@@ -1996,7 +1948,7 @@
     <file name="CheckConfigurationBlock.java" />
   </source>
   <source id="678887849223472884" name="ExecuteConfigBlock" hash="-5ycax2h375gzv8nzv32j64trtdeb5rz">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="8376523923662591983" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -2011,8 +1963,8 @@
     <file name="ExecuteConfigBlock.java" />
   </source>
   <source id="678887849223472892" name="ActionsStatement" hash="cgpu7cddoox8v2z9jfwojtypvktco4o">
+    <dep root="1203071646776" />
     <dep root="1203088046679" />
-    <dep root="2450897840534688273" />
     <dep root="678887849223527750" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -2029,7 +1981,7 @@
     <file name="ActionsStatement.java" />
   </source>
   <source id="678887849223472893" name="ProcessHandlerStatement" hash="8vqpw09x0dytwv3055a7e01c5p05qwm">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="678887849223527750" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -2047,7 +1999,7 @@
     <file name="ProcessHandlerStatement.java" />
   </source>
   <source id="678887849223472894" name="ExecutionConsoleStatement" hash="bs4o7edwniua9e3ntf39217lvlqbt0o">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="678887849223472895" />
     <dep root="678887849223527750" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
@@ -2227,7 +2179,7 @@
     <file name="PropertyRefType.java" />
   </source>
   <source id="394857668356997867" name="SimpleActionPlace" hash="vzz3qg8t8lx6acc1hy7hbbzj7d7ueq">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="394857668356997868" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -2248,7 +2200,7 @@
     <file name="ActionPlaceSpecification.java" />
   </source>
   <source id="394857668357022342" name="ToolActionPlace" hash="a200r6981kwz6ftuybckwrl0n83ug5i">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="394857668356997868" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -2263,7 +2215,7 @@
     <file name="ToolActionPlace.java" />
   </source>
   <source id="394857668357342104" name="EverywhereActionPlace" hash="detcbk8tng7e186e9yg4s01h2oplr4l">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="394857668356997868" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -2333,7 +2285,7 @@
     <file name="RunConfigType.java" />
   </source>
   <source id="6586153900349324059" name="ActionListStatement" hash="-6uzouxi9p3p43cnjjwphwxs0mfai70u">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="678887849223527750" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -2369,9 +2321,8 @@
     <file name="CreateRunConfigStatement.java" />
   </source>
   <source id="7066926174333292873" name="RunConfigPropertyInstance" hash="-3aj7gi06fxhdev1odnko9jhpfcfpum5">
+    <dep root="1203071646776" />
     <dep root="1210179190070" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep root="7086588812844908357" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -2389,8 +2340,7 @@
     <file name="RunConfigPropertyInstance.java" />
   </source>
   <source id="8415911927033048374" name="RunConfigCreator" hash="-9fb0rj7jk6zh4rrqw6amp1b2o8u3e1a">
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="7035278950562850663" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -2550,7 +2500,7 @@
     <file name="RunModelConfigCreator.java" />
   </source>
   <source id="9061443648117357794" name="ProcessStatement" hash="edzapz6t0hmlsgvuadob2id1jzrcj4g">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="678887849223527750" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -2568,7 +2518,7 @@
     <file name="ProcessStatement.java" />
   </source>
   <source id="9061443648117368090" name="ConsoleExpression" hash="-3xuagd10bo8ox88r8mly3tg6w6qelfu">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="678887849223527750" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -2595,8 +2545,7 @@
     <file name="ConsoleType.java" />
   </source>
   <source id="3856910426407528287" name="UniversalRunConfigCreator" hash="-37xufmjiz66tlptpbb6s1gl184fl2gi">
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="3856910426407529502" />
     <dep root="3856910426407529578" />
     <dep root="7035278950562850663" />
@@ -2709,11 +2658,10 @@
     <file name="ProjectCreatorTarget.java" />
   </source>
   <source id="6547237850567458268" name="BaseToolDeclaration" hash="-dipsm840nl84j1reikfrgwgzfc4loez">
+    <dep root="1203071646776" />
     <dep root="1213888653896" />
     <dep root="1213888677711" />
     <dep root="1628770029971140533" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -2745,7 +2693,7 @@
     <file name="TabbedToolDeclaration.java" />
   </source>
   <source id="5896642449625987000" name="AddTabOperation" hash="55qgln6s3gxy388a1nl1ulttdvjll1w">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="6938053545825350222" />
     <dep root="8096638938275438668" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
@@ -2793,7 +2741,7 @@
     <file name="GetSelectedTabOperation.java" />
   </source>
   <source id="8096638938275438668" name="TabbedToolOperation" hash="-2rw3wuyyppjvohyf9n6mcfzzw51u865">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -2987,7 +2935,7 @@
     <file name="VariableNodeExpression.java" />
   </source>
   <source id="492938830216689663" name="GetUserDataExpression" hash="306jvt62zegdie4x8v4u883chm7p48t">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="678887849223527750" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -3060,7 +3008,7 @@
     <file name="RunConfigExecutionParameterDeclaration.java" />
   </source>
   <source id="8179323502814656936" name="RunConfigParameterReferenceOperation" hash="-5q4w7nhdo919b77vue1qvk4u1oquoqg">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="8179323502814630510" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -3100,7 +3048,7 @@
     <dep root="1110842925895076036" />
     <dep root="1110842925895076037" />
     <dep root="1110842925895076038" />
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="7187575959585005270" />
     <dep root="8376523923662591983" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
@@ -3247,7 +3195,7 @@
     <file name="GetPreferencesComponentInProjectOperation.java" />
   </source>
   <source id="3339131993542057767" name="BaseProjectOperation" hash="6npk5cqw4fzuezimxr19wv0vo23fa8q">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -3460,7 +3408,7 @@
     <file name="PrepareReturnType_FunctionParameter.java" />
   </source>
   <source id="3680762252127977523" name="ProjectExpression" hash="-5cm1u7t40bqwx507ht0wyhc0r9n3h6k">
-    <dep root="2450897840534688273" />
+    <dep root="1203071646776" />
     <dep root="678887849223527750" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -3564,11 +3512,10 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CreateNodeAspectBlock.java" />
   </source>
-  <source id="3743831881070611759" name="EditorTab" hash="-7e3k9zojckkptzbt30vxdepb8qq24b3">
+  <source id="3743831881070611759" name="EditorTab" hash="-45knay25fxtry50kmt9w2b9bwobgdc">
+    <dep root="1203071646776" />
     <dep root="1628770029971140533" />
     <dep root="2450897840534683973" />
-    <dep root="2450897840534683975" />
-    <dep root="2450897840534688273" />
     <dep root="3743831881070612962" />
     <dep root="3743831881070613135" />
     <dep root="3743831881070657672" />
@@ -3640,9 +3587,9 @@
     <file name="OrderConstraints.java" />
   </source>
   <source id="2450897840534683975" name="Order" hash="-4zfk6s04eqz2xwho16v50la824j0d1g">
+    <dep root="1203071646776" />
     <dep root="2450897840534683973" />
     <dep root="2450897840534683979" />
-    <dep root="2450897840534688273" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -3674,6 +3621,7 @@
     <file name="EditorTabReference.java" />
   </source>
   <source id="2450897840534688273" name="OrderReference" hash="y14obgnt0teb5omus63n87gqervvt9">
+    <dep root="1203071646776" />
     <dep root="2450897840534683973" />
     <dep root="2450897840534683975" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
@@ -3690,6 +3638,31 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OrderReference.java" />
+  </source>
+  <source id="1203071646776" name="ActionDeclaration" hash="-9jyfv7uwjp6yr175o6yh11m9q1pctrx">
+    <dep root="1203083511112" />
+    <dep root="1205681149025" />
+    <dep root="1207318242772" />
+    <dep root="1217413147516" />
+    <dep root="1227008846812" />
+    <dep root="1628770029971140533" />
+    <dep root="394857668356997868" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="ActionDeclaration.java" />
   </source>
 </dependencies>
 

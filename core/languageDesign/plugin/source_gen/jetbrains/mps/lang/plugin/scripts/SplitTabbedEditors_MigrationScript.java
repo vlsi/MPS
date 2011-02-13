@@ -76,7 +76,8 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
           SNode newTab = new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0a81a4a0a0a1a0().createNode(SPropertyOperations.getString(tab, "name"), SPropertyOperations.getString(tab, "shortcutChar"), SLinkOperations.getTarget(node, "mainConcept", false), SLinkOperations.getTarget(node, "mainConcept", false));
 
           // todo rewrite. this code is due to bad behavior of quotations in this case 
-          SLinkOperations.setTarget(newTab, "order", new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a2a3a81a4a0a0a1a0().createNode(order), true);
+          SPropertyOperations.set(newTab, "commandOnCreate", "" + !(SPropertyOperations.getBoolean(tab, "outsideCommand")));
+          SLinkOperations.setTarget(newTab, "order", new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a2a4a81a4a0a0a1a0().createNode(order), true);
           ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(newTab, "baseNodeBlock", true), "body", true), "statement", true)).addElement(SNodeOperations.copyNode(callHelperStmt));
 
           if (SLinkOperations.getTarget(tab, "initBlock", true) != null) {
@@ -116,7 +117,7 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
           }
 
           SModelOperations.addRootNode(model, newTab);
-          ListSequence.fromList(SLinkOperations.getTargets(order, "tab", true)).addElement(new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0k0s0e0a0a0b0a().createNode(newTab));
+          ListSequence.fromList(SLinkOperations.getTargets(order, "tab", true)).addElement(new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0l0s0e0a0a0b0a().createNode(newTab));
         }
 
         SNodeOperations.deleteNode(node);
@@ -415,8 +416,8 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_w50lnh_a2a3a81a4a0a0a1a0 {
-    public QuotationClass_w50lnh_a2a3a81a4a0a0a1a0() {
+  public static class QuotationClass_w50lnh_a2a4a81a4a0a0a1a0 {
+    public QuotationClass_w50lnh_a2a4a81a4a0a0a1a0() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -433,8 +434,8 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_w50lnh_a0a0k0s0e0a0a0b0a {
-    public QuotationClass_w50lnh_a0a0k0s0e0a0a0b0a() {
+  public static class QuotationClass_w50lnh_a0a0l0s0e0a0a0b0a {
+    public QuotationClass_w50lnh_a0a0l0s0e0a0a0b0a() {
     }
 
     public SNode createNode(Object parameter_3) {
