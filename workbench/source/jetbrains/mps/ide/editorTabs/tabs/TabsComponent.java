@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
-import org.jetbrains.annotations.NonNls;
 
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
@@ -43,32 +42,11 @@ public abstract class TabsComponent extends JPanel{
   private SNodePointer myLastNode = null;
   private Set<EditorTabDescriptor> myPossibleTabs;
   private List<EditorTab> myRealTabs = new ArrayList<EditorTab>();
-  private ModelListener myListener = new ModelListener() {
-    protected void onImportantRootRemoved(SNodePointer node) {
-      if (myBaseNode.equals(node)) return; //will be closed by idea
-
-      if (myLastNode.equals(node)) {
-        onNodeChange(myBaseNode.getNode());
-      }
-
-      updateTabs();
-    }
-  };
   private JComponent myToolbar = null;
   private JComponent myShortcutComponent;
-  private SModelCommandListener myModelCommandListener = new SModelCommandListener() {
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      outer:
-      for (EditorTabDescriptor d : myPossibleTabs) {
-        for (EditorTab tab : myRealTabs) {
-          if (tab.getDescriptor() == d) continue outer;
-        }
 
-        if (d.getNodes(myBaseNode.getNode()).isEmpty()) continue;
-        updateTabs();
-      }
-    }
-  };
+  private SModelCommandListener myTabAdditionListener = new MyTabAdditionListener();
+  private ModelListener myTabRemovalListener = new MyTabRemovalListener();
 
   public TabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent shortcutComponent) {
     myBaseNode = baseNode;
@@ -139,12 +117,14 @@ public abstract class TabsComponent extends JPanel{
 
   private void updateTabs() {
     myRealTabs.clear();
+    myTabRemovalListener.clearAspects();
+
     for (EditorTabDescriptor d : myPossibleTabs) {
       List<SNode> nodes = d.getNodes(myBaseNode.getNode());
       if (nodes.isEmpty()) continue;
 
       for (SNode node : nodes) {
-        myListener.aspectAdded(node);
+        myTabRemovalListener.aspectAdded(node);
       }
 
       final EditorTab tab = new EditorTab(this,myRealTabs.size(), d, myBaseNode);
@@ -195,14 +175,13 @@ public abstract class TabsComponent extends JPanel{
   private void prevTab() {
     for (EditorTab tab : myRealTabs) {
       boolean thatTab = tab.getDescriptor().getNodes(myBaseNode.getNode()).contains(myLastNode.getNode());
-      if (thatTab) {
-        int index = myRealTabs.indexOf(tab);
-        if (index == 0) return;
+      if (!thatTab) continue;
 
-        performTabAction(index - 1);
+      int index = myRealTabs.indexOf(tab);
+      if (index == 0) return;
 
-        return;
-      }
+      performTabAction(index - 1);
+      return;
     }
   }
 
@@ -216,9 +195,9 @@ public abstract class TabsComponent extends JPanel{
   ///-------------events----------------
 
   private void addListeners() {
-    myListener.startListening();
+    myTabRemovalListener.startListening();
 
-    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myModelCommandListener);
+    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myTabAdditionListener);
 
     SModelRepository.getInstance().addModelRepositoryListener(myModelAddedListener);
   }
@@ -226,7 +205,7 @@ public abstract class TabsComponent extends JPanel{
   private void removeListeners() {
     SModelRepository.getInstance().removeModelRepositoryListener(myModelAddedListener);
 
-    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myModelCommandListener);
+    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myTabAdditionListener);
 
     for (SModelReference modelRef : myModelAdditionListeners.keySet()) {
       for (SModelListener listener : myModelAdditionListeners.get(modelRef)) {
@@ -238,7 +217,7 @@ public abstract class TabsComponent extends JPanel{
 
     myModelAdditionListeners.clear();
 
-    myListener.stopListening();
+    myTabRemovalListener.stopListening();
   }
 
   ///-------------tab insert events----------------
@@ -298,6 +277,32 @@ public abstract class TabsComponent extends JPanel{
   private class AdditionDescriptor extends Pair<Condition<SModelDescriptor>, SModelListener> {
     public AdditionDescriptor(Condition<SModelDescriptor> first, SModelListener second) {
       super(first, second);
+    }
+  }
+
+  private class MyTabAdditionListener implements SModelCommandListener {
+    public void eventsHappenedInCommand(List<SModelEvent> events) {
+      outer:
+      for (EditorTabDescriptor d : myPossibleTabs) {
+        for (EditorTab tab : myRealTabs) {
+          if (tab.getDescriptor() == d) continue outer;
+        }
+
+        if (d.getNodes(myBaseNode.getNode()).isEmpty()) continue;
+        updateTabs();
+      }
+    }
+  }
+
+  private class MyTabRemovalListener extends ModelListener {
+    protected void onImportantRootRemoved(SNodePointer node) {
+      if (myBaseNode.equals(node)) return; //will be closed by idea
+
+      if (myLastNode.equals(node)) {
+        onNodeChange(myBaseNode.getNode());
+      }
+
+      updateTabs();
     }
   }
 }
