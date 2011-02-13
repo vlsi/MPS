@@ -5574,20 +5574,6 @@
         </node>
       </node>
     </node>
-    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1215281886425">
-      <property name="name" nameId="tpck.1169194664001" value="LOG" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1215281886426" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1215281891694">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="homp.~Logger" resolveInfo="Logger" />
-      </node>
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1215281908837">
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="homp.~Logger%dgetLogger(java%dlang%dClass)%cjetbrains%dmps%dlogging%dLogger" resolveInfo="getLogger" />
-        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="homp.~Logger" resolveInfo="Logger" />
-        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="1215281921354">
-          <link role="classifier" roleId="tpee.1116615189566" targetNodeId="1206116606470" resolveInfo="GeneratedCustomProjectPlugin" />
-        </node>
-      </node>
-    </node>
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1215283694626">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1215283694627" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1215283694628" />
