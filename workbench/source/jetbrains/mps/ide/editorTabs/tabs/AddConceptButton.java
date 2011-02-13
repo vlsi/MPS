@@ -107,23 +107,27 @@ abstract class AddConceptTab {
         }
       };
 
-      if (myD.commandOnCreate()) {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            r1.run();
-          }
-        });
-      } else {
-        r1.run();
-      }
-
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      final Runnable r2 = new Runnable() {
         public void run() {
           String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
           created[0].setProperty(SNode.PACK, mainPack);
           aspectCreated(created[0]);
         }
-      });
+      };
+
+      if (myD.commandOnCreate()) {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            r1.run();
+            if (created[0] == null) return;
+            r2.run();
+          }
+        });
+      } else {
+        r1.run();
+        if (created[0] == null) return;
+        ModelAccess.instance().runWriteActionInCommand(r2);
+      }
     }
   }
 
