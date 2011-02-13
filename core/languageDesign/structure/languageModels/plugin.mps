@@ -105,30 +105,35 @@
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725492">
       <property name="name" nameId="tpck.1169194664001" value="Textgen" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725524">
       <property name="name" nameId="tpck.1169194664001" value="Refactorings" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="R" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725557">
       <property name="name" nameId="tpck.1169194664001" value="Intentions" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="I" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725575">
       <property name="name" nameId="tpck.1169194664001" value="Find Usages" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="F" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725593">
       <property name="name" nameId="tpck.1169194664001" value="Constraints" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="C" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725625">
@@ -141,6 +146,7 @@
       <property name="name" nameId="tpck.1169194664001" value="Data Flow" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="D" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725660">
@@ -153,24 +159,28 @@
       <property name="name" nameId="tpck.1169194664001" value="Actions" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="A" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725694">
       <property name="name" nameId="tpck.1169194664001" value="Behavior" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="B" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725759">
       <property name="name" nameId="tpck.1169194664001" value="Typesystem" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="T" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725777">
       <property name="name" nameId="tpck.1169194664001" value="Editor" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="E" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6388164970935848749">
