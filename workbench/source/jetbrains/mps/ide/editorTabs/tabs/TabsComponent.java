@@ -196,49 +196,15 @@ public abstract class TabsComponent extends JPanel{
 
   private void addListeners() {
     myTabRemovalListener.startListening();
-
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myTabAdditionListener);
-
-    SModelRepository.getInstance().addModelRepositoryListener(myModelAddedListener);
   }
 
   private void removeListeners() {
-    SModelRepository.getInstance().removeModelRepositoryListener(myModelAddedListener);
-
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myTabAdditionListener);
-
-    for (SModelReference modelRef : myModelAdditionListeners.keySet()) {
-      for (SModelListener listener : myModelAdditionListeners.get(modelRef)) {
-        SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelRef);
-        if (model == null) continue;
-        model.removeModelListener(listener);
-      }
-    }
-
-    myModelAdditionListeners.clear();
-
     myTabRemovalListener.stopListening();
   }
 
   ///-------------tab insert events----------------
-
-  private SModelRepositoryListener myModelAddedListener = new ModelAddedListener();
-  protected MultiMap<SModelReference, SModelListener> myModelAdditionListeners = new MultiMap<SModelReference, SModelListener>();
-  private List<AdditionDescriptor> myAdditionDescriptors = new ArrayList<AdditionDescriptor>();
-
-  public void addNodeAdditionListener(Condition<SModelDescriptor> listenToModelCondition, SModelListener listener) {
-    myAdditionDescriptors.add(new AdditionDescriptor(listenToModelCondition, listener));
-    for (SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors()) {
-      if (listenToModelCondition.met(d)) {
-        listenModelForAdditions(d, listener);
-      }
-    }
-  }
-
-  private void listenModelForAdditions(SModelDescriptor descriptor, SModelListener listener) {
-    descriptor.addModelListener(listener);
-    myModelAdditionListeners.putValue(descriptor.getSModelReference(), listener);
-  }
 
   private static class EditorTabComparator implements Comparator<EditorTab> {
     public int compare(EditorTab o1, EditorTab o2) {
@@ -253,24 +219,6 @@ public abstract class TabsComponent extends JPanel{
       assert r1 * r2 <= 0 : "can't determine order";
 
       return r1;
-    }
-  }
-
-  private class ModelAddedListener extends SModelRepositoryAdapter {
-    public void modelAdded(SModelDescriptor modelDescriptor) {
-      for (AdditionDescriptor d : myAdditionDescriptors) {
-        if (d.first.met(modelDescriptor)) {
-          listenModelForAdditions(modelDescriptor, d.second);
-        }
-      }
-    }
-
-    public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
-      SModelReference modelRef = modelDescriptor.getSModelReference();
-      for (SModelListener listener : myModelAdditionListeners.get(modelRef)) {
-        modelDescriptor.removeModelListener(listener);
-      }
-      myModelAdditionListeners.remove(modelRef);
     }
   }
 
