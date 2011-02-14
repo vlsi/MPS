@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.save;
+package jetbrains.mps.workbench.save;
 
 import com.intellij.AppTopics;
 import com.intellij.openapi.application.ApplicationManager;
