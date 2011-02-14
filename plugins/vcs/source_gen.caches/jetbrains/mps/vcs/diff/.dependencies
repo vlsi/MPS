@@ -1,48 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.vcs.diff.Conflict" file="Conflict.java">
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.DiffBuilder" file="DiffBuilder.java">
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.NewNodeChange" />
-    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddRootChange" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteReferenceChange" />
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange" />
     <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddLanguageAspectChange" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteReferenceChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ModelImportChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.EngagedOnGenerationLanguagesChange" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddLanguageAspectChange" />
+    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ModelImportChange" />
     <classNode dependClassName="jetbrains.mps.smodel.search.SModelSearchUtil" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddRootChange" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetNodeChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddNodeChange" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
-    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.Cardinality" />
+    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedDevkitsChange" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange" />
@@ -108,12 +105,12 @@
     <classNode dependClassName="java.util.Set" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.Merger" file="Merger.java">
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.NewNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.DiffBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddRootChange" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
     <classNode dependClassName="com.intellij.openapi.util.Pair" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="java.util.Collections" />
@@ -122,31 +119,29 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddNodeChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddLanguageAspectChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.Conflict" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.Cardinality" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddLanguageAspectChange" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ModelImportChange" />
     <classNode dependClassName="jetbrains.mps.smodel.search.SModelSearchUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetNodeChange" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange" />
+    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.Warning" />
@@ -166,9 +161,8 @@
     <classNode extendsClassName="com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.Warning" file="Warning.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
   </dependency>
 </dependenciesRoot>
 

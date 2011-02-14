@@ -11182,6 +11182,45 @@
             </node>
           </node>
         </node>
+        <node role="3.statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="2726660264471209086">
+          <node role="31.variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="2726660264471209087">
+            <property name="1.name:0" value="symmetric" />
+          </node>
+          <node role="31.inputSequence:7" type="jetbrains.mps.baseLanguage.collections.structure.MapElement:7" id="2726660264471209091">
+            <node role="31.key:7" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2726660264471209094">
+              <link role="3.variableDeclaration:3" targetNodeId="3396946986144252960" resolveInfo="change" />
+            </node>
+            <node role="31.map:7" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="2726660264471209090">
+              <link role="3.variableDeclaration:3" targetNodeId="5694687812507038674" resolveInfo="mySymmetricChanges" />
+            </node>
+          </node>
+          <node role="3.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2726660264471209089">
+            <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2726660264471209095">
+              <node role="3.condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="2726660264471209116">
+                <node role="3.expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="2726660264471209118">
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="3396946986144156207" resolveInfo="isChangeResolved" />
+                  <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2726660264471209119">
+                    <link role="31.variable:7" targetNodeId="2726660264471209087" resolveInfo="symmetric" />
+                  </node>
+                </node>
+              </node>
+              <node role="3.ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2726660264471209097">
+                <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2726660264471209131">
+                  <node role="3.expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2726660264471209133">
+                    <node role="3.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="2726660264471209132">
+                      <link role="3.variableDeclaration:3" targetNodeId="7154392717046525561" resolveInfo="myExcludedChanges" />
+                    </node>
+                    <node role="3.operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation:7" id="2726660264471209137">
+                      <node role="31.argument:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2726660264471209139">
+                        <link role="31.variable:7" targetNodeId="2726660264471209087" resolveInfo="symmetric" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="3.statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="3396946986144253049">
           <node role="31.variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="3396946986144253050">
             <property name="1.name:0" value="conflicted" />
@@ -11261,6 +11300,45 @@
             <node role="3.operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation:7" id="3396946986144253001">
               <node role="31.argument:7" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3396946986144253003">
                 <link role="3.variableDeclaration:3" targetNodeId="3396946986144252986" resolveInfo="change" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="3.statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="2726660264471209142">
+          <node role="31.variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="2726660264471209143">
+            <property name="1.name:0" value="symmetric" />
+          </node>
+          <node role="31.inputSequence:7" type="jetbrains.mps.baseLanguage.collections.structure.MapElement:7" id="2726660264471209144">
+            <node role="31.key:7" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2726660264471209145">
+              <link role="3.variableDeclaration:3" targetNodeId="3396946986144252986" resolveInfo="change" />
+            </node>
+            <node role="31.map:7" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="2726660264471209146">
+              <link role="3.variableDeclaration:3" targetNodeId="5694687812507038674" resolveInfo="mySymmetricChanges" />
+            </node>
+          </node>
+          <node role="3.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2726660264471209147">
+            <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2726660264471209148">
+              <node role="3.condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="2726660264471209149">
+                <node role="3.expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="2726660264471209150">
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="3396946986144156207" resolveInfo="isChangeResolved" />
+                  <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2726660264471209151">
+                    <link role="31.variable:7" targetNodeId="2726660264471209143" resolveInfo="symmetric" />
+                  </node>
+                </node>
+              </node>
+              <node role="3.ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2726660264471209152">
+                <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2726660264471209153">
+                  <node role="3.expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2726660264471209154">
+                    <node role="3.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="2726660264471209158">
+                      <link role="3.variableDeclaration:3" targetNodeId="7154392717046525561" resolveInfo="myExcludedChanges" />
+                    </node>
+                    <node role="3.operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation:7" id="2726660264471209156">
+                      <node role="31.argument:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2726660264471209157">
+                        <link role="31.variable:7" targetNodeId="2726660264471209143" resolveInfo="symmetric" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

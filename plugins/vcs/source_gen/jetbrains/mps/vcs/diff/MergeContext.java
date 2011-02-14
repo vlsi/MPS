@@ -273,6 +273,11 @@ public class MergeContext {
     }
     change.apply(myResultModel);
     SetSequence.fromSet(myAppliedChanges).addElement(change);
+    for (ModelChange symmetric : ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change))) {
+      if (!(isChangeResolved(symmetric))) {
+        SetSequence.fromSet(myExcludedChanges).addElement(symmetric);
+      }
+    }
     for (ModelChange conflicted : Sequence.fromIterable(getConflictedWith(change))) {
       assert !(SetSequence.fromSet(myAppliedChanges).contains(conflicted));
       excludeChange(conflicted);
@@ -285,6 +290,11 @@ public class MergeContext {
       return;
     }
     SetSequence.fromSet(myExcludedChanges).addElement(change);
+    for (ModelChange symmetric : ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change))) {
+      if (!(isChangeResolved(symmetric))) {
+        SetSequence.fromSet(myExcludedChanges).addElement(symmetric);
+      }
+    }
     for (ModelChange conflicted : Sequence.fromIterable(getConflictedWith(change))) {
       if (!(isChangeResolved(conflicted)) && Sequence.fromIterable(getConflictedWith(conflicted)).isEmpty()) {
         applyChange(conflicted);
