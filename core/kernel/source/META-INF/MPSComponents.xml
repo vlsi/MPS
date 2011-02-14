@@ -60,6 +60,8 @@
   <xi:include href="/componentSets/VCS.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/Execution.xml" xpointer="xpointer(/components/*)"/>
 
+  <xi:include href="/META-INF/MPSDebuggerComponents.xml" xpointer="xpointer(/components/*)"/>
+
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.vcs.ExcludedFileIndexApplicationComponent</implementation-class>
@@ -227,26 +229,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.debug.customViewers.CustomViewersManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.Debuggers</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.JavaDebugger</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.breakpoints.DefaultProvider</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.typesystem.inference.TypeChecker</implementation-class>
     </component>
 
@@ -348,10 +330,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.DebugInfoManager</implementation-class>
     </component>
 
     <component>
@@ -495,32 +473,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.nodeEditor.bookmark.BookmarkManager</implementation-class>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.BreakpointManagerComponent</implementation-class>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointViewSettingsComponent
-      </implementation-class>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.DebugSessionManagerComponent</implementation-class>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.runtime.VMEventsProcessorManagerComponent</implementation-class>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.CurrentLinePositionComponent</implementation-class>
       <skipForDummyProject/>
     </component>
 
