@@ -8,11 +8,13 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class ProcessStatementPart_DataFlow extends DataFlowBuilder {
-  public ProcessStatementPart_DataFlow() {
+public class ExecuteConfiguration_Function_DataFlow extends DataFlowBuilder {
+  public ExecuteConfiguration_Function_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "process", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "tool", true));
   }
 }

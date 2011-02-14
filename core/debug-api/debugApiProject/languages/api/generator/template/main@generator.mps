@@ -25,10 +25,12 @@
     </node>
     <node type="tp4k.ApplicationPluginDeclaration" typeId="tp4k.1215279937187" id="1270798772176197309">
       <property name="name" nameId="tpck.1169194664001" value="DebugInfoProvider" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints" />
     </node>
   </roots>
   <root id="1270798772176052789">
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="1270798772176181059">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="86gq.3157158168562217892" resolveInfo="DebugInfoProvider" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="1270798772176197309" resolveInfo="DebugInfoProvider" />
     </node>

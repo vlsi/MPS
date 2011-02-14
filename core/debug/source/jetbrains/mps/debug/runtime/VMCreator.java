@@ -19,6 +19,7 @@ import com.sun.jdi.connect.Connector;
 import com.sun.jdi.connect.Connector.Argument;
 import com.sun.jdi.connect.IllegalConnectorArgumentsException;
 import com.sun.jdi.connect.ListeningConnector;
+import com.sun.tools.jdi.SocketListeningConnector;
 import jetbrains.mps.debug.DebuggerKeys;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
 import jetbrains.mps.debug.api.ToDebugAPI;
