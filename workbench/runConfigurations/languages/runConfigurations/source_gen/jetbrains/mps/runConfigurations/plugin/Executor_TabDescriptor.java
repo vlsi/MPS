@@ -55,6 +55,10 @@ public class Executor_TabDescriptor extends EditorTabDescriptor {
     });
   }
 
+  public boolean commandOnCreate() {
+    return false;
+  }
+
   public SNode createNode(final SNode node, final SNode concept) {
     SNode executor = SConceptOperations.createNewNode("jetbrains.mps.runConfigurations.structure.RunConfigurationExecutor", null);
     SLinkOperations.setTarget(executor, "runConfiguration", node, false);

@@ -16,28 +16,28 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
-public class CommandExpression_Editor extends DefaultNodeEditor {
+public class ProcessStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_q3bj4k_a(editorContext, node);
+    return this.createCollection_ogig6_a(editorContext, node);
   }
 
-  private EditorCell createCollection_q3bj4k_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ogig6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_q3bj4k_a");
-    editorCell.addEditorCell(this.createRefNodeList_q3bj4k_a0(editorContext, node));
+    editorCell.setCellId("Collection_ogig6_a");
+    editorCell.addEditorCell(this.createRefNodeList_ogig6_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_q3bj4k_a0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CommandExpression_Editor.partListHandler_q3bj4k_a0(node, "part", editorContext);
+  private EditorCell createRefNodeList_ogig6_a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ProcessStatement_Editor.partListHandler_ogig6_a0(node, "part", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_part");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class partListHandler_q3bj4k_a0 extends RefNodeListHandler {
-    public partListHandler_q3bj4k_a0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class partListHandler_ogig6_a0 extends RefNodeListHandler {
+    public partListHandler_ogig6_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

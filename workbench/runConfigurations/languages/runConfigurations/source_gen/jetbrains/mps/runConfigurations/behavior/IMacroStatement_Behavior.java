@@ -17,7 +17,7 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class IMacroExpression_Behavior {
+public class IMacroStatement_Behavior {
   private static Class[] PARAMETERS_2866018809101548658 = {SNode.class};
   private static Class[] PARAMETERS_2866018809101550409 = {SNode.class};
   private static Class[] PARAMETERS_2866018809101567754 = {SNode.class};
@@ -49,42 +49,42 @@ public class IMacroExpression_Behavior {
   }
 
   public static String call_getMethodName_2866018809101548658(SNode thisNode) {
-    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroExpression"), "virtual_getMethodName_2866018809101548658", PARAMETERS_2866018809101548658);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroStatement"), "virtual_getMethodName_2866018809101548658", PARAMETERS_2866018809101548658);
   }
 
   public static SNode call_getReturnType_2866018809101550409(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroExpression"), "virtual_getReturnType_2866018809101550409", PARAMETERS_2866018809101550409);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroStatement"), "virtual_getReturnType_2866018809101550409", PARAMETERS_2866018809101550409);
   }
 
   public static List<SNode> call_getRequiredParameters_2866018809101567754(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroExpression"), "virtual_getRequiredParameters_2866018809101567754", PARAMETERS_2866018809101567754);
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroStatement"), "virtual_getRequiredParameters_2866018809101567754", PARAMETERS_2866018809101567754);
   }
 
   public static List<SNode> call_getThrows_2866018809101689713(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroExpression"), "virtual_getThrows_2866018809101689713", PARAMETERS_2866018809101689713);
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroStatement"), "virtual_getThrows_2866018809101689713", PARAMETERS_2866018809101689713);
   }
 
   public static List<SNode> call_getReferencedParameters_2866018809101764585(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroExpression"), "virtual_getReferencedParameters_2866018809101764585", PARAMETERS_2866018809101764585);
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroStatement"), "virtual_getReferencedParameters_2866018809101764585", PARAMETERS_2866018809101764585);
   }
 
   public static String callSuper_getMethodName_2866018809101548658(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroExpression"), callerConceptFqName, "virtual_getMethodName_2866018809101548658", PARAMETERS_2866018809101548658);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroStatement"), callerConceptFqName, "virtual_getMethodName_2866018809101548658", PARAMETERS_2866018809101548658);
   }
 
   public static SNode callSuper_getReturnType_2866018809101550409(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroExpression"), callerConceptFqName, "virtual_getReturnType_2866018809101550409", PARAMETERS_2866018809101550409);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroStatement"), callerConceptFqName, "virtual_getReturnType_2866018809101550409", PARAMETERS_2866018809101550409);
   }
 
   public static List<SNode> callSuper_getRequiredParameters_2866018809101567754(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroExpression"), callerConceptFqName, "virtual_getRequiredParameters_2866018809101567754", PARAMETERS_2866018809101567754);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroStatement"), callerConceptFqName, "virtual_getRequiredParameters_2866018809101567754", PARAMETERS_2866018809101567754);
   }
 
   public static List<SNode> callSuper_getThrows_2866018809101689713(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroExpression"), callerConceptFqName, "virtual_getThrows_2866018809101689713", PARAMETERS_2866018809101689713);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroStatement"), callerConceptFqName, "virtual_getThrows_2866018809101689713", PARAMETERS_2866018809101689713);
   }
 
   public static List<SNode> callSuper_getReferencedParameters_2866018809101764585(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroExpression"), callerConceptFqName, "virtual_getReferencedParameters_2866018809101764585", PARAMETERS_2866018809101764585);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.IMacroStatement"), callerConceptFqName, "virtual_getReferencedParameters_2866018809101764585", PARAMETERS_2866018809101764585);
   }
 }
