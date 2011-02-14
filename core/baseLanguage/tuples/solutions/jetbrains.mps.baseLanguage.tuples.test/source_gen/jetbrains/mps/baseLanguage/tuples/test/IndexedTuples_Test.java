@@ -193,6 +193,18 @@ public class IndexedTuples_Test extends TestCase {
     Assert.assertNull(pair._1());
   }
 
+  public void test_nulls() throws Exception {
+    Tuples._2<Integer, String> pair = null;
+    Assert.assertNull(pair);
+    pair = MultiTuple.<Integer,String>from(1, "1");
+    Assert.assertNotNull(pair);
+    Tuples._2<Integer, String> pair2;
+    pair2 = null;
+    Assert.assertNull(pair2);
+    pair2 = MultiTuple.<Integer,String>from(2, "2");
+    Assert.assertNotNull(pair2);
+  }
+
   public Tuples._2<String, Character> toTuple(String s, char c) {
     return MultiTuple.<String,Character>from(s, c);
   }
