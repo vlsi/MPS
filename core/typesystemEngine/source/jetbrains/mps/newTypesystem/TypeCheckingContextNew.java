@@ -15,18 +15,21 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.WhenConcreteBlock;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.Pair;
 
-import java.util.List;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -40,9 +43,12 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private State myState;
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
+  private INodeTypesComponent myNodeTypesComponent;
+  private boolean myIsNonTypesystemComputation = false;
+  private boolean myIsResolving = false;
+  private IOperationContext myOperationContext;
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
-    super(rootNode, typeChecker);
     myState = new State(this);
     myRootNode = rootNode;
     myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
@@ -55,6 +61,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myRootNode = rootNode;
     myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
+    myIsResolving = resolving;
   }
 
   @Override
@@ -123,13 +130,13 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     EquationInfo info = new EquationInfo(node, "typeOf", ruleModel, ruleId);
     if (node == null) return null;
-    NodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
+    INodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
       currentTypesComponent.addNodeToFrontier(node);
       currentTypesComponent.typeOfNodeCalled(node);
       if (addDependency) {
-        currentTypesComponent.addDependcyOnCurrent(node);
+        currentTypesComponent.addDependencyOnCurrent(node);
       }
       if (ruleModel != null && ruleId != null) {
         currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
@@ -158,7 +165,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
     getNodeTypesComponent().reportTypeError(nodeWithError, errorReporter);
-    getNodeTypesComponent().addDependcyOnCurrent(nodeWithError, false);
+    getNodeTypesComponent().addDependencyOnCurrent(nodeWithError, false);
 
   }
 
@@ -210,7 +217,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
-  public NodeTypesComponent getNodeTypesComponent() {
+  public INodeTypesComponent getNodeTypesComponent() {
     return myNodeTypesComponent;
   }
 
@@ -252,7 +259,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
-  public NodeTypesComponent getBaseNodeTypesComponent() {
+  public INodeTypesComponent getBaseNodeTypesComponent() {
     return myNodeTypesComponent;
   }
 
@@ -301,5 +308,160 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   protected SNode getTypeOf_normalMode(SNode node) {
     if (!checkIfNotChecked(node, false)) return null;
-    return getTypeDontCheck(node);  }
+    return getTypeDontCheck(node);
+  }
+
+  public boolean isCheckedRoot(boolean considerNonTypesystemRules) {
+    return myNodeTypesComponent.isChecked(considerNonTypesystemRules);
+  }
+
+  //--------
+
+  @Override
+  public SModel getRuntimeTypesModel() {
+   return myTypeChecker.getRuntimeTypesModel();
+  }
+
+  @Override
+  public Map<SNode, SNode> getMainContext() {
+    return getNodeTypesComponent().getMainContext();
+  }
+
+  @Override
+  public boolean isIncrementalMode() {
+    return !isInEditorQueries() && myTypeChecker.isGlobalIncrementalMode();
+  }
+
+  @Override
+  public boolean isInEditorQueries() {
+    return myIsResolving;
+  }
+
+  @Override
+  public void setIsNonTypesystemComputation() {
+     myIsNonTypesystemComputation = true;
+  }
+
+  @Override
+  public void resetIsNonTypesystemComputation() {
+    myIsNonTypesystemComputation = false;
+  }
+
+  @Override
+  public boolean isNonTypesystemComputation() {
+    return myIsNonTypesystemComputation;
+  }
+
+  @Override
+  public ISlicer getCurrentSlicer() {
+    return null;
+  }
+
+  @Override
+  public void registerTypeVariable(SNode variable) {
+    getNodeTypesComponent().registerTypeVariable(variable);
+  }
+
+  @Override
+  public SNode[] getRegisteredTypeVariables(String varName) {
+    return getNodeTypesComponent().getVariables(varName);
+  }
+
+  @Override
+  public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow) {
+    //todo
+  }
+
+  @Override
+  public void whenConcrete(List<NodeInfo> arguments, Runnable r) {
+    //todo
+  }
+
+  @Override
+  public SNode getNode() {
+    return myRootNode;
+  }
+
+  @Override
+  public void setOperationContext(IOperationContext context) {
+    myOperationContext = context;
+  }
+
+  @Override
+  public IOperationContext getOperationContext() {
+   return myOperationContext;
+  }
+
+  @Override
+  public void runTypeCheckingAction(Runnable r) {
+    synchronized (TYPECHECKING_LOCK) {
+      r.run();
+    }
+  }
+
+  @Override
+  public <T> T runTypeCheckingAction(Computable<T> c) {
+    synchronized (TYPECHECKING_LOCK) {
+      return c.compute();
+    }
+  }
+
+  @Override
+  public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
+    if (node == null) return null;
+     synchronized (TYPECHECKING_LOCK) {
+       if (this.isInEditorQueries()) {
+         return getTypeOf_resolveMode(node, typeChecker);
+       } else if (typeChecker.isGenerationMode()) {
+         return getTypeOf_generationMode(node);
+       } else {
+         return getTypeOf_normalMode(node);
+       }
+     }
+  }
+
+  @Override
+  public SNode getTypeInGenerationMode(SNode node) {
+    return getTypeOf_generationMode(node);
+  }
+
+  @Override
+  public boolean checkIfNotChecked(SNode node, boolean useNonTypesystemRules) {
+    synchronized (TYPECHECKING_LOCK) {
+      if (!isCheckedRoot(useNonTypesystemRules)) {
+        checkRoot();
+        if (useNonTypesystemRules) {
+          myNodeTypesComponent.applyNonTypesystemRulesToRoot(null);
+        }
+      }
+      return true;
+    }
+  }
+
+  @Override
+  public Set<Pair<SNode, List<IErrorReporter>>> checkRootAndGetErrors(boolean refreshTypes) {
+    synchronized (TYPECHECKING_LOCK) {
+      checkRoot(refreshTypes);
+      //non-typesystem checks
+      getBaseNodeTypesComponent().applyNonTypesystemRulesToRoot(getOperationContext());
+
+      Set<Pair<SNode, List<IErrorReporter>>> errors =
+        new HashSet<Pair<SNode, List<IErrorReporter>>>(myNodeTypesComponent.getNodesWithErrors());
+      return errors;
+    }
+  }
+
+  @Override
+  public IErrorReporter getTypeMessageDontCheck(SNode node) {
+    List<IErrorReporter> messages = getTypeMessagesDontCheck(node);
+    if (messages.isEmpty()) {
+      return null;
+    }
+    Collections.sort(messages, new Comparator<IErrorReporter>() {
+      public int compare(IErrorReporter o1, IErrorReporter o2) {
+        return o2.getMessageStatus().compareTo(o1.getMessageStatus());
+      }
+    });
+    return messages.get(0);
+  }
 }

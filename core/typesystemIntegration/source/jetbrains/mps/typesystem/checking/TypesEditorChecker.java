@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.typesystem.inference.NodeTypesComponent;
+import jetbrains.mps.typesystem.inference.INodeTypesComponent;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
@@ -56,7 +56,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
       context.runTypeCheckingAction(new Runnable() {
         @Override
         public void run() {
-          NodeTypesComponent typesComponent = context.getBaseNodeTypesComponent();
+          INodeTypesComponent typesComponent = context.getBaseNodeTypesComponent();
           if (!wasCheckedOnce || !context.isCheckedRoot(true)) {
             try {
               myMessagesChanged = true;

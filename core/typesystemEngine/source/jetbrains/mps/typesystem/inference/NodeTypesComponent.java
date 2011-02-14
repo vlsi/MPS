@@ -39,7 +39,7 @@ import java.lang.ref.WeakReference;
 import java.util.*;
 import java.util.Map.Entry;
 
-public class NodeTypesComponent {
+public class NodeTypesComponent implements INodeTypesComponent {
 
   private static final char A_CHAR = 'a';
   private static final char Z_CHAR = 'z';
@@ -691,13 +691,13 @@ public class NodeTypesComponent {
     }
   }
 
-  public void addDependcyOnCurrent(SNode node) {
-    addDependcyOnCurrent(node, true);
+  public void addDependencyOnCurrent(SNode node) {
+    addDependencyOnCurrent(node, true);
   }
 
   //"type affected" means that *type* of this node depends on current
   // used to decide whether call "type will be recalculated" if current invalidated
-  public void addDependcyOnCurrent(SNode node, boolean typeAffected) {
+  public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
     HashSet<SNode> hashSet = new HashSet<SNode>(1);
     hashSet.add(myCurrentCheckedNode);
     addDepedentNodesTypesystem(node, hashSet, typeAffected);
