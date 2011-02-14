@@ -44,6 +44,18 @@ public class QueriesGenerated {
                 SPropertyOperations.set(debuggerReference, "debuggerName", (item));
                 return debuggerReference;
               }
+
+              public String getMatchingText(String pattern) {
+                return "debugger<" + (item) + ">";
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+
+              public String getDescriptionText(String pattern) {
+                return (item) + " Debugger";
+              }
             });
           }
         }
