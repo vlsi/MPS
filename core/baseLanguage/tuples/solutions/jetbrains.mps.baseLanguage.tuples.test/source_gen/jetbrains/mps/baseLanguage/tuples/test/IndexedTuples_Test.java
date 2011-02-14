@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.util.MPS11114;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.baseLanguage.tuples.util.Sum;
 
 public class IndexedTuples_Test extends TestCase {
   public void test_empty() throws Exception {
@@ -177,6 +179,18 @@ public class IndexedTuples_Test extends TestCase {
     Tuples._2<Integer, Integer> pair2 = MultiTuple.<Integer,Integer>from(9999 + 1, 10001 - 1);
     Assert.assertTrue((int) pair2._0() == 10000);
     Assert.assertTrue(10000 == (int) pair2._1());
+  }
+
+  public void test_mps6985() throws Exception {
+    Tuples._2<Integer, Integer> pair;
+    pair = MapSequence.fromMap(new Sum().map).get(42);
+  }
+
+  public void test_mps11447() throws Exception {
+    Tuples._2<Object, Object> pair;
+    pair = new Nulls().returnsNulls();
+    Assert.assertNull(pair._0());
+    Assert.assertNull(pair._1());
   }
 
   public Tuples._2<String, Character> toTuple(String s, char c) {
