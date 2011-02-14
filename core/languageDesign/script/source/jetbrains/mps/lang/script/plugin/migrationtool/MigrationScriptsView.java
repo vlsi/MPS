@@ -226,6 +226,10 @@ public abstract class MigrationScriptsView {
   }
 
   public void searchResultsChanged() {
-    updateControls(true, new JLabel(""));
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        updateControls(true, new JLabel(""));
+      }
+    });
   }
 }

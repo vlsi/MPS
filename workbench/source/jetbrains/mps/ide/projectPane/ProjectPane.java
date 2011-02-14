@@ -386,7 +386,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     protected void doSelectIn(SelectInContext context, boolean requestFocus) {
       SNode toSelect = getNode(context);
       if (toSelect != null) {
-        selectNode(toSelect, false);
+        selectNode(toSelect, requestFocus);
       }
     }
 

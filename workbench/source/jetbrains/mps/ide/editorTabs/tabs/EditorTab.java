@@ -28,14 +28,14 @@ import java.awt.Component;
 import java.util.List;
 
 public class EditorTab {
-  public static DataKey<Component> COMPONENT_KEY = DataKey.create("Component");
-
   private TabsComponent myTabComponent;
+  private int myIndex;
   private EditorTabDescriptor myDescriptor;
   private SNodePointer myBaseNode;
 
-  public EditorTab(TabsComponent tabComponent, EditorTabDescriptor descriptor, SNodePointer baseNode) {
+  public EditorTab(TabsComponent tabComponent,int index, EditorTabDescriptor descriptor, SNodePointer baseNode) {
     myTabComponent = tabComponent;
+    myIndex = index;
     myDescriptor = descriptor;
     myBaseNode = baseNode;
   }
@@ -102,10 +102,7 @@ public class EditorTab {
             return;
           }
 
-          Component component = e.getInputEvent() == null ? null : e.getInputEvent().getComponent();
-          if (component == null) {
-            component = COMPONENT_KEY.getData(e.getDataContext());
-          }
+          Component component = myTabComponent.getComponentForTabIndex(myIndex);
 
           ActionGroup group = getGotoGroup();
           assert group != null : "no nodes to go, but tab is visible";

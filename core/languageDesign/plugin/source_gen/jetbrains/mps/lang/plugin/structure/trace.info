@@ -233,9 +233,9 @@
   <unitInfo fileName="PreferencesComponentDeclaration.java" startLine="14" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration" />
   <unitInfo fileName="ActionGroupDeclaration.java" startLine="15" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" />
   <unitInfo fileName="FileGeneratorDeclaration.java" startLine="17" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration" />
-  <unitInfo fileName="EditorTab.java" startLine="13" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.EditorTab" />
   <unitInfo fileName="AbstractEditorTab.java" startLine="13" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.AbstractEditorTab" />
   <unitInfo fileName="BaseToolDeclaration.java" startLine="16" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseToolDeclaration" />
+  <unitInfo fileName="EditorTab.java" startLine="13" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.EditorTab" />
   <unitInfo fileName="RunConfigurationDeclaration.java" startLine="16" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration" />
   <unitInfo fileName="ActionDeclaration.java" startLine="15" startPosition="0" endLine="231" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionDeclaration" />
   <root nodeId="485694842829280671">

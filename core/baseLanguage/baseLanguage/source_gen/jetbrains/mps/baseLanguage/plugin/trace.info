@@ -28,7 +28,7 @@
   <unitInfo fileName="BaseLanguage_ProjectPlugin.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ProjectPlugin" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="365" startPosition="0" endLine="388" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionResult" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="389" startPosition="0" endLine="414" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionConsole" />
-  <unitInfo fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
+  <unitInfo fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.Default_KeymapChanges" />
   <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoProvider_CustomApplicationPlugin" />
   <unitInfo fileName="AnalyzeStacktrace_Tool.java" startLine="22" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Tool" />
@@ -56,66 +56,58 @@
   <unitInfo fileName="InlineLocalVariable_Action.java" startLine="21" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.InlineLocalVariable_Action" />
   <unitInfo fileName="CommentLine_Action.java" startLine="19" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.CommentLine_Action" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="111" startPosition="15" endLine="205" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$1" />
-  <unitInfo fileName="GoToOverridenMethod_Action.java" startLine="35" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action" />
-  <unitInfo fileName="GoToInheritedClassifier_Action.java" startLine="34" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action" />
-  <unitInfo fileName="GoToOverridingMethod_Action.java" startLine="37" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action" />
+  <unitInfo fileName="GoToOverridenMethod_Action.java" startLine="34" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action" />
+  <unitInfo fileName="GoToInheritedClassifier_Action.java" startLine="33" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action" />
+  <unitInfo fileName="GoToOverridingMethod_Action.java" startLine="36" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="61" startPosition="0" endLine="415" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration" />
   <root nodeId="1108208212555615250">
-    <nodeInfo nodeId="1108208212555653261" fileName="GoToOverridenMethod_Action.java" startLine="45" startPosition="87" endLine="46" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9093903716560055870" fileName="GoToOverridenMethod_Action.java" startLine="94" startPosition="9" endLine="95" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8659437073927771315" fileName="GoToOverridenMethod_Action.java" startLine="95" startPosition="121" endLine="96" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9093903716560055922" fileName="GoToOverridenMethod_Action.java" startLine="100" startPosition="31" endLine="101" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8659437073927771328" fileName="GoToOverridenMethod_Action.java" startLine="101" startPosition="99" endLine="102" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9093903716560055975" fileName="GoToOverridenMethod_Action.java" startLine="106" startPosition="9" endLine="107" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9093903716560055980" fileName="GoToOverridenMethod_Action.java" startLine="108" startPosition="56" endLine="109" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9093903716560055997" fileName="GoToOverridenMethod_Action.java" startLine="110" startPosition="14" endLine="111" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9093903716560056007" fileName="GoToOverridenMethod_Action.java" startLine="111" startPosition="129" endLine="112" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9093903716560056024" fileName="GoToOverridenMethod_Action.java" startLine="112" startPosition="92" endLine="113" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9093903716560056041" fileName="GoToOverridenMethod_Action.java" startLine="116" startPosition="57" endLine="117" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1108208212555653196" fileName="GoToOverridenMethod_Action.java" startLine="125" startPosition="81" endLine="126" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1108208212555654378" fileName="GoToOverridenMethod_Action.java" startLine="129" startPosition="66" endLine="130" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1108208212555695832" fileName="GoToOverridenMethod_Action.java" startLine="133" startPosition="94" endLine="134" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1108208212555695838" fileName="GoToOverridenMethod_Action.java" startLine="134" startPosition="89" endLine="135" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1430599794085346274" fileName="GoToOverridenMethod_Action.java" startLine="135" startPosition="78" endLine="136" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9093903716560055995" fileName="GoToOverridenMethod_Action.java" startLine="110" startPosition="12" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9093903716560056039" fileName="GoToOverridenMethod_Action.java" startLine="115" startPosition="149" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1108208212555653191" fileName="GoToOverridenMethod_Action.java" startLine="124" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInstanceMethodDeclaration#(Ljava/util/Map;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1108208212555654374" fileName="GoToOverridenMethod_Action.java" startLine="128" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifier#(Ljava/util/Map;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1430599794085346334" fileName="GoToOverridenMethod_Action.java" startLine="136" startPosition="155" endLine="140" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9093903716560055919" fileName="GoToOverridenMethod_Action.java" startLine="99" startPosition="63" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="9093903716560056033" fileName="GoToOverridenMethod_Action.java" startLine="114" startPosition="7" endLine="119" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9093903716560055918" fileName="GoToOverridenMethod_Action.java" startLine="98" startPosition="56" endLine="104" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9093903716560055978" fileName="GoToOverridenMethod_Action.java" startLine="107" startPosition="34" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9093903716560055887" fileName="GoToOverridenMethod_Action.java" startLine="97" startPosition="134" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="9093903716560055879" fileName="GoToOverridenMethod_Action.java" startLine="96" startPosition="48" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1108208212555695821" fileName="GoToOverridenMethod_Action.java" startLine="132" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenMethod#(Ljava/util/Map;)Ljava/util/Set;" />
-    <scopeInfo nodeId="1108208212555649464" fileName="GoToOverridenMethod_Action.java" startLine="45" startPosition="87" endLine="46" endPosition="159" />
-    <scopeInfo nodeId="9093903716560055979" fileName="GoToOverridenMethod_Action.java" startLine="108" startPosition="56" endLine="109" endPosition="78" />
-    <scopeInfo nodeId="9093903716560056040" fileName="GoToOverridenMethod_Action.java" startLine="116" startPosition="57" endLine="117" endPosition="25" />
-    <scopeInfo nodeId="1108208212555653193" fileName="GoToOverridenMethod_Action.java" startLine="125" startPosition="81" endLine="126" endPosition="178" />
-    <scopeInfo nodeId="1108208212555654376" fileName="GoToOverridenMethod_Action.java" startLine="129" startPosition="66" endLine="130" endPosition="175" />
-    <scopeInfo nodeId="9093903716560055920" fileName="GoToOverridenMethod_Action.java" startLine="100" startPosition="31" endLine="102" endPosition="139" />
-    <scopeInfo nodeId="9093903716560055996" fileName="GoToOverridenMethod_Action.java" startLine="110" startPosition="14" endLine="113" endPosition="122">
-      <varInfo nodeId="9093903716560056008" varName="point" />
-      <varInfo nodeId="9093903716560055998" varName="cellBounds" />
-    </scopeInfo>
-    <scopeInfo nodeId="9093903716560056039" fileName="GoToOverridenMethod_Action.java" startLine="115" startPosition="149" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="1108208212555653191" fileName="GoToOverridenMethod_Action.java" startLine="124" startPosition="0" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="1108208212555654374" fileName="GoToOverridenMethod_Action.java" startLine="128" startPosition="0" endLine="132" endPosition="0" />
-    <scopeInfo nodeId="9093903716560055919" fileName="GoToOverridenMethod_Action.java" startLine="99" startPosition="63" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="9093903716560055893" fileName="GoToOverridenMethod_Action.java" startLine="98" startPosition="56" endLine="104" endPosition="13" />
-    <scopeInfo nodeId="1108208212555695823" fileName="GoToOverridenMethod_Action.java" startLine="133" startPosition="94" endLine="140" endPosition="6">
+    <nodeInfo nodeId="1108208212555653261" fileName="GoToOverridenMethod_Action.java" startLine="44" startPosition="87" endLine="45" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9093903716560055870" fileName="GoToOverridenMethod_Action.java" startLine="93" startPosition="9" endLine="94" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8659437073927771315" fileName="GoToOverridenMethod_Action.java" startLine="94" startPosition="121" endLine="95" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9093903716560055922" fileName="GoToOverridenMethod_Action.java" startLine="99" startPosition="31" endLine="100" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8659437073927771328" fileName="GoToOverridenMethod_Action.java" startLine="100" startPosition="99" endLine="101" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3343883238141237456" fileName="GoToOverridenMethod_Action.java" startLine="105" startPosition="9" endLine="106" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3343883238141237466" fileName="GoToOverridenMethod_Action.java" startLine="106" startPosition="127" endLine="107" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3343883238141237492" fileName="GoToOverridenMethod_Action.java" startLine="107" startPosition="90" endLine="108" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3343883238141237454" fileName="GoToOverridenMethod_Action.java" startLine="108" startPosition="129" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9093903716560056041" fileName="GoToOverridenMethod_Action.java" startLine="111" startPosition="57" endLine="112" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1108208212555653196" fileName="GoToOverridenMethod_Action.java" startLine="120" startPosition="81" endLine="121" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1108208212555654378" fileName="GoToOverridenMethod_Action.java" startLine="124" startPosition="66" endLine="125" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1108208212555695832" fileName="GoToOverridenMethod_Action.java" startLine="128" startPosition="94" endLine="129" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1108208212555695838" fileName="GoToOverridenMethod_Action.java" startLine="129" startPosition="89" endLine="130" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1430599794085346274" fileName="GoToOverridenMethod_Action.java" startLine="130" startPosition="78" endLine="131" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9093903716560056039" fileName="GoToOverridenMethod_Action.java" startLine="110" startPosition="149" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1108208212555653191" fileName="GoToOverridenMethod_Action.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInstanceMethodDeclaration#(Ljava/util/Map;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1108208212555654374" fileName="GoToOverridenMethod_Action.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifier#(Ljava/util/Map;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1430599794085346334" fileName="GoToOverridenMethod_Action.java" startLine="131" startPosition="155" endLine="135" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9093903716560055919" fileName="GoToOverridenMethod_Action.java" startLine="98" startPosition="63" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="9093903716560056033" fileName="GoToOverridenMethod_Action.java" startLine="109" startPosition="0" endLine="114" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9093903716560055918" fileName="GoToOverridenMethod_Action.java" startLine="97" startPosition="56" endLine="103" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9093903716560055887" fileName="GoToOverridenMethod_Action.java" startLine="96" startPosition="134" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="9093903716560055879" fileName="GoToOverridenMethod_Action.java" startLine="95" startPosition="48" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1108208212555695821" fileName="GoToOverridenMethod_Action.java" startLine="127" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenMethod#(Ljava/util/Map;)Ljava/util/Set;" />
+    <scopeInfo nodeId="1108208212555649464" fileName="GoToOverridenMethod_Action.java" startLine="44" startPosition="87" endLine="45" endPosition="159" />
+    <scopeInfo nodeId="9093903716560056040" fileName="GoToOverridenMethod_Action.java" startLine="111" startPosition="57" endLine="112" endPosition="25" />
+    <scopeInfo nodeId="1108208212555653193" fileName="GoToOverridenMethod_Action.java" startLine="120" startPosition="81" endLine="121" endPosition="178" />
+    <scopeInfo nodeId="1108208212555654376" fileName="GoToOverridenMethod_Action.java" startLine="124" startPosition="66" endLine="125" endPosition="175" />
+    <scopeInfo nodeId="9093903716560055920" fileName="GoToOverridenMethod_Action.java" startLine="99" startPosition="31" endLine="101" endPosition="139" />
+    <scopeInfo nodeId="9093903716560056039" fileName="GoToOverridenMethod_Action.java" startLine="110" startPosition="149" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="1108208212555653191" fileName="GoToOverridenMethod_Action.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="1108208212555654374" fileName="GoToOverridenMethod_Action.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="9093903716560055919" fileName="GoToOverridenMethod_Action.java" startLine="98" startPosition="63" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="9093903716560055893" fileName="GoToOverridenMethod_Action.java" startLine="97" startPosition="56" endLine="103" endPosition="13" />
+    <scopeInfo nodeId="1108208212555695823" fileName="GoToOverridenMethod_Action.java" startLine="128" startPosition="94" endLine="135" endPosition="6">
       <varInfo nodeId="1108208212555695839" varName="classifier" />
       <varInfo nodeId="1108208212555695833" varName="method" />
       <varInfo nodeId="1430599794085346275" varName="overridenMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="9093903716560055887" fileName="GoToOverridenMethod_Action.java" startLine="97" startPosition="134" endLine="106" endPosition="0">
+    <scopeInfo nodeId="9093903716560055887" fileName="GoToOverridenMethod_Action.java" startLine="96" startPosition="134" endLine="105" endPosition="0">
       <varInfo nodeId="9093903716560055890" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="1108208212555695821" fileName="GoToOverridenMethod_Action.java" startLine="132" startPosition="0" endLine="142" endPosition="0" />
-    <unitInfo nodeId="9093903716560056039" fileName="GoToOverridenMethod_Action.java" startLine="115" startPosition="104" endLine="119" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action$2" />
-    <unitInfo nodeId="9093903716560055919" fileName="GoToOverridenMethod_Action.java" startLine="99" startPosition="51" endLine="104" endPosition="11" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action$2" />
-    <unitInfo nodeId="9093903716560055885" fileName="GoToOverridenMethod_Action.java" startLine="97" startPosition="44" endLine="106" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action$1" />
+    <scopeInfo nodeId="1108208212555695821" fileName="GoToOverridenMethod_Action.java" startLine="127" startPosition="0" endLine="137" endPosition="0" />
+    <unitInfo nodeId="9093903716560056039" fileName="GoToOverridenMethod_Action.java" startLine="110" startPosition="104" endLine="114" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action$2" />
+    <unitInfo nodeId="9093903716560055919" fileName="GoToOverridenMethod_Action.java" startLine="98" startPosition="51" endLine="103" endPosition="11" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action$2" />
+    <unitInfo nodeId="9093903716560055885" fileName="GoToOverridenMethod_Action.java" startLine="96" startPosition="44" endLine="105" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action$1" />
   </root>
   <root nodeId="113917032267548917">
     <nodeInfo nodeId="4991336608511159608" fileName="AbstractOverrideEditorMessage.java" startLine="14" startPosition="98" endLine="15" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReturnTypeCellFinder" />
@@ -284,27 +276,27 @@
     <unitInfo nodeId="1208785739646" fileName="ToDoMessage.java" startLine="13" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ToDoMessage" />
   </root>
   <root nodeId="1208787586603">
-    <nodeInfo nodeId="1215438553604" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="13" startPosition="0" endLine="14" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToDoHighlighter" />
-    <nodeInfo nodeId="2345890179797527164" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="14" startPosition="68" endLine="15" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethodDeclFixer" />
-    <nodeInfo nodeId="5002400195358004832" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="15" startPosition="84" endLine="16" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOverrideMethodsChecker" />
-    <nodeInfo nodeId="1208787714852" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="21" startPosition="42" endLine="22" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1208787714861" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="23" startPosition="30" endLine="24" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3912187081988067498" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="24" startPosition="98" endLine="25" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5002400195358049314" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="25" startPosition="98" endLine="26" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1751532732861406176" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="26" startPosition="105" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1208787749003" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="31" startPosition="45" endLine="32" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1751532732861406187" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="33" startPosition="30" endLine="34" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3912187081988067534" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="34" startPosition="84" endLine="35" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1208787749012" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="35" startPosition="101" endLine="36" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5002400195358049332" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="36" startPosition="101" endLine="37" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1208787714859" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="22" startPosition="70" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1208787749010" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="32" startPosition="70" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1208787714860" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="23" startPosition="30" endLine="27" endPosition="81" />
-    <scopeInfo nodeId="1208787749011" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="33" startPosition="30" endLine="37" endPosition="108" />
-    <scopeInfo nodeId="1208787699615" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="21" startPosition="42" endLine="28" endPosition="5">
+    <nodeInfo nodeId="1215438553604" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="10" startPosition="91" endLine="11" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToDoHighlighter" />
+    <nodeInfo nodeId="2345890179797527164" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="11" startPosition="68" endLine="12" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethodDeclFixer" />
+    <nodeInfo nodeId="5002400195358004832" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="12" startPosition="84" endLine="13" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOverrideMethodsChecker" />
+    <nodeInfo nodeId="1208787714852" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="18" startPosition="42" endLine="19" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1208787714861" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="20" startPosition="30" endLine="21" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3912187081988067498" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="21" startPosition="98" endLine="22" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5002400195358049314" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="22" startPosition="98" endLine="23" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1751532732861406176" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="23" startPosition="105" endLine="24" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1208787749003" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="28" startPosition="45" endLine="29" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1751532732861406187" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="30" startPosition="30" endLine="31" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3912187081988067534" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="31" startPosition="84" endLine="32" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1208787749012" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="32" startPosition="101" endLine="33" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5002400195358049332" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="33" startPosition="101" endLine="34" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1208787714859" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="19" startPosition="70" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1208787749010" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="29" startPosition="70" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1208787714860" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="20" startPosition="30" endLine="24" endPosition="81" />
+    <scopeInfo nodeId="1208787749011" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="30" startPosition="30" endLine="34" endPosition="108" />
+    <scopeInfo nodeId="1208787699615" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="18" startPosition="42" endLine="25" endPosition="5">
       <varInfo nodeId="1208787714853" varName="highlighter" />
     </scopeInfo>
-    <scopeInfo nodeId="1208787738782" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="31" startPosition="45" endLine="38" endPosition="5">
+    <scopeInfo nodeId="1208787738782" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="28" startPosition="45" endLine="35" endPosition="5">
       <varInfo nodeId="1208787749004" varName="highlighter" />
     </scopeInfo>
   </root>
@@ -2014,79 +2006,71 @@
     <unitInfo nodeId="6349997524910394660" fileName="OverridingMethodsFinder.java" startLine="28" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.OverridingMethodsFinder" />
   </root>
   <root nodeId="6556826051425136566">
-    <nodeInfo nodeId="6556826051425203465" fileName="GoToInheritedClassifier_Action.java" startLine="44" startPosition="87" endLine="45" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3703829873956741429" fileName="GoToInheritedClassifier_Action.java" startLine="100" startPosition="9" endLine="101" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3703829873956741439" fileName="GoToInheritedClassifier_Action.java" startLine="104" startPosition="160" endLine="105" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3703829873956741449" fileName="GoToInheritedClassifier_Action.java" startLine="106" startPosition="18" endLine="107" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3703829873956741469" fileName="GoToInheritedClassifier_Action.java" startLine="107" startPosition="128" endLine="108" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6556826051425136649" fileName="GoToInheritedClassifier_Action.java" startLine="111" startPosition="9" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6556826051425136650" fileName="GoToInheritedClassifier_Action.java" startLine="112" startPosition="0" endLine="113" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6556826051425203534" fileName="GoToInheritedClassifier_Action.java" startLine="118" startPosition="79" endLine="119" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8767021959483187138" fileName="GoToInheritedClassifier_Action.java" startLine="124" startPosition="9" endLine="125" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8767021959483187147" fileName="GoToInheritedClassifier_Action.java" startLine="127" startPosition="27" endLine="128" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6556826051425136694" fileName="GoToInheritedClassifier_Action.java" startLine="130" startPosition="9" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3703829873956682814" fileName="GoToInheritedClassifier_Action.java" startLine="131" startPosition="0" endLine="132" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3703829873956720050" fileName="GoToInheritedClassifier_Action.java" startLine="133" startPosition="56" endLine="134" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6556826051425136699" fileName="GoToInheritedClassifier_Action.java" startLine="135" startPosition="14" endLine="136" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6556826051425136709" fileName="GoToInheritedClassifier_Action.java" startLine="136" startPosition="129" endLine="137" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3703829873956720038" fileName="GoToInheritedClassifier_Action.java" startLine="137" startPosition="92" endLine="138" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6556826051425136735" fileName="GoToInheritedClassifier_Action.java" startLine="139" startPosition="7" endLine="140" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7448855087283523757" fileName="GoToInheritedClassifier_Action.java" startLine="146" startPosition="97" endLine="147" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7448855087283552287" fileName="GoToInheritedClassifier_Action.java" startLine="148" startPosition="53" endLine="149" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7448855087283552336" fileName="GoToInheritedClassifier_Action.java" startLine="151" startPosition="186" endLine="152" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7448855087283552278" fileName="GoToInheritedClassifier_Action.java" startLine="155" startPosition="5" endLine="156" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6556826051425203487" fileName="GoToInheritedClassifier_Action.java" startLine="106" startPosition="16" endLine="109" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3703829873956741462" fileName="GoToInheritedClassifier_Action.java" startLine="117" startPosition="31" endLine="120" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7448855087283552320" fileName="GoToInheritedClassifier_Action.java" startLine="150" startPosition="97" endLine="153" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8767021959483187144" fileName="GoToInheritedClassifier_Action.java" startLine="126" startPosition="59" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3703829873956720035" fileName="GoToInheritedClassifier_Action.java" startLine="135" startPosition="12" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8767021959483187143" fileName="GoToInheritedClassifier_Action.java" startLine="125" startPosition="98" endLine="130" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7448855087283552297" fileName="GoToInheritedClassifier_Action.java" startLine="149" startPosition="53" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6556826051425203473" fileName="GoToInheritedClassifier_Action.java" startLine="103" startPosition="27" endLine="109" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6556826051425136672" fileName="GoToInheritedClassifier_Action.java" startLine="116" startPosition="63" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6556826051425136671" fileName="GoToInheritedClassifier_Action.java" startLine="115" startPosition="61" endLine="122" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3703829873956682824" fileName="GoToInheritedClassifier_Action.java" startLine="132" startPosition="34" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7448855087283552282" fileName="GoToInheritedClassifier_Action.java" startLine="147" startPosition="48" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6556826051425136622" fileName="GoToInheritedClassifier_Action.java" startLine="102" startPosition="59" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6556826051425136621" fileName="GoToInheritedClassifier_Action.java" startLine="101" startPosition="88" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6556826051425136664" fileName="GoToInheritedClassifier_Action.java" startLine="114" startPosition="135" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="6556826051425136656" fileName="GoToInheritedClassifier_Action.java" startLine="113" startPosition="55" endLine="124" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7448855087283523750" fileName="GoToInheritedClassifier_Action.java" startLine="145" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="appendEnumConstants#(Ljava/util/List;Ljava/util/Map;)Ljava/util/List;" />
-    <scopeInfo nodeId="6556826051425136744" fileName="GoToInheritedClassifier_Action.java" startLine="44" startPosition="87" endLine="45" endPosition="299" />
-    <scopeInfo nodeId="6556826051425203474" fileName="GoToInheritedClassifier_Action.java" startLine="104" startPosition="160" endLine="105" endPosition="123" />
-    <scopeInfo nodeId="3703829873956741465" fileName="GoToInheritedClassifier_Action.java" startLine="118" startPosition="79" endLine="119" endPosition="210" />
-    <scopeInfo nodeId="8767021959483187145" fileName="GoToInheritedClassifier_Action.java" startLine="127" startPosition="27" endLine="128" endPosition="118" />
-    <scopeInfo nodeId="3703829873956682825" fileName="GoToInheritedClassifier_Action.java" startLine="133" startPosition="56" endLine="134" endPosition="78" />
-    <scopeInfo nodeId="7448855087283552323" fileName="GoToInheritedClassifier_Action.java" startLine="151" startPosition="186" endLine="152" endPosition="65" />
-    <scopeInfo nodeId="6556826051425203488" fileName="GoToInheritedClassifier_Action.java" startLine="106" startPosition="18" endLine="108" endPosition="126" />
-    <scopeInfo nodeId="3703829873956741462" fileName="GoToInheritedClassifier_Action.java" startLine="117" startPosition="31" endLine="120" endPosition="15" />
-    <scopeInfo nodeId="6556826051425136673" fileName="GoToInheritedClassifier_Action.java" startLine="117" startPosition="31" endLine="120" endPosition="15" />
-    <scopeInfo nodeId="3703829873956720036" fileName="GoToInheritedClassifier_Action.java" startLine="135" startPosition="14" endLine="138" endPosition="122">
-      <varInfo nodeId="6556826051425136710" varName="point" />
-      <varInfo nodeId="6556826051425136700" varName="cellBounds" />
-    </scopeInfo>
-    <scopeInfo nodeId="7448855087283552298" fileName="GoToInheritedClassifier_Action.java" startLine="150" startPosition="97" endLine="153" endPosition="9" />
-    <scopeInfo nodeId="7448855087283552320" fileName="GoToInheritedClassifier_Action.java" startLine="150" startPosition="97" endLine="153" endPosition="9" />
-    <scopeInfo nodeId="8767021959483187144" fileName="GoToInheritedClassifier_Action.java" startLine="126" startPosition="59" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="6556826051425136623" fileName="GoToInheritedClassifier_Action.java" startLine="103" startPosition="27" endLine="109" endPosition="11" />
-    <scopeInfo nodeId="6556826051425136672" fileName="GoToInheritedClassifier_Action.java" startLine="116" startPosition="63" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="7448855087283552285" fileName="GoToInheritedClassifier_Action.java" startLine="148" startPosition="53" endLine="154" endPosition="7" />
-    <scopeInfo nodeId="6556826051425136670" fileName="GoToInheritedClassifier_Action.java" startLine="115" startPosition="61" endLine="122" endPosition="13" />
-    <scopeInfo nodeId="7448855087283552282" fileName="GoToInheritedClassifier_Action.java" startLine="147" startPosition="48" endLine="155" endPosition="5" />
-    <scopeInfo nodeId="6556826051425136622" fileName="GoToInheritedClassifier_Action.java" startLine="102" startPosition="59" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="6556826051425136664" fileName="GoToInheritedClassifier_Action.java" startLine="114" startPosition="135" endLine="124" endPosition="0">
+    <nodeInfo nodeId="6556826051425203465" fileName="GoToInheritedClassifier_Action.java" startLine="43" startPosition="87" endLine="44" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3703829873956741429" fileName="GoToInheritedClassifier_Action.java" startLine="99" startPosition="9" endLine="100" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3703829873956741439" fileName="GoToInheritedClassifier_Action.java" startLine="103" startPosition="160" endLine="104" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3703829873956741449" fileName="GoToInheritedClassifier_Action.java" startLine="105" startPosition="18" endLine="106" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3703829873956741469" fileName="GoToInheritedClassifier_Action.java" startLine="106" startPosition="128" endLine="107" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6556826051425136649" fileName="GoToInheritedClassifier_Action.java" startLine="110" startPosition="9" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6556826051425136650" fileName="GoToInheritedClassifier_Action.java" startLine="111" startPosition="0" endLine="112" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6556826051425203534" fileName="GoToInheritedClassifier_Action.java" startLine="117" startPosition="79" endLine="118" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8767021959483187138" fileName="GoToInheritedClassifier_Action.java" startLine="123" startPosition="9" endLine="124" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8767021959483187147" fileName="GoToInheritedClassifier_Action.java" startLine="126" startPosition="27" endLine="127" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6556826051425136694" fileName="GoToInheritedClassifier_Action.java" startLine="129" startPosition="9" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3343883238141237503" fileName="GoToInheritedClassifier_Action.java" startLine="130" startPosition="0" endLine="131" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3343883238141237513" fileName="GoToInheritedClassifier_Action.java" startLine="131" startPosition="127" endLine="132" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3343883238141237539" fileName="GoToInheritedClassifier_Action.java" startLine="132" startPosition="90" endLine="133" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3343883238141237502" fileName="GoToInheritedClassifier_Action.java" startLine="133" startPosition="129" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6556826051425136735" fileName="GoToInheritedClassifier_Action.java" startLine="134" startPosition="0" endLine="135" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7448855087283523757" fileName="GoToInheritedClassifier_Action.java" startLine="141" startPosition="97" endLine="142" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7448855087283552287" fileName="GoToInheritedClassifier_Action.java" startLine="143" startPosition="53" endLine="144" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7448855087283552336" fileName="GoToInheritedClassifier_Action.java" startLine="146" startPosition="186" endLine="147" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7448855087283552278" fileName="GoToInheritedClassifier_Action.java" startLine="150" startPosition="5" endLine="151" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6556826051425203487" fileName="GoToInheritedClassifier_Action.java" startLine="105" startPosition="16" endLine="108" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3703829873956741462" fileName="GoToInheritedClassifier_Action.java" startLine="116" startPosition="31" endLine="119" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7448855087283552320" fileName="GoToInheritedClassifier_Action.java" startLine="145" startPosition="97" endLine="148" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8767021959483187144" fileName="GoToInheritedClassifier_Action.java" startLine="125" startPosition="59" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8767021959483187143" fileName="GoToInheritedClassifier_Action.java" startLine="124" startPosition="98" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7448855087283552297" fileName="GoToInheritedClassifier_Action.java" startLine="144" startPosition="53" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6556826051425203473" fileName="GoToInheritedClassifier_Action.java" startLine="102" startPosition="27" endLine="108" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6556826051425136672" fileName="GoToInheritedClassifier_Action.java" startLine="115" startPosition="63" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6556826051425136671" fileName="GoToInheritedClassifier_Action.java" startLine="114" startPosition="61" endLine="121" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7448855087283552282" fileName="GoToInheritedClassifier_Action.java" startLine="142" startPosition="48" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6556826051425136622" fileName="GoToInheritedClassifier_Action.java" startLine="101" startPosition="59" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6556826051425136621" fileName="GoToInheritedClassifier_Action.java" startLine="100" startPosition="88" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6556826051425136664" fileName="GoToInheritedClassifier_Action.java" startLine="113" startPosition="135" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="6556826051425136656" fileName="GoToInheritedClassifier_Action.java" startLine="112" startPosition="55" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7448855087283523750" fileName="GoToInheritedClassifier_Action.java" startLine="140" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="appendEnumConstants#(Ljava/util/List;Ljava/util/Map;)Ljava/util/List;" />
+    <scopeInfo nodeId="6556826051425136744" fileName="GoToInheritedClassifier_Action.java" startLine="43" startPosition="87" endLine="44" endPosition="299" />
+    <scopeInfo nodeId="6556826051425203474" fileName="GoToInheritedClassifier_Action.java" startLine="103" startPosition="160" endLine="104" endPosition="123" />
+    <scopeInfo nodeId="3703829873956741465" fileName="GoToInheritedClassifier_Action.java" startLine="117" startPosition="79" endLine="118" endPosition="210" />
+    <scopeInfo nodeId="8767021959483187145" fileName="GoToInheritedClassifier_Action.java" startLine="126" startPosition="27" endLine="127" endPosition="118" />
+    <scopeInfo nodeId="7448855087283552323" fileName="GoToInheritedClassifier_Action.java" startLine="146" startPosition="186" endLine="147" endPosition="65" />
+    <scopeInfo nodeId="6556826051425203488" fileName="GoToInheritedClassifier_Action.java" startLine="105" startPosition="18" endLine="107" endPosition="126" />
+    <scopeInfo nodeId="3703829873956741462" fileName="GoToInheritedClassifier_Action.java" startLine="116" startPosition="31" endLine="119" endPosition="15" />
+    <scopeInfo nodeId="6556826051425136673" fileName="GoToInheritedClassifier_Action.java" startLine="116" startPosition="31" endLine="119" endPosition="15" />
+    <scopeInfo nodeId="7448855087283552298" fileName="GoToInheritedClassifier_Action.java" startLine="145" startPosition="97" endLine="148" endPosition="9" />
+    <scopeInfo nodeId="7448855087283552320" fileName="GoToInheritedClassifier_Action.java" startLine="145" startPosition="97" endLine="148" endPosition="9" />
+    <scopeInfo nodeId="8767021959483187144" fileName="GoToInheritedClassifier_Action.java" startLine="125" startPosition="59" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="6556826051425136623" fileName="GoToInheritedClassifier_Action.java" startLine="102" startPosition="27" endLine="108" endPosition="11" />
+    <scopeInfo nodeId="6556826051425136672" fileName="GoToInheritedClassifier_Action.java" startLine="115" startPosition="63" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="7448855087283552285" fileName="GoToInheritedClassifier_Action.java" startLine="143" startPosition="53" endLine="149" endPosition="7" />
+    <scopeInfo nodeId="6556826051425136670" fileName="GoToInheritedClassifier_Action.java" startLine="114" startPosition="61" endLine="121" endPosition="13" />
+    <scopeInfo nodeId="7448855087283552282" fileName="GoToInheritedClassifier_Action.java" startLine="142" startPosition="48" endLine="150" endPosition="5" />
+    <scopeInfo nodeId="6556826051425136622" fileName="GoToInheritedClassifier_Action.java" startLine="101" startPosition="59" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="6556826051425136664" fileName="GoToInheritedClassifier_Action.java" startLine="113" startPosition="135" endLine="123" endPosition="0">
       <varInfo nodeId="6556826051425136667" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="7448855087283523752" fileName="GoToInheritedClassifier_Action.java" startLine="146" startPosition="97" endLine="156" endPosition="18">
+    <scopeInfo nodeId="7448855087283523752" fileName="GoToInheritedClassifier_Action.java" startLine="141" startPosition="97" endLine="151" endPosition="18">
       <varInfo nodeId="7448855087283523758" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7448855087283523750" fileName="GoToInheritedClassifier_Action.java" startLine="145" startPosition="0" endLine="158" endPosition="0">
+    <scopeInfo nodeId="7448855087283523750" fileName="GoToInheritedClassifier_Action.java" startLine="140" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="7448855087283523755" varName="nodes" />
     </scopeInfo>
-    <unitInfo nodeId="8767021959483187144" fileName="GoToInheritedClassifier_Action.java" startLine="126" startPosition="47" endLine="130" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action$3" />
-    <unitInfo nodeId="6556826051425136672" fileName="GoToInheritedClassifier_Action.java" startLine="116" startPosition="51" endLine="122" endPosition="11" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action$3" />
-    <unitInfo nodeId="6556826051425136622" fileName="GoToInheritedClassifier_Action.java" startLine="102" startPosition="47" endLine="111" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action$1" />
-    <unitInfo nodeId="6556826051425136662" fileName="GoToInheritedClassifier_Action.java" startLine="114" startPosition="44" endLine="124" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action$2" />
+    <unitInfo nodeId="8767021959483187144" fileName="GoToInheritedClassifier_Action.java" startLine="125" startPosition="47" endLine="129" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action$3" />
+    <unitInfo nodeId="6556826051425136672" fileName="GoToInheritedClassifier_Action.java" startLine="115" startPosition="51" endLine="121" endPosition="11" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action$3" />
+    <unitInfo nodeId="6556826051425136622" fileName="GoToInheritedClassifier_Action.java" startLine="101" startPosition="47" endLine="110" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action$1" />
+    <unitInfo nodeId="6556826051425136662" fileName="GoToInheritedClassifier_Action.java" startLine="113" startPosition="44" endLine="123" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action$2" />
   </root>
   <root nodeId="6611733346286335531">
     <nodeInfo nodeId="6611733346286335722" fileName="GoToHelper.java" startLine="27" startPosition="124" endLine="28" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2291,80 +2275,72 @@
     <nodeInfo nodeId="8156047350005480585" fileName="PrintNodePosition_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="8596238429278788966">
-    <nodeInfo nodeId="4909195013914164699" fileName="GoToOverridingMethod_Action.java" startLine="40" startPosition="0" endLine="41" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="finderClasses" />
-    <nodeInfo nodeId="4909195013914279244" fileName="GoToOverridingMethod_Action.java" startLine="52" startPosition="127" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4909195013914279248" fileName="GoToOverridingMethod_Action.java" startLine="55" startPosition="5" endLine="56" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4909195013914279283" fileName="GoToOverridingMethod_Action.java" startLine="111" startPosition="9" endLine="112" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5989118282799066311" fileName="GoToOverridingMethod_Action.java" startLine="112" startPosition="82" endLine="113" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5989118282799066325" fileName="GoToOverridingMethod_Action.java" startLine="115" startPosition="27" endLine="116" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6198841441434676138" fileName="GoToOverridingMethod_Action.java" startLine="117" startPosition="85" endLine="118" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6198841441434676145" fileName="GoToOverridingMethod_Action.java" startLine="119" startPosition="96" endLine="120" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4909195013914279275" fileName="GoToOverridingMethod_Action.java" startLine="124" startPosition="9" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8596238429278902891" fileName="GoToOverridingMethod_Action.java" startLine="125" startPosition="0" endLine="126" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4909195013914308759" fileName="GoToOverridingMethod_Action.java" startLine="131" startPosition="68" endLine="132" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8596238429278902985" fileName="GoToOverridingMethod_Action.java" startLine="137" startPosition="9" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3700112560448155551" fileName="GoToOverridingMethod_Action.java" startLine="138" startPosition="0" endLine="139" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3700112560448155556" fileName="GoToOverridingMethod_Action.java" startLine="140" startPosition="56" endLine="141" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4510256390947005985" fileName="GoToOverridingMethod_Action.java" startLine="142" startPosition="14" endLine="143" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4510256390947005995" fileName="GoToOverridingMethod_Action.java" startLine="143" startPosition="129" endLine="144" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3700112560448155612" fileName="GoToOverridingMethod_Action.java" startLine="144" startPosition="92" endLine="145" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4293622255559922847" fileName="GoToOverridingMethod_Action.java" startLine="146" startPosition="7" endLine="147" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4909195013914225263" fileName="GoToOverridingMethod_Action.java" startLine="163" startPosition="65" endLine="164" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4909195013914225598" fileName="GoToOverridingMethod_Action.java" startLine="165" startPosition="31" endLine="166" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4909195013914225535" fileName="GoToOverridingMethod_Action.java" startLine="167" startPosition="5" endLine="168" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4909195013914225301" fileName="GoToOverridingMethod_Action.java" startLine="168" startPosition="45" endLine="169" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4909195013914279233" fileName="GoToOverridingMethod_Action.java" startLine="51" startPosition="79" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6198841441434676143" fileName="GoToOverridingMethod_Action.java" startLine="118" startPosition="81" endLine="121" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4909195013914279319" fileName="GoToOverridingMethod_Action.java" startLine="130" startPosition="31" endLine="133" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4909195013914225557" fileName="GoToOverridingMethod_Action.java" startLine="164" startPosition="47" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3700112560448155571" fileName="GoToOverridingMethod_Action.java" startLine="142" startPosition="12" endLine="146" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4909195013914279206" fileName="GoToOverridingMethod_Action.java" startLine="50" startPosition="87" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6198841441434676136" fileName="GoToOverridingMethod_Action.java" startLine="116" startPosition="122" endLine="122" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8596238429278902860" fileName="GoToOverridingMethod_Action.java" startLine="129" startPosition="63" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8596238429278902859" fileName="GoToOverridingMethod_Action.java" startLine="128" startPosition="61" endLine="135" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3700112560448155554" fileName="GoToOverridingMethod_Action.java" startLine="139" startPosition="34" endLine="146" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6198841441434676132" fileName="GoToOverridingMethod_Action.java" startLine="114" startPosition="59" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8596238429278902775" fileName="GoToOverridingMethod_Action.java" startLine="127" startPosition="135" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="6198841441434676131" fileName="GoToOverridingMethod_Action.java" startLine="113" startPosition="48" endLine="124" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8596238429278847272" fileName="GoToOverridingMethod_Action.java" startLine="126" startPosition="73" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="4909195013914279234" fileName="GoToOverridingMethod_Action.java" startLine="52" startPosition="127" endLine="53" endPosition="20" />
-    <scopeInfo nodeId="6198841441434676144" fileName="GoToOverridingMethod_Action.java" startLine="119" startPosition="96" endLine="120" endPosition="69" />
-    <scopeInfo nodeId="4909195013914279322" fileName="GoToOverridingMethod_Action.java" startLine="131" startPosition="68" endLine="132" endPosition="199" />
-    <scopeInfo nodeId="3700112560448155555" fileName="GoToOverridingMethod_Action.java" startLine="140" startPosition="56" endLine="141" endPosition="78" />
-    <scopeInfo nodeId="4909195013914225558" fileName="GoToOverridingMethod_Action.java" startLine="165" startPosition="31" endLine="166" endPosition="37" />
-    <scopeInfo nodeId="4909195013914279207" fileName="GoToOverridingMethod_Action.java" startLine="51" startPosition="79" endLine="54" endPosition="7" />
-    <scopeInfo nodeId="4909195013914279319" fileName="GoToOverridingMethod_Action.java" startLine="130" startPosition="31" endLine="133" endPosition="15" />
-    <scopeInfo nodeId="8596238429278902861" fileName="GoToOverridingMethod_Action.java" startLine="130" startPosition="31" endLine="133" endPosition="15" />
-    <scopeInfo nodeId="3700112560448155572" fileName="GoToOverridingMethod_Action.java" startLine="142" startPosition="14" endLine="145" endPosition="122">
-      <varInfo nodeId="4510256390947005996" varName="point" />
-      <varInfo nodeId="4510256390947005986" varName="cellBounds" />
-    </scopeInfo>
-    <scopeInfo nodeId="4909195013914225557" fileName="GoToOverridingMethod_Action.java" startLine="164" startPosition="47" endLine="167" endPosition="5">
+    <nodeInfo nodeId="4909195013914164699" fileName="GoToOverridingMethod_Action.java" startLine="39" startPosition="0" endLine="40" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="finderClasses" />
+    <nodeInfo nodeId="4909195013914279244" fileName="GoToOverridingMethod_Action.java" startLine="51" startPosition="127" endLine="52" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4909195013914279248" fileName="GoToOverridingMethod_Action.java" startLine="54" startPosition="5" endLine="55" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4909195013914279283" fileName="GoToOverridingMethod_Action.java" startLine="110" startPosition="9" endLine="111" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5989118282799066311" fileName="GoToOverridingMethod_Action.java" startLine="111" startPosition="82" endLine="112" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5989118282799066325" fileName="GoToOverridingMethod_Action.java" startLine="114" startPosition="27" endLine="115" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6198841441434676138" fileName="GoToOverridingMethod_Action.java" startLine="116" startPosition="85" endLine="117" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6198841441434676145" fileName="GoToOverridingMethod_Action.java" startLine="118" startPosition="96" endLine="119" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4909195013914279275" fileName="GoToOverridingMethod_Action.java" startLine="123" startPosition="9" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8596238429278902891" fileName="GoToOverridingMethod_Action.java" startLine="124" startPosition="0" endLine="125" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4909195013914308759" fileName="GoToOverridingMethod_Action.java" startLine="130" startPosition="68" endLine="131" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8596238429278902985" fileName="GoToOverridingMethod_Action.java" startLine="136" startPosition="9" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3343883238141211266" fileName="GoToOverridingMethod_Action.java" startLine="137" startPosition="0" endLine="138" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3343883238141211276" fileName="GoToOverridingMethod_Action.java" startLine="138" startPosition="127" endLine="139" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3343883238141233959" fileName="GoToOverridingMethod_Action.java" startLine="139" startPosition="90" endLine="140" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3343883238141211263" fileName="GoToOverridingMethod_Action.java" startLine="140" startPosition="129" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4293622255559922847" fileName="GoToOverridingMethod_Action.java" startLine="141" startPosition="0" endLine="142" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4909195013914225263" fileName="GoToOverridingMethod_Action.java" startLine="158" startPosition="65" endLine="159" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4909195013914225598" fileName="GoToOverridingMethod_Action.java" startLine="160" startPosition="31" endLine="161" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4909195013914225535" fileName="GoToOverridingMethod_Action.java" startLine="162" startPosition="5" endLine="163" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4909195013914225301" fileName="GoToOverridingMethod_Action.java" startLine="163" startPosition="45" endLine="164" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4909195013914279233" fileName="GoToOverridingMethod_Action.java" startLine="50" startPosition="79" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6198841441434676143" fileName="GoToOverridingMethod_Action.java" startLine="117" startPosition="81" endLine="120" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4909195013914279319" fileName="GoToOverridingMethod_Action.java" startLine="129" startPosition="31" endLine="132" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4909195013914225557" fileName="GoToOverridingMethod_Action.java" startLine="159" startPosition="47" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4909195013914279206" fileName="GoToOverridingMethod_Action.java" startLine="49" startPosition="87" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6198841441434676136" fileName="GoToOverridingMethod_Action.java" startLine="115" startPosition="122" endLine="121" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8596238429278902860" fileName="GoToOverridingMethod_Action.java" startLine="128" startPosition="63" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8596238429278902859" fileName="GoToOverridingMethod_Action.java" startLine="127" startPosition="61" endLine="134" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6198841441434676132" fileName="GoToOverridingMethod_Action.java" startLine="113" startPosition="59" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8596238429278902775" fileName="GoToOverridingMethod_Action.java" startLine="126" startPosition="135" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="6198841441434676131" fileName="GoToOverridingMethod_Action.java" startLine="112" startPosition="48" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8596238429278847272" fileName="GoToOverridingMethod_Action.java" startLine="125" startPosition="73" endLine="136" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="4909195013914279234" fileName="GoToOverridingMethod_Action.java" startLine="51" startPosition="127" endLine="52" endPosition="20" />
+    <scopeInfo nodeId="6198841441434676144" fileName="GoToOverridingMethod_Action.java" startLine="118" startPosition="96" endLine="119" endPosition="69" />
+    <scopeInfo nodeId="4909195013914279322" fileName="GoToOverridingMethod_Action.java" startLine="130" startPosition="68" endLine="131" endPosition="199" />
+    <scopeInfo nodeId="4909195013914225558" fileName="GoToOverridingMethod_Action.java" startLine="160" startPosition="31" endLine="161" endPosition="37" />
+    <scopeInfo nodeId="4909195013914279207" fileName="GoToOverridingMethod_Action.java" startLine="50" startPosition="79" endLine="53" endPosition="7" />
+    <scopeInfo nodeId="4909195013914279319" fileName="GoToOverridingMethod_Action.java" startLine="129" startPosition="31" endLine="132" endPosition="15" />
+    <scopeInfo nodeId="8596238429278902861" fileName="GoToOverridingMethod_Action.java" startLine="129" startPosition="31" endLine="132" endPosition="15" />
+    <scopeInfo nodeId="4909195013914225557" fileName="GoToOverridingMethod_Action.java" startLine="159" startPosition="47" endLine="162" endPosition="5">
       <varInfo nodeId="4909195013914225561" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="6198841441434676137" fileName="GoToOverridingMethod_Action.java" startLine="117" startPosition="85" endLine="121" endPosition="13">
+    <scopeInfo nodeId="6198841441434676137" fileName="GoToOverridingMethod_Action.java" startLine="116" startPosition="85" endLine="120" endPosition="13">
       <varInfo nodeId="6198841441434676139" varName="finder" />
     </scopeInfo>
-    <scopeInfo nodeId="4909195013914279206" fileName="GoToOverridingMethod_Action.java" startLine="50" startPosition="87" endLine="55" endPosition="5">
+    <scopeInfo nodeId="4909195013914279206" fileName="GoToOverridingMethod_Action.java" startLine="49" startPosition="87" endLine="54" endPosition="5">
       <varInfo nodeId="4909195013914279210" varName="finderClass" />
     </scopeInfo>
-    <scopeInfo nodeId="1910641662758326350" fileName="GoToOverridingMethod_Action.java" startLine="50" startPosition="87" endLine="56" endPosition="17" />
-    <scopeInfo nodeId="6198841441434676136" fileName="GoToOverridingMethod_Action.java" startLine="116" startPosition="122" endLine="122" endPosition="11">
+    <scopeInfo nodeId="1910641662758326350" fileName="GoToOverridingMethod_Action.java" startLine="49" startPosition="87" endLine="55" endPosition="17" />
+    <scopeInfo nodeId="6198841441434676136" fileName="GoToOverridingMethod_Action.java" startLine="115" startPosition="122" endLine="121" endPosition="11">
       <varInfo nodeId="6198841441434676156" varName="finderClass" />
     </scopeInfo>
-    <scopeInfo nodeId="8596238429278902860" fileName="GoToOverridingMethod_Action.java" startLine="129" startPosition="63" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="4909195013914214324" fileName="GoToOverridingMethod_Action.java" startLine="163" startPosition="65" endLine="169" endPosition="29">
+    <scopeInfo nodeId="8596238429278902860" fileName="GoToOverridingMethod_Action.java" startLine="128" startPosition="63" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="4909195013914214324" fileName="GoToOverridingMethod_Action.java" startLine="158" startPosition="65" endLine="164" endPosition="29">
       <varInfo nodeId="4909195013914225264" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6198841441434676133" fileName="GoToOverridingMethod_Action.java" startLine="115" startPosition="27" endLine="122" endPosition="11" />
-    <scopeInfo nodeId="8596238429278902781" fileName="GoToOverridingMethod_Action.java" startLine="128" startPosition="61" endLine="135" endPosition="13" />
-    <scopeInfo nodeId="6198841441434676132" fileName="GoToOverridingMethod_Action.java" startLine="114" startPosition="59" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="8596238429278902775" fileName="GoToOverridingMethod_Action.java" startLine="127" startPosition="135" endLine="137" endPosition="0">
+    <scopeInfo nodeId="6198841441434676133" fileName="GoToOverridingMethod_Action.java" startLine="114" startPosition="27" endLine="121" endPosition="11" />
+    <scopeInfo nodeId="8596238429278902781" fileName="GoToOverridingMethod_Action.java" startLine="127" startPosition="61" endLine="134" endPosition="13" />
+    <scopeInfo nodeId="6198841441434676132" fileName="GoToOverridingMethod_Action.java" startLine="113" startPosition="59" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="8596238429278902775" fileName="GoToOverridingMethod_Action.java" startLine="126" startPosition="135" endLine="136" endPosition="0">
       <varInfo nodeId="8596238429278902778" varName="p" />
     </scopeInfo>
-    <unitInfo nodeId="8596238429278902860" fileName="GoToOverridingMethod_Action.java" startLine="129" startPosition="51" endLine="135" endPosition="11" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action$3" />
-    <unitInfo nodeId="6198841441434676132" fileName="GoToOverridingMethod_Action.java" startLine="114" startPosition="47" endLine="124" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action$1" />
-    <unitInfo nodeId="8596238429278902761" fileName="GoToOverridingMethod_Action.java" startLine="127" startPosition="44" endLine="137" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action$2" />
+    <unitInfo nodeId="8596238429278902860" fileName="GoToOverridingMethod_Action.java" startLine="128" startPosition="51" endLine="134" endPosition="11" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action$3" />
+    <unitInfo nodeId="6198841441434676132" fileName="GoToOverridingMethod_Action.java" startLine="113" startPosition="47" endLine="123" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action$1" />
+    <unitInfo nodeId="8596238429278902761" fileName="GoToOverridingMethod_Action.java" startLine="126" startPosition="44" endLine="136" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action$2" />
   </root>
 </debugInfo>
 

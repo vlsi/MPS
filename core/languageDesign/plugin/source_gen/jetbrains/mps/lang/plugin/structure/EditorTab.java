@@ -17,6 +17,7 @@ public class EditorTab extends BaseConcept implements INamedConcept, ICheckedNam
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String COMMAND_ON_CREATE = "commandOnCreate";
   public static final String BASE_NODE_CONCEPT = "baseNodeConcept";
   public static final String ORDER = "order";
   public static final String LISTEN_BLOCK = "listenBlock";
@@ -68,6 +69,14 @@ public class EditorTab extends BaseConcept implements INamedConcept, ICheckedNam
 
   public void setVirtualPackage(String value) {
     this.setProperty(EditorTab.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getCommandOnCreate() {
+    return this.getBooleanProperty(EditorTab.COMMAND_ON_CREATE);
+  }
+
+  public void setCommandOnCreate(boolean value) {
+    this.setBooleanProperty(EditorTab.COMMAND_ON_CREATE, value);
   }
 
   public AbstractConceptDeclaration getBaseNodeConcept() {

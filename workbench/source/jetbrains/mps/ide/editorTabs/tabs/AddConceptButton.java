@@ -93,20 +93,41 @@ abstract class AddConceptTab {
     private final EditorTabDescriptor myD;
 
     public CreateAction(SNode concept, EditorTabDescriptor d) {
-      super(concept.getName().replaceAll("_","__"), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
+      super(concept.getName().replaceAll("_", "__"), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
       myConcept = concept;
       myD = d;
     }
 
     public void actionPerformed(AnActionEvent e) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      final SNode[] created = new SNode[1];
+
+      final Runnable r1 = new Runnable() {
         public void run() {
-          SNode created = myD.createNode(myBaseNode.getNode(), myConcept);
-          String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
-          created.setProperty(SNode.PACK, mainPack);
-          aspectCreated(created);
+          created[0] = myD.createNode(myBaseNode.getNode(), myConcept);
         }
-      });
+      };
+
+      final Runnable r2 = new Runnable() {
+        public void run() {
+          String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
+          created[0].setProperty(SNode.PACK, mainPack);
+          aspectCreated(created[0]);
+        }
+      };
+
+      if (myD.commandOnCreate()) {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            r1.run();
+            if (created[0] == null) return;
+            r2.run();
+          }
+        });
+      } else {
+        r1.run();
+        if (created[0] == null) return;
+        ModelAccess.instance().runWriteActionInCommand(r2);
+      }
     }
   }
 

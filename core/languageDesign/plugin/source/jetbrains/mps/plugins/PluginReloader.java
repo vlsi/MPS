@@ -31,15 +31,6 @@ import org.jetbrains.annotations.NotNull;
 public class PluginReloader implements ApplicationComponent {
   private ReloadAdapter myReloadListener = new MyReloadAdapter();
 
-  private ProjectManagerAdapter myProjectListener = new ProjectManagerAdapter() {
-    public void projectClosing(Project project) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          disposePlugins();
-        }
-      });
-    }
-  };
   private ClassLoaderManager myClassLoaderManager;
   private ProjectManager myProjectManager;
   private ApplicationPluginManager myPluginManager;
@@ -83,11 +74,9 @@ public class PluginReloader implements ApplicationComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadListener);
-    myProjectManager.addProjectManagerListener(myProjectListener);
   }
 
   public void disposeComponent() {
-    myProjectManager.removeProjectManagerListener(myProjectListener);
     myClassLoaderManager.removeReloadHandler(myReloadListener);
   }
 

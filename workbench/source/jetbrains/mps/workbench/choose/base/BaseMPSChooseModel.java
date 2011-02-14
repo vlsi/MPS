@@ -37,7 +37,7 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
-  private static final Logger LOG = Logger.getLogger(BaseMPSChooseModel.class);
+  protected static final Logger LOG = Logger.getLogger(BaseMPSChooseModel.class);
 
   private Project myProject;
 

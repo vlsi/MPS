@@ -220,7 +220,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.LanguageChecksPlugin_CustomProjectPlugin" file="LanguageChecksPlugin_CustomProjectPlugin.java">
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.LanguageChecker" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />

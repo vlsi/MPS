@@ -108,6 +108,10 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
     return result;
   }
 
+  public boolean commandOnCreate() {
+    return false;
+  }
+
   public SNode createNode(final SNode node, final SNode concept) {
     Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     final JFrame frame = WindowManager.getInstance().getFrame(project);

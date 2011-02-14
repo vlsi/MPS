@@ -83,7 +83,7 @@ import jetbrains.mps.util.CollectionUtil;
             if (areModulesUpdated || !(myNewModuleVFiles.isEmpty())) {
               progressIndicator.setText("Reloading classes... Please wait.");
               ReloadSession.LOG.info("Reloading classes.");
-              ModelAccess.instance().runReadAction(new Runnable() {
+              ModelAccess.instance().runWriteAction(new Runnable() {
                 public void run() {
                   ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
                 }

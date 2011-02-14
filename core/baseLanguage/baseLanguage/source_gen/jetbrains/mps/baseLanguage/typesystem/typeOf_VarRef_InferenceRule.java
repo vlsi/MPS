@@ -21,22 +21,23 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
   }
 
   public void applyRule(final SNode varRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    SNode variableDeclaration = SLinkOperations.getTarget(varRef, "variableDeclaration", false);
     do {
-      SNode matchedNode_lcu2lp_a0 = SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "type", true);
+      SNode matchedNode_lcu2lp_b0 = SLinkOperations.getTarget(variableDeclaration, "type", true);
       {
-        boolean matches_lcu2lp_a0a = false;
+        boolean matches_lcu2lp_a1a = false;
         {
-          SNode matchingNode_lcu2lp_a0a = SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "type", true);
-          if (matchingNode_lcu2lp_a0a != null) {
-            matches_lcu2lp_a0a = SModelUtil_new.isAssignableConcept(matchingNode_lcu2lp_a0a.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+          SNode matchingNode_lcu2lp_a1a = SLinkOperations.getTarget(variableDeclaration, "type", true);
+          if (matchingNode_lcu2lp_a1a != null) {
+            matches_lcu2lp_a1a = SModelUtil_new.isAssignableConcept(matchingNode_lcu2lp_a1a.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
           }
         }
-        if (matches_lcu2lp_a0a) {
+        if (matches_lcu2lp_a1a) {
           {
             SNode _nodeToCheck_1029348928467 = varRef;
             BaseQuickFixProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923263526", 0, intentionProvider);
-            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923238086", true), (SNode) new typeOf_VarRef_InferenceRule.QuotationClass_fse81k_a0a0a0a2a1a0a0().createNode(SLinkOperations.getTarget(matchedNode_lcu2lp_a0, "componentType", true), typeCheckingContext), _info_12389875345);
+            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923238086", true), (SNode) new typeOf_VarRef_InferenceRule.QuotationClass_fse81k_a0a0a0a2a1a1a0().createNode(SLinkOperations.getTarget(matchedNode_lcu2lp_b0, "componentType", true), typeCheckingContext), _info_12389875345);
           }
           break;
         }
@@ -45,7 +46,7 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
         SNode _nodeToCheck_1029348928467 = varRef;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923304964", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923304969", false), (SNode) typeCheckingContext.typeOf(varRef, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923304966", true), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(variableDeclaration, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923304969", false), (SNode) typeCheckingContext.typeOf(varRef, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923304966", true), _info_12389875345);
       }
     } while (false);
   }
@@ -65,8 +66,8 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
     return false;
   }
 
-  public static class QuotationClass_fse81k_a0a0a0a2a1a0a0 {
-    public QuotationClass_fse81k_a0a0a0a2a1a0a0() {
+  public static class QuotationClass_fse81k_a0a0a0a2a1a1a0 {
+    public QuotationClass_fse81k_a0a0a0a2a1a1a0() {
     }
 
     public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {

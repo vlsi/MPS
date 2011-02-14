@@ -52,6 +52,10 @@ public abstract class EditorTabDescriptor implements Comparable<EditorTabDescrip
     return new ArrayList<SNode>();
   }
 
+  public boolean commandOnCreate(){
+    return true;
+  }
+
   public SNode createNode(SNode baseNode, SNode concept) {
     throw new UnsupportedOperationException();
   }

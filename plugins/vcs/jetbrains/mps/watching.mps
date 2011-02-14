@@ -2,6 +2,12 @@
 <model modelUID="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)">
   <persistence version="6" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
+  <import index="19" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="21" modelUID="f:java_stub#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" version="-1" />
+  <import index="8" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="24" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="23" modelUID="f:java_stub#com.intellij.openapi.vfs(com.intellij.openapi.vfs@java_stub)" version="-1" />
   <import index="1" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" implicit="yes" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
@@ -9,7 +15,6 @@
   <import index="5" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" implicit="yes" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="7" modelUID="f:java_stub#com.intellij.openapi.vfs.newvfs(com.intellij.openapi.vfs.newvfs@java_stub)" version="-1" implicit="yes" />
-  <import index="8" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" implicit="yes" />
   <import index="9" modelUID="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)" version="-1" implicit="yes" />
   <import index="10" modelUID="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" version="-1" implicit="yes" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" implicit="yes" />
@@ -20,12 +25,8 @@
   <import index="16" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" implicit="yes" />
   <import index="17" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" implicit="yes" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.library(jetbrains.mps.library@java_stub)" version="-1" implicit="yes" />
-  <import index="19" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" implicit="yes" />
   <import index="20" modelUID="f:java_stub#com.intellij.openapi.util.io(com.intellij.openapi.util.io@java_stub)" version="-1" implicit="yes" />
-  <import index="21" modelUID="f:java_stub#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" version="-1" implicit="yes" />
   <import index="22" modelUID="f:java_stub#com.intellij.util(com.intellij.util@java_stub)" version="-1" implicit="yes" />
-  <import index="23" modelUID="f:java_stub#com.intellij.openapi.vfs(com.intellij.openapi.vfs@java_stub)" version="-1" implicit="yes" />
-  <import index="24" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" implicit="yes" />
   <import index="25" modelUID="f:java_stub#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" implicit="yes" />
   <import index="26" modelUID="f:java_stub#jetbrains.mps.ide.vfs(jetbrains.mps.ide.vfs@java_stub)" version="-1" implicit="yes" />
   <import index="27" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" implicit="yes" />
@@ -2769,7 +2770,7 @@
                                           <link role="6.baseMethodDeclaration:3" targetNodeId="24.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" />
                                         </node>
                                         <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247361935">
-                                          <link role="6.baseMethodDeclaration:3" targetNodeId="24.~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" />
+                                          <link role="6.baseMethodDeclaration:3" targetNodeId="24.~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolveInfo="runWriteAction" />
                                           <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4707157387247361936">
                                             <node role="6.creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="4707157387247361937">
                                               <node role="6.cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="4707157387247361938">

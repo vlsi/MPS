@@ -21,6 +21,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new RunConfigPropertyInstance_property_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ActionParameterReference_parameter_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ActionInstance_action_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ActionConstructionParameterDeclaration_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

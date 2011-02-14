@@ -39,23 +39,26 @@ abstract class ChooseFromStubsByNameModel implements ChooseByNameModel {
 
   ChooseFromStubsByNameModel() {
     ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
       public void run() {
         for (IModule m : GlobalScope.getInstance().getVisibleModules()) {
+          boolean hasStubs = false;
           for (SModelDescriptor sd : m.getOwnModelDescriptors()) {
             if (SModelStereotype.isStubModelStereotype(sd.getStereotype())) {
-              final List<BaseSNodeDescriptor> descriptors = StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(m);
-              for (BaseSNodeDescriptor descriptor : descriptors) {
-                String name = getName(descriptor);
-                List<BaseSNodeDescriptor> descriptorList = myPossibleNodes.get(name);
-                if (descriptorList == null) {
-                  descriptorList = new ArrayList<BaseSNodeDescriptor>();
-                  myPossibleNodes.put(name, descriptorList);
-                }
-                descriptorList.add(descriptor);
-              }
+              hasStubs = true;
               break;
             }
+          }
+          if (!hasStubs) continue;
+
+          final List<BaseSNodeDescriptor> descriptors = StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(m);
+          for (BaseSNodeDescriptor descriptor : descriptors) {
+            String name = getName(descriptor);
+            List<BaseSNodeDescriptor> descriptorList = myPossibleNodes.get(name);
+            if (descriptorList == null) {
+              descriptorList = new ArrayList<BaseSNodeDescriptor>();
+              myPossibleNodes.put(name, descriptorList);
+            }
+            descriptorList.add(descriptor);
           }
         }
       }

@@ -36,7 +36,7 @@ public class typeof_LocalInstanceMethodCall_InferenceRule extends AbstractInfere
     SNode methodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
     final SNode methodClassifier = SNodeOperations.getAncestor(methodDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
-    RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, methodCall, SLinkOperations.getTarget(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "returnType", true), mmap);
+    RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, methodCall, SLinkOperations.getTarget(methodDeclaration, "returnType", true), mmap);
     SNode currentClassifier = SNodeOperations.getAncestor(methodCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     while (currentClassifier != null && currentClassifier != methodClassifier && !(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(currentClassifier, methodCall, IClassifiersSearchScope.INSTANCE_METHOD)).contains(methodDeclaration))) {
       currentClassifier = SNodeOperations.getAncestor(currentClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);

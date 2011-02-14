@@ -115,8 +115,18 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
+            if (descriptor == null) {
+              LOG.error("Can't find model descriptor for: " + object.getModelReference());
+              return;
+            }
+
             SModel model = descriptor.getSModel();
             SNode node = object.getNode(model);
+            if (node == null) {
+              LOG.error("Can't find node for: " + object.getId());
+              return;
+            }
+
             myProject.getComponent(MPSEditorOpener.class).openNode(node);
           }
         });

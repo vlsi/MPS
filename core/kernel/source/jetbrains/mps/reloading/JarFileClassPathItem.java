@@ -76,6 +76,8 @@ public class JarFileClassPathItem extends RealClassPathItem {
     InputStream inp = null;
     try {
       inp = myZipFile.getInputStream(entry);
+      if (inp == null) return null;
+
       byte[] result = new byte[(int) entry.getSize()];
 
       ReadUtil.read(result, inp);
@@ -224,7 +226,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
         buildPackageCaches(pack);
         myCache.addClass(InternUtil.intern(pack), InternUtil.intern(className));
 
-        String fullClassName =pack.length() > 0? pack + "." + className:className;
+        String fullClassName = pack.length() > 0 ? pack + "." + className : className;
         myEntries.put(InternUtil.intern(fullClassName), entry);
       }
     }

@@ -154,7 +154,9 @@ public class TabbedEditor extends BaseNodeEditor {
       public void run() {
         if (state instanceof TabbedEditorState) {
           SNode node = ((TabbedEditorState) state).myCurrentNode.getNode();
-          showNode(node, false);
+          if (node != null) {
+            showNode(node, false);
+          }
         } else {
           //regular editor was shown for that node last time
           showNode(myBaseNode.getNode(), false);

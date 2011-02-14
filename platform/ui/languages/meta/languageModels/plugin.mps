@@ -61,10 +61,12 @@
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725727">
       <property name="name" nameId="tpck.1169194664001" value="UICode" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="sqp9.8381258131358158044" resolveInfo="UIObject" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725743">
       <property name="name" nameId="tpck.1169194664001" value="Code" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="sqp9.8381258131358158046" resolveInfo="Event" />
     </node>
   </roots>
