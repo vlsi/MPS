@@ -51,6 +51,20 @@ public class IfEqualsNullAll extends DataFlowConstructor {
         }
       }
     }
+    if (SLinkOperations.getTargets(node, "elsifClauses", true) != null) {
+      for (SNode var : vars) {
+        {
+          Object object = ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first();
+          if (((Program) o).contains(object)) {
+            boolean before = true;
+            int position = ((Program) (o)).getStart(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first());
+            Instruction instruction = new notNullInstruction(var);
+            instruction.setSource(node);
+            ((Program) (o)).insert(instruction, position, true, before);
+          }
+        }
+      }
+    }
     for (SNode var : vars) {
       {
         Object object = SNodeOperations.getParent(var);
