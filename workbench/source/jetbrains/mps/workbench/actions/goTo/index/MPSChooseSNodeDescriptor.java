@@ -22,7 +22,6 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
@@ -77,7 +76,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
 
       boolean needToLoad = false;
       for (BaseSNodeDescriptor snd : descriptors.get(0)) {
-        if (cm.hasGetter(snd.getConceptFqName(), INamedConcept.NAME)) {
+        if (cm.hasGetter(snd.getConceptFqName(), SNodeUtil.property_INamedConcept_name)) {
           needToLoad = true;
           break;
         }
