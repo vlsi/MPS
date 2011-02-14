@@ -390,7 +390,9 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.OldMergeModelsDialog" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffRequest" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.MergeModelsDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.ModelUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ModelMergeRequest" />
@@ -404,7 +406,7 @@
     <classNode dependClassName="com.intellij.openapi.diff.DiffContent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDiffTool" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffManager" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode extendsClassName="com.intellij.openapi.diff.DiffTool" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.OldChangeEditorMessage" file="OldChangeEditorMessage.java">
