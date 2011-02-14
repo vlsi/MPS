@@ -25,13 +25,12 @@ public class AddBlockOperation extends AbstractBlockOperation {
   
   public AddBlockOperation(Block block) {
     myBlock = block;
-    myPresentation = "Added : [" + myBlock.getPresentation() + "]"; 
     myEquationInfo = new EquationInfo(null, " ", block.getNodeModel(), block.getNodeId());
   }
 
   @Override
   public String getPresentation() {
-    return myPresentation;
+    return "Added : [" + myBlock.getPresentation() + "]";
   }
 
   @Override

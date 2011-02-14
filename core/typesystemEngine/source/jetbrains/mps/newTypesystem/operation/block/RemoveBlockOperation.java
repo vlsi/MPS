@@ -25,14 +25,13 @@ public class RemoveBlockOperation extends AbstractBlockOperation {
 
   public RemoveBlockOperation(Block block) {
     myBlock = block;
-    String prefix = myBlock.getBlockKind() == BlockKind.WHEN_CONCRETE ? "Executed : [" : "Solved : [";
-    myPresentation = prefix + myBlock.getPresentation() + "]";
     myEquationInfo = new EquationInfo(null, " ", block.getNodeModel(), block.getNodeId());
   }
 
   @Override
   public String getPresentation() {
-    return myPresentation;
+    String prefix = myBlock.getBlockKind() == BlockKind.WHEN_CONCRETE ? "Executed : [" : "Solved : [";
+    return prefix + myBlock.getPresentation() + "]";
   }
 
   @Override

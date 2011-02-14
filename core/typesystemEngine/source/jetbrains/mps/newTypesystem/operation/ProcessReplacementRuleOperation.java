@@ -13,33 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.operation.equation;
+package jetbrains.mps.newTypesystem.operation;
 
-import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 8, 2010
- * Time: 1:17:32 PM
+ * Date: Feb 14, 2011
+ * Time: 8:05:15 PM
  */
-public abstract class AbstractEquationOperation extends AbstractOperation {
-  SNode myChild;
-  SNode myParent;
+public class ProcessReplacementRuleOperation extends AddRemarkOperation {
+  private SNode mySubType;
+  private SNode mySuperType;
 
-  AbstractEquationOperation(SNode child, SNode parent, SNode source, EquationInfo info) {
-    myChild = child;
-    mySource = source;
-    myParent = parent;
-    myEquationInfo = info;
+  public ProcessReplacementRuleOperation(SNode subType, SNode superType, Runnable runnable) {
+    super(runnable);
+    mySubType = subType;
+    mySuperType = superType;
   }
 
   @Override
-  public String getShortPresentation() {
-    return myChild + " = " + myParent;
+  public String getPresentation() {
+    return mySubType + " is subtype of " + mySuperType + " by replacement rule";
   }
-
-
 }
+

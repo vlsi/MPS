@@ -37,6 +37,11 @@ public class AddRemarkOperation extends AbstractOperation {
     myAction = runnable;
   }
 
+  public AddRemarkOperation(Runnable runnable) {
+    myAction = runnable;
+    myString = "";
+  }
+
   @Override
   public String getPresentation() {
     return myString;
