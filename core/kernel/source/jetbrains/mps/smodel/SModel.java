@@ -61,10 +61,10 @@ public class SModel {
   private Throwable myDisposedStacktrace = null;
 
   public SModel(@NotNull SModelReference modelReference) {
-    this(modelReference,new UniversalOptimizedNodeIdMap());
+    this(modelReference, new UniversalOptimizedNodeIdMap());
   }
 
-  public SModel(@NotNull SModelReference modelReference,INodeIdToNodeMap map) {
+  public SModel(@NotNull SModelReference modelReference, INodeIdToNodeMap map) {
     myReference = modelReference;
     myIdToNodeMap = map;
   }
@@ -492,7 +492,7 @@ public class SModel {
 
   //---------imports manipulation--------
 
-  public ModelDependenciesManager getModelDepsManager(){
+  public ModelDependenciesManager getModelDepsManager() {
     return new ModelDependenciesManager(this);
   }
 
@@ -968,6 +968,7 @@ public class SModel {
   @Nullable
   public SNode getNodeById(String idString) {
     SNodeId nodeId = SNodeId.fromString(idString);
+    assert nodeId != null : "wrong node id string";
     return getNodeById(nodeId);
   }
 }
