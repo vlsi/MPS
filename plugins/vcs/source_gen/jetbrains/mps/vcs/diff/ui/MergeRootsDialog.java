@@ -17,6 +17,7 @@ import jetbrains.mps.vcs.diff.MergeContextState;
 import javax.swing.JSplitPane;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -71,7 +72,7 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
     splitPane.setResizeWeight(0.7);
     myContainer = new JPanel(new BorderLayout());
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ApplyNonConflictsForRoot(myMergeContext, this));
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(GoToNeighbourOccurence.previousInstance(myMergeContext, this), GoToNeighbourOccurence.nextInstance(myMergeContext, this), Separator.getInstance(), new ApplyNonConflictsForRoot(myMergeContext, this));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     toolbar.updateActionsImmediately();
 
@@ -195,6 +196,10 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     return myRootId;
   }
 
+  /*package*/ MergeModelsDialog getModelsDialog() {
+    return myModelsDialog;
+  }
+
   protected JComponent getMainComponent() {
     return myContainer;
   }
@@ -226,8 +231,7 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             myMergeContext.applyAllNonConflictingChanges(myRootId);
-            myStateToRestore = null;
-            dispose();
+            saveAndClose();
           }
         });
         return;
@@ -237,7 +241,10 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
         return;
       }
     }
+    saveAndClose();
+  }
 
+  public void saveAndClose() {
     myStateToRestore = null;
     dispose();
   }

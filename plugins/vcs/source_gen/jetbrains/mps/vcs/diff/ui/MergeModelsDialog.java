@@ -22,16 +22,21 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.JScrollPane;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
-import jetbrains.mps.ide.ui.MPSTree;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import javax.swing.tree.TreeNode;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.icons.IconManager;
 import org.apache.commons.lang.StringUtils;
@@ -42,8 +47,6 @@ import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class MergeModelsDialog extends BaseDialog {
   public static final Icon APPLY_NON_CONFLICTS = IconLoader.getIcon("/diff/applyNotConflicts.png", Icons.class);
@@ -104,6 +107,58 @@ public class MergeModelsDialog extends BaseDialog {
     return myOperationContext;
   }
 
+  @Nullable
+  public SNodeId getPreviousRoot(@NotNull SNodeId rootId) {
+    return getNeighbourRoot(rootId, false);
+  }
+
+  @Nullable
+  public SNodeId getNextRoot(@NotNull SNodeId rootId) {
+    return getNeighbourRoot(rootId, true);
+  }
+
+  @Nullable
+  private SNodeId getNeighbourRoot(@NotNull SNodeId rootId, boolean next) {
+    MPSTreeNode modelTreeNode = myMergeModelsTree.getRootNode();
+    MergeModelsDialog.RootTreeNode rootTreeNode = findRootTreeNode(rootId);
+    if (rootTreeNode == null) {
+      return null;
+    } else {
+      TreeNode neighbour = (next ?
+        modelTreeNode.getChildAfter(rootTreeNode) :
+        modelTreeNode.getChildBefore(rootTreeNode)
+      );
+      if (neighbour == null) {
+        return null;
+      } else {
+        return ((MergeModelsDialog.RootTreeNode) neighbour).myRootId;
+      }
+    }
+  }
+
+  private MergeModelsDialog.RootTreeNode findRootTreeNode(SNodeId rootId) {
+    MPSTreeNode modelTreeNode = myMergeModelsTree.getRootNode();
+    for (MPSTreeNode rootTreeNode : Sequence.fromIterable(modelTreeNode)) {
+      if (rootId.equals(((MergeModelsDialog.RootTreeNode) rootTreeNode).myRootId)) {
+        return ((MergeModelsDialog.RootTreeNode) rootTreeNode);
+      }
+    }
+    return null;
+  }
+
+  public void invokeMergeRoots(final SNodeId rootId) {
+    final MergeModelsDialog.RootTreeNode rootTreeNode = findRootTreeNode(rootId);
+    assert rootTreeNode != null;
+    final Wrappers._T<MergeRootsDialog> mergeRootsDialog = new Wrappers._T<MergeRootsDialog>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        mergeRootsDialog.value = new MergeRootsDialog(MergeModelsDialog.this, myMergeContext, rootId, rootTreeNode.myPresentations);
+      }
+    });
+    mergeRootsDialog.value.showDialog();
+    mergeRootsDialog.value.toFront();
+  }
+
   public static boolean isNewMergeEnabled() {
     return "true".equals(System.getProperty("mps.newmerge"));
   }
@@ -115,17 +170,17 @@ public class MergeModelsDialog extends BaseDialog {
     }
 
     protected MPSTreeNode rebuild() {
-      final MergeModelsDialog.MyModelTreeNode modelNode = new MergeModelsDialog.MyModelTreeNode();
-      SetSequence.fromSet(myMergeContext.getAffectedRoots()).<MergeModelsDialog.MyRootTreeNode>select(new ISelector<SNodeId, MergeModelsDialog.MyRootTreeNode>() {
-        public MergeModelsDialog.MyRootTreeNode select(SNodeId r) {
-          return new MergeModelsDialog.MyRootTreeNode(r);
+      final MergeModelsDialog.ModelTreeNode modelNode = new MergeModelsDialog.ModelTreeNode();
+      SetSequence.fromSet(myMergeContext.getAffectedRoots()).<MergeModelsDialog.RootTreeNode>select(new ISelector<SNodeId, MergeModelsDialog.RootTreeNode>() {
+        public MergeModelsDialog.RootTreeNode select(SNodeId r) {
+          return new MergeModelsDialog.RootTreeNode(r);
         }
-      }).sort(new ISelector<MergeModelsDialog.MyRootTreeNode, Comparable<?>>() {
-        public Comparable<?> select(MergeModelsDialog.MyRootTreeNode rtn) {
+      }).sort(new ISelector<MergeModelsDialog.RootTreeNode, Comparable<?>>() {
+        public Comparable<?> select(MergeModelsDialog.RootTreeNode rtn) {
           return rtn.myPresentations;
         }
-      }, true).visitAll(new IVisitor<MergeModelsDialog.MyRootTreeNode>() {
-        public void visit(MergeModelsDialog.MyRootTreeNode rtn) {
+      }, true).visitAll(new IVisitor<MergeModelsDialog.RootTreeNode>() {
+        public void visit(MergeModelsDialog.RootTreeNode rtn) {
           modelNode.add(rtn);
         }
       });
@@ -139,8 +194,8 @@ public class MergeModelsDialog extends BaseDialog {
     }
   }
 
-  private class MyModelTreeNode extends MPSTreeNode {
-    public MyModelTreeNode() {
+  private class ModelTreeNode extends MPSTreeNode {
+    public ModelTreeNode() {
       super(myOperationContext);
       setNodeIdentifier("model");
     }
@@ -152,11 +207,11 @@ public class MergeModelsDialog extends BaseDialog {
     }
   }
 
-  private class MyRootTreeNode extends MPSTreeNode {
+  private class RootTreeNode extends MPSTreeNode {
     private SNodeId myRootId;
     private String myPresentations;
 
-    public MyRootTreeNode(SNodeId rootId) {
+    public RootTreeNode(SNodeId rootId) {
       super(myOperationContext);
       myRootId = rootId;
       setNodeIdentifier("" + myRootId);
@@ -245,14 +300,7 @@ public class MergeModelsDialog extends BaseDialog {
 
     @Override
     public void doubleClick() {
-      final Wrappers._T<MergeRootsDialog> mergeRootsDialog = new Wrappers._T<MergeRootsDialog>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          mergeRootsDialog.value = new MergeRootsDialog(MergeModelsDialog.this, myMergeContext, myRootId, myPresentations);
-        }
-      });
-      mergeRootsDialog.value.showDialog();
-      mergeRootsDialog.value.toFront();
+      invokeMergeRoots(myRootId);
     }
   }
 }
