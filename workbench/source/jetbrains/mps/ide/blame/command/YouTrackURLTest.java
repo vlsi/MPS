@@ -20,7 +20,6 @@ import jetbrains.mps.ide.blame.perform.Response;
 import junit.framework.TestCase;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
-import org.apache.commons.httpclient.HttpRecoverableException;
 
 import java.io.IOException;
 import java.io.InterruptedIOException;

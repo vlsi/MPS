@@ -22,8 +22,6 @@ import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.workbench.action.ActionUtils;
 
-import javax.swing.JCheckBox;
-
 public class SupertypesViewTool extends AbstractHierarchyView {
   public SupertypesViewTool(Project project) {
     super(project, "Supertypes", -1, Icons.DEFAULT_ICON);

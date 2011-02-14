@@ -18,7 +18,6 @@ package jetbrains.mps.plugins;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.project.ProjectManagerAdapter;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
