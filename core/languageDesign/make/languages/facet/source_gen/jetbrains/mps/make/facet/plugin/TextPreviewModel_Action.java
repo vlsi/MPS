@@ -83,7 +83,7 @@ public class TextPreviewModel_Action extends GeneratedAction {
       IResult res = new WorkbenchMakeService(((IOperationContext) MapSequence.fromMap(_params).get("context")), cmon, true).make(new ModelsToResources(((IOperationContext) MapSequence.fromMap(_params).get("context")), Sequence.<SModelDescriptor>singleton(md)).resources(false), scr);
 
       if (res.isSucessful()) {
-        FResource fres = new FResource().assignFrom((FResource) Sequence.fromIterable(res.output()).first());
+        FResource fres = (FResource) Sequence.fromIterable(res.output()).first();
 
         TextPreviewFile tfile = new TextPreviewFile(md.getSModelReference().getSModelFqName().getCompactPresentation(), "Generated text for " + md.getSModelReference().getSModelFqName().getLongName(), fres.contents());
         FileEditorManager.getInstance(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()).openTextEditor(new OpenFileDescriptor(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject(), tfile), true);

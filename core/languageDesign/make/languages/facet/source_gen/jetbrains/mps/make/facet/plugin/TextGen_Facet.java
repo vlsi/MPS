@@ -86,7 +86,7 @@ public class TextGen_Facet implements IFacet {
               for (IResource resource : Sequence.fromIterable(input)) {
                 final FileProcessor fileProc = new FileProcessor();
 
-                GResource gres = new GResource().assignFrom((GResource) resource);
+                GResource gres = (GResource) resource;
                 monitor.currentProgress().advanceWork("Writing", 50, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
                 if (!(gres.status().isOk())) {
                   Logger.getLogger("jetbrains.mps.make.TextGen").error("Generation was not OK");
@@ -187,7 +187,7 @@ public class TextGen_Facet implements IFacet {
           switch (0) {
             case 0:
               for (IResource resource : Sequence.fromIterable(input)) {
-                GResource gres = new GResource().assignFrom((GResource) resource);
+                GResource gres = (GResource) resource;
                 Map<String, String> texts = MapSequence.fromMap(new HashMap<String, String>());
                 String prefix = JavaNameUtil.packageNameForModelUID(gres.status().getOutputModel().getSModelReference());
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="CResource.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.smodel.resources.CResource" />
   <unitInfo fileName="TResource.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.smodel.resources.TResource" />
+  <unitInfo fileName="CResource.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.smodel.resources.CResource" />
   <unitInfo fileName="MResource.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.smodel.resources.MResource" />
-  <unitInfo fileName="FResource.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.smodel.resources.FResource" />
   <unitInfo fileName="GResource.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.smodel.resources.GResource" />
+  <unitInfo fileName="FResource.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.smodel.resources.FResource" />
   <root nodeId="7219626660275504879">
     <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="106" startPosition="27" endLine="106" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="113" startPosition="27" endLine="113" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

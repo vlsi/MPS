@@ -153,7 +153,7 @@ public class EmbeddableEditor {
     };
     IResult res = new WorkbenchMakeService(myContext, cmon, true).make(new ModelsToResources(myContext, Sequence.<SModelDescriptor>singleton(myModel)).resources(false), scr);
     if (res.isSucessful()) {
-      CResource out = new CResource().assignFrom((CResource) Sequence.fromIterable(res.output()).first());
+      CResource out = (CResource) Sequence.fromIterable(res.output()).first();
       return out.classes();
     }
     return null;
