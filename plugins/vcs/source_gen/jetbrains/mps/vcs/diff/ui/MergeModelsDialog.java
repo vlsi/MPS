@@ -16,6 +16,7 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
+import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -30,23 +31,27 @@ import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import java.util.List;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import javax.swing.JPopupMenu;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.icons.IconManager;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.awt.Color;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.workbench.action.BaseAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 
 public class MergeModelsDialog extends BaseDialog {
   public static final Icon APPLY_NON_CONFLICTS = IconLoader.getIcon("/diff/applyNotConflicts.png", Icons.class);
@@ -56,7 +61,8 @@ public class MergeModelsDialog extends BaseDialog {
   private MergeContext myMergeContext;
   private MergeModelsDialog.MergeModelsTree myMergeModelsTree;
   private JPanel myPanel = new JPanel(new BorderLayout());
-  private boolean myCancelled = false;
+  private boolean myApplyChanges = false;
+  private boolean myRootsDialogInvoked = false;
 
   public MergeModelsDialog(Project project, IOperationContext operationContext, SModel baseModel, SModel mineModel, SModel repositoryModel) {
     super(WindowManager.getInstance().getFrame(project), "Merging " + SModelOperations.getModelName(baseModel));
@@ -65,7 +71,7 @@ public class MergeModelsDialog extends BaseDialog {
     myMergeContext = new MergeContext(baseModel, mineModel, repositoryModel);
     myMergeModelsTree = new MergeModelsDialog.MergeModelsTree();
 
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new MergeNonConflictingRoots(myMergeContext, this));
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new MergeNonConflictingRoots(myMergeContext, this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this));
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     toolbar.updateActionsImmediately();
     myPanel.add(toolbar.getComponent(), BorderLayout.NORTH);
@@ -83,19 +89,19 @@ public class MergeModelsDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void ok() {
+    myApplyChanges = true;
     dispose();
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void cancel() {
-    myCancelled = true;
     dispose();
   }
 
   public SModel getResultModel() {
-    return (myCancelled ?
-      null :
-      myMergeContext.getResultModel()
+    return (myApplyChanges ?
+      myMergeContext.getResultModel() :
+      null
     );
   }
 
@@ -149,6 +155,10 @@ public class MergeModelsDialog extends BaseDialog {
   public void invokeMergeRoots(final SNodeId rootId) {
     final MergeModelsDialog.RootTreeNode rootTreeNode = findRootTreeNode(rootId);
     assert rootTreeNode != null;
+    if (myRootsDialogInvoked) {
+      return;
+    }
+    myRootsDialogInvoked = true;
     final Wrappers._T<MergeRootsDialog> mergeRootsDialog = new Wrappers._T<MergeRootsDialog>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -157,6 +167,41 @@ public class MergeModelsDialog extends BaseDialog {
     });
     mergeRootsDialog.value.showDialog();
     mergeRootsDialog.value.toFront();
+  }
+
+  public void acceptVersionForSelectedRoots(boolean mine) {
+    final List<ModelChange> changesToApply = ListSequence.fromList(new ArrayList<ModelChange>());
+    final List<ModelChange> changesToExclude = ListSequence.fromList(new ArrayList<ModelChange>());
+    for (MergeModelsDialog.RootTreeNode rtn : Sequence.fromIterable(Sequence.fromArray(myMergeModelsTree.getSelectedNodes(MergeModelsDialog.RootTreeNode.class, null)))) {
+      for (ModelChange change : ListSequence.fromList(myMergeContext.getChangesForRoot(rtn.myRootId))) {
+        if (!(myMergeContext.isChangeResolved(change))) {
+          if (mine == myMergeContext.isMyChange(change)) {
+            ListSequence.fromList(changesToApply).addElement(change);
+          } else {
+            ListSequence.fromList(changesToExclude).addElement(change);
+          }
+        }
+      }
+    }
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        ListSequence.fromList(changesToApply).visitAll(new IVisitor<ModelChange>() {
+          public void visit(ModelChange ch) {
+            myMergeContext.applyChange(ch);
+          }
+        });
+        ListSequence.fromList(changesToExclude).visitAll(new IVisitor<ModelChange>() {
+          public void visit(ModelChange ch) {
+            myMergeContext.excludeChange(ch);
+          }
+        });
+        myMergeModelsTree.rebuildNow();
+      }
+    });
+  }
+
+  /*package*/ void rootsDialogClosed() {
+    myRootsDialogInvoked = false;
   }
 
   public static boolean isNewMergeEnabled() {
@@ -191,6 +236,16 @@ public class MergeModelsDialog extends BaseDialog {
     public void rebuildNow() {
       super.rebuildNow();
       expandAll();
+    }
+
+    @Override
+    protected JPopupMenu createPopupMenu(MPSTreeNode node) {
+      if (node instanceof MergeModelsDialog.RootTreeNode) {
+        DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new MergeModelsDialog.MergeRootsAction(((MergeModelsDialog.RootTreeNode) node).myRootId), AcceptYoursTheirs.yoursInstance(MergeModelsDialog.this), AcceptYoursTheirs.theirsInstance(MergeModelsDialog.this));
+        return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, actionGroup).getComponent();
+      } else {
+        return null;
+      }
     }
   }
 
@@ -300,6 +355,20 @@ public class MergeModelsDialog extends BaseDialog {
 
     @Override
     public void doubleClick() {
+      invokeMergeRoots(myRootId);
+    }
+  }
+
+  /*package*/ class MergeRootsAction extends BaseAction {
+    private SNodeId myRootId;
+
+    public MergeRootsAction(SNodeId rootId) {
+      super("Merge Root");
+      myRootId = rootId;
+      setDisableOnNoProject(false);
+    }
+
+    protected void doExecute(AnActionEvent event, Map<String, Object> map) {
       invokeMergeRoots(myRootId);
     }
   }

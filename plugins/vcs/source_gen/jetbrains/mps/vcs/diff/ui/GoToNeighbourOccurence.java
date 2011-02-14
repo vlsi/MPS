@@ -14,7 +14,7 @@ public abstract class GoToNeighbourOccurence extends BaseAction {
   private MergeContext myMergeContext;
   protected MergeRootsDialog myMergeRootsDialog;
 
-  public GoToNeighbourOccurence(String type, MergeContext mergeContext, MergeRootsDialog mergeRootsDialog, Icon icon) {
+  private GoToNeighbourOccurence(String type, MergeContext mergeContext, MergeRootsDialog mergeRootsDialog, Icon icon) {
     super("Go to " + type + " Root", null, icon);
     myMergeContext = mergeContext;
     myMergeRootsDialog = mergeRootsDialog;

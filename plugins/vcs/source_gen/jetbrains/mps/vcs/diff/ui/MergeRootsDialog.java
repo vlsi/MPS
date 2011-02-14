@@ -261,6 +261,7 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     } else {
       myMergeContext.restoreState(myStateToRestore);
     }
+    myModelsDialog.rootsDialogClosed();
     super.dispose();
   }
 }
