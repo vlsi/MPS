@@ -63,9 +63,12 @@ public class MergeModelsDialog extends BaseDialog {
   private JPanel myPanel = new JPanel(new BorderLayout());
   private boolean myApplyChanges = false;
   private boolean myRootsDialogInvoked = false;
+  private String[] myContentTitles;
 
-  public MergeModelsDialog(Project project, IOperationContext operationContext, SModel baseModel, SModel mineModel, SModel repositoryModel) {
+  public MergeModelsDialog(Project project, IOperationContext operationContext, SModel baseModel, SModel mineModel, SModel repositoryModel, String[] contentTitles) {
     super(WindowManager.getInstance().getFrame(project), "Merging " + SModelOperations.getModelName(baseModel));
+    assert contentTitles.length == 3;
+    myContentTitles = contentTitles;
     myProject = project;
     myOperationContext = operationContext;
     myMergeContext = new MergeContext(baseModel, mineModel, repositoryModel);
@@ -76,6 +79,10 @@ public class MergeModelsDialog extends BaseDialog {
     toolbar.updateActionsImmediately();
     myPanel.add(toolbar.getComponent(), BorderLayout.NORTH);
     myPanel.add(new JScrollPane(myMergeModelsTree), BorderLayout.CENTER);
+  }
+
+  public MergeModelsDialog(Project project, IOperationContext operationContext, SModel baseModel, SModel mineModel, SModel repositoryModel) {
+    this(project, operationContext, baseModel, mineModel, repositoryModel, new String[]{"Local Version", "Merge Result", "Remote Version"});
   }
 
   protected JComponent getMainComponent() {
@@ -202,6 +209,10 @@ public class MergeModelsDialog extends BaseDialog {
 
   /*package*/ void rootsDialogClosed() {
     myRootsDialogInvoked = false;
+  }
+
+  /*package*/ String[] getContentTitles() {
+    return myContentTitles;
   }
 
   public static boolean isNewMergeEnabled() {

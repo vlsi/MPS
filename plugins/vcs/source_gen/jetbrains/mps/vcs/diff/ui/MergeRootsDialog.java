@@ -60,9 +60,9 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     myRootId = rootId;
     myStateToRestore = myMergeContext.getCurrentState();
 
-    myMineEditor = addEditor(0, myMergeContext.getMyModel(), "My Changes");
-    myResultEditor = addEditor(1, myMergeContext.getResultModel(), "Merge Result");
-    myRepositoryEditor = addEditor(2, myMergeContext.getRepositoryModel(), "Repository Changes");
+    myMineEditor = addEditor(0, myMergeContext.getMyModel());
+    myResultEditor = addEditor(1, myMergeContext.getResultModel());
+    myRepositoryEditor = addEditor(2, myMergeContext.getRepositoryModel());
 
     linkEditors(true, false);
     linkEditors(false, false);
@@ -163,14 +163,16 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     ), changeGroupBuilder, inspector);
   }
 
-  private DiffEditorComponent addEditor(int index, SModel model, String revisionName) {
+  private DiffEditorComponent addEditor(int index, SModel model) {
     SNode node = model.getNodeById(myRootId);
     final DiffEditorComponent result = new DiffEditorComponent(myOperationContext, node);
     result.editNode(node, myOperationContext);
     result.setReadOnly(true);
 
     JPanel panel = new JPanel(new BorderLayout());
-    panel.add(new JLabel(revisionName), BorderLayout.NORTH);
+    JLabel title = new JLabel(myModelsDialog.getContentTitles()[index]);
+    title.setToolTipText(myModelsDialog.getContentTitles()[index]);
+    panel.add(title, BorderLayout.NORTH);
     panel.add(result.getExternalComponent(), BorderLayout.CENTER);
     panel.setPreferredSize(new Dimension());
 
