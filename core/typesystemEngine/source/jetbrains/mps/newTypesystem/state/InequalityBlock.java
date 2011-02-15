@@ -21,7 +21,6 @@ import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.newTypesystem.operation.CheckSubTypeOperation;
 import jetbrains.mps.newTypesystem.operation.ProcessReplacementRuleOperation;
 import jetbrains.mps.smodel.SNode;

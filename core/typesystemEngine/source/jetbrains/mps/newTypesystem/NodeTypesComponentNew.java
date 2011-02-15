@@ -175,7 +175,7 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
   }
 
   public void setCheckedNonTypesystem() {
-    myNonTypeSystemComponent.setCheckedNonTypesystem();
+    myNonTypeSystemComponent.setChecked();
   }
 
   protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
@@ -298,20 +298,20 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
   }
 
   public boolean isCheckedNonTypesystem() {
-    return myNonTypeSystemComponent.isCheckedNonTypesystem();
+    return myNonTypeSystemComponent.isChecked();
   }
 
   public void setCheckedTypesystem() {
-    myTypeSystemComponent.setCheckedTypeSystem();
+    myTypeSystemComponent.setChecked();
   }
 
   public boolean isChecked(boolean considerNonTypeSystemRules) {
     processPendingEvents();
-    boolean b = myTypeSystemComponent.isCheckedTypeSystem();
+    boolean typesChecked = myTypeSystemComponent.isChecked();
     if (considerNonTypeSystemRules) {
-      return b && myNonTypeSystemComponent.isCheckedNonTypesystem();
+      return typesChecked && myNonTypeSystemComponent.isChecked();
     } else {
-      return b;
+      return typesChecked;
     }
   }
 
@@ -375,7 +375,7 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
       markDependentOnPropertyNodesForInvalidation(event.getNode(), event.getPropertyName());
     }
 
-    private void markDependentNodesForInvalidation(SNode eventNode, Component component) {
+    private void markDependentNodesForInvalidation(SNode eventNode, CheckingComponent component) {
        component.addNodeToInvalidate(eventNode);
        component.setInvalidationWasPerformed(false);
     }

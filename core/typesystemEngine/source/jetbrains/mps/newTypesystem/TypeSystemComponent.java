@@ -27,7 +27,6 @@ import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.annotation.UseCarefully;
 
 import java.util.*;
 
@@ -37,7 +36,7 @@ import java.util.*;
  * Date: 1/31/11
  * Time: 4:58 PM
  */
-class TypeSystemComponent extends Component {
+class TypeSystemComponent extends CheckingComponent {
 
   private boolean myInvalidationResult = false;
 
@@ -51,9 +50,6 @@ class TypeSystemComponent extends Component {
   private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
   private Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
   private Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
-
-  private boolean myIsCheckedTypeSystem = false;
-
   private WeakSet<SNode> myNodesDependentOnCaches = new WeakSet<SNode>();
   private Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
   private SNode myCurrentCheckedNode;
@@ -83,7 +79,7 @@ class TypeSystemComponent extends Component {
   }
 
   //returns true if something was invalidated
-  private boolean doInvalidateTypesystem() {
+  protected boolean doInvalidate() {
     if (myInvalidationWasPerformed) {
       return myInvalidationResult;
     }
@@ -152,21 +148,12 @@ class TypeSystemComponent extends Component {
     myNodesToRules.remove(node);
   }
 
-  public boolean isCheckedTypeSystem() {
-    return myIsCheckedTypeSystem && !doInvalidateTypesystem();
-  }
-
   public Map<SNode, List<IErrorReporter>> getNodesToErrorsMap() {
     return myState.getNodeMaps().getNodesToErrors();
   }
 
-  @UseCarefully
-  public void setCheckedTypeSystem() {
-    myIsCheckedTypeSystem = true;
-  }
-
   public void clear() {
-    myIsCheckedTypeSystem = false;
+    myIsChecked = false;
     clearCaches();
     clearState();
     clearNodeTypes();
@@ -211,7 +198,7 @@ class TypeSystemComponent extends Component {
         clear();
       } else {
         myState.clearOperations();
-        doInvalidateTypesystem();
+        doInvalidate();
         myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
         myFullyCheckedNodes.clear();
       }
