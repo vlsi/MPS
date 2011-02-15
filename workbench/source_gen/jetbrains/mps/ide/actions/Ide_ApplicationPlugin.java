@@ -136,7 +136,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RenameAspects_Action());
     addAction(new RenameFavoritesList_Action());
     addAction(new RenameFileOrDirectory_Action());
-    addAction(new RenameLanguage_Action());
     addAction(new RenameModel_Action());
     addAction(new RenameNamespace_Action());
     addAction(new RenamePackage_Action());
@@ -225,7 +224,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new LanguageActions_ActionGroup());
     addGroup(new LanguageNewActions_ActionGroup());
     addGroup(new LanguageNewCustomPartActions_ActionGroup());
-    addGroup(new LanguageRefactoring_ActionGroup());
     addGroup(new ModelActionsInternal_ActionGroup());
     addGroup(new ModelActions_ActionGroup());
     addGroup(new ModelNewActions_ActionGroup());
@@ -299,7 +297,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(FileSystemNewActions_ActionGroup.ID, AbstractFileActions_ActionGroup.ID, AbstractFileActions_ActionGroup.LABEL_ID_new);
     insertGroupIntoAnother(PackageNewActions_ActionGroup.ID, PackageActions_ActionGroup.ID, PackageActions_ActionGroup.LABEL_ID_newActions);
     insertGroupIntoAnother(ModelRefactoring_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_refactoring);
-    insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(SolutionRefactoring_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, ModelNewActions_ActionGroup.ID, ModelNewActions_ActionGroup.LABEL_ID_newRoot);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, PackageNewActions_ActionGroup.ID, null);

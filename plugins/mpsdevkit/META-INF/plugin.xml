@@ -15,7 +15,7 @@
   -->
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
-  <id>jetbrains.mps.ide.devkit</id>
+  <id>jetbrains.mps.ide.mpsdevkit</id>
   <name>MPS Languages DevKit</name>
   <description>Allows to develop new MPS languages</description>
   <version>1.5</version>
@@ -24,7 +24,9 @@
 
 
   <application-components>
-
+    <component>
+      <implementation-class>jetbrains.mps.ide.devkit.actions.Mpsdevkit_PluginInitializer</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

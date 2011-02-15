@@ -7,6 +7,7 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/solution/mpsdevkit.msd" folder="" />
+      <solutionPath path="${mps_home}/workbench/ideSolution/jetbrains.mps.ide.msd" />
     </projectSolutions>
     <projectLanguages />
     <projectDevkits />
