@@ -373,8 +373,8 @@
   </target>
   <target name="pack.runtime">
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/languageDesign/smodel/solutions/runtime/runtime.msd" prefix="module" />
-      <zipfileset dir="core/languageDesign/smodel/solutions/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset file="core/kernel/smodelRuntime/smodelRuntime.msd" prefix="module" />
+      <zipfileset dir="core/kernel/smodelRuntime" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.script">
