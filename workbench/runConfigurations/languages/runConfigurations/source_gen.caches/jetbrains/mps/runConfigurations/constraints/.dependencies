@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.runConfigurations.constraints.CommandReferenceExpression_Constraints" file="CommandReferenceExpression_Constraints.java">
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+  </dependency>
   <dependency className="jetbrains.mps.runConfigurations.constraints.ConstraintsDescriptor" file="ConstraintsDescriptor.java">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.constraints.TemplateParameterReference_constructorParameterDeclaration_ReferentConstraint" />

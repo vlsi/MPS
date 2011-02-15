@@ -62,11 +62,11 @@ public class RunConfigurationExecutor extends BaseConcept implements INamedConce
     super.setReferent(RunConfigurationExecutor.RUN_CONFIGURATION, node);
   }
 
-  public Execute_Function getExecute() {
-    return (Execute_Function) this.getChild(Execute_Function.class, RunConfigurationExecutor.EXECUTE);
+  public ExecuteConfiguration_Function getExecute() {
+    return (ExecuteConfiguration_Function) this.getChild(ExecuteConfiguration_Function.class, RunConfigurationExecutor.EXECUTE);
   }
 
-  public void setExecute(Execute_Function node) {
+  public void setExecute(ExecuteConfiguration_Function node) {
     super.setChild(RunConfigurationExecutor.EXECUTE, node);
   }
 

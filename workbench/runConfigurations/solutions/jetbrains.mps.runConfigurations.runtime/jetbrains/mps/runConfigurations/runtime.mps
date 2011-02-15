@@ -26,6 +26,9 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8265043642382453574">
       <property name="name" nameId="tpck.1169194664001" value="ConsoleProcessListener" />
     </node>
+    <node type="tpee.Interface" typeId="tpee.1107796713796" id="6355961872152753014">
+      <property name="name" nameId="tpck.1169194664001" value="IDebuggableRunProfileState" />
+    </node>
   </roots>
   <root id="1252300412034470124">
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1252300412034470130">
@@ -289,6 +292,9 @@
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="mwyq.~Override" />
       </node>
     </node>
+  </root>
+  <root id="6355961872152753014">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6355961872152753015" />
   </root>
 </model>
 

@@ -9,6 +9,9 @@
     <scopeInfo nodeId="143080135592810950" fileName="IPersistentConfiguration.java" startLine="11" startPosition="72" endLine="12" endPosition="56" />
     <unitInfo nodeId="1252300412034470124" fileName="IPersistentConfiguration.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" />
   </root>
+  <root nodeId="6355961872152753014">
+    <unitInfo nodeId="6355961872152753014" fileName="IDebuggableRunProfileState.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.IDebuggableRunProfileState" />
+  </root>
   <root nodeId="8265043642382446572">
     <nodeInfo nodeId="8265043642382453554" fileName="DefaultProcessHandler.java" startLine="10" startPosition="101" endLine="11" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8265043642382453571" fileName="DefaultProcessHandler.java" startLine="11" startPosition="31" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

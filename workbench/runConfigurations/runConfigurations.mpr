@@ -15,6 +15,7 @@
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="usages.baselang" />
       <languagePath path="${mps_home}/core/baseLanguage/runConfigurations/runConfigurations.mpl" folder="old" />
       <languagePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" folder="usages.baselang" />
+      <languagePath path="${mps_home}/core/debug-api/debugApiProject/languages/api/api.mpl" />
       <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" folder="old" />
       <languagePath path="${mps_home}/platform/buildlanguage/languages/buildlanguage/buildlanguage.mpl" folder="usages.build" />
       <languagePath path="${mps_home}/platform/buildlanguage/languages/custommps/custommps.mpl" folder="usages.build" />

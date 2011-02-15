@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,6 +64,16 @@ public class Debuggers implements ApplicationComponent {
       debuggers = new ArrayList<IDebugger>(myDebuggers);
       return debuggers;
     }
+  }
+
+  @Nullable
+  public IDebugger getDebuggerByName(@NotNull String name) {
+    for (IDebugger debugger : getDebuggers()) {
+      if (name.equals(debugger.getName())) {
+        return debugger;
+      }
+    }
+    return null;
   }
 
   public static Debuggers getInstance() {

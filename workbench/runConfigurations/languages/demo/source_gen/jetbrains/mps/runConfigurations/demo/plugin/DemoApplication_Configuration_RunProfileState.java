@@ -18,16 +18,9 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.execution.ui.ConsoleView;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.runConfigurations.runtime.DefaultProcessHandler;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import org.apache.commons.lang.StringUtils;
+import com.intellij.execution.executors.DefaultDebugExecutor;
 import jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener;
-import java.io.IOException;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.openapi.actionSystem.AnAction;
 import javax.swing.JComponent;
@@ -61,33 +54,13 @@ public class DemoApplication_Configuration_RunProfileState implements RunProfile
         fqName.value = NameUtil.nodeFQName(myRunConfiguration.getNode().getNode());
       }
     });
-    String java = "java";
-    ProcessHandler process = createProcess(consoleView, java);
-    return new DemoApplication_Configuration_RunProfileState.MyExecutionResult(process, new DemoApplication_Configuration_RunProfileState.MyExecutionConsole(consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
+    ProcessHandler javaProcess = Java_Command.createProcess(myRunConfiguration, (executor).getId().equals(DefaultDebugExecutor.EXECUTOR_ID), new ConsoleProcessListener(consoleView));
+    return new DemoApplication_Configuration_RunProfileState.MyExecutionResult(javaProcess, new DemoApplication_Configuration_RunProfileState.MyExecutionConsole(consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         consoleView.dispose();
       }
     }));
 
-  }
-
-  private ProcessHandler createProcess(ConsoleView consoleView, String java) throws ExecutionException {
-    List<String> arguments = ListSequence.fromListAndArray(new ArrayList<String>(), java, "-version");
-    ProcessBuilder builder = new ProcessBuilder(ListSequence.fromList(arguments).toGenericArray(String.class));
-    try {
-      Process process = builder.start();
-      DefaultProcessHandler processHandler = new DefaultProcessHandler(process, ListSequence.fromList(arguments).foldLeft("", new ILeftCombinator<String, String>() {
-        public String combine(String s, String it) {
-          return (StringUtils.isEmpty(s) ?
-            it :
-            s + " " + it
-          );
-        }
-      }), new ConsoleProcessListener(consoleView));
-      return processHandler;
-    } catch (IOException e) {
-      throw new ExecutionException("Start Process Failed", e);
-    }
   }
 
   private static class MyExecutionResult implements ExecutionResult {

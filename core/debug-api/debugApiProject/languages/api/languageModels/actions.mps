@@ -149,7 +149,6 @@
           </node>
         </node>
       </node>
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemoveDefaultsPart" typeId="tpdg.1177614709184" id="337851360307514007" />
     </node>
   </root>
 </model>

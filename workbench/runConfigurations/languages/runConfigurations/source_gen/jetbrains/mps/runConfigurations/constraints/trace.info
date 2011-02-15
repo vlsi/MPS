@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="CommandReferenceExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.CommandReferenceExpression_Constraints" />
   <unitInfo fileName="TemplateParameterReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.TemplateParameterReference_Constraints" />
   <unitInfo fileName="ReportConfigurationErrorStatement_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ReportConfigurationErrorStatement_Constraints" />
   <unitInfo fileName="EditorPropertyReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.EditorPropertyReference_Constraints" />
@@ -58,6 +59,10 @@
   <root nodeId="587410464426983340">
     <nodeInfo nodeId="587410464426983343" fileName="EditorPropertyReference_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="587410464426983342" fileName="EditorPropertyReference_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="149" />
+  </root>
+  <root nodeId="6355961872152754482">
+    <nodeInfo nodeId="6355961872152766295" fileName="CommandReferenceExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6355961872152754484" fileName="CommandReferenceExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="171" />
   </root>
   <root nodeId="7902226081039506341">
     <nodeInfo nodeId="7902226081039506347" fileName="EditorOperation_editorOperationDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="33" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
-public class ProcessStatement_Behavior {
+public class CommandExpression_Behavior {
   private static Class[] PARAMETERS_2866018809101550417 = {SNode.class};
   private static Class[] PARAMETERS_2866018809101567760 = {SNode.class};
   private static Class[] PARAMETERS_2866018809101689723 = {SNode.class};
@@ -25,43 +25,43 @@ public class ProcessStatement_Behavior {
   }
 
   public static SNode virtual_getReturnType_2866018809101550409(SNode thisNode) {
-    return new ProcessStatement_Behavior.QuotationClass_cvery0_a0a0b().createNode();
+    return new CommandExpression_Behavior.QuotationClass_zh90uf_a0a0b().createNode();
   }
 
   public static List<SNode> virtual_getRequiredParameters_2866018809101567754(SNode thisNode) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), new ProcessStatement_Behavior.QuotationClass_cvery0_a1a0a2().createNode());
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), new CommandExpression_Behavior.QuotationClass_zh90uf_a1a0a2().createNode());
   }
 
   public static List<SNode> virtual_getThrows_2866018809101689713(SNode thisNode) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), new ProcessStatement_Behavior.QuotationClass_cvery0_a1a0a3().createNode());
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), new CommandExpression_Behavior.QuotationClass_zh90uf_a1a0a3().createNode());
   }
 
   public static SNode call_getReturnType_2866018809101550417(SNode thisNode) {
-    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.ProcessStatement"), "virtual_getReturnType_2866018809101550409", PARAMETERS_2866018809101550417);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.CommandExpression"), "virtual_getReturnType_2866018809101550409", PARAMETERS_2866018809101550417);
   }
 
   public static List<SNode> call_getRequiredParameters_2866018809101567760(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.ProcessStatement"), "virtual_getRequiredParameters_2866018809101567754", PARAMETERS_2866018809101567760);
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.CommandExpression"), "virtual_getRequiredParameters_2866018809101567754", PARAMETERS_2866018809101567760);
   }
 
   public static List<SNode> call_getThrows_2866018809101689723(SNode thisNode) {
-    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.ProcessStatement"), "virtual_getThrows_2866018809101689713", PARAMETERS_2866018809101689723);
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.CommandExpression"), "virtual_getThrows_2866018809101689713", PARAMETERS_2866018809101689723);
   }
 
   public static SNode callSuper_getReturnType_2866018809101550417(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.ProcessStatement"), callerConceptFqName, "virtual_getReturnType_2866018809101550409", PARAMETERS_2866018809101550417);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.CommandExpression"), callerConceptFqName, "virtual_getReturnType_2866018809101550409", PARAMETERS_2866018809101550417);
   }
 
   public static List<SNode> callSuper_getRequiredParameters_2866018809101567760(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.ProcessStatement"), callerConceptFqName, "virtual_getRequiredParameters_2866018809101567754", PARAMETERS_2866018809101567760);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.CommandExpression"), callerConceptFqName, "virtual_getRequiredParameters_2866018809101567754", PARAMETERS_2866018809101567760);
   }
 
   public static List<SNode> callSuper_getThrows_2866018809101689723(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.ProcessStatement"), callerConceptFqName, "virtual_getThrows_2866018809101689713", PARAMETERS_2866018809101689723);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.runConfigurations.structure.CommandExpression"), callerConceptFqName, "virtual_getThrows_2866018809101689713", PARAMETERS_2866018809101689723);
   }
 
-  public static class QuotationClass_cvery0_a0a0b {
-    public QuotationClass_cvery0_a0a0b() {
+  public static class QuotationClass_zh90uf_a0a0b {
+    public QuotationClass_zh90uf_a0a0b() {
     }
 
     public SNode createNode() {
@@ -78,8 +78,8 @@ public class ProcessStatement_Behavior {
     }
   }
 
-  public static class QuotationClass_cvery0_a1a0a2 {
-    public QuotationClass_cvery0_a1a0a2() {
+  public static class QuotationClass_zh90uf_a1a0a2 {
+    public QuotationClass_zh90uf_a1a0a2() {
     }
 
     public SNode createNode() {
@@ -90,11 +90,11 @@ public class ProcessStatement_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setProperty("name", "consoleView");
+        quotedNode1_3.setProperty("name", "processListener");
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.addReference(SReference.create("classifier", quotedNode1_4, SModelReference.fromString("f:java_stub#com.intellij.execution.ui(com.intellij.execution.ui@java_stub)"), SNodeId.fromString("~ConsoleView")));
+          quotedNode1_4.addReference(SReference.create("classifier", quotedNode1_4, SModelReference.fromString("f:java_stub#com.intellij.execution.process(com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessListener")));
           quotedNode_1.addChild("type", quotedNode1_4);
         }
         result = quotedNode1_3;
@@ -103,8 +103,8 @@ public class ProcessStatement_Behavior {
     }
   }
 
-  public static class QuotationClass_cvery0_a1a0a3 {
-    public QuotationClass_cvery0_a1a0a3() {
+  public static class QuotationClass_zh90uf_a1a0a3 {
+    public QuotationClass_zh90uf_a1a0a3() {
     }
 
     public SNode createNode() {

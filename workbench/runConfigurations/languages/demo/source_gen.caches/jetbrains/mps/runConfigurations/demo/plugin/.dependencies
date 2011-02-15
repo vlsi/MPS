@@ -65,37 +65,29 @@
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationFactory" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_RunProfileState" file="DemoApplication_Configuration_RunProfileState.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.DefaultProcessHandler" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="com.intellij.execution.ExecutionException" />
-    <classNode dependClassName="java.lang.Process" />
-    <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener" />
-    <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="com.intellij.execution.ui.ConsoleView" />
-    <classNode dependClassName="java.lang.ProcessBuilder" />
-    <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
-    <classNode dependClassName="com.intellij.execution.configurations.RunnerSettings" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationPerRunnerSettings" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="com.intellij.execution.Executor" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="com.intellij.execution.executors.DefaultDebugExecutor" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="com.intellij.execution.ExecutionException" />
+    <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
+    <classNode dependClassName="com.intellij.execution.Executor" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.Java_Command" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationPerRunnerSettings" />
+    <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="com.intellij.execution.configurations.RunnerSettings" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode extendsClassName="com.intellij.execution.ui.ExecutionConsole" />
     <classNode extendsClassName="com.intellij.execution.ExecutionResult" />
@@ -129,6 +121,24 @@
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.RunConfigurationsInitializer_CustomProjectPlugin" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Java_Command" file="Java_Command.java">
+    <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessListener" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
+    <classNode dependClassName="com.intellij.execution.ExecutionException" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.DefaultProcessHandler" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
+    <classNode dependClassName="com.intellij.execution.configurations.RunConfigurationBase" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.ProcessBuilder" />
+    <classNode dependClassName="java.lang.Process" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Make_Configuration" file="Make_Configuration.java">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -185,12 +195,11 @@
     <classNode extendsClassName="com.intellij.openapi.options.SettingsEditor" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.RunConfigurationsInitializer_CustomProjectPlugin" file="RunConfigurationsInitializer_CustomProjectPlugin.java">
-    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
-    <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.Demo_Kind" />
-    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
+    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.Demo_Kind" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
   </dependency>
 </dependenciesRoot>
