@@ -256,6 +256,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -355,6 +356,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -454,6 +456,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -553,6 +556,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -652,6 +656,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -753,6 +758,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -858,6 +864,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -959,6 +966,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1059,6 +1067,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1161,6 +1170,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1261,6 +1271,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1362,6 +1373,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1462,6 +1474,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1563,6 +1576,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1662,6 +1676,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1741,6 +1756,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc.classpaths">
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1769,6 +1785,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1868,6 +1885,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -1968,6 +1986,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2082,6 +2101,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2191,6 +2211,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2304,6 +2325,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2410,6 +2432,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2509,6 +2532,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2608,6 +2632,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2717,6 +2742,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2816,6 +2842,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -2915,6 +2942,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3014,6 +3042,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3113,6 +3142,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3213,6 +3243,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3317,6 +3348,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3427,6 +3459,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3538,6 +3571,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3649,6 +3683,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3751,6 +3786,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3852,6 +3888,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -3952,6 +3989,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4053,6 +4091,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4152,6 +4191,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4254,6 +4294,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4353,6 +4394,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
@@ -4453,6 +4495,7 @@
     <path path="core/baseLanguage/tuples/classes" />
     <path path="core/baseLanguage/tuples/runtime/classes" />
     <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
     <path path="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />

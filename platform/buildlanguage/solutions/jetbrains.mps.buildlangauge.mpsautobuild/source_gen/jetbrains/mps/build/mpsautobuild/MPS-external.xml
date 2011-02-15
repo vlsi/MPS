@@ -173,7 +173,7 @@
       <zipfileset dir="${mps_home}/plugins/samples/classes" prefix="" />
     </jar>
     <copy todir="${deploy.dir}/MPS/plugins">
-      <fileset dir="${mps_home}/plugins" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, **/*.iml, **/*.iws" />
+      <fileset dir="${mps_home}/plugins" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, mpsdevkit/**, **/*.iml, **/*.iws" />
     </copy>
     <copy todir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples">
       <fileset dir="${mps_home}/samples" excludes="**/*.iml, **/*.iws" />

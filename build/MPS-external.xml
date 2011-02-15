@@ -164,12 +164,16 @@
       <zipfileset dir="${mps_home}/plugins/vcs/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/vcs/classes" prefix="" />
     </jar>
+    <jar destfile="${deploy.dir}/MPS/plugins/mpsdevkit.jar" filesonly="true" duplicate="preserve" compress="true">
+      <zipfileset dir="${mps_home}/plugins/mpsdevkit/META-INF" includes="**/plugin.xml" prefix="META-INF" />
+      <zipfileset dir="${mps_home}/plugins/mpsdevkit/classes" prefix="" />
+    </jar>
     <jar destfile="${deploy.dir}/MPS/plugins/samples.jar" filesonly="true" duplicate="preserve" compress="true">
       <zipfileset dir="${mps_home}/plugins/samples/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/samples/classes" prefix="" />
     </jar>
     <copy todir="${deploy.dir}/MPS/plugins">
-      <fileset dir="${mps_home}/plugins" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, **/*.iml, **/*.iws" />
+      <fileset dir="${mps_home}/plugins" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, mpsdevkit/**, **/*.iml, **/*.iws" />
     </copy>
     <copy todir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples">
       <fileset dir="${mps_home}/samples" excludes="**/*.iml, **/*.iws" />
