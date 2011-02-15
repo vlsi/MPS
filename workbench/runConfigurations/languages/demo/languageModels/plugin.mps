@@ -1266,6 +1266,18 @@
                 <property name="value" nameId="tpee.1070475926801" value="-version" />
               </node>
             </node>
+            <node role="workingDirectory" roleId="uhxm.6472627752525599075" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6472627752525616642">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6472627752525616644">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n1y2.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6472627752525616646">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~System%dgetProperty(java%dlang%dString)%cjava%dlang%dString" resolveInfo="getProperty" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="mwyq.~System" resolveInfo="System" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6472627752525616647">
+                    <property name="value" nameId="tpee.1070475926801" value="user.home" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

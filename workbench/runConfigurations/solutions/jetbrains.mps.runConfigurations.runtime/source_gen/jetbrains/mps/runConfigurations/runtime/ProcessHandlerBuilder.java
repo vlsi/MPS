@@ -10,11 +10,13 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.execution.process.ProcessHandler;
-import com.intellij.execution.process.ProcessListener;
 import com.intellij.execution.ExecutionException;
+import com.intellij.execution.process.ProcessAdapter;
+import java.io.File;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.execution.process.ProcessListener;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.io.IOException;
-import org.jetbrains.annotations.NotNull;
 
 public class ProcessHandlerBuilder {
   private final List<String> myCommandLine = ListSequence.fromList(new ArrayList<String>());
@@ -48,8 +50,24 @@ public class ProcessHandlerBuilder {
     return this;
   }
 
-  public ProcessHandler build(@Nullable ProcessListener listener) throws ExecutionException {
+  public ProcessHandler build() throws ExecutionException {
+    return build(new ProcessAdapter() {}, new File(System.getProperty("user.dir")));
+  }
+
+  public ProcessHandler build(@NotNull ProcessListener listener) throws ExecutionException {
+    return build(listener, new File(System.getProperty("user.dir")));
+  }
+
+  public ProcessHandler build(@NotNull File workingDirectory) throws ExecutionException {
+    return build(new ProcessAdapter() {}, workingDirectory);
+  }
+
+  public ProcessHandler build(@NotNull ProcessListener listener, @NotNull File workingDirectory) throws ExecutionException {
+    if (!(workingDirectory.exists())) {
+      throw new ExecutionException("Working directory " + workingDirectory + " does not exist.");
+    }
     ProcessBuilder builder = new ProcessBuilder(ListSequence.fromList(myCommandLine).toGenericArray(String.class));
+    builder.directory(workingDirectory);
     try {
       Process process = builder.start();
       DefaultProcessHandler processHandler = new DefaultProcessHandler(process, ListSequence.fromList(myCommandLine).foldLeft("", new ILeftCombinator<String, String>() {
@@ -62,7 +80,7 @@ public class ProcessHandlerBuilder {
       }), listener);
       return processHandler;
     } catch (IOException e) {
-      throw new ExecutionException("Start Process Failed", e);
+      throw new ExecutionException("Start process failed", e);
     }
   }
 

@@ -7,6 +7,7 @@ import com.intellij.execution.configurations.RunConfigurationBase;
 import com.intellij.execution.process.ProcessListener;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.runConfigurations.runtime.ProcessHandlerBuilder;
+import java.io.File;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
 
@@ -16,7 +17,7 @@ public class Java_Command {
 
   public static ProcessHandler createProcess(RunConfigurationBase configuration, boolean debug, ProcessListener processListener) throws ExecutionException {
     String java = "/usr/lib/jvm/java-1.6.0-openjdk/bin/java";
-    return new ProcessHandlerBuilder().append(java).append("-version").build(processListener);
+    return new ProcessHandlerBuilder().append(java).append("-version").build(processListener, new File(System.getProperty("user.home")));
   }
 
   public static IDebugger getDebugger() {
