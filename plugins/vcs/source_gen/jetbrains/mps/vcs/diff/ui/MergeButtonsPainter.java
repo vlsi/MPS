@@ -20,7 +20,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.awt.Cursor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.MergeContext;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -145,16 +144,14 @@ public class MergeButtonsPainter extends AbstractFoldingAreaPainter {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         MergeContext mergeContext = myChangeGroupBuilder.getMergeContext();
-        for (ModelChange change : ListSequence.fromList(myCurrentGroup.getChanges())) {
-          switch (myCurrentAction) {
-            case APPLY:
-              mergeContext.applyChange(change);
-              break;
-            case EXCLUDE:
-              mergeContext.excludeChange(change);
-              break;
-            default:
-          }
+        switch (myCurrentAction) {
+          case APPLY:
+            mergeContext.applyChanges(myCurrentGroup.getChanges());
+            break;
+          case EXCLUDE:
+            mergeContext.applyChanges(myCurrentGroup.getChanges());
+            break;
+          default:
         }
         myDialog.rehighlight();
       }

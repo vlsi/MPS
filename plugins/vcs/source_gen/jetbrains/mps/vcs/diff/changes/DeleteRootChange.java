@@ -25,7 +25,7 @@ public class DeleteRootChange extends ModelChange {
     return myNodeId;
   }
 
-  public void apply(@NotNull SModel model) {
+  public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     assert model.getNodeById(myNodeId) != null;
     model.getNodeById(myNodeId).delete();
   }

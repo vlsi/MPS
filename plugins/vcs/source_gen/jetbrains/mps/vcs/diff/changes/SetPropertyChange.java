@@ -26,7 +26,7 @@ public class SetPropertyChange extends NodeChange {
     return myNewValue;
   }
 
-  public void apply(@NotNull SModel model) {
+  public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     SNode node = model.getNodeById(getAffectedNodeId());
     assert node != null;
     node.setProperty(myPropertyName, myNewValue);

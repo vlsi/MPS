@@ -8,7 +8,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.CopyUtil;
 
 public class AddRootChange extends ModelChange {
   private SNodeId myNodeId;
@@ -29,10 +28,9 @@ public class AddRootChange extends ModelChange {
     return myNodeId;
   }
 
-  public void apply(@NotNull SModel model) {
-    // TODO handle IDs specifically 
+  public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     SNode newNode = getChangeSet().getNewModel().getNodeById(myNodeId);
-    SModelOperations.addRootNode(model, CopyUtil.copyAndPreserveId(newNode));
+    SModelOperations.addRootNode(model, nodeCopier.copyNode(newNode));
   }
 
   public ChangeType getType() {

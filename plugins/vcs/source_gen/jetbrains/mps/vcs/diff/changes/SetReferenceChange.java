@@ -45,7 +45,7 @@ public class SetReferenceChange extends NodeChange {
     return myResolveInfo;
   }
 
-  public void apply(@NotNull SModel model) {
+  public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     SNode node = model.getNodeById(getAffectedNodeId());
     assert node != null;
     if (myTargetNodeId == null && myResolveInfo == null) {

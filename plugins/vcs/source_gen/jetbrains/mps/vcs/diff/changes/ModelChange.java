@@ -24,7 +24,7 @@ public abstract class ModelChange {
     return null;
   }
 
-  public abstract void apply(@NotNull SModel model);
+  public abstract void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier);
 
   public abstract ChangeType getType();
 }

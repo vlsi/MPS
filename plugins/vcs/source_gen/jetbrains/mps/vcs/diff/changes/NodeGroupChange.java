@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.CopyUtil;
 
 public abstract class NodeGroupChange extends ModelChange {
   private SNodeId myParentNodeId;
@@ -63,14 +62,13 @@ public abstract class NodeGroupChange extends ModelChange {
     return MultiTuple.<Integer,Integer>from(0, 0);
   }
 
-  public void apply(@NotNull SModel model) {
-    // TODO handle IDs specifically 
+  public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     SNode parent = model.getNodeById(myParentNodeId);
     SNode anchor = deleteOldNodesAndReturnAnchor(model);
     List<SNode> nodesToAdd = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> newChildren = getChangeSet().getNewModel().getNodeById(myParentNodeId).getChildren(myRole);
     for (int i = getNodesToInsert()._0(); i < getNodesToInsert()._1(); i++) {
-      ListSequence.fromList(nodesToAdd).addElement(CopyUtil.copy(newChildren.get(i)));
+      ListSequence.fromList(nodesToAdd).addElement(nodeCopier.copyNode(newChildren.get(i)));
     }
     for (SNode newNode : ListSequence.fromList(nodesToAdd).reversedList()) {
       parent.insertChild(anchor, myRole, newNode);

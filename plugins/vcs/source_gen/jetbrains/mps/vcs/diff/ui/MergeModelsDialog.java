@@ -35,10 +35,10 @@ import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import javax.swing.JPopupMenu;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.icons.IconManager;
@@ -192,16 +192,8 @@ public class MergeModelsDialog extends BaseDialog {
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        ListSequence.fromList(changesToApply).visitAll(new IVisitor<ModelChange>() {
-          public void visit(ModelChange ch) {
-            myMergeContext.applyChange(ch);
-          }
-        });
-        ListSequence.fromList(changesToExclude).visitAll(new IVisitor<ModelChange>() {
-          public void visit(ModelChange ch) {
-            myMergeContext.excludeChange(ch);
-          }
-        });
+        myMergeContext.applyChanges(changesToApply);
+        myMergeContext.excludeChanges(changesToExclude);
         myMergeModelsTree.rebuildNow();
       }
     });
