@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="FixParametersInAnonymousClass_QuickFix.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.FixParametersInAnonymousClass_QuickFix" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="923" startPosition="60" endLine="934" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$1" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="927" startPosition="60" endLine="938" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$1" />
   <unitInfo fileName="MakeInnerClassStatic_QuickFix.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.MakeInnerClassStatic_QuickFix" />
   <unitInfo fileName="SetConstructorDeclaration_QuickFix.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.SetConstructorDeclaration_QuickFix" />
   <unitInfo fileName="RemoveExcessTypeCast_QuickFix.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.RemoveExcessTypeCast_QuickFix" />
   <unitInfo fileName="MakeVariableFinal_QuickFix.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.MakeVariableFinal_QuickFix" />
   <unitInfo fileName="Add_NullableAnnotationToParameter_QuickFix.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.Add_NullableAnnotationToParameter_QuickFix" />
   <unitInfo fileName="Add_NotNullAnnotation_QuickFix.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.Add_NotNullAnnotation_QuickFix" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="938" startPosition="51" endLine="953" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$2" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="957" startPosition="51" endLine="972" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$3" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1019" startPosition="51" endLine="1034" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$5" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="942" startPosition="51" endLine="957" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$2" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="961" startPosition="51" endLine="976" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$3" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1023" startPosition="51" endLine="1038" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$5" />
   <unitInfo fileName="BinaryExpressionPriority_QuickFix.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.BinaryExpressionPriority_QuickFix" />
   <unitInfo fileName="AddExceptionToMethodSignature_QuickFix.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.AddExceptionToMethodSignature_QuickFix" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1110" startPosition="0" endLine="1126" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_g$QuotationClass_3ist9o_a0a0a1" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1287" startPosition="0" endLine="1303" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_c$QuotationClass_3ist9o_a0a0a0e" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1304" startPosition="0" endLine="1320" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_c$QuotationClass_3ist9o_a0a1a0e" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1337" startPosition="0" endLine="1353" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_d$QuotationClass_3ist9o_a0a0a0f" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1388" startPosition="0" endLine="1404" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_e$QuotationClass_3ist9o_a0a0a6" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1405" startPosition="0" endLine="1421" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_e$QuotationClass_3ist9o_a0a0a0g" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1422" startPosition="0" endLine="1438" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_e$QuotationClass_3ist9o_a0a1a0g" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1440" startPosition="0" endLine="1456" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$QuotationClass_3ist9o_a0a0a0a0a0a0a322a0" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1457" startPosition="0" endLine="1473" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$QuotationClass_3ist9o_a0a0a0a0a0a0a0pi0a" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1114" startPosition="0" endLine="1130" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_g$QuotationClass_3ist9o_a0a0a1" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1291" startPosition="0" endLine="1307" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_c$QuotationClass_3ist9o_a0a0a0e" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1308" startPosition="0" endLine="1324" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_c$QuotationClass_3ist9o_a0a1a0e" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1341" startPosition="0" endLine="1357" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_d$QuotationClass_3ist9o_a0a0a0f" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1392" startPosition="0" endLine="1408" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_e$QuotationClass_3ist9o_a0a0a6" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1409" startPosition="0" endLine="1425" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_e$QuotationClass_3ist9o_a0a0a0g" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1426" startPosition="0" endLine="1442" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_e$QuotationClass_3ist9o_a0a1a0g" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1444" startPosition="0" endLine="1460" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$QuotationClass_3ist9o_a0a0a0a0a0a0a422a0" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1461" startPosition="0" endLine="1477" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$QuotationClass_3ist9o_a0a0a0a0a0a0a0qi0a" />
   <unitInfo fileName="ReplaceClassAntiquotationWithClassifierType_QuickFix.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.ReplaceClassAntiquotationWithClassifierType_QuickFix" />
   <unitInfo fileName="MakeStaticInitializerNotStatic_QuickFix.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.MakeStaticInitializerNotStatic_QuickFix" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1058" startPosition="0" endLine="1075" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_a$QuotationClass_3ist9o_a0a0a0a0" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1076" startPosition="0" endLine="1093" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_a$QuotationClass_3ist9o_a0a0b0a0" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1127" startPosition="0" endLine="1144" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_g$QuotationClass_3ist9o_a0a0a0a1" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1145" startPosition="0" endLine="1162" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_g$QuotationClass_3ist9o_a0a0b0a1" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1179" startPosition="0" endLine="1196" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_h$QuotationClass_3ist9o_a0a0a0a2" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1197" startPosition="0" endLine="1214" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_h$QuotationClass_3ist9o_a0a1a0c" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1235" startPosition="0" endLine="1252" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_b$QuotationClass_3ist9o_a0a0a0a3" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1253" startPosition="0" endLine="1270" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_b$QuotationClass_3ist9o_a0a1a0d" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1354" startPosition="0" endLine="1371" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_d$QuotationClass_3ist9o_a0a1a0f" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1062" startPosition="0" endLine="1079" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_a$QuotationClass_3ist9o_a0a0a0a0" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1080" startPosition="0" endLine="1097" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_a$QuotationClass_3ist9o_a0a0b0a0" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1131" startPosition="0" endLine="1148" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_g$QuotationClass_3ist9o_a0a0a0a1" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1149" startPosition="0" endLine="1166" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_g$QuotationClass_3ist9o_a0a0b0a1" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1183" startPosition="0" endLine="1200" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_h$QuotationClass_3ist9o_a0a0a0a2" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1201" startPosition="0" endLine="1218" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_h$QuotationClass_3ist9o_a0a1a0c" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1239" startPosition="0" endLine="1256" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_b$QuotationClass_3ist9o_a0a0a0a3" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1257" startPosition="0" endLine="1274" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_b$QuotationClass_3ist9o_a0a1a0d" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1358" startPosition="0" endLine="1375" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_d$QuotationClass_3ist9o_a0a1a0f" />
   <unitInfo fileName="RemoveUnusedAssignment_QuickFix.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.RemoveUnusedAssignment_QuickFix" />
   <unitInfo fileName="typeof_ThisConstructorInvocation_NonTypesystemRule.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_ThisConstructorInvocation_NonTypesystemRule" />
   <unitInfo fileName="MakeStaticFieldNotStatic_QuickFix.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.MakeStaticFieldNotStatic_QuickFix" />
@@ -120,6 +120,7 @@
   <unitInfo fileName="typeOf_ConceptFunction_InferenceRule.java" startLine="123" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_ConceptFunction_InferenceRule$QuotationClass_bbraw4_a1a0a0a1a0" />
   <unitInfo fileName="typeof_AnnotationInstanceValue_InferenceRule.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_AnnotationInstanceValue_InferenceRule" />
   <unitInfo fileName="check_ConceptFunction_NonTypesystemRule.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ConceptFunction_NonTypesystemRule" />
+  <unitInfo fileName="check_FinalAndAbstractMethod_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_FinalAndAbstractMethod_NonTypesystemRule" />
   <unitInfo fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_DefaultSuperConstructorThrowables_NonTypesystemRule" />
   <unitInfo fileName="check_StringLiteral_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_StringLiteral_NonTypesystemRule" />
   <unitInfo fileName="check_NonStaticClassInInterface_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_NonStaticClassInInterface_NonTypesystemRule" />
@@ -244,7 +245,7 @@
   <unitInfo fileName="interfaces_are_comparable_ComparisonRule.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.interfaces_are_comparable_ComparisonRule" />
   <unitInfo fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="19" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_BaseVariableDeclaration_InferenceRule" />
   <unitInfo fileName="check_AnnotationTarget_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_AnnotationTarget_NonTypesystemRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="976" startPosition="51" endLine="1015" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$4" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="980" startPosition="51" endLine="1019" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$4" />
   <unitInfo fileName="any_type_supertypeof_bottom_InequationReplacementRule.java" startLine="13" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.any_type_supertypeof_bottom_InequationReplacementRule" />
   <unitInfo fileName="any_type_subtypeof_wildcard_type_InequationReplacementRule.java" startLine="13" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.any_type_subtypeof_wildcard_type_InequationReplacementRule" />
   <unitInfo fileName="check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule" />
@@ -268,12 +269,12 @@
   <unitInfo fileName="check_EnumConstantHasConstructorDeclaration_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_EnumConstantHasConstructorDeclaration_NonTypesystemRule" />
   <unitInfo fileName="check_VariableArityType_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_VariableArityType_NonTypesystemRule" />
   <unitInfo fileName="check_AbstractMethodsInClass_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_AbstractMethodsInClass_NonTypesystemRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1272" startPosition="0" endLine="1321" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_c" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1322" startPosition="0" endLine="1372" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_d" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1276" startPosition="0" endLine="1325" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_c" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1326" startPosition="0" endLine="1376" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_d" />
   <unitInfo fileName="typeof_OperationAssignmentExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_OperationAssignmentExpression_InferenceRule" />
   <unitInfo fileName="typeof_BinaryOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_BinaryOperation_InferenceRule" />
   <unitInfo fileName="check_OverrideNullAnnotations_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_OverrideNullAnnotations_NonTypesystemRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1164" startPosition="0" endLine="1215" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_h" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1168" startPosition="0" endLine="1219" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_h" />
   <unitInfo fileName="float_extends_double_SubtypingRule.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.float_extends_double_SubtypingRule" />
   <unitInfo fileName="long_extends_float_SubtypingRule.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.long_extends_float_SubtypingRule" />
   <unitInfo fileName="char_extends_int_SubtypingRule.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.char_extends_int_SubtypingRule" />
@@ -298,8 +299,8 @@
   <unitInfo fileName="long_extends_integral_SubtypingRule.java" startLine="19" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.long_extends_integral_SubtypingRule" />
   <unitInfo fileName="Boolean_extends_primitive_SubtypingRule.java" startLine="19" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.Boolean_extends_primitive_SubtypingRule" />
   <unitInfo fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="72" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ForeachWithErasure_NonTypesystemRule$Pattern_aftnu9_a0a0a2a0" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1039" startPosition="0" endLine="1094" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_a" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1216" startPosition="0" endLine="1271" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_b" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1043" startPosition="0" endLine="1098" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_a" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1220" startPosition="0" endLine="1275" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_b" />
   <unitInfo fileName="typeof_ArrayCreator_InferenceRule.java" startLine="52" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_ArrayCreator_InferenceRule$QuotationClass_vouny3_a0a0a1a0" />
   <unitInfo fileName="subtyping_arrayType_SubtypingRule.java" startLine="53" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.subtyping_arrayType_SubtypingRule$QuotationClass_ny91lb_a0a0a0a0a0b0a" />
   <unitInfo fileName="typeof_ArrayLiteral_InferenceRule.java" startLine="57" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_ArrayLiteral_InferenceRule$QuotationClass_8lb61p_a0a2a0" />
@@ -345,8 +346,8 @@
   <unitInfo fileName="supertypes_of_typeVariableReference_SubtypingRule.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.supertypes_of_typeVariableReference_SubtypingRule" />
   <unitInfo fileName="typeof_AbstractUnaryNumberOperation_InferenceRule.java" startLine="21" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_AbstractUnaryNumberOperation_InferenceRule" />
   <unitInfo fileName="typeof_BitwiseNotExpression_InferenceRule.java" startLine="21" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_BitwiseNotExpression_InferenceRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1373" startPosition="0" endLine="1439" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_e" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1095" startPosition="0" endLine="1163" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_g" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1377" startPosition="0" endLine="1443" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_e" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1099" startPosition="0" endLine="1167" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_g" />
   <unitInfo fileName="typeof_PropertyReference_InferenceRule.java" startLine="20" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_PropertyReference_InferenceRule" />
   <unitInfo fileName="check_ExceptionWasNotCaught_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ExceptionWasNotCaught_NonTypesystemRule" />
   <unitInfo fileName="typeof_EnumValuesExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_EnumValuesExpression_InferenceRule" />
@@ -402,7 +403,7 @@
   <unitInfo fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="23" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.ObjectArraySupertypes_SubtypingRule" />
   <unitInfo fileName="check_CaughtWasThrown_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_CaughtWasThrown_NonTypesystemRule" />
   <unitInfo fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="29" startPosition="0" endLine="316" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.subtypesOfClassifierTypeWWildcards_InequationReplacementRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="31" startPosition="0" endLine="1474" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="31" startPosition="0" endLine="1478" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor" />
   <root nodeId="1032178265900242657">
     <nodeInfo nodeId="1032178265900242673" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="35" startPosition="129" endLine="36" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5620366456317465132" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="37" startPosition="103" endLine="38" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -757,19 +758,19 @@
     <nodeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="34" startPosition="7" endLine="35" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="35" startPosition="54" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="36" startPosition="60" endLine="37" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1193835024461" fileName="TypesystemDescriptor.java" startLine="944" startPosition="60" endLine="945" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193834998365" fileName="TypesystemDescriptor.java" startLine="946" startPosition="11" endLine="947" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193834966925" fileName="TypesystemDescriptor.java" startLine="943" startPosition="54" endLine="946" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1193835024461" fileName="TypesystemDescriptor.java" startLine="948" startPosition="60" endLine="949" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193834998365" fileName="TypesystemDescriptor.java" startLine="950" startPosition="11" endLine="951" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193834966925" fileName="TypesystemDescriptor.java" startLine="947" startPosition="54" endLine="950" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="33" startPosition="133" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1203030934664" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="25" startPosition="12" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1203030927267" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="25" startPosition="10" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1209916480535" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="32" startPosition="5" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1203030907645" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="23" startPosition="115" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1203030907646" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="24" startPosition="137" endLine="24" endPosition="137" />
-    <scopeInfo nodeId="1193834966927" fileName="TypesystemDescriptor.java" startLine="944" startPosition="60" endLine="945" endPosition="57" />
+    <scopeInfo nodeId="1193834966927" fileName="TypesystemDescriptor.java" startLine="948" startPosition="60" endLine="949" endPosition="57" />
     <scopeInfo nodeId="1209916572216" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="34" startPosition="7" endLine="37" endPosition="298" />
     <scopeInfo nodeId="1203030934664" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="26" startPosition="7" endLine="30" endPosition="283" />
-    <scopeInfo nodeId="1193834940539" fileName="TypesystemDescriptor.java" startLine="943" startPosition="54" endLine="947" endPosition="22" />
+    <scopeInfo nodeId="1193834940539" fileName="TypesystemDescriptor.java" startLine="947" startPosition="54" endLine="951" endPosition="22" />
     <scopeInfo nodeId="1209916480536" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="33" startPosition="133" endLine="38" endPosition="7" />
     <scopeInfo nodeId="1203030927268" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="25" startPosition="12" endLine="31" endPosition="7" />
     <scopeInfo nodeId="1176718067026" fileName="typeof_BaseVariableDeclaration_InferenceRule.java" startLine="23" startPosition="115" endLine="39" endPosition="5" />
@@ -853,13 +854,13 @@
     <nodeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="21" startPosition="51" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="22" startPosition="52" endLine="23" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="23" startPosition="210" endLine="24" endPosition="423" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193845791625" fileName="TypesystemDescriptor.java" startLine="963" startPosition="56" endLine="964" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193845780013" fileName="TypesystemDescriptor.java" startLine="965" startPosition="11" endLine="966" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1193845734653" fileName="TypesystemDescriptor.java" startLine="962" startPosition="54" endLine="965" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1193845791625" fileName="TypesystemDescriptor.java" startLine="967" startPosition="56" endLine="968" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193845780013" fileName="TypesystemDescriptor.java" startLine="969" startPosition="11" endLine="970" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1193845734653" fileName="TypesystemDescriptor.java" startLine="966" startPosition="54" endLine="969" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="19" startPosition="122" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1193845734655" fileName="TypesystemDescriptor.java" startLine="963" startPosition="56" endLine="964" endPosition="57" />
+    <scopeInfo nodeId="1193845734655" fileName="TypesystemDescriptor.java" startLine="967" startPosition="56" endLine="968" endPosition="57" />
     <scopeInfo nodeId="1197929386564" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="20" startPosition="5" endLine="24" endPosition="423" />
-    <scopeInfo nodeId="1193845700396" fileName="TypesystemDescriptor.java" startLine="962" startPosition="54" endLine="966" endPosition="22" />
+    <scopeInfo nodeId="1193845700396" fileName="TypesystemDescriptor.java" startLine="966" startPosition="54" endLine="970" endPosition="22" />
     <scopeInfo nodeId="1176896957097" fileName="typeOf_GenericNewExpression_InferenceRule.java" startLine="19" startPosition="122" endLine="25" endPosition="5" />
   </root>
   <root nodeId="1176897069499">
@@ -2864,65 +2865,65 @@
     <nodeInfo nodeId="684456904423890539" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="56" startPosition="326" endLine="57" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="684456904423890533" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="58" startPosition="20" endLine="59" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="684456904423971150" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="64" startPosition="12" endLine="65" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207648751664" fileName="TypesystemDescriptor.java" startLine="981" startPosition="60" endLine="982" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207648823977" fileName="TypesystemDescriptor.java" startLine="982" startPosition="114" endLine="983" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207648848489" fileName="TypesystemDescriptor.java" startLine="983" startPosition="124" endLine="984" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="986" startPosition="13" endLine="987" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="987" startPosition="26" endLine="988" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="988" startPosition="24" endLine="989" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="989" startPosition="154" endLine="990" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="992" startPosition="50" endLine="993" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="995" startPosition="48" endLine="996" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="997" startPosition="17" endLine="998" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="998" startPosition="46" endLine="999" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6295887419091357456" fileName="TypesystemDescriptor.java" startLine="1000" startPosition="198" endLine="1001" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1207650127432" fileName="TypesystemDescriptor.java" startLine="1002" startPosition="90" endLine="1003" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207648893602" fileName="TypesystemDescriptor.java" startLine="1008" startPosition="11" endLine="1009" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1207648751664" fileName="TypesystemDescriptor.java" startLine="985" startPosition="60" endLine="986" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207648823977" fileName="TypesystemDescriptor.java" startLine="986" startPosition="114" endLine="987" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207648848489" fileName="TypesystemDescriptor.java" startLine="987" startPosition="124" endLine="988" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="990" startPosition="13" endLine="991" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="991" startPosition="26" endLine="992" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="992" startPosition="24" endLine="993" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="993" startPosition="154" endLine="994" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="996" startPosition="50" endLine="997" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="999" startPosition="48" endLine="1000" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="1001" startPosition="17" endLine="1002" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="1002" startPosition="46" endLine="1003" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6295887419091357456" fileName="TypesystemDescriptor.java" startLine="1004" startPosition="198" endLine="1005" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1207650127432" fileName="TypesystemDescriptor.java" startLine="1006" startPosition="90" endLine="1007" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207648893602" fileName="TypesystemDescriptor.java" startLine="1012" startPosition="11" endLine="1013" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="684456904423890531" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="58" startPosition="18" endLine="60" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="684456904423889813" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="64" startPosition="10" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1204064574539" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="28" startPosition="94" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="991" startPosition="28" endLine="994" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="994" startPosition="17" endLine="997" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1207650094263" fileName="TypesystemDescriptor.java" startLine="1001" startPosition="111" endLine="1004" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="995" startPosition="28" endLine="998" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="998" startPosition="17" endLine="1001" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1207650094263" fileName="TypesystemDescriptor.java" startLine="1005" startPosition="111" endLine="1008" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="702942408396860204" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="55" startPosition="29" endLine="60" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1204064763142" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="34" startPosition="105" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="999" startPosition="42" endLine="1005" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1207649079698" fileName="TypesystemDescriptor.java" startLine="999" startPosition="42" endLine="1005" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="1003" startPosition="42" endLine="1009" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1207649079698" fileName="TypesystemDescriptor.java" startLine="1003" startPosition="42" endLine="1009" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1204065906120" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="40" startPosition="5" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="54" startPosition="61" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="53" startPosition="99" endLine="62" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="51" startPosition="386" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="684456904423889785" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="50" startPosition="94" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="990" startPosition="142" endLine="1006" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="985" startPosition="65" endLine="1007" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1207648654826" fileName="TypesystemDescriptor.java" startLine="984" startPosition="72" endLine="1008" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="994" startPosition="142" endLine="1010" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="989" startPosition="65" endLine="1011" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1207648654826" fileName="TypesystemDescriptor.java" startLine="988" startPosition="72" endLine="1012" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1204064574540" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="29" startPosition="36" endLine="30" endPosition="13" />
     <scopeInfo nodeId="702942408396860206" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="56" startPosition="326" endLine="57" endPosition="262" />
     <scopeInfo nodeId="684456904423890532" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="58" startPosition="20" endLine="59" endPosition="212" />
     <scopeInfo nodeId="684456904423889814" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="64" startPosition="12" endLine="65" endPosition="204" />
-    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="992" startPosition="50" endLine="993" endPosition="24" />
-    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="995" startPosition="48" endLine="996" endPosition="24" />
-    <scopeInfo nodeId="1207650094265" fileName="TypesystemDescriptor.java" startLine="1002" startPosition="90" endLine="1003" endPosition="64" />
+    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="996" startPosition="50" endLine="997" endPosition="24" />
+    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="999" startPosition="48" endLine="1000" endPosition="24" />
+    <scopeInfo nodeId="1207650094265" fileName="TypesystemDescriptor.java" startLine="1006" startPosition="90" endLine="1007" endPosition="64" />
     <scopeInfo nodeId="1204064763142" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="35" startPosition="5" endLine="39" endPosition="312" />
-    <scopeInfo nodeId="1207649079702" fileName="TypesystemDescriptor.java" startLine="1000" startPosition="198" endLine="1004" endPosition="19">
+    <scopeInfo nodeId="1207649079702" fileName="TypesystemDescriptor.java" startLine="1004" startPosition="198" endLine="1008" endPosition="19">
       <varInfo nodeId="6295887419091357457" varName="variableDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1204065906120" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="41" startPosition="5" endLine="46" endPosition="308" />
     <scopeInfo nodeId="702942408396860199" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="55" startPosition="29" endLine="60" endPosition="13" />
-    <scopeInfo nodeId="1207649010712" fileName="TypesystemDescriptor.java" startLine="999" startPosition="42" endLine="1005" endPosition="17" />
-    <scopeInfo nodeId="1207649079698" fileName="TypesystemDescriptor.java" startLine="999" startPosition="42" endLine="1005" endPosition="17">
+    <scopeInfo nodeId="1207649010712" fileName="TypesystemDescriptor.java" startLine="1003" startPosition="42" endLine="1009" endPosition="17" />
+    <scopeInfo nodeId="1207649079698" fileName="TypesystemDescriptor.java" startLine="1003" startPosition="42" endLine="1009" endPosition="17">
       <varInfo nodeId="1207649079700" varName="tvr" />
     </scopeInfo>
     <scopeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="54" startPosition="61" endLine="62" endPosition="0" />
     <scopeInfo nodeId="702942408396860198" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="52" startPosition="7" endLine="62" endPosition="127" />
     <scopeInfo nodeId="684456904423889786" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="51" startPosition="386" endLine="63" endPosition="7" />
-    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="991" startPosition="28" endLine="1005" endPosition="17" />
-    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="986" startPosition="13" endLine="1006" endPosition="15">
+    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="995" startPosition="28" endLine="1009" endPosition="17" />
+    <scopeInfo nodeId="1207649010707" fileName="TypesystemDescriptor.java" startLine="990" startPosition="13" endLine="1010" endPosition="15">
       <varInfo nodeId="1207649032454" varName="arg" />
       <varInfo nodeId="1207649010709" varName="param" />
     </scopeInfo>
-    <scopeInfo nodeId="1207648654828" fileName="TypesystemDescriptor.java" startLine="985" startPosition="65" endLine="1007" endPosition="13" />
-    <scopeInfo nodeId="1207648619836" fileName="TypesystemDescriptor.java" startLine="981" startPosition="60" endLine="1009" endPosition="24">
+    <scopeInfo nodeId="1207648654828" fileName="TypesystemDescriptor.java" startLine="989" startPosition="65" endLine="1011" endPosition="13" />
+    <scopeInfo nodeId="1207648619836" fileName="TypesystemDescriptor.java" startLine="985" startPosition="60" endLine="1013" endPosition="24">
       <varInfo nodeId="1207648848490" varName="result" />
       <varInfo nodeId="1207648751665" varName="instanceMethodDeclaration" />
       <varInfo nodeId="1207648823978" varName="declarations" />
@@ -3427,7 +3428,7 @@
     <nodeInfo nodeId="1220444030637" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="35" startPosition="212" endLine="36" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220444030637" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="36" startPosition="64" endLine="37" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220444030637" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="37" startPosition="56" endLine="38" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1220443995701" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="45" startPosition="103" endLine="46" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1220443995701" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="45" startPosition="103" endLine="46" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1220444030637" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="47" startPosition="12" endLine="48" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1220444023164" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="47" startPosition="10" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1220443943109" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="44" startPosition="35" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -3495,9 +3496,9 @@
     <nodeInfo nodeId="1220523357864" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="134" startPosition="15" endLine="135" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220523357864" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="135" startPosition="52" endLine="136" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220523357876" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="137" startPosition="15" endLine="138" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6281385834685063550" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="138" startPosition="55" endLine="139" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6281385834685063550" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="138" startPosition="55" endLine="139" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1220523357880" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="140" startPosition="17" endLine="141" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1220523357903" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="142" startPosition="328" endLine="143" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1220523357903" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="142" startPosition="328" endLine="143" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227258840880" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="149" startPosition="16" endLine="150" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1227258925906" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="150" startPosition="64" endLine="151" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1233155321686" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="152" startPosition="139" endLine="153" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4122,32 +4123,32 @@
     <scopeInfo nodeId="1230476723780" fileName="Class_Void_weak_supertypeof_void_SubtypingRule.java" startLine="22" startPosition="118" endLine="23" endPosition="124" />
   </root>
   <root nodeId="1236166392793">
-    <nodeInfo nodeId="7447106258752476412" fileName="TypesystemDescriptor.java" startLine="931" startPosition="103" endLine="932" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236617969358" fileName="TypesystemDescriptor.java" startLine="1051" startPosition="206" endLine="1052" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236617995671" fileName="TypesystemDescriptor.java" startLine="1053" startPosition="14" endLine="1054" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239449491701" fileName="TypesystemDescriptor.java" startLine="1106" startPosition="99" endLine="1107" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3860149536565525602" fileName="TypesystemDescriptor.java" startLine="1175" startPosition="99" endLine="1176" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4957392803029437141" fileName="TypesystemDescriptor.java" startLine="1228" startPosition="105" endLine="1229" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4957392803029437138" fileName="TypesystemDescriptor.java" startLine="1230" startPosition="14" endLine="1231" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4957392803029437166" fileName="TypesystemDescriptor.java" startLine="1283" startPosition="99" endLine="1284" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4957392803029437188" fileName="TypesystemDescriptor.java" startLine="1333" startPosition="99" endLine="1334" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6361444434083817749" fileName="TypesystemDescriptor.java" startLine="1384" startPosition="99" endLine="1385" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236617781626" fileName="TypesystemDescriptor.java" startLine="1053" startPosition="12" endLine="1055" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4957392803029437134" fileName="TypesystemDescriptor.java" startLine="1230" startPosition="12" endLine="1232" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1236617781612" fileName="TypesystemDescriptor.java" startLine="1050" startPosition="99" endLine="1055" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4957392803029397801" fileName="TypesystemDescriptor.java" startLine="1227" startPosition="99" endLine="1232" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1533154877881631952" fileName="TypesystemDescriptor.java" startLine="931" startPosition="103" endLine="932" endPosition="98" />
-    <scopeInfo nodeId="1236617781613" fileName="TypesystemDescriptor.java" startLine="1051" startPosition="206" endLine="1052" endPosition="20" />
-    <scopeInfo nodeId="1236617781627" fileName="TypesystemDescriptor.java" startLine="1053" startPosition="14" endLine="1054" endPosition="81" />
-    <scopeInfo nodeId="1239449442589" fileName="TypesystemDescriptor.java" startLine="1106" startPosition="99" endLine="1107" endPosition="124" />
-    <scopeInfo nodeId="3860149536565525575" fileName="TypesystemDescriptor.java" startLine="1175" startPosition="99" endLine="1176" endPosition="29" />
-    <scopeInfo nodeId="4957392803029397803" fileName="TypesystemDescriptor.java" startLine="1228" startPosition="105" endLine="1229" endPosition="31" />
-    <scopeInfo nodeId="4957392803029437135" fileName="TypesystemDescriptor.java" startLine="1230" startPosition="14" endLine="1231" endPosition="20" />
-    <scopeInfo nodeId="4957392803029437154" fileName="TypesystemDescriptor.java" startLine="1283" startPosition="99" endLine="1284" endPosition="29" />
-    <scopeInfo nodeId="4957392803029437179" fileName="TypesystemDescriptor.java" startLine="1333" startPosition="99" endLine="1334" endPosition="29" />
-    <scopeInfo nodeId="6361444434083801799" fileName="TypesystemDescriptor.java" startLine="1384" startPosition="99" endLine="1385" endPosition="124" />
-    <scopeInfo nodeId="1236166412688" fileName="TypesystemDescriptor.java" startLine="1050" startPosition="99" endLine="1055" endPosition="7" />
-    <scopeInfo nodeId="4957392803029379674" fileName="TypesystemDescriptor.java" startLine="1227" startPosition="99" endLine="1232" endPosition="7" />
+    <nodeInfo nodeId="7447106258752476412" fileName="TypesystemDescriptor.java" startLine="935" startPosition="103" endLine="936" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236617969358" fileName="TypesystemDescriptor.java" startLine="1055" startPosition="206" endLine="1056" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236617995671" fileName="TypesystemDescriptor.java" startLine="1057" startPosition="14" endLine="1058" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239449491701" fileName="TypesystemDescriptor.java" startLine="1110" startPosition="99" endLine="1111" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3860149536565525602" fileName="TypesystemDescriptor.java" startLine="1179" startPosition="99" endLine="1180" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4957392803029437141" fileName="TypesystemDescriptor.java" startLine="1232" startPosition="105" endLine="1233" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4957392803029437138" fileName="TypesystemDescriptor.java" startLine="1234" startPosition="14" endLine="1235" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4957392803029437166" fileName="TypesystemDescriptor.java" startLine="1287" startPosition="99" endLine="1288" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4957392803029437188" fileName="TypesystemDescriptor.java" startLine="1337" startPosition="99" endLine="1338" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6361444434083817749" fileName="TypesystemDescriptor.java" startLine="1388" startPosition="99" endLine="1389" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236617781626" fileName="TypesystemDescriptor.java" startLine="1057" startPosition="12" endLine="1059" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4957392803029437134" fileName="TypesystemDescriptor.java" startLine="1234" startPosition="12" endLine="1236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1236617781612" fileName="TypesystemDescriptor.java" startLine="1054" startPosition="99" endLine="1059" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4957392803029397801" fileName="TypesystemDescriptor.java" startLine="1231" startPosition="99" endLine="1236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1533154877881631952" fileName="TypesystemDescriptor.java" startLine="935" startPosition="103" endLine="936" endPosition="98" />
+    <scopeInfo nodeId="1236617781613" fileName="TypesystemDescriptor.java" startLine="1055" startPosition="206" endLine="1056" endPosition="20" />
+    <scopeInfo nodeId="1236617781627" fileName="TypesystemDescriptor.java" startLine="1057" startPosition="14" endLine="1058" endPosition="81" />
+    <scopeInfo nodeId="1239449442589" fileName="TypesystemDescriptor.java" startLine="1110" startPosition="99" endLine="1111" endPosition="124" />
+    <scopeInfo nodeId="3860149536565525575" fileName="TypesystemDescriptor.java" startLine="1179" startPosition="99" endLine="1180" endPosition="29" />
+    <scopeInfo nodeId="4957392803029397803" fileName="TypesystemDescriptor.java" startLine="1232" startPosition="105" endLine="1233" endPosition="31" />
+    <scopeInfo nodeId="4957392803029437135" fileName="TypesystemDescriptor.java" startLine="1234" startPosition="14" endLine="1235" endPosition="20" />
+    <scopeInfo nodeId="4957392803029437154" fileName="TypesystemDescriptor.java" startLine="1287" startPosition="99" endLine="1288" endPosition="29" />
+    <scopeInfo nodeId="4957392803029437179" fileName="TypesystemDescriptor.java" startLine="1337" startPosition="99" endLine="1338" endPosition="29" />
+    <scopeInfo nodeId="6361444434083801799" fileName="TypesystemDescriptor.java" startLine="1388" startPosition="99" endLine="1389" endPosition="124" />
+    <scopeInfo nodeId="1236166412688" fileName="TypesystemDescriptor.java" startLine="1054" startPosition="99" endLine="1059" endPosition="7" />
+    <scopeInfo nodeId="4957392803029379674" fileName="TypesystemDescriptor.java" startLine="1231" startPosition="99" endLine="1236" endPosition="7" />
   </root>
   <root nodeId="1236695950918">
     <nodeInfo nodeId="1236697384391" fileName="typeof_VarVariableReference_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -5714,13 +5715,13 @@
     <nodeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="23" startPosition="54" endLine="24" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="24" startPosition="217" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="25" startPosition="56" endLine="26" endPosition="418" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554301099359820389" fileName="TypesystemDescriptor.java" startLine="1025" startPosition="60" endLine="1026" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="554301099359820393" fileName="TypesystemDescriptor.java" startLine="1027" startPosition="11" endLine="1028" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="554301099359820380" fileName="TypesystemDescriptor.java" startLine="1024" startPosition="54" endLine="1027" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="554301099359820389" fileName="TypesystemDescriptor.java" startLine="1029" startPosition="60" endLine="1030" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="554301099359820393" fileName="TypesystemDescriptor.java" startLine="1031" startPosition="11" endLine="1032" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="554301099359820380" fileName="TypesystemDescriptor.java" startLine="1028" startPosition="54" endLine="1031" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="20" startPosition="88" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="554301099359820435" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="19" startPosition="132" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="554301099359820388" fileName="TypesystemDescriptor.java" startLine="1025" startPosition="60" endLine="1026" endPosition="57" />
-    <scopeInfo nodeId="554301099359820379" fileName="TypesystemDescriptor.java" startLine="1024" startPosition="54" endLine="1028" endPosition="22" />
+    <scopeInfo nodeId="554301099359820388" fileName="TypesystemDescriptor.java" startLine="1029" startPosition="60" endLine="1030" endPosition="57" />
+    <scopeInfo nodeId="554301099359820379" fileName="TypesystemDescriptor.java" startLine="1028" startPosition="54" endLine="1032" endPosition="22" />
     <scopeInfo nodeId="554301099359820442" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="21" startPosition="7" endLine="26" endPosition="418" />
     <scopeInfo nodeId="554301099359820441" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="20" startPosition="88" endLine="27" endPosition="7" />
     <scopeInfo nodeId="554301099359820395" fileName="typeof_VariableDeclaration_InferenceRule.java" startLine="19" startPosition="132" endLine="28" endPosition="5" />
@@ -6070,6 +6071,16 @@
     <scopeInfo nodeId="7854098281915049057" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="22" startPosition="133" endLine="30" endPosition="5">
       <varInfo nodeId="8918460683225511051" varName="classifierType" />
     </scopeInfo>
+  </root>
+  <root nodeId="7868761255934363861">
+    <nodeInfo nodeId="7868761255934417558" fileName="check_FinalAndAbstractMethod_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7868761255934417558" fileName="check_FinalAndAbstractMethod_NonTypesystemRule.java" startLine="24" startPosition="54" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7868761255934417558" fileName="check_FinalAndAbstractMethod_NonTypesystemRule.java" startLine="25" startPosition="60" endLine="26" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7868761255934417558" fileName="check_FinalAndAbstractMethod_NonTypesystemRule.java" startLine="22" startPosition="154" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7868761255934383373" fileName="check_FinalAndAbstractMethod_NonTypesystemRule.java" startLine="21" startPosition="138" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="7868761255934417558" fileName="check_FinalAndAbstractMethod_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="26" endPosition="304" />
+    <scopeInfo nodeId="7868761255934383375" fileName="check_FinalAndAbstractMethod_NonTypesystemRule.java" startLine="22" startPosition="154" endLine="27" endPosition="7" />
+    <scopeInfo nodeId="7868761255934363862" fileName="check_FinalAndAbstractMethod_NonTypesystemRule.java" startLine="21" startPosition="138" endLine="28" endPosition="5" />
   </root>
   <root nodeId="7970711249077251764">
     <nodeInfo nodeId="7970711249077251789" fileName="CheckingUtil.java" startLine="14" startPosition="48" endLine="15" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

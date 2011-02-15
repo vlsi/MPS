@@ -939,6 +939,11 @@
       <property name="name" nameId="tpck.1169194664001" value="check_TypeInVarDecl" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
     </node>
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7868761255934363861">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
+      <property name="name" nameId="tpck.1169194664001" value="check_FinalAndAbstractMethod" />
+      <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+    </node>
   </roots>
   <root id="1175495245176">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1175495245177">
@@ -27899,6 +27904,44 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="7868761255934363861">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="7868761255934363862">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7868761255934383373">
+        <node role="condition" roleId="tpee.1068580123160" type="tpee.AndExpression" typeId="tpee.1080120340718" id="7868761255934417549">
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7868761255934384493">
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7868761255934384492">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7868761255934373954" resolveInfo="baseMethodDeclaration" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="7868761255934570940">
+              <link role="property" roleId="tp25.1138056395725" targetNodeId="tpee.1178608670077" resolveInfo="isAbstract" />
+            </node>
+          </node>
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7868761255934417553">
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7868761255934417552">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7868761255934373954" resolveInfo="baseMethodDeclaration" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="7868761255934490431">
+              <link role="property" roleId="tp25.1138056395725" targetNodeId="tpee.1181808852946" resolveInfo="isFinal" />
+            </node>
+          </node>
+        </node>
+        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="7868761255934383375">
+          <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="7868761255934417558">
+            <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7868761255934417561">
+              <property name="value" nameId="tpee.1070475926801" value="Illegal combination of modifiers 'abstract' and 'final'" />
+            </node>
+            <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7868761255934417562">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7868761255934373954" resolveInfo="baseMethodDeclaration" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7868761255934373954">
+      <property name="name" nameId="tpck.1169194664001" value="instanceMethodDeclaration" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
   </root>
 </model>
