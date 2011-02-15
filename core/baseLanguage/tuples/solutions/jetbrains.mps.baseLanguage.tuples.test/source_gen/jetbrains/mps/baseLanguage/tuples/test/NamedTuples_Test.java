@@ -194,6 +194,14 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertNotNull(pair);
   }
 
+  public void test_implementsInterface() throws Exception {
+    Sample sample = new Sample(42);
+    Assert.assertSame(42, sample.get());
+    Assert.assertEquals("<42>", sample.getSample());
+    ISample s = sample;
+    Assert.assertEquals("<42>", s.getSample());
+  }
+
   public String getString(SharedPair<String, String>... tuples) {
     return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).<String>select(new ISelector<SharedPair<String, String>, String>() {
       public String select(SharedPair<String, String> t) {

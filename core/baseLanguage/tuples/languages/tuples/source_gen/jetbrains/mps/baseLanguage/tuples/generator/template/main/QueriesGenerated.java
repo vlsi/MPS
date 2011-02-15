@@ -702,6 +702,10 @@ public class QueriesGenerated {
     });
   }
 
+  public static boolean ifMacro_Condition_6562295948842486506(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "component", true)).isNotEmpty();
+  }
+
   public static boolean ifMacro_Condition_247710080512637057(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getNode(), "final"));
   }
