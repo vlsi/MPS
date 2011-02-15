@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dxf3nnla13mx3grshntjmc7q9cmw6iz">
+<dependencies version="2" modelHash="acs12rt6rfl28un3nyawsvfm0qtalpw">
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" />
@@ -21,6 +21,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="9lv0st89onsmnueckkgcty336crj4y9" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-dtwqt0ixqdj85ukq93zpt04924xrm4y" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="1vv2hn6wycrvymu9zfv8qcmx3ks0rgn" />
+  <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" hash="15tk2prxohfzzcb9qpbsfjc8i9f64bi" />
   <dep model="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)" hash="-es2ze67y3oesvdovyezr1tl1czrvk3k" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-85pv52yepx8e7cyubxibfiu4lxtfny5" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="cv4v4yu2mg2qwn3qgmp4opgx2qhvapi" />
@@ -96,6 +97,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
@@ -192,13 +194,13 @@
   <source id="1448685625140488659" name="weave_PersistentConfigurationEditorTemplateFields" hash="63ybknbhlwbzgbafngh6kmtx8z8r8p4">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1448685625140488711" name="weave_PersistentConfigurationEditorTemplateConstructor" hash="-vm16i9ad6vysaugkekqxcrz0hpt69y">
+  <source id="1448685625140488711" name="weave_PersistentConfigurationEditorTemplateConstructor" hash="1elausayuma2ap9bbrli3lfssa1f6f7">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1448685625140492336" name="reduce_ConstructorParameterReference" hash="ytkvyw58ram2hoafi9mmp9p40b2lpm">
+  <source id="1448685625140492336" name="reduce_ConstructorParameterReference" hash="-nxqit58djc1zlijik29sxmxl3nzydt">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1448685625140492358" name="reduce_ConstructorParameterReferenceInEditor" hash="-2muy55ri2m3imas3n2fxfr4gtvwsw3f">
+  <source id="1448685625140492358" name="reduce_ConstructorParameterReferenceInEditor" hash="2andvtbneyb1bthwdijeonfczdxocpk">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="6589514334700622351" name="reduce_TemplatePersistentPropertyDeclaration" hash="-duuq94536y1iwdg3ydpqf3nazfaz1ba">

@@ -443,18 +443,18 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_3257967158569718638(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConstructorParameterToParameter");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConstructorParameterToEditorParameter");
   }
 
   public static Object referenceMacro_GetReferent_3257967158569718620(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConstructorParamaterToField");
   }
 
-  public static Object referenceMacro_GetReferent_1448685625140492342(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_4667331066104758417(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "ConstructorParamaterToField");
   }
 
-  public static Object referenceMacro_GetReferent_1448685625140492362(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_4667331066104758405(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "ConstructorParamaterToEditorField");
   }
 
