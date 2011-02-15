@@ -78,6 +78,12 @@ public class NullableAnalyzer_Test extends BaseTransformationTest {
     this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "testIfNullReturnNotEmpty", true);
   }
 
+  @Test
+  public void testMPS10935() throws Throwable {
+    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "testMPS10935", true);
+  }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void testDot() throws Exception {
@@ -133,6 +139,11 @@ public class NullableAnalyzer_Test extends BaseTransformationTest {
     public void testIfNullReturnNotEmpty() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("8673157736019186652"), "jetbrains.mps.lang.test.structure.NodeOperation");
       NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("8673157736019186604"));
+    }
+
+    public void testMPS10935() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("3613402085300515297"), "jetbrains.mps.lang.test.structure.NodeOperation");
+      NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("3613402085300515269"));
     }
   }
 }

@@ -40,6 +40,6 @@ public class check_FinalAndAbstractMethod_NonTypesystemRule extends AbstractNonT
   }
 
   public boolean overrides() {
-    return true;
+    return false;
   }
 }

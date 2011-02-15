@@ -942,7 +942,6 @@
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7868761255934363861">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
       <property name="name" nameId="tpck.1169194664001" value="check_FinalAndAbstractMethod" />
-      <property name="overrides" nameId="tpd4.1195213689297" value="true" />
     </node>
   </roots>
   <root id="1175495245176">
