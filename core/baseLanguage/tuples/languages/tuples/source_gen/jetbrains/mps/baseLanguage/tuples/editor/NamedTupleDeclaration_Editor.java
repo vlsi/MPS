@@ -243,11 +243,6 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new NamedTupleDeclaration_Editor.implementsListHandler_955wzk_b7a(node, "implements", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_implements");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.SELECTABLE, true);
-    }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
