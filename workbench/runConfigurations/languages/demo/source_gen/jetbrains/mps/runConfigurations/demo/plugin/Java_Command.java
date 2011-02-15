@@ -6,15 +6,9 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.configurations.RunConfigurationBase;
 import com.intellij.execution.process.ProcessListener;
 import com.intellij.execution.ExecutionException;
+import jetbrains.mps.runConfigurations.runtime.ProcessHandlerBuilder;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.runConfigurations.runtime.DefaultProcessHandler;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import org.apache.commons.lang.StringUtils;
-import java.io.IOException;
 
 public class Java_Command {
   public Java_Command() {
@@ -22,29 +16,10 @@ public class Java_Command {
 
   public static ProcessHandler createProcess(RunConfigurationBase configuration, boolean debug, ProcessListener processListener) throws ExecutionException {
     String java = "/usr/lib/jvm/java-1.6.0-openjdk/bin/java";
-    return createCommand(processListener, java);
+    return new ProcessHandlerBuilder().append(java).append("-version").build(processListener);
   }
 
   public static IDebugger getDebugger() {
     return Debuggers.getInstance().getDebuggerByName("Java");
-  }
-
-  public static ProcessHandler createCommand(ProcessListener processListener, String java) throws ExecutionException {
-    List<String> arguments = ListSequence.fromListAndArray(new ArrayList<String>(), java, "-version");
-    ProcessBuilder builder = new ProcessBuilder(ListSequence.fromList(arguments).toGenericArray(String.class));
-    try {
-      Process process = builder.start();
-      DefaultProcessHandler processHandler = new DefaultProcessHandler(process, ListSequence.fromList(arguments).foldLeft("", new ILeftCombinator<String, String>() {
-        public String combine(String s, String it) {
-          return (StringUtils.isEmpty(s) ?
-            it :
-            s + " " + it
-          );
-        }
-      }), processListener);
-      return processHandler;
-    } catch (IOException e) {
-      throw new ExecutionException("Start Process Failed", e);
-    }
   }
 }

@@ -180,10 +180,6 @@
       <property name="name" nameId="tpck.1169194664001" value="CommandPart" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
-    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2866018809101490239">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
-      <property name="name" nameId="tpck.1169194664001" value="IMacroExpression" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2866018809102008315">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <property name="name" nameId="tpck.1169194664001" value="ProcessType" />
@@ -214,6 +210,11 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
       <property name="name" nameId="tpck.1169194664001" value="DebugSession_Function" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4667331066104771828">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <property name="name" nameId="tpck.1169194664001" value="CommandMethod" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp4f.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
     </node>
   </roots>
   <root id="2401501559171345993">
@@ -644,9 +645,6 @@
       <property name="value" nameId="tpce.1105725733873" value="command" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2866018809101490240">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2866018809101490239" resolveInfo="IMacroStatement" />
-    </node>
   </root>
   <root id="5812151570929638024">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5812151570929658237">
@@ -656,7 +654,6 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
   </root>
-  <root id="2866018809101490239" />
   <root id="2866018809102008315">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2866018809102008316">
       <property name="value" nameId="tpce.1105725733873" value="process" />
@@ -681,6 +678,9 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6957430790227171560">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4667331066104874890">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tp4f.1205751982837" resolveInfo="IClassifier" />
+    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2064548906020947554">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="debugger" />
@@ -691,6 +691,12 @@
       <property name="role" nameId="tpce.1071599776563" value="execute" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="6957430790227171581" resolveInfo="ExecuteCommand_Function" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4667331066104771829">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="method" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4667331066104771828" resolveInfo="CommandMethod" />
     </node>
   </root>
   <root id="6957430790227171581">
@@ -731,5 +737,6 @@
       <link role="target" roleId="tpce.1105736807942" targetNodeId="7684700299064179245" resolveInfo="Project_Parameter" />
     </node>
   </root>
+  <root id="4667331066104771828" />
 </model>
 

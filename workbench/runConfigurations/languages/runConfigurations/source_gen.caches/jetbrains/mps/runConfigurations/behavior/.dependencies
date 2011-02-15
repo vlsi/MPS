@@ -33,6 +33,11 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.util.HashSet" />
   </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.behavior.CommandMethod_Behavior" file="CommandMethod_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+  </dependency>
   <dependency className="jetbrains.mps.runConfigurations.behavior.CreateEditor_Function_Behavior" file="CreateEditor_Function_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.lang.Class" />

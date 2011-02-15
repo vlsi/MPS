@@ -22,5 +22,24 @@
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode extendsClassName="com.intellij.openapi.util.JDOMExternalizable" />
   </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.runtime.ProcessHandlerBuilder" file="ProcessHandlerBuilder.java">
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessListener" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode dependClassName="com.intellij.execution.ExecutionException" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.DefaultProcessHandler" />
+    <classNode dependClassName="java.lang.ProcessBuilder" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="java.lang.Process" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="java.io.IOException" />
+  </dependency>
 </dependenciesRoot>
 

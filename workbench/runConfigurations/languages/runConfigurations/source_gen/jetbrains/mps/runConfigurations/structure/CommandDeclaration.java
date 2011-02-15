@@ -6,6 +6,8 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.apiLang.structure.DebuggerReference;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +20,7 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DEBUGGER = "debugger";
   public static final String EXECUTE = "execute";
+  public static final String METHOD = "method";
 
   public CommandDeclaration(SNode node) {
     super(node);
@@ -69,6 +72,26 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept {
 
   public void setExecute(ExecuteCommand_Function node) {
     super.setChild(CommandDeclaration.EXECUTE, node);
+  }
+
+  public int getMethodsCount() {
+    return this.getChildCount(CommandDeclaration.METHOD);
+  }
+
+  public Iterator<CommandMethod> methods() {
+    return this.children(CommandMethod.class, CommandDeclaration.METHOD);
+  }
+
+  public List<CommandMethod> getMethods() {
+    return this.getChildren(CommandMethod.class, CommandDeclaration.METHOD);
+  }
+
+  public void addMethod(CommandMethod node) {
+    this.addChild(CommandDeclaration.METHOD, node);
+  }
+
+  public void insertMethod(CommandMethod prev, CommandMethod node) {
+    this.insertChild(prev, CommandDeclaration.METHOD, node);
   }
 
   public static CommandDeclaration newInstance(SModel sm, boolean init) {
