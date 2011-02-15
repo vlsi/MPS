@@ -7,13 +7,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public abstract class NodeGroupChange extends ModelChange {
@@ -41,20 +38,18 @@ public abstract class NodeGroupChange extends ModelChange {
   public abstract int getEnd();
 
   @Nullable
-  private SNode deleteOldNodesAndReturnAnchor(@NotNull final SModel model) {
+  private SNode deleteOldNodesAndReturnAnchor(@NotNull SModel model) {
     SNode parent = getChangeSet().getOldModel().getNodeById(myParentNodeId);
     assert parent != null;
-    Iterable<SNode> originalNodesToDelete = ListSequence.fromList(((List<SNode>) parent.getChildren(myRole))).page(getBegin(), getEnd());
-    SNodeId anchorId = check_yjf6x2_a0d0e(SNodeOperations.getPrevSibling(Sequence.fromIterable(originalNodesToDelete).first()));
-    SNode anchor = (anchorId == null ?
+
+    List<SNode> children = parent.getChildren(myRole);
+    SNode anchor = (getBegin() == 0 ?
       null :
-      model.getNodeById(anchorId)
+      model.getNodeById(children.get(getBegin() - 1).getSNodeId())
     );
-    Sequence.fromIterable(originalNodesToDelete).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode n) {
-        model.getNodeById(n.getSNodeId()).delete();
-      }
-    });
+    for (int i = getBegin(); i < getEnd(); i++) {
+      model.getNodeById(children.get(i).getSNodeId()).delete();
+    }
     return anchor;
   }
 
@@ -86,12 +81,5 @@ public abstract class NodeGroupChange extends ModelChange {
       String.format("node #%d", begin) :
       String.format("nodes #%d-%d", begin, end - 1)
     );
-  }
-
-  private static SNodeId check_yjf6x2_a0d0e(SNode p) {
-    if (null == p) {
-      return null;
-    }
-    return p.getSNodeId();
   }
 }

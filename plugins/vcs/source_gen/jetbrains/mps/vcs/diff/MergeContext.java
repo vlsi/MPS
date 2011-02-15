@@ -14,6 +14,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.changes.ChangeSetBuilder;
 import jetbrains.mps.smodel.CopyUtil;
@@ -25,7 +26,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -47,6 +47,7 @@ public class MergeContext implements NodeCopier {
   private Set<ModelChange> myAppliedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private Set<ModelChange> myExcludedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private Map<SNodeId, List<ModelChange>> myRootToChanges = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
+  private Map<SNodeId, SNode> myIdReplacementCache = MapSequence.fromMap(new HashMap<SNodeId, SNode>());
 
   public MergeContext(final SModel base, final SModel mine, final SModel repository) {
     myBaseModel = base;
@@ -275,7 +276,23 @@ public class MergeContext implements NodeCopier {
   }
 
   private void restoreIds() {
-    // TODO restore ids 
+    for (SNodeId id : SetSequence.fromSet(MapSequence.fromMap(myIdReplacementCache).keySet())) {
+      if (myResultModel.getNodeById(id) == null) {
+        // node id is free now! 
+        SNode node = MapSequence.fromMap(myIdReplacementCache).get(id);
+        assert node != null;
+
+        SNode copy = CopyUtil.copyAndPreserveId(node);
+        copy.setId(id);
+        if (SNodeOperations.getParent(node) == null) {
+          assert false;
+        } else {
+          SNodeOperations.replaceWithAnother(node, copy);
+        }
+
+        MapSequence.fromMap(myIdReplacementCache).put(id, null);
+      }
+    }
   }
 
   private void applyChangesNoRestoreIds(Iterable<ModelChange> changes) {
@@ -350,18 +367,28 @@ public class MergeContext implements NodeCopier {
   }
 
   public MergeContextState getCurrentState() {
-    return new MergeContextState(myResultModel, myAppliedChanges, myExcludedChanges);
+    return new MergeContextState(myResultModel, myAppliedChanges, myExcludedChanges, myIdReplacementCache);
   }
 
   public void restoreState(MergeContextState state) {
     myResultModel = state.myResultModel;
     myAppliedChanges = state.myAppliedChanges;
     myExcludedChanges = state.myExcludedChanges;
+    myIdReplacementCache = state.myIdReplacementCache;
   }
 
   public SNode copyNode(SNode sourceNode) {
-    // TODO  
-    return CopyUtil.copy(sourceNode);
+    SNode copy = CopyUtil.copyAndPreserveId(sourceNode);
+    for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(copy, null, true, new String[]{}))) {
+      SNodeId nodeId = node.getSNodeId();
+      if (myResultModel.getNodeById(nodeId) != null) {
+        node.setId(null);
+        if (!(MapSequence.fromMap(myIdReplacementCache).containsKey(nodeId))) {
+          MapSequence.fromMap(myIdReplacementCache).put(nodeId, node);
+        }
+      }
+    }
+    return copy;
   }
 
   private static Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> arrangeNodeGroupChanges(ChangeSet changeSet) {

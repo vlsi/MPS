@@ -22,7 +22,6 @@
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="11" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
-  <import index="17" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
   <root_stubs>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8813828754313712692">
       <property name="1.name:0" value="ModelChange" />
@@ -2584,62 +2583,25 @@
             </node>
           </node>
         </node>
-        <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3396946986144293440">
-          <node role="2.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3396946986144293441">
-            <property name="1.name:0" value="originalNodesToDelete" />
-            <node role="2.type:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="3396946986144293442">
-              <node role="5.elementType:7" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3396946986144293443" />
-            </node>
-            <node role="2.initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3396946986144293444">
-              <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="3396946986144293445">
-                <node role="2.expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="3396946986144293446">
-                  <node role="2.expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3396946986144293447">
-                    <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3396946986144293448">
-                      <link role="2.variableDeclaration:3" targetNodeId="3396946986144290644" resolveInfo="parent" />
-                    </node>
-                    <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3396946986144293449">
-                      <link role="2.baseMethodDeclaration:3" targetNodeId="6.~SNode.getChildren(java.lang.String):java.util.List" resolveInfo="getChildren" />
-                      <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3396946986144293450">
-                        <link role="2.variableDeclaration:3" targetNodeId="4972886494893223507" resolveInfo="myRole" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="2.type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="3396946986144293451">
-                    <node role="5.elementType:7" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3396946986144293452" />
-                  </node>
-                </node>
-              </node>
-              <node role="2.operation:3" type="jetbrains.mps.baseLanguage.collections.structure.PageOperation:7" id="3396946986144293453">
-                <node role="5.fromElement:7" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="3396946986144293454">
-                  <link role="2.baseMethodDeclaration:3" targetNodeId="4972886494893364978" resolveInfo="getBegin" />
-                </node>
-                <node role="5.toElement:7" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="3396946986144293455">
-                  <link role="2.baseMethodDeclaration:3" targetNodeId="4972886494893364983" resolveInfo="getEnd" />
-                </node>
+        <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="7121949289458336617" />
+        <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7121949289458336537">
+          <node role="2.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7121949289458336538">
+            <property name="1.name:0" value="children" />
+            <node role="2.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7121949289458336539">
+              <link role="2.classifier:3" targetNodeId="12.~List" resolveInfo="List" />
+              <node role="2.parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7121949289458336540">
+                <link role="2.classifier:3" targetNodeId="6.~SNode" resolveInfo="SNode" />
               </node>
             </node>
-          </node>
-        </node>
-        <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3396946986144293667">
-          <node role="2.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3396946986144293668">
-            <property name="1.name:0" value="anchorId" />
-            <node role="2.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3396946986144293669">
-              <link role="2.classifier:3" targetNodeId="6.~SNodeId" resolveInfo="SNodeId" />
-            </node>
-            <node role="2.initializer:3" type="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" id="3396946986144293670">
-              <node role="2.operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3396946986144293671">
-                <node role="3.leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3396946986144293672">
-                  <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3396946986144293673">
-                    <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3396946986144293674">
-                      <link role="2.variableDeclaration:3" targetNodeId="3396946986144293441" resolveInfo="originalNodesToDelete" />
-                    </node>
-                    <node role="2.operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation:7" id="3396946986144293675" />
-                  </node>
-                  <node role="2.operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingOperation:16" id="3396946986144293676" />
-                </node>
+            <node role="2.initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7121949289458336541">
+              <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7121949289458336542">
+                <link role="2.variableDeclaration:3" targetNodeId="3396946986144290644" resolveInfo="parent" />
               </node>
-              <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3396946986144293677">
-                <link role="2.baseMethodDeclaration:3" targetNodeId="6.~SNode.getSNodeId():jetbrains.mps.smodel.SNodeId" resolveInfo="getSNodeId" />
+              <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7121949289458336543">
+                <link role="2.baseMethodDeclaration:3" targetNodeId="6.~SNode.getChildren(java.lang.String):java.util.List" resolveInfo="getChildren" />
+                <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7121949289458336544">
+                  <link role="2.variableDeclaration:3" targetNodeId="4972886494893223507" resolveInfo="myRole" />
+                </node>
               </node>
             </node>
           </node>
@@ -2650,12 +2612,6 @@
             <node role="2.type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3396946986144293474" />
             <node role="2.initializer:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="3396946986144293685">
               <node role="2.ifTrue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3396946986144293694" />
-              <node role="2.condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3396946986144293681">
-                <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3396946986144293684" />
-                <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3396946986144293680">
-                  <link role="2.variableDeclaration:3" targetNodeId="3396946986144293668" resolveInfo="anchorId" />
-                </node>
-              </node>
               <node role="2.ifFalse:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3396946986144293695">
                 <node role="2.operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3396946986144293696">
                   <node role="3.leftExpression:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3396946986144293697">
@@ -2664,55 +2620,94 @@
                 </node>
                 <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3396946986144293698">
                   <link role="2.baseMethodDeclaration:3" targetNodeId="6.~SModel.getNodeById(jetbrains.mps.smodel.SNodeId):jetbrains.mps.smodel.SNode" resolveInfo="getNodeById" />
-                  <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3396946986144293699">
-                    <link role="2.variableDeclaration:3" targetNodeId="3396946986144293668" resolveInfo="anchorId" />
+                  <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7121949289458336655">
+                    <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7121949289458336656">
+                      <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7121949289458336657">
+                        <link role="2.variableDeclaration:3" targetNodeId="7121949289458336538" resolveInfo="children" />
+                      </node>
+                      <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7121949289458336658">
+                        <link role="2.baseMethodDeclaration:3" targetNodeId="12.~List.get(int):java.lang.Object" resolveInfo="get" />
+                        <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.MinusExpression:3" id="7121949289458336659">
+                          <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="7121949289458336660">
+                            <property name="2.value:3" value="1" />
+                          </node>
+                          <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="7121949289458336661">
+                            <link role="2.baseMethodDeclaration:3" targetNodeId="4972886494893364978" resolveInfo="getBegin" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7121949289458336662">
+                      <link role="2.baseMethodDeclaration:3" targetNodeId="6.~SNode.getSNodeId():jetbrains.mps.smodel.SNodeId" resolveInfo="getSNodeId" />
+                    </node>
                   </node>
+                </node>
+              </node>
+              <node role="2.condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="7121949289458336651">
+                <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="7121949289458336652">
+                  <link role="2.baseMethodDeclaration:3" targetNodeId="4972886494893364978" resolveInfo="getBegin" />
+                </node>
+                <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="7121949289458336653">
+                  <property name="2.value:3" value="0" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3396946986144290662">
-          <node role="2.expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3396946986144290700">
-            <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3396946986144293456">
-              <link role="2.variableDeclaration:3" targetNodeId="3396946986144293441" resolveInfo="idsToDelete" />
-            </node>
-            <node role="2.operation:3" type="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation:7" id="3396946986144293736">
-              <node role="5.closure:7" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="3396946986144293737">
-                <node role="7.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3396946986144293738">
-                  <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3396946986144293739">
-                    <node role="2.expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3396946986144293751">
-                      <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3396946986144293740">
-                        <node role="2.operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3396946986144293741">
-                          <node role="3.leftExpression:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3396946986144293742">
-                            <link role="2.variableDeclaration:3" targetNodeId="3396946986144283260" resolveInfo="model" />
-                          </node>
+        <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.ForStatement:3" id="7121949289458336577">
+          <node role="2.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7121949289458336578">
+            <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7121949289458336674">
+              <node role="2.expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7121949289458336675">
+                <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7121949289458336676">
+                  <node role="2.operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="7121949289458336677">
+                    <node role="3.leftExpression:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7121949289458336678">
+                      <link role="2.variableDeclaration:3" targetNodeId="3396946986144283260" resolveInfo="model" />
+                    </node>
+                  </node>
+                  <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7121949289458336679">
+                    <link role="2.baseMethodDeclaration:3" targetNodeId="6.~SModel.getNodeById(jetbrains.mps.smodel.SNodeId):jetbrains.mps.smodel.SNode" resolveInfo="getNodeById" />
+                    <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7121949289458336684">
+                      <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7121949289458336685">
+                        <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7121949289458336686">
+                          <link role="2.variableDeclaration:3" targetNodeId="7121949289458336538" resolveInfo="children" />
                         </node>
-                        <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3396946986144293743">
-                          <link role="2.baseMethodDeclaration:3" targetNodeId="6.~SModel.getNodeById(jetbrains.mps.smodel.SNodeId):jetbrains.mps.smodel.SNode" resolveInfo="getNodeById" />
-                          <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3396946986144293744">
-                            <node role="2.operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3396946986144293745">
-                              <node role="3.leftExpression:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3396946986144293746">
-                                <link role="2.variableDeclaration:3" targetNodeId="3396946986144293748" resolveInfo="n" />
-                              </node>
-                            </node>
-                            <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3396946986144293747">
-                              <link role="2.baseMethodDeclaration:3" targetNodeId="6.~SNode.getSNodeId():jetbrains.mps.smodel.SNodeId" resolveInfo="getSNodeId" />
-                            </node>
+                        <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7121949289458336687">
+                          <link role="2.baseMethodDeclaration:3" targetNodeId="12.~List.get(int):java.lang.Object" resolveInfo="get" />
+                          <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7121949289458336688">
+                            <link role="2.variableDeclaration:3" targetNodeId="7121949289458336580" resolveInfo="i" />
                           </node>
                         </node>
                       </node>
-                      <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3396946986144293755">
-                        <link role="2.baseMethodDeclaration:3" targetNodeId="6.~SNode.delete():void" resolveInfo="delete" />
+                      <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7121949289458336689">
+                        <link role="2.baseMethodDeclaration:3" targetNodeId="6.~SNode.getSNodeId():jetbrains.mps.smodel.SNodeId" resolveInfo="getSNodeId" />
                       </node>
                     </node>
                   </node>
                 </node>
-                <node role="7.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3396946986144293748">
-                  <property name="1.name:0" value="n" />
-                  <node role="2.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3396946986144293749" />
+                <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7121949289458336681">
+                  <link role="2.baseMethodDeclaration:3" targetNodeId="6.~SNode.delete():void" resolveInfo="delete" />
                 </node>
               </node>
+            </node>
+          </node>
+          <node role="2.variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7121949289458336580">
+            <property name="1.name:0" value="i" />
+            <node role="2.type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7121949289458336581" />
+            <node role="2.initializer:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="7121949289458336584">
+              <link role="2.baseMethodDeclaration:3" targetNodeId="4972886494893364978" resolveInfo="getBegin" />
+            </node>
+          </node>
+          <node role="2.condition:3" type="jetbrains.mps.baseLanguage.structure.LessThanExpression:3" id="7121949289458336586">
+            <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="7121949289458336589">
+              <link role="2.baseMethodDeclaration:3" targetNodeId="4972886494893364983" resolveInfo="getEnd" />
+            </node>
+            <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7121949289458336585">
+              <link role="2.variableDeclaration:3" targetNodeId="7121949289458336580" resolveInfo="i" />
+            </node>
+          </node>
+          <node role="2.iteration:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="7121949289458336591">
+            <node role="2.expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7121949289458336592">
+              <link role="2.variableDeclaration:3" targetNodeId="7121949289458336580" resolveInfo="i" />
             </node>
           </node>
         </node>
