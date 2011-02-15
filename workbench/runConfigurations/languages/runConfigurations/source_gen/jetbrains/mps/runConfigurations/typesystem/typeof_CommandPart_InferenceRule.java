@@ -29,7 +29,7 @@ public class typeof_CommandPart_InferenceRule extends AbstractInferenceRule_Runt
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.CommandPart";
+    return "jetbrains.mps.runConfigurations.structure.ProcessBuilderPart";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

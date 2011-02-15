@@ -1255,13 +1255,13 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="456055012090368969">
-          <node role="expression" roleId="tpee.1068580123156" type="uhxm.CommandExpression" typeId="uhxm.5812151570929638022" id="456055012090368970">
-            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.CommandPart" typeId="uhxm.5812151570929638024" id="456055012090368971">
+          <node role="expression" roleId="tpee.1068580123156" type="uhxm.ProcessBuilderExpression" typeId="uhxm.5812151570929638022" id="456055012090368970">
+            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="456055012090368971">
               <node role="expression" roleId="uhxm.5812151570929658237" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="456055012090368973">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="456055012090368965" resolveInfo="java" />
               </node>
             </node>
-            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.CommandPart" typeId="uhxm.5812151570929638024" id="456055012090368974">
+            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="456055012090368974">
               <node role="expression" roleId="uhxm.5812151570929658237" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="456055012090368976">
                 <property name="value" nameId="tpee.1070475926801" value="-version" />
               </node>

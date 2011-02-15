@@ -172,12 +172,12 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5812151570929638022">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
-      <property name="name" nameId="tpck.1169194664001" value="CommandExpression" />
+      <property name="name" nameId="tpck.1169194664001" value="ProcessBuilderExpression" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5812151570929638024">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
-      <property name="name" nameId="tpck.1169194664001" value="CommandPart" />
+      <property name="name" nameId="tpck.1169194664001" value="ProcessBuilderPart" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2866018809102008315">
@@ -642,7 +642,7 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="5812151570929638024" resolveInfo="ProcessStatementPart" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5812151570929638023">
-      <property name="value" nameId="tpce.1105725733873" value="command" />
+      <property name="value" nameId="tpce.1105725733873" value="process builder" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>

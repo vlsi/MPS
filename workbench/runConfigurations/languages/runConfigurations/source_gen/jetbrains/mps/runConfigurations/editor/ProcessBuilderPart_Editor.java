@@ -12,19 +12,19 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class CommandPart_Editor extends DefaultNodeEditor {
+public class ProcessBuilderPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3fqil3_a(editorContext, node);
+    return this.createCollection_5qj7hy_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3fqil3_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5qj7hy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3fqil3_a");
-    editorCell.addEditorCell(this.createRefNode_3fqil3_a0(editorContext, node));
+    editorCell.setCellId("Collection_5qj7hy_a");
+    editorCell.addEditorCell(this.createRefNode_5qj7hy_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_3fqil3_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5qj7hy_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");
