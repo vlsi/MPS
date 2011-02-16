@@ -22682,7 +22682,7 @@
                       </node>
                       <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="8420508849338227914">
                         <property name="29.name:0" value="r" />
-                        <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="8420508849338227915" />
+                        <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080352" />
                       </node>
                     </node>
                   </node>
@@ -22703,7 +22703,7 @@
                     </node>
                     <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="8420508849338227923">
                       <property name="29.name:0" value="rtn" />
-                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="8420508849338227924" />
+                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080309" />
                     </node>
                   </node>
                   <node role="60.ascending:7" type="jetbrains.mps.baseLanguage.collections.structure.SortDirection:7" id="8420508849338227925">
@@ -22730,7 +22730,7 @@
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="8420508849338227935">
                     <property name="29.name:0" value="rtn" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="8420508849338227936" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080350" />
                   </node>
                 </node>
               </node>
@@ -23221,7 +23221,7 @@
                       </node>
                       <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="5019828647791435001">
                         <property name="29.name:0" value="ch" />
-                        <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="5019828647791435002" />
+                        <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080313" />
                       </node>
                     </node>
                   </node>
@@ -23264,7 +23264,7 @@
                     </node>
                     <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="5019828647791435020">
                       <property name="29.name:0" value="ch" />
-                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="5019828647791435021" />
+                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080351" />
                     </node>
                   </node>
                 </node>
@@ -23356,7 +23356,7 @@
                     </node>
                     <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="5019828647791435041">
                       <property name="29.name:0" value="ch" />
-                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="5019828647791435042" />
+                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080259" />
                     </node>
                   </node>
                 </node>
@@ -23415,7 +23415,7 @@
                     </node>
                     <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="5019828647791435065">
                       <property name="29.name:0" value="ch" />
-                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="5019828647791435066" />
+                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080306" />
                     </node>
                   </node>
                 </node>
@@ -24728,7 +24728,7 @@
                 </node>
                 <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="1696159243610618116">
                   <property name="29.name:0" value="b" />
-                  <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="1696159243610618117" />
+                  <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080311" />
                 </node>
               </node>
             </node>
@@ -26261,7 +26261,7 @@
                     </node>
                     <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3930789558091016300">
                       <property name="29.name:0" value="ch" />
-                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3930789558091016301" />
+                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080279" />
                     </node>
                   </node>
                 </node>
@@ -26304,7 +26304,7 @@
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3930789558091016319">
                     <property name="29.name:0" value="ch" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3930789558091016320" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080315" />
                   </node>
                 </node>
               </node>
@@ -27692,7 +27692,7 @@
                 </node>
                 <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="7702536061215834525">
                   <property name="29.name:0" value="m" />
-                  <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="7702536061215834526" />
+                  <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080298" />
                 </node>
               </node>
             </node>
@@ -27898,7 +27898,7 @@
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="5019828647791521562">
                     <property name="29.name:0" value="other" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="5019828647791521563" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080341" />
                   </node>
                 </node>
               </node>
@@ -29047,7 +29047,7 @@
                     </node>
                     <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="903473793367315853">
                       <property name="29.name:0" value="child" />
-                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="903473793367315854" />
+                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080261" />
                     </node>
                   </node>
                 </node>
@@ -29568,7 +29568,7 @@
                           </node>
                           <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="1696159243610635319">
                             <property name="29.name:0" value="m" />
-                            <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="1696159243610635320" />
+                            <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080252" />
                           </node>
                         </node>
                       </node>
@@ -33366,7 +33366,7 @@
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="7702536061215797118">
                     <property name="29.name:0" value="cg" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="7702536061215797119" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080300" />
                   </node>
                 </node>
               </node>
@@ -34557,7 +34557,7 @@
                       </node>
                       <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458818">
                         <property name="29.name:0" value="s" />
-                        <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458819" />
+                        <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080317" />
                       </node>
                     </node>
                   </node>
@@ -34595,7 +34595,7 @@
                     </node>
                     <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273460691">
                       <property name="29.name:0" value="g" />
-                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273460692" />
+                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080242" />
                     </node>
                   </node>
                   <node role="60.ascending:7" type="jetbrains.mps.baseLanguage.collections.structure.SortDirection:7" id="3021948350273460693">
@@ -34730,7 +34730,7 @@
                 </node>
                 <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="1696159243610413743">
                   <property name="29.name:0" value="it" />
-                  <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="1696159243610413744" />
+                  <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080265" />
                 </node>
               </node>
             </node>
@@ -35069,7 +35069,7 @@
                     </node>
                     <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458262">
                       <property name="29.name:0" value="ch" />
-                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458263" />
+                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080269" />
                     </node>
                   </node>
                 </node>
@@ -35092,11 +35092,11 @@
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458271">
                     <property name="29.name:0" value="a" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458272" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080303" />
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458273">
                     <property name="29.name:0" value="b" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458274" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080310" />
                   </node>
                 </node>
               </node>
@@ -35129,7 +35129,7 @@
                     </node>
                     <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458288">
                       <property name="29.name:0" value="ch" />
-                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458289" />
+                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080358" />
                     </node>
                   </node>
                 </node>
@@ -35152,11 +35152,11 @@
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458297">
                     <property name="29.name:0" value="a" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458298" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080257" />
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458299">
                     <property name="29.name:0" value="b" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458300" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080250" />
                   </node>
                 </node>
               </node>
@@ -35189,7 +35189,7 @@
                     </node>
                     <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458314">
                       <property name="29.name:0" value="ch" />
-                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458315" />
+                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080288" />
                     </node>
                   </node>
                 </node>
@@ -35212,11 +35212,11 @@
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458323">
                     <property name="29.name:0" value="a" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458324" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080324" />
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458325">
                     <property name="29.name:0" value="b" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458326" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080344" />
                   </node>
                 </node>
               </node>
@@ -35249,7 +35249,7 @@
                     </node>
                     <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458340">
                       <property name="29.name:0" value="ch" />
-                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458341" />
+                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080285" />
                     </node>
                   </node>
                 </node>
@@ -35272,11 +35272,11 @@
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458349">
                     <property name="29.name:0" value="a" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458350" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080314" />
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458351">
                     <property name="29.name:0" value="b" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458352" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080241" />
                   </node>
                 </node>
               </node>
@@ -35320,7 +35320,7 @@
                     </node>
                     <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458371">
                       <property name="29.name:0" value="ch" />
-                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458372" />
+                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080297" />
                     </node>
                   </node>
                 </node>
@@ -35350,11 +35350,11 @@
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458383">
                     <property name="29.name:0" value="a" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458384" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080255" />
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458385">
                     <property name="29.name:0" value="b" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458386" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080296" />
                   </node>
                 </node>
               </node>
@@ -35389,7 +35389,7 @@
                   </node>
                   <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="3021948350273458401">
                     <property name="29.name:0" value="ch" />
-                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="3021948350273458402" />
+                    <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080277" />
                   </node>
                 </node>
               </node>
@@ -35883,7 +35883,7 @@
                       </node>
                       <node role="57.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="7270277680536726564">
                         <property name="29.name:0" value="ch" />
-                        <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="7270277680536726565" />
+                        <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080249" />
                       </node>
                     </node>
                   </node>

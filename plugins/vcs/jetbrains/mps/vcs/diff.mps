@@ -9292,7 +9292,7 @@
                 </node>
                 <node role="28.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="7295777740694922134">
                   <property name="1.name:0" value="d" />
-                  <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="7295777740694922135" />
+                  <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080337" />
                 </node>
               </node>
             </node>
@@ -9379,7 +9379,7 @@
                 </node>
                 <node role="28.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="7295777740694922170">
                   <property name="1.name:0" value="a" />
-                  <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="7295777740694922171" />
+                  <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080260" />
                 </node>
               </node>
             </node>
@@ -9740,7 +9740,7 @@
                                 </node>
                                 <node role="28.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="7295777740694922330">
                                   <property name="1.name:0" value="ch" />
-                                  <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="7295777740694922331" />
+                                  <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080301" />
                                 </node>
                               </node>
                             </node>
@@ -11839,7 +11839,7 @@
                 </node>
                 <node role="28.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="7121949289458238754">
                   <property name="1.name:0" value="m" />
-                  <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="7121949289458238755" />
+                  <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080338" />
                 </node>
               </node>
             </node>
@@ -12054,7 +12054,7 @@
                   </node>
                   <node role="28.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="2726660264471340422">
                     <property name="1.name:0" value="c" />
-                    <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="2726660264471340423" />
+                    <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080295" />
                   </node>
                 </node>
               </node>
@@ -12157,7 +12157,7 @@
                 </node>
                 <node role="28.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="7154392717046525648">
                   <property name="1.name:0" value="other" />
-                  <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="7154392717046525649" />
+                  <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080262" />
                 </node>
               </node>
             </node>
@@ -12673,7 +12673,7 @@
                         </node>
                         <node role="28.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="5746253950163647778">
                           <property name="1.name:0" value="c" />
-                          <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="5746253950163647779" />
+                          <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080268" />
                         </node>
                       </node>
                     </node>

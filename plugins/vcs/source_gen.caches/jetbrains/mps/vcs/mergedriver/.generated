@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1u11u0iwqfliw63x4cywxtdo6a1jp1i">
+<dependencies version="2" modelHash="2bvf39145gwwqa8nz9zil6qpniqe1fx">
   <dep model="f:java_stub#java.io(java.io@java_stub)" />
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#java.util(java.util@java_stub)" />
@@ -23,7 +23,7 @@
   <common hash="-cxu5lxrbn67lfkbo1j2ualm92i4iegu">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
   </common>
-  <source id="7551811584090935086" name="MergeDriverMain" hash="2ksln14uqv4cqces8yc44gu8923ji7">
+  <source id="7551811584090935086" name="MergeDriverMain" hash="-amd66qte28cjiclawnoeq3ctv2xu6bl">
     <dep model="f:java_stub#java.io(java.io@java_stub)" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#java.util(java.util@java_stub)" />

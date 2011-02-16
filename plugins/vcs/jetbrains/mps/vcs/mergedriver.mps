@@ -300,7 +300,7 @@
                     </node>
                     <node role="10.parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="8452496433460051710">
                       <property name="1.name:0" value="fn" />
-                      <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="8452496433460051711" />
+                      <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.UndefinedType:3" id="6473905640924080325" />
                     </node>
                   </node>
                 </node>
