@@ -6935,18 +6935,6 @@
           </node>
           <node role="caseConsequence" roleId="tpf8.1195158637244" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1240221363699">
             <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.DotExpression" typeId="tpef.1197027756228" id="1240221363700">
-              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1240221363701">
-                <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
-                <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1240221363702">
-                  <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="1240221363703">
-                    <node role="statement" roleId="tpef.1068581517665" type="tpef.ExpressionStatement" typeId="tpef.1068580123155" id="1240221363704">
-                      <node role="expression" roleId="tpef.1068580123156" type="tpef.StringLiteral" typeId="tpef.1070475926800" id="1240221363705">
-                        <property name="value" nameId="tpef.1070475926801" value="jetbrains.mps.internal.collections.runtime.MapSequence" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node role="operand" roleId="tpef.1197027771414" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="1240221363706">
                 <property name="fqClassName" nameId="tp68.1173992483054" value="MapSequence" />
                 <property name="methodName" nameId="tp68.1173992444083" value="fromMapAndKeysArray" />
@@ -7325,18 +7313,6 @@
           </node>
           <node role="caseConsequence" roleId="tpf8.1195158637244" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1240240884347">
             <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.DotExpression" typeId="tpef.1197027756228" id="1240240884348">
-              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1240240884349">
-                <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
-                <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1240240884350">
-                  <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="1240240884351">
-                    <node role="statement" roleId="tpef.1068581517665" type="tpef.ExpressionStatement" typeId="tpef.1068580123155" id="1240240884352">
-                      <node role="expression" roleId="tpef.1068580123156" type="tpef.StringLiteral" typeId="tpef.1070475926800" id="1240240884353">
-                        <property name="value" nameId="tpef.1070475926801" value="jetbrains.mps.internal.collections.runtime.MapSequence" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node role="operand" roleId="tpef.1197027771414" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="1240240884354">
                 <property name="fqClassName" nameId="tp68.1173992483054" value="SortedMapSequence" />
                 <property name="methodName" nameId="tp68.1173992444083" value="fromMapAndKeysArray" />
@@ -7763,18 +7739,6 @@
           </node>
           <node role="caseConsequence" roleId="tpf8.1195158637244" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="9034802358628571877">
             <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.DotExpression" typeId="tpef.1197027756228" id="9034802358628571878">
-              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="9034802358628571879">
-                <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
-                <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="9034802358628571880">
-                  <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="9034802358628571881">
-                    <node role="statement" roleId="tpef.1068581517665" type="tpef.ExpressionStatement" typeId="tpef.1068580123155" id="9034802358628571882">
-                      <node role="expression" roleId="tpef.1068580123156" type="tpef.StringLiteral" typeId="tpef.1070475926800" id="9034802358628571883">
-                        <property name="value" nameId="tpef.1070475926801" value="jetbrains.mps.internal.collections.runtime.MapSequence" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node role="operand" roleId="tpef.1197027771414" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="9034802358628571884">
                 <property name="fqClassName" nameId="tp68.1173992483054" value="MapSequence" />
                 <property name="methodName" nameId="tp68.1173992444083" value="fromMapAndKeysArray" />
@@ -8219,18 +8183,6 @@
           </node>
           <node role="caseConsequence" roleId="tpf8.1195158637244" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1206971428693">
             <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.DotExpression" typeId="tpef.1197027756228" id="1206971557672">
-              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1206971557675">
-                <property name="propertyName" nameId="tpck.1757699476691236117" value="fqClassName" />
-                <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1206971557676">
-                  <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="1206971557677">
-                    <node role="statement" roleId="tpef.1068581517665" type="tpef.ExpressionStatement" typeId="tpef.1068580123155" id="1206971557678">
-                      <node role="expression" roleId="tpef.1068580123156" type="tpef.StringLiteral" typeId="tpef.1070475926800" id="1206971557679">
-                        <property name="value" nameId="tpef.1070475926801" value="jetbrains.mps.internal.collections.runtime.MapSequence" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node role="operand" roleId="tpef.1197027771414" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="1206971457737">
                 <property name="fqClassName" nameId="tp68.1173992483054" value="MapSequence" />
                 <property name="methodName" nameId="tp68.1173992444083" value="fromMapAndKeysArray" />
