@@ -101,7 +101,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ModelProperties_Action());
     addAction(new MoveFileOrDirectory_Action());
     addAction(new NewAccessoryModel_Action());
-    addAction(new NewDevKit_Action());
     addAction(new NewDirectory_Action());
     addAction(new NewFile_Action());
     addAction(new NewGenerator_Action());

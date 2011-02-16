@@ -4,6 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
@@ -22,12 +23,15 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new NewDevKit_Action());
     addAction(new RenameLanguage_Action());
     // groups 
     addGroup(new LanguageRefactoring_ActionGroup());
+    addGroup(new ProjectNewActionsEx_ActionGroup());
   }
 
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(ProjectNewActionsEx_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, ProjectNewActions_ActionGroup.LABEL_ID_end);
     insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_refactoring);
   }
 
