@@ -23,6 +23,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.JScrollPane;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.NotNull;
@@ -96,8 +97,16 @@ public class MergeModelsDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void ok() {
-    myApplyChanges = true;
-    dispose();
+    MergeConfirmation.showMergeConfirmationAndTakeAction(this, myMergeContext, myMergeContext.getAllChanges(), new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        myMergeContext.applyAllChangesForNonConflictingRoots();
+      }
+    }, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        myApplyChanges = true;
+        dispose();
+      }
+    });
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')

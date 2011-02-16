@@ -17,11 +17,11 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MergeContext implements NodeCopier {
@@ -51,7 +51,7 @@ public class MergeContext implements NodeCopier {
   }
 
   private void fillRootToChangesMap() {
-    for (ModelChange change : ListSequence.fromList(myMineChangeSet.getModelChanges()).concat(ListSequence.fromList(myRepositoryChangeSet.getModelChanges()))) {
+    for (ModelChange change : Sequence.fromIterable(getAllChanges())) {
       SNodeId rootId = change.getRootId();
       if (MapSequence.fromMap(myRootToChanges).get(rootId) == null) {
         MapSequence.fromMap(myRootToChanges).put(rootId, ListSequence.fromList(new ArrayList<ModelChange>()));
@@ -60,16 +60,28 @@ public class MergeContext implements NodeCopier {
     }
   }
 
-  public void applyAllNonConflictingChanges() {
-    applyAllNonConflictingChanges(null);
-  }
-
   public void applyAllNonConflictingChanges(@Nullable final SNodeId rootId) {
-    applyChanges(ListSequence.fromList(myMineChangeSet.getModelChanges()).concat(ListSequence.fromList(myRepositoryChangeSet.getModelChanges())).where(new IWhereFilter<ModelChange>() {
+    applyChanges(Sequence.fromIterable(getAllChanges()).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange c) {
-        return eq_358wfv_a0a0a0a0a0a0a0c(c.getRootId(), rootId) && Sequence.fromIterable(getConflictedWith(c)).isEmpty();
+        return eq_358wfv_a0a0a0a0a0a0a0b(c.getRootId(), rootId) && Sequence.fromIterable(getConflictedWith(c)).isEmpty();
       }
     }));
+  }
+
+  public void applyAllChangesForNonConflictingRoots() {
+    for (SNodeId root : SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet())) {
+      if (!(ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(root)).any(new IWhereFilter<ModelChange>() {
+        public boolean accept(ModelChange ch) {
+          return !(isChangeResolved(ch)) && Sequence.fromIterable(getConflictedWith(ch)).isNotEmpty();
+        }
+      }))) {
+        applyAllNonConflictingChanges(root);
+      }
+    }
+  }
+
+  public Iterable<ModelChange> getAllChanges() {
+    return ListSequence.fromList(myMineChangeSet.getModelChanges()).concat(ListSequence.fromList(myRepositoryChangeSet.getModelChanges()));
   }
 
   public Set<SNodeId> getAffectedRoots() {
@@ -216,7 +228,7 @@ public class MergeContext implements NodeCopier {
     return copy;
   }
 
-  private static boolean eq_358wfv_a0a0a0a0a0a0a0c(Object a, Object b) {
+  private static boolean eq_358wfv_a0a0a0a0a0a0a0b(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

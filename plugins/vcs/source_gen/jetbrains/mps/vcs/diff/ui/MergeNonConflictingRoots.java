@@ -6,12 +6,6 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.vcs.diff.MergeContext;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MergeNonConflictingRoots extends BaseAction {
   private MergeContext myMergeContext;
@@ -25,15 +19,7 @@ public class MergeNonConflictingRoots extends BaseAction {
   }
 
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-    for (SNodeId root : SetSequence.fromSet(myMergeContext.getAffectedRoots())) {
-      if (!(ListSequence.fromList(myMergeContext.getChangesForRoot(root)).any(new IWhereFilter<ModelChange>() {
-        public boolean accept(ModelChange ch) {
-          return !(myMergeContext.isChangeResolved(ch)) && Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
-        }
-      }))) {
-        myMergeContext.applyAllNonConflictingChanges(root);
-      }
-    }
+    myMergeContext.applyAllChangesForNonConflictingRoots();
     myMergeModelsDialog.rebuildLater();
   }
 }
