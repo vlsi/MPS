@@ -17,7 +17,9 @@ package jetbrains.mps.debugger.api.actions;
 
 import com.intellij.openapi.actionSystem.ToggleAction;
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
+import com.intellij.xdebugger.impl.actions.MuteBreakpointAction;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.integration.ui.DebugActionsUtil;
 import jetbrains.mps.ide.icons.IconManager;
@@ -26,7 +28,7 @@ import jetbrains.mps.util.MacrosFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class MuteBreakpoints extends ToggleAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath(MacrosFactory.SOLUTION_DESCRIPTOR + "/icons/debug/muteBreakpoints.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = new ImageIcon(MuteBreakpoints.class.getResource("icons/muteBreakpoints.png"));
 
   public MuteBreakpoints() {
     super("Mute Breakpoints", "Mute Breakpoints", ICON);
