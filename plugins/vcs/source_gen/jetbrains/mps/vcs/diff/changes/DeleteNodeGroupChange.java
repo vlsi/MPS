@@ -28,6 +28,14 @@ public class DeleteNodeGroupChange extends NodeGroupChange {
     return myResultPosition;
   }
 
+  public int getResultBegin() {
+    return myResultPosition;
+  }
+
+  public int getResultEnd() {
+    return myResultPosition;
+  }
+
   @Override
   public String toString() {
     return String.format("Delete %s in role %s of node %s", nodeRange(myBegin, myEnd), getRole(), getParentNodeId());

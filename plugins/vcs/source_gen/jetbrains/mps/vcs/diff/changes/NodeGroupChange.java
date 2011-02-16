@@ -8,8 +8,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -37,6 +35,10 @@ public abstract class NodeGroupChange extends ModelChange {
 
   public abstract int getEnd();
 
+  public abstract int getResultBegin();
+
+  public abstract int getResultEnd();
+
   @Nullable
   private SNode deleteOldNodesAndReturnAnchor(@NotNull SModel model) {
     SNode parent = getChangeSet().getOldModel().getNodeById(myParentNodeId);
@@ -53,16 +55,12 @@ public abstract class NodeGroupChange extends ModelChange {
     return anchor;
   }
 
-  protected Tuples._2<Integer, Integer> getNodesToInsert() {
-    return MultiTuple.<Integer,Integer>from(0, 0);
-  }
-
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     SNode parent = model.getNodeById(myParentNodeId);
     SNode anchor = deleteOldNodesAndReturnAnchor(model);
     List<SNode> nodesToAdd = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> newChildren = getChangeSet().getNewModel().getNodeById(myParentNodeId).getChildren(myRole);
-    for (int i = getNodesToInsert()._0(); i < getNodesToInsert()._1(); i++) {
+    for (int i = getResultBegin(); i < getResultEnd(); i++) {
       ListSequence.fromList(nodesToAdd).addElement(nodeCopier.copyNode(newChildren.get(i)));
     }
     for (SNode newNode : ListSequence.fromList(nodesToAdd).reversedList()) {

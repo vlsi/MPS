@@ -32,6 +32,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
+import jetbrains.mps.util.SNodeCompare;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 
@@ -195,6 +196,22 @@ public class MergeContext implements NodeCopier {
     }
   }
 
+  private boolean nodeGroupChangesSymmetric(NodeGroupChange mine, NodeGroupChange repository) {
+    if (mine.getBegin() == repository.getBegin() && mine.getEnd() == repository.getEnd()) {
+      if (mine.getResultEnd() - mine.getResultBegin() == repository.getResultEnd() - repository.getResultBegin()) {
+        List<SNode> myChildren = myMyModel.getNodeById(mine.getParentNodeId()).getChildren(mine.getRole());
+        List<SNode> repositoryChildren = myRepositoryModel.getNodeById(repository.getParentNodeId()).getChildren(repository.getRole());
+        for (int o = 0; o < mine.getResultEnd() - mine.getResultBegin(); o++) {
+          if (!(SNodeCompare.nodeEquals(myChildren.get(mine.getResultBegin() + o), repositoryChildren.get(repository.getResultBegin() + o)))) {
+            return false;
+          }
+        }
+        return true;
+      }
+    }
+    return false;
+  }
+
   private void collectConflicts() {
     Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> mineGroupChanges = arrangeNodeGroupChanges(myMineChangeSet);
     Map<Tuples._2<SNodeId, String>, List<NodeGroupChange>> repositoryGroupChanges = arrangeNodeGroupChanges(myRepositoryChangeSet);
@@ -205,9 +222,14 @@ public class MergeContext implements NodeCopier {
       // but it is left for simplicity 
       for (NodeGroupChange m : ListSequence.fromList(mine)) {
         for (NodeGroupChange r : ListSequence.fromList(repository)) {
-          if (!(m.getEnd() < r.getBegin() || m.getBegin() > r.getEnd())) {
-            addConflict(m, r);
-            // TODO check for symmetry 
+          if (m.getEnd() < r.getBegin() || m.getBegin() > r.getEnd()) {
+            // ok 
+          } else {
+            if (nodeGroupChangesSymmetric(m, r)) {
+              addSymmetric(m, r);
+            } else {
+              addConflict(m, r);
+            }
           }
         }
       }
@@ -240,7 +262,7 @@ public class MergeContext implements NodeCopier {
   public void applyAllNonConflictingChanges(@Nullable final SNodeId rootId) {
     applyChanges(ListSequence.fromList(myMineChangeSet.getModelChanges()).concat(ListSequence.fromList(myRepositoryChangeSet.getModelChanges())).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange c) {
-        return eq_358wfv_a0a0a0a0a0a0a0o(c.getRootId(), rootId) && Sequence.fromIterable(getConflictedWith(c)).isEmpty();
+        return eq_358wfv_a0a0a0a0a0a0a0p(c.getRootId(), rootId) && Sequence.fromIterable(getConflictedWith(c)).isEmpty();
       }
     }));
   }
@@ -309,7 +331,6 @@ public class MergeContext implements NodeCopier {
 
   private void applyChange(ModelChange change) {
     if (isChangeResolved(change)) {
-      assert SetSequence.fromSet(myAppliedChanges).contains(change);
     } else {
       change.apply(myResultModel, this);
       SetSequence.fromSet(myAppliedChanges).addElement(change);
@@ -323,7 +344,6 @@ public class MergeContext implements NodeCopier {
 
   private void excludeChange(ModelChange change) {
     if (isChangeResolved(change)) {
-      assert SetSequence.fromSet(myExcludedChanges).contains(change);
     } else {
       SetSequence.fromSet(myExcludedChanges).addElement(change);
       for (ModelChange symmetric : ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change))) {
@@ -416,7 +436,7 @@ public class MergeContext implements NodeCopier {
     addOneWayChangeLink(map, b, a);
   }
 
-  private static boolean eq_358wfv_a0a0a0a0a0a0a0o(Object a, Object b) {
+  private static boolean eq_358wfv_a0a0a0a0a0a0a0p(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
