@@ -144,14 +144,10 @@ public class MergeButtonsPainter extends AbstractFoldingAreaPainter {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         MergeContext mergeContext = myChangeGroupBuilder.getMergeContext();
-        switch (myCurrentAction) {
-          case APPLY:
-            mergeContext.applyChanges(myCurrentGroup.getChanges());
-            break;
-          case EXCLUDE:
-            mergeContext.applyChanges(myCurrentGroup.getChanges());
-            break;
-          default:
+        if (myCurrentAction == MergeButtonsPainter.Action.APPLY) {
+          mergeContext.applyChanges(myCurrentGroup.getChanges());
+        } else if (myCurrentAction == MergeButtonsPainter.Action.EXCLUDE) {
+          mergeContext.excludeChanges(myCurrentGroup.getChanges());
         }
         myDialog.rehighlight();
       }

@@ -192,7 +192,13 @@ public class MergeContext implements NodeCopier {
     Map<SNodeId, AddRootChange> mineAddRootChanges = arrangeAddRootChanges(myMineChangeSet);
     Map<SNodeId, AddRootChange> repositoryAddRootChanges = arrangeAddRootChanges(myRepositoryChangeSet);
     for (SNodeId addedRoot : SetSequence.fromSet(MapSequence.fromMap(mineAddRootChanges).keySet()).intersect(SetSequence.fromSet(MapSequence.fromMap(repositoryAddRootChanges).keySet()))) {
-      addConflict(MapSequence.fromMap(mineAddRootChanges).get(addedRoot), MapSequence.fromMap(repositoryAddRootChanges).get(addedRoot));
+      AddRootChange mine = MapSequence.fromMap(mineAddRootChanges).get(addedRoot);
+      AddRootChange repository = MapSequence.fromMap(repositoryAddRootChanges).get(addedRoot);
+      if (SNodeCompare.nodeEquals(myMyModel.getNodeById(mine.getNodeId()), myRepositoryModel.getNodeById(repository.getNodeId()))) {
+        addSymmetric(mine, repository);
+      } else {
+        addConflict(mine, repository);
+      }
     }
   }
 
