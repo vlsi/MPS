@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.api.integration.ui.breakpoint;
+package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.DataProvider;
-import jetbrains.mps.debug.api.BreakpointManagerComponentImpl;
-import jetbrains.mps.debug.api.BreakpointManagerComponentImpl.IBreakpointManagerListener;
+import jetbrains.mps.debugger.api.BreakpointManagerComponentImpl;
+import jetbrains.mps.debugger.api.BreakpointManagerComponentImpl.IBreakpointManagerListener;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

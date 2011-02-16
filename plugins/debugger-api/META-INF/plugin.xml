@@ -16,14 +16,14 @@
   <project-components>
     <component>
       <interface-class>jetbrains.mps.debug.api.BreakpointManagerComponent</interface-class>
-      <implementation-class>jetbrains.mps.debug.api.BreakpointManagerComponentImpl</implementation-class>
+      <implementation-class>jetbrains.mps.debugger.api.BreakpointManagerComponentImpl</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointViewSettingsComponent
+      <implementation-class>jetbrains.mps.debugger.api.ui.breakpoints.BreakpointViewSettingsComponent
       </implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.debug.api.CurrentLinePositionComponent</implementation-class>
+      <implementation-class>jetbrains.mps.debugger.api.CurrentLinePositionComponent</implementation-class>
     </component>
   </project-components>
 
@@ -35,7 +35,7 @@
 
     <!--for being able to use MuteAction in j.m.ide.actions-->
     <group id="DebugMuteAction" popup="false">
-      <action id="Mute" text="Mute" class="jetbrains.mps.debug.api.integration.ui.MuteBreakpoints"/>
+      <action id="Mute" text="Mute" class="jetbrains.mps.debugger.api.actions.MuteBreakpoints"/>
     </group>
   </actions>
 

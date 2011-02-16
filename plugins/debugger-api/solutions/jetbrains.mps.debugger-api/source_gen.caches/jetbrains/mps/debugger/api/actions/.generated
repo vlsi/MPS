@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="866338u9wv5ci47m0vo4gmwuz4jfrmn">
+<dependencies version="2" modelHash="-8vugobk329b8e2gbkuzyv98dz1v2bgj">
   <dep model="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" />
   <dep model="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" />
   <dep model="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" />
@@ -14,6 +14,7 @@
   <dep model="f:java_stub#jetbrains.mps.debug.api.evaluation(jetbrains.mps.debug.api.evaluation@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.debug.api.integration.ui(jetbrains.mps.debug.api.integration.ui@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.debug.api.programState(jetbrains.mps.debug.api.programState@java_stub)" />
+  <dep model="f:java_stub#jetbrains.mps.debugger.api(jetbrains.mps.debugger.api@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.plugins.applicationplugins(jetbrains.mps.plugins.applicationplugins@java_stub)" />
@@ -49,7 +50,7 @@
   <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" hash="-2vvy0ol2j0l75ifhg1hkj107r1ppo0n" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="7onuy7ras5spdyysdm2zbxch2b4ail7" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-a3lyoaamovawk27q1ns6mctrm277vkn" />
-  <common hash="-6de5xxx8avvrvhsajhz4xau3cswy4or">
+  <common hash="-9y5frp7efujbabopvyp7by4bcff125f">
     <dep root="4073774232572770202" />
     <dep root="7064627997011532320" />
     <dep root="7064627997011532361" />
@@ -298,11 +299,11 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="StepOver_Action.java" />
   </source>
-  <source id="7064627997011532788" name="ToggleBreakpoint" hash="4d6yadb2jbzn91swmu09w404n0y4y5r">
+  <source id="7064627997011532788" name="ToggleBreakpoint" hash="-a16jrrq657539epl3qsuekb9shz6itr">
     <dep model="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" />
     <dep model="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
-    <dep model="f:java_stub#jetbrains.mps.debug.api(jetbrains.mps.debug.api@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.debugger.api(jetbrains.mps.debugger.api@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" />
@@ -326,7 +327,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ToggleBreakpoint_Action.java" />
   </source>
-  <source id="7064627997011532825" name="ViewBreakpoints" hash="94g3p3ba2ybf3rgmncaeg2immtv1hx">
+  <source id="7064627997011532825" name="ViewBreakpoints" hash="tq2mz222fawvdllmh0h3vr7pcg2sza">
     <dep model="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />

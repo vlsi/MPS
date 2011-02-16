@@ -1,13 +1,17 @@
-package jetbrains.mps.debug.api;
+package jetbrains.mps.debugger.api;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionListener;
+import jetbrains.mps.debug.api.SessionChangeAdapter;
+import jetbrains.mps.debug.api.SessionChangeListener;
+import jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePainter;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
-import jetbrains.mps.debug.api.integration.ui.breakpoint.CurrentLinePainter;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.NullLocation;

@@ -1,9 +1,9 @@
-package jetbrains.mps.debug.api.integration.ui.breakpoint;
+package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debug.api.BreakpointManagerComponentImpl;
+import jetbrains.mps.debugger.api.BreakpointManagerComponentImpl;
 import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;

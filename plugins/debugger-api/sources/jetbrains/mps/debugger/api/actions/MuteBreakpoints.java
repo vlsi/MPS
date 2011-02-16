@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.api.integration.ui;
+package jetbrains.mps.debugger.api.actions;
 
 import com.intellij.openapi.actionSystem.ToggleAction;
 import javax.swing.Icon;
 
 import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debug.api.integration.ui.DebugActionsUtil;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.util.MacrosFactory;

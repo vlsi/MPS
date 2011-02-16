@@ -1,12 +1,12 @@
-package jetbrains.mps.debug.api.integration.ui.breakpoint;
+package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.BreakpointManagerComponentImpl;
-import jetbrains.mps.debug.api.BreakpointManagerComponentImpl.IBreakpointManagerListener;
+import jetbrains.mps.debugger.api.BreakpointManagerComponentImpl;
+import jetbrains.mps.debugger.api.BreakpointManagerComponentImpl.IBreakpointManagerListener;
 import jetbrains.mps.debug.api.breakpoints.*;
-import jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointsView.BreakpointSelectionListener;
+import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsView.BreakpointSelectionListener;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;

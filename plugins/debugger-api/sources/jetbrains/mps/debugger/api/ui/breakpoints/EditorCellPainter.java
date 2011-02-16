@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.api.integration.ui.breakpoint;
+package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import jetbrains.mps.nodeEditor.AbstractAdditionalPainter;
 import jetbrains.mps.nodeEditor.EditorComponent;

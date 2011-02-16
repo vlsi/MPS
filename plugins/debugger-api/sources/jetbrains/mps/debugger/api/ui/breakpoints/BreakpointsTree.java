@@ -13,17 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.api.integration.ui.breakpoint;
+package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.debug.api.BreakpointManagerComponentImpl;
+import jetbrains.mps.debugger.api.BreakpointManagerComponentImpl;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.debug.api.integration.ui.breakpoint.GroupedTree.GroupKind;
+import jetbrains.mps.debugger.api.ui.breakpoints.GroupedTree.GroupKind;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.CheckBoxNodeRenderer.NodeData;
-import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
