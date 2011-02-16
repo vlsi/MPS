@@ -17,12 +17,8 @@ package jetbrains.mps.debug.api;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
-import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
-
+import java.util.HashSet;
 import java.util.Set;
 
 public abstract class BreakpointManagerComponent {
@@ -36,33 +32,21 @@ public abstract class BreakpointManagerComponent {
   public static void notifyDebuggableConceptsAdded() {
   }
 
-  public abstract void toggleBreakpoint(EditorCell cell);
-
-  public abstract boolean isDebuggable(EditorCell cell);
-
-  public abstract void toggleBreakpoint(SNode node, boolean handleRemoveBreakpoint);
-
-  public abstract void addBreakpoint(@NotNull IBreakpoint breakpoint);
-
-  public abstract void removeBreakpoint(@NotNull IBreakpoint breakpoint);
-
-  public abstract void createFromUi(IBreakpointKind kind);
-
+  // todo do we need this?
   public abstract void processBreakpointHit(IBreakpoint breakpoint);
 
   public abstract Set<IBreakpoint> getAllIBreakpoints();
 
   @Deprecated
   @ToRemove(version = 2.0)
-  public abstract Set<AbstractMPSBreakpoint> getAllBreakpoints();
-
-  public abstract void addChangeListener(IBreakpointManagerListener listener);
-
-  public abstract void removeChangeListener(IBreakpointManagerListener listener);
-
-  public abstract void editBreakpointProperties(ILocationBreakpoint breakpoint);
-
-  public interface IBreakpointManagerListener {
-    void breakpointsChanged();
+  public Set<AbstractMPSBreakpoint> getAllBreakpoints() {
+    Set<AbstractMPSBreakpoint> result = new HashSet<AbstractMPSBreakpoint>();
+    Set<IBreakpoint> allIBreakpoints = getAllIBreakpoints();
+    for (IBreakpoint bp : allIBreakpoints) {
+      if (bp instanceof AbstractMPSBreakpoint) {
+        result.add((AbstractMPSBreakpoint) bp);
+      }
+    }
+    return result;
   }
 }

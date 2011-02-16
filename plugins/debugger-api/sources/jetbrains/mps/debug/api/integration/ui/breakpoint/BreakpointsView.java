@@ -17,8 +17,8 @@ package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.DataProvider;
-import jetbrains.mps.debug.api.BreakpointManagerComponent;
-import jetbrains.mps.debug.api.BreakpointManagerComponent.IBreakpointManagerListener;
+import jetbrains.mps.debug.api.BreakpointManagerComponentImpl;
+import jetbrains.mps.debug.api.BreakpointManagerComponentImpl.IBreakpointManagerListener;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -29,7 +29,7 @@ import java.util.*;
 public abstract class BreakpointsView implements DataProvider {
   public static DataKey<IBreakpoint> MPS_BREAKPOINT = DataKey.create("MPS_Breakpoint");
   private List<IBreakpoint> myBreakpointsList;
-  private final BreakpointManagerComponent myBreakpointsManager;
+  private final BreakpointManagerComponentImpl myBreakpointsManager;
   private final List<BreakpointSelectionListener> mySelectionListeners = new ArrayList<BreakpointSelectionListener>();
   private final IBreakpointManagerListener myListener = new IBreakpointManagerListener() {
     @Override
@@ -38,7 +38,7 @@ public abstract class BreakpointsView implements DataProvider {
     }
   };
 
-  public BreakpointsView(BreakpointManagerComponent breakpointsManager) {
+  public BreakpointsView(BreakpointManagerComponentImpl breakpointsManager) {
     myBreakpointsManager = breakpointsManager;
     myBreakpointsManager.addChangeListener(myListener);
     updateBreakpoints();

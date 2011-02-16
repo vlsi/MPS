@@ -94,7 +94,14 @@ public class BreakpointManagerComponentImpl extends BreakpointManagerComponent i
     myEditorsProvider = new EditorsProvider(project);
   }
 
-  @Override
+  public static BreakpointManagerComponentImpl getInstance(Project project) {
+    final BreakpointManagerComponent instance = BreakpointManagerComponent.getInstance(project);
+    if (instance instanceof BreakpointManagerComponentImpl) {
+      return (BreakpointManagerComponentImpl) instance;
+    }
+    return null;
+  }
+
   public void toggleBreakpoint(EditorCell cell) {
     EditorCell debuggableCell = findDebuggableOrTraceableCell(cell);
     if (debuggableCell != null) {
@@ -102,7 +109,6 @@ public class BreakpointManagerComponentImpl extends BreakpointManagerComponent i
     }
   }
 
-  @Override
   public boolean isDebuggable(EditorCell cell) {
     return findDebuggableCell(cell) != null || findTraceableCell(cell) != null;
   }
@@ -115,6 +121,7 @@ public class BreakpointManagerComponentImpl extends BreakpointManagerComponent i
         if (debuggableOrTraceableCell == null) {
           return false;
         }
+        // todo do we need to know about ui?
         EditorCell iconAnchorCell = BreakpointIconRenderer.getBreakpointIconAnchorCell(editorComponent.findNodeCell(debuggableOrTraceableCell.getSNode()));
         // ignoring mouse clicks to any other rows except one containing "BreakpointIconAnchorCell"
         // (this cell will be marked with breakpoint icon in LeftEditorHighlighter)
@@ -217,8 +224,7 @@ public class BreakpointManagerComponentImpl extends BreakpointManagerComponent i
     editorComponent.removeLeftMarginPressListener(myMouseListener);
   }
 
-  @Override
-  public void toggleBreakpoint(SNode node, boolean handleRemoveBreakpoint) {
+  private void toggleBreakpoint(SNode node, boolean handleRemoveBreakpoint) {
     SNode root = node.getContainingRoot();
     if (root == null) return;
     boolean hasBreakpoint = false;
@@ -253,8 +259,7 @@ public class BreakpointManagerComponentImpl extends BreakpointManagerComponent i
     }
   }
 
-  @Override
-  public void addBreakpoint(@NotNull IBreakpoint breakpoint) {
+  private void addBreakpoint(@NotNull IBreakpoint breakpoint) {
     synchronized (myBreakpoints) {
       if (breakpoint instanceof ILocationBreakpoint) {
         addLocationBreakpoint((ILocationBreakpoint) breakpoint);
@@ -295,7 +300,6 @@ public class BreakpointManagerComponentImpl extends BreakpointManagerComponent i
     }
   }
 
-  @Override
   public void removeBreakpoint(@NotNull final IBreakpoint breakpoint) {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -347,7 +351,6 @@ public class BreakpointManagerComponentImpl extends BreakpointManagerComponent i
     }
   }
 
-  @Override
   public void createFromUi(IBreakpointKind kind) {
     IBreakpointsProvider provider = myProvidersManager.getProvider(kind);
     if (provider == null) {
@@ -451,29 +454,12 @@ public class BreakpointManagerComponentImpl extends BreakpointManagerComponent i
     }
   }
 
-  @Override
-  @Deprecated
-  @ToRemove(version = 2.0)
-  public Set<AbstractMPSBreakpoint> getAllBreakpoints() {
-    synchronized (myBreakpoints) {
-      Set<AbstractMPSBreakpoint> result = new HashSet<AbstractMPSBreakpoint>();
-      for (IBreakpoint bp : myBreakpoints) {
-        if (bp instanceof AbstractMPSBreakpoint) {
-          result.add((AbstractMPSBreakpoint) bp);
-        }
-      }
-      return result;
-    }
-  }
-
-  @Override
   public void addChangeListener(IBreakpointManagerListener listener) {
     synchronized (myListeners) {
       myListeners.add(listener);
     }
   }
 
-  @Override
   public void removeChangeListener(IBreakpointManagerListener listener) {
     synchronized (myListeners) {
       myListeners.remove(listener);
@@ -490,7 +476,6 @@ public class BreakpointManagerComponentImpl extends BreakpointManagerComponent i
     }
   }
 
-  @Override
   public void editBreakpointProperties(ILocationBreakpoint breakpoint) {
     BreakpointsBrowserDialog breakpointsBrowserDialog = new BreakpointsBrowserDialog(ProjectOperationContext.get(myProject));
     breakpointsBrowserDialog.selectBreakpoint(breakpoint);
@@ -523,9 +508,10 @@ public class BreakpointManagerComponentImpl extends BreakpointManagerComponent i
         }
       });
     }
-  }
 
+  }
   private class MyLeftMarginMouseListener implements LeftMarginMouseListener {
+
     @Override
     public void mousePressed(MouseEvent e, EditorComponent editorComponent) {
     }
@@ -533,7 +519,6 @@ public class BreakpointManagerComponentImpl extends BreakpointManagerComponent i
     @Override
     public void mouseReleased(MouseEvent e, EditorComponent editorComponent) {
     }
-
     @Override
     public void mouseClicked(final MouseEvent e, final EditorComponent editorComponent) {
       if (e.getButton() == MouseEvent.BUTTON1) {
@@ -548,8 +533,8 @@ public class BreakpointManagerComponentImpl extends BreakpointManagerComponent i
         });
       }
     }
-  }
 
+  }
   private class MySessionChangeAdapter extends SessionChangeAdapter {
     @Override
     public void muted(AbstractDebugSession session) {
@@ -565,29 +550,34 @@ public class BreakpointManagerComponentImpl extends BreakpointManagerComponent i
         }
       }));
     }
-  }
 
+  }
   private class MyDebugSessionAdapter extends DebugSessionAdapter {
+
     @Override
     public void registered(AbstractDebugSession session) {
       session.addChangeListener(myChangeListener);
     }
-
     @Override
     public void detached(AbstractDebugSession session) {
       session.removeChangeListener(myChangeListener);
     }
-  }
 
+  }
   private class MyEditorOpenListener implements EditorOpenListener {
+
     @Override
     public void editorOpened(MPSFileNodeEditor editor) {
       editorComponentOpened(editor.getNodeEditor().getCurrentEditorComponent());
     }
-
     @Override
     public void editorClosed(MPSFileNodeEditor editor) {
       editorComponentClosed(editor.getNodeEditor().getCurrentEditorComponent());
     }
+
+  }
+  public interface IBreakpointManagerListener {
+    void breakpointsChanged();
+
   }
 }

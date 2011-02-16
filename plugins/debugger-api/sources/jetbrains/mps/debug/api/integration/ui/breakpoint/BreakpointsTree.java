@@ -16,7 +16,7 @@
 package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.debug.api.BreakpointManagerComponentImpl;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.GroupedTree.GroupKind;
@@ -50,7 +50,7 @@ public class BreakpointsTree extends BreakpointsView {
   private final GroupKind myRootKind = new RootGroupKind();
   private Collection<BreakpointNodeData> myData;
 
-  public BreakpointsTree(IOperationContext context, BreakpointManagerComponent breakpointsManager) {
+  public BreakpointsTree(IOperationContext context, BreakpointManagerComponentImpl breakpointsManager) {
     super(breakpointsManager);
     myContext = context;
     updateBreakpointsData();

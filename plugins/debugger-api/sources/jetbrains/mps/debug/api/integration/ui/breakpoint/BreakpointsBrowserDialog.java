@@ -3,8 +3,8 @@ package jetbrains.mps.debug.api.integration.ui.breakpoint;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.BreakpointManagerComponent;
-import jetbrains.mps.debug.api.BreakpointManagerComponent.IBreakpointManagerListener;
+import jetbrains.mps.debug.api.BreakpointManagerComponentImpl;
+import jetbrains.mps.debug.api.BreakpointManagerComponentImpl.IBreakpointManagerListener;
 import jetbrains.mps.debug.api.breakpoints.*;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointsView.BreakpointSelectionListener;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
@@ -27,7 +27,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   private final JPanel myMainPanel;
   private JComponent myPropertiesEditorPanel;
   private final IOperationContext myContext;
-  private final BreakpointManagerComponent myBreakpointsManager;
+  private final BreakpointManagerComponentImpl myBreakpointsManager;
   private final BreakpointProvidersManager myProvidersManager;
   private AnAction myShowNodeAction;
   private AnAction myGotoNodeAction;
@@ -43,7 +43,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     setModal(false);
 
     myContext = context;
-    myBreakpointsManager = myContext.getComponent(BreakpointManagerComponent.class);
+    myBreakpointsManager = BreakpointManagerComponentImpl.getInstance(myContext.getProject());
     myProvidersManager = myContext.getComponent(BreakpointProvidersManager.class);
     myCurrentViewIndex = BreakpointViewSettingsComponent.getInstance(myContext.getProject()).getViewIndex();
     myViews = new BreakpointsView[]{new BreakpointsTable(myBreakpointsManager), new BreakpointsTree(myContext, myBreakpointsManager)};

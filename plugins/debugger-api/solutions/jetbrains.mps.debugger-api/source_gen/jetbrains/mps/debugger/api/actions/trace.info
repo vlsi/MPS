@@ -14,7 +14,7 @@
   <unitInfo fileName="Pause_Action.java" startLine="18" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debugger.api.actions.Pause_Action" />
   <unitInfo fileName="ViewBreakpoints_Action.java" startLine="20" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.debugger.api.actions.ViewBreakpoints_Action" />
   <unitInfo fileName="EvaluateExpression_Action.java" startLine="19" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.debugger.api.actions.EvaluateExpression_Action" />
-  <unitInfo fileName="ToggleBreakpoint_Action.java" startLine="18" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.debugger.api.actions.ToggleBreakpoint_Action" />
+  <unitInfo fileName="ToggleBreakpoint_Action.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.debugger.api.actions.ToggleBreakpoint_Action" />
   <unitInfo fileName="ExportThreads_Action.java" startLine="26" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.debugger.api.actions.ExportThreads_Action" />
   <root nodeId="7064627997011532320">
     <nodeInfo nodeId="7064627997011532343" fileName="EvaluateExpression_Action.java" startLine="31" startPosition="7" endLine="32" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -150,9 +150,12 @@
     </scopeInfo>
   </root>
   <root nodeId="7064627997011532788">
-    <nodeInfo nodeId="7064627997011532808" fileName="ToggleBreakpoint_Action.java" startLine="29" startPosition="9" endLine="30" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7064627997011532791" fileName="ToggleBreakpoint_Action.java" startLine="59" startPosition="9" endLine="60" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="7064627997011532807" fileName="ToggleBreakpoint_Action.java" startLine="29" startPosition="9" endLine="30" endPosition="223" />
+    <nodeInfo nodeId="7064714451792151223" fileName="ToggleBreakpoint_Action.java" startLine="30" startPosition="7" endLine="31" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7064627997011532808" fileName="ToggleBreakpoint_Action.java" startLine="31" startPosition="159" endLine="32" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7064627997011532791" fileName="ToggleBreakpoint_Action.java" startLine="62" startPosition="9" endLine="63" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="7064627997011532807" fileName="ToggleBreakpoint_Action.java" startLine="30" startPosition="7" endLine="32" endPosition="169">
+      <varInfo nodeId="7064714451792151224" varName="breakpointManager" />
+    </scopeInfo>
   </root>
   <root nodeId="7064627997011532825">
     <nodeInfo nodeId="7064627997011532829" fileName="ViewBreakpoints_Action.java" startLine="53" startPosition="9" endLine="54" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
