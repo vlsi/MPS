@@ -164,9 +164,9 @@ public final class CopyUtil {
       SNode outputNode = mapping.get(inputNode);
 
       for (SReference ref : inputNode.getReferencesArray()) {
-        SNode inputTargetNode = ref.getTargetNode();
-        if (cloneRefs || inputTargetNode == null) {//broken reference
-          if (ref instanceof StaticReference) {//copy broken static reference
+        SNode inputTargetNode = cloneRefs ? null : ref.getTargetNode();
+        if (inputTargetNode == null) {//broken reference or need to clone
+          if (ref instanceof StaticReference) {
             StaticReference staticReference = (StaticReference) ref;
             outputNode.addReference(new StaticReference(
               staticReference.getRole(),
