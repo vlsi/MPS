@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.debug.breakpoints;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -38,16 +36,7 @@ import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.List;
 
-public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpoint, JavaBreakpointKind>, ApplicationComponent {
-  private final BreakpointProvidersManager myProvidersManager;
-
-  public static JavaBreakpointsProvider getInstance() {
-    return ApplicationManager.getApplication().getComponent(JavaBreakpointsProvider.class);
-  }
-
-  public JavaBreakpointsProvider(BreakpointProvidersManager providersManager) {
-    myProvidersManager = providersManager;
-  }
+public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpoint, JavaBreakpointKind> {
 
   @NotNull
   @Override
@@ -161,22 +150,6 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
         return breakpoint.isValid() ? (breakpoint.isEnabled() ? jetbrains.mps.debug.integration.Icons.FIELD_BREAKPOINT : jetbrains.mps.debug.integration.Icons.DISABLED_FIELD_BREAKPOINT) : Icons.INV_BREAKPOINT;
     }
     return null;
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "Java Breakpoints Provider";
-  }
-
-  @Override
-  public void initComponent() {
-    myProvidersManager.registerProvider(this);
-  }
-
-  @Override
-  public void disposeComponent() {
-    myProvidersManager.unregisterProvider(this);
   }
 
   private static class MyIBreakpointPropertiesUi implements IBreakpointPropertiesUi<JavaBreakpoint> {

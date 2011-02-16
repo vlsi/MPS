@@ -168,7 +168,11 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.debug.breakpoints.JavaBreakpointsProvider</implementation-class>
+      <implementation-class>jetbrains.mps.debug.api.Debuggers</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.debug.JavaDebugger</implementation-class>
     </component>
 
     <component>
