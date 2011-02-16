@@ -50,6 +50,7 @@ import org.junit.runners.Suite.SuiteClasses;
   jetbrains.mps.baseLanguage.test.UnusedParameters_Test.class,
   jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test.class,
   jetbrains.mps.baseLanguage.test.VariableUninitialized_Test.class,
+  jetbrains.mps.baseLanguage.test.Validation_Test.class,
   jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples_Test.class,
   jetbrains.mps.baseLanguage.tuples.test.GenericNamedTuples_Test.class,
   jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test.class,

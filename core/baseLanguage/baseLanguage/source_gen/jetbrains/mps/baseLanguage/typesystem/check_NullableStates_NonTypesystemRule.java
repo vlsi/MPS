@@ -39,6 +39,9 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
     CustomAnalyzerRunner<Map<SNode, NullableState>> nullableRunner = new NullableAnalyzerRunner(iMethodLike);
     AnalysisResult<Map<SNode, NullableState>> result = nullableRunner.analyze();
     Program program = nullableRunner.getProgram();
+    if (DataFlowUtil.tooComplex(program)) {
+      return;
+    }
     for (Instruction instruction : program.getInstructions()) {
       SNode source = (SNode) instruction.getSource();
       SNode variable = source;

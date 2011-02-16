@@ -29,7 +29,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypesReadListener;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.annotation.UseCarefully;
 
 import java.util.*;
 
@@ -39,18 +38,14 @@ import java.util.*;
  * Date: 1/31/11
  * Time: 4:40 PM
  */
-class NonTypeSystemComponent extends Component {
+class NonTypeSystemComponent extends CheckingComponent {
 
-  private boolean myIsCheckedNonTypeSystem = false;
   private boolean myInvalidationResultNT = false;
-
   private Set<Pair<SNode, String>> myCurrentPropertiesToInvalidate = new THashSet<Pair<SNode, String>>();
   private Set<SNode> myCurrentTypedTermsToInvalidate = new THashSet<SNode>();
-
-  private Set<Pair<SNode, NonTypesystemRule_Runtime>> myCheckedNodesNonTypesystem
+  private Set<Pair<SNode, NonTypesystemRule_Runtime>> myCheckedNodes
     = new THashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
-
-  private Map<SNode, List<IErrorReporter>> myNodesToNonTypesystemErrorsMap = new THashMap<SNode, List<IErrorReporter>>();
+  private Map<SNode, List<IErrorReporter>> myNodesToErrorsMap = new THashMap<SNode, List<IErrorReporter>>();
 
     // nodes to rules which depend on this nodes
   private Map<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> myNodesToDependentNodesWithNTRules =
@@ -79,7 +74,7 @@ class NonTypeSystemComponent extends Component {
   }
 
   public void clear() {
-    myIsCheckedNonTypeSystem = false;
+    myIsChecked = false;
     clearCaches();
   }
 
@@ -87,11 +82,11 @@ class NonTypeSystemComponent extends Component {
     myCurrentNodesToInvalidate.clear();
     myCurrentPropertiesToInvalidate.clear();
     myCurrentTypedTermsToInvalidate.clear();
-    myNodesToNonTypesystemErrorsMap.clear();
+    myNodesToErrorsMap.clear();
   }
 
   void clearCaches() {
-    myCheckedNodesNonTypesystem.clear();
+    myCheckedNodes.clear();
     myNodesAndNTRulesToErrors.clear();
     myNodesToDependentNodesWithNTRules.clear();
     myPropertiesToDependentNodesWithNTRules.clear();
@@ -99,17 +94,8 @@ class NonTypeSystemComponent extends Component {
     myNodesDependentOnCachesWithNTRules.clear();
   }
 
-  public boolean isCheckedNonTypesystem() {
-    return myIsCheckedNonTypeSystem && !doInvalidateNonTypesystem();
-  }
-
   public Map<SNode, List<IErrorReporter>> getNodesToErrorsMap() {
-    return Collections.unmodifiableMap(myNodesToNonTypesystemErrorsMap);
-  }
-
-  @UseCarefully
-  public void setCheckedNonTypesystem() {
-    myIsCheckedNonTypeSystem = true;
+    return Collections.unmodifiableMap(myNodesToErrorsMap);
   }
 
   private void doInvalidate(Map<NonTypesystemRule_Runtime, WeakSet<SNode>> nodesAndRules, Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules) {
@@ -126,7 +112,7 @@ class NonTypeSystemComponent extends Component {
   }
 
   //returns true if something was invalidated
-  private boolean doInvalidateNonTypesystem() {
+  protected boolean doInvalidate() {
     if (myInvalidationWasPerformed) {
       return myInvalidationResultNT;
     }
@@ -159,13 +145,13 @@ class NonTypeSystemComponent extends Component {
 
     boolean result = !invalidatedNodesAndRules.isEmpty();
     for (Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule : invalidatedNodesAndRules) {
-      myCheckedNodesNonTypesystem.remove(nodeAndRule);
+      myCheckedNodes.remove(nodeAndRule);
       Map<NonTypesystemRule_Runtime, Set<IErrorReporter>> rulesAndErrors = myNodesAndNTRulesToErrors.get(nodeAndRule.o1);
       if (rulesAndErrors != null) {
         Set<IErrorReporter> errors = rulesAndErrors.get(nodeAndRule.o2);
         if (errors != null) {
           for (IErrorReporter errorReporter : errors) {
-            List<IErrorReporter> iErrorReporters = myNodesToNonTypesystemErrorsMap.get(errorReporter.getSNode());
+            List<IErrorReporter> iErrorReporters = myNodesToErrorsMap.get(errorReporter.getSNode());
             if (iErrorReporters != null) {
               iErrorReporters.remove(errorReporter);
             }
@@ -194,7 +180,7 @@ class NonTypeSystemComponent extends Component {
 
 
   void putError(SNode node, IErrorReporter errorReporter) {
-    Map<SNode, List<IErrorReporter>> errorMap = myNodesToNonTypesystemErrorsMap;
+    Map<SNode, List<IErrorReporter>> errorMap = myNodesToErrorsMap;
 
     List<IErrorReporter> iErrorReporters = errorMap.get(node);
     if (iErrorReporters == null) {
@@ -226,7 +212,6 @@ class NonTypeSystemComponent extends Component {
       errorsSet.add(errorReporter);
     }
   }
-
 
   private void addDependentTypeTerms(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> typesToDependOn) {
     addDependentNodes(sNode, rule, typesToDependOn, true);
@@ -287,7 +272,7 @@ class NonTypeSystemComponent extends Component {
   public void applyNonTypeSystemRulesToRoot(IOperationContext context) {
     SNode root = myNodeTypesComponent.getNode();
     if (root == null) return;
-    doInvalidateNonTypesystem();
+    doInvalidate();
     myNodeTypesComponent.setNonTypeSystemCheckingInProgress(true);
     getTypeCheckingContext().setOperationContext(context);
     try {
@@ -326,7 +311,7 @@ class NonTypeSystemComponent extends Component {
         MyTypesReadListener typesReadListener = new MyTypesReadListener();
         MyLanguageCachesReadListener languageCachesReadListener = new MyLanguageCachesReadListener();
         if (isIncrementalMode()) {
-          if (myCheckedNodesNonTypesystem.contains(nodeAndRule)) {
+          if (myCheckedNodes.contains(nodeAndRule)) {
             continue;
           }
           nodesReadListener.clear();
@@ -364,7 +349,7 @@ class NonTypeSystemComponent extends Component {
           }
           nodesReadListener.clear();
         }
-        myCheckedNodesNonTypesystem.add(nodeAndRule);
+        myCheckedNodes.add(nodeAndRule);
       }
     }
   }

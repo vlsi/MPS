@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="Mpsdevkit_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ProjectPlugin" />
+  <unitInfo fileName="LanguageRefactoring_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.LanguageRefactoring_ActionGroup" />
+  <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Default_KeymapChanges" />
+  <unitInfo fileName="Mpsdevkit_PluginInitializer.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_PluginInitializer" />
+  <unitInfo fileName="Mpsdevkit_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
+  <unitInfo fileName="RenameLanguage_Action.java" startLine="20" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.RenameLanguage_Action" />
+  <root nodeId="8586967776370449177">
+    <nodeInfo nodeId="8586967776370449202" fileName="RenameLanguage_Action.java" startLine="30" startPosition="87" endLine="31" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8586967776370449180" fileName="RenameLanguage_Action.java" startLine="68" startPosition="9" endLine="69" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="8586967776370449201" fileName="RenameLanguage_Action.java" startLine="30" startPosition="87" endLine="31" endPosition="86" />
+  </root>
+  <root nodeId="8586967776370449208">
+    <nodeInfo nodeId="8586967776370449210" fileName="LanguageRefactoring_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+</debugInfo>
+

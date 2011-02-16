@@ -36,7 +36,7 @@ public class TypeCheckingContext {
   private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
 
   @NotNull
-  protected NodeTypesComponent myNodeTypesComponent;
+  private INodeTypesComponent myNodeTypesComponent;
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
 
@@ -59,6 +59,10 @@ public class TypeCheckingContext {
     myNodeTypesComponent = new NodeTypesComponent(rootNode, typeChecker, this);
     myTypeChecker = typeChecker;
     myRootNode = rootNode;
+  }
+
+  public TypeCheckingContext() {
+    //only for new typeSystem
   }
 
   public SubtypingManager getSubtypingManager() {
@@ -129,7 +133,7 @@ public class TypeCheckingContext {
 
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
     getNodeTypesComponent().reportTypeError(nodeWithError, errorReporter);
-    getNodeTypesComponent().addDependcyOnCurrent(nodeWithError, false);
+    getNodeTypesComponent().addDependencyOnCurrent(nodeWithError, false);
   }
   //~
 
@@ -156,13 +160,13 @@ public class TypeCheckingContext {
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     if (node == null) return null;
     SNode type = null;
-    NodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
+    INodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
       currentTypesComponent.addNodeToFrontier(node);
       currentTypesComponent.typeOfNodeCalled(node);
       if (addDependency) {
-        currentTypesComponent.addDependcyOnCurrent(node);
+        currentTypesComponent.addDependencyOnCurrent(node);
       }
       //--- for diagnostics:
       if (ruleModel != null && ruleId != null) {
@@ -463,11 +467,11 @@ public class TypeCheckingContext {
     return myRootNode;
   }
 
-  public NodeTypesComponent getNodeTypesComponent() {
+  public INodeTypesComponent getNodeTypesComponent() {
     return myNodeTypesComponent;
   }
 
-  public NodeTypesComponent getBaseNodeTypesComponent() {
+  public INodeTypesComponent getBaseNodeTypesComponent() {
     return myNodeTypesComponent;
   }
 
@@ -493,7 +497,7 @@ public class TypeCheckingContext {
 
   /*package*/ SNode computeTypeInferenceMode(SNode node) {
     synchronized (TYPECHECKING_LOCK) {
-      final NodeTypesComponent temporaryComponent;
+      final INodeTypesComponent temporaryComponent;
       temporaryComponent = getNodeTypesComponent();
       return temporaryComponent.computeTypesForNodeInferenceMode(node);
     }

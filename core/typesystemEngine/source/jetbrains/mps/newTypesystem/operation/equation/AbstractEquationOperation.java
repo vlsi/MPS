@@ -28,19 +28,17 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 public abstract class AbstractEquationOperation extends AbstractOperation {
   SNode myChild;
   SNode myParent;
-  private final String myPresentation;
 
   AbstractEquationOperation(SNode child, SNode parent, SNode source, EquationInfo info) {
     myChild = child;
     mySource = source;
     myParent = parent;
     myEquationInfo = info;
-    myPresentation = myChild + " = " + myParent;
   }
 
   @Override
   public String getShortPresentation() {
-    return myPresentation;
+    return myChild + " = " + myParent;
   }
 
 

@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.typesystem.inference.NodeTypesComponent;
+import jetbrains.mps.typesystem.inference.INodeTypesComponent;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Pair;
@@ -40,7 +40,6 @@ import java.util.ArrayList;
  * User: Cyril.Konopko
  * Date: 05.04.2010
  * Time: 16:41:04
- * To change this template use File | Settings | File Templates.
  */
 public class AffectingRulesFinder implements IFinder {
   @Override
@@ -50,7 +49,7 @@ public class AffectingRulesFinder implements IFinder {
     //todo get by editor
     TypeCheckingContext typeCheckingContext =
       TypeContextManager.getInstance().getContextForEditedRootNode(term.getContainingRoot(), TypeContextManager.DEFAULT_OWNER);
-    NodeTypesComponent component = typeCheckingContext.getBaseNodeTypesComponent();
+    INodeTypesComponent component = typeCheckingContext.getBaseNodeTypesComponent();
     if (component != null) {
         Set<Pair<String, String>> rulesIds = component.getRulesWhichAffectNodeType(term);
         if (rulesIds != null) {

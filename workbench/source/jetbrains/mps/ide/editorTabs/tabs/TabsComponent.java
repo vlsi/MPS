@@ -18,7 +18,6 @@ package jetbrains.mps.ide.editorTabs.tabs;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Pair;
-import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabs.baseListening.ModelListener;
 import jetbrains.mps.smodel.*;
@@ -37,7 +36,7 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
-public abstract class TabsComponent extends JPanel{
+public abstract class TabsComponent extends JPanel {
   private SNodePointer myBaseNode;
   private SNodePointer myLastNode = null;
   private Set<EditorTabDescriptor> myPossibleTabs;
@@ -94,7 +93,7 @@ public abstract class TabsComponent extends JPanel{
     updateTabs();
   }
 
-  public Component getComponentForTabIndex(int index){
+  public Component getComponentForTabIndex(int index) {
     return myToolbar.getComponent(index);
   }
 
@@ -127,7 +126,7 @@ public abstract class TabsComponent extends JPanel{
         myTabRemovalListener.aspectAdded(node);
       }
 
-      final EditorTab tab = new EditorTab(this,myRealTabs.size(), d, myBaseNode);
+      final EditorTab tab = new EditorTab(this, myRealTabs.size(), d, myBaseNode);
       myRealTabs.add(tab);
     }
 
@@ -163,7 +162,10 @@ public abstract class TabsComponent extends JPanel{
       boolean thatTab = tab.getDescriptor().getNodes(myBaseNode.getNode()).contains(myLastNode.getNode());
       if (thatTab) {
         int index = myRealTabs.indexOf(tab);
-        if (index == myRealTabs.size() - 1) return;
+        if (index == myRealTabs.size() - 1) {
+          performTabAction(0);
+          return;
+        }
 
         performTabAction(index + 1);
 
@@ -178,7 +180,10 @@ public abstract class TabsComponent extends JPanel{
       if (!thatTab) continue;
 
       int index = myRealTabs.indexOf(tab);
-      if (index == 0) return;
+      if (index == 0) {
+        performTabAction(myRealTabs.size() - 1);
+        return;
+      }
 
       performTabAction(index - 1);
       return;

@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.checkedbox.sandbox.test;
 
 
 public class FooCheckedDots {
+  private String myString;
+
   public FooCheckedDots() {
   }
 
@@ -12,7 +14,20 @@ public class FooCheckedDots {
     if (check_7013wl_a1a0(t, s)) {
       check_7013wl_a0a1a0(foo2, s, t, foo2);
       check_7013wl_a1a1a0(s, s);
+
     }
+  }
+
+  public void foo(String s) {
+    check_7013wl_a0a1(s, this);
+    check_7013wl_a1a1(s, this);
+    check_7013wl_a2a1(s, myString);
+    check_7013wl_a3a1(s, this);
+
+  }
+
+  public int intFunc() {
+    return 2;
   }
 
   private static char check_7013wl_a0a0(String checkedDotOperand) {
@@ -39,6 +54,34 @@ public class FooCheckedDots {
   private static boolean check_7013wl_a1a0(Object checkedDotOperand, String s) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(s);
+    }
+    return false;
+  }
+
+  private static char check_7013wl_a0a1(String checkedDotOperand, FooCheckedDots checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.charAt(checkedDotThisExpression.intFunc());
+    }
+    return 0;
+  }
+
+  private static char check_7013wl_a1a1(String checkedDotOperand, FooCheckedDots checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.charAt(checkedDotThisExpression.intFunc());
+    }
+    return 0;
+  }
+
+  private static boolean check_7013wl_a2a1(String checkedDotOperand, String myString) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.equals(myString);
+    }
+    return false;
+  }
+
+  private static boolean check_7013wl_a3a1(String checkedDotOperand, FooCheckedDots checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.equals(checkedDotThisExpression.myString);
     }
     return false;
   }

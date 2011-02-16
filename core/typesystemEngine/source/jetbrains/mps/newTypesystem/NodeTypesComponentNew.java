@@ -30,6 +30,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -38,7 +39,7 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.*;
 
-public class NodeTypesComponentNew extends NodeTypesComponent {
+public class NodeTypesComponentNew implements INodeTypesComponent {
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
 
@@ -53,13 +54,12 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
   private TypeSystemComponent myTypeSystemComponent;
   private boolean myIsSpecial = false;
 
-  private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
+  private static final Logger LOG = Logger.getLogger(NodeTypesComponentNew.class);
 
   private boolean myIsNonTypeSystemCheckingInProgress = false;
   private TypeCheckingContext myTypeCheckingContext;
 
   public NodeTypesComponentNew(SNode rootNode, TypeChecker typeChecker, TypeCheckingContextNew typeCheckingContext) {
-    super(rootNode, typeChecker, typeCheckingContext);
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
     myTypeCheckingContext = typeCheckingContext;
@@ -162,77 +162,68 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
   }
 
   @Override
+  public Map<SNode, SNode> getMainContext() {
+    return null;
+  }
+
   protected boolean loadTypesystemRules(SNode root) {
     return myTypeSystemComponent.loadTypesystemRules(root);
   }
 
-  @Override
   public void computeTypes(boolean refreshTypes) {
     myTypeSystemComponent.computeTypes(refreshTypes);
   }
 
-  @Override
   public void setCheckedNonTypesystem() {
-    myNonTypeSystemComponent.setCheckedNonTypesystem();
+    myNonTypeSystemComponent.setChecked();
   }
 
-  @Override
   protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
     myTypeSystemComponent.computeTypes(nodeToCheck, refreshTypes, forceChildrenCheck,additionalNodes,inferenceMode);
   }
 
-  @Override
   public void typeOfNodeCalled(SNode node) {
     myTypeSystemComponent.typeOfNodeCalled(node);
   }
 
-  @Override
-  public void addDependcyOnCurrent(SNode node) {
-    myTypeSystemComponent.addDependencyOnCurrent(node);
-  }
-
-  @Override
-  public void addDependcyOnCurrent(SNode node, boolean typeAffected) {
+  public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
     myTypeSystemComponent.addDependencyOnCurrent(node, typeAffected);
   }
 
-  @Override
   public void addDependencyForCurrent(SNode node) {
     myTypeSystemComponent.addDependencyForCurrent(node);
   }
 
   @Override
+  public void addDependencyOnCurrent(SNode node) {
+    myTypeSystemComponent.addDependencyOnCurrent(node);
+  }
+
   protected boolean applyRulesToNode(SNode node) {
     return myTypeSystemComponent.applyRulesToNode(node);
   }
 
-  @Override
   public void applyNonTypesystemRulesToRoot(IOperationContext context) {
     myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(context);
   }
 
-  @Override
   public void addNodeToFrontier(SNode node) {
     myTypeSystemComponent.addNodeToFrontier(node);
   }
 
-  @Override
   public SNode getType(SNode node) {
     return myTypeSystemComponent.getType(node);
   }
 
-  @Override
   public void markUnchecked(SNode node) {
     myTypeSystemComponent.markUnchecked(node);
   }
 
-  @Override
   public SNode getRawTypeFromContext(SNode node) {
     return myTypeSystemComponent.getRawTypeFromContext(node);
   }
 
   @NotNull
-  @Override
   public List<IErrorReporter> getErrors(SNode node) {
     Map<SNode, List<IErrorReporter>> nodesToErrorsMap = myTypeSystemComponent.getNodesToErrorsMap();
     Map<SNode, List<IErrorReporter>> nodesToErrorsMapNT = myNonTypeSystemComponent.getNodesToErrorsMap();
@@ -248,14 +239,41 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
     }
     return result;
   }
-
-
-  @Override
+  //------------Deprecated--------------------
   public EquationManager getEquationManager() {
+    return null;
+  }
+  @Override
+  public String getNewVarName() {
     return null;
   }
 
   @Override
+  public SNode[] getVariables(String varName) {
+    return new SNode[0];
+  }
+
+  @Override
+  public void registerTypeVariable(SNode variable) {
+
+  }
+
+  @Override
+  public ISlicer getSlicer() {
+    return null;
+  }
+
+  @Override
+  public InequationSystem computeInequationsForHole(SNode hole, boolean holeIsAType) {
+    return null;
+  }
+
+  @Override
+  public IWrapper getHoleWrapperRepresentator(IWrapper wrapper) {
+    return null;
+  }
+
+  //--------------------------------------------------
   public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
     Map<SNode, List<IErrorReporter>> nodesToErrorsMap = myTypeSystemComponent.getNodesToErrorsMap();
     Map<SNode, List<IErrorReporter>> nodesToErrorsMapNT = myNonTypeSystemComponent.getNodesToErrorsMap();
@@ -271,33 +289,29 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
     return result;
   }
 
-  @Override
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
     myTypeSystemComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
   }
 
-  @Override
   public Set<Pair<String, String>> getRulesWhichAffectNodeType(SNode node) {
     return myTypeSystemComponent.getRulesWhichAffectNodeType(node);
   }
 
-  @Override
   public boolean isCheckedNonTypesystem() {
-    return myNonTypeSystemComponent.isCheckedNonTypesystem();
+    return myNonTypeSystemComponent.isChecked();
   }
 
-  @Override
   public void setCheckedTypesystem() {
-    myTypeSystemComponent.setCheckedTypeSystem();
+    myTypeSystemComponent.setChecked();
   }
 
   public boolean isChecked(boolean considerNonTypeSystemRules) {
     processPendingEvents();
-    boolean b = myTypeSystemComponent.isCheckedTypeSystem();
+    boolean typesChecked = myTypeSystemComponent.isChecked();
     if (considerNonTypeSystemRules) {
-      return b && myNonTypeSystemComponent.isCheckedNonTypesystem();
+      return typesChecked && myNonTypeSystemComponent.isChecked();
     } else {
-      return b;
+      return typesChecked;
     }
   }
 
@@ -361,7 +375,7 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
       markDependentOnPropertyNodesForInvalidation(event.getNode(), event.getPropertyName());
     }
 
-    private void markDependentNodesForInvalidation(SNode eventNode, Component component) {
+    private void markDependentNodesForInvalidation(SNode eventNode, CheckingComponent component) {
        component.addNodeToInvalidate(eventNode);
        component.setInvalidationWasPerformed(false);
     }

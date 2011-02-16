@@ -59,7 +59,7 @@
   <xi:include href="/componentSets/Editor.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/VCS.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/Execution.xml" xpointer="xpointer(/components/*)"/>
-
+  <xi:include href="/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/META-INF/MPSDebuggerComponents.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
@@ -85,22 +85,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.smodel.SModelRepository</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.smodel.MPSModuleRepository</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.smodel.constraints.ModelConstraintsManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.reloading.ClassLoaderManager</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.MessagesPoolClearer</implementation-class>
     </component>
 
@@ -109,47 +93,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.stubs.StubReloadManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.smodel.GarbageCollector</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.smodel.SModelUtil_new</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.cache.CachesManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.smodel.GlobalSModelEventsManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.smodel.CommandEventsManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.project.MPSProjects</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.smodel.behaviour.BehaviorManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.project.AuxilaryRuntimeModel</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.nodeEditor.LanguagesKeymapManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.findUsages.ProxyFindUsagesManager</implementation-class>
     </component>
 
     <component>
@@ -169,10 +113,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.datatransfer.CopyPasteManager</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.lang.dataFlow.DataFlowManager</implementation-class>
     </component>
 
@@ -186,10 +126,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.ide.messages.NavigationManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.util.QueryMethodGenerated</implementation-class>
     </component>
 
     <component>
@@ -217,24 +153,11 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.generator.ModelGenerationStatusManager</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.smodel.persistence.PersistenceSettings</implementation-class>
     </component>
 
     <component>
       <implementation-class>jetbrains.mps.intentions.IntentionsPreferencesPage</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.typesystem.inference.TypeChecker</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.typesystem.inference.TypeContextManager
-      </implementation-class>
     </component>
 
     <component>
@@ -264,16 +187,11 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.cleanup.CleanupManager</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.fileTypes.MPSFileTypesManager</implementation-class>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager
-      </implementation-class>
+      <implementation-class>jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager</implementation-class>
     </component>
 
     <component>
@@ -301,35 +219,11 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.smodel.ImmatureReferences</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.ide.undo.OnReloadingUndoCleaner</implementation-class>
     </component>
 
     <component>
       <implementation-class>jetbrains.mps.ide.tooltips.MPSToolTipManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.generator.cache.AllCaches</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.make.java.BLDependenciesCache</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.traceInfo.TraceInfoManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.generator.traceInfo.TraceInfoCache</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache</implementation-class>
     </component>
 
     <component>
@@ -341,7 +235,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.save.ModelsSaver</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.save.ModelsSaver</implementation-class>
     </component>
 
     <component>
@@ -356,16 +250,15 @@
 
   <project-components>
     <component>
+      <implementation-class>jetbrains.mps.lang.generator.plugin.debug.GenerationTracer</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager</implementation-class>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.cache.CachesClearer</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPerfsPage
-      </implementation-class>
+      <implementation-class>jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPerfsPage</implementation-class>
     </component>
 
     <component>
@@ -424,8 +317,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.lang.generator.plugin.debug.GenerationTracerViewTool
-      </implementation-class>
+      <implementation-class>jetbrains.mps.lang.generator.plugin.debug.GenerationTracerViewTool</implementation-class>
       <skipForDummyProject/>
     </component>
 
@@ -450,20 +342,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.typesystem.uiActions.SupertypesViewTool</implementation-class>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.typesystem.uiActions.TypecheckerStateView</implementation-class>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.library.ProjectLibraryManager</implementation-class>
     </component>
 
@@ -476,12 +354,16 @@
       <skipForDummyProject/>
     </component>
 
+    <!-- typesystem -->
+
     <component>
-      <implementation-class>jetbrains.mps.generator.GeneratorManager</implementation-class>
+      <implementation-class>jetbrains.mps.typesystem.uiActions.SupertypesViewTool</implementation-class>
+      <skipForDummyProject/>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.project.ProjectScope</implementation-class>
+      <implementation-class>jetbrains.mps.typesystem.uiActions.TypecheckerStateView</implementation-class>
+      <skipForDummyProject/>
     </component>
 
     <component>
@@ -489,15 +371,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.lang.generator.plugin.debug.GenerationTracer</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.nodeEditor.EditorManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.generator.TransientModelsComponent</implementation-class>
     </component>
 
     <component>
@@ -555,6 +429,8 @@
     <component>
       <implementation-class>jetbrains.mps.ide.findusages.caches.MPSFileBasedIndexProjectHandler</implementation-class>
     </component>
+
+    <!-- language development workbench -->
 
     <component>
       <implementation-class>jetbrains.mps.ide.make.StartupModuleMaker</implementation-class>

@@ -21,7 +21,6 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
@@ -72,13 +71,13 @@ public class TypeChecker implements ApplicationComponent {
     }
   };
 
-  private static final boolean useNewTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_NEW_TYPESYSTEM));
+  private static final boolean useOldTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_OLD_TYPESYSTEM));
 
   public TypeChecker(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
 
 
-    if (useNewTypeSystem) {
+    if (!useOldTypeSystem) {
       myRuntimeSupport = new RuntimeSupportNew(this);
       mySubtypingManager = new SubTypingManagerNew(this);
     } else {

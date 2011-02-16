@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.UseCarefully;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -33,16 +34,27 @@ import java.util.Set;
  * Date: 1/31/11
  * Time: 5:09 PM
  */
-public class Component {
+public abstract class CheckingComponent {
   protected boolean myInvalidationWasPerformed = false;
   protected boolean myCacheWasRebuilt = false;
   protected TypeChecker myTypeChecker;
   protected final Object ACCESS_LOCK = new Object();
   protected NodeTypesComponentNew myNodeTypesComponent;
-
+  protected boolean myIsChecked = false;
   protected MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
 
   protected Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
+
+  @UseCarefully
+  public void setChecked() {
+    myIsChecked = true;
+  }
+
+  public boolean isChecked() {
+    return myIsChecked && !doInvalidate();
+  }
+
+  protected abstract boolean doInvalidate();
 
   public void setInvalidationWasPerformed(boolean invalidationWasPerformed) {
     myInvalidationWasPerformed = invalidationWasPerformed;

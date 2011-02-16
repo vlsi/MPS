@@ -60,7 +60,6 @@
   <import index="jt7v" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" implicit="yes" />
   <import index="qspx" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" implicit="yes" />
   <import index="rcrn" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" implicit="yes" />
-  <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="3754890006475631526">
       <property name="name" nameId="tpck.1169194664001" value="main" />
@@ -235,10 +234,6 @@
       <property name="name" nameId="tpck.1169194664001" value="reduce_CommandReferenceExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="uhxm.6957430790227171558" resolveInfo="CommandReferenceExpression" />
-    </node>
-    <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="9101437854575048553">
-      <property name="name" nameId="tpck.1169194664001" value="reduce_DebuggerReference" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="86gq.1104094430779068753" resolveInfo="DebuggerReference" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6472627752525396737">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ProcessBuilderExpression" />
@@ -924,12 +919,6 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="uhxm.6957430790227171558" resolveInfo="CommandReferenceExpression" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="456055012090411387">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="456055012090411385" resolveInfo="reduce_CommandReferenceExpression" />
-      </node>
-    </node>
-    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="9101437854575048551">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="86gq.1104094430779068753" resolveInfo="DebuggerReference" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="9101437854575048555">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="9101437854575048553" resolveInfo="reduce_DebuggerReference" />
       </node>
     </node>
   </root>
@@ -6775,35 +6764,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </root>
-  <root id="9101437854575048553">
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9101437854575048560">
-      <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9101437854575048559">
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6rrl.~Debuggers%dgetInstance()%cjetbrains%dmps%ddebug%dapi%dDebuggers" resolveInfo="getInstance" />
-        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="6rrl.~Debuggers" resolveInfo="Debuggers" />
-      </node>
-      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4667331066104421225">
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6rrl.~Debuggers%dgetDebuggerByName(java%dlang%dString)%cjetbrains%dmps%ddebug%dapi%dIDebugger" resolveInfo="getDebuggerByName" />
-        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4667331066104501090">
-          <property name="value" nameId="tpee.1070475926801" value="name" />
-          <node role="propertyMacro$property_attribute$value" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="4667331066104572763">
-            <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="4667331066104572764">
-              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4667331066104572765">
-                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4667331066104572766">
-                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4667331066104572768">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4667331066104572767" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4667331066104572772">
-                      <link role="property" roleId="tp25.1138056395725" targetNodeId="86gq.1104094430779068757" resolveInfo="debuggerName" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="4667331066104572762" />
     </node>
   </root>
   <root id="6472627752525396737">

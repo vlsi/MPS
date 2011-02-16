@@ -28,7 +28,6 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
  */
 public class EquationAddedOperation extends AbstractEquationOperation {
 
-
   public EquationAddedOperation(SNode child, SNode parent, SNode source, EquationInfo info) {
     super(child, parent, source, info);
   }

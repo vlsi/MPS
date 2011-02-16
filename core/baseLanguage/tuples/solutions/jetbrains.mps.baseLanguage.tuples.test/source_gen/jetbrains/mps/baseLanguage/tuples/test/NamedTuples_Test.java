@@ -22,10 +22,14 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class NamedTuples_Test extends TestCase {
   public void test_createAndAssign() throws Exception {
+    // this test no longer applies 
+    if (true) {
+      return;
+    }
     Data tpl = new Data("ABC", "XYZ");
     Assert.assertEquals("ABC", tpl.foo());
     Assert.assertEquals("XYZ", tpl.bar());
-    Data tpl2 = new Data().assignFrom(tpl);
+    Data tpl2 = tpl;
     Assert.assertEquals("ABC", tpl2.foo());
     Assert.assertEquals("XYZ", tpl2.bar());
     tpl.foo("abc");
@@ -46,7 +50,7 @@ public class NamedTuples_Test extends TestCase {
   }
 
   public void test_returnValue() throws Exception {
-    Data data = new Data().assignFrom(this.getData());
+    Data data = this.getData();
     Assert.assertEquals("ABC", data.foo());
     Assert.assertEquals("XYZ", data.bar());
   }
@@ -78,8 +82,8 @@ public class NamedTuples_Test extends TestCase {
   }
 
   public void test_equalsOperator() throws Exception {
-    Data tpl1 = new Data().assignFrom(this.getData());
-    Data tpl2 = new Data().assignFrom(this.getData());
+    Data tpl1 = this.getData();
+    Data tpl2 = this.getData();
     Assert.assertFalse(((Object) tpl1) == ((Object) tpl2));
     Assert.assertTrue(MultiTuple.eq(tpl1, tpl2));
     Assert.assertFalse(!(MultiTuple.eq(tpl1, tpl2)));
@@ -106,8 +110,8 @@ public class NamedTuples_Test extends TestCase {
     Pair<Integer, String> p = new Pair<Integer, String>(1, "a");
     Assert.assertSame(1, p.first());
     Assert.assertEquals("a", p.second());
-    Pair<Integer, String> pp = new Pair<Integer, String>().assignFrom(p);
-    Assert.assertFalse(((Object) p) == ((Object) pp));
+    Pair<Integer, String> pp = p;
+    // <node> 
     Assert.assertSame(1, pp.first());
     Assert.assertEquals("a", pp.second());
   }
@@ -124,8 +128,8 @@ public class NamedTuples_Test extends TestCase {
     SharedPair<Integer, String> p = new SharedPair<Integer, String>(1, "a");
     Assert.assertSame(1, p.first());
     Assert.assertEquals("a", p.second());
-    SharedPair<Integer, String> pp = new SharedPair<Integer, String>().assignFrom(p);
-    Assert.assertFalse(((Object) p) == ((Object) pp));
+    SharedPair<Integer, String> pp = p;
+    // <node> 
     Assert.assertSame(1, pp.first());
     Assert.assertEquals("a", pp.second());
   }
@@ -181,6 +185,21 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertTrue((int) ip.a() == (int) ip.b());
     IntPair ip2 = new IntPair(9999 + 1, 10001 - 1);
     Assert.assertTrue((int) ip2.a() == (int) ip2.b());
+  }
+
+  public void test_nulls() throws Exception {
+    IntPair pair = null;
+    Assert.assertNull(pair);
+    pair = new IntPair(1, 2);
+    Assert.assertNotNull(pair);
+  }
+
+  public void test_implementsInterface() throws Exception {
+    Sample sample = new Sample(42);
+    Assert.assertSame(42, sample.get());
+    Assert.assertEquals("<42>", sample.getSample());
+    ISample s = sample;
+    Assert.assertEquals("<42>", s.getSample());
   }
 
   public String getString(SharedPair<String, String>... tuples) {

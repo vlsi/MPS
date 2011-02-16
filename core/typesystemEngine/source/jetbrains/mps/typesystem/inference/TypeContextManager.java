@@ -21,7 +21,7 @@ import java.util.Map.Entry;
 
 public class TypeContextManager implements ApplicationComponent {
   private final Object myLock = new Object();
-  private static final boolean useNewTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_NEW_TYPESYSTEM));
+  private static final boolean useOldTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_OLD_TYPESYSTEM));
   //minor
   public static final ITypeContextOwner DEFAULT_OWNER = new ITypeContextOwner() {};
 
@@ -137,7 +137,7 @@ public class TypeContextManager implements ApplicationComponent {
   }
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
-    if (useNewTypeSystem) {
+    if (!useOldTypeSystem) {
       return new TypeCheckingContextNew(node, myTypeChecker);
     }
     return new TypeCheckingContext(node, myTypeChecker);
@@ -247,7 +247,7 @@ public class TypeContextManager implements ApplicationComponent {
     if (root == null) {
       root = node.getTopmostAncestor();
     }
-    if (useNewTypeSystem) {
+    if (!useOldTypeSystem) {
       return new TypeCheckingContextNew(root, myTypeChecker, true); //todo should be resolving
     }
     return new TypeCheckingContext(root, myTypeChecker, true);

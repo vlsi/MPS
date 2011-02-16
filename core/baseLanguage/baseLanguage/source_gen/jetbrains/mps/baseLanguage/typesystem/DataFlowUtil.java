@@ -7,15 +7,15 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlow;
-import jetbrains.mps.lang.dataFlow.DataflowBuilderException;
-import java.util.Set;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.dataFlow.DataflowBuilderException;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.ILocalDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ILocalReference_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
@@ -23,6 +23,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class DataFlowUtil {
+  private static int maxProgramSize = 400;
+
   public DataFlowUtil() {
   }
 
@@ -38,6 +40,14 @@ public class DataFlowUtil {
     }
     try {
       Program program = DataFlow.buildProgram(statementList);
+      if (tooComplex(program)) {
+        {
+          BaseQuickFixProvider intentionProvider = null;
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportInfo(SNodeOperations.getParent(statementList), "This node is too complex too analyze by data flow algorithm", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6067900799350600197", intentionProvider, errorTarget);
+        }
+        return;
+      }
       checkUnreachable(typeCheckingContext, program);
       checkUninitializedReads(typeCheckingContext, program);
       checkUnusedAssignments(typeCheckingContext, program);
@@ -193,5 +203,9 @@ public class DataFlowUtil {
         }
       }
     }
+  }
+
+  public static boolean tooComplex(Program program) {
+    return program.size() > DataFlowUtil.maxProgramSize;
   }
 }

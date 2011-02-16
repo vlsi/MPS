@@ -101,7 +101,7 @@ public class JavaCompile_Facet implements IFacet {
               }
               monitor.currentProgress().beginWork("Compiling", work, monitor.currentProgress().workLeft());
               for (IResource resource : Sequence.fromIterable(input)) {
-                TResource tres = new TResource().assignFrom((TResource) resource);
+                TResource tres = (TResource) resource;
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
@@ -206,7 +206,7 @@ public class JavaCompile_Facet implements IFacet {
 
               boolean refreshed = false;
               for (IResource resource : Sequence.fromIterable(input)) {
-                TResource tres = new TResource().assignFrom((TResource) resource);
+                TResource tres = (TResource) resource;
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_wf1ya0_a0b);
                 }
@@ -379,7 +379,7 @@ public class JavaCompile_Facet implements IFacet {
               final JavaCompiler jc = new JavaCompiler();
               Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
               for (IResource r : Sequence.fromIterable(input)) {
-                FResource fres = new FResource().assignFrom(((FResource) r));
+                FResource fres = ((FResource) r);
                 MapSequence.fromMap(fres.contents()).visitAll(new IVisitor<IMapping<String, String>>() {
                   public void visit(IMapping<String, String> m) {
                     jc.addSource(m.key(), m.value());

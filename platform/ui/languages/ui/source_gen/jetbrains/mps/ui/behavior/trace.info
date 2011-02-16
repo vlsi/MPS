@@ -26,44 +26,44 @@
   <unitInfo fileName="CompartmentProviderStatement_Behavior.java" startLine="15" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.ui.behavior.CompartmentProviderStatement_Behavior" />
   <unitInfo fileName="UIObjectStatement_Behavior.java" startLine="13" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ui.behavior.UIObjectStatement_Behavior" />
   <root nodeId="1576918603588684625">
-    <nodeInfo nodeId="1576918603588705996" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AppendUIObjectStatement_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="17" />
-    <nodeInfo nodeId="5197527271413889654" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AppendUIObjectStatement_Behavior.java" startLine="24" startPosition="104" endLine="25" endPosition="100" />
+    <nodeInfo nodeId="1576918603588705996" fileName="AppendUIObjectStatement_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5197527271413889654" fileName="AppendUIObjectStatement_Behavior.java" startLine="24" startPosition="104" endLine="25" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1576918603588684627" fileName="AppendUIObjectStatement_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
     <scopeInfo nodeId="1576918603588705990" fileName="AppendUIObjectStatement_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="17" />
     <scopeInfo nodeId="5197527271413889645" fileName="AppendUIObjectStatement_Behavior.java" startLine="24" startPosition="104" endLine="25" endPosition="100" />
   </root>
   <root nodeId="1719339442170067961">
-    <nodeInfo nodeId="1719339442170089330" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIObjectType_Behavior.java" startLine="14" startPosition="78" endLine="18" endPosition="13" />
+    <nodeInfo nodeId="1719339442170089330" fileName="UIObjectType_Behavior.java" startLine="14" startPosition="78" endLine="18" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1719339442170067963" fileName="UIObjectType_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="1719339442170067967" fileName="UIObjectType_Behavior.java" startLine="14" startPosition="78" endLine="18" endPosition="13" />
   </root>
   <root nodeId="1870423755832759932">
-    <nodeInfo nodeId="1870423755832759943" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AccessUIPropertyOperation_Behavior.java" startLine="15" startPosition="72" endLine="16" endPosition="16" />
+    <nodeInfo nodeId="1870423755832759943" fileName="AccessUIPropertyOperation_Behavior.java" startLine="15" startPosition="72" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1870423755832759934" fileName="AccessUIPropertyOperation_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1870423755832759937" fileName="AccessUIPropertyOperation_Behavior.java" startLine="15" startPosition="72" endLine="16" endPosition="16" />
   </root>
   <root nodeId="3091159734392454233">
-    <nodeInfo nodeId="3091159734392475604" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InsertUIObjectStatement_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="17" />
-    <nodeInfo nodeId="5197527271413889665" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InsertUIObjectStatement_Behavior.java" startLine="24" startPosition="104" endLine="25" endPosition="100" />
+    <nodeInfo nodeId="3091159734392475604" fileName="InsertUIObjectStatement_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5197527271413889665" fileName="InsertUIObjectStatement_Behavior.java" startLine="24" startPosition="104" endLine="25" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="3091159734392454235" fileName="InsertUIObjectStatement_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
     <scopeInfo nodeId="3091159734392475598" fileName="InsertUIObjectStatement_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="17" />
     <scopeInfo nodeId="5197527271413889664" fileName="InsertUIObjectStatement_Behavior.java" startLine="24" startPosition="104" endLine="25" endPosition="100" />
   </root>
   <root nodeId="3262277503800965872">
-    <nodeInfo nodeId="3262277503800965879" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIObjectReference_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="69" />
+    <nodeInfo nodeId="3262277503800965879" fileName="UIObjectReference_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="3262277503800965874" fileName="UIObjectReference_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="3262277503800965877" fileName="UIObjectReference_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="69" />
   </root>
   <root nodeId="5197527271413739306">
-    <nodeInfo nodeId="5197527271413739396" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UIObjectProviderStatement_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="212" />
-    <nodeInfo nodeId="5197527271413739412" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIObjectProviderStatement_Behavior.java" startLine="22" startPosition="111" endLine="23" endPosition="19" />
-    <nodeInfo nodeId="5197527271413739416" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIObjectProviderStatement_Behavior.java" startLine="25" startPosition="172" endLine="26" endPosition="19" />
-    <nodeInfo nodeId="5197527271413739422" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UIObjectProviderStatement_Behavior.java" startLine="27" startPosition="5" endLine="28" endPosition="154" />
-    <nodeInfo nodeId="5197527271413739429" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIObjectProviderStatement_Behavior.java" startLine="28" startPosition="154" endLine="29" endPosition="267" />
-    <nodeInfo nodeId="5197527271413739450" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIObjectProviderStatement_Behavior.java" startLine="32" startPosition="88" endLine="33" endPosition="64" />
-    <nodeInfo nodeId="5197527271413739470" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIObjectProviderStatement_Behavior.java" startLine="36" startPosition="80" endLine="37" endPosition="16" />
-    <nodeInfo nodeId="5197527271413739405" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="UIObjectProviderStatement_Behavior.java" startLine="21" startPosition="212" endLine="24" endPosition="5" />
-    <nodeInfo nodeId="5197527271413739414" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="UIObjectProviderStatement_Behavior.java" startLine="24" startPosition="5" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="5197527271413739396" fileName="UIObjectProviderStatement_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5197527271413739412" fileName="UIObjectProviderStatement_Behavior.java" startLine="22" startPosition="111" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5197527271413739416" fileName="UIObjectProviderStatement_Behavior.java" startLine="25" startPosition="172" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5197527271413739422" fileName="UIObjectProviderStatement_Behavior.java" startLine="27" startPosition="5" endLine="28" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5197527271413739429" fileName="UIObjectProviderStatement_Behavior.java" startLine="28" startPosition="154" endLine="29" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5197527271413739450" fileName="UIObjectProviderStatement_Behavior.java" startLine="32" startPosition="88" endLine="33" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5197527271413739470" fileName="UIObjectProviderStatement_Behavior.java" startLine="36" startPosition="80" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5197527271413739405" fileName="UIObjectProviderStatement_Behavior.java" startLine="21" startPosition="212" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5197527271413739414" fileName="UIObjectProviderStatement_Behavior.java" startLine="24" startPosition="5" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="5197527271413739308" fileName="UIObjectProviderStatement_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
     <scopeInfo nodeId="5197527271413739411" fileName="UIObjectProviderStatement_Behavior.java" startLine="22" startPosition="111" endLine="23" endPosition="19" />
     <scopeInfo nodeId="5197527271413739415" fileName="UIObjectProviderStatement_Behavior.java" startLine="25" startPosition="172" endLine="26" endPosition="19" />
@@ -75,22 +75,22 @@
     </scopeInfo>
   </root>
   <root nodeId="5224413709453691494">
-    <nodeInfo nodeId="5224413709453691505" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Validator_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="261" />
+    <nodeInfo nodeId="5224413709453691505" fileName="Validator_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="5224413709453691496" fileName="Validator_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="5224413709453691500" fileName="Validator_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="261" />
   </root>
   <root nodeId="5224413709454208106">
-    <nodeInfo nodeId="5224413709454317365" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InlineController_Behavior.java" startLine="17" startPosition="90" endLine="18" endPosition="226" />
+    <nodeInfo nodeId="5224413709454317365" fileName="InlineController_Behavior.java" startLine="17" startPosition="90" endLine="18" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="5224413709454208108" fileName="InlineController_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="5224413709454208113" fileName="InlineController_Behavior.java" startLine="17" startPosition="90" endLine="18" endPosition="226" />
   </root>
   <root nodeId="5224413709454215017">
-    <nodeInfo nodeId="5224413709454216213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EventType_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="172" />
+    <nodeInfo nodeId="5224413709454216213" fileName="EventType_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="5224413709454215019" fileName="EventType_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="5224413709454215023" fileName="EventType_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="172" />
   </root>
   <root nodeId="5776545240963923444">
-    <nodeInfo nodeId="5776545240963944813" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ContainerType_Behavior.java" startLine="14" startPosition="78" endLine="21" endPosition="13" />
+    <nodeInfo nodeId="5776545240963944813" fileName="ContainerType_Behavior.java" startLine="14" startPosition="78" endLine="21" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="5776545240963923446" fileName="ContainerType_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="5776545240963923450" fileName="ContainerType_Behavior.java" startLine="14" startPosition="78" endLine="21" endPosition="13" />
   </root>
@@ -98,17 +98,17 @@
     <scopeInfo nodeId="6410919744913609595" fileName="IUIObjectDeclaration_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
   </root>
   <root nodeId="6410919744913642007">
-    <nodeInfo nodeId="6410919744913642014" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CreateUIObjectStatement_Behavior.java" startLine="20" startPosition="75" endLine="21" endPosition="145" />
+    <nodeInfo nodeId="6410919744913642014" fileName="CreateUIObjectStatement_Behavior.java" startLine="20" startPosition="75" endLine="21" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="6410919744913642009" fileName="CreateUIObjectStatement_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
     <scopeInfo nodeId="6410919744913642012" fileName="CreateUIObjectStatement_Behavior.java" startLine="20" startPosition="75" endLine="21" endPosition="145" />
   </root>
   <root nodeId="7109250785404509289">
-    <nodeInfo nodeId="8923564134259851827" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIObjectStatement_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="170" />
-    <nodeInfo nodeId="8923564134258524087" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIObjectStatement_Behavior.java" startLine="24" startPosition="83" endLine="25" endPosition="118" />
-    <nodeInfo nodeId="8923564134258524103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIObjectStatement_Behavior.java" startLine="28" startPosition="76" endLine="29" endPosition="165" />
-    <nodeInfo nodeId="8923564134258699726" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIObjectStatement_Behavior.java" startLine="32" startPosition="75" endLine="33" endPosition="173" />
-    <nodeInfo nodeId="8923564134258876770" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIObjectStatement_Behavior.java" startLine="36" startPosition="75" endLine="37" endPosition="163" />
-    <nodeInfo nodeId="5197527271413889624" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UIObjectStatement_Behavior.java" startLine="40" startPosition="104" endLine="41" endPosition="94" />
+    <nodeInfo nodeId="8923564134259851827" fileName="UIObjectStatement_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923564134258524087" fileName="UIObjectStatement_Behavior.java" startLine="24" startPosition="83" endLine="25" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923564134258524103" fileName="UIObjectStatement_Behavior.java" startLine="28" startPosition="76" endLine="29" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923564134258699726" fileName="UIObjectStatement_Behavior.java" startLine="32" startPosition="75" endLine="33" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923564134258876770" fileName="UIObjectStatement_Behavior.java" startLine="36" startPosition="75" endLine="37" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5197527271413889624" fileName="UIObjectStatement_Behavior.java" startLine="40" startPosition="104" endLine="41" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="7109250785404509291" fileName="UIObjectStatement_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
     <scopeInfo nodeId="7109250785404509295" fileName="UIObjectStatement_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="170" />
     <scopeInfo nodeId="8923564134258524085" fileName="UIObjectStatement_Behavior.java" startLine="24" startPosition="83" endLine="25" endPosition="118" />
@@ -118,10 +118,10 @@
     <scopeInfo nodeId="5197527271413889622" fileName="UIObjectStatement_Behavior.java" startLine="40" startPosition="104" endLine="41" endPosition="94" />
   </root>
   <root nodeId="8381258131358759638">
-    <nodeInfo nodeId="8381258131358762868" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BeanPropertyView_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="103" />
-    <nodeInfo nodeId="8381258131358762441" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BeanPropertyView_Behavior.java" startLine="17" startPosition="76" endLine="18" endPosition="26" />
-    <nodeInfo nodeId="8381258131358762453" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BeanPropertyView_Behavior.java" startLine="18" startPosition="26" endLine="19" endPosition="72" />
-    <nodeInfo nodeId="8381258131358762459" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BeanPropertyView_Behavior.java" startLine="19" startPosition="72" endLine="23" endPosition="6" />
+    <nodeInfo nodeId="8381258131358762868" fileName="BeanPropertyView_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8381258131358762441" fileName="BeanPropertyView_Behavior.java" startLine="17" startPosition="76" endLine="18" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8381258131358762453" fileName="BeanPropertyView_Behavior.java" startLine="18" startPosition="26" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8381258131358762459" fileName="BeanPropertyView_Behavior.java" startLine="19" startPosition="72" endLine="23" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8381258131358759640" fileName="BeanPropertyView_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="8381258131358759708" fileName="BeanPropertyView_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="103" />
     <scopeInfo nodeId="8381258131358762403" fileName="BeanPropertyView_Behavior.java" startLine="17" startPosition="76" endLine="23" endPosition="6">
@@ -130,30 +130,30 @@
     </scopeInfo>
   </root>
   <root nodeId="8923564134258257518">
-    <nodeInfo nodeId="8923564134259851765" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IUIObjectContextProvider_Behavior.java" startLine="18" startPosition="87" endLine="19" endPosition="17" />
-    <nodeInfo nodeId="8923564134258345458" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IUIObjectContextProvider_Behavior.java" startLine="22" startPosition="88" endLine="23" endPosition="16" />
-    <nodeInfo nodeId="8923564134258345456" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IUIObjectContextProvider_Behavior.java" startLine="26" startPosition="78" endLine="27" endPosition="16" />
+    <nodeInfo nodeId="8923564134259851765" fileName="IUIObjectContextProvider_Behavior.java" startLine="18" startPosition="87" endLine="19" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923564134258345458" fileName="IUIObjectContextProvider_Behavior.java" startLine="22" startPosition="88" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923564134258345456" fileName="IUIObjectContextProvider_Behavior.java" startLine="26" startPosition="78" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8923564134258257520" fileName="IUIObjectContextProvider_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="8923564134259848106" fileName="IUIObjectContextProvider_Behavior.java" startLine="18" startPosition="87" endLine="19" endPosition="17" />
     <scopeInfo nodeId="8923564134258345449" fileName="IUIObjectContextProvider_Behavior.java" startLine="22" startPosition="88" endLine="23" endPosition="16" />
     <scopeInfo nodeId="8923564134258345454" fileName="IUIObjectContextProvider_Behavior.java" startLine="26" startPosition="78" endLine="27" endPosition="16" />
   </root>
   <root nodeId="8923564134258345460">
-    <nodeInfo nodeId="8923564134259851777" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="23" startPosition="87" endLine="24" endPosition="212" />
-    <nodeInfo nodeId="8923564134259851793" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="25" startPosition="111" endLine="26" endPosition="19" />
-    <nodeInfo nodeId="8923564134259851797" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="28" startPosition="172" endLine="29" endPosition="19" />
-    <nodeInfo nodeId="8923564134259851803" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="30" startPosition="5" endLine="31" endPosition="154" />
-    <nodeInfo nodeId="8923564134259851810" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="31" startPosition="154" endLine="32" endPosition="267" />
-    <nodeInfo nodeId="8923564134258345479" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="35" startPosition="88" endLine="36" endPosition="64" />
-    <nodeInfo nodeId="8923564134258345486" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="131" />
-    <nodeInfo nodeId="8923564134258345486" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="41" startPosition="131" endLine="42" endPosition="202" />
-    <nodeInfo nodeId="8923564134258348466" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="43" startPosition="43" endLine="44" endPosition="85" />
-    <nodeInfo nodeId="8923564134258345486" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="45" startPosition="12" endLine="46" endPosition="7" />
-    <nodeInfo nodeId="8923564134258348479" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="47" startPosition="5" endLine="48" endPosition="16" />
-    <nodeInfo nodeId="8923564134259851786" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="24" startPosition="212" endLine="27" endPosition="5" />
-    <nodeInfo nodeId="8923564134259851795" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="27" startPosition="5" endLine="30" endPosition="5" />
-    <nodeInfo nodeId="8923564134258345486" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="42" startPosition="202" endLine="46" endPosition="7" />
-    <nodeInfo nodeId="8923564134258345486" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="CompartmentProviderStatement_Behavior.java" startLine="39" startPosition="80" endLine="47" endPosition="5" />
+    <nodeInfo nodeId="8923564134259851777" fileName="CompartmentProviderStatement_Behavior.java" startLine="23" startPosition="87" endLine="24" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8923564134259851793" fileName="CompartmentProviderStatement_Behavior.java" startLine="25" startPosition="111" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923564134259851797" fileName="CompartmentProviderStatement_Behavior.java" startLine="28" startPosition="172" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923564134259851803" fileName="CompartmentProviderStatement_Behavior.java" startLine="30" startPosition="5" endLine="31" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8923564134259851810" fileName="CompartmentProviderStatement_Behavior.java" startLine="31" startPosition="154" endLine="32" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923564134258345479" fileName="CompartmentProviderStatement_Behavior.java" startLine="35" startPosition="88" endLine="36" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923564134258345486" fileName="CompartmentProviderStatement_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8923564134258345486" fileName="CompartmentProviderStatement_Behavior.java" startLine="41" startPosition="131" endLine="42" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8923564134258348466" fileName="CompartmentProviderStatement_Behavior.java" startLine="43" startPosition="43" endLine="44" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923564134258345486" fileName="CompartmentProviderStatement_Behavior.java" startLine="45" startPosition="12" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8923564134258348479" fileName="CompartmentProviderStatement_Behavior.java" startLine="47" startPosition="5" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923564134259851786" fileName="CompartmentProviderStatement_Behavior.java" startLine="24" startPosition="212" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8923564134259851795" fileName="CompartmentProviderStatement_Behavior.java" startLine="27" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8923564134258345486" fileName="CompartmentProviderStatement_Behavior.java" startLine="42" startPosition="202" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8923564134258345486" fileName="CompartmentProviderStatement_Behavior.java" startLine="39" startPosition="80" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="8923564134258345462" fileName="CompartmentProviderStatement_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
     <scopeInfo nodeId="8923564134259851792" fileName="CompartmentProviderStatement_Behavior.java" startLine="25" startPosition="111" endLine="26" endPosition="19" />
     <scopeInfo nodeId="8923564134259851796" fileName="CompartmentProviderStatement_Behavior.java" startLine="28" startPosition="172" endLine="29" endPosition="19" />
@@ -167,14 +167,14 @@
     <scopeInfo nodeId="8923564134258348476" fileName="CompartmentProviderStatement_Behavior.java" startLine="39" startPosition="80" endLine="48" endPosition="16" />
   </root>
   <root nodeId="8923564134258348481">
-    <nodeInfo nodeId="8923564134258348503" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ContainerCompartment_Behavior.java" startLine="17" startPosition="78" endLine="18" endPosition="111" />
-    <nodeInfo nodeId="8923564134258348496" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ContainerCompartment_Behavior.java" startLine="21" startPosition="80" endLine="22" endPosition="67" />
+    <nodeInfo nodeId="8923564134258348503" fileName="ContainerCompartment_Behavior.java" startLine="17" startPosition="78" endLine="18" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923564134258348496" fileName="ContainerCompartment_Behavior.java" startLine="21" startPosition="80" endLine="22" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8923564134258348483" fileName="ContainerCompartment_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="8923564134258348486" fileName="ContainerCompartment_Behavior.java" startLine="17" startPosition="78" endLine="18" endPosition="111" />
     <scopeInfo nodeId="8923564134258348494" fileName="ContainerCompartment_Behavior.java" startLine="21" startPosition="80" endLine="22" endPosition="67" />
   </root>
   <root nodeId="9014158157446674098">
-    <nodeInfo nodeId="9014158157446906291" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="View_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="155" />
+    <nodeInfo nodeId="9014158157446906291" fileName="View_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="9014158157446674100" fileName="View_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="9014158157446906288" fileName="View_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="155" />
   </root>

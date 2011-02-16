@@ -15,7 +15,10 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.smodel.IOperationContext;
@@ -71,12 +74,22 @@ public class GoToNodeById_Action extends GeneratedAction {
         return;
       }
       value = StringUtils.trim(value);
-      SNode node = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel().getNodeById(value);
-      if (node == null) {
+      final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
+      final SNodeId id = SNodeId.fromString(value);
+      if (id == null) {
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Wrong node ID format " + value);
+        return;
+      }
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          node.value = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel().getNodeById(id);
+        }
+      });
+      if (node.value == null) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't find node with id " + value);
         return;
       }
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(node, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(node.value, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToNodeById", t);
