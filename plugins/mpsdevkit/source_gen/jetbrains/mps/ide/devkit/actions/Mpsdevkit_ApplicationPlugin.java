@@ -4,8 +4,8 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
+import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.actions.Goto_ActionGroup;
@@ -27,27 +27,35 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new AddAccessoryModel_Action());
     addAction(new GoToConceptDeclaration_Action());
     addAction(new GoToEditorDeclaration_Action());
     addAction(new GoToRules_Action());
+    addAction(new NewAccessoryModel_Action());
     addAction(new NewDevKit_Action());
+    addAction(new NewGenerator_Action());
     addAction(new RenameLanguage_Action());
     // groups 
+    addGroup(new AccessoriesGroupActions_ActionGroup());
     addGroup(new EditorPopupEx_ActionGroup());
     addGroup(new EditorTabActionsEx_ActionGroup());
     addGroup(new GotoEx_ActionGroup());
+    addGroup(new LanguageNewActions_ActionGroup());
+    addGroup(new LanguageNewCustomPartActions_ActionGroup());
     addGroup(new LanguageRefactoring_ActionGroup());
     addGroup(new NodeActionsEx_ActionGroup());
     addGroup(new ProjectNewActionsEx_ActionGroup());
   }
 
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(LanguageNewActions_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_newGroup);
     insertGroupIntoAnother(ProjectNewActionsEx_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, ProjectNewActions_ActionGroup.LABEL_ID_end);
     insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(EditorPopupEx_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(EditorTabActionsEx_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(GotoEx_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(NodeActionsEx_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_gotoConceptAspects);
+    insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

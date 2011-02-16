@@ -21,7 +21,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new AddAccessoryModel_Action());
     addAction(new AddGeneralPurposeDevKitToLanguageModels_Action());
     addAction(new AddLanguageDesingDevKitToLanguages_Action());
     addAction(new AddLanguageImport_Action());
@@ -97,10 +96,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ModelPropertiesWOShortcut_Action());
     addAction(new ModelProperties_Action());
     addAction(new MoveFileOrDirectory_Action());
-    addAction(new NewAccessoryModel_Action());
     addAction(new NewDirectory_Action());
     addAction(new NewFile_Action());
-    addAction(new NewGenerator_Action());
     addAction(new NewModelFromSource_Action());
     addAction(new NewModel_Action());
     addAction(new NewRuntimeModule_Action());
@@ -177,7 +174,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ViewBreakpoints_Action());
     // groups 
     addGroup(new AbstractFileActions_ActionGroup());
-    addGroup(new AccessoriesGroupActions_ActionGroup());
     addGroup(new AddToFavoritesGroup_ActionGroup());
     addGroup(new Bookmarks_ActionGroup());
     addGroup(new Breakpoints_ActionGroup());
@@ -218,8 +214,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new JUnitTestCaseActions_ActionGroup());
     addGroup(new JUnitTestMethodActions_ActionGroup());
     addGroup(new LanguageActions_ActionGroup());
-    addGroup(new LanguageNewActions_ActionGroup());
-    addGroup(new LanguageNewCustomPartActions_ActionGroup());
     addGroup(new ModelActionsInternal_ActionGroup());
     addGroup(new ModelActions_ActionGroup());
     addGroup(new ModelNewActions_ActionGroup());
@@ -286,7 +280,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(EditorInternal_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(ProjectNewActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_projectNew);
-    insertGroupIntoAnother(LanguageNewActions_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_newGroup);
     insertGroupIntoAnother(SolutionNewActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_solutionNew);
     insertGroupIntoAnother(GeneratorNewActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generatorNew);
     insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_newActions);
@@ -297,7 +290,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, ModelNewActions_ActionGroup.ID, ModelNewActions_ActionGroup.LABEL_ID_newRoot);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, PackageNewActions_ActionGroup.ID, null);
     insertGroupIntoAnother(Tools_ActionGroup.ID, "ToolsMenu", null);
-    insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
     insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, FileActions_ActionGroup.ID, FileActions_ActionGroup.LABEL_ID_abstractFileActions);
     insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, FolderActions_ActionGroup.ID, FolderActions_ActionGroup.LABEL_ID_abstractFileActions);
     insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, ModuleActions_ActionGroup.ID, ModuleActions_ActionGroup.LABEL_ID_abstractFileActions);
