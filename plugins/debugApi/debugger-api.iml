@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/classes" />
+    <output-test url="file://$MODULE_DIR$/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../debugger-api">
+      <sourceFolder url="file://$MODULE_DIR$/../debugger-api/sources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../debugger-api/solutions/jetbrains.mps.debugger-api/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../debugger-api/resources" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="MPS" />
+    <orderEntry type="module" module-name="debug-api" />
+  </component>
+</module>
+

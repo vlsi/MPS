@@ -4,12 +4,12 @@ package jetbrains.mps.debug.evaluation.ui;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.debug.api.integration.ui.DebugActionsUtil;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
-import jetbrains.mps.ide.actions.DebugActionsUtil;
 
 public class EvaluationTreeActions {
   public EvaluationTreeActions() {
