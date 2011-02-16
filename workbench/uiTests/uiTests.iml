@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library name="jfcunit">
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib/jfcunit" />
@@ -17,7 +17,7 @@
         <jarDirectory url="file://$MODULE_DIR$/lib/jfcunit" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="JUnit4" level="project" />
+    <orderEntry type="library" exported="" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
