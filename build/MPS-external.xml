@@ -34,6 +34,9 @@
     <mkdir dir="${deploy.dir}/MPS/lib/mpsboot.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib" />
     <mkdir dir="${deploy.dir}/MPS/license" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/cvsIntegration" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/git4idea" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/svn4idea" />
     <mkdir dir="${deploy.dir}/MPS/plugins" />
     <mkdir dir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples" />
     <mkdir dir="${deploy.dir}/MPS/samples.zip.tmp" />
@@ -172,9 +175,20 @@
       <zipfileset dir="${mps_home}/plugins/samples/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/samples/classes" prefix="" />
     </jar>
-    <copy todir="${deploy.dir}/MPS/plugins">
-      <fileset dir="${mps_home}/plugins" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, mpsdevkit/**, **/*.iml, **/*.iws" />
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-api.jar" filesonly="true" duplicate="preserve" compress="true">
+      <zipfileset dir="${mps_home}/plugins/debugger-api/META-INF" includes="**/plugin.xml" prefix="META-INF" />
+      <zipfileset dir="${mps_home}/plugins/debugger-api/classes" prefix="" />
+    </jar>
+    <copy todir="${deploy.dir}/MPS/plugins/cvsIntegration">
+      <fileset dir="${mps_home}/plugins/cvsIntegration" excludes="**/*.zip, **/*.iml, **/*.iws" />
     </copy>
+    <copy todir="${deploy.dir}/MPS/plugins/git4idea">
+      <fileset dir="${mps_home}/plugins/git4idea" excludes="**/*.zip, **/*.iml, **/*.iws" />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/plugins/svn4idea">
+      <fileset dir="${mps_home}/plugins/svn4idea" excludes="**/*.zip, **/*.iml, **/*.iws" />
+    </copy>
+    <mkdir dir="${deploy.dir}/MPS/plugins" />
     <copy todir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples">
       <fileset dir="${mps_home}/samples" excludes="**/*.iml, **/*.iws" />
     </copy>
