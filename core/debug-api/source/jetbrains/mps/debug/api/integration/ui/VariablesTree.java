@@ -25,7 +25,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.*;
 
-class VariablesTree extends MPSTree implements DataProvider {
+public class VariablesTree extends MPSTree implements DataProvider {
   @NotNull
   private AbstractUiState myUiState;
   private final Project myProject;

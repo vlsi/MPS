@@ -13,9 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.api.integration;
+package jetbrains.mps.debugger.api.runner;
 
-import com.intellij.debugger.ui.DebuggerContentInfo;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.RunProfile;
@@ -27,8 +26,6 @@ import com.intellij.execution.ui.ExecutionConsoleEx;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.execution.ui.RunnerLayoutUi;
 import com.intellij.execution.ui.actions.CloseAction;
-import com.intellij.execution.ui.layout.LayoutAttractionPolicy;
-import com.intellij.execution.ui.layout.LayoutViewOptions;
 import com.intellij.execution.ui.layout.PlaceInGrid;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -41,7 +38,7 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
-import jetbrains.mps.debug.api.integration.ui.DebuggerToolPanel;
+import jetbrains.mps.debugger.api.tool.DebuggerToolPanel;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 

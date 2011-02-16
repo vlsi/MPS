@@ -1,10 +1,9 @@
-package jetbrains.mps.debug.api.integration.ui;
+package jetbrains.mps.debugger.api.tool;
 
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ui.RunnerLayoutUi;
 import com.intellij.execution.ui.layout.PlaceInGrid;
 import com.intellij.ide.ui.ListCellRendererWrapper;
-import com.intellij.openapi.Disposable;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.components.JBList;
@@ -15,16 +14,16 @@ import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
-import jetbrains.mps.debug.api.integration.DebuggerContent;
+import jetbrains.mps.debug.api.integration.ui.VariablesTree;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.IThread;
 import jetbrains.mps.debug.api.programState.NullLocation;
+import jetbrains.mps.debugger.api.runner.DebuggerContent;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.BorderLayout;

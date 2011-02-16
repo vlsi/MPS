@@ -40,7 +40,7 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <programRunner id="defaultDebugRunner" implementation="jetbrains.mps.debug.api.integration.MPSDebugRunner" order="last"/>
+    <programRunner id="defaultDebugRunner" implementation="jetbrains.mps.debugger.api.runner.MPSDebugRunner" order="last"/>
     <executor implementation="com.intellij.execution.executors.DefaultDebugExecutor" order="after run" id="debug"/>
   </extensions>
 </idea-plugin>

@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.api.integration;
+package jetbrains.mps.debugger.api.runner;
 
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.ExecutionResult;
