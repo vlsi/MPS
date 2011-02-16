@@ -96,7 +96,7 @@
                                 <link role="baseMethodDeclaration:3" targetNodeId="3.~ModelGenerationStatusManager.getInstance():jetbrains.mps.generator.ModelGenerationStatusManager" resolveInfo="getInstance" />
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3608835296802635803">
-                                <link role="baseMethodDeclaration:3" targetNodeId="3.~ModelGenerationStatusManager.generationRequired(jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.smodel.IOperationContext,boolean,boolean):boolean" resolveInfo="generationRequired" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="3.~ModelGenerationStatusManager.generationRequired(jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.smodel.IOperationContext):boolean" resolveInfo="generationRequired" />
                                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3608835296802635804">
                                   <link role="variableDeclaration:3" targetNodeId="3608835296802635810" resolveInfo="md" />
                                 </node>
@@ -105,12 +105,6 @@
                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="3608835296802635807">
                                     <link role="fieldDeclaration:3" targetNodeId="3608835296802635845" resolveInfo="context" />
                                   </node>
-                                </node>
-                                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3608835296802635808">
-                                  <property name="value:3" value="false" />
-                                </node>
-                                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3608835296802635809">
-                                  <property name="value:3" value="true" />
                                 </node>
                               </node>
                             </node>

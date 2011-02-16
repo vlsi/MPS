@@ -57,7 +57,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
 
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
       for (SModelDescriptor sm : solution.getEditableUserModels()) {
-        if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, ProjectOperationContext.get(project), false, true)) {
+        if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, ProjectOperationContext.get(project))) {
           continue;
         }
 
@@ -77,7 +77,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
       Iterator<SModelDescriptor> it = inputModels.iterator();
       while (it.hasNext()) {
         SModelDescriptor model = it.next();
-        if ((!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model, ProjectOperationContext.get(project), false, true)) ||
+        if ((!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model, ProjectOperationContext.get(project))) ||
           GeneratorManager.isDoNotGenerate(model)) {
           it.remove();
         }

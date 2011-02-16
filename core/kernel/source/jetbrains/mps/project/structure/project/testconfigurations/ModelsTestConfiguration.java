@@ -70,7 +70,7 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
 
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor sm : modelDescriptors) {
-      if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, ProjectOperationContext.get(project), false, true)) {
+      if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, ProjectOperationContext.get(project))) {
         continue;
       }
       models.add(sm);

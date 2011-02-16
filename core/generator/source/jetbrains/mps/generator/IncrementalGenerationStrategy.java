@@ -25,7 +25,6 @@ import java.util.Map;
  * Evgeny Gryaznov, Oct 7, 2010
  */
 public interface IncrementalGenerationStrategy {
-
   Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext);
 
   GenerationCacheContainer getContainer();
