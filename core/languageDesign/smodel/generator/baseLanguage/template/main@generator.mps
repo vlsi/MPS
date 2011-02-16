@@ -11439,7 +11439,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1757699476691451350">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1757699476691451351">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1757699476691451352">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n8s8.~IAttributeDescriptor$PropertyAttribute%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)" resolveInfo="IAttributeDescriptor.PropertyAttribute" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i8bi.6407023681583030755" resolveInfo="PropertyAttribute" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1757699476691451353">
               <node role="nodeMacro$attribute" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="1757699476691451354">
                 <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="6407023681583040708" resolveInfo="reduce_AbstractConceptDeclaration" />
