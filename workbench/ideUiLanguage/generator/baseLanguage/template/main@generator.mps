@@ -1117,7 +1117,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tphr.AttributeReferenceOperation" typeId="tphr.1202478475127" id="1203607235018">
                   <link role="member" roleId="tp4f.1205756909548" targetNodeId="1203605928556" resolveInfo="dialog" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="1203607249397">
-                    <property name="linkRole" nameId="tpck.1757699476691236116" value="attribute" />
+                    <property name="linkRole" nameId="tpck.1757699476691236116" value="member" />
                     <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="1203607249398">
                       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1203607249399">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1203607439672">
@@ -1178,7 +1178,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tphr.AttributeReferenceOperation" typeId="tphr.1202478475127" id="1203607703420">
                   <link role="member" roleId="tp4f.1205756909548" targetNodeId="1203605928556" resolveInfo="dialog" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="1203607703421">
-                    <property name="linkRole" nameId="tpck.1757699476691236116" value="attribute" />
+                    <property name="linkRole" nameId="tpck.1757699476691236116" value="member" />
                     <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="1203607703422">
                       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1203607703423">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1203607703424">
@@ -1254,7 +1254,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tphr.AttributeReferenceOperation" typeId="tphr.1202478475127" id="1203610749605">
                 <link role="member" roleId="tp4f.1205756909548" targetNodeId="1203605928556" resolveInfo="dialog" />
                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="1203610749606">
-                  <property name="linkRole" nameId="tpck.1757699476691236116" value="attribute" />
+                  <property name="linkRole" nameId="tpck.1757699476691236116" value="member" />
                   <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="1203610749607">
                     <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1203610749608">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1203610749609">
@@ -1311,7 +1311,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tphr.AttributeReferenceOperation" typeId="tphr.1202478475127" id="3734045384532546769">
                   <link role="member" roleId="tp4f.1205756909548" targetNodeId="1203605928556" resolveInfo="dialog" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="3734045384532546770">
-                    <property name="linkRole" nameId="tpck.1757699476691236116" value="attribute" />
+                    <property name="linkRole" nameId="tpck.1757699476691236116" value="member" />
                     <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="3734045384532546771">
                       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3734045384532546772">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3734045384532546773">
@@ -1388,7 +1388,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tphr.AttributeReferenceOperation" typeId="tphr.1202478475127" id="3734045384532546826">
                   <link role="member" roleId="tp4f.1205756909548" targetNodeId="1203605928556" resolveInfo="dialog" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="3734045384532546827">
-                    <property name="linkRole" nameId="tpck.1757699476691236116" value="attribute" />
+                    <property name="linkRole" nameId="tpck.1757699476691236116" value="member" />
                     <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="3734045384532546828">
                       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3734045384532546829">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3734045384532546830">
