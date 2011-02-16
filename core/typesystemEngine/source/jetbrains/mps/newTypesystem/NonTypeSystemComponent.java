@@ -213,7 +213,6 @@ class NonTypeSystemComponent extends CheckingComponent {
     }
   }
 
-
   private void addDependentTypeTerms(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> typesToDependOn) {
     addDependentNodes(sNode, rule, typesToDependOn, true);
   }
