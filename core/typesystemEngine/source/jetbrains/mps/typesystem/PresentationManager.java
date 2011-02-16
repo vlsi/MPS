@@ -15,44 +15,31 @@
  */
 package jetbrains.mps.typesystem;
 
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.NodeWrapper;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
-import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 
 public class PresentationManager {
+  // param is SNode or IWrapper
   public static String toString(Object type) {
     if (type == null) return null;
-    INodeAdapter typeAdapter = null;
+    SNode typeNode = null;
     if (type instanceof NodeWrapper) {
-      typeAdapter = BaseAdapter.fromNode(((NodeWrapper) type).getNode());
-    }
-    if (type instanceof INodeAdapter) {
-      typeAdapter = (INodeAdapter) type;
+      typeNode = ((NodeWrapper) type).getNode();
     }
     if (type instanceof SNode) {
-      typeAdapter = ((SNode) type).getAdapter();
+      typeNode = ((SNode) type);
     }
-    if (typeAdapter instanceof RuntimeTypeVariable && !(typeAdapter instanceof RuntimeErrorType)) {
-      return ((RuntimeTypeVariable) typeAdapter).getName();
+    if (HUtil.isRuntimeErrorType(typeNode)) {
+      return "ERROR(" + HUtil.getErrorText(typeNode) + ")";
     }
-    if (type instanceof String) {
-      return (String) type;
+    if (HUtil.isRuntimeTypeVariable(typeNode)) {
+      return (typeNode).getName();
     }
-    if (typeAdapter == null) return null;
-    return toString_1(typeAdapter.getNode());
+    if (typeNode != null) {
+      return typeNode.getPresentation(true);
+    }
+    return null;
   }
 
-  public static String toString_1(SNode type) {
-    INodeAdapter typeAdapter = BaseAdapter.fromNode(type);
-    if (typeAdapter instanceof RuntimeErrorType) {
-      return "ERROR(" + ((RuntimeErrorType) typeAdapter).getErrorText() + ")";
-    }
-    if (typeAdapter instanceof RuntimeTypeVariable) {
-      return toString(type);
-    }
-    return type.getPresentation(true);
-  }
 }

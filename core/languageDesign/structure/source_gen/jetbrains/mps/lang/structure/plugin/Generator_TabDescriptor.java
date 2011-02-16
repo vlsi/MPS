@@ -32,7 +32,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.workbench.dialogs.project.creation.NewGeneratorDialog;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.generator.GenerationFacade;
 import javax.swing.JOptionPane;
 import jetbrains.mps.ide.actions.MappingDialog;
 import jetbrains.mps.util.NameUtil;
@@ -136,8 +136,8 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (Generator generator : genList) {
-          for (BaseAdapter confAdapter : generator.getOwnMappings()) {
-            ListSequence.fromList(mappings).addElement((SNode) confAdapter.getNode());
+          for (SNode confAdapter : GenerationFacade.getOwnMappings(generator)) {
+            ListSequence.fromList(mappings).addElement((SNode) confAdapter);
           }
         }
       }

@@ -1,9 +1,5 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -103,8 +99,8 @@ public class ModelFindOperations {
     return SModelOperations.hasLanguage(model,language.getModuleReference());
   }
 
-  public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> descendantsKnownInModel) {
-    if (!myFindUsagesSupported) return new HashSet<AbstractConceptDeclaration>();
+  public Set<SNode> findDescendants(SNode node, Set<SNode> descendantsKnownInModel) {
+    if (!myFindUsagesSupported) return new HashSet<SNode>();
     boolean changed = false;
     if (myModelDescriptor instanceof EditableSModelDescriptor) {
       changed = SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor));
@@ -116,7 +112,7 @@ public class ModelFindOperations {
       return descendantsKnownInModel;
 
     SModel model = myModelDescriptor.getSModel();
-    Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
+    Set<SNode> result = new HashSet<SNode>();
     if (model != null) {
       for (SNode root : model.roots()) {
         addDescendants(root, node, result);
@@ -138,26 +134,20 @@ public class ModelFindOperations {
     }
   }
 
-  private void addDescendants(SNode current, AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> result) {
-    if (BaseAdapter.fromNode(current) instanceof ConceptDeclaration) {
-      ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(current);
-      for (InterfaceConceptReference interfaceConceptReference : concept.getImplementses()) {
-        InterfaceConceptDeclaration declaration = interfaceConceptReference.getIntfc();
-        if (declaration != null && declaration.getNode() == BaseAdapter.fromAdapter(node)) {
-          result.add(concept);
+  private void addDescendants(SNode current, SNode node, Set<SNode> result) {
+    if (SNodeUtil.isInstanceOfConceptDeclaration(current)) {
+      for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(current)) {
+        if (interfaceConcept != null && interfaceConcept == node) {
+          result.add(current);
           break;
         }
       }
-      if (BaseAdapter.fromAdapter(concept.getExtends()) == BaseAdapter.fromAdapter(node)) {
-        result.add(concept);
+      if (SNodeUtil.getConceptDeclaration_Extends(current) == node) {
+        result.add(current);
       }
-    }
-
-    if (BaseAdapter.fromNode(current) instanceof InterfaceConceptDeclaration) {
-      InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) BaseAdapter.fromNode(current);
-      for (InterfaceConceptReference interfaceConceptReference : interfaceConcept.getExtendses()) {
-        InterfaceConceptDeclaration declaration = interfaceConceptReference.getIntfc();
-        if (declaration != null && declaration.getNode() == BaseAdapter.fromAdapter(node)) {
+    } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(current)) {
+      for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(current)) {
+        if (interfaceConcept != null && interfaceConcept == node) {
           result.add(interfaceConcept);
           break;
         }
@@ -169,7 +159,7 @@ public class ModelFindOperations {
     }
   }
 
-  public Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope) {
+  public Set<SNode> findInstances(SNode concept, IScope scope) {
     if (!myFindUsagesSupported) return Collections.emptySet();
 
     SModel model = myModelDescriptor.getSModel();
@@ -182,7 +172,7 @@ public class ModelFindOperations {
     return result;
   }
 
-  public Set<SNode> findExactInstances(AbstractConceptDeclaration concept, IScope scope) {
+  public Set<SNode> findExactInstances(SNode concept, IScope scope) {
     if (!myFindUsagesSupported) return Collections.emptySet();
 
     SModel model = myModelDescriptor.getSModel();
@@ -195,14 +185,14 @@ public class ModelFindOperations {
     return result;
   }
 
-  private void addInstances(SNode current, AbstractConceptDeclaration concept, Set<SNode> result, IScope scope) {
-    if (current.isInstanceOfConcept(concept)) result.add(current);
+  private void addInstances(SNode current, SNode concept, Set<SNode> result, IScope scope) {
+    if (current.isInstanceOfConcept(NameUtil.nodeFQName(concept))) result.add(current);
     for (SNode child : current.getChildren()) {
       addInstances(child, concept, result, scope);
     }
   }
 
-  private void addExactInstances(SNode current, AbstractConceptDeclaration concept, Set<SNode> result, IScope scope) {
+  private void addExactInstances(SNode current, SNode concept, Set<SNode> result, IScope scope) {
     if (current.getConceptFqName().equals(NameUtil.nodeFQName(concept))) {
       result.add(current);
     }

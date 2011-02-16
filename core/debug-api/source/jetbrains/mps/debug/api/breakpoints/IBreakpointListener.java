@@ -16,5 +16,5 @@
 package jetbrains.mps.debug.api.breakpoints;
 
 public interface IBreakpointListener {
-  public void breakpointToggled(IBreakpoint breakpoint, boolean enabled);
+  public void breakpointEnabledStateToggled(IBreakpoint breakpoint, boolean enabled);
 }

@@ -68,6 +68,14 @@ public class GenerationStatus extends Status {
     return myInputModel != null ? myInputModel.getSModel() : null;
   }
 
+  public SModelDescriptor getOutputModelDescriptor () {
+    return myOutputModel;
+  }
+
+  public SModelDescriptor getInputModelDescriptor () {
+    return myInputModel;
+  }
+
   public DebugInfo getDebugInfo() {
     return myDebugInfo;
   }

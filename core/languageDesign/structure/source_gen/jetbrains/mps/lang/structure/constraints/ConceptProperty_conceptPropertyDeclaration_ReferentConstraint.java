@@ -9,8 +9,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptProperty_conceptPropertyDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -27,8 +29,13 @@ public class ConceptProperty_conceptPropertyDeclaration_ReferentConstraint exten
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     // concept properties declared in hierarchy of enclosing concept 
-    SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration", true, false);
-    return new ConceptAndSuperConceptsScope(((ConceptDeclaration) SNodeOperations.getAdapter(enclosingConcept)));
+    SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
+    final boolean isConcept = SNodeOperations.isInstanceOf(enclosingConcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+    return (List<SNode>) new ConceptAndSuperConceptsScope(enclosingConcept).getNodes(new Condition<SNode>() {
+      public boolean met(SNode node) {
+        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration") && (isConcept || SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), "inheritable"));
+      }
+    });
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

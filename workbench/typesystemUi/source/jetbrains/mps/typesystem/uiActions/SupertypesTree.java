@@ -82,7 +82,7 @@ public class SupertypesTree extends AbstractHierarchyTree<INodeAdapter> {
   }
 
   public String calculateNodeIdentifier(HierarchyTreeNode<INodeAdapter> treeNode) {
-    return PresentationManager.toString(treeNode.getNode());
+    return PresentationManager.toString(treeNode.getNode().getNode());
   }
 
   private class MyBaseNodeDialog extends BaseNodeDialog {

@@ -11,6 +11,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 /*package*/ class Main_where_select_operations {
+  /*package*/ Main_where_select_operations() {
+  }
+
   /*package*/ static void main(String[] args) {
     Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {

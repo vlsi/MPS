@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.core.structure.IResolveInfo;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.util.NameUtil;
 
 /**
  * Igor Alshannikov
@@ -34,18 +33,18 @@ public class SReferenceUtil {
   public static boolean isDynamicResolve(String role, SNode sourceNode) {
 //     return false;  // disable dynamic references
 
-    LinkDeclaration link = new ConceptAndSuperConceptsScope(sourceNode.getConceptDeclarationAdapter()).getMostSpecificLinkDeclarationByRole(role);
+    SNode link = new ConceptAndSuperConceptsScope(sourceNode.getConceptDeclarationNode()).getMostSpecificLinkDeclarationByRole(role);
     if (link == null) {
       LOG.error("couldn't find link declaration '" + role + "' in concept '" + sourceNode.getConceptFqName() + "'", sourceNode);
       return false;
     }
 
-    AbstractConceptDeclaration target = link.getTarget();
+    SNode target = SModelUtil.getLinkDeclarationTarget(link);
     if (target == null) {
       LOG.error("link target is not defined", link);
       return false;
     }
 
-    return SModelUtil_new.isAssignableConcept(target, IResolveInfo.concept);
+    return SModelUtil.isAssignableConcept(NameUtil.nodeFQName(target), SNodeUtil.concept_IResolveInfo);
   }
 }

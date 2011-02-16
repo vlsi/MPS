@@ -65,7 +65,7 @@ import java.lang.reflect.Method;
   }
 
   private static Class getFactoryClass(ConceptDeclaration conceptDeclaration) {
-    String languageNamespace = NameUtil.namespaceFromConcept(conceptDeclaration);
+    String languageNamespace = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(conceptDeclaration));
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
     assert language != null;
     return language.getClass(languageNamespace + ".Factory");

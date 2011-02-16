@@ -305,7 +305,7 @@ public class TemplateProcessor {
             outputNodes.add(childToReplaceLater);
             // execute the 'mapper' function later
             myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(
-              nodeMacro, childToReplaceLater, newcontext, myReductionContext);
+              BaseAdapter.fromAdapter(nodeMacro), childToReplaceLater, newcontext, myReductionContext);
           } else {
             List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newcontext, nodeMacrosToSkip + 1);
             if (_outputNodes != null) {
@@ -313,7 +313,7 @@ public class TemplateProcessor {
               // do post-processing here (it's not really a post-processing because model is not completed yet - output nodes are not added to parent node).
               for (SNode outputNode : _outputNodes) {
                 myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroPostProcChange(
-                  nodeMacro, outputNode, newcontext, myReductionContext);
+                  BaseAdapter.fromAdapter(nodeMacro), outputNode, newcontext, myReductionContext);
               }
             }
           }

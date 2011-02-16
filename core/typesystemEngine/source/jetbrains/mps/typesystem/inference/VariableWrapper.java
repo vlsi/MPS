@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
@@ -56,8 +55,8 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
     return myEquationManager;
   }
 
-  public RuntimeTypeVariable getVariable() {
-    return (RuntimeTypeVariable) BaseAdapter.fromNode(getNode());
+  public SNode getVariable() {
+    return getNode();
   }
 
   public String getVariableName() {

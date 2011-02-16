@@ -157,6 +157,12 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     return true;
   }
 
+  public void checkModelsAndRun(IOperationContext operationContext, List<SModelDescriptor> modelDescriptors, Runnable runnable) {
+    if (ModelCheckerTool_Tool.this.checkModelsBeforeGenerationIfNeeded(operationContext, modelDescriptors, runnable)) {
+      runnable.run();
+    }
+  }
+
   public CheckinHandler.ReturnResult checkModelsBeforeCommit(IOperationContext operationContext, List<SModelDescriptor> modelDescriptors) {
     ModelCheckerViewer viewer = ModelCheckerTool_Tool.this.checkModels(modelDescriptors, operationContext, false);
     SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();

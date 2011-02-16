@@ -16,14 +16,10 @@
 package jetbrains.mps.smodel.action;
 
 import com.intellij.util.containers.HashMap;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -37,15 +33,16 @@ import java.util.Arrays;
  */
 public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteAction {
   private SNode myCurrentReferent;
-  private LinkDeclaration myLinkDeclaration;
+  private SNode myLinkDeclaration;
   private IReferencePresentation myPresentation;
 
-  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IReferencePresentation presentation) {
+  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode referenceNode, SNode currentReferent, SNode linkDeclaration, IReferencePresentation presentation) {
     super(null, parameterNode, referenceNode);
     myCurrentReferent = currentReferent;
     myLinkDeclaration = linkDeclaration;
     myPresentation = presentation;
-    if (SModelUtil_new.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.reference) {
+    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
+    if (!SNodeUtil.getLinkDeclaration_IsReference(genuineLinkDeclaration)) {
       throw new RuntimeException("Only reference links are allowed here.");
     }
   }
@@ -87,10 +84,11 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   public SNode doSubstitute(String pattern) {
     SNode parameterNode = (SNode) getParameterObject();
     if (myCurrentReferent != parameterNode) {
-      if (!SModelUtil_new.isAcceptableTarget(myLinkDeclaration, parameterNode)) {
+      SNode linkDeclaration = myLinkDeclaration;
+      if (!SModelUtil.isAcceptableTarget(linkDeclaration, parameterNode)) {
         throw new RuntimeException("Couldn't set referent node: " + parameterNode.getDebugText());
       }
-      getSourceNode().setReferent(SModelUtil_new.getGenuineLinkRole(myLinkDeclaration), parameterNode);
+      getSourceNode().setReferent(SModelUtil.getGenuineLinkRole(linkDeclaration), parameterNode);
     }
     return null;
   }
@@ -107,7 +105,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
       if (!nodeCopyRoot.isRoot()) {
         auxModel.addRoot(nodeCopyRoot);
       }
-      String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
+      String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
       SNode sourceNode = mapping.get(sourceNodePeer);
       SNode nodeToEquatePeer = sourceNodePeer;
       TypeChecker typeChecker = TypeChecker.getInstance();

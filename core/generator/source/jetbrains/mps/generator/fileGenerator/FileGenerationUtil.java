@@ -46,6 +46,12 @@ public class FileGenerationUtil {
 
   public static IFile getDefaultOutputDir(SModelReference reference, IFile outputRootDir) {
     String packageName = JavaNameUtil.packageNameForModelUID(reference);
-    return outputRootDir.child(packageName.replace('.', File.separatorChar));
+    String packagePath;
+    if (FileSystem.getInstance().isPackaged(outputRootDir)) {
+      packagePath = packageName.replace('.', '/');
+    } else {
+      packagePath = packageName.replace('.', File.separatorChar);
+    }
+    return outputRootDir.child(packagePath);
   }
 }

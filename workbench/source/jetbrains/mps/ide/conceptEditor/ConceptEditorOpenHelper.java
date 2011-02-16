@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.conceptEditor;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation;
 import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationLink;
@@ -28,7 +29,7 @@ public class ConceptEditorOpenHelper {
     AbstractConceptDeclaration baseNode = findBaseNodeMultiTab(node);
 
     if (baseNode == null ||
-      SModelUtil_new.getDeclaringLanguage(baseNode, context.getScope()) == null ||
+      SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(baseNode)) == null ||
       (Language.getModelAspect(node.getModel().getModelDescriptor()) == null
         && !SModelStereotype.isGeneratorModel(node.getModel()))) {
       return null;
@@ -64,9 +65,8 @@ public class ConceptEditorOpenHelper {
   }
 
   public static boolean canOpen(IOperationContext context, SNode node) {
-    INodeAdapter concept = BaseAdapter.fromNode(node);
-    return concept instanceof AbstractConceptDeclaration &&
-      SModelUtil_new.getDeclaringLanguage((AbstractConceptDeclaration) concept, context.getScope()) != null &&
+    return SNodeUtil.isInstanceOfAbstractConceptDeclaration(node) &&
+      SModelUtil.getDeclaringLanguage(node) != null &&
       Language.getModelAspect(node.getModel().getModelDescriptor()) != null;
   }
 }

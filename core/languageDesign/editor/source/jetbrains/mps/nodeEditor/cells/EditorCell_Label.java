@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.LocalTimeCounter;
 import com.intellij.util.ui.UIUtil;
@@ -434,7 +435,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
     if (isEditable()) {
       final boolean result[] = new boolean[1];
-      getEditorContext().executeCommand(new Runnable() {
+      String groupId = ModelAccess.instance().runReadAction(new Computable<String>() {
+        @Override
+        public String compute() {
+          return getCellId() + "_" + getSNode().getId();
+        }
+      });
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           if (processMutableKeyTyped(keyEvent, allowErrors)) {
             getEditorContext().flushEvents();
@@ -451,7 +458,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
             result[0] = true;
           }
         }
-      });
+      }, null, groupId, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, getOperationContext().getProject());
+      getEditor().relayout();
       if (result[0]) {
         return true;
       }

@@ -141,7 +141,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
       }
 
       private int searchInEditors(SNode ancestor, SNode searchedNode) {
-        AbstractConceptDeclaration conceptDeclaration = ancestor.getConceptDeclarationAdapter();
+        SNode conceptDeclaration = ancestor.getConceptDeclarationNode();
         SModel structureModel = conceptDeclaration.getModel();
         Language language = (Language) structureModel.getModelDescriptor().getModule();
         SModel editorModel = language.getEditorModelDescriptor().getSModel();

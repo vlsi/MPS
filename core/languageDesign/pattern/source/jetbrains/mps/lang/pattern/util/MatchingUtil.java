@@ -16,7 +16,6 @@
 package jetbrains.mps.lang.pattern.util;
 
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -45,8 +44,8 @@ public class MatchingUtil {
     Set<String> propertyNames = propertyNames1;
     propertyNames.addAll(node2.getPropertyNames());
     for (String propertyName : propertyNames) {
-      AbstractConceptDeclaration typeDeclaration = node1.getConceptDeclarationAdapter();
-      PropertyDeclaration propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(typeDeclaration, propertyName);
+      SNode typeDeclaration = node1.getConceptDeclarationNode();
+      SNode propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(typeDeclaration, propertyName);
       String propertyValue1 = node1.getProperty(propertyName);
       String propertyValue2 = node2.getProperty(propertyName);
       if (propertyDeclaration == null) {

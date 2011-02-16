@@ -353,11 +353,11 @@ public class WorkbenchModelAccess extends ModelAccess {
     if(project == null) {
       project = CurrentProjectAccessUtil.getProjectFromUI();
     }
-    return runWriteActionInCommand(c, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, project);
+    return runWriteActionInCommand(c, null, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, project);
   }
 
   @Override
-  public <T> T runWriteActionInCommand(final Computable<T> c, final String name, final UndoConfirmationPolicy policy, Project project) {
+  public <T> T runWriteActionInCommand(final Computable<T> c, String name, Object groupId, final UndoConfirmationPolicy policy, Project project) {
     final Object[] result = new Object[1];
     CommandProcessor.getInstance().executeCommand(project, new Runnable() {
       public void run() {
@@ -375,12 +375,12 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public void runWriteActionInCommand(Runnable r, Project project) {
-    runWriteActionInCommand(r, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, project);
+    runWriteActionInCommand(r, null, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, project);
   }
 
   @Override
-  public void runWriteActionInCommand(Runnable r, String name, UndoConfirmationPolicy policy, Project project) {
-    CommandProcessor.getInstance().executeCommand(project, new CommandRunnable(r), name, null, policy);
+  public void runWriteActionInCommand(Runnable r, String name, Object groupId, UndoConfirmationPolicy policy, Project project) {
+    CommandProcessor.getInstance().executeCommand(project, new CommandRunnable(r), name, groupId, policy);
   }
 
   @Override

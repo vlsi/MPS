@@ -16,6 +16,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -46,7 +47,7 @@ public class ConceptEditorHelper {
   }
 
   public static SNode createNewConceptAspectInstance(SNode applicableNode, SNode concept, SModel model) {
-    SNode conceptAspect = SConceptOperations.createNewNode(NameUtil.nodeFQName(concept), null);
+    SNode conceptAspect = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(concept), null);
     IConceptAspect_Behavior.call_setBaseConcept_6261424444345963020(conceptAspect, applicableNode);
     SModelOperations.addRootNode(model, conceptAspect);
 

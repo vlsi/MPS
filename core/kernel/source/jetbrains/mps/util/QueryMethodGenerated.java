@@ -17,7 +17,6 @@ package jetbrains.mps.util;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.util.containers.ConcurrentHashSet;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -147,12 +146,11 @@ public class QueryMethodGenerated implements ApplicationComponent {
     return result;
   }
 
-  public static Constructor getAdapterConstructor(String className) {
+  public static Constructor getAdapterConstructor(final String className) {
     Constructor result = ourAdaptorsConstructors.get(className);
     if (result != null) return result;
 
     try {
-      String adapterName = className;
       String namespace = NameUtil.namespaceFromLongName(className);
 
       assert namespace.endsWith(".structure");
@@ -164,15 +162,17 @@ public class QueryMethodGenerated implements ApplicationComponent {
       if (l == null) {
         return null;
       }
-      cls = l.getClass(adapterName);
-
+      cls = l.getClass(className);
       if (cls == null) {
-        throw new ClassNotFoundException("class " + adapterName + " was not found in language: " + languageNamespace);
+        throw new ClassNotFoundException("class " + className + " was not found in language: " + languageNamespace);
       }
 
-      Constructor ctor = cls.isInterface() ?
-        BaseConcept.class.getConstructor(SNode.class) :
-        cls.getConstructor(SNode.class);
+      Constructor ctor;
+      if(cls.isInterface()) {
+        ctor = className.equals(SNodeUtil.concept_BaseConcept) ? null : getAdapterConstructor(SNodeUtil.concept_BaseConcept);
+      } else {
+        ctor = cls.getConstructor(SNode.class);
+      }
 
       if (ctor != null) {
         ctor.setAccessible(true);

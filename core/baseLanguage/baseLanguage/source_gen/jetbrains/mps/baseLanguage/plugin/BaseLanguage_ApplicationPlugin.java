@@ -78,7 +78,6 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     addCustomPart(res, new DebugInfoProvider_CustomApplicationPlugin());
-    addCustomPart(res, new TraceInfoInitializer_CustomApplicationPlugin());
     return res;
   }
 

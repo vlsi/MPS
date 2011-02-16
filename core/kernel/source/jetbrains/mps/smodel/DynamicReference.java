@@ -16,8 +16,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.StandaloneMPSContext;
@@ -64,7 +63,7 @@ public class DynamicReference extends SReferenceBase {
     }
 
     SNode referenceNode = getSourceNode();
-    AbstractConceptDeclaration referenceNodeConcept = referenceNode.getConceptDeclarationAdapter();
+    SNode referenceNodeConcept = referenceNode.getConceptDeclarationNode();
     SNode enclosingNode = getSourceNode().getParent();
     SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(
       enclosingNode,
@@ -79,7 +78,7 @@ public class DynamicReference extends SReferenceBase {
       return null;
     }
 
-    LinkDeclaration mostSpecificForRole = new ConceptAndSuperConceptsScope(referenceNodeConcept).getMostSpecificLinkDeclarationByRole(getRole());
+    SNode mostSpecificForRole = new ConceptAndSuperConceptsScope(referenceNodeConcept).getMostSpecificLinkDeclarationByRole(getRole());
     if (mostSpecificForRole == null) {
       if (!silently) {
         error("cannot find link declaration '" + getRole() + "' in concept '" + referenceNode.getConceptFqName() + "'");
@@ -88,7 +87,7 @@ public class DynamicReference extends SReferenceBase {
     }
 
     ISearchScope searchScope = status.getSearchScope();
-    IReferenceInfoResolver infoResolver = searchScope.getReferenceInfoResolver(referenceNode, mostSpecificForRole.getTarget());
+    IReferenceInfoResolver infoResolver = searchScope.getReferenceInfoResolver(referenceNode, SModelUtil.getLinkDeclarationTarget(mostSpecificForRole));
     if (infoResolver == null) {
       if (!silently) {
         error("cannot obtain resolver for reference: '" + getRole() + "'");

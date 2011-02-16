@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IfInstanceOfVarReference_DataFlow.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.IfInstanceOfVarReference_DataFlow" />
   <unitInfo fileName="Node_IsInstanceOfOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.Node_IsInstanceOfOperation_DataFlow" />
   <unitInfo fileName="Concept_IsSuperConceptOfOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.Concept_IsSuperConceptOfOperation_DataFlow" />
   <unitInfo fileName="PoundExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.PoundExpression_DataFlow" />
   <unitInfo fileName="Concept_IsSubConceptOfOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.Concept_IsSubConceptOfOperation_DataFlow" />
   <unitInfo fileName="SemanticDowncastExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.SemanticDowncastExpression_DataFlow" />
   <unitInfo fileName="SNodeTypeCastExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.SNodeTypeCastExpression_DataFlow" />
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.DFABuilders" />
+  <unitInfo fileName="IfInstanceOfStatement_DataFlow.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.IfInstanceOfStatement_DataFlow" />
   <unitInfo fileName="SNodeOperation_DataFlow.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.SNodeOperation_DataFlow" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.smodel.dataFlow.DFABuilders" />
   <root nodeId="1210626395131">
     <nodeInfo nodeId="7910522704535779665" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SNodeOperation_DataFlow.java" startLine="18" startPosition="98" endLine="19" endPosition="50" />
     <nodeInfo nodeId="7910522704535779643" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SNodeOperation_DataFlow.java" startLine="17" startPosition="95" endLine="20" endPosition="7" />
@@ -24,6 +26,18 @@
   <root nodeId="1220278792529">
     <nodeInfo nodeId="1220278795126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SemanticDowncastExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="111" />
     <scopeInfo nodeId="1220278792531" fileName="SemanticDowncastExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="111" />
+  </root>
+  <root nodeId="1883223317721107093">
+    <nodeInfo nodeId="1883223317721107096" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfInstanceOfVarReference_DataFlow.java" startLine="14" startPosition="102" endLine="15" endPosition="116" />
+    <scopeInfo nodeId="1883223317721107095" fileName="IfInstanceOfVarReference_DataFlow.java" startLine="14" startPosition="102" endLine="15" endPosition="116" />
+  </root>
+  <root nodeId="1883223317721107104">
+    <nodeInfo nodeId="1883223317721107114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfInstanceOfStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="111" />
+    <nodeInfo nodeId="1883223317721107123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfInstanceOfStatement_DataFlow.java" startLine="16" startPosition="111" endLine="17" endPosition="93" />
+    <nodeInfo nodeId="1883223317721107127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfInstanceOfStatement_DataFlow.java" startLine="17" startPosition="93" endLine="18" endPosition="101" />
+    <nodeInfo nodeId="1883223317721107136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfInstanceOfStatement_DataFlow.java" startLine="18" startPosition="101" endLine="19" endPosition="101" />
+    <nodeInfo nodeId="1883223317721107145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfInstanceOfStatement_DataFlow.java" startLine="19" startPosition="101" endLine="20" endPosition="43" />
+    <scopeInfo nodeId="1883223317721107106" fileName="IfInstanceOfStatement_DataFlow.java" startLine="15" startPosition="102" endLine="20" endPosition="43" />
   </root>
   <root nodeId="6031770219184889510">
     <nodeInfo nodeId="6031770219184889513" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Concept_IsSuperConceptOfOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="112" />

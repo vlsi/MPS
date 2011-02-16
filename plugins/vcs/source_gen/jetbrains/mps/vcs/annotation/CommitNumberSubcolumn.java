@@ -73,10 +73,10 @@ public class CommitNumberSubcolumn extends AnnotationAspectSubcolumn {
     return true;
   }
 
-  private static Date check_efout7_a0a0a0a0f0b(VcsFileRevision p) {
-    if (null == p) {
-      return null;
+  private static Date check_efout7_a0a0a0a0f0b(VcsFileRevision checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getRevisionDate();
     }
-    return p.getRevisionDate();
+    return null;
   }
 }

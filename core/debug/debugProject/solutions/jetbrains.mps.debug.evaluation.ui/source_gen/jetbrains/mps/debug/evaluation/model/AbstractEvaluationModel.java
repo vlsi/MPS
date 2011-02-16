@@ -49,6 +49,7 @@ import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
 import jetbrains.mps.generator.GeneratorManager;
 import java.util.Collections;
+import jetbrains.mps.generator.GenerationOptions;
 import com.intellij.openapi.util.Disposer;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
@@ -245,7 +246,7 @@ public abstract class AbstractEvaluationModel {
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
       GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-      boolean successful = generatorManager.generateModels(Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, progressWindow, messageHandler, true, false);
+      boolean successful = generatorManager.generateModels(Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, progressWindow, messageHandler, GenerationOptions.getDefaults().saveTransientModels(IS_DEVELOPER_MODE).rebuildAll(false).reporting(false, false, false, 0).create());
 
       Disposer.dispose(progressWindow);
 

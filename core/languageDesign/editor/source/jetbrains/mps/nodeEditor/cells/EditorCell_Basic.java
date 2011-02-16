@@ -15,31 +15,35 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import com.intellij.openapi.util.Computable;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.util.*;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.ListMap;
+import jetbrains.mps.util.NameUtil;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.*;
-import java.util.List;
-
-import com.intellij.util.ui.UIUtil;
-import com.intellij.openapi.util.Computable;
 
 /**
  * Author: Sergey Dmitriev
@@ -255,9 +259,9 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
     SNode node = getSNode();
     SNode operationNode = null;
-    LinkDeclaration linkDeclaration = SModelUtil_new.getGenuineLinkDeclaration(getLinkDeclaration());
-    if (linkDeclaration != null && linkDeclaration.getMetaClass() == LinkMetaclass.reference) {
-      SNode referentNode = node.getReferent(linkDeclaration.getRole());
+    SNode linkDeclaration = SModelUtil.getGenuineLinkDeclaration(BaseAdapter.fromAdapter(getLinkDeclaration()));
+    if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
+      SNode referentNode = node.getReferent(SModelUtil.getLinkDeclarationRole(linkDeclaration));
       if (referentNode != null) {
         operationNode = referentNode;
       }
@@ -270,7 +274,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public String getCellRole() {
     LinkDeclaration linkDeclaration = getLinkDeclaration();
     if (linkDeclaration != null) {
-      return SModelUtil_new.getGenuineLinkRole(linkDeclaration);
+      return SModelUtil.getGenuineLinkRole(BaseAdapter.fromAdapter(linkDeclaration));
     } else {//try legacy technique
       return getRole();
     }
@@ -384,7 +388,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public LinkDeclaration getLinkDeclaration() {
     String role = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
     if (role != null) {
-      return getSNode().getLinkDeclaration(role);
+      return (LinkDeclaration) BaseAdapter.fromNode(getSNode().getLinkDeclaration(role));
     }
     return myLinkDeclaration;
   }
@@ -498,7 +502,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     while (node.isAttribute()) {
       node = node.getParent();
     }
-    LinkDeclaration link = node.getParent().getLinkDeclaration(node.getRole_());
+    LinkDeclaration link = (LinkDeclaration) BaseAdapter.fromNode(node.getParent().getLinkDeclaration(node.getRole_()));
     AbstractConceptDeclaration concept = link.getTarget();
     String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept), editorContext.getScope());
     if (node.getConceptFqName().equals(concreteConceptFqName)) {

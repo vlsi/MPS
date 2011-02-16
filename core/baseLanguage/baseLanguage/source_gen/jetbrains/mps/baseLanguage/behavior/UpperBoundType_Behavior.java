@@ -25,4 +25,12 @@ public class UpperBoundType_Behavior {
     }
     return Type_Behavior.call_isSupersetOf_1220438914705(SLinkOperations.getTarget(thisNode, "bound", true), t);
   }
+
+  public static boolean virtual_isValueType_4836112446988592019(SNode thisNode) {
+    return false;
+  }
+
+  public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
+    return false;
+  }
 }

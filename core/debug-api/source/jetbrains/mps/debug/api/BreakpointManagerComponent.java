@@ -29,12 +29,14 @@ import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionListener
 import jetbrains.mps.debug.api.breakpoints.*;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointIconRenderer;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointPainter;
+import jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointsBrowserDialog;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.LeftMarginMouseListener;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -376,6 +378,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
         try {
           IBreakpoint breakpoint = provider.loadFromState((Element) breakpointElement.getChildren().get(0), kind, myProject);
           if (breakpoint != null) {
+            breakpoint.addBreakpointListener(myBreakpointListener);
             myBreakpoints.add(breakpoint);
           }
         } catch (Throwable t) {
@@ -474,12 +477,19 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   // TODO legacy method so the users code would compile -- remove after MPS2.0
   @Deprecated
+  @ToRemove(version = 2.0)
   public static void notifyDebuggableConceptsAdded() {
+  }
+
+  public void editBreakpointProperties(ILocationBreakpoint breakpoint) {
+    BreakpointsBrowserDialog breakpointsBrowserDialog = new BreakpointsBrowserDialog(ProjectOperationContext.get(myProject));
+    breakpointsBrowserDialog.selectBreakpoint(breakpoint);
+    breakpointsBrowserDialog.showDialog();
   }
 
   private class MyBreakpointListener implements IBreakpointListener {
     @Override
-    public void breakpointToggled(final IBreakpoint breakpoint, boolean enabled) {
+    public void breakpointEnabledStateToggled(final IBreakpoint breakpoint, boolean enabled) {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {

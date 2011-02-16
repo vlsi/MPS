@@ -13,6 +13,7 @@ public class AdvanceWorkStatement extends Statement {
   public static final String concept = "jetbrains.mps.make.script.structure.AdvanceWorkStatement";
   public static final String WORK_STATEMENT = "workStatement";
   public static final String AMOUNT = "amount";
+  public static final String COMMENT = "comment";
 
   public AdvanceWorkStatement(SNode node) {
     super(node);
@@ -32,6 +33,14 @@ public class AdvanceWorkStatement extends Statement {
 
   public void setAmount(Expression node) {
     super.setChild(AdvanceWorkStatement.AMOUNT, node);
+  }
+
+  public Expression getComment() {
+    return (Expression) this.getChild(Expression.class, AdvanceWorkStatement.COMMENT);
+  }
+
+  public void setComment(Expression node) {
+    super.setChild(AdvanceWorkStatement.COMMENT, node);
   }
 
   public static AdvanceWorkStatement newInstance(SModel sm, boolean init) {

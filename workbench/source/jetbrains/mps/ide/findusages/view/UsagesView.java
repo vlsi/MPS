@@ -34,10 +34,11 @@ import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
-import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -134,7 +135,10 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
     for (SModelDescriptor modelDescriptor : myTreeComponent.getIncludedModels()) {
       models.add(modelDescriptor);
     }
-    GeneratorFacade.getInstance().generateModels(ProjectOperationContext.get(myProject), models, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true, false);
+
+    ProjectOperationContext context = ProjectOperationContext.get(myProject);
+    new WorkbenchMakeService (context, true).make(new ModelsToResources(context, models).resources(false));
+//    GeneratorUIFacade.getInstance().generateModels(context, models, GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
   }
 
   public void goToNext() {

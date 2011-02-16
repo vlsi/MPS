@@ -4,36 +4,21 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StatementList_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    TraceInfoGenerationUtil.createScopeInfo(this, node);
     int size = ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).count();
-    SNode methodLike = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
-    SNode lastStatement = IMethodLike_Behavior.call_getLastStatement_1239354409446(methodLike);
     for (int i = 0; i < size; i++) {
       SNode statement = ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).toListSequence()).getElement(i);
-      if (statement == lastStatement && (LastStatementUtil.canMakeReturnStatement(statement))) {
-        SNode expressionStatement = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
-        SNode returnStatement = SModelOperations.createNewNode(SNodeOperations.getModel(statement), "jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
-        SNode expression = SNodeOperations.copyNode(SLinkOperations.getTarget(expressionStatement, "expression", true));
-        SLinkOperations.setNewChild(expressionStatement, "expression", "jetbrains.mps.baseLanguage.structure.Expression");
-        SLinkOperations.setTarget(returnStatement, "expression", expression, true);
-        returnStatement.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, expressionStatement.getUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE));
-        statement = returnStatement;
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), statement, this.getSNode());
-        // rollback changes 
-        SLinkOperations.setNewChild(returnStatement, "expression", "jetbrains.mps.baseLanguage.structure.Expression");
-        SLinkOperations.setTarget(expressionStatement, "expression", expression, true);
-      } else {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), statement, this.getSNode());
-      }
+      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), statement, this.getSNode());
     }
+    TraceInfoGenerationUtil.fillScopeInfo(this, node, ScopeConcept_Behavior.call_getScopeVariables_3822000666564591100(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.ScopeConcept")));
   }
 }

@@ -21,9 +21,9 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.reference.*;
 import jetbrains.mps.generator.runtime.*;
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -111,15 +111,15 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   public Collection<SNode> trySwitch(SNodePointer switch_, String mappingName, TemplateContext context) throws GenerationException {
     Collection<SNode> collection = generator.tryToReduce(context, switch_, mappingName, reductionContext);
-    if(collection != null) {
+    if (collection != null) {
       return collection;
     }
 
     // try the default case
     TemplateSwitchMapping current = generator.getSwitch(switch_);
-    if(current != null) {
+    if (current != null) {
       collection = current.applyDefault(this, switch_, mappingName, context);
-      if(collection != null) {
+      if (collection != null) {
         return collection;
       }
     }
@@ -131,7 +131,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public Collection<SNode> applyTemplate(@NotNull SNodePointer templateDeclaration, @NotNull SNodePointer templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException {
     TemplateModel templateModel = generator.getRuleManager().getTemplateModel(templateDeclaration.getModelReference());
-    if(templateModel == null) {
+    if (templateModel == null) {
       generator.getLogger().error(templateNode.getNode(), "template model not found: cannot apply template declaration, try to check & regenerate affected generators",
         GeneratorUtil.describeIfExists(context.getInput(), "input"),
         GeneratorUtil.describeIfExists(templateNode.getNode(), "template"),
@@ -140,7 +140,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     }
 
     TemplateDeclaration templateDeclarationInstance = templateModel.loadTemplate(templateDeclaration, arguments);
-    if(templateDeclarationInstance == null) {
+    if (templateDeclarationInstance == null) {
       generator.getLogger().error(templateNode.getNode(), "declaration not found: cannot apply template declaration, try to check & regenerate affected generators",
         GeneratorUtil.describeIfExists(context.getInput(), "input"),
         GeneratorUtil.describeIfExists(templateNode.getNode(), "template"),
@@ -154,7 +154,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public Collection<SNode> weaveTemplate(@NotNull SNodePointer templateDeclaration, @NotNull SNodePointer templateNode, @NotNull TemplateContext context, @NotNull SNode outputContextNode, Object... arguments) throws GenerationException {
     TemplateModel templateModel = generator.getRuleManager().getTemplateModel(templateDeclaration.getModelReference());
-    if(templateModel == null) {
+    if (templateModel == null) {
       generator.getLogger().error(templateNode.getNode(), "template model not found: cannot apply template declaration, try to check & regenerate affected generators",
         GeneratorUtil.describeIfExists(context.getInput(), "input"),
         GeneratorUtil.describeIfExists(templateNode.getNode(), "template"),
@@ -163,7 +163,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     }
 
     TemplateDeclaration templateDeclarationInstance = templateModel.loadTemplate(templateDeclaration, arguments);
-    if(templateDeclarationInstance == null || !(templateDeclarationInstance instanceof TemplateDeclarationWeavingAware)) {
+    if (templateDeclarationInstance == null || !(templateDeclarationInstance instanceof TemplateDeclarationWeavingAware)) {
       generator.getLogger().error(templateNode.getNode(), "declaration not found: cannot apply template declaration, try to check & regenerate affected generators",
         GeneratorUtil.describeIfExists(context.getInput(), "input"),
         GeneratorUtil.describeIfExists(templateNode.getNode(), "template"),
@@ -171,7 +171,8 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       return Collections.emptyList();
     }
 
-    return ((TemplateDeclarationWeavingAware)templateDeclarationInstance).weave(this, context, outputContextNode);  }
+    return ((TemplateDeclarationWeavingAware) templateDeclarationInstance).weave(this, context, outputContextNode);
+  }
 
 
   public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {
@@ -251,7 +252,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodePointer templateNode, SNode inputNode) {
-    if(outputNodeToWeave == null) {
+    if (outputNodeToWeave == null) {
       return;
     }
 
@@ -264,17 +265,16 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     }
 
     // add
-    LinkDeclaration childLinkDeclaration = contextParentNode.getLinkDeclaration(childRole);
+    SNode/*LinkDeclaration*/ childLinkDeclaration = SModelSearchUtil.findLinkDeclaration(contextParentNode.getConceptDeclarationNode(), childRole);
     if (childLinkDeclaration == null) {
       // there should have been warning about that
       contextParentNode.addChild(childRole, outputNodeToWeave);
     } else {
       // if singular child then don't add more that 1 child
-      Cardinality cardinality = childLinkDeclaration.getSourceCardinality();
-      if (cardinality == Cardinality._0__1 || cardinality == Cardinality._1) {
-        contextParentNode.setChild(childRole, outputNodeToWeave);
-      } else {
+      if (SModelUtil.isMultipleLinkDeclaration(childLinkDeclaration)) {
         contextParentNode.addChild(childRole, outputNodeToWeave);
+      } else {
+        contextParentNode.setChild(childRole, outputNodeToWeave);
       }
     }
   }

@@ -207,11 +207,11 @@ public class MergeButtonsPainter extends AbstractFoldingAreaPainter {
     return painter;
   }
 
-  private static String check_85dz7l_a0a5(MergeButtonsPainter.Action p) {
-    if (null == p) {
-      return null;
+  private static String check_85dz7l_a0a5(MergeButtonsPainter.Action checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getMessage();
     }
-    return p.getMessage();
+    return null;
   }
 
   private static   enum Action {

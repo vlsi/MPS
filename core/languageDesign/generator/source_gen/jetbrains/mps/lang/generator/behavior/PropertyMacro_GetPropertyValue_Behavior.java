@@ -5,9 +5,7 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import java.util.Set;
@@ -23,9 +21,9 @@ public class PropertyMacro_GetPropertyValue_Behavior {
     SNode propertyMacro = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.generator.structure.PropertyMacro", false, false);
     SNode attributedNode = SNodeOperations.getParent(propertyMacro);
     String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(propertyMacro.getRole_());
-    PropertyDeclaration property_ = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(attributedNode))), propertyName);
+    SNode property_ = SModelSearchUtil.findPropertyDeclaration(SNodeOperations.getConceptDeclaration(attributedNode), propertyName);
     if (property_ != null) {
-      SNode property = SNodeOperations.cast(property_.getNode(), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+      SNode property = SNodeOperations.cast(property_, "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
       SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
       if (dataType != null) {
         return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType);

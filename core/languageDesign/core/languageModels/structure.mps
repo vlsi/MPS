@@ -86,6 +86,9 @@
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1137473854053">
       <property name="name" nameId="1169194664001" value="abstract" />
     </node>
+    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="8339862546319981473">
+      <property name="name" nameId="1169194664001" value="final" />
+    </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="1137473891462">
       <property name="name" nameId="1169194664001" value="alias" />
     </node>

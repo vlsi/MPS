@@ -26,6 +26,7 @@ import jetbrains.mps.refactoring.framework.paramchooser.mps.internal.ChooserType
 import jetbrains.mps.refactoring.framework.paramchooser.mps.internal.MPSNodeChooser;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
@@ -40,7 +41,7 @@ public class MPSChooserFactory {
     });
   }
 
-  public static IChooser createModelChooser(final RefactoringContext context, final String paramName, final IChooserSettings<SModelDescriptor> settings) {
+  public static IChooser createModelChooser(final RefactoringContext context, final String paramName, final IChooserSettings<SModelReference> settings) {
     return ModelAccess.instance().runReadAction(new Computable<IChooser>() {
       public IChooser compute() {
         return new BaseMPSChooser(context, paramName, new ModelChooserType(), settings);

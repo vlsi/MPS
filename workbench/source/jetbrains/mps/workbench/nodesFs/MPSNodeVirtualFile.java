@@ -66,6 +66,10 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
     return myNode.getNode();
   }
 
+  SNodePointer getSNodePointer() {
+    return myNode;
+  }
+
   public String getPath() {
     return myPath;
   }

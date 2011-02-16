@@ -38,7 +38,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
   public void applyRule(final SNode closure, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> paramTypes = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode param : SLinkOperations.getTargets(closure, "parameter", true)) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(param, "type", true), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(param, "type", true), "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(param, "type", true), "jetbrains.mps.baseLanguage.structure.UndefinedType")) {
         final SNode pt_typevar_1221579075465 = typeCheckingContext.createNewRuntimeTypesVariable();
         {
           SNode _nodeToCheck_1029348928467 = param;

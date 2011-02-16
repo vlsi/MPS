@@ -12,6 +12,7 @@ import java.util.Map;
 import jetbrains.mps.baseLanguage.dataFlow.NullableState;
 import jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
+import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -34,9 +35,11 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
   }
 
   public void applyRule(final SNode iMethodLike, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    // Find possible NPE 
     CustomAnalyzerRunner<Map<SNode, NullableState>> nullableRunner = new NullableAnalyzerRunner(iMethodLike);
     AnalysisResult<Map<SNode, NullableState>> result = nullableRunner.analyze();
-    for (Instruction instruction : nullableRunner.getProgram().getInstructions()) {
+    Program program = nullableRunner.getProgram();
+    for (Instruction instruction : program.getInstructions()) {
       SNode source = (SNode) instruction.getSource();
       SNode variable = source;
       if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
@@ -87,6 +90,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
           }
         }
       }
+      // Find Nullable assignements to NotNull variables 
       if (instruction instanceof WriteInstruction) {
         WriteInstruction write = (WriteInstruction) instruction;
         List<SNode> annotation = SLinkOperations.getTargets(((SNode) write.getVariable()), "annotation", true);
@@ -108,6 +112,42 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
               BaseQuickFixProvider intentionProvider = null;
               MessageTarget errorTarget = new NodeMessageTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError((SNode) write.getValue(), "This expression might evaluate to null but is assigned to a variable that is annotated with @NotNull", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3791846458263577483", intentionProvider, errorTarget);
+            }
+          }
+        }
+      }
+    }
+    // Find Nullable returns of NotNull methods 
+    if (SNodeOperations.isInstanceOf(iMethodLike, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      SNode method = SNodeOperations.cast(iMethodLike, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+      if (ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return (SLinkOperations.getTarget(it, "annotation", false) != null);
+        }
+      }).<SNode>select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SLinkOperations.getTarget(it, "annotation", false);
+        }
+      }).contains(SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~NotNull"))) {
+        for (SNode returnStatement : SNodeOperations.getDescendants(method, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})) {
+          SNode expression = SLinkOperations.getTarget(returnStatement, "expression", true);
+          if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
+            SNode variable = SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
+            List<Instruction> instructions = program.getInstructionsFor(returnStatement);
+            if (!(instructions.isEmpty())) {
+              if (NullableState.canBeNull(result.get(instructions.get(instructions.size() - 1)).get(variable))) {
+                {
+                  BaseQuickFixProvider intentionProvider = null;
+                  MessageTarget errorTarget = new NodeMessageTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(expression, "Expression " + expression + " might evaluate to null but is returned from method declared @NotNull", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5899025696847223994", intentionProvider, errorTarget);
+                }
+              }
+            }
+          } else if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.NullLiteral")) {
+            {
+              BaseQuickFixProvider intentionProvider = null;
+              MessageTarget errorTarget = new NodeMessageTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(expression, "Null is returned from method declared @NotNull", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4658387821817544361", intentionProvider, errorTarget);
             }
           }
         }

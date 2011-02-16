@@ -31,6 +31,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import java.util.List;
 import java.util.Collections;
 
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -63,7 +64,7 @@ public class ReferenceConceptLinkTargetSearchScope extends AbstractSearchScope {
         ISearchScope allNodesScope = SModelSearchUtil.createModelAndImportedModelsScope(myReferenceConceptLink.getModel(), myScope);
         return allNodesScope.getNodes(new Condition<SNode>() {
           public boolean met(SNode object) {
-            return object.isInstanceOfConcept(targetConcept);
+            return object.isInstanceOfConcept(NameUtil.nodeFQName(targetConcept));
           }
         });
       }

@@ -22,13 +22,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
@@ -214,12 +209,11 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static SNode call_findLinkDeclaration_1213877394467(SNode thisNode, String role) {
-    return SNodeOperations.cast(BaseAdapter.fromAdapter(SModelSearchUtil.findLinkDeclaration(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)), role)), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    return SNodeOperations.cast(SModelSearchUtil.findLinkDeclaration(thisNode, role), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
   }
 
   public static List<SNode> call_getLinkDeclarations_1213877394480(SNode thisNode) {
-    List<LinkDeclaration> links = SModelSearchUtil.getLinkDeclarations(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)));
-    return (List<SNode>) BaseAdapter.toNodes(links);
+    return (List<SNode>) SModelSearchUtil.getLinkDeclarations(thisNode);
   }
 
   public static List<SNode> call_getReferenceLinkDeclarations_1213877394496(SNode thisNode) {
@@ -241,23 +235,21 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static List<SNode> call_getPropertyDeclarations_1213877394546(SNode thisNode) {
-    List<PropertyDeclaration> properties = SModelSearchUtil.getPropertyDeclarations(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)));
-    return (List<SNode>) BaseAdapter.toNodes(properties);
+    List<SNode> properties = SModelSearchUtil.getPropertyDeclarations(thisNode);
+    return (List<SNode>) properties;
   }
 
   public static SNode call_findPropertyDeclaration_1219835742593(SNode thisNode, String name) {
-    PropertyDeclaration p = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)), name);
-    return SNodeOperations.cast(BaseAdapter.fromAdapter(p), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+    SNode p = SModelSearchUtil.findPropertyDeclaration(thisNode, name);
+    return SNodeOperations.cast(p, "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
 
   public static List<SNode> call_getConceptPropertyDeclarations_1213877394562(SNode thisNode) {
-    List<ConceptPropertyDeclaration> list = SModelSearchUtil.getConceptPropertyDeclarations(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)));
-    return (List<SNode>) BaseAdapter.toNodes(list);
+    return (List<SNode>) SModelSearchUtil.getConceptPropertyDeclarations(thisNode);
   }
 
   public static List<SNode> call_getConceptLinkDeclarations_1213877394578(SNode thisNode) {
-    List<ConceptLinkDeclaration> list = SModelSearchUtil.getConceptLinkDeclarations(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)));
-    return (List<SNode>) BaseAdapter.toNodes(list);
+    return (List<SNode>) IterableUtil.asList(SModelSearchUtil.getConceptLinkDeclarations(thisNode));
   }
 
   public static SNode call_specializeLink_4304720797559012132(SNode thisNode, SNode link, SNode targetConcept) {

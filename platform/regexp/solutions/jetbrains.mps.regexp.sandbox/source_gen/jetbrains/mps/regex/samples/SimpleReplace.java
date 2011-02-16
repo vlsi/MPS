@@ -16,6 +16,6 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
 
   /*package*/ void replaceWithCapture() {
     String s = "";
-    s = RegexpOperations.replace(s, REGEXP_x5qji9_b0a1a1, new _Replacer_a0a0b0b_0(SimpleReplace.this, null));
+    s = RegexpOperations.replace(s, REGEXP_x5qji9_b0a1a1, new _Replacer_a0a0b0b(SimpleReplace.this, null));
   }
 }

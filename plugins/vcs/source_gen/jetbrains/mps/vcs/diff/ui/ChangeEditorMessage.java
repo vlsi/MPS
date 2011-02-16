@@ -340,18 +340,18 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     return -1;
   }
 
-  private static Boolean check_myu41h_a0a0b0e(Set<SNode> p, EditorCell cell) {
-    if (null == p) {
-      return null;
+  private static boolean check_myu41h_a0a0b0e(Set<SNode> checkedDotOperand, EditorCell cell) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.contains(cell.getSNode());
     }
-    return p.contains(cell.getSNode());
+    return false;
   }
 
-  private static Boolean check_myu41h_a0d0f(Set<SNode> p, EditorCell cell) {
-    if (null == p) {
-      return null;
+  private static boolean check_myu41h_a0d0f(Set<SNode> checkedDotOperand, EditorCell cell) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.contains(cell.getSNode());
     }
-    return p.contains(cell.getSNode());
+    return false;
   }
 
   private static boolean eq_myu41h_a0a0a0b0e(Object a, Object b) {

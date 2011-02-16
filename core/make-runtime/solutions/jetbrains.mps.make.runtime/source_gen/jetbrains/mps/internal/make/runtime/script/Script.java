@@ -8,11 +8,10 @@ import jetbrains.mps.make.facet.ITarget;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.make.script.IParametersPool;
-import jetbrains.mps.make.script.IMonitors;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.make.script.IMonitors;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IConfig;
@@ -23,32 +22,22 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Collections;
+import jetbrains.mps.make.script.IParametersPool;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.make.script.IProgress;
 
-public class Script implements IScript {
+public class Script extends IScript.Stub implements IScript {
   private static Logger LOG = Logger.getLogger(Script.class);
 
   private ITarget.Name defaultTargetName;
   private TargetRange targetRange;
   private List<ValidationError> errors = ListSequence.fromList(new ArrayList<ValidationError>());
   private boolean validated = false;
-  private _FunctionTypes._void_P1_E0<? super IParametersPool> init;
-  private IMonitors monitors;
 
   public Script(TargetRange targetRange, ITarget.Name defaultTargetName) {
     this.targetRange = targetRange;
     this.defaultTargetName = defaultTargetName;
-  }
-
-  public void setInit(_FunctionTypes._void_P1_E0<? super IParametersPool> init) {
-    this.init = init;
-  }
-
-  public void setMonitors(IMonitors mons) {
-    this.monitors = mons;
   }
 
   public void validate() {
@@ -98,13 +87,9 @@ public class Script implements IScript {
     final CompositeResult results = new CompositeResult();
     final Script.ParametersPool pool = new Script.ParametersPool();
     LOG.debug("Initializing");
-    if (init != null) {
-      init.invoke(pool);
-    }
-    IMonitors mons = monitors;
-    if (mons == null) {
-      mons = new Script.Monitors();
-    }
+    init(pool);
+
+    IMonitors mons = monitors();
     final Iterable<ITarget> toExecute = targetRange.targetAndSortedPrecursors(defaultTargetName);
     mons.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
       public void invoke(IConfigMonitor cmon) {
@@ -211,19 +196,6 @@ public class Script implements IScript {
         MapSequence.fromMap(cache).put(target, vars);
       }
       return cls.cast(MapSequence.fromMap(cache).get(target));
-    }
-  }
-
-  private class Monitors implements IMonitors {
-    public Monitors() {
-    }
-
-    public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-      code.invoke(new IJobMonitor.Stub(new IProgress.Stub()));
-    }
-
-    public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
-      code.invoke(new IConfigMonitor.Stub());
     }
   }
 

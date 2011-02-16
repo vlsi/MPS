@@ -30,7 +30,6 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -698,7 +697,7 @@ public class QueriesGenerated {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp");
       Calculable calculable = new Calculable() {
         public Object calculate() {
-          SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, _context.getSourceNode(), ((ConceptDeclaration) SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"))), "match", operationContext);
+          SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, _context.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), "match", operationContext);
           return (List<SNode>) status.getSearchScope().getNodes();
         }
       };

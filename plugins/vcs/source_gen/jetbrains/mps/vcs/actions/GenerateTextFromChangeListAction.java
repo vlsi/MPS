@@ -4,6 +4,13 @@ package jetbrains.mps.vcs.actions;
 
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.generator.OutputViewGenerationHandler;
+import com.intellij.openapi.vcs.actions.VcsContext;
+import java.util.List;
+import jetbrains.mps.smodel.SModelDescriptor;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.generator.GeneratorUIFacade;
 
 public class GenerateTextFromChangeListAction extends GenerateFromChangeListAction {
   public GenerateTextFromChangeListAction() {
@@ -15,5 +22,13 @@ public class GenerateTextFromChangeListAction extends GenerateFromChangeListActi
 
   protected String getWhatToGenerateName() {
     return "Text";
+  }
+
+  @Override
+  protected void actionPerformed(VcsContext vcsContext) {
+    List<SModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
+    Project project = vcsContext.getProject();
+    IOperationContext context = ProjectOperationContext.get(project);
+    GeneratorUIFacade.getInstance().generateModels(context, modelsToGenerate, getGenerationHandler(), true, false);
   }
 }

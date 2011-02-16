@@ -11,8 +11,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class StatementList_Behavior {
+  private static Class[] PARAMETERS_2496361171403550911 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -80,5 +84,23 @@ public class StatementList_Behavior {
       return statement;
     }
     return null;
+  }
+
+  public static List<SNode> virtual_getScopeVariables_3822000666564591100(SNode thisNode) {
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode statement : SLinkOperations.getTargets(thisNode, "statement", true)) {
+      if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true));
+      }
+    }
+    return result;
+  }
+
+  public static List<SNode> call_getScopeVariables_2496361171403550911(SNode thisNode) {
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList"), "virtual_getScopeVariables_3822000666564591100", PARAMETERS_2496361171403550911);
+  }
+
+  public static List<SNode> callSuper_getScopeVariables_2496361171403550911(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList"), callerConceptFqName, "virtual_getScopeVariables_3822000666564591100", PARAMETERS_2496361171403550911);
   }
 }

@@ -49,7 +49,7 @@ public class FileProcessor {
     myFilesToDelete.addAll(files);
   }
 
-  public void saveGeneratedFiles() {
+  public void flushChanges() {
     for (FileProcessor.FileAndContent fileAndContent : myFilesAndContents) {
       fileAndContent.save();
     }

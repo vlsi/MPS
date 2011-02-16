@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.typesystem.behavior.ApplicableNodeCondition_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ChildTypeRestriction_childLinkDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -30,7 +29,7 @@ public class ChildTypeRestriction_childLinkDeclaration_ReferentConstraint extend
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode inferenceRule = SNodeOperations.cast(SNodeOperations.getParent(_context.getReferenceNode()), "jetbrains.mps.lang.typesystem.structure.InferenceRule");
     SNode abstractConceptDeclaration = ApplicableNodeCondition_Behavior.call_getApplicableConcept_1213877307633(SLinkOperations.getTarget(inferenceRule, "applicableNode", true));
-    ConceptAndSuperConceptsScope conceptScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(abstractConceptDeclaration)));
+    ConceptAndSuperConceptsScope conceptScope = new ConceptAndSuperConceptsScope(abstractConceptDeclaration);
     return conceptScope;
   }
 

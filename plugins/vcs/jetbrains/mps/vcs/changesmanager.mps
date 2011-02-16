@@ -10343,9 +10343,6 @@
                           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2352903979085962793">
                             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2352903979085962794">
                               <property name="name" nameId="tpck.1169194664001" value="propertyDeclaration" />
-                              <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2352903979085962795">
-                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vskm.~PropertyDeclaration" resolveInfo="PropertyDeclaration" />
-                              </node>
                               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3027670757012516658">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3027670757012516659">
                                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3027670757012516660">
@@ -10356,7 +10353,7 @@
                                   </node>
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3027670757012516662">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNode%dgetPropertyDeclaration(java%dlang%dString)%cjetbrains%dmps%dlang%dstructure%dstructure%dPropertyDeclaration" resolveInfo="getPropertyDeclaration" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNode%dgetPropertyDeclaration(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getPropertyDeclaration" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3027670757012516663">
                                     <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3027670757012516664">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5433436225280057603" resolveInfo="e" />
@@ -10367,6 +10364,7 @@
                                   </node>
                                 </node>
                               </node>
+                              <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6146258535356849090" />
                             </node>
                           </node>
                           <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="2352903979085962805">
@@ -10407,8 +10405,8 @@
                                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d8ec.~PropertySupport" resolveInfo="PropertySupport" />
                                     </node>
                                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2352903979085962823">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~PropertySupport%dgetPropertySupport(jetbrains%dmps%dlang%dstructure%dstructure%dPropertyDeclaration)%cjetbrains%dmps%dsmodel%dPropertySupport" resolveInfo="getPropertySupport" />
                                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="d8ec.~PropertySupport" resolveInfo="PropertySupport" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~PropertySupport%dgetPropertySupport(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dPropertySupport" resolveInfo="getPropertySupport" />
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2352903979085962824">
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2352903979085962794" resolveInfo="propertyDeclaration" />
                                       </node>

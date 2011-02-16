@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.StaticReference;
@@ -88,17 +87,8 @@ public class WriteHelper {
     return genReferenceString(ref, nodeId.toString());
   }
 
-  @NotNull
-  public String genReferenceId(@NotNull SNode node) {
+  public String genReferenceId(SNode node) {
     return genReferenceId(SNodeOperations.getModel(node).getSModelReference(), node.getSNodeId());
-  }
-
-  @Nullable
-  public String genReferenceId(@Nullable BaseAdapter adapter) {
-    return (adapter == null ?
-      null :
-      genReferenceId(adapter.getNode())
-    );
   }
 
   public String genType(@NotNull SNode node) {
@@ -122,7 +112,11 @@ public class WriteHelper {
   }
 
   public String genRoleId(@NotNull SNode node) {
-    return genReferenceId(node.getRoleLink());
+    SNode roleLink = node.getRoleLink();
+    return (roleLink != null ?
+      genReferenceId(roleLink) :
+      null
+    );
   }
 
   public String genRoleId(@NotNull SReference ref) {

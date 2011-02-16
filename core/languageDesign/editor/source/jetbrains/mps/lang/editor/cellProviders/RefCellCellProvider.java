@@ -15,28 +15,27 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.IDeprecatable;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.structure.IBLDeprecatable;
-import jetbrains.mps.util.CollectionUtil;
 
 import java.util.Iterator;
 
@@ -83,7 +82,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     setSemanticNodeToCells(editorCell, node);
 
     if (myIsCardinality1) {
-      if (ReferenceConceptUtil.getCharacteristicReference(node.getConceptDeclarationAdapter()) != null) {
+      if (ReferenceConceptUtil.getCharacteristicReference(node.getConceptDeclarationNode()) != null) {
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));
       } else {
         editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());

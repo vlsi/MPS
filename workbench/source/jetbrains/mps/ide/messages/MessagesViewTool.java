@@ -154,6 +154,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
   private void initUI() {
     myList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+    myList.setCellRenderer(new MessagesListCellRenderer());
     myComponent.setLayout(new BorderLayout());
 
     final JPanel panel = new JPanel(new BorderLayout());

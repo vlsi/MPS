@@ -37,6 +37,7 @@ public class CurrentLinePositionComponent implements ProjectComponent {
     new HashMap<AbstractDebugSession, CurrentLinePainter>();
   private final Project myProject;
   private final SessionChangeListener myChangeListener = new MySessionChangeListener();
+  private volatile boolean myIsDisposed = false;
 
   //todo extract and generify
   private final DebugSessionListener myCurrentDebugSessionListener = new MyCurrentDebugSessionListener();
@@ -103,6 +104,7 @@ public class CurrentLinePositionComponent implements ProjectComponent {
 
   @Override
   public void disposeComponent() {
+    myIsDisposed = true;
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.removeCurrentDebugSessionListener(myCurrentDebugSessionListener);
     myEditorsProvider.removeEditorOpenListener(myEditorOpenListener);
@@ -199,6 +201,7 @@ public class CurrentLinePositionComponent implements ProjectComponent {
 
   private List<IEditor> getAllEditors() {
     List<IEditor> result = new ArrayList<IEditor>();
+    if (myIsDisposed) return result;
     FileEditor[] allEditors = myFileEditorManager.getAllEditors();
     for (FileEditor editor : allEditors) {
       if (editor instanceof MPSFileNodeEditor) {

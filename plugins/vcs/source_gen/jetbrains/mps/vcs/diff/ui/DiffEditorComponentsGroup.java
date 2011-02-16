@@ -30,32 +30,32 @@ public class DiffEditorComponentsGroup {
     diffEditor.getViewport().addChangeListener(new DiffEditorComponentsGroup.MyViewportChangeListener(diffEditor));
   }
 
-  private static SNodeId check_53tvmj_a0a0a0a0a(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_53tvmj_a0a0a0a0a(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
-  private static SNode check_53tvmj_a0a0a0a0a0(EditorCell p) {
-    if (null == p) {
-      return null;
+  private static SNode check_53tvmj_a0a0a0a0a0(EditorCell checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNode();
     }
-    return p.getSNode();
+    return null;
   }
 
-  private static SNode check_53tvmj_a0a0a0a1a0a0a0(SModel p, SNodeId selectionId) {
-    if (null == p) {
-      return null;
+  private static SNode check_53tvmj_a0a0a0a1a0a0a0(SModel checkedDotOperand, SNodeId selectionId) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNodeById(selectionId);
     }
-    return p.getNodeById(selectionId);
+    return null;
   }
 
-  private static SModel check_53tvmj_a0a0a0a0b0a0a0a(SNode p) {
-    if (null == p) {
-      return null;
+  private static SModel check_53tvmj_a0a0a0a0b0a0a0a(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModel();
     }
-    return p.getModel();
+    return null;
   }
 
   private class MyCellSelectionListener implements CellSelectionListener {

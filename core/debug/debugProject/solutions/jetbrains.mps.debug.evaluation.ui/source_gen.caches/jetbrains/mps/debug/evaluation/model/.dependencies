@@ -47,6 +47,7 @@
     <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.lang.ClassLoader" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.generator.GeneratorManager" />
@@ -97,6 +98,7 @@
     <classNode extendsClassName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel" />
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.model.LowLevelEvaluationModel" file="LowLevelEvaluationModel.java">
+    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -127,7 +129,6 @@
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.traceInfo.TraceInfoManager" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />

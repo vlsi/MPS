@@ -28,6 +28,12 @@ public class BootstrapLanguages {
   public static final ModuleReference COLLECTIONS = ModuleReference.fromString("83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)");
   public static final ModuleReference CLOSURES = ModuleReference.fromString("fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)");
   public static final ModuleReference TUPLES = ModuleReference.fromString("a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)");
+  public static final String concept_baseLanguage_Annotation = "jetbrains.mps.baseLanguage.structure.Annotation";
+  public static final String concept_baseLanguage_ClassConcept = "jetbrains.mps.baseLanguage.structure.ClassConcept";
+  public static final String concept_baseLanguage_EnumClass = "jetbrains.mps.baseLanguage.structure.EnumClass";
+  public static final String concept_baseLanguage_Interface = "jetbrains.mps.baseLanguage.structure.Interface";
+  public static final String concept_stubs_LibraryStubDescriptor = "jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor";
+  public static final String concept_generator_MappingConfiguration = "jetbrains.mps.lang.generator.structure.MappingConfiguration";
 
   public BootstrapLanguages() {
   }
@@ -46,5 +52,9 @@ public class BootstrapLanguages {
 
   public static Language generatorLanguage() {
     return (Language) MPSModuleRepository.getInstance().getModule(GENERATOR);
+  }
+
+  public static Language coreLanguage() {
+    return (Language) MPSModuleRepository.getInstance().getModule(CORE);
   }
 }

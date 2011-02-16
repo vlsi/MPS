@@ -314,18 +314,18 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     }
   }
 
-  private static SModel check_7ugudc_a0a0a1a0a0f0a(SNode p) {
-    if (null == p) {
-      return null;
+  private static SModel check_7ugudc_a0a0a1a0a0f0a(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModel();
     }
-    return p.getModel();
+    return null;
   }
 
-  private static NodeHighlightManager check_7ugudc_a0a41(EditorComponent p) {
-    if (null == p) {
-      return null;
+  private static NodeHighlightManager check_7ugudc_a0a41(EditorComponent checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getHighlightManager();
     }
-    return p.getHighlightManager();
+    return null;
   }
 
   public class ChangeEditorMessage extends EditorMessageWithTarget {

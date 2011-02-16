@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.smodel.presentation;
 
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.core.structure.IResolveInfo;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
@@ -66,81 +63,76 @@ public class NodePresentationUtil {
     return matchingText(node.getAdapter(), referent_presentation, true);
   }
 
-  public static String matchingText(SNode node, boolean referent_presentation, boolean visible) {
-    return matchingText(node.getAdapter(), referent_presentation, visible);
-  }
-
   public static String matchingText(INodeAdapter nodeAdapter, boolean referent_presentation) {
     return matchingText(nodeAdapter, referent_presentation, true);
   }
 
   public static String matchingText(INodeAdapter nodeAdapter, boolean referent_presentation, boolean visible) {
+    return matchingText(BaseAdapter.fromAdapter(nodeAdapter), referent_presentation, visible);
+  }
+
+  public static String matchingText(SNode node, boolean referent_presentation, boolean visible) {
     // handle concept declarations is a special way.
-    if (nodeAdapter instanceof ConceptDeclaration) {
+    if (SNodeUtil.isInstanceOfConceptDeclaration(node)) {
       if (!referent_presentation) {
-        String alias = nodeAdapter.getConceptProperty("alias");
+        String alias = SNodeUtil.getConceptAlias(node);
         if (alias != null) {
           return alias;
         }
       }
-      return nodeAdapter.getName();
+      return node.getName();
     }
 
-    if (visible) {
-      return nodeAdapter.getNode().getPresentation();
-    } else {
-      if (nodeAdapter instanceof IResolveInfo) {
-        return ((IResolveInfo) nodeAdapter).getResolveInfo();
+    if (!visible) {
+      if (node.isInstanceOfConcept(SNodeUtil.concept_IResolveInfo)) {
+        return SNodeUtil.getResolveInfo(node);
       }
-      return nodeAdapter.getNode().getPresentation();
     }
+    return node.getPresentation();
   }
 
   public static String descriptionText(SNode node) {
     return descriptionText(node, false);
   }
 
-  public static String descriptionText(SNode node, boolean referent_presentation) {
-    return descriptionText(node.getAdapter(), referent_presentation);
+  public static String descriptionText(INodeAdapter nodeAdapter, boolean referent_presentation) {
+    return descriptionText(BaseAdapter.fromAdapter(nodeAdapter), referent_presentation);
   }
 
-  public static String descriptionText(INodeAdapter nodeAdapter, boolean referent_presentation) {
-    if (nodeAdapter instanceof ConceptDeclaration && !referent_presentation) {
-      String description = nodeAdapter.getConceptProperty(BaseConcept.SHORT_DESCRIPTION);
+  public static String descriptionText(SNode node, boolean referent_presentation) {
+    if (SNodeUtil.isInstanceOfConceptDeclaration(node) && !referent_presentation) {
+      String description = SNodeUtil.getConceptShortDescription(node);
       if (description != null) {
         return description;
       }
 
-      ConceptDeclaration anExtends = ((ConceptDeclaration) nodeAdapter).getExtends();
+      SNode anExtends = SNodeUtil.getConceptDeclaration_Extends(node);
       if (anExtends != null) {
-        String namespace = NameUtil.namespaceFromConcept((ConceptDeclaration) nodeAdapter);
+        String namespace = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(node));
         namespace = NameUtil.compactNamespace(namespace);
         return "(" + anExtends.getName() + " in " + namespace + ")";
       }
       return "";
     }
 
-    return descriptionText_internal(nodeAdapter);
+    return descriptionText_internal(node);
   }
 
-  private static String descriptionText_internal(INodeAdapter nodeAdapter) {
-    if (nodeAdapter == null) {
+  private static String descriptionText_internal(SNode node) {
+    if (node == null) {
       return "";
     }
 
-    if (nodeAdapter instanceof BaseConcept) {
-      BaseConcept bc = (BaseConcept) nodeAdapter;
-      String shortDescription = bc.getShortDescription();
-      if (shortDescription != null) {
-        return shortDescription;
-      }
+    String shortDescription = SNodeUtil.getNodeShortDescription(node);
+    if (shortDescription != null) {
+      return shortDescription;
     }
 
-    if (nodeAdapter.isRoot()) {
-      return NameUtil.shortNameFromLongName(nodeAdapter.getClass().getName()) + " (" + nodeAdapter.getModel().getSModelReference().getCompactPresentation() + ")";
+    if (node.isRoot()) {
+      return NameUtil.shortNameFromLongName(node.getConceptFqName()) + " (" + node.getModel().getSModelReference().getCompactPresentation() + ")";
     }
 
-    return nodeAdapter.getRole_() + " (" + NameUtil.compactNodeFQName(nodeAdapter.getContainingRoot()) + ")";
+    return node.getRole_() + " (" + NameUtil.compactNodeFQName(node.getContainingRoot()) + ")";
   }
 
   public static String getAliasOrConceptName(SNode node) {
@@ -157,7 +149,7 @@ public class NodePresentationUtil {
     if (role != null) {
       return role;
     }
-    if (node.getAdapter() instanceof ConceptDeclaration && node.getName() != null) {
+    if (SNodeUtil.isInstanceOfConceptDeclaration(node) && node.getName() != null) {
       return node.getName();
     }
     return NameUtil.shortNameFromLongName(node.getClass().getName());

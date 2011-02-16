@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class BaseConcept extends BaseAdapter {
   public static final String concept = "jetbrains.mps.lang.core.structure.BaseConcept";
   public static final String CPR_Abstract = "abstract";
+  public static final String CPR_Final = "final";
   public static final String CPR_Alias = "alias";
   public static final String CPR_ShortDescription = "shortDescription";
   public static final String CPR_DontSubstituteByDefault = "dontSubstituteByDefault";

@@ -16,7 +16,7 @@
 package jetbrains.mps.plugin;
 
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.ide.generator.GeneratorFacade.GenerationHandlerProvider;
+import jetbrains.mps.ide.generator.GeneratorUIFacade.GenerationHandlerProvider;
 
 /**
  * Evgeny Gryaznov, Aug 24, 2010

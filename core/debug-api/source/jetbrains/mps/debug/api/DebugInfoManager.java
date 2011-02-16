@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.TraceInfoManager;
+import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.util.NameUtil;
@@ -134,7 +135,7 @@ public class DebugInfoManager implements ApplicationComponent {
 
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(node.getModel().getModelDescriptor());
     if (debugInfo != null) {
-      PositionInfo position = debugInfo.getPositionForNode(node.getId());
+      TraceablePositionInfo position = debugInfo.getPositionForNode(node.getId());
       if (position != null) {
         String conceptFqName = position.getConceptFqName();
         if (conceptFqName == null) return null;

@@ -16,8 +16,9 @@
 package jetbrains.mps.workbench.actions.generate;
 
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.ide.generator.GeneratorUIFacade;
 
+@Deprecated
 public class GenerateFilesFromModelsAction extends GenerateModelsAction {
   public GenerateFilesFromModelsAction(boolean rebuildAll) {
     super("", rebuildAll);
@@ -25,6 +26,6 @@ public class GenerateFilesFromModelsAction extends GenerateModelsAction {
   }
 
   public IGenerationHandler getGenerationHandler() {
-    return GeneratorFacade.getInstance().getDefaultGenerationHandler();
+    return GeneratorUIFacade.getInstance().getDefaultGenerationHandler();
   }
 }

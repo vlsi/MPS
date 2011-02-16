@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.annotation.Hack;
@@ -26,7 +25,7 @@ public class PropertyAccessor implements ModelAccessor {
   private String myPropertyName;
   private boolean myReadOnly;
   private boolean myAllowEmptyText;
-  private PropertyDeclaration myPropertyDeclaration;
+  private SNode myPropertyDeclaration;
   private IScope myScope;
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {

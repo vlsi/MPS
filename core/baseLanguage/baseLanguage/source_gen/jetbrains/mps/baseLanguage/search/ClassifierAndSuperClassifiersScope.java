@@ -21,8 +21,8 @@ import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.BaseAdapter;
 
@@ -160,8 +160,9 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     return list;
   }
 
-  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
-    if (SModelUtil_new.isAssignableConcept(targetConcept, FieldDeclaration.concept)) {
+  @Override
+  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
+    if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
       return new IReferenceInfoResolver() {
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
           if (referenceInfo == null) {
@@ -171,7 +172,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
         }
       };
     }
-    if (SModelUtil_new.isAssignableConcept(targetConcept, StaticFieldDeclaration.concept)) {
+    if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
       return new IReferenceInfoResolver() {
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
           if (referenceInfo == null) {
@@ -181,7 +182,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
         }
       };
     }
-    if (SModelUtil_new.isAssignableConcept(targetConcept, EnumConstantDeclaration.concept)) {
+    if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"))) {
       return new IReferenceInfoResolver() {
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
           if (referenceInfo == null) {

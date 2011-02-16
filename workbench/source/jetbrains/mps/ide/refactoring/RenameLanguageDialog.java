@@ -21,16 +21,17 @@ import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GenParameters;
-import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.refactoring.renameLanguage.LanguageRenamer;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -144,7 +145,9 @@ public class RenameLanguageDialog extends BaseDialog {
           return;
         }
 
-        GeneratorFacade.getInstance().generateModels(new ModuleContext(myLanguage, myProject), params.getModelDescriptors(), GeneratorFacade.getInstance().getDefaultGenerationHandler(), true, false);
+        ModuleContext context = new ModuleContext(myLanguage, myProject);
+        new WorkbenchMakeService (context, true).make(new ModelsToResources(context, params.getModelDescriptors()).resources(false));
+//        GeneratorUIFacade.getInstance().generateModels(new ModuleContext(myLanguage, myProject), params.getModelDescriptors(), GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
       }
     }
 

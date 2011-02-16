@@ -19,8 +19,8 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.ui.LayeredIcon;
 import com.intellij.ui.RowIcon;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
@@ -68,12 +68,11 @@ public class IconManager {
   };
 
   public static boolean canUseAlternativeIcon(String conceptFqName) {
-    AbstractConceptDeclaration acd = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-    if (acd == null || !(acd instanceof ConceptDeclaration)) {
+    SNode acd = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    if (acd == null || !(SNodeUtil.isInstanceOfConceptDeclaration(acd))) {
       return false;
     }
-    ConceptDeclaration concept = (ConceptDeclaration) acd;
-    return ModelConstraintsManager.getInstance().getAlternativeIconMethod(concept) != null;
+    return ModelConstraintsManager.getInstance().getAlternativeIconMethod(acd) != null;
   }
 
   public static Icon getIconWithoutAdditionalPart(@NotNull final SNode node) {
@@ -93,8 +92,8 @@ public class IconManager {
           return Icons.UNKNOWN_ICON;
         }
 
-        if (node.getConceptDeclarationAdapter() instanceof ConceptDeclaration) {
-          ConceptDeclaration concept = (ConceptDeclaration) node.getConceptDeclarationAdapter();
+        if (SNodeUtil.isInstanceOfConceptDeclaration(node.getConceptDeclarationNode())) {
+          SNode concept = node.getConceptDeclarationNode();
           Method alternativeIconMethod = ModelConstraintsManager.getInstance().getAlternativeIconMethod(concept);
           Icon alternativeIcon = null;
           try {
@@ -102,7 +101,7 @@ public class IconManager {
               Object iconObject = alternativeIconMethod.invoke(null, node);
               if (iconObject != null) {
                 String alternativeIconPath = (String) iconObject;
-                alternativeIcon = getIconFor(concept, alternativeIconPath);
+                alternativeIcon = getIconFor((ConceptDeclaration) BaseAdapter.fromNode(concept), alternativeIconPath);
               }
             }
           } catch (Throwable t) {
@@ -110,7 +109,7 @@ public class IconManager {
           if (alternativeIcon != null) {
             mainIcon = alternativeIcon;
           } else {
-            mainIcon = IconManager.getIconFor(concept);
+            mainIcon = IconManager.getIconFor((ConceptDeclaration) BaseAdapter.fromNode(concept));
           }
         }
 
@@ -165,8 +164,7 @@ public class IconManager {
   }
 
   private static Icon getIconFor(ConceptDeclaration conceptDeclaration, String path) {
-    IScope scope = GlobalScope.getInstance();
-    Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, scope);
+    Language language = SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(conceptDeclaration));
     if (language != null) {
       String iconPath = MacrosFactory.languageDescriptor().expandPath(path, language.getDescriptorFile());
       if (iconPath != null) {
@@ -180,12 +178,12 @@ public class IconManager {
   }
 
   public static Icon getIconForConceptFQName(String conceptFQName) {
-    AbstractConceptDeclaration acd = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
-    ConceptDeclaration cd = null;
+    SNode acd = SModelUtil.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
+    SNode cd = null;
     Icon icon = null;
-    if (acd instanceof ConceptDeclaration) {
-      cd = (ConceptDeclaration) acd;
-      icon = getIconFor(cd);
+    if (SNodeUtil.isInstanceOfConceptDeclaration(acd)) {
+      cd = acd;
+      icon = getIconFor((ConceptDeclaration) cd.getAdapter());
     }
     if (icon == null) {
       if (cd != null && cd.isRoot()) {

@@ -530,18 +530,18 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     }
   }
 
-  private static FileStatus check_ybywwq_a0a0a0a2a01(ModelChangesManager p) {
-    if (null == p) {
-      return null;
+  private static FileStatus check_ybywwq_a0a0a0a2a01(ModelChangesManager checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getFileStatus();
     }
-    return p.getFileStatus();
+    return null;
   }
 
-  private static Color check_ybywwq_a0b0a0a2a01(FileStatus p) {
-    if (null == p) {
-      return null;
+  private static Color check_ybywwq_a0b0a0a2a01(FileStatus checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getColor();
     }
-    return p.getColor();
+    return null;
   }
 
   private class PrimaryMessage extends TreeMessage {

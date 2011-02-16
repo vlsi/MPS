@@ -22,6 +22,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
@@ -116,14 +117,14 @@ public final class ChooseNodeDialog extends BaseDialog {
   }
 
   public static String getRoleInTarget(SNode nodeToMove, SNode targetNode, IScope scope) {
-    AbstractConceptDeclaration nodeToMoveDeclaration = SModelUtil_new.findConceptDeclaration(nodeToMove.getConceptFqName(), scope);
-    AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(targetNode.getConceptFqName(), scope);
+    SNode nodeToMoveDeclaration = SModelUtil.findConceptDeclaration(nodeToMove.getConceptFqName(), scope);
+    SNode conceptDeclaration = SModelUtil.findConceptDeclaration(targetNode.getConceptFqName(), scope);
     String roleInParent = null;
-    for (AbstractConceptDeclaration abstractConceptDeclaration : SModelUtil_new.getConceptAndSuperConcepts(conceptDeclaration)) {
-      for (LinkDeclaration linkDeclaration : abstractConceptDeclaration.getLinkDeclarations()) {
+    for (SNode abstractConceptDeclaration : SModelUtil_new.getConceptAndSuperConcepts(conceptDeclaration)) {
+      for (LinkDeclaration linkDeclaration : ((AbstractConceptDeclaration)abstractConceptDeclaration.getAdapter()).getLinkDeclarations()) {
         if (linkDeclaration.getMetaClass() == LinkMetaclass.reference) continue;
         AbstractConceptDeclaration targetConcept = linkDeclaration.getTarget();
-        if (SModelUtil_new.isAssignableConcept(nodeToMoveDeclaration, targetConcept)) {
+        if (SModelUtil.isAssignableConcept(nodeToMoveDeclaration, BaseAdapter.fromAdapter(targetConcept))) {
           roleInParent = linkDeclaration.getRole();
           break;
         }

@@ -15,20 +15,21 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
+import jetbrains.mps.ide.ChooseItemComponent;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.ChooseItemComponent;
 
-import javax.swing.Icon;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -36,7 +37,7 @@ import java.util.regex.Pattern;
 public abstract class AbstractCellMenuPart_PropertyPostfixHints implements SubstituteInfoPart {
   public List<INodeSubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     SNode node = (SNode) cellContext.get(PropertyCellContext.EDITED_NODE);
-    final PropertyDeclaration property = (PropertyDeclaration) BaseAdapter.fromNode((SNode) cellContext.get(PropertyCellContext.PROPERTY_DECLARATION));
+    final SNode property = (SNode) cellContext.get(PropertyCellContext.PROPERTY_DECLARATION);
     if (property == null) {
       return Collections.emptyList();
     }

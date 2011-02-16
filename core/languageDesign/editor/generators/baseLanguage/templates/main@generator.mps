@@ -8747,15 +8747,19 @@
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1213036598735">
                             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1213036598737">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qg1d.~AggregationCellContext%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dlang%dstructure%dstructure%dLinkDeclaration)" resolveInfo="AggregationCellContext" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qg1d.~AggregationCellContext%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode)" resolveInfo="AggregationCellContext" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1184142273541">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1184142273576" resolveInfo="listOwner" />
                               </node>
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1184142273542">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1184142273578" resolveInfo="elementNode" />
                               </node>
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="1184142273543">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qg1d.~RefNodeListHandler%dgetLinkDeclaration()%cjetbrains%dmps%dlang%dstructure%dstructure%dLinkDeclaration" resolveInfo="getLinkDeclaration" />
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7388979241613493773">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~BaseAdapter%dfromAdapter(jetbrains%dmps%dsmodel%dINodeAdapter)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="fromAdapter" />
+                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="d8ec.~BaseAdapter" resolveInfo="BaseAdapter" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="7388979241613493774">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qg1d.~RefNodeListHandler%dgetLinkDeclaration()%cjetbrains%dmps%dlang%dstructure%dstructure%dLinkDeclaration" resolveInfo="getLinkDeclaration" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -18259,7 +18263,7 @@
                             </node>
                             <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="9138927109407481306">
                               <property name="name" nameId="tpck.1169194664001" value="it" />
-                              <node role="type" roleId="tpee.5680397130376446158" type="tpee.WildCardType" typeId="tpee.1171903607971" id="9138927109407481307" />
+                              <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2108863436754490560" />
                             </node>
                           </node>
                         </node>

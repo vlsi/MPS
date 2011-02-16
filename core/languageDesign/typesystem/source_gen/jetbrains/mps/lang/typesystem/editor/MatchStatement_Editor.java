@@ -54,9 +54,8 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_qh3cwh_a6a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qh3cwh_b6a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_qh3cwh_c6a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_qh3cwh_d6a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_qh3cwh_e6a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_qh3cwh_c6a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_qh3cwh_d6a(editorContext, node));
     return editorCell;
   }
 
@@ -118,21 +117,9 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_qh3cwh_c6a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_qh3cwh_c6a");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_qh3cwh_e6a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_qh3cwh_d6a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_qh3cwh_e6a");
+    editorCell.setCellId("Constant_qh3cwh_d6a");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -171,7 +158,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_qh3cwh_d6a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_qh3cwh_c6a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("ifFalseStatement");
     provider.setNoTargetText("<no ifFalseStatement>");

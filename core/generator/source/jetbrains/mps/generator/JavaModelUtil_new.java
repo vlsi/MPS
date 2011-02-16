@@ -15,16 +15,40 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Iterator;
-
 public class JavaModelUtil_new {
   private static final Logger LOG = Logger.getLogger(JavaModelUtil_new.class);
+
+  @Nullable
+  public static SNode findClassifier(Class cls) {
+    String name = cls.getName();
+    String rootName = NameUtil.shortNameFromLongName(name);
+    String modelName = NameUtil.namespaceFromLongName(name);
+    return findClassifier(modelName, rootName);
+  }
+
+  public static SNode findClassifier(String packageName, String shortClassName) {
+    return findClassifier(packageName, shortClassName, false);
+  }
+
+  public static SNode findClassifier(String packageName, String shortClassName, boolean reportErrors) {
+    SModelFqName modelUID = new SModelFqName(packageName, SModelStereotype.getStubStereotypeForId(LanguageID.JAVA));
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+    if (modelDescriptor == null) {
+      if (reportErrors) LOG.error("couldn't find model '" + modelUID + "'");
+      return null;
+    }
+    SModel model = modelDescriptor.getSModel();
+    SNode rootByName = SModelOperations.getRootByName(model, shortClassName);
+    if (rootByName == null && reportErrors) {
+      LOG.error("couldn't find root '" + shortClassName + "' in model '" + modelUID + "'");
+    }
+    return rootByName;
+  }
 
 //  public static InstanceMethodDeclaration findMethod(Classifier classifier, String methodName, String[] parmTypes) {
 //    Iterator<InstanceMethodDeclaration> methods = classifier.methods();
@@ -105,93 +129,65 @@ public class JavaModelUtil_new {
 //    }
 //    return true;
 //  }
-
-  @Nullable
-  public static Classifier findClassifier(Class cls) {
-    String name = cls.getName();
-    String rootName = NameUtil.shortNameFromLongName(name);
-    String modelName = NameUtil.namespaceFromLongName(name);
-    return (Classifier) BaseAdapter.fromNode(findClassifier(modelName, rootName));
-  }
-
-  public static SNode findClassifier(String packageName, String shortClassName) {
-    return findClassifier(packageName, shortClassName, false);
-  }
-
-  public static SNode findClassifier(String packageName, String shortClassName, boolean reportErrors) {
-    SModelFqName modelUID = new SModelFqName(packageName, SModelStereotype.getStubStereotypeForId(LanguageID.JAVA));
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
-    if (modelDescriptor == null) {
-      if (reportErrors) LOG.error("couldn't find model '" + modelUID + "'");
-      return null;
-    }
-    SModel model = modelDescriptor.getSModel();
-    SNode rootByName = SModelOperations.getRootByName(model, shortClassName);
-    if (rootByName == null && reportErrors) {
-      LOG.error("couldn't find root '" + shortClassName + "' in model '" + modelUID + "'");
-    }
-    return rootByName;
-  }
-
-  public static FieldDeclaration findField(Classifier classifier, String fieldName) {
-    if (!(classifier instanceof ClassConcept)) return null;
-    ClassConcept classConcept = (ClassConcept) classifier;
-    while (classConcept != null) {
-      Iterator<FieldDeclaration> fields = classConcept.fields();
-      while (fields.hasNext()) {
-        FieldDeclaration field = fields.next();
-        if (fieldName.equals(field.getName())) {
-          return field;
-        }
-      }
-      classConcept = getSuperclass(classConcept);
-    }
-    return null;
-  }
-
-  public static StaticFieldDeclaration findStaticField(Classifier classifier, String constantName) {
-    if (classifier == null) return null;
-
-    Iterator<StaticFieldDeclaration> fields = classifier.staticFields();
-    while (fields.hasNext()) {
-      StaticFieldDeclaration field = fields.next();
-      if (constantName.equals(field.getName())) {
-        return field;
-      }
-    }
-
-    if (classifier instanceof ClassConcept) {
-      StaticFieldDeclaration staticField = findStaticField(getSuperclass((ClassConcept) classifier), constantName);
-      if (staticField != null) {
-        return staticField;
-      }
-
-      Iterator<ClassifierType> iterator = ((ClassConcept) classifier).implementedInterfaces();
-      while (iterator.hasNext()) {
-        ClassifierType classifierType = iterator.next();
-        staticField = findStaticField(classifierType.getClassifier(), constantName);
-        if (staticField != null) {
-          return staticField;
-        }
-      }
-    } else {
-      Iterator<ClassifierType> iterator = ((Interface) classifier).extendedInterfaces();
-      while (iterator.hasNext()) {
-        ClassifierType classifierType = iterator.next();
-        StaticFieldDeclaration staticField = findStaticField(classifierType.getClassifier(), constantName);
-        if (staticField != null) {
-          return staticField;
-        }
-      }
-    }
-    return null;
-  }
-
-  public static ClassConcept getSuperclass(ClassConcept subClass) {
-    ClassifierType superclass = subClass.getSuperclass();
-    if (superclass != null) {
-      return (ClassConcept) superclass.getClassifier();
-    }
-    return null;
-  }
+//  public static FieldDeclaration findField(Classifier classifier, String fieldName) {
+//    if (!(classifier instanceof ClassConcept)) return null;
+//    ClassConcept classConcept = (ClassConcept) classifier;
+//    while (classConcept != null) {
+//      Iterator<FieldDeclaration> fields = classConcept.fields();
+//      while (fields.hasNext()) {
+//        FieldDeclaration field = fields.next();
+//        if (fieldName.equals(field.getName())) {
+//          return field;
+//        }
+//      }
+//      classConcept = getSuperclass(classConcept);
+//    }
+//    return null;
+//  }
+//
+//  public static StaticFieldDeclaration findStaticField(Classifier classifier, String constantName) {
+//    if (classifier == null) return null;
+//
+//    Iterator<StaticFieldDeclaration> fields = classifier.staticFields();
+//    while (fields.hasNext()) {
+//      StaticFieldDeclaration field = fields.next();
+//      if (constantName.equals(field.getName())) {
+//        return field;
+//      }
+//    }
+//
+//    if (classifier instanceof ClassConcept) {
+//      StaticFieldDeclaration staticField = findStaticField(getSuperclass((ClassConcept) classifier), constantName);
+//      if (staticField != null) {
+//        return staticField;
+//      }
+//
+//      Iterator<ClassifierType> iterator = ((ClassConcept) classifier).implementedInterfaces();
+//      while (iterator.hasNext()) {
+//        ClassifierType classifierType = iterator.next();
+//        staticField = findStaticField(classifierType.getClassifier(), constantName);
+//        if (staticField != null) {
+//          return staticField;
+//        }
+//      }
+//    } else {
+//      Iterator<ClassifierType> iterator = ((Interface) classifier).extendedInterfaces();
+//      while (iterator.hasNext()) {
+//        ClassifierType classifierType = iterator.next();
+//        StaticFieldDeclaration staticField = findStaticField(classifierType.getClassifier(), constantName);
+//        if (staticField != null) {
+//          return staticField;
+//        }
+//      }
+//    }
+//    return null;
+//  }
+//
+//  public static ClassConcept getSuperclass(ClassConcept subClass) {
+//    ClassifierType superclass = subClass.getSuperclass();
+//    if (superclass != null) {
+//      return (ClassConcept) superclass.getClassifier();
+//    }
+//    return null;
+//  }
 }

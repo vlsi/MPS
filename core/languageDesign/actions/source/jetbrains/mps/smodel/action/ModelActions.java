@@ -47,8 +47,8 @@ public class ModelActions {
   // referent substitute
   //-------------------
 
-  public static List<INodeSubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IOperationContext context) {
-    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, (LinkDeclaration) linkDeclaration, context);
+  public static List<INodeSubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration, IOperationContext context) {
+    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration, context);
   }
 
   //-------------------

@@ -72,6 +72,15 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior" file="ScopeConcept_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.textGen.behavior.SimpleTextGenOperation_Behavior" file="SimpleTextGenOperation_Behavior.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
@@ -82,6 +91,23 @@
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" file="TraceableConcept_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior" file="UnitConcept_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
   </dependency>
   <dependency className="jetbrains.mps.lang.textGen.behavior.UtilityMethodCall_Behavior" file="UtilityMethodCall_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

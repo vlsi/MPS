@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -46,10 +47,10 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
 
     String replacementConceptFqName = getReplacementConceptName();
     IOperationContext context = editorContext.getOperationContext();
-    AbstractConceptDeclaration replacementConcept = SModelUtil_new.findConceptDeclaration(replacementConceptFqName, context.getScope());
+    SNode replacementConcept = SModelUtil.findConceptDeclaration(replacementConceptFqName, context.getScope());
 
 
-    List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(parent, node, replacementConcept, this, context);
+    List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(parent, node, (AbstractConceptDeclaration) BaseAdapter.fromNode(replacementConcept), this, context);
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     for (INodeSubstituteAction a : actions) {
       result.add(new NodeSubstituteActionWrapper(a) {

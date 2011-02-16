@@ -15,13 +15,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.IMethodCall;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 
 public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   protected static Log log = LogFactory.getLog(ClassifierVisibleMembersScope.class);
@@ -61,15 +59,15 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     return myClassifierScope.getClassifierNodes().contains(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)) && isVisible(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
   }
 
-  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
+  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     if (this.myClassifierType != null) {
-      if (SModelUtil_new.isAssignableConcept(targetConcept, StaticMethodDeclaration.concept)) {
+      if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
         SNode classifier = SLinkOperations.getTarget(this.myClassifierType, "classifier", false);
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SNodeOperations.isInstanceOf(referenceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
           return new StaticMethodReferenceInfoResolver(this.myClassifierScope, (ClassConcept) ((Classifier) SNodeOperations.getAdapter(classifier)), ((IMethodCall) ((BaseConcept) SNodeOperations.getAdapter(referenceNode))).getActualArguments());
         }
       } else
-      if (SModelUtil_new.isAssignableConcept(targetConcept, InstanceMethodDeclaration.concept)) {
+      if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
         if (((BaseConcept) SNodeOperations.getAdapter(referenceNode)) instanceof IMethodCall) {
           return new InstanceMethodReferenceInfoResolver(this.myClassifierScope, ((ClassifierType) SNodeOperations.getAdapter(this.myClassifierType)), ((IMethodCall) ((BaseConcept) SNodeOperations.getAdapter(referenceNode))).getActualArguments());
         }
@@ -82,10 +80,10 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     return VisibilityUtil.isVisible(myContextNode, member);
   }
 
-  private static SNode check_y8c6cm_a0a0a(ClassifierType p) {
-    if (null == p) {
-      return null;
+  private static SNode check_y8c6cm_a0a0a(ClassifierType checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNode();
     }
-    return p.getNode();
+    return null;
   }
 }

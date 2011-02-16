@@ -9,8 +9,6 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue;
 import java.util.List;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.annotations.NotNull;
-
 import java.util.ArrayList;
 
 public class MyViewer_Factory extends ValueWrapperFactory {
@@ -22,7 +20,7 @@ public class MyViewer_Factory extends ValueWrapperFactory {
   }
 
   @Override
-  public boolean canWrapValue(@NotNull JavaValue value) {
+  public boolean canWrapValue(JavaValue value) {
     if (value instanceof JavaObjectValue) {
       JavaObjectValue ov = (JavaObjectValue) value;
       return "jetbrains.mps.internal.collections.runtime.ListSequence".equals(ov.getClassFqName());

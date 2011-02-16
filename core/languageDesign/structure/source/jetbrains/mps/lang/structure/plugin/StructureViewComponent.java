@@ -19,6 +19,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
@@ -69,7 +70,7 @@ public class StructureViewComponent {
       }
     };
 
-    ConceptAndSuperConceptsScope scope = new ConceptAndSuperConceptsScope(myConcept);
+    ConceptAndSuperConceptsScope scope = new ConceptAndSuperConceptsScope(BaseAdapter.fromAdapter(myConcept));
 
     TextTreeNode properties = new TextTreeNode("Properties");
     root.add(properties);

@@ -20,6 +20,7 @@ import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Evgeny Gryaznov, Sep 3, 2010
@@ -73,11 +74,11 @@ public interface ModelCommandExecutor {
 
   <T> T runWriteActionInCommand(Computable<T> c, Project project);
 
-  <T> T runWriteActionInCommand(Computable<T> c, String name, UndoConfirmationPolicy policy, Project project);
+  <T> T runWriteActionInCommand(Computable<T> c, @Nullable String name, @Nullable Object groupId, UndoConfirmationPolicy policy, Project project);
 
   void runWriteActionInCommand(Runnable r, Project project);
 
-  void runWriteActionInCommand(Runnable r, String name, UndoConfirmationPolicy policy, Project project);
+  void runWriteActionInCommand(Runnable r, @Nullable String name, @Nullable Object groupId, UndoConfirmationPolicy policy, Project project);
 
   /**
    * use runCommandInEDT

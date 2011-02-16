@@ -24,9 +24,6 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
-import jetbrains.mps.smodel.persistence.def.v0.ModelPersistence0;
-import jetbrains.mps.smodel.persistence.def.v1.ModelPersistence1;
-import jetbrains.mps.smodel.persistence.def.v2.ModelPersistence2;
 import jetbrains.mps.smodel.persistence.def.v3.ModelPersistence3;
 import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
@@ -98,9 +95,9 @@ public class ModelPersistence {
   public static final String PERSISTENCE_VERSION = "version";
 
   private static final IModelPersistence[] myModelPersistenceFactory = {
-    new ModelPersistence0(),
-    new ModelPersistence1(),
-    new ModelPersistence2(),
+    null,
+    null,
+    null,
     new ModelPersistence3(),
     new ModelPersistence4(),
     new ModelPersistence5(),

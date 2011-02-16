@@ -8,16 +8,16 @@
   <unitInfo fileName="InstructionReference_DefaultSearchScope.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.InstructionReference_DefaultSearchScope" />
   <unitInfo fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.ApplicableNodeReference_applicableNode_ReferentConstraint" />
   <root nodeId="178770917832460637">
-    <nodeInfo nodeId="178770917832460641" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnalyzerRunnerCreator_analyzer_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="150" />
+    <nodeInfo nodeId="178770917832460641" fileName="AnalyzerRunnerCreator_analyzer_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="178770917832460640" fileName="AnalyzerRunnerCreator_analyzer_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="150" />
   </root>
   <root nodeId="4217760266503650622">
-    <nodeInfo nodeId="4217760266503650628" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstructionReference_DefaultSearchScope.java" startLine="29" startPosition="132" endLine="30" endPosition="48" />
-    <nodeInfo nodeId="4217760266503650638" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstructionReference_DefaultSearchScope.java" startLine="31" startPosition="167" endLine="32" endPosition="130" />
-    <nodeInfo nodeId="4217760266503650649" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstructionReference_DefaultSearchScope.java" startLine="33" startPosition="5" endLine="34" endPosition="18" />
-    <nodeInfo nodeId="4217760266503650634" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InstructionReference_DefaultSearchScope.java" startLine="30" startPosition="48" endLine="33" endPosition="5" />
+    <nodeInfo nodeId="4217760266503650628" fileName="InstructionReference_DefaultSearchScope.java" startLine="29" startPosition="132" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4217760266503650638" fileName="InstructionReference_DefaultSearchScope.java" startLine="31" startPosition="167" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4217760266503650649" fileName="InstructionReference_DefaultSearchScope.java" startLine="33" startPosition="5" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4217760266503650634" fileName="InstructionReference_DefaultSearchScope.java" startLine="30" startPosition="48" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="4217760266503650637" fileName="InstructionReference_DefaultSearchScope.java" startLine="31" startPosition="167" endLine="32" endPosition="130" />
-    <scopeInfo nodeId="4217760266503650634" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InstructionReference_DefaultSearchScope.java" startLine="30" startPosition="48" endLine="33" endPosition="5">
+    <scopeInfo nodeId="4217760266503650634" fileName="InstructionReference_DefaultSearchScope.java" startLine="30" startPosition="48" endLine="33" endPosition="5">
       <varInfo nodeId="4217760266503650635" varName="analyzer" />
     </scopeInfo>
     <scopeInfo nodeId="4217760266503650627" fileName="InstructionReference_DefaultSearchScope.java" startLine="29" startPosition="132" endLine="34" endPosition="18">
@@ -25,11 +25,11 @@
     </scopeInfo>
   </root>
   <root nodeId="4943044633102057755">
-    <nodeInfo nodeId="4943044633102057801" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="48" />
-    <nodeInfo nodeId="4943044633102118271" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="31" startPosition="48" endLine="32" endPosition="129" />
-    <nodeInfo nodeId="4943044633102119239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="33" startPosition="161" endLine="34" endPosition="175" />
-    <nodeInfo nodeId="4943044633102057779" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="18" />
-    <nodeInfo nodeId="4943044633102119212" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="32" startPosition="129" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="4943044633102057801" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633102118271" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="31" startPosition="48" endLine="32" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633102119239" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="33" startPosition="161" endLine="34" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633102057779" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633102119212" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="32" startPosition="129" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="4943044633102119213" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="33" startPosition="161" endLine="34" endPosition="175" />
     <scopeInfo nodeId="4943044633102057778" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="30" startPosition="132" endLine="36" endPosition="18">
       <varInfo nodeId="4943044633102057802" varName="result" />
@@ -37,13 +37,13 @@
     </scopeInfo>
   </root>
   <root nodeId="7985661997283725842">
-    <nodeInfo nodeId="7985661997283726510" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IsOperation_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="133" />
-    <nodeInfo nodeId="7985661997283726529" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IsOperation_instruction_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="177" />
+    <nodeInfo nodeId="7985661997283726510" fileName="IsOperation_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7985661997283726529" fileName="IsOperation_instruction_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="7985661997283725844" fileName="IsOperation_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="133" />
     <scopeInfo nodeId="7985661997283726528" fileName="IsOperation_instruction_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="177" />
   </root>
   <root nodeId="95073643532950051">
-    <nodeInfo nodeId="95073643532950054" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnalyzerRunnerAnalyzeOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="474" />
+    <nodeInfo nodeId="95073643532950054" fileName="AnalyzerRunnerAnalyzeOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="474" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="95073643532950053" fileName="AnalyzerRunnerAnalyzeOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="474" />
   </root>
 </debugInfo>

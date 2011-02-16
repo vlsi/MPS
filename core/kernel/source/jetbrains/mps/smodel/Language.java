@@ -17,10 +17,6 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.util.containers.ConcurrentHashSet;
-import jetbrains.mps.lang.core.structure.Core_Language;
-import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
@@ -55,7 +51,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   private LanguageDescriptor myLanguageDescriptor;
   private List<Generator> myGenerators = new ArrayList<Generator>();
 
-  private ConcurrentHashMap<String, AbstractConceptDeclaration> myNameToConceptCache = new ConcurrentHashMap<String, AbstractConceptDeclaration>();
+  private ConcurrentHashMap<String, SNode> myNameToConceptCache = new ConcurrentHashMap<String, SNode>();
   //the following is needed because we can't store null values in myNameToConceptCache, as long as it's a ConcurrentHashMap
   private ConcurrentHashSet<String> myNamesWithNoConcepts = new ConcurrentHashSet<String>(1);
 
@@ -192,8 +188,9 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public List<Language> getExtendedLanguages() {
     List<Language> result = ModuleUtil.refsToLanguages(getExtendedLanguageRefs());
 
-    if (!result.contains(Core_Language.get())) {
-      result.add(Core_Language.get());
+    Language coreLang = BootstrapLanguages.coreLanguage();
+    if (!result.contains(coreLang)) {
+      result.add(coreLang);
     }
 
     return result;
@@ -354,7 +351,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public String getGeneratorOutputPath() {
     String generatorOutputPath = myLanguageDescriptor.getGenPath();
     if (generatorOutputPath == null) {
-      generatorOutputPath = myDescriptorFile.getParent().getAbsolutePath() + File.separatorChar + "source_gen";
+      generatorOutputPath = myDescriptorFile.getParent().child("source_gen").getAbsolutePath();
     }
     return generatorOutputPath;
   }
@@ -363,11 +360,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return null;
   }
 
-  public List<ConceptDeclaration> getConceptDeclarations() {
-    SModelDescriptor struc = getStructureModelDescriptor();
-    if (struc == null) return new ArrayList<ConceptDeclaration>();
-    List<SNode> nodes = struc.getSModel().getFastNodeFinder().getNodes(ConceptDeclaration.concept, true);
-    return BaseAdapter.toAdapters(nodes);
+  public List<SNode> getConceptDeclarations() {
+    SModelDescriptor structureModel = getStructureModelDescriptor();
+    if (structureModel == null) return Collections.emptyList();
+    return structureModel.getSModel().getFastNodeFinder().getNodes(SNodeUtil.concept_ConceptDeclaration, true);
   }
 
   public List<EditableSModelDescriptor> getUtilModels() {
@@ -477,7 +473,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     myAllExtendedLanguages = null;
   }
 
-  public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
+  public SNode findConceptDeclaration(@NotNull String conceptName) {
     if (myNamesLoadingState == ModelLoadingState.FULLY_LOADED) return myNameToConceptCache.get(conceptName);
     if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
     if (myNamesWithNoConcepts.contains(conceptName)) return null;
@@ -491,7 +487,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       for (SNode root : structureModel.roots()) {
         String name = getConceptName(root);
         if (name == null) continue;
-        myNameToConceptCache.putIfAbsent(name, (AbstractConceptDeclaration) root.getAdapter());
+        myNameToConceptCache.putIfAbsent(name, root);
       }
       if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
     }
@@ -500,10 +496,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     for (SNode node : structureModel.nodes()) {
       String name = getConceptName(node);
       if (name == null) continue;
-      myNameToConceptCache.putIfAbsent(name, (AbstractConceptDeclaration) node.getAdapter());
+      myNameToConceptCache.putIfAbsent(name, node);
     }
 
-    AbstractConceptDeclaration result = myNameToConceptCache.get(conceptName);
+    SNode result = myNameToConceptCache.get(conceptName);
     if (result == null) {
       myNamesWithNoConcepts.add(conceptName);
     }
@@ -512,8 +508,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   private String getConceptName(SNode node) {
-    if (!(node.getAdapter() instanceof AbstractConceptDeclaration)) return null;
-    return node.getPersistentProperty(INamedConcept.NAME);
+    if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(node))) return null;
+    return node.getPersistentProperty(SNodeUtil.property_INamedConcept_name);
   }
 
   public void save() {

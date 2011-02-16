@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.lang.reflect.Method;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.List;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
@@ -53,7 +52,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       final Method method = cm.getCanBeRootMethod(node.getConceptFqName(), operationContext);
       boolean canBeRoot = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return cm.canBeRoot(operationContext, method, SNodeOperations.getModel(node), ((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))));
+          return cm.canBeRoot(operationContext, method, SNodeOperations.getModel(node), SNodeOperations.getConceptDeclaration(node));
         }
       });
       if (!(canBeRoot)) {
@@ -88,13 +87,13 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     // Properties validation 
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     component.addDependency(concept);
-    ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
-    for (AbstractConceptDeclaration parentConcept : chs.getConcepts()) {
-      component.addDependency(parentConcept.getNode());
+    ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(concept);
+    for (SNode parentConcept : chs.getConcepts()) {
+      component.addDependency(parentConcept);
     }
     List<PropertyDeclaration> props = chs.getAdapters(PropertyDeclaration.class);
     for (PropertyDeclaration p : ListSequence.fromList(props)) {
-      final PropertySupport ps = PropertySupport.getPropertySupport(p);
+      final PropertySupport ps = PropertySupport.getPropertySupport(p.getNode());
       final String propertyName = p.getName();
       if (propertyName == null) {
         LOG.error("Property declaration has a null name, declaration id: " + p.getNode().getSNodeId() + ", model: " + p.getModel().getSModelFqName());

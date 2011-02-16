@@ -64,6 +64,10 @@ public class TransientModelsModule extends AbstractModule {
     MPSModuleRepository.getInstance().removeModule(TransientModelsModule.this);
   }
 
+  public void releaseModule () {
+    MPSModuleRepository.getInstance().removeModule(TransientModelsModule.this);
+  }
+
   public Class getClass(String fqName) {
     if (myOriginalModule == null) {
       throw new IllegalStateException();
@@ -101,11 +105,19 @@ public class TransientModelsModule extends AbstractModule {
   }
 
   public void clearAll() {
+    removeAll();
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     invalidateCaches();
     myModelsToKeep.clear();
     myPublished.clear();
     myModels.clear();
+  }
+
+  public void removeAll() {
+    List<SModelDescriptor> models = this.getOwnModelDescriptors();
+    for (SModelDescriptor model : models) {
+      removeModel(model);
+    }
   }
 
   public void clearUnused() {
@@ -255,9 +267,8 @@ public class TransientModelsModule extends AbstractModule {
         TransientSwapSpace swap = myComponent.getTransientSwapSpace();
         if (swap == null || !swap.swapOut((TransientSModel) mySModel)) { return false; }
 
-        this.mySModel = null;
-        fireModelReplaced();
-        setLoadingState(ModelLoadingState.NOT_LOADED);
+        dropModel();
+
         this.wasUnloaded = true;
       }
       return false;

@@ -7,7 +7,9 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import org.joda.time.format.PeriodFormatterBuilder;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
@@ -27,8 +29,8 @@ public class DateTimeProperty_periodFormatMethod_ReferentConstraint extends Base
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    ClassifierType ct = ClassifierType.newInstance(null);
-    ct.setClassifier(JavaModelUtil_new.findClassifier(PeriodFormatterBuilder.class));
+    SNode ct = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SLinkOperations.setTarget(ct, "classifier", (SNode) JavaModelUtil_new.findClassifier(PeriodFormatterBuilder.class), false);
     return new ClassifierVisibleMembersScope(ct, _context.getEnclosingNode(), IClassifiersSearchScope.INSTANCE_METHOD);
   }
 

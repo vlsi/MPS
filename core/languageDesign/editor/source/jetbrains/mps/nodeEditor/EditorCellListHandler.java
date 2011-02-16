@@ -15,15 +15,16 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 
 import java.util.List;
 
@@ -33,26 +34,26 @@ import java.util.List;
  */
 public abstract class EditorCellListHandler extends AbstractCellListHandler {
 
-  private ConceptDeclaration myChildConcept;
-  private LinkDeclaration myLinkDeclaration;
+  private SNode myChildConcept;
+  private SNode myLinkDeclaration;
 
   public EditorCellListHandler(SNode ownerNode, String childRole, EditorContext editorContext) {
     super(ownerNode, childRole, editorContext);
     myLinkDeclaration = ownerNode.getLinkDeclaration(childRole);
-    myChildConcept = (ConceptDeclaration) myLinkDeclaration.getTarget();
-    LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
-    if (genuineLink.getMetaClass() != LinkMetaclass.aggregation) {
+    myChildConcept = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
+    SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
+    if (SNodeUtil.getLinkDeclaration_IsReference(genuineLink)) {
       throw new RuntimeException("Only Aggregation links can be used in list");
     }
-    myElementRole = genuineLink.getRole();
+    myElementRole = SModelUtil.getLinkDeclarationRole(genuineLink);
   }
 
   public LinkDeclaration getLinkDeclaration() {
-    return myLinkDeclaration;
+    return (LinkDeclaration) BaseAdapter.fromNode(myLinkDeclaration);
   }
 
   public ConceptDeclaration getChildConcept() {
-    return myChildConcept;
+    return (ConceptDeclaration) BaseAdapter.fromNode(myChildConcept);
   }
 
 

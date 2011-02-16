@@ -128,6 +128,18 @@ public class BreakpointsTable extends BreakpointsView {
   }
 
   @Override
+  public void selectBreakpoint(@Nullable IBreakpoint breakpoint) {
+    if (breakpoint != null) {
+      int index = getBreakpointsList().indexOf(breakpoint);
+      if (index >= 0 && index < myBreakpointsTable.getRowCount()) {
+        myBreakpointsTable.setRowSelectionInterval(index, index);
+      }
+    } else {
+      myBreakpointsTable.getSelectionModel().clearSelection();
+    }
+  }
+
+  @Override
   public Object getData(@NonNls String dataId) {
     if (MPS_BREAKPOINT.is(dataId)) {
       return getSelectedBreakpoint();

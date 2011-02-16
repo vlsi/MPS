@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.structure.constraints;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.AbstractSearchScope;
@@ -63,7 +64,7 @@ public class ConceptDeclarationExtendedConceptSearchScope extends AbstractSearch
         if (!(object instanceof ConceptDeclaration)) return false;
         ConceptDeclaration concept = (ConceptDeclaration) object;
         // concept shouldn't extend 'current concept'
-        return !SModelUtil_new.isAssignableConcept(concept, myConceptDeclaration);
+        return !SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(concept), BaseAdapter.fromAdapter(myConceptDeclaration));
       }
     }));
   }

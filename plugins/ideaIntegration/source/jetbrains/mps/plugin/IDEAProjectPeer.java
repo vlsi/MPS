@@ -54,6 +54,10 @@ public class IDEAProjectPeer implements ProjectComponent, IAuxProjectPeer {
     return new IDEACompiler();
   }
 
+  public boolean isValid () {
+    return isIDEAPresent();
+  }
+
   private boolean isIDEAPresent() {
     return !MPSCore.getInstance().isTestMode() && myIdeaProjectHandler != null;
   }

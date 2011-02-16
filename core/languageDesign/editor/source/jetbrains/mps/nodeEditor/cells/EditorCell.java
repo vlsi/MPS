@@ -15,28 +15,23 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.StyleAttribute;
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 
-import javax.swing.JComponent;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
-import java.util.Set;
 import java.util.List;
-import java.util.LinkedHashSet;
+import java.util.Set;
 
 public interface EditorCell extends Cloneable {
   static final EditorCell[] EMPTY_ARRAY = new EditorCell[0];

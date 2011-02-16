@@ -192,6 +192,10 @@
   <dependency className="jetbrains.mps.lang.typesystem.behavior.TypesystemIntentionArgument_Behavior" file="TypesystemIntentionArgument_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.behavior.WhenConcreteVariableDeclaration_Behavior" file="WhenConcreteVariableDeclaration_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.WhenConcreteVariableReference_Behavior" file="WhenConcreteVariableReference_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>

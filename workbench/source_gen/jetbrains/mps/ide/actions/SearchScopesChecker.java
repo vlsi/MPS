@@ -20,8 +20,6 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 
 @Deprecated
 public class SearchScopesChecker extends SpecificChecker {
@@ -64,7 +62,7 @@ public class SearchScopesChecker extends SpecificChecker {
   }
 
   private static boolean checkScope(SNode concept, SNode node, SNode targetNode, SNode linkDeclaration, IOperationContext operationContext) {
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, node, ((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)), ((LinkDeclaration) SNodeOperations.getAdapter(linkDeclaration)), operationContext);
+    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, node, concept, linkDeclaration, operationContext);
     if (status.isOk() && !(status.isDefault())) {
       status.getSearchScope().isInScope(targetNode);
     }

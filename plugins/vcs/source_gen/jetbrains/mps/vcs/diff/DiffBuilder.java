@@ -35,11 +35,10 @@ import jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange;
 import jetbrains.mps.vcs.diff.oldchanges.DeleteReferenceChange;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 @Deprecated
 public class DiffBuilder {
@@ -410,11 +409,11 @@ public class DiffBuilder {
   }
 
   private boolean isMultipleCardinality(String fqName, String role) {
-    LinkDeclaration ld = SModelSearchUtil.findLinkDeclaration(SModelUtil_new.findConceptDeclaration(fqName, GlobalScope.getInstance()), role);
+    SNode ld = (SNode) SModelSearchUtil.findLinkDeclaration(SModelUtil.findConceptDeclaration(fqName, GlobalScope.getInstance()), role);
     if (ld == null) {
       return false;
     }
-    return ld.getSourceCardinality() != Cardinality._0__1 && ld.getSourceCardinality() != Cardinality._1;
+    return SPropertyOperations.hasValue(ld, "sourceCardinality", "1..n", "0..1") || SPropertyOperations.hasValue(ld, "sourceCardinality", "0..n", "0..1");
   }
 
   public List<Change> getChanges() {

@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
@@ -103,7 +103,7 @@ public class AttachMappingLabel_Intention extends BaseIntention implements Inten
     IModule module = operationContext.getModule();
     List<SNode> mappings;
     if (module instanceof Generator) {
-      mappings = (List<SNode>) BaseAdapter.toNodes(((Generator) module).getOwnMappings());
+      mappings = (List<SNode>) GenerationFacade.getOwnMappings((Generator) module);
     } else {
       mappings = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
     }

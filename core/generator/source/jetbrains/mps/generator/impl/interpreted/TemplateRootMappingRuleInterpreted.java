@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateProcessor;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -23,9 +24,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
-import jetbrains.mps.lang.generator.structure.MappingLabelDeclaration;
-import jetbrains.mps.lang.generator.structure.Root_MappingRule;
-import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
@@ -43,7 +41,7 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
 
   public TemplateRootMappingRuleInterpreted(SNode rule) {
     ruleNode = rule;
-    applicableConcept = rule.getReferent(Root_MappingRule.APPLICABLE_CONCEPT);
+    applicableConcept = RuleUtil.getBaseRuleApplicableConcept(rule);
   }
 
   @Override
@@ -58,18 +56,17 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
 
   @Override
   public boolean applyToInheritors() {
-    return ruleNode.getBooleanProperty(Root_MappingRule.APPLY_TO_CONCEPT_INHERITORS);
+    return RuleUtil.getBaseRuleApplyToConceptInheritors(ruleNode);
   }
 
   @Override
   public boolean keepSourceRoot() {
-    String value = ruleNode.getProperty(Root_MappingRule.KEEP_SOURCE_ROOT);
-    return Options_DefaultTrue.parseValue(value) == Options_DefaultTrue.true_;
+    return RuleUtil.getRootRuleKeepSourceRoot(ruleNode);
   }
 
   @Override
   public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
-    SNode condition = ruleNode.getChild(Root_MappingRule.CONDITION_FUNCTION);
+    SNode condition = RuleUtil.getBaseRuleCondition(ruleNode);
     if (condition == null) {
       return true;
     }
@@ -94,10 +91,9 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
 
   @Override
   public Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    SNode templateNode = ruleNode.getReferent(Root_MappingRule.TEMPLATE);
+    SNode templateNode = RuleUtil.getRootRuleTemplateNode(ruleNode);
     if (templateNode != null) {
-      SNode labelDeclaration = ruleNode.getReferent(Root_MappingRule.LABEL_DECLARATION);
-      String ruleMappingName = labelDeclaration != null ? labelDeclaration.getProperty(MappingLabelDeclaration.NAME) : null;
+      String ruleMappingName = RuleUtil.getBaseRuleLabel(ruleNode);
 
       return new TemplateProcessor(environment.getGenerator(), environment.getReductionContext())
         .processTemplateNode(ruleMappingName, templateNode, context);

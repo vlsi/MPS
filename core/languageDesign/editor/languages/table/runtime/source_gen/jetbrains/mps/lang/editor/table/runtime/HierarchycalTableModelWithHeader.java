@@ -63,7 +63,7 @@ public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
 
   @Override
   public void insertColumn(int columnNumber) {
-    insertElementAt(getHeaderColumns(), SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myHeaderColumnsLinkDeclaration, "target", false)), null), columnNumber);
+    Utils.insertElementAt(getHeaderColumns(), SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myHeaderColumnsLinkDeclaration, "target", false)), null), columnNumber);
     super.insertColumn(columnNumber);
   }
 

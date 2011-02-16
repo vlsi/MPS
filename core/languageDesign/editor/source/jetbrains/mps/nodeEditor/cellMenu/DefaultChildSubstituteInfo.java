@@ -16,10 +16,8 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import com.intellij.util.containers.HashMap;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -32,6 +30,7 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.typesystem.inference.InequationSystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.Arrays;
 import java.util.List;
@@ -41,39 +40,44 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   private SNode myParentNode;
   private SNode myCurrentChild;
-  private LinkDeclaration myLinkDeclaration;
+  private SNode myLinkDeclaration;
 
-  public DefaultChildSubstituteInfo(final SNode sourceNode, final LinkDeclaration linkDeclaration, final EditorContext editorContext) {
+  public DefaultChildSubstituteInfo(final SNode sourceNode, final SNode linkDeclaration, final EditorContext editorContext) {
     super(editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
         if (isNotAggregation(linkDeclaration)) {
-          LOG.error("only aggregation links are allowed here", linkDeclaration.getNode());
+          LOG.error("only aggregation links are allowed here", linkDeclaration);
         }
-        Cardinality sourceCardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
-        if (!(sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0__1)) {
-          LOG.error("only cardinalities 1 or 0..1 are allowed here", linkDeclaration.getNode());
+        SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
+        if (SModelUtil.isMultipleLinkDeclaration(genuineLinkDeclaration)) {
+          LOG.error("only cardinalities 1 or 0..1 are allowed here", linkDeclaration);
         }
 
         myParentNode = sourceNode;
-        LinkDeclaration mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(myParentNode.getConceptDeclarationAdapter(), linkDeclaration.getRole());
+        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(myParentNode.getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
         myLinkDeclaration = mostSpecificLinkDeclaration;
-        myCurrentChild = sourceNode.getChild(SModelUtil_new.getGenuineLinkRole(linkDeclaration));
+        myCurrentChild = sourceNode.getChild(SModelUtil.getGenuineLinkRole(linkDeclaration));
       }
     });
   }
 
+  @Deprecated
   public DefaultChildSubstituteInfo(final SNode parentNode, final SNode currChildNode, final LinkDeclaration linkDeclaration, final EditorContext editorContext) {
+    this(parentNode, currChildNode, BaseAdapter.fromAdapter(linkDeclaration), editorContext);
+  }
+
+  public DefaultChildSubstituteInfo(final SNode parentNode, final SNode currChildNode, final SNode linkDeclaration, final EditorContext editorContext) {
     super(editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
         if (linkDeclaration == null) {
           LOG.error("link declaration is null", new IllegalArgumentException("link declaration is null"));
         } else if (isNotAggregation(linkDeclaration)) {
-          LOG.error("only aggregation links are allowed here", new RuntimeException("only aggregation links are allowed here"), linkDeclaration.getNode());
+          LOG.error("only aggregation links are allowed here", new RuntimeException("only aggregation links are allowed here"), linkDeclaration);
         }
         myParentNode = parentNode;
-        LinkDeclaration mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(myParentNode.getConceptDeclarationAdapter(), linkDeclaration.getRole());
+        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(myParentNode.getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
         myLinkDeclaration = mostSpecificLinkDeclaration;
         myCurrentChild = currChildNode;
       }
@@ -82,7 +86,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   public List<INodeSubstituteAction> createActions() {
     List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(myParentNode, myCurrentChild,
-      (AbstractConceptDeclaration) myLinkDeclaration.getTarget(),
+      SModelUtil.getLinkDeclarationTarget(myLinkDeclaration),
       createDefaultNodeSetter(),
       getOperationContext());
     return actions;
@@ -99,14 +103,14 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
         auxModel.addRoot(nodeCopyRoot);
       }
 
-      boolean holeIsAType = SModelUtil_new.isAssignableConcept(myLinkDeclaration.getTarget(), "jetbrains.mps.lang.core.structure.IType");
+      boolean holeIsAType = SModelUtil.isAssignableConcept(NameUtil.nodeFQName(SModelUtil.getLinkDeclarationTarget(myLinkDeclaration)), "jetbrains.mps.lang.core.structure.IType");
       SNode hole = null;
       SNode parent = mapping.get(myParentNode);
       if (myCurrentChild != null) {
         SNode child = mapping.get(myCurrentChild);
         parent.removeChild(child);
       }
-      String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
+      String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
       hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
       parent.setChild(role, hole);
       InequationSystem inequationsForHole = TypeChecker.getInstance().getInequationsForHole(hole, holeIsAType);
@@ -121,12 +125,13 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     return new DefaultChildNodeSetter(myLinkDeclaration);
   }
 
-  protected LinkDeclaration getLinkDeclaration() {
+  protected SNode getLinkDeclaration() {
     return myLinkDeclaration;
   }
 
-  public static boolean isNotAggregation(LinkDeclaration linkDeclaration) {
-    return SModelUtil_new.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.aggregation;
+  public static boolean isNotAggregation(SNode linkDeclaration) {
+    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
+    return SNodeUtil.getLinkDeclaration_IsReference(genuineLinkDeclaration);
   }
 
 }

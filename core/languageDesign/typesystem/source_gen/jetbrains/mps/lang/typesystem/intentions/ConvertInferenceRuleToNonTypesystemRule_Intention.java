@@ -47,7 +47,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    List<SNode> descendants = SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", "jetbrains.mps.lang.typesystem.structure.GivetypeStatement", "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypeOfExpression", "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"}, false, new String[]{});
+    List<SNode> descendants = SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypeOfExpression", "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"}, false, new String[]{});
     return ListSequence.fromList(descendants).isEmpty();
   }
 

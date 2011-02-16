@@ -19,25 +19,41 @@ import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
 import junit.framework.TestCase;
 import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpException;
+import org.apache.commons.httpclient.HttpRecoverableException;
 
 import java.io.IOException;
+import java.io.InterruptedIOException;
 
 public class YouTrackURLTest extends TestCase {
   public void testLogin() throws IOException {
     HttpClient client = new HttpClient();
     Poster.setTimeouts(client);
     Response result = null;
-    for (int i=0; i<3; ++i) {
-      result = Command.login(client, Query.ANONYMOUS);
-      if (!result.isSuccess()) {
-        try {
-          Thread.sleep(3000);
+    IOException lastEx = null;
+    for (int i=1; i<=3; ++i) {
+      lastEx = null;
+      try {
+        result = Command.login(client, Query.ANONYMOUS);
+        if (!result.isSuccess()) {
+          try {
+            Thread.sleep(3000*i);
+          }
+          catch (InterruptedException ignore) {}
         }
-        catch (InterruptedException ignore) {}
+        else {
+          break;
+        }
       }
-      else {
-        break;
+      catch (HttpException ex) {
+        lastEx = ex;
       }
+      catch (InterruptedIOException ex) {
+        lastEx = ex;
+      }
+    }
+    if (lastEx != null) {
+      throw lastEx;
     }
     assertTrue("Can't login to YouTrack as anonymous", result.isSuccess());
   }

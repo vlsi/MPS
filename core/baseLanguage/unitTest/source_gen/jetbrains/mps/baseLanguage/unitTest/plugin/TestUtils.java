@@ -244,10 +244,10 @@ __switch__:
     });
   }
 
-  private static SNode check_6qi07j_a0a0a0a0a1a2(SNodePointer p) {
-    if (null == p) {
-      return null;
+  private static SNode check_6qi07j_a0a0a0a0a1a2(SNodePointer checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNode();
     }
-    return p.getNode();
+    return null;
   }
 }

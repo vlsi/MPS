@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.ModelFindOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 
@@ -79,7 +78,7 @@ public class HighlightInstances_Action extends GeneratedAction {
     try {
       NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
       EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
-      for (SNode ref : SetSequence.fromSet(new ModelFindOperations(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))))), ((IScope) MapSequence.fromMap(_params).get("scope"))))) {
+      for (SNode ref : SetSequence.fromSet(new ModelFindOperations(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).findInstances(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))), ((IScope) MapSequence.fromMap(_params).get("scope"))))) {
         if (ref.getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
           highlightManager.mark(ref, HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);
         }

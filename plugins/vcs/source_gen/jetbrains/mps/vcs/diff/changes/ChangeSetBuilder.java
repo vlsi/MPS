@@ -8,7 +8,6 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.PropertySupport;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.smodel.SReference;
 import java.util.HashMap;
@@ -45,7 +44,7 @@ public class ChangeSetBuilder {
     Map<String, String> newProperties = (Map<String, String>) newNode.getProperties();
     for (String name : SetSequence.fromSet(MapSequence.fromMap(oldProperties).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(newProperties).keySet()))) {
       PropertySupport propertySupport = new ChangeSetBuilder.DefaultPropertySupport();
-      PropertyDeclaration propertyDeclaration = oldNode.getPropertyDeclaration(name);
+      SNode propertyDeclaration = oldNode.getPropertyDeclaration(name);
       if (propertyDeclaration != null) {
         propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
       }

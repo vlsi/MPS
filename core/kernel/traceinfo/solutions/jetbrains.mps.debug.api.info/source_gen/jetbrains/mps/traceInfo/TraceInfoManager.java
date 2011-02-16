@@ -16,6 +16,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.ApplicationManager;
 
+@Deprecated
 public class TraceInfoManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(TraceInfoManager.class);
 
@@ -23,6 +24,7 @@ public class TraceInfoManager implements ApplicationComponent {
   private final Map<String, Mapper<SNode, List<SNode>>> myScopeConceptsAndGetters = new HashMap<String, Mapper<SNode, List<SNode>>>();
   private final Map<String, Mapper<SNode, String>> myUnitConceptsToUnitNameGetters = new LinkedHashMap<String, Mapper<SNode, String>>();
 
+  @Deprecated
   public TraceInfoManager() {
   }
 

@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.baseLanguage.constraints;
 
-import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
+import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.*;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -57,8 +58,8 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
     return result;
   }
 
-  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
-    if (SModelUtil_new.isAssignableConcept(targetConcept, ConstructorDeclaration.concept)) {
+  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
+    if (SModelUtil.isAssignableConcept(NameUtil.nodeFQName(targetConcept), ConstructorDeclaration.concept)) {
       if (referenceNode.getAdapter() instanceof ClassCreator) {
         ClassCreator classCreator = (ClassCreator) referenceNode.getAdapter();
         return new ConstructorDeclarationReferenceInfoResolver(

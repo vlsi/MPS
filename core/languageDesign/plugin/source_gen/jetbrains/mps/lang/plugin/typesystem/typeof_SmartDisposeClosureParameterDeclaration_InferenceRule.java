@@ -40,6 +40,6 @@ public class typeof_SmartDisposeClosureParameterDeclaration_InferenceRule extend
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

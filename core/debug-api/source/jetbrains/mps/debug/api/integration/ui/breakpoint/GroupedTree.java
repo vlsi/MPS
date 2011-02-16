@@ -58,6 +58,27 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
     return new GroupTreeNode<Object>(myContext, createRootGroupKind(), new Object(), getData());
   }
 
+  @Nullable
+  public MPSTreeNode findNodeForData(D nodeData) {
+    return findNodeForData((GroupTreeNode) getRootNode(), nodeData);
+  }
+
+  @Nullable
+  private MPSTreeNode findNodeForData(GroupTreeNode rootNode, D nodeData) {
+    for (int i = 0; i < rootNode.getChildCount(); i++) {
+      MPSTreeNode child = (MPSTreeNode) rootNode.getChildAt(i);
+      if (child instanceof GroupTreeNode) {
+        GroupData groupData = ((GroupTreeNode) child).getGroupData();
+        if (groupData.getKind().getGroup(nodeData).equals(groupData.getGroup())) {
+          return findNodeForData((GroupTreeNode) child, nodeData);
+        }
+      } else if (child.getUserObject() != null && child.getUserObject().equals(nodeData)) {
+        return child;
+      }
+    }
+    return null;
+  }
+
   public static abstract class GroupKind<D, T> {
     private boolean myIsVisible = true;
 
@@ -166,7 +187,7 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
     public GroupTreeNode(IOperationContext operationContext, @NotNull GroupKind<D, T> kind, @NotNull T group, Collection<D> data) {
       super(new GroupData(group, kind, data), operationContext);
 
-      GroupData groupData = (GroupData) getUserObject();
+      GroupData groupData = getGroupData();
       setNodeIdentifier(groupData.getText());
       setText(groupData.getText());
       Icon icon = groupData.getIcon(false);
@@ -197,6 +218,10 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
           }
         }
       }
+    }
+
+    private GroupData getGroupData() {
+      return (GroupData) getUserObject();
     }
   }
 }

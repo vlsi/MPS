@@ -18,7 +18,6 @@ import java.awt.event.ActionEvent;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.util.Set;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import org.apache.commons.lang.StringUtils;
@@ -67,7 +66,7 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
         final Wrappers._T<List<SNode>> toChooseFrom = new Wrappers._T<List<SNode>>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            Set<SNode> instances = findUsegesManager.findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(MainNodeChooser.this.myTargetConcept)), myScope, progressAdapter, false);
+            Set<SNode> instances = findUsegesManager.findInstances(MainNodeChooser.this.myTargetConcept, myScope, progressAdapter, false);
             if (MainNodeChooser.this.myAcceptor == null) {
               toChooseFrom.value = ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).toListSequence();
             } else {
@@ -106,7 +105,7 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
               SModel smodel = descriptor.getSModel();
               Iterable<SNode> nodes = ListSequence.fromList(SModelOperations.getNodes(smodel, null)).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  if (!(it.isInstanceOfConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(MainNodeChooser.this.myTargetConcept))))) {
+                  if (!(it.isInstanceOfConcept(MainNodeChooser.this.myTargetConcept))) {
                     return false;
                   }
                   if (myAcceptor == null) {

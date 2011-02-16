@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import junit.framework.TestCase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -150,7 +149,7 @@ public enum TestNodeWrapperFactory {
   public abstract ITestNodeWrapper wrap(@NotNull SNode node);
 
   public boolean canWrap(@NotNull SNode node) {
-    return node.isInstanceOfConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(getWrappedConcept())));
+    return node.isInstanceOfConcept(getWrappedConcept());
   }
 
   public abstract SNode getWrappedConcept();
@@ -187,11 +186,11 @@ public enum TestNodeWrapperFactory {
     }).distinct();
   }
 
-  private static SNode check_kl7j79_a0a0b0a0b2(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNode check_kl7j79_a0a0b0a0b2(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return SLinkOperations.getTarget(checkedDotOperand, "classifier", false);
     }
-    return SLinkOperations.getTarget(p, "classifier", false);
+    return null;
   }
 
   private static boolean eq_kl7j79_a0a0b2(Object a, Object b) {

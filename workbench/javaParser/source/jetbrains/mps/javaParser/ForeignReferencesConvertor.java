@@ -196,7 +196,7 @@ public class ForeignReferencesConvertor {
       return mpsTypeAsString(((VariableArityType) type).getComponentType()) + "...";
     }
     if (type instanceof PrimitiveType) {
-      return SModelUtil_new.getAlias(type.getConceptDeclarationAdapter());
+      return SModelUtil_new.getAlias(type.getNode().getConceptDeclarationNode());
     }
     if (type instanceof TypeVariableReference) {
       return ((TypeVariableReference) type).getTypeVariableDeclaration().getName();

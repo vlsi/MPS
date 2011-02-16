@@ -15,11 +15,8 @@
  */
 package jetbrains.mps.stubs;
 
-import jetbrains.mps.baseLanguage.structure.Annotation;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.EnumClass;
-import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.InternUtil;
 
@@ -49,15 +46,15 @@ public class StubDescriptor {
       myPack + "." + myCls
     ));
     if (kind == ClassifierKind.CLASS) {
-      result = ClassConcept.concept;
+      result = BootstrapLanguages.concept_baseLanguage_ClassConcept;
     } else if (kind == ClassifierKind.INTERFACE) {
-      result = Interface.concept;
+      result = BootstrapLanguages.concept_baseLanguage_Interface;
     } else if (kind == ClassifierKind.ANNOTATIONS) {
-      result = Annotation.concept;
+      result = BootstrapLanguages.concept_baseLanguage_Annotation;
     } else if (kind == ClassifierKind.ENUM) {
-      return EnumClass.concept;
+      return BootstrapLanguages.concept_baseLanguage_EnumClass;
     } else {
-      result = ClassConcept.concept;
+      result = BootstrapLanguages.concept_baseLanguage_ClassConcept;
     }
     result = InternUtil.intern(result);
     return result;

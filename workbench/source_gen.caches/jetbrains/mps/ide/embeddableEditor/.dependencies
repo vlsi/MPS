@@ -3,7 +3,8 @@
   <dependency className="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" file="EmbeddableEditor.java">
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.GenerationResult" />
-    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorUIFacade" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="java.util.Set" />
@@ -20,12 +21,11 @@
     <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler" />
     <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorFacade" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.IEditor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.ide.NodeEditor" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.smodel.ProjectModels" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessage" />

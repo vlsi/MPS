@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
@@ -34,16 +35,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
 
 public abstract class AbstractReferentCellProvider extends CellProviderWithRole {
 
   public static final Logger LOG = Logger.getLogger(AbstractReferentCellProvider.class);
 
-  protected LinkDeclaration myLinkDeclaration;
+  protected SNode myLinkDeclaration;
   protected String myGenuineRole;
   protected LinkDeclaration myGenuineLinkDeclaration;
 
@@ -69,7 +67,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
-        myGenuineLinkDeclaration = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
+        myGenuineLinkDeclaration = (LinkDeclaration) BaseAdapter.fromNode(SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration));
         myGenuineRole = myGenuineLinkDeclaration.getRole();
         myIsAggregation = myGenuineLinkDeclaration.getMetaClass() == LinkMetaclass.aggregation;
         Cardinality sourceCardinality = myGenuineLinkDeclaration.getSourceCardinality();
@@ -118,7 +116,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
         referentNode = reference.getTargetNode();
         if (referentNode == null || context.getScope().getModelDescriptor(referentNode.getModel().getSModelReference()) == null) {
           String rinfo = reference.getResolveInfo();
-          myErrorText = rinfo != null ? rinfo : "?" + myLinkDeclaration.getRole() + "?";
+          myErrorText = rinfo != null ? rinfo : "?" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration) + "?";
           return createErrorCell(myErrorText, node, context);
         }
       }
@@ -139,7 +137,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
         noRefCell.setAction(CellActionType.INSERT_BEFORE, new CellAction_Insert(getSNode(), myGenuineRole));
       }
 
-      noRefCell.setCellId("empty_" + myLinkDeclaration.getRole());
+      noRefCell.setCellId("empty_" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration));
       return noRefCell;
     }
 
@@ -161,7 +159,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   }
 
 
-  public LinkDeclaration getLinkDeclaration() {
+  public SNode getLinkDeclaration() {
     return myLinkDeclaration;
   }
 

@@ -75,10 +75,10 @@ public abstract class AbstractProgressStrategy {
     }
 
     public void advanceWork(String name, int done) {
-      advanceWork(name, null, done);
+      advanceWork(name, done, null);
     }
 
-    public void advanceWork(String name, String comment, int done) {
+    public void advanceWork(String name, int done, String comment) {
       if (done < 0) {
         throw new IllegalArgumentException("invalid done value");
       }
@@ -167,8 +167,8 @@ public abstract class AbstractProgressStrategy {
       lastProgress().advanceWork(name, done);
     }
 
-    public void advanceWork(String name, String comment, int done) {
-      lastProgress().advanceWork(name, done);
+    public void advanceWork(String name, int done, String comment) {
+      lastProgress().advanceWork(name, done, comment);
     }
 
     public int workLeft() {

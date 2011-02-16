@@ -18,6 +18,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.commons.lang.StringUtils;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseMethodDeclaration_Behavior {
@@ -28,6 +29,8 @@ public class BaseMethodDeclaration_Behavior {
   private static Class[] PARAMETERS_5358895268254685434 = {SNode.class};
   private static Class[] PARAMETERS_1232982539764 = {SNode.class};
   private static Class[] PARAMETERS_8847328628797656446 = {SNode.class};
+  private static Class[] PARAMETERS_2496361171403550883 = {SNode.class};
+  private static Class[] PARAMETERS_2496361171403550901 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -219,6 +222,15 @@ public class BaseMethodDeclaration_Behavior {
     return false;
   }
 
+  @Nullable
+  public static String virtual_getTraceableProperty_3822000666564591088(SNode thisNode) {
+    return SPropertyOperations.getString(thisNode, "name") + "#" + BaseMethodDeclaration_Behavior.call_jniSignature_8847328628797656446(thisNode);
+  }
+
+  public static List<SNode> virtual_getScopeVariables_3822000666564591100(SNode thisNode) {
+    return SLinkOperations.getTargets(thisNode, "parameter", true);
+  }
+
   public static List<Icon> call_getMarkIcons_5039675756633081786(SNode thisNode) {
     return (List<Icon>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633081786);
   }
@@ -247,6 +259,14 @@ public class BaseMethodDeclaration_Behavior {
     return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_jniSignature_8847328628797656446", PARAMETERS_8847328628797656446);
   }
 
+  public static String call_getTraceableProperty_2496361171403550883(SNode thisNode) {
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_getTraceableProperty_3822000666564591088", PARAMETERS_2496361171403550883);
+  }
+
+  public static List<SNode> call_getScopeVariables_2496361171403550901(SNode thisNode) {
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_getScopeVariables_3822000666564591100", PARAMETERS_2496361171403550901);
+  }
+
   public static List<Icon> callSuper_getMarkIcons_5039675756633081786(SNode thisNode, String callerConceptFqName) {
     return (List<Icon>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633081786);
   }
@@ -273,5 +293,13 @@ public class BaseMethodDeclaration_Behavior {
 
   public static String callSuper_jniSignature_8847328628797656446(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_jniSignature_8847328628797656446", PARAMETERS_8847328628797656446);
+  }
+
+  public static String callSuper_getTraceableProperty_2496361171403550883(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_3822000666564591088", PARAMETERS_2496361171403550883);
+  }
+
+  public static List<SNode> callSuper_getScopeVariables_2496361171403550901(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getScopeVariables_3822000666564591100", PARAMETERS_2496361171403550901);
   }
 }

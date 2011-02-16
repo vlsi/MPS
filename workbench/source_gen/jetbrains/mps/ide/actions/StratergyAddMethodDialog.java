@@ -7,10 +7,12 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 import jetbrains.mps.smodel.SNode;
+import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.NameUtil;
@@ -21,6 +23,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
+import java.util.HashMap;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.BaseAdapter;
 import javax.swing.JComponent;
@@ -45,12 +48,20 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     mySortByNameAction = new StratergyAddMethodDialog.SortByNameAction(myProject);
   }
 
-  private void setVariableNames(SNode node) {
+  private void setVariableNames(SNode node, Map<String, Integer> usedNames) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       SNode variable = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
       SNode nodeType = SLinkOperations.getTarget(variable, "type", true);
       if (nodeType != null) {
         String name = ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType)).first();
+        if (MapSequence.fromMap(usedNames).containsKey(name)) {
+          int i = MapSequence.fromMap(usedNames).get(name);
+          i = i + 1;
+          MapSequence.fromMap(usedNames).put(name, i);
+          name = name + i;
+        } else {
+          MapSequence.fromMap(usedNames).put(name, 0);
+        }
         String prefix = VariableDeclaration_Behavior.call_getPrefix_3012473318495495520(variable, myProject);
         String suffix = VariableDeclaration_Behavior.call_getSuffix_3012473318495499856(variable, myProject);
         String mainName = (StringUtils.isEmpty(prefix) ?
@@ -61,7 +72,7 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
       }
     }
     for (SNode child : SNodeOperations.getChildren(node)) {
-      setVariableNames(child);
+      setVariableNames(child, usedNames);
     }
   }
 
@@ -103,7 +114,7 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
       SNode addedMethod = addedMethodAdapter.getNode();
       SModel sourceModel = added.getSource().getNode().getModel();
       if (SModelStereotype.isStubModelStereotype(sourceModel.getStereotype())) {
-        setVariableNames(addedMethod);
+        setVariableNames(addedMethod, MapSequence.fromMap(new HashMap<String, Integer>()));
       }
       result.add(added.getResult());
       myAdditionStrategy.updateMethod(added.getSource().getNode(), added.getResult().getNode());

@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
@@ -43,7 +44,7 @@ public class EditorCell_RefPresentation {
   }
 
   public static EditorCell_Property create(EditorContext context, SNode node, SNode refNode, LinkDeclaration linkDeclaration) {
-    MyAccessor accessor = new MyAccessor(context, node, refNode, linkDeclaration);
+    MyAccessor accessor = new MyAccessor(context, node, refNode, BaseAdapter.fromAdapter(linkDeclaration));
     EditorCell_Property result = EditorCell_Property.create(context, accessor, node);
     return result;
   }
@@ -52,13 +53,13 @@ public class EditorCell_RefPresentation {
     private EditorCell myContextCell;
     private SNode myNode;
     private SNode myRefNode;
-    private LinkDeclaration myLinkDeclaration;
+    private SNode myLinkDeclaration;
     private EditorContext myContext;
 
     public MyAccessor() {
     }
 
-    public MyAccessor(EditorContext context, SNode node, SNode refNode, LinkDeclaration linkDeclaration) {
+    public MyAccessor(EditorContext context, SNode node, SNode refNode, SNode linkDeclaration) {
       myContext = context;
       myNode = node;
       myRefNode = refNode;
@@ -80,7 +81,7 @@ public class EditorCell_RefPresentation {
         IReferencePresentation presentation = ModelConstraintsUtil.getPresentation(
           node.getParent(),
           node,
-          node.getConceptDeclarationAdapter(),
+          node.getConceptDeclarationNode(),
           myLinkDeclaration,
           myContext.getOperationContext()
         );
@@ -98,8 +99,8 @@ public class EditorCell_RefPresentation {
       IReferencePresentation presentation = ModelConstraintsUtil.getPresentation(
         node.getParent(),
         node,
-        node.getConceptDeclarationAdapter(),
-        refNodeCell.getLinkDeclaration(),
+        node.getConceptDeclarationNode(),
+        BaseAdapter.fromAdapter(refNodeCell.getLinkDeclaration()),
         myContextCell.getEditorContext().getOperationContext()
       );
 

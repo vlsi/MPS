@@ -116,6 +116,10 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     }
   }
 
+  public void selectBreakpoint(@Nullable IBreakpoint breakpoint) {
+    myViews[myCurrentViewIndex].selectBreakpoint(breakpoint);
+  }
+
   private void breakpointSelected(IBreakpoint breakpoint) {
     if (myPropertiesEditorPanel != null){
       myMainPanel.remove(myPropertiesEditorPanel);

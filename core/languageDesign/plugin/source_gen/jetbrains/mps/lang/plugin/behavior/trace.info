@@ -352,7 +352,7 @@
     <scopeInfo nodeId="1499919975383980870" fileName="Order_Behavior.java" startLine="20" startPosition="39" endLine="21" endPosition="72" />
     <scopeInfo nodeId="1499919975383980869" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="Order_Behavior.java" startLine="19" startPosition="117" endLine="23" endPosition="0" />
     <scopeInfo nodeId="1499919975383913757" fileName="Order_Behavior.java" startLine="18" startPosition="95" endLine="23" endPosition="20" />
-    <unitInfo nodeId="1499919975383980869" fileName="Order_Behavior.java" startLine="19" startPosition="94" endLine="23" endPosition="5" unitName="jetbrains.mps.lang.plugin.behavior.IWhereFilter$anonymous" />
+    <unitInfo nodeId="1499919975383980869" fileName="Order_Behavior.java" startLine="19" startPosition="94" endLine="23" endPosition="5" unitName="jetbrains.mps.lang.plugin.behavior.Order_Behavior$1" />
   </root>
   <root nodeId="1499919975383980890">
     <nodeInfo nodeId="1499919975383980902" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OrderReference_Behavior.java" startLine="16" startPosition="89" endLine="17" endPosition="129" />

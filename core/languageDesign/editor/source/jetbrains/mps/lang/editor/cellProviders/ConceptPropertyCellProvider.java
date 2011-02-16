@@ -18,6 +18,7 @@ package jetbrains.mps.lang.editor.cellProviders;
 import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptProperty;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -36,7 +37,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
 
   public void setRole(Object role) {
     myConceptPropertyName = role.toString();
-    ConceptProperty conceptProperty = getSNode().findConceptProperty(myConceptPropertyName);
+    ConceptProperty conceptProperty = (ConceptProperty) BaseAdapter.fromNode(getSNode().findConceptProperty(myConceptPropertyName));
     if (conceptProperty != null) {
       myConceptPropertyDeclaration = conceptProperty.getConceptPropertyDeclaration();
     }

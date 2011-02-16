@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="HighLevelCustomViewer_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.debug.customViewers.behavior.HighLevelCustomViewer_Behavior" />
   <root nodeId="43370322128260019">
-    <nodeInfo nodeId="43370322128270482" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="HighLevelCustomViewer_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="92" />
+    <nodeInfo nodeId="43370322128270482" fileName="HighLevelCustomViewer_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="43370322128260021" fileName="HighLevelCustomViewer_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="43370322128260025" fileName="HighLevelCustomViewer_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="92" />
   </root>

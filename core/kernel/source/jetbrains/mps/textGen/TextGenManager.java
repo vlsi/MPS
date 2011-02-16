@@ -17,15 +17,14 @@ package jetbrains.mps.textGen;
 
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
-import jetbrains.mps.traceInfo.TraceInfoManager;
+import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
 import jetbrains.mps.util.NameUtil;
 
@@ -56,15 +55,9 @@ public class TextGenManager {
     return ourInstance;
   }
 
-  private HashMap<SNode, PositionInfo> myPositions;
-  private HashMap<SNode, ScopePositionInfo> myScopePositions;
-  private Map<SNode, UnitPositionInfo> myUnitPositions;
   private Map<String, Class<SNodeTextGen>> myClassesCache;
 
-  public TextGenerationResult generateText(IOperationContext context, SNode node) {
-    myPositions = new HashMap<SNode, PositionInfo>();
-    myScopePositions = new HashMap<SNode, ScopePositionInfo>();
-    myUnitPositions = new HashMap<SNode, UnitPositionInfo>();
+  /*package*/ TextGenerationResult generateText(IOperationContext context, SNode node) {
     myClassesCache = new HashMap<String, Class<SNodeTextGen>>();
 
     TextGenBuffer buffer = new TextGenBuffer();
@@ -73,21 +66,33 @@ public class TextGenManager {
     myClassesCache = null;
     String topBufferText = buffer.getTopBufferText();
     int topLength = topBufferText.isEmpty() ? 1 : topBufferText.split(buffer.getLineSeparator(), -1).length + 2;
-    for (PositionInfo position : myPositions.values()) {
+
+    // position info
+    Map<SNode, TraceablePositionInfo> positionInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.POSITION_INFO);
+    Map<SNode, ScopePositionInfo> scopeInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.SCOPE_INFO);
+    Map<SNode, UnitPositionInfo> unitInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.UNIT_INFO);
+    for (TraceablePositionInfo position : positionInfo.values()) {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }
-    for (PositionInfo position : myScopePositions.values()) {
+    for (ScopePositionInfo position : scopeInfo.values()) {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }
-    for (PositionInfo position : myUnitPositions.values()) {
+    for (UnitPositionInfo position : unitInfo.values()) {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }
+
+    // dependencies
     List<String> dependencies = getUserObjectCollection(DEPENDENCY, node, buffer, (Set<String>) buffer.getUserObject(EXTENDS));
     List<String> extend = getUserObjectCollection(EXTENDS, node, buffer, null);
-    return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), myPositions, myScopePositions, myUnitPositions, dependencies, extend);
+
+    Map<String, List<String>> deps = new HashMap<String, List<String>>(2);
+    deps.put(TextGenManager.DEPENDENCY, dependencies);
+    deps.put(TextGenManager.EXTENDS, extend);
+
+    return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), positionInfo, scopeInfo, unitInfo, deps);
   }
 
   public boolean canGenerateTextFor(SNode node) {
@@ -97,6 +102,7 @@ public class TextGenManager {
   public String getExtension(SNode node) {
     return loadNodeTextGen(null, node).getExtension(node);
   }
+
 
   public void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, SNode contextNode) {
     if (node == null) {
@@ -117,37 +123,9 @@ public class TextGenManager {
 
     nodeTextGen.setBuffer(buffer);
     try {
-      PositionInfo info = new PositionInfo();
-      info.setStartLine(buffer.getLineNumber());
-      info.setStartPosition(buffer.getPosition());
       nodeTextGen.setSNode(node);
       nodeTextGen.doGenerateText(node);
       nodeTextGen.setSNode(null);
-      info.setEndLine(buffer.getLineNumber());
-      info.setEndPosition(buffer.getPosition());
-
-      if (TraceInfoManager.getInstance().isTraceableNode(node)) {
-        myPositions.put(node, info);
-        info.setConceptFqName(node.getConceptFqName());
-        info.setPropertyString(TraceInfoManager.getInstance().getPropertyString(node));
-      }
-      if (TraceInfoManager.getInstance().isScopeNode(node)) {
-        ScopePositionInfo scopePositionInfo = new ScopePositionInfo();
-        scopePositionInfo.fillFrom(info);
-        List<SNode> vars = TraceInfoManager.getInstance().getVarsInScope(node);
-        for (SNode var : vars) {
-          if (var != null) {
-            scopePositionInfo.addVarInfo(var);
-          }
-        }
-        myScopePositions.put(node, scopePositionInfo);
-      }
-      if (TraceInfoManager.getInstance().isUnitNode(node)) {
-        UnitPositionInfo unitPositionInfo = new UnitPositionInfo();
-        unitPositionInfo.fillFrom(info);
-        unitPositionInfo.setUnitName(TraceInfoManager.getInstance().getUnitName(node));
-        myUnitPositions.put(node, unitPositionInfo);
-      }
     } catch (Exception e) {
       buffer.foundError();
       LOG.error("failed to generate text for " + node.getDebugText(), e, node);
@@ -168,7 +146,7 @@ public class TextGenManager {
         return textgenClass;
       }
 
-      cd = cd.getReferent(ConceptDeclaration.EXTENDS);
+      cd = SNodeUtil.getConceptDeclaration_Extends(cd);
       if (cd == null) cd = baseConcept;
     }
     return DefaultTextGen.class;
@@ -231,52 +209,4 @@ public class TextGenManager {
     return Collections.emptyList();
   }
 
-  public static class TextGenerationResult {
-    private String myText;
-    private boolean myContainErrors;
-    private final HashMap<SNode, PositionInfo> myPositions;
-    private final HashMap<SNode, ScopePositionInfo> myScopePositions;
-    private final Map<SNode, UnitPositionInfo> myUnitPositions;
-    private Map<String, List<String>> myDependencies;
-
-    private TextGenerationResult(String text,
-                                 boolean containErrors,
-                                 HashMap<SNode, PositionInfo> positions,
-                                 HashMap<SNode, ScopePositionInfo> scopePositions,
-                                 Map<SNode, UnitPositionInfo> unitPositions, List<String> dependencies,
-                                 List<String> extend) {
-      myText = text;
-      myContainErrors = containErrors;
-      myPositions = positions;
-      myScopePositions = scopePositions;
-      myUnitPositions = unitPositions;
-      myDependencies = new HashMap<String, List<String>>(2);
-      myDependencies.put(DEPENDENCY, dependencies);
-      myDependencies.put(EXTENDS, extend);
-    }
-
-    public String getText() {
-      return myText;
-    }
-
-    public boolean hasErrors() {
-      return myContainErrors;
-    }
-
-    public Map<SNode, PositionInfo> getPositions() {
-      return myPositions;
-    }
-
-    public Map<SNode, ScopePositionInfo> getScopePositions() {
-      return myScopePositions;
-    }
-
-    public Map<SNode, UnitPositionInfo> getUnitPositions() {
-      return myUnitPositions;
-    }
-
-    public Map<String, List<String>> getDependencies() {
-      return myDependencies;
-    }
-  }
 }

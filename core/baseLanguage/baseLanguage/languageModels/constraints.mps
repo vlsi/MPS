@@ -215,6 +215,9 @@
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="2030079436469605452">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1188207840427" resolveInfo="AnnotationInstance" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="4836112446988635826">
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.4972933694980447171" resolveInfo="BaseVariableDeclaration" />
+    </node>
   </roots>
   <root id="1213104836688">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1213104836689">
@@ -270,7 +273,7 @@
                     </node>
                     <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="6985153366001607866">
                       <property name="name" nameId="tpck.1169194664001" value="it" />
-                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.WildCardType" typeId="tpee.1171903607971" id="6985153366001607867" />
+                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2108863436754489623" />
                     </node>
                   </node>
                 </node>
@@ -1122,7 +1125,7 @@
                                       </node>
                                       <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="7708004186056151470">
                                         <property name="name" nameId="tpck.1169194664001" value="it" />
-                                        <node role="type" roleId="tpee.5680397130376446158" type="tpee.WildCardType" typeId="tpee.1171903607971" id="7708004186056151471" />
+                                        <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2108863436754489773" />
                                       </node>
                                     </node>
                                   </node>
@@ -2537,7 +2540,7 @@
                   </node>
                   <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="8986964027630473420">
                     <property name="name" nameId="tpck.1169194664001" value="it" />
-                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.WildCardType" typeId="tpee.1171903607971" id="8986964027630473421" />
+                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2108863436754490078" />
                   </node>
                 </node>
               </node>
@@ -3945,5 +3948,6 @@
       </node>
     </node>
   </root>
+  <root id="4836112446988635826" />
 </model>
 

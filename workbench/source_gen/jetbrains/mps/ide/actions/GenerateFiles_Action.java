@@ -20,7 +20,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.ide.generator.GeneratorUIFacade;
 
 public class GenerateFiles_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -79,7 +79,7 @@ public class GenerateFiles_Action extends GeneratedAction {
           models.add(model);
         }
       }
-      GeneratorFacade.getInstance().generateModels(projectContext, models, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true, false);
+      GeneratorUIFacade.getInstance().generateModels(projectContext, models, GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateFiles", t);

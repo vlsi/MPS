@@ -78,7 +78,6 @@ import jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.vcs.diff.oldchanges.UsedDevkitsChange;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
-import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.vcs.diff.oldchanges.DeleteReferenceChange;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -956,158 +955,158 @@ __switch__:
     }
   }
 
-  private static SNodeId check_fh1co9_a0a0a1a0a0h0c0a6a0e0y(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_fh1co9_a0a0a1a0a0h0c0a6a0e0y(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
-  private static SNodeId check_fh1co9_e0a0a2a0a0h0c0a6a0e0y(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_fh1co9_e0a0a2a0a0h0c0a6a0e0y(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
-  private static SNode check_fh1co9_a4a0a0c0a0a7a2a0g0a4a42(SNode p, SNode node) {
-    if (null == p) {
-      return null;
+  private static SNode check_fh1co9_a4a0a0c0a0a7a2a0g0a4a42(SNode checkedDotOperand, SNode node) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getChild(SNodeOperations.getContainingLinkRole(node));
     }
-    return p.getChild(SNodeOperations.getContainingLinkRole(node));
+    return null;
   }
 
-  private static SNodeId check_fh1co9_c0a0a0b0b0a0a0a9a0e0y(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_fh1co9_c0a0a0b0b0a0a0a9a0e0y(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
-  private static SNodeId check_fh1co9_a1a43(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_fh1co9_a1a43(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
-  private static SNode check_fh1co9_a0b0ib(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNode check_fh1co9_a0b0ib(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getParent();
     }
-    return p.getParent();
+    return null;
   }
 
-  private static SNode check_fh1co9_a0a1a43(SModel p, SNodeId child) {
-    if (null == p) {
-      return null;
+  private static SNode check_fh1co9_a0a1a43(SModel checkedDotOperand, SNodeId child) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNodeById(child);
     }
-    return p.getNodeById(child);
+    return null;
   }
 
-  private static List<SNode> check_fh1co9_a0a21a93(SNode p, String role) {
-    if (null == p) {
-      return null;
+  private static List<SNode> check_fh1co9_a0a21a93(SNode checkedDotOperand, String role) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getChildren(role);
     }
-    return p.getChildren(role);
+    return null;
   }
 
-  private static SNode check_fh1co9_a0b0a2a74(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNode check_fh1co9_a0b0a2a74(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getParent();
     }
-    return p.getParent();
+    return null;
   }
 
-  private static SNodeId check_fh1co9_a0a0c0a2a74(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_fh1co9_a0a0c0a2a74(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
-  private static SNode check_fh1co9_a0a0b0a0a4a0c0vb(List<SNode> p, DeleteNodeChange deleteChange) {
-    if (null == p) {
-      return null;
+  private static SNode check_fh1co9_a0a0b0a0a4a0c0vb(List<SNode> checkedDotOperand, DeleteNodeChange deleteChange) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.get(deleteChange.getNextChildIndex() - 1);
     }
-    return p.get(deleteChange.getNextChildIndex() - 1);
+    return null;
   }
 
-  private static SNodeId check_fh1co9_a0a0b0b0a0a4a0c0vb(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_fh1co9_a0a0b0b0a0a4a0c0vb(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
-  private static String check_fh1co9_b0a3a1c0vb(SNode p, String role) {
-    if (null == p) {
-      return null;
+  private static String check_fh1co9_b0a3a1c0vb(SNode checkedDotOperand, String role) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getProperty(role);
     }
-    return p.getProperty(role);
+    return null;
   }
 
-  private static SReference check_fh1co9_a0d0c2a74(SNode p, String role) {
-    if (null == p) {
-      return null;
+  private static SReference check_fh1co9_a0d0c2a74(SNode checkedDotOperand, String role) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference(role);
     }
-    return p.getReference(role);
+    return null;
   }
 
-  private static SNodeId check_fh1co9_a0a1a3a2a2a(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_fh1co9_a0a1a3a2a2a(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
-  private static SNodeId check_fh1co9_b0a1a3a2a2a(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_fh1co9_b0a1a3a2a2a(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
-  private static String check_fh1co9_a0h0a3a0a0b0m0(SNode p, SModelPropertyEvent e) {
-    if (null == p) {
-      return null;
+  private static String check_fh1co9_a0h0a3a0a0b0m0(SNode checkedDotOperand, SModelPropertyEvent e) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getProperty(e.getPropertyName());
     }
-    return p.getProperty(e.getPropertyName());
+    return null;
   }
 
-  private static SNode check_fh1co9_a0j0a3a0a0b0o0(SNode p, SReference reference) {
-    if (null == p) {
-      return null;
+  private static SNode check_fh1co9_a0j0a3a0a0b0o0(SNode checkedDotOperand, SReference reference) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReferent(reference.getRole());
     }
-    return p.getReferent(reference.getRole());
+    return null;
   }
 
-  private static SNodeId check_fh1co9_c0a0a0a0j0a3a0a0c0r0(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_fh1co9_c0a0a0a0j0a3a0a0c0r0(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
-  private static SNodeId check_fh1co9_a0a0a0c0i0a3a0a0c0t0(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_fh1co9_a0a0a0c0i0a3a0a0c0t0(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
-  private static SNodeId check_fh1co9_e0a0f0i0a3a0a0c0t0(SNode p) {
-    if (null == p) {
-      return null;
+  private static SNodeId check_fh1co9_e0a0f0i0a3a0a0c0t0(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSNodeId();
     }
-    return p.getSNodeId();
+    return null;
   }
 
-  private static SNode check_fh1co9_a4a0a5a8a0d0a0a2a91a(SNode p, SModelChildEvent e) {
-    if (null == p) {
-      return null;
+  private static SNode check_fh1co9_a4a0a5a8a0d0a0a2a91a(SNode checkedDotOperand, SModelChildEvent e) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getChild(e.getChildRole());
     }
-    return p.getChild(e.getChildRole());
+    return null;
   }
 
   private class MyModelListener extends SModelAdapter {
@@ -1276,7 +1275,7 @@ __switch__:
               });
 
               String baseValue = check_fh1co9_a0h0a3a0a0b0m0(myBaseVersionModel.getNodeById(nodeId), e);
-              PropertyDeclaration propertyDeclaration = e.getNode().getPropertyDeclaration(e.getPropertyName());
+              SNode propertyDeclaration = e.getNode().getPropertyDeclaration(e.getPropertyName());
               if (propertyDeclaration == null) {
                 if (ObjectUtils.equals(baseValue, e.getNewPropertyValue())) {
                   return;

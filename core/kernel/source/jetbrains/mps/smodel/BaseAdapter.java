@@ -16,9 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptLink;
-import jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.CollectionUtil;
@@ -63,7 +60,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public String getAlias() {
-    return SModelUtil_new.getAlias(getConceptDeclarationAdapter());
+    return SModelUtil_new.getAlias(getNode().getConceptDeclarationNode());
   }
 
   public INodeAdapter getParent() {
@@ -128,10 +125,6 @@ public abstract class BaseAdapter implements INodeAdapter {
       list.add(currNode);
     }
     return list;
-  }
-
-  public final AbstractConceptDeclaration getConceptDeclarationAdapter() {
-    return getNode().getConceptDeclarationAdapter();
   }
 
   public void replaceChild(INodeAdapter oldChild, INodeAdapter newChild) {
@@ -308,12 +301,11 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   protected <C extends INodeAdapter> C ensureAdapter(Class<C> requiredClass, String role, INodeAdapter adapter) {
-    try {
+    if (requiredClass.isInstance(adapter)) {
       return (C) adapter;
-    } catch (ClassCastException e) {
-      LOG.error("Incorrect type in role " + role + ". " + requiredClass.getName() + " required", adapter);
-      return null;
     }
+    LOG.error("Incorrect type in role " + role + ". " + requiredClass.getName() + " required", adapter);
+    return null;
   }
 
   protected void setReferent(@NotNull String role, INodeAdapter newValue) {
@@ -553,20 +545,18 @@ public abstract class BaseAdapter implements INodeAdapter {
     return myNode.getConceptFqName();
   }
 
-  public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy) {
-    AbstractConceptDeclaration conceptDeclaration;
-    if (this instanceof AbstractConceptDeclaration) {
-      conceptDeclaration = (AbstractConceptDeclaration) this;
-    } else {
-      conceptDeclaration = getConceptDeclarationAdapter();
+  public List<SNode> getConceptLinks(final String linkName, boolean lookupHierarchy) {
+    SNode conceptDeclaration = getNode();
+    if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(conceptDeclaration))) {
+      conceptDeclaration = conceptDeclaration.getConceptDeclarationNode();
     }
 
     if (lookupHierarchy) {
-      return (List) new ConceptAndSuperConceptsScope(conceptDeclaration).
-        getAdapters(new Condition<INodeAdapter>() {
-          public boolean met(INodeAdapter n) {
-            if (n instanceof ConceptLink) {
-              ConceptLinkDeclaration conceptLinkDeclaration = ((ConceptLink) n).getConceptLinkDeclaration();
+      return new ConceptAndSuperConceptsScope(conceptDeclaration).
+        getNodes(new Condition<SNode>() {
+          public boolean met(SNode n) {
+            if (SNodeUtil.isInstanceOfConceptLink(n)) {
+              SNode conceptLinkDeclaration = SNodeUtil.getConceptLink_Declaration(n);
               return (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName()));
             }
             return false;
@@ -574,11 +564,10 @@ public abstract class BaseAdapter implements INodeAdapter {
         });
     }
 
-    List<ConceptLink> result = new ArrayList<ConceptLink>();
-    Iterator<ConceptLink> conceptLinks = conceptDeclaration.conceptLinks();
-    while (conceptLinks.hasNext()) {
-      ConceptLink conceptLink = conceptLinks.next();
-      ConceptLinkDeclaration conceptLinkDeclaration = conceptLink.getConceptLinkDeclaration();
+    List<SNode> result = new ArrayList<SNode>();
+    Iterable<SNode> conceptLinks = SNodeUtil.getConcept_ConceptLinks(conceptDeclaration);
+    for(SNode conceptLink : conceptLinks) {
+      SNode conceptLinkDeclaration = SNodeUtil.getConceptLink_Declaration(conceptLink);
       if (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName())) {
         result.add(conceptLink);
       }
@@ -588,9 +577,9 @@ public abstract class BaseAdapter implements INodeAdapter {
 
   public List<SNode> getConceptLinkTargets(String linkName, boolean lookupHierarchy) {
     List<SNode> result = new ArrayList<SNode>();
-    List<ConceptLink> conceptLinks = getConceptLinks(linkName, lookupHierarchy);
-    for (ConceptLink conceptLink : conceptLinks) {
-      SNode target = SModelUtil.getConceptLinkTarget(conceptLink.getNode());
+    List<SNode> conceptLinks = getConceptLinks(linkName, lookupHierarchy);
+    for (SNode conceptLink : conceptLinks) {
+      SNode target = SModelUtil.getConceptLinkTarget(conceptLink);
       if (target != null) {
         result.add(target);
       }

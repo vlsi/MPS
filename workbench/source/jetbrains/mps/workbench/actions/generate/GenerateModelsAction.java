@@ -19,7 +19,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
-import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+@Deprecated
 public abstract class GenerateModelsAction extends BaseAction {
   private List<SModelDescriptor> myModels;
   private IOperationContext myContext;
@@ -50,7 +51,7 @@ public abstract class GenerateModelsAction extends BaseAction {
     boolean checkSuccessful = myPluginManager.getTool(ModelCheckerTool_Tool.class)
       .checkModelsBeforeGenerationIfNeeded(myContext, (List<SModelDescriptor>) ((List) myModels), new Runnable() {
         public void run() {
-          GeneratorFacade.getInstance().generateModels(
+          GeneratorUIFacade.getInstance().generateModels(
             myContext,
             myModels,
             getGenerationHandler(),
@@ -62,7 +63,7 @@ public abstract class GenerateModelsAction extends BaseAction {
       return;
     }
 
-    GeneratorFacade.getInstance().generateModels(
+    GeneratorUIFacade.getInstance().generateModels(
       myContext,
       myModels,
       getGenerationHandler(),

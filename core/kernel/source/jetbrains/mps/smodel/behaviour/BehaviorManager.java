@@ -19,10 +19,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -97,14 +93,14 @@ public final class BehaviorManager implements ApplicationComponent {
     }
   }
 
-  private static List<Method> calculateConstructors(AbstractConceptDeclaration concept, Language language) {
+  private static List<Method> calculateConstructors(SNode concept, Language language) {
     List<Method> methodsToCall = new ArrayList<Method>();
-    Set<AbstractConceptDeclaration> processed = new HashSet<AbstractConceptDeclaration>();
+    Set<SNode> processed = new HashSet<SNode>();
 
-    List<AbstractConceptDeclaration> concepts = Collections.singletonList(concept);
+    List<SNode> concepts = Collections.singletonList(concept);
     while (!concepts.isEmpty()) {
-      List<AbstractConceptDeclaration> newFrontier = new ArrayList<AbstractConceptDeclaration>();
-      for (AbstractConceptDeclaration currentConcept : concepts) {
+      List<SNode> newFrontier = new ArrayList<SNode>();
+      for (SNode currentConcept : concepts) {
         assert currentConcept != null;
         if (processed.contains(currentConcept)) {
           continue;
@@ -123,25 +119,19 @@ public final class BehaviorManager implements ApplicationComponent {
           //ignore
         }
 
-        if (currentConcept instanceof ConceptDeclaration) {
-          ConceptDeclaration conceptDeclaration = (ConceptDeclaration) currentConcept;
-          List<InterfaceConceptReference> references = conceptDeclaration.getImplementses();
-          for (InterfaceConceptReference reference : references) {
-            InterfaceConceptDeclaration intfc = reference.getIntfc();
-            if (intfc == null) continue;
-            newFrontier.add(intfc);
+        if (SNodeUtil.isInstanceOfConceptDeclaration(currentConcept)) {
+          for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(currentConcept)) {
+            if (interfaceConcept == null || processed.contains(interfaceConcept)) continue;
+            newFrontier.add(interfaceConcept);
           }
-          ConceptDeclaration parentConcept = conceptDeclaration.getExtends();
-          if (parentConcept != null) {
+          SNode parentConcept = SNodeUtil.getConceptDeclaration_Extends(currentConcept);
+          if (parentConcept != null && !processed.contains(parentConcept)) {
             newFrontier.add(parentConcept);
           }
-        } else if (currentConcept instanceof InterfaceConceptDeclaration) {
-          InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) currentConcept;
-          List<InterfaceConceptReference> references = interfaceConcept.getExtendses();
-          for (InterfaceConceptReference reference : references) {
-            InterfaceConceptDeclaration intfc = reference.getIntfc();
-            if (intfc == null) continue;
-            newFrontier.add(intfc);
+        } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(currentConcept)) {
+          for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(currentConcept)) {
+            if (interfaceConcept == null || processed.contains(interfaceConcept)) continue;
+            newFrontier.add(interfaceConcept);
           }
         }
         processed.add(currentConcept);
@@ -174,7 +164,7 @@ public final class BehaviorManager implements ApplicationComponent {
       return;
     }
 
-    AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
+    SNode concept = node.getConceptDeclarationNode();
     Language language = node.getLanguage(GlobalScope.getInstance());
 
     String conceptFqName = InternUtil.intern(NameUtil.nodeFQName(concept));
@@ -265,21 +255,20 @@ public final class BehaviorManager implements ApplicationComponent {
       }
     }
 
-    List<AbstractConceptDeclaration> superConcepts;
+    List<SNode> superConcepts;
     if (callerConceptFqName == null) {
-      AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
+      SNode concept = node.getConceptDeclarationNode();
       superConcepts = SModelUtil_new.getConceptAndSuperConcepts(concept);
     } else {
-      AbstractConceptDeclaration callerConcept = SModelUtil_new.findConceptDeclaration(callerConceptFqName, GlobalScope.getInstance());
-      superConcepts = new ArrayList<AbstractConceptDeclaration>(SModelUtil_new.getConceptAndSuperConcepts(callerConcept));
+      SNode callerConcept = SModelUtil.findConceptDeclaration(callerConceptFqName, GlobalScope.getInstance());
+      superConcepts = new ArrayList<SNode>(SModelUtil_new.getConceptAndSuperConcepts(callerConcept));
       superConcepts.remove(callerConcept);
     }
 
     Method method = null;
     Class[] parameterTypeArray = parametersTypes;
 
-    for (AbstractConceptDeclaration sconcept : superConcepts) {
-      SNode conceptDeclaration = BaseAdapter.fromAdapter(sconcept);
+    for (SNode conceptDeclaration : superConcepts) {
       method = getMethod(conceptDeclaration, methodName, parameterTypeArray);
       if (method != null) {
         break;

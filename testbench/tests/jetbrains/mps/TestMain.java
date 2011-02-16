@@ -130,17 +130,17 @@ public class TestMain {
           }
         }
       });
+
+      waitUntilAllEventsFlushed();
+
       // execute test
       return pr.execute(project[0]);
     } catch (Throwable t) {
       t.printStackTrace();
       return false;
     } finally {
-      // Wait until last invokeLater() is executed
-      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-        public void run() {}
-      }, ModalityState.NON_MODAL);
-      ModelAccess.instance().flushEventQueue();
+      waitUntilAllEventsFlushed();
+
       // clean up
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
@@ -151,6 +151,14 @@ public class TestMain {
         }
       });
     }
+  }
+
+  private static void waitUntilAllEventsFlushed() {
+    // Wait until last invokeLater() is executed
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() {}
+    }, ModalityState.NON_MODAL);
+    ModelAccess.instance().flushEventQueue();
   }
 
   public static MPSProject loadProject(File projectFile) {

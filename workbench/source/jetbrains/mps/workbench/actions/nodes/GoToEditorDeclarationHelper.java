@@ -33,7 +33,7 @@ public class GoToEditorDeclarationHelper {
   public static SNode getOrCreateEditorForConcept(final SModelDescriptor languageEditor, final ConceptDeclaration concept, final SNode node, final IScope scope) {
     ConceptEditorDeclaration editorDeclaration = ModelAccess.instance().runReadAction(new Computable<ConceptEditorDeclaration>() {
       public ConceptEditorDeclaration compute() {
-        return findEditorDeclaration(languageEditor.getSModel(), concept);
+        return findEditorDeclaration(languageEditor.getSModel(), BaseAdapter.fromAdapter(concept));
       }
     });
     if (editorDeclaration != null) return editorDeclaration.getNode();
@@ -82,13 +82,13 @@ public class GoToEditorDeclarationHelper {
     return language.getEditorModelDescriptor();
   }
 
-  public static ConceptEditorDeclaration findEditorDeclaration(SModel editorModel, final AbstractConceptDeclaration conceptDeclaration) {
+  public static ConceptEditorDeclaration findEditorDeclaration(SModel editorModel, final SNode conceptDeclaration) {
     Condition<SNode> cond = new Condition<SNode>() {
       public boolean met(SNode n) {
         INodeAdapter object = BaseAdapter.fromNode(n);
         if (object instanceof ConceptEditorDeclaration) {
           ConceptEditorDeclaration editor = (ConceptEditorDeclaration) object;
-          return editor.getConceptDeclaration() == conceptDeclaration;
+          return editor.getConceptDeclaration() == BaseAdapter.fromNode(conceptDeclaration);
         }
         return false;
       }

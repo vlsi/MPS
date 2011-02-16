@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
-import jetbrains.mps.generator.impl.interpreted.TemplateMappingConfigurationInterpreted;
-import jetbrains.mps.generator.impl.interpreted.TemplateModelInterpreted;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -71,7 +69,9 @@ public class GenerationPartitioner {
   private List<List<MappingConfiguration>> doPartitioning(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators) {
     reset();
     for (Generator generator : generators) {
-      for (MappingConfiguration mapping : generator.getOwnMappings()) {
+      for (SNode m : GenerationFacade.getOwnMappings(generator)) {
+        // TODO
+        MappingConfiguration mapping = (MappingConfiguration) BaseAdapter.fromNode(m);
         myPriorityMap.put(mapping, new HashMap<MappingConfiguration, PriorityData>());
       }
     }
@@ -259,7 +259,11 @@ public class GenerationPartitioner {
     }
 
     if (mappingRef instanceof MappingConfig_RefAllLocal) {
-      return refGenerator.getOwnMappings();
+      List<MappingConfiguration> mappingConf = new ArrayList<MappingConfiguration>();
+      for(SNode n : GenerationFacade.getOwnMappings(refGenerator)) {
+        mappingConf.add((MappingConfiguration) BaseAdapter.fromNode(n));
+      }
+      return mappingConf;
     }
 
     if (mappingRef instanceof MappingConfig_RefSet) {

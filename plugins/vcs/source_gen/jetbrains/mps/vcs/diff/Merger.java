@@ -25,11 +25,10 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.diff.oldchanges.SetNodeChange;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.NameUtil;
@@ -256,11 +255,11 @@ public class Merger {
   }
 
   private boolean isOneOrZeroCardinality(SNode parent, String role) {
-    LinkDeclaration ld = SModelSearchUtil.findLinkDeclaration(SModelUtil_new.findConceptDeclaration(parent.getConceptFqName(), GlobalScope.getInstance()), role);
+    SNode ld = (SNode) SModelSearchUtil.findLinkDeclaration(SModelUtil.findConceptDeclaration(parent.getConceptFqName(), GlobalScope.getInstance()), role);
     if (ld == null) {
       return false;
     }
-    return ld.getSourceCardinality() == Cardinality._0__1 || ld.getSourceCardinality() == Cardinality._1;
+    return SPropertyOperations.hasValue(ld, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(ld, "sourceCardinality", "1", "0..1");
   }
 
   private void collectDeleteDependencyConflicts() {

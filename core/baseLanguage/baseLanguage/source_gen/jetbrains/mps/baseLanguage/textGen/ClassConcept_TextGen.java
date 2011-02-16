@@ -4,14 +4,18 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ClassConcept_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    TraceInfoGenerationUtil.createUnitInfo(this, node);
     BaseLanguageTextGen.fileHeader(node, this);
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
@@ -55,6 +59,7 @@ public class ClassConcept_TextGen extends SNodeTextGen {
       this.append("}");
     }
     this.appendNewLine();
+    TraceInfoGenerationUtil.fillUnitInfo(this, node, UnitConcept_Behavior.call_getUnitName_3822000666564591112(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.UnitConcept")));
   }
 
   public String getExtension(SNode node) {

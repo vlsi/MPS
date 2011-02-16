@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-63hektzmxoh32gkikc85rmgg20shmzi">
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-5nztix013gb61szha7d69foggfwbn4z" />
+  <common hash="21b2fnokq310u5lb92w8c33cczbcebt" />
+  <source id="1196985119947853670" name="Int2" hash="-5xlvhljfxg97z2b7opd4eesshg736wv">
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <file name="Int2.java" />
+  </source>
+</dependencies>
+

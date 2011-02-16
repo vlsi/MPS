@@ -6,16 +6,18 @@ import jetbrains.mps.smodel.SModel;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import java.util.List;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.List;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.Set;
 import org.jdom.Element;
 import java.util.Arrays;
 import org.jdom.DataConversionException;
@@ -40,7 +42,7 @@ public class DebugInfo {
     this.myModel = model;
   }
 
-  public void addPosition(PositionInfo position, String rootId) {
+  public void addPosition(TraceablePositionInfo position, String rootId) {
     if (rootId == null) {
       rootId = DebugInfo.UNSPECIFIED_ROOT;
     }
@@ -87,42 +89,22 @@ public class DebugInfo {
     MapSequence.fromMap(myRoots).put(root.getRootId(), root);
   }
 
-  public List<SNode> getNodesForLine(String str, SModel model) {
-    List<SNode> result = new ArrayList<SNode>();
-    for (PositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<PositionInfo>translate(new ITranslator2<DebugInfoRoot, PositionInfo>() {
-      public Iterable<PositionInfo> translate(DebugInfoRoot it) {
-        return it.getPositions();
-      }
-    })) {
-      if (eq_exfyrk_a0a0b0h(element.getFileAndLine(), str)) {
-        String nodeId = element.getNodeId();
-        SNode node = model.getNodeById(nodeId);
-        ListSequence.fromList(result).addElement(node);
-      }
-    }
-    return result;
-  }
-
+  @Nullable
   public SNode getNodeForLine(String file, int line, SModel model) {
-    List<PositionInfo> resultList = ListSequence.fromList(new ArrayList<PositionInfo>());
-    for (PositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<PositionInfo>translate(new ITranslator2<DebugInfoRoot, PositionInfo>() {
-      public Iterable<PositionInfo> translate(DebugInfoRoot it) {
-        return it.getPositions();
+    List<TraceablePositionInfo> resultList = getInfoForPosition(file, line, new _FunctionTypes._return_P1_E0<Set<TraceablePositionInfo>, DebugInfoRoot>() {
+      public Set<TraceablePositionInfo> invoke(DebugInfoRoot root) {
+        return root.getPositions();
       }
-    })) {
-      if (eq_exfyrk_a0a0a0b0i(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
-        ListSequence.fromList(resultList).addElement(element);
-      }
-    }
+    });
     if (ListSequence.fromList(resultList).isEmpty()) {
       return null;
     }
-    Iterable<PositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<PositionInfo, Comparable<?>>() {
-      public Comparable<?> select(PositionInfo it) {
+    Iterable<TraceablePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<TraceablePositionInfo, Comparable<?>>() {
+      public Comparable<?> select(TraceablePositionInfo it) {
         return it;
       }
     }, true);
-    final PositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
+    final TraceablePositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
     String nodeId = firstPositionInfo.getNodeId();
     // here we do some magic to fix the following bug: 
     // each node in base language owns a '\n' symbol in a previous line 
@@ -148,8 +130,8 @@ public class DebugInfo {
     // the solution is simple: 
     // among all node with same position we select the deepest 
     if (Sequence.fromIterable(sorted).count() > 1) {
-      Iterable<PositionInfo> sameSpacePositions = Sequence.fromIterable(sorted).where(new IWhereFilter<PositionInfo>() {
-        public boolean accept(PositionInfo it) {
+      Iterable<TraceablePositionInfo> sameSpacePositions = Sequence.fromIterable(sorted).where(new IWhereFilter<TraceablePositionInfo>() {
+        public boolean accept(TraceablePositionInfo it) {
           return firstPositionInfo.isOccupyTheSameSpace(it);
         }
       });
@@ -158,7 +140,7 @@ public class DebugInfo {
         boolean finished = false;
         while (!(finished)) {
           finished = true;
-          for (PositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
+          for (TraceablePositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
             SNode otherNode = model.getNodeById(otherPos.getNodeId());
             if ((otherNode != null) && otherNode.isDescendantOf(currentNode, false)) {
               currentNode = otherNode;
@@ -174,17 +156,13 @@ public class DebugInfo {
     return model.getNodeById(nodeId);
   }
 
+  @Nullable
   public SNode getVarForLine(String file, int line, SModel model, String varName) {
-    List<ScopePositionInfo> resultList = ListSequence.fromList(new ArrayList<ScopePositionInfo>());
-    for (ScopePositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<ScopePositionInfo>translate(new ITranslator2<DebugInfoRoot, ScopePositionInfo>() {
-      public Iterable<ScopePositionInfo> translate(DebugInfoRoot it) {
-        return it.getScopePositions();
+    List<ScopePositionInfo> resultList = getInfoForPosition(file, line, new _FunctionTypes._return_P1_E0<Set<ScopePositionInfo>, DebugInfoRoot>() {
+      public Set<ScopePositionInfo> invoke(DebugInfoRoot root) {
+        return root.getScopePositions();
       }
-    })) {
-      if (eq_exfyrk_a0a0a0b0j(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
-        ListSequence.fromList(resultList).addElement(element);
-      }
-    }
+    });
     if (ListSequence.fromList(resultList).isEmpty()) {
       return null;
     }
@@ -202,31 +180,28 @@ public class DebugInfo {
     return null;
   }
 
-  public PositionInfo getPositionForNode(String nodeId) {
-    for (PositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<PositionInfo>translate(new ITranslator2<DebugInfoRoot, PositionInfo>() {
-      public Iterable<PositionInfo> translate(DebugInfoRoot it) {
+  @Nullable
+  public TraceablePositionInfo getPositionForNode(String nodeId) {
+    for (TraceablePositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<TraceablePositionInfo>translate(new ITranslator2<DebugInfoRoot, TraceablePositionInfo>() {
+      public Iterable<TraceablePositionInfo> translate(DebugInfoRoot it) {
         return it.getPositions();
       }
     })) {
-      if (eq_exfyrk_a0a0a0k(element.getNodeId(), nodeId)) {
+      if (eq_exfyrk_a0a0a0j(element.getNodeId(), nodeId)) {
         return element;
       }
     }
     return null;
   }
 
+  @Nullable
   public String getUnitNameForLine(String file, int line) {
     // TODO duplication! 
-    List<UnitPositionInfo> resultList = ListSequence.fromList(new ArrayList<UnitPositionInfo>());
-    for (UnitPositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<UnitPositionInfo>translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
-      public Iterable<UnitPositionInfo> translate(DebugInfoRoot it) {
-        return it.getUnitPositions();
+    List<UnitPositionInfo> resultList = getInfoForPosition(file, line, new _FunctionTypes._return_P1_E0<Set<UnitPositionInfo>, DebugInfoRoot>() {
+      public Set<UnitPositionInfo> invoke(DebugInfoRoot root) {
+        return root.getUnitPositions();
       }
-    })) {
-      if (eq_exfyrk_a0a0a0c0l(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
-        ListSequence.fromList(resultList).addElement(element);
-      }
-    }
+    });
     if (ListSequence.fromList(resultList).isEmpty()) {
       return null;
     }
@@ -239,18 +214,14 @@ public class DebugInfo {
     return firstPositionInfo.getUnitName();
   }
 
+  @Nullable
   public SNode getUnitNodeForLine(String file, int line, SModel model) {
     // TODO second duplication! 
-    List<UnitPositionInfo> resultList = ListSequence.fromList(new ArrayList<UnitPositionInfo>());
-    for (UnitPositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<UnitPositionInfo>translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
-      public Iterable<UnitPositionInfo> translate(DebugInfoRoot it) {
-        return it.getUnitPositions();
+    List<UnitPositionInfo> resultList = getInfoForPosition(file, line, new _FunctionTypes._return_P1_E0<Set<UnitPositionInfo>, DebugInfoRoot>() {
+      public Set<UnitPositionInfo> invoke(DebugInfoRoot root) {
+        return root.getUnitPositions();
       }
-    })) {
-      if (eq_exfyrk_a0a0a0c0m(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
-        ListSequence.fromList(resultList).addElement(element);
-      }
-    }
+    });
     if (ListSequence.fromList(resultList).isEmpty()) {
       return null;
     }
@@ -267,11 +238,25 @@ public class DebugInfo {
     return model.getNodeById(id);
   }
 
+  private <T extends PositionInfo> List<T> getInfoForPosition(String file, int line, final _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> getAllPositionsForRoot) {
+    List<T> resultList = ListSequence.fromList(new ArrayList<T>());
+    for (T element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<T>translate(new ITranslator2<DebugInfoRoot, T>() {
+      public Iterable<T> translate(DebugInfoRoot it) {
+        return getAllPositionsForRoot.invoke(it);
+      }
+    })) {
+      if (element.isPositionInside(file, line)) {
+        ListSequence.fromList(resultList).addElement(element);
+      }
+    }
+    return resultList;
+  }
+
   public List<String> getRoots() {
     return SetSequence.fromSet(MapSequence.fromMap(this.myRoots).keySet()).toListSequence();
   }
 
-  public Set<PositionInfo> getPositions(String rootId) {
+  public Set<TraceablePositionInfo> getPositions(String rootId) {
     DebugInfoRoot infoRoot = MapSequence.fromMap(this.myRoots).get(rootId);
     return (infoRoot != null ?
       infoRoot.getPositions() :
@@ -317,42 +302,7 @@ public class DebugInfo {
     return info;
   }
 
-  private static boolean eq_exfyrk_a0a0b0h(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_exfyrk_a0a0a0b0i(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_exfyrk_a0a0a0b0j(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_exfyrk_a0a0a0k(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_exfyrk_a0a0a0c0l(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_exfyrk_a0a0a0c0m(Object a, Object b) {
+  private static boolean eq_exfyrk_a0a0a0j(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

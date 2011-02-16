@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
 
 /**
@@ -29,7 +28,7 @@ public interface IWrapper extends IMatcher {
   public SNode getNode();
   public boolean isVariable();
   public boolean isConcrete();
-  public RuntimeTypeVariable getVariable();
+  public SNode getVariable();
   public String getVariableName();
   public boolean testVariableName(String pattern);
   public void fireRepresentatorSet(IWrapper representator, EquationManager equationManager);

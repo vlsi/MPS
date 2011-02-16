@@ -10,6 +10,9 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 
 /*package*/ class Main_forEach_operation {
+  /*package*/ Main_forEach_operation() {
+  }
+
   /*package*/ static void main(String[] args) {
     Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {

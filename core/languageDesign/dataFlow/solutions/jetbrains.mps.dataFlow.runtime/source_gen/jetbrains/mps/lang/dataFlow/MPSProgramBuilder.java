@@ -5,7 +5,6 @@ package jetbrains.mps.lang.dataFlow;
 import jetbrains.mps.lang.dataFlow.framework.StructuralProgramBuilder;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
@@ -24,8 +23,8 @@ public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
       return;
     }
     SNode snode = (SNode) node;
-    List<AbstractConceptDeclaration> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(snode.getConceptDeclarationAdapter());
-    for (AbstractConceptDeclaration concept : conceptAndSuperConcepts) {
+    List<SNode> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(snode.getConceptDeclarationNode());
+    for (SNode concept : conceptAndSuperConcepts) {
       DataFlowBuilder builder = this.myDataFlowManager.getBuilderFor(NameUtil.nodeFQName(concept));
       if (builder != null) {
         builder.build(null, new DataFlowBuilderContext(snode, MPSProgramBuilder.this));

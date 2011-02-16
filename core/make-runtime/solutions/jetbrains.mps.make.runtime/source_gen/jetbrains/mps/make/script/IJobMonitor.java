@@ -19,6 +19,7 @@ public interface IJobMonitor {
     }
 
     public void reportFeedback(IFeedback fdbk) {
+      System.err.println(String.valueOf(fdbk));
     }
 
     public boolean stopRequested() {

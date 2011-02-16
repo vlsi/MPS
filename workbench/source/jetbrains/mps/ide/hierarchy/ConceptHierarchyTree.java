@@ -1,12 +1,11 @@
 package jetbrains.mps.ide.hierarchy;
 
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.HashSet;
@@ -27,7 +26,8 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptD
     Set<String> parents = myCache.getParentsNames(NameUtil.nodeFQName(node));
     Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
     for (String s : parents) {
-      result.add(SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance()));
+      SNode conceptDeclaration = SModelUtil.findConceptDeclaration(s, GlobalScope.getInstance());
+      result.add((AbstractConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration));
     }
     return result;
   }
@@ -37,7 +37,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptD
       ConceptDeclaration concept = ((ConceptDeclaration) node);
       ConceptDeclaration extendsConcept = concept.getExtends();
       if (extendsConcept == null && !NameUtil.nodeFQName(concept).equals(BaseConcept.concept)) {
-        extendsConcept = SModelUtil_new.getBaseConcept();
+        extendsConcept = (ConceptDeclaration) BaseAdapter.fromNode(SModelUtil.getBaseConcept());
       }
       return extendsConcept;
     } else {
@@ -51,8 +51,8 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptD
     }
     Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
     for (String s : myCache.getDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclaration))) {
-      AbstractConceptDeclaration abstractConceptDeclaration = SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance());
-      result.add(abstractConceptDeclaration);
+      SNode abstractConceptDeclaration = SModelUtil.findConceptDeclaration(s, GlobalScope.getInstance());
+      result.add((AbstractConceptDeclaration) BaseAdapter.fromNode(abstractConceptDeclaration));
     }
     return result;
   }

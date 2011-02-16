@@ -22,8 +22,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -90,8 +88,7 @@ public class SModelUtil {
           return null;
         }
         String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
-        AbstractConceptDeclaration resultAdapter = language.findConceptDeclaration(conceptName);
-        SNode result = ((SNode) BaseAdapter.fromAdapter(resultAdapter));
+        SNode result = (SNode) language.findConceptDeclaration(conceptName);
         MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).put(InternUtil.intern(conceptFQName), result);
         return result;
       }
@@ -110,11 +107,14 @@ public class SModelUtil {
   }
 
   public static synchronized Language getDeclaringLanguage(SNode concept) {
+    if (concept == null) {
+      return null;
+    }
     Language l = MapSequence.fromMap(myConceptToLanguage).get(concept);
     if (l != null) {
       return l;
     }
-    String languageFqName = NameUtil.namespaceFromConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
+    String languageFqName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(concept));
     if (languageFqName == null) {
       return null;
     }
@@ -144,8 +144,8 @@ public class SModelUtil {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
       if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
-        for (AbstractConceptDeclaration adapter : ListSequence.fromList(new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(superConcept))).getConcepts())) {
-          SetSequence.fromSet(result).addElement((SNode) adapter.getNode());
+        for (SNode node : ListSequence.fromList(new ConceptAndSuperConceptsScope(superConcept).getConcepts())) {
+          SetSequence.fromSet(result).addElement((SNode) node);
         }
       }
     }
@@ -188,7 +188,21 @@ public class SModelUtil {
     }
     String fromFqName = NameUtil.nodeFQName(from);
     String toFqName = NameUtil.nodeFQName(to);
-    return LanguageHierarchyCache.getInstance().getAncestorsNames(fromFqName).contains(toFqName);
+    return LanguageHierarchyCache.getInstance().isAssignable(fromFqName, toFqName);
+  }
+
+  public static boolean isAssignableConcept(String fromFqName, String toFqName) {
+    if (eq_74see4_a0a0m(fromFqName, toFqName)) {
+      return true;
+    }
+    if (fromFqName == null || toFqName == null) {
+      return false;
+    }
+    if ("jetbrains.mps.lang.core.structure.BaseConcept".equals(toFqName)) {
+      return true;
+    }
+
+    return LanguageHierarchyCache.getInstance().isAssignable(fromFqName, toFqName);
   }
 
   public static SNode getGenuineLinkSourceCardinality(SNode linkDecl) {
@@ -206,5 +220,33 @@ public class SModelUtil {
       }
     });
     return annotationLinkDeclaration;
+  }
+
+  public static boolean isAcceptableTarget(SNode linkDeclaration, SNode referentNode) {
+    SNode linkTargetConcept = SLinkOperations.getTarget(linkDeclaration, "target", false);
+    return isAssignableConcept(referentNode.getConceptFqName(), NameUtil.nodeFQName(linkTargetConcept));
+  }
+
+  public static boolean isMultipleLinkDeclaration(@NotNull SNode linkDeclaration) {
+    return SPropertyOperations.hasValue(linkDeclaration, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(linkDeclaration, "sourceCardinality", "1..n", "0..1");
+  }
+
+  public static SNode getLinkDeclarationTarget(SNode linkDeclaration) {
+    return SLinkOperations.getTarget(linkDeclaration, "target", false);
+  }
+
+  public static SNode getLinkDeclarationSpecializedLink(SNode link) {
+    return SLinkOperations.getTarget(link, "specializedLink", false);
+  }
+
+  public static String getLinkDeclarationRole(SNode link) {
+    return SPropertyOperations.getString(link, "role");
+  }
+
+  private static boolean eq_74see4_a0a0m(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import com.intellij.util.containers.HashMap;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
@@ -41,15 +42,15 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   private static final Logger LOG = Logger.getLogger(DefaultReferenceSubstituteInfo.class);
 
   private SNode mySourceNode;
-  private LinkDeclaration myLinkDeclaration;
+  private SNode myLinkDeclaration;
   private SNode myCurrentReferent;
 
-  public DefaultReferenceSubstituteInfo(final SNode sourceNode, final LinkDeclaration linkDeclaration, final EditorContext editorContext) {
+  public DefaultReferenceSubstituteInfo(final SNode sourceNode, final SNode linkDeclaration, final EditorContext editorContext) {
     super(editorContext);
 
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
-        LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
+        LinkDeclaration genuineLink = (LinkDeclaration) BaseAdapter.fromNode(SModelUtil.getGenuineLinkDeclaration(linkDeclaration));
         myLinkDeclaration = linkDeclaration;
 
         if (genuineLink == null) {
@@ -57,15 +58,15 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
         }
 
         if (genuineLink.getMetaClass() != LinkMetaclass.reference) {
-          LOG.error("only reference links are allowed here", linkDeclaration.getNode());
+          LOG.error("only reference links are allowed here", linkDeclaration);
         }
         Cardinality sourceCardinality = genuineLink.getSourceCardinality();
         if (!(sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._0__1)) {
-          LOG.error("only cardinalities 1 or 0..1 are allowed here", linkDeclaration.getNode());
+          LOG.error("only cardinalities 1 or 0..1 are allowed here", linkDeclaration);
         }
 
         mySourceNode = sourceNode;
-        myCurrentReferent = sourceNode.getReferent(SModelUtil_new.getGenuineLinkRole(linkDeclaration));
+        myCurrentReferent = sourceNode.getReferent(SModelUtil.getGenuineLinkRole(linkDeclaration));
       }
     });
   }
@@ -80,7 +81,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
       if (!nodeCopyRoot.isRoot()) {
         auxModel.addRoot(nodeCopyRoot);
       }
-      String role = SModelUtil_new.getGenuineLinkRole(myLinkDeclaration);
+      String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
       SNode sourceNode = mapping.get(mySourceNode);
       SNode nodeToEquatePeer = mySourceNode;
       TypeChecker typeChecker = TypeChecker.getInstance();
@@ -111,22 +112,22 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     }
 
     EditorComponent editor = getEditorContext().getNodeEditorComponent();
-    EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, SModelUtil_new.getGenuineLinkRole(myLinkDeclaration));
+    EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, SModelUtil.getGenuineLinkRole(myLinkDeclaration));
 
     if (referenceCell != null && referenceCell.getContainingBigCell().getFirstLeaf() == referenceCell &&
-      ReferenceConceptUtil.getCharacteristicReference(mySourceNode.getConceptDeclarationAdapter()) == myLinkDeclaration &&
+      ReferenceConceptUtil.getCharacteristicReference(mySourceNode.getConceptDeclarationNode()) == myLinkDeclaration &&
       mySourceNode.getParent() != null && mySourceNode.getChildren().isEmpty()) {
 
       SNode parent = mySourceNode.getParent();
       String role = mySourceNode.getRole_();
-      LinkDeclaration roleLink = parent.getLinkDeclaration(role);
+      LinkDeclaration roleLink = (LinkDeclaration) BaseAdapter.fromNode(parent.getLinkDeclaration(role));
       return ModelActions.createChildSubstituteActions(parent, mySourceNode, roleLink.getTarget().getNode(), new DefaultChildNodeSetter(roleLink), getOperationContext());
     }
 
     return ModelActions.createReferentSubstituteActions(mySourceNode, myCurrentReferent, myLinkDeclaration, getOperationContext());
   }
 
-  protected LinkDeclaration getLinkDeclaration() {
+  protected SNode getLinkDeclaration() {
     return myLinkDeclaration;
   }
 }

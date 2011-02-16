@@ -539,7 +539,7 @@ public class VariableConcept_Behavior {
                           SNode quotedNode1_145 = quotedNode_67;
                           quotedNode1_145.setProperty("name", "it");
                           {
-                            quotedNode_73 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", null, GlobalScope.getInstance(), false);
+                            quotedNode_73 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UndefinedType", null, GlobalScope.getInstance(), false);
                             SNode quotedNode1_146 = quotedNode_73;
                             quotedNode_67.addChild("type", quotedNode1_146);
                           }

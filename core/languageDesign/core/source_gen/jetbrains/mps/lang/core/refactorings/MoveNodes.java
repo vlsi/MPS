@@ -10,14 +10,12 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import java.util.List;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -59,15 +57,11 @@ public class MoveNodes extends BaseLoggableRefactoring {
         if (((Object) refactoringContext.getParameter("target")) instanceof SNode) {
           SNode targetNode = ((SNode) ((Object) refactoringContext.getParameter("target")));
           SNode concept = SNodeOperations.getConceptDeclaration(targetNode);
-          ConceptAndSuperConceptsScope superConceptsScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
-          List<LinkDeclaration> linkDeclarations = superConceptsScope.getLinkDeclarationsExcludingOverridden();
-          Iterable<SNode> childLinkDeclarations = ListSequence.fromList(linkDeclarations).where(new IWhereFilter<LinkDeclaration>() {
-            public boolean accept(LinkDeclaration it) {
-              return SPropertyOperations.hasValue(SNodeOperations.cast(it.getNode(), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "aggregation", "reference");
-            }
-          }).<SNode>select(new ISelector<LinkDeclaration, SNode>() {
-            public SNode select(LinkDeclaration it) {
-              return SNodeOperations.cast(it.getNode(), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+          ConceptAndSuperConceptsScope superConceptsScope = new ConceptAndSuperConceptsScope(concept);
+          List<SNode> linkDeclarations = (List<SNode>) superConceptsScope.getLinkDeclarationsExcludingOverridden();
+          Iterable<SNode> childLinkDeclarations = ListSequence.fromList(linkDeclarations).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference");
             }
           });
           Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).<String>select(new ISelector<SNode, String>() {
@@ -91,7 +85,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
           result.value = true;
         } else if (((Object) refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
           for (SNode node : refactoringContext.getSelectedNodes()) {
-            if (!(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "rootable"))) {
+            if (!(SNodeOperations.isInstanceOf(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) || !(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "rootable"))) {
               return;
             }
           }

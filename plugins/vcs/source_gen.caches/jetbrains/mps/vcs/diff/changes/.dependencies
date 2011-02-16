@@ -56,12 +56,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ReplaceNodeGroupChange" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ReplaceNodeGroupChange" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISetSequence" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />

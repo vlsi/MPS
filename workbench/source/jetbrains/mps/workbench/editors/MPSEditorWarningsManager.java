@@ -30,7 +30,7 @@ import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.GlobalScope;
@@ -171,7 +171,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
               }
             });
 
-            GeneratorFacade.getInstance().generateModels(editor.getNodeEditor().getOperationContext(), models, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true, false);
+            GeneratorUIFacade.getInstance().generateModels(editor.getNodeEditor().getOperationContext(), models, GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
           }
         });
     }

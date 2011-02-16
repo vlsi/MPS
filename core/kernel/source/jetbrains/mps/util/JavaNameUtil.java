@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
@@ -71,8 +70,7 @@ public final class JavaNameUtil {
     return fqName.substring(offset + 1);
   }
 
-  public static String className(AbstractConceptDeclaration conceptDeclaration) {
+  public static String className(SNode conceptDeclaration) {
     return NameUtil.nodeFQName(conceptDeclaration);
   }
-
 }

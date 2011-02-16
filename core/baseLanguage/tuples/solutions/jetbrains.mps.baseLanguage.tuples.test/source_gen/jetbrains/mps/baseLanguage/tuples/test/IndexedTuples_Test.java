@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.tuples.util.MPS11114;
 
 public class IndexedTuples_Test extends TestCase {
   public void test_empty() throws Exception {
@@ -161,6 +162,13 @@ public class IndexedTuples_Test extends TestCase {
     Assert.assertNotNull(t);
     Assert.assertSame(0, t._0());
     Assert.assertNull(t._1());
+  }
+
+  public void test_mps11114() throws Exception {
+    // <node> 
+    for (Tuples._2<Integer, String> tt : MPS11114.returnTuples()) {
+      Assert.assertNotNull(tt);
+    }
   }
 
   public Tuples._2<String, Character> toTuple(String s, char c) {

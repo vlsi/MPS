@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.*;
-import jetbrains.mps.smodel.persistence.def.v1.ReferencePersister1;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -32,7 +31,7 @@ import java.util.Set;
 
 public class ModelWriter3 implements IModelWriter {
   protected IReferencePersister getReferencePersister() {
-    return new ReferencePersister1();
+    return new ReferencePersister3();
   }
 
   protected int getModelPersistenceVersion() {

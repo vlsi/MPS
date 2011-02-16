@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
@@ -283,7 +282,7 @@ public class NameUtil {
     if (fqName == null) return fqName;
     int offset = fqName.lastIndexOf('.');
     if (offset < 0) return fqName;
-    
+
     return fqName.substring(offset + 1);
   }
 
@@ -310,14 +309,9 @@ public class NameUtil {
       builder.append('.');
       builder.append(shortName);
       return builder.toString();
-    }
-    finally {
+    } finally {
       StringBuilderSpinAllocator.dispose(builder);
     }
-  }
-
-  public static String namespaceFromConcept(AbstractConceptDeclaration concept) {
-    return namespaceFromConceptFQName(nodeFQName(concept));
   }
 
   public static String namespaceFromConceptFQName(String fqName) {
@@ -450,7 +444,7 @@ public class NameUtil {
   }
 
   public static String namespaceFromPath(String path) {
-    return path.replace('/', '.').replace(File.separatorChar, '.'); 
+    return path.replace('/', '.').replace(File.separatorChar, '.');
   }
 
   /**

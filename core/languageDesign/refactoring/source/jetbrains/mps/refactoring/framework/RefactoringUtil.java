@@ -49,12 +49,12 @@ public class RefactoringUtil {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Set<SNode> newRefactorings = FindUsagesManager.getInstance().findInstances(
-          ((ConceptDeclaration) SConceptOperations.findConceptDeclaration(Refactoring.concept).getAdapter()),
+          SConceptOperations.findConceptDeclaration(Refactoring.concept),
           GlobalScope.getInstance(),
           new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()),
           false);
         Set<SNode> oldRefactorings = FindUsagesManager.getInstance().findInstances(
-          ((ConceptDeclaration) SConceptOperations.findConceptDeclaration(OldRefactoring.concept).getAdapter()),
+          SConceptOperations.findConceptDeclaration(OldRefactoring.concept),
           GlobalScope.getInstance(),
           new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()),
           false);

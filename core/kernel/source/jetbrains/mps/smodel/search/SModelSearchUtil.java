@@ -16,9 +16,9 @@
 package jetbrains.mps.smodel.search;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.FlattenIterable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -48,38 +48,38 @@ public class SModelSearchUtil {
   }
 
 
-  public static LinkDeclaration findLinkDeclaration(AbstractConceptDeclaration conceptDeclaration, String role) {
+  public static SNode findLinkDeclaration(SNode conceptDeclaration, String role) {
     if (role == null) return null;
     return new ConceptAndSuperConceptsScope(conceptDeclaration).getLinkDeclarationByRole(role);
   }
 
-  public static LinkDeclaration findMostSpecificLinkDeclaration(AbstractConceptDeclaration conceptDeclaration, String role) {
+  public static SNode/*LinkDeclaration*/ findMostSpecificLinkDeclaration(SNode conceptDeclaration, String role) {
     if (role == null) return null;
     return new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(role);
   }
 
-  public static List<LinkDeclaration> getLinkDeclarations(AbstractConceptDeclaration concept) {
+  public static List<SNode> getLinkDeclarations(SNode concept) {
     return new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
   }
 
-  public static List<LinkDeclaration> getAggregationLinkDeclarations(AbstractConceptDeclaration concept) {
-    List<LinkDeclaration> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
-    List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
-    for (LinkDeclaration link : list) {
-      if (link.getMetaClass() == LinkMetaclass.aggregation) {
+  public static List<SNode> getAggregationLinkDeclarations(SNode concept) {
+    List<SNode> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode link : list) {
+      if (!SNodeUtil.getLinkDeclaration_IsReference(link)) {
         result.add(link);
       }
     }
     return result;
   }
 
-  public static List<LinkDeclaration> getReferenceLinkDeclarations(final AbstractConceptDeclaration concept) {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<LinkDeclaration>>() {
-      public List<LinkDeclaration> compute() {
-        List<LinkDeclaration> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
-        List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
-        for (LinkDeclaration link : list) {
-          if (link.getMetaClass() == LinkMetaclass.reference) {
+  public static List<SNode> getReferenceLinkDeclarations(final SNode concept) {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<SNode>>() {
+      public List<SNode> compute() {
+        List<SNode> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
+        List<SNode> result = new ArrayList<SNode>();
+        for (SNode link : list) {
+          if (SNodeUtil.getLinkDeclaration_IsReference(link)) {
             result.add(link);
           }
         }
@@ -89,36 +89,37 @@ public class SModelSearchUtil {
   }
 
 
-  public static List<PropertyDeclaration> getPropertyDeclarations(AbstractConceptDeclaration concept) {
+  public static List<SNode> getPropertyDeclarations(SNode concept) {
     return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarations();
   }
 
   @Nullable
-  public static PropertyDeclaration findPropertyDeclaration(AbstractConceptDeclaration concept, String propertyName) {
+  public static SNode findPropertyDeclaration(SNode concept, String propertyName) {
     if (concept == null || propertyName == null) return null;
     return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarationByName(propertyName);
   }
 
-
-  public static List<ConceptPropertyDeclaration> getConceptPropertyDeclarations(AbstractConceptDeclaration concept) {
-    List<ConceptPropertyDeclaration> result = new ArrayList<ConceptPropertyDeclaration>();
-    List<AbstractConceptDeclaration> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
-    for (AbstractConceptDeclaration c : concepts) {
-      result.addAll(c.getConceptPropertyDeclarations());
+  public static List<SNode> getConceptPropertyDeclarations(SNode concept) {
+    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
+    for (SNode c : concepts) {
+      for(SNode conceptPropertyDeclaration : SNodeUtil.getConcept_ConceptPropertyDeclarations(c)) {
+        result.add(conceptPropertyDeclaration);
+      }
     }
     return result;
   }
 
-  public static ConceptProperty findConceptProperty(AbstractConceptDeclaration concept, String propertyName) {
+  public static SNode findConceptProperty(SNode concept, String propertyName) {
     if (concept == null) return null;
     return new ConceptAndSuperConceptsScope(concept).getConceptPropertyByName(propertyName);
   }
 
-  public static List<ConceptLinkDeclaration> getConceptLinkDeclarations(AbstractConceptDeclaration concept) {
-    List<ConceptLinkDeclaration> result = new ArrayList<ConceptLinkDeclaration>();
-    List<AbstractConceptDeclaration> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
-    for (AbstractConceptDeclaration c : concepts) {
-      result.addAll(c.getConceptLinkDeclarations());
+  public static Iterable<SNode> getConceptLinkDeclarations(SNode concept) {
+    FlattenIterable<SNode> result = new FlattenIterable<SNode>(new ArrayList<Iterable<SNode>>());
+    List<SNode> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
+    for (SNode c : concepts) {
+      result.add(SNodeUtil.getConcept_ConceptLinkDeclarations(c));
     }
     return result;
   }
@@ -128,7 +129,7 @@ public class SModelSearchUtil {
     private SModel myModel;
     private boolean myRootsOnly;
     private IScope myScope;
-    private List<ConceptDeclaration> myConcepts;
+    private List<SNode> myConcepts;
 
     public _ConceptsFromModelLanguagesScope(SModel model, boolean rootsOnly, IScope scope) {
       myModel = model;
@@ -139,12 +140,16 @@ public class SModelSearchUtil {
     @NotNull
     public List<SNode> getNodes(Condition<SNode> condition) {
       if (myConcepts == null) {
-        myConcepts = new ArrayList<ConceptDeclaration>();
+        myConcepts = new ArrayList<SNode>();
         List<Language> languages = SModelOperations.getLanguages(myModel, myScope);
         for (Language language : languages) {
           if (myRootsOnly) {
             SModel structureModel = language.getStructureModelDescriptor().getSModel();
-            myConcepts.addAll(structureModel.getRootsAdapters(ConceptDeclaration.class));
+            for (SNode node : structureModel.roots()) {
+              if (SNodeUtil.isInstanceOfConceptDeclaration(node)) {
+                myConcepts.add(node);
+              }
+            }
           } else {
             myConcepts.addAll(language.getConceptDeclarations());
           }
@@ -152,9 +157,9 @@ public class SModelSearchUtil {
       }
 
       List<SNode> concepts = new ArrayList<SNode>();
-      for (ConceptDeclaration concept : myConcepts) {
-        if (condition.met(concept.getNode())) {
-          concepts.add(concept.getNode());
+      for (SNode concept : myConcepts) {
+        if (condition.met(concept)) {
+          concepts.add(concept);
         }
       }
 

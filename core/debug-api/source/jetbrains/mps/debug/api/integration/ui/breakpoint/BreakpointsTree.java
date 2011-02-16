@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
@@ -43,7 +44,7 @@ import java.util.Collection;
 
 public class BreakpointsTree extends BreakpointsView {
   private final IOperationContext myContext;
-  private final MPSTree myTree;
+  private final GroupedTree<BreakpointNodeData> myTree;
   private final GroupKind myModuleKind = new ModuleGroupKind();
   private final GroupKind myModelKind = new ModelGroupKind();
   private final GroupKind myRootKind = new RootGroupKind();
@@ -102,6 +103,21 @@ public class BreakpointsTree extends BreakpointsView {
       }
     }
     return null;
+  }
+
+  @Override
+  public void selectBreakpoint(@Nullable final IBreakpoint breakpoint) {
+    if (breakpoint != null) {
+      MPSTreeNode treeNode = ModelAccess.instance().runReadAction(new Computable<MPSTreeNode>() {
+        @Override
+        public MPSTreeNode compute() {
+          return myTree.findNodeForData(new BreakpointNodeData(breakpoint));
+        }
+      });
+      myTree.selectNode(treeNode);
+    } else {
+      myTree.clearSelection();
+    }
   }
 
   @Override
@@ -322,6 +338,23 @@ public class BreakpointsTree extends BreakpointsView {
     @NotNull
     public IBreakpoint getBreakpoint() {
       return myBreakpoint;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      BreakpointNodeData that = (BreakpointNodeData) o;
+
+      if (!myBreakpoint.equals(that.myBreakpoint)) return false;
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      return myBreakpoint.hashCode();
     }
   }
 

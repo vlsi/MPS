@@ -17,8 +17,10 @@ package jetbrains.mps.ide.hierarchy;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.annotation.DisposableCommand;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -28,6 +30,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 
 public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
+  private static Logger LOG = Logger.getLogger(HierarchyTreeNode.class);
+
   private SNodePointer myNodePointer;
   protected AbstractHierarchyTree<T> myHierarchyTree;
 
@@ -52,7 +56,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 
   protected void doUpdatePresentation() {
     @DisposableCommand
-    SNode node = myNodePointer.getNode();
+    SNode node = getNode_internal();
     if (node == null) return;
 
     setIcon(IconManager.getIconFor(node));
@@ -67,7 +71,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 
   protected void onRemove() {
     super.onRemove();
-    SNode node = myNodePointer.getNode();
+    SNode node = getNode_internal();
     if (node != null && !node.isRegistered()) {
       SModel sModel = node.getModel();
       boolean wasLoading = sModel.isLoading();
@@ -85,7 +89,15 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
   }
 
   public T getNode() {
-    return (T) BaseAdapter.fromNode(myNodePointer.getNode());
+    return (T) BaseAdapter.fromNode(getNode_internal());
+  }
+
+  private SNode getNode_internal() {
+    SNode node = myNodePointer.getNode();
+    if (node == null) {
+      LOG.error("Can't find node " + myNodePointer.getModelReference() + " : " + myNodePointer.getNodeId());
+    }
+    return node;
   }
 
   public String calculateNodeIdentifier() {
@@ -103,7 +115,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 
     BaseAction hierarchyAction = new BaseAction("Show Hierarchy For This Node") {
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        final SNode node = myNodePointer.getNode();
+        final SNode node = getNode_internal();
         hierarchyView.showItemInHierarchy((T) node.getAdapter(), getOperationContext());
       }
     };
@@ -111,13 +123,12 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
   }
 
   public void doubleClick() {
+    if (myHierarchyTree.doubleClick(HierarchyTreeNode.this)) {
+      return;
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (myHierarchyTree.doubleClick(HierarchyTreeNode.this)) {
-          return;
-        }
-
-        final SNode node = myNodePointer.getNode();
+        final SNode node = getNode_internal();
 
         AbstractHierarchyView<T> hierarchyView = myHierarchyTree.getHierarchyView();
         if (hierarchyView != null) {

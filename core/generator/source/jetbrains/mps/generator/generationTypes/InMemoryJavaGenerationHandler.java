@@ -1,18 +1,12 @@
 package jetbrains.mps.generator.generationTypes;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.baseLanguage.structure.Annotation;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.EnumClass;
-import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.CompilationResultListener;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.fileGenerator.TextGenerationUtil;
-import jetbrains.mps.generator.fileGenerator.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.project.AbstractModule;
@@ -21,6 +15,8 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.textGen.TextGenerationResult;
+import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.JavaNameUtil;
@@ -139,8 +135,9 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   }
 
   private static boolean isJavaSource(INodeAdapter outputNode) {
-    return outputNode.getClass() == ClassConcept.class || outputNode.getClass() == Interface.class ||
-      outputNode.getClass() == (Class) EnumClass.class || outputNode.getClass() == Annotation.class;
+    String concept = outputNode.getConceptFQName();
+    return concept.equals(BootstrapLanguages.concept_baseLanguage_ClassConcept) || concept.equals(BootstrapLanguages.concept_baseLanguage_Interface) ||
+      concept.equals(BootstrapLanguages.concept_baseLanguage_EnumClass) || concept.equals(BootstrapLanguages.concept_baseLanguage_Annotation);
   }
 
   @Deprecated

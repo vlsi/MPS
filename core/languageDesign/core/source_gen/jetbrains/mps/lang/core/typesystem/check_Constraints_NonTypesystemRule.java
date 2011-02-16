@@ -17,7 +17,6 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import java.util.List;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -124,10 +123,10 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
 
       // Properties validation 
       SNode concept = SNodeOperations.getConceptDeclaration(node);
-      ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
+      ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(concept);
       List<PropertyDeclaration> props = chs.getAdapters(PropertyDeclaration.class);
       for (PropertyDeclaration p : ListSequence.fromList(props)) {
-        PropertySupport ps = PropertySupport.getPropertySupport(p);
+        PropertySupport ps = PropertySupport.getPropertySupport(p.getNode());
         String propertyName = p.getName();
         if (propertyName == null) {
           LOG.error("Property declaration has a null name, declaration id: " + p.getNode().getSNodeId() + ", model: " + p.getModel().getSModelFqName());
@@ -156,7 +155,7 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
         if ("left_transform_hint".equals(name) || "right_transform_hint".equals(name)) {
           continue;
         }
-        if (SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)), name) == null) {
+        if (SModelSearchUtil.findPropertyDeclaration(concept, name) == null) {
           {
             BaseQuickFixProvider intentionProvider = null;
             intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.RemoveUndeclaredProperty_QuickFix", false);

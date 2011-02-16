@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
@@ -51,7 +51,7 @@ public class ChildrenCollectionFinder {
 
           if (current.getRole() != null) {
             String role = current.getRole();
-            LinkDeclaration linkDeclaration = currentNode.getLinkDeclaration(role);
+            LinkDeclaration linkDeclaration = (LinkDeclaration) BaseAdapter.fromNode(currentNode.getLinkDeclaration(role));
             if (linkDeclaration != null &&
               linkDeclaration.getMetaClass() == LinkMetaclass.aggregation &&
               (linkDeclaration.getSourceCardinality() == Cardinality._0__n || linkDeclaration.getSourceCardinality() == Cardinality._1__n)) {

@@ -7,14 +7,14 @@
   <unitInfo fileName="EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="18" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.debug.evaluation.constraints.EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint" />
   <unitInfo fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="20" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.debug.evaluation.constraints.LowLevelVariableReference_variableDeclaration_ReferentConstraint" />
   <root nodeId="6036237525966315979">
-    <nodeInfo nodeId="6036237525966315982" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EvaluatorsThisExpression_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="194" />
+    <nodeInfo nodeId="6036237525966315982" fileName="EvaluatorsThisExpression_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="6036237525966315981" fileName="EvaluatorsThisExpression_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="194" />
   </root>
   <root nodeId="6036237525966325224">
-    <nodeInfo nodeId="6036237525966325298" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="12" startPosition="114" endLine="13" endPosition="201" />
-    <nodeInfo nodeId="6036237525966325310" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="13" startPosition="201" endLine="14" endPosition="185" />
-    <nodeInfo nodeId="6036237525966325251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="327" />
-    <nodeInfo nodeId="6036237525966325260" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="31" startPosition="327" endLine="32" endPosition="199" />
+    <nodeInfo nodeId="6036237525966325298" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="12" startPosition="114" endLine="13" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6036237525966325310" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="13" startPosition="201" endLine="14" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6036237525966325251" fileName="EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6036237525966325260" fileName="EvaluatorsSuperMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="31" startPosition="327" endLine="32" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="6036237525966325226" fileName="EvaluatorsSuperMethodCall_Constraints.java" startLine="12" startPosition="114" endLine="14" endPosition="185">
       <varInfo nodeId="6036237525966325299" varName="classifierType" />
     </scopeInfo>
@@ -23,21 +23,21 @@
     </scopeInfo>
   </root>
   <root nodeId="6146091894852365519">
-    <nodeInfo nodeId="7589348374035685292" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="33" endPosition="154" />
-    <nodeInfo nodeId="7589348374035687953" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="34" startPosition="69" endLine="35" endPosition="70" />
-    <nodeInfo nodeId="6146091894852366846" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="38" startPosition="39" endLine="39" endPosition="69" />
-    <nodeInfo nodeId="6146091894852366857" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="46" startPosition="51" endLine="47" endPosition="78" />
-    <nodeInfo nodeId="7589348374035687946" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="33" startPosition="154" endLine="36" endPosition="5" />
-    <nodeInfo nodeId="6146091894852366842" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="37" startPosition="124" endLine="41" endPosition="0" />
-    <nodeInfo nodeId="6146091894852366821" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="36" startPosition="5" endLine="41" endPosition="7" />
+    <nodeInfo nodeId="7589348374035685292" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="33" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7589348374035687953" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="34" startPosition="69" endLine="35" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6146091894852366846" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="38" startPosition="39" endLine="39" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6146091894852366857" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="46" startPosition="51" endLine="47" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7589348374035687946" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="33" startPosition="154" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6146091894852366842" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="37" startPosition="124" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="6146091894852366821" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="36" startPosition="5" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="7589348374035687947" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="34" startPosition="69" endLine="35" endPosition="70" />
     <scopeInfo nodeId="6146091894852366843" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="38" startPosition="39" endLine="39" endPosition="69" />
     <scopeInfo nodeId="6146091894852366856" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="46" startPosition="51" endLine="47" endPosition="78" />
-    <scopeInfo nodeId="6146091894852366842" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="37" startPosition="124" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="6146091894852366842" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="37" startPosition="124" endLine="41" endPosition="0" />
     <scopeInfo nodeId="6146091894852366820" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="41" endPosition="7">
       <varInfo nodeId="7589348374035685293" varName="evaluator" />
     </scopeInfo>
-    <unitInfo nodeId="6146091894852366842" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="37" startPosition="101" endLine="41" endPosition="5" unitName="jetbrains.mps.debug.evaluation.constraints.IWhereFilter$anonymous" />
+    <unitInfo nodeId="6146091894852366842" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="37" startPosition="101" endLine="41" endPosition="5" unitName="jetbrains.mps.debug.evaluation.constraints.LowLevelVariableReference_variableDeclaration_ReferentConstraint$1" />
   </root>
 </debugInfo>
 

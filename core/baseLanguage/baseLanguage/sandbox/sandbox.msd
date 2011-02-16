@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.sandbox" uuid="4f57e080-33c7-449c-96f9-dd8dfead6ae4" extenallyVisible="true" compileInMPS="true" java-stubs-enabled="true" generatorOutputPath="${solution_descriptor}/source_gen">
+<solution name="jetbrains.mps.baseLanguage.sandbox" uuid="4f57e080-33c7-449c-96f9-dd8dfead6ae4" compileInMPS="true" java-stubs-enabled="true" generatorOutputPath="${solution_descriptor}/source_gen">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.baseLanguage.sandbox" />
   </models>
@@ -33,6 +33,7 @@
     <usedLanguage>d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)</usedLanguage>
     <usedLanguage>2c55c7ac-60c3-4eea-b9db-0d627bd2dcb9(jetbrains.mps.xml)</usedLanguage>
     <usedLanguage>823d79c6-2e26-4b0e-92a0-e1884a10bba9(jetbrains.mps.xml.deprecated)</usedLanguage>
+    <usedLanguage>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguage>
   </usedLanguages>
   <usedDevKits>
     <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>

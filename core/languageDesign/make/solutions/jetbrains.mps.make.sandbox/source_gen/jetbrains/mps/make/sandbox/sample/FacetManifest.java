@@ -13,9 +13,9 @@ public class FacetManifest {
 
   public FacetManifest() {
     ListSequence.fromList(facets).addElement(new FFFFacet_Facet());
+    ListSequence.fromList(facets).addElement(new GGG_Facet());
     ListSequence.fromList(facets).addElement(new Generate_Facet());
     ListSequence.fromList(facets).addElement(new GenerateSpecial_Facet());
-    ListSequence.fromList(facets).addElement(new GGG_Facet());
   }
 
   public void registerFacets(FacetRegistry registry) {

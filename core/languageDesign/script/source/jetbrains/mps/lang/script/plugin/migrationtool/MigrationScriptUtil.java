@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.lang.script.plugin.migrationtool;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.lang.script.util.ScriptNameUtil;
@@ -79,8 +79,8 @@ public class MigrationScriptUtil {
     }
   }
 
-  public static AbstractConceptDeclaration getApplicableConcept(AbstractMigrationRefactoring migrationRefactoring) {
-    return SModelUtil_new.findConceptDeclaration(
+  public static SNode getApplicableConcept(AbstractMigrationRefactoring migrationRefactoring) {
+    return SModelUtil.findConceptDeclaration(
       migrationRefactoring.getFqNameOfConceptToSearchInstances(),
       GlobalScope.getInstance());
   }

@@ -14,9 +14,9 @@ import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
-import jetbrains.mps.generator.fileGenerator.TextGenerationUtil;
+import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -25,9 +25,11 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
+@Deprecated
 public class GenerateTextFromBuild {
   private static Logger LOG = Logger.getLogger(GenerateTextFromBuild.class);
 
+  @Deprecated
   public GenerateTextFromBuild() {
   }
 
@@ -42,7 +44,7 @@ public class GenerateTextFromBuild {
     final File[] fileToRun = new File[]{null};
     TextGenerationHandler generationHandler = new TextGenerationHandler() {
       @Override
-      protected void fileGenerated(String targetDir, String fileName, TextGenerationUtil.TextGenerationResult result) {
+      protected void fileGenerated(String targetDir, String fileName, TextGenerationResult result) {
         File target = new File(basedir + File.separator + fileName);
         new File(basedir + File.separator).mkdirs();
         FileUtil.write(target, result.getText());
@@ -52,7 +54,7 @@ public class GenerateTextFromBuild {
       }
     };
     if (showWindow) {
-      GeneratorFacade.getInstance().generateModels(context, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), generationHandler, true, false);
+      GeneratorUIFacade.getInstance().generateModels(context, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), generationHandler, true, false);
     } else {
       generatorManager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, new EmptyProgressIndicator(), new DefaultMessageHandler(project));
     }

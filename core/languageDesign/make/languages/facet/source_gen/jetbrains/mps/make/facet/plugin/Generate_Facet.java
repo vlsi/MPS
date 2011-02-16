@@ -32,7 +32,9 @@ import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
@@ -418,12 +420,12 @@ public class Generate_Facet implements IFacet {
 
               GenerationHandler gh = new GenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource>() {
                 public Boolean invoke(GResource data) {
-                  monitor.currentProgress().advanceWork("Generation", 1000);
+                  monitor.currentProgress().advanceWork("Generating", 1000);
                   _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(data)));
                   return true;
                 }
               });
-              monitor.currentProgress().beginWork("Generation", Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
+              monitor.currentProgress().beginWork("Generating", Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
                 public Integer combine(Integer s, IResource it) {
                   return s + Sequence.fromIterable(((MResource) it).models()).count() * 1000;
                 }
@@ -438,7 +440,7 @@ public class Generate_Facet implements IFacet {
                   // don't clear the messages 
                 }
               }, pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions().create());
-              monitor.currentProgress().finishWork("Generation");
+              monitor.currentProgress().finishWork("Generating");
               if (!(generationOk)) {
                 return new IResult.FAILURE(_output_fi61u2_a0d.value);
               }

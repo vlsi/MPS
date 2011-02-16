@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.util.NameUtil;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 class IntelligentNodeMover {
   private static final Logger LOG = Logger.getLogger(IntelligentNodeMover.class);
@@ -78,26 +77,26 @@ class IntelligentNodeMover {
     final String role = current.getRole_();
     assert parent != null && role != null;
 
-    final AbstractConceptDeclaration acd = parent.getConceptDeclarationAdapter();
-    final LinkDeclaration link = SModelSearchUtil.findLinkDeclaration(acd, role);
+    final SNode acd = parent.getConceptDeclarationNode();
+    final SNode link = SModelSearchUtil.findLinkDeclaration(acd, role);
 
     if (link == null) {
       LOG.error("Can't find a link " + role + " in concept " + acd.getName());
       return;
     }
 
-    if (link.getSourceCardinality() != Cardinality._0__n && link.getSourceCardinality() != Cardinality._1__n) {
+    if (!SModelUtil.isMultipleLinkDeclaration(link)) {
       return;
     }
 
-    final AbstractConceptDeclaration targetType = (AbstractConceptDeclaration) link.getParent();
+    final SNode targetType = link.getParent();
 
     if (isBoundary(current)) {
       SNode currentAnchor = parent;
       SNode currentTarget = parent.getParent();
 
       while (currentTarget != null) {
-        if (currentTarget.isInstanceOfConcept(targetType)) {
+        if (currentTarget.isInstanceOfConcept(NameUtil.nodeFQName(targetType))) {
           parent.removeChild(current);
           addWithAnchor(currentTarget, currentAnchor, role, current);
           moveOtherNodes(current);
@@ -154,8 +153,8 @@ class IntelligentNodeMover {
     }
   }
 
-  private SNode findNodeAtBoundary(AbstractConceptDeclaration acd, SNode current, boolean includeThis) {
-    if (includeThis && current.isInstanceOfConcept(acd)) {
+  private SNode findNodeAtBoundary(SNode acd, SNode current, boolean includeThis) {
+    if (includeThis && current.isInstanceOfConcept(NameUtil.nodeFQName(acd))) {
       return current;
     }
 

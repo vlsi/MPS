@@ -16,9 +16,7 @@
 package jetbrains.mps.smodel.presentation;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -48,9 +46,9 @@ public class ReferenceConceptUtil {
    * @param concept with is possibly 'pure reference' concept.
    * @return characteristic reference or NULL
    */
-  public static LinkDeclaration getCharacteristicReference(final AbstractConceptDeclaration concept) {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<LinkDeclaration>() {
-      public LinkDeclaration compute() {
+  public static SNode getCharacteristicReference(final SNode concept) {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
+      public SNode compute() {
         String expectedReferentRole = null;
         String alias = concept.getConceptProperty("alias");
         if (alias != null) {
@@ -63,10 +61,10 @@ public class ReferenceConceptUtil {
           expectedReferentRole = matches[1];
         }
 
-        List<LinkDeclaration> links = SModelSearchUtil.getReferenceLinkDeclarations(concept);
+        List<SNode> links = SModelSearchUtil.getReferenceLinkDeclarations(concept);
         if (expectedReferentRole != null) {
-          for (LinkDeclaration link : links) {
-            if (expectedReferentRole.equals(link.getRole())) {
+          for (SNode link : links) {
+            if (expectedReferentRole.equals(SModelUtil.getLinkDeclarationRole(link))) {
               return link;
             }
           }
@@ -74,7 +72,8 @@ public class ReferenceConceptUtil {
         } else {
           // if concept declares exactly ONE REQUIRED reference link...
           if (links.size() == 1) {
-            if (SModelUtil_new.getGenuineLinkSourceCardinality(links.get(0)) == Cardinality._1) {
+            SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(links.get(0));
+            if (SNodeUtil.getLinkDeclaration_IsExactlyOneMultiplicity(genuineLinkDeclaration)) {
               return links.get(0);
             }
           }
@@ -84,13 +83,13 @@ public class ReferenceConceptUtil {
     });
   }
 
-  public static boolean hasSmartAlias(AbstractConceptDeclaration concept) {
+  public static boolean hasSmartAlias(SNode concept) {
     String conceptAlias = concept.getConceptProperty("alias");
     // matches pattern 'xxx <{_referent_role_}> yyy' ?
     return conceptAlias != null && SMART_ALIAS.matcher(conceptAlias).matches();
   }
 
-  public static String getPresentationFromSmartAlias(AbstractConceptDeclaration concept, String referentPresentation) {
+  public static String getPresentationFromSmartAlias(SNode concept, String referentPresentation) {
     String conceptAlias = concept.getConceptProperty("alias");
     // handle pattern 'xxx <{_referent_role_}> yyy'
     String[] matches = SMART_ALIAS_SEPARATOR.split(conceptAlias, 0);
@@ -103,16 +102,16 @@ public class ReferenceConceptUtil {
   }
 
   public static String getPresentation(SNode node) {
-    AbstractConceptDeclaration nodeConcept = node.getConceptDeclarationAdapter();
-    LinkDeclaration characteristicReference = getCharacteristicReference(nodeConcept);
+    SNode nodeConcept = node.getConceptDeclarationNode();
+    SNode characteristicReference = getCharacteristicReference(nodeConcept);
     if (characteristicReference == null) return null;
-    String genuineRole = SModelUtil_new.getGenuineLinkRole(characteristicReference);
+    String genuineRole = SModelUtil.getGenuineLinkRole(characteristicReference);
     SReference reference = node.getReference(genuineRole);
     if (reference instanceof DynamicReference) {
       return reference.getResolveInfo();
     }
     SNode referentNode = node.getReferent(genuineRole);
-    String referentPresentation = "<no " + characteristicReference.getRole() + ">";
+    String referentPresentation = "<no " + SModelUtil.getLinkDeclarationRole(characteristicReference) + ">";
     if (referentNode != null) {
       referentPresentation = referentNode.toString();
     }

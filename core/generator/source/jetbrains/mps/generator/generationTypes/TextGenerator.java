@@ -19,12 +19,12 @@ import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.make.java.ModelDependencies;
 import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.traceInfo.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.cache.CacheGenerator;
-import jetbrains.mps.generator.fileGenerator.TextGenerationUtil;
-import jetbrains.mps.generator.fileGenerator.TextGenerationUtil.TextGenerationResult;
+import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -87,7 +87,7 @@ public class TextGenerator {
   }
 
   private void fillDebugInfo(DebugInfo info, String fileName, TextGenerationResult result) {
-    Map<SNode, PositionInfo> positions = result.getPositions();
+    Map<SNode, TraceablePositionInfo> positions = result.getPositions();
     Map<SNode, ScopePositionInfo> scopePositions = result.getScopePositions();
     Map<SNode, UnitPositionInfo> unitPositions = result.getUnitPositions();
     if (positions == null && scopePositions == null && unitPositions == null) {
@@ -98,7 +98,7 @@ public class TextGenerator {
         SNode input = out;
         input = getOriginalInputNodeForNearestParent(input);
         if (input != null && !(input.isDisposed())) {
-          PositionInfo positionInfo = result.getPositions().get(out);
+          TraceablePositionInfo positionInfo = result.getPositions().get(out);
           positionInfo.setNodeId(input.getId());
           info.setModel(input.getModel());
           positionInfo.setFileName(fileName);

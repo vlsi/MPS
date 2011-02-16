@@ -6,15 +6,16 @@ import org.junit.runner.RunWith;
 import org.jmock.integration.junit4.JMock;
 import jetbrains.mps.make.unittest.MockTestCase;
 import org.junit.Test;
-import jetbrains.mps.internal.make.runtime.script.ScriptBuilder;
+import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.script.IProgress;
 import org.jmock.Expectations;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.make.script.IScript;
-import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.script.IMonitors;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.make.script.IParametersPool;
 import junit.framework.Assert;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -61,7 +62,16 @@ public class Generator_Test extends MockTestCase {
       }
     });
 
-    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Generator")).withTarget(new ITarget.Name("Make")).withMonitors(new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub))).toScript();
+    final IMonitors mons = new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
+    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Generator_")).withTarget(new ITarget.Name("Make")).toScript();
+    scr = new IScript.StubBoss(scr) {
+      public IMonitors monitors() {
+        return mons;
+      }
+
+      public void init(IParametersPool ppool) {
+      }
+    };
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.defaultTarget();
     Assert.assertNotNull(dt);
@@ -123,7 +133,15 @@ public class Generator_Test extends MockTestCase {
       }
     });
     Mockups.allowing(context, mons);
-    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Generator")).withFacet(new IFacet.Name("TextGen")).withTarget(new ITarget.Name("Make")).withMonitors(mons).toScript();
+    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Generator_")).withFacet(new IFacet.Name("TextGen_")).withTarget(new ITarget.Name("Make")).toScript();
+    scr = new IScript.StubBoss(scr) {
+      public IMonitors monitors() {
+        return mons;
+      }
+
+      public void init(IParametersPool ppool) {
+      }
+    };
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.defaultTarget();
     Assert.assertNotNull(dt);
@@ -186,7 +204,16 @@ public class Generator_Test extends MockTestCase {
     });
     Mockups.allowing(context, mons);
 
-    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Generator")).withFacet(new IFacet.Name("TextGen")).withTarget(new ITarget.Name("Make")).withMonitors(mons).toScript();
+    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Generator_")).withFacet(new IFacet.Name("TextGen_")).withTarget(new ITarget.Name("Make")).toScript();
+    scr = new IScript.StubBoss(scr) {
+      public IMonitors monitors() {
+        return mons;
+      }
+
+      public void init(IParametersPool ppool) {
+      }
+    };
+
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.defaultTarget();
     Assert.assertNotNull(dt);
@@ -234,7 +261,17 @@ public class Generator_Test extends MockTestCase {
       }
     });
 
-    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Worker")).withTarget(new ITarget.Name("Make")).withMonitors(new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub))).toScript();
+    final IMonitors mons = new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
+    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Worker_")).withTarget(new ITarget.Name("Make")).toScript();
+    scr = new IScript.StubBoss(scr) {
+      public IMonitors monitors() {
+        return mons;
+      }
+
+      public void init(IParametersPool ppool) {
+      }
+    };
+
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.defaultTarget();
     Assert.assertNotNull(dt);
@@ -280,7 +317,16 @@ public class Generator_Test extends MockTestCase {
       }
     };
 
-    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Worker")).withTarget(new ITarget.Name("Make")).withMonitors(new IMonitors.Stub(new IConfigMonitor.Stub(), jmon)).toScript();
+    final IMonitors mons = new IMonitors.Stub(new IConfigMonitor.Stub(), jmon);
+    IScript scr = scb.withFacet(new IFacet.Name("Maker_")).withFacet(new IFacet.Name("Worker_")).withTarget(new ITarget.Name("Make")).toScript();
+    scr = new IScript.StubBoss(scr) {
+      public IMonitors monitors() {
+        return mons;
+      }
+
+      public void init(IParametersPool ppool) {
+      }
+    };
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.defaultTarget();
     Assert.assertNotNull(dt);

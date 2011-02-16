@@ -64,11 +64,11 @@ public class VcsRevisionRange extends BaseGroup {
     }
   }
 
-  private static Date check_5bt2ri_a0a0a0a0c0(VcsFileRevision p) {
-    if (null == p) {
-      return null;
+  private static Date check_5bt2ri_a0a0a0a0c0(VcsFileRevision checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getRevisionDate();
     }
-    return p.getRevisionDate();
+    return null;
   }
 
   private class HiglightAction extends BaseAction {

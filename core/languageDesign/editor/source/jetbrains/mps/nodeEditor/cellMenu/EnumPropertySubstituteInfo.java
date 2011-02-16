@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
+import jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration;
+import jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration;
-import jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -30,9 +30,9 @@ import java.util.List;
 public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
 
   private SNode myNode;
-  private PropertyDeclaration myPropertyDeclaration;
+  private SNode myPropertyDeclaration;
 
-  public EnumPropertySubstituteInfo(SNode node, PropertyDeclaration propertyDeclaration, EditorContext editorContext) {
+  public EnumPropertySubstituteInfo(SNode node, SNode propertyDeclaration, EditorContext editorContext) {
     super(editorContext);
     myNode = node;
     myPropertyDeclaration = propertyDeclaration;
@@ -40,7 +40,7 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
 
   public List<INodeSubstituteAction> createActions() {
     List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
-    EnumerationDataTypeDeclaration dataType = (EnumerationDataTypeDeclaration) myPropertyDeclaration.getDataType();
+    EnumerationDataTypeDeclaration dataType = (EnumerationDataTypeDeclaration) ((PropertyDeclaration) BaseAdapter.fromNode(myPropertyDeclaration)).getDataType();
 
     for (final EnumerationMemberDeclaration memberDeclaration : dataType.getMembers()) {
       actions.add(new AbstractNodeSubstituteAction(null, memberDeclaration, myNode) {

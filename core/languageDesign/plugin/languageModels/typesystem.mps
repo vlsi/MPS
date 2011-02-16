@@ -234,6 +234,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="485694842828666112">
       <property name="name" nameId="tpck.1169194664001" value="typeof_SmartDisposeClosureParameterDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool.Operations" />
+      <property name="overrides" nameId="tpd4.1195213689297" value="true" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="441707825122650655">
       <property name="name" nameId="tpck.1169194664001" value="typeof_NodesCreatorTarget" />

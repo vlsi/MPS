@@ -7,7 +7,10 @@
   <unitInfo fileName="ConstantStringAppendPart_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ConstantStringAppendPart_Behavior" />
   <unitInfo fileName="WithIndentOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.WithIndentOperation_Behavior" />
   <unitInfo fileName="OperationDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.OperationDeclaration_Behavior" />
+  <unitInfo fileName="UnitConcept_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior" />
+  <unitInfo fileName="ScopeConcept_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ScopeConcept_Behavior" />
   <unitInfo fileName="AbstractAppendPart_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractAppendPart_Behavior" />
+  <unitInfo fileName="TraceableConcept_Behavior.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.TraceableConcept_Behavior" />
   <unitInfo fileName="AbstractTextGenDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractTextGenDeclaration_Behavior" />
   <unitInfo fileName="AbstractTextGenParameter_Behavior.java" startLine="10" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AbstractTextGenParameter_Behavior" />
   <unitInfo fileName="SimpleTextGenOperation_Behavior.java" startLine="10" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.SimpleTextGenOperation_Behavior" />
@@ -201,6 +204,17 @@
     <nodeInfo nodeId="1260930188116560117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UtilityMethodCall_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" />
     <scopeInfo nodeId="1260930188116560110" fileName="UtilityMethodCall_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1260930188116560114" fileName="UtilityMethodCall_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" />
+  </root>
+  <root nodeId="3822000666564591085">
+    <nodeInfo nodeId="3822000666564591093" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TraceableConcept_Behavior.java" startLine="17" startPosition="89" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="3822000666564591087" fileName="TraceableConcept_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="3822000666564591091" fileName="TraceableConcept_Behavior.java" startLine="17" startPosition="89" endLine="18" endPosition="16" />
+  </root>
+  <root nodeId="3822000666564591097">
+    <scopeInfo nodeId="3822000666564591099" fileName="ScopeConcept_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+  </root>
+  <root nodeId="3822000666564591109">
+    <scopeInfo nodeId="3822000666564591111" fileName="UnitConcept_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
   </root>
 </debugInfo>
 

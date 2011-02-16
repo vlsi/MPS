@@ -1,83 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.vcs.actions.AbstractShowInFileView" file="AbstractShowInFileView.java">
-    <classNode dependClassName="com.intellij.openapi.vfs.VfsUtil" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VfsUtil" />
     <classNode dependClassName="com.intellij.openapi.vcs.actions.VcsContext" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Presentation" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="com.intellij.openapi.vcs.actions.AbstractVcsAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.actions.GenerateFilesFromChangeListAction" file="GenerateFilesFromChangeListAction.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorUIFacade" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
-    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorFacade" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.vcs.actions.GenerateFromChangeListAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.actions.GenerateFromChangeListAction" file="GenerateFromChangeListAction.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
+    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
-    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorFacade" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.Presentation" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.workbench.make.WorkbenchMakeService" />
+    <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
+    <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="com.intellij.openapi.vcs.actions.VcsContext" />
-    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.Presentation" />
     <classNode extendsClassName="com.intellij.openapi.vcs.actions.AbstractVcsAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.actions.GenerateTextFromChangeListAction" file="GenerateTextFromChangeListAction.java">
-    <classNode dependClassName="jetbrains.mps.ide.generator.OutputViewGenerationHandler" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorUIFacade" />
+    <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="com.intellij.openapi.vcs.actions.VcsContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.OutputViewGenerationHandler" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="jetbrains.mps.vcs.actions.GenerateFromChangeListAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.actions.ShowInFileView" file="ShowInFileView.java">
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView" />
-    <classNode dependClassName="com.intellij.ide.projectView.ProjectView" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="com.intellij.openapi.vcs.actions.VcsContext" />
+    <classNode dependClassName="com.intellij.ide.projectView.ProjectView" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="jetbrains.mps.vcs.actions.AbstractShowInFileView" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.actions.ShowInLogicalView" file="ShowInLogicalView.java">
+    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypesManager" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="com.intellij.openapi.vcs.actions.VcsContext" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.Presentation" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="com.intellij.openapi.util.Computable" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.Presentation" />
-    <classNode dependClassName="com.intellij.openapi.vcs.actions.VcsContext" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="com.intellij.openapi.vcs.actions.AbstractVcsAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.actions.ShowInVcsRootsView" file="ShowInVcsRootsView.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.fileSystem.VCSRootsProjectView" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="com.intellij.openapi.vcs.actions.VcsContext" />
     <classNode dependClassName="com.intellij.ide.projectView.ProjectView" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.fileSystem.VCSRootsProjectView" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="jetbrains.mps.vcs.actions.AbstractShowInFileView" />
   </dependency>
 </dependenciesRoot>

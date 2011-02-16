@@ -55,11 +55,11 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class QueriesGenerated {
   private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a0a1a1a3a53 = new SNodePointer("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)", "~SNode");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a0a1a1a0a3a2a0a7a5a0a705 = new SNodePointer("f:java_stub#jetbrains.mps.lang.typesystem.runtime(jetbrains.mps.lang.typesystem.runtime@java_stub)", "~HUtil.copyIfNecessary(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a1a1a2a0a0a0a1a1a0a3a2a0a7a5a0a705 = new SNodePointer("f:java_stub#jetbrains.mps.lang.typesystem.runtime(jetbrains.mps.lang.typesystem.runtime@java_stub)", "~HUtil");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a1a1a1a0a1a2a0a0a0a1a1a3a5a0a805 = new SNodePointer("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~TypeChecker.getRuntimeSupport():jetbrains.mps.lang.typesystem.runtime.RuntimeSupport");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a1a1a1a1a1a2a0a0a0a1a1a3a5a0a805 = new SNodePointer("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker");
-  private static SNodePointer SNODE_POINTER_x583g4_a0a1a1a1a2a1a1a1a1a1a2a0a0a0a1a1a3a5a0a805 = new SNodePointer("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~TypeChecker");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a0a1a1a0a3a2a0a7a5a0a005 = new SNodePointer("f:java_stub#jetbrains.mps.lang.typesystem.runtime(jetbrains.mps.lang.typesystem.runtime@java_stub)", "~HUtil.copyIfNecessary(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a1a1a2a0a0a0a1a1a0a3a2a0a7a5a0a005 = new SNodePointer("f:java_stub#jetbrains.mps.lang.typesystem.runtime(jetbrains.mps.lang.typesystem.runtime@java_stub)", "~HUtil");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a1a1a1a0a1a2a0a0a0a1a1a3a5a0a105 = new SNodePointer("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~TypeChecker.getRuntimeSupport():jetbrains.mps.lang.typesystem.runtime.RuntimeSupport");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a1a1a1a1a1a2a0a0a0a1a1a3a5a0a105 = new SNodePointer("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a1a1a2a1a1a1a1a1a2a0a0a0a1a1a3a5a0a105 = new SNodePointer("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~TypeChecker");
 
   public static boolean createRootRule_Condition_1175254554283(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
@@ -1062,16 +1062,6 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static Object propertyMacro_GetPropertyValue_1239115605985(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "conceptOfInstance", false);
-    return INamedConcept_Behavior.call_getFqName_1213877404258(conceptDeclaration);
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1239118482951(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "conceptOfInstance", false);
-    return INamedConcept_Behavior.call_getFqName_1213877404258(conceptDeclaration);
-  }
-
   public static Object propertyMacro_GetPropertyValue_1240324610467(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "matchingConcept", false));
   }
@@ -1134,15 +1124,15 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1175002064909(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.InferenceRule")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a591().createNode(_context.getOutputModel()), "classifier", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a391().createNode(_context.getOutputModel()), "classifier", false);
     }
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a591().createNode(_context.getOutputModel()), "classifier", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a391().createNode(_context.getOutputModel()), "classifier", false);
     }
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a2a591().createNode(_context.getOutputModel()), "classifier", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a2a391().createNode(_context.getOutputModel()), "classifier", false);
     }
-    return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a3a591().createNode(_context.getOutputModel()), "classifier", false);
+    return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a3a391().createNode(_context.getOutputModel()), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1199,10 +1189,10 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1227106551335(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
     if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a802().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a602().createNode(), "baseMethodDeclaration", false);
     }
     if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a2a802().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a2a602().createNode(), "baseMethodDeclaration", false);
     }
     return null;
   }
@@ -1210,10 +1200,10 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1227108499099(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
     if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a902().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a702().createNode(), "baseMethodDeclaration", false);
     }
     if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a2a902().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a2a702().createNode(), "baseMethodDeclaration", false);
     }
     return null;
   }
@@ -1358,10 +1348,10 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1227108582180(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
     if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a132().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a922().createNode(), "baseMethodDeclaration", false);
     }
     if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a2a132().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a2a922().createNode(), "baseMethodDeclaration", false);
     }
     return null;
   }
@@ -1376,12 +1366,12 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1222182391879(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.SubtypingRule")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a432().createNode(), "classifier", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a232().createNode(), "classifier", false);
     }
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.ComparisonRule")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a432().createNode(), "classifier", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a232().createNode(), "classifier", false);
     }
-    return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a2a432().createNode(), "classifier", false);
+    return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a2a232().createNode(), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_1223044000311(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1430,10 +1420,10 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1227108441386(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode messageTarget = SLinkOperations.getTarget(_context.getNode(), "messageTarget", true);
     if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a542().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a342().createNode(), "baseMethodDeclaration", false);
     }
     if (SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget") || SNodeOperations.isInstanceOf(messageTarget, "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a2a542().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a2a342().createNode(), "baseMethodDeclaration", false);
     }
     return null;
   }
@@ -1505,34 +1495,34 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1214931879685(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode grandparent = SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode()));
     do {
-      SNode matchedNode_x583g4_b0ck = grandparent;
+      SNode matchedNode_x583g4_b0ak = grandparent;
       {
-        boolean matches_x583g4_a1a262 = false;
+        boolean matches_x583g4_a1a062 = false;
         {
-          SNode matchingNode_x583g4_a1a262 = grandparent;
-          if (matchingNode_x583g4_a1a262 != null) {
-            matches_x583g4_a1a262 = SModelUtil_new.isAssignableConcept(matchingNode_x583g4_a1a262.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
+          SNode matchingNode_x583g4_a1a062 = grandparent;
+          if (matchingNode_x583g4_a1a062 != null) {
+            matches_x583g4_a1a062 = SModelUtil_new.isAssignableConcept(matchingNode_x583g4_a1a062.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
           }
         }
-        if (matches_x583g4_a1a262) {
+        if (matches_x583g4_a1a062) {
           {
-            if ((SLinkOperations.getTarget(matchedNode_x583g4_b0ck, "nodeToCheck", true) != null)) {
+            if ((SLinkOperations.getTarget(matchedNode_x583g4_b0ak, "nodeToCheck", true) != null)) {
               return true;
             }
-            SNode leftPart = SLinkOperations.getTarget(matchedNode_x583g4_b0ck, "leftExpression", true);
+            SNode leftPart = SLinkOperations.getTarget(matchedNode_x583g4_b0ak, "leftExpression", true);
             do {
-              SNode matchedNode_x583g4_c0a1a262 = leftPart;
+              SNode matchedNode_x583g4_c0a1a062 = leftPart;
               {
-                boolean matches_x583g4_a2a0b0ck = false;
+                boolean matches_x583g4_a2a0b0ak = false;
                 {
-                  SNode matchingNode_x583g4_a2a0b0ck = leftPart;
-                  if (matchingNode_x583g4_a2a0b0ck != null) {
-                    matches_x583g4_a2a0b0ck = SModelUtil_new.isAssignableConcept(matchingNode_x583g4_a2a0b0ck.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
+                  SNode matchingNode_x583g4_a2a0b0ak = leftPart;
+                  if (matchingNode_x583g4_a2a0b0ak != null) {
+                    matches_x583g4_a2a0b0ak = SModelUtil_new.isAssignableConcept(matchingNode_x583g4_a2a0b0ak.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
                   }
                 }
-                if (matches_x583g4_a2a0b0ck) {
-                  if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_x583g4_c0a1a262, "normalType", true), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression")) {
-                    if (SLinkOperations.getTarget(matchedNode_x583g4_c0a1a262, "normalType", true) == _context.getNode()) {
+                if (matches_x583g4_a2a0b0ak) {
+                  if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_x583g4_c0a1a062, "normalType", true), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression")) {
+                    if (SLinkOperations.getTarget(matchedNode_x583g4_c0a1a062, "normalType", true) == _context.getNode()) {
                       return false;
                     } else {
                       return true;
@@ -1542,19 +1532,19 @@ public class QueriesGenerated {
                 }
               }
             } while (false);
-            SNode rightPart = SLinkOperations.getTarget(matchedNode_x583g4_b0ck, "rightExpression", true);
+            SNode rightPart = SLinkOperations.getTarget(matchedNode_x583g4_b0ak, "rightExpression", true);
             do {
-              SNode matchedNode_x583g4_e0a1a262 = rightPart;
+              SNode matchedNode_x583g4_e0a1a062 = rightPart;
               {
-                boolean matches_x583g4_a4a0b0ck = false;
+                boolean matches_x583g4_a4a0b0ak = false;
                 {
-                  SNode matchingNode_x583g4_a4a0b0ck = rightPart;
-                  if (matchingNode_x583g4_a4a0b0ck != null) {
-                    matches_x583g4_a4a0b0ck = SModelUtil_new.isAssignableConcept(matchingNode_x583g4_a4a0b0ck.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
+                  SNode matchingNode_x583g4_a4a0b0ak = rightPart;
+                  if (matchingNode_x583g4_a4a0b0ak != null) {
+                    matches_x583g4_a4a0b0ak = SModelUtil_new.isAssignableConcept(matchingNode_x583g4_a4a0b0ak.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
                   }
                 }
-                if (matches_x583g4_a4a0b0ck) {
-                  if (SLinkOperations.getTarget(matchedNode_x583g4_e0a1a262, "normalType", true) == _context.getNode()) {
+                if (matches_x583g4_a4a0b0ak) {
+                  if (SLinkOperations.getTarget(matchedNode_x583g4_e0a1a062, "normalType", true) == _context.getNode()) {
                     return false;
                   }
                   break;
@@ -1572,34 +1562,34 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1214931157675(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode grandparent = SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode()));
     do {
-      SNode matchedNode_x583g4_b0dk = grandparent;
+      SNode matchedNode_x583g4_b0bk = grandparent;
       {
-        boolean matches_x583g4_a1a362 = false;
+        boolean matches_x583g4_a1a162 = false;
         {
-          SNode matchingNode_x583g4_a1a362 = grandparent;
-          if (matchingNode_x583g4_a1a362 != null) {
-            matches_x583g4_a1a362 = SModelUtil_new.isAssignableConcept(matchingNode_x583g4_a1a362.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
+          SNode matchingNode_x583g4_a1a162 = grandparent;
+          if (matchingNode_x583g4_a1a162 != null) {
+            matches_x583g4_a1a162 = SModelUtil_new.isAssignableConcept(matchingNode_x583g4_a1a162.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
           }
         }
-        if (matches_x583g4_a1a362) {
+        if (matches_x583g4_a1a162) {
           {
-            if ((SLinkOperations.getTarget(matchedNode_x583g4_b0dk, "nodeToCheck", true) != null)) {
+            if ((SLinkOperations.getTarget(matchedNode_x583g4_b0bk, "nodeToCheck", true) != null)) {
               return false;
             }
-            SNode leftPart = SLinkOperations.getTarget(matchedNode_x583g4_b0dk, "leftExpression", true);
+            SNode leftPart = SLinkOperations.getTarget(matchedNode_x583g4_b0bk, "leftExpression", true);
             do {
-              SNode matchedNode_x583g4_c0a1a362 = leftPart;
+              SNode matchedNode_x583g4_c0a1a162 = leftPart;
               {
-                boolean matches_x583g4_a2a0b0dk = false;
+                boolean matches_x583g4_a2a0b0bk = false;
                 {
-                  SNode matchingNode_x583g4_a2a0b0dk = leftPart;
-                  if (matchingNode_x583g4_a2a0b0dk != null) {
-                    matches_x583g4_a2a0b0dk = SModelUtil_new.isAssignableConcept(matchingNode_x583g4_a2a0b0dk.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
+                  SNode matchingNode_x583g4_a2a0b0bk = leftPart;
+                  if (matchingNode_x583g4_a2a0b0bk != null) {
+                    matches_x583g4_a2a0b0bk = SModelUtil_new.isAssignableConcept(matchingNode_x583g4_a2a0b0bk.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
                   }
                 }
-                if (matches_x583g4_a2a0b0dk) {
-                  if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_x583g4_c0a1a362, "normalType", true), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression")) {
-                    if (SLinkOperations.getTarget(matchedNode_x583g4_c0a1a362, "normalType", true) == _context.getNode()) {
+                if (matches_x583g4_a2a0b0bk) {
+                  if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_x583g4_c0a1a162, "normalType", true), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression")) {
+                    if (SLinkOperations.getTarget(matchedNode_x583g4_c0a1a162, "normalType", true) == _context.getNode()) {
                       return true;
                     } else {
                       return false;
@@ -1609,19 +1599,19 @@ public class QueriesGenerated {
                 }
               }
             } while (false);
-            SNode rightPart = SLinkOperations.getTarget(matchedNode_x583g4_b0dk, "rightExpression", true);
+            SNode rightPart = SLinkOperations.getTarget(matchedNode_x583g4_b0bk, "rightExpression", true);
             do {
-              SNode matchedNode_x583g4_e0a1a362 = rightPart;
+              SNode matchedNode_x583g4_e0a1a162 = rightPart;
               {
-                boolean matches_x583g4_a4a0b0dk = false;
+                boolean matches_x583g4_a4a0b0bk = false;
                 {
-                  SNode matchingNode_x583g4_a4a0b0dk = rightPart;
-                  if (matchingNode_x583g4_a4a0b0dk != null) {
-                    matches_x583g4_a4a0b0dk = SModelUtil_new.isAssignableConcept(matchingNode_x583g4_a4a0b0dk.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
+                  SNode matchingNode_x583g4_a4a0b0bk = rightPart;
+                  if (matchingNode_x583g4_a4a0b0bk != null) {
+                    matches_x583g4_a4a0b0bk = SModelUtil_new.isAssignableConcept(matchingNode_x583g4_a4a0b0bk.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
                   }
                 }
-                if (matches_x583g4_a4a0b0dk) {
-                  if (SLinkOperations.getTarget(matchedNode_x583g4_e0a1a362, "normalType", true) == _context.getNode()) {
+                if (matches_x583g4_a4a0b0bk) {
+                  if (SLinkOperations.getTarget(matchedNode_x583g4_e0a1a162, "normalType", true) == _context.getNode()) {
                     return true;
                   }
                   break;
@@ -1662,10 +1652,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1207655469430(final IOperationContext operationContext, final IfMacroContext _context) {
     return FindSourceBlock_Behavior.call_isSet_1213877521577(SLinkOperations.getTarget(_context.getNode(), "findSourceBlock", true));
-  }
-
-  public static boolean ifMacro_Condition_1224145493074(final IOperationContext operationContext, final IfMacroContext _context) {
-    throw new RuntimeException("givetype is deprecated and not implemented");
   }
 
   public static boolean ifMacro_Condition_1223996377318(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2479,14 +2465,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1223374838180(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode methodDeclaration = SNodeOperations.copyNode(_context.getNode());
-    ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).insertElement(0, new QueriesGenerated.QuotationClass_x583g4_a1a0b0kr().createNode());
+    ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).insertElement(0, new QueriesGenerated.QuotationClass_x583g4_a1a0b0hr().createNode());
     SLinkOperations.setNewChild(methodDeclaration, AttributesRolesUtil.childRoleFromAttributeRole("processed"), "jetbrains.mps.lang.typesystem.structure.Processed");
     return methodDeclaration;
   }
 
   public static SNode sourceNodeQuery_1223378950940(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode methodCall = SNodeOperations.copyNode(_context.getNode());
-    ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).insertElement(0, new QueriesGenerated.QuotationClass_x583g4_a1a0b0lr().createNode());
+    ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).insertElement(0, new QueriesGenerated.QuotationClass_x583g4_a1a0b0ir().createNode());
     SLinkOperations.setNewChild(methodCall, AttributesRolesUtil.childRoleFromAttributeRole("processed"), "jetbrains.mps.lang.typesystem.structure.Processed");
     return methodCall;
   }
@@ -2534,21 +2520,13 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "rightOperandType", true);
   }
 
-  public static SNode sourceNodeQuery_1239115686289(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
-  public static SNode sourceNodeQuery_1239118482972(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_1240324695757(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "targetNode", true);
   }
 
   public static SNode sourceNodeQuery_1240658089005(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     if (SPropertyOperations.hasValue(SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false), "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false), "sourceCardinality", "1", "0..1")) {
-      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0yr().createNode();
+      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0tr().createNode();
     } else {
       return SLinkOperations.getTarget(_context.getNode(), "childIndex", true);
     }
@@ -2763,14 +2741,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "actualArgument", true);
   }
 
-  public static Iterable sourceNodesQuery_1239115667760(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "argument", true);
-  }
-
-  public static Iterable sourceNodesQuery_1239118482965(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "argument", true);
-  }
-
   public static Iterable sourceNodesQuery_1240324642248(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "linkInfo", true);
   }
@@ -2786,13 +2756,13 @@ public class QueriesGenerated {
       List<SNode> annotationInstances = SLinkOperations.getTargets(baseMethodDeclaration, "annotation", true);
       for (SNode annotationInstance : annotationInstances) {
         SNode annotation = SLinkOperations.getTarget(annotationInstance, "annotation", false);
-        if (annotation == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a3a0a605_0().createNode(), "classifier", false) || annotation == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a3a0a605().createNode(), "classifier", false)) {
+        if (annotation == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a3a0a994_0().createNode(), "classifier", false) || annotation == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a3a0a994().createNode(), "classifier", false)) {
           toProcess = true;
           break;
         }
       }
       if (toProcess) {
-        ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).insertElement(0, new QueriesGenerated.QuotationClass_x583g4_a1a0a0e0a0mt().createNode());
+        ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).insertElement(0, new QueriesGenerated.QuotationClass_x583g4_a1a0a0e0a0ft().createNode());
       }
     }
     for (SNode baseMethodDeclaration : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
@@ -2800,13 +2770,13 @@ public class QueriesGenerated {
       List<SNode> annotationInstances = SLinkOperations.getTargets(baseMethodDeclaration, "annotation", true);
       for (SNode annotationInstance : annotationInstances) {
         SNode annotation = SLinkOperations.getTarget(annotationInstance, "annotation", false);
-        if (annotation == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a2a1a605_0().createNode(), "classifier", false) || annotation == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a2a1a605().createNode(), "classifier", false)) {
+        if (annotation == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a2a1a994_0().createNode(), "classifier", false) || annotation == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a2a1a994().createNode(), "classifier", false)) {
           toProcess = true;
           break;
         }
       }
       if (toProcess) {
-        ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)).insertElement(0, new QueriesGenerated.QuotationClass_x583g4_a1a0a0d0b0mt().createNode());
+        ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)).insertElement(0, new QueriesGenerated.QuotationClass_x583g4_a1a0a0d0b0ft().createNode());
       }
     }
   }
@@ -2839,22 +2809,22 @@ public class QueriesGenerated {
         }
 parametersLoop:
         for (SNode parameterDeclaration : SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)) {
-          if (SPropertyOperations.getString(parameterDeclaration, "name").equals("typeCheckingContext") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a7a5a0a705().createNode(), "classifier", false)) {
+          if (SPropertyOperations.getString(parameterDeclaration, "name").equals("typeCheckingContext") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a7a5a0a005().createNode(), "classifier", false)) {
             SNode lastParameterType = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).last(), "type", true);
-            boolean alreadyProcessed = SNodeOperations.isInstanceOf(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0b0a0h0f0a0nt().createNode(), "classifier", false);
+            boolean alreadyProcessed = SNodeOperations.isInstanceOf(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0b0a0h0f0a0gt().createNode(), "classifier", false);
             if (!(alreadyProcessed)) {
-              ListSequence.fromList(SLinkOperations.getTargets(instanceMethodCall, "actualArgument", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0a0c0a0h0f0a0nt().createNode());
+              ListSequence.fromList(SLinkOperations.getTargets(instanceMethodCall, "actualArgument", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0a0c0a0h0f0a0gt().createNode());
               ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(instanceMethodDeclaration), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).addElement(SNodeOperations.copyNode(instanceMethodDeclaration));
-              ListSequence.fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0c0c0a0h0f0a0nt().createNode());
+              ListSequence.fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0c0c0a0h0f0a0gt().createNode());
               for (SNode mc : SNodeOperations.getDescendants(instanceMethodDeclaration, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})) {
                 do {
-                  SNode matchedNode_x583g4_a0d0c0a0h0f0a0nt = mc;
+                  SNode matchedNode_x583g4_a0d0c0a0h0f0a0gt = mc;
                   {
-                    boolean matches_x583g4_a0a3a2a0a7a5a0a705 = false;
-                    GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_x583g4_a0a1a1a0a3a2a0a7a5a0a705();
-                    matches_x583g4_a0a3a2a0a7a5a0a705 = matchingPattern.match(matchedNode_x583g4_a0d0c0a0h0f0a0nt);
-                    if (matches_x583g4_a0a3a2a0a7a5a0a705) {
-                      ListSequence.fromList(SLinkOperations.getTargets(matchedNode_x583g4_a0d0c0a0h0f0a0nt, "actualArgument", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0d0b0a0d0c0a0h0f0a0nt().createNode());
+                    boolean matches_x583g4_a0a3a2a0a7a5a0a005 = false;
+                    GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_x583g4_a0a1a1a0a3a2a0a7a5a0a005();
+                    matches_x583g4_a0a3a2a0a7a5a0a005 = matchingPattern.match(matchedNode_x583g4_a0d0c0a0h0f0a0gt);
+                    if (matches_x583g4_a0a3a2a0a7a5a0a005) {
+                      ListSequence.fromList(SLinkOperations.getTargets(matchedNode_x583g4_a0d0c0a0h0f0a0gt, "actualArgument", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0d0b0a0d0c0a0h0f0a0gt().createNode());
                       break;
                     }
                   }
@@ -2885,12 +2855,12 @@ parametersLoop:
         }
         SNode dotExpression = SNodeOperations.cast(SNodeOperations.getParent(instanceMethodCall), "jetbrains.mps.baseLanguage.structure.DotExpression");
         do {
-          SNode matchedNode_x583g4_d0f0a0ot = SLinkOperations.getTarget(dotExpression, "operand", true);
+          SNode matchedNode_x583g4_d0f0a0ht = SLinkOperations.getTarget(dotExpression, "operand", true);
           {
-            boolean matches_x583g4_a3a5a0a805 = false;
-            GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_x583g4_a0a1a1a3a5a0a805();
-            matches_x583g4_a3a5a0a805 = matchingPattern.match(matchedNode_x583g4_d0f0a0ot);
-            if (matches_x583g4_a3a5a0a805) {
+            boolean matches_x583g4_a3a5a0a105 = false;
+            GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_x583g4_a0a1a1a3a5a0a105();
+            matches_x583g4_a3a5a0a105 = matchingPattern.match(matchedNode_x583g4_d0f0a0ht);
+            if (matches_x583g4_a3a5a0a105) {
               break;
             }
           }
@@ -2899,10 +2869,10 @@ parametersLoop:
 parametersLoop:
         for (SNode parameterDeclaration : SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)) {
           SNode lastParameterType = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).last(), "type", true);
-          if (SPropertyOperations.getString(parameterDeclaration, "name").equals("typeCheckingContext") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a4a5a0a805().createNode(), "classifier", false)) {
-            boolean alreadyProcessed = SNodeOperations.isInstanceOf(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0b0e0f0a0ot().createNode(), "classifier", false);
+          if (SPropertyOperations.getString(parameterDeclaration, "name").equals("typeCheckingContext") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(parameterDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a1a4a5a0a105().createNode(), "classifier", false)) {
+            boolean alreadyProcessed = SNodeOperations.isInstanceOf(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(lastParameterType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0b0e0f0a0ht().createNode(), "classifier", false);
             if (!(alreadyProcessed)) {
-              ListSequence.fromList(SLinkOperations.getTargets(instanceMethodCall, "actualArgument", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0a0b0b0e0f0a0ot().createNode());
+              ListSequence.fromList(SLinkOperations.getTargets(instanceMethodCall, "actualArgument", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0a0b0b0e0f0a0ht().createNode());
             }
             break parametersLoop;
           }
@@ -3044,8 +3014,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a591 {
-    public QuotationClass_x583g4_a0a0a0a591() {
+  public static class QuotationClass_x583g4_a0a0a0a391 {
+    public QuotationClass_x583g4_a0a0a0a391() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -3062,8 +3032,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a1a591 {
-    public QuotationClass_x583g4_a0a0a1a591() {
+  public static class QuotationClass_x583g4_a0a0a1a391 {
+    public QuotationClass_x583g4_a0a0a1a391() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -3080,8 +3050,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a2a591 {
-    public QuotationClass_x583g4_a0a0a2a591() {
+  public static class QuotationClass_x583g4_a0a0a2a391 {
+    public QuotationClass_x583g4_a0a0a2a391() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -3098,8 +3068,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a3a591 {
-    public QuotationClass_x583g4_a0a3a591() {
+  public static class QuotationClass_x583g4_a0a3a391 {
+    public QuotationClass_x583g4_a0a3a391() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -3116,8 +3086,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a1a802 {
-    public QuotationClass_x583g4_a0a0a1a802() {
+  public static class QuotationClass_x583g4_a0a0a1a602 {
+    public QuotationClass_x583g4_a0a0a1a602() {
     }
 
     public SNode createNode() {
@@ -3134,8 +3104,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a2a802 {
-    public QuotationClass_x583g4_a0a0a2a802() {
+  public static class QuotationClass_x583g4_a0a0a2a602 {
+    public QuotationClass_x583g4_a0a0a2a602() {
     }
 
     public SNode createNode() {
@@ -3152,8 +3122,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a1a902 {
-    public QuotationClass_x583g4_a0a0a1a902() {
+  public static class QuotationClass_x583g4_a0a0a1a702 {
+    public QuotationClass_x583g4_a0a0a1a702() {
     }
 
     public SNode createNode() {
@@ -3170,8 +3140,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a2a902 {
-    public QuotationClass_x583g4_a0a0a2a902() {
+  public static class QuotationClass_x583g4_a0a0a2a702 {
+    public QuotationClass_x583g4_a0a0a2a702() {
     }
 
     public SNode createNode() {
@@ -3188,8 +3158,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a1a132 {
-    public QuotationClass_x583g4_a0a0a1a132() {
+  public static class QuotationClass_x583g4_a0a0a1a922 {
+    public QuotationClass_x583g4_a0a0a1a922() {
     }
 
     public SNode createNode() {
@@ -3206,8 +3176,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a2a132 {
-    public QuotationClass_x583g4_a0a0a2a132() {
+  public static class QuotationClass_x583g4_a0a0a2a922 {
+    public QuotationClass_x583g4_a0a0a2a922() {
     }
 
     public SNode createNode() {
@@ -3224,8 +3194,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a432 {
-    public QuotationClass_x583g4_a0a0a0a432() {
+  public static class QuotationClass_x583g4_a0a0a0a232 {
+    public QuotationClass_x583g4_a0a0a0a232() {
     }
 
     public SNode createNode() {
@@ -3242,8 +3212,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a1a432 {
-    public QuotationClass_x583g4_a0a0a1a432() {
+  public static class QuotationClass_x583g4_a0a0a1a232 {
+    public QuotationClass_x583g4_a0a0a1a232() {
     }
 
     public SNode createNode() {
@@ -3260,8 +3230,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a2a432 {
-    public QuotationClass_x583g4_a0a2a432() {
+  public static class QuotationClass_x583g4_a0a2a232 {
+    public QuotationClass_x583g4_a0a2a232() {
     }
 
     public SNode createNode() {
@@ -3278,8 +3248,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a1a542 {
-    public QuotationClass_x583g4_a0a0a1a542() {
+  public static class QuotationClass_x583g4_a0a0a1a342 {
+    public QuotationClass_x583g4_a0a0a1a342() {
     }
 
     public SNode createNode() {
@@ -3296,8 +3266,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a2a542 {
-    public QuotationClass_x583g4_a0a0a2a542() {
+  public static class QuotationClass_x583g4_a0a0a2a342 {
+    public QuotationClass_x583g4_a0a0a2a342() {
     }
 
     public SNode createNode() {
@@ -3314,8 +3284,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a1a0b0kr {
-    public QuotationClass_x583g4_a1a0b0kr() {
+  public static class QuotationClass_x583g4_a1a0b0hr {
+    public QuotationClass_x583g4_a1a0b0hr() {
     }
 
     public SNode createNode() {
@@ -3339,8 +3309,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a1a0b0lr {
-    public QuotationClass_x583g4_a1a0b0lr() {
+  public static class QuotationClass_x583g4_a1a0b0ir {
+    public QuotationClass_x583g4_a1a0b0ir() {
     }
 
     public SNode createNode() {
@@ -3364,8 +3334,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0yr {
-    public QuotationClass_x583g4_a0a0a0yr() {
+  public static class QuotationClass_x583g4_a0a0a0tr {
+    public QuotationClass_x583g4_a0a0a0tr() {
     }
 
     public SNode createNode() {
@@ -3382,8 +3352,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a1a3a0a605 {
-    public QuotationClass_x583g4_a0a0a1a3a0a605() {
+  public static class QuotationClass_x583g4_a0a0a1a3a0a994 {
+    public QuotationClass_x583g4_a0a0a1a3a0a994() {
     }
 
     public SNode createNode() {
@@ -3400,8 +3370,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a1a3a0a605_0 {
-    public QuotationClass_x583g4_a0a0a1a3a0a605_0() {
+  public static class QuotationClass_x583g4_a0a0a1a3a0a994_0 {
+    public QuotationClass_x583g4_a0a0a1a3a0a994_0() {
     }
 
     public SNode createNode() {
@@ -3418,8 +3388,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a1a0a0e0a0mt {
-    public QuotationClass_x583g4_a1a0a0e0a0mt() {
+  public static class QuotationClass_x583g4_a1a0a0e0a0ft {
+    public QuotationClass_x583g4_a1a0a0e0a0ft() {
     }
 
     public SNode createNode() {
@@ -3443,8 +3413,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a1a2a1a605 {
-    public QuotationClass_x583g4_a0a0a1a2a1a605() {
+  public static class QuotationClass_x583g4_a0a0a1a2a1a994 {
+    public QuotationClass_x583g4_a0a0a1a2a1a994() {
     }
 
     public SNode createNode() {
@@ -3461,8 +3431,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a1a2a1a605_0 {
-    public QuotationClass_x583g4_a0a0a1a2a1a605_0() {
+  public static class QuotationClass_x583g4_a0a0a1a2a1a994_0 {
+    public QuotationClass_x583g4_a0a0a1a2a1a994_0() {
     }
 
     public SNode createNode() {
@@ -3479,8 +3449,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a1a0a0d0b0mt {
-    public QuotationClass_x583g4_a1a0a0d0b0mt() {
+  public static class QuotationClass_x583g4_a1a0a0d0b0ft {
+    public QuotationClass_x583g4_a1a0a0d0b0ft() {
     }
 
     public SNode createNode() {
@@ -3505,8 +3475,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0b0a0h0f0a0nt {
-    public QuotationClass_x583g4_a0a0a0b0a0h0f0a0nt() {
+  public static class QuotationClass_x583g4_a0a0a0b0a0h0f0a0gt {
+    public QuotationClass_x583g4_a0a0a0b0a0h0f0a0gt() {
     }
 
     public SNode createNode() {
@@ -3523,8 +3493,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0c0a0h0f0a0nt {
-    public QuotationClass_x583g4_a0a0a0c0a0h0f0a0nt() {
+  public static class QuotationClass_x583g4_a0a0a0c0a0h0f0a0gt {
+    public QuotationClass_x583g4_a0a0a0c0a0h0f0a0gt() {
     }
 
     public SNode createNode() {
@@ -3548,8 +3518,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0c0c0a0h0f0a0nt {
-    public QuotationClass_x583g4_a0a0c0c0a0h0f0a0nt() {
+  public static class QuotationClass_x583g4_a0a0c0c0a0h0f0a0gt {
+    public QuotationClass_x583g4_a0a0c0c0a0h0f0a0gt() {
     }
 
     public SNode createNode() {
@@ -3574,41 +3544,41 @@ parametersLoop:
     }
   }
 
-  public static class Pattern_x583g4_a0a1a1a0a3a2a0a7a5a0a705 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_x583g4_a0a1a1a0a3a2a0a7a5a0a005 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_p;
 
-    public Pattern_x583g4_a0a1a1a0a3a2a0a7a5a0a705() {
+    public Pattern_x583g4_a0a1a1a0a3a2a0a7a5a0a005() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0nt;
-        nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0nt = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.StaticMethodCall".equals(nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0nt.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0gt;
+        nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0gt = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.StaticMethodCall".equals(nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0gt.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a0a1a1a0a3a2a0a7a5a0a705.getNode();
-          if (nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0nt.getReferent("baseMethodDeclaration") != referent) {
+          referent = SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a0a1a1a0a3a2a0a7a5a0a005.getNode();
+          if (nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0gt.getReferent("baseMethodDeclaration") != referent) {
             return false;
           }
         }
         {
           SNode referent;
-          referent = SNODE_POINTER_x583g4_a0a1a1a1a2a0a0a0a1a1a0a3a2a0a7a5a0a705.getNode();
-          if (nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0nt.getReferent("classConcept") != referent) {
+          referent = SNODE_POINTER_x583g4_a0a1a1a1a2a0a0a0a1a1a0a3a2a0a7a5a0a005.getNode();
+          if (nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0gt.getReferent("classConcept") != referent) {
             return false;
           }
         }
         {
           String childRole_x583g4_ = "actualArgument";
-          if (nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0nt.getChildCount(childRole_x583g4_) != 1) {
+          if (nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0gt.getChildCount(childRole_x583g4_) != 1) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0a3a2a0a7a5a0a705 = nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0nt.getChildren(childRole_x583g4_).get(0);
-            this.PatternVar_p = childVar_x583g4_a0a0a0a3a2a0a7a5a0a705;
+            SNode childVar_x583g4_a0a0a0a3a2a0a7a5a0a005 = nodeToMatch_x583g4_a0a0a0d0c0a0h0f0a0gt.getChildren(childRole_x583g4_).get(0);
+            this.PatternVar_p = childVar_x583g4_a0a0a0a3a2a0a7a5a0a005;
           }
         }
       }
@@ -3636,8 +3606,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0d0b0a0d0c0a0h0f0a0nt {
-    public QuotationClass_x583g4_a0a0a0a0d0b0a0d0c0a0h0f0a0nt() {
+  public static class QuotationClass_x583g4_a0a0a0a0d0b0a0d0c0a0h0f0a0gt {
+    public QuotationClass_x583g4_a0a0a0a0d0b0a0d0c0a0h0f0a0gt() {
     }
 
     public SNode createNode() {
@@ -3661,8 +3631,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a7a5a0a705 {
-    public QuotationClass_x583g4_a0a0a0a7a5a0a705() {
+  public static class QuotationClass_x583g4_a0a0a0a7a5a0a005 {
+    public QuotationClass_x583g4_a0a0a0a7a5a0a005() {
     }
 
     public SNode createNode() {
@@ -3679,34 +3649,34 @@ parametersLoop:
     }
   }
 
-  public static class Pattern_x583g4_a0a1a1a3a5a0a805 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_x583g4_a0a1a1a3a5a0a805() {
+  public static class Pattern_x583g4_a0a1a1a3a5a0a105 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_x583g4_a0a1a1a3a5a0a105() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_x583g4_a0a0d0f0a0ot;
-        nodeToMatch_x583g4_a0a0d0f0a0ot = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_x583g4_a0a0d0f0a0ot.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0d0f0a0ht;
+        nodeToMatch_x583g4_a0a0d0f0a0ht = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_x583g4_a0a0d0f0a0ht.getConceptFqName()))) {
           return false;
         }
         {
           String childRole_x583g4__0 = "operation";
-          if (nodeToMatch_x583g4_a0a0d0f0a0ot.getChildCount(childRole_x583g4__0) != 1) {
+          if (nodeToMatch_x583g4_a0a0d0f0a0ht.getChildCount(childRole_x583g4__0) != 1) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a3a5a0a805 = nodeToMatch_x583g4_a0a0d0f0a0ot.getChildren(childRole_x583g4__0).get(0);
+            SNode childVar_x583g4_a0a0a3a5a0a105 = nodeToMatch_x583g4_a0a0d0f0a0ht.getChildren(childRole_x583g4__0).get(0);
             {
-              SNode nodeToMatch_x583g4_a0a0a3a5a0a805;
-              nodeToMatch_x583g4_a0a0a3a5a0a805 = childVar_x583g4_a0a0a3a5a0a805;
-              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_x583g4_a0a0a3a5a0a805.getConceptFqName()))) {
+              SNode nodeToMatch_x583g4_a0a0a3a5a0a105;
+              nodeToMatch_x583g4_a0a0a3a5a0a105 = childVar_x583g4_a0a0a3a5a0a105;
+              if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_x583g4_a0a0a3a5a0a105.getConceptFqName()))) {
                 return false;
               }
               {
                 SNode referent;
-                referent = SNODE_POINTER_x583g4_a0a1a0a1a2a1a1a1a0a1a2a0a0a0a1a1a3a5a0a805.getNode();
-                if (nodeToMatch_x583g4_a0a0a3a5a0a805.getReferent("baseMethodDeclaration") != referent) {
+                referent = SNODE_POINTER_x583g4_a0a1a0a1a2a1a1a1a0a1a2a0a0a0a1a1a3a5a0a105.getNode();
+                if (nodeToMatch_x583g4_a0a0a3a5a0a105.getReferent("baseMethodDeclaration") != referent) {
                   return false;
                 }
               }
@@ -3715,28 +3685,28 @@ parametersLoop:
         }
         {
           String childRole_x583g4__1 = "operand";
-          if (nodeToMatch_x583g4_a0a0d0f0a0ot.getChildCount(childRole_x583g4__1) != 1) {
+          if (nodeToMatch_x583g4_a0a0d0f0a0ht.getChildCount(childRole_x583g4__1) != 1) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a3a5a0a805_0 = nodeToMatch_x583g4_a0a0d0f0a0ot.getChildren(childRole_x583g4__1).get(0);
+            SNode childVar_x583g4_a0a0a3a5a0a105_0 = nodeToMatch_x583g4_a0a0d0f0a0ht.getChildren(childRole_x583g4__1).get(0);
             {
-              SNode nodeToMatch_x583g4_a0a0a3a5a0a805_0;
-              nodeToMatch_x583g4_a0a0a3a5a0a805_0 = childVar_x583g4_a0a0a3a5a0a805_0;
-              if (!("jetbrains.mps.baseLanguage.structure.StaticMethodCall".equals(nodeToMatch_x583g4_a0a0a3a5a0a805_0.getConceptFqName()))) {
+              SNode nodeToMatch_x583g4_a0a0a3a5a0a105_0;
+              nodeToMatch_x583g4_a0a0a3a5a0a105_0 = childVar_x583g4_a0a0a3a5a0a105_0;
+              if (!("jetbrains.mps.baseLanguage.structure.StaticMethodCall".equals(nodeToMatch_x583g4_a0a0a3a5a0a105_0.getConceptFqName()))) {
                 return false;
               }
               {
                 SNode referent;
-                referent = SNODE_POINTER_x583g4_a0a1a0a1a2a1a1a1a1a1a2a0a0a0a1a1a3a5a0a805.getNode();
-                if (nodeToMatch_x583g4_a0a0a3a5a0a805_0.getReferent("baseMethodDeclaration") != referent) {
+                referent = SNODE_POINTER_x583g4_a0a1a0a1a2a1a1a1a1a1a2a0a0a0a1a1a3a5a0a105.getNode();
+                if (nodeToMatch_x583g4_a0a0a3a5a0a105_0.getReferent("baseMethodDeclaration") != referent) {
                   return false;
                 }
               }
               {
                 SNode referent;
-                referent = SNODE_POINTER_x583g4_a0a1a1a1a2a1a1a1a1a1a2a0a0a0a1a1a3a5a0a805.getNode();
-                if (nodeToMatch_x583g4_a0a0a3a5a0a805_0.getReferent("classConcept") != referent) {
+                referent = SNODE_POINTER_x583g4_a0a1a1a1a2a1a1a1a1a1a2a0a0a0a1a1a3a5a0a105.getNode();
+                if (nodeToMatch_x583g4_a0a0a3a5a0a105_0.getReferent("classConcept") != referent) {
                   return false;
                 }
               }
@@ -3762,8 +3732,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0b0e0f0a0ot {
-    public QuotationClass_x583g4_a0a0a0a0b0e0f0a0ot() {
+  public static class QuotationClass_x583g4_a0a0a0a0b0e0f0a0ht {
+    public QuotationClass_x583g4_a0a0a0a0b0e0f0a0ht() {
     }
 
     public SNode createNode() {
@@ -3780,8 +3750,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0b0b0e0f0a0ot {
-    public QuotationClass_x583g4_a0a0a0b0b0e0f0a0ot() {
+  public static class QuotationClass_x583g4_a0a0a0b0b0e0f0a0ht {
+    public QuotationClass_x583g4_a0a0a0b0b0e0f0a0ht() {
     }
 
     public SNode createNode() {
@@ -3805,8 +3775,8 @@ parametersLoop:
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a1a4a5a0a805 {
-    public QuotationClass_x583g4_a0a0a1a4a5a0a805() {
+  public static class QuotationClass_x583g4_a0a0a1a4a5a0a105 {
+    public QuotationClass_x583g4_a0a0a1a4a5a0a105() {
     }
 
     public SNode createNode() {

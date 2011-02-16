@@ -10,6 +10,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModel;
 
 public class ScopePositionInfo extends PositionInfo {
@@ -41,7 +42,7 @@ public class ScopePositionInfo extends PositionInfo {
     }
   }
 
-  public SNode getVarNode(String varName, SModel model) {
+  public SNode getVarNode(String varName, @NotNull SModel model) {
     VarInfo varInfo = MapSequence.fromMap(this.myVars).get(varName);
     if (varInfo == null) {
       return null;
@@ -49,11 +50,11 @@ public class ScopePositionInfo extends PositionInfo {
     return model.getNodeById(varInfo.getNodeId());
   }
 
-  public void addVarInfo(SNode node) {
+  public void addVarInfo(@NotNull SNode node) {
     String varName = node.getName();
     if (varName != null) {
       VarInfo varInfo = new VarInfo();
-      varInfo.setVarName(node.getName());
+      varInfo.setVarName(varName);
       MapSequence.fromMap(this.myTempNodeToVarMap).put(node, varInfo);
       MapSequence.fromMap(this.myVars).put(varInfo.getVarName(), varInfo);
     } else {

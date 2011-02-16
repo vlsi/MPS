@@ -18,12 +18,10 @@ package jetbrains.mps.debug.api.breakpoints;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.PositionInfo;
+import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -50,8 +48,10 @@ public class BreakpointLocation {
   }
 
   @Nullable
-  public PositionInfo getTargetCodePosition() {
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(myNodePointer.getModel());
+  public TraceablePositionInfo getTargetCodePosition() {
+    SModelDescriptor model = myNodePointer.getModel();
+    if (model == null) return null;
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
       return null;
     }

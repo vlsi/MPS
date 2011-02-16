@@ -1103,7 +1103,7 @@
                               <node role="eventHandlingBlock" roleId="fb0y.5224413709454207588" type="fb0y.EventHandingBlock" typeId="fb0y.5224413709453581648" id="6876714382652043826">
                                 <node role="parameter" roleId="tp2c.1199569906740" type="fb0y.FunctionParameterDeclaration" typeId="fb0y.5224413709453581668" id="6876714382652043827">
                                   <property name="name" nameId="tpck.1169194664001" value="event" />
-                                  <node role="type" roleId="tpee.5680397130376446158" type="tpee.WildCardType" typeId="tpee.1171903607971" id="6876714382652043828" />
+                                  <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="2108863436754490097" />
                                 </node>
                                 <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="6876714382652043829">
                                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6876714382652043873">

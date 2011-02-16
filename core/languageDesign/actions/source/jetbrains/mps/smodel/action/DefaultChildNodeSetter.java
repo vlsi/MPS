@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 
 /**
@@ -29,9 +30,14 @@ import jetbrains.mps.smodel.SNode;
 public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
   private static final Logger LOG = Logger.getLogger(DefaultChildNodeSetter.class);
 
-  LinkDeclaration myLinkDeclaration;
+  SNode myLinkDeclaration;
 
+  @Deprecated
   public DefaultChildNodeSetter(LinkDeclaration linkDeclaration) {
+    this(BaseAdapter.fromAdapter(linkDeclaration));
+  }
+
+  public DefaultChildNodeSetter(SNode linkDeclaration) {
     myLinkDeclaration = linkDeclaration;
 
     if (DefaultChildSubstituteInfo.isNotAggregation(linkDeclaration)) {
@@ -39,19 +45,19 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
     }
   }
 
-  public LinkDeclaration getLinkDeclaration() {
+  public SNode getLinkDeclaration() {
     return myLinkDeclaration;
   }
 
   public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
-    if (newChild != null && !SModelUtil_new.isAcceptableTarget(myLinkDeclaration, newChild)) {
+    if (newChild != null && !SModelUtil.isAcceptableTarget(myLinkDeclaration, newChild)) {
       LOG.error("couldn't set instance of " + newChild.getConceptFqName() +
-        " as child '" + myLinkDeclaration.getRole() + "' to " + parentNode.getDebugText());
+        " as child '" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration) + "' to " + parentNode.getDebugText());
       return newChild;
     }
 
     if (oldChild == null) {
-      parentNode.setChild(SModelUtil_new.getGenuineLinkRole(myLinkDeclaration), newChild);
+      parentNode.setChild(SModelUtil.getGenuineLinkRole(myLinkDeclaration), newChild);
     } else {
       parentNode.replaceChild(oldChild, newChild);
       oldChild.delete();

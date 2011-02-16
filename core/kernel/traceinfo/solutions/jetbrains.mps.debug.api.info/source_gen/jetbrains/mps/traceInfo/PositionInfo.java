@@ -8,20 +8,16 @@ import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Attribute;
 
-public class PositionInfo implements Comparable<PositionInfo> {
+public abstract class PositionInfo implements Comparable<PositionInfo> {
   private static String FILE_NAME = "fileName";
   private static String START_LINE = "startLine";
   private static String START_POSITION = "startPosition";
   private static String END_LINE = "endLine";
   private static String END_POSITION = "endPosition";
   private static String NODE_ID = "nodeId";
-  private static String CONCEPT_FQ_NAME = "conceptFqName";
-  private static String PROPERTY_STRING = "propertyString";
 
   private String myFileName;
   private String myNodeId;
-  private String myConceptFqName;
-  private String myPropertyString;
   private int myStartLine;
   private int myStartPosition;
   private int myEndLine;
@@ -32,13 +28,11 @@ public class PositionInfo implements Comparable<PositionInfo> {
 
   public PositionInfo(Element element) throws DataConversionException {
     this.myNodeId = InternUtil.intern(check_1myh1n_a0a0a1(element.getAttribute(NODE_ID)));
-    this.myConceptFqName = InternUtil.intern(check_1myh1n_a0a1a1(element.getAttribute(CONCEPT_FQ_NAME)));
-    this.myFileName = InternUtil.intern(check_1myh1n_a0a2a1(element.getAttribute(FILE_NAME)));
+    this.myFileName = InternUtil.intern(check_1myh1n_a0a1a1(element.getAttribute(FILE_NAME)));
     this.myStartLine = element.getAttribute(PositionInfo.START_LINE).getIntValue();
     this.myStartPosition = element.getAttribute(PositionInfo.START_POSITION).getIntValue();
     this.myEndLine = element.getAttribute(PositionInfo.END_LINE).getIntValue();
     this.myEndPosition = element.getAttribute(PositionInfo.END_POSITION).getIntValue();
-    this.myPropertyString = element.getAttributeValue(PositionInfo.PROPERTY_STRING);
   }
 
   @Nullable
@@ -67,10 +61,6 @@ public class PositionInfo implements Comparable<PositionInfo> {
     return this.myEndPosition;
   }
 
-  public String getPropertyString() {
-    return myPropertyString;
-  }
-
   public void setFileName(String fileName) {
     this.myFileName = InternUtil.intern(fileName);
   }
@@ -95,14 +85,6 @@ public class PositionInfo implements Comparable<PositionInfo> {
     this.myEndPosition = endPosition;
   }
 
-  public void setPropertyString(String propertyString) {
-    this.myPropertyString = propertyString;
-  }
-
-  public String getFileAndLine() {
-    return this.myFileName + ":" + (this.myStartLine + 1);
-  }
-
   public int getLineDistance() {
     return this.myEndLine - this.myStartLine;
   }
@@ -110,12 +92,6 @@ public class PositionInfo implements Comparable<PositionInfo> {
   public void saveTo(Element element) {
     if (myNodeId != null) {
       element.setAttribute(PositionInfo.NODE_ID, this.myNodeId);
-    }
-    if (myConceptFqName != null) {
-      element.setAttribute(PositionInfo.CONCEPT_FQ_NAME, this.myConceptFqName);
-    }
-    if (myPropertyString != null) {
-      element.setAttribute(PROPERTY_STRING, this.myPropertyString);
     }
     element.setAttribute(PositionInfo.FILE_NAME, this.myFileName);
     element.setAttribute(PositionInfo.START_LINE, Integer.toString(this.myStartLine));
@@ -129,9 +105,9 @@ public class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public int compareTo(PositionInfo p) {
-    if (eq_1myh1n_a0a0s(this.getLineDistance(), p.getLineDistance())) {
-      if (eq_1myh1n_a0a0a0s(this.myStartLine, p.myStartLine)) {
-        if (eq_1myh1n_a0a0a0a0s(this.myStartPosition, p.myStartPosition)) {
+    if (eq_1myh1n_a0a0p(this.getLineDistance(), p.getLineDistance())) {
+      if (eq_1myh1n_a0a0a0p(this.myStartLine, p.myStartLine)) {
+        if (eq_1myh1n_a0a0a0a0p(this.myStartPosition, p.myStartPosition)) {
           if (myNodeId == null) {
             return -1;
           }
@@ -151,7 +127,11 @@ public class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public boolean isOccupyTheSameSpace(PositionInfo p) {
-    return (eq_1myh1n_a0a0a0a0t(myStartLine, p.myStartLine)) && (eq_1myh1n_a0a0a0a0t_0(myEndLine, p.myEndLine)) && (eq_1myh1n_a0a0a0a91(myStartPosition, p.myStartPosition)) && (eq_1myh1n_a0a0a0t(myEndPosition, p.myEndPosition));
+    return (eq_1myh1n_a0a0a0a0q(myStartLine, p.myStartLine)) && (eq_1myh1n_a0a0a0a0q_0(myEndLine, p.myEndLine)) && (eq_1myh1n_a0a0a0a61(myStartPosition, p.myStartPosition)) && (eq_1myh1n_a0a0a0q(myEndPosition, p.myEndPosition));
+  }
+
+  public boolean isPositionInside(String file, int line) {
+    return eq_1myh1n_a0a0a0r(myFileName, file) && myStartLine <= line && line <= myEndLine;
   }
 
   public void fillFrom(PositionInfo position) {
@@ -161,83 +141,72 @@ public class PositionInfo implements Comparable<PositionInfo> {
     this.myStartPosition = position.myStartPosition;
     this.myEndLine = position.myEndLine;
     this.myEndPosition = position.myEndPosition;
-    this.myPropertyString = position.myPropertyString;
-    this.myConceptFqName = position.myConceptFqName;
   }
 
-  @Nullable
-  public String getConceptFqName() {
-    return myConceptFqName;
-  }
-
-  public void setConceptFqName(String conceptFqName) {
-    myConceptFqName = InternUtil.intern(conceptFqName);
-  }
-
-  private static String check_1myh1n_a0a0a1(Attribute p) {
-    if (null == p) {
-      return null;
+  private static String check_1myh1n_a0a0a1(Attribute checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getValue();
     }
-    return p.getValue();
+    return null;
   }
 
-  private static String check_1myh1n_a0a1a1(Attribute p) {
-    if (null == p) {
-      return null;
+  private static String check_1myh1n_a0a1a1(Attribute checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getValue();
     }
-    return p.getValue();
+    return null;
   }
 
-  private static String check_1myh1n_a0a2a1(Attribute p) {
-    if (null == p) {
-      return null;
-    }
-    return p.getValue();
-  }
-
-  private static boolean eq_1myh1n_a0a0s(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0p(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0a0s(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0a0p(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0s(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0p(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0a0t(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0a0q(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0a0t_0(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0a0q_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0a91(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0a61(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0t(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0q(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_1myh1n_a0a0a0r(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

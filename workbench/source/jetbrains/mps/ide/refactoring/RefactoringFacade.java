@@ -24,14 +24,15 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -227,7 +228,8 @@ public class RefactoringFacade {
         }
       });
       IOperationContext operationContext = ProjectOperationContext.get(refactoringContext.getSelectedProject());
-      GeneratorFacade.getInstance().generateModels(operationContext, descriptors, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true, false);
+      new WorkbenchMakeService (operationContext, true).make(new ModelsToResources(operationContext, descriptors).resources(false));
+//      GeneratorUIFacade.getInstance().generateModels(operationContext, descriptors, GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false);
     } finally {
       SNode.setNodeMemberAccessModifier(null);
     }

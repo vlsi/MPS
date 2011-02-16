@@ -2,8 +2,6 @@ package jetbrains.mps.stubs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
@@ -138,13 +136,13 @@ public class StubReloadManager implements ApplicationComponent {
 
       Condition<SNode> cond = new Condition<SNode>() {
         public boolean met(SNode node) {
-          return node.getConceptFqName().equals(LibraryStubDescriptor.concept);
+          return node.getConceptFqName().equals(BootstrapLanguages.concept_stubs_LibraryStubDescriptor);
         }
       };
       Iterable<SNode> iterable = new ConditionalIterable<SNode>(descriptor.getSModel().roots(), cond);
 
       for (SNode node : iterable) {
-        Class descrClass = l.getClass(l.getModuleFqName() + "." + LanguageAspect.STUBS.getName() + "." + node.getPersistentProperty(INamedConcept.NAME) + "_StubDescriptor");
+        Class descrClass = l.getClass(l.getModuleFqName() + "." + LanguageAspect.STUBS.getName() + "." + node.getPersistentProperty(SNodeUtil.property_INamedConcept_name) + "_StubDescriptor");
         if (descrClass == null) continue;
 
         try {

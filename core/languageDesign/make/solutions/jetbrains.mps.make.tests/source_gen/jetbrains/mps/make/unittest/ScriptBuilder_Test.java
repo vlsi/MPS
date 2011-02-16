@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import org.jmock.integration.junit4.JMock;
 import jetbrains.mps.make.facet.IFacet;
 import org.junit.Test;
-import jetbrains.mps.internal.make.runtime.script.ScriptBuilder;
+import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.make.facet.ITarget;
@@ -91,12 +91,12 @@ public class ScriptBuilder_Test extends MockTestCase {
 
   @Before
   public void setUp() throws Exception {
-    final IFacet fmake = Mockups.facet(context, "Make");
+    final IFacet fmake = Mockups.facet(context, "Make_");
     final ITarget tmake = Mockups.target(context, "make", new ITarget.Name("make"));
     final IFacet fgen = Mockups.facet(context, "Gen");
     final ITarget tgen = Mockups.target(context, "gen", new ITarget.Name("gen"));
     final ITarget tcfg = Mockups.target(context, "cfg", new ITarget.Name("cfg"));
-    final IFacet ftextgen = Mockups.facet(context, "Textgen");
+    final IFacet ftextgen = Mockups.facet(context, "Textgen_");
     final ITarget ttextgen = Mockups.target(context, "textgen", new ITarget.Name("textgen"));
     context.checking(new Expectations() {
       {

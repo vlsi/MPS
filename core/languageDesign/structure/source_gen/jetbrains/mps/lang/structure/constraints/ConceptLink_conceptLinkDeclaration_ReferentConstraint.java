@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptLink_conceptLinkDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -28,7 +27,7 @@ public class ConceptLink_conceptLinkDeclaration_ReferentConstraint extends BaseN
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     // concept links declared in hierarchy of enclosing concept 
     SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration", true, false);
-    return new ConceptAndSuperConceptsScope(((ConceptDeclaration) SNodeOperations.getAdapter(enclosingConcept)));
+    return new ConceptAndSuperConceptsScope(enclosingConcept);
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

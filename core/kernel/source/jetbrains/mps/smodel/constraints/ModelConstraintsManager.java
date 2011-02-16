@@ -20,12 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
-import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -112,7 +107,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private final Map<String, Method> myCanBeRootMethods = new HashMap<String, Method>();
   private final Map<String, String> myDefaultConceptNames = new HashMap<String, String>();
 
-  private final Map<String, String> myConstraintClassNames = new HashMap<String, String>();
+  private final Map<String, String> myConstraintClassNames = new ConcurrentHashMap<String, String>();
 
   public ModelConstraintsManager(ClassLoaderManager cm) {
   }
@@ -209,9 +204,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
       }
 
       // find set-event-handler and put to cache
-      List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
-      for (AbstractConceptDeclaration concept : hierarchy) {
-        Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+      List<SNode> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationNode());
+      for (SNode concept : hierarchy) {
+        Language l = SModelUtil.getDeclaringLanguage(concept);
         ensureLanguageAdded(l);
 
         String conceptFqName = NameUtil.nodeFQName(concept);
@@ -273,12 +268,12 @@ public class ModelConstraintsManager implements ApplicationComponent {
     String namespace = NameUtil.namespaceFromConceptFQName(conceptFqName);
 
     // 'bootstrap' properties
-    if (namespace.equals("jetbrains.mps.lang.structure") && propertyName.equals(INamedConcept.NAME)
+    if (namespace.equals("jetbrains.mps.lang.structure") && propertyName.equals(SNodeUtil.property_INamedConcept_name)
       && !conceptFqName.equals("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration")) {
       return null;
     }
 
-    if (conceptFqName.equals(RuntimeTypeVariable.concept)) {
+    if (conceptFqName.equals("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
       // helgins ku-ku!
       return null;
     }
@@ -299,11 +294,11 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<IModelConstraints>() {
       public IModelConstraints compute() {
-        AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-        List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(conceptDeclaration);
+        SNode conceptDeclaration = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+        List<SNode/*AbstractConceptDeclaration*/> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(conceptDeclaration);
 
-        for (final AbstractConceptDeclaration concept : hierarchy) {
-          Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+        for (final SNode concept : hierarchy) {
+          Language l = SModelUtil.getDeclaringLanguage(concept);
           ensureLanguageAdded(l);
 
           final String conceptFqName = NameUtil.nodeFQName(concept);
@@ -349,9 +344,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
       return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<INodePropertyValidator>() {
         public INodePropertyValidator compute() {
           // find validator and put to cache
-          List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
-          for (AbstractConceptDeclaration concept : hierarchy) {
-            Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+          List<SNode> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationNode());
+          for (SNode concept : hierarchy) {
+            Language l = SModelUtil.getDeclaringLanguage(concept);
             ensureLanguageAdded(l);
 
             String conceptFqName = NameUtil.nodeFQName(concept);
@@ -370,12 +365,12 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
-  INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(AbstractConceptDeclaration nodeConcept, String referentRole) {
+  INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(SNode nodeConcept, String referentRole) {
     INodeReferentSearchScopeProvider result = getNodeReferentSearchScopeProviderNonDefault(nodeConcept, referentRole);
     if (result != null) return result;
-    LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
+    SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
     if (linkDeclaration == null) {
-      LOG.error("No reference serch scope provider was found. Concept: " + nodeConcept.getAlias() + "; refName: " + referentRole);
+      LOG.error("No reference serch scope provider was found. Concept: " + SNodeUtil.getConceptDeclarationAlias(nodeConcept) + "; refName: " + referentRole);
       return new BaseNodeReferenceSearchScopeProvider() {
         public void registerSelf(ModelConstraintsManager manager) {
 
@@ -386,19 +381,20 @@ public class ModelConstraintsManager implements ApplicationComponent {
         }
       };
     }
-    return getNodeDefaultSearchScopeProvider(linkDeclaration.getTarget());
+    return getNodeDefaultSearchScopeProvider(SModelUtil.getLinkDeclarationTarget(linkDeclaration));
   }
 
-  private INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(AbstractConceptDeclaration referentConcept) {
+  private INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(SNode referentConcept) {
     while (referentConcept != null) {
-      Language l = SModelUtil_new.getDeclaringLanguage(referentConcept, GlobalScope.getInstance());
+      Language l = SModelUtil.getDeclaringLanguage(referentConcept);
       ensureLanguageAdded(l);
 
       String conceptFqName = NameUtil.nodeFQName(referentConcept);
       INodeReferentSearchScopeProvider provider = myNodeDefaultSearchScopeProvidersMap.get(conceptFqName);
       if (provider != null) return provider;
-      if (!(referentConcept instanceof ConceptDeclaration)) break;
-      referentConcept = ((ConceptDeclaration) referentConcept).getExtends();
+
+      if (!SNodeUtil.isInstanceOfConceptDeclaration(referentConcept)) break;
+      referentConcept = SNodeUtil.getConceptDeclaration_Extends(referentConcept);
     }
     return null;
   }
@@ -406,10 +402,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
   /**
    * use the ModelConstraintsUtil.getSearchScope()
    */
-  private INodeReferentSearchScopeProvider getNodeReferentSearchScopeProviderNonDefault(AbstractConceptDeclaration nodeConcept, String referentRole) {
-    List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(nodeConcept);
-    for (AbstractConceptDeclaration concept : hierarchy) {
-      Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+  private INodeReferentSearchScopeProvider getNodeReferentSearchScopeProviderNonDefault(SNode nodeConcept, String referentRole) {
+    List<SNode> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(nodeConcept);
+    for (SNode concept : hierarchy) {
+      Language l = SModelUtil.getDeclaringLanguage(concept);
       ensureLanguageAdded(l);
 
       String conceptFqName = NameUtil.nodeFQName(concept);
@@ -469,10 +465,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     myNodePropertyValidatorsMap.clear();
     myNodeReferentSearchScopeProvidersMap.clear();
     myNodeDefaultSearchScopeProvidersMap.clear();
-
-    synchronized (myConstraintClassNames) {
-      myConstraintClassNames.clear();
-    }
+    myConstraintClassNames.clear();
 
     synchronized (myLock) {
       myNodeReferentSetEventHandlersMap.clear();
@@ -608,8 +601,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
     if (m != null) {
       try {
         if (!(Boolean) m.invoke(null, context, new CanBeAnAncestorContext(parentNode, childConcept))) {
-          ConceptConstraints constraints = getClassConstraints(context, m);
-          return constraints != null ? BaseAdapter.fromAdapter(constraints.getCanBeAncestor()) : null;
+          SNode constraints = getClassConstraints(context, m);
+          return constraints != null ? SConstraintsUtil.getConceptConstraints_CanBeAncestor(constraints) : null;
         }
       } catch (IllegalAccessException e) {
         LOG.error(e);
@@ -648,9 +641,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public SNode getCanBeParentBlock(IOperationContext context, Method m) {
-    ConceptConstraints constraints = getClassConstraints(context, m);
+    SNode constraints = getClassConstraints(context, m);
     if (constraints == null) return null;
-    return BaseAdapter.fromAdapter(constraints.getCanBeParent());
+    return SConstraintsUtil.getConceptConstraints_CanBeParent(constraints);
   }
 
   public Method getCanBeChildMethod(String conceptFqName, IOperationContext context) {
@@ -660,14 +653,14 @@ public class ModelConstraintsManager implements ApplicationComponent {
       }
 
       IScope scope = context.getScope();
-      AbstractConceptDeclaration topConcept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
+      SNode topConcept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
 
       if (topConcept != null) {
-        List<AbstractConceptDeclaration> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(topConcept);
+        List<SNode> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(topConcept);
 
-        for (AbstractConceptDeclaration concept : conceptAndSuperConcepts) {
+        for (SNode concept : conceptAndSuperConcepts) {
           String fqName = NameUtil.nodeFQName(concept);
-          Language language = scope.getLanguage(NameUtil.namespaceFromConcept(concept));
+          Language language = SModelUtil.getDeclaringLanguage(concept);
           if (language == null) {
             continue;
           }
@@ -695,7 +688,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
     Method method = getCanBeChildMethod(fqName, context);
     if (method != null) {
-      SNode concept = BaseAdapter.fromAdapter(SModelUtil_new.findConceptDeclaration(fqName, context.getScope()));
+      SNode concept = SModelUtil.findConceptDeclaration(fqName, context.getScope());
       return canBeChild(concept, method, context, parentNode, link);
     }
     return true;
@@ -720,9 +713,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public SNode getCanBeChildBlock(IOperationContext context, Method m) {
-    ConceptConstraints constraints = getClassConstraints(context, m);
+    SNode constraints = getClassConstraints(context, m);
     if (constraints == null) return null;
-    return BaseAdapter.fromAdapter(constraints.getCanBeChild());
+    return SConstraintsUtil.getConceptConstraints_CanBeChild(constraints);
   }
 
   @Nullable
@@ -758,9 +751,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
-  public Method getAlternativeIconMethod(ConceptDeclaration concept) {
-    String fqName = NameUtil.nodeFQName(concept);
-    String namespace = NameUtil.namespaceFromConcept(concept);
+  public Method getAlternativeIconMethod(SNode conceptDeclaration) {
+    String fqName = NameUtil.nodeFQName(conceptDeclaration);
+    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
     Language language = GlobalScope.getInstance().getLanguage(namespace);
     String behaviorClassName = constraintsClassByConceptFqName(fqName);
     Class behaviorClass = language.getClass(behaviorClassName);
@@ -785,13 +778,13 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public SNode getCanBeRootBlock(IOperationContext context, Method m) {
     if (m == null) return null;
-    ConceptConstraints constraints = getClassConstraints(context, m);
+    SNode constraints = getClassConstraints(context, m);
     if (constraints == null) return null;
-    return BaseAdapter.fromAdapter(constraints.getCanBeRoot());
+    return SConstraintsUtil.getConceptConstraints_CanBeRoot(constraints);
   }
 
   public boolean canBeRoot(IOperationContext context, String conceptFqName, SModel model) {
-    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, context.getScope());
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, context.getScope());
     if (concept == null) {
       return false;
     }
@@ -799,8 +792,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return canBeRoot(context, method, model, concept);
   }
 
-  public boolean canBeRoot(IOperationContext context, Method method, SModel model, AbstractConceptDeclaration concept) {
-    if (concept instanceof ConceptDeclaration && ((ConceptDeclaration) concept).getRootable()) {
+  public boolean canBeRoot(IOperationContext context, Method method, SModel model, SNode concept) {
+    if (SNodeUtil.isInstanceOfConceptDeclaration(concept) && SNodeUtil.getConceptDeclaration_IsRootable(concept)) {
       if (method != null) {
         try {
           return (Boolean) method.invoke(null, context, new CanBeARootContext(model));
@@ -817,7 +810,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return false;
   }
 
-  private ConceptConstraints getClassConstraints(IOperationContext context, Method m) {
+  private SNode getClassConstraints(IOperationContext context, Method m) {
     Class cls = m.getDeclaringClass();
     String fqName = cls.getName();
     String modelName = NameUtil.namespaceFromLongName(fqName);
@@ -830,28 +823,26 @@ public class ModelConstraintsManager implements ApplicationComponent {
     if (sm == null) return null;
     SNode root = SModelOperations.getRootByName(sm.getSModel(), rootName);
     if (root == null) return null;
-    if (root.getAdapter() instanceof ConceptConstraints) {
-      return (ConceptConstraints) root.getAdapter();
+    if (SNodeOperations.isInstanceOf(root, SConstraintsUtil.concept_ConceptConstraints)) {
+      return root;
     }
     return null;
   }
 
   private String constraintsClassByConceptFqName(String fqName) {
-    synchronized (myConstraintClassNames) {
-      String cachedValue = myConstraintClassNames.get(fqName);
-      if (cachedValue != null) {
-        return cachedValue;
-      }
+    String cachedValue = myConstraintClassNames.get(fqName);
+    if (cachedValue != null) {
+      return cachedValue;
+    }
 
-      // TODO replace with code like in NameUtil.namespaceFromConceptFQName, remove cache
-      Matcher m = CONCEPT_FQNAME.matcher(fqName);
-      if (m.matches()) {
-        String result = m.group(1) + ".constraints." + m.group(2) + "_Constraints";
-        myConstraintClassNames.put(fqName, result);
-        return result;
-      } else {
-        throw new RuntimeException();
-      }
+    // TODO replace with code like in NameUtil.namespaceFromConceptFQName, remove cache
+    Matcher m = CONCEPT_FQNAME.matcher(fqName);
+    if (m.matches()) {
+      String result = m.group(1) + ".constraints." + m.group(2) + "_Constraints";
+      myConstraintClassNames.put(fqName, result);
+      return result;
+    } else {
+      throw new RuntimeException();
     }
   }
 }

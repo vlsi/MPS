@@ -42,6 +42,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5224413709453668151">
       <property name="name" nameId="tpck.1169194664001" value="typeof_FunctionParameterDeclaration" />
+      <property name="overrides" nameId="tpd4.1195213689297" value="true" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5224413709453691561">
       <property name="name" nameId="tpck.1169194664001" value="typeof_Validator" />

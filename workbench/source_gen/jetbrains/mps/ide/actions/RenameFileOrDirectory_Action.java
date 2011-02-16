@@ -106,10 +106,10 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
     return false;
   }
 
-  private static VirtualFile check_g7rid4_a0b0a(VirtualFile p, String result) {
-    if (null == p) {
-      return null;
+  private static VirtualFile check_g7rid4_a0b0a(VirtualFile checkedDotOperand, String result) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.findChild(result);
     }
-    return p.findChild(result);
+    return null;
   }
 }

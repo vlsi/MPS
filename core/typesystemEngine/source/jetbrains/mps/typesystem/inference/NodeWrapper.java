@@ -18,9 +18,6 @@ package jetbrains.mps.typesystem.inference;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.typesystem.structure.RuntimeHoleType;
-import jetbrains.mps.lang.typesystem.structure.RuntimeListVariable;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
@@ -41,10 +38,9 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
   public static NodeWrapper createWrapperFromNode(SNode node, EquationManager equationManager, boolean equationManagerNullable) {
     if (node == null) return null;
     NodeWrapper result;
-    String conceptFqName = node.getConceptFqName();
-    if (RuntimeTypeVariable.concept.equals(conceptFqName)) {
+    if (HUtil.isRuntimeTypeVariable(node)) {
       result = new VariableWrapper(node, equationManager, equationManagerNullable);
-    } else if (RuntimeHoleType.concept.equals(conceptFqName)) {
+    } else if (HUtil.isRuntimeHoleType(node)) {
       result = new HoleWrapper(node, equationManager, null);
     } else {
       result = new NodeWrapper(node);
@@ -136,13 +132,13 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
         public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
           if (!nodes1.isEmpty()) {
             SNode node1 = nodes1.get(0);
-            if (node1 != null && RuntimeListVariable.concept.equals(node1.getConceptFqName())) {
+            if (HUtil.isRuntimeListVariable(node1)) {
               return true;
             }
           }
           if (!nodes2.isEmpty()) {
             SNode node2 = nodes2.get(0);
-            if (node2 != null && RuntimeListVariable.concept.equals(node2.getConceptFqName())) {
+            if (HUtil.isRuntimeListVariable(node2)) {
               return true;
             }
           }
@@ -157,7 +153,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
           if (equationManager == null) return;
           if (!nodes1.isEmpty()) {
             SNode node1 = nodes1.get(0);
-            if (node1 != null && RuntimeListVariable.concept.equals(node1.getConceptFqName())) {
+            if (HUtil.isRuntimeListVariable(node1)) {
               SNode var = node1;
               SNode parent = var.getParent();
               String role = var.getRole_();
@@ -173,7 +169,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
           }
           if (!nodes2.isEmpty()) {
             SNode node2 = nodes2.get(0);
-            if (node2 != null && RuntimeListVariable.concept.equals(node2.getConceptFqName())) {
+            if (HUtil.isRuntimeListVariable(node2)) {
               SNode var = node2;
               SNode parent = var.getParent();
               String role = var.getRole_();
@@ -198,7 +194,8 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     return wrapper.matchesWith(this, equationManager, errorInfo);
   }
 
-  public RuntimeTypeVariable getVariable() {
+  @Override
+  public SNode getVariable() {
     return null;
   }
 

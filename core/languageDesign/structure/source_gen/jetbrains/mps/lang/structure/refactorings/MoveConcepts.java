@@ -15,6 +15,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelReference;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
@@ -75,7 +77,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
   public void refactor(final RefactoringContext refactoringContext) {
     refactoringContext.setParameter("sourceModel", SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first()).getModelDescriptor());
     Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("sourceModel")));
-    Language targetLanguage = Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("targetModel")));
+    Language targetLanguage = Language.getLanguageFor(SModelRepository.getInstance().getModelDescriptor(((SModelReference) refactoringContext.getParameter("targetModel"))));
     List<SNode> editors = new ArrayList<SNode>();
     List<SNode> behaviors = new ArrayList<SNode>();
     List<SNode> constraints = new ArrayList<SNode>();
@@ -122,9 +124,9 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     }
     // refactoring itself 
     for (SNode node : refactoringContext.getSelectedNodes()) {
-      refactoringContext.changeFeatureName(node, ((SModelDescriptor) refactoringContext.getParameter("targetModel")).getSModelReference().getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
+      refactoringContext.changeFeatureName(node, ((SModelReference) refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
     }
-    refactoringContext.moveNodesToModel(refactoringContext.getSelectedNodes(), ((SModelDescriptor) refactoringContext.getParameter("targetModel")).getSModel());
+    refactoringContext.moveNodesToModel(refactoringContext.getSelectedNodes(), SModelRepository.getInstance().getModelDescriptor(((SModelReference) refactoringContext.getParameter("targetModel"))).getSModel());
     if (ListSequence.fromList(editors).isNotEmpty()) {
       refactoringContext.updateByDefault(editorModelDescriptor.getSModel());
       SModelDescriptor targetEditorModelDescriptor = targetLanguage.getEditorModelDescriptor();
@@ -179,7 +181,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
         ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SModel>) list));
       }
     }
-    Language targetLanguage = Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("targetModel")));
+    Language targetLanguage = Language.getLanguageFor(SModelRepository.getInstance().getModelDescriptor(((SModelReference) refactoringContext.getParameter("targetModel"))));
     if (targetLanguage != null) {
       Map<IModule, List<SModel>> models = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project, targetLanguage);
       for (List<SModel> list : Sequence.fromIterable(models.values())) {

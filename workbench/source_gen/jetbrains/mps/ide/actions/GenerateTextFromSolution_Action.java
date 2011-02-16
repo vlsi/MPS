@@ -21,7 +21,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.generator.OutputViewGenerationHandler;
 
@@ -96,7 +96,7 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), exceptionMsg.value);
         return;
       }
-      GeneratorFacade.getInstance().generateModels(((IOperationContext) MapSequence.fromMap(_params).get("context")), params.value.getModelDescriptors(), new OutputViewGenerationHandler(), true, false);
+      GeneratorUIFacade.getInstance().generateModels(((IOperationContext) MapSequence.fromMap(_params).get("context")), params.value.getModelDescriptors(), new OutputViewGenerationHandler(), true, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateTextFromSolution", t);

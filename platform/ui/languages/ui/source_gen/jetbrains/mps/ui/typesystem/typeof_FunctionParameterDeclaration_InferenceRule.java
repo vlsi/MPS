@@ -42,6 +42,6 @@ public class typeof_FunctionParameterDeclaration_InferenceRule extends AbstractI
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

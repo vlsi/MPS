@@ -24,7 +24,7 @@ import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
-import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.ide.projectPane.ModuleChangingOperationContext;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.IModule;
@@ -40,6 +40,7 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import java.util.*;
 
+@Deprecated
 public abstract class BaseGenerateAction extends BaseAction {
   private boolean myRebuildAll;
   private IOperationContext myOperationContext;
@@ -117,8 +118,8 @@ public abstract class BaseGenerateAction extends BaseAction {
     boolean checkSuccessful = myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class)
       .checkModelsBeforeGenerationIfNeeded(invocationContext, modelsToGenerate, new Runnable() {
         public void run() {
-          IGenerationHandler generationHandler = GeneratorFacade.getInstance().getDefaultGenerationHandler();
-          GeneratorFacade.getInstance().generateModels(
+          IGenerationHandler generationHandler = GeneratorUIFacade.getInstance().getDefaultGenerationHandler();
+          GeneratorUIFacade.getInstance().generateModels(
             invocationContext1,
             modelsToGenerate,
             generationHandler,
@@ -129,8 +130,8 @@ public abstract class BaseGenerateAction extends BaseAction {
       return;
     }
 
-    IGenerationHandler generationHandler = GeneratorFacade.getInstance().getDefaultGenerationHandler();
-    GeneratorFacade.getInstance().generateModels(
+    IGenerationHandler generationHandler = GeneratorUIFacade.getInstance().getDefaultGenerationHandler();
+    GeneratorUIFacade.getInstance().generateModels(
       invocationContext,
       modelsToGenerate,
       generationHandler,
