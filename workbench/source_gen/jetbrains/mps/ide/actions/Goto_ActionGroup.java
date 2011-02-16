@@ -19,6 +19,7 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Goto_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Goto_ActionGroup";
   public static final String LABEL_ID_gotoVCS = ID + "gotoVCS";
+  public static final String LABEL_ID_gotoConceptAspects = ID + "gotoConceptAspects";
 
   public Goto_ActionGroup() {
     super("Go To", ID);
@@ -37,9 +38,12 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
       Goto_ActionGroup.this.addParameterizedAction(new GoToRootNode_Action(new GoToRootNodeAction()), PluginId.getId("jetbrains.mps.ide"), new GoToRootNodeAction());
       Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToNodeById_Action");
       Goto_ActionGroup.this.addSeparator();
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action");
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action");
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRules_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(Goto_ActionGroup.LABEL_ID_gotoConceptAspects);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        Goto_ActionGroup.this.addAction(action);
+      }
       Goto_ActionGroup.this.addSeparator();
       Goto_ActionGroup.this.addParameterizedAction(new GoToModel_Action(new GoToModelAction()), PluginId.getId("jetbrains.mps.ide"), new GoToModelAction());
       Goto_ActionGroup.this.addParameterizedAction(new GoToLanguage_Action(new GoToLanguageAction()), PluginId.getId("jetbrains.mps.ide"), new GoToLanguageAction());

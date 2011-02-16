@@ -81,10 +81,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GetModelContentsFromSource_Action());
     addAction(new GetModuleContentsFromSource_Action());
     addAction(new GoByCurrentReference_Action());
-    addAction(new GoToConceptDeclaration_Action());
-    addAction(new GoToEditorDeclaration_Action());
     addAction(new GoToNodeById_Action());
-    addAction(new GoToRules_Action());
     addAction(new GoToUsageInMappingConfig_Action());
     addAction(new HighlightCellDependencies_Action());
     addAction(new HighlightInstances_Action());

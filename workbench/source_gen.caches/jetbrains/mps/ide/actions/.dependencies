@@ -2164,27 +2164,6 @@
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.actions.GoToConceptDeclaration_Action" file="GoToConceptDeclaration_Action.java">
-    <classNode dependClassName="jetbrains.mps.workbench.editors.MPSEditorOpener" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.actions.GoToDevkit_Action" file="GoToDevkit_Action.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -2197,44 +2176,6 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.actions.GoToEditorDeclaration_Action" file="GoToEditorDeclaration_Action.java">
-    <classNode dependClassName="jetbrains.mps.smodel.BaseAdapter" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="javax.swing.JOptionPane" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationHelper" />
-    <classNode dependClassName="java.awt.Frame" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="jetbrains.mps.workbench.editors.MPSEditorOpener" />
-    <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
-    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.GoToFile_Action" file="GoToFile_Action.java">
@@ -2331,27 +2272,6 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.actions.GoToRules_Action" file="GoToRules_Action.java">
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.nodes.GoToRulesHelper" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.awt.Frame" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.GoToSolution_Action" file="GoToSolution_Action.java">
@@ -2547,7 +2467,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.CheckModelsBeforeGeneration_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Favorites_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GenerateFiles_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GoToRules_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GetModuleContentsFromSource_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.SolutionProperties_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GenerateModels_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.QuickCreate_Action" />
@@ -2570,11 +2490,10 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowCellInExplorer_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowParameters_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GenerateFavorites_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GetModuleContentsFromSource_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.NewSubModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GenerateModule_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FindPrevious_Action" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.NewSubModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GenerateProjectPopup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
@@ -2622,7 +2541,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.CutNode_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Find_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FindNext_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GoToEditorDeclaration_Action" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.ide.actions.TestNodePath_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowBookmarksDialog_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
@@ -2638,9 +2557,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToNodeById_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GeneratorProperties_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DeleteNode_Action" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.ide.actions.TransientModulesActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GoToConceptDeclaration_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowNodeInfo_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.PrintNodeID_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.UpgradeModelPersistenceInModel_Action" />

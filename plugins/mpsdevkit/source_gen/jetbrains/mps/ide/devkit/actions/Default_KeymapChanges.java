@@ -10,6 +10,9 @@ import javax.swing.KeyStroke;
 public class Default_KeymapChanges extends BaseKeymapChanges {
   public Default_KeymapChanges() {
     // simple 
+    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.GoToConceptDeclaration_Action", getShortcut("ctrl shift S"));
+    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.GoToEditorDeclaration_Action", getShortcut("ctrl shift E"));
+    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.GoToRules_Action", getShortcut("ctrl alt R"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.RenameLanguage_Action", getShortcut("shift F6"));
     // simple parameterized 
     // complex 
