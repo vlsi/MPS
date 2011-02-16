@@ -61,6 +61,7 @@ public final class CopyUtil {
     copy.setLoading(true);
     copyModelContentAndPreserveIds(model, copy);
     copyModelProperties(model, copy);
+    copy.setMaxImportIndex(model.getMaxImportIndex());
     copy.setLoading(false);
     return copy;
   }
