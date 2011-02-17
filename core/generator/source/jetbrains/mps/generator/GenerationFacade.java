@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.generator.impl.plan.GenerationPartitioner;
+import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -28,7 +29,7 @@ import java.util.List;
  */
 public class GenerationFacade {
 
-  public static List<SNode> getOwnMappings(Generator generator) {
+  public static List<SNode/*MappingConfiguration*/> getOwnMappings(Generator generator) {
     List<SModelDescriptor> list = generator.getOwnTemplateModels();
     List<SNode> mappings = new ArrayList<SNode>();
     for (SModelDescriptor templateModel : list) {
@@ -36,5 +37,14 @@ public class GenerationFacade {
       mappings.addAll(nodes);
     }
     return mappings;
+  }
+
+  public static Collection<Generator> getPossiblyEngagedGenerators(SModel model) {
+    return GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model, GlobalScope.getInstance());
+  }
+
+  public static List<List<SNode/*MappingConfiguration*/>> getPlan(Collection<Generator> generators) {
+    GenerationPartitioner partitioner = new GenerationPartitioner();
+    return partitioner.createMappingSets(generators);
   }
 }
