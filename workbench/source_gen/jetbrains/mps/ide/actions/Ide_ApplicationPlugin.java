@@ -49,7 +49,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CopyNode_Action());
     addAction(new CutNode_Action());
     addAction(new DeleteFavoritesList_Action());
-    addAction(new DeleteGenerator_Action());
     addAction(new DeleteModels_Action());
     addAction(new DeleteModules_Action());
     addAction(new DeleteNode_Action());
@@ -76,7 +75,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GenerateFiles_Action());
     addAction(new GenerateTextFromSolution_Action());
     addAction(new GenerationIntentions_Action());
-    addAction(new GeneratorProperties_Action());
     addAction(new GetModelContentsFromSource_Action());
     addAction(new GetModuleContentsFromSource_Action());
     addAction(new GoByCurrentReference_Action());
@@ -198,7 +196,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Folding_ActionGroup());
     addGroup(new GenerateEditorPopup_ActionGroup());
     addGroup(new GenerateFavorites_ActionGroup());
-    addGroup(new GenerateGeneratorPopup_ActionGroup());
     addGroup(new GenerateModelPopup_ActionGroup());
     addGroup(new GenerateModels_ActionGroup());
     addGroup(new GenerateModulePopup_ActionGroup());
@@ -208,7 +205,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Generate_ActionGroup());
     addGroup(new GenerationIntentions_ActionGroup());
     addGroup(new GeneratorActions_ActionGroup());
-    addGroup(new GeneratorNewActions_ActionGroup());
     addGroup(new GoByReference_ActionGroup());
     addGroup(new Goto_ActionGroup());
     addGroup(new JUnitTestCaseActions_ActionGroup());
@@ -219,6 +215,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new ModelNewActions_ActionGroup());
     addGroup(new ModelRefactoring_ActionGroup());
     addGroup(new ModuleActions_ActionGroup());
+    addGroup(new ModulePropertiesGroup_ActionGroup());
     addGroup(new NamespaceActions_ActionGroup());
     addGroup(new NamespaceInternalActions_ActionGroup());
     addGroup(new NamespaceMakeActions_ActionGroup());
@@ -269,7 +266,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Edit_ActionGroup.ID, "EditMenu", null);
     insertGroupIntoAnother(Folding_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_folding);
     insertGroupIntoAnother(Generate_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_aux);
-    insertGroupIntoAnother(GenerateGeneratorPopup_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(GenerateModelPopup_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_generateActions);
     insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_generateModule);
     insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_generateModule);
@@ -281,7 +277,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(EditorInternal_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(ProjectNewActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_projectNew);
     insertGroupIntoAnother(SolutionNewActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_solutionNew);
-    insertGroupIntoAnother(GeneratorNewActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generatorNew);
     insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_newActions);
     insertGroupIntoAnother(FileSystemNewActions_ActionGroup.ID, AbstractFileActions_ActionGroup.ID, AbstractFileActions_ActionGroup.LABEL_ID_new);
     insertGroupIntoAnother(PackageNewActions_ActionGroup.ID, PackageActions_ActionGroup.ID, PackageActions_ActionGroup.LABEL_ID_newActions);

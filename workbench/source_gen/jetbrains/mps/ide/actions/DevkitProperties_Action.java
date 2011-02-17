@@ -27,7 +27,7 @@ public class DevkitProperties_Action extends GeneratedAction {
 
   public DevkitProperties_Action() {
     super("DevKit Properties", "", ICON);
-    this.setIsAlwaysVisible(true);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 

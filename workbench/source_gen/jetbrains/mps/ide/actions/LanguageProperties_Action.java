@@ -27,7 +27,7 @@ public class LanguageProperties_Action extends GeneratedAction {
 
   public LanguageProperties_Action() {
     super("Language Properties", "", ICON);
-    this.setIsAlwaysVisible(true);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 

@@ -42,5 +42,6 @@ public class ProjectPaneActionGroups {
 
   // FIXME hardcoded action ID
   public static final String LANGUAGE_NEW_ACTIONS = "jetbrains.mps.ide.devkit.actions.LanguageNewActions_ActionGroup";
-  public static final String GENERATOR_NEW_ACTIONS = GeneratorNewActions_ActionGroup.ID;
+  // FIXME hardcoded action ID
+  public static final String GENERATOR_NEW_ACTIONS = "jetbrains.mps.ide.devkit.actions.GeneratorNewActions_ActionGroup";
 }
