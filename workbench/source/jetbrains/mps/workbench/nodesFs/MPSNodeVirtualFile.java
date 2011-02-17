@@ -20,6 +20,7 @@ import com.intellij.openapi.vfs.DeprecatedVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -35,6 +36,7 @@ import java.io.OutputStream;
 
 public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   private static final byte[] CONTENTS = new byte[0];
+  private static final Logger LOG = Logger.getLogger(MPSNodeVirtualFile.class);
 
   private SNodePointer myNode;
   private String myPath;
@@ -55,7 +57,10 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode node = myNode.getNode();
-        assert node != null : "Cannot find node for passed SNodePointer: " + myNode.toString();
+        if (node == null) {
+          LOG.error(new Throwable("Cannot find node for passed SNodePointer: " + myNode.toString()));
+          return;
+        }
         myName = "" + node.getPresentation();
         myPath = node.getModel().getSModelFqName() + "/" + myName;
       }
