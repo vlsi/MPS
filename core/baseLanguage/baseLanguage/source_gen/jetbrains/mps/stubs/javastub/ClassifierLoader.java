@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.reloading.AbstractClassPathItem;
+import jetbrains.mps.stubs.StubLocation;
 import org.objectweb.asm.ClassReader;
 import jetbrains.mps.stubs.javastub.asm.ASMClass;
 import jetbrains.mps.baseLanguage.structure.Classifier;
@@ -24,10 +25,12 @@ import jetbrains.mps.util.NameUtil;
 
 public class ClassifierLoader {
   private IClassPathItem myCpItem;
+  private StubLocation myLocation;
   private SModel myModel;
   private ClassifierUpdater myUpdater;
 
-  public ClassifierLoader(SModel model, IClassPathItem cpItem, ClassifierUpdater updater) {
+  public ClassifierLoader(StubLocation location, SModel model, IClassPathItem cpItem, ClassifierUpdater updater) {
+    myLocation = location;
     myModel = model;
     myCpItem = cpItem;
     myUpdater = updater;
@@ -58,7 +61,7 @@ public class ClassifierLoader {
     ASMClass ac = new ASMClass(reader);
     Classifier res = createClassifierForClass(name, myModel, reader);
     adder.invoke(res.getNode());
-    myUpdater.updateClassifier(res, ac);
+    myUpdater.updateClassifier(myLocation.getModule(),res, ac);
     updateInnerClassifiers(ac, res);
   }
 

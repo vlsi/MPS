@@ -555,6 +555,20 @@ public abstract class AbstractModule implements IModule {
     return timestamp != myDescriptorFile.lastModified();
   }
 
+  @Override
+  public ModuleReference getModuleFor(String packageName, String langID) {
+    Set<IModule> deps = getDependenciesManager().getAllDependOnModules();
+    deps.add(this);
+    for (IModule module: deps){
+      for (SModelDescriptor model : module.getOwnModelDescriptors()) {
+        if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))){
+          return module.getModuleReference();
+        }
+      }
+    }
+    return null;
+  }
+
   public String getOutputFor(SModelDescriptor model) {
     if (SModelStereotype.isTestModel(model)) {
       return getTestsGeneratorOutputPath();

@@ -5,15 +5,18 @@ package jetbrains.mps.stubs.javastub;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.stubs.StubLocation;
 
 public class ASMModelLoader {
   private static final Logger LOG = Logger.getLogger(ASMModelLoader.class);
   public static final boolean SKIP_PRIVATE = false;
 
+  private StubLocation myLocation;
   private IClassPathItem myCpItem;
   private SModel myModel;
 
-  public ASMModelLoader(IClassPathItem classPathItem, SModel model) {
+  public ASMModelLoader(StubLocation location, IClassPathItem classPathItem, SModel model) {
+    myLocation = location;
     myCpItem = classPathItem;
     myModel = model;
   }
@@ -21,7 +24,7 @@ public class ASMModelLoader {
   public void updateModel() {
     try {
       String pack = myModel.getLongName();
-      ClassifierLoader loader = new ClassifierLoader(myModel, myCpItem, new ClassifierUpdater());
+      ClassifierLoader loader = new ClassifierLoader(myLocation,myModel, myCpItem, new ClassifierUpdater());
       for (String name : myCpItem.getRootClasses(pack)) {
         if (myModel.getNodeById(ASMNodeId.createId(name)) != null) {
           continue;

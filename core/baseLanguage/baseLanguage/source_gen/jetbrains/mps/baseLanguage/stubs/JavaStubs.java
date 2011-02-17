@@ -50,7 +50,7 @@ public class JavaStubs extends BaseStubModelRootManager {
     if (cpItem == null) {
       return;
     }
-    new ASMModelLoader(cpItem, model).updateModel();
+    new ASMModelLoader(location, cpItem, model).updateModel();
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
