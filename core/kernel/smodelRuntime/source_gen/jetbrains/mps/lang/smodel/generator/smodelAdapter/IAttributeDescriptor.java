@@ -36,36 +36,36 @@ public interface IAttributeDescriptor {
   }
 
   public static class LinkAttribute extends IAttributeDescriptor.AttributeDescriptor {
-    private SNode myLinkDeclaration;
+    private String myLinkRole;
 
-    public LinkAttribute(@NotNull SNode attributeDeclaration, SNode linkDeclaration) {
+    public LinkAttribute(@NotNull SNode attributeDeclaration, String linkRole) {
       super(attributeDeclaration);
-      myLinkDeclaration = linkDeclaration;
+      myLinkRole = linkRole;
     }
 
     public boolean match(@NotNull SNode attribute) {
-      return super.match(attribute) && (myLinkDeclaration == null || myLinkDeclaration == attribute.getReferent("link"));
+      return super.match(attribute) && (myLinkRole == null || myLinkRole.equals(attribute.getProperty("linkRole")));
     }
 
     public void update(@NotNull SNode attribute) {
-      attribute.setReferent("link", myLinkDeclaration);
+      attribute.setProperty("linkRole", myLinkRole);
     }
   }
 
   public static class PropertyAttribute extends IAttributeDescriptor.AttributeDescriptor {
-    private SNode myPropertyDeclaration;
+    private String myPropertyName;
 
-    public PropertyAttribute(@NotNull SNode attributeDeclaration, SNode propertyDeclaration) {
+    public PropertyAttribute(@NotNull SNode attributeDeclaration, String propertyName) {
       super(attributeDeclaration);
-      myPropertyDeclaration = propertyDeclaration;
+      myPropertyName = propertyName;
     }
 
     public boolean match(@NotNull SNode attribute) {
-      return super.match(attribute) && (myPropertyDeclaration == null || myPropertyDeclaration == attribute.getReferent("property"));
+      return super.match(attribute) && (myPropertyName == null || myPropertyName.equals(attribute.getProperty("propertyName")));
     }
 
     public void update(@NotNull SNode attribute) {
-      attribute.setReferent("property", myPropertyDeclaration);
+      attribute.setProperty("propertyName", myPropertyName);
     }
   }
 
@@ -104,11 +104,11 @@ public interface IAttributeDescriptor {
 
     public boolean match(@NotNull SNode attribute) {
       SNode attr = SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute");
-      return (attr != null) && super.match(attr) && (myLinkRole == null || myLinkRole.equals(SPropertyOperations.getString(SLinkOperations.getTarget(attr, "link", false), "role")));
+      return (attr != null) && super.match(attr) && (myLinkRole == null || myLinkRole.equals(SPropertyOperations.getString(attr, "linkRole")));
     }
 
     public void update(@NotNull SNode attribute) {
-      SLinkOperations.setTarget(SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute"), "link", SNodeOperations.as(SNodeOperations.getParent(attribute).getLinkDeclaration(myLinkRole), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
+      SPropertyOperations.set(SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute"), "linkRole", myLinkRole);
     }
   }
 
@@ -122,11 +122,11 @@ public interface IAttributeDescriptor {
 
     public boolean match(@NotNull SNode attribute) {
       SNode attr = SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute");
-      return (attr != null) && super.match(attr) && (myPropertyName == null || myPropertyName.equals(SPropertyOperations.getString(SLinkOperations.getTarget(attr, "property", false), "name")));
+      return (attr != null) && super.match(attr) && (myPropertyName == null || myPropertyName.equals(SPropertyOperations.getString(attr, "propertyName")));
     }
 
     public void update(@NotNull SNode attribute) {
-      SLinkOperations.setTarget(SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute"), "property", SNodeOperations.as(SNodeOperations.getParent(attribute).getPropertyDeclaration(myPropertyName), "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), false);
+      SPropertyOperations.set(SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute"), "propertyName", myPropertyName);
     }
   }
 
