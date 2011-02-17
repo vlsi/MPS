@@ -9,6 +9,7 @@
   <unitInfo fileName="UnusedAssignment_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedAssignment_Test$TestBody" />
   <unitInfo fileName="MethodParametersTest_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.MethodParametersTest_Test$TestBody" />
   <unitInfo fileName="ForLoop_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForLoop_Test$TestBody" />
+  <unitInfo fileName="Validation_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.Validation_Test$TestBody" />
   <unitInfo fileName="FinalFieldWasAssigned_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.FinalFieldWasAssigned_Test$TestBody" />
   <unitInfo fileName="PrivateField_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody" />
   <unitInfo fileName="ForBreakUnreachable_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForBreakUnreachable_Test$TestBody" />
@@ -34,6 +35,7 @@
   <unitInfo fileName="UnusedAssignment_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedAssignment_Test" />
   <unitInfo fileName="MethodParametersTest_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.MethodParametersTest_Test" />
   <unitInfo fileName="ForLoop_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForLoop_Test" />
+  <unitInfo fileName="Validation_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.Validation_Test" />
   <unitInfo fileName="FinalFieldWasAssigned_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.FinalFieldWasAssigned_Test" />
   <unitInfo fileName="PrivateField_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.PrivateField_Test" />
   <unitInfo fileName="ForBreakUnreachable_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ForBreakUnreachable_Test" />
@@ -51,10 +53,10 @@
   <unitInfo fileName="ReadAction_Test.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ReadAction_Test" />
   <unitInfo fileName="IfStatementWrongUnreachable_Test.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.IfStatementWrongUnreachable_Test" />
   <unitInfo fileName="TypesTest_BL_Test.java" startLine="45" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody" />
-  <unitInfo fileName="NullableAnalyzer_Test.java" startLine="81" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody" />
   <unitInfo fileName="TypesTest_BL_Test.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TypesTest_BL_Test" />
+  <unitInfo fileName="NullableAnalyzer_Test.java" startLine="87" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody" />
   <unitInfo fileName="TestSafeEquals_Test.java" startLine="8" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TestSafeEquals_Test" />
-  <unitInfo fileName="NullableAnalyzer_Test.java" startLine="13" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test" />
+  <unitInfo fileName="NullableAnalyzer_Test.java" startLine="13" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test" />
   <root nodeId="1217271585523">
     <nodeInfo nodeId="1225979304340" fileName="ForLoop_Test.java" startLine="22" startPosition="49" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215444253193" fileName="ForLoop_Test.java" startLine="23" startPosition="40" endLine="24" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
