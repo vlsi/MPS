@@ -85,6 +85,14 @@ public class ConstructorDeclaration_Behavior {
     return !(SNodeOperations.isInstanceOf(firstStatement, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"));
   }
 
+  public static SNode call_getThisConstructorInvocation_6018737561676809124(SNode thisNode) {
+    SNode firstStatement = StatementList_Behavior.call_getFirstStatement_5420652334935371934(SLinkOperations.getTarget(thisNode, "body", true));
+    if (SNodeOperations.isInstanceOf(firstStatement, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(firstStatement, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"), "baseMethodDeclaration", false);
+    }
+    return null;
+  }
+
   public static SNode call_getSuperDefaultConstructor_7152041109751601013(SNode thisNode) {
     SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
