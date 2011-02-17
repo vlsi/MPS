@@ -1048,9 +1048,9 @@
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8524227390952646906">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8524227390952646885" resolveInfo="declaration" />
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="8524227390952646907">
-              <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.NodeAttributeAccessQualifier" typeId="tp25.1204763358057" id="8524227390952646908">
-                <link role="annotationLink" roleId="tp25.1204763443606" targetNodeId="tpce.1224241293279" resolveInfo="deprecatedNode" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517902">
+              <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="3071170492188517903">
+                <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="tpce.1224240836180" resolveInfo="DeprecatedNodeAnnotation" />
               </node>
             </node>
           </node>

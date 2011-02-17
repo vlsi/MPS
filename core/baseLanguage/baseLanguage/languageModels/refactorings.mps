@@ -898,7 +898,7 @@
               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="9118878263582123093">
                 <property name="name" nameId="tpck.1169194664001" value="a" />
                 <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="9118878263582123094">
-                  <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="9118878263582123096">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="9118878263582123096">
                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9118878263582123104">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9118878263582123099">
                         <node role="operand" roleId="tpee.1197027771414" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="9118878263582123098">
@@ -913,7 +913,7 @@
                   </node>
                 </node>
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.Type" typeId="tpee.1068431790189" id="9118878263582123095">
-                  <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="9118878263582123898">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="9118878263582123898">
                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9118878263582123910">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9118878263582123903">
                         <node role="operand" roleId="tpee.1197027771414" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="9118878263582123901">
@@ -927,7 +927,8 @@
                     </node>
                   </node>
                 </node>
-                <node role="propertyAntiquotation$property_attribute$name" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="9118878263582123110">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="9118878263582123110">
+                  <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9118878263582123891">
                     <node role="operand" roleId="tpee.1197027771414" type="tp1h.RefactoringFieldReference" typeId="tp1h.5497648299878398634" id="9118878263582123890">
                       <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="9118878263582108236" resolveInfo="declaration" />
@@ -1068,12 +1069,14 @@
                     <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="9118878263582143894">
                       <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="9118878263582143896">
                         <link role="classifier" roleId="tpee.1144433057691" targetNodeId="89o2.1143458983612836301" resolveInfo="AskDialog" />
-                        <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="9118878263582143901">
+                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="9118878263582143901">
+                          <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                           <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9118878263582143917">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9118878263582143905" resolveInfo="declarationClassifier" />
                           </node>
                         </node>
-                        <node role="referenceAntiquotation$link_attribute$variableDeclaration" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="9118878263582143918">
+                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="9118878263582143918">
+                          <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
                           <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9118878263582143921">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9118878263582123088" resolveInfo="newDeclaration" />
                           </node>
@@ -1109,8 +1112,9 @@
                       </node>
                       <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="9118878263582143937">
                         <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="9118878263582143939">
-                          <node role="referenceAntiquotation$link_attribute$variableDeclaration" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="9118878263582143940">
+                          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="9118878263582143940">
                             <property name="label" nameId="tp3r.6489343236075007666" value="LocalStaticFieldReference" />
+                            <property name="linkRole" nameId="tpck.1757699476691236116" value="variableDeclaration" />
                             <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9118878263582143954">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9118878263582123088" resolveInfo="newDeclaration" />
                             </node>

@@ -141,7 +141,7 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1225799385715">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1224608834445" resolveInfo="IDeprecatable" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1225799522686" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1225799522686" />
   </root>
   <root id="1199569711397">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1199620678344">

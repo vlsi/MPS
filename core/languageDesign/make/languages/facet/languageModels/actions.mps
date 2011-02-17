@@ -387,8 +387,9 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7320828025189408998">
                   <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="7320828025189409001">
                     <node role="quotedNode" roleId="tp3r.1196350785114" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="7320828025189409003">
-                      <node role="referenceAntiquotation$link_attribute$component" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="7320828025189409004">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="7320828025189409004">
                         <property name="label" nameId="tp3r.6489343236075007666" value="NamedTupleComponentAccessOperation" />
+                        <property name="linkRole" nameId="tpck.1757699476691236116" value="component" />
                         <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="7320828025189409006" />
                       </node>
                     </node>
@@ -602,8 +603,9 @@
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3344436107830251993">
                     <node role="quotedNode" roleId="tp3r.1196350785114" type="vvvw.ForeignParametersExpression" typeId="vvvw.3344436107830227888" id="3344436107830251994">
-                      <node role="referenceAntiquotation$link_attribute$target" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3344436107830251995">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3344436107830251995">
                         <property name="label" nameId="tp3r.6489343236075007666" value="ForeignVarialblesExpression" />
+                        <property name="linkRole" nameId="tpck.1757699476691236116" value="target" />
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3344436107830251996">
                           <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="3344436107830251997" />
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="3344436107830251998">
@@ -627,8 +629,9 @@
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3344436107830252028">
                     <node role="quotedNode" roleId="tp3r.1196350785114" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="3344436107830252029">
-                      <node role="referenceAntiquotation$link_attribute$component" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3344436107830252030">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3344436107830252030">
                         <property name="label" nameId="tp3r.6489343236075007666" value="NamedTupleComponentAccessOperation" />
+                        <property name="linkRole" nameId="tpck.1757699476691236116" value="component" />
                         <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="3344436107830252031" />
                       </node>
                     </node>
@@ -639,14 +642,14 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3344436107830252004">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="vvvw.ForeignParametersComponentExpression" typeId="vvvw.3344436107830227889" id="3344436107830252006">
                     <node role="operand" roleId="tpee.1197027771414" type="vvvw.ForeignParametersExpression" typeId="vvvw.3344436107830227888" id="3344436107830252007">
-                      <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="3344436107830252009">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="3344436107830252009">
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3344436107830252011">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3344436107830251991" resolveInfo="fve" />
                         </node>
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.IOperation" typeId="tpee.1197027803184" id="3344436107830252014">
-                      <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="3344436107830252015">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="3344436107830252015">
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3344436107830252032">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3344436107830252026" resolveInfo="op" />
                         </node>

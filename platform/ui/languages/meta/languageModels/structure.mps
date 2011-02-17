@@ -427,7 +427,7 @@
       <property name="role" nameId="tpce.1071599776563" value="runtimeType" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
-      <node role="OverrideLinkAnnotation$attribute" type="sqp9.OverrideAnnotation" typeId="6247544121092588772" id="4849999735687542045" />
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="sqp9.OverrideAnnotation" typeId="6247544121092588772" id="4849999735687542045" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1642651187739181597">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

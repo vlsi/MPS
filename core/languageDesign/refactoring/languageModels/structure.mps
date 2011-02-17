@@ -589,7 +589,7 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1189695238818">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379697516" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379697516" />
   </root>
   <root id="1189693830529">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6895093993902236769">
@@ -605,7 +605,7 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1189693905781">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379697517" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379697517" />
   </root>
   <root id="1189694022607">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1189694534258">
@@ -619,7 +619,7 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="6528618226609591701">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpee.1216468774225" resolveInfo="showName" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695499" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695499" />
   </root>
   <root id="1189694053795">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1189694943091">
@@ -647,7 +647,7 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1189695055720">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpee.1146528679895" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379698035" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379698035" />
   </root>
   <root id="1189694434958">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1189695035062">
@@ -703,7 +703,7 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="6528618226609509178">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpee.1216468774225" resolveInfo="showName" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695484" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695484" />
   </root>
   <root id="1192792808079">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1192793165066">
@@ -721,7 +721,7 @@
       <property name="role" nameId="tpce.1071599776563" value="initialValue" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1198599668934" resolveInfo="InitialValueClause" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695495" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695495" />
   </root>
   <root id="1192793302394">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1192793349872">
@@ -732,7 +732,7 @@
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" roleId="tpce.1105736807942" targetNodeId="1192793411861" resolveInfo="ConceptFunctionParameter_UserArgument" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695493" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695493" />
   </root>
   <root id="1192793411861">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1192793457394">
@@ -745,7 +745,7 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
       </node>
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695497" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695497" />
   </root>
   <root id="1197382578687">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1197382604610">
@@ -787,7 +787,7 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="n3eq.~IChooseComponent" resolveInfo="IChooseComponent" />
       </node>
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695492" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695492" />
   </root>
   <root id="1198577376375">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1198577431631">
@@ -808,7 +808,7 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
       </node>
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695494" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695494" />
   </root>
   <root id="1199619425400">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1199619459778">
@@ -921,7 +921,7 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3242588059496701767">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3242588059496701743" resolveInfo="RefactoringAction" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695498" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695498" />
   </root>
   <root id="1209559069560">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1209559096655">
@@ -1039,56 +1039,56 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="6528618226609509184">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpee.1216468774225" resolveInfo="showName" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695500" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695500" />
   </root>
   <root id="1214999715318">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1214999818608">
       <property name="value" nameId="tpce.1105725733873" value="nodes" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695488" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695488" />
   </root>
   <root id="1215000036307">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1215000062262">
       <property name="value" nameId="tpce.1105725733873" value="node" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695487" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695487" />
   </root>
   <root id="1215000134655">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1215000157344">
       <property name="value" nameId="tpce.1105725733873" value="modelDescriptor" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695485" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695485" />
   </root>
   <root id="1215084399714">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1215084427352">
       <property name="value" nameId="tpce.1105725733873" value="module" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695486" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695486" />
   </root>
   <root id="1215084496797">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1215084512267">
       <property name="value" nameId="tpce.1105725733873" value="project" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695490" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695490" />
   </root>
   <root id="1215084545440">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1215084563863">
       <property name="value" nameId="tpce.1105725733873" value="scope" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695491" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695491" />
   </root>
   <root id="1215084612287">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1215084635570">
       <property name="value" nameId="tpce.1105725733873" value="operationContext" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695489" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695489" />
   </root>
   <root id="3242588059496701743" />
   <root id="3242588059496747656">
@@ -1686,7 +1686,7 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1214999756915">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695483" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3302086321379695483" />
   </root>
   <root id="4413749148913695136">
     <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.AggregationConceptLinkDeclaration" typeId="tpce.1105741535888" id="4413749148913757059">

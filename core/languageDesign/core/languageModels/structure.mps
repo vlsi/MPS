@@ -154,7 +154,7 @@
   <root id="1234971358450" />
   <root id="201537367881071930" />
   <root id="376024488709664661">
-    <node role="export$attribute" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="9136532523118437100" />
+    <node role="_$attribute" roleId="5169995583184591170" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="9136532523118437100" />
   </root>
   <root id="5425021671150136555">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="4075196924244385128">
@@ -174,7 +174,7 @@
       <property name="value" nameId="tpce.1105725733873" value="@export(public)" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1137473891462" resolveInfo="alias" />
     </node>
-    <node role="export$attribute" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="4075196924244431954" />
+    <node role="_$attribute" roleId="5169995583184591170" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="4075196924244431954" />
   </root>
   <root id="2565736246230036151">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4075196924244376960">
@@ -185,14 +185,14 @@
       <property name="name" nameId="1169194664001" value="namespace" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1082983041843" resolveInfo="string" />
     </node>
-    <node role="export$attribute" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="4075196924244431953" />
+    <node role="_$attribute" roleId="5169995583184591170" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="4075196924244431953" />
   </root>
   <root id="2565736246230036154">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4075196924244376956">
       <property name="value" nameId="tpce.1105725733873" value="@export(module)" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1137473891462" resolveInfo="alias" />
     </node>
-    <node role="export$attribute" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="4075196924244431952" />
+    <node role="_$attribute" roleId="5169995583184591170" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="4075196924244431952" />
   </root>
   <root id="5169995583184591161">
     <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.ReferenceConceptLinkDeclaration" typeId="tpce.1105741578420" id="5169995583184591169">

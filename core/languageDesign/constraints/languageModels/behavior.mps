@@ -556,7 +556,8 @@
               </node>
               <node role="argument" roleId="tpd4.1179479418730" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="7432497532426445448">
                 <node role="elementType" roleId="tp2q.1151689745422" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7432497532426445449">
-                  <node role="referenceAntiquotation$link_attribute$concept" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="7432497532426445450">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="7432497532426445450">
+                    <property name="linkRole" nameId="tpck.1757699476691236116" value="concept" />
                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7432497532426445451">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7432497532426444546" resolveInfo="target" />
                     </node>

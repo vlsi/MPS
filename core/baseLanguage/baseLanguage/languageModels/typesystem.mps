@@ -1864,7 +1864,7 @@
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1196777954853">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1196777954854">
               <node role="componentType" roleId="tpee.1070534760952" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1196777954855">
-                <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1196777954879">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1196777954879">
                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1203977953857">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1203977965383">
                       <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1196777954882">
@@ -1910,7 +1910,7 @@
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1196777954887">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1196777954888">
               <node role="componentType" roleId="tpee.1070534760952" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1196777954889">
-                <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1196777954892">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1196777954892">
                   <node role="expression" roleId="tp3r.1196350785111" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1196777954893">
                     <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1175601836165" resolveInfo="T" />
                   </node>
@@ -2248,7 +2248,7 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Iterable" resolveInfo="Iterable" />
                 <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1207147232304">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-                  <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1207147234322">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1207147234322">
                     <node role="expression" roleId="tp3r.1196350785111" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1207147236762">
                       <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1176561507041" resolveInfo="T" />
                     </node>
@@ -2257,7 +2257,7 @@
               </node>
               <node role="argument" roleId="tpd4.1179479418730" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1207147247675">
                 <node role="componentType" roleId="tpee.1070534760952" type="tpee.Type" typeId="tpee.1068431790189" id="1207147247676">
-                  <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1207147250803">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1207147250803">
                     <node role="expression" roleId="tp3r.1196350785111" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1207147253353">
                       <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1176561507041" resolveInfo="T" />
                     </node>
@@ -2479,7 +2479,7 @@
                 <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1219923269828">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1219923279658">
                     <node role="componentType" roleId="tpee.1070534760952" type="tpee.Type" typeId="tpee.1068431790189" id="1219923279659">
-                      <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1219923283613">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1219923283613">
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1219923291913">
                           <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1219923289209">
                             <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1219923212318" resolveInfo="variableArityType" />
@@ -3237,13 +3237,14 @@
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
                     <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7790104442347410322">
                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-                      <node role="_attr_$attribute" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="7790104442347410323">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="7790104442347410323">
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7790104442347410325">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1228174212945" resolveInfo="params" />
                         </node>
                       </node>
                     </node>
-                    <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="7790104442347410326">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="7790104442347410326">
+                      <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                       <node role="expression" roleId="tp3r.1196350785111" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7790104442347410328">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1203432971226" resolveInfo="genericClassifier" />
                       </node>
@@ -6552,7 +6553,8 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Class" resolveInfo="Class" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1196777955093">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-                <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1196777955098">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1196777955098">
+                  <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1203977967640">
                     <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1196777955100">
                       <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1176898930151" resolveInfo="classExpr" />
@@ -6801,7 +6803,8 @@
           <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1241009630355">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1241009630356">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1241009630357">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1241009630357">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1241009630358">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1241009438534" resolveInfo="methodClassifier" />
                 </node>
@@ -7271,7 +7274,7 @@
                         <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1196777955227">
                           <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1196777955228">
                             <node role="componentType" roleId="tpee.1070534760952" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1196777955229">
-                              <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1196777955232">
+                              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1196777955232">
                                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1196777955233">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1177070212114" resolveInfo="componentTypeSupertype" />
                                 </node>
@@ -8045,7 +8048,7 @@
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1196777955282">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1196777955283">
               <node role="componentType" roleId="tpee.1070534760952" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1196777955284">
-                <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1196777955287">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1196777955287">
                   <node role="expression" roleId="tp3r.1196350785111" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1196777955288">
                     <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1188221443596" resolveInfo="elementType" />
                   </node>
@@ -8096,7 +8099,8 @@
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1196777955289">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1196777955290">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1196777955293">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1196777955293">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1196777955294">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1188221588873" resolveInfo="annotation" />
                 </node>
@@ -8230,7 +8234,7 @@
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2925336694746296800">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~ArrayList" resolveInfo="ArrayList" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="2925336694746296801">
-                <node role="_attr_$attribute" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="2925336694746296802">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="2925336694746296802">
                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2925336694746296803">
                     <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2925336694746296804">
                       <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1194623838238" resolveInfo="creator" />
@@ -8241,7 +8245,8 @@
                   </node>
                 </node>
               </node>
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2925336694746296806">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2925336694746296806">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2925336694746296917">
                   <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1194623838238" resolveInfo="anonymousClass" />
                 </node>
@@ -9227,7 +9232,8 @@
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1206554174352">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1206554174353">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1206554174354">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1206554174354">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1206554174355">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1206554174344" resolveInfo="fieldClassifier" />
                 </node>
@@ -9774,7 +9780,8 @@
               <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1201468086544">
                 <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1201468086545">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-                  <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1201468086546">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1201468086546">
+                    <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1203977956984">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1201468102385">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1201467936670" resolveInfo="property" />
@@ -10201,7 +10208,8 @@
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1204065906124">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1204065906125">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1204065906126">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1204065906126">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1204065908972">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1204065848719" resolveInfo="methodClassifier" />
                 </node>
@@ -10798,7 +10806,7 @@
               <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1209402709898">
                 <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1209402717382">
                   <node role="componentType" roleId="tpee.1070534760952" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1209402715830">
-                    <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1209402724323">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1209402724323">
                       <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1209402726950">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1209402636733" resolveInfo="type" />
                       </node>
@@ -11324,7 +11332,7 @@
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1212781606031">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~ArrayList" resolveInfo="ArrayList" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.StringType" typeId="tpee.1225271177708" id="1225190477360">
-                <node role="_attr_$attribute" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="1225190477361">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="1225190477361">
                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225190477362">
                     <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1225190477363">
                       <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1212781547112" resolveInfo="creator" />
@@ -11335,7 +11343,8 @@
                   </node>
                 </node>
               </node>
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1212781606037">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1212781606037">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1212781606038">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1212781606018" resolveInfo="methodClassifier" />
                 </node>
@@ -11464,7 +11473,7 @@
                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~Set" resolveInfo="Set" />
                       <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1215004759255">
                         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-                        <node role="_attr_$attribute" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="1215004769428">
+                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="1215004769428">
                           <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1215004773373">
                             <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1215004772245">
                               <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1215004614722" resolveInfo="anonymousClass" />
@@ -11475,7 +11484,8 @@
                           </node>
                         </node>
                       </node>
-                      <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1215004778521">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1215004778521">
+                        <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1215004783449">
                           <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1215004782087">
                             <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1215004614722" resolveInfo="anonymousClass" />
@@ -13203,14 +13213,15 @@
                 <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1220523357854">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
                   <node role="parameter" roleId="tpee.1109201940907" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1220523357855">
-                    <node role="asPattern$attribute" type="tp3t.ListPattern" typeId="tp3t.1136727061274" id="1220523357856">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.ListPattern" typeId="tp3t.1136727061274" id="1220523357856">
                       <property name="varName" nameId="tp3t.1136720037780" value="l" />
                     </node>
-                    <node role="_attr_$attribute" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="1220523357857">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="1220523357857">
                       <property name="varName" nameId="tp3t.1136720037780" value="ignored" />
                     </node>
                   </node>
-                  <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1220523357858">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1220523357858">
+                    <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1220523357859">
                       <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1220523359215">
                         <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1220523330092" resolveInfo="classifierType" />
@@ -15009,7 +15020,8 @@
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1224574969007">
               <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1224574976994">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-                <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1224574977651">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1224574977651">
+                  <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1224574980513">
                     <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1224574980012">
                       <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1224574932973" resolveInfo="expression" />
@@ -15043,7 +15055,8 @@
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1224575711204">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1224575711205">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1224575714832">
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1224575716521">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1224575716521">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1224575719196">
                   <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1224575718398">
                     <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1224575656588" resolveInfo="expression" />
@@ -15646,11 +15659,11 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1228302363839">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1228302284609" resolveInfo="classifierType" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="1228302363840">
-                  <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.LinkAttributeAccessQualifier" typeId="tp25.1204848911283" id="1228302363841">
-                    <link role="annotationLink" roleId="tp25.1204848911285" targetNodeId="tp3r.1196350785121" resolveInfo="referenceAntiquotation" />
-                    <node role="linkQualifier" roleId="tp25.1204848911284" type="tp25.LinkRefQualifier" typeId="tp25.1204851882688" id="1228302363842">
-                      <link role="link" roleId="tp25.1204851882689" targetNodeId="tpee.1107535924139" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188518034">
+                  <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.LinkAttributeQualifier" typeId="tp25.6407023681583036855" id="3071170492188518035">
+                    <link role="attributeConcept" roleId="tp25.6407023681583036856" targetNodeId="tp3r.1196350785117" resolveInfo="ReferenceAntiquotation" />
+                    <node role="linkQualifier" roleId="tp25.6407023681583038098" type="tp25.LinkQualifier" typeId="tp25.2788452359612124332" id="3071170492188518036">
+                      <link role="link" roleId="tp25.2788452359612124336" targetNodeId="tpee.1107535924139" />
                     </node>
                   </node>
                 </node>
@@ -17912,9 +17925,9 @@
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6495695326613151283">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6495695326613151286" resolveInfo="it" />
                             </node>
-                            <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="6495695326613151284">
-                              <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.NodeAttributeAccessQualifier" typeId="tp25.1204763358057" id="6495695326613151285">
-                                <link role="annotationLink" roleId="tp25.1204763443606" targetNodeId="tpf8.1149858605876" resolveInfo="templateFragment" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188518000">
+                              <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="3071170492188518001">
+                                <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="tpf8.1095672379244" resolveInfo="TemplateFragment" />
                               </node>
                             </node>
                           </node>
@@ -17963,9 +17976,9 @@
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6495695326613151312">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6495695326613151315" resolveInfo="it" />
                             </node>
-                            <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="6495695326613151313">
-                              <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.NodeAttributeAccessQualifier" typeId="tp25.1204763358057" id="6495695326613151314">
-                                <link role="annotationLink" roleId="tp25.1204763443606" targetNodeId="tpf8.1149858605876" resolveInfo="templateFragment" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517888">
+                              <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="3071170492188517889">
+                                <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="tpf8.1095672379244" resolveInfo="TemplateFragment" />
                               </node>
                             </node>
                           </node>
@@ -18731,7 +18744,7 @@
             <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1032178265900313091">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Iterable" resolveInfo="Iterable" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.Type" typeId="tpee.1068431790189" id="1032178265900313092">
-                <node role="_attr_$attribute" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="1032178265900313093">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="1032178265900313093">
                   <property name="varName" nameId="tp3t.1136720037780" value="p" />
                 </node>
               </node>
@@ -20506,8 +20519,9 @@
                                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpd4.IsSubtypeExpression" typeId="tpd4.1176543928247" id="8512491756795014535">
                                   <node role="subtypeExpression" roleId="tpd4.1176543945045" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="8512491756795014536">
                                     <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8512491756795014537">
-                                      <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="8512491756795014538">
+                                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="8512491756795014538">
                                         <property name="label" nameId="tp3r.6489343236075007666" value="ClassifierType" />
+                                        <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8512491756795014539">
                                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8512491756795014541" resolveInfo="t" />
                                         </node>
@@ -20521,8 +20535,9 @@
                                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpd4.IsSubtypeExpression" typeId="tpd4.1176543928247" id="2248407684786392192">
                                   <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2248407684786392198">
                                     <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2248407684786392199">
-                                      <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2248407684786392200">
+                                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2248407684786392200">
                                         <property name="label" nameId="tp3r.6489343236075007666" value="ClassifierType" />
+                                        <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2248407684786392201">
                                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8512491756795014541" resolveInfo="t" />
                                         </node>
@@ -20876,8 +20891,9 @@
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Enum" resolveInfo="Enum" />
                     <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4746245540142533140">
                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-                      <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="4746245540142533141">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="4746245540142533141">
                         <property name="label" nameId="tp3r.6489343236075007666" value="ClassifierType" />
+                        <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4746245540142533152">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4746245540142533146" resolveInfo="classifier" />
                         </node>
@@ -21364,7 +21380,8 @@
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Class" resolveInfo="Class" />
                   <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4564374268190697528">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-                    <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="4564374268190697529">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="4564374268190697529">
+                      <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                       <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7287261519498562533">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="7287261519498562531">
                           <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
@@ -22583,8 +22600,9 @@
           </node>
           <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="8578055449698165477">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8578055449698165478">
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="8578055449698165479">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="8578055449698165479">
                 <property name="label" nameId="tp3r.6489343236075007666" value="ClassifierType" />
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8578055449698353790">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8578055449698353781" resolveInfo="currentClassifier" />
                 </node>
@@ -22730,8 +22748,9 @@
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1126608406759381111">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1126608406759381112">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1126608406759381113">
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1126608406759381114">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1126608406759381114">
                 <property name="label" nameId="tp3r.6489343236075007666" value="ClassifierType" />
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1126608406759381115">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8578055449698165467" resolveInfo="methodClassifier" />
                 </node>
@@ -22742,8 +22761,9 @@
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1126608406759381116">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1126608406759381117">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1126608406759381118">
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1126608406759381119">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1126608406759381119">
                 <property name="label" nameId="tp3r.6489343236075007666" value="ClassifierType" />
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1126608406759381120">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8578055449698353781" resolveInfo="currentClassifier" />
                 </node>
@@ -23337,7 +23357,8 @@
               <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="5569019188765067979">
                 <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="5569019188765067980">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="5569019188765067981">
-                    <node role="referenceAntiquotation$link_attribute$typeVariableDeclaration" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="5569019188765067982">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="5569019188765067982">
+                      <property name="linkRole" nameId="tpck.1757699476691236116" value="typeVariableDeclaration" />
                       <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5569019188765067983">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5569019188765067987" resolveInfo="typeVariableDeclaration" />
                       </node>
@@ -23370,13 +23391,14 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
               <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5569019188765067993">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-                <node role="_attr_$attribute" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="5569019188765067994">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="5569019188765067994">
                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5569019188765067995">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5569019188765067969" resolveInfo="typeVarRefs" />
                   </node>
                 </node>
               </node>
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="5569019188765067996">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="5569019188765067996">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5569019188765067997">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5569019188765068009" resolveInfo="classifier" />
                 </node>
@@ -25492,8 +25514,9 @@
           </node>
           <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2233570453276444062">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2233570453276444063">
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2233570453276444064">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2233570453276444064">
                 <property name="label" nameId="tp3r.6489343236075007666" value="ClassifierType" />
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2233570453276444065">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2233570453276415955" resolveInfo="currentClassifier" />
                 </node>
@@ -25609,7 +25632,8 @@
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2233570453276392951">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2233570453276392952">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2233570453276392953">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2233570453276392953">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2233570453276392954">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2233570453276392942" resolveInfo="fieldClassifier" />
                 </node>
@@ -27304,8 +27328,9 @@
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="2030079436469754175">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2030079436469754176">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2030079436469754178">
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2030079436469754179">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2030079436469754179">
                 <property name="label" nameId="tp3r.6489343236075007666" value="ClassifierType" />
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2030079436469754182">
                   <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2030079436469754181">
                     <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="2030079436469744704" resolveInfo="annotationInstance" />

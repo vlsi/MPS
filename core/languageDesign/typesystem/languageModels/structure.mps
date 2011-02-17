@@ -1289,7 +1289,7 @@
       <property name="value" nameId="tpce.1105725733873" value="helgins list type variable" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="short_description" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1970539388026990595" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1970539388026990595" />
   </root>
   <root id="1203432734351">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1203432751071">
@@ -1441,7 +1441,7 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1212671198487">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="843338424126759621" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="843338424126759621" />
   </root>
   <root id="1212573620175">
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1212573620176">

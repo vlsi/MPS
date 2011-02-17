@@ -22,7 +22,7 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4021391592916173801" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4021391592916173802" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4021391592916173803" />
-      <node role="methodDocComment$attribute" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="4021391592916173804">
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="4021391592916173804">
         <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="4021391592916173805">
           <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="4021391592916173806" />
         </node>
@@ -36,7 +36,7 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4021391592916173791" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4021391592916173792" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4021391592916173793" />
-      <node role="methodDocComment$attribute" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="4021391592916173794">
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="4021391592916173794">
         <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="4021391592916173795">
           <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="4021391592916173796">
             <property name="text" nameId="m373.8970989240999019144" value="fasdfasdfasdfasdfasdf" />
@@ -55,7 +55,7 @@
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5562345046718955368">
         <property name="value" nameId="tpee.1068580320021" value="4" />
       </node>
-      <node role="staticFieldDocComment$attribute" type="m373.FieldDocComment" typeId="m373.6832197706140896242" id="3106559687487257070">
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="m373.FieldDocComment" typeId="m373.6832197706140896242" id="3106559687487257070">
         <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="3106559687487257071">
           <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="3106559687487257072" />
         </node>
@@ -65,7 +65,7 @@
       <property name="name" nameId="tpck.1169194664001" value="x" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="6832197706140999821" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6832197706140999823" />
-      <node role="fieldDocComment$attribute" type="m373.FieldDocComment" typeId="m373.6832197706140896242" id="4021391592916073099">
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="m373.FieldDocComment" typeId="m373.6832197706140896242" id="4021391592916073099">
         <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="4021391592916073100">
           <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="4021391592916073101" />
         </node>
@@ -126,7 +126,7 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~ArrayStoreException" resolveInfo="ArrayStoreException" />
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="4021391592915198827" />
-      <node role="methodDocComment$attribute" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="4021391592915198832">
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="4021391592915198832">
         <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="4021391592916694600">
           <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="4021391592916694601">
             <property name="text" nameId="m373.8970989240999019144" value="The quick " />
@@ -260,7 +260,7 @@
           </node>
         </node>
       </node>
-      <node role="methodDocComment$attribute" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="3106559687487257062">
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="3106559687487257062">
         <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="3106559687487257063">
           <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="3106559687487257064">
             <property name="text" nameId="m373.8970989240999019144" value="asd" />

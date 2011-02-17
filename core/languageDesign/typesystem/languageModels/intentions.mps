@@ -351,7 +351,8 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3302086321380616790">
               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpd4.TypesystemIntention" typeId="tpd4.1210784285454" id="3302086321380616791">
                 <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="3302086321380616758" resolveInfo="fix_" />
-                <node role="referenceAntiquotation$link_attribute$quickFix" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3302086321380616792">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3302086321380616792">
+                  <property name="linkRole" nameId="tpck.1757699476691236116" value="quickFix" />
                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3302086321380616793">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3302086321380616755" resolveInfo="quickFixNode" />
                   </node>

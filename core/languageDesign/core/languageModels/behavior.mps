@@ -647,9 +647,9 @@
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8656690432819148322">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8656690432819148326" resolveInfo="it" />
                             </node>
-                            <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="8656690432819148323">
-                              <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.NodeAttributeAccessQualifier" typeId="tp25.1204763358057" id="8656690432819148324">
-                                <link role="annotationLink" roleId="tp25.1204763443606" targetNodeId="tpck.376024488709664661" resolveInfo="export" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517900">
+                              <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="3071170492188517901">
+                                <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="tpck.5425021671150136555" resolveInfo="ExportScope" />
                               </node>
                             </node>
                           </node>
@@ -664,9 +664,9 @@
                   </node>
                 </node>
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="8656690432819148328">
-                <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.NodeAttributeAccessQualifier" typeId="tp25.1204763358057" id="8656690432819148329">
-                  <link role="annotationLink" roleId="tp25.1204763443606" targetNodeId="tpck.376024488709664661" resolveInfo="export" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517688">
+                <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="3071170492188517689">
+                  <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="tpck.5425021671150136555" resolveInfo="ExportScope" />
                 </node>
               </node>
             </node>
@@ -680,9 +680,9 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetContainingRootOperation" typeId="tp25.1171310072040" id="4075196924244445345" />
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="4075196924244445350">
-              <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.NodeAttributeAccessQualifier" typeId="tp25.1204763358057" id="4075196924244445352">
-                <link role="annotationLink" roleId="tp25.1204763443606" targetNodeId="tpck.376024488709664661" resolveInfo="export" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517914">
+              <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="3071170492188517915">
+                <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="tpck.5425021671150136555" resolveInfo="ExportScope" />
               </node>
             </node>
           </node>

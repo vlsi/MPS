@@ -999,7 +999,7 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3342854882747946698">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564383037">
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564383037">
       <property name="comment" nameId="tpce.1225118933224" value="this 'add' operation was replaced with nlist&lt;&gt; 'add' operation from collections laguage" />
       <property name="build" nameId="tpce.1225118929411" value="14333" />
     </node>
@@ -1025,7 +1025,7 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3342854882747946702">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564383093">
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564383093">
       <property name="comment" nameId="tpce.1225118933224" value="this 'insert first' operation was replaced with nlist&lt;&gt; 'addFirst' operation from collections laguage" />
       <property name="build" nameId="tpce.1225118929411" value="14333" />
     </node>
@@ -1045,7 +1045,7 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1228342618466">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1228342515854">
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1228342515854">
       <property name="comment" nameId="tpce.1225118933224" value="this 'remove' operation has been replaced with 'detach' operation" />
       <property name="build" nameId="tpce.1225118929411" value="1193" />
     </node>
@@ -1207,7 +1207,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="prototypeNode" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" />
-      <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3757480014665019795" />
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3757480014665019795" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1143235216709">
       <property name="value" nameId="tpce.1105725733873" value="new node" />
@@ -1384,7 +1384,7 @@
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1217022095863" resolveInfo="returnType" />
       <node role="target" roleId="tpce.1105736901241" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1179356605386" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564383057">
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564383057">
       <property name="comment" nameId="tpce.1225118933224" value="this 'count' operation was replaced with nlist&lt;&gt; 'size' operation from collections laguage" />
       <property name="build" nameId="tpce.1225118929411" value="14333" />
     </node>
@@ -1746,7 +1746,7 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3342854882747836492">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564361193">
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564361193">
       <property name="comment" nameId="tpce.1225118933224" value="this 'add all' operation was replaced with nlist&lt;&gt; 'addAll' operation from collections laguage" />
       <property name="build" nameId="tpce.1225118929411" value="14333" />
     </node>
@@ -2060,7 +2060,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="prototypeNode" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" />
-      <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3757480014665019775" />
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3757480014665019775" />
     </node>
   </root>
   <root id="1181949435690">
@@ -2068,7 +2068,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="prototypeNode" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" />
-      <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3757480014665019785" />
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3757480014665019785" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1181949486312">
       <property name="value" nameId="tpce.1105725733873" value="new instance" />
@@ -2275,7 +2275,7 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1206036984625">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1206036041805" resolveInfo="IInternalType" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="6037466102201905966" />
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="6037466102201905966" />
   </root>
   <root id="1205357139746">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1205357175701">
@@ -2397,7 +2397,7 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3342854882747946704">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564383100">
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564383100">
       <property name="comment" nameId="tpce.1225118933224" value="this 'remove all' operation was replaced with nlist&lt;&gt; 'clear' operation from collections laguage" />
       <property name="build" nameId="tpce.1225118929411" value="14333" />
     </node>

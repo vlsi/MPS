@@ -50,7 +50,7 @@
     </node>
   </root>
   <root id="1209605205934">
-    <node role="rootTemplateAnnotation$attribute" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="1209605205935">
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="1209605205935">
       <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="tpm0.1195168316083" resolveInfo="InputRoot" />
     </node>
     <node role="outputChild" roleId="tq1l.1195169631818" type="tq1l.OutputNode_forDontApplyReductionTwice_test" typeId="tq1l.1209604028561" id="1209605724998">

@@ -119,7 +119,7 @@
         <node role="attribute" roleId="tpjo.1188768803246" type="tpjh.SimpleAttribute" typeId="tpjh.1188772500757" id="3852159904898801199">
           <property name="attributeName" nameId="tpjh.1188772810752" value="attr" />
           <node role="value" roleId="tpjh.1188772833817" type="tpjo.Text" typeId="tpjo.1161373262136" id="3852159904898801200" />
-          <node role="nodeMacro$attribute" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3852159904898824952">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3852159904898824952">
             <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="3852159904898824953">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3852159904898824954">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3852159904898824955">
@@ -138,7 +138,7 @@
           <node role="content" roleId="tpjo.1163629255661" type="tpjh.SimpleElement" typeId="tpjh.1179105519357" id="2968360207536632815">
             <node role="elementName" roleId="tpjh.1179271242032" type="tpjo.Text" typeId="tpjo.1161373262136" id="2968360207536632816" />
             <node role="contentList" roleId="tpjo.1179114219774" type="tpjo.ContentList" typeId="tpjo.1163629230879" id="2968360207536632817" />
-            <node role="nodeMacro$attribute" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2968360207536985233">
+            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2968360207536985233">
               <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2968360207536985234">
                 <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2968360207536985235">
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2968360207536987615">
@@ -169,10 +169,11 @@
         </node>
       </node>
     </node>
-    <node role="rootTemplateAnnotation$attribute" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="3852159904898253931">
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="3852159904898253931">
       <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="k1iy.1572321421811286040" resolveInfo="GWTModule" />
     </node>
-    <node role="propertyMacro$property_attribute$fileName" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3852159904898263054">
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3852159904898263054">
+      <property name="propertyName" nameId="tpck.1757699476691236117" value="fileName" />
       <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="3852159904898263055">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3852159904898263056">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3852159904898358466">
@@ -196,7 +197,8 @@
       <node role="attribute" roleId="tpjo.1188768803246" type="tpjh.SimpleAttribute" typeId="tpjh.1188772500757" id="2968360207536881427">
         <property name="attributeName" nameId="tpjh.1188772810752" value="class" />
         <node role="value" roleId="tpjh.1188772833817" type="tpjo.Text" typeId="tpjo.1161373262136" id="2968360207536881428">
-          <node role="propertyMacro$property_attribute$text" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2968360207536881429">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2968360207536881429">
+            <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
             <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="2968360207536881430">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2968360207536881431">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2968360207536881432">
@@ -217,7 +219,7 @@
           </node>
         </node>
       </node>
-      <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2968360207536881438" />
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2968360207536881438" />
     </node>
   </root>
   <root id="3852159904898379928">
@@ -226,11 +228,12 @@
         <property name="text" nameId="tpjo.1161373273669" value="inherits" />
       </node>
       <node role="contentList" roleId="tpjo.1179114219774" type="tpjo.ContentList" typeId="tpjo.1163629230879" id="2968360207536881441" />
-      <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2968360207536881442" />
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2968360207536881442" />
       <node role="attribute" roleId="tpjo.1188768803246" type="tpjh.SimpleAttribute" typeId="tpjh.1188772500757" id="2968360207536881443">
         <property name="attributeName" nameId="tpjh.1188772810752" value="name" />
         <node role="value" roleId="tpjh.1188772833817" type="tpjo.Text" typeId="tpjo.1161373262136" id="2968360207536881444">
-          <node role="propertyMacro$property_attribute$text" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2968360207536881445">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2968360207536881445">
+            <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
             <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="2968360207536881446">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2968360207536881447">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2968360207536881448">
@@ -257,7 +260,8 @@
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpjh.SimpleElement" typeId="tpjh.1179105519357" id="2968360207536878964">
       <node role="elementName" roleId="tpjh.1179271242032" type="tpjo.Text" typeId="tpjo.1161373262136" id="2968360207536878965">
         <property name="text" nameId="tpjo.1161373273669" value="element" />
-        <node role="propertyMacro$property_attribute$text" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2968360207536878966">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2968360207536878966">
+          <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
           <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="2968360207536878967">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2968360207536878968">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2968360207536878969">
@@ -272,11 +276,12 @@
           </node>
         </node>
       </node>
-      <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2968360207536878973" />
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2968360207536878973" />
       <node role="attribute" roleId="tpjo.1188768803246" type="tpjh.SimpleAttribute" typeId="tpjh.1188772500757" id="2968360207536878974">
         <property name="attributeName" nameId="tpjh.1188772810752" value="path" />
         <node role="value" roleId="tpjh.1188772833817" type="tpjo.Text" typeId="tpjo.1161373262136" id="2968360207536878975">
-          <node role="propertyMacro$property_attribute$text" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2968360207536878976">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2968360207536878976">
+            <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
             <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="2968360207536878977">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2968360207536878978">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2968360207536878979">
@@ -314,7 +319,7 @@
       <node role="attribute" roleId="tpjo.1188768803246" type="tpjh.SimpleAttribute" typeId="tpjh.1188772500757" id="2968360207536878992">
         <property name="attributeName" nameId="tpjh.1188772810752" value="attr" />
         <node role="value" roleId="tpjh.1188772833817" type="tpjo.Text" typeId="tpjo.1161373262136" id="2968360207536878993" />
-        <node role="nodeMacro$attribute" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2968360207536878994">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2968360207536878994">
           <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2968360207536878995">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2968360207536878996">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2968360207536878997">
@@ -333,7 +338,7 @@
         <node role="content" roleId="tpjo.1163629255661" type="tpjh.SimpleElement" typeId="tpjh.1179105519357" id="2968360207537115108">
           <node role="elementName" roleId="tpjh.1179271242032" type="tpjo.Text" typeId="tpjo.1161373262136" id="2968360207537115109" />
           <node role="contentList" roleId="tpjo.1179114219774" type="tpjo.ContentList" typeId="tpjo.1163629230879" id="2968360207537115110" />
-          <node role="nodeMacro$attribute" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2968360207537115112">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="2968360207537115112">
             <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2968360207537115113">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2968360207537115114">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2968360207537115115">
@@ -355,7 +360,8 @@
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpjh.SimpleElement" typeId="tpjh.1179105519357" id="2968360207536881402">
       <node role="elementName" roleId="tpjh.1179271242032" type="tpjo.Text" typeId="tpjo.1161373262136" id="2968360207536881403">
         <property name="text" nameId="tpjo.1161373273669" value="element" />
-        <node role="propertyMacro$property_attribute$text" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2968360207536881404">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2968360207536881404">
+          <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
           <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="2968360207536881405">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2968360207536881406">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2968360207536881407">
@@ -370,11 +376,12 @@
           </node>
         </node>
       </node>
-      <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2968360207536881411" />
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2968360207536881411" />
       <node role="attribute" roleId="tpjo.1188768803246" type="tpjh.SimpleAttribute" typeId="tpjh.1188772500757" id="2968360207536881412">
         <property name="attributeName" nameId="tpjh.1188772810752" value="name" />
         <node role="value" roleId="tpjh.1188772833817" type="tpjo.Text" typeId="tpjo.1161373262136" id="2968360207536881413">
-          <node role="propertyMacro$property_attribute$text" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2968360207536881414">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2968360207536881414">
+            <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
             <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="2968360207536881415">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2968360207536881416">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2968360207536881417">
@@ -403,7 +410,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="k1iy.1572321421811299625" resolveInfo="CaseSensitive" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="3852159904898549801">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpjo.Text" typeId="tpjo.1161373262136" id="3852159904898549804">
-          <node role="propertyMacro$property_attribute$text" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3852159904898549805">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3852159904898549805">
+            <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
             <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="3852159904898549806">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3852159904898549807">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3852159904898556314">
@@ -432,7 +440,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="k1iy.1572321421811299622" resolveInfo="DefaultExcludes" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="3852159904898556327">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpjo.Text" typeId="tpjo.1161373262136" id="3852159904898556328">
-          <node role="propertyMacro$property_attribute$text" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3852159904898556329">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3852159904898556329">
+            <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
             <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="3852159904898556330">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3852159904898556331">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3852159904898556332">
@@ -461,7 +470,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="k1iy.1572321421811416484" resolveInfo="Excludes" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="3852159904898556340">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpjo.Text" typeId="tpjo.1161373262136" id="3852159904898556342">
-          <node role="propertyMacro$property_attribute$text" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3852159904898556343">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3852159904898556343">
+            <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
             <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="3852159904898556344">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3852159904898556345">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3852159904898556346">
@@ -487,7 +497,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="k1iy.1572321421811416463" resolveInfo="Includes" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="3852159904898556358">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpjo.Text" typeId="tpjo.1161373262136" id="3852159904898556359">
-          <node role="propertyMacro$property_attribute$text" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3852159904898556360">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3852159904898556360">
+            <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
             <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="3852159904898556361">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3852159904898556362">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3852159904898556363">
@@ -513,7 +524,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="k1iy.1572321421813875986" resolveInfo="RenameTo" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="3852159904898824975">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpjo.Text" typeId="tpjo.1161373262136" id="3852159904898824976">
-          <node role="propertyMacro$property_attribute$text" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3852159904898824977">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3852159904898824977">
+            <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
             <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="3852159904898824978">
               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3852159904898824979">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3852159904898824980">
@@ -541,12 +553,13 @@
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpjh.SimpleAttribute" typeId="tpjh.1188772500757" id="2968360207536879012">
       <property name="attributeName" nameId="tpjh.1188772810752" value="attr" />
       <node role="value" roleId="tpjh.1188772833817" type="tpjo.Text" typeId="tpjo.1161373262136" id="2968360207536879013">
-        <node role="nodeMacro$attribute" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2968360207536879014">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="2968360207536879014">
           <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="3852159904898547408" resolveInfo="switch_Attr_value" />
         </node>
       </node>
-      <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2968360207536879015" />
-      <node role="propertyMacro$property_attribute$attributeName" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2968360207536879016">
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2968360207536879015" />
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="2968360207536879016">
+        <property name="propertyName" nameId="tpck.1757699476691236117" value="attributeName" />
         <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="2968360207536879017">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2968360207536879018">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2968360207536879019">
@@ -566,8 +579,8 @@
     <node role="contentNode" roleId="tpf8.1092060348987" type="k1iy.GWTModule" typeId="k1iy.1572321421811286040" id="1220369573364040165">
       <property name="name" nameId="tpck.1169194664001" value="context" />
       <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="1220369573364040166">
-        <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1220369573364040167" />
-        <node role="nodeMacro$attribute" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="1220369573364040169">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1220369573364040167" />
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="1220369573364040169">
           <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="1220369573364040170">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1220369573364040171">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1220369573364040172">
@@ -723,7 +736,8 @@
             </node>
           </node>
         </node>
-        <node role="referenceMacro$link_attribute$module" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="1220369573364066223">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="1220369573364066223">
+          <property name="linkRole" nameId="tpck.1757699476691236116" value="module" />
           <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="1220369573364066224">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1220369573364066225">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1220369573364066226">
