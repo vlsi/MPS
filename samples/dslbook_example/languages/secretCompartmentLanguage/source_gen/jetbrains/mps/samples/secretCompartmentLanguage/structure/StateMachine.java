@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +22,7 @@ public class StateMachine extends BaseConcept implements INamedConcept {
   public static final String START_STATE = "startState";
   public static final String EVENT = "event";
   public static final String STATE = "state";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public StateMachine(SNode node) {
     super(node);
@@ -112,6 +114,26 @@ public class StateMachine extends BaseConcept implements INamedConcept {
 
   public void insertState(State prev, State node) {
     this.insertChild(prev, StateMachine.STATE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(StateMachine._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, StateMachine._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, StateMachine._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(StateMachine._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, StateMachine._$ATTRIBUTE, node);
   }
 
   public static StateMachine newInstance(SModel sm, boolean init) {
