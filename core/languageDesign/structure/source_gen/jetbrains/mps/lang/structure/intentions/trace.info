@@ -3,24 +3,24 @@
   <unitInfo fileName="CreateReferenceConcept_Intention.java" startLine="86" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention$QuotationClass_k63gxf_a0a1a7" />
   <unitInfo fileName="MakeRootable_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeRootable_Intention" />
   <unitInfo fileName="CreateReferenceConcept_Intention.java" startLine="115" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention$QuotationClass_k63gxf_a0a11a7" />
-  <unitInfo fileName="AddDeprecatedAnnotation_Intention.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.AddDeprecatedAnnotation_Intention" />
+  <unitInfo fileName="AddDeprecatedAnnotation_Intention.java" startLine="15" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.AddDeprecatedAnnotation_Intention" />
   <unitInfo fileName="CreateReferenceConcept_Intention.java" startLine="27" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention" />
   <root nodeId="1224245135252">
-    <nodeInfo nodeId="1224245365572" fileName="AddDeprecatedAnnotation_Intention.java" startLine="35" startPosition="124" endLine="36" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224245381358" fileName="AddDeprecatedAnnotation_Intention.java" startLine="37" startPosition="5" endLine="38" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224245430628" fileName="AddDeprecatedAnnotation_Intention.java" startLine="42" startPosition="124" endLine="43" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224245455278" fileName="AddDeprecatedAnnotation_Intention.java" startLine="43" startPosition="135" endLine="44" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224245566347" fileName="AddDeprecatedAnnotation_Intention.java" startLine="45" startPosition="12" endLine="46" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224245542923" fileName="AddDeprecatedAnnotation_Intention.java" startLine="45" startPosition="10" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224245334979" fileName="AddDeprecatedAnnotation_Intention.java" startLine="34" startPosition="85" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224245511985" fileName="AddDeprecatedAnnotation_Intention.java" startLine="41" startPosition="76" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1224245334981" fileName="AddDeprecatedAnnotation_Intention.java" startLine="35" startPosition="124" endLine="36" endPosition="41" />
-    <scopeInfo nodeId="1224245542924" fileName="AddDeprecatedAnnotation_Intention.java" startLine="45" startPosition="12" endLine="46" endPosition="138" />
-    <scopeInfo nodeId="1224245511986" fileName="AddDeprecatedAnnotation_Intention.java" startLine="42" startPosition="124" endLine="44" endPosition="122">
+    <nodeInfo nodeId="1224245365572" fileName="AddDeprecatedAnnotation_Intention.java" startLine="36" startPosition="209" endLine="37" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224245381358" fileName="AddDeprecatedAnnotation_Intention.java" startLine="38" startPosition="5" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224245430628" fileName="AddDeprecatedAnnotation_Intention.java" startLine="43" startPosition="209" endLine="44" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224245455278" fileName="AddDeprecatedAnnotation_Intention.java" startLine="44" startPosition="135" endLine="45" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224245566347" fileName="AddDeprecatedAnnotation_Intention.java" startLine="46" startPosition="12" endLine="47" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224245542923" fileName="AddDeprecatedAnnotation_Intention.java" startLine="46" startPosition="10" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1224245334979" fileName="AddDeprecatedAnnotation_Intention.java" startLine="35" startPosition="85" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224245511985" fileName="AddDeprecatedAnnotation_Intention.java" startLine="42" startPosition="76" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1224245334981" fileName="AddDeprecatedAnnotation_Intention.java" startLine="36" startPosition="209" endLine="37" endPosition="41" />
+    <scopeInfo nodeId="1224245542924" fileName="AddDeprecatedAnnotation_Intention.java" startLine="46" startPosition="12" endLine="47" endPosition="223" />
+    <scopeInfo nodeId="1224245511986" fileName="AddDeprecatedAnnotation_Intention.java" startLine="43" startPosition="209" endLine="45" endPosition="207">
       <varInfo nodeId="1224245430629" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="1224245135254" fileName="AddDeprecatedAnnotation_Intention.java" startLine="34" startPosition="85" endLine="38" endPosition="42" />
-    <scopeInfo nodeId="1224245135256" fileName="AddDeprecatedAnnotation_Intention.java" startLine="41" startPosition="76" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="1224245135254" fileName="AddDeprecatedAnnotation_Intention.java" startLine="35" startPosition="85" endLine="39" endPosition="42" />
+    <scopeInfo nodeId="1224245135256" fileName="AddDeprecatedAnnotation_Intention.java" startLine="42" startPosition="76" endLine="48" endPosition="5" />
   </root>
   <root nodeId="2799938697970315260">
     <nodeInfo nodeId="2799938697970315280" fileName="MakeRootable_Intention.java" startLine="38" startPosition="76" endLine="39" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

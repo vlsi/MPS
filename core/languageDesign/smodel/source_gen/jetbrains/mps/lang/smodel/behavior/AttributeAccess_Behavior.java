@@ -9,6 +9,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class AttributeAccess_Behavior {
   private static Class[] PARAMETERS_6960953357954063537 = {SNode.class};
@@ -35,7 +42,11 @@ public class AttributeAccess_Behavior {
   }
 
   public static SNode call_getAttributeContainerType_6960953357954139822(SNode thisNode) {
-    return TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
+    SNode result = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
+    return ((result != null) && (SLinkOperations.getTarget(result, "concept", false) == null) ?
+      new AttributeAccess_Behavior.QuotationClass_q663c8_a0a1a5().createNode() :
+      result
+    );
   }
 
   public static boolean call_isSingularCardinality_6960953357954063537(SNode thisNode) {
@@ -60,5 +71,23 @@ public class AttributeAccess_Behavior {
 
   public static SNode callSuper_getTargetConcept_6960953357954063543(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_getTargetConcept_4024382256428848859", PARAMETERS_6960953357954063543);
+  }
+
+  public static class QuotationClass_q663c8_a0a1a5 {
+    public QuotationClass_q663c8_a0a1a5() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("concept", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1133920641626")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

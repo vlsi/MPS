@@ -13,8 +13,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class RootTemplateAnnotation_KeyMap extends EditorCellKeyMap {
@@ -64,11 +65,11 @@ public class RootTemplateAnnotation_KeyMap extends EditorCellKeyMap {
       if (language == BootstrapLanguages.generatorLanguage()) {
         return false;
       }
-      return SLinkOperations.getTarget(applyToNode, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) == null;
+      return AttributeOperations.getAttribute(applyToNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) == null;
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeFactoryOperations.setNewChild(SNodeOperations.getContainingRoot(node), AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
+      SNodeFactoryOperations.setNewAttribute(SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
     }
 
     public String getKeyStroke() {

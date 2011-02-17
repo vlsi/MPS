@@ -8,12 +8,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -60,9 +60,9 @@ public class SetExportAnnotation_Intention extends BaseIntention implements Inte
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNodeOperations.deleteNode(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("export"), true));
+    SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))));
     if ((this.myParameter != null)) {
-      SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("export"), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(this.myParameter), null), true);
+      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(this.myParameter), null));
     }
   }
 
@@ -74,7 +74,7 @@ public class SetExportAnnotation_Intention extends BaseIntention implements Inte
     SNode[] all = {null ,SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopeModule") ,SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopePublic") ,SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScopeNamespace")};
     return Sequence.fromIterable(Sequence.fromArray(all)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("export"), true));
+        return it != SNodeOperations.getConceptDeclaration(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))));
       }
     }).toListSequence();
   }

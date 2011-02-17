@@ -7,8 +7,9 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddConditions_Intention extends BaseIntention implements Intention {
@@ -47,8 +48,8 @@ public class AddConditions_Intention extends BaseIntention implements Intention 
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("PreconditionLink"), true) == null)) {
-      SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("PreconditionLink"), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions", null), true);
+    if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions"))) == null)) {
+      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions")), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions", null));
     }
   }
 

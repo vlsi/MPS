@@ -77,17 +77,17 @@
   </root>
   <root nodeId="4075196924244322258">
     <nodeInfo nodeId="4075196924244347332" fileName="SetExportAnnotation_Intention.java" startLine="58" startPosition="90" endLine="59" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4075196924244383139" fileName="SetExportAnnotation_Intention.java" startLine="62" startPosition="76" endLine="63" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4075196924244344503" fileName="SetExportAnnotation_Intention.java" startLine="64" startPosition="37" endLine="65" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4075196924244383139" fileName="SetExportAnnotation_Intention.java" startLine="62" startPosition="76" endLine="63" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4075196924244344503" fileName="SetExportAnnotation_Intention.java" startLine="64" startPosition="37" endLine="65" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4075196924244435537" fileName="SetExportAnnotation_Intention.java" startLine="73" startPosition="93" endLine="74" endPosition="322" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4075196924244434153" fileName="SetExportAnnotation_Intention.java" startLine="76" startPosition="39" endLine="77" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4075196924244383156" fileName="SetExportAnnotation_Intention.java" startLine="63" startPosition="128" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4075196924244434153" fileName="SetExportAnnotation_Intention.java" startLine="76" startPosition="39" endLine="77" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4075196924244383156" fileName="SetExportAnnotation_Intention.java" startLine="63" startPosition="203" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4075196924244344452" fileName="SetExportAnnotation_Intention.java" startLine="44" startPosition="85" endLine="48" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4075196924244434148" fileName="SetExportAnnotation_Intention.java" startLine="75" startPosition="91" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="4075196924244434133" fileName="SetExportAnnotation_Intention.java" startLine="74" startPosition="322" endLine="79" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="4075196924244347331" fileName="SetExportAnnotation_Intention.java" startLine="58" startPosition="90" endLine="59" endPosition="25" />
-    <scopeInfo nodeId="4075196924244383157" fileName="SetExportAnnotation_Intention.java" startLine="64" startPosition="37" endLine="65" endPosition="185" />
-    <scopeInfo nodeId="4075196924244434149" fileName="SetExportAnnotation_Intention.java" startLine="76" startPosition="39" endLine="77" endPosition="156" />
+    <scopeInfo nodeId="4075196924244383157" fileName="SetExportAnnotation_Intention.java" startLine="64" startPosition="37" endLine="65" endPosition="260" />
+    <scopeInfo nodeId="4075196924244434149" fileName="SetExportAnnotation_Intention.java" startLine="76" startPosition="39" endLine="77" endPosition="231" />
     <scopeInfo nodeId="4075196924244322260" fileName="SetExportAnnotation_Intention.java" startLine="44" startPosition="85" endLine="48" endPosition="6" />
     <scopeInfo nodeId="4075196924244322262" fileName="SetExportAnnotation_Intention.java" startLine="62" startPosition="76" endLine="66" endPosition="5" />
     <scopeInfo nodeId="4075196924244434148" fileName="SetExportAnnotation_Intention.java" startLine="75" startPosition="91" endLine="79" endPosition="0" />
