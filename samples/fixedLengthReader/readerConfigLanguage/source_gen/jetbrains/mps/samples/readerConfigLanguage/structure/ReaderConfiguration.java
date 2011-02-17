@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +19,7 @@ public class ReaderConfiguration extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String MAPPING = "mapping";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ReaderConfiguration(SNode node) {
     super(node);
@@ -73,6 +75,26 @@ public class ReaderConfiguration extends BaseConcept implements INamedConcept {
 
   public void insertMapping(Mapping prev, Mapping node) {
     this.insertChild(prev, ReaderConfiguration.MAPPING, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ReaderConfiguration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ReaderConfiguration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ReaderConfiguration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ReaderConfiguration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ReaderConfiguration._$ATTRIBUTE, node);
   }
 
   public static ReaderConfiguration newInstance(SModel sm, boolean init) {

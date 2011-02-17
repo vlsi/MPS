@@ -6,6 +6,9 @@ import jetbrains.mps.samples.matrixLanguage.runtime.Matrix;
 import jetbrains.mps.samples.matrixLanguage.runtime.MatrixIterator;
 
 public class ABC {
+  public ABC() {
+  }
+
   public void abc() {
     int tmp = 10;
     double a = 1;
