@@ -31,7 +31,7 @@ public class AttributeOperations {
   }
 
   public static boolean isNewAttributeInOldRole(SNode node, String oldRole) {
-    return SNodeOperations.hasRole(node, "jetbrains.mps.lang.core.structure.BaseConcept", "_$attribute") && oldRole.equals(getOldRole(node));
+    return "_$attribute".equals(SNodeOperations.getContainingLinkRole(node)) && oldRole.equals(getOldRole(node));
   }
 
   public static Iterable<SNode> getAttributes(SNode node, final IAttributeDescriptor descriptor) {
@@ -109,7 +109,7 @@ public class AttributeOperations {
   }
 
   public static String getLinkRole(SNode attribute) {
-    if (!(SNodeOperations.hasRole(attribute, "jetbrains.mps.lang.core.structure.BaseConcept", "_$attribute"))) {
+    if (!("_$attribute".equals(SNodeOperations.getContainingLinkRole(attribute)))) {
       // compatibility with old attributes 
       return AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(SNodeOperations.getContainingLinkRole(attribute));
     }
@@ -121,7 +121,7 @@ public class AttributeOperations {
   }
 
   public static String getPropertyName(SNode attribute) {
-    if (!(SNodeOperations.hasRole(attribute, "jetbrains.mps.lang.core.structure.BaseConcept", "_$attribute"))) {
+    if (!("_$attribute".equals(SNodeOperations.getContainingLinkRole(attribute)))) {
       // compatibility with old attributes 
       return AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(SNodeOperations.getContainingLinkRole(attribute));
     }
@@ -132,7 +132,11 @@ public class AttributeOperations {
   }
 
   public static boolean isAttribute(SNode node) {
-    return SNodeOperations.hasRole(node, "jetbrains.mps.lang.core.structure.BaseConcept", "_$attribute") || AttributesRolesUtil.isAttributeRole(SNodeOperations.getContainingLinkRole(node));
+    String role = SNodeOperations.getContainingLinkRole(node);
+    if (role == null) {
+      return false;
+    }
+    return role.equals("_$attribute") || AttributesRolesUtil.isAttributeRole(role);
   }
 
   public static List<SNode> getAllAttributes(SNode node) {
