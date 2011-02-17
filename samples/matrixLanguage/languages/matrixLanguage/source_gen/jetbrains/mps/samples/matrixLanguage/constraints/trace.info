@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="MatrixIndexVariableRefirence_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.MatrixIndexVariableRefirence_Behavior" />
+  <unitInfo fileName="MatrixIndexVariableReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.MatrixIndexVariableReference_Behavior" />
   <unitInfo fileName="MatrixElementVariableReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.MatrixElementVariableReference_Behavior" />
   <unitInfo fileName="MatrixElementVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.MatrixElementVariableDeclaration_Behavior" />
   <unitInfo fileName="MatrixType_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.MatrixType_Behavior" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="19" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint" />
-  <unitInfo fileName="MatrixIndexVariableRefirence_DefaultSearchScope.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.MatrixIndexVariableRefirence_DefaultSearchScope" />
+  <unitInfo fileName="MatrixIndexVariableReference_DefaultSearchScope.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.MatrixIndexVariableReference_DefaultSearchScope" />
   <root nodeId="1210172209680">
-    <nodeInfo nodeId="1210172221167" fileName="MatrixType_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="142" />
+    <nodeInfo nodeId="1210172221167" fileName="MatrixType_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1210172209682" fileName="MatrixType_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1210172211789" fileName="MatrixType_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="142" />
   </root>
@@ -19,16 +19,16 @@
     <scopeInfo nodeId="1210238473283" fileName="MatrixElementVariableReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="1210239208856">
-    <scopeInfo nodeId="1210239208858" fileName="MatrixIndexVariableRefirence_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1210239208858" fileName="MatrixIndexVariableReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="1213107435730">
-    <nodeInfo nodeId="1213107435734" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="95" />
-    <nodeInfo nodeId="1213107435740" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="32" startPosition="95" endLine="33" endPosition="46" />
-    <nodeInfo nodeId="1213107435750" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="35" startPosition="118" endLine="36" endPosition="190" />
-    <nodeInfo nodeId="1213107435767" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="38" startPosition="5" endLine="39" endPosition="59" />
-    <nodeInfo nodeId="1213107435772" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="39" startPosition="59" endLine="40" endPosition="18" />
-    <nodeInfo nodeId="1213107435748" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="34" startPosition="30" endLine="37" endPosition="7" />
-    <nodeInfo nodeId="1213107435746" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="33" startPosition="46" endLine="38" endPosition="5" />
+    <nodeInfo nodeId="1213107435734" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213107435740" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="32" startPosition="95" endLine="33" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213107435750" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="35" startPosition="118" endLine="36" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213107435767" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="38" startPosition="5" endLine="39" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213107435772" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="39" startPosition="59" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213107435748" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="34" startPosition="30" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213107435746" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="33" startPosition="46" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="1213107435749" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="35" startPosition="118" endLine="36" endPosition="190" />
     <scopeInfo nodeId="1213107435747" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="34" startPosition="30" endLine="37" endPosition="7" />
     <scopeInfo nodeId="1213107435746" fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="33" startPosition="46" endLine="38" endPosition="5">
@@ -41,20 +41,20 @@
     </scopeInfo>
   </root>
   <root nodeId="1213107436037">
-    <nodeInfo nodeId="1213107436041" fileName="MatrixIndexVariableRefirence_DefaultSearchScope.java" startLine="30" startPosition="132" endLine="31" endPosition="95" />
-    <nodeInfo nodeId="1213107436047" fileName="MatrixIndexVariableRefirence_DefaultSearchScope.java" startLine="31" startPosition="95" endLine="32" endPosition="46" />
-    <nodeInfo nodeId="1213107436057" fileName="MatrixIndexVariableRefirence_DefaultSearchScope.java" startLine="34" startPosition="118" endLine="35" endPosition="189" />
-    <nodeInfo nodeId="1213107436067" fileName="MatrixIndexVariableRefirence_DefaultSearchScope.java" startLine="35" startPosition="189" endLine="36" endPosition="186" />
-    <nodeInfo nodeId="1213107436084" fileName="MatrixIndexVariableRefirence_DefaultSearchScope.java" startLine="38" startPosition="5" endLine="39" endPosition="59" />
-    <nodeInfo nodeId="1213107436089" fileName="MatrixIndexVariableRefirence_DefaultSearchScope.java" startLine="39" startPosition="59" endLine="40" endPosition="18" />
-    <nodeInfo nodeId="1213107436055" fileName="MatrixIndexVariableRefirence_DefaultSearchScope.java" startLine="33" startPosition="30" endLine="37" endPosition="7" />
-    <nodeInfo nodeId="1213107436053" fileName="MatrixIndexVariableRefirence_DefaultSearchScope.java" startLine="32" startPosition="46" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="1213107436056" fileName="MatrixIndexVariableRefirence_DefaultSearchScope.java" startLine="34" startPosition="118" endLine="36" endPosition="186" />
-    <scopeInfo nodeId="1213107436054" fileName="MatrixIndexVariableRefirence_DefaultSearchScope.java" startLine="33" startPosition="30" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="1213107436053" fileName="MatrixIndexVariableRefirence_DefaultSearchScope.java" startLine="32" startPosition="46" endLine="38" endPosition="5">
+    <nodeInfo nodeId="1213107436041" fileName="MatrixIndexVariableReference_DefaultSearchScope.java" startLine="30" startPosition="132" endLine="31" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213107436047" fileName="MatrixIndexVariableReference_DefaultSearchScope.java" startLine="31" startPosition="95" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213107436057" fileName="MatrixIndexVariableReference_DefaultSearchScope.java" startLine="34" startPosition="118" endLine="35" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213107436067" fileName="MatrixIndexVariableReference_DefaultSearchScope.java" startLine="35" startPosition="189" endLine="36" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213107436084" fileName="MatrixIndexVariableReference_DefaultSearchScope.java" startLine="38" startPosition="5" endLine="39" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213107436089" fileName="MatrixIndexVariableReference_DefaultSearchScope.java" startLine="39" startPosition="59" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213107436055" fileName="MatrixIndexVariableReference_DefaultSearchScope.java" startLine="33" startPosition="30" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213107436053" fileName="MatrixIndexVariableReference_DefaultSearchScope.java" startLine="32" startPosition="46" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="1213107436056" fileName="MatrixIndexVariableReference_DefaultSearchScope.java" startLine="34" startPosition="118" endLine="36" endPosition="186" />
+    <scopeInfo nodeId="1213107436054" fileName="MatrixIndexVariableReference_DefaultSearchScope.java" startLine="33" startPosition="30" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="1213107436053" fileName="MatrixIndexVariableReference_DefaultSearchScope.java" startLine="32" startPosition="46" endLine="38" endPosition="5">
       <varInfo nodeId="1213107436082" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1213107436040" fileName="MatrixIndexVariableRefirence_DefaultSearchScope.java" startLine="30" startPosition="132" endLine="40" endPosition="18">
+    <scopeInfo nodeId="1213107436040" fileName="MatrixIndexVariableReference_DefaultSearchScope.java" startLine="30" startPosition="132" endLine="40" endPosition="18">
       <varInfo nodeId="1213107436085" varName="result" />
       <varInfo nodeId="1213107436048" varName="vars" />
       <varInfo nodeId="1213107436042" varName="nodes" />

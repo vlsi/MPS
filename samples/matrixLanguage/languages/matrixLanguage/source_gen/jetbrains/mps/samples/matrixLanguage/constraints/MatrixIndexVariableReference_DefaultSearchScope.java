@@ -15,16 +15,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class MatrixIndexVariableRefirence_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
-  public MatrixIndexVariableRefirence_DefaultSearchScope() {
+public class MatrixIndexVariableReference_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
+  public MatrixIndexVariableReference_DefaultSearchScope() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeDefaultSearchScopeProvider("jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableRefirence", this);
+    manager.registerNodeDefaultSearchScopeProvider("jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableReference", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeDefaultSearchScopeProvider("jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableRefirence");
+    manager.unRegisterNodeDefaultSearchScopeProvider("jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableReference");
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {

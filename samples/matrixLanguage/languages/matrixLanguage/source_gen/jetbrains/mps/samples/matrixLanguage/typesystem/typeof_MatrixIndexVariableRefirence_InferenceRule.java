@@ -26,7 +26,7 @@ public class typeof_MatrixIndexVariableRefirence_InferenceRule extends AbstractI
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableRefirence";
+    return "jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableReference";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

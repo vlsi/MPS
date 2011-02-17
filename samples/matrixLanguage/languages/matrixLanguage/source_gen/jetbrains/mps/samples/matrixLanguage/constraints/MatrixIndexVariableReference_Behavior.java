@@ -4,7 +4,7 @@ package jetbrains.mps.samples.matrixLanguage.constraints;
 
 import jetbrains.mps.smodel.SNode;
 
-public class MatrixIndexVariableRefirence_Behavior {
+public class MatrixIndexVariableReference_Behavior {
   public static void init(SNode thisNode) {
   }
 }

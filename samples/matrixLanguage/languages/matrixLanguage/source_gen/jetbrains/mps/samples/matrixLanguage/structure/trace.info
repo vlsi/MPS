@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="MatrixLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixLanguage_Language" />
+  <unitInfo fileName="MatrixElementVariableDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableDeclaration" />
+  <unitInfo fileName="MatrixIndexVariableDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration" />
   <unitInfo fileName="MatrixDivExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixDivExpression" />
   <unitInfo fileName="MatrixSubExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixSubExpression" />
   <unitInfo fileName="MatrixAddExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixAddExpression" />
   <unitInfo fileName="MatrixMultExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixMultExpression" />
-  <unitInfo fileName="MatrixIndexVariableRefirence.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableRefirence" />
+  <unitInfo fileName="MatrixIndexVariableReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableReference" />
   <unitInfo fileName="MatrixElementVariableReference.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableReference" />
   <unitInfo fileName="TransposeExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression" />
   <unitInfo fileName="DeterminantExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression" />
   <unitInfo fileName="MatrixType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixType" />
   <unitInfo fileName="MatrixRow.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixRow" />
   <unitInfo fileName="MatrixLiteral.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral" />
-  <unitInfo fileName="MatrixElementVariableDeclaration.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableDeclaration" />
-  <unitInfo fileName="MatrixIndexVariableDeclaration.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration" />
   <unitInfo fileName="ForEachMatrixElement.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement" />
 </debugInfo>
 
