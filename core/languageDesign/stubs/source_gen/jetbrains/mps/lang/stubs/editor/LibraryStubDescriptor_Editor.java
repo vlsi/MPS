@@ -90,6 +90,8 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_y9570a_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y9570a_b1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_y9570a_c1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y9570a_d1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_y9570a_e1b0(editorContext, node));
     return editorCell;
   }
 
@@ -182,6 +184,13 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_y9570a_d1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_y9570a_d1b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createConstant_y9570a_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_y9570a_c0");
@@ -231,6 +240,23 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNode_y9570a_c1b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("initBlock");
+    provider.setNoTargetText("<no init block>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_y9570a_e1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rootsBlock");
     provider.setNoTargetText("<no rootsBlock>");
