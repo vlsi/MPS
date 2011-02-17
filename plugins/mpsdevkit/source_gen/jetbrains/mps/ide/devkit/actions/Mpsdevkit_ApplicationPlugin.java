@@ -35,6 +35,8 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GoToConceptDeclaration_Action());
     addAction(new GoToEditorDeclaration_Action());
     addAction(new GoToRules_Action());
+    addAction(new LanguageHierarchy_Action());
+    addAction(new LanguageProperties_Action());
     addAction(new NewAccessoryModel_Action());
     addAction(new NewDevKit_Action());
     addAction(new NewGenerator_Action());
@@ -48,6 +50,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new GeneratorActions_Properties_ActionGroup());
     addGroup(new GeneratorNewActions_ActionGroup());
     addGroup(new GotoEx_ActionGroup());
+    addGroup(new LanguageActionsEx_ActionGroup());
     addGroup(new LanguageNewActions_ActionGroup());
     addGroup(new LanguageNewCustomPartActions_ActionGroup());
     addGroup(new LanguageRefactoring_ActionGroup());
@@ -69,6 +72,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(EditorTabActionsEx_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(GotoEx_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(NodeActionsEx_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_gotoConceptAspects);
+    insertGroupIntoAnother(LanguageActionsEx_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_properties);
     insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
   }
 

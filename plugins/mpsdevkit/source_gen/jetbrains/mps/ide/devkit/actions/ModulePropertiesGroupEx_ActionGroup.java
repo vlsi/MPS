@@ -15,6 +15,7 @@ public class ModulePropertiesGroupEx_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       ModulePropertiesGroupEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.GeneratorProperties_Action");
+      ModulePropertiesGroupEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.LanguageProperties_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

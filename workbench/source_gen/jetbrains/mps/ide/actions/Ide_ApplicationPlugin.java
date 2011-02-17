@@ -84,9 +84,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
     addAction(new InstallIDEAPlugin_Action());
-    addAction(new LanguageHierarchy_Action());
     addAction(new LanguagePaths_Action());
-    addAction(new LanguageProperties_Action());
     addAction(new LoadNonStubModels_Action());
     addAction(new MPSProjectPaths_Action());
     addAction(new MakeAllModules_Action());

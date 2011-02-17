@@ -18,7 +18,6 @@ public class ModulePropertiesGroup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      ModulePropertiesGroup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguageProperties_Action");
       ModulePropertiesGroup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SolutionProperties_Action");
       ModulePropertiesGroup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DevkitProperties_Action");
       {
