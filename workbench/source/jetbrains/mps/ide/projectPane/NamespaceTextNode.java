@@ -86,6 +86,7 @@ public class NamespaceTextNode extends TextTreeNode {
 
     if (hasModulesUnder) {
       newGroup.add(new NewSolution_Action(myName));
+      // FIXME
       //newGroup.add(new NewLanguage_Action(myName));
     }
     if (hasModelsUnder && hasModulesUnder) {
