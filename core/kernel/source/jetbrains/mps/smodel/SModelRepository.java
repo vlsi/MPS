@@ -17,10 +17,13 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelId.ForeignSModelId;
+import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -38,8 +41,9 @@ public class SModelRepository implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
 
   private static SModelRepository ourInstance = null;
+
   public static SModelRepository getInstance() {
-    if (ourInstance ==null){
+    if (ourInstance == null) {
       ourInstance = ApplicationManager.getApplication().getComponent(SModelRepository.class);
     }
     return ourInstance;
@@ -182,12 +186,14 @@ public class SModelRepository implements ApplicationComponent {
       "Another model \"" + modelReference + "\" is already registered!");
 
     SModelDescriptor modelDescByName = getModelDescriptor(modelReference.getSModelFqName());
+/*
     if (modelDescByName != null && modelDescByName != modelDescriptor) {
       LOG.error("can't register model descriptor " + modelReference
         + "model with the same fq name but different id is already registered: id = "
         + modelDescByName.getSModelReference().getSModelId());
       registerModelDescriptor(modelDescByName, owner);
     }
+*/
 
     synchronized (myModelsLock) {
       Set<ModelOwner> owners = myModelsToOwners.getByFirst(modelDescriptor);
@@ -284,10 +290,15 @@ public class SModelRepository implements ApplicationComponent {
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
     if (modelReference == null) return null;
-    if (modelReference.getSModelId() != null) {
-      return myIdToModelDescriptorMap.get(modelReference.getSModelId());
-    }
-    return myFqNameToModelDescriptorMap.get(modelReference.getSModelFqName());
+
+    SModelId id = modelReference.getSModelId();
+    if (id == null) return myFqNameToModelDescriptorMap.get(modelReference.getSModelFqName());
+
+    SModelDescriptor model = myIdToModelDescriptorMap.get(id);
+    if (model != null) return model;
+
+    if (id instanceof RegularSModelId) return myFqNameToModelDescriptorMap.get(modelReference.getSModelFqName());
+    return null;
   }
 
   public SModelDescriptor getModelDescriptor(SModelFqName modelFqName) {
