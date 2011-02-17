@@ -5,6 +5,9 @@ package jetbrains.mps.make.script.structure;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.baseLanguage.structure.IWillBeClassifier;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class OptionType extends Type implements IWillBeClassifier {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXPECTED_OPTION = "expectedOption";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public OptionType(SNode node) {
     super(node);
@@ -50,6 +54,26 @@ public class OptionType extends Type implements IWillBeClassifier {
 
   public void setExpectedOption(ExpectedOption node) {
     super.setReferent(OptionType.EXPECTED_OPTION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(OptionType._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, OptionType._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, OptionType._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(OptionType._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, OptionType._$ATTRIBUTE, node);
   }
 
   public static OptionType newInstance(SModel sm, boolean init) {

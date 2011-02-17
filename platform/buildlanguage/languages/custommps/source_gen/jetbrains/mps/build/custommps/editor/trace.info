@@ -1,3 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="CustomMpsStyles_StyleSheet.java" startLine="17" startPosition="46" endLine="27" endPosition="5" unitName="jetbrains.mps.build.custommps.editor.CustomMpsStyles_StyleSheet$1" />
+  <unitInfo fileName="CustomMpsStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.CustomMpsStyles_StyleSheet" />
+  <unitInfo fileName="UndeclaredVariableReference_Editor.java" startLine="17" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.UndeclaredVariableReference_Editor" />
+  <unitInfo fileName="LibraryFolder_Editor.java" startLine="25" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.LibraryFolder_Editor" />
+  <unitInfo fileName="MPSBuild_Editor.java" startLine="27" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.MPSBuild_Editor" />
+  <unitInfo fileName="MPSDistribution_Editor.java" startLine="30" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.MPSDistribution_Editor" />
+  <root nodeId="1233937590204">
+    <nodeInfo nodeId="1233937959751" fileName="CustomMpsStyles_StyleSheet.java" startLine="31" startPosition="108" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1233937956201" fileName="CustomMpsStyles_StyleSheet.java" startLine="31" startPosition="108" endLine="32" endPosition="16" />
+  </root>
+  <root nodeId="2235195415637073420">
+    <nodeInfo nodeId="144296692408987449" fileName="MPSDistribution_Editor.java" startLine="245" startPosition="111" endLine="246" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2235195415637082620" fileName="MPSDistribution_Editor.java" startLine="249" startPosition="111" endLine="250" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="144296692408987448" fileName="MPSDistribution_Editor.java" startLine="245" startPosition="111" endLine="246" endPosition="146" />
+    <scopeInfo nodeId="2235195415637073439" fileName="MPSDistribution_Editor.java" startLine="249" startPosition="111" endLine="250" endPosition="146" />
+  </root>
+</debugInfo>
 

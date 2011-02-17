@@ -6,6 +6,9 @@ import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.IVisible;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Visibility;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class StaticConceptMethodDeclaration extends BaseMethodDeclaration implem
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_PRIVATE = "isPrivate";
   public static final String VISIBILITY = "visibility";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public StaticConceptMethodDeclaration(SNode node) {
     super(node);
@@ -60,6 +64,26 @@ public class StaticConceptMethodDeclaration extends BaseMethodDeclaration implem
 
   public void setVisibility(Visibility node) {
     super.setChild(StaticConceptMethodDeclaration.VISIBILITY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(StaticConceptMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, StaticConceptMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, StaticConceptMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(StaticConceptMethodDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, StaticConceptMethodDeclaration._$ATTRIBUTE, node);
   }
 
   public static StaticConceptMethodDeclaration newInstance(SModel sm, boolean init) {

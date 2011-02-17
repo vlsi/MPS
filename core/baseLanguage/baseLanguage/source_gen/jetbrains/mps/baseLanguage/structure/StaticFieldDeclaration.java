@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.lang.textGen.structure.TraceableConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String IS_DEPRECATED = "isDeprecated";
   public static final String VISIBILITY = "visibility";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public StaticFieldDeclaration(SNode node) {
     super(node);
@@ -68,6 +72,26 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
 
   public void setVisibility(Visibility node) {
     super.setChild(StaticFieldDeclaration.VISIBILITY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(StaticFieldDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, StaticFieldDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, StaticFieldDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(StaticFieldDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, StaticFieldDeclaration._$ATTRIBUTE, node);
   }
 
   public static StaticFieldDeclaration newInstance(SModel sm, boolean init) {

@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.builders.structure;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.StatementList;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class BuilderStatement extends Statement implements BuilderContainer {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BUILDER = "builder";
   public static final String BODY = "body";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BuilderStatement(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class BuilderStatement extends Statement implements BuilderContainer {
 
   public void setBody(StatementList node) {
     super.setChild(BuilderStatement.BODY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(BuilderStatement._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BuilderStatement._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BuilderStatement._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(BuilderStatement._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BuilderStatement._$ATTRIBUTE, node);
   }
 
   public static BuilderStatement newInstance(SModel sm, boolean init) {

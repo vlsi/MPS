@@ -1,3 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="ConceptConstraints_Editor.java" startLine="771" startPosition="0" endLine="803" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor$_Inline_g00aa7_a1a" />
+  <unitInfo fileName="ConceptConstraints_Editor.java" startLine="804" startPosition="0" endLine="836" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor$_Inline_g00aa7_a1a3a" />
+  <unitInfo fileName="NodePropertyConstraint_Editor.java" startLine="266" startPosition="0" endLine="303" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodePropertyConstraint_Editor$_Inline_vrfi3w_a2a" />
+  <unitInfo fileName="NodeReferentConstraint_Editor.java" startLine="408" startPosition="0" endLine="445" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodeReferentConstraint_Editor$_Inline_y1wtxd_a2a" />
+  <unitInfo fileName="ConceptConstraints_Editor.java" startLine="837" startPosition="0" endLine="889" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor$propertyListHandler_g00aa7_o3a" />
+  <unitInfo fileName="ConceptConstraints_Editor.java" startLine="890" startPosition="0" endLine="942" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor$referentListHandler_g00aa7_q3a" />
+  <unitInfo fileName="NodeDefaultSearchScope_Editor.java" startLine="20" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodeDefaultSearchScope_Editor" />
+  <unitInfo fileName="NodePropertyConstraint_Editor.java" startLine="25" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodePropertyConstraint_Editor" />
+  <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Factory_Editor.java" startLine="18" startPosition="0" endLine="330" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConstraintFunction_ReferentSearchScope_Factory_Editor" />
+  <unitInfo fileName="NodeReferentConstraint_Editor.java" startLine="28" startPosition="0" endLine="446" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.NodeReferentConstraint_Editor" />
+  <unitInfo fileName="ConceptConstraints_Editor.java" startLine="37" startPosition="0" endLine="943" endPosition="0" unitName="jetbrains.mps.lang.constraints.editor.ConceptConstraints_Editor" />
+  <root nodeId="1148687645603">
+    <nodeInfo nodeId="8830318409774614256" fileName="NodeReferentConstraint_Editor.java" startLine="396" startPosition="112" endLine="397" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3624215205573897276" fileName="NodeReferentConstraint_Editor.java" startLine="400" startPosition="112" endLine="401" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3624215205573897290" fileName="NodeReferentConstraint_Editor.java" startLine="404" startPosition="112" endLine="405" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="8830318409774605105" fileName="NodeReferentConstraint_Editor.java" startLine="396" startPosition="112" endLine="397" endPosition="81" />
+    <scopeInfo nodeId="3624215205573897275" fileName="NodeReferentConstraint_Editor.java" startLine="400" startPosition="112" endLine="401" endPosition="81" />
+    <scopeInfo nodeId="3624215205573897289" fileName="NodeReferentConstraint_Editor.java" startLine="404" startPosition="112" endLine="405" endPosition="81" />
+  </root>
+  <root nodeId="1213094054781">
+    <nodeInfo nodeId="2118147876589610066" fileName="ConceptConstraints_Editor.java" startLine="719" startPosition="112" endLine="720" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2118147876589610090" fileName="ConceptConstraints_Editor.java" startLine="723" startPosition="113" endLine="724" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2118147876589610101" fileName="ConceptConstraints_Editor.java" startLine="727" startPosition="112" endLine="728" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2118147876589610116" fileName="ConceptConstraints_Editor.java" startLine="731" startPosition="112" endLine="732" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2118147876589610139" fileName="ConceptConstraints_Editor.java" startLine="735" startPosition="114" endLine="736" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2118147876589610150" fileName="ConceptConstraints_Editor.java" startLine="739" startPosition="113" endLine="740" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2118147876589610167" fileName="ConceptConstraints_Editor.java" startLine="743" startPosition="113" endLine="744" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2118147876589610178" fileName="ConceptConstraints_Editor.java" startLine="747" startPosition="112" endLine="748" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7852712695066887793" fileName="ConceptConstraints_Editor.java" startLine="751" startPosition="112" endLine="752" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7852712695066909479" fileName="ConceptConstraints_Editor.java" startLine="755" startPosition="113" endLine="756" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3754598629525415325" fileName="ConceptConstraints_Editor.java" startLine="759" startPosition="113" endLine="760" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3754598629525415348" fileName="ConceptConstraints_Editor.java" startLine="763" startPosition="115" endLine="764" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3754598629525415359" fileName="ConceptConstraints_Editor.java" startLine="767" startPosition="113" endLine="768" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2118147876589610065" fileName="ConceptConstraints_Editor.java" startLine="719" startPosition="112" endLine="720" endPosition="112" />
+    <scopeInfo nodeId="2118147876589610089" fileName="ConceptConstraints_Editor.java" startLine="723" startPosition="113" endLine="724" endPosition="71" />
+    <scopeInfo nodeId="2118147876589610100" fileName="ConceptConstraints_Editor.java" startLine="727" startPosition="112" endLine="728" endPosition="71" />
+    <scopeInfo nodeId="2118147876589610115" fileName="ConceptConstraints_Editor.java" startLine="731" startPosition="112" endLine="732" endPosition="259" />
+    <scopeInfo nodeId="2118147876589610138" fileName="ConceptConstraints_Editor.java" startLine="735" startPosition="114" endLine="736" endPosition="72" />
+    <scopeInfo nodeId="2118147876589610149" fileName="ConceptConstraints_Editor.java" startLine="739" startPosition="113" endLine="740" endPosition="72" />
+    <scopeInfo nodeId="2118147876589610166" fileName="ConceptConstraints_Editor.java" startLine="743" startPosition="113" endLine="744" endPosition="72" />
+    <scopeInfo nodeId="2118147876589610177" fileName="ConceptConstraints_Editor.java" startLine="747" startPosition="112" endLine="748" endPosition="72" />
+    <scopeInfo nodeId="7852712695066883430" fileName="ConceptConstraints_Editor.java" startLine="751" startPosition="112" endLine="752" endPosition="74" />
+    <scopeInfo nodeId="7852712695066909478" fileName="ConceptConstraints_Editor.java" startLine="755" startPosition="113" endLine="756" endPosition="74" />
+    <scopeInfo nodeId="3754598629525415324" fileName="ConceptConstraints_Editor.java" startLine="759" startPosition="113" endLine="760" endPosition="282" />
+    <scopeInfo nodeId="3754598629525415347" fileName="ConceptConstraints_Editor.java" startLine="763" startPosition="115" endLine="764" endPosition="72" />
+    <scopeInfo nodeId="3754598629525415358" fileName="ConceptConstraints_Editor.java" startLine="767" startPosition="113" endLine="768" endPosition="72" />
+  </root>
+</debugInfo>
 

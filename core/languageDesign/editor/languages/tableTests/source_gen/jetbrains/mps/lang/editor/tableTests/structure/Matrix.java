@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +21,7 @@ public class Matrix extends BaseConcept implements INamedConcept {
   public static final String XS = "xs";
   public static final String YS = "ys";
   public static final String CONTENTS = "contents";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Matrix(SNode node) {
     super(node);
@@ -115,6 +117,26 @@ public class Matrix extends BaseConcept implements INamedConcept {
 
   public void insertContents(ContentElement prev, ContentElement node) {
     this.insertChild(prev, Matrix.CONTENTS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Matrix._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Matrix._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Matrix._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Matrix._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Matrix._$ATTRIBUTE, node);
   }
 
   public static Matrix newInstance(SModel sm, boolean init) {

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +18,7 @@ public class ConditionalFormatToken extends FormatToken implements INamedConcept
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONDITION_PAIR = "conditionPair";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConditionalFormatToken(SNode node) {
     super(node);
@@ -72,6 +74,26 @@ public class ConditionalFormatToken extends FormatToken implements INamedConcept
 
   public void insertConditionPair(TokenConditionalPair prev, TokenConditionalPair node) {
     this.insertChild(prev, ConditionalFormatToken.CONDITION_PAIR, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ConditionalFormatToken._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConditionalFormatToken._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConditionalFormatToken._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConditionalFormatToken._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConditionalFormatToken._$ATTRIBUTE, node);
   }
 
   public static ConditionalFormatToken newInstance(SModel sm, boolean init) {

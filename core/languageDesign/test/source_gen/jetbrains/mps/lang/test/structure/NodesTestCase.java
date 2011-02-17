@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -23,6 +24,7 @@ public class NodesTestCase extends BaseConcept implements ITestCase, INamedConce
   public static final String NODES_TO_CHECK = "nodesToCheck";
   public static final String TEST_METHODS = "testMethods";
   public static final String METHODS = "methods";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public NodesTestCase(SNode node) {
     super(node);
@@ -118,6 +120,26 @@ public class NodesTestCase extends BaseConcept implements ITestCase, INamedConce
 
   public void insertMethods(DefaultClassifierMethodDeclaration prev, DefaultClassifierMethodDeclaration node) {
     this.insertChild(prev, NodesTestCase.METHODS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(NodesTestCase._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, NodesTestCase._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, NodesTestCase._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(NodesTestCase._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, NodesTestCase._$ATTRIBUTE, node);
   }
 
   public static NodesTestCase newInstance(SModel sm, boolean init) {

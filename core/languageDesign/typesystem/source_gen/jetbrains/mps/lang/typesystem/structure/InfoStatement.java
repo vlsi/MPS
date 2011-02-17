@@ -5,6 +5,9 @@ package jetbrains.mps.lang.typesystem.structure;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +22,7 @@ public class InfoStatement extends Statement implements MessageStatement {
   public static final String HELGINS_INTENTION = "helginsIntention";
   public static final String MESSAGE_TARGET = "messageTarget";
   public static final String FOREIGN_MESSAGE_SOURCE = "foreignMessageSource";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public InfoStatement(SNode node) {
     super(node);
@@ -86,6 +90,26 @@ public class InfoStatement extends Statement implements MessageStatement {
 
   public void setForeignMessageSource(Expression node) {
     super.setChild(InfoStatement.FOREIGN_MESSAGE_SOURCE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(InfoStatement._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, InfoStatement._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, InfoStatement._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(InfoStatement._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InfoStatement._$ATTRIBUTE, node);
   }
 
   public static InfoStatement newInstance(SModel sm, boolean init) {

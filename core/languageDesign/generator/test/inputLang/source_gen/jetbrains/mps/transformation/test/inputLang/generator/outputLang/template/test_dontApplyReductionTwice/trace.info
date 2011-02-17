@@ -6,7 +6,7 @@
   <unitInfo fileName="TemplateModelImpl.java" startLine="18" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.TemplateModelImpl" />
   <unitInfo fileName="Mappingmain.java" startLine="23" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.Mappingmain" />
   <root nodeId="1209604518979">
-    <nodeInfo nodeId="1209604582248" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="11" startPosition="146" endLine="12" endPosition="108" />
+    <nodeInfo nodeId="1209604582248" fileName="QueriesGenerated.java" startLine="11" startPosition="146" endLine="12" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1209604575153" fileName="QueriesGenerated.java" startLine="11" startPosition="146" endLine="12" endPosition="108" />
   </root>
 </debugInfo>

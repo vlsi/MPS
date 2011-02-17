@@ -6,20 +6,20 @@
   <unitInfo fileName="typeof_CustomStatementRef_InferenceRule.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.typesystem.typeof_CustomStatementRef_InferenceRule" />
   <unitInfo fileName="typeof_CustomStatement_InferenceRule.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.typesystem.typeof_CustomStatement_InferenceRule" />
   <root nodeId="2163819695913379860">
-    <nodeInfo nodeId="2163819695913393697" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_CustomStatementRef_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="60" />
-    <nodeInfo nodeId="2163819695913393697" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_CustomStatementRef_InferenceRule.java" startLine="23" startPosition="60" endLine="24" endPosition="52" />
-    <nodeInfo nodeId="2163819695913393697" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_CustomStatementRef_InferenceRule.java" startLine="24" startPosition="52" endLine="25" endPosition="234" />
-    <nodeInfo nodeId="2163819695913393697" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_CustomStatementRef_InferenceRule.java" startLine="25" startPosition="234" endLine="26" endPosition="368" />
-    <nodeInfo nodeId="2163819695913393697" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_CustomStatementRef_InferenceRule.java" startLine="21" startPosition="131" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="2163819695913393697" fileName="typeof_CustomStatementRef_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2163819695913393697" fileName="typeof_CustomStatementRef_InferenceRule.java" startLine="23" startPosition="60" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2163819695913393697" fileName="typeof_CustomStatementRef_InferenceRule.java" startLine="24" startPosition="52" endLine="25" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2163819695913393697" fileName="typeof_CustomStatementRef_InferenceRule.java" startLine="25" startPosition="234" endLine="26" endPosition="368" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2163819695913393697" fileName="typeof_CustomStatementRef_InferenceRule.java" startLine="21" startPosition="131" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="2163819695913393697" fileName="typeof_CustomStatementRef_InferenceRule.java" startLine="22" startPosition="5" endLine="26" endPosition="368" />
     <scopeInfo nodeId="2163819695913379861" fileName="typeof_CustomStatementRef_InferenceRule.java" startLine="21" startPosition="131" endLine="27" endPosition="5" />
   </root>
   <root nodeId="6266395626234257711">
-    <nodeInfo nodeId="6266395626234295840" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_CustomStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="99" />
-    <nodeInfo nodeId="6266395626234295840" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_CustomStatement_InferenceRule.java" startLine="24" startPosition="99" endLine="25" endPosition="52" />
-    <nodeInfo nodeId="6266395626234295840" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_CustomStatement_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="234" />
-    <nodeInfo nodeId="6266395626234295840" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_CustomStatement_InferenceRule.java" startLine="26" startPosition="234" endLine="27" endPosition="365" />
-    <nodeInfo nodeId="6266395626234295840" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_CustomStatement_InferenceRule.java" startLine="22" startPosition="128" endLine="28" endPosition="5" />
+    <nodeInfo nodeId="6266395626234295840" fileName="typeof_CustomStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6266395626234295840" fileName="typeof_CustomStatement_InferenceRule.java" startLine="24" startPosition="99" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6266395626234295840" fileName="typeof_CustomStatement_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6266395626234295840" fileName="typeof_CustomStatement_InferenceRule.java" startLine="26" startPosition="234" endLine="27" endPosition="365" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6266395626234295840" fileName="typeof_CustomStatement_InferenceRule.java" startLine="22" startPosition="128" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="6266395626234295840" fileName="typeof_CustomStatement_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="365" />
     <scopeInfo nodeId="6266395626234257712" fileName="typeof_CustomStatement_InferenceRule.java" startLine="22" startPosition="128" endLine="28" endPosition="5" />
   </root>

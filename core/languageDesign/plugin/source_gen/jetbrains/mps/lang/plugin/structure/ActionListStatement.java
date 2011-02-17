@@ -5,6 +5,9 @@ package jetbrains.mps.lang.plugin.structure;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class ActionListStatement extends Statement implements ExecuteSpecific {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ACTIONS = "actions";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ActionListStatement(SNode node) {
     super(node);
@@ -50,6 +54,26 @@ public class ActionListStatement extends Statement implements ExecuteSpecific {
 
   public void setActions(Expression node) {
     super.setChild(ActionListStatement.ACTIONS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ActionListStatement._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ActionListStatement._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ActionListStatement._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ActionListStatement._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ActionListStatement._$ATTRIBUTE, node);
   }
 
   public static ActionListStatement newInstance(SModel sm, boolean init) {

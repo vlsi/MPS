@@ -5,6 +5,9 @@ package jetbrains.mps.ypath.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +23,7 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   public static final String ASCENDING = "ascending";
   public static final String OPPOSITE = "opposite";
   public static final String GETTER = "getter";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public GenericFeature(SNode node) {
     super(node);
@@ -95,6 +99,26 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
 
   public void setGetter(GFGetterFun node) {
     super.setChild(GenericFeature.GETTER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(GenericFeature._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, GenericFeature._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, GenericFeature._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(GenericFeature._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GenericFeature._$ATTRIBUTE, node);
   }
 
   public static GenericFeature newInstance(SModel sm, boolean init) {

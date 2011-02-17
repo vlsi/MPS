@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.datesInternal.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +22,7 @@ public class DateTimePropertyFormatType extends BaseConcept implements INamedCon
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DATE_TIME_PROPERTY_CARDINALITY = "dateTimePropertyCardinality";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public DateTimePropertyFormatType(SNode node) {
     super(node);
@@ -86,6 +90,26 @@ public class DateTimePropertyFormatType extends BaseConcept implements INamedCon
 
   public void setDateTimePropertyCardinality(DateTimePropertyCardinality node) {
     super.setReferent(DateTimePropertyFormatType.DATE_TIME_PROPERTY_CARDINALITY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(DateTimePropertyFormatType._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, DateTimePropertyFormatType._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, DateTimePropertyFormatType._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(DateTimePropertyFormatType._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DateTimePropertyFormatType._$ATTRIBUTE, node);
   }
 
   public static DateTimePropertyFormatType newInstance(SModel sm, boolean init) {

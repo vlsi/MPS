@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.unitTest.structure;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class AssertThrows extends Statement implements MessageHolder {
   public static final String STATEMENT = "statement";
   public static final String EXCEPTION_TYPE = "exceptionType";
   public static final String MESSAGE = "message";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AssertThrows(SNode node) {
     super(node);
@@ -68,6 +72,26 @@ public class AssertThrows extends Statement implements MessageHolder {
 
   public void setMessage(Message node) {
     super.setChild(AssertThrows.MESSAGE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AssertThrows._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AssertThrows._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AssertThrows._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AssertThrows._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AssertThrows._$ATTRIBUTE, node);
   }
 
   public static AssertThrows newInstance(SModel sm, boolean init) {

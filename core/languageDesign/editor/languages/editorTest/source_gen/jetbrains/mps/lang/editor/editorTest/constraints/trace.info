@@ -4,17 +4,17 @@
   <unitInfo fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_variableDeclaration_ReferentConstraint" />
   <unitInfo fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_var_ReferentConstraint" />
   <root nodeId="4965160547087600886">
-    <nodeInfo nodeId="4965160547087600890" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="48" />
-    <nodeInfo nodeId="4965160547087600907" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="33" startPosition="125" endLine="34" endPosition="155" />
-    <nodeInfo nodeId="4965160547087600924" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="37" startPosition="5" endLine="38" endPosition="18" />
-    <nodeInfo nodeId="4965160547087600901" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="32" startPosition="85" endLine="35" endPosition="9" />
-    <nodeInfo nodeId="4965160547087600898" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="31" startPosition="153" endLine="36" endPosition="7" />
-    <nodeInfo nodeId="4965160547087600896" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="30" startPosition="48" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="4965160547087600890" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4965160547087600907" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="33" startPosition="125" endLine="34" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4965160547087600924" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="37" startPosition="5" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4965160547087600901" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="32" startPosition="85" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4965160547087600898" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="31" startPosition="153" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4965160547087600896" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="30" startPosition="48" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="4965160547087600906" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="33" startPosition="125" endLine="34" endPosition="155" />
     <scopeInfo nodeId="4965160547087600900" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="32" startPosition="85" endLine="35" endPosition="9" />
     <scopeInfo nodeId="4965160547087600897" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="31" startPosition="153" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="4965160547087600898" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="31" startPosition="153" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="4965160547087600896" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="30" startPosition="48" endLine="37" endPosition="5">
+    <scopeInfo nodeId="4965160547087600898" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="31" startPosition="153" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="4965160547087600896" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="30" startPosition="48" endLine="37" endPosition="5">
       <varInfo nodeId="4965160547087600916" varName="block" />
     </scopeInfo>
     <scopeInfo nodeId="4965160547087600889" fileName="NotEditableVaraileReference_variableDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="38" endPosition="18">
@@ -22,17 +22,17 @@
     </scopeInfo>
   </root>
   <root nodeId="7428162988805013921">
-    <nodeInfo nodeId="2340678293597344731" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="48" />
-    <nodeInfo nodeId="2340678293597469867" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="33" startPosition="125" endLine="34" endPosition="155" />
-    <nodeInfo nodeId="2340678293597344767" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="37" startPosition="5" endLine="38" endPosition="18" />
-    <nodeInfo nodeId="2340678293597469837" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="32" startPosition="85" endLine="35" endPosition="9" />
-    <nodeInfo nodeId="2340678293597469828" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="31" startPosition="153" endLine="36" endPosition="7" />
-    <nodeInfo nodeId="2340678293597344737" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="30" startPosition="48" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="2340678293597344731" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2340678293597469867" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="33" startPosition="125" endLine="34" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2340678293597344767" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="37" startPosition="5" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2340678293597469837" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="32" startPosition="85" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2340678293597469828" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="31" startPosition="153" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2340678293597344737" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="30" startPosition="48" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="2340678293597469839" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="33" startPosition="125" endLine="34" endPosition="155" />
     <scopeInfo nodeId="2340678293597469831" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="32" startPosition="85" endLine="35" endPosition="9" />
     <scopeInfo nodeId="2340678293597344738" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="31" startPosition="153" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="2340678293597469828" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="31" startPosition="153" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="2340678293597344737" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="30" startPosition="48" endLine="37" endPosition="5">
+    <scopeInfo nodeId="2340678293597469828" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="31" startPosition="153" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="2340678293597344737" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="30" startPosition="48" endLine="37" endPosition="5">
       <varInfo nodeId="2340678293597344760" varName="block" />
     </scopeInfo>
     <scopeInfo nodeId="2340678293597344727" fileName="VariableDeclarationReference_var_ReferentConstraint.java" startLine="29" startPosition="132" endLine="38" endPosition="18">

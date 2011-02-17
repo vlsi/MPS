@@ -6,7 +6,7 @@
   <unitInfo fileName="TwoVarStatement.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement" />
   <unitInfo fileName="CustomStatementRef.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef" />
   <unitInfo fileName="OutputNode.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" />
-  <unitInfo fileName="CustomStatement.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.CustomStatement" />
-  <unitInfo fileName="OutputRoot.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" />
+  <unitInfo fileName="CustomStatement.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.CustomStatement" />
+  <unitInfo fileName="OutputRoot.java" startLine="15" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" />
 </debugInfo>
 

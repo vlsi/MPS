@@ -4,6 +4,9 @@ package jetbrains.mps.lang.plugin.structure;
 
 import jetbrains.mps.baseLanguage.structure.ConceptFunction;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -14,6 +17,7 @@ public class ParameterizedShortcutChange extends ConceptFunction implements Shor
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ACTION = "action";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ParameterizedShortcutChange(SNode node) {
     super(node);
@@ -49,6 +53,26 @@ public class ParameterizedShortcutChange extends ConceptFunction implements Shor
 
   public void setAction(ActionDeclaration node) {
     super.setReferent(ParameterizedShortcutChange.ACTION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ParameterizedShortcutChange._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ParameterizedShortcutChange._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ParameterizedShortcutChange._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ParameterizedShortcutChange._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ParameterizedShortcutChange._$ATTRIBUTE, node);
   }
 
   public static ParameterizedShortcutChange newInstance(SModel sm, boolean init) {

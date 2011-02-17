@@ -5,6 +5,9 @@ package jetbrains.mps.ui.structure;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.ILocalReference;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class UIObjectReference extends Expression implements ILocalReference {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DECLARATION = "declaration";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public UIObjectReference(SNode node) {
     super(node);
@@ -50,6 +54,26 @@ public class UIObjectReference extends Expression implements ILocalReference {
 
   public void setDeclaration(IUIObjectDeclaration node) {
     super.setReferent(UIObjectReference.DECLARATION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(UIObjectReference._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, UIObjectReference._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, UIObjectReference._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(UIObjectReference._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, UIObjectReference._$ATTRIBUTE, node);
   }
 
   public static UIObjectReference newInstance(SModel sm, boolean init) {

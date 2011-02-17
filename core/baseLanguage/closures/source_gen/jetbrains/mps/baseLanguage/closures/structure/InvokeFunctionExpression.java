@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.IDeprecatable;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +19,7 @@ public class InvokeFunctionExpression extends Expression implements IDeprecatabl
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String FUNCTION = "function";
   public static final String PARAMETER = "parameter";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public InvokeFunctionExpression(SNode node) {
     super(node);
@@ -73,6 +75,26 @@ public class InvokeFunctionExpression extends Expression implements IDeprecatabl
 
   public void insertParameter(Expression prev, Expression node) {
     this.insertChild(prev, InvokeFunctionExpression.PARAMETER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(InvokeFunctionExpression._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, InvokeFunctionExpression._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, InvokeFunctionExpression._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(InvokeFunctionExpression._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InvokeFunctionExpression._$ATTRIBUTE, node);
   }
 
   public static InvokeFunctionExpression newInstance(SModel sm, boolean init) {

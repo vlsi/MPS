@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +21,7 @@ public class Container extends BaseConcept implements INamedConcept, HasTemplate
   public static final String SPECIALIZES = "specializes";
   public static final String ALLOWS = "allows";
   public static final String REQUIRED_ASPECT = "requiredAspect";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Container(SNode node) {
     super(node);
@@ -91,6 +93,26 @@ public class Container extends BaseConcept implements INamedConcept, HasTemplate
 
   public void insertRequiredAspect(ChildAspectDefinition prev, ChildAspectDefinition node) {
     this.insertChild(prev, Container.REQUIRED_ASPECT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Container._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Container._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Container._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Container._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Container._$ATTRIBUTE, node);
   }
 
   public static Container newInstance(SModel sm, boolean init) {

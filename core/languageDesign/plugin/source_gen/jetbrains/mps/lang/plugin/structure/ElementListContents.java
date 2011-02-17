@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +17,7 @@ public class ElementListContents extends BaseConcept implements GroupContents {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String REFERENCE = "reference";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ElementListContents(SNode node) {
     super(node);
@@ -63,6 +65,26 @@ public class ElementListContents extends BaseConcept implements GroupContents {
 
   public void insertReference(ActionGroupMember prev, ActionGroupMember node) {
     this.insertChild(prev, ElementListContents.REFERENCE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ElementListContents._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ElementListContents._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ElementListContents._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ElementListContents._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ElementListContents._$ATTRIBUTE, node);
   }
 
   public static ElementListContents newInstance(SModel sm, boolean init) {

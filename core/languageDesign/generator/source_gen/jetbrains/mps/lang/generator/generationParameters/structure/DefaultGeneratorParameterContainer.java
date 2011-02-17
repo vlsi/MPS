@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +19,7 @@ public class DefaultGeneratorParameterContainer extends BaseConcept implements I
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PARAMETERS = "parameters";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public DefaultGeneratorParameterContainer(SNode node) {
     super(node);
@@ -73,6 +75,26 @@ public class DefaultGeneratorParameterContainer extends BaseConcept implements I
 
   public void insertParameters(DefaultGeneratorParameter prev, DefaultGeneratorParameter node) {
     this.insertChild(prev, DefaultGeneratorParameterContainer.PARAMETERS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(DefaultGeneratorParameterContainer._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, DefaultGeneratorParameterContainer._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, DefaultGeneratorParameterContainer._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(DefaultGeneratorParameterContainer._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DefaultGeneratorParameterContainer._$ATTRIBUTE, node);
   }
 
   public static DefaultGeneratorParameterContainer newInstance(SModel sm, boolean init) {

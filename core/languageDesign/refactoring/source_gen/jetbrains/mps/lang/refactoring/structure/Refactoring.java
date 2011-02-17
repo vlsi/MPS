@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.plugin.structure.KeyMapKeystroke;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -31,6 +32,7 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
   public static final String UPDATE_MODEL_BLOCK = "updateModelBlock";
   public static final String PARAMETER = "parameter";
   public static final String FIELD = "field";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Refactoring(SNode node) {
     super(node);
@@ -186,6 +188,26 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
 
   public void insertField(RefactoringField prev, RefactoringField node) {
     this.insertChild(prev, Refactoring.FIELD, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Refactoring._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Refactoring._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Refactoring._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Refactoring._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Refactoring._$ATTRIBUTE, node);
   }
 
   public static Refactoring newInstance(SModel sm, boolean init) {

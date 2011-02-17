@@ -5,6 +5,7 @@ package jetbrains.mps.build.packaging.structure;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String SOURCE_PATH = "sourcePath";
   public static final String ENTRY = "entry";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Folder(SNode node) {
     super(node);
@@ -98,6 +100,26 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
 
   public void insertEntry(AbstractProjectComponent prev, AbstractProjectComponent node) {
     this.insertChild(prev, Folder.ENTRY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Folder._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Folder._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Folder._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Folder._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Folder._$ATTRIBUTE, node);
   }
 
   public static Folder newInstance(SModel sm, boolean init) {

@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class SimpleBuilders extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXTENDS_BUILDER = "extendsBuilder";
   public static final String BUILDER = "builder";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SimpleBuilders(SNode node) {
     super(node);
@@ -82,6 +84,26 @@ public class SimpleBuilders extends BaseConcept implements INamedConcept {
 
   public void insertBuilder(BaseSimpleBuilderDeclaration prev, BaseSimpleBuilderDeclaration node) {
     this.insertChild(prev, SimpleBuilders.BUILDER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(SimpleBuilders._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SimpleBuilders._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SimpleBuilders._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(SimpleBuilders._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SimpleBuilders._$ATTRIBUTE, node);
   }
 
   public static SimpleBuilders newInstance(SModel sm, boolean init) {

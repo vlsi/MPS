@@ -5,6 +5,9 @@ package jetbrains.mps.ui.modeling.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class AspectParameterDecl extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ASPECT_DEF = "aspectDef";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AspectParameterDecl(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class AspectParameterDecl extends BaseConcept implements INamedConcept {
 
   public void setAspectDef(ChildAspectDefinition node) {
     super.setReferent(AspectParameterDecl.ASPECT_DEF, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AspectParameterDecl._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AspectParameterDecl._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AspectParameterDecl._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AspectParameterDecl._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AspectParameterDecl._$ATTRIBUTE, node);
   }
 
   public static AspectParameterDecl newInstance(SModel sm, boolean init) {

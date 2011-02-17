@@ -1,3 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="ConstraintFunction_CanBeAnAncestor_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAnAncestor_Behavior" />
+  <unitInfo fileName="ConstraintFunction_CanBeARoot_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeARoot_Behavior" />
+  <unitInfo fileName="ConstraintFunction_CanBeAParent_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAParent_Behavior" />
+  <unitInfo fileName="ConstraintFunction_CanBeAChild_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_CanBeAChild_Behavior" />
+  <unitInfo fileName="ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior" />
+  <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Validator_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Validator_Behavior" />
+  <unitInfo fileName="NodeReferentConstraint_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_Behavior" />
+  <unitInfo fileName="NodePropertyConstraint_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint_Behavior" />
+  <unitInfo fileName="NodeDefaultSearchScope_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_Behavior" />
+  <unitInfo fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="28" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyGetter_Behavior$QuotationClass_25x9xv_a0e0b" />
+  <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="100" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior$QuotationClass_q6xvx3_a0a1a2" />
+  <unitInfo fileName="ConceptConstraints_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_Behavior" />
+  <unitInfo fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_PropertyGetter_Behavior" />
+  <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="63" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior$QuotationClass_q6xvx3_a0c0b" />
+  <unitInfo fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="20" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Factory_Behavior" />
+  <root nodeId="1213877261402">
+    <nodeInfo nodeId="1213877261414" fileName="NodeDefaultSearchScope_Behavior.java" startLine="14" startPosition="129" endLine="15" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877261423" fileName="NodeDefaultSearchScope_Behavior.java" startLine="17" startPosition="135" endLine="18" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877261438" fileName="NodeDefaultSearchScope_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877261405" fileName="NodeDefaultSearchScope_Behavior.java" startLine="13" startPosition="77" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877261421" fileName="NodeDefaultSearchScope_Behavior.java" startLine="16" startPosition="5" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1213877261442" fileName="NodeDefaultSearchScope_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="1213877261413" fileName="NodeDefaultSearchScope_Behavior.java" startLine="14" startPosition="129" endLine="15" endPosition="181" />
+    <scopeInfo nodeId="1213877261422" fileName="NodeDefaultSearchScope_Behavior.java" startLine="17" startPosition="135" endLine="18" endPosition="173" />
+    <scopeInfo nodeId="1213877261404" fileName="NodeDefaultSearchScope_Behavior.java" startLine="13" startPosition="77" endLine="20" endPosition="16" />
+  </root>
+  <root nodeId="1213877292344">
+    <nodeInfo nodeId="1213877292356" fileName="NodePropertyConstraint_Behavior.java" startLine="14" startPosition="141" endLine="15" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877292365" fileName="NodePropertyConstraint_Behavior.java" startLine="17" startPosition="147" endLine="18" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877292378" fileName="NodePropertyConstraint_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877292348" fileName="NodePropertyConstraint_Behavior.java" startLine="13" startPosition="79" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877292363" fileName="NodePropertyConstraint_Behavior.java" startLine="16" startPosition="5" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1213877292381" fileName="NodePropertyConstraint_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="1213877292355" fileName="NodePropertyConstraint_Behavior.java" startLine="14" startPosition="141" endLine="15" endPosition="181" />
+    <scopeInfo nodeId="1213877292364" fileName="NodePropertyConstraint_Behavior.java" startLine="17" startPosition="147" endLine="18" endPosition="187" />
+    <scopeInfo nodeId="1213877292347" fileName="NodePropertyConstraint_Behavior.java" startLine="13" startPosition="79" endLine="20" endPosition="16" />
+  </root>
+  <root nodeId="1213877330449">
+    <nodeInfo nodeId="1213877330452" fileName="ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213877330458" fileName="ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1213877330451" fileName="ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" />
+  </root>
+  <root nodeId="1213877345068">
+    <nodeInfo nodeId="1213877345071" fileName="ConstraintFunction_CanBeAChild_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213877345077" fileName="ConstraintFunction_CanBeAChild_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1213877345070" fileName="ConstraintFunction_CanBeAChild_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" />
+  </root>
+  <root nodeId="1213877399321">
+    <nodeInfo nodeId="1213877399334" fileName="NodeReferentConstraint_Behavior.java" startLine="14" startPosition="127" endLine="15" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877399345" fileName="NodeReferentConstraint_Behavior.java" startLine="17" startPosition="133" endLine="18" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877399360" fileName="NodeReferentConstraint_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877399325" fileName="NodeReferentConstraint_Behavior.java" startLine="13" startPosition="79" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877399343" fileName="NodeReferentConstraint_Behavior.java" startLine="16" startPosition="5" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1213877399363" fileName="NodeReferentConstraint_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="1213877399333" fileName="NodeReferentConstraint_Behavior.java" startLine="14" startPosition="127" endLine="15" endPosition="246" />
+    <scopeInfo nodeId="1213877399344" fileName="NodeReferentConstraint_Behavior.java" startLine="17" startPosition="133" endLine="18" endPosition="173" />
+    <scopeInfo nodeId="1213877399324" fileName="NodeReferentConstraint_Behavior.java" startLine="13" startPosition="79" endLine="20" endPosition="16" />
+  </root>
+  <root nodeId="1213877530539">
+    <nodeInfo nodeId="1213877530542" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877530550" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="19" startPosition="150" endLine="20" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877530556" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="20" startPosition="96" endLine="21" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877530564" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="22" startPosition="27" endLine="23" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877530571" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877530562" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="21" startPosition="76" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1213877530576" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1213877530563" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="22" startPosition="27" endLine="23" endPosition="90" />
+    <scopeInfo nodeId="1213877530541" fileName="ConstraintFunction_PropertyGetter_Behavior.java" startLine="18" startPosition="83" endLine="25" endPosition="101">
+      <varInfo nodeId="1213877530557" varName="dataType" />
+      <varInfo nodeId="1213877530543" varName="propertyConstraint" />
+      <varInfo nodeId="1213877530551" varName="property" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1213877537278">
+    <nodeInfo nodeId="1213877537281" fileName="ConstraintFunction_CanBeAParent_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213877537287" fileName="ConstraintFunction_CanBeAParent_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1213877537280" fileName="ConstraintFunction_CanBeAParent_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" />
+  </root>
+  <root nodeId="1217541907773">
+    <nodeInfo nodeId="7432497532426444545" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="24" startPosition="83" endLine="25" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7432497532426444569" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="26" startPosition="27" endLine="27" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7432497532426445444" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="28" startPosition="5" endLine="29" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2990203945683057011" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="33" startPosition="70" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4799522809165718943" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="35" startPosition="5" endLine="36" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2990203945683057066" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="38" startPosition="188" endLine="39" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3842846413326532242" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="41" startPosition="5" endLine="42" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3842846413326532266" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="43" startPosition="109" endLine="44" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3842846413326532278" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="45" startPosition="5" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="522233044824082135" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="49" startPosition="86" endLine="50" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7432497532426444559" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="25" startPosition="234" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2990203945683056996" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="32" startPosition="89" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2990203945683057052" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="37" startPosition="161" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3842846413326532254" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="42" startPosition="88" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2990203945683057043" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="36" startPosition="129" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2990203945683058954" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="53" startPosition="77" endLine="60" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1217541907775" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
+    <scopeInfo nodeId="7432497532426444560" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="26" startPosition="27" endLine="27" endPosition="175" />
+    <scopeInfo nodeId="2990203945683056997" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="33" startPosition="70" endLine="34" endPosition="19" />
+    <scopeInfo nodeId="2990203945683057054" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="38" startPosition="188" endLine="39" endPosition="21" />
+    <scopeInfo nodeId="3842846413326532255" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="43" startPosition="109" endLine="44" endPosition="261" />
+    <scopeInfo nodeId="522233044824082133" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="49" startPosition="86" endLine="50" endPosition="242" />
+    <scopeInfo nodeId="2990203945683057046" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="37" startPosition="161" endLine="40" endPosition="7" />
+    <scopeInfo nodeId="1217541911559" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="24" startPosition="83" endLine="29" endPosition="120">
+      <varInfo nodeId="7432497532426444546" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="2990203945683057043" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="36" startPosition="129" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="2990203945683058949" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="53" startPosition="77" endLine="60" endPosition="6" />
+    <scopeInfo nodeId="2990203945683056981" fileName="ConstraintFunction_ReferentSearchScope_Factory_Behavior.java" startLine="32" startPosition="89" endLine="46" endPosition="16">
+      <varInfo nodeId="4799522809165718944" varName="sequenceType" />
+      <varInfo nodeId="3842846413326532243" varName="lastStmt" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1227085021513">
+    <nodeInfo nodeId="1227085030989" fileName="ConstraintFunction_CanBeARoot_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1227085021515" fileName="ConstraintFunction_CanBeARoot_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1227085023628" fileName="ConstraintFunction_CanBeARoot_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" />
+  </root>
+  <root nodeId="2990203945683058804">
+    <nodeInfo nodeId="2990203945683059027" fileName="ConstraintFunction_ReferentSearchScope_Validator_Behavior.java" startLine="13" startPosition="86" endLine="20" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2990203945683058806" fileName="ConstraintFunction_ReferentSearchScope_Validator_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="2990203945683059025" fileName="ConstraintFunction_ReferentSearchScope_Validator_Behavior.java" startLine="13" startPosition="86" endLine="20" endPosition="6" />
+  </root>
+  <root nodeId="7494912800760359233">
+    <nodeInfo nodeId="7494912800760359238" fileName="ConstraintFunction_CanBeAnAncestor_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7494912800760359235" fileName="ConstraintFunction_CanBeAnAncestor_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="7494912800760359237" fileName="ConstraintFunction_CanBeAnAncestor_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" />
+  </root>
+  <root nodeId="8952337903384645665">
+    <nodeInfo nodeId="8952337903384645678" fileName="ConceptConstraints_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6261424444345978693" fileName="ConceptConstraints_Behavior.java" startLine="21" startPosition="100" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="8952337903384645667" fileName="ConceptConstraints_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="8952337903384645672" fileName="ConceptConstraints_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="65" />
+    <scopeInfo nodeId="6261424444345978684" fileName="ConceptConstraints_Behavior.java" startLine="21" startPosition="100" endLine="22" endPosition="71" />
+  </root>
+</debugInfo>
 

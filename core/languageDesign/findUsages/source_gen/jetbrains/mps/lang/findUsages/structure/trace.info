@@ -12,6 +12,6 @@
   <unitInfo fileName="ResultStatement.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.findUsages.structure.ResultStatement" />
   <unitInfo fileName="ExecuteFinderExpression.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression" />
   <unitInfo fileName="AbstractFinderDeclaration.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration" />
-  <unitInfo fileName="FinderDeclaration.java" startLine="13" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" />
+  <unitInfo fileName="FinderDeclaration.java" startLine="16" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" />
 </debugInfo>
 

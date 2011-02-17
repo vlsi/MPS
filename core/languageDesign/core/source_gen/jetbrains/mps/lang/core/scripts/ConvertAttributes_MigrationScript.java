@@ -9,6 +9,7 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.behavior.ILinkAccess_Behavior;
@@ -46,8 +47,8 @@ public class ConvertAttributes_MigrationScript extends BaseMigrationScript {
           if ((attribute == null)) {
             LOG.error("Incompatible attribute concept type and stereotype" + (role + " in model " + SNodeOperations.getModel(node).getSModelFqName() + ", node " + node + "[" + node.getId() + "]"));
           }
-          SLinkOperations.setTarget(attribute, "link", SNodeOperations.as(SNodeOperations.getParent(node).getLinkDeclaration(link), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
-          if ((SLinkOperations.getTarget(attribute, "link", false) == null)) {
+          SPropertyOperations.set(attribute, "linkRole", link);
+          if (SNodeOperations.getParent(node).getLinkDeclaration(link) == null) {
             LOG.error("No link declaration was found for link attribute " + (role + " in model " + SNodeOperations.getModel(node).getSModelFqName() + ", node " + node + "[" + node.getId() + "]"));
           }
 
@@ -58,8 +59,8 @@ public class ConvertAttributes_MigrationScript extends BaseMigrationScript {
           if ((attribute == null)) {
             LOG.error("Incompatible attribute concept type and stereotype for " + (role + " in model " + SNodeOperations.getModel(node).getSModelFqName() + ", node " + node + "[" + node.getId() + "]"));
           }
-          SLinkOperations.setTarget(attribute, "property", SNodeOperations.as(SNodeOperations.getParent(node).getPropertyDeclaration(prop), "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), false);
-          if ((SLinkOperations.getTarget(attribute, "property", false) == null)) {
+          SPropertyOperations.set(attribute, "propertyName", prop);
+          if (SNodeOperations.getParent(node).getPropertyDeclaration(prop) == null) {
             LOG.error("No property declaration was found for property attribute " + (role + " in model " + SNodeOperations.getModel(node).getSModelFqName() + ", node " + node + "[" + node.getId() + "]"));
           }
         } else if (role.endsWith("$attribute")) {

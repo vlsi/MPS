@@ -53,23 +53,23 @@
   <unitInfo fileName="VerticalConstraint.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.VerticalConstraint" />
   <unitInfo fileName="HorizontalConstraint.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.HorizontalConstraint" />
   <unitInfo fileName="Unit.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Unit" />
-  <unitInfo fileName="EditableUIProperty.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.EditableUIProperty" />
-  <unitInfo fileName="UIAction.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.UIAction" />
-  <unitInfo fileName="AuxObjectAccessOp.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.AuxObjectAccessOp" />
   <unitInfo fileName="ApplyConstraintStatement.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.ApplyConstraintStatement" />
   <unitInfo fileName="HAlignment.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.HAlignment" />
   <unitInfo fileName="VAlignment.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.VAlignment" />
-  <unitInfo fileName="AspectParameterDecl.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.AspectParameterDecl" />
-  <unitInfo fileName="UIProperty.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.UIProperty" />
-  <unitInfo fileName="EventProperty.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.EventProperty" />
-  <unitInfo fileName="ContainerItemAdder.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.ContainerItemAdder" />
-  <unitInfo fileName="ChildAspectDefinition.java" startLine="13" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.ChildAspectDefinition" />
-  <unitInfo fileName="AuxObjectTemplate.java" startLine="13" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.AuxObjectTemplate" />
+  <unitInfo fileName="EditableUIProperty.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.EditableUIProperty" />
+  <unitInfo fileName="UIAction.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.UIAction" />
+  <unitInfo fileName="AuxObjectAccessOp.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.AuxObjectAccessOp" />
   <unitInfo fileName="ContainerTemplate.java" startLine="12" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.ContainerTemplate" />
-  <unitInfo fileName="Event.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Event" />
-  <unitInfo fileName="Container.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Container" />
-  <unitInfo fileName="EventHandlerTemplate.java" startLine="15" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.EventHandlerTemplate" />
-  <unitInfo fileName="UIObject.java" startLine="14" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.UIObject" />
-  <unitInfo fileName="UIObjectTemplate.java" startLine="15" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" />
+  <unitInfo fileName="AspectParameterDecl.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.AspectParameterDecl" />
+  <unitInfo fileName="UIProperty.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.UIProperty" />
+  <unitInfo fileName="EventProperty.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.EventProperty" />
+  <unitInfo fileName="ContainerItemAdder.java" startLine="14" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.ContainerItemAdder" />
+  <unitInfo fileName="ChildAspectDefinition.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.ChildAspectDefinition" />
+  <unitInfo fileName="AuxObjectTemplate.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.AuxObjectTemplate" />
+  <unitInfo fileName="Event.java" startLine="15" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Event" />
+  <unitInfo fileName="Container.java" startLine="15" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.Container" />
+  <unitInfo fileName="EventHandlerTemplate.java" startLine="16" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.EventHandlerTemplate" />
+  <unitInfo fileName="UIObject.java" startLine="15" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.UIObject" />
+  <unitInfo fileName="UIObjectTemplate.java" startLine="16" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.ui.modeling.structure.UIObjectTemplate" />
 </debugInfo>
 

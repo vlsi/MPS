@@ -7,6 +7,9 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.xml.structure.XmlRoot;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.xmlSchema.structure.Schema;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +24,7 @@ public class XmlFile extends BaseConcept implements INamedConcept, XmlRoot {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String SCHEMA = "schema";
   public static final String DOCUMENT = "document";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public XmlFile(SNode node) {
     super(node);
@@ -88,6 +92,26 @@ public class XmlFile extends BaseConcept implements INamedConcept, XmlRoot {
 
   public void setDocument(Document node) {
     super.setChild(XmlFile.DOCUMENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(XmlFile._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, XmlFile._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, XmlFile._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(XmlFile._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, XmlFile._$ATTRIBUTE, node);
   }
 
   public static XmlFile newInstance(SModel sm, boolean init) {

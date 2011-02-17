@@ -43,7 +43,7 @@ public class ReferenceMacro_GetReferent_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("", (SNode) parameter_3);
+        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -66,7 +66,7 @@ public class ReferenceMacro_GetReferent_Behavior {
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
-          quotedNode1_5.setReferent("", (SNode) parameter_7);
+          quotedNode1_5.setReferent("concept", (SNode) parameter_7);
           quotedNode_1.addChild("argument", quotedNode1_5);
         }
         {

@@ -18,7 +18,7 @@
   <unitInfo fileName="ContextCompartmentWrapper_Editor.java" startLine="23" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.ui.internal.editor.ContextCompartmentWrapper_Editor" />
   <unitInfo fileName="ContextBindingWrapper_Editor.java" startLine="32" startPosition="0" endLine="333" endPosition="0" unitName="jetbrains.mps.ui.internal.editor.ContextBindingWrapper_Editor" />
   <root nodeId="6653319296676637891">
-    <nodeInfo nodeId="6653319296676642220" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GeometryHandler_Editor.java" startLine="173" startPosition="33" endLine="174" endPosition="159" />
+    <nodeInfo nodeId="6653319296676642220" fileName="GeometryHandler_Editor.java" startLine="173" startPosition="33" endLine="174" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="6653319296676637969" fileName="GeometryHandler_Editor.java" startLine="173" startPosition="33" endLine="174" endPosition="159" />
   </root>
 </debugInfo>

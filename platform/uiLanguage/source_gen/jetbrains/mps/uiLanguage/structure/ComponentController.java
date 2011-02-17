@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -25,6 +26,7 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
   public static final String ATTRIBUTE = "attribute";
   public static final String EVENT = "event";
   public static final String COMPONENT_METHOD = "componentMethod";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ComponentController(SNode node) {
     super(node);
@@ -144,6 +146,26 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
 
   public void insertComponentMethod(DefaultClassifierMethodDeclaration prev, DefaultClassifierMethodDeclaration node) {
     this.insertChild(prev, ComponentController.COMPONENT_METHOD, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ComponentController._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ComponentController._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ComponentController._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ComponentController._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ComponentController._$ATTRIBUTE, node);
   }
 
   public static ComponentController newInstance(SModel sm, boolean init) {

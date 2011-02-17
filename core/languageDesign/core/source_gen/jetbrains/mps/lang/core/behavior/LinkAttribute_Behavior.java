@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -17,7 +16,7 @@ public class LinkAttribute_Behavior {
   }
 
   public static String virtual_getOldAttributeRole_6407023681583030897(SNode thisNode) {
-    return AttributesRolesUtil.childRoleFromLinkAttributeRole(SConceptPropertyOperations.getString(thisNode, "role"), SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "link", false), "role"));
+    return AttributesRolesUtil.childRoleFromLinkAttributeRole(SConceptPropertyOperations.getString(thisNode, "role"), SPropertyOperations.getString(thisNode, "linkRole"));
   }
 
   public static String call_getOldAttributeRole_6407023681583031064(SNode thisNode) {

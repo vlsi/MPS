@@ -5,6 +5,9 @@ package jetbrains.mps.ypath.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class ParameterWrapper extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PARAM_REF = "paramRef";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ParameterWrapper(SNode node) {
     super(node);
@@ -68,6 +72,26 @@ public class ParameterWrapper extends BaseConcept implements INamedConcept {
 
   public void setParamRef(BaseConcept node) {
     super.setReferent(ParameterWrapper.PARAM_REF, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ParameterWrapper._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ParameterWrapper._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ParameterWrapper._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ParameterWrapper._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ParameterWrapper._$ATTRIBUTE, node);
   }
 
   public static ParameterWrapper newInstance(SModel sm, boolean init) {

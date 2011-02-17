@@ -4,6 +4,9 @@ package jetbrains.mps.xmlSchema.structure;
 
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class AttributeDeclaration extends AttributeExpression implements INamedC
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String USE_ATTRIBUTE = "useAttribute";
   public static final String TYPE = "type";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AttributeDeclaration(SNode node) {
     super(node);
@@ -76,6 +80,26 @@ public class AttributeDeclaration extends AttributeExpression implements INamedC
 
   public void setType(SchemaType node) {
     super.setChild(AttributeDeclaration.TYPE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AttributeDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AttributeDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AttributeDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AttributeDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AttributeDeclaration._$ATTRIBUTE, node);
   }
 
   public static AttributeDeclaration newInstance(SModel sm, boolean init) {

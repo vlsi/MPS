@@ -4,6 +4,9 @@ package jetbrains.mps.ypath.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -23,6 +26,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   public static final String TARGET_TYPE_FUNCTION = "targetTypeFunction";
   public static final String TO_STRING_FUNCTION = "toStringFunction";
   public static final String CARDINAL = "cardinal";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ParamListFeature(SNode node) {
     super(node);
@@ -130,6 +134,26 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
 
   public void setCardinal(GFCardinalParamFun node) {
     super.setChild(ParamListFeature.CARDINAL, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ParamListFeature._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ParamListFeature._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ParamListFeature._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ParamListFeature._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ParamListFeature._$ATTRIBUTE, node);
   }
 
   public static ParamListFeature newInstance(SModel sm, boolean init) {

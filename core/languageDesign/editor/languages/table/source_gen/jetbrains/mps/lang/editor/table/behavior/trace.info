@@ -2,8 +2,8 @@
 <debugInfo>
   <unitInfo fileName="CellModel_HierarchycalTable_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.CellModel_HierarchycalTable_Behavior" />
   <root nodeId="6216065619544941718">
-    <nodeInfo nodeId="6216065619544944236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CellModel_HierarchycalTable_Behavior.java" startLine="13" startPosition="96" endLine="14" endPosition="139" />
-    <nodeInfo nodeId="6216065619544944252" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_HierarchycalTable_Behavior.java" startLine="14" startPosition="139" endLine="15" endPosition="102" />
+    <nodeInfo nodeId="6216065619544944236" fileName="CellModel_HierarchycalTable_Behavior.java" startLine="13" startPosition="96" endLine="14" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6216065619544944252" fileName="CellModel_HierarchycalTable_Behavior.java" startLine="14" startPosition="139" endLine="15" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="6216065619544941720" fileName="CellModel_HierarchycalTable_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="6216065619544944233" fileName="CellModel_HierarchycalTable_Behavior.java" startLine="13" startPosition="96" endLine="15" endPosition="102">
       <varInfo nodeId="6216065619544944237" varName="editorComponent" />

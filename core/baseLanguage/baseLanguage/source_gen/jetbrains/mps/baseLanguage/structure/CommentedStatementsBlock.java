@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.IMetaLevelChanger;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +17,7 @@ public class CommentedStatementsBlock extends Statement implements ILocalVariabl
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String STATEMENT = "statement";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public CommentedStatementsBlock(SNode node) {
     super(node);
@@ -63,6 +65,26 @@ public class CommentedStatementsBlock extends Statement implements ILocalVariabl
 
   public void insertStatement(Statement prev, Statement node) {
     this.insertChild(prev, CommentedStatementsBlock.STATEMENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(CommentedStatementsBlock._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, CommentedStatementsBlock._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, CommentedStatementsBlock._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(CommentedStatementsBlock._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CommentedStatementsBlock._$ATTRIBUTE, node);
   }
 
   public static CommentedStatementsBlock newInstance(SModel sm, boolean init) {

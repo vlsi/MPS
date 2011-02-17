@@ -5,6 +5,9 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class ConceptEditorDeclaration extends BaseEditorComponent implements INa
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String INSPECTED_CELL_MODEL = "inspectedCellModel";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConceptEditorDeclaration(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class ConceptEditorDeclaration extends BaseEditorComponent implements INa
 
   public void setInspectedCellModel(EditorCellModel node) {
     super.setChild(ConceptEditorDeclaration.INSPECTED_CELL_MODEL, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ConceptEditorDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConceptEditorDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConceptEditorDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConceptEditorDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConceptEditorDeclaration._$ATTRIBUTE, node);
   }
 
   public static ConceptEditorDeclaration newInstance(SModel sm, boolean init) {

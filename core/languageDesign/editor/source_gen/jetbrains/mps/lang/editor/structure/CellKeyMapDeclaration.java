@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -22,6 +23,7 @@ public class CellKeyMapDeclaration extends BaseConcept implements INamedConcept,
   public static final String EVERY_MODEL = "everyModel";
   public static final String APPLICABLE_CONCEPT = "applicableConcept";
   public static final String ITEM = "item";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public CellKeyMapDeclaration(SNode node) {
     super(node);
@@ -93,6 +95,26 @@ public class CellKeyMapDeclaration extends BaseConcept implements INamedConcept,
 
   public void insertItem(CellKeyMapItem prev, CellKeyMapItem node) {
     this.insertChild(prev, CellKeyMapDeclaration.ITEM, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(CellKeyMapDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, CellKeyMapDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, CellKeyMapDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(CellKeyMapDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CellKeyMapDeclaration._$ATTRIBUTE, node);
   }
 
   public static CellKeyMapDeclaration newInstance(SModel sm, boolean init) {

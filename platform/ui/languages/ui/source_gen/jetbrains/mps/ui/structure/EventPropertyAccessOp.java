@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ui.modeling.structure.EventProperty;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class EventPropertyAccessOp extends BaseConcept implements IOperation {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROPERTY = "property";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public EventPropertyAccessOp(SNode node) {
     super(node);
@@ -51,6 +55,26 @@ public class EventPropertyAccessOp extends BaseConcept implements IOperation {
 
   public void setProperty(EventProperty node) {
     super.setReferent(EventPropertyAccessOp.PROPERTY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(EventPropertyAccessOp._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, EventPropertyAccessOp._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, EventPropertyAccessOp._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(EventPropertyAccessOp._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EventPropertyAccessOp._$ATTRIBUTE, node);
   }
 
   public static EventPropertyAccessOp newInstance(SModel sm, boolean init) {

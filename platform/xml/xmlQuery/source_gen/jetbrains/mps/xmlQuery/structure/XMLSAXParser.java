@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -22,6 +23,7 @@ public class XMLSAXParser extends BaseConcept implements INamedConcept {
   public static final String PARAMETERS = "parameters";
   public static final String NODES = "nodes";
   public static final String FIELDS = "fields";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public XMLSAXParser(SNode node) {
     super(node);
@@ -133,6 +135,26 @@ public class XMLSAXParser extends BaseConcept implements INamedConcept {
 
   public void insertFields(XMLSAXFieldDeclaration prev, XMLSAXFieldDeclaration node) {
     this.insertChild(prev, XMLSAXParser.FIELDS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(XMLSAXParser._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, XMLSAXParser._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, XMLSAXParser._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(XMLSAXParser._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, XMLSAXParser._$ATTRIBUTE, node);
   }
 
   public static XMLSAXParser newInstance(SModel sm, boolean init) {

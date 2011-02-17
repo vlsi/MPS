@@ -185,7 +185,6 @@
   <unitInfo fileName="_Colors_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._Colors_Enum_PropertySupport" />
   <unitInfo fileName="_YesNoDefault_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._YesNoDefault_Enum_PropertySupport" />
   <unitInfo fileName="MatchingLabelStyleClassItem.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" />
-  <unitInfo fileName="QueryFunction_Color.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.QueryFunction_Color" />
   <unitInfo fileName="CellMenuPart_ReplaceChild_Item.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item" />
   <unitInfo fileName="CellModel_Image.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_Image" />
   <unitInfo fileName="ModelAccessor.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.ModelAccessor" />
@@ -199,9 +198,7 @@
   <unitInfo fileName="CellActionId.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellActionId" />
   <unitInfo fileName="CellModel_Block.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_Block" />
   <unitInfo fileName="CellModel_Alternation.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_Alternation" />
-  <unitInfo fileName="RGBColor.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.RGBColor" />
   <unitInfo fileName="CellModel_TransactionalProperty.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty" />
-  <unitInfo fileName="EditorComponentDeclaration.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" />
   <unitInfo fileName="CellMenuPart_AbstractGroup.java" startLine="12" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup" />
   <unitInfo fileName="ScriptSwitchEnum.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.ScriptSwitchEnum" />
   <unitInfo fileName="DefaultBaseLineEnum.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.DefaultBaseLineEnum" />
@@ -216,22 +213,25 @@
   <unitInfo fileName="FocusPolicy.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.FocusPolicy" />
   <unitInfo fileName="CellModel_RefNodeList.java" startLine="11" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" />
   <unitInfo fileName="CellModel_WithRole.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_WithRole" />
-  <unitInfo fileName="ConceptEditorDeclaration.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" />
   <unitInfo fileName="CellModel_AbstractLabel.java" startLine="10" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel" />
   <unitInfo fileName="_FontStyle_Enum.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._FontStyle_Enum" />
-  <unitInfo fileName="AbstractStyledTextOperation.java" startLine="15" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation" />
-  <unitInfo fileName="CellMenuComponent.java" startLine="12" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellMenuComponent" />
-  <unitInfo fileName="InlineStyleDeclaration.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.InlineStyleDeclaration" />
-  <unitInfo fileName="StyleSheet.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.StyleSheet" />
+  <unitInfo fileName="QueryFunction_Color.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.QueryFunction_Color" />
+  <unitInfo fileName="RGBColor.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.RGBColor" />
+  <unitInfo fileName="EditorComponentDeclaration.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" />
   <unitInfo fileName="RightTransformAnchorTag.java" startLine="9" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.RightTransformAnchorTag" />
-  <unitInfo fileName="StyleSheetClass.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.StyleSheetClass" />
-  <unitInfo fileName="CellActionMapDeclaration.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" />
-  <unitInfo fileName="CellKeyMapDeclaration.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration" />
+  <unitInfo fileName="ConceptEditorDeclaration.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" />
+  <unitInfo fileName="AbstractStyledTextOperation.java" startLine="16" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation" />
+  <unitInfo fileName="CellMenuComponent.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellMenuComponent" />
   <unitInfo fileName="CellKeyMapItem.java" startLine="13" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellKeyMapItem" />
+  <unitInfo fileName="InlineStyleDeclaration.java" startLine="14" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.InlineStyleDeclaration" />
+  <unitInfo fileName="StyleSheet.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.StyleSheet" />
   <unitInfo fileName="CellModel_Collection.java" startLine="12" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_Collection" />
-  <unitInfo fileName="ParametersInformationQuery.java" startLine="18" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.ParametersInformationQuery" />
+  <unitInfo fileName="StyleSheetClass.java" startLine="16" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.StyleSheetClass" />
+  <unitInfo fileName="CellActionMapDeclaration.java" startLine="17" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" />
+  <unitInfo fileName="CellKeyMapDeclaration.java" startLine="17" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration" />
   <unitInfo fileName="_Colors_Enum.java" startLine="9" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._Colors_Enum" />
   <unitInfo fileName="CellModel_ListWithRole.java" startLine="10" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" />
-  <unitInfo fileName="EditorCellModel.java" startLine="13" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.EditorCellModel" />
+  <unitInfo fileName="ParametersInformationQuery.java" startLine="19" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.ParametersInformationQuery" />
+  <unitInfo fileName="EditorCellModel.java" startLine="14" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.EditorCellModel" />
 </debugInfo>
 

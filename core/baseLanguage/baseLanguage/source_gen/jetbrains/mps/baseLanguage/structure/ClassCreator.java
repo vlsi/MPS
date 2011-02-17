@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +18,7 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String TYPE_PARAMETER = "typeParameter";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ClassCreator(SNode node) {
     super(node);
@@ -100,6 +102,26 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, ClassCreator.ACTUAL_ARGUMENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ClassCreator._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ClassCreator._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ClassCreator._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ClassCreator._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ClassCreator._$ATTRIBUTE, node);
   }
 
   public static ClassCreator newInstance(SModel sm, boolean init) {

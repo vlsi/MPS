@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -26,6 +27,7 @@ public class UIObjectTemplate extends BaseConcept implements INamedConcept {
   public static final String PROPERTY_ACCESSOR = "propertyAccessor";
   public static final String ACTION_HANDLER = "actionHandler";
   public static final String CONTAINER_TEMPLATE = "containerTemplate";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public UIObjectTemplate(SNode node) {
     super(node);
@@ -173,6 +175,26 @@ public class UIObjectTemplate extends BaseConcept implements INamedConcept {
 
   public void insertContainerTemplate(ContainerTemplate prev, ContainerTemplate node) {
     this.insertChild(prev, UIObjectTemplate.CONTAINER_TEMPLATE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(UIObjectTemplate._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, UIObjectTemplate._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, UIObjectTemplate._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(UIObjectTemplate._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, UIObjectTemplate._$ATTRIBUTE, node);
   }
 
   public static UIObjectTemplate newInstance(SModel sm, boolean init) {

@@ -21,21 +21,21 @@
   <unitInfo fileName="HighLevelValue_ConceptFunctionParameter.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter" />
   <unitInfo fileName="WatchableCreator.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.WatchableCreator" />
   <unitInfo fileName="HighLevelWatchableCreator.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.HighLevelWatchableCreator" />
-  <unitInfo fileName="JavaValueOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.JavaValueOperation" />
-  <unitInfo fileName="StringValueOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.StringValueOperation" />
-  <unitInfo fileName="FieldsListOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.FieldsListOperation" />
-  <unitInfo fileName="AllElementsOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.AllElementsOperation" />
-  <unitInfo fileName="SizeOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.SizeOperation" />
-  <unitInfo fileName="ClassFqNameOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ClassFqNameOperation" />
-  <unitInfo fileName="ClassNameOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ClassNameOperation" />
-  <unitInfo fileName="ElementOperation.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ElementOperation" />
-  <unitInfo fileName="FieldOperation.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.FieldOperation" />
-  <unitInfo fileName="IsInstanceOfOperation.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.IsInstanceOfOperation" />
-  <unitInfo fileName="CustomWatchable.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CustomWatchable" />
-  <unitInfo fileName="ElementsRangeOperation.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ElementsRangeOperation" />
-  <unitInfo fileName="CustomWatchablesContainer.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CustomWatchablesContainer" />
-  <unitInfo fileName="CustomViewer.java" startLine="12" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CustomViewer" />
-  <unitInfo fileName="CallMethodOperation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CallMethodOperation" />
-  <unitInfo fileName="HighLevelCustomViewer.java" startLine="13" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer" />
+  <unitInfo fileName="JavaValueOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.JavaValueOperation" />
+  <unitInfo fileName="StringValueOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.StringValueOperation" />
+  <unitInfo fileName="FieldsListOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.FieldsListOperation" />
+  <unitInfo fileName="AllElementsOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.AllElementsOperation" />
+  <unitInfo fileName="SizeOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.SizeOperation" />
+  <unitInfo fileName="ClassFqNameOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ClassFqNameOperation" />
+  <unitInfo fileName="ClassNameOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ClassNameOperation" />
+  <unitInfo fileName="ElementOperation.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ElementOperation" />
+  <unitInfo fileName="FieldOperation.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.FieldOperation" />
+  <unitInfo fileName="IsInstanceOfOperation.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.IsInstanceOfOperation" />
+  <unitInfo fileName="CustomWatchable.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CustomWatchable" />
+  <unitInfo fileName="ElementsRangeOperation.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.ElementsRangeOperation" />
+  <unitInfo fileName="CustomWatchablesContainer.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CustomWatchablesContainer" />
+  <unitInfo fileName="CustomViewer.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CustomViewer" />
+  <unitInfo fileName="CallMethodOperation.java" startLine="16" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.CallMethodOperation" />
+  <unitInfo fileName="HighLevelCustomViewer.java" startLine="16" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer" />
 </debugInfo>
 

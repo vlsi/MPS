@@ -7,6 +7,9 @@ import jetbrains.mps.baseLanguage.structure.TypeDerivable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.datesInternal.structure.IPeriodFormat;
 import jetbrains.mps.baseLanguage.datesInternal.structure.Locale;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +22,7 @@ public class FormatPeriodExpression extends Expression implements TypeDerivable 
   public static final String FORMAT = "format";
   public static final String LOCALE = "locale";
   public static final String PERIOD = "period";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FormatPeriodExpression(SNode node) {
     super(node);
@@ -70,6 +74,26 @@ public class FormatPeriodExpression extends Expression implements TypeDerivable 
 
   public void setPeriod(Expression node) {
     super.setChild(FormatPeriodExpression.PERIOD, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(FormatPeriodExpression._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FormatPeriodExpression._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FormatPeriodExpression._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(FormatPeriodExpression._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FormatPeriodExpression._$ATTRIBUTE, node);
   }
 
   public static FormatPeriodExpression newInstance(SModel sm, boolean init) {

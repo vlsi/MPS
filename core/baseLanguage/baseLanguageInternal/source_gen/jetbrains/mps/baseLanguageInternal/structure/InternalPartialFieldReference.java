@@ -7,6 +7,9 @@ import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +23,7 @@ public class InternalPartialFieldReference extends Expression implements IOperat
   public static final String FIELD_TYPE = "fieldType";
   public static final String INSTANCE_TYPE = "instanceType";
   public static final String INSTANCE = "instance";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public InternalPartialFieldReference(SNode node) {
     super(node);
@@ -79,6 +83,26 @@ public class InternalPartialFieldReference extends Expression implements IOperat
 
   public void setInstance(Expression node) {
     super.setChild(InternalPartialFieldReference.INSTANCE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(InternalPartialFieldReference._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, InternalPartialFieldReference._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, InternalPartialFieldReference._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(InternalPartialFieldReference._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InternalPartialFieldReference._$ATTRIBUTE, node);
   }
 
   public static InternalPartialFieldReference newInstance(SModel sm, boolean init) {

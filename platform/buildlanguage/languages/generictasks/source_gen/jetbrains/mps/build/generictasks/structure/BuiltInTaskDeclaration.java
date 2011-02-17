@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -26,6 +27,7 @@ public class BuiltInTaskDeclaration extends BaseConcept implements ITaskDeclarat
   public static final String FAKE_DECLARATION = "fakeDeclaration";
   public static final String ATTRIBUTES_DECL = "attributesDecl";
   public static final String INTERFACES = "interfaces";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BuiltInTaskDeclaration(SNode node) {
     super(node);
@@ -189,6 +191,26 @@ public class BuiltInTaskDeclaration extends BaseConcept implements ITaskDeclarat
 
   public void insertInterfaces(TaskReference prev, TaskReference node) {
     this.insertChild(prev, BuiltInTaskDeclaration.INTERFACES, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(BuiltInTaskDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BuiltInTaskDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BuiltInTaskDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(BuiltInTaskDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BuiltInTaskDeclaration._$ATTRIBUTE, node);
   }
 
   public static BuiltInTaskDeclaration newInstance(SModel sm, boolean init) {

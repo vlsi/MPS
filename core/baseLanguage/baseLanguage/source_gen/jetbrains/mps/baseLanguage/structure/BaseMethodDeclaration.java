@@ -8,6 +8,7 @@ import jetbrains.mps.lang.textGen.structure.ScopeConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -25,6 +26,7 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
   public static final String BODY = "body";
   public static final String PARAMETER = "parameter";
   public static final String THROWS_ITEM = "throwsItem";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String ANNOTATION = "annotation";
 
   public BaseMethodDeclaration(SNode node) {
@@ -141,6 +143,26 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
 
   public void insertThrowsItem(Type prev, Type node) {
     this.insertChild(prev, BaseMethodDeclaration.THROWS_ITEM, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(BaseMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BaseMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BaseMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(BaseMethodDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BaseMethodDeclaration._$ATTRIBUTE, node);
   }
 
   public int getAnnotationsCount() {

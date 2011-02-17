@@ -8,6 +8,7 @@ import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -25,6 +26,7 @@ public class ActionGroupDeclaration extends BaseConcept implements INamedConcept
   public static final String IS_INVISIBLE_WHEN_DISABLED = "isInvisibleWhenDisabled";
   public static final String CONTENTS = "contents";
   public static final String MODIFIER = "modifier";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ActionGroupDeclaration(SNode node) {
     super(node);
@@ -128,6 +130,26 @@ public class ActionGroupDeclaration extends BaseConcept implements INamedConcept
 
   public void insertModifier(ModificationStatement prev, ModificationStatement node) {
     this.insertChild(prev, ActionGroupDeclaration.MODIFIER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ActionGroupDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ActionGroupDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ActionGroupDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ActionGroupDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ActionGroupDeclaration._$ATTRIBUTE, node);
   }
 
   public static ActionGroupDeclaration newInstance(SModel sm, boolean init) {

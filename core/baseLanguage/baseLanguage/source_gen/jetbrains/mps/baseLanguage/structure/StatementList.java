@@ -8,6 +8,7 @@ import jetbrains.mps.lang.textGen.structure.ScopeConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +19,7 @@ public class StatementList extends BaseConcept implements IContainer, ILocalVari
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String STATEMENT = "statement";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public StatementList(SNode node) {
     super(node);
@@ -65,6 +67,26 @@ public class StatementList extends BaseConcept implements IContainer, ILocalVari
 
   public void insertStatement(Statement prev, Statement node) {
     this.insertChild(prev, StatementList.STATEMENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(StatementList._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, StatementList._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, StatementList._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(StatementList._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, StatementList._$ATTRIBUTE, node);
   }
 
   public static StatementList newInstance(SModel sm, boolean init) {

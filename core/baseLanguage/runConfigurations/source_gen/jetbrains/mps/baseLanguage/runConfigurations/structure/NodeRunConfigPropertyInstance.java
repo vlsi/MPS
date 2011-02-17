@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.plugin.structure.IRunConfigPropertyInstance;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class NodeRunConfigPropertyInstance extends BaseConcept implements IRunCo
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROPERTY_VALUE = "propertyValue";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public NodeRunConfigPropertyInstance(SNode node) {
     super(node);
@@ -60,6 +64,26 @@ public class NodeRunConfigPropertyInstance extends BaseConcept implements IRunCo
 
   public void setPropertyValue(Expression node) {
     super.setChild(NodeRunConfigPropertyInstance.PROPERTY_VALUE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(NodeRunConfigPropertyInstance._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, NodeRunConfigPropertyInstance._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, NodeRunConfigPropertyInstance._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(NodeRunConfigPropertyInstance._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, NodeRunConfigPropertyInstance._$ATTRIBUTE, node);
   }
 
   public static NodeRunConfigPropertyInstance newInstance(SModel sm, boolean init) {

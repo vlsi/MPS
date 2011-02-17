@@ -17,31 +17,31 @@
   <unitInfo fileName="IFeature_opposite_ReferentConstraint.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ypath.constraints.IFeature_opposite_ReferentConstraint" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ypath.constraints.ConstraintsDescriptor" />
   <root nodeId="1213104836707">
-    <nodeInfo nodeId="1213104836711" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MatchPropertyOperation_property_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="144" />
-    <nodeInfo nodeId="1225096927394" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MatchPropertyOperation_property_ReferentConstraint.java" startLine="32" startPosition="39" endLine="33" endPosition="102" />
-    <nodeInfo nodeId="1225096927390" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="MatchPropertyOperation_property_ReferentConstraint.java" startLine="31" startPosition="131" endLine="35" endPosition="0" />
-    <nodeInfo nodeId="1213104836719" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MatchPropertyOperation_property_ReferentConstraint.java" startLine="30" startPosition="144" endLine="35" endPosition="24" />
+    <nodeInfo nodeId="1213104836711" fileName="MatchPropertyOperation_property_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225096927394" fileName="MatchPropertyOperation_property_ReferentConstraint.java" startLine="32" startPosition="39" endLine="33" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225096927390" fileName="MatchPropertyOperation_property_ReferentConstraint.java" startLine="31" startPosition="131" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1213104836719" fileName="MatchPropertyOperation_property_ReferentConstraint.java" startLine="30" startPosition="144" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1225096927393" fileName="MatchPropertyOperation_property_ReferentConstraint.java" startLine="32" startPosition="39" endLine="33" endPosition="102" />
-    <scopeInfo nodeId="1225096927390" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="MatchPropertyOperation_property_ReferentConstraint.java" startLine="31" startPosition="131" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1225096927390" fileName="MatchPropertyOperation_property_ReferentConstraint.java" startLine="31" startPosition="131" endLine="35" endPosition="0" />
     <scopeInfo nodeId="1213104836710" fileName="MatchPropertyOperation_property_ReferentConstraint.java" startLine="29" startPosition="132" endLine="35" endPosition="24">
       <varInfo nodeId="1213104836712" varName="nk" />
     </scopeInfo>
-    <unitInfo nodeId="1225096927390" fileName="MatchPropertyOperation_property_ReferentConstraint.java" startLine="31" startPosition="108" endLine="35" endPosition="5" unitName="jetbrains.mps.ypath.constraints.IWhereFilter$anonymous" />
+    <unitInfo nodeId="1225096927390" fileName="MatchPropertyOperation_property_ReferentConstraint.java" startLine="31" startPosition="108" endLine="35" endPosition="5" unitName="jetbrains.mps.ypath.constraints.MatchPropertyOperation_property_ReferentConstraint$1" />
   </root>
   <root nodeId="1213104837324">
-    <nodeInfo nodeId="1213104837328" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TreePathAspect_defaultFeature_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="149" />
+    <nodeInfo nodeId="1213104837328" fileName="TreePathAspect_defaultFeature_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1213104837327" fileName="TreePathAspect_defaultFeature_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="149" />
   </root>
   <root nodeId="1213104841243">
-    <nodeInfo nodeId="1213104841249" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="26" startPosition="66" endLine="27" endPosition="119" />
-    <nodeInfo nodeId="1213104841270" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="29" startPosition="103" endLine="30" endPosition="141" />
-    <nodeInfo nodeId="1213104841281" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="33" startPosition="5" endLine="34" endPosition="101" />
-    <nodeInfo nodeId="1213104841264" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="28" startPosition="96" endLine="31" endPosition="9" />
-    <nodeInfo nodeId="1213104841257" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="27" startPosition="119" endLine="32" endPosition="7" />
-    <nodeInfo nodeId="1213104841247" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="25" startPosition="124" endLine="33" endPosition="5" />
+    <nodeInfo nodeId="1213104841249" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="26" startPosition="66" endLine="27" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104841270" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="29" startPosition="103" endLine="30" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213104841281" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="33" startPosition="5" endLine="34" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213104841264" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="28" startPosition="96" endLine="31" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213104841257" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="27" startPosition="119" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1213104841247" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="25" startPosition="124" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1213104841269" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="29" startPosition="103" endLine="30" endPosition="141" />
     <scopeInfo nodeId="1213104841263" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="28" startPosition="96" endLine="31" endPosition="9" />
-    <scopeInfo nodeId="1213104841257" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="27" startPosition="119" endLine="32" endPosition="7">
+    <scopeInfo nodeId="1213104841257" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="27" startPosition="119" endLine="32" endPosition="7">
       <varInfo nodeId="1213104841261" varName="desc" />
     </scopeInfo>
     <scopeInfo nodeId="1213104841248" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="26" startPosition="66" endLine="32" endPosition="7">
@@ -50,12 +50,12 @@
     <scopeInfo nodeId="1213104841246" fileName="TreeNodeKindProperty_default_PropertyConstraint.java" startLine="25" startPosition="124" endLine="34" endPosition="101" />
   </root>
   <root nodeId="1213104845580">
-    <nodeInfo nodeId="1213104845584" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="15" />
-    <nodeInfo nodeId="1213104845589" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="33" startPosition="129" endLine="34" endPosition="41" />
-    <nodeInfo nodeId="1213104845599" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="35" startPosition="12" endLine="36" endPosition="145" />
-    <nodeInfo nodeId="1213104845606" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="37" startPosition="5" endLine="38" endPosition="322" />
-    <nodeInfo nodeId="1213104845597" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="35" startPosition="10" endLine="37" endPosition="5" />
-    <nodeInfo nodeId="1213104845587" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="32" startPosition="15" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="1213104845584" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104845589" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="33" startPosition="129" endLine="34" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213104845599" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="35" startPosition="12" endLine="36" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213104845606" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="37" startPosition="5" endLine="38" endPosition="322" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104845597" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="35" startPosition="10" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213104845587" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="32" startPosition="15" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1213104845588" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="33" startPosition="129" endLine="34" endPosition="41" />
     <scopeInfo nodeId="1213104845598" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="35" startPosition="12" endLine="36" endPosition="145" />
     <scopeInfo nodeId="1213104845583" fileName="IterateOperation_usedFeature_ReferentConstraint.java" startLine="31" startPosition="132" endLine="38" endPosition="322">
@@ -63,43 +63,43 @@
     </scopeInfo>
   </root>
   <root nodeId="1213104846059">
-    <nodeInfo nodeId="1213104846097" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IFeature_opposite_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="54" />
-    <nodeInfo nodeId="1213104846080" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IFeature_default_PropertyConstraint.java" startLine="30" startPosition="26" endLine="31" endPosition="64" />
-    <nodeInfo nodeId="1213104846101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IFeature_opposite_ReferentConstraint.java" startLine="30" startPosition="54" endLine="31" endPosition="117" />
-    <nodeInfo nodeId="4145095496975148696" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IFeature_default_PropertyConstraint.java" startLine="34" startPosition="5" endLine="35" endPosition="104" />
-    <nodeInfo nodeId="1213104846075" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IFeature_default_PropertyConstraint.java" startLine="29" startPosition="196" endLine="32" endPosition="9" />
-    <nodeInfo nodeId="1225096928358" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IFeature_opposite_ReferentConstraint.java" startLine="33" startPosition="39" endLine="37" endPosition="11" />
-    <nodeInfo nodeId="1213104846066" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IFeature_default_PropertyConstraint.java" startLine="28" startPosition="58" endLine="33" endPosition="7" />
-    <nodeInfo nodeId="1213104846063" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IFeature_default_PropertyConstraint.java" startLine="27" startPosition="124" endLine="34" endPosition="5" />
-    <nodeInfo nodeId="1225096928354" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="IFeature_opposite_ReferentConstraint.java" startLine="32" startPosition="218" endLine="39" endPosition="0" />
-    <nodeInfo nodeId="1213104846108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IFeature_opposite_ReferentConstraint.java" startLine="31" startPosition="117" endLine="39" endPosition="24" />
+    <nodeInfo nodeId="1213104846097" fileName="IFeature_opposite_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104846080" fileName="IFeature_default_PropertyConstraint.java" startLine="30" startPosition="26" endLine="31" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213104846101" fileName="IFeature_opposite_ReferentConstraint.java" startLine="30" startPosition="54" endLine="31" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4145095496975148696" fileName="IFeature_default_PropertyConstraint.java" startLine="34" startPosition="5" endLine="35" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213104846075" fileName="IFeature_default_PropertyConstraint.java" startLine="29" startPosition="196" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225096928358" fileName="IFeature_opposite_ReferentConstraint.java" startLine="33" startPosition="39" endLine="37" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104846066" fileName="IFeature_default_PropertyConstraint.java" startLine="28" startPosition="58" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1213104846063" fileName="IFeature_default_PropertyConstraint.java" startLine="27" startPosition="124" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225096928354" fileName="IFeature_opposite_ReferentConstraint.java" startLine="32" startPosition="218" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1213104846108" fileName="IFeature_opposite_ReferentConstraint.java" startLine="31" startPosition="117" endLine="39" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1213104846079" fileName="IFeature_default_PropertyConstraint.java" startLine="30" startPosition="26" endLine="31" endPosition="64" />
     <scopeInfo nodeId="1213104846074" fileName="IFeature_default_PropertyConstraint.java" startLine="29" startPosition="196" endLine="32" endPosition="9" />
     <scopeInfo nodeId="1225096928357" fileName="IFeature_opposite_ReferentConstraint.java" startLine="33" startPosition="39" endLine="37" endPosition="11" />
     <scopeInfo nodeId="1213104846065" fileName="IFeature_default_PropertyConstraint.java" startLine="28" startPosition="58" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="1213104846066" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IFeature_default_PropertyConstraint.java" startLine="28" startPosition="58" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="1225096928354" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="IFeature_opposite_ReferentConstraint.java" startLine="32" startPosition="218" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1213104846066" fileName="IFeature_default_PropertyConstraint.java" startLine="28" startPosition="58" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="1225096928354" fileName="IFeature_opposite_ReferentConstraint.java" startLine="32" startPosition="218" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1213104846062" fileName="IFeature_default_PropertyConstraint.java" startLine="27" startPosition="124" endLine="35" endPosition="104" />
     <scopeInfo nodeId="1213104846096" fileName="IFeature_opposite_ReferentConstraint.java" startLine="29" startPosition="132" endLine="39" endPosition="24">
       <varInfo nodeId="1213104846102" varName="isGeneric" />
       <varInfo nodeId="1213104846098" varName="feature" />
     </scopeInfo>
-    <unitInfo nodeId="1225096928354" fileName="IFeature_opposite_ReferentConstraint.java" startLine="32" startPosition="195" endLine="39" endPosition="5" unitName="jetbrains.mps.ypath.constraints.IWhereFilter$anonymous" />
+    <unitInfo nodeId="1225096928354" fileName="IFeature_opposite_ReferentConstraint.java" startLine="32" startPosition="195" endLine="39" endPosition="5" unitName="jetbrains.mps.ypath.constraints.IFeature_opposite_ReferentConstraint$1" />
   </root>
   <root nodeId="1213104858652">
-    <nodeInfo nodeId="1213104858656" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TreePathAdapterExpression_treepathAspect_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="45" />
-    <nodeInfo nodeId="1213104858660" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TreePathAdapterExpression_treepathAspect_ReferentConstraint.java" startLine="28" startPosition="45" endLine="29" endPosition="131" />
+    <nodeInfo nodeId="1213104858656" fileName="TreePathAdapterExpression_treepathAspect_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104858660" fileName="TreePathAdapterExpression_treepathAspect_ReferentConstraint.java" startLine="28" startPosition="45" endLine="29" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1213104858655" fileName="TreePathAdapterExpression_treepathAspect_ReferentConstraint.java" startLine="27" startPosition="132" endLine="29" endPosition="131">
       <varInfo nodeId="1213104858657" varName="tpae" />
     </scopeInfo>
   </root>
   <root nodeId="1213104858818">
-    <nodeInfo nodeId="1213104858822" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="29" />
-    <nodeInfo nodeId="1213104858827" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="30" startPosition="141" endLine="31" endPosition="170" />
-    <nodeInfo nodeId="1213104858847" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="32" startPosition="12" endLine="33" endPosition="43" />
-    <nodeInfo nodeId="1213104858851" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="34" startPosition="5" endLine="35" endPosition="23" />
-    <nodeInfo nodeId="1213104858845" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="32" startPosition="10" endLine="34" endPosition="5" />
-    <nodeInfo nodeId="1213104858825" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="29" startPosition="29" endLine="34" endPosition="5" />
+    <nodeInfo nodeId="1213104858822" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104858827" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="30" startPosition="141" endLine="31" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213104858847" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="32" startPosition="12" endLine="33" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213104858851" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="34" startPosition="5" endLine="35" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213104858845" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="32" startPosition="10" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213104858825" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="29" startPosition="29" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1213104858826" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="30" startPosition="141" endLine="31" endPosition="170" />
     <scopeInfo nodeId="1213104858846" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="32" startPosition="12" endLine="33" endPosition="43" />
     <scopeInfo nodeId="1213104858821" fileName="TreeNodeKindReference_treeNodeKind_ReferentConstraint.java" startLine="28" startPosition="132" endLine="35" endPosition="23">
@@ -107,41 +107,41 @@
     </scopeInfo>
   </root>
   <root nodeId="1213104859281">
-    <nodeInfo nodeId="1213104859285" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="149" />
-    <nodeInfo nodeId="1213104859292" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="30" startPosition="149" endLine="31" endPosition="152" />
-    <nodeInfo nodeId="1225096925369" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="33" startPosition="39" endLine="34" endPosition="94" />
-    <nodeInfo nodeId="1225096925365" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="32" startPosition="132" endLine="36" endPosition="0" />
-    <nodeInfo nodeId="1213104859300" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="31" startPosition="152" endLine="36" endPosition="24" />
+    <nodeInfo nodeId="1213104859285" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213104859292" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="30" startPosition="149" endLine="31" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225096925369" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="33" startPosition="39" endLine="34" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225096925365" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="32" startPosition="132" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1213104859300" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="31" startPosition="152" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1225096925368" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="33" startPosition="39" endLine="34" endPosition="94" />
-    <scopeInfo nodeId="1225096925365" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="32" startPosition="132" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1225096925365" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="32" startPosition="132" endLine="36" endPosition="0" />
     <scopeInfo nodeId="1213104859284" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="29" startPosition="132" endLine="36" endPosition="24">
       <varInfo nodeId="1213104859286" varName="tpoe" />
       <varInfo nodeId="1213104859293" varName="tpa" />
     </scopeInfo>
-    <unitInfo nodeId="1225096925365" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="32" startPosition="109" endLine="36" endPosition="5" unitName="jetbrains.mps.ypath.constraints.IWhereFilter$anonymous" />
+    <unitInfo nodeId="1225096925365" fileName="TreeNodeKindOccurrence_nodeKind_ReferentConstraint.java" startLine="32" startPosition="109" endLine="36" endPosition="5" unitName="jetbrains.mps.ypath.constraints.TreeNodeKindOccurrence_nodeKind_ReferentConstraint$1" />
   </root>
   <root nodeId="1213104860501">
-    <nodeInfo nodeId="1213104860505" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NodeKindSpecificCase_treeNodeKind_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="268" />
+    <nodeInfo nodeId="1213104860505" fileName="NodeKindSpecificCase_treeNodeKind_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="268" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1213104860504" fileName="NodeKindSpecificCase_treeNodeKind_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="268" />
   </root>
   <root nodeId="4581582910844587511">
-    <nodeInfo nodeId="7376433222636453307" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="GenericFeature_writable_PropertyConstraint.java" startLine="23" startPosition="124" endLine="24" endPosition="48" />
+    <nodeInfo nodeId="7376433222636453307" fileName="GenericFeature_writable_PropertyConstraint.java" startLine="23" startPosition="124" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <scopeInfo nodeId="4581582910844587514" fileName="GenericFeature_writable_PropertyConstraint.java" startLine="23" startPosition="124" endLine="24" endPosition="48" />
   </root>
   <root nodeId="4581582910845094945">
-    <nodeInfo nodeId="7376433222636454065" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="GenericParamFeature_writable_PropertyConstraint.java" startLine="23" startPosition="124" endLine="24" endPosition="42" />
+    <nodeInfo nodeId="7376433222636454065" fileName="GenericParamFeature_writable_PropertyConstraint.java" startLine="23" startPosition="124" endLine="24" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <scopeInfo nodeId="4581582910845094948" fileName="GenericParamFeature_writable_PropertyConstraint.java" startLine="23" startPosition="124" endLine="24" endPosition="42" />
   </root>
   <root nodeId="5626852792500016114">
-    <nodeInfo nodeId="5626852792500016117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="TreePathOperation_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="264" />
+    <nodeInfo nodeId="5626852792500016117" fileName="TreePathOperation_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="5626852792500016116" fileName="TreePathOperation_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="264" />
   </root>
   <root nodeId="791534949580478508">
-    <nodeInfo nodeId="7376433222636454029" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="ListFeature_writable_PropertyConstraint.java" startLine="23" startPosition="124" endLine="24" endPosition="37" />
+    <nodeInfo nodeId="7376433222636454029" fileName="ListFeature_writable_PropertyConstraint.java" startLine="23" startPosition="124" endLine="24" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <scopeInfo nodeId="791534949580478513" fileName="ListFeature_writable_PropertyConstraint.java" startLine="23" startPosition="124" endLine="24" endPosition="37" />
   </root>
   <root nodeId="791534949580478619">
-    <nodeInfo nodeId="7376433222636454243" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="SequenceFeature_writable_PropertyConstraint.java" startLine="23" startPosition="124" endLine="24" endPosition="37" />
+    <nodeInfo nodeId="7376433222636454243" fileName="SequenceFeature_writable_PropertyConstraint.java" startLine="23" startPosition="124" endLine="24" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <scopeInfo nodeId="791534949580478626" fileName="SequenceFeature_writable_PropertyConstraint.java" startLine="23" startPosition="124" endLine="24" endPosition="37" />
   </root>
 </debugInfo>
