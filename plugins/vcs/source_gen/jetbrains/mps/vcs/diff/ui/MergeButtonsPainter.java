@@ -197,11 +197,8 @@ public class MergeButtonsPainter extends AbstractFoldingAreaPainter {
     myGroupToButtonCoord = null;
   }
 
-  public static MergeButtonsPainter addTo(MergeRootsDialog dialog, DiffEditorComponent diffEditor, ChangeGroupBuilder changeGroupBuilder, boolean inspector) {
-    EditorComponent editorComponent = (inspector ?
-      diffEditor.getInspector() :
-      diffEditor
-    );
+  public static MergeButtonsPainter addTo(MergeRootsDialog dialog, DiffEditor diffEditor, ChangeGroupBuilder changeGroupBuilder, boolean inspector) {
+    EditorComponent editorComponent = diffEditor.getEditorComponent(inspector);
     MergeButtonsPainter painter = new MergeButtonsPainter(dialog, editorComponent, changeGroupBuilder);
     editorComponent.getLeftEditorHighlighter().addFoldingAreaPainter(painter);
     return painter;

@@ -42,9 +42,9 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
   private JPanel myContainer = new JPanel(new BorderLayout());
   private JPanel myTopPanel = new JPanel(new GridBagLayout());
   private JPanel myBottomPanel = new JPanel(new GridBagLayout());
-  private DiffEditorComponent myResultEditor;
-  private DiffEditorComponent myMineEditor;
-  private DiffEditorComponent myRepositoryEditor;
+  private DiffEditor myResultEditor;
+  private DiffEditor myMineEditor;
+  private DiffEditor myRepositoryEditor;
   private List<ChangeGroupBuilder> myChangeGroupBuilders = ListSequence.fromList(new ArrayList<ChangeGroupBuilder>());
   private DiffEditorComponentsGroup myDiffEditorsGroup = new DiffEditorComponentsGroup();
   private MergeContextState myStateToRestore;
@@ -96,14 +96,14 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     myResultEditor.unhighlightAllChanges();
     myRepositoryEditor.unhighlightAllChanges();
 
-    if (myResultEditor.getEditedNode() == null) {
+    if (myResultEditor.getMainEditor().getEditedNode() == null) {
       SNode node = myMergeContext.getResultModel().getNodeById(myRootId);
       if (node != null) {
-        myResultEditor.editNode(node, myOperationContext);
+        myResultEditor.getMainEditor().editNode(node, myOperationContext);
       }
     }
 
-    myResultEditor.rebuildEditorContent();
+    myResultEditor.getMainEditor().rebuildEditorContent();
 
     ListSequence.fromList(myChangeGroupBuilders).visitAll(new IVisitor<ChangeGroupBuilder>() {
       public void visit(ChangeGroupBuilder b) {
@@ -130,7 +130,7 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     myRepositoryEditor.repaintAndRebuildEditorMessages();
   }
 
-  private void higlightChange(DiffEditorComponent diffEditor, SModel model, ModelChange change) {
+  private void higlightChange(DiffEditor diffEditor, SModel model, ModelChange change) {
     diffEditor.highlightChange(new ChangeEditorMessage(model, change, diffEditor) {
       @Override
       public boolean isConflicted() {
@@ -160,17 +160,17 @@ public class MergeRootsDialog extends BaseDialog implements EditorMessageOwner {
     ), changeGroupBuilder, inspector);
   }
 
-  private DiffEditorComponent addEditor(int index, SModel model) {
+  private DiffEditor addEditor(int index, SModel model) {
     SNode node = model.getNodeById(myRootId);
-    final DiffEditorComponent result = new DiffEditorComponent(myOperationContext, node);
-    result.editNode(node, myOperationContext);
+    final DiffEditor result = new DiffEditor(myOperationContext, node);
+    result.getMainEditor().editNode(node, myOperationContext);
     result.setReadOnly(true);
 
     JPanel panel = new JPanel(new BorderLayout());
     JLabel title = new JLabel(myModelsDialog.getContentTitles()[index]);
     title.setToolTipText(myModelsDialog.getContentTitles()[index]);
     panel.add(title, BorderLayout.NORTH);
-    panel.add(result.getExternalComponent(), BorderLayout.CENTER);
+    panel.add(result.getMainEditor().getExternalComponent(), BorderLayout.CENTER);
     panel.setPreferredSize(new Dimension());
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?

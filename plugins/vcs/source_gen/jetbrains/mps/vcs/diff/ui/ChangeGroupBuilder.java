@@ -26,16 +26,16 @@ public class ChangeGroupBuilder {
   private MergeContext myMergeContext;
   private ChangeSet myChangeSet;
   private boolean myInspector = false;
-  private DiffEditorComponent myLeftEditorComponent;
-  private DiffEditorComponent myRightEditorComponent;
+  private DiffEditor myLeftEditor;
+  private DiffEditor myRightEditor;
   private List<ChangeGroup> myChangeGroups = null;
   private List<ChangeGroupInvalidateListener> myInvalidateListeners = ListSequence.fromList(new ArrayList<ChangeGroupInvalidateListener>());
 
-  public ChangeGroupBuilder(MergeContext mergeContext, ChangeSet changeSet, DiffEditorComponent leftEditorComponent, DiffEditorComponent rightEditorComponent, boolean inspector) {
+  public ChangeGroupBuilder(MergeContext mergeContext, ChangeSet changeSet, DiffEditor leftEditor, DiffEditor rightEditor, boolean inspector) {
     myMergeContext = mergeContext;
     myChangeSet = changeSet;
-    myLeftEditorComponent = leftEditorComponent;
-    myRightEditorComponent = rightEditorComponent;
+    myLeftEditor = leftEditor;
+    myRightEditor = rightEditor;
     myInspector = inspector;
     if (myInspector) {
       EditorComponent.RebuildListener rebuildListener = new EditorComponent.RebuildListener() {
@@ -43,23 +43,17 @@ public class ChangeGroupBuilder {
           invalidate();
         }
       };
-      myLeftEditorComponent.getInspector().addRebuildListener(rebuildListener);
-      myRightEditorComponent.getInspector().addRebuildListener(rebuildListener);
+      myLeftEditor.getInspector().addRebuildListener(rebuildListener);
+      myRightEditor.getInspector().addRebuildListener(rebuildListener);
     }
   }
 
   public EditorComponent getLeftComponent() {
-    return (myInspector ?
-      myLeftEditorComponent.getInspector() :
-      myLeftEditorComponent
-    );
+    return myLeftEditor.getEditorComponent(myInspector);
   }
 
   public EditorComponent getRightComponent() {
-    return (myInspector ?
-      myRightEditorComponent.getInspector() :
-      myRightEditorComponent
-    );
+    return myRightEditor.getEditorComponent(myInspector);
   }
 
   private void calculateChangeGroups() {
@@ -68,8 +62,8 @@ public class ChangeGroupBuilder {
     final Map<ModelChange, Integer> rightStarts = MapSequence.fromMap(new HashMap<ModelChange, Integer>());
     final Map<ModelChange, Integer> rightEnds = MapSequence.fromMap(new HashMap<ModelChange, Integer>());
     for (ModelChange change : ListSequence.fromList(myChangeSet.getModelChanges())) {
-      ChangeEditorMessage leftMessage = myLeftEditorComponent.getMessageForChange(change);
-      ChangeEditorMessage rightMessage = myRightEditorComponent.getMessageForChange(change);
+      ChangeEditorMessage leftMessage = myLeftEditor.getMessageForChange(change);
+      ChangeEditorMessage rightMessage = myRightEditor.getMessageForChange(change);
 
       int leftStart = -1;
       int rightStart = -1;
@@ -152,14 +146,6 @@ public class ChangeGroupBuilder {
         it.changeGroupsInvalidated();
       }
     });
-  }
-
-  public DiffEditorComponent getLeftDiffEditorComponent() {
-    return myLeftEditorComponent;
-  }
-
-  public DiffEditorComponent getRightDiffEditorComponent() {
-    return myRightEditorComponent;
   }
 
   public MergeContext getMergeContext() {
