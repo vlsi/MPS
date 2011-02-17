@@ -1059,7 +1059,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myEditorContext;
   }
 
-  public abstract EditorCell createRootCell();
+  public EditorCell createRootCell() {
+    return createRootCell(null);
+  }
 
   protected abstract EditorCell createRootCell(List<SModelEvent> events);
 

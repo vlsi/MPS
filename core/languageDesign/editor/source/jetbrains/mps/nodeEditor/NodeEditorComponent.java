@@ -130,10 +130,6 @@ public class NodeEditorComponent extends EditorComponent {
     }
   }
 
-  public EditorCell createRootCell() {
-    return createRootCell(null);
-  }
-
   public EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditedNode().isDeleted()) {
       EditorContext editorContext = getEditorContext();

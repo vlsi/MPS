@@ -58,10 +58,6 @@ public class UIEditorComponent extends EditorComponent {
     return getEditorContext().createRootCell(getEditedNode(), events);
   }
 
-  public EditorCell createRootCell() {
-    return createRootCell(null);
-  }
-
   @Override
   public void dispose() {
     super.dispose();
