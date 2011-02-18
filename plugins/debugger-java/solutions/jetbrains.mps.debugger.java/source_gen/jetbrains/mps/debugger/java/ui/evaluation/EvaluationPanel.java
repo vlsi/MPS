@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.ui.evaluation;
 
 import javax.swing.JTabbedPane;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
-import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.nodeEditor.Highlighter;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;

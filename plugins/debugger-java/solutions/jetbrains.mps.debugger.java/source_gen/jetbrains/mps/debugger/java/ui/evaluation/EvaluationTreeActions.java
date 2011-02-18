@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.ui.evaluation;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debugger.java.evaluation.EvaluationProvider;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons;

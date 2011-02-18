@@ -5,7 +5,7 @@ package jetbrains.mps.debugger.java.ui.evaluation;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.evaluation.EvaluationProvider;
-import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 
 public class EvaluationDialog extends AbstractEvaluationDialog {

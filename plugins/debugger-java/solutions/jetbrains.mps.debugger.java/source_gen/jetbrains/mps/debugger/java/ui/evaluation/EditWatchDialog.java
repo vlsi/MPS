@@ -7,7 +7,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debugger.java.evaluation.EvaluationProvider;
-import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 
 public class EditWatchDialog extends AbstractEvaluationDialog {

@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.ui.evaluation;
 
 import jetbrains.mps.debug.runtime.SessionStopDisposer;
 import jetbrains.mps.debugger.java.evaluation.EvaluationProvider;
-import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;

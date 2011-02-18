@@ -5,7 +5,7 @@ package jetbrains.mps.debugger.java.ui.evaluation;
 import javax.swing.JPanel;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.DataKey;
-import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debug.runtime.DebugSession;
 import org.jetbrains.annotations.NotNull;
 import java.awt.BorderLayout;
