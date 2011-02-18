@@ -5,6 +5,9 @@ package jetbrains.mps.lang.textGen.structure;
 import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration implem
   public static final String CONCEPT_DECLARATION = "conceptDeclaration";
   public static final String EXTENSION = "extension";
   public static final String TEXT_GEN_BLOCK = "textGenBlock";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConceptTextGenDeclaration(SNode node) {
     super(node);
@@ -68,6 +72,26 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration implem
 
   public void setTextGenBlock(GenerateTextDeclaration node) {
     super.setChild(ConceptTextGenDeclaration.TEXT_GEN_BLOCK, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ConceptTextGenDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConceptTextGenDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConceptTextGenDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConceptTextGenDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConceptTextGenDeclaration._$ATTRIBUTE, node);
   }
 
   public static ConceptTextGenDeclaration newInstance(SModel sm, boolean init) {

@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.overloadedOperators.structure;
 import jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class LeftOperand extends ConceptFunctionParameter implements INamedConce
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public LeftOperand(SNode node) {
     super(node);
@@ -50,6 +54,26 @@ public class LeftOperand extends ConceptFunctionParameter implements INamedConce
 
   public void setVirtualPackage(String value) {
     this.setProperty(LeftOperand.VIRTUAL_PACKAGE, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(LeftOperand._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, LeftOperand._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, LeftOperand._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(LeftOperand._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, LeftOperand._$ATTRIBUTE, node);
   }
 
   public static LeftOperand newInstance(SModel sm, boolean init) {

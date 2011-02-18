@@ -55,7 +55,12 @@ public class JavaCompiler {
     org.eclipse.jdt.internal.compiler.Compiler c = new Compiler(new MyNameEnvironment(classPath), new MyErrorHandlingPolicy(), options, new MyCompilerRequestor(), new DefaultProblemFactory(), null);
     //c.options.verbose = true;
 
-    c.compile(myCompilationUnits.values().toArray(new CompilationUnit[0]));
+    try {
+      c.compile(myCompilationUnits.values().toArray(new CompilationUnit[0]));
+    }
+    catch (RuntimeException ex) {
+      onFatalError(ex.getMessage());
+    }
   }
 
   public ClassLoader getClassLoader(ClassLoader parent) {
@@ -144,6 +149,12 @@ public class JavaCompiler {
   private void onClass(ClassFile f) {
     for (CompilationResultListener l : myCompilationResultListeners) {
       l.onClass(f);
+    }
+  }
+
+  private void onFatalError(String error) {
+    for (CompilationResultListener l : myCompilationResultListeners) {
+      l.onFatalError(error);
     }
   }
 

@@ -181,9 +181,9 @@
                       <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="8892289062514412793">
                         <link role="variable" roleId="tp2q.1153944258490" targetNodeId="8892289062514412784" resolveInfo="intMethod" />
                       </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="8892289062514412794">
-                        <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.NodeAttributeAccessQualifier" typeId="tp25.1204763358057" id="8892289062514412795">
-                          <link role="annotationLink" roleId="tp25.1204763443606" targetNodeId="gw7r.332248429538005857" resolveInfo="PreconditionLink" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188518137">
+                        <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="3071170492188518138">
+                          <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="gw7r.332248429538005856" resolveInfo="MethodConditions" />
                         </node>
                       </node>
                     </node>

@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +22,7 @@ public class ProjectDescription extends BaseConcept implements INamedConcept {
   public static final String CYCLE = "cycle";
   public static final String COMMON_CLASSPATH = "commonClasspath";
   public static final String MACRO = "macro";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ProjectDescription(SNode node) {
     super(node);
@@ -124,6 +126,26 @@ public class ProjectDescription extends BaseConcept implements INamedConcept {
 
   public void insertMacro(Macros prev, Macros node) {
     this.insertChild(prev, ProjectDescription.MACRO, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ProjectDescription._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ProjectDescription._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ProjectDescription._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ProjectDescription._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ProjectDescription._$ATTRIBUTE, node);
   }
 
   public static ProjectDescription newInstance(SModel sm, boolean init) {

@@ -5,6 +5,9 @@ package jetbrains.mps.lang.plugin.structure;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class ExecutionConsoleStatement extends Statement implements ExecuteSpeci
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONSOLE_COMPONENT = "consoleComponent";
   public static final String DISPOSE_BLOCK = "disposeBlock";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ExecutionConsoleStatement(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class ExecutionConsoleStatement extends Statement implements ExecuteSpeci
 
   public void setDisposeBlock(DisposeConsoleBlock node) {
     super.setChild(ExecutionConsoleStatement.DISPOSE_BLOCK, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ExecutionConsoleStatement._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ExecutionConsoleStatement._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ExecutionConsoleStatement._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ExecutionConsoleStatement._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ExecutionConsoleStatement._$ATTRIBUTE, node);
   }
 
   public static ExecutionConsoleStatement newInstance(SModel sm, boolean init) {

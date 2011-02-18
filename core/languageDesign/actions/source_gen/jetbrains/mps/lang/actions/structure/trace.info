@@ -88,31 +88,31 @@
   <unitInfo fileName="PastePostProcessor.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.PastePostProcessor" />
   <unitInfo fileName="Side_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Side_PropertySupport" />
   <unitInfo fileName="SideTransformTag_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformTag_PropertySupport" />
-  <unitInfo fileName="QueryFunction_SideTransform_Icon.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon" />
-  <unitInfo fileName="QueryFunction_SideTransform_String.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String" />
   <unitInfo fileName="WrapperSubstituteMenuPart.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart" />
-  <unitInfo fileName="QueryFunction_ParameterizedSubstitute_String.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String" />
-  <unitInfo fileName="QueryFunction_SubstituteString.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString" />
   <unitInfo fileName="PasteWrapper.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.PasteWrapper" />
   <unitInfo fileName="NodeFactory.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NodeFactory" />
   <unitInfo fileName="ConceptPart.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.ConceptPart" />
   <unitInfo fileName="Side.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Side" />
   <unitInfo fileName="SimpleSideTransformMenuPart.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" />
-  <unitInfo fileName="Substitute_SimpleString.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Substitute_SimpleString" />
-  <unitInfo fileName="SideTransform_SimpleString.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" />
   <unitInfo fileName="SimpleItemSubstitutePart.java" startLine="10" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart" />
-  <unitInfo fileName="SmartActionParameter.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SmartActionParameter" />
+  <unitInfo fileName="QueryFunction_SideTransform_Icon.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon" />
+  <unitInfo fileName="QueryFunction_SideTransform_String.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String" />
+  <unitInfo fileName="QueryFunction_ParameterizedSubstitute_String.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String" />
+  <unitInfo fileName="QueryFunction_SubstituteString.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString" />
   <unitInfo fileName="SideTransformTag.java" startLine="9" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformTag" />
   <unitInfo fileName="ParameterizedSideTransformMenuPart.java" startLine="11" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart" />
   <unitInfo fileName="ParameterizedSubstituteMenuPart.java" startLine="11" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart" />
   <unitInfo fileName="GenerateCodeAction.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.GenerateCodeAction" />
-  <unitInfo fileName="PasteWrappers.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.PasteWrappers" />
-  <unitInfo fileName="NodeFactories.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NodeFactories" />
-  <unitInfo fileName="SideTransformHintSubstituteActions.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" />
-  <unitInfo fileName="NodeSubstituteActions.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" />
-  <unitInfo fileName="SmartEditorActions.java" startLine="14" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SmartEditorActions" />
+  <unitInfo fileName="Substitute_SimpleString.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Substitute_SimpleString" />
+  <unitInfo fileName="SideTransform_SimpleString.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" />
+  <unitInfo fileName="SmartActionParameter.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SmartActionParameter" />
   <unitInfo fileName="NodeSubstituteActionsBuilder.java" startLine="14" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" />
-  <unitInfo fileName="CopyPasteHandlers.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.CopyPasteHandlers" />
+  <unitInfo fileName="PasteWrappers.java" startLine="16" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.PasteWrappers" />
+  <unitInfo fileName="NodeFactories.java" startLine="16" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NodeFactories" />
+  <unitInfo fileName="SideTransformHintSubstituteActions.java" startLine="16" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" />
+  <unitInfo fileName="NodeSubstituteActions.java" startLine="16" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" />
   <unitInfo fileName="SideTransformHintSubstituteActionsBuilder.java" startLine="14" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" />
+  <unitInfo fileName="SmartEditorActions.java" startLine="15" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SmartEditorActions" />
+  <unitInfo fileName="CopyPasteHandlers.java" startLine="16" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.CopyPasteHandlers" />
 </debugInfo>
 

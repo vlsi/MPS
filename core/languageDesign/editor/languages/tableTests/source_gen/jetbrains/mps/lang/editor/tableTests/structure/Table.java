@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -22,6 +23,7 @@ public class Table extends BaseConcept implements INamedConcept {
   public static final String INITIAL_ROW_COUNT = "initialRowCount";
   public static final String INITIAL_COLUMN_COUNT = "initialColumnCount";
   public static final String ROWS = "rows";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Table(SNode node) {
     super(node);
@@ -93,6 +95,26 @@ public class Table extends BaseConcept implements INamedConcept {
 
   public void insertRows(Row prev, Row node) {
     this.insertChild(prev, Table.ROWS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Table._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Table._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Table._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Table._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Table._$ATTRIBUTE, node);
   }
 
   public static Table newInstance(SModel sm, boolean init) {

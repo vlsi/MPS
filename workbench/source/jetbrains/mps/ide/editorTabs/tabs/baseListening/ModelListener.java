@@ -43,6 +43,11 @@ public abstract class ModelListener {
 
   //------event&callback------
 
+  public void clearAspects(){
+    stopListening();
+    startListening();
+  }
+
   public void aspectAdded(SNode node) {
     SModelDescriptor descriptor = node.getModel().getModelDescriptor();
     if (!myImportantNodes.containsKey(descriptor.getSModelReference())) {
@@ -69,7 +74,7 @@ public abstract class ModelListener {
   }
 
   private class ModelRemovedAdapter extends SModelRepositoryAdapter {
-    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+    public void modelDeleted(SModelDescriptor modelDescriptor) {
       SModelReference ref = modelDescriptor.getSModelReference();
       if (!myImportantNodes.containsKey(ref)) return;
 

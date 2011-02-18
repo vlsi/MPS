@@ -2,10 +2,10 @@
 <debugInfo>
   <unitInfo fileName="MatrixType_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.behavior.MatrixType_Behavior" />
   <root nodeId="1215414020889">
-    <nodeInfo nodeId="1215414028678" fileName="MatrixType_Behavior.java" startLine="12" startPosition="78" endLine="13" endPosition="75" />
-    <nodeInfo nodeId="1215414028689" fileName="MatrixType_Behavior.java" startLine="14" startPosition="25" endLine="15" endPosition="23" />
-    <nodeInfo nodeId="1215414028691" fileName="MatrixType_Behavior.java" startLine="16" startPosition="5" endLine="17" endPosition="34" />
-    <nodeInfo nodeId="1215414028684" fileName="MatrixType_Behavior.java" startLine="13" startPosition="75" endLine="16" endPosition="5" />
+    <nodeInfo nodeId="1215414028678" fileName="MatrixType_Behavior.java" startLine="12" startPosition="78" endLine="13" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215414028689" fileName="MatrixType_Behavior.java" startLine="14" startPosition="25" endLine="15" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215414028691" fileName="MatrixType_Behavior.java" startLine="16" startPosition="5" endLine="17" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215414028684" fileName="MatrixType_Behavior.java" startLine="13" startPosition="75" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1215414020891" fileName="MatrixType_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="1215414028688" fileName="MatrixType_Behavior.java" startLine="14" startPosition="25" endLine="15" endPosition="23" />
     <scopeInfo nodeId="1215414028677" fileName="MatrixType_Behavior.java" startLine="12" startPosition="78" endLine="17" endPosition="34">

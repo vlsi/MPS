@@ -20,6 +20,7 @@ import jetbrains.mps.ide.actions.*;
 public class ProjectPaneActionGroups {
   public static final String PROJECT_PANE_NODE_ACTIONS = NodeActions_ActionGroup.ID;
   public static final String PROJECT_PANE_MODEL_ACTIONS = ModelActions_ActionGroup.ID;
+  public static final String PROJECT_PANE_MODULE_ACTIONS = ModuleActions_ActionGroup.ID;
   public static final String PROJECT_PANE_LANGUAGE_ACTIONS = LanguageActions_ActionGroup.ID;
   public static final String PROJECT_PANE_DEVKIT_ACTIONS = DevkitActions_ActionGroup.ID;
   public static final String PROJECT_PANE_PROJECT_ACTIONS = ProjectActions_ActionGroup.ID;
@@ -29,10 +30,18 @@ public class ProjectPaneActionGroups {
   public static final String PROJECT_PANE_PACKAGE_ACTIONS = PackageActions_ActionGroup.ID;
   public static final String PROJECT_PANE_NAMESPACE_ACTIONS = NamespaceActions_ActionGroup.ID;
   public static final String PROJECT_PANE_RUNTIME_FOLDER_ACTIONS = RuntimeFolderActions_ActionGroup.ID;
-  public static final String PROJECT_PANE_ACCESSORIES_ACTIONS = AccessoriesGroupActions_ActionGroup.ID;
+
+  // FIXME hardcoded action ID
+  public static final String PROJECT_PANE_ACCESSORIES_ACTIONS = "jetbrains.mps.ide.devkit.actions.AccessoriesGroupActions_ActionGroup";
+
+  public static final String PROJECT_PANE_FILE_ACTIONS = FileActions_ActionGroup.ID;
+  public static final String PROJECT_PANE_FOLDER_ACTIONS = FolderActions_ActionGroup.ID;
 
   public static final String PROJECT_NEW_ACTIONS = ProjectNewActions_ActionGroup.ID;
   public static final String SOLUTION_NEW_ACTIONS = SolutionNewActions_ActionGroup.ID;
-  public static final String LANGUAGE_NEW_ACTIONS = LanguageNewActions_ActionGroup.ID;
-  public static final String GENERATOR_NEW_ACTIONS = GeneratorNewActions_ActionGroup.ID;
+
+  // FIXME hardcoded action ID
+  public static final String LANGUAGE_NEW_ACTIONS = "jetbrains.mps.ide.devkit.actions.LanguageNewActions_ActionGroup";
+  // FIXME hardcoded action ID
+  public static final String GENERATOR_NEW_ACTIONS = "jetbrains.mps.ide.devkit.actions.GeneratorNewActions_ActionGroup";
 }

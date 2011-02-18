@@ -5,6 +5,7 @@ package jetbrains.mps.bash.structure;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +19,7 @@ public class IfCommand extends AbstractCommand implements ICompoundCommand {
   public static final String IF_TRUE = "ifTrue";
   public static final String IF_FALSE = "ifFalse";
   public static final String ELSE_IF = "elseIf";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public IfCommand(SNode node) {
     super(node);
@@ -89,6 +91,26 @@ public class IfCommand extends AbstractCommand implements ICompoundCommand {
 
   public void insertElseIf(ElifCommand prev, ElifCommand node) {
     this.insertChild(prev, IfCommand.ELSE_IF, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(IfCommand._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, IfCommand._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, IfCommand._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(IfCommand._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, IfCommand._$ATTRIBUTE, node);
   }
 
   public static IfCommand newInstance(SModel sm, boolean init) {

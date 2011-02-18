@@ -36,7 +36,7 @@ public class TypeCheckingContext {
   private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
 
   @NotNull
-  protected NodeTypesComponent myNodeTypesComponent;
+  private INodeTypesComponent myNodeTypesComponent;
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
 
@@ -59,6 +59,10 @@ public class TypeCheckingContext {
     myNodeTypesComponent = new NodeTypesComponent(rootNode, typeChecker, this);
     myTypeChecker = typeChecker;
     myRootNode = rootNode;
+  }
+
+  public TypeCheckingContext() {
+    //only for new typeSystem
   }
 
   public SubtypingManager getSubtypingManager() {
@@ -129,7 +133,7 @@ public class TypeCheckingContext {
 
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
     getNodeTypesComponent().reportTypeError(nodeWithError, errorReporter);
-    getNodeTypesComponent().addDependcyOnCurrent(nodeWithError, false);
+    getNodeTypesComponent().addDependencyOnCurrent(nodeWithError, false);
   }
   //~
 
@@ -156,13 +160,13 @@ public class TypeCheckingContext {
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     if (node == null) return null;
     SNode type = null;
-    NodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
+    INodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
       currentTypesComponent.addNodeToFrontier(node);
       currentTypesComponent.typeOfNodeCalled(node);
       if (addDependency) {
-        currentTypesComponent.addDependcyOnCurrent(node);
+        currentTypesComponent.addDependencyOnCurrent(node);
       }
       //--- for diagnostics:
       if (ruleModel != null && ruleId != null) {
@@ -219,74 +223,6 @@ public class TypeCheckingContext {
   }
 
   @Deprecated
-  public void createEquation(SNode node1,
-                             IWrapper wrapper2,
-                             SNode nodeToCheck,
-                             String errorString,
-                             String ruleModel,
-                             String ruleId,
-                             QuickFixProvider intentionProvider) {
-    EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
-    getCurrentSlicer().beforeUserEquationAdded(node1, wrapper2.getNode(), equationInfo);
-    EquationManager equationManager = getNodeTypesComponent().getEquationManager();
-    equationManager.addEquation(
-      NodeWrapper.fromNode(node1, equationManager),
-      wrapper2,
-      equationInfo);
-  }
-
-  @Deprecated
-  public void createEquation(IWrapper wrapper1,
-                             SNode node2,
-                             SNode nodeToCheck,
-                             String errorString,
-                             String ruleModel,
-                             String ruleId,
-                             QuickFixProvider intentionProvider) {
-    EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
-    getCurrentSlicer().beforeUserEquationAdded(wrapper1.getNode(), node2, equationInfo);
-    EquationManager equationManager = getNodeTypesComponent().getEquationManager();
-    equationManager.addEquation(
-      wrapper1,
-      NodeWrapper.fromNode(node2, equationManager),
-      equationInfo);
-  }
-
-  @Deprecated
-  public void createEquation(IWrapper wrapper1,
-                             IWrapper wrapper2,
-                             SNode nodeToCheck,
-                             String errorString,
-                             String ruleModel,
-                             String ruleId,
-                             QuickFixProvider intentionProvider) {
-    EquationInfo equationInfo = new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider);
-    getCurrentSlicer().beforeUserEquationAdded(wrapper1.getNode(), wrapper2.getNode(), equationInfo);
-    getNodeTypesComponent().getEquationManager().addEquation(
-      wrapper1,
-      wrapper2,
-      equationInfo);
-  }
-
-  @Deprecated
-  public void createLessThanInequation(SNode node1,
-                                       SNode node2,
-                                       SNode nodeToCheck,
-                                       String errorString,
-                                       String ruleModel,
-                                       String ruleId,
-                                       boolean checkOnly,
-                                       int inequationPriority,
-                                       QuickFixProvider intentionProvider) {
-    getNodeTypesComponent().getEquationManager().addInequation(
-      node1,
-      node2,
-      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, inequationPriority, intentionProvider),
-      true,
-      checkOnly);
-  }
-
-  @Deprecated
   public void createLessThanInequationStrong(SNode node1,
                                              SNode node2,
                                              SNode nodeToCheck,
@@ -334,21 +270,6 @@ public class TypeCheckingContext {
       node1,
       node2,
       new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
-  }
-
-  @Deprecated
-  public void createComparableEquationStrong(SNode node1,
-                                             SNode node2,
-                                             SNode nodeToCheck,
-                                             String errorString,
-                                             String ruleModel,
-                                             String ruleId,
-                                             QuickFixProvider intentionProvider) {
-    getNodeTypesComponent().getEquationManager().addInequationComparable(
-      node1,
-      node2,
-      new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider),
-      false);
   }
 
   //new eqs
@@ -546,11 +467,11 @@ public class TypeCheckingContext {
     return myRootNode;
   }
 
-  public NodeTypesComponent getNodeTypesComponent() {
+  public INodeTypesComponent getNodeTypesComponent() {
     return myNodeTypesComponent;
   }
 
-  public NodeTypesComponent getBaseNodeTypesComponent() {
+  public INodeTypesComponent getBaseNodeTypesComponent() {
     return myNodeTypesComponent;
   }
 
@@ -576,7 +497,7 @@ public class TypeCheckingContext {
 
   /*package*/ SNode computeTypeInferenceMode(SNode node) {
     synchronized (TYPECHECKING_LOCK) {
-      final NodeTypesComponent temporaryComponent;
+      final INodeTypesComponent temporaryComponent;
       temporaryComponent = getNodeTypesComponent();
       return temporaryComponent.computeTypesForNodeInferenceMode(node);
     }

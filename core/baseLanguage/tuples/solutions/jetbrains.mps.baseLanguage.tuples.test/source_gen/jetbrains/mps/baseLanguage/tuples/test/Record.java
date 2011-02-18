@@ -44,6 +44,6 @@ public class Record extends MultiTuple._3<String, Integer, Float> {
   }
 
   public String toString() {
-    return this.name() + ":" + this.age() + ":" + this.size();
+    return this.name() + ":" + (int) this.age() + ":" + (float) this.size();
   }
 }

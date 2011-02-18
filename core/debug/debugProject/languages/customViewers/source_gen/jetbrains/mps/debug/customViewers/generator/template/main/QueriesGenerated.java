@@ -20,7 +20,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -243,52 +245,52 @@ public class QueriesGenerated {
   }
 
   public static void mapSrcMacro_post_mapper_721063219978405017(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("toProcessMethod"), "jetbrains.mps.debug.customViewers.structure.ToProcessMethod");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.customViewers.structure.ToProcessMethod")), "jetbrains.mps.debug.customViewers.structure.ToProcessMethod");
   }
 
   public static void mapSrcMacro_post_mapper_721063219978405039(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("toProcessMethod"), "jetbrains.mps.debug.customViewers.structure.ToProcessMethod");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.customViewers.structure.ToProcessMethod")), "jetbrains.mps.debug.customViewers.structure.ToProcessMethod");
   }
 
   public static void mapSrcMacro_post_mapper_721063219978402837(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("toProcessMethod"), "jetbrains.mps.debug.customViewers.structure.ToProcessMethod");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.customViewers.structure.ToProcessMethod")), "jetbrains.mps.debug.customViewers.structure.ToProcessMethod");
   }
 
   public static void mapSrcMacro_post_mapper_1123500463147192694(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_5639218245806456017(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_6772833964096462904(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_5639218245806455992(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_5639218245806446718(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_1464575230816145950(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mapSrcMacro_post_mapper_8256349518541671180(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
     ListSequence.fromList(SNodeOperations.getDescendants(_context.getOutputNode(), null, false, new String[]{})).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        SLinkOperations.setNewChild(it, AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+        AttributeOperations.createAndSetAttrbiute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
       }
     });
   }
 
   public static void mapSrcMacro_post_mapper_1855642807426525752(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+    AttributeOperations.createAndSetAttrbiute(_context.getOutputNode(), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation")), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
   }
 
   public static void mappingScript_CodeBlock_264293128390891135(final IOperationContext operationContext, final MappingScriptContext _context) {
@@ -296,7 +298,7 @@ public class QueriesGenerated {
       if (eq_x583g4_a0a0a0a36(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a36().createNode(), "classifier", false)) && SPropertyOperations.getString(classConcept, "name").endsWith("_WrapperFactory")) {
         for (SNode method : ListSequence.fromList(SNodeOperations.getDescendants(classConcept, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("toProcessMethod"), true) != null);
+            return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.customViewers.structure.ToProcessMethod"))) != null);
           }
         })) {
           if ((method == null)) {

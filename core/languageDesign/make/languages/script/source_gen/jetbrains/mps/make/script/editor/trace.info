@@ -9,12 +9,14 @@
   <unitInfo fileName="AdvanceWorkStatement_Editor.java" startLine="134" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.make.script.editor.AdvanceWorkStatement_Editor$_Inline_wnrqtk_a3a" />
   <unitInfo fileName="ExpectedOption_Editor.java" startLine="106" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.make.script.editor.ExpectedOption_Editor$optionListHandler_97k2fj_a3a" />
   <unitInfo fileName="ResultStatement_Editor.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.make.script.editor.ResultStatement_Editor" />
+  <unitInfo fileName="Option_unmakeDefault.java" startLine="23" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.make.script.editor.Option_unmakeDefault$Option_unmakeDefault_Action0" />
   <unitInfo fileName="JobDeclaration_Editor.java" startLine="233" startPosition="0" endLine="285" endPosition="0" unitName="jetbrains.mps.make.script.editor.JobDeclaration_Editor$queryListHandler_e0yr07_b1a" />
-  <unitInfo fileName="Option_Editor.java" startLine="17" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.make.script.editor.Option_Editor" />
+  <unitInfo fileName="Option_unmakeDefault.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.make.script.editor.Option_unmakeDefault" />
   <unitInfo fileName="OutputResources_Editor.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.make.script.editor.OutputResources_Editor" />
   <unitInfo fileName="RelayQueryExpression_Editor.java" startLine="145" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.make.script.editor.RelayQueryExpression_Editor$parameterListHandler_ne0cce_d0" />
   <unitInfo fileName="OptionExpression_Editor.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.make.script.editor.OptionExpression_Editor" />
   <unitInfo fileName="Text_Editor.java" startLine="20" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.make.script.editor.Text_Editor" />
+  <unitInfo fileName="Option_Editor.java" startLine="23" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.make.script.editor.Option_Editor" />
   <unitInfo fileName="ReportFeedbackStatement_Editor.java" startLine="19" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.make.script.editor.ReportFeedbackStatement_Editor" />
   <unitInfo fileName="FinishWorkStatement_Editor.java" startLine="20" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.make.script.editor.FinishWorkStatement_Editor" />
   <unitInfo fileName="QueryDefinition_Editor.java" startLine="19" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.make.script.editor.QueryDefinition_Editor" />
@@ -24,6 +26,12 @@
   <unitInfo fileName="AdvanceWorkStatement_Editor.java" startLine="21" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.make.script.editor.AdvanceWorkStatement_Editor" />
   <unitInfo fileName="RelayQueryExpression_Editor.java" startLine="32" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.make.script.editor.RelayQueryExpression_Editor" />
   <unitInfo fileName="JobDeclaration_Editor.java" startLine="31" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.make.script.editor.JobDeclaration_Editor" />
+  <root nodeId="3681941909241126195">
+    <nodeInfo nodeId="3681941909241126203" fileName="Option_unmakeDefault.java" startLine="56" startPosition="152" endLine="57" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3681941909241126226" fileName="Option_unmakeDefault.java" startLine="60" startPosition="146" endLine="61" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="3681941909241126202" fileName="Option_unmakeDefault.java" startLine="56" startPosition="152" endLine="57" endPosition="210" />
+    <scopeInfo nodeId="3681941909241126199" fileName="Option_unmakeDefault.java" startLine="60" startPosition="146" endLine="61" endPosition="163" />
+  </root>
   <root nodeId="505095865854384112">
     <nodeInfo nodeId="127305800529604612" fileName="JobDeclaration_Editor.java" startLine="209" startPosition="111" endLine="210" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="127305800529604649" fileName="JobDeclaration_Editor.java" startLine="213" startPosition="112" endLine="214" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -37,6 +45,10 @@
     <scopeInfo nodeId="1977954644795396336" fileName="JobDeclaration_Editor.java" startLine="221" startPosition="111" endLine="222" endPosition="69" />
     <scopeInfo nodeId="1977954644795396350" fileName="JobDeclaration_Editor.java" startLine="225" startPosition="112" endLine="226" endPosition="69" />
     <scopeInfo nodeId="1977954644795396365" fileName="JobDeclaration_Editor.java" startLine="229" startPosition="111" endLine="230" endPosition="69" />
+  </root>
+  <root nodeId="505095865854429724">
+    <nodeInfo nodeId="3681941909241125997" fileName="Option_Editor.java" startLine="95" startPosition="111" endLine="96" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="3681941909241118337" fileName="Option_Editor.java" startLine="95" startPosition="111" endLine="96" endPosition="208" />
   </root>
 </debugInfo>
 

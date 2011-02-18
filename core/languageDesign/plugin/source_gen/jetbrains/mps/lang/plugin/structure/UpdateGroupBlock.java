@@ -4,6 +4,9 @@ package jetbrains.mps.lang.plugin.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class UpdateGroupBlock extends BaseConcept implements GroupContents {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String UPDATE_FUNCTION = "updateFunction";
   public static final String ENUMERATE_FUNCTION = "enumerateFunction";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public UpdateGroupBlock(SNode node) {
     super(node);
@@ -58,6 +62,26 @@ public class UpdateGroupBlock extends BaseConcept implements GroupContents {
 
   public void setEnumerateFunction(EnumerateChildrenFunction node) {
     super.setChild(UpdateGroupBlock.ENUMERATE_FUNCTION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(UpdateGroupBlock._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, UpdateGroupBlock._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, UpdateGroupBlock._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(UpdateGroupBlock._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, UpdateGroupBlock._$ATTRIBUTE, node);
   }
 
   public static UpdateGroupBlock newInstance(SModel sm, boolean init) {

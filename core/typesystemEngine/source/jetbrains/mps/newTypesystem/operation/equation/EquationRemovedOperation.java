@@ -23,14 +23,11 @@ import jetbrains.mps.smodel.SNode;
  * User: Ilya.Lintsbakh
  * Date: Oct 8, 2010
  * Time: 1:17:49 PM
- * To change this template use File | Settings | File Templates.
  */
 public class EquationRemovedOperation extends AbstractEquationOperation {
 
   public EquationRemovedOperation(SNode child, SNode parent, SNode source) {
-    myChild = child;
-    myParent = parent;
-    mySource = source;
+    super(child, parent, source, null);
   }
 
   @Override
@@ -46,13 +43,5 @@ public class EquationRemovedOperation extends AbstractEquationOperation {
   @Override
   public String getPresentation() {
     return "Equation removed " + getShortPresentation();
-  }
-
-  public SNode getChild() {
-    return myChild;
-  }
-
-  public SNode getParent() {
-    return myParent;
   }
 }

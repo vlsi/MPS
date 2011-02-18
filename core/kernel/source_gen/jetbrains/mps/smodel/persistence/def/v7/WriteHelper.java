@@ -87,7 +87,8 @@ public class WriteHelper {
     return genReferenceString(ref, nodeId.toString());
   }
 
-  public String genReferenceId(SNode node) {
+  @NotNull
+  public String genReferenceId(@NotNull SNode node) {
     return genReferenceId(SNodeOperations.getModel(node).getSModelReference(), node.getSNodeId());
   }
 
@@ -112,15 +113,19 @@ public class WriteHelper {
   }
 
   public String genRoleId(@NotNull SNode node) {
-    SNode roleLink = node.getRoleLink();
-    return (roleLink != null ?
-      genReferenceId(roleLink) :
-      null
+    SNode linkDecl = node.getRoleLink();
+    return ((linkDecl == null) ?
+      null :
+      genReferenceId(linkDecl)
     );
   }
 
   public String genRoleId(@NotNull SReference ref) {
-    return genReferenceId(ref.getSourceNode().getLinkDeclaration(ref.getRole()));
+    SNode linkDecl = ref.getSourceNode().getLinkDeclaration(ref.getRole());
+    return ((linkDecl == null) ?
+      null :
+      genReferenceId(linkDecl)
+    );
   }
 
   public String genName(@NotNull SNode node, @NotNull String prop) {
@@ -128,7 +133,11 @@ public class WriteHelper {
   }
 
   public String genNameId(@NotNull SNode node, @NotNull String prop) {
-    return genReferenceId(node.getPropertyDeclaration(prop));
+    SNode propDecl = node.getPropertyDeclaration(prop);
+    return ((propDecl == null) ?
+      null :
+      genReferenceId(propDecl)
+    );
   }
 
   public String genTarget(@NotNull SReference ref) {

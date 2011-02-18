@@ -6,6 +6,7 @@ import jetbrains.mps.lang.textGen.structure.UnitConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -28,6 +29,7 @@ public class ClassConcept extends Classifier implements IBLDeprecatable, UnitCon
   public static final String STATIC_METHOD = "staticMethod";
   public static final String IMPLEMENTED_INTERFACE = "implementedInterface";
   public static final String PROPERTY = "property";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ClassConcept(SNode node) {
     super(node);
@@ -219,6 +221,26 @@ public class ClassConcept extends Classifier implements IBLDeprecatable, UnitCon
 
   public void insertProperty(Property prev, Property node) {
     this.insertChild(prev, ClassConcept.PROPERTY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ClassConcept._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ClassConcept._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ClassConcept._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ClassConcept._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ClassConcept._$ATTRIBUTE, node);
   }
 
   public static ClassConcept newInstance(SModel sm, boolean init) {

@@ -52,14 +52,24 @@ public class QuickFixAdapter extends BaseIntention  {
 
   public void execute(SNode node, EditorContext editorContext) {
     EditorCell selectedCell = editorContext.getSelectedCell();
-    SNode selectedNode = selectedCell.getSNode();
-    Integer caretPosition = null;
-    if (selectedCell instanceof EditorCell_Label) {
-      caretPosition = ((EditorCell_Label)selectedCell).getCaretPosition();
+    int caretX = -1;
+    int caretY = -1;
+    boolean restoreCaretPosition = false;
+    if (selectedCell != null && selectedCell.getSNode().getAncestors(true).contains(node)) {
+      caretX = selectedCell.getCaretX();
+      caretY = selectedCell.getBaseline();
+      restoreCaretPosition= true;
     }
-    Pair<SNode, Integer> wasSelected = new Pair<SNode, Integer>(selectedNode, caretPosition);
     myQuickFix.execute(node);
-    // quickFix.setSelection(node, editorContext, wasSelected);
+    if (restoreCaretPosition) {
+      editorContext.flushEvents();
+      EditorCell rootCell = editorContext.getNodeEditorComponent().getRootCell();
+      EditorCell leaf = rootCell.findLeaf(caretX, caretY);
+      if (leaf != null) {
+        editorContext.getNodeEditorComponent().changeSelection(leaf);
+        leaf.setCaretX(caretX);
+      }
+    }
   }
 
   public IntentionType getType() {

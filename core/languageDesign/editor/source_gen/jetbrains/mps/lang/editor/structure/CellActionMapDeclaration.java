@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +22,7 @@ public class CellActionMapDeclaration extends BaseConcept implements INamedConce
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String APPLICABLE_CONCEPT = "applicableConcept";
   public static final String ITEM = "item";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public CellActionMapDeclaration(SNode node) {
     super(node);
@@ -84,6 +86,26 @@ public class CellActionMapDeclaration extends BaseConcept implements INamedConce
 
   public void insertItem(CellActionMapItem prev, CellActionMapItem node) {
     this.insertChild(prev, CellActionMapDeclaration.ITEM, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(CellActionMapDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, CellActionMapDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, CellActionMapDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(CellActionMapDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CellActionMapDeclaration._$ATTRIBUTE, node);
   }
 
   public static CellActionMapDeclaration newInstance(SModel sm, boolean init) {

@@ -5,6 +5,6 @@
   <unitInfo fileName="MigrationScriptPart_node.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" />
   <unitInfo fileName="MigrationScriptPart_Instance_Predicate.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" />
   <unitInfo fileName="MigrationScriptPart_Instance.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" />
-  <unitInfo fileName="MigrationScript.java" startLine="14" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.script.structure.MigrationScript" />
+  <unitInfo fileName="MigrationScript.java" startLine="15" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.lang.script.structure.MigrationScript" />
 </debugInfo>
 

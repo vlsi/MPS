@@ -4,6 +4,9 @@ package jetbrains.mps.lang.refactoring.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -14,6 +17,7 @@ public class RefactoringParameterReference extends Expression implements Refacto
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String REFACTORING_PARAMETER = "refactoringParameter";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public RefactoringParameterReference(SNode node) {
     super(node);
@@ -49,6 +53,26 @@ public class RefactoringParameterReference extends Expression implements Refacto
 
   public void setRefactoringParameter(RefactoringParameter node) {
     super.setReferent(RefactoringParameterReference.REFACTORING_PARAMETER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(RefactoringParameterReference._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, RefactoringParameterReference._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, RefactoringParameterReference._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(RefactoringParameterReference._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, RefactoringParameterReference._$ATTRIBUTE, node);
   }
 
   public static RefactoringParameterReference newInstance(SModel sm, boolean init) {

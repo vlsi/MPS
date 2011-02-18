@@ -27,10 +27,9 @@ import java.util.List;
  * User: Ilya.Lintsbakh
  * Date: Sep 10, 2010
  * Time: 6:11:49 PM
- * To change this template use File | Settings | File Templates.
  */
 public abstract class AbstractOperation {
-  protected List<AbstractOperation> myConsequences;
+  private List<AbstractOperation> myConsequences;
   protected SNode mySource = null;
   protected EquationInfo myEquationInfo = null;
 
@@ -53,7 +52,7 @@ public abstract class AbstractOperation {
 
   protected abstract void doRedo(State state);
 
-  public void undo(final jetbrains.mps.newTypesystem.state.State state) {
+  public void undo(final State state) {
     state.executeStateChangeAction(new Runnable() {
       @Override
       public void run() {
@@ -62,7 +61,7 @@ public abstract class AbstractOperation {
     });
   }
 
-  public void redo(final jetbrains.mps.newTypesystem.state.State state) {
+  public void redo(final State state) {
     state.executeStateChangeAction(new Runnable() {
       @Override
       public void run() {
@@ -76,9 +75,7 @@ public abstract class AbstractOperation {
     redo(state);
   }
 
-  public String getPresentation() {
-    return "";
-  }
+  public abstract String getPresentation();
 
   public String getShortPresentation() {
     return "";

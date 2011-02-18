@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +21,7 @@ public class ChildAspectDefinition extends BaseConcept implements INamedConcept 
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String OPTIONAL = "optional";
   public static final String ASPECT_TYPE = "aspectType";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ChildAspectDefinition(SNode node) {
     super(node);
@@ -69,6 +73,26 @@ public class ChildAspectDefinition extends BaseConcept implements INamedConcept 
 
   public void setAspectType(Type node) {
     super.setChild(ChildAspectDefinition.ASPECT_TYPE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ChildAspectDefinition._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ChildAspectDefinition._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ChildAspectDefinition._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ChildAspectDefinition._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ChildAspectDefinition._$ATTRIBUTE, node);
   }
 
   public static ChildAspectDefinition newInstance(SModel sm, boolean init) {

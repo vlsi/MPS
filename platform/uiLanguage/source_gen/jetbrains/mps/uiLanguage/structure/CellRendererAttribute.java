@@ -5,6 +5,9 @@ package jetbrains.mps.uiLanguage.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class CellRendererAttribute extends BaseConcept implements IComponentPart
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RENDERER = "renderer";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public CellRendererAttribute(SNode node) {
     super(node);
@@ -50,6 +54,26 @@ public class CellRendererAttribute extends BaseConcept implements IComponentPart
 
   public void setRenderer(Expression node) {
     super.setChild(CellRendererAttribute.RENDERER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(CellRendererAttribute._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, CellRendererAttribute._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, CellRendererAttribute._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(CellRendererAttribute._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CellRendererAttribute._$ATTRIBUTE, node);
   }
 
   public static CellRendererAttribute newInstance(SModel sm, boolean init) {

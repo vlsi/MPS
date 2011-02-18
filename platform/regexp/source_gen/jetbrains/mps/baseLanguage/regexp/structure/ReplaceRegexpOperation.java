@@ -7,6 +7,7 @@ import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -22,6 +23,7 @@ public class ReplaceRegexpOperation extends BaseConcept implements IOperation {
   public static final String GLOBAL_REPLACE = "globalReplace";
   public static final String SEARCH = "search";
   public static final String REPLACEMENT = "replacement";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ReplaceRegexpOperation(SNode node) {
     super(node);
@@ -109,6 +111,26 @@ public class ReplaceRegexpOperation extends BaseConcept implements IOperation {
 
   public void insertReplacement(Replacement prev, Replacement node) {
     this.insertChild(prev, ReplaceRegexpOperation.REPLACEMENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ReplaceRegexpOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ReplaceRegexpOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ReplaceRegexpOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ReplaceRegexpOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ReplaceRegexpOperation._$ATTRIBUTE, node);
   }
 
   public static ReplaceRegexpOperation newInstance(SModel sm, boolean init) {

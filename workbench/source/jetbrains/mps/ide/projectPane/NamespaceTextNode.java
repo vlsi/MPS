@@ -17,7 +17,6 @@ package jetbrains.mps.ide.projectPane;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.ide.actions.NewLanguage_Action;
 import jetbrains.mps.ide.actions.NewModel_Action;
 import jetbrains.mps.ide.actions.NewSolution_Action;
 import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNodeBuilder;
@@ -87,7 +86,8 @@ public class NamespaceTextNode extends TextTreeNode {
 
     if (hasModulesUnder) {
       newGroup.add(new NewSolution_Action(myName));
-      newGroup.add(new NewLanguage_Action(myName));
+      // FIXME
+      //newGroup.add(new NewLanguage_Action(myName));
     }
     if (hasModelsUnder && hasModulesUnder) {
       newGroup.addSeparator();

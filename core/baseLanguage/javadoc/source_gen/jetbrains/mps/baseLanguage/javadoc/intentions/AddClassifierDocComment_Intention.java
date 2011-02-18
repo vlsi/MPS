@@ -6,11 +6,13 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -37,7 +39,7 @@ public class AddClassifierDocComment_Intention extends BaseIntention implements 
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), true) == null) ?
+    return ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))) == null) ?
       "Add Documentation Comment" :
       "Remove Documentation Comment"
     );
@@ -55,18 +57,18 @@ public class AddClassifierDocComment_Intention extends BaseIntention implements 
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), true) != null)) {
-      SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), null, true);
+    if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))) != null)) {
+      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), null);
       return;
     }
 
-    SNodeFactoryOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment");
+    SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment");
 
     //  Type variables 
     for (SNode typeVariableDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true))) {
       SNode paramTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
       SLinkOperations.setTarget(paramTag, "parameter", new AddClassifierDocComment_Intention.QuotationClass_nmk0m3_a2a1a5a7().createNode(typeVariableDeclaration), true);
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), true), "param", true)).addElement(paramTag);
+      ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))), "param", true)).addElement(paramTag);
     }
   }
 

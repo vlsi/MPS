@@ -18,19 +18,20 @@
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" file="BaseDocComment.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.NodeAttribute" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference" file="BaseDocReference.java">

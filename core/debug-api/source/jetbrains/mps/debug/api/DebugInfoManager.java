@@ -25,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.TraceInfoManager;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.util.Mapper;

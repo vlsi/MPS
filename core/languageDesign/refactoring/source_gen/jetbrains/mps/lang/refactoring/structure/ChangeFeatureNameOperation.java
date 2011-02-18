@@ -5,6 +5,9 @@ package jetbrains.mps.lang.refactoring.structure;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class ChangeFeatureNameOperation extends Statement implements Refactoring
   public static final String FEATURE = "feature";
   public static final String NEW_CONCEPT_F_Q_NAME = "newConceptFQName";
   public static final String NEW_FEATURE_NAME = "newFeatureName";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ChangeFeatureNameOperation(SNode node) {
     super(node);
@@ -68,6 +72,26 @@ public class ChangeFeatureNameOperation extends Statement implements Refactoring
 
   public void setNewFeatureName(Expression node) {
     super.setChild(ChangeFeatureNameOperation.NEW_FEATURE_NAME, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ChangeFeatureNameOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ChangeFeatureNameOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ChangeFeatureNameOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ChangeFeatureNameOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ChangeFeatureNameOperation._$ATTRIBUTE, node);
   }
 
   public static ChangeFeatureNameOperation newInstance(SModel sm, boolean init) {

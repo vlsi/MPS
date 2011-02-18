@@ -173,11 +173,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
         MPSModuleRepository.getInstance().removeUnusedModules();
         SModelRepository.getInstance().removeUnusedDescriptors();
         if (reloadAll) {
-          boolean standardMode = !MPSCore.getInstance().isTestMode();
-          if (standardMode) {
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+        } else {
+          if (!MPSCore.getInstance().isTestMode()) {
             ClassLoaderManager.getInstance().unloadAll(new EmptyProgressIndicator());
-          } else {
-            ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
           }
         }
 

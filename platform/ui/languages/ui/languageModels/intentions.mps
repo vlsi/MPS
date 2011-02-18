@@ -369,7 +369,8 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="2441084687258555757">
               <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2441084687258555760">
                 <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2441084687258555762">
-                  <node role="propertyAntiquotation$property_attribute$value" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="2441084687258555763">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="2441084687258555763">
+                    <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
                     <node role="expression" roleId="tp3r.1196350785111" type="tp3j.IntentionParameter" typeId="tp3j.1240322627579" id="2441084687258555765" />
                   </node>
                 </node>

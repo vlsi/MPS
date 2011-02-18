@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,6 +19,7 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NAME = "name";
   public static final String COMPONENT_DECLARATION = "componentDeclaration";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String CONTENT = "content";
 
   public ComponentInstance(SNode node) {
@@ -62,6 +64,26 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
 
   public void setComponentDeclaration(ComponentDeclaration node) {
     super.setReferent(ComponentInstance.COMPONENT_DECLARATION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ComponentInstance._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ComponentInstance._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ComponentInstance._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ComponentInstance._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ComponentInstance._$ATTRIBUTE, node);
   }
 
   public int getContentsCount() {

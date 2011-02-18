@@ -49,6 +49,8 @@ import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePaneCopyPr
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePanePasteProvider;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.AbstractFileTreeNode;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.FolderTreeNode;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.ModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -61,6 +63,8 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.ChangedListener;
 import jetbrains.mps.vcs.GlobalClassPathIndex;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -70,6 +74,7 @@ import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 import javax.swing.Timer;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.event.*;
 import java.util.LinkedList;
@@ -84,7 +89,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private final IdeDocumentHistory myIdeDocumentHistory;
   private final ProjectView myProjectView;
   private final FileEditorManager myEditorManager;
- 
+
   private ChangeListListener myChangeListListener;
   private MessageBusConnection myMessageBusConnection;
   private FileStatusListener myFileStatusListener;
@@ -299,8 +304,27 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       return new FilePanePasteProvider();
     } else if (PlatformDataKeys.CUT_PROVIDER.getName().equals(dataId)) {
       return new FilePaneCopyProvider();
+    } else if (dataId.equals(MPSDataKeys.PLACE.getName())) {
+      TreeNode treeNode = getSelectedTreeNode(TreeNode.class);
+      if (treeNode instanceof ModuleTreeNode) {
+        return ActionPlace.PROJECT_PANE_MODULE;
+      } else if (treeNode instanceof FileTreeNode) {
+        return ActionPlace.PROJECT_PANE_FILE;
+      } else if (treeNode instanceof FolderTreeNode) {
+        return ActionPlace.PROJECT_PANE_FOLDER;
+      }
     }
+
     return super.getData(dataId);
+  }
+
+  //todo eliminate code duplication in BaseLogicalViewProjectPane
+  private <T extends TreeNode> T getSelectedTreeNode(Class<T> nodeClass) {
+    TreePath selectionPath = getTree().getSelectionPath();
+    if (selectionPath == null) return null;
+    Object selectedNode = selectionPath.getLastPathComponent();
+    if (!(nodeClass.isInstance(selectedNode))) return null;
+    return (T) selectedNode;
   }
 
   private void openEditor() {
@@ -324,7 +348,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     ToolWindow projectViewToolWindow = windowManager.getToolWindow(ToolWindowId.PROJECT_VIEW);
     projectViewToolWindow.activate(new Runnable() {
       public void run() {
-      myProjectView.changeView(getId());
+        myProjectView.changeView(getId());
         MPSTreeNode nodeToSelect = getNode(file);
 
         if (nodeToSelect != null) {

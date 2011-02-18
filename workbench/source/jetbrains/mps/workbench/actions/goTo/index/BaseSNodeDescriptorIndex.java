@@ -24,15 +24,10 @@ import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
 import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.SNodeDescriptor;
@@ -103,7 +98,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
           SModel model = doModelParsing(inputData);
 
           for (final SNode node : getRootsToIterate(model)) {
-            String persistentName = node.getPersistentProperty(INamedConcept.NAME);
+            String persistentName = node.getPersistentProperty(SNodeUtil.property_INamedConcept_name);
             String nodeName = (persistentName == null) ? "null" : persistentName;
             String conceptFqName = node.getConceptFqName();
             SModelReference modelRef = model.getSModelReference();

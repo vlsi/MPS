@@ -28,6 +28,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;

@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +19,7 @@ public class Order extends BaseConcept implements OrderConstraints, INamedConcep
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NAME = "name";
   public static final String TAB = "tab";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Order(SNode node) {
     super(node);
@@ -73,6 +75,26 @@ public class Order extends BaseConcept implements OrderConstraints, INamedConcep
 
   public void insertTab(EditorTabReference prev, EditorTabReference node) {
     this.insertChild(prev, Order.TAB, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Order._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Order._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Order._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Order._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Order._$ATTRIBUTE, node);
   }
 
   public static Order newInstance(SModel sm, boolean init) {

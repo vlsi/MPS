@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String VISIBILITY = "visibility";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public StaticMethodDeclaration(SNode node) {
     super(node);
@@ -58,6 +62,26 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
 
   public void setVisibility(Visibility node) {
     super.setChild(StaticMethodDeclaration.VISIBILITY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(StaticMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, StaticMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, StaticMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(StaticMethodDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, StaticMethodDeclaration._$ATTRIBUTE, node);
   }
 
   public static StaticMethodDeclaration newInstance(SModel sm, boolean init) {

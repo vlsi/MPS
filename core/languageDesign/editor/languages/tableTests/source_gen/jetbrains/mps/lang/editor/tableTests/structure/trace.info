@@ -8,14 +8,14 @@
   <unitInfo fileName="HierarchycalTable.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.HierarchycalTable" />
   <unitInfo fileName="Row.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.Row" />
   <unitInfo fileName="Transition.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.Transition" />
-  <unitInfo fileName="State.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.State" />
-  <unitInfo fileName="Event.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.Event" />
-  <unitInfo fileName="ContentElement.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.ContentElement" />
-  <unitInfo fileName="YElement.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.YElement" />
-  <unitInfo fileName="XElement.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.XElement" />
+  <unitInfo fileName="State.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.State" />
+  <unitInfo fileName="Event.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.Event" />
+  <unitInfo fileName="ContentElement.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.ContentElement" />
+  <unitInfo fileName="YElement.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.YElement" />
+  <unitInfo fileName="XElement.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.XElement" />
   <unitInfo fileName="UltimateContainer.java" startLine="13" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.UltimateContainer" />
-  <unitInfo fileName="Table.java" startLine="14" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.Table" />
-  <unitInfo fileName="Matrix.java" startLine="14" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.Matrix" />
-  <unitInfo fileName="StateMachine.java" startLine="14" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.StateMachine" />
+  <unitInfo fileName="Table.java" startLine="15" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.Table" />
+  <unitInfo fileName="Matrix.java" startLine="15" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.Matrix" />
+  <unitInfo fileName="StateMachine.java" startLine="15" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.structure.StateMachine" />
 </debugInfo>
 

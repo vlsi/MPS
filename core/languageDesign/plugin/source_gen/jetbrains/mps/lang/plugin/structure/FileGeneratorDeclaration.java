@@ -10,6 +10,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration;
 import java.util.List;
 import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -26,6 +27,7 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
   public static final String OVERRIDES_DEFAULT_BLOCK = "overridesDefaultBlock";
   public static final String METHOD = "method";
   public static final String FIELD = "field";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FileGeneratorDeclaration(SNode node) {
     super(node);
@@ -133,6 +135,26 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
 
   public void insertField(DefaultClassifierFieldDeclaration prev, DefaultClassifierFieldDeclaration node) {
     this.insertChild(prev, FileGeneratorDeclaration.FIELD, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(FileGeneratorDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FileGeneratorDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FileGeneratorDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(FileGeneratorDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FileGeneratorDeclaration._$ATTRIBUTE, node);
   }
 
   public static FileGeneratorDeclaration newInstance(SModel sm, boolean init) {

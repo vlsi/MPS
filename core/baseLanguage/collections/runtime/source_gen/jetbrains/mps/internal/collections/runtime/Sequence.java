@@ -249,6 +249,11 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
   }
 
   public static <U> ISequence<U> fromArray(U... array) {
+    if (USE_NULL_SEQUENCE) {
+      if (array == null) {
+        return NullSequence.instance();
+      }
+    }
     return new BasicSequence<U>(Arrays.asList(array));
   }
 

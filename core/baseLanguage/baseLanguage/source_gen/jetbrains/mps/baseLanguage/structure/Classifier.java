@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.IContainer;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -26,6 +27,7 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   public static final String METHOD = "method";
   public static final String STATIC_INNER_CLASSIFIERS = "staticInnerClassifiers";
   public static final String ANNOTATION = "annotation";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Classifier(SNode node) {
     super(node);
@@ -181,6 +183,26 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
 
   public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
     this.insertChild(prev, Classifier.ANNOTATION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Classifier._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Classifier._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Classifier._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Classifier._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Classifier._$ATTRIBUTE, node);
   }
 
   public static Classifier newInstance(SModel sm, boolean init) {

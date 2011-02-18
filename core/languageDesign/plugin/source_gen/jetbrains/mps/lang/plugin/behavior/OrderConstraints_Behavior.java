@@ -7,13 +7,22 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class OrderConstraints_Behavior {
+  private static Class[] PARAMETERS_3038738109029048953 = {SNode.class};
   private static Class[] PARAMETERS_1499919975383879508 = {SNode.class ,SNode.class};
 
   public static void init(SNode thisNode) {
   }
 
+  public static SNode call_getOrder_3038738109029048953(SNode thisNode) {
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048953);
+  }
+
   public static boolean call_presents_1499919975383879508(SNode thisNode, SNode tab) {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), "virtual_presents_1499919975383879508", PARAMETERS_1499919975383879508, tab);
+  }
+
+  public static SNode callSuper_getOrder_3038738109029048953(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), callerConceptFqName, "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048953);
   }
 
   public static boolean callSuper_presents_1499919975383879508(SNode thisNode, String callerConceptFqName, SNode tab) {

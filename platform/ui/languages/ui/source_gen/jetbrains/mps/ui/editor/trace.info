@@ -62,27 +62,27 @@
   <unitInfo fileName="ContainerType_Editor.java" startLine="22" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.ui.editor.ContainerType_Editor" />
   <unitInfo fileName="common_UIObjectStatement.java" startLine="29" startPosition="0" endLine="371" endPosition="0" unitName="jetbrains.mps.ui.editor.common_UIObjectStatement" />
   <root nodeId="4981225789808358127">
-    <nodeInfo nodeId="4981225789808358170" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IterateContentsStatement_Editor.java" startLine="173" startPosition="111" endLine="174" endPosition="72" />
+    <nodeInfo nodeId="4981225789808358170" fileName="IterateContentsStatement_Editor.java" startLine="173" startPosition="111" endLine="174" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="4981225789808358169" fileName="IterateContentsStatement_Editor.java" startLine="173" startPosition="111" endLine="174" endPosition="72" />
   </root>
   <root nodeId="4981225789808358216">
-    <nodeInfo nodeId="4981225789808372691" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IterateContentsVariable_Editor.java" startLine="65" startPosition="100" endLine="66" endPosition="78" />
-    <nodeInfo nodeId="4981225789808372700" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IterateContentsVariable_Editor.java" startLine="67" startPosition="129" endLine="68" endPosition="240" />
-    <nodeInfo nodeId="4981225789808372716" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IterateContentsVariable_Editor.java" startLine="69" startPosition="7" endLine="70" endPosition="23" />
-    <nodeInfo nodeId="4981225789808372698" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IterateContentsVariable_Editor.java" startLine="66" startPosition="78" endLine="69" endPosition="7" />
+    <nodeInfo nodeId="4981225789808372691" fileName="IterateContentsVariable_Editor.java" startLine="65" startPosition="100" endLine="66" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4981225789808372700" fileName="IterateContentsVariable_Editor.java" startLine="67" startPosition="129" endLine="68" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4981225789808372716" fileName="IterateContentsVariable_Editor.java" startLine="69" startPosition="7" endLine="70" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4981225789808372698" fileName="IterateContentsVariable_Editor.java" startLine="66" startPosition="78" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="4981225789808372699" fileName="IterateContentsVariable_Editor.java" startLine="67" startPosition="129" endLine="68" endPosition="240" />
     <scopeInfo nodeId="4981225789808372690" fileName="IterateContentsVariable_Editor.java" startLine="65" startPosition="100" endLine="70" endPosition="23">
       <varInfo nodeId="4981225789808372692" varName="postfixes" />
     </scopeInfo>
   </root>
   <root nodeId="4981225789809472789">
-    <nodeInfo nodeId="513490887686042289" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="common_UIObjectStatement.java" startLine="141" startPosition="51" endLine="142" endPosition="68" />
-    <nodeInfo nodeId="513490887686042278" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="common_UIObjectStatement.java" startLine="140" startPosition="191" endLine="144" endPosition="0" />
-    <nodeInfo nodeId="513490887686042261" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="common_UIObjectStatement.java" startLine="139" startPosition="111" endLine="144" endPosition="20" />
+    <nodeInfo nodeId="513490887686042289" fileName="common_UIObjectStatement.java" startLine="141" startPosition="51" endLine="142" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="513490887686042278" fileName="common_UIObjectStatement.java" startLine="140" startPosition="191" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="513490887686042261" fileName="common_UIObjectStatement.java" startLine="139" startPosition="111" endLine="144" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="513490887686042279" fileName="common_UIObjectStatement.java" startLine="141" startPosition="51" endLine="142" endPosition="68" />
-    <scopeInfo nodeId="513490887686042278" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="common_UIObjectStatement.java" startLine="140" startPosition="191" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="513490887686042278" fileName="common_UIObjectStatement.java" startLine="140" startPosition="191" endLine="144" endPosition="0" />
     <scopeInfo nodeId="513490887686042260" fileName="common_UIObjectStatement.java" startLine="139" startPosition="111" endLine="144" endPosition="20" />
-    <unitInfo nodeId="513490887686042278" fileName="common_UIObjectStatement.java" startLine="140" startPosition="161" endLine="144" endPosition="5" unitName="jetbrains.mps.ui.editor.ITranslator2$anonymous" />
+    <unitInfo nodeId="513490887686042278" fileName="common_UIObjectStatement.java" startLine="140" startPosition="161" endLine="144" endPosition="5" unitName="jetbrains.mps.ui.editor.common_UIObjectStatement$1" />
   </root>
 </debugInfo>
 

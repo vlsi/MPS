@@ -10,7 +10,8 @@ import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class AddTestReferenceAnnotation_Intention extends BaseIntention implements Intention {
   public AddTestReferenceAnnotation_Intention() {
@@ -51,7 +52,7 @@ public class AddTestReferenceAnnotation_Intention extends BaseIntention implemen
     EditorCell cell = editorContext.getSelectedCell();
     String linkRole = QueriesUtil.getEditedLinkRole(cell);
     SNode referentNode = QueriesUtil.getEditedLinkReferentNode(cell);
-    SNode result = SNodeFactoryOperations.setNewChild(referentNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAnnotation", linkRole), "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion");
+    SNode result = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion"), linkRole), "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion");
   }
 
   public String getLocationString() {

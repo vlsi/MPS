@@ -237,6 +237,13 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       info("Compilation finished with errors.");
     }
 
+    @Override
+    public void onFatalError(String error) {
+      myHasErrors = true;
+      error("Fatal error: "+error);
+      info("Compilation aborted.");
+    }
+
     public boolean hasErrors() {
       return myHasErrors;
     }

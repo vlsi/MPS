@@ -22,4 +22,6 @@ public interface CompilationResultListener {
   void onCompilationResult(CompilationResult r);
 
   void onClass(ClassFile f);
+
+  void onFatalError (String error);
 }

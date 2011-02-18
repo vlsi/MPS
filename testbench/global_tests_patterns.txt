@@ -9,6 +9,7 @@
 +collections:jetbrains/mps/internalCollections/**/*Test.java
 +dates:jetbrains/mps/baseLanguage/dates/unittest/**/*Test.java
 +generator-engine:jetbrains/mps/generator/test/*Test.java
++generator-engine:jetbrains/mps/traceInfo/test/*Test.java
 +kernel:jetbrains/mps/make/**/*Test*.java
 +kernel:jetbrains/mps/diff/**/DiffTestCase.java
 +**/jetbrains/mps/makeTest/**/*Test.java

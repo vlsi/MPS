@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.runConfigurations.structure;
 
 import jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -13,6 +16,7 @@ public class Node_FunctionParameter extends ConceptFunctionParameter implements 
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Node_FunctionParameter(SNode node) {
     super(node);
@@ -40,6 +44,26 @@ public class Node_FunctionParameter extends ConceptFunctionParameter implements 
 
   public void setVirtualPackage(String value) {
     this.setProperty(Node_FunctionParameter.VIRTUAL_PACKAGE, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Node_FunctionParameter._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Node_FunctionParameter._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Node_FunctionParameter._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Node_FunctionParameter._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Node_FunctionParameter._$ATTRIBUTE, node);
   }
 
   public static Node_FunctionParameter newInstance(SModel sm, boolean init) {

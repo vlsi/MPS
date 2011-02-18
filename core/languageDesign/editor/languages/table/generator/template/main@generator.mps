@@ -155,7 +155,7 @@
                       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8562016843455411670">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8562016843455411671">
                           <node role="expression" roleId="tpee.1068581517676" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="8562016843455411676" />
-                          <node role="nodeMacro$attribute" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="8562016843455421177">
+                          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="8562016843455421177">
                             <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="8562016843455421178">
                               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8562016843455421179">
                                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8562016843455421180">
@@ -218,7 +218,8 @@
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3216977149571365618">
                   <property name="value" nameId="tpee.1070475926801" value="" />
-                  <node role="propertyMacro$property_attribute$value" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3216977149571365619">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="3216977149571365619">
+                    <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
                     <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="3216977149571365620">
                       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3216977149571365621">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3216977149571365622">
@@ -251,7 +252,7 @@
               <property name="name" nameId="tpck.1169194664001" value="i" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6189378527250534379" />
             </node>
-            <node role="nodeMacro$attribute" type="tpf8.IncludeMacro" typeId="tpf8.1194565793557" id="6189378527250534380">
+            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.IncludeMacro" typeId="tpf8.1194565793557" id="6189378527250534380">
               <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="tpc3.5170495790389304146" resolveInfo="template_cellSetupBlock" />
             </node>
           </node>
@@ -265,7 +266,7 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1210374656847927771" />
               </node>
             </node>
-            <node role="nodeMacro$attribute" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="1210374656847927772">
+            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="1210374656847927772">
               <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="tpc3.6287772348368334582" resolveInfo="template_cellSetSubstituteInfo" />
             </node>
           </node>
@@ -288,10 +289,11 @@
           <property name="name" nameId="tpck.1169194664001" value="node" />
           <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6189378527250534449" />
         </node>
-        <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="6189378527250534450">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="6189378527250534450">
           <link role="labelDeclaration" roleId="tpf8.1200916687663" targetNodeId="tpc3.1215478113347" resolveInfo="cellFactoryMethod" />
         </node>
-        <node role="propertyMacro$property_attribute$name" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="6189378527250534451">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="6189378527250534451">
+          <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
           <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="6189378527250534452">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6189378527250534453">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6189378527250534454">
@@ -328,7 +330,8 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkRefExpression" typeId="tp25.1226359078165" id="293523277269609045">
                       <link role="conceptDeclaration" roleId="tp25.1226359078166" targetNodeId="ohyq.4677325677876400523" resolveInfo="CellModel_Table" />
                       <link role="linkDeclaration" roleId="tp25.1226359192215" targetNodeId="ohyq.4490468428501048483" />
-                      <node role="referenceMacro$link_attribute$conceptDeclaration" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269610527">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269610527">
+                        <property name="linkRole" nameId="tpck.1757699476691236116" value="conceptDeclaration" />
                         <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="293523277269610528">
                           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="293523277269610529">
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="293523277269610530">
@@ -348,7 +351,8 @@
                           </node>
                         </node>
                       </node>
-                      <node role="referenceMacro$link_attribute$linkDeclaration" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269645360">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269645360">
+                        <property name="linkRole" nameId="tpck.1757699476691236116" value="linkDeclaration" />
                         <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="293523277269645361">
                           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="293523277269645362">
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="293523277269645363">
@@ -366,7 +370,8 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkRefExpression" typeId="tp25.1226359078165" id="293523277269645371">
                       <link role="conceptDeclaration" roleId="tp25.1226359078166" targetNodeId="ohyq.4677325677876400523" resolveInfo="CellModel_Table" />
                       <link role="linkDeclaration" roleId="tp25.1226359192215" targetNodeId="ohyq.4490468428501048483" />
-                      <node role="referenceMacro$link_attribute$conceptDeclaration" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269645372">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269645372">
+                        <property name="linkRole" nameId="tpck.1757699476691236116" value="conceptDeclaration" />
                         <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="293523277269645373">
                           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="293523277269645374">
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="293523277269645375">
@@ -386,7 +391,8 @@
                           </node>
                         </node>
                       </node>
-                      <node role="referenceMacro$link_attribute$linkDeclaration" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269645382">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269645382">
+                        <property name="linkRole" nameId="tpck.1757699476691236116" value="linkDeclaration" />
                         <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="293523277269645383">
                           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="293523277269645384">
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="293523277269645385">
@@ -404,7 +410,8 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkRefExpression" typeId="tp25.1226359078165" id="293523277269645390">
                       <link role="conceptDeclaration" roleId="tp25.1226359078166" targetNodeId="ohyq.4677325677876400523" resolveInfo="CellModel_Table" />
                       <link role="linkDeclaration" roleId="tp25.1226359192215" targetNodeId="ohyq.4490468428501048483" />
-                      <node role="referenceMacro$link_attribute$conceptDeclaration" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269645391">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269645391">
+                        <property name="linkRole" nameId="tpck.1757699476691236116" value="conceptDeclaration" />
                         <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="293523277269645392">
                           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="293523277269645393">
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="293523277269645394">
@@ -424,7 +431,8 @@
                           </node>
                         </node>
                       </node>
-                      <node role="referenceMacro$link_attribute$linkDeclaration" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269645401">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269645401">
+                        <property name="linkRole" nameId="tpck.1757699476691236116" value="linkDeclaration" />
                         <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="293523277269645402">
                           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="293523277269645403">
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="293523277269645404">

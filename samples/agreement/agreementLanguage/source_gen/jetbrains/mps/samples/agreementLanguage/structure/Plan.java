@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class Plan extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String VALUE = "value";
   public static final String EVENT = "event";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Plan(SNode node) {
     super(node);
@@ -94,6 +96,26 @@ public class Plan extends BaseConcept implements INamedConcept {
 
   public void insertEvent(Event prev, Event node) {
     this.insertChild(prev, Plan.EVENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Plan._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Plan._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Plan._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Plan._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Plan._$ATTRIBUTE, node);
   }
 
   public static Plan newInstance(SModel sm, boolean init) {

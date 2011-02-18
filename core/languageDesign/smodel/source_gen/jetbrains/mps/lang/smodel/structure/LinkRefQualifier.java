@@ -5,6 +5,9 @@ package jetbrains.mps.lang.smodel.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifie
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String LINK = "link";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public LinkRefQualifier(SNode node) {
     super(node);
@@ -50,6 +54,26 @@ public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifie
 
   public void setLink(LinkDeclaration node) {
     super.setReferent(LinkRefQualifier.LINK, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(LinkRefQualifier._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, LinkRefQualifier._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, LinkRefQualifier._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(LinkRefQualifier._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, LinkRefQualifier._$ATTRIBUTE, node);
   }
 
   public static LinkRefQualifier newInstance(SModel sm, boolean init) {

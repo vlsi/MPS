@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.textGen.structure.ScopeConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class CatchClause extends BaseConcept implements ScopeConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String THROWABLE = "throwable";
   public static final String CATCH_BODY = "catchBody";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public CatchClause(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class CatchClause extends BaseConcept implements ScopeConcept {
 
   public void setCatchBody(StatementList node) {
     super.setChild(CatchClause.CATCH_BODY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(CatchClause._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, CatchClause._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, CatchClause._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(CatchClause._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CatchClause._$ATTRIBUTE, node);
   }
 
   public static CatchClause newInstance(SModel sm, boolean init) {

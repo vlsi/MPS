@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +19,7 @@ public class DateTimePropertyConfiguration extends BaseConcept implements INamed
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DATE_TIME_PROPERTY_FORMAT_TYPE = "dateTimePropertyFormatType";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public DateTimePropertyConfiguration(SNode node) {
     super(node);
@@ -73,6 +75,26 @@ public class DateTimePropertyConfiguration extends BaseConcept implements INamed
 
   public void insertDateTimePropertyFormatType(DateTimePropertyFormatType prev, DateTimePropertyFormatType node) {
     this.insertChild(prev, DateTimePropertyConfiguration.DATE_TIME_PROPERTY_FORMAT_TYPE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(DateTimePropertyConfiguration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, DateTimePropertyConfiguration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, DateTimePropertyConfiguration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(DateTimePropertyConfiguration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DateTimePropertyConfiguration._$ATTRIBUTE, node);
   }
 
   public static DateTimePropertyConfiguration newInstance(SModel sm, boolean init) {

@@ -4936,9 +4936,9 @@
               <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpf8.1087833466690" resolveInfo="NodeMacro" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1206561988997">
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="1206561988998">
-                <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.NodeAttributeAccessQualifier" typeId="tp25.1204763358057" id="1206563137946">
-                  <link role="annotationLink" roleId="tp25.1204763443606" targetNodeId="tpf8.1149694500506" resolveInfo="nodeMacro" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188518057">
+                <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="3071170492188518058">
+                  <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="tpf8.1087833466690" resolveInfo="NodeMacro" />
                 </node>
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1206561989000">
@@ -4956,9 +4956,9 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1206563162231">
               <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetFirstOperation" typeId="tp2q.1165525191778" id="1206563162232" />
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1206563162233">
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="1206563162234">
-                  <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.NodeAttributeAccessQualifier" typeId="tp25.1204763358057" id="1206563162235">
-                    <link role="annotationLink" roleId="tp25.1204763443606" targetNodeId="tpf8.1149694500506" resolveInfo="nodeMacro" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517757">
+                  <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="3071170492188517758">
+                    <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="tpf8.1087833466690" resolveInfo="NodeMacro" />
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1206563162236">
@@ -4986,11 +4986,11 @@
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1087833241328" resolveInfo="PropertyMacro" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1206563216220">
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="1206563216221">
-                <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.PropertyAttributeAccessQualifier" typeId="tp25.1204832665472" id="1206563216222">
-                  <link role="annotationLink" roleId="tp25.1204832665473" targetNodeId="tpf8.1149694466802" resolveInfo="propertyMacro" />
-                  <node role="propertyQualifier" roleId="tp25.1204834178790" type="tp25.PropertyRefQualifier" typeId="tp25.1204837120311" id="1206563590178">
-                    <link role="property" roleId="tp25.1204837225594" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517734">
+                <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.PropertyAttributeQualifier" typeId="tp25.6407023681583040953" id="3071170492188517735">
+                  <link role="attributeConcept" roleId="tp25.6407023681583040954" targetNodeId="tpf8.1087833241328" resolveInfo="PropertyMacro" />
+                  <node role="propertyQualifier" roleId="tp25.6407023681583040955" type="tp25.PropertyQualifier" typeId="tp25.2788452359612124333" id="3071170492188517736">
+                    <link role="property" roleId="tp25.2788452359612124335" targetNodeId="tpck.1169194664001" resolveInfo="name" />
                   </node>
                 </node>
               </node>
@@ -5007,11 +5007,11 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1206563216228">
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="1206563216229" />
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1206563216230">
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="1206563216231">
-                  <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.PropertyAttributeAccessQualifier" typeId="tp25.1204832665472" id="1206563216232">
-                    <link role="annotationLink" roleId="tp25.1204832665473" targetNodeId="tpf8.1149694466802" resolveInfo="propertyMacro" />
-                    <node role="propertyQualifier" roleId="tp25.1204834178790" type="tp25.PropertyRefQualifier" typeId="tp25.1204837120311" id="1206563592304">
-                      <link role="property" roleId="tp25.1204837225594" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517977">
+                  <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.PropertyAttributeQualifier" typeId="tp25.6407023681583040953" id="3071170492188517978">
+                    <link role="attributeConcept" roleId="tp25.6407023681583040954" targetNodeId="tpf8.1087833241328" resolveInfo="PropertyMacro" />
+                    <node role="propertyQualifier" roleId="tp25.6407023681583040955" type="tp25.PropertyQualifier" typeId="tp25.2788452359612124333" id="3071170492188517979">
+                      <link role="property" roleId="tp25.2788452359612124335" targetNodeId="tpck.1169194664001" resolveInfo="name" />
                     </node>
                   </node>
                 </node>
@@ -5029,10 +5029,10 @@
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1087833241328" resolveInfo="PropertyMacro" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1206563679662">
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="1206563679663">
-                <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.PropertyAttributeAccessQualifier" typeId="tp25.1204832665472" id="1206563679664">
-                  <link role="annotationLink" roleId="tp25.1204832665473" targetNodeId="tpf8.1149694466802" resolveInfo="propertyMacro" />
-                  <node role="propertyQualifier" roleId="tp25.1204834178790" type="tp25.PoundExpression" typeId="tp25.1204834851141" id="1206563679665">
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517786">
+                <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.PropertyAttributeQualifier" typeId="tp25.6407023681583040953" id="3071170492188517787">
+                  <link role="attributeConcept" roleId="tp25.6407023681583040954" targetNodeId="tpf8.1087833241328" resolveInfo="PropertyMacro" />
+                  <node role="propertyQualifier" roleId="tp25.6407023681583040955" type="tp25.PoundExpression" typeId="tp25.1204834851141" id="1206563679665">
                     <node role="expression" roleId="tp25.1204834868751" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1206563679666">
                       <property name="value" nameId="tpee.1070475926801" value="name" />
                     </node>
@@ -5076,11 +5076,11 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1206566460900">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1206563707638" resolveInfo="node" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="1206566460901">
-                <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.PropertyAttributeAccessQualifier" typeId="tp25.1204832665472" id="1206566460902">
-                  <link role="annotationLink" roleId="tp25.1204832665473" targetNodeId="tpf8.1149694466802" resolveInfo="propertyMacro" />
-                  <node role="propertyQualifier" roleId="tp25.1204834178790" type="tp25.PropertyRefQualifier" typeId="tp25.1204837120311" id="1206566460903">
-                    <link role="property" roleId="tp25.1204837225594" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517833">
+                <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.PropertyAttributeQualifier" typeId="tp25.6407023681583040953" id="3071170492188517834">
+                  <link role="attributeConcept" roleId="tp25.6407023681583040954" targetNodeId="tpf8.1087833241328" resolveInfo="PropertyMacro" />
+                  <node role="propertyQualifier" roleId="tp25.6407023681583040955" type="tp25.PropertyQualifier" typeId="tp25.2788452359612124333" id="3071170492188517835">
+                    <link role="property" roleId="tp25.2788452359612124335" targetNodeId="tpck.1169194664001" resolveInfo="name" />
                   </node>
                 </node>
               </node>
@@ -5096,10 +5096,10 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1206563781517">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1206563707638" resolveInfo="node" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="1206563784645">
-                <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.PropertyAttributeAccessQualifier" typeId="tp25.1204832665472" id="1206563786881">
-                  <link role="annotationLink" roleId="tp25.1204832665473" targetNodeId="tpf8.1149694466802" resolveInfo="propertyMacro" />
-                  <node role="propertyQualifier" roleId="tp25.1204834178790" type="tp25.PoundExpression" typeId="tp25.1204834851141" id="1206563789179">
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517898">
+                <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.PropertyAttributeQualifier" typeId="tp25.6407023681583040953" id="3071170492188517899">
+                  <link role="attributeConcept" roleId="tp25.6407023681583040954" targetNodeId="tpf8.1087833241328" resolveInfo="PropertyMacro" />
+                  <node role="propertyQualifier" roleId="tp25.6407023681583040955" type="tp25.PoundExpression" typeId="tp25.1204834851141" id="1206563789179">
                     <node role="expression" roleId="tp25.1204834868751" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1206563791446">
                       <property name="value" nameId="tpee.1070475926801" value="name" />
                     </node>
@@ -5115,11 +5115,11 @@
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1206570208033">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1206563707638" resolveInfo="node" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="1206570211520">
-                <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.PropertyAttributeAccessQualifier" typeId="tp25.1204832665472" id="1206570214084">
-                  <link role="annotationLink" roleId="tp25.1204832665473" targetNodeId="tpf8.1149694466802" resolveInfo="propertyMacro" />
-                  <node role="propertyQualifier" roleId="tp25.1204834178790" type="tp25.PropertyRefQualifier" typeId="tp25.1204837120311" id="1206570217210">
-                    <link role="property" roleId="tp25.1204837225594" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517765">
+                <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.PropertyAttributeQualifier" typeId="tp25.6407023681583040953" id="3071170492188517766">
+                  <link role="attributeConcept" roleId="tp25.6407023681583040954" targetNodeId="tpf8.1087833241328" resolveInfo="PropertyMacro" />
+                  <node role="propertyQualifier" roleId="tp25.6407023681583040955" type="tp25.PropertyQualifier" typeId="tp25.2788452359612124333" id="3071170492188517767">
+                    <link role="property" roleId="tp25.2788452359612124335" targetNodeId="tpck.1169194664001" resolveInfo="name" />
                   </node>
                 </node>
               </node>
@@ -5151,11 +5151,11 @@
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1088761943574" resolveInfo="ReferenceMacro" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1206570365614">
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="1206570365615">
-                <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.LinkAttributeAccessQualifier" typeId="tp25.1204848911283" id="1206570365616">
-                  <link role="annotationLink" roleId="tp25.1204848911285" targetNodeId="tpf8.1149694518242" resolveInfo="referenceMacro" />
-                  <node role="linkQualifier" roleId="tp25.1204848911284" type="tp25.LinkRefQualifier" typeId="tp25.1204851882688" id="1219961794925">
-                    <link role="link" roleId="tp25.1204851882689" targetNodeId="tpee.1070568296581" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188518093">
+                <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.LinkAttributeQualifier" typeId="tp25.6407023681583036855" id="3071170492188518094">
+                  <link role="attributeConcept" roleId="tp25.6407023681583036856" targetNodeId="tpf8.1088761943574" resolveInfo="ReferenceMacro" />
+                  <node role="linkQualifier" roleId="tp25.6407023681583038098" type="tp25.LinkQualifier" typeId="tp25.2788452359612124332" id="3071170492188518095">
+                    <link role="link" roleId="tp25.2788452359612124336" targetNodeId="tpee.1070568296581" />
                   </node>
                 </node>
               </node>
@@ -5172,10 +5172,10 @@
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpf8.1088761943574" resolveInfo="ReferenceMacro" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1206570389107">
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="1206570389108">
-                <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.LinkAttributeAccessQualifier" typeId="tp25.1204848911283" id="1206570389109">
-                  <link role="annotationLink" roleId="tp25.1204848911285" targetNodeId="tpf8.1149694518242" resolveInfo="referenceMacro" />
-                  <node role="linkQualifier" roleId="tp25.1204848911284" type="tp25.PoundExpression" typeId="tp25.1204834851141" id="1206570392675">
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517655">
+                <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.LinkAttributeQualifier" typeId="tp25.6407023681583036855" id="3071170492188517656">
+                  <link role="attributeConcept" roleId="tp25.6407023681583036856" targetNodeId="tpf8.1088761943574" resolveInfo="ReferenceMacro" />
+                  <node role="linkQualifier" roleId="tp25.6407023681583038098" type="tp25.PoundExpression" typeId="tp25.1204834851141" id="1206570392675">
                     <node role="expression" roleId="tp25.1204834868751" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1206570398614">
                       <property name="value" nameId="tpee.1070475926801" value="localVariableDeclaration" />
                     </node>
@@ -5213,11 +5213,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1206570482230">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1206570507813">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1206570457536">
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="1206570457537">
-                <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.LinkAttributeAccessQualifier" typeId="tp25.1204848911283" id="1206570457538">
-                  <link role="annotationLink" roleId="tp25.1204848911285" targetNodeId="tpf8.1149694518242" resolveInfo="referenceMacro" />
-                  <node role="linkQualifier" roleId="tp25.1204848911284" type="tp25.LinkRefQualifier" typeId="tp25.1204851882688" id="1219961836817">
-                    <link role="link" roleId="tp25.1204851882689" targetNodeId="tpee.1070568296581" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517932">
+                <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.LinkAttributeQualifier" typeId="tp25.6407023681583036855" id="3071170492188517933">
+                  <link role="attributeConcept" roleId="tp25.6407023681583036856" targetNodeId="tpf8.1088761943574" resolveInfo="ReferenceMacro" />
+                  <node role="linkQualifier" roleId="tp25.6407023681583038098" type="tp25.LinkQualifier" typeId="tp25.2788452359612124332" id="3071170492188517934">
+                    <link role="link" roleId="tp25.2788452359612124336" targetNodeId="tpee.1070568296581" />
                   </node>
                 </node>
               </node>
@@ -5238,11 +5238,11 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1206570457534" resolveInfo="refMacro" />
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1206570564156">
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="1206570564157">
-                <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.LinkAttributeAccessQualifier" typeId="tp25.1204848911283" id="1206570564158">
-                  <link role="annotationLink" roleId="tp25.1204848911285" targetNodeId="tpf8.1149694518242" resolveInfo="referenceMacro" />
-                  <node role="linkQualifier" roleId="tp25.1204848911284" type="tp25.LinkRefQualifier" typeId="tp25.1204851882688" id="1219961846069">
-                    <link role="link" roleId="tp25.1204851882689" targetNodeId="tpee.1070568296581" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517879">
+                <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.LinkAttributeQualifier" typeId="tp25.6407023681583036855" id="3071170492188517880">
+                  <link role="attributeConcept" roleId="tp25.6407023681583036856" targetNodeId="tpf8.1088761943574" resolveInfo="ReferenceMacro" />
+                  <node role="linkQualifier" roleId="tp25.6407023681583038098" type="tp25.LinkQualifier" typeId="tp25.2788452359612124332" id="3071170492188517881">
+                    <link role="link" roleId="tp25.2788452359612124336" targetNodeId="tpee.1070568296581" />
                   </node>
                 </node>
               </node>
@@ -5258,10 +5258,10 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1206570457534" resolveInfo="refMacro" />
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1206570457544">
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="1206570457545">
-                <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.LinkAttributeAccessQualifier" typeId="tp25.1204848911283" id="1206570457546">
-                  <link role="annotationLink" roleId="tp25.1204848911285" targetNodeId="tpf8.1149694518242" resolveInfo="referenceMacro" />
-                  <node role="linkQualifier" roleId="tp25.1204848911284" type="tp25.PoundExpression" typeId="tp25.1204834851141" id="1206570457547">
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517782">
+                <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.LinkAttributeQualifier" typeId="tp25.6407023681583036855" id="3071170492188517783">
+                  <link role="attributeConcept" roleId="tp25.6407023681583036856" targetNodeId="tpf8.1088761943574" resolveInfo="ReferenceMacro" />
+                  <node role="linkQualifier" roleId="tp25.6407023681583038098" type="tp25.PoundExpression" typeId="tp25.1204834851141" id="1206570457547">
                     <node role="expression" roleId="tp25.1204834868751" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1206570457548">
                       <property name="value" nameId="tpee.1070475926801" value="localVariableDeclaration" />
                     </node>

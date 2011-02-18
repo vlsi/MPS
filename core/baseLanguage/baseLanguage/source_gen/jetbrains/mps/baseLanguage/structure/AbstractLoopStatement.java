@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.IContainer;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class AbstractLoopStatement extends Statement implements IContainer, ICon
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BODY = "body";
   public static final String LOOP_LABEL = "loopLabel";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AbstractLoopStatement(SNode node) {
     super(node);
@@ -67,6 +71,26 @@ public class AbstractLoopStatement extends Statement implements IContainer, ICon
 
   public void setLoopLabel(LoopLabel node) {
     super.setChild(AbstractLoopStatement.LOOP_LABEL, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AbstractLoopStatement._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AbstractLoopStatement._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AbstractLoopStatement._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AbstractLoopStatement._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AbstractLoopStatement._$ATTRIBUTE, node);
   }
 
   public static AbstractLoopStatement newInstance(SModel sm, boolean init) {

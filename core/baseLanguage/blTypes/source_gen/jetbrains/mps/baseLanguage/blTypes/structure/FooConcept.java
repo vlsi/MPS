@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.blTypes.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class FooConcept extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BAR = "bar";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FooConcept(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class FooConcept extends BaseConcept implements INamedConcept {
 
   public void setBar(BarConcept node) {
     super.setReferent(FooConcept.BAR, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(FooConcept._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FooConcept._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FooConcept._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(FooConcept._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FooConcept._$ATTRIBUTE, node);
   }
 
   public static FooConcept newInstance(SModel sm, boolean init) {

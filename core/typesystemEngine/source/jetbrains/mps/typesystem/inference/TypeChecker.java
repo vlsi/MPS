@@ -21,8 +21,8 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
+import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -71,16 +71,18 @@ public class TypeChecker implements ApplicationComponent {
     }
   };
 
-  private static final boolean useNewTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_NEW_TYPESYSTEM));
+  private static final boolean useOldTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_OLD_TYPESYSTEM));
 
   public TypeChecker(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
 
-    mySubtypingManager = new SubtypingManager(this);
-    if (useNewTypeSystem) {
+
+    if (!useOldTypeSystem) {
       myRuntimeSupport = new RuntimeSupportNew(this);
+      mySubtypingManager = new SubTypingManagerNew(this);
     } else {
       myRuntimeSupport = new RuntimeSupport(this);
+      mySubtypingManager = new SubtypingManager(this);
     }
     myRulesManager = new RulesManager(this);
   }
@@ -319,7 +321,7 @@ public class TypeChecker implements ApplicationComponent {
     }
   }
 
-  /* package */ void fireTypeWillBeRecalculatedForTerm(SNode term) {
+  public void fireTypeWillBeRecalculatedForTerm(SNode term) {
     for (TypeRecalculatedListener typeRecalculatedListener : copyTypeRecalculatedListeners()) {
       typeRecalculatedListener.typeWillBeRecalculatedForTerm(term);
     }

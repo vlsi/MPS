@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.IWrapper;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -14,6 +17,7 @@ public class LocalVariableDeclarationStatement extends Statement implements IWra
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String LOCAL_VARIABLE_DECLARATION = "localVariableDeclaration";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public LocalVariableDeclarationStatement(SNode node) {
     super(node);
@@ -49,6 +53,26 @@ public class LocalVariableDeclarationStatement extends Statement implements IWra
 
   public void setLocalVariableDeclaration(LocalVariableDeclaration node) {
     super.setChild(LocalVariableDeclarationStatement.LOCAL_VARIABLE_DECLARATION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(LocalVariableDeclarationStatement._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, LocalVariableDeclarationStatement._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, LocalVariableDeclarationStatement._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(LocalVariableDeclarationStatement._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, LocalVariableDeclarationStatement._$ATTRIBUTE, node);
   }
 
   public static LocalVariableDeclarationStatement newInstance(SModel sm, boolean init) {

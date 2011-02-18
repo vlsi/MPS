@@ -10,6 +10,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -30,6 +31,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
   public static final String ALTERNATIVE_ICON = "alternativeIcon";
   public static final String PROPERTY = "property";
   public static final String REFERENT = "referent";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConceptConstraints(SNode node) {
     super(node);
@@ -169,6 +171,26 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
 
   public void insertReferent(NodeReferentConstraint prev, NodeReferentConstraint node) {
     this.insertChild(prev, ConceptConstraints.REFERENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ConceptConstraints._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConceptConstraints._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConceptConstraints._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConceptConstraints._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConceptConstraints._$ATTRIBUTE, node);
   }
 
   public static ConceptConstraints newInstance(SModel sm, boolean init) {

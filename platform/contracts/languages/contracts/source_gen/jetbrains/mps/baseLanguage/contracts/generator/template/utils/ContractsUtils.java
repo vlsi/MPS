@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
@@ -36,7 +38,7 @@ public class ContractsUtils {
     List<SNode> interfaceMethods = getOverridenInterfaceMethod(method);
     List<SNode> resultList = new ArrayList<SNode>();
     for (SNode intMethod : ListSequence.fromList(interfaceMethods)) {
-      ListSequence.fromList(resultList).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(intMethod, AttributesRolesUtil.childRoleFromAttributeRole("PreconditionLink"), true), "condition", true)));
+      ListSequence.fromList(resultList).addSequence(ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(intMethod, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions"))), "condition", true)));
     }
     return resultList;
   }

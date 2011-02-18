@@ -1378,7 +1378,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="7798684637310719317">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tp2q.ContainerIteratorType" typeId="tp2q.1240151247486" id="7798684637310724141">
               <node role="elementType" roleId="tp2q.1237467730343" type="tpee.Type" typeId="tpee.1068431790189" id="7798684637310724142">
-                <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="7798684637310724170">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="7798684637310724170">
                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7798684637310724172">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7798684637310724161" resolveInfo="itype" />
                   </node>

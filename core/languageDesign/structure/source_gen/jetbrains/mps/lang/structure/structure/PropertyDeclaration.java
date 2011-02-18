@@ -5,6 +5,9 @@ package jetbrains.mps.lang.structure.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept, I
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DO_NOT_GENERATE = "doNotGenerate";
   public static final String DATA_TYPE = "dataType";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public PropertyDeclaration(SNode node) {
     super(node);
@@ -68,6 +72,26 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept, I
 
   public void setDataType(DataTypeDeclaration node) {
     super.setReferent(PropertyDeclaration.DATA_TYPE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(PropertyDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, PropertyDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, PropertyDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(PropertyDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, PropertyDeclaration._$ATTRIBUTE, node);
   }
 
   public static PropertyDeclaration newInstance(SModel sm, boolean init) {

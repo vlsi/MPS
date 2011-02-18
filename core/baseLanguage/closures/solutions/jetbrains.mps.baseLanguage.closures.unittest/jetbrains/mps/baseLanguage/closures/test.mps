@@ -86,7 +86,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1227886714777">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1227886714777">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
@@ -151,7 +151,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1227886714802">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1227886714802">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>

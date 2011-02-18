@@ -16,10 +16,9 @@
 package jetbrains.mps.generator.impl.plan;
 
 import com.intellij.openapi.util.Pair;
+import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.generator.structure.TemplateDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -97,7 +96,7 @@ public class GenerationPartitioningUtil {
     }
     List<Language> result = new ArrayList<Language>();
     for (String namespace : namespaces) {
-      Language language = scope.getLanguage(namespace);
+      Language language = scope.getLanguage(new ModuleReference(namespace));
       if (language != null) {
         result.add(language);
       } else {
@@ -128,10 +127,10 @@ public class GenerationPartitioningUtil {
     } else {
       if (excludeTLBase) {
         // only look into 'content' in template declartions
-        if (node.getAdapter() instanceof TemplateDeclaration) {
-          BaseConcept content = ((TemplateDeclaration) node.getAdapter()).getContentNode();
+        if (node.isInstanceOfConcept(RuleUtil.concept_TemplateDeclaration)) {
+          SNode content = RuleUtil.getTemplateDeclaration_ContentNode(node);
           if (content != null) {
-            collectLanguageNamespaces(content.getNode(), namespaces, excludeTLBase);
+            collectLanguageNamespaces(content, namespaces, excludeTLBase);
           }
         }
       } else {

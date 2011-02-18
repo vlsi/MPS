@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import jetbrains.mps.make.facet.structure.FacetReference;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class Outlook extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String FACET = "facet";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Outlook(SNode node) {
     super(node);
@@ -74,6 +76,26 @@ public class Outlook extends BaseConcept implements INamedConcept {
 
   public void insertFacet(FacetReference prev, FacetReference node) {
     this.insertChild(prev, Outlook.FACET, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Outlook._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Outlook._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Outlook._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Outlook._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Outlook._$ATTRIBUTE, node);
   }
 
   public static Outlook newInstance(SModel sm, boolean init) {

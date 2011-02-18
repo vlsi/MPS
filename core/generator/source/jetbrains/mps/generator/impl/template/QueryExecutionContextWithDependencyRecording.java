@@ -6,7 +6,6 @@ import jetbrains.mps.generator.impl.interpreted.TemplateCreateRootRuleInterprete
 import jetbrains.mps.generator.impl.interpreted.TemplateRootMappingRuleInterpreted;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -30,7 +29,7 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
+  public boolean checkCondition(SNode condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.checkCondition(condition, required, inputNode, ruleNode);
@@ -40,7 +39,7 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
+  public boolean checkConditionForIfMacro(SNode inputNode, SNode ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.checkConditionForIfMacro(inputNode, ifMacro, context);
@@ -70,7 +69,7 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
+  public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
@@ -80,7 +79,7 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query, @NotNull TemplateContext context) {
+  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.evaluateSourceNodeQuery(inputNode, macroNode, query, context);
@@ -90,7 +89,7 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query, @Nullable TemplateContext context) {
+  public Object evaluateArgumentQuery(SNode inputNode, SNode query, @Nullable TemplateContext context) {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.evaluateArgumentQuery(inputNode, query, context);
@@ -100,7 +99,7 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, @NotNull TemplateContext context) {
+  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query, context);
@@ -120,7 +119,7 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context) {
+  public Object getReferentTarget(SNode node, SNode outputNode, SNode refMacro, TemplateContext context) {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       Object target = wrapped.getReferentTarget(node, outputNode, refMacro, context);

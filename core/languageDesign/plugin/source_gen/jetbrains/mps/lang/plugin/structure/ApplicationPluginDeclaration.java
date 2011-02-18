@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +22,7 @@ public class ApplicationPluginDeclaration extends BaseConcept implements IClassi
   public static final String INIT_BLOCK = "initBlock";
   public static final String DISPOSE_BLOCK = "disposeBlock";
   public static final String FIELD_DECLARATION = "fieldDeclaration";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ApplicationPluginDeclaration(SNode node) {
     super(node);
@@ -92,6 +94,26 @@ public class ApplicationPluginDeclaration extends BaseConcept implements IClassi
 
   public void insertFieldDeclaration(DefaultClassifierFieldDeclaration prev, DefaultClassifierFieldDeclaration node) {
     this.insertChild(prev, ApplicationPluginDeclaration.FIELD_DECLARATION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ApplicationPluginDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ApplicationPluginDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ApplicationPluginDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ApplicationPluginDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ApplicationPluginDeclaration._$ATTRIBUTE, node);
   }
 
   public static ApplicationPluginDeclaration newInstance(SModel sm, boolean init) {

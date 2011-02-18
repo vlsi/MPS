@@ -24,7 +24,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
+import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.ide.make.StartupModuleMaker;
 import jetbrains.mps.logging.Logger;
@@ -36,6 +38,7 @@ import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.highlighter.EditorsHelper;
 import org.jetbrains.annotations.NonNls;
@@ -223,9 +226,28 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private void recreateTabbedEditors() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        editors:
         for (MPSFileNodeEditor editor : EditorsHelper.getAllEditors(myManager)) {
-          if (editor.isValid() && editor.getNodeEditor() instanceof TabbedEditor) {
+          if (!editor.isValid()) continue;
+
+          if (editor.getNodeEditor() instanceof TabbedEditor) {
+            //this is for recreating tabbed editors on reload to renew tab classes
             editor.recreateEditor();
+          } else if (editor.getNodeEditor() instanceof NodeEditor) {
+            //and this is to make non-tabbed editors tabbed if they need to
+            ArrayList<BaseProjectPlugin> plugins;
+            synchronized (myPluginsLock) {
+              plugins = new ArrayList<BaseProjectPlugin>(mySortedPlugins);
+            }
+            for (BaseProjectPlugin p : plugins) {
+              for (EditorTabDescriptor tab : p.getTabDescriptors()) {
+                SNode node = editor.getNodeEditor().getCurrentlyEditedNode().getNode();
+                if (tab.getBaseNode(node) != null) {
+                  editor.recreateEditor();
+                  continue editors;
+                }
+              }
+            }
           }
         }
       }

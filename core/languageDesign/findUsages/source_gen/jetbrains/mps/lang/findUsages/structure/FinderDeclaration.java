@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy;
 import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +22,7 @@ public class FinderDeclaration extends AbstractFinderDeclaration implements INam
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_VISIBLE_BLOCK = "isVisibleBlock";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FinderDeclaration(SNode node) {
     super(node);
@@ -78,6 +82,26 @@ public class FinderDeclaration extends AbstractFinderDeclaration implements INam
 
   public void setIsVisibleBlock(IsVisibleBlock node) {
     super.setChild(FinderDeclaration.IS_VISIBLE_BLOCK, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(FinderDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FinderDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FinderDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(FinderDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FinderDeclaration._$ATTRIBUTE, node);
   }
 
   public static FinderDeclaration newInstance(SModel sm, boolean init) {

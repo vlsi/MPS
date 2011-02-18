@@ -198,7 +198,7 @@
       <property name="name" nameId="tpck.1169194664001" value="additionalVMOptions" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
-    <node role="export$attribute" type="tpck.ExportScopeNamespace" typeId="tpck.2565736246230036151" id="144296692409136173">
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpck.ExportScopeNamespace" typeId="tpck.2565736246230036151" id="144296692409136173">
       <property name="namespace" nameId="tpck.2565736246230036153" value="jetbrains.mps" />
     </node>
   </root>

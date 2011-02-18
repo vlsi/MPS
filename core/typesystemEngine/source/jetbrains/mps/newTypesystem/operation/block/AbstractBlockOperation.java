@@ -25,8 +25,7 @@ import jetbrains.mps.newTypesystem.state.Block;
  * Time: 6:32:14 PM
  */
 public abstract class AbstractBlockOperation extends AbstractOperation {
-  protected Block myBlock;
-  protected String myPresentation;
+  Block myBlock;
 
   public Block getBlock() {
     return myBlock;

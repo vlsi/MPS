@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class IfStatement_DataFlow extends DataFlowBuilder {
   public IfStatement_DataFlow() {
@@ -25,10 +26,10 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
       _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"));
     }
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "ifTrue", true));
-    if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null)) {
+    if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null) || SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true) != null && ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true)).isNotEmpty()) {
       _context.getBuilder().emitMayBeUnreachable(new Runnable() {
         public void run() {
-          _context.getBuilder().emitJump(_context.getBuilder().after(SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true)));
+          _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
         }
       });
     }

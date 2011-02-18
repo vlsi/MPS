@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.regexp.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class MatchRegexpOperation extends BaseConcept implements IOperation, Reg
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String REGEXP = "regexp";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public MatchRegexpOperation(SNode node) {
     super(node);
@@ -50,6 +54,26 @@ public class MatchRegexpOperation extends BaseConcept implements IOperation, Reg
 
   public void setRegexp(RegexpExpression node) {
     super.setChild(MatchRegexpOperation.REGEXP, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(MatchRegexpOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, MatchRegexpOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, MatchRegexpOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(MatchRegexpOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, MatchRegexpOperation._$ATTRIBUTE, node);
   }
 
   public static MatchRegexpOperation newInstance(SModel sm, boolean init) {

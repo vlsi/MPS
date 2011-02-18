@@ -6,6 +6,7 @@ import jetbrains.mps.lang.textGen.structure.ScopeConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +19,7 @@ public class ForStatement extends AbstractForStatement implements ScopeConcept {
   public static final String CONDITION = "condition";
   public static final String ITERATION = "iteration";
   public static final String ADDITIONAL_VAR = "additionalVar";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ForStatement(SNode node) {
     super(node);
@@ -93,6 +95,26 @@ public class ForStatement extends AbstractForStatement implements ScopeConcept {
 
   public void insertAdditionalVar(AdditionalForLoopVariable prev, AdditionalForLoopVariable node) {
     this.insertChild(prev, ForStatement.ADDITIONAL_VAR, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ForStatement._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ForStatement._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ForStatement._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ForStatement._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ForStatement._$ATTRIBUTE, node);
   }
 
   public static ForStatement newInstance(SModel sm, boolean init) {

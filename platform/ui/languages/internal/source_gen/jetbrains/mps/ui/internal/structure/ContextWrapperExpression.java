@@ -4,6 +4,9 @@ package jetbrains.mps.ui.internal.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class ContextWrapperExpression extends Expression implements IContextWrap
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXPRESSION = "expression";
   public static final String CONTEXT = "context";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ContextWrapperExpression(SNode node) {
     super(node);
@@ -58,6 +62,26 @@ public class ContextWrapperExpression extends Expression implements IContextWrap
 
   public void setContext(Expression node) {
     super.setChild(ContextWrapperExpression.CONTEXT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ContextWrapperExpression._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ContextWrapperExpression._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ContextWrapperExpression._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ContextWrapperExpression._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ContextWrapperExpression._$ATTRIBUTE, node);
   }
 
   public static ContextWrapperExpression newInstance(SModel sm, boolean init) {

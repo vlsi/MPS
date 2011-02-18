@@ -54,6 +54,7 @@
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCellAction" />
     <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.style.TableComponent" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
@@ -64,9 +65,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.ParentSettings" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.CellActionType" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.EditorCell_Empty" />
     <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.style.TableComponent" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.EditorCell_Empty" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical" />

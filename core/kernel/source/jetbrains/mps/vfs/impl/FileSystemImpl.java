@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.vfs.impl;
 
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;

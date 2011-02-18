@@ -95,6 +95,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_AttributeAccess_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_AttributeAccessOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -104,6 +108,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_ConceptFqNameRefExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ConceptPropertyNameRefExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

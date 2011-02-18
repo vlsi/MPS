@@ -4,7 +4,7 @@ package jetbrains.mps.lang.generator.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -20,7 +20,7 @@ public class ReferenceMacro_GetReferent_Behavior {
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode referenceMacro = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.generator.structure.ReferenceMacro", false, false);
     SNode attributedNode = SNodeOperations.getParent(referenceMacro);
-    String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(referenceMacro.getRole_());
+    String linkRole = AttributeOperations.getLinkRole(referenceMacro);
     ConceptAndSuperConceptsScope linkSearchScope = new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(attributedNode));
     SNode link = SNodeOperations.cast(linkSearchScope.getMostSpecificLinkDeclarationByRole(linkRole), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SNode targetConcept = SLinkOperations.getTarget(link, "target", false);

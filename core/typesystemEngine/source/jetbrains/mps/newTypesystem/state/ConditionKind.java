@@ -20,13 +20,6 @@ import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 06.12.10
- * Time: 22:37
- * To change this template use File | Settings | File Templates.
- */
 public enum ConditionKind {
   ANY {
     @Override

@@ -5,6 +5,9 @@ package jetbrains.mps.samples.readerConfigLanguage.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class Field extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String START = "start";
   public static final String END = "end";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Field(SNode node) {
     super(node);
@@ -68,6 +72,26 @@ public class Field extends BaseConcept implements INamedConcept {
 
   public void setEnd(int value) {
     this.setIntegerProperty(Field.END, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Field._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Field._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Field._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Field._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Field._$ATTRIBUTE, node);
   }
 
   public static Field newInstance(SModel sm, boolean init) {

@@ -20,6 +20,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -133,6 +134,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
   private void regenerate() {
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : myTreeComponent.getIncludedModels()) {
+      if (GeneratorManager.isDoNotGenerate(modelDescriptor)) continue;
       models.add(modelDescriptor);
     }
 
@@ -234,7 +236,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
 
   public static class ButtonConfiguration implements IExternalizeable {
     private static final String RERUN = "rerun";
-    private static final String REGENERATE = "regenerate";
+    private static final String REGENERATE = "rebuild";
     private static final String CLOSE = "close";
 
     private boolean myShowRerunButton;
@@ -309,7 +311,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
         });
       }
       if (buttonConfiguration.isShowRegenerateButton()) {
-        actionGroup.addAction(new AnAction("Regenerate models", "", Icons.REGENERATE_ICON) {
+        actionGroup.addAction(new AnAction("Rebuild models", "", Icons.MAKE_ICON) {
           public void actionPerformed(AnActionEvent e) {
             regenerate();
           }

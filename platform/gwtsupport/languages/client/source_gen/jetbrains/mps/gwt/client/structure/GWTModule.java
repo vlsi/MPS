@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class GWTModule extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RENAME_TO = "renameTo";
   public static final String ELEMENT = "element";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public GWTModule(SNode node) {
     super(node);
@@ -82,6 +84,26 @@ public class GWTModule extends BaseConcept implements INamedConcept {
 
   public void insertElement(Element prev, Element node) {
     this.insertChild(prev, GWTModule.ELEMENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(GWTModule._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, GWTModule._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, GWTModule._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(GWTModule._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GWTModule._$ATTRIBUTE, node);
   }
 
   public static GWTModule newInstance(SModel sm, boolean init) {

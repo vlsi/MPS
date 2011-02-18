@@ -8,8 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class CreateAntiquotation_Intention extends BaseIntention implements Intention {
@@ -47,7 +48,7 @@ public class CreateAntiquotation_Intention extends BaseIntention implements Inte
       return;
     }
     SModel model = SNodeOperations.getModel(contextNode);
-    if (SLinkOperations.getTarget(contextNode, AttributesRolesUtil.childRoleFromAttributeRole("antiquotation"), true) != null) {
+    if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.Antiquotation"))) != null) {
       contextNode.setAttribute(null);
     } else {
       SNode antiquotation = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.Antiquotation", null);

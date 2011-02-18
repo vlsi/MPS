@@ -8,6 +8,7 @@ import jetbrains.mps.baseLanguage.structure.IWillBeClassifier;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,7 +19,9 @@ public class ExpectedOption extends BaseConcept implements IExpected, INamedConc
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NAME = "name";
+  public static final String DEFAULT_OPTION = "defaultOption";
   public static final String OPTION = "option";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ExpectedOption(SNode node) {
     super(node);
@@ -56,6 +59,14 @@ public class ExpectedOption extends BaseConcept implements IExpected, INamedConc
     this.setProperty(ExpectedOption.NAME, value);
   }
 
+  public int getDefaultOption() {
+    return this.getIntegerProperty(ExpectedOption.DEFAULT_OPTION);
+  }
+
+  public void setDefaultOption(int value) {
+    this.setIntegerProperty(ExpectedOption.DEFAULT_OPTION, value);
+  }
+
   public int getOptionsCount() {
     return this.getChildCount(ExpectedOption.OPTION);
   }
@@ -74,6 +85,26 @@ public class ExpectedOption extends BaseConcept implements IExpected, INamedConc
 
   public void insertOption(Option prev, Option node) {
     this.insertChild(prev, ExpectedOption.OPTION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ExpectedOption._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ExpectedOption._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ExpectedOption._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ExpectedOption._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ExpectedOption._$ATTRIBUTE, node);
   }
 
   public static ExpectedOption newInstance(SModel sm, boolean init) {

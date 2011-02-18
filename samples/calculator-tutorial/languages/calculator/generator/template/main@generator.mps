@@ -7,60 +7,11 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
-  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
-  <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
+  <languageAspect modelUID="r:45d8de88-ed91-4d57-9c1a-6fd957f9060b(jetbrains.mps.calculator.generator.template.main@generator)" version="-1" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="8" />
   <import index="1" modelUID="r:87765d2d-a756-4883-9acc-6a42e5bf6c23(jetbrains.mps.calculator.structure)" version="-1" />
@@ -94,8 +45,9 @@
                 <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="313932908986203989">
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="313932908986203992">
                     <link role="variableDeclaration:3" targetNodeId="313932908986203977" resolveInfo="i" />
-                    <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="313932908986203993" />
-                    <node role="referenceMacro$link_attribute$variableDeclaration:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="313932908986203994">
+                    <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="313932908986203993" />
+                    <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="313932908986203994">
+                      <property name="linkRole:2" value="variableDeclaration" />
                       <node role="referentFunction:2" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent:2" id="313932908986203995">
                         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="313932908986203996">
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="313932908986203997">
@@ -204,7 +156,8 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1241364368586">
               <property name="value:3" value="0" />
             </node>
-            <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241364403678">
+            <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241364403678">
+              <property name="propertyName:2" value="name" />
               <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1241364403679">
                 <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241364403680">
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241364406993">
@@ -220,11 +173,11 @@
                 </node>
               </node>
             </node>
-            <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro:2" id="1241364466226">
+            <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro:2" id="1241364466226">
               <link role="mappingLabel:2" targetNodeId="1241364424363" resolveInfo="LocalVar" />
             </node>
           </node>
-          <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1241364372885">
+          <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1241364372885">
             <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1241364372886">
               <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241364372887">
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241364383076">
@@ -249,7 +202,8 @@
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241364499731">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7812194938265880301">
                       <link role="variableDeclaration:3" targetNodeId="1241363926829" resolveInfo="inputField" />
-                      <node role="referenceMacro$link_attribute$variableDeclaration:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="7812194938265880302">
+                      <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="7812194938265880302">
+                        <property name="linkRole:2" value="variableDeclaration" />
                         <node role="referentFunction:2" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent:2" id="7812194938265880303">
                           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7812194938265880304">
                             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7812194938265880305">
@@ -272,7 +226,8 @@
                 </node>
                 <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1241364485034">
                   <link role="variableDeclaration:3" targetNodeId="1241364366114" resolveInfo="i" />
-                  <node role="referenceMacro$link_attribute$variableDeclaration:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="1241364536781">
+                  <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="1241364536781">
+                    <property name="linkRole:2" value="variableDeclaration" />
                     <node role="referentFunction:2" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent:2" id="1241364536782">
                       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241364536783">
                         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241364542753">
@@ -289,7 +244,7 @@
                   </node>
                 </node>
               </node>
-              <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1241364521504">
+              <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1241364521504">
                 <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1241364521505">
                   <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241364521506">
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241364524695">
@@ -319,7 +274,8 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241364618354">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7812194938265880312">
               <link role="variableDeclaration:3" targetNodeId="1241364033287" resolveInfo="outputField" />
-              <node role="referenceMacro$link_attribute$variableDeclaration:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="7812194938265880323">
+              <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="7812194938265880323">
+                <property name="linkRole:2" value="variableDeclaration" />
                 <node role="referentFunction:2" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent:2" id="7812194938265880324">
                   <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7812194938265880325">
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7812194938265880326">
@@ -340,7 +296,7 @@
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1241369658928">
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1241369661931">
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1241369668228">
-                    <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1241369673714">
+                    <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1241369673714">
                       <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1241369673715">
                         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241369673716">
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241369676435">
@@ -362,7 +318,7 @@
               </node>
             </node>
           </node>
-          <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1241364634222">
+          <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1241364634222">
             <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1241364634223">
               <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241364634224">
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241364643147">
@@ -463,7 +419,7 @@
           <link role="baseMethodDeclaration:3" targetNodeId="3.~JTextField.&lt;init&gt;()" resolveInfo="JTextField" />
         </node>
       </node>
-      <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1241363965965">
+      <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1241363965965">
         <link role="mappingLabel:2" targetNodeId="1241364164175" resolveInfo="InputFieldDeclaration" />
         <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1241363965966">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241363965967">
@@ -478,7 +434,8 @@
           </node>
         </node>
       </node>
-      <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241364001133">
+      <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241364001133">
+        <property name="propertyName:2" value="name" />
         <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1241364001134">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241364001135">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241364007777">
@@ -506,7 +463,7 @@
           <link role="baseMethodDeclaration:3" targetNodeId="3.~JTextField.&lt;init&gt;()" resolveInfo="JTextField" />
         </node>
       </node>
-      <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1241364033292">
+      <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1241364033292">
         <link role="mappingLabel:2" targetNodeId="1241364331969" resolveInfo="OutputFieldDeclaration" />
         <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1241364033293">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241364033294">
@@ -521,7 +478,8 @@
           </node>
         </node>
       </node>
-      <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241364033299">
+      <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241364033299">
+        <property name="propertyName:2" value="name" />
         <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1241364033300">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241364033301">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241364033302">
@@ -548,7 +506,8 @@
             <link role="baseMethodDeclaration:3" targetNodeId="6.~Frame.setTitle(java.lang.String):void" resolveInfo="setTitle" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1241363856654">
               <property name="value:3" value="Calculator" />
-              <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241363912193">
+              <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241363912193">
+                <property name="propertyName:2" value="value" />
                 <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1241363912194">
                   <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241363912195">
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241363915164">
@@ -591,7 +550,8 @@
                   </node>
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7812194938265879181">
                     <link role="variableDeclaration:3" targetNodeId="1241363926829" resolveInfo="inputField" />
-                    <node role="referenceMacro$link_attribute$variableDeclaration:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="7812194938265879182">
+                    <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="7812194938265879182">
+                      <property name="linkRole:2" value="variableDeclaration" />
                       <node role="referentFunction:2" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent:2" id="7812194938265879183">
                         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7812194938265879184">
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7812194938265879194">
@@ -627,7 +587,8 @@
                     <link role="baseMethodDeclaration:3" targetNodeId="3.~JLabel.&lt;init&gt;(java.lang.String)" resolveInfo="JLabel" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1241364097091">
                       <property name="value:3" value="Title" />
-                      <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241364137613">
+                      <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241364137613">
+                        <property name="propertyName:2" value="value" />
                         <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1241364137614">
                           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241364137615">
                             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241364140101">
@@ -651,7 +612,8 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="6.~Container.add(java.awt.Component):java.awt.Component" resolveInfo="add" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7812194938265880286">
                   <link role="variableDeclaration:3" targetNodeId="1241363926829" resolveInfo="inputField" />
-                  <node role="referenceMacro$link_attribute$variableDeclaration:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="7812194938265880287">
+                  <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="7812194938265880287">
+                    <property name="linkRole:2" value="variableDeclaration" />
                     <node role="referentFunction:2" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent:2" id="7812194938265880288">
                       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7812194938265880289">
                         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7812194938265880290">
@@ -670,7 +632,7 @@
               </node>
             </node>
           </node>
-          <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1241364118227">
+          <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1241364118227">
             <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1241364118228">
               <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241364118229">
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241364123824">
@@ -706,7 +668,8 @@
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241364275725">
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1241364275726">
                     <link role="fieldDeclaration:3" targetNodeId="1241364033287" resolveInfo="outputField" />
-                    <node role="referenceMacro$link_attribute$fieldDeclaration:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="1241364275727">
+                    <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="1241364275727">
+                      <property name="linkRole:2" value="fieldDeclaration" />
                       <node role="referentFunction:2" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent:2" id="1241364275728">
                         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241364275729">
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241364275730">
@@ -727,7 +690,7 @@
               </node>
             </node>
           </node>
-          <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1241364275737">
+          <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1241364275737">
             <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1241364275738">
               <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241364275739">
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241364275740">
@@ -771,10 +734,11 @@
         </node>
       </node>
     </node>
-    <node role="rootTemplateAnnotation$attribute:3" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1241363184182">
+    <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1241363184182">
       <link role="applicableConcept:2" targetNodeId="1.1241362555920" resolveInfo="Calculator" />
     </node>
-    <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241363259553">
+    <node role="_$attribute:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241363259553">
+      <property name="propertyName:2" value="name" />
       <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1241363259554">
         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241363259555">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241363283809">

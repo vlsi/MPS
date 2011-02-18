@@ -173,74 +173,74 @@
   <unitInfo fileName="VariableNodeItem.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.VariableNodeItem" />
   <unitInfo fileName="Keymap_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Keymap_PropertySupport" />
   <unitInfo fileName="ToolDeclaration.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ToolDeclaration" />
-  <unitInfo fileName="ProjectExpression.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProjectExpression" />
-  <unitInfo fileName="ConsoleExpression.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ConsoleExpression" />
-  <unitInfo fileName="EverywhereActionPlace.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.EverywhereActionPlace" />
-  <unitInfo fileName="ToolActionPlace.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ToolActionPlace" />
-  <unitInfo fileName="SimpleActionPlace.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.SimpleActionPlace" />
-  <unitInfo fileName="ExecuteConfigBlock.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ExecuteConfigBlock" />
-  <unitInfo fileName="DoUpdateGroupBlock.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock" />
-  <unitInfo fileName="BuildGroupBlock.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BuildGroupBlock" />
-  <unitInfo fileName="Separator.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Separator" />
-  <unitInfo fileName="GetNodesBlock.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetNodesBlock" />
-  <unitInfo fileName="GetNodeBlock.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetNodeBlock" />
-  <unitInfo fileName="BaseProjectOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseProjectOperation" />
   <unitInfo fileName="DebuggableNodeItem.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.DebuggableNodeItem" />
-  <unitInfo fileName="TabbedToolOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.TabbedToolOperation" />
-  <unitInfo fileName="ProjectOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProjectOperation" />
   <unitInfo fileName="MultitabbedEditorTab.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab" />
-  <unitInfo fileName="OrderReference.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.OrderReference" />
-  <unitInfo fileName="GetUserDataExpression.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetUserDataExpression" />
-  <unitInfo fileName="AddTabOperation.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.AddTabOperation" />
-  <unitInfo fileName="ParameterizedShortcutChange.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange" />
   <unitInfo fileName="ToolTab.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ToolTab" />
-  <unitInfo fileName="ActionListStatement.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionListStatement" />
   <unitInfo fileName="ConfigurationEditorDeclaration.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ConfigurationEditorDeclaration" />
-  <unitInfo fileName="ProcessHandlerStatement.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProcessHandlerStatement" />
-  <unitInfo fileName="PersistentPropertyDeclaration.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration" />
-  <unitInfo fileName="GroupAnchor.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GroupAnchor" />
-  <unitInfo fileName="RunConfigParameterReferenceOperation.java" startLine="13" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation" />
-  <unitInfo fileName="ActionConstructorParameterReferenceOperation.java" startLine="13" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation" />
-  <unitInfo fileName="ActionDataParameterReferenceOperation.java" startLine="13" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" />
-  <unitInfo fileName="PersistentPropertyReference.java" startLine="13" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" />
-  <unitInfo fileName="ActionParameterReferenceOperation.java" startLine="13" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" />
-  <unitInfo fileName="UpdateGroupBlock.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.UpdateGroupBlock" />
-  <unitInfo fileName="ProcessStatement.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProcessStatement" />
-  <unitInfo fileName="RunConfigCreator.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigCreator" />
-  <unitInfo fileName="ExecutionConsoleStatement.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ExecutionConsoleStatement" />
-  <unitInfo fileName="ActionConstructionParameterDeclaration.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration" />
-  <unitInfo fileName="ActionParameterDeclaration.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" />
   <unitInfo fileName="Keymap.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Keymap" />
-  <unitInfo fileName="ActionsStatement.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionsStatement" />
-  <unitInfo fileName="ElementListContents.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ElementListContents" />
+  <unitInfo fileName="ProjectExpression.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProjectExpression" />
+  <unitInfo fileName="ConsoleExpression.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ConsoleExpression" />
   <unitInfo fileName="CreateRunConfigStatement.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement" />
-  <unitInfo fileName="RunConfigPropertyInstance.java" startLine="12" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" />
-  <unitInfo fileName="ActionDataParameterDeclaration.java" startLine="13" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" />
-  <unitInfo fileName="SimpleShortcutChange.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.SimpleShortcutChange" />
-  <unitInfo fileName="Order.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Order" />
-  <unitInfo fileName="ActionInstance.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionInstance" />
+  <unitInfo fileName="EverywhereActionPlace.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.EverywhereActionPlace" />
+  <unitInfo fileName="ToolActionPlace.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ToolActionPlace" />
+  <unitInfo fileName="SimpleActionPlace.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.SimpleActionPlace" />
+  <unitInfo fileName="ExecuteConfigBlock.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ExecuteConfigBlock" />
+  <unitInfo fileName="DoUpdateGroupBlock.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock" />
+  <unitInfo fileName="BuildGroupBlock.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BuildGroupBlock" />
+  <unitInfo fileName="Separator.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Separator" />
+  <unitInfo fileName="GetNodesBlock.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetNodesBlock" />
+  <unitInfo fileName="GetNodeBlock.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetNodeBlock" />
+  <unitInfo fileName="BaseProjectOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseProjectOperation" />
+  <unitInfo fileName="TabbedToolOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.TabbedToolOperation" />
+  <unitInfo fileName="ProjectOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProjectOperation" />
+  <unitInfo fileName="OrderReference.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.OrderReference" />
+  <unitInfo fileName="GetUserDataExpression.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetUserDataExpression" />
+  <unitInfo fileName="AddTabOperation.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.AddTabOperation" />
+  <unitInfo fileName="ParameterizedShortcutChange.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange" />
+  <unitInfo fileName="ActionListStatement.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionListStatement" />
+  <unitInfo fileName="ProcessHandlerStatement.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProcessHandlerStatement" />
+  <unitInfo fileName="PersistentPropertyDeclaration.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration" />
+  <unitInfo fileName="GroupAnchor.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GroupAnchor" />
   <unitInfo fileName="IdeaInitializerDescriptor.java" startLine="11" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor" />
-  <unitInfo fileName="ParametrizedExecuteBlock.java" startLine="11" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteBlock" />
-  <unitInfo fileName="UniversalRunConfigCreator.java" startLine="12" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator" />
-  <unitInfo fileName="RunConfigurationTypeDeclaration.java" startLine="12" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration" />
-  <unitInfo fileName="GenerationListenerDeclaration.java" startLine="12" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GenerationListenerDeclaration" />
   <unitInfo fileName="DebugInfoInitializer.java" startLine="13" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.DebugInfoInitializer" />
-  <unitInfo fileName="KeymapChangesDeclaration.java" startLine="14" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration" />
-  <unitInfo fileName="ApplicationPluginDeclaration.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration" />
-  <unitInfo fileName="ProjectPluginDeclaration.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration" />
-  <unitInfo fileName="TabbedEditorDeclaration.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration" />
-  <unitInfo fileName="PreferencePage.java" startLine="13" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.PreferencePage" />
-  <unitInfo fileName="PreferencesComponentDeclaration.java" startLine="14" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration" />
-  <unitInfo fileName="ActionGroupDeclaration.java" startLine="15" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" />
-  <unitInfo fileName="FileGeneratorDeclaration.java" startLine="17" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration" />
-  <unitInfo fileName="EditorTab.java" startLine="13" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.EditorTab" />
-  <unitInfo fileName="AbstractEditorTab.java" startLine="13" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.AbstractEditorTab" />
-  <unitInfo fileName="BaseToolDeclaration.java" startLine="16" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseToolDeclaration" />
-  <unitInfo fileName="RunConfigurationDeclaration.java" startLine="16" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration" />
-  <unitInfo fileName="ActionDeclaration.java" startLine="15" startPosition="0" endLine="231" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionDeclaration" />
+  <unitInfo fileName="RunConfigParameterReferenceOperation.java" startLine="16" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation" />
+  <unitInfo fileName="ActionConstructorParameterReferenceOperation.java" startLine="16" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation" />
+  <unitInfo fileName="ActionDataParameterReferenceOperation.java" startLine="16" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" />
+  <unitInfo fileName="PersistentPropertyReference.java" startLine="16" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" />
+  <unitInfo fileName="ActionParameterReferenceOperation.java" startLine="16" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" />
+  <unitInfo fileName="UpdateGroupBlock.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.UpdateGroupBlock" />
+  <unitInfo fileName="ProcessStatement.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProcessStatement" />
+  <unitInfo fileName="RunConfigCreator.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigCreator" />
+  <unitInfo fileName="ExecutionConsoleStatement.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ExecutionConsoleStatement" />
+  <unitInfo fileName="ActionConstructionParameterDeclaration.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration" />
+  <unitInfo fileName="ActionParameterDeclaration.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" />
+  <unitInfo fileName="ActionsStatement.java" startLine="14" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionsStatement" />
+  <unitInfo fileName="ElementListContents.java" startLine="14" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ElementListContents" />
+  <unitInfo fileName="RunConfigPropertyInstance.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" />
+  <unitInfo fileName="ActionDataParameterDeclaration.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" />
+  <unitInfo fileName="SimpleShortcutChange.java" startLine="14" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.SimpleShortcutChange" />
+  <unitInfo fileName="Order.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Order" />
+  <unitInfo fileName="ActionInstance.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionInstance" />
+  <unitInfo fileName="ParametrizedExecuteBlock.java" startLine="14" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteBlock" />
+  <unitInfo fileName="UniversalRunConfigCreator.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator" />
+  <unitInfo fileName="RunConfigurationTypeDeclaration.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration" />
+  <unitInfo fileName="GenerationListenerDeclaration.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GenerationListenerDeclaration" />
+  <unitInfo fileName="KeymapChangesDeclaration.java" startLine="15" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration" />
+  <unitInfo fileName="ApplicationPluginDeclaration.java" startLine="16" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration" />
+  <unitInfo fileName="ProjectPluginDeclaration.java" startLine="16" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration" />
+  <unitInfo fileName="TabbedEditorDeclaration.java" startLine="16" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration" />
+  <unitInfo fileName="PreferencePage.java" startLine="16" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.PreferencePage" />
+  <unitInfo fileName="PreferencesComponentDeclaration.java" startLine="15" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration" />
+  <unitInfo fileName="ActionGroupDeclaration.java" startLine="16" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" />
+  <unitInfo fileName="FileGeneratorDeclaration.java" startLine="18" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration" />
+  <unitInfo fileName="AbstractEditorTab.java" startLine="16" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.AbstractEditorTab" />
+  <unitInfo fileName="BaseToolDeclaration.java" startLine="17" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseToolDeclaration" />
+  <unitInfo fileName="EditorTab.java" startLine="16" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.EditorTab" />
+  <unitInfo fileName="RunConfigurationDeclaration.java" startLine="17" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration" />
+  <unitInfo fileName="ActionDeclaration.java" startLine="16" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionDeclaration" />
   <root nodeId="485694842829280671">
-    <nodeInfo nodeId="485694842829280677" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#(null)V" fileName="IComponentDisposer.java" startLine="7" startPosition="59" endLine="8" endPosition="44" />
-    <scopeInfo nodeId="485694842829280677" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#(null)V" fileName="IComponentDisposer.java" startLine="7" startPosition="59" endLine="8" endPosition="44">
+    <nodeInfo nodeId="485694842829280677" fileName="IComponentDisposer.java" startLine="7" startPosition="59" endLine="8" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#(null)V" />
+    <scopeInfo nodeId="485694842829280677" fileName="IComponentDisposer.java" startLine="7" startPosition="59" endLine="8" endPosition="44">
       <varInfo nodeId="485694842829280681" varName="component" />
     </scopeInfo>
     <unitInfo nodeId="485694842829280671" fileName="IComponentDisposer.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IComponentDisposer" />

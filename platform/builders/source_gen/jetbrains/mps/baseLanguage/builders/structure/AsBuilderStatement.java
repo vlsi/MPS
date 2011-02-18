@@ -7,6 +7,9 @@ import jetbrains.mps.baseLanguage.structure.IContainsStatementList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.StatementList;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +22,7 @@ public class AsBuilderStatement extends Statement implements IContainsStatementL
   public static final String EXPRESSION = "expression";
   public static final String BUILDER = "builder";
   public static final String BODY = "body";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AsBuilderStatement(SNode node) {
     super(node);
@@ -70,6 +74,26 @@ public class AsBuilderStatement extends Statement implements IContainsStatementL
 
   public void setBody(StatementList node) {
     super.setChild(AsBuilderStatement.BODY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AsBuilderStatement._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AsBuilderStatement._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AsBuilderStatement._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AsBuilderStatement._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AsBuilderStatement._$ATTRIBUTE, node);
   }
 
   public static AsBuilderStatement newInstance(SModel sm, boolean init) {

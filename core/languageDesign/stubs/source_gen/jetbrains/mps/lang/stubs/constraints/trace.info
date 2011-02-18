@@ -5,18 +5,18 @@
   <unitInfo fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.stubs.constraints.LibraryStubDescriptor_moduleName_PropertyConstraint" />
   <unitInfo fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.stubs.constraints.LanguageRef_languageFqName_PropertyConstraint" />
   <root nodeId="562112407431569978">
-    <nodeInfo nodeId="562112407431866960" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="29" startPosition="81" endLine="30" endPosition="18" />
-    <nodeInfo nodeId="562112407431866997" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="31" startPosition="5" endLine="32" endPosition="0" />
-    <nodeInfo nodeId="562112407431866963" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="32" startPosition="0" endLine="33" endPosition="95" />
-    <nodeInfo nodeId="562112407431866985" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="34" startPosition="27" endLine="35" endPosition="18" />
-    <nodeInfo nodeId="562112407431866998" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="36" startPosition="5" endLine="37" endPosition="0" />
-    <nodeInfo nodeId="562112407431866989" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="37" startPosition="0" endLine="38" endPosition="79" />
-    <nodeInfo nodeId="562112407431867010" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="39" startPosition="25" endLine="40" endPosition="33" />
-    <nodeInfo nodeId="562112407431867000" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="41" startPosition="5" endLine="42" endPosition="0" />
-    <nodeInfo nodeId="562112407431570000" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="42" startPosition="0" endLine="43" endPosition="36" />
-    <nodeInfo nodeId="562112407431845227" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="28" startPosition="80" endLine="31" endPosition="5" />
-    <nodeInfo nodeId="562112407431866972" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="33" startPosition="95" endLine="36" endPosition="5" />
-    <nodeInfo nodeId="562112407431867001" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="38" startPosition="79" endLine="41" endPosition="5" />
+    <nodeInfo nodeId="562112407431866960" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="29" startPosition="81" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="562112407431866997" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="562112407431866963" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="32" startPosition="0" endLine="33" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="562112407431866985" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="34" startPosition="27" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="562112407431866998" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="36" startPosition="5" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="562112407431866989" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="37" startPosition="0" endLine="38" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="562112407431867010" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="39" startPosition="25" endLine="40" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="562112407431867000" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="41" startPosition="5" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="562112407431570000" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="42" startPosition="0" endLine="43" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="562112407431845227" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="28" startPosition="80" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="562112407431866972" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="33" startPosition="95" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="562112407431867001" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="38" startPosition="79" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="562112407431845228" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="29" startPosition="81" endLine="30" endPosition="18" />
     <scopeInfo nodeId="562112407431866973" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="34" startPosition="27" endLine="35" endPosition="18" />
     <scopeInfo nodeId="562112407431867002" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="39" startPosition="25" endLine="40" endPosition="33" />
@@ -26,18 +26,18 @@
     </scopeInfo>
   </root>
   <root nodeId="7076427504342075467">
-    <nodeInfo nodeId="2295084792488056009" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="29" startPosition="79" endLine="30" endPosition="18" />
-    <nodeInfo nodeId="2295084792488056016" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="31" startPosition="5" endLine="32" endPosition="0" />
-    <nodeInfo nodeId="2295084792488056017" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="32" startPosition="0" endLine="33" endPosition="93" />
-    <nodeInfo nodeId="2295084792488056026" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="34" startPosition="27" endLine="35" endPosition="18" />
-    <nodeInfo nodeId="2295084792488056031" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="36" startPosition="5" endLine="37" endPosition="0" />
-    <nodeInfo nodeId="2295084792488056032" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="37" startPosition="0" endLine="38" endPosition="79" />
-    <nodeInfo nodeId="2295084792488056041" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="39" startPosition="25" endLine="40" endPosition="33" />
-    <nodeInfo nodeId="2295084792488056048" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="41" startPosition="5" endLine="42" endPosition="0" />
-    <nodeInfo nodeId="2295084792488056049" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="42" startPosition="0" endLine="43" endPosition="36" />
-    <nodeInfo nodeId="2295084792488056007" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="28" startPosition="80" endLine="31" endPosition="5" />
-    <nodeInfo nodeId="2295084792488056024" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="33" startPosition="93" endLine="36" endPosition="5" />
-    <nodeInfo nodeId="2295084792488056039" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="38" startPosition="79" endLine="41" endPosition="5" />
+    <nodeInfo nodeId="2295084792488056009" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="29" startPosition="79" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295084792488056016" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2295084792488056017" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="32" startPosition="0" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2295084792488056026" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="34" startPosition="27" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295084792488056031" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="36" startPosition="5" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2295084792488056032" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="37" startPosition="0" endLine="38" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2295084792488056041" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="39" startPosition="25" endLine="40" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295084792488056048" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="41" startPosition="5" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2295084792488056049" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="42" startPosition="0" endLine="43" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2295084792488056007" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="28" startPosition="80" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2295084792488056024" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="33" startPosition="93" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2295084792488056039" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="38" startPosition="79" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="2295084792488056008" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="29" startPosition="79" endLine="30" endPosition="18" />
     <scopeInfo nodeId="2295084792488056025" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="34" startPosition="27" endLine="35" endPosition="18" />
     <scopeInfo nodeId="2295084792488056040" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="39" startPosition="25" endLine="40" endPosition="33" />
@@ -47,7 +47,7 @@
     </scopeInfo>
   </root>
   <root nodeId="972176972348253740">
-    <nodeInfo nodeId="972176972348253743" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Stereotype_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="150" />
+    <nodeInfo nodeId="972176972348253743" fileName="Stereotype_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="972176972348253742" fileName="Stereotype_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="150" />
   </root>
 </debugInfo>

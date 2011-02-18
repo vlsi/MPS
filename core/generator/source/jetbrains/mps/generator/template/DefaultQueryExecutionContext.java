@@ -3,9 +3,10 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.*;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -28,7 +29,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     this.generator = generator;
   }
 
-  public boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
+  public boolean checkCondition(SNode condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
     if (condition == null) {
       if (required) {
         generator.showErrorMessage(inputNode, null, ruleNode, "rule condition required");
@@ -37,7 +38,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return true;
     }
 
-    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition.getNode());
+    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition);
     try {
       return (Boolean) QueryMethodGenerated.invoke(
         methodName,
@@ -46,50 +47,44 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      generator.getLogger().warning(BaseAdapter.fromAdapter(condition), "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+      generator.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (NoSuchMethodException e) {
-      generator.getLogger().warning(BaseAdapter.fromAdapter(condition), "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+      generator.getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (Throwable t) {
-      throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
+      throw new GenerationFailureException("error executing condition ", condition, t);
     }
     return false;
   }
 
-  public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    IfMacro_Condition function = ifMacro.getConditionFunction();
+  public boolean checkConditionForIfMacro(SNode inputNode, SNode ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
+    SNode function = RuleUtil.getIfMacro_ConditionFunction(ifMacro);
     if (function == null) {
-      throw new GenerationFailureException("cannot evaluate if-macro condition", inputNode, BaseAdapter.fromAdapter(ifMacro), null);
+      throw new GenerationFailureException("cannot evaluate if-macro condition", inputNode, ifMacro, null);
     }
 
-    String methodName = TemplateFunctionMethodName.ifMacro_Condition(function.getNode());
+    String methodName = TemplateFunctionMethodName.ifMacro_Condition(function);
     try {
       return (Boolean) QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new IfMacroContext(inputNode, BaseAdapter.fromAdapter(ifMacro), context, generator),
+        new IfMacroContext(inputNode, ifMacro, context, generator),
         ifMacro.getModel(),
         true);
     } catch (ClassNotFoundException e) {
-      generator.getLogger().warning(BaseAdapter.fromAdapter(ifMacro), "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+      generator.getLogger().warning(ifMacro, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (NoSuchMethodException e) {
-      generator.getLogger().warning(BaseAdapter.fromAdapter(ifMacro), "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+      generator.getLogger().warning(ifMacro, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
     } catch (Throwable t) {
-      throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(ifMacro), t);
+      throw new GenerationFailureException("error executing condition ", ifMacro, t);
     }
 
     return false;
   }
 
   public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
-    MapSrcMacro_MapperFunction mapperFunction;
-    if (adapter instanceof MapSrcNodeMacro) {
-      mapperFunction = ((MapSrcNodeMacro) adapter).getMapperFunction();
-    } else {
-      mapperFunction = ((MapSrcListMacro) adapter).getMapperFunction();
-    }
+    SNode mapperFunction = RuleUtil.getMapSrc_MapperFunction(mapSrcNodeOrListMacro);
 
-    String methodName = TemplateFunctionMethodName.mapSrcMacro_MapperFunction(mapperFunction.getNode());
+    String methodName = TemplateFunctionMethodName.mapSrcMacro_MapperFunction(mapperFunction);
     try {
       return (SNode) QueryMethodGenerated.invoke(
         methodName,
@@ -118,32 +113,31 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
   }
 
-  public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    String attributeRole = propertyMacro.getRole_();
-    String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(attributeRole);
+  public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
+    String propertyName = AttributeOperations.getPropertyName(propertyMacro);
 
-    PropertyMacro_GetPropertyValue function = propertyMacro.getPropertyValueFunction();
-    if (function == null) {
-      throw new GenerationFailureException("cannot evaluate property macro", inputNode, templateNode, BaseAdapter.fromAdapter(propertyMacro));
+    SNode function = RuleUtil.getPropertyMacro_ValueFunction(propertyMacro);
+    if (propertyName == null || function == null) {
+      throw new GenerationFailureException("cannot evaluate property macro", inputNode, templateNode, propertyMacro);
     }
 
     String templateValue = templateNode.getProperty(propertyName);
-    String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function.getNode());
+    String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function);
     try {
       Object macroValue = QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new PropertyMacroContext(inputNode, templateValue, propertyMacro.getNode(), context, generator),
+        new PropertyMacroContext(inputNode, templateValue, propertyMacro, context, generator),
         propertyMacro.getModel());
       String propertyValue = macroValue == null ? null : String.valueOf(macroValue);
       outputNode.setProperty(propertyName, propertyValue);
     } catch (Throwable t) {
-      throw new GenerationFailureException("cannot evaluate property macro", inputNode, templateNode, BaseAdapter.fromAdapter(propertyMacro), t);
+      throw new GenerationFailureException("cannot evaluate property macro", inputNode, templateNode, propertyMacro, t);
     }
   }
 
-  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query, @NotNull TemplateContext context) {
-    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query.getNode());
+  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query);
     try {
       return (SNode) QueryMethodGenerated.invoke(
         methodName,
@@ -154,25 +148,25 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       generator.getLogger().warning(macroNode, "cannot find nodes query '" + methodName + "' : evaluate to null");
       return null;
     } catch (Exception e) {
-      generator.showErrorMessage(inputNode, query.getNode(), "cannot evaluate query");
+      generator.showErrorMessage(inputNode, query, "cannot evaluate query");
       generator.getLogger().handleException(e);
       return null;
     }
   }
 
-  public Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query, @Nullable TemplateContext context) {
-    String methodName = TemplateFunctionMethodName.templateArgumentQuery(query.getNode());
+  public Object evaluateArgumentQuery(SNode inputNode, SNode query, @Nullable TemplateContext context) {
+    String methodName = TemplateFunctionMethodName.templateArgumentQuery(query);
     try {
       return QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new TemplateQueryContext(inputNode, query.getNode().getParent(), context, generator),
+        new TemplateQueryContext(inputNode, query.getParent(), context, generator),
         query.getModel());
     } catch (NoSuchMethodException e) {
-      generator.getLogger().warning(query.getNode().getParent(), "cannot find nodes query '" + methodName + "' : evaluate to null");
+      generator.getLogger().warning(query.getParent(), "cannot find nodes query '" + methodName + "' : evaluate to null");
       return null;
     } catch (Exception e) {
-      generator.showErrorMessage(inputNode, query.getNode(), "cannot evaluate query");
+      generator.showErrorMessage(inputNode, query, "cannot evaluate query");
       generator.getLogger().handleException(e);
       return null;
     }
@@ -181,8 +175,8 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   /**
    * used to evaluate 'sourceNodesQuery' in macros and in rules
    */
-  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, @NotNull TemplateContext context) {
-    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
+  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query);
     try {
       Object result = QueryMethodGenerated.invoke(
         methodName,
@@ -204,18 +198,18 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       generator.getLogger().warning(macroNode, "cannot find nodes query '" + methodName + "' : evaluate to empty list");
       return new ArrayList<SNode>();
     } catch (Exception e) {
-      generator.showErrorMessage(inputNode, query.getNode(), "cannot evaluate query");
+      generator.showErrorMessage(inputNode, query, "cannot evaluate query");
       generator.getLogger().handleException(e);
       return new LinkedList<SNode>();
     }
   }
 
   public SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context) {
-    TemplateFragment fragment = TemplateFragment_AnnotationLink.getTemplateFragment((BaseConcept) templateFragmentNode.getAdapter());
+    SNode fragment = RuleUtil.getTemplateFragmentByAnnotatedNode(templateFragmentNode);
     // has custom context builder provider?
-    TemplateFragment_ContextNodeQuery query = fragment.getContextNodeQuery();
+    SNode query = RuleUtil.getTemplateFragment_ContextNodeQuery(fragment);
     if (query != null) {
-      String methodName = TemplateFunctionMethodName.templateFragment_ContextNodeQuery(query.getNode());
+      String methodName = TemplateFunctionMethodName.templateFragment_ContextNodeQuery(query);
       try {
         return (SNode) QueryMethodGenerated.invoke(
           methodName,
@@ -236,23 +230,23 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     return mainContextNode;
   }
 
-  public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context) {
-    ReferenceMacro_GetReferent function = refMacro.getReferentFunction();
+  public Object getReferentTarget(SNode node, SNode outputNode, SNode refMacro, TemplateContext context) {
+    SNode function = RuleUtil.getReferenceMacro_GetReferent(refMacro);
     if (function == null) {
-      generator.showErrorMessage(node, refMacro.getNode(), "cannot evaluate reference macro: no function");
+      generator.showErrorMessage(node, refMacro, "cannot evaluate reference macro: no function");
       return null;
     }
 
-    String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function.getNode());
+    String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function);
     try {
       return QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new ReferenceMacroContext(node, outputNode, refMacro.getNode(), context, generator),
+        new ReferenceMacroContext(node, outputNode, refMacro, context, generator),
         refMacro.getModel());
 
     } catch (Throwable t) {
-      generator.showErrorMessage(node, refMacro.getNode(), "cannot evaluate reference macro");
+      generator.showErrorMessage(node, refMacro, "cannot evaluate reference macro");
       generator.getLogger().handleException(t);
     }
     return null;

@@ -7,10 +7,11 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
@@ -41,13 +42,13 @@ public class ExportScope_Behavior {
   public static SNode getExportScope_4075196924244445285(SNode node) {
     // return effective ExportScope or null 
     /*
-      return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
+      return AttributeOperations.getAttribute(ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return (SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("export"), true) != null);
+          return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))) != null);
         }
-      }), AttributesRolesUtil.childRoleFromAttributeRole("export"), true);
+      }), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")));
     */
-    return SLinkOperations.getTarget(SNodeOperations.getContainingRoot(node), AttributesRolesUtil.childRoleFromAttributeRole("export"), true);
+    return AttributeOperations.getAttribute(SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")));
   }
 
   public static boolean checkExportDefault_8259195909097980935(boolean isConcept, SNode node, String namespace) {

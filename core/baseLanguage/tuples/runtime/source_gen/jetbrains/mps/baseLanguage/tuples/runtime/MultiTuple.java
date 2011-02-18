@@ -61,8 +61,18 @@ public class MultiTuple {
     return this.values[idx];
   }
 
+  @Deprecated
   public void assign(Object... values) {
-    System.arraycopy(values, 0, this.values, 0, values.length);
+    assignValues(values);
+  }
+
+  public MultiTuple assignValues(Object... values) {
+    if (values == null) {
+      Arrays.fill(this.values, null);
+    } else {
+      System.arraycopy(values, 0, this.values, 0, values.length);
+    }
+    return this;
   }
 
   public static boolean eq(Object a, Object b) {
@@ -162,8 +172,10 @@ public class MultiTuple {
     }
 
     public Tuples._0 assign(Tuples._0 from) {
-      this.assign();
-      return this;
+      if (from == null) {
+        return (Tuples._0) this.assignValues(null);
+      }
+      return (Tuples._0) this.assignValues();
     }
   }
 
@@ -187,13 +199,17 @@ public class MultiTuple {
     }
 
     public Tuples._0 assign(Tuples._0 from) {
-      this.assign();
-      return this;
+      if (from == null) {
+        return (Tuples._0) this.assignValues(null);
+      }
+      return (Tuples._0) this.assignValues();
     }
 
     public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
-      this.assign(from._0());
-      return this;
+      if (from == null) {
+        return (Tuples._1<T0>) this.assignValues(null);
+      }
+      return (Tuples._1<T0>) this.assignValues(from._0());
     }
   }
 
@@ -227,18 +243,24 @@ public class MultiTuple {
     }
 
     public Tuples._0 assign(Tuples._0 from) {
-      this.assign();
-      return this;
+      if (from == null) {
+        return (Tuples._0) this.assignValues(null);
+      }
+      return (Tuples._0) this.assignValues();
     }
 
     public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
-      this.assign(from._0());
-      return this;
+      if (from == null) {
+        return (Tuples._1<T0>) this.assignValues(null);
+      }
+      return (Tuples._1<T0>) this.assignValues(from._0());
     }
 
     public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
-      this.assign(from._0(), from._1());
-      return this;
+      if (from == null) {
+        return (Tuples._2<T0, T1>) this.assignValues(null);
+      }
+      return (Tuples._2<T0, T1>) this.assignValues(from._0(), from._1());
     }
   }
 
@@ -282,23 +304,31 @@ public class MultiTuple {
     }
 
     public Tuples._0 assign(Tuples._0 from) {
-      this.assign();
-      return this;
+      if (from == null) {
+        return (Tuples._0) this.assignValues(null);
+      }
+      return (Tuples._0) this.assignValues();
     }
 
     public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
-      this.assign(from._0());
-      return this;
+      if (from == null) {
+        return (Tuples._1<T0>) this.assignValues(null);
+      }
+      return (Tuples._1<T0>) this.assignValues(from._0());
     }
 
     public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
-      this.assign(from._0(), from._1());
-      return this;
+      if (from == null) {
+        return (Tuples._2<T0, T1>) this.assignValues(null);
+      }
+      return (Tuples._2<T0, T1>) this.assignValues(from._0(), from._1());
     }
 
     public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
-      this.assign(from._0(), from._1(), from._2());
-      return this;
+      if (from == null) {
+        return (Tuples._3<T0, T1, T2>) this.assignValues(null);
+      }
+      return (Tuples._3<T0, T1, T2>) this.assignValues(from._0(), from._1(), from._2());
     }
   }
 
@@ -352,28 +382,38 @@ public class MultiTuple {
     }
 
     public Tuples._0 assign(Tuples._0 from) {
-      this.assign();
-      return this;
+      if (from == null) {
+        return (Tuples._0) this.assignValues(null);
+      }
+      return (Tuples._0) this.assignValues();
     }
 
     public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
-      this.assign(from._0());
-      return this;
+      if (from == null) {
+        return (Tuples._1<T0>) this.assignValues(null);
+      }
+      return (Tuples._1<T0>) this.assignValues(from._0());
     }
 
     public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
-      this.assign(from._0(), from._1());
-      return this;
+      if (from == null) {
+        return (Tuples._2<T0, T1>) this.assignValues(null);
+      }
+      return (Tuples._2<T0, T1>) this.assignValues(from._0(), from._1());
     }
 
     public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
-      this.assign(from._0(), from._1(), from._2());
-      return this;
+      if (from == null) {
+        return (Tuples._3<T0, T1, T2>) this.assignValues(null);
+      }
+      return (Tuples._3<T0, T1, T2>) this.assignValues(from._0(), from._1(), from._2());
     }
 
     public Tuples._4<T0, T1, T2, T3> assign(Tuples._4<? extends T0, ? extends T1, ? extends T2, ? extends T3> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3());
-      return this;
+      if (from == null) {
+        return (Tuples._4<T0, T1, T2, T3>) this.assignValues(null);
+      }
+      return (Tuples._4<T0, T1, T2, T3>) this.assignValues(from._0(), from._1(), from._2(), from._3());
     }
   }
 
@@ -437,33 +477,45 @@ public class MultiTuple {
     }
 
     public Tuples._0 assign(Tuples._0 from) {
-      this.assign();
-      return this;
+      if (from == null) {
+        return (Tuples._0) this.assignValues(null);
+      }
+      return (Tuples._0) this.assignValues();
     }
 
     public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
-      this.assign(from._0());
-      return this;
+      if (from == null) {
+        return (Tuples._1<T0>) this.assignValues(null);
+      }
+      return (Tuples._1<T0>) this.assignValues(from._0());
     }
 
     public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
-      this.assign(from._0(), from._1());
-      return this;
+      if (from == null) {
+        return (Tuples._2<T0, T1>) this.assignValues(null);
+      }
+      return (Tuples._2<T0, T1>) this.assignValues(from._0(), from._1());
     }
 
     public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
-      this.assign(from._0(), from._1(), from._2());
-      return this;
+      if (from == null) {
+        return (Tuples._3<T0, T1, T2>) this.assignValues(null);
+      }
+      return (Tuples._3<T0, T1, T2>) this.assignValues(from._0(), from._1(), from._2());
     }
 
     public Tuples._4<T0, T1, T2, T3> assign(Tuples._4<? extends T0, ? extends T1, ? extends T2, ? extends T3> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3());
-      return this;
+      if (from == null) {
+        return (Tuples._4<T0, T1, T2, T3>) this.assignValues(null);
+      }
+      return (Tuples._4<T0, T1, T2, T3>) this.assignValues(from._0(), from._1(), from._2(), from._3());
     }
 
     public Tuples._5<T0, T1, T2, T3, T4> assign(Tuples._5<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4());
-      return this;
+      if (from == null) {
+        return (Tuples._5<T0, T1, T2, T3, T4>) this.assignValues(null);
+      }
+      return (Tuples._5<T0, T1, T2, T3, T4>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4());
     }
   }
 
@@ -537,38 +589,52 @@ public class MultiTuple {
     }
 
     public Tuples._0 assign(Tuples._0 from) {
-      this.assign();
-      return this;
+      if (from == null) {
+        return (Tuples._0) this.assignValues(null);
+      }
+      return (Tuples._0) this.assignValues();
     }
 
     public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
-      this.assign(from._0());
-      return this;
+      if (from == null) {
+        return (Tuples._1<T0>) this.assignValues(null);
+      }
+      return (Tuples._1<T0>) this.assignValues(from._0());
     }
 
     public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
-      this.assign(from._0(), from._1());
-      return this;
+      if (from == null) {
+        return (Tuples._2<T0, T1>) this.assignValues(null);
+      }
+      return (Tuples._2<T0, T1>) this.assignValues(from._0(), from._1());
     }
 
     public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
-      this.assign(from._0(), from._1(), from._2());
-      return this;
+      if (from == null) {
+        return (Tuples._3<T0, T1, T2>) this.assignValues(null);
+      }
+      return (Tuples._3<T0, T1, T2>) this.assignValues(from._0(), from._1(), from._2());
     }
 
     public Tuples._4<T0, T1, T2, T3> assign(Tuples._4<? extends T0, ? extends T1, ? extends T2, ? extends T3> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3());
-      return this;
+      if (from == null) {
+        return (Tuples._4<T0, T1, T2, T3>) this.assignValues(null);
+      }
+      return (Tuples._4<T0, T1, T2, T3>) this.assignValues(from._0(), from._1(), from._2(), from._3());
     }
 
     public Tuples._5<T0, T1, T2, T3, T4> assign(Tuples._5<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4());
-      return this;
+      if (from == null) {
+        return (Tuples._5<T0, T1, T2, T3, T4>) this.assignValues(null);
+      }
+      return (Tuples._5<T0, T1, T2, T3, T4>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4());
     }
 
     public Tuples._6<T0, T1, T2, T3, T4, T5> assign(Tuples._6<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5());
-      return this;
+      if (from == null) {
+        return (Tuples._6<T0, T1, T2, T3, T4, T5>) this.assignValues(null);
+      }
+      return (Tuples._6<T0, T1, T2, T3, T4, T5>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4(), from._5());
     }
   }
 
@@ -652,43 +718,59 @@ public class MultiTuple {
     }
 
     public Tuples._0 assign(Tuples._0 from) {
-      this.assign();
-      return this;
+      if (from == null) {
+        return (Tuples._0) this.assignValues(null);
+      }
+      return (Tuples._0) this.assignValues();
     }
 
     public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
-      this.assign(from._0());
-      return this;
+      if (from == null) {
+        return (Tuples._1<T0>) this.assignValues(null);
+      }
+      return (Tuples._1<T0>) this.assignValues(from._0());
     }
 
     public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
-      this.assign(from._0(), from._1());
-      return this;
+      if (from == null) {
+        return (Tuples._2<T0, T1>) this.assignValues(null);
+      }
+      return (Tuples._2<T0, T1>) this.assignValues(from._0(), from._1());
     }
 
     public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
-      this.assign(from._0(), from._1(), from._2());
-      return this;
+      if (from == null) {
+        return (Tuples._3<T0, T1, T2>) this.assignValues(null);
+      }
+      return (Tuples._3<T0, T1, T2>) this.assignValues(from._0(), from._1(), from._2());
     }
 
     public Tuples._4<T0, T1, T2, T3> assign(Tuples._4<? extends T0, ? extends T1, ? extends T2, ? extends T3> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3());
-      return this;
+      if (from == null) {
+        return (Tuples._4<T0, T1, T2, T3>) this.assignValues(null);
+      }
+      return (Tuples._4<T0, T1, T2, T3>) this.assignValues(from._0(), from._1(), from._2(), from._3());
     }
 
     public Tuples._5<T0, T1, T2, T3, T4> assign(Tuples._5<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4());
-      return this;
+      if (from == null) {
+        return (Tuples._5<T0, T1, T2, T3, T4>) this.assignValues(null);
+      }
+      return (Tuples._5<T0, T1, T2, T3, T4>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4());
     }
 
     public Tuples._6<T0, T1, T2, T3, T4, T5> assign(Tuples._6<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5());
-      return this;
+      if (from == null) {
+        return (Tuples._6<T0, T1, T2, T3, T4, T5>) this.assignValues(null);
+      }
+      return (Tuples._6<T0, T1, T2, T3, T4, T5>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4(), from._5());
     }
 
     public Tuples._7<T0, T1, T2, T3, T4, T5, T6> assign(Tuples._7<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6());
-      return this;
+      if (from == null) {
+        return (Tuples._7<T0, T1, T2, T3, T4, T5, T6>) this.assignValues(null);
+      }
+      return (Tuples._7<T0, T1, T2, T3, T4, T5, T6>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6());
     }
   }
 
@@ -782,48 +864,66 @@ public class MultiTuple {
     }
 
     public Tuples._0 assign(Tuples._0 from) {
-      this.assign();
-      return this;
+      if (from == null) {
+        return (Tuples._0) this.assignValues(null);
+      }
+      return (Tuples._0) this.assignValues();
     }
 
     public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
-      this.assign(from._0());
-      return this;
+      if (from == null) {
+        return (Tuples._1<T0>) this.assignValues(null);
+      }
+      return (Tuples._1<T0>) this.assignValues(from._0());
     }
 
     public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
-      this.assign(from._0(), from._1());
-      return this;
+      if (from == null) {
+        return (Tuples._2<T0, T1>) this.assignValues(null);
+      }
+      return (Tuples._2<T0, T1>) this.assignValues(from._0(), from._1());
     }
 
     public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
-      this.assign(from._0(), from._1(), from._2());
-      return this;
+      if (from == null) {
+        return (Tuples._3<T0, T1, T2>) this.assignValues(null);
+      }
+      return (Tuples._3<T0, T1, T2>) this.assignValues(from._0(), from._1(), from._2());
     }
 
     public Tuples._4<T0, T1, T2, T3> assign(Tuples._4<? extends T0, ? extends T1, ? extends T2, ? extends T3> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3());
-      return this;
+      if (from == null) {
+        return (Tuples._4<T0, T1, T2, T3>) this.assignValues(null);
+      }
+      return (Tuples._4<T0, T1, T2, T3>) this.assignValues(from._0(), from._1(), from._2(), from._3());
     }
 
     public Tuples._5<T0, T1, T2, T3, T4> assign(Tuples._5<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4());
-      return this;
+      if (from == null) {
+        return (Tuples._5<T0, T1, T2, T3, T4>) this.assignValues(null);
+      }
+      return (Tuples._5<T0, T1, T2, T3, T4>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4());
     }
 
     public Tuples._6<T0, T1, T2, T3, T4, T5> assign(Tuples._6<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5());
-      return this;
+      if (from == null) {
+        return (Tuples._6<T0, T1, T2, T3, T4, T5>) this.assignValues(null);
+      }
+      return (Tuples._6<T0, T1, T2, T3, T4, T5>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4(), from._5());
     }
 
     public Tuples._7<T0, T1, T2, T3, T4, T5, T6> assign(Tuples._7<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6());
-      return this;
+      if (from == null) {
+        return (Tuples._7<T0, T1, T2, T3, T4, T5, T6>) this.assignValues(null);
+      }
+      return (Tuples._7<T0, T1, T2, T3, T4, T5, T6>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6());
     }
 
     public Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> assign(Tuples._8<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6(), from._7());
-      return this;
+      if (from == null) {
+        return (Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7>) this.assignValues(null);
+      }
+      return (Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6(), from._7());
     }
   }
 
@@ -927,53 +1027,73 @@ public class MultiTuple {
     }
 
     public Tuples._0 assign(Tuples._0 from) {
-      this.assign();
-      return this;
+      if (from == null) {
+        return (Tuples._0) this.assignValues(null);
+      }
+      return (Tuples._0) this.assignValues();
     }
 
     public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
-      this.assign(from._0());
-      return this;
+      if (from == null) {
+        return (Tuples._1<T0>) this.assignValues(null);
+      }
+      return (Tuples._1<T0>) this.assignValues(from._0());
     }
 
     public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
-      this.assign(from._0(), from._1());
-      return this;
+      if (from == null) {
+        return (Tuples._2<T0, T1>) this.assignValues(null);
+      }
+      return (Tuples._2<T0, T1>) this.assignValues(from._0(), from._1());
     }
 
     public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
-      this.assign(from._0(), from._1(), from._2());
-      return this;
+      if (from == null) {
+        return (Tuples._3<T0, T1, T2>) this.assignValues(null);
+      }
+      return (Tuples._3<T0, T1, T2>) this.assignValues(from._0(), from._1(), from._2());
     }
 
     public Tuples._4<T0, T1, T2, T3> assign(Tuples._4<? extends T0, ? extends T1, ? extends T2, ? extends T3> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3());
-      return this;
+      if (from == null) {
+        return (Tuples._4<T0, T1, T2, T3>) this.assignValues(null);
+      }
+      return (Tuples._4<T0, T1, T2, T3>) this.assignValues(from._0(), from._1(), from._2(), from._3());
     }
 
     public Tuples._5<T0, T1, T2, T3, T4> assign(Tuples._5<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4());
-      return this;
+      if (from == null) {
+        return (Tuples._5<T0, T1, T2, T3, T4>) this.assignValues(null);
+      }
+      return (Tuples._5<T0, T1, T2, T3, T4>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4());
     }
 
     public Tuples._6<T0, T1, T2, T3, T4, T5> assign(Tuples._6<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5());
-      return this;
+      if (from == null) {
+        return (Tuples._6<T0, T1, T2, T3, T4, T5>) this.assignValues(null);
+      }
+      return (Tuples._6<T0, T1, T2, T3, T4, T5>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4(), from._5());
     }
 
     public Tuples._7<T0, T1, T2, T3, T4, T5, T6> assign(Tuples._7<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6());
-      return this;
+      if (from == null) {
+        return (Tuples._7<T0, T1, T2, T3, T4, T5, T6>) this.assignValues(null);
+      }
+      return (Tuples._7<T0, T1, T2, T3, T4, T5, T6>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6());
     }
 
     public Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> assign(Tuples._8<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6(), from._7());
-      return this;
+      if (from == null) {
+        return (Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7>) this.assignValues(null);
+      }
+      return (Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6(), from._7());
     }
 
     public Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> assign(Tuples._9<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> from) {
-      this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6(), from._7(), from._8());
-      return this;
+      if (from == null) {
+        return (Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8>) this.assignValues(null);
+      }
+      return (Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8>) this.assignValues(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6(), from._7(), from._8());
     }
   }
 }

@@ -5,7 +5,6 @@ import jetbrains.mps.generator.impl.interpreted.TemplateCreateRootRuleInterprete
 import jetbrains.mps.generator.impl.interpreted.TemplateRootMappingRuleInterpreted;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.JavaNameUtil;
@@ -41,7 +40,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
+  public boolean checkCondition(SNode condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
     try {
       tracer.push(taskName("check condition", ruleNode), true);
       return wrapped.checkCondition(condition, required, inputNode, ruleNode);
@@ -51,9 +50,9 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
+  public boolean checkConditionForIfMacro(SNode inputNode, SNode ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("check if condition", ifMacro.getNode()), true);
+      tracer.push(taskName("check if condition", ifMacro), true);
       return wrapped.checkConditionForIfMacro(inputNode, ifMacro, context);
     } finally {
       tracer.pop();
@@ -81,7 +80,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
+  public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("property macro", templateNode), true);
       wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
@@ -91,7 +90,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query, @NotNull TemplateContext context) {
+  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
     try {
       tracer.push(taskName("evaluate source node", macroNode), true);
       return wrapped.evaluateSourceNodeQuery(inputNode, macroNode, query, context);
@@ -101,9 +100,9 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, @NotNull TemplateContext context) {
+  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
     try {
-      tracer.push(taskName("evaluate source nodes", query.getNode()), true);
+      tracer.push(taskName("evaluate source nodes", query), true);
       return wrapped.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query, context);
     } finally {
       tracer.pop();
@@ -121,9 +120,9 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context) {
+  public Object getReferentTarget(SNode node, SNode outputNode, SNode refMacro, TemplateContext context) {
     try {
-      tracer.push(taskName("referent target", refMacro.getNode()), true);
+      tracer.push(taskName("referent target", refMacro), true);
       return wrapped.getReferentTarget(node, outputNode, refMacro, context);
     } finally {
       tracer.pop();
@@ -131,9 +130,9 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query, @Nullable TemplateContext context) {
+  public Object evaluateArgumentQuery(SNode inputNode, SNode query, @Nullable TemplateContext context) {
     try {
-      tracer.push(taskName("evaluate template argument query", query.getNode()), true);
+      tracer.push(taskName("evaluate template argument query", query), true);
       return wrapped.evaluateArgumentQuery(inputNode, query, context);
     } finally {
       tracer.pop();

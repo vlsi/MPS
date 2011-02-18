@@ -8,6 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ui.modeling.structure.HasTemplate;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +24,7 @@ public class StatementStub extends Statement implements IPartiallyDefinedStub {
   public static final String SELECTOR = "selector";
   public static final String ROLE = "role";
   public static final String TEMPLATE = "template";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public StatementStub(SNode node) {
     super(node);
@@ -80,6 +84,26 @@ public class StatementStub extends Statement implements IPartiallyDefinedStub {
 
   public void setTemplate(BaseConcept node) {
     super.setReferent(StatementStub.TEMPLATE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(StatementStub._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, StatementStub._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, StatementStub._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(StatementStub._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, StatementStub._$ATTRIBUTE, node);
   }
 
   public static StatementStub newInstance(SModel sm, boolean init) {

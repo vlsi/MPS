@@ -65,6 +65,32 @@ public class TargetRange {
     } while (atsize < SetSequence.fromSet(allTargets).count());
   }
 
+  public void addRelatedPrecursors(Iterable<ITarget> availableTargets) {
+    Set<ITarget.Name> valences = SetSequence.fromSetWithValues(new HashSet<ITarget.Name>(), Sequence.fromIterable(MapSequence.fromMap(targetsView).values()).<ITarget.Name>translate(new ITranslator2<ITarget, ITarget.Name>() {
+      public Iterable<ITarget.Name> translate(ITarget trg) {
+        return Sequence.fromIterable(trg.after()).concat(Sequence.fromIterable(trg.notAfter()));
+      }
+    }));
+    List<ITarget> available = Sequence.fromIterable(availableTargets).toListSequence();
+    int atsize;
+    do {
+      atsize = SetSequence.fromSet(allTargets).count();
+      for (Iterator<ITarget> it = ListSequence.fromList(available).iterator(); it.hasNext();) {
+        ITarget trg = it.next();
+        Iterable<ITarget.Name> trgvals = Sequence.fromIterable(trg.before()).concat(Sequence.fromIterable(trg.notBefore()));
+        if (SetSequence.fromSet(valences).contains(trg.getName()) || Sequence.fromIterable(trgvals).any(new IWhereFilter<ITarget.Name>() {
+          public boolean accept(ITarget.Name tn) {
+            return MapSequence.fromMap(targetsView).containsKey(tn);
+          }
+        })) {
+          addTarget(trg);
+          SetSequence.fromSet(valences).addSequence(Sequence.fromIterable(trg.after()).concat(Sequence.fromIterable(trg.notAfter())));
+          it.remove();
+        }
+      }
+    } while (atsize < SetSequence.fromSet(allTargets).count());
+  }
+
   public ITarget getTarget(ITarget.Name name) {
     return MapSequence.fromMap(targetsView).get(name);
   }

@@ -4,6 +4,9 @@ package jetbrains.mpslite.structure;
 
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class ConcreteReferencePart extends ReferencePart implements INamedConcep
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONCEPT_REFERENCE = "conceptReference";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConcreteReferencePart(SNode node) {
     super(node);
@@ -58,6 +62,26 @@ public class ConcreteReferencePart extends ReferencePart implements INamedConcep
 
   public void setConceptReference(AbstractConceptReference node) {
     super.setChild(ConcreteReferencePart.CONCEPT_REFERENCE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ConcreteReferencePart._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConcreteReferencePart._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConcreteReferencePart._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConcreteReferencePart._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConcreteReferencePart._$ATTRIBUTE, node);
   }
 
   public static ConcreteReferencePart newInstance(SModel sm, boolean init) {

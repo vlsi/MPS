@@ -9,6 +9,7 @@ import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -23,6 +24,7 @@ public class EvaluatorConcept extends BaseConcept implements IMethodLike {
   public static final String STATIC_CONTEXT_TYPE = "staticContextType";
   public static final String EVALUATED_STATEMENTS = "evaluatedStatements";
   public static final String VARIABLES = "variables";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public EvaluatorConcept(SNode node) {
     super(node);
@@ -102,6 +104,26 @@ public class EvaluatorConcept extends BaseConcept implements IMethodLike {
 
   public void insertVariables(LowLevelVariable prev, LowLevelVariable node) {
     this.insertChild(prev, EvaluatorConcept.VARIABLES, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(EvaluatorConcept._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, EvaluatorConcept._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, EvaluatorConcept._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(EvaluatorConcept._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EvaluatorConcept._$ATTRIBUTE, node);
   }
 
   public static EvaluatorConcept newInstance(SModel sm, boolean init) {

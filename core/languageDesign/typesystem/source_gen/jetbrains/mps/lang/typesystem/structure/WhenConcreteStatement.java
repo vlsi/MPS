@@ -7,6 +7,9 @@ import jetbrains.mps.baseLanguage.structure.Closureoid;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +24,7 @@ public class WhenConcreteStatement extends Statement implements Closureoid {
   public static final String BODY = "body";
   public static final String ARGUMENT = "argument";
   public static final String ARGUMENT_REPRESENTATOR = "argumentRepresentator";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public WhenConcreteStatement(SNode node) {
     super(node);
@@ -88,6 +92,26 @@ public class WhenConcreteStatement extends Statement implements Closureoid {
 
   public void setArgumentRepresentator(WhenConcreteVariableDeclaration node) {
     super.setChild(WhenConcreteStatement.ARGUMENT_REPRESENTATOR, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(WhenConcreteStatement._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, WhenConcreteStatement._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, WhenConcreteStatement._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(WhenConcreteStatement._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, WhenConcreteStatement._$ATTRIBUTE, node);
   }
 
   public static WhenConcreteStatement newInstance(SModel sm, boolean init) {

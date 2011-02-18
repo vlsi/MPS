@@ -53,20 +53,20 @@
   <unitInfo fileName="AnonymousCellAnnotation_Editor.java" startLine="20" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.lang.test.editor.AnonymousCellAnnotation_Editor" />
   <unitInfo fileName="NodesTestCase_Editor.java" startLine="28" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodesTestCase_Editor" />
   <root nodeId="1101347953350138824">
-    <nodeInfo nodeId="1101347953350241948" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="BootstrapActionReference_Editor.java" startLine="78" startPosition="105" endLine="79" endPosition="16" />
-    <nodeInfo nodeId="1101347953350240463" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BootstrapActionReference_Editor.java" startLine="79" startPosition="16" endLine="80" endPosition="129" />
-    <nodeInfo nodeId="1101347953350240473" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BootstrapActionReference_Editor.java" startLine="80" startPosition="129" endLine="81" endPosition="20" />
+    <nodeInfo nodeId="1101347953350241948" fileName="BootstrapActionReference_Editor.java" startLine="78" startPosition="105" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1101347953350240463" fileName="BootstrapActionReference_Editor.java" startLine="79" startPosition="16" endLine="80" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1101347953350240473" fileName="BootstrapActionReference_Editor.java" startLine="80" startPosition="129" endLine="81" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1101347953350138841" fileName="BootstrapActionReference_Editor.java" startLine="78" startPosition="105" endLine="81" endPosition="20">
       <varInfo nodeId="1101347953350240464" varName="result" />
     </scopeInfo>
   </root>
   <root nodeId="1215524000577">
-    <nodeInfo nodeId="1215524040381" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Annotation_Actions.java" startLine="28" startPosition="75" endLine="29" endPosition="39" />
+    <nodeInfo nodeId="1215524040381" fileName="Annotation_Actions.java" startLine="28" startPosition="75" endLine="29" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1215524022394" fileName="Annotation_Actions.java" startLine="28" startPosition="75" endLine="29" endPosition="39" />
   </root>
   <root nodeId="1229194997584">
-    <nodeInfo nodeId="1229432451221" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnonymousCellAnnotation_Editor.java" startLine="272" startPosition="111" endLine="273" endPosition="66" />
-    <nodeInfo nodeId="1932269937152637550" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnonymousCellAnnotation_Editor.java" startLine="276" startPosition="111" endLine="277" endPosition="69" />
+    <nodeInfo nodeId="1229432451221" fileName="AnonymousCellAnnotation_Editor.java" startLine="272" startPosition="111" endLine="273" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1932269937152637550" fileName="AnonymousCellAnnotation_Editor.java" startLine="276" startPosition="111" endLine="277" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1229432434156" fileName="AnonymousCellAnnotation_Editor.java" startLine="272" startPosition="111" endLine="273" endPosition="66" />
     <scopeInfo nodeId="1932269937152637549" fileName="AnonymousCellAnnotation_Editor.java" startLine="276" startPosition="111" endLine="277" endPosition="69" />
   </root>

@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.script.actions.QueriesGenerated" />
   <root nodeId="1209061298968">
-    <nodeInfo nodeId="1209061400316" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="QueriesGenerated.java" startLine="11" startPosition="149" endLine="12" endPosition="105" />
+    <nodeInfo nodeId="1209061400316" fileName="QueriesGenerated.java" startLine="11" startPosition="149" endLine="12" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1209061300940" fileName="QueriesGenerated.java" startLine="11" startPosition="149" endLine="12" endPosition="105" />
   </root>
 </debugInfo>

@@ -31,6 +31,6 @@
   <unitInfo fileName="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" />
   <unitInfo fileName="GenerationContextOp_GetOutputListByLabelAndInput.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput" />
   <unitInfo fileName="GenerationContextOp_GetOutputByLabelAndInput.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" />
-  <unitInfo fileName="GenerationContextOp_Base.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base" />
+  <unitInfo fileName="GenerationContextOp_Base.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base" />
 </debugInfo>
 

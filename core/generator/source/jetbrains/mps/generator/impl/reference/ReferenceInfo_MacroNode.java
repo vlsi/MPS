@@ -17,7 +17,7 @@ package jetbrains.mps.generator.impl.reference;
 
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.lang.generator.structure.ReferenceMacro;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.InternUtil;
@@ -28,18 +28,16 @@ import jetbrains.mps.util.InternUtil;
 public class ReferenceInfo_MacroNode extends ReferenceInfo_Macro {
 
   private final SNode myTemplateReferenceNode;
-  private final ReferenceMacro myReferenceMacro;
+  private final SNode myReferenceMacro;
 
-  public ReferenceInfo_MacroNode(SNode outputSourceNode, ReferenceMacro macro, SNode templateReferenceNode, TemplateContext context, ReductionContext reductionContext) {
+  public ReferenceInfo_MacroNode(SNode outputSourceNode, SNode macro, SNode templateReferenceNode, TemplateContext context, ReductionContext reductionContext) {
     super(outputSourceNode, InternUtil.intern(getReferenceRole(macro)), context, reductionContext);
     myTemplateReferenceNode = templateReferenceNode;
     myReferenceMacro = macro;
   }
 
-  private static String getReferenceRole(ReferenceMacro macro) {
-    String attributeRole = macro.getRole_();
-    String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(attributeRole);
-    return linkRole;
+  private static String getReferenceRole(SNode macro) {
+    return AttributeOperations.getLinkRole(macro);
   }
 
   public SNode getInputTargetNode() {
@@ -47,7 +45,7 @@ public class ReferenceInfo_MacroNode extends ReferenceInfo_Macro {
   }
 
   protected SNode getMacroNode() {
-    return myReferenceMacro.getNode();
+    return myReferenceMacro;
   }
 
   protected Object resolveReference() {

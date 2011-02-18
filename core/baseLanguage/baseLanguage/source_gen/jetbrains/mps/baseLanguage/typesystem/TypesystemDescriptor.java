@@ -519,6 +519,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_ConstructorRecursiveInvocation_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_CorrectScope_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
@@ -556,6 +560,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_FieldIsNeverUsedOrAssigned_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_FinalAndAbstractMethod_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
@@ -922,14 +930,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOpsProvider_OneTypeSpecified provider = new OverloadedOpsProvider_OneTypeSpecified() {
         {
-          this.myOperandType = new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a0pi0a().createNode();
+          this.myOperandType = new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a0ri0a().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
           this.myIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a322a0().createNode();
+          return new TypesystemDescriptor.QuotationClass_3ist9o_a0a0a0a0a0a0a522a0().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
@@ -1437,8 +1445,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a322a0 {
-    public QuotationClass_3ist9o_a0a0a0a0a0a0a322a0() {
+  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a522a0 {
+    public QuotationClass_3ist9o_a0a0a0a0a0a0a522a0() {
     }
 
     public SNode createNode() {
@@ -1454,8 +1462,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a0pi0a {
-    public QuotationClass_3ist9o_a0a0a0a0a0a0a0pi0a() {
+  public static class QuotationClass_3ist9o_a0a0a0a0a0a0a0ri0a {
+    public QuotationClass_3ist9o_a0a0a0a0a0a0a0ri0a() {
     }
 
     public SNode createNode() {

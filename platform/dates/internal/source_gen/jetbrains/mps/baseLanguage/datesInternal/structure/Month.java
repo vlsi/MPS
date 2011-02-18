@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.datesInternal.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +21,7 @@ public class Month extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DAYS = "days";
   public static final String NUMBER = "number";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Month(SNode node) {
     super(node);
@@ -77,6 +81,26 @@ public class Month extends BaseConcept implements INamedConcept {
 
   public void setNumber(int value) {
     this.setIntegerProperty(Month.NUMBER, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Month._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Month._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Month._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Month._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Month._$ATTRIBUTE, node);
   }
 
   public static Month newInstance(SModel sm, boolean init) {

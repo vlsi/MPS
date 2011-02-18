@@ -13,9 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -66,15 +66,60 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
         });
         ListSequence.fromList(SLinkOperations.getTargets(helperClass, "staticMethod", true)).addElement(method);
 
+        SNode callHelperStmt = new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a21a4a0a0a1a0().createNode(helperClass, SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", null), SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", null), method);
+
+        SNode order = SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.plugin.structure.Order", null);
+        SPropertyOperations.set(order, "name", SPropertyOperations.getString(node, "name"));
+
         List<SNode> tabs = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(node, "tabs", true));
         for (SNode tab : ListSequence.fromList(tabs)) {
-          SNodeOperations.detachNode(tab);
-          SModelOperations.addRootNode(model, tab);
-          SLinkOperations.setTarget(tab, "baseNodeConcept", SLinkOperations.getTarget(node, "mainConcept", false), false);
-          SNode bnb = SLinkOperations.setNewChild(tab, "baseNodeBlock", "jetbrains.mps.lang.plugin.structure.GetBaseNodeBlock");
-          SLinkOperations.setNewChild(bnb, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(bnb, "body", true), "statement", true)).addElement(new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0f0n0e0a0a0b0a().createNode(helperClass, SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", null), SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", null), method));
+          SNode newTab = new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0a81a4a0a0a1a0().createNode(SPropertyOperations.getString(tab, "name"), SPropertyOperations.getString(tab, "shortcutChar"), SLinkOperations.getTarget(node, "mainConcept", false), SLinkOperations.getTarget(node, "mainConcept", false));
+
+          // todo rewrite. this code is due to bad behavior of quotations in this case 
+          SPropertyOperations.set(newTab, "commandOnCreate", "" + !(SPropertyOperations.getBoolean(tab, "outsideCommand")));
+          SLinkOperations.setTarget(newTab, "order", new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a2a4a81a4a0a0a1a0().createNode(order), true);
+          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(newTab, "baseNodeBlock", true), "body", true), "statement", true)).addElement(SNodeOperations.copyNode(callHelperStmt));
+
+          if (SLinkOperations.getTarget(tab, "initBlock", true) != null) {
+            SLinkOperations.setNewChild(newTab, "listenBlock", "jetbrains.mps.lang.plugin.structure.ListenBlock");
+            SLinkOperations.setTarget(SLinkOperations.getTarget(newTab, "listenBlock", true), "body", SLinkOperations.getTarget(SLinkOperations.getTarget(tab, "initBlock", true), "body", true), true);
+          }
+          if (SNodeOperations.isInstanceOf(tab, "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab")) {
+            SNode oldTab = SNodeOperations.cast(tab, "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab");
+
+            if ((SLinkOperations.getTarget(oldTab, "newCreateBlock", true) != null)) {
+              SLinkOperations.setNewChild(newTab, "createBlock", "jetbrains.mps.lang.plugin.structure.NewCreateBlock");
+              SLinkOperations.setTarget(SLinkOperations.getTarget(newTab, "createBlock", true), "body", SLinkOperations.getTarget(SLinkOperations.getTarget(oldTab, "newCreateBlock", true), "body", true), true);
+            }
+
+            if ((SLinkOperations.getTarget(oldTab, "createBlock", true) != null)) {
+              SLinkOperations.setNewChild(newTab, "createBlock", "jetbrains.mps.lang.plugin.structure.NewCreateBlock");
+              SLinkOperations.setTarget(SLinkOperations.getTarget(newTab, "createBlock", true), "body", SLinkOperations.getTarget(SLinkOperations.getTarget(oldTab, "createBlock", true), "body", true), true);
+            }
+
+            if ((SLinkOperations.getTarget(oldTab, "getConceptsBlock", true) != null)) {
+              SLinkOperations.setNewChild(newTab, "conceptsBlock", "jetbrains.mps.lang.plugin.structure.GetConceptsBlock");
+              SLinkOperations.setTarget(SLinkOperations.getTarget(newTab, "conceptsBlock", true), "body", SLinkOperations.getTarget(SLinkOperations.getTarget(oldTab, "getConceptsBlock", true), "body", true), true);
+            }
+
+            SLinkOperations.setNewChild(newTab, "nodesBlock", "jetbrains.mps.lang.plugin.structure.GetNodesBlock");
+            SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(newTab, "nodesBlock", true), "jetbrains.mps.lang.plugin.structure.GetNodesBlock"), "body", SLinkOperations.getTarget(SLinkOperations.getTarget(oldTab, "getNodesBlock", true), "body", true), true);
+          } else {
+            SNode oldTab = SNodeOperations.cast(tab, "jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab");
+
+            if ((SLinkOperations.getTarget(oldTab, "createBlock", true) != null)) {
+              SLinkOperations.setNewChild(newTab, "createBlock", "jetbrains.mps.lang.plugin.structure.NewCreateBlock");
+              SLinkOperations.setTarget(SLinkOperations.getTarget(newTab, "createBlock", true), "body", SLinkOperations.getTarget(SLinkOperations.getTarget(oldTab, "createBlock", true), "body", true), true);
+            }
+
+            SLinkOperations.setNewChild(newTab, "nodesBlock", "jetbrains.mps.lang.plugin.structure.GetNodeBlock");
+            SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(newTab, "nodesBlock", true), "jetbrains.mps.lang.plugin.structure.GetNodeBlock"), "body", SLinkOperations.getTarget(SLinkOperations.getTarget(oldTab, "getNodeBlock", true), "body", true), true);
+          }
+
+          SModelOperations.addRootNode(model, newTab);
+          ListSequence.fromList(SLinkOperations.getTargets(order, "tab", true)).addElement(new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0l0s0e0a0a0b0a().createNode(newTab));
         }
+
         SNodeOperations.deleteNode(node);
       }
 
@@ -243,8 +288,8 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_w50lnh_a0a0f0n0e0a0a0b0a {
-    public QuotationClass_w50lnh_a0a0f0n0e0a0a0b0a() {
+  public static class QuotationClass_w50lnh_a0a21a4a0a0a1a0 {
+    public QuotationClass_w50lnh_a0a21a4a0a0a1a0() {
     }
 
     public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12) {
@@ -291,6 +336,117 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
           quotedNode_1.addChild("expression", quotedNode1_6);
         }
         result = quotedNode1_5;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_w50lnh_a0a0a81a4a0a0a1a0 {
+    public QuotationClass_w50lnh_a0a0a81a4a0a0a1a0() {
+    }
+
+    public SNode createNode(Object parameter_21, Object parameter_22, Object parameter_23, Object parameter_24) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      SNode quotedNode_6 = null;
+      SNode quotedNode_7 = null;
+      SNode quotedNode_8 = null;
+      SNode quotedNode_9 = null;
+      SNode quotedNode_10 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.EditorTab", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_11 = quotedNode_1;
+        quotedNode1_11.setProperty("name", (String) parameter_21);
+        quotedNode1_11.setProperty("shortcutChar", (String) parameter_22);
+        quotedNode1_11.setReferent("baseNodeConcept", (SNode) parameter_23);
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.IsApplicableTabBlock", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_12 = quotedNode_2;
+          {
+            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_13 = quotedNode_4;
+            {
+              quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, GlobalScope.getInstance(), false);
+              SNode quotedNode1_14 = quotedNode_6;
+              {
+                quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
+                SNode quotedNode1_15 = quotedNode_7;
+                {
+                  quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", null, GlobalScope.getInstance(), false);
+                  SNode quotedNode1_16 = quotedNode_8;
+                  quotedNode_7.addChild("operand", quotedNode1_16);
+                }
+                {
+                  quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", null, GlobalScope.getInstance(), false);
+                  SNode quotedNode1_17 = quotedNode_9;
+                  {
+                    quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, GlobalScope.getInstance(), false);
+                    SNode quotedNode1_18 = quotedNode_10;
+                    quotedNode1_18.setReferent("conceptDeclaration", (SNode) parameter_24);
+                    quotedNode_9.addChild("conceptArgument", quotedNode1_18);
+                  }
+                  quotedNode_7.addChild("operation", quotedNode1_17);
+                }
+                quotedNode_6.addChild("expression", quotedNode1_15);
+              }
+              quotedNode_4.addChild("statement", quotedNode1_14);
+            }
+            quotedNode_2.addChild("body", quotedNode1_13);
+          }
+          quotedNode_1.addChild("isApplicableBlock", quotedNode1_12);
+        }
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BaseNodeBlock", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_19 = quotedNode_3;
+          {
+            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_20 = quotedNode_5;
+            quotedNode_3.addChild("body", quotedNode1_20);
+          }
+          quotedNode_1.addChild("baseNodeBlock", quotedNode1_19);
+        }
+        result = quotedNode1_11;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_w50lnh_a2a4a81a4a0a0a1a0 {
+    public QuotationClass_w50lnh_a2a4a81a4a0a0a1a0() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.OrderReference", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("order", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_w50lnh_a0a0l0s0e0a0a0b0a {
+    public QuotationClass_w50lnh_a0a0l0s0e0a0a0b0a() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.EditorTabReference", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("editorTab", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }

@@ -45,6 +45,7 @@
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.StaticMethodCall_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_Behavior" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />

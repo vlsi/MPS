@@ -15,23 +15,16 @@
  */
 package jetbrains.mps.newTypesystem.operation.block;
 
-import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.ConditionKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.12.10
- * Time: 16:08
- */
 public class AddDependencyOperation extends AbstractBlockOperation {
-  private SNode myVar;
+  private final SNode myVar;
 
-  private ConditionKind myConditionKind;
+  private final ConditionKind myConditionKind;
 
   public AddDependencyOperation(Block block, SNode input, ConditionKind conditionKind) {
     myVar = input;
@@ -44,11 +37,6 @@ public class AddDependencyOperation extends AbstractBlockOperation {
   public String getPresentation() {
     return "Block dependency added: " + myVar + " -> [" + myBlock.getPresentation() + "]";
   }
-
-/*  @Override
-  public Color getColor() {
-    return Colors.WHEN_CONCRETE_ADDED;
-  }*/
 
   @Override
   public void doUndo(State state) {

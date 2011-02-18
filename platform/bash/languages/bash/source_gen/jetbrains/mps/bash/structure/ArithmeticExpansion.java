@@ -4,6 +4,9 @@ package jetbrains.mps.bash.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -14,6 +17,7 @@ public class ArithmeticExpansion extends BaseConcept implements IGeneralizedWord
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXPRESSION = "expression";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ArithmeticExpansion(SNode node) {
     super(node);
@@ -49,6 +53,26 @@ public class ArithmeticExpansion extends BaseConcept implements IGeneralizedWord
 
   public void setExpression(ArithmeticExpression node) {
     super.setChild(ArithmeticExpansion.EXPRESSION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ArithmeticExpansion._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ArithmeticExpansion._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ArithmeticExpansion._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ArithmeticExpansion._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ArithmeticExpansion._$ATTRIBUTE, node);
   }
 
   public static ArithmeticExpansion newInstance(SModel sm, boolean init) {

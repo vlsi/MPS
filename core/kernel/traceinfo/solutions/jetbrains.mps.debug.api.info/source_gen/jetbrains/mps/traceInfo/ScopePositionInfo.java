@@ -8,9 +8,9 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModel;
 
 public class ScopePositionInfo extends PositionInfo {
@@ -23,19 +23,19 @@ public class ScopePositionInfo extends PositionInfo {
   public ScopePositionInfo() {
   }
 
-  public ScopePositionInfo(Element element) throws DataConversionException {
+  public ScopePositionInfo(@NotNull Element element) throws DataConversionException {
     super(element);
     for (Object varInfoElement_ : element.getChildren(ScopePositionInfo.VAR_INFO)) {
       Element varInfoElement = (Element) varInfoElement_;
       VarInfo varInfo = new VarInfo(varInfoElement);
-      MapSequence.fromMap(this.myVars).put(varInfo.getVarName(), varInfo);
+      MapSequence.fromMap(myVars).put(varInfo.getVarName(), varInfo);
     }
   }
 
   @Override
   public void saveTo(Element element) {
     super.saveTo(element);
-    for (VarInfo varInfo : MapSequence.fromMap(this.myVars).values()) {
+    for (VarInfo varInfo : MapSequence.fromMap(myVars).values()) {
       Element child = new Element(ScopePositionInfo.VAR_INFO);
       varInfo.saveTo(child);
       element.addContent(child);
@@ -43,7 +43,7 @@ public class ScopePositionInfo extends PositionInfo {
   }
 
   public SNode getVarNode(String varName, @NotNull SModel model) {
-    VarInfo varInfo = MapSequence.fromMap(this.myVars).get(varName);
+    VarInfo varInfo = MapSequence.fromMap(myVars).get(varName);
     if (varInfo == null) {
       return null;
     }
@@ -55,8 +55,8 @@ public class ScopePositionInfo extends PositionInfo {
     if (varName != null) {
       VarInfo varInfo = new VarInfo();
       varInfo.setVarName(varName);
-      MapSequence.fromMap(this.myTempNodeToVarMap).put(node, varInfo);
-      MapSequence.fromMap(this.myVars).put(varInfo.getVarName(), varInfo);
+      MapSequence.fromMap(myTempNodeToVarMap).put(node, varInfo);
+      MapSequence.fromMap(myVars).put(varInfo.getVarName(), varInfo);
     } else {
       if (log.isWarnEnabled()) {
         log.warn("variable name is null for node " + node.getId());
@@ -66,15 +66,15 @@ public class ScopePositionInfo extends PositionInfo {
 
   public Map<SNode, VarInfo> getTempVarInfoMap() {
     Map<SNode, VarInfo> result = MapSequence.fromMap(new HashMap<SNode, VarInfo>());
-    MapSequence.fromMap(result).putAll(this.myTempNodeToVarMap);
+    MapSequence.fromMap(result).putAll(myTempNodeToVarMap);
     return result;
   }
 
   public void clearTempVarInfoMap() {
-    MapSequence.fromMap(this.myTempNodeToVarMap).clear();
+    MapSequence.fromMap(myTempNodeToVarMap).clear();
   }
 
   public void removeVarInfo(VarInfo varInfo) {
-    MapSequence.fromMap(this.myVars).removeKey(varInfo.getVarName());
+    MapSequence.fromMap(myVars).removeKey(varInfo.getVarName());
   }
 }

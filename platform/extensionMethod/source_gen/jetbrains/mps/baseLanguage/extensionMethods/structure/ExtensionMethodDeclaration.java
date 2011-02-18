@@ -7,6 +7,9 @@ import jetbrains.mps.baseLanguage.structure.ClassifierMember;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.baseLanguage.structure.Visibility;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +21,7 @@ public class ExtensionMethodDeclaration extends BaseMethodDeclaration implements
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXTENDED_TYPE = "extendedType";
   public static final String VISIBILITY = "visibility";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ExtensionMethodDeclaration(SNode node) {
     super(node);
@@ -61,6 +65,26 @@ public class ExtensionMethodDeclaration extends BaseMethodDeclaration implements
 
   public void setVisibility(Visibility node) {
     super.setChild(ExtensionMethodDeclaration.VISIBILITY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ExtensionMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ExtensionMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ExtensionMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ExtensionMethodDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ExtensionMethodDeclaration._$ATTRIBUTE, node);
   }
 
   public static ExtensionMethodDeclaration newInstance(SModel sm, boolean init) {

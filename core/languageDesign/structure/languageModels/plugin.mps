@@ -105,30 +105,35 @@
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725492">
       <property name="name" nameId="tpck.1169194664001" value="Textgen" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725524">
       <property name="name" nameId="tpck.1169194664001" value="Refactorings" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="R" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725557">
       <property name="name" nameId="tpck.1169194664001" value="Intentions" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="I" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725575">
       <property name="name" nameId="tpck.1169194664001" value="Find Usages" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="F" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725593">
       <property name="name" nameId="tpck.1169194664001" value="Constraints" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="C" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725625">
@@ -141,6 +146,7 @@
       <property name="name" nameId="tpck.1169194664001" value="Data Flow" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="D" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725660">
@@ -153,28 +159,36 @@
       <property name="name" nameId="tpck.1169194664001" value="Actions" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="A" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725694">
       <property name="name" nameId="tpck.1169194664001" value="Behavior" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="B" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725759">
       <property name="name" nameId="tpck.1169194664001" value="Typesystem" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="T" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="2542706524531725777">
       <property name="name" nameId="tpck.1169194664001" value="Editor" />
       <property name="shortcutChar" nameId="tp4k.3743831881070611767" value="E" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="commandOnCreate" nameId="tp4k.8204570419206313935" value="true" />
       <link role="baseNodeConcept" roleId="tp4k.3743831881070611760" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6388164970935848749">
       <property name="name" nameId="tpck.1169194664001" value="ConceptEditorHelper" />
+    </node>
+    <node type="tp4k.Order" typeId="tp4k.2450897840534683975" id="3038738109028822686">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+      <property name="name" nameId="tpck.1169194664001" value="ConceptDeclaration" />
     </node>
   </roots>
   <root id="1216648908320">
@@ -2292,6 +2306,9 @@
         </node>
       </node>
     </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028888969">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
+    </node>
   </root>
   <root id="2542706524531725524">
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2542706524531725525">
@@ -2368,6 +2385,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028888967">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="2542706524531725557">
@@ -2446,6 +2466,9 @@
         </node>
       </node>
     </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028888966">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
+    </node>
   </root>
   <root id="2542706524531725575">
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2542706524531725576">
@@ -2522,6 +2545,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028836234">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="2542706524531725593">
@@ -2621,6 +2647,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028836231">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="2542706524531725625">
@@ -3372,9 +3401,9 @@
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6388164970935848555">
                       <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6388164970935848556">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6388164970935848557">
-                          <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="6388164970935848558">
-                            <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.NodeAttributeAccessQualifier" typeId="tp25.1204763358057" id="6388164970935848559">
-                              <link role="annotationLink" roleId="tp25.1204763443606" targetNodeId="tpf8.1168619445822" resolveInfo="rootTemplateAnnotation" />
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188518043">
+                            <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="3071170492188518044">
+                              <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="tpf8.1168619357332" resolveInfo="RootTemplateAnnotation" />
                             </node>
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6388164970935848560">
@@ -3565,9 +3594,9 @@
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6388164970935848224">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6388164970935848228" resolveInfo="genFragment" />
                       </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccessOperation" typeId="tp25.1204761823073" id="6388164970935848225">
-                        <node role="attributeQualifier" roleId="tp25.1204762310079" type="tp25.NodeAttributeAccessQualifier" typeId="tp25.1204763358057" id="6388164970935848226">
-                          <link role="annotationLink" roleId="tp25.1204763443606" targetNodeId="tpf8.1168619445822" resolveInfo="rootTemplateAnnotation" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517945">
+                        <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="3071170492188517946">
+                          <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="tpf8.1168619357332" resolveInfo="RootTemplateAnnotation" />
                         </node>
                       </node>
                     </node>
@@ -3797,6 +3826,9 @@
         </node>
       </node>
     </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028888963">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
+    </node>
   </root>
   <root id="2542706524531725643">
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2542706524531725644">
@@ -3889,12 +3921,15 @@
             <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="2450897840535006350">
               <node role="elementType" roleId="tp2q.1237721435807" type="tp25.SConceptType" typeId="tp25.1172420572800" id="2450897840535006351" />
               <node role="initValue" roleId="tp2q.1237721435808" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="2450897840535006352">
-                <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="1i04.1225194240794" resolveInfo="ConceptBehavior" />
+                <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tp41.1206442055221" resolveInfo="DataFlowBuilderDeclaration" />
               </node>
             </node>
           </node>
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028836232">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="2542706524531725660">
@@ -3932,6 +3967,9 @@
           <node role="expression" roleId="tpee.1068580123156" type="tp4k.ConceptFunctionParameter_node" typeId="tp4k.1203853034639" id="6388164970935847744" />
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028888968">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="2542706524531725676">
@@ -4009,6 +4047,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028836229">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="2542706524531725694">
@@ -4108,6 +4149,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028836230">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="2542706524531725759">
@@ -4425,6 +4469,9 @@
         </node>
       </node>
     </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028888975">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
+    </node>
   </root>
   <root id="2542706524531725777">
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2542706524531725778">
@@ -4551,6 +4598,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.OrderReference" typeId="tp4k.2450897840534688273" id="3038738109028836233">
+      <link role="order" roleId="tp4k.2450897840534688274" targetNodeId="3038738109028822686" resolveInfo="ConceptDeclaration" />
     </node>
   </root>
   <root id="6388164970935848749">
@@ -5270,6 +5320,44 @@
           <node role="componentType" roleId="tpee.1070534760952" type="tp25.SConceptType" typeId="tp25.1172420572800" id="1214823353927928445" />
         </node>
       </node>
+    </node>
+  </root>
+  <root id="3038738109028822686">
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836204">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725660" resolveInfo="Structure" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836206">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725777" resolveInfo="Editor" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836207">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725593" resolveInfo="Constraints" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836209">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725694" resolveInfo="Behavior" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836211">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725759" resolveInfo="Typesystem" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836214">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725676" resolveInfo="Actions" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836216">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725524" resolveInfo="Refactorings" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836218">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725557" resolveInfo="Intentions" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836220">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725575" resolveInfo="Find Usages" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836222">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725643" resolveInfo="Data Flow" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836224">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725625" resolveInfo="Generator" />
+    </node>
+    <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="3038738109028836226">
+      <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2542706524531725492" resolveInfo="Textgen" />
     </node>
   </root>
 </model>

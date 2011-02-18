@@ -11,11 +11,12 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -119,7 +120,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeFactoryOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), "jetbrains.mps.lang.pattern.structure.AsPattern");
+      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.AsPattern")), "jetbrains.mps.lang.pattern.structure.AsPattern");
     }
 
     public String getKeyStroke() {
@@ -251,7 +252,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       List<SNode> siblings = SNodeOperations.getAllSiblings(node, false);
-      SNodeFactoryOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), "jetbrains.mps.lang.pattern.structure.ListPattern");
+      SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.AsPattern")), "jetbrains.mps.lang.pattern.structure.ListPattern");
       for (SNode sibling : siblings) {
         SNodeOperations.deleteNode(sibling);
       }
@@ -302,7 +303,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
         return;
       }
       SModel model = SNodeOperations.getModel(contextNode);
-      if (SLinkOperations.getTarget(contextNode, AttributesRolesUtil.childRoleFromAttributeRole("antiquotation"), true) != null) {
+      if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.Antiquotation"))) != null) {
         contextNode.setAttribute(null);
       } else
       contextNode.setAttribute(SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.Antiquotation", null));
@@ -422,14 +423,14 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation")) {
         SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
         assert attributedNode != null;
-        SLinkOperations.setTarget(attributedNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), null, true);
+        AttributeOperations.setAttribute(attributedNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), role), null);
         attributedNode.setAttribute(null);
         return;
       }
-      if (SLinkOperations.getTarget(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), true) != null) {
-        SLinkOperations.setTarget(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), null, true);
+      if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), role)) != null) {
+        AttributeOperations.setAttribute(contextNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), role), null);
       } else {
-        SNodeFactoryOperations.setNewChild(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
+        SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), role), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
       }
     }
 

@@ -123,7 +123,7 @@ public abstract class RefactoringViewItem {
 
   private void addCheckboxes(boolean hasModelsToGenerate) {
     if (hasModelsToGenerate) {
-      myGenerateModelsCheckbox = new JCheckBox("generate models");
+      myGenerateModelsCheckbox = new JCheckBox("rebuild models");
       myGenerateModelsCheckbox.setSelected(true);
       myButtonsPanel.add(myGenerateModelsCheckbox);
     }

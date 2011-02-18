@@ -16,13 +16,13 @@
   <unitInfo fileName="Date.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Date" />
   <unitInfo fileName="Taxable.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Taxable" />
   <unitInfo fileName="ValueType.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.ValueType" />
-  <unitInfo fileName="AccountType.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.AccountType" />
   <unitInfo fileName="Unit.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Unit" />
   <unitInfo fileName="Event.java" startLine="13" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Event" />
   <unitInfo fileName="AgreementDeclarations.java" startLine="13" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations" />
-  <unitInfo fileName="EventVariable.java" startLine="12" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.EventVariable" />
-  <unitInfo fileName="EventType.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.EventType" />
-  <unitInfo fileName="Value.java" startLine="14" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Value" />
-  <unitInfo fileName="Plan.java" startLine="14" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Plan" />
+  <unitInfo fileName="AccountType.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.AccountType" />
+  <unitInfo fileName="EventVariable.java" startLine="15" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.EventVariable" />
+  <unitInfo fileName="EventType.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.EventType" />
+  <unitInfo fileName="Value.java" startLine="15" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Value" />
+  <unitInfo fileName="Plan.java" startLine="15" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.structure.Plan" />
 </debugInfo>
 

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -25,6 +26,7 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
   public static final String CONCRETE_SYNTAX = "concreteSyntax";
   public static final String EXTENDS = "extends";
   public static final String SCOPE_BLOCK = "scopeBlock";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public VariableConcept(SNode node) {
     super(node);
@@ -144,6 +146,26 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
 
   public void insertScopeBlock(BlockReference prev, BlockReference node) {
     this.insertChild(prev, VariableConcept.SCOPE_BLOCK, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(VariableConcept._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, VariableConcept._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, VariableConcept._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(VariableConcept._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, VariableConcept._$ATTRIBUTE, node);
   }
 
   public static VariableConcept newInstance(SModel sm, boolean init) {

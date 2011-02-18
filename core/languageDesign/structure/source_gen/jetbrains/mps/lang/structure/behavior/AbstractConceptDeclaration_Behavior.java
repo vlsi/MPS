@@ -15,9 +15,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -96,7 +97,7 @@ public class AbstractConceptDeclaration_Behavior {
       for (SModelDescriptor sd : g.getOwnTemplateModels()) {
         SModel m = sd.getSModel();
         for (SNode node : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
-          if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false) == thisNode || SLinkOperations.getTarget(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true), "applicableConcept", false) == thisNode) {
+          if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false) == thisNode || SLinkOperations.getTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))), "applicableConcept", false) == thisNode) {
             ListSequence.fromList(result).addElement(node);
           }
           // generator rules 

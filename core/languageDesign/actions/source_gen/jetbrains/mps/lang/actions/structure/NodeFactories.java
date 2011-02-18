@@ -8,6 +8,7 @@ import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class NodeFactories extends BaseConcept implements INamedConcept, IConcep
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NODE_FACTORY = "nodeFactory";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public NodeFactories(SNode node) {
     super(node);
@@ -74,6 +76,26 @@ public class NodeFactories extends BaseConcept implements INamedConcept, IConcep
 
   public void insertNodeFactory(NodeFactory prev, NodeFactory node) {
     this.insertChild(prev, NodeFactories.NODE_FACTORY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(NodeFactories._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, NodeFactories._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, NodeFactories._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(NodeFactories._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, NodeFactories._$ATTRIBUTE, node);
   }
 
   public static NodeFactories newInstance(SModel sm, boolean init) {

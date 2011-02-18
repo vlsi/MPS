@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.regexp.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class ReplaceWithRegexpOperation extends BaseConcept implements IOperatio
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String REPLACE_BLOCK = "replaceBlock";
   public static final String REGEXP = "regexp";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ReplaceWithRegexpOperation(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class ReplaceWithRegexpOperation extends BaseConcept implements IOperatio
 
   public void setRegexp(RegexpExpression node) {
     super.setChild(ReplaceWithRegexpOperation.REGEXP, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ReplaceWithRegexpOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ReplaceWithRegexpOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ReplaceWithRegexpOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ReplaceWithRegexpOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ReplaceWithRegexpOperation._$ATTRIBUTE, node);
   }
 
   public static ReplaceWithRegexpOperation newInstance(SModel sm, boolean init) {

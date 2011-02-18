@@ -17,33 +17,29 @@ package jetbrains.mps.newTypesystem.operation.block;
 
 import jetbrains.mps.newTypesystem.operation.PresentationKind;
 import jetbrains.mps.newTypesystem.state.Block;
+import jetbrains.mps.newTypesystem.state.BlockKind;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.12.10
- * Time: 16:08
- * To change this template use File | Settings | File Templates.
- */
 public class AddBlockOperation extends AbstractBlockOperation {
   
   public AddBlockOperation(Block block) {
     myBlock = block;
-    myPresentation = "Block added : [" + myBlock.getPresentation() + "]"; 
     myEquationInfo = new EquationInfo(null, " ", block.getNodeModel(), block.getNodeId());
   }
 
   @Override
   public String getPresentation() {
-    return myPresentation;
+    return "Added : [" + myBlock.getPresentation() + "]";
   }
 
   @Override
   public String getPresentationKind() {
-    return PresentationKind.WHEN_CONCRETE_ADDED;
+    if (myBlock.getBlockKind() == BlockKind.WHEN_CONCRETE) {
+      return PresentationKind.WHEN_CONCRETE_ADDED;
+    } else {
+      return PresentationKind.RELATION_ADDED;
+    }
   }
 
   @Override

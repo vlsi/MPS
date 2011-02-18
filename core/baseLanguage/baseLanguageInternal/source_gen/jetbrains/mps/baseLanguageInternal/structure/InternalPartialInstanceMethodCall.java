@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +22,7 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
   public static final String RETURN_TYPE = "returnType";
   public static final String INSTANCE = "instance";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public InternalPartialInstanceMethodCall(SNode node) {
     super(node);
@@ -92,6 +94,26 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, InternalPartialInstanceMethodCall.ACTUAL_ARGUMENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(InternalPartialInstanceMethodCall._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, InternalPartialInstanceMethodCall._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, InternalPartialInstanceMethodCall._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(InternalPartialInstanceMethodCall._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InternalPartialInstanceMethodCall._$ATTRIBUTE, node);
   }
 
   public static InternalPartialInstanceMethodCall newInstance(SModel sm, boolean init) {

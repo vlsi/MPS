@@ -2611,7 +2611,7 @@
                               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qspx.~ModelGenerationStatusManager" resolveInfo="ModelGenerationStatusManager" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5434412145310422940">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qspx.~ModelGenerationStatusManager%dgenerationRequired(jetbrains%dmps%dsmodel%dSModelDescriptor,jetbrains%dmps%dsmodel%dIOperationContext,boolean,boolean)%cboolean" resolveInfo="generationRequired" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qspx.~ModelGenerationStatusManager%dgenerationRequired(jetbrains%dmps%dsmodel%dSModelDescriptor,jetbrains%dmps%dsmodel%dIOperationContext)%cboolean" resolveInfo="generationRequired" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5434412145310422941">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399148626" resolveInfo="md" />
                               </node>
@@ -2621,12 +2621,6 @@
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2925308412866501425">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399148673" resolveInfo="project" />
                                 </node>
-                              </node>
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6011030346824740638">
-                                <property name="value" nameId="tpee.1068580123138" value="false" />
-                              </node>
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6011030346824740640">
-                                <property name="value" nameId="tpee.1068580123138" value="true" />
                               </node>
                             </node>
                           </node>

@@ -20,6 +20,7 @@ public enum ActionPlace {
 
   PROJECT_PANE_SNODE("MPS_ProjectPane_SNode"),
   PROJECT_PANE_SMODEL("MPS_ProjectPane_SModel"),
+  PROJECT_PANE_MODULE("MPS_ProjectPane_Module"),
   PROJECT_PANE_LANGUAGE("MPS_ProjectPane_Language"),
   PROJECT_PANE_DEVKIT("MPS_ProjectPane_Devkit"),
   PROJECT_PANE_SOLUTION("MPS_ProjectPane_Solution"),
@@ -30,6 +31,8 @@ public enum ActionPlace {
   PROJECT_PANE_NAMESPACE("MPS_ProjectPane_Namespace"),
   PROJECT_PANE_RUNTIME_FOLDER("MPS_ProjectPane_RuntimeFolder"),
   PROJECT_PANE_ACCESSORIES("MPS_ProjectPane_Accessories"),
+  PROJECT_PANE_FILE("MPS_ProjectPane_File"),
+  PROJECT_PANE_FOLDER("MPS_ProjectPane_Folder"),
   PROJECT_PANE("MPS_ProjectPane");
 
   private String myId = "";

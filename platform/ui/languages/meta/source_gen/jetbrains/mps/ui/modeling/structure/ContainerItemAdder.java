@@ -6,6 +6,7 @@ import jetbrains.mps.baseLanguage.structure.ConceptFunction;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +17,7 @@ public class ContainerItemAdder extends ConceptFunction implements IAspectParame
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ASPECT_PARAMETER = "aspectParameter";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ContainerItemAdder(SNode node) {
     super(node);
@@ -63,6 +65,26 @@ public class ContainerItemAdder extends ConceptFunction implements IAspectParame
 
   public void insertAspectParameter(AspectParameterDecl prev, AspectParameterDecl node) {
     this.insertChild(prev, ContainerItemAdder.ASPECT_PARAMETER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ContainerItemAdder._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ContainerItemAdder._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ContainerItemAdder._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ContainerItemAdder._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ContainerItemAdder._$ATTRIBUTE, node);
   }
 
   public static ContainerItemAdder newInstance(SModel sm, boolean init) {

@@ -52,14 +52,14 @@ public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
     List<SModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
     if (modelsToGenerate.isEmpty()) {
       enable(presentation, false);
-      presentation.setText("Generate " + getWhatToGenerateName());
+      presentation.setText("Rebuild " + getWhatToGenerateName());
     } else
     if (modelsToGenerate.size() == 1) {
       enable(presentation, true);
-      presentation.setText("Generate " + getWhatToGenerateName() + " From Model");
+      presentation.setText("Rebuild " + getWhatToGenerateName() + " From Model");
     } else {
       enable(presentation, true);
-      presentation.setText("Generate " + getWhatToGenerateName() + " From Models");
+      presentation.setText("Rebuild " + getWhatToGenerateName() + " From Models");
     }
   }
 

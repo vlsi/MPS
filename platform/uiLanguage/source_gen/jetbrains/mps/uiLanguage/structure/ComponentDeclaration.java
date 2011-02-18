@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -23,6 +26,7 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
   public static final String MAP_TO = "mapTo";
   public static final String ROOT = "root";
   public static final String RENDERER_INFO = "rendererInfo";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ComponentDeclaration(SNode node) {
     super(node);
@@ -114,6 +118,26 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
 
   public void setRendererInfo(StubCellRendererInfo node) {
     super.setChild(ComponentDeclaration.RENDERER_INFO, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ComponentDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ComponentDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ComponentDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ComponentDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ComponentDeclaration._$ATTRIBUTE, node);
   }
 
   public static ComponentDeclaration newInstance(SModel sm, boolean init) {

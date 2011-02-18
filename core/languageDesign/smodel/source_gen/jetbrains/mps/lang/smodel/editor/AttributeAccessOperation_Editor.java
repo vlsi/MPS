@@ -30,7 +30,7 @@ public class AttributeAccessOperation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_sruon6_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$@");
     editorCell.setCellId("Constant_sruon6_a0");
     {
       Style style = editorCell.getStyle();

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +17,7 @@ public class Form extends BaseConcept implements IComponentPart, IComponentInsta
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PART = "part";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String CONTENT = "content";
 
   public Form(SNode node) {
@@ -64,6 +66,26 @@ public class Form extends BaseConcept implements IComponentPart, IComponentInsta
 
   public void insertPart(FormPart prev, FormPart node) {
     this.insertChild(prev, Form.PART, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Form._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Form._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Form._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Form._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Form._$ATTRIBUTE, node);
   }
 
   public int getContentsCount() {

@@ -7,6 +7,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.IStructureDeprecatable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration" />
@@ -52,14 +53,17 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" file="AnnotationLinkDeclaration.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AnnotationLinkStereotype" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.AnnotationLinkCardinality" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AnnotationLinkStereotype" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.AnnotationLinkStereotype" file="AnnotationLinkStereotype.java">
@@ -130,13 +134,16 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration" file="ConceptLinkDeclaration.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.IStructureDeprecatable" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.ConceptProperty" file="ConceptProperty.java">
@@ -150,12 +157,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration" file="ConceptPropertyDeclaration.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.IStructureDeprecatable" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" file="ConstrainedDataTypeDeclaration.java">
@@ -169,20 +179,27 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.DataTypeDeclaration" file="DataTypeDeclaration.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" file="DeprecatedNodeAnnotation.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.NodeAttribute" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.DeprecatedNode_AnnotationLink" file="DeprecatedNode_AnnotationLink.java">
@@ -276,14 +293,17 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.LinkDeclaration" file="LinkDeclaration.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.Cardinality" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.IStructureDeprecatable" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.structure.Cardinality" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.LinkMetaclass" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.structure.IStructureDeprecatable" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.LinkMetaclass" file="LinkMetaclass.java">
@@ -310,12 +330,15 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.structure.PropertyDeclaration" file="PropertyDeclaration.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.IStructureDeprecatable" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.DataTypeDeclaration" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>

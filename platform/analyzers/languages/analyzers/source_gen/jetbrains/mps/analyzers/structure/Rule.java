@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.StatementList;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +22,7 @@ public class Rule extends BaseConcept implements INamedConcept {
   public static final String ANALYZER = "analyzer";
   public static final String ACTIONS = "actions";
   public static final String CONDITION = "condition";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Rule(SNode node) {
     super(node);
@@ -78,6 +82,26 @@ public class Rule extends BaseConcept implements INamedConcept {
 
   public void setCondition(ApplicableCondition node) {
     super.setChild(Rule.CONDITION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Rule._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Rule._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Rule._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Rule._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Rule._$ATTRIBUTE, node);
   }
 
   public static Rule newInstance(SModel sm, boolean init) {

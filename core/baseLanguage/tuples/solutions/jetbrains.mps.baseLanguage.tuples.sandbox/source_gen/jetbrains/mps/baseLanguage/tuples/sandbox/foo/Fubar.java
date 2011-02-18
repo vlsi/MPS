@@ -14,6 +14,6 @@ public class Fubar {
   }
 
   public static void main(String[] args) {
-    System.out.println(new Fubar().a.get(1)._0());
+    System.out.println((int) new Fubar().a.get(1)._0());
   }
 }

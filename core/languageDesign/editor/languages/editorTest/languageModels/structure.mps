@@ -35,7 +35,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7658393498702771296">
       <property name="name" nameId="tpck.1169194664001" value="ReferenceAnnotataion" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049745" resolveInfo="LinkAttribute" />
     </node>
     <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="7658393498702861285">
       <property name="role" nameId="tpce.1204740973143" value="referenceAnnotation" />
@@ -143,7 +143,16 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
     </node>
   </root>
-  <root id="7658393498702771296" />
+  <root id="7658393498702771296">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5216537374825317511">
+      <property name="value" nameId="tpce.1105725733873" value="referenceAnnotation" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.5169995583184591164" resolveInfo="role" />
+    </node>
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="5216537374825317512">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpck.5169995583184591169" resolveInfo="attributed" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+  </root>
   <root id="7658393498702861285" />
   <root id="5110219550149792114">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5110219550150577779">

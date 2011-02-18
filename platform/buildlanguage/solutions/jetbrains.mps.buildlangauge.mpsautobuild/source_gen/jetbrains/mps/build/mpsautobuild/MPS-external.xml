@@ -164,12 +164,16 @@
       <zipfileset dir="${mps_home}/plugins/vcs/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/vcs/classes" prefix="" />
     </jar>
+    <jar destfile="${deploy.dir}/MPS/plugins/mpsdevkit.jar" filesonly="true" duplicate="preserve" compress="true">
+      <zipfileset dir="${mps_home}/plugins/mpsdevkit/META-INF" includes="**/plugin.xml" prefix="META-INF" />
+      <zipfileset dir="${mps_home}/plugins/mpsdevkit/classes" prefix="" />
+    </jar>
     <jar destfile="${deploy.dir}/MPS/plugins/samples.jar" filesonly="true" duplicate="preserve" compress="true">
       <zipfileset dir="${mps_home}/plugins/samples/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/samples/classes" prefix="" />
     </jar>
     <copy todir="${deploy.dir}/MPS/plugins">
-      <fileset dir="${mps_home}/plugins" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, **/*.iml, **/*.iws" />
+      <fileset dir="${mps_home}/plugins" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, mpsdevkit/**, **/*.iml, **/*.iws" />
     </copy>
     <copy todir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples">
       <fileset dir="${mps_home}/samples" excludes="**/*.iml, **/*.iws" />
@@ -247,6 +251,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.debug.privateMembers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debug.apiLang" />
     <antcall target="MPS-languages.pack.jetbrains.mps.make.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.smodel.resources" />
     <antcall target="MPS-languages.pack.jetbrains.mps.kernel" />
     <mkdir dir="${deploy.dir}/MPS/core" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated" />
@@ -310,6 +315,7 @@
       <fileset dir="${mps_home}/plugin" excludes="**/*.java, **/*.iml, **/*.iws" />
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.ide" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.workbench.make" />
     <mkdir dir="${deploy.dir}/MPS/workbench" />
     <echo file="${deploy.dir}/MPS/help-build.append.idea.version/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
     <antcall target="help-build.append.idea.version" inheritall="true">

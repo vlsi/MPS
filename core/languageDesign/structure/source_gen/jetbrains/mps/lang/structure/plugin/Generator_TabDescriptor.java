@@ -14,8 +14,8 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -37,6 +37,7 @@ import javax.swing.JOptionPane;
 import jetbrains.mps.ide.actions.MappingDialog;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.generator.behavior.MappingConfiguration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Generator_TabDescriptor extends EditorTabDescriptor {
   public Generator_TabDescriptor() {
@@ -48,6 +49,10 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
 
   public Character getShortcutChar() {
     return 'G';
+  }
+
+  public int compareTo(EditorTabDescriptor descriptor) {
+    return new ConceptDeclaration_Order().compare(this, descriptor);
   }
 
   public void startListening() {
@@ -80,7 +85,7 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
     if (rootable || isInterface) {
       boolean isNeedRootTemplate = true;
       for (SNode genFragment : AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(node)) {
-        if ((SLinkOperations.getTarget(genFragment, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) != null)) {
+        if ((AttributeOperations.getAttribute(genFragment, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) != null)) {
           isNeedRootTemplate = false;
           break;
         }
@@ -102,6 +107,10 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
       }
     }
     return result;
+  }
+
+  public boolean commandOnCreate() {
+    return false;
   }
 
   public SNode createNode(final SNode node, final SNode concept) {
@@ -189,7 +198,7 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
         } else {
           SNode rootTemplateNode = SModelOperations.createNewNode(model, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", null);
           SLinkOperations.setTarget(rootTemplateNode, "applicableConcept", node, false);
-          SLinkOperations.setTarget(result.value, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), rootTemplateNode, true);
+          AttributeOperations.setAttribute(result.value, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), rootTemplateNode);
           SPropertyOperations.set(SNodeOperations.cast(result.value, "jetbrains.mps.lang.core.structure.INamedConcept"), "name", SPropertyOperations.getString(node, "name"));
           SModelOperations.addRootNode(model, result.value);
           MappingConfiguration_Behavior.call_addMember_3166264919334415805(mapping.value, result.value);

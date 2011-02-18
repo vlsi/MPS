@@ -17,17 +17,24 @@ package jetbrains.mps.newTypesystem.operation.equation;
 
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
  * Date: Oct 8, 2010
  * Time: 1:17:32 PM
- * To change this template use File | Settings | File Templates.
  */
 public abstract class AbstractEquationOperation extends AbstractOperation {
-  protected SNode myChild;
-  protected SNode myParent;
+  SNode myChild;
+  SNode myParent;
+
+  AbstractEquationOperation(SNode child, SNode parent, SNode source, EquationInfo info) {
+    myChild = child;
+    mySource = source;
+    myParent = parent;
+    myEquationInfo = info;
+  }
 
   @Override
   public String getShortPresentation() {

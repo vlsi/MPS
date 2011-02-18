@@ -8,30 +8,30 @@
   <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.dataFlow.DFABuilders" />
   <unitInfo fileName="AssertSame_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertSame_DataFlow" />
   <root nodeId="1207074074329">
-    <nodeInfo nodeId="1207074081597" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AssertTrue_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" />
+    <nodeInfo nodeId="1207074081597" fileName="AssertTrue_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1207074074331" fileName="AssertTrue_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" />
   </root>
   <root nodeId="1207074236137">
-    <nodeInfo nodeId="1207074239000" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AssertEquals_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="105" />
-    <nodeInfo nodeId="1207074249343" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AssertEquals_DataFlow.java" startLine="16" startPosition="105" endLine="17" endPosition="103" />
+    <nodeInfo nodeId="1207074239000" fileName="AssertEquals_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207074249343" fileName="AssertEquals_DataFlow.java" startLine="16" startPosition="105" endLine="17" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1207074236139" fileName="AssertEquals_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="103" />
   </root>
   <root nodeId="1207074444912">
-    <nodeInfo nodeId="1207074447618" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AssertFalse_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" />
+    <nodeInfo nodeId="1207074447618" fileName="AssertFalse_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1207074444914" fileName="AssertFalse_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" />
   </root>
   <root nodeId="1207074533735">
-    <nodeInfo nodeId="1207074535832" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AssertIsNull_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
+    <nodeInfo nodeId="1207074535832" fileName="AssertIsNull_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1207074533737" fileName="AssertIsNull_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
   </root>
   <root nodeId="1228580711772">
-    <nodeInfo nodeId="1228580727025" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AssertSame_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="105" />
-    <nodeInfo nodeId="1228580741986" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AssertSame_DataFlow.java" startLine="16" startPosition="105" endLine="17" endPosition="103" />
-    <nodeInfo nodeId="1228580760685" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AssertSame_DataFlow.java" startLine="17" startPosition="103" endLine="18" endPosition="36" />
+    <nodeInfo nodeId="1228580727025" fileName="AssertSame_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228580741986" fileName="AssertSame_DataFlow.java" startLine="16" startPosition="105" endLine="17" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228580760685" fileName="AssertSame_DataFlow.java" startLine="17" startPosition="103" endLine="18" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1228580711774" fileName="AssertSame_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="36" />
   </root>
   <root nodeId="7080278351417106693">
-    <nodeInfo nodeId="7080278351417106696" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AssertInNotNull_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
+    <nodeInfo nodeId="7080278351417106696" fileName="AssertInNotNull_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="7080278351417106695" fileName="AssertInNotNull_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
   </root>
 </debugInfo>

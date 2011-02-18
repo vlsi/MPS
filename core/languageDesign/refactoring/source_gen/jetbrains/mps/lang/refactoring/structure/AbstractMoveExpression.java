@@ -4,6 +4,9 @@ package jetbrains.mps.lang.refactoring.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class AbstractMoveExpression extends Expression implements RefactoringAct
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String WHAT_TO_MOVE = "whatToMove";
   public static final String DESTINATION = "destination";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AbstractMoveExpression(SNode node) {
     super(node);
@@ -58,6 +62,26 @@ public class AbstractMoveExpression extends Expression implements RefactoringAct
 
   public void setDestination(Expression node) {
     super.setChild(AbstractMoveExpression.DESTINATION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AbstractMoveExpression._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AbstractMoveExpression._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AbstractMoveExpression._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AbstractMoveExpression._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AbstractMoveExpression._$ATTRIBUTE, node);
   }
 
   public static AbstractMoveExpression newInstance(SModel sm, boolean init) {

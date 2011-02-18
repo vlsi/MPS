@@ -31,53 +31,53 @@
   <unitInfo fileName="Create_Test.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.Create_Test" />
   <unitInfo fileName="RemoveCell_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveCell_Test" />
   <root nodeId="1211716198725196074">
-    <nodeInfo nodeId="4880455824535162725" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InsertRowAfterLast_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="105" />
+    <nodeInfo nodeId="4880455824535162725" fileName="InsertRowAfterLast_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="5171926735592465361">
-    <nodeInfo nodeId="4880455824535162719" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InsertColumnBeforeFirst_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="105" />
+    <nodeInfo nodeId="4880455824535162719" fileName="InsertColumnBeforeFirst_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="5171926735592482851">
-    <nodeInfo nodeId="4880455824535162717" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InsertColumnAfterLast_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="105" />
+    <nodeInfo nodeId="4880455824535162717" fileName="InsertColumnAfterLast_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="6170050146384276078">
-    <nodeInfo nodeId="6170050146384276108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Create_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="66" />
-    <nodeInfo nodeId="6170050146384276109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Create_Test.java" startLine="28" startPosition="66" endLine="29" endPosition="122" />
+    <nodeInfo nodeId="6170050146384276108" fileName="Create_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6170050146384276109" fileName="Create_Test.java" startLine="28" startPosition="66" endLine="29" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="6170050146384276111">
-    <nodeInfo nodeId="6170050146384276162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveHeaderCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="123" />
-    <nodeInfo nodeId="1010717384721789219" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveHeaderCell_Test.java" startLine="28" startPosition="123" endLine="29" endPosition="123" />
+    <nodeInfo nodeId="6170050146384276162" fileName="RemoveHeaderCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1010717384721789219" fileName="RemoveHeaderCell_Test.java" startLine="28" startPosition="123" endLine="29" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="6170050146384276164">
-    <nodeInfo nodeId="6170050146384276191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveRow_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="123" />
+    <nodeInfo nodeId="6170050146384276191" fileName="RemoveRow_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="6170050146384276214">
-    <nodeInfo nodeId="6170050146384276266" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EditCell_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="71" />
+    <nodeInfo nodeId="6170050146384276266" fileName="EditCell_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="6170050146384276267">
-    <nodeInfo nodeId="6170050146384276319" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EditHeaderCell_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="66" />
+    <nodeInfo nodeId="6170050146384276319" fileName="EditHeaderCell_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="6170050146384276320">
-    <nodeInfo nodeId="4880455824535162723" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InsertRowAfterHeader_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="105" />
+    <nodeInfo nodeId="4880455824535162723" fileName="InsertRowAfterHeader_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="6170050146384276378">
-    <nodeInfo nodeId="4880455824535162721" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InsertRowAfter_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="105" />
+    <nodeInfo nodeId="4880455824535162721" fileName="InsertRowAfter_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="6341395909949440712">
-    <nodeInfo nodeId="4880455824535162727" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InsertRowBefore_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="105" />
+    <nodeInfo nodeId="4880455824535162727" fileName="InsertRowBefore_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="6341395909949441235">
-    <nodeInfo nodeId="4880455824535162729" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InsertRowBeforeHeader_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="105" />
+    <nodeInfo nodeId="4880455824535162729" fileName="InsertRowBeforeHeader_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="8143909488490586222">
-    <nodeInfo nodeId="8143909488490603675" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveHeaderRow_FromLastCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="123" />
+    <nodeInfo nodeId="8143909488490603675" fileName="RemoveHeaderRow_FromLastCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="8143909488490605459">
-    <nodeInfo nodeId="8143909488490605513" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveHeaderRow_FromFirstCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="119" />
+    <nodeInfo nodeId="8143909488490605513" fileName="RemoveHeaderRow_FromFirstCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="9025751233592076947">
-    <nodeInfo nodeId="9025751233592112533" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="119" />
-    <nodeInfo nodeId="9025751233592112536" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveCell_Test.java" startLine="28" startPosition="119" endLine="29" endPosition="119" />
-    <nodeInfo nodeId="9025751233592112535" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="RemoveCell_Test.java" startLine="29" startPosition="119" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="9025751233592112533" fileName="RemoveCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9025751233592112536" fileName="RemoveCell_Test.java" startLine="28" startPosition="119" endLine="29" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9025751233592112535" fileName="RemoveCell_Test.java" startLine="29" startPosition="119" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
   </root>
 </debugInfo>
 

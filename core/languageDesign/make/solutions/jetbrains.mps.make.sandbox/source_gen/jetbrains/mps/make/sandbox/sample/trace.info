@@ -2,9 +2,9 @@
 <debugInfo>
   <unitInfo fileName="outlook1_outlook.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.outlook1_outlook" />
   <unitInfo fileName="what_Option.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.what_Option" />
-  <unitInfo fileName="DOH_Query.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.DOH_Query" />
   <unitInfo fileName="FacetManifest.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.FacetManifest" />
   <unitInfo fileName="GGG_Facet.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.GGG_Facet" />
+  <unitInfo fileName="DOH_Query.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.DOH_Query" />
   <unitInfo fileName="Generate_Facet.java" startLine="17" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.Generate_Facet" />
   <unitInfo fileName="GenerateSpecial_Facet.java" startLine="21" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.GenerateSpecial_Facet" />
   <unitInfo fileName="FFFFacet_Facet.java" startLine="18" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.make.sandbox.sample.FFFFacet_Facet" />

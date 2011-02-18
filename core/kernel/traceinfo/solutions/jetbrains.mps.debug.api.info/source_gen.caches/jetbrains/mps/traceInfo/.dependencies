@@ -56,6 +56,7 @@
     <classNode dependClassName="org.jdom.DataConversionException" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="org.jdom.Attribute" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode extendsClassName="java.lang.Comparable" />
   </dependency>
@@ -105,9 +106,11 @@
     <classNode extendsClassName="jetbrains.mps.traceInfo.PositionInfo" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.UnitPositionInfo" file="UnitPositionInfo.java">
-    <classNode dependClassName="org.jdom.DataConversionException" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jdom.DataConversionException" />
+    <classNode dependClassName="org.jdom.Attribute" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode extendsClassName="jetbrains.mps.traceInfo.PositionInfo" />
   </dependency>
@@ -116,9 +119,11 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.VarPositionInfo" file="VarPositionInfo.java">
-    <classNode dependClassName="org.jdom.DataConversionException" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jdom.DataConversionException" />
+    <classNode dependClassName="org.jdom.Attribute" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode extendsClassName="jetbrains.mps.traceInfo.PositionInfo" />
   </dependency>

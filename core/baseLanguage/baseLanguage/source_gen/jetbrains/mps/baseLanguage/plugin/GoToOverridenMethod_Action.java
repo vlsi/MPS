@@ -20,11 +20,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import com.intellij.ui.awt.RelativePoint;
-import java.awt.event.MouseEvent;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Point;
+import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -104,19 +103,15 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
           });
         }
       });
-      RelativePoint relativePoint;
-      if (event.getInputEvent() instanceof MouseEvent) {
-        relativePoint = new RelativePoint((MouseEvent) event.getInputEvent());
-      } else {
-        Rectangle cellBounds = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell().getBounds();
-        Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
-        relativePoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
-      }
+      Rectangle cellBounds = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell().getBounds();
+      Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
+      RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
+
       GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods.value).<SNode>select(new ISelector<Tuples._2<SNode, SNode>, SNode>() {
         public SNode select(Tuples._2<SNode, SNode> it) {
           return it._0();
         }
-      }).toListSequence(), relativePoint, ((Project) MapSequence.fromMap(_params).get("project")), methodName[0]);
+      }).toListSequence(), relPoint, ((Project) MapSequence.fromMap(_params).get("project")), methodName[0]);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToOverridenMethod", t);
     }

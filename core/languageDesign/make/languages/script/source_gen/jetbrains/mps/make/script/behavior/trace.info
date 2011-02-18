@@ -4,7 +4,7 @@
   <unitInfo fileName="ResultStatement_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ResultStatement_Behavior" />
   <unitInfo fileName="RelayQueryExpression_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.make.script.behavior.RelayQueryExpression_Behavior" />
   <unitInfo fileName="QueryDefinition_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.script.behavior.QueryDefinition_Behavior" />
-  <unitInfo fileName="ExpectedOption_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ExpectedOption_Behavior" />
+  <unitInfo fileName="ExpectedOption_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ExpectedOption_Behavior" />
   <unitInfo fileName="OptionType_Behavior.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.script.behavior.OptionType_Behavior" />
   <root nodeId="1977954644795510055">
     <nodeInfo nodeId="1977954644795510066" fileName="RelayQueryExpression_Behavior.java" startLine="15" startPosition="82" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -29,9 +29,10 @@
     <scopeInfo nodeId="8486446835277382821" fileName="QueryDefinition_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="156" />
   </root>
   <root nodeId="8853708281362145849">
-    <nodeInfo nodeId="8853708281362147139" fileName="ExpectedOption_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="8853708281362145851" fileName="ExpectedOption_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="8853708281362145860" fileName="ExpectedOption_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="156" />
+    <nodeInfo nodeId="3681941909241118315" fileName="ExpectedOption_Behavior.java" startLine="15" startPosition="43" endLine="16" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8853708281362147139" fileName="ExpectedOption_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="3681941909241118314" fileName="ExpectedOption_Behavior.java" startLine="15" startPosition="43" endLine="16" endPosition="64" />
+    <scopeInfo nodeId="8853708281362145860" fileName="ExpectedOption_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="156" />
   </root>
 </debugInfo>
 

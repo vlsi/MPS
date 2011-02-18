@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="SharedStyles_StyleSheet.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet" />
+</debugInfo>
 

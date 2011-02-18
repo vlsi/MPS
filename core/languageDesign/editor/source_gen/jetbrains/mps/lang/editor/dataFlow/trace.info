@@ -3,11 +3,11 @@
   <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.editor.dataFlow.DFABuilders" />
   <unitInfo fileName="AbstractStyledTextOperation_DataFlow.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.dataFlow.AbstractStyledTextOperation_DataFlow" />
   <root nodeId="4531786690998643506">
-    <nodeInfo nodeId="4531786690998643509" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="16" startPosition="102" endLine="17" endPosition="36" />
-    <nodeInfo nodeId="4531786690998643525" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="18" startPosition="122" endLine="19" endPosition="52" />
-    <nodeInfo nodeId="4531786690998643511" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="17" startPosition="36" endLine="20" endPosition="5" />
+    <nodeInfo nodeId="4531786690998643509" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="16" startPosition="102" endLine="17" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4531786690998643525" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="18" startPosition="122" endLine="19" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4531786690998643511" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="17" startPosition="36" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="4531786690998643514" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="18" startPosition="122" endLine="19" endPosition="52" />
-    <scopeInfo nodeId="4531786690998643511" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="17" startPosition="36" endLine="20" endPosition="5" />
+    <scopeInfo nodeId="4531786690998643511" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="17" startPosition="36" endLine="20" endPosition="5" />
     <scopeInfo nodeId="4531786690998643508" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="16" startPosition="102" endLine="20" endPosition="5" />
   </root>
 </debugInfo>

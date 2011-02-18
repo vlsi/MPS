@@ -24,8 +24,9 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import javax.swing.JComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.ide.embeddableEditor.GenerationResult;
+import jetbrains.mps.compiler.IClassesData;
 import java.util.Collections;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
 import com.intellij.openapi.project.Project;
@@ -101,14 +102,24 @@ public class FindInstancesDialog extends BaseDialog {
           language.value = SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(FindInstancesDialog.this.myNode));
         }
       });
-      final GenerationResult result = this.myEditor.generate(Collections.singleton(language.value.getClassPathItem()));
-      String fqName = result.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
-      ClassLoader loader = result.getLoader(QueryExecutor.class.getClassLoader());
-      final Query query = (Query) Class.forName(fqName, true, loader).newInstance();
-      final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
+      // <node> 
+      IClassesData cd = myEditor.make(Collections.singleton(language.value.getClassPathItem()));
+      if (cd == null) {
+        return;
+      }
+      final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          FindInstancesDialog.this.execute(FindInstancesDialog.this.myContext.getProject(), query, SNodeOperations.cast(result.getSNode(), "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
+          model.value = SNodeOperations.getModel(myNode);
+        }
+      });
+      String fqName = model.value.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
+      ClassLoader loader = cd.getClassLoader(QueryExecutor.class.getClassLoader());
+      final Query query = (Query) Class.forName(fqName, true, loader).newInstance();
+      final IScope scope = this.myScope.getOptions().getScope(this.myContext, model.value.getModelDescriptor());
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          FindInstancesDialog.this.execute(FindInstancesDialog.this.myContext.getProject(), query, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
         }
       });
     } catch (Throwable t) {

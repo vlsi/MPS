@@ -9,8 +9,8 @@ import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -27,7 +27,7 @@ public class HighLevelEvaluationModel extends AbstractEvaluationModel {
       public void run() {
         // TODO not all languages have block statements; type of used statement should be specified via plugin 
         myNodeToShow = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
-        SLinkOperations.setNewChild(myNodeToShow, AttributesRolesUtil.childRoleFromAttributeRole("toEvaluateAnnotation"), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
+        AttributeOperations.createAndSetAttrbiute(myNodeToShow, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation")), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
 
         SNode locationNode = myEvaluationContext.getLocationNode();
         SNode locationRoot = getLocationRoot();

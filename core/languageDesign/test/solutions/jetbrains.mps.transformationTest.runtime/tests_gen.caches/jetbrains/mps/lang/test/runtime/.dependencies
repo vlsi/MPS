@@ -134,20 +134,22 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.errors.MessageStatus" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.analyzers.LivenessAnalyzer" />
-    <classNode dependClassName="jetbrains.mps.smodel.AttributesRolesUtil" />
+    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodeOperation_Behavior" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.analyzers.InitializedVariablesAnalyzer" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.VarSet" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
@@ -163,6 +165,21 @@
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.runtime.TestRunner" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.test.runtime.TypeSystemChecker" file="TypeSystemChecker.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeContextManager" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.TypesUtil" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.test.StateMatcher" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.state.State" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.TypeCheckingContextNew" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.operation.AbstractOperation" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
 </dependenciesRoot>
 

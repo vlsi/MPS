@@ -20,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.make.facet.structure.RelatedFacetReference" />
     <classNode dependClassName="jetbrains.mps.make.facet.structure.TargetDeclaration" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.make.facet.structure.ExtendsFacetReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
@@ -123,6 +124,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.make.facet.structure.ParametersDeclaration" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.make.facet.structure.TargetDependency" />
     <classNode dependClassName="jetbrains.mps.make.script.structure.JobDeclaration" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />

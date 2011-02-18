@@ -719,7 +719,7 @@
                     <node role="replacementNode" roleId="tp25.1140131861877" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1235747781381">
                       <node role="quotedNode" roleId="tp3r.1196350785114" type="tp2c.CompactInvokeFunctionExpression" typeId="tp2c.1235746970280" id="1235747783430">
                         <node role="function" roleId="tp2c.1235746996653" type="tpee.Expression" typeId="tpee.1068431790191" id="1235747783431">
-                          <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1235747809934">
+                          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1235747809934">
                             <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="1235747813999" />
                           </node>
                         </node>

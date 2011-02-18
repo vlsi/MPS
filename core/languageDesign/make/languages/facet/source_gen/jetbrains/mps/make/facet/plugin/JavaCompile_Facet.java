@@ -25,6 +25,25 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.compiler.JavaCompiler;
+import java.util.Set;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.smodel.resources.FResource;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.compiler.CompilationResultAdapter;
+import org.eclipse.jdt.internal.compiler.CompilationResult;
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.resources.CResource;
+import jetbrains.mps.compiler.IClassesData;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class JavaCompile_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -34,6 +53,7 @@ public class JavaCompile_Facet implements IFacet {
     ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_wf1ya0_a());
     ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_wf1ya0_b());
     ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_wf1ya0_c());
+    ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_wf1ya0_d());
   }
 
   public Iterable<ITarget> targets() {
@@ -81,7 +101,7 @@ public class JavaCompile_Facet implements IFacet {
               }
               monitor.currentProgress().beginWork("Compiling", work, monitor.currentProgress().workLeft());
               for (IResource resource : Sequence.fromIterable(input)) {
-                TResource tres = new TResource().assignFrom((TResource) resource);
+                TResource tres = (TResource) resource;
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
@@ -186,7 +206,7 @@ public class JavaCompile_Facet implements IFacet {
 
               boolean refreshed = false;
               for (IResource resource : Sequence.fromIterable(input)) {
-                TResource tres = new TResource().assignFrom((TResource) resource);
+                TResource tres = (TResource) resource;
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_wf1ya0_a0b);
                 }
@@ -341,6 +361,137 @@ public class JavaCompile_Facet implements IFacet {
 
     public <T> T createParameters(Class<T> cls) {
       return null;
+    }
+  }
+
+  public static class Target_wf1ya0_d implements ITarget {
+    private ITarget.Name name = new ITarget.Name("compileToMemory");
+
+    public Target_wf1ya0_d() {
+    }
+
+    public IJob createJob() {
+      return new IJob() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+          Iterable<IResource> _output_wf1ya0_a0d = null;
+          switch (0) {
+            case 0:
+              final JavaCompiler jc = new JavaCompiler();
+              Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
+              for (IResource r : Sequence.fromIterable(input)) {
+                FResource fres = ((FResource) r);
+                MapSequence.fromMap(fres.contents()).visitAll(new IVisitor<IMapping<String, String>>() {
+                  public void visit(IMapping<String, String> m) {
+                    jc.addSource(m.key(), m.value());
+                  }
+                });
+                if (fres.module() != null) {
+                  SetSequence.fromSet(modules).addElement(fres.module());
+                }
+              }
+              pool.parameters(Target_wf1ya0_d.this.getName(), JavaCompile_Facet.Target_wf1ya0_d.Parameters.class).errors(false);
+              jc.addCompilationResultListener(new CompilationResultAdapter() {
+                public void onCompilationResult(CompilationResult cr) {
+                  if (cr.hasErrors()) {
+                    pool.parameters(Target_wf1ya0_d.this.getName(), JavaCompile_Facet.Target_wf1ya0_d.Parameters.class).errors(true);
+                    CategorizedProblem[] categorizedProblems = cr.getErrors();
+                    for (int i = 0; i < 3 && i < categorizedProblems.length; i++) {
+                      monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(String.valueOf(categorizedProblems[i]))));
+                    }
+                  }
+                }
+              });
+              final CompositeClassPathItem ccp = (CompositeClassPathItem) AbstractModule.getDependenciesClasspath(modules, true);
+              Sequence.fromIterable(pool.parameters(Target_wf1ya0_d.this.getName(), JavaCompile_Facet.Target_wf1ya0_d.Parameters.class).classPath()).visitAll(new IVisitor<IClassPathItem>() {
+                public void visit(IClassPathItem cpi) {
+                  ccp.add(cpi);
+                }
+              });
+              jc.compile(ccp);
+              if ((boolean) pool.parameters(Target_wf1ya0_d.this.getName(), JavaCompile_Facet.Target_wf1ya0_d.Parameters.class).errors()) {
+                return new IResult.FAILURE(_output_wf1ya0_a0d);
+              }
+              _output_wf1ya0_a0d = Sequence.fromIterable(_output_wf1ya0_a0d).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CResource(new IClassesData() {
+                public ClassLoader getClassLoader(ClassLoader parent) {
+                  return jc.getClassLoader(parent);
+                }
+              }))));
+            default:
+              return new IResult.SUCCESS(_output_wf1ya0_a0d);
+          }
+        }
+      };
+    }
+
+    public IConfig createConfig() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> notAfter() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> after() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("textGenToMemory")});
+    }
+
+    public Iterable<ITarget.Name> notBefore() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> before() {
+      return null;
+    }
+
+    public ITarget.Name getName() {
+      return name;
+    }
+
+    public boolean requiresInput() {
+      return true;
+    }
+
+    public boolean producesOutput() {
+      return true;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
+    }
+
+    public <T> T createParameters(Class<T> cls) {
+      return cls.cast(new Parameters());
+    }
+
+    public static class Parameters extends MultiTuple._2<Iterable<IClassPathItem>, Boolean> {
+      public Parameters() {
+        super();
+      }
+
+      public Parameters(Iterable<IClassPathItem> classPath, Boolean errors) {
+        super(classPath, errors);
+      }
+
+      public Iterable<IClassPathItem> classPath(Iterable<IClassPathItem> value) {
+        return super._0(value);
+      }
+
+      public Boolean errors(Boolean value) {
+        return super._1(value);
+      }
+
+      public Iterable<IClassPathItem> classPath() {
+        return super._0();
+      }
+
+      public Boolean errors() {
+        return super._1();
+      }
+
+      @SuppressWarnings(value = "unchecked")
+      public JavaCompile_Facet.Target_wf1ya0_d.Parameters assignFrom(Tuples._2<Iterable<IClassPathItem>, Boolean> from) {
+        return (JavaCompile_Facet.Target_wf1ya0_d.Parameters) super.assign(from);
+      }
     }
   }
 }

@@ -5,6 +5,7 @@ package jetbrains.mps.build.packaging.structure;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +22,7 @@ public class Zip extends AbstractProjectComponent implements ICompositeComponent
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DELETE = "delete";
   public static final String ENTRY = "entry";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Zip(SNode node) {
     super(node);
@@ -116,6 +118,26 @@ public class Zip extends AbstractProjectComponent implements ICompositeComponent
 
   public void insertEntry(AbstractProjectComponent prev, AbstractProjectComponent node) {
     this.insertChild(prev, Zip.ENTRY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Zip._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Zip._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Zip._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Zip._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Zip._$ATTRIBUTE, node);
   }
 
   public static Zip newInstance(SModel sm, boolean init) {

@@ -1391,50 +1391,40 @@
                       </node>
                     </node>
                   </node>
-                  <node role="2.condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="6473905640924080226">
-                    <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6473905640924080229">
-                      <property name="2.value:3" value="0" />
-                    </node>
-                    <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.MinusExpression:3" id="6473905640924078301">
-                      <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="4972886494893415553">
-                        <node role="11.index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4972886494893415556">
-                          <property name="2.value:3" value="0" />
-                        </node>
-                        <node role="11.tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4972886494893415549">
-                          <link role="2.variableDeclaration:3" targetNodeId="4972886494893415523" resolveInfo="oldIndices" />
-                        </node>
+                  <node role="2.condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="6434885394825838164">
+                    <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="6434885394825838165">
+                      <node role="11.index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6434885394825838166">
+                        <property name="2.value:3" value="0" />
                       </node>
-                      <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="6473905640924080223">
-                        <node role="11.tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6473905640924080224">
-                          <link role="2.variableDeclaration:3" targetNodeId="4972886494893415523" resolveInfo="oldIndices" />
-                        </node>
-                        <node role="11.index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6473905640924080225">
-                          <property name="2.value:3" value="1" />
-                        </node>
+                      <node role="11.tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6434885394825838167">
+                        <link role="2.variableDeclaration:3" targetNodeId="4972886494893415523" resolveInfo="oldIndices" />
+                      </node>
+                    </node>
+                    <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="6434885394825838168">
+                      <node role="11.tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6434885394825838169">
+                        <link role="2.variableDeclaration:3" targetNodeId="4972886494893415523" resolveInfo="oldIndices" />
+                      </node>
+                      <node role="11.index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6434885394825838170">
+                        <property name="2.value:3" value="1" />
                       </node>
                     </node>
                   </node>
                   <node role="2.elsifClauses:3" type="jetbrains.mps.baseLanguage.structure.ElsifClause:3" id="4972886494893415568">
-                    <node role="2.condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="6473905640924080236">
-                      <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6473905640924080239">
-                        <property name="2.value:3" value="0" />
-                      </node>
-                      <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.MinusExpression:3" id="6473905640924080230">
-                        <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="4972886494893415572">
-                          <node role="11.index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4972886494893415575">
-                            <property name="2.value:3" value="0" />
-                          </node>
-                          <node role="11.tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4972886494893415571">
-                            <link role="2.variableDeclaration:3" targetNodeId="4972886494893415536" resolveInfo="newIndices" />
-                          </node>
+                    <node role="2.condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="6434885394825838171">
+                      <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="6434885394825838172">
+                        <node role="11.index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6434885394825838173">
+                          <property name="2.value:3" value="0" />
                         </node>
-                        <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="6473905640924080233">
-                          <node role="11.index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6473905640924080234">
-                            <property name="2.value:3" value="1" />
-                          </node>
-                          <node role="11.tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6473905640924080235">
-                            <link role="2.variableDeclaration:3" targetNodeId="4972886494893415536" resolveInfo="newIndices" />
-                          </node>
+                        <node role="11.tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6434885394825838174">
+                          <link role="2.variableDeclaration:3" targetNodeId="4972886494893415536" resolveInfo="newIndices" />
+                        </node>
+                      </node>
+                      <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression:2" id="6434885394825838175">
+                        <node role="11.index:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6434885394825838176">
+                          <property name="2.value:3" value="1" />
+                        </node>
+                        <node role="11.tuple:2" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6434885394825838177">
+                          <link role="2.variableDeclaration:3" targetNodeId="4972886494893415536" resolveInfo="newIndices" />
                         </node>
                       </node>
                     </node>

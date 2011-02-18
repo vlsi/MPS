@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.collections.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class SubListOperation extends SequenceOperation implements IListOperatio
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String FROM_INDEX = "fromIndex";
   public static final String UP_TO_INDEX = "upToIndex";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SubListOperation(SNode node) {
     super(node);
@@ -58,6 +62,26 @@ public class SubListOperation extends SequenceOperation implements IListOperatio
 
   public void setUpToIndex(Expression node) {
     super.setChild(SubListOperation.UP_TO_INDEX, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(SubListOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SubListOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SubListOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(SubListOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SubListOperation._$ATTRIBUTE, node);
   }
 
   public static SubListOperation newInstance(SModel sm, boolean init) {

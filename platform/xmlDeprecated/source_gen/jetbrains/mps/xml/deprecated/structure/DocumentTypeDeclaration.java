@@ -5,6 +5,9 @@ package jetbrains.mps.xml.deprecated.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class DocumentTypeDeclaration extends BaseConcept implements INamedConcep
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXTERNAL_I_D = "externalID";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public DocumentTypeDeclaration(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class DocumentTypeDeclaration extends BaseConcept implements INamedConcep
 
   public void setExternalID(ExternalId node) {
     super.setChild(DocumentTypeDeclaration.EXTERNAL_I_D, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(DocumentTypeDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, DocumentTypeDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, DocumentTypeDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(DocumentTypeDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DocumentTypeDeclaration._$ATTRIBUTE, node);
   }
 
   public static DocumentTypeDeclaration newInstance(SModel sm, boolean init) {

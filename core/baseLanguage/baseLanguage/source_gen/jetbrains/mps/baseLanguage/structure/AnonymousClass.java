@@ -6,6 +6,7 @@ import jetbrains.mps.lang.textGen.structure.UnitConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +21,7 @@ public class AnonymousClass extends ClassConcept implements IMethodCall, IContro
   public static final String PARAMETER = "parameter";
   public static final String TYPE_PARAMETER = "typeParameter";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AnonymousClass(SNode node) {
     super(node);
@@ -131,6 +133,26 @@ public class AnonymousClass extends ClassConcept implements IMethodCall, IContro
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, AnonymousClass.ACTUAL_ARGUMENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AnonymousClass._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AnonymousClass._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AnonymousClass._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AnonymousClass._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AnonymousClass._$ATTRIBUTE, node);
   }
 
   public static AnonymousClass newInstance(SModel sm, boolean init) {

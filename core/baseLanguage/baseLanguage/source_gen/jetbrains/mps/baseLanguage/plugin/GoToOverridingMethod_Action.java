@@ -27,11 +27,10 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
-import com.intellij.ui.awt.RelativePoint;
-import java.awt.event.MouseEvent;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Point;
+import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class GoToOverridingMethod_Action extends GeneratedAction {
@@ -136,15 +135,11 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
         }
       });
 
-      RelativePoint relativePoint;
-      if (event.getInputEvent() instanceof MouseEvent) {
-        relativePoint = new RelativePoint((MouseEvent) event.getInputEvent());
-      } else {
-        Rectangle cellBounds = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell().getBounds();
-        Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
-        relativePoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
-      }
-      GoToHelper.showOverridingMethodsMenu(SetSequence.fromSet(nodes).toListSequence(), relativePoint, ((Project) MapSequence.fromMap(_params).get("project")), methodName[0]);
+      Rectangle cellBounds = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell().getBounds();
+      Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
+      RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
+
+      GoToHelper.showOverridingMethodsMenu(SetSequence.fromSet(nodes).toListSequence(), relPoint, ((Project) MapSequence.fromMap(_params).get("project")), methodName[0]);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToOverridingMethod", t);
     }

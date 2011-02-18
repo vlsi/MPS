@@ -4,6 +4,9 @@ package jetbrains.mps.lang.editor.editorTest.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -14,6 +17,7 @@ public class InspectorBlock extends BaseConcept implements IBaseTestBlock {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BLOCK = "block";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public InspectorBlock(SNode node) {
     super(node);
@@ -49,6 +53,26 @@ public class InspectorBlock extends BaseConcept implements IBaseTestBlock {
 
   public void setBlock(IBaseTestBlock node) {
     super.setChild(InspectorBlock.BLOCK, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(InspectorBlock._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, InspectorBlock._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, InspectorBlock._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(InspectorBlock._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InspectorBlock._$ATTRIBUTE, node);
   }
 
   public static InspectorBlock newInstance(SModel sm, boolean init) {

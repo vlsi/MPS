@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.runConfigurations.structure;
 import jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration;
 import jetbrains.mps.lang.plugin.structure.IEnhancedRunConfiguration;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -14,6 +17,7 @@ public class JavaRunConfiguration extends RunConfigurationDeclaration implements
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public JavaRunConfiguration(SNode node) {
     super(node);
@@ -41,6 +45,26 @@ public class JavaRunConfiguration extends RunConfigurationDeclaration implements
 
   public void setVirtualPackage(String value) {
     this.setProperty(JavaRunConfiguration.VIRTUAL_PACKAGE, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(JavaRunConfiguration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, JavaRunConfiguration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, JavaRunConfiguration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(JavaRunConfiguration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, JavaRunConfiguration._$ATTRIBUTE, node);
   }
 
   public static JavaRunConfiguration newInstance(SModel sm, boolean init) {

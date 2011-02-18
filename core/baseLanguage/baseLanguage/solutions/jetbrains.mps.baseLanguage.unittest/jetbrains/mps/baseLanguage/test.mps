@@ -16,6 +16,7 @@
   <import index="n1y2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="qvoq" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="t1ti" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="tp6m" modelUID="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
@@ -108,7 +109,7 @@
     </node>
     <node type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="6017652711700374672">
       <property name="name" nameId="tpck.1169194664001" value="TypesTest_BL" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="dataFlow" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="typeSystem" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="5097124989039164757">
       <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr" />
@@ -132,6 +133,18 @@
       <property name="name" nameId="tpck.1169194664001" value="FinalFieldWasAssigned" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="dataFlow" />
     </node>
+    <node type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="7187651930235347758">
+      <property name="name" nameId="tpck.1169194664001" value="TestGenerationMode" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="typeSystem" />
+    </node>
+    <node type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="5210914756411638023">
+      <property name="name" nameId="tpck.1169194664001" value="RollBacksNewTypeSystem" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="typeSystem" />
+    </node>
+    <node type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="7868761255934329294">
+      <property name="name" nameId="tpck.1169194664001" value="Validation" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="dataFlow" />
+    </node>
   </roots>
   <root id="1217271585456">
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1217271585458">
@@ -152,12 +165,12 @@
                   <property name="value" nameId="tpee.1068580320021" value="1" />
                 </node>
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1216231244757">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1216231244757">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="1216231255040" />
               </node>
             </node>
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1216231228348">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1216231228348">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1216231238662" />
           </node>
         </node>
@@ -235,7 +248,7 @@
             <property name="name" nameId="tpck.1169194664001" value="a" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1215444253224" />
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1215444253225">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1215444253225">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
@@ -276,7 +289,7 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1215522795334">
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1215522796447">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215444224352" resolveInfo="b" />
-                    <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1215522821006">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1215522821006">
                       <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="1215522839801" />
                     </node>
                   </node>
@@ -284,7 +297,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215444224362" resolveInfo="a" />
                   </node>
                 </node>
-                <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1215524666839">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1215524666839">
                   <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="1215524677431" />
                 </node>
               </node>
@@ -294,7 +307,7 @@
             <property name="name" nameId="tpck.1169194664001" value="a" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1215444224363" />
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1215444224364">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1215444224364">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
@@ -342,13 +355,13 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215444198393" resolveInfo="a" />
                   </node>
                 </node>
-                <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1215524703673">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1215524703673">
                   <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="1215524708345" />
                 </node>
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1215444198403">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1215444198403">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
@@ -397,11 +410,11 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1215522889580">
                 <property name="name" nameId="tpck.1169194664001" value="a" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1215522889581" />
-                <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1216895837956">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1216895837956">
                   <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="1216895846723" />
                 </node>
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1216232720510">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1216232720510">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="1216232724026" />
               </node>
             </node>
@@ -410,7 +423,7 @@
             <property name="name" nameId="tpck.1169194664001" value="t" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1215444211026" />
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1216895627746">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1216895627746">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1216895632608" />
           </node>
         </node>
@@ -463,7 +476,7 @@
               </node>
             </node>
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1216549232816">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1216549232816">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1216549241562" />
           </node>
         </node>
@@ -532,7 +545,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1227876791311" resolveInfo="a" />
                             </node>
                           </node>
-                          <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1227876791320">
+                          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1227876791320">
                             <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="1227876791321" />
                           </node>
                         </node>
@@ -543,7 +556,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1215444268434">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1215444268434">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
@@ -587,7 +600,7 @@
                         <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1215444400373" />
                         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1215444400374" />
                         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1215522863563">
-                          <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1215522871846">
+                          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1215522871846">
                             <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="1215522876408" />
                           </node>
                         </node>
@@ -613,7 +626,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1215444400379">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1215444400379">
           <property name="name" nameId="tpck.1169194664001" value="class" />
         </node>
       </node>
@@ -643,13 +656,13 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1216889592660">
                 <property name="name" nameId="tpck.1169194664001" value="a" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1216889592661" />
-                <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1216889869455">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1216889869455">
                   <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="1216889875447" />
                 </node>
               </node>
             </node>
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1216889615893">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1216889615893">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1216889859700" />
           </node>
         </node>
@@ -704,7 +717,7 @@
                               <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1215444376236">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215444376219" resolveInfo="t" />
                               </node>
-                              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1215524603802">
+                              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1215524603802">
                                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="1215524607913" />
                               </node>
                             </node>
@@ -727,7 +740,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1215444376242">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1215444376242">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
@@ -766,7 +779,7 @@
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1215444156820" />
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1215522917860">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215444156816" resolveInfo="v" />
-                  <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1215522923423">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1215522923423">
                     <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="1215522927829" />
                   </node>
                 </node>
@@ -779,13 +792,13 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1215444156826">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215444156819" resolveInfo="a" />
                 </node>
-                <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1215524538403">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1215524538403">
                   <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="1215524547718" />
                 </node>
               </node>
             </node>
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1216893944815">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1216893944815">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1216893950801" />
           </node>
         </node>
@@ -857,7 +870,7 @@
                     </node>
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1239365538953">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215444237458" resolveInfo="a" />
-                      <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1239365538954">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1239365538954">
                         <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="1239365538955" />
                       </node>
                     </node>
@@ -870,7 +883,7 @@
             <property name="name" nameId="tpck.1169194664001" value="e" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1215444237479" />
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1215444237480">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1215444237480">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
@@ -980,7 +993,7 @@
             <property name="name" nameId="tpck.1169194664001" value="b" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1217861531332" />
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1217861585946">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1217861585946">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1217864879944" />
           </node>
         </node>
@@ -1061,7 +1074,7 @@
                   </node>
                 </node>
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1239365264693">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1239365264693">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="1239365278901" />
               </node>
             </node>
@@ -1074,7 +1087,7 @@
             <property name="name" nameId="tpck.1169194664001" value="b" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1217864474260" />
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1217864474261">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1217864474261">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1217864892290" />
           </node>
         </node>
@@ -1156,7 +1169,7 @@
             <property name="name" nameId="tpck.1169194664001" value="p" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1217866162972" />
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1217866433720">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1217866433720">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1217866439753" />
           </node>
         </node>
@@ -1200,7 +1213,7 @@
                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8512491756795119585">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="n1y2.~IOException" resolveInfo="IOException" />
                   </node>
-                  <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="354371747683307892">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="354371747683307892">
                     <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="354371747683307893" />
                   </node>
                 </node>
@@ -1223,7 +1236,7 @@
                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8512491756795119586">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="n1y2.~IOException" resolveInfo="IOException" />
                   </node>
-                  <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="354371747683324363">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="354371747683324363">
                     <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="354371747683324364" />
                   </node>
                 </node>
@@ -1231,7 +1244,7 @@
               </node>
             </node>
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1220012514559">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1220012514559">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1220012521451" />
           </node>
         </node>
@@ -1292,7 +1305,7 @@
             <property name="name" nameId="tpck.1169194664001" value="a" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1220013478561" />
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1220013503033">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1220013503033">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1220013512724" />
           </node>
         </node>
@@ -1327,7 +1340,7 @@
           <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1220265325479">
             <property name="name" nameId="tpck.1169194664001" value="b" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1220265325480" />
-            <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1220265448150">
+            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1220265448150">
               <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="1220265454238" />
             </node>
           </node>
@@ -1363,12 +1376,12 @@
           <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1220265310509">
             <property name="name" nameId="tpck.1169194664001" value="b" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1220265310510" />
-            <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1220265478268">
+            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1220265478268">
               <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="1220265482494" />
             </node>
           </node>
         </node>
-        <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1220265428623">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1220265428623">
           <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1220265437276" />
         </node>
       </node>
@@ -1439,7 +1452,7 @@
             </node>
           </node>
           <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1222443291672" />
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1222443316200">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1222443316200">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1222443330005" />
           </node>
         </node>
@@ -1460,7 +1473,7 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1239288457694">
                 <property name="name" nameId="tpck.1169194664001" value="a" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1239288457695" />
-                <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="2736903840391132361">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="2736903840391132361">
                   <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="2736903840391132362" />
                 </node>
               </node>
@@ -1483,7 +1496,7 @@
               </node>
             </node>
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1226936109744">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1226936109744">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1226936244308" />
           </node>
         </node>
@@ -1557,7 +1570,7 @@
           <property name="name" nameId="tpck.1169194664001" value="param" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="4859441577819743274" />
         </node>
-        <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1229349949893">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1229349949893">
           <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1229350096076" />
         </node>
       </node>
@@ -1596,7 +1609,7 @@
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6846030807779017483">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6017652711700376510" resolveInfo="a" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017484">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017484">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="6846030807779017485">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6846030807779017486" />
                 </node>
@@ -1611,7 +1624,7 @@
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6846030807779017489">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6017652711700376510" resolveInfo="a" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017490">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017490">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="6846030807779017491">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6846030807779017492" />
                 </node>
@@ -1626,7 +1639,7 @@
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6846030807779017495">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6017652711700376510" resolveInfo="a" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017496">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017496">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="6846030807779017497">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6846030807779017498" />
                 </node>
@@ -1641,7 +1654,7 @@
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6846030807779017501">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6017652711700376510" resolveInfo="a" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017502">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017502">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="6846030807779017503">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6846030807779017504" />
                 </node>
@@ -1656,7 +1669,7 @@
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6846030807779017507">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6017652711700376510" resolveInfo="a" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017508">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017508">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="6846030807779017509">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.StringType" typeId="tpee.1225271177708" id="6846030807779017510" />
                 </node>
@@ -1671,7 +1684,7 @@
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6846030807779017513">
                 <property name="value" nameId="tpee.1070475926801" value="" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017514">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017514">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="6846030807779017515">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.StringType" typeId="tpee.1225271177708" id="6846030807779017516" />
                 </node>
@@ -1689,7 +1702,7 @@
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6017652711700376653">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6017652711700376510" resolveInfo="a" />
                 </node>
-                <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="7039665527129878194">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="7039665527129878194">
                   <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="7039665527129878195" />
                 </node>
               </node>
@@ -1710,7 +1723,7 @@
             </node>
           </node>
         </node>
-        <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6017652711700376551">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6017652711700376551">
           <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="6017652711700376553">
             <property name="operationName" nameId="tp5g.501631557342352972" value="testBinaryOp" />
           </node>
@@ -1739,7 +1752,7 @@
               <node role="condition" roleId="tpee.1163668914799" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6846030807779017546">
                 <property name="value" nameId="tpee.1068580123138" value="true" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017547">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017547">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeSetProperty" typeId="tp5g.95706764259116183" id="6835053503248404233">
                   <node role="type" roleId="tp5g.95706764259116184" type="tpd4.MeetType" typeId="tpd4.1188473524530" id="6835053503248404235">
                     <node role="argument" roleId="tpd4.1188473537547" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6835053503248404236">
@@ -1781,7 +1794,7 @@
               <node role="condition" roleId="tpee.1163668914799" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6846030807779017555">
                 <property name="value" nameId="tpee.1068580123138" value="true" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017556">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017556">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="6846030807779017557">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.DoubleType" typeId="tpee.1070534513062" id="6846030807779017558" />
                 </node>
@@ -1789,7 +1802,7 @@
             </node>
           </node>
         </node>
-        <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6846030807779035849">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6846030807779035849">
           <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="6846030807779035850">
             <property name="operationName" nameId="tp5g.501631557342352972" value="testTernaryOp" />
           </node>
@@ -1986,7 +1999,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5374109160289271541">
                 <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="2685915532175039785" resolveInfo="testErasureField1" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5374109160289271542">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5374109160289271542">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="5374109160289271543">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.StringType" typeId="tpee.1225271177708" id="8227296800200035852" />
                 </node>
@@ -2001,7 +2014,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5374109160289271548">
                 <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="2685915532175039781" resolveInfo="testErasureField2" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5374109160289271549">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5374109160289271549">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="5374109160289271550">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5374109160289271581">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~HashSet" resolveInfo="HashSet" />
@@ -2018,7 +2031,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5374109160289271555">
                 <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="2685915532175039789" resolveInfo="testErasureField3" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5374109160289271556">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5374109160289271556">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="5374109160289271557">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5374109160289271558">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
@@ -2038,7 +2051,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5374109160289268148">
                 <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="2685915532175039785" resolveInfo="testErasureField1" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5374109160289268181">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5374109160289268181">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="5374109160289268184">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5374109160289268187">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
@@ -2055,7 +2068,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5374109160289268161">
                 <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="2685915532175039781" resolveInfo="testErasureField2" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5374109160289268188">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5374109160289268188">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="5374109160289268191">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5374109160289271530">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~Set" resolveInfo="Set" />
@@ -2072,7 +2085,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5374109160289268176">
                 <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="2685915532175039789" resolveInfo="testErasureField3" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5374109160289268193">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5374109160289268193">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="5374109160289268197">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5374109160289271533">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
@@ -2085,7 +2098,7 @@
             </node>
           </node>
         </node>
-        <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6846030807779035851">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6846030807779035851">
           <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="454440546580065076">
             <property name="operationName" nameId="tp5g.501631557342352972" value="testGenericFields" />
           </node>
@@ -2123,7 +2136,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6846030807779017644">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2685915532175039758" resolveInfo="testMethodInGenericClass1" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017583">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017583">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="6846030807779017584">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6846030807779017653">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
@@ -2141,7 +2154,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6846030807779017648">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2685915532175039763" resolveInfo="testMethodInGenericClass2" />
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017590">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6846030807779017590">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="6846030807779017591">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.StringType" typeId="tpee.1225271177708" id="8227296800200035844" />
                 </node>
@@ -2149,7 +2162,7 @@
             </node>
           </node>
         </node>
-        <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="454440546580065077">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="454440546580065077">
           <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="454440546580065078">
             <property name="operationName" nameId="tp5g.501631557342352972" value="testGenericInstanceMethods" />
           </node>
@@ -2172,7 +2185,7 @@
                   <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.StringType" typeId="tpee.1225271177708" id="8227296800200035842" />
                 </node>
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="2066156582659196278">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="2066156582659196278">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="2066156582659196281">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2066156582659198057">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
@@ -2192,7 +2205,7 @@
                   <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.StringType" typeId="tpee.1225271177708" id="8227296800200035847" />
                 </node>
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="454440546580065086">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="454440546580065086">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="2066156582659196283">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2066156582659198064">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
@@ -2215,7 +2228,7 @@
                   <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.StringType" typeId="tpee.1225271177708" id="8227296800200035848" />
                 </node>
               </node>
-              <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="2066156582659196276">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="2066156582659196276">
                 <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeTypeProperty" typeId="tp5g.1215526290564" id="2066156582659196285">
                   <node role="type" roleId="tp5g.1215526393912" type="tpee.StringType" typeId="tpee.1225271177708" id="8227296800200035850" />
                 </node>
@@ -2223,7 +2236,7 @@
             </node>
           </node>
         </node>
-        <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="454440546580065079">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="454440546580065079">
           <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="454440546580065080">
             <property name="operationName" nameId="tp5g.501631557342352972" value="testGenericMethods" />
           </node>
@@ -2376,7 +2389,7 @@
                     <property name="value" nameId="tpee.1070475926801" value="2" />
                   </node>
                 </node>
-                <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071471">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071471">
                   <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="6011730950863071472" />
                 </node>
               </node>
@@ -2418,10 +2431,10 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6011730950863071487">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dconcat(java%dlang%dString)%cjava%dlang%dString" resolveInfo="concat" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6011730950863071488">
-                        <property name="value" nameId="tpee.1070475926801" value="2" />
+                        <property name="value" nameId="tpee.1070475926801" value="23" />
                       </node>
                     </node>
-                    <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071489">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071489">
                       <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="6011730950863071490" />
                     </node>
                   </node>
@@ -2447,7 +2460,7 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6011730950863071500">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dconcat(java%dlang%dString)%cjava%dlang%dString" resolveInfo="concat" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6011730950863071501">
-                        <property name="value" nameId="tpee.1070475926801" value="" />
+                        <property name="value" nameId="tpee.1070475926801" value="sdf" />
                       </node>
                     </node>
                   </node>
@@ -2457,6 +2470,16 @@
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6011730950863071503" />
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6011730950863071504">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6011730950863071492" resolveInfo="s3" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2611025225176462805">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="2611025225176462807">
+                <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2611025225176462810">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6011730950863071512" resolveInfo="s" />
+                </node>
+                <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2611025225176462806">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6011730950863071712" resolveInfo="myNullable" />
                 </node>
               </node>
             </node>
@@ -2471,12 +2494,11 @@
                     <property name="value" nameId="tpee.1070475926801" value="" />
                   </node>
                 </node>
-                <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071510">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071510">
                   <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="6011730950863071511" />
                 </node>
               </node>
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1228615757308491191" />
           </node>
           <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6011730950863071512">
             <property name="name" nameId="tpck.1169194664001" value="s" />
@@ -2485,7 +2507,7 @@
               <link role="annotation" roleId="tpee.1188208074048" targetNodeId="qvoq.~Nullable" resolveInfo="Nullable" />
             </node>
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6011730950863071515">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6011730950863071515">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="6011730950863071516">
               <property name="operationName" nameId="tp5g.501631557342352972" value="testDot" />
             </node>
@@ -2519,11 +2541,11 @@
                 </node>
               </node>
               <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1228615757308512340">
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1228615757308512344">
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1228615757308512343">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="6966675015290666557">
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6966675015290666558">
                     <property name="value" nameId="tpee.1068580320021" value="2" />
                   </node>
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5149227103994090294">
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6966675015290666559">
                     <property name="value" nameId="tpee.1068580320021" value="44" />
                   </node>
                 </node>
@@ -2542,7 +2564,7 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1228615757308606545">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~Object%dnotify()%cvoid" resolveInfo="notify" />
                     </node>
-                    <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1228615757308606546">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1228615757308606546">
                       <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="1228615757308606547" />
                     </node>
                   </node>
@@ -2607,7 +2629,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1228615757308591691">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~Object%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
                       </node>
-                      <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1228615757308606540">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="1228615757308606540">
                         <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="1228615757308606541" />
                       </node>
                     </node>
@@ -2664,7 +2686,41 @@
                 </node>
               </node>
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1228615757308606581" />
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1259268621398087002">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1259268621398087004">
+                <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1259268621398087007">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1228615757308491246" resolveInfo="s" />
+                </node>
+                <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1259268621398087003">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1228615757308512320" resolveInfo="t" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1259268621398087009">
+              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1259268621398087010">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1259268621398087011" />
+              </node>
+              <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1259268621398087014">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1259268621398087017" />
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1259268621398088521">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1228615757308512320" resolveInfo="t" />
+                </node>
+              </node>
+              <node role="elsifClauses" roleId="tpee.1206060520071" type="tpee.ElsifClause" typeId="tpee.1206060495898" id="1259268621398087018">
+                <node role="condition" roleId="tpee.1206060619838" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1259268621398087022">
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1259268621398088519">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~Object%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1259268621398088520">
+                      <property name="value" nameId="tpee.1070475926801" value="3" />
+                    </node>
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1259268621398088522">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1228615757308512320" resolveInfo="t" />
+                  </node>
+                </node>
+                <node role="statementList" roleId="tpee.1206060644605" type="tpee.StatementList" typeId="tpee.1068580123136" id="1259268621398087020" />
+              </node>
+            </node>
           </node>
           <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1228615757308491246">
             <property name="name" nameId="tpck.1169194664001" value="s" />
@@ -2673,7 +2729,7 @@
               <link role="annotation" roleId="tpee.1188208074048" targetNodeId="qvoq.~Nullable" resolveInfo="Nullable" />
             </node>
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1228615757308491249">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="1228615757308491249">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="1228615757308491250">
               <property name="operationName" nameId="tp5g.501631557342352972" value="testIf" />
             </node>
@@ -2723,7 +2779,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6011730950863071603">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~Object%dhashCode()%cint" resolveInfo="hashCode" />
                 </node>
-                <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071604">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071604">
                   <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="6011730950863071605" />
                 </node>
               </node>
@@ -2764,7 +2820,7 @@
                     <property name="value" nameId="tpee.1070475926801" value="" />
                   </node>
                 </node>
-                <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071621">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071621">
                   <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="6011730950863071622" />
                 </node>
               </node>
@@ -2779,7 +2835,7 @@
               <link role="annotation" roleId="tpee.1188208074048" targetNodeId="qvoq.~Nullable" resolveInfo="Nullable" />
             </node>
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6011730950863071626">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6011730950863071626">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="6011730950863071627">
               <property name="operationName" nameId="tp5g.501631557342352972" value="testWhile" />
             </node>
@@ -2850,7 +2906,7 @@
                     <property name="value" nameId="tpee.1070475926801" value="" />
                   </node>
                 </node>
-                <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071660">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071660">
                   <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="6011730950863071661" />
                 </node>
               </node>
@@ -2860,7 +2916,7 @@
             <property name="name" nameId="tpck.1169194664001" value="s2" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6011730950863071663" />
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6011730950863071664">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6011730950863071664">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="6011730950863071665">
               <property name="operationName" nameId="tp5g.501631557342352972" value="testWrite" />
             </node>
@@ -2893,7 +2949,7 @@
                         <property name="value" nameId="tpee.1070475926801" value="" />
                       </node>
                     </node>
-                    <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071681">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071681">
                       <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="6011730950863071682" />
                     </node>
                   </node>
@@ -2934,7 +2990,7 @@
                     <property name="value" nameId="tpee.1070475926801" value="" />
                   </node>
                 </node>
-                <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071698">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071698">
                   <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="6011730950863071699" />
                 </node>
               </node>
@@ -3010,7 +3066,7 @@
               </node>
             </node>
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6689253151531890255">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6689253151531890255">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="6689253151531890256">
               <property name="operationName" nameId="tp5g.501631557342352972" value="testForLoop" />
             </node>
@@ -3061,6 +3117,7 @@
                 </node>
               </node>
             </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="664472603580285533" />
             <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5899025696847072338">
               <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="5899025696847072342">
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5899025696847072346">
@@ -3078,7 +3135,7 @@
               <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5899025696847072340">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5899025696847072359">
                   <node role="expression" roleId="tpee.1068581517676" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5899025696847072362">
-                    <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5899025696847072416">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5899025696847072416">
                       <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="5899025696847072437" />
                     </node>
                   </node>
@@ -3090,7 +3147,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5899025696847072379">
                   <node role="expression" roleId="tpee.1068581517676" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5899025696847072381">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5899025696847072352" resolveInfo="s" />
-                    <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5899025696847072410">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5899025696847072410">
                       <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="5899025696847072412" />
                     </node>
                   </node>
@@ -3110,7 +3167,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5899025696847072407">
                   <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5899025696847072409">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5899025696847072395" resolveInfo="b" />
-                    <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5899025696847072413">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="5899025696847072413">
                       <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="5899025696847072415" />
                     </node>
                   </node>
@@ -3148,7 +3205,7 @@
               </node>
             </node>
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="5899025696847062707">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="5899025696847062707">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="5899025696847062708">
               <property name="operationName" nameId="tp5g.501631557342352972" value="testReturnNotNull" />
             </node>
@@ -3340,7 +3397,7 @@
                       <property name="value" nameId="tpee.1070475926801" value="2" />
                     </node>
                   </node>
-                  <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071775">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="6011730950863071775">
                     <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="6011730950863071776" />
                   </node>
                 </node>
@@ -3442,7 +3499,7 @@
             <link role="annotation" roleId="tpee.1188208074048" targetNodeId="qvoq.~Nullable" resolveInfo="Nullable" />
           </node>
         </node>
-        <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6011730950863071780">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="6011730950863071780">
           <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="6011730950863071781">
             <property name="operationName" nameId="tp5g.501631557342352972" value="testAnnotationParam" />
           </node>
@@ -3483,7 +3540,7 @@
                         <property name="value" nameId="tpee.1068580320021" value="2" />
                       </node>
                     </node>
-                    <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="3383816410303583278">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="3383816410303583278">
                       <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="3383816410303583279" />
                     </node>
                   </node>
@@ -3538,7 +3595,7 @@
                         <property name="value" nameId="tpee.1068580320021" value="2" />
                       </node>
                     </node>
-                    <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="3383816410303583339">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="3383816410303583339">
                       <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="3383816410303583340" />
                     </node>
                   </node>
@@ -3560,7 +3617,7 @@
             <link role="annotation" roleId="tpee.1188208074048" targetNodeId="qvoq.~Nullable" resolveInfo="Nullable" />
           </node>
         </node>
-        <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="3383816410303507496">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="3383816410303507496">
           <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="3383816410303507497">
             <property name="operationName" nameId="tp5g.501631557342352972" value="testTernaryOperation" />
           </node>
@@ -3628,7 +3685,7 @@
             <link role="annotation" roleId="tpee.1188208074048" targetNodeId="qvoq.~Nullable" resolveInfo="Nullable" />
           </node>
         </node>
-        <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="8673157736019176310">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="8673157736019176310">
           <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="8673157736019176311">
             <property name="operationName" nameId="tp5g.501631557342352972" value="testContinue" />
           </node>
@@ -3691,7 +3748,7 @@
             <link role="annotation" roleId="tpee.1188208074048" targetNodeId="qvoq.~Nullable" resolveInfo="Nullable" />
           </node>
         </node>
-        <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="8673157736019186599">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="8673157736019186599">
           <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="8673157736019186600">
             <property name="operationName" nameId="tp5g.501631557342352972" value="testIfNullNew" />
           </node>
@@ -3756,9 +3813,86 @@
             <link role="annotation" roleId="tpee.1188208074048" targetNodeId="qvoq.~Nullable" resolveInfo="Nullable" />
           </node>
         </node>
-        <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="8673157736019186651">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="8673157736019186651">
           <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="8673157736019186652">
             <property name="operationName" nameId="tp5g.501631557342352972" value="testIfNullReturnNotEmpty" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="3613402085300515268">
+      <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3613402085300515269">
+        <property name="name" nameId="tpck.1169194664001" value="testMPS10935" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3613402085300515270" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3613402085300515271" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3613402085300515272">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3613402085300515273">
+            <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3613402085300515274">
+              <property name="name" nameId="tpck.1169194664001" value="s2" />
+              <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3613402085300515275" />
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3613402085300515276">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3613402085300515293" resolveInfo="s" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="3613402085300515277">
+            <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="3613402085300515278">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="3613402085300528001">
+                <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="3613402085300528002">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="3613402085300528003" />
+                </node>
+                <node role="condition" roleId="tpee.1068580123160" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="3613402085300528007">
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3613402085300528010" />
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3613402085300528006">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3613402085300515274" resolveInfo="s2" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" roleId="tpee.1068580123160" type="tpee.OrExpression" typeId="tpee.1080223426719" id="3613402085300515281">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3613402085300515282">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3613402085300515283">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3613402085300515274" resolveInfo="s2" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3613402085300515284">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%disEmpty()%cboolean" resolveInfo="isEmpty" />
+                </node>
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="3613402085300515285">
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3613402085300515286">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3613402085300515274" resolveInfo="s2" />
+                </node>
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3613402085300515287" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3613402085300515288">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3613402085300515289">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3613402085300515290">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3613402085300515274" resolveInfo="s2" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3613402085300515291">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dcharAt(int)%cchar" resolveInfo="charAt" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3613402085300515292">
+                  <property name="value" nameId="tpee.1068580320021" value="2" />
+                </node>
+              </node>
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="4688324513888566411">
+                <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="4688324513888566412" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3613402085300515293">
+          <property name="name" nameId="tpck.1169194664001" value="s" />
+          <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3613402085300515294" />
+          <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="3613402085300515295">
+            <link role="annotation" roleId="tpee.1188208074048" targetNodeId="qvoq.~Nullable" resolveInfo="Nullable" />
+          </node>
+        </node>
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="3613402085300515296">
+          <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="3613402085300515297">
+            <property name="operationName" nameId="tp5g.501631557342352972" value="testMPS10935" />
           </node>
         </node>
       </node>
@@ -3807,7 +3941,7 @@
             <property name="name" nameId="tpck.1169194664001" value="b" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="9092976468699800069" />
           </node>
-          <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="9092976468699800070">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="9092976468699800070">
             <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="9092976468699800071" />
           </node>
         </node>
@@ -3822,7 +3956,7 @@
           <property name="name" nameId="tpck.1169194664001" value="s" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="7970711249077213413" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="7970711249077213421" />
-          <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="7970711249077314353">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="7970711249077314353">
             <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="7970711249077314355" />
           </node>
         </node>
@@ -3835,7 +3969,7 @@
           <property name="name" nameId="tpck.1169194664001" value="s3" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="7970711249077213419" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="7970711249077213423" />
-          <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="7970711249077314350">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="7970711249077314350">
             <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeWarningProperty" typeId="tp5g.1215511704609" id="7970711249077314352" />
           </node>
         </node>
@@ -3869,7 +4003,7 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="7970711249077196634" />
           </node>
         </node>
-        <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="7970711249077314344">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="7970711249077314344">
           <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="7970711249077314345" />
         </node>
       </node>
@@ -3906,7 +4040,7 @@
           <property name="isFinal" nameId="tpee.1176718929932" value="true" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="843236768048178288" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="843236768048178289" />
-          <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="843236768048178306">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="843236768048178306">
             <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="843236768048178307" />
           </node>
         </node>
@@ -3930,7 +4064,7 @@
           <property name="isFinal" nameId="tpee.1176718929932" value="true" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="843236768048178263" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="843236768048178260" />
-          <node role="nodePropertiesMarker$attribute" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="843236768048178274">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="843236768048178274">
             <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="843236768048178275" />
           </node>
         </node>
@@ -3951,7 +4085,7 @@
             </node>
           </node>
         </node>
-        <node role="nodeOpraretionsMark$attribute" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="843236768048178245">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="843236768048178245">
           <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="843236768048178247" />
         </node>
         <node role="classInitializer" roleId="tpee.1221737886778" type="tpee.StaticInitializer" typeId="tpee.1221737317277" id="843236768048178266">
@@ -3979,6 +4113,280 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="843236768048178284" resolveInfo="myString3" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="7187651930235347758">
+    <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="7187651930235347759">
+      <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7187651930235347760">
+        <property name="name" nameId="tpck.1169194664001" value="Class2" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7187651930235347761" />
+        <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7187651930235347762">
+          <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7187651930235347763" />
+          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7187651930235347764" />
+          <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7187651930235347765">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7187651930235347766">
+              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7187651930235347767">
+                <property name="name" nameId="tpck.1169194664001" value="strList" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="7187651930235347768">
+                  <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="7187651930235347769" />
+                </node>
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7187651930235347770">
+                  <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="7187651930235347771">
+                    <node role="elementType" roleId="tp2q.1237721435807" type="tpee.StringType" typeId="tpee.1225271177708" id="7187651930235347772" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7187651930235353817">
+              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7187651930235353818">
+                <property name="name" nameId="tpck.1169194664001" value="a" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="7187651930235353819" />
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7187651930235353821">
+                  <property name="value" nameId="tpee.1068580320021" value="1" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7187651930235353823">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="7187651930235353825">
+                <node role="expression" roleId="tpee.1239714902950" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7187651930235353826">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7187651930235353818" resolveInfo="a" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7187651930235353807">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7187651930235353809">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7187651930235353808">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7187651930235347767" resolveInfo="strList" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="7187651930235353813">
+                  <node role="argument" roleId="tp2q.1160612519549" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7187651930235353815">
+                    <property name="value" nameId="tpee.1070475926801" value="sdf" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1760001917666877974">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1760001917666877976">
+                <node role="expression" roleId="tpee.1239714902950" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1760001917666877977">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7187651930235353818" resolveInfo="a" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7187651930235347794">
+            <property name="name" nameId="tpck.1169194664001" value="method" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="7187651930235347795">
+      <property name="name" nameId="tpck.1169194664001" value="GenerationMode" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7187651930235347796" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7187651930235347797">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5210914756411573029">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5210914756411573031">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp6m.7187651930234842199" resolveInfo="checkGenerationMode" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp6m.7187651930234842193" resolveInfo="TypeSystemChecker" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="5210914756411573032">
+              <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="7187651930235347794" resolveInfo="method" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="5210914756411638023">
+    <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="5210914756411638024">
+      <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5210914756411638025">
+        <property name="name" nameId="tpck.1169194664001" value="Class2" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5210914756411638026" />
+        <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5210914756411638027">
+          <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5210914756411638028" />
+          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5210914756411638029" />
+          <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5210914756411638030">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5210914756411638031">
+              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5210914756411638032">
+                <property name="name" nameId="tpck.1169194664001" value="strList" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="5210914756411638033">
+                  <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="5210914756411638034" />
+                </node>
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5210914756411638035">
+                  <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="5210914756411638036">
+                    <node role="elementType" roleId="tp2q.1237721435807" type="tpee.StringType" typeId="tpee.1225271177708" id="5210914756411638037" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5210914756411638038">
+              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5210914756411638039">
+                <property name="name" nameId="tpck.1169194664001" value="a" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5210914756411638040" />
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5210914756411638041">
+                  <property name="value" nameId="tpee.1068580320021" value="1" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5210914756411638042">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="5210914756411638043">
+                <node role="expression" roleId="tpee.1239714902950" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5210914756411638044">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5210914756411638039" resolveInfo="a" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5210914756411638045">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5210914756411638046">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5210914756411638047">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5210914756411638032" resolveInfo="strList" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="5210914756411638048">
+                  <node role="argument" roleId="tp2q.1160612519549" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5210914756411638049">
+                    <property name="value" nameId="tpee.1070475926801" value="sdf" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5210914756411638050">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="5210914756411638051">
+                <node role="expression" roleId="tpee.1239714902950" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5210914756411638052">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5210914756411638039" resolveInfo="a" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5210914756411638053">
+            <property name="name" nameId="tpck.1169194664001" value="method" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="5210914756411638054">
+      <property name="name" nameId="tpck.1169194664001" value="GenerationMode" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5210914756411638055" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5210914756411638056">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5210914756411638057">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5210914756411638060">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp6m.7187651930234868244" resolveInfo="checkRollBacks" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp6m.7187651930234842193" resolveInfo="TypeSystemChecker" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="5210914756411638061">
+              <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="5210914756411638053" resolveInfo="method" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="7868761255934329294">
+    <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="7868761255934329295">
+      <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7868761255934329296">
+        <property name="name" nameId="tpck.1169194664001" value="Class2" />
+        <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
+        <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7868761255934329334">
+          <property name="name" nameId="tpck.1169194664001" value="foo" />
+          <property name="isFinal" nameId="tpee.1181808852946" value="true" />
+          <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
+          <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7868761255934329335" />
+          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7868761255934329336" />
+          <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7868761255934329337" />
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="2319519288049976970">
+            <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="2319519288049976971" />
+          </node>
+        </node>
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7868761255934329339" />
+        <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7868761255934329311">
+          <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7868761255934329312" />
+          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7868761255934329313" />
+          <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7868761255934329314">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ThisConstructorInvocation" typeId="tpee.1178893518978" id="698255809163062095">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="698255809163062087" resolveInfo="Class2" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="698255809163062096">
+                <property name="value" nameId="tpee.1070475926801" value="" />
+              </node>
+            </node>
+          </node>
+          <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7868761255934329323">
+            <property name="name" nameId="tpck.1169194664001" value="e" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="7868761255934329324" />
+          </node>
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="4456514995149638911">
+            <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="4456514995149638912" />
+          </node>
+        </node>
+        <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="6018737561676583459">
+          <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6018737561676583460" />
+          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6018737561676583461" />
+          <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6018737561676583462">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ThisConstructorInvocation" typeId="tpee.1178893518978" id="6018737561676692023">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="698255809163041337" resolveInfo="Class2" />
+            </node>
+          </node>
+          <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6018737561676596117">
+            <property name="name" nameId="tpck.1169194664001" value="d" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.DoubleType" typeId="tpee.1070534513062" id="6018737561676596118" />
+          </node>
+        </node>
+        <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="6018737561676748686">
+          <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6018737561676748687" />
+          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6018737561676748688" />
+          <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6018737561676748689">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ThisConstructorInvocation" typeId="tpee.1178893518978" id="6018737561676748694">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7868761255934329311" resolveInfo="Class2" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6018737561676748695">
+                <property name="value" nameId="tpee.1068580320021" value="1" />
+              </node>
+            </node>
+          </node>
+          <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6018737561676748691">
+            <property name="name" nameId="tpck.1169194664001" value="d" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6018737561676748693" />
+          </node>
+        </node>
+        <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="698255809163041337">
+          <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="698255809163041338" />
+          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="698255809163041339" />
+          <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="698255809163041340">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ThisConstructorInvocation" typeId="tpee.1178893518978" id="698255809163062086">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="698255809163041337" resolveInfo="Class2" />
+            </node>
+          </node>
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="4456514995149638909">
+            <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="4456514995149638910" />
+          </node>
+        </node>
+        <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="698255809163062087">
+          <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="698255809163062088" />
+          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="698255809163062089" />
+          <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="698255809163062090">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ThisConstructorInvocation" typeId="tpee.1178893518978" id="698255809163062093">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7868761255934329311" resolveInfo="Class2" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="698255809163062094">
+                <property name="value" nameId="tpee.1068580320021" value="1" />
+              </node>
+            </node>
+          </node>
+          <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="698255809163062091">
+            <property name="name" nameId="tpck.1169194664001" value="s" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="698255809163062092" />
+          </node>
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodePropertiesContainer" typeId="tp5g.1215507532627" id="4456514995149638907">
+            <node role="properties" roleId="tp5g.1215507909023" type="tp5g.NodeErrorPropety" typeId="tp5g.1215507671101" id="4456514995149638908" />
+          </node>
+        </node>
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="7868761255934329325">
+          <node role="operations" roleId="tp5g.1215604436604" type="tp5g.TypesCheckOperation" typeId="tp5g.1215607067978" id="7868761255934329326" />
+        </node>
+        <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="7868761255934329327">
+          <property name="name" nameId="tpck.1169194664001" value="main" />
+          <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7868761255934329328" />
+          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7868761255934329329" />
+          <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7868761255934329330" />
+          <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7868761255934329331">
+            <property name="name" nameId="tpck.1169194664001" value="args" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="7868761255934329332">
+              <node role="componentType" roleId="tpee.1070534760952" type="tpee.StringType" typeId="tpee.1225271177708" id="7868761255934329333" />
             </node>
           </node>
         </node>

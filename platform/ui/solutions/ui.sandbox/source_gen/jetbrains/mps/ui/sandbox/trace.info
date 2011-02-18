@@ -268,29 +268,29 @@
   <unitInfo fileName="PanelsDemo_Swing.java" startLine="32" startPosition="0" endLine="539" endPosition="0" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_Swing" />
   <unitInfo fileName="PanelsDemo_SWT.java" startLine="28" startPosition="0" endLine="567" endPosition="0" unitName="jetbrains.mps.ui.sandbox.PanelsDemo_SWT" />
   <root nodeId="7046856741208199003">
-    <nodeInfo nodeId="7046856741208199004" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="kino" fileName="BusinessObject.java" startLine="6" startPosition="29" endLine="7" endPosition="23" />
-    <nodeInfo nodeId="7046856741208199007" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="vino" fileName="BusinessObject.java" startLine="7" startPosition="23" endLine="8" endPosition="23" />
-    <nodeInfo nodeId="7046856741208199010" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="domino" fileName="BusinessObject.java" startLine="8" startPosition="23" endLine="9" endPosition="25" />
-    <nodeInfo nodeId="7006844861053446210" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="bar" fileName="BusinessObject.java" startLine="9" startPosition="25" endLine="10" endPosition="26" />
-    <nodeInfo nodeId="7046856741208199021" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BusinessObject.java" startLine="15" startPosition="28" endLine="16" endPosition="90" />
-    <nodeInfo nodeId="7046856741208199045" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BusinessObject.java" startLine="19" startPosition="29" endLine="20" endPosition="23" />
-    <nodeInfo nodeId="7046856741208199056" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BusinessObject.java" startLine="23" startPosition="36" endLine="24" endPosition="20" />
-    <nodeInfo nodeId="7046856741208199065" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BusinessObject.java" startLine="27" startPosition="27" endLine="28" endPosition="21" />
-    <nodeInfo nodeId="7046856741208199076" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BusinessObject.java" startLine="31" startPosition="34" endLine="32" endPosition="18" />
-    <nodeInfo nodeId="7046856741208199086" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BusinessObject.java" startLine="35" startPosition="27" endLine="36" endPosition="21" />
-    <nodeInfo nodeId="7046856741208199096" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BusinessObject.java" startLine="39" startPosition="34" endLine="40" endPosition="18" />
-    <nodeInfo nodeId="7006844861053446219" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BusinessObject.java" startLine="43" startPosition="26" endLine="44" endPosition="15" />
-    <nodeInfo nodeId="7006844861053446213" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BusinessObject.java" startLine="47" startPosition="34" endLine="48" endPosition="19" />
-    <nodeInfo nodeId="7046856741208199014" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BusinessObject#()V" fileName="BusinessObject.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
-    <nodeInfo nodeId="7046856741208199018" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" fileName="BusinessObject.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
-    <nodeInfo nodeId="7046856741208199042" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDomino#()Z" fileName="BusinessObject.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <nodeInfo nodeId="7046856741208199050" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDomino#(Z)V" fileName="BusinessObject.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <nodeInfo nodeId="7046856741208199062" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVino#()Z" fileName="BusinessObject.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <nodeInfo nodeId="7046856741208199070" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVino#(Z)V" fileName="BusinessObject.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <nodeInfo nodeId="7046856741208199082" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isKino#()Z" fileName="BusinessObject.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <nodeInfo nodeId="7046856741208199090" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setKino#(Z)V" fileName="BusinessObject.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
-    <nodeInfo nodeId="7006844861053446198" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBar#()Ljava/lang/String;" fileName="BusinessObject.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <nodeInfo nodeId="7006844861053446203" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBar#(Ljava/lang/String;)V" fileName="BusinessObject.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <nodeInfo nodeId="7046856741208199004" fileName="BusinessObject.java" startLine="6" startPosition="29" endLine="7" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="kino" />
+    <nodeInfo nodeId="7046856741208199007" fileName="BusinessObject.java" startLine="7" startPosition="23" endLine="8" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="vino" />
+    <nodeInfo nodeId="7046856741208199010" fileName="BusinessObject.java" startLine="8" startPosition="23" endLine="9" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="domino" />
+    <nodeInfo nodeId="7006844861053446210" fileName="BusinessObject.java" startLine="9" startPosition="25" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="bar" />
+    <nodeInfo nodeId="7046856741208199021" fileName="BusinessObject.java" startLine="15" startPosition="28" endLine="16" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7046856741208199045" fileName="BusinessObject.java" startLine="19" startPosition="29" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7046856741208199056" fileName="BusinessObject.java" startLine="23" startPosition="36" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7046856741208199065" fileName="BusinessObject.java" startLine="27" startPosition="27" endLine="28" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7046856741208199076" fileName="BusinessObject.java" startLine="31" startPosition="34" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7046856741208199086" fileName="BusinessObject.java" startLine="35" startPosition="27" endLine="36" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7046856741208199096" fileName="BusinessObject.java" startLine="39" startPosition="34" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7006844861053446219" fileName="BusinessObject.java" startLine="43" startPosition="26" endLine="44" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7006844861053446213" fileName="BusinessObject.java" startLine="47" startPosition="34" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7046856741208199014" fileName="BusinessObject.java" startLine="11" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BusinessObject#()V" />
+    <nodeInfo nodeId="7046856741208199018" fileName="BusinessObject.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7046856741208199042" fileName="BusinessObject.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDomino#()Z" />
+    <nodeInfo nodeId="7046856741208199050" fileName="BusinessObject.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDomino#(Z)V" />
+    <nodeInfo nodeId="7046856741208199062" fileName="BusinessObject.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVino#()Z" />
+    <nodeInfo nodeId="7046856741208199070" fileName="BusinessObject.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVino#(Z)V" />
+    <nodeInfo nodeId="7046856741208199082" fileName="BusinessObject.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isKino#()Z" />
+    <nodeInfo nodeId="7046856741208199090" fileName="BusinessObject.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setKino#(Z)V" />
+    <nodeInfo nodeId="7006844861053446198" fileName="BusinessObject.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBar#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7006844861053446203" fileName="BusinessObject.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBar#(Ljava/lang/String;)V" />
     <scopeInfo nodeId="7046856741208199017" fileName="BusinessObject.java" startLine="12" startPosition="27" endLine="12" endPosition="27" />
     <scopeInfo nodeId="7046856741208199020" fileName="BusinessObject.java" startLine="15" startPosition="28" endLine="16" endPosition="90" />
     <scopeInfo nodeId="7046856741208199044" fileName="BusinessObject.java" startLine="19" startPosition="29" endLine="20" endPosition="23" />
@@ -301,22 +301,22 @@
     <scopeInfo nodeId="7046856741208199095" fileName="BusinessObject.java" startLine="39" startPosition="34" endLine="40" endPosition="18" />
     <scopeInfo nodeId="7006844861053446201" fileName="BusinessObject.java" startLine="43" startPosition="26" endLine="44" endPosition="15" />
     <scopeInfo nodeId="7006844861053446206" fileName="BusinessObject.java" startLine="47" startPosition="34" endLine="48" endPosition="19" />
-    <scopeInfo nodeId="7046856741208199014" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BusinessObject#()V" fileName="BusinessObject.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="7046856741208199018" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" fileName="BusinessObject.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="7046856741208199042" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDomino#()Z" fileName="BusinessObject.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7046856741208199050" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDomino#(Z)V" fileName="BusinessObject.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="7046856741208199014" fileName="BusinessObject.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="7046856741208199018" fileName="BusinessObject.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7046856741208199042" fileName="BusinessObject.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7046856741208199050" fileName="BusinessObject.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="7046856741208199051" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="7046856741208199062" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVino#()Z" fileName="BusinessObject.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="7046856741208199070" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVino#(Z)V" fileName="BusinessObject.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="7046856741208199062" fileName="BusinessObject.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="7046856741208199070" fileName="BusinessObject.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="7046856741208199071" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="7046856741208199082" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isKino#()Z" fileName="BusinessObject.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="7046856741208199090" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setKino#(Z)V" fileName="BusinessObject.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="7046856741208199082" fileName="BusinessObject.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="7046856741208199090" fileName="BusinessObject.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="7046856741208199091" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="7006844861053446198" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBar#()Ljava/lang/String;" fileName="BusinessObject.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="7006844861053446203" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBar#(Ljava/lang/String;)V" fileName="BusinessObject.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="7006844861053446198" fileName="BusinessObject.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="7006844861053446203" fileName="BusinessObject.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="7006844861053446207" varName="bar" />
     </scopeInfo>
     <unitInfo nodeId="7046856741208199003" fileName="BusinessObject.java" startLine="6" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.ui.sandbox.BusinessObject" />

@@ -8,7 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class RemoveConditions_Intention extends BaseIntention implements Intention {
@@ -43,11 +45,11 @@ public class RemoveConditions_Intention extends BaseIntention implements Intenti
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("PreconditionLink"), true), "condition", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions"))), "condition", true)).isNotEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNodeOperations.detachNode(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("PreconditionLink"), true));
+    SNodeOperations.detachNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions"))));
   }
 
   public String getLocationString() {

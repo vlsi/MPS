@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.regexp.structure;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +16,7 @@ public class SymbolClassRegexp extends Regexp implements SymbolClassRegexpAndPar
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PART = "part";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SymbolClassRegexp(SNode node) {
     super(node);
@@ -62,6 +64,26 @@ public class SymbolClassRegexp extends Regexp implements SymbolClassRegexpAndPar
 
   public void insertPart(SymbolClassPart prev, SymbolClassPart node) {
     this.insertChild(prev, SymbolClassRegexp.PART, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(SymbolClassRegexp._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SymbolClassRegexp._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SymbolClassRegexp._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(SymbolClassRegexp._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SymbolClassRegexp._$ATTRIBUTE, node);
   }
 
   public static SymbolClassRegexp newInstance(SModel sm, boolean init) {

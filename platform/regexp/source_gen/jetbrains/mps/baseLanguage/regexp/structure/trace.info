@@ -45,24 +45,24 @@
   <unitInfo fileName="FromNToMTimesRegexp.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp" />
   <unitInfo fileName="IntervalSymbolClassPart.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart" />
   <unitInfo fileName="BinaryRegexp.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp" />
-  <unitInfo fileName="SymbolClassPart.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart" />
   <unitInfo fileName="InlineRegexpExpression.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression" />
-  <unitInfo fileName="MatchRegexpOperation.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation" />
-  <unitInfo fileName="SplitOperation.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.SplitOperation" />
-  <unitInfo fileName="FindMatchExpression.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression" />
-  <unitInfo fileName="MatchRegexpExpression.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression" />
-  <unitInfo fileName="SplitExpression.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.SplitExpression" />
-  <unitInfo fileName="ReplaceWithRegexpOperation.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation" />
-  <unitInfo fileName="MatchParensRegexp.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp" />
-  <unitInfo fileName="PredefinedSymbolClassDeclaration.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration" />
-  <unitInfo fileName="SymbolClassRegexp.java" startLine="12" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp" />
-  <unitInfo fileName="ReplaceWithRegexpExpression.java" startLine="11" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression" />
-  <unitInfo fileName="RegexpDeclaration.java" startLine="12" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" />
-  <unitInfo fileName="FindMatchStatement.java" startLine="13" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement" />
-  <unitInfo fileName="ForEachMatchStatement.java" startLine="13" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement" />
-  <unitInfo fileName="MatchRegexpStatement.java" startLine="13" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement" />
-  <unitInfo fileName="Regexps.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.Regexps" />
-  <unitInfo fileName="PredefinedSymbolClasses.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses" />
-  <unitInfo fileName="ReplaceRegexpOperation.java" startLine="14" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation" />
+  <unitInfo fileName="SymbolClassPart.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart" />
+  <unitInfo fileName="MatchRegexpOperation.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation" />
+  <unitInfo fileName="SplitOperation.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.SplitOperation" />
+  <unitInfo fileName="FindMatchExpression.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression" />
+  <unitInfo fileName="MatchRegexpExpression.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression" />
+  <unitInfo fileName="SplitExpression.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.SplitExpression" />
+  <unitInfo fileName="ReplaceWithRegexpOperation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation" />
+  <unitInfo fileName="MatchParensRegexp.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp" />
+  <unitInfo fileName="PredefinedSymbolClassDeclaration.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration" />
+  <unitInfo fileName="SymbolClassRegexp.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp" />
+  <unitInfo fileName="ReplaceWithRegexpExpression.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression" />
+  <unitInfo fileName="RegexpDeclaration.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" />
+  <unitInfo fileName="FindMatchStatement.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement" />
+  <unitInfo fileName="ForEachMatchStatement.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement" />
+  <unitInfo fileName="MatchRegexpStatement.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement" />
+  <unitInfo fileName="Regexps.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.Regexps" />
+  <unitInfo fileName="PredefinedSymbolClasses.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses" />
+  <unitInfo fileName="ReplaceRegexpOperation.java" startLine="15" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation" />
 </debugInfo>
 

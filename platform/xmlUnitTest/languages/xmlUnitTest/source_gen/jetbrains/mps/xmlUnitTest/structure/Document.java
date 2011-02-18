@@ -5,6 +5,9 @@ package jetbrains.mps.xmlUnitTest.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class Document extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ROOT_ELEMENT = "rootElement";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Document(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class Document extends BaseConcept implements INamedConcept {
 
   public void setRootElement(Element node) {
     super.setChild(Document.ROOT_ELEMENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Document._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Document._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Document._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Document._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Document._$ATTRIBUTE, node);
   }
 
   public static Document newInstance(SModel sm, boolean init) {

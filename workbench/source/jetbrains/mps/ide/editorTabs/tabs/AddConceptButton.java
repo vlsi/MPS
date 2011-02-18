@@ -28,9 +28,7 @@ import javax.swing.JComponent;
 import javax.swing.JPopupMenu;
 import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 abstract class AddConceptTab {
   private SNodePointer myBaseNode;
@@ -58,7 +56,10 @@ abstract class AddConceptTab {
     DefaultActionGroup currentGroup = null;
     List<DefaultActionGroup> groups = new ArrayList<DefaultActionGroup>();
 
-    for (final EditorTabDescriptor d : myPossibleTabs) {
+    List<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(myPossibleTabs);
+    Collections.sort(tabs, new EditorTabComparator());
+
+    for (final EditorTabDescriptor d : tabs) {
       List<SNode> concepts = d.getConcepts(myBaseNode.getNode());
       if (concepts.isEmpty()) continue;
 
@@ -76,7 +77,6 @@ abstract class AddConceptTab {
       }
     }
 
-    //todo sort tabs
     if (currentGroup != null) {
       result.add(currentGroup);
       result.add(new Separator());
@@ -93,20 +93,41 @@ abstract class AddConceptTab {
     private final EditorTabDescriptor myD;
 
     public CreateAction(SNode concept, EditorTabDescriptor d) {
-      super(concept.getName(), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
+      super(concept.getName().replaceAll("_", "__"), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
       myConcept = concept;
       myD = d;
     }
 
     public void actionPerformed(AnActionEvent e) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      final SNode[] created = new SNode[1];
+
+      final Runnable r1 = new Runnable() {
         public void run() {
-          SNode created = myD.createNode(myBaseNode.getNode(), myConcept);
-          String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
-          created.setProperty(SNode.PACK, mainPack);
-          aspectCreated(created);
+          created[0] = myD.createNode(myBaseNode.getNode(), myConcept);
         }
-      });
+      };
+
+      final Runnable r2 = new Runnable() {
+        public void run() {
+          String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
+          created[0].setProperty(SNode.PACK, mainPack);
+          aspectCreated(created[0]);
+        }
+      };
+
+      if (myD.commandOnCreate()) {
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            r1.run();
+            if (created[0] == null) return;
+            r2.run();
+          }
+        });
+      } else {
+        r1.run();
+        if (created[0] == null) return;
+        ModelAccess.instance().runWriteActionInCommand(r2);
+      }
     }
   }
 
@@ -127,6 +148,19 @@ abstract class AddConceptTab {
           popupComponent.show(e.getInputEvent().getComponent(), 0, 0);
         }
       });
+    }
+  }
+
+  private static class EditorTabComparator implements Comparator<EditorTabDescriptor> {
+    public int compare(EditorTabDescriptor d1, EditorTabDescriptor d2) {
+      int r1 = d1.compareTo(d2);
+      int r2 = d2.compareTo(d1);
+
+      if ((r1 == 0) ^ (r2 == 0)) return r1 - r2;
+
+      assert r1 * r2 <= 0 : "can't determine order";
+
+      return r1;
     }
   }
 }

@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -188,7 +189,8 @@ public final class SNode {
         result.add(ref.getRole());
       }
     }
-    result.addAll(getLinkNamesFromAttributes());
+    result.addAll(AttributeOperations.getLinkNamesFromAttributes(this));
+    result.addAll(getLinkNamesFromAttributes());  // compatibility
     return result;
   }
 
@@ -304,10 +306,8 @@ public final class SNode {
   public List<SNode> getAllAttributes() {
     List<SNode> attributes = new ArrayList<SNode>(0);
     for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
-      String role = child.getRole_();
-      if (AttributesRolesUtil.isNodeAttributeRole(role) ||
-        AttributesRolesUtil.isLinkAttributeRole(role) ||
-        AttributesRolesUtil.isPropertyAttributeRole(role)) {
+      // for migration period:
+      if (AttributeOperations.isAttribute(child)) {
         attributes.add(child);
       }
     }
@@ -315,87 +315,69 @@ public final class SNode {
   }
 
   public boolean isAttribute() {
-    String role_ = getRole_();
-    return (role_ != null && AttributesRolesUtil.isAttributeRole(role_));
+    return AttributeOperations.isAttribute(this);
+//    String role_ = getRole_();
+//    return (role_ != null && AttributesRolesUtil.isAttributeRole(role_));
   }
 
   public SNode getAttribute(String role) {
-    String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);
-    return getChild(attributeRole);
+    return AttributeOperations.getNodeAttribute(this, role);
   }
 
   public List<SNode> getAttributes(String role) {
-    String attributeRole = AttributesRolesUtil.childRoleFromAttributeRole(role);
-    return getChildren(attributeRole);
+    return AttributeOperations.getNodeAttributes(this, role);
   }
 
   public void setAttribute(String role, SNode attribute) {
-    setChild(AttributesRolesUtil.childRoleFromAttributeRole(role), attribute);
+    AttributeOperations.setNodeAttribute(this, role, attribute);
   }
 
   public void addAttribute(String role, SNode attribute) {
-    addChild(AttributesRolesUtil.childRoleFromAttributeRole(role), attribute);
+    AttributeOperations.addNodeAttribute(this, role, attribute);
   }
 
   //property
 
   public void setPropertyAttribute(String role, String propertyName, SNode propertyAttribute) {
-    setChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName), propertyAttribute);
+    AttributeOperations.setPropertyAttribute(this, role, propertyName, propertyAttribute);
   }
 
   public void addPropertyAttribute(String role, String propertyName, SNode propertyAttribute) {
-    addChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName), propertyAttribute);
+    AttributeOperations.addPropertyAttribute(this, role, propertyName, propertyAttribute);
   }
 
   public SNode getPropertyAttribute(String role, String propertyName) {
-    return getChild(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName));
+    return AttributeOperations.getPropertyAttribute(this, role, propertyName);
   }
 
   public List<SNode> getPropertyAttributes(String role, String propertyName) {
-    return getChildren(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName));
+    return AttributeOperations.getPropertyAttributes(this, role, propertyName);
   }
 
   public Set<SNode> getPropertyAttributesForPropertyName(String propertyName) {
-    Set<SNode> result = new HashSet<SNode>();
-    for (String role : getChildRoles(true)) {
-      String attributePropertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
-      if (attributePropertyName != null) {
-        if (attributePropertyName.equals(propertyName)) {
-          result.add(getChild(role));
-        }
-      }
-    }
-    return result;
+    return AttributeOperations.getPropertyAttributeForPropertyName(this, propertyName);
   }
 
   //link
 
   public void setLinkAttribute(String role, String linkRole, SNode linkAttribute) {
-    setChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole), linkAttribute);
+    AttributeOperations.setLinkAttribute(this, role, linkRole, linkAttribute);
   }
 
   public void addLinkAttribute(String role, String linkRole, SNode linkAttribute) {
-    addChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole), linkAttribute);
+    AttributeOperations.addLinkAttribute(this, role, linkRole, linkAttribute);
   }
 
   public SNode getLinkAttribute(String role, String linkRole) {
-    return getChild(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole));
+    return AttributeOperations.getLinkAttribute(this, role, linkRole);
   }
 
   public List<SNode> getLinkAttributes(String role, String linkRole) {
-    return getChildren(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole));
+    return AttributeOperations.getLinkAttributes(this, role, linkRole);
   }
 
   public Set<SNode> getLinkAttributesForLinkRole(String linkRole) {
-    Set<SNode> result = new HashSet<SNode>();
-    if (linkRole == null) return result;
-    for (String role : getChildRoles(true)) {
-      String attributelinkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(role);
-      if (linkRole.equals(attributelinkRole)) {
-        result.add(getChild(role));
-      }
-    }
-    return result;
+    return AttributeOperations.getLinkAttributeForLinkRole(this, linkRole);
   }
 
   public Map<String, String> getProperties() {
@@ -422,7 +404,8 @@ public final class SNode {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
-    Set<String> result = getPropertyNamesFromAttributes();
+    Set<String> result = AttributeOperations.getPropertyNamesFromAttributes(this);
+    result.addAll(getPropertyNamesFromAttributes());  // compatibility
     if (myProperties != null) {
       for (int i = 0; i < myProperties.length; i += 2) {
         result.add(myProperties[i]);
@@ -638,8 +621,12 @@ public final class SNode {
     fireNodeReadAccess();
     int count = 0;
     SNode foundChild = null;
+    boolean isOldAttributeRole = AttributesRolesUtil.isAttributeRole(role);
     for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
       if (role.equals(child.getRole_())) {
+        foundChild = child;
+        count++;
+      } else if (isOldAttributeRole && AttributeOperations.isNewAttributeInOldRole(child, role)) {
         foundChild = child;
         count++;
       }
@@ -681,8 +668,11 @@ public final class SNode {
     }
     int count = 0;
 
+    boolean isOldAttributeRole = AttributesRolesUtil.isAttributeRole(role);
     for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
       if (role.equals(child.getRole_())) {
+        count++;
+      } else if (isOldAttributeRole && AttributeOperations.isNewAttributeInOldRole(child, role)) {
         count++;
       }
     }
@@ -787,8 +777,13 @@ public final class SNode {
     if (firstChild == null) return Collections.emptyList();
     List<SNode> result = new ArrayList<SNode>();
 
+    boolean isOldAttributeRole = AttributesRolesUtil.isAttributeRole(role);
     for (SNode child = firstChild; child != null; child = child.myNextSibling) {
       if (role.equals(child.getRole_())) {
+        result.add(child);
+        child.fireNodeReadAccess();
+        NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);
+      } else if (isOldAttributeRole && AttributeOperations.isNewAttributeInOldRole(child, role)) {
         result.add(child);
         child.fireNodeReadAccess();
         NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);
@@ -1861,19 +1856,12 @@ public final class SNode {
 
   @Deprecated
   public SNode getAttribute() {
-    // default (?) attribute
-    SNode result = getAttribute(null);  // '_attr_$attribute'
-    if (result == null) {
-      // old way, just: '$attribute'
-      result = getChild(AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.ATTRIBUTE_STEREOTYPE);
-    }
-    return result;
+    return AttributeOperations.getNodeAttribute(this, null);
   }
 
   @Deprecated
   public void setAttribute(SNode attributeConcept) {
-    // default (?) attribute
-    setAttribute(null, attributeConcept);
+    AttributeOperations.setNodeAttribute(this, null, attributeConcept);
   }
 
   @Deprecated
@@ -1884,20 +1872,7 @@ public final class SNode {
 
   @Deprecated
   public SNode getPropertyAttribute(String propertyName) {
-    // 'default' property attr
-    SNode result = getPropertyAttribute(null, propertyName);
-    if (result != null) return result;
-
-    // back compatibility with some obsolete property attributes?
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
-      if (AttributesRolesUtil.isChildRoleOfPropertyAttributeForPropertyName(propertyName, child.getRole_())) {
-        return child;
-      }
-    }
-
-    // old - no attribute role.
-    result = getChild(propertyName + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.PROPERTY_ATTRIBUTE_STEREOTYPE);
-    return result;
+    return AttributeOperations.getPropertyAttribute(this, null, propertyName);
   }
 
   @Deprecated
@@ -1908,18 +1883,6 @@ public final class SNode {
 
   @Deprecated
   public SNode getLinkAttribute(String role) {
-    // 'default' link attr
-    SNode result = getLinkAttribute(null, role);
-    if (result != null) return result;
-
-    // back compatibility with some obsolete link attributes?
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
-      if (AttributesRolesUtil.isChildRoleOfLinkAttributeForLinkRole(role, child.getRole_())) {
-        return child;
-      }
-    }
-
-    result = getChild(role + AttributesRolesUtil.STEREOTYPE_DELIM + AttributesRolesUtil.LINK_ATTRIBUTE_STEREOTYPE);
-    return result;
+    return AttributeOperations.getLinkAttribute(this, null, role);
   }
 }

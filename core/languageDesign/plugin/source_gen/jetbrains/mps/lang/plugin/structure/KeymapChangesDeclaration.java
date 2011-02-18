@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class KeymapChangesDeclaration extends BaseConcept implements INamedConce
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String KEYMAP = "keymap";
   public static final String SHORTCUT_CHANGE = "shortcutChange";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public KeymapChangesDeclaration(SNode node) {
     super(node);
@@ -83,6 +85,26 @@ public class KeymapChangesDeclaration extends BaseConcept implements INamedConce
 
   public void insertShortcutChange(ShortcutChange prev, ShortcutChange node) {
     this.insertChild(prev, KeymapChangesDeclaration.SHORTCUT_CHANGE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(KeymapChangesDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, KeymapChangesDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, KeymapChangesDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(KeymapChangesDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, KeymapChangesDeclaration._$ATTRIBUTE, node);
   }
 
   public static KeymapChangesDeclaration newInstance(SModel sm, boolean init) {

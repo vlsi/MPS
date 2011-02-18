@@ -21,6 +21,7 @@ import javax.swing.ImageIcon;
 public class Icons {
   public static final Icon RERUN_ICON = new ImageIcon(Icons.class.getResource("refreshUsages.png"));
   public static final Icon REGENERATE_ICON = new ImageIcon(Icons.class.getResource("generate.png"));
+  public static final Icon MAKE_ICON = new ImageIcon(Icons.class.getResource("make.png"));
   public static final Icon EXPAND_ICON = new ImageIcon(Icons.class.getResource("expandall.png"));
   public static final Icon COLLAPSE_ICON = new ImageIcon(Icons.class.getResource("collapseall.png"));
   public static final Icon AUTOSCROLL_ICON = new ImageIcon(Icons.class.getResource("autoscrollToSource.png"));

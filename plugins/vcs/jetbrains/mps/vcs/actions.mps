@@ -218,7 +218,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1502718409600210262">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="w0kr.~WorkbenchMakeService%dmake(java%dlang%dIterable)%cboolean" resolveInfo="make" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="w0kr.~WorkbenchMakeService%dmake(java%dlang%dIterable)%cjetbrains%dmps%dmake%dscript%dIResult" resolveInfo="make" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9190111818814693000">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9190111818814692833">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9190111818814692998">
@@ -505,7 +505,7 @@
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7705742079275757708">
                         <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7705742079275757709">
                           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7705742079275757710">
-                            <property name="value" nameId="tpee.1070475926801" value="Generate " />
+                            <property name="value" nameId="tpee.1070475926801" value="Rebuild " />
                           </node>
                           <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="7705742079275757711">
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7705742079275757766" resolveInfo="getWhatToGenerateName" />
@@ -542,7 +542,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7705742079275757722">
                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7705742079275757723">
                         <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7705742079275757724">
-                          <property name="value" nameId="tpee.1070475926801" value="Generate " />
+                          <property name="value" nameId="tpee.1070475926801" value="Rebuild " />
                         </node>
                         <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="7705742079275757725">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7705742079275757766" resolveInfo="getWhatToGenerateName" />
@@ -576,7 +576,7 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ll11.~Presentation%dsetText(java%dlang%dString)%cvoid" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7705742079275757736">
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7705742079275757737">
-                      <property name="value" nameId="tpee.1070475926801" value="Generate " />
+                      <property name="value" nameId="tpee.1070475926801" value="Rebuild " />
                     </node>
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="7705742079275757738">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7705742079275757766" resolveInfo="getWhatToGenerateName" />

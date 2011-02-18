@@ -15,10 +15,6 @@
  */
 package jetbrains.mps.newTypesystem.state;
 
-import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.errors.SimpleErrorReporter;
-import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.equation.EquationAddedOperation;
 import jetbrains.mps.newTypesystem.operation.equation.EquationSubstitutedOperation;
@@ -28,10 +24,9 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 import jetbrains.mps.util.Pair;
-import org.apache.commons.collections.map.UnmodifiableMap;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-import java.util.Map.Entry;
 
 /**
  * Created by IntelliJ IDEA.
@@ -136,7 +131,7 @@ public class Equations {
     if (left == null || right == null) {
       return false;
     }
-    return TypesUtil.match(left, right, this, info, false);
+    return TypesUtil.match(left, right, this, info);
   }
 
   private void processEquation(SNode var, SNode type, EquationInfo info) {
@@ -242,7 +237,6 @@ public class Equations {
     List<String> result = new LinkedList<String>();
     Map<SNode, Set<SNode>> map = new HashMap<SNode, Set<SNode>>();
     all.addAll(myRepresentatives.keySet());
-    System.out.println(all);
     for (SNode node : all) {
       node = getNameRepresentative(node);
       SNode representative = getRepresentative(node);
@@ -265,8 +259,8 @@ public class Equations {
     return result;
   }
 
-  public UnmodifiableMap getRepresentatives() {
-    return (UnmodifiableMap)myRepresentatives;
+  public Map<SNode, SNode> getRepresentatives() {
+    return Collections.unmodifiableMap(myRepresentatives);
   }
 
 }

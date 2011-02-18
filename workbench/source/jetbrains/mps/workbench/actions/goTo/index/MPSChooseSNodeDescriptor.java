@@ -22,7 +22,6 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
@@ -77,7 +76,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
 
       boolean needToLoad = false;
       for (BaseSNodeDescriptor snd : descriptors.get(0)) {
-        if (cm.hasGetter(snd.getConceptFqName(), INamedConcept.NAME)) {
+        if (cm.hasGetter(snd.getConceptFqName(), SNodeUtil.property_INamedConcept_name)) {
           needToLoad = true;
           break;
         }
@@ -115,8 +114,18 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
+            if (descriptor == null) {
+              LOG.error("Can't find model descriptor for: " + object.getModelReference());
+              return;
+            }
+
             SModel model = descriptor.getSModel();
             SNode node = object.getNode(model);
+            if (node == null) {
+              LOG.error("Can't find node for: " + object.getId());
+              return;
+            }
+
             myProject.getComponent(MPSEditorOpener.class).openNode(node);
           }
         });

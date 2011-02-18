@@ -8,26 +8,22 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/solutions/traceInfo/source_gen" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="JDOM" level="project" />
+    <orderEntry type="module" module-name="idea-patch" scope="RUNTIME" />
     <orderEntry type="library" name="IDEA-plaform" level="project" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
-    <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="module" module-name="core" />
-    <orderEntry type="module" module-name="generator" />
-    <orderEntry type="module" module-name="pattern" />
-    <orderEntry type="module" module-name="baseLanguage" />
-    <orderEntry type="module" module-name="structure" />
-    <orderEntry type="module" module-name="workbench" />
-    <orderEntry type="module" module-name="typesystemEngine" />
-    <orderEntry type="module" module-name="sharedConcepts" />
-    <orderEntry type="module" module-name="smodel" />
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
-    <orderEntry type="module" module-name="testbench" scope="TEST" />
+    <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="collections-runtime" />
+    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="testbench" scope="TEST" />
+    <orderEntry type="module" module-name="workbench" scope="TEST" />
   </component>
 </module>
 

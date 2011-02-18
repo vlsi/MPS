@@ -39,7 +39,7 @@ import java.lang.ref.WeakReference;
 import java.util.*;
 import java.util.Map.Entry;
 
-public class NodeTypesComponent {
+public class NodeTypesComponent implements INodeTypesComponent {
 
   private static final char A_CHAR = 'a';
   private static final char Z_CHAR = 'z';
@@ -58,8 +58,8 @@ public class NodeTypesComponent {
 
   private Map<SNode, List<IErrorReporter>> myNodesToNonTypesystemErrorsMap = new THashMap<SNode, List<IErrorReporter>>();
 
-  protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
-  protected Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
+  private Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
+  private Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
 
   private Set<Pair<SNode, NonTypesystemRule_Runtime>> myCheckedNodesNonTypesystem
     = new THashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
@@ -530,7 +530,7 @@ public class NodeTypesComponent {
     return type;
   }
 
-  protected void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes) {
+  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes) {
     if (node == null) return;
     Set<SNode> frontier = new LinkedHashSet<SNode>();
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
@@ -691,13 +691,13 @@ public class NodeTypesComponent {
     }
   }
 
-  public void addDependcyOnCurrent(SNode node) {
-    addDependcyOnCurrent(node, true);
+  public void addDependencyOnCurrent(SNode node) {
+    addDependencyOnCurrent(node, true);
   }
 
   //"type affected" means that *type* of this node depends on current
   // used to decide whether call "type will be recalculated" if current invalidated
-  public void addDependcyOnCurrent(SNode node, boolean typeAffected) {
+  public void addDependencyOnCurrent(SNode node, boolean typeAffected) {
     HashSet<SNode> hashSet = new HashSet<SNode>(1);
     hashSet.add(myCurrentCheckedNode);
     addDepedentNodesTypesystem(node, hashSet, typeAffected);
@@ -714,7 +714,7 @@ public class NodeTypesComponent {
   }
 
   protected boolean applyRulesToNode(SNode node) {
-    Set<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
+    List<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
     boolean result = false;
     if (newRules != null) {
       myCurrentTypeAffected = false;
@@ -774,7 +774,7 @@ public class NodeTypesComponent {
   }
 
   private void applyNonTypesystemRulesToNode(SNode node) {
-    Set<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
+    List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
     if (nonTypesystemRules != null) {
       for (Pair<NonTypesystemRule_Runtime, IsApplicableStatus> rule : nonTypesystemRules) {
         Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
@@ -1380,7 +1380,7 @@ public class NodeTypesComponent {
     }
 
     void dispose() {
-      for (SModelDescriptor sm : myNodesCount.keySet()) {
+      for (SModelDescriptor sm : new HashSet<SModelDescriptor>(myNodesCount.keySet())) {
         sm.removeModelListener(myListener);
       }
     }

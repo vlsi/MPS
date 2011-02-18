@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class FieldOperation extends BaseConcept implements IOperation {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String FIELD_NAME = "fieldName";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FieldOperation(SNode node) {
     super(node);
@@ -51,6 +55,26 @@ public class FieldOperation extends BaseConcept implements IOperation {
 
   public void setFieldName(Expression node) {
     super.setChild(FieldOperation.FIELD_NAME, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(FieldOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FieldOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FieldOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(FieldOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FieldOperation._$ATTRIBUTE, node);
   }
 
   public static FieldOperation newInstance(SModel sm, boolean init) {

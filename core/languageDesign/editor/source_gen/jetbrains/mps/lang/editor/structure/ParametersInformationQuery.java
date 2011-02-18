@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -27,6 +28,7 @@ public class ParametersInformationQuery extends BaseConcept implements INamedCon
   public static final String PRESENTATION = "presentation";
   public static final String IS_METHOD_CURRENT = "isMethodCurrent";
   public static final String METHOD_DECLARATION = "methodDeclaration";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ParametersInformationQuery(SNode node) {
     super(node);
@@ -122,6 +124,26 @@ public class ParametersInformationQuery extends BaseConcept implements INamedCon
 
   public void insertMethodDeclaration(DefaultClassifierMethodDeclaration prev, DefaultClassifierMethodDeclaration node) {
     this.insertChild(prev, ParametersInformationQuery.METHOD_DECLARATION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ParametersInformationQuery._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ParametersInformationQuery._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ParametersInformationQuery._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ParametersInformationQuery._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ParametersInformationQuery._$ATTRIBUTE, node);
   }
 
   public static ParametersInformationQuery newInstance(SModel sm, boolean init) {

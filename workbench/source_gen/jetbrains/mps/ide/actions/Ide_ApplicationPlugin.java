@@ -21,7 +21,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new AddAccessoryModel_Action());
     addAction(new AddGeneralPurposeDevKitToLanguageModels_Action());
     addAction(new AddLanguageDesingDevKitToLanguages_Action());
     addAction(new AddLanguageImport_Action());
@@ -50,7 +49,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CopyNode_Action());
     addAction(new CutNode_Action());
     addAction(new DeleteFavoritesList_Action());
-    addAction(new DeleteGenerator_Action());
     addAction(new DeleteModels_Action());
     addAction(new DeleteModules_Action());
     addAction(new DeleteNode_Action());
@@ -77,22 +75,16 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GenerateFiles_Action());
     addAction(new GenerateTextFromSolution_Action());
     addAction(new GenerationIntentions_Action());
-    addAction(new GeneratorProperties_Action());
     addAction(new GetModelContentsFromSource_Action());
     addAction(new GetModuleContentsFromSource_Action());
     addAction(new GoByCurrentReference_Action());
-    addAction(new GoToConceptDeclaration_Action());
-    addAction(new GoToEditorDeclaration_Action());
     addAction(new GoToNodeById_Action());
-    addAction(new GoToRules_Action());
     addAction(new GoToUsageInMappingConfig_Action());
     addAction(new HighlightCellDependencies_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
     addAction(new InstallIDEAPlugin_Action());
-    addAction(new LanguageHierarchy_Action());
     addAction(new LanguagePaths_Action());
-    addAction(new LanguageProperties_Action());
     addAction(new LoadNonStubModels_Action());
     addAction(new MPSProjectPaths_Action());
     addAction(new MakeAllModules_Action());
@@ -100,11 +92,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ModelPropertiesWOShortcut_Action());
     addAction(new ModelProperties_Action());
     addAction(new MoveFileOrDirectory_Action());
-    addAction(new NewAccessoryModel_Action());
-    addAction(new NewDevKit_Action());
     addAction(new NewDirectory_Action());
     addAction(new NewFile_Action());
-    addAction(new NewGenerator_Action());
     addAction(new NewModelFromSource_Action());
     addAction(new NewModel_Action());
     addAction(new NewRuntimeModule_Action());
@@ -136,7 +125,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RenameAspects_Action());
     addAction(new RenameFavoritesList_Action());
     addAction(new RenameFileOrDirectory_Action());
-    addAction(new RenameLanguage_Action());
     addAction(new RenameModel_Action());
     addAction(new RenameNamespace_Action());
     addAction(new RenamePackage_Action());
@@ -182,7 +170,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ViewBreakpoints_Action());
     // groups 
     addGroup(new AbstractFileActions_ActionGroup());
-    addGroup(new AccessoriesGroupActions_ActionGroup());
     addGroup(new AddToFavoritesGroup_ActionGroup());
     addGroup(new Bookmarks_ActionGroup());
     addGroup(new Breakpoints_ActionGroup());
@@ -207,7 +194,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Folding_ActionGroup());
     addGroup(new GenerateEditorPopup_ActionGroup());
     addGroup(new GenerateFavorites_ActionGroup());
-    addGroup(new GenerateGeneratorPopup_ActionGroup());
     addGroup(new GenerateModelPopup_ActionGroup());
     addGroup(new GenerateModels_ActionGroup());
     addGroup(new GenerateModulePopup_ActionGroup());
@@ -217,20 +203,17 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Generate_ActionGroup());
     addGroup(new GenerationIntentions_ActionGroup());
     addGroup(new GeneratorActions_ActionGroup());
-    addGroup(new GeneratorNewActions_ActionGroup());
     addGroup(new GoByReference_ActionGroup());
     addGroup(new Goto_ActionGroup());
     addGroup(new JUnitTestCaseActions_ActionGroup());
     addGroup(new JUnitTestMethodActions_ActionGroup());
     addGroup(new LanguageActions_ActionGroup());
-    addGroup(new LanguageNewActions_ActionGroup());
-    addGroup(new LanguageNewCustomPartActions_ActionGroup());
-    addGroup(new LanguageRefactoring_ActionGroup());
     addGroup(new ModelActionsInternal_ActionGroup());
     addGroup(new ModelActions_ActionGroup());
     addGroup(new ModelNewActions_ActionGroup());
     addGroup(new ModelRefactoring_ActionGroup());
     addGroup(new ModuleActions_ActionGroup());
+    addGroup(new ModulePropertiesGroup_ActionGroup());
     addGroup(new NamespaceActions_ActionGroup());
     addGroup(new NamespaceInternalActions_ActionGroup());
     addGroup(new NamespaceMakeActions_ActionGroup());
@@ -281,7 +264,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Edit_ActionGroup.ID, "EditMenu", null);
     insertGroupIntoAnother(Folding_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_folding);
     insertGroupIntoAnother(Generate_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_aux);
-    insertGroupIntoAnother(GenerateGeneratorPopup_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(GenerateModelPopup_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_generateActions);
     insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_generateModule);
     insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_generateModule);
@@ -292,19 +274,15 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(EditorInternal_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(ProjectNewActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_projectNew);
-    insertGroupIntoAnother(LanguageNewActions_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_newGroup);
     insertGroupIntoAnother(SolutionNewActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_solutionNew);
-    insertGroupIntoAnother(GeneratorNewActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generatorNew);
     insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_newActions);
     insertGroupIntoAnother(FileSystemNewActions_ActionGroup.ID, AbstractFileActions_ActionGroup.ID, AbstractFileActions_ActionGroup.LABEL_ID_new);
     insertGroupIntoAnother(PackageNewActions_ActionGroup.ID, PackageActions_ActionGroup.ID, PackageActions_ActionGroup.LABEL_ID_newActions);
     insertGroupIntoAnother(ModelRefactoring_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_refactoring);
-    insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(SolutionRefactoring_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, ModelNewActions_ActionGroup.ID, ModelNewActions_ActionGroup.LABEL_ID_newRoot);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, PackageNewActions_ActionGroup.ID, null);
     insertGroupIntoAnother(Tools_ActionGroup.ID, "ToolsMenu", null);
-    insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
     insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, FileActions_ActionGroup.ID, FileActions_ActionGroup.LABEL_ID_abstractFileActions);
     insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, FolderActions_ActionGroup.ID, FolderActions_ActionGroup.LABEL_ID_abstractFileActions);
     insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, ModuleActions_ActionGroup.ID, ModuleActions_ActionGroup.LABEL_ID_abstractFileActions);

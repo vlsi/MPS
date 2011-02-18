@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.findUsages.structure.FinderDeclaration;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class FinderReference extends BaseConcept implements IResolveInfo {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String FINDER_DECLARATION = "finderDeclaration";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FinderReference(SNode node) {
     super(node);
@@ -60,6 +64,26 @@ public class FinderReference extends BaseConcept implements IResolveInfo {
 
   public void setFinderDeclaration(FinderDeclaration node) {
     super.setReferent(FinderReference.FINDER_DECLARATION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(FinderReference._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FinderReference._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FinderReference._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(FinderReference._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FinderReference._$ATTRIBUTE, node);
   }
 
   public static FinderReference newInstance(SModel sm, boolean init) {

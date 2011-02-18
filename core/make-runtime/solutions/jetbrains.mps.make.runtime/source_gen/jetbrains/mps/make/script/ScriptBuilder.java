@@ -124,7 +124,7 @@ public class ScriptBuilder {
     if (ListSequence.fromList(errors).isNotEmpty()) {
       return;
     }
-    tr.addRelated(Sequence.fromIterable(MapSequence.fromMap(facetsView).values()).<ITarget>translate(new ITranslator2<IFacet, ITarget>() {
+    tr.addRelatedPrecursors(Sequence.fromIterable(MapSequence.fromMap(facetsView).values()).<ITarget>translate(new ITranslator2<IFacet, ITarget>() {
       public Iterable<ITarget> translate(IFacet fct) {
         return fct.targets();
       }

@@ -5,11 +5,11 @@
   <unitInfo fileName="Quotation_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.Quotation_ApplicationPlugin" />
   <unitInfo fileName="ShowMetaLevel_Action.java" startLine="19" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.ShowMetaLevel_Action" />
   <root nodeId="3981318653438276869">
-    <nodeInfo nodeId="3981318653438280035" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowMetaLevel_Action.java" startLine="62" startPosition="9" endLine="63" endPosition="140" />
-    <nodeInfo nodeId="3981318653438301381" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowMetaLevel_Action.java" startLine="63" startPosition="140" endLine="64" endPosition="108" />
+    <nodeInfo nodeId="3981318653438280035" fileName="ShowMetaLevel_Action.java" startLine="62" startPosition="9" endLine="63" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3981318653438301381" fileName="ShowMetaLevel_Action.java" startLine="63" startPosition="140" endLine="64" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="3981318653438329584">
-    <nodeInfo nodeId="3981318653438329587" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MetaLevelActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="110" />
+    <nodeInfo nodeId="3981318653438329587" fileName="MetaLevelActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
 </debugInfo>
 

@@ -78,7 +78,7 @@ public class ProjectTest {
 
       // Applications tests
       "/core/make-runtime/Make-runtime.mpr",
-      "/core/kernel/kernelSolution/kernel.mpr",
+      "/core/kernel/kernel.mpr",
       "/core/debug/debugProject/debugProject.mpr",
       "/core/kernel/traceinfo/traceInfo.mpr",
       "/platform/mps-lite/mps-lite.mpr",

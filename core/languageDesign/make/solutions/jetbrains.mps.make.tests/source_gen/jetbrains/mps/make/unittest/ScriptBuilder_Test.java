@@ -54,7 +54,7 @@ public class ScriptBuilder_Test extends MockTestCase {
         return f.getName();
       }
     }));
-    scb.withTarget(new ITarget.Name("gen"));
+    scb.withTarget(new ITarget.Name("make"));
     IScript sc = scb.toScript();
     Assert.assertNotNull(sc);
     Assert.assertTrue(sc.isValid());

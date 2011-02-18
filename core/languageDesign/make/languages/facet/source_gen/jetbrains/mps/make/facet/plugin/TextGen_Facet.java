@@ -30,6 +30,16 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.script.IConfig;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.textGen.TextGenerationResult;
+import jetbrains.mps.textGen.TextGenerationUtil;
+import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.smodel.resources.FResource;
 
 public class TextGen_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -37,6 +47,7 @@ public class TextGen_Facet implements IFacet {
 
   public TextGen_Facet() {
     ListSequence.fromList(targets).addElement(new TextGen_Facet.Target_21gswx_a());
+    ListSequence.fromList(targets).addElement(new TextGen_Facet.Target_21gswx_b());
   }
 
   public Iterable<ITarget> targets() {
@@ -75,7 +86,7 @@ public class TextGen_Facet implements IFacet {
               for (IResource resource : Sequence.fromIterable(input)) {
                 final FileProcessor fileProc = new FileProcessor();
 
-                GResource gres = new GResource().assignFrom((GResource) resource);
+                GResource gres = (GResource) resource;
                 monitor.currentProgress().advanceWork("Writing", 50, gres.status().getInputModel().getSModelReference().getSModelFqName().getLongName());
                 if (!(gres.status().isOk())) {
                   Logger.getLogger("jetbrains.mps.make.TextGen").error("Generation was not OK");
@@ -140,6 +151,90 @@ public class TextGen_Facet implements IFacet {
 
     public Iterable<ITarget.Name> before() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("cleanUpAfterGeneration"), new ITarget.Name("make")});
+    }
+
+    public ITarget.Name getName() {
+      return name;
+    }
+
+    public boolean requiresInput() {
+      return true;
+    }
+
+    public boolean producesOutput() {
+      return true;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
+    }
+
+    public <T> T createParameters(Class<T> cls) {
+      return null;
+    }
+  }
+
+  public static class Target_21gswx_b implements ITarget {
+    private ITarget.Name name = new ITarget.Name("textGenToMemory");
+
+    public Target_21gswx_b() {
+    }
+
+    public IJob createJob() {
+      return new IJob() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+          Iterable<IResource> _output_21gswx_a0b = null;
+          switch (0) {
+            case 0:
+              for (IResource resource : Sequence.fromIterable(input)) {
+                GResource gres = (GResource) resource;
+                Map<String, String> texts = MapSequence.fromMap(new HashMap<String, String>());
+                String prefix = JavaNameUtil.packageNameForModelUID(gres.status().getOutputModel().getSModelReference());
+
+                for (SNode root : Sequence.fromIterable(gres.status().getOutputModel().roots()).where(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode rt) {
+                    return rt.getName() != null;
+                  }
+                })) {
+                  TextGenerationResult tgr = TextGenerationUtil.generateText(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), root);
+                  if (tgr.hasErrors()) {
+                    return new IResult.FAILURE(_output_21gswx_a0b);
+                  }
+                  String ext = TextGenManager.instance().getExtension(root);
+                  String fname = ((ext != null ?
+                    root.getName() + "." + ext :
+                    root.getName()
+                  ));
+                  MapSequence.fromMap(texts).put(fname, tgr.getText());
+                }
+
+                _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new FResource(prefix, texts, gres.module(), gres.model()))));
+              }
+            default:
+              return new IResult.SUCCESS(_output_21gswx_a0b);
+          }
+        }
+      };
+    }
+
+    public IConfig createConfig() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> notAfter() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> after() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("generate")});
+    }
+
+    public Iterable<ITarget.Name> notBefore() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> before() {
+      return null;
     }
 
     public ITarget.Name getName() {

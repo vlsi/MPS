@@ -24,5 +24,13 @@
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.tuples.util.Sum" file="Sum.java">
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="java.util.HashMap" />
+  </dependency>
 </dependenciesRoot>
 

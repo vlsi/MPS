@@ -1,37 +1,52 @@
 package jetbrains.mps.generator.traceInfo;
 
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.cleanup.CleanupListener;
+import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.BaseModelCache;
-import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
+import org.jdom.Document;
+import org.jdom.JDOMException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.generator.generationTypes.StreamHandler;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import java.io.InputStream;
-import org.jdom.Document;
-import jetbrains.mps.util.JDOMUtil;
+
 import java.io.IOException;
-import org.jdom.JDOMException;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.vfs.FileSystem;
-import com.intellij.openapi.application.ApplicationManager;
+import java.io.InputStream;
 
 public class TraceInfoCache extends BaseModelCache<DebugInfo> {
   private static final Logger LOG = Logger.getLogger(TraceInfoCache.class);
   public static final String TRACE_FILE_NAME = "trace.info";
+  private final CleanupManager myCleanupManager;
 
-  public TraceInfoCache() {
+  public TraceInfoCache(CleanupManager cleanupManager) {
     super(null);
+    myCleanupManager = cleanupManager;
   }
 
   @NonNls
   @NotNull
   public String getComponentName() {
     return "Debug Info Cache";
+  }
+
+  @Override
+  public void initComponent() {
+    super.initComponent();
+    myCleanupManager.addCleanupListener(new CleanupListener() {
+      public void performCleanup() {
+        cleanup();
+      }
+    });
   }
 
   protected String getCacheFileName() {

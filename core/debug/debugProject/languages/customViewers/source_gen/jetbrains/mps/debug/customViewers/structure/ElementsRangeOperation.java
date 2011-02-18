@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class ElementsRangeOperation extends BaseConcept implements IOperation {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String START_INDEX = "startIndex";
   public static final String END_INDEX = "endIndex";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ElementsRangeOperation(SNode node) {
     super(node);
@@ -60,6 +64,26 @@ public class ElementsRangeOperation extends BaseConcept implements IOperation {
 
   public void setEndIndex(Expression node) {
     super.setChild(ElementsRangeOperation.END_INDEX, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ElementsRangeOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ElementsRangeOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ElementsRangeOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ElementsRangeOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ElementsRangeOperation._$ATTRIBUTE, node);
   }
 
   public static ElementsRangeOperation newInstance(SModel sm, boolean init) {

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IPropertyQualifier.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.IPropertyQualifier" />
+  <unitInfo fileName="ILinkQualifier.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.ILinkQualifier" />
   <unitInfo fileName="ILinkAccessQualifierContainer.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer" />
   <unitInfo fileName="IReferenceOperation.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.IReferenceOperation" />
   <unitInfo fileName="ILinkAccess.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.ILinkAccess" />
@@ -10,6 +12,7 @@
   <unitInfo fileName="IPropertyAccessQualifier.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.IPropertyAccessQualifier" />
   <unitInfo fileName="IAttributeAccessQualifier.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.IAttributeAccessQualifier" />
   <unitInfo fileName="Smodel_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Smodel_Language" />
+  <unitInfo fileName="AllAttributeQualifier.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.AllAttributeQualifier" />
   <unitInfo fileName="OperationParm_SameMetaLevel.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.OperationParm_SameMetaLevel" />
   <unitInfo fileName="Node_GetContainingRoleOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation" />
   <unitInfo fileName="Node_GetContainingLinkOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation" />
@@ -46,6 +49,7 @@
   <unitInfo fileName="Node_DeleteOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" />
   <unitInfo fileName="Link_DeleteChildOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation" />
   <unitInfo fileName="Node_GetParentOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" />
+  <unitInfo fileName="AttributeQualifier.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.AttributeQualifier" />
   <unitInfo fileName="IfInstanceOfVariable.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable" />
   <unitInfo fileName="SReferenceType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SReferenceType" />
   <unitInfo fileName="EqualsStructurallyExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression" />
@@ -60,6 +64,7 @@
   <unitInfo fileName="Property_HasValue_Enum.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" />
   <unitInfo fileName="OperationParm_Concept.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" />
   <unitInfo fileName="Node_IsInstanceOfOperation.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" />
+  <unitInfo fileName="NodeAttributeQualifier.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier" />
   <unitInfo fileName="CheckedModuleReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.CheckedModuleReference" />
   <unitInfo fileName="ConceptProperty_SetOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.ConceptProperty_SetOperation" />
   <unitInfo fileName="Model_AddRootOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" />
@@ -96,6 +101,8 @@
   <unitInfo fileName="EnumMemberReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.EnumMemberReference" />
   <unitInfo fileName="SNodeType.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SNodeType" />
   <unitInfo fileName="StaticConceptMethodCall.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" />
+  <unitInfo fileName="PropertyAttributeQualifier.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier" />
+  <unitInfo fileName="LinkAttributeQualifier.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier" />
   <unitInfo fileName="Concept_GetAllSubConcepts.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts" />
   <unitInfo fileName="SEnumOperationInvocation.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" />
   <unitInfo fileName="Node_GetReferentSearchScopeOperation.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation" />
@@ -104,39 +111,43 @@
   <unitInfo fileName="Model_RootsIncludingImportedOperation.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation" />
   <unitInfo fileName="Node_IsRoleOperation.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" />
   <unitInfo fileName="Model_CreateNewNodeOperation.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" />
+  <unitInfo fileName="ConceptPropertyNameRefExpression.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.ConceptPropertyNameRefExpression" />
   <unitInfo fileName="PropertyNameRefExpression.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression" />
   <unitInfo fileName="LinkNameRefExpression.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.LinkNameRefExpression" />
   <unitInfo fileName="LinkRefExpression.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.LinkRefExpression" />
   <unitInfo fileName="OperationParm_StopConceptList.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList" />
   <unitInfo fileName="OperationParm_ConceptList.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" />
-  <unitInfo fileName="Reference_GetResolveInfo.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo" />
-  <unitInfo fileName="Reference_GetRoleOperation.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation" />
-  <unitInfo fileName="Reference_GetLinkDeclarationOperation.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation" />
-  <unitInfo fileName="Reference_GetTargetOperation.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation" />
-  <unitInfo fileName="SEnum_MembersOperation.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation" />
-  <unitInfo fileName="EnumMember_NameOperation.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation" />
-  <unitInfo fileName="EnumMember_ValueOperation.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" />
-  <unitInfo fileName="AllAttributesQualifier.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.AllAttributesQualifier" />
   <unitInfo fileName="SNodeTypeCastExpression.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" />
-  <unitInfo fileName="OperationParm_LinkQualifier.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" />
-  <unitInfo fileName="AttributeAccessOperation.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" />
-  <unitInfo fileName="SLinkListAccess.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SLinkListAccess" />
-  <unitInfo fileName="SLinkAccess.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SLinkAccess" />
-  <unitInfo fileName="SEnum_MemberOperation.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation" />
-  <unitInfo fileName="SEnum_MemberForValueOperation.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation" />
-  <unitInfo fileName="SEnum_MemberForNameOperation.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation" />
-  <unitInfo fileName="LinkRefQualifier.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" />
-  <unitInfo fileName="PropertyRefQualifier.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.PropertyRefQualifier" />
-  <unitInfo fileName="PoundExpression.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.PoundExpression" />
-  <unitInfo fileName="NodeAttributeAccessQualifier.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" />
-  <unitInfo fileName="RefConcept_Reference.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" />
-  <unitInfo fileName="SLinkImplicitSelect.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" />
-  <unitInfo fileName="SearchScope_ContainsOperation.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation" />
   <unitInfo fileName="IfInstanceOfStatement.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement" />
-  <unitInfo fileName="LinkAttributeAccessQualifier.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier" />
-  <unitInfo fileName="PropertyAttributeAccessQualifier.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier" />
-  <unitInfo fileName="_LinkAccessT.java" startLine="13" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure._LinkAccessT" />
-  <unitInfo fileName="SNodeOperation.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SNodeOperation" />
-  <unitInfo fileName="Node_ConceptMethodCall.java" startLine="16" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" />
+  <unitInfo fileName="Reference_GetResolveInfo.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo" />
+  <unitInfo fileName="Reference_GetRoleOperation.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation" />
+  <unitInfo fileName="Reference_GetLinkDeclarationOperation.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation" />
+  <unitInfo fileName="Reference_GetTargetOperation.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation" />
+  <unitInfo fileName="SEnum_MembersOperation.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation" />
+  <unitInfo fileName="EnumMember_NameOperation.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation" />
+  <unitInfo fileName="EnumMember_ValueOperation.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" />
+  <unitInfo fileName="AllAttributesQualifier.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.AllAttributesQualifier" />
+  <unitInfo fileName="AttributeAccess.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.AttributeAccess" />
+  <unitInfo fileName="OperationParm_LinkQualifier.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" />
+  <unitInfo fileName="AttributeAccessOperation.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" />
+  <unitInfo fileName="SLinkListAccess.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SLinkListAccess" />
+  <unitInfo fileName="SLinkAccess.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SLinkAccess" />
+  <unitInfo fileName="PropertyQualifier.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.PropertyQualifier" />
+  <unitInfo fileName="LinkQualifier.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.LinkQualifier" />
+  <unitInfo fileName="SEnum_MemberOperation.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation" />
+  <unitInfo fileName="SEnum_MemberForValueOperation.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation" />
+  <unitInfo fileName="SEnum_MemberForNameOperation.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation" />
+  <unitInfo fileName="LinkRefQualifier.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" />
+  <unitInfo fileName="PropertyRefQualifier.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.PropertyRefQualifier" />
+  <unitInfo fileName="PoundExpression.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.PoundExpression" />
+  <unitInfo fileName="NodeAttributeAccessQualifier.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" />
+  <unitInfo fileName="RefConcept_Reference.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" />
+  <unitInfo fileName="SLinkImplicitSelect.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" />
+  <unitInfo fileName="SearchScope_ContainsOperation.java" startLine="16" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation" />
+  <unitInfo fileName="LinkAttributeAccessQualifier.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier" />
+  <unitInfo fileName="PropertyAttributeAccessQualifier.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier" />
+  <unitInfo fileName="_LinkAccessT.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure._LinkAccessT" />
+  <unitInfo fileName="SNodeOperation.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.SNodeOperation" />
+  <unitInfo fileName="Node_ConceptMethodCall.java" startLine="17" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" />
 </debugInfo>
 

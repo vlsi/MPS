@@ -6,6 +6,9 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.TypeDerivable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.datesInternal.structure.Month;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -22,6 +25,7 @@ public class TimeConstant extends Expression implements TypeDerivable {
   public static final String YEAR = "year";
   public static final String MONTH = "month";
   public static final String TIMEZONE = "timezone";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TimeConstant(SNode node) {
     super(node);
@@ -105,6 +109,26 @@ public class TimeConstant extends Expression implements TypeDerivable {
 
   public void setTimezone(Expression node) {
     super.setChild(TimeConstant.TIMEZONE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(TimeConstant._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TimeConstant._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TimeConstant._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(TimeConstant._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TimeConstant._$ATTRIBUTE, node);
   }
 
   public static TimeConstant newInstance(SModel sm, boolean init) {

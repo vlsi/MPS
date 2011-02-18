@@ -9,8 +9,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.IOperationContext;
@@ -22,6 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
 
@@ -72,7 +74,7 @@ public class AttachMappingLabel_Intention extends BaseIntention implements Inten
       return false;
     }
     //  in root template - ok 
-    if (SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) != null) {
+    if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) != null) {
       return true;
     }
     //  in in-line template - ok 
@@ -83,7 +85,7 @@ public class AttachMappingLabel_Intention extends BaseIntention implements Inten
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", false, false) != null) {
       return ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true) != null;
+          return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment"))) != null;
         }
       }) != null;
     }
@@ -91,7 +93,7 @@ public class AttachMappingLabel_Intention extends BaseIntention implements Inten
     if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
       return ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true) != null;
+          return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment"))) != null;
         }
       }) != null;
     }

@@ -39,6 +39,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.tuples.test.ISample" file="ISample.java">
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test" file="IndexedTuples_Test.java">
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -47,10 +50,12 @@
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.util.MPS11114" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.Nulls" />
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ArrayUtils" />
@@ -61,7 +66,15 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.MPS7408" />
     <classNode dependClassName="java.lang.Long" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.util.Sum" />
     <classNode extendsClassName="junit.framework.TestCase" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.tuples.test.IntPair" file="IntPair.java">
+    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.test.MPS7408" file="MPS7408.java">
     <classNode dependClassName="java.util.List" />
@@ -73,9 +86,11 @@
     <classNode dependClassName="java.util.ArrayList" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test" file="NamedTuples_Test.java">
-    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.Pair" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.Sample" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.ISample" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -91,15 +106,23 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.Record" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.Pair" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.IntPair" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ArrayUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.shared.GlobalSharedPair" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.Data" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="java.lang.Long" />
     <classNode extendsClassName="junit.framework.TestCase" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.tuples.test.Nulls" file="Nulls.java">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.test.Pair" file="Pair.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
@@ -115,6 +138,15 @@
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.tuples.test.Sample" file="Sample.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.test.ISample" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
   </dependency>
 </dependenciesRoot>
 
