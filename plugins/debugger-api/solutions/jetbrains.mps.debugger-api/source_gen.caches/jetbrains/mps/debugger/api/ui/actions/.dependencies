@@ -119,6 +119,15 @@
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.MuteBreakpoints" file="MuteBreakpoints.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.DebugActionsUtil" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
+    <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
+  </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.actions.Pause_Action" file="Pause_Action.java">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.DebugActionsUtil" />

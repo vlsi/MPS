@@ -16,6 +16,43 @@
   <unitInfo fileName="EvaluateExpression_Action.java" startLine="19" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action" />
   <unitInfo fileName="ToggleBreakpoint_Action.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.ToggleBreakpoint_Action" />
   <unitInfo fileName="ExportThreads_Action.java" startLine="26" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.ExportThreads_Action" />
+  <root nodeId="2392684134639444998">
+    <nodeInfo nodeId="2392684134639445001" fileName="MuteBreakpoints.java" startLine="12" startPosition="51" endLine="13" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="2392684134639445014" fileName="MuteBreakpoints.java" startLine="15" startPosition="28" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2392684134639445026" fileName="MuteBreakpoints.java" startLine="19" startPosition="59" endLine="20" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2392684134639445036" fileName="MuteBreakpoints.java" startLine="21" startPosition="31" endLine="22" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2392684134639445037" fileName="MuteBreakpoints.java" startLine="23" startPosition="5" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2392684134639445048" fileName="MuteBreakpoints.java" startLine="27" startPosition="50" endLine="28" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2392684134639445053" fileName="MuteBreakpoints.java" startLine="28" startPosition="80" endLine="29" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2392684134639445068" fileName="MuteBreakpoints.java" startLine="33" startPosition="43" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2392684134639445071" fileName="MuteBreakpoints.java" startLine="34" startPosition="24" endLine="35" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2392684134639445010" fileName="MuteBreakpoints.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MuteBreakpoints#()V" />
+    <nodeInfo nodeId="2392684134639445031" fileName="MuteBreakpoints.java" startLine="20" startPosition="80" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2392684134639445042" fileName="MuteBreakpoints.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="2392684134639445062" fileName="MuteBreakpoints.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="2392684134639445018" fileName="MuteBreakpoints.java" startLine="18" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <scopeInfo nodeId="2392684134639445013" fileName="MuteBreakpoints.java" startLine="15" startPosition="28" endLine="16" endPosition="56" />
+    <scopeInfo nodeId="2392684134639445035" fileName="MuteBreakpoints.java" startLine="21" startPosition="31" endLine="22" endPosition="13" />
+    <scopeInfo nodeId="2392684134639445047" fileName="MuteBreakpoints.java" startLine="27" startPosition="50" endLine="29" endPosition="59">
+      <varInfo nodeId="2392684134639445049" varName="debugSession" />
+    </scopeInfo>
+    <scopeInfo nodeId="2392684134639445067" fileName="MuteBreakpoints.java" startLine="33" startPosition="43" endLine="35" endPosition="88" />
+    <scopeInfo nodeId="2392684134639445010" fileName="MuteBreakpoints.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="2392684134639445025" fileName="MuteBreakpoints.java" startLine="19" startPosition="59" endLine="24" endPosition="36">
+      <varInfo nodeId="2392684134639445027" varName="debugSession" />
+    </scopeInfo>
+    <scopeInfo nodeId="2392684134639445042" fileName="MuteBreakpoints.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2392684134639445045" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="2392684134639445062" fileName="MuteBreakpoints.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="2392684134639445065" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="2392684134639445018" fileName="MuteBreakpoints.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="2392684134639445023" varName="b" />
+      <varInfo nodeId="2392684134639445021" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="2392684134639444998" fileName="MuteBreakpoints.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.MuteBreakpoints" />
+  </root>
   <root nodeId="7064627997011532320">
     <nodeInfo nodeId="7064627997011532343" fileName="EvaluateExpression_Action.java" startLine="31" startPosition="7" endLine="32" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7064627997011532348" fileName="EvaluateExpression_Action.java" startLine="32" startPosition="95" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
