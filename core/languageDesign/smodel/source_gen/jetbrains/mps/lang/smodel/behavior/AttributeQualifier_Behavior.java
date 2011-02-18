@@ -4,6 +4,7 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AttributeQualifier_Behavior {
@@ -17,7 +18,7 @@ public class AttributeQualifier_Behavior {
   }
 
   public static SNode virtual_getTargetConcept_6407023681583066586(SNode thisNode) {
-    return SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161");
+    return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.Attribute");
   }
 
   public static SNode call_getTargetConcept_6407023681583066586(SNode thisNode) {

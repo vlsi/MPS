@@ -26,7 +26,7 @@
   <unitInfo fileName="SLinkAccess_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SLinkAccess_Behavior" />
   <unitInfo fileName="SLinkListAccess_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SLinkListAccess_Behavior" />
   <unitInfo fileName="SEnumMemberType_Behavior.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SEnumMemberType_Behavior" />
-  <unitInfo fileName="AttributeQualifier_Behavior.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior" />
+  <unitInfo fileName="AttributeQualifier_Behavior.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior" />
   <unitInfo fileName="SConceptType_Behavior.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SConceptType_Behavior" />
   <unitInfo fileName="OperationParm_LinkQualifier_Behavior.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.OperationParm_LinkQualifier_Behavior" />
   <unitInfo fileName="ILinkAccess_Behavior.java" startLine="9" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.ILinkAccess_Behavior" />
@@ -480,14 +480,14 @@
   </root>
   <root nodeId="2788452359612002126">
     <nodeInfo nodeId="2788452359612002222" fileName="AttributeAccess_Behavior.java" startLine="28" startPosition="72" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6960953357954063541" fileName="AttributeAccess_Behavior.java" startLine="32" startPosition="91" endLine="33" endPosition="350" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6960953357954063541" fileName="AttributeAccess_Behavior.java" startLine="32" startPosition="91" endLine="33" endPosition="340" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6960953357954063551" fileName="AttributeAccess_Behavior.java" startLine="36" startPosition="83" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6960953357954063585" fileName="AttributeAccess_Behavior.java" startLine="40" startPosition="84" endLine="41" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8106064145944353378" fileName="AttributeAccess_Behavior.java" startLine="44" startPosition="90" endLine="45" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8106064145944353399" fileName="AttributeAccess_Behavior.java" startLine="45" startPosition="281" endLine="49" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="2788452359612002128" fileName="AttributeAccess_Behavior.java" startLine="25" startPosition="43" endLine="25" endPosition="43" />
     <scopeInfo nodeId="2788452359612002134" fileName="AttributeAccess_Behavior.java" startLine="28" startPosition="72" endLine="29" endPosition="16" />
-    <scopeInfo nodeId="6960953357954063539" fileName="AttributeAccess_Behavior.java" startLine="32" startPosition="91" endLine="33" endPosition="350" />
+    <scopeInfo nodeId="6960953357954063539" fileName="AttributeAccess_Behavior.java" startLine="32" startPosition="91" endLine="33" endPosition="340" />
     <scopeInfo nodeId="6960953357954063549" fileName="AttributeAccess_Behavior.java" startLine="36" startPosition="83" endLine="37" endPosition="16" />
     <scopeInfo nodeId="6960953357954063545" fileName="AttributeAccess_Behavior.java" startLine="40" startPosition="84" endLine="41" endPosition="137" />
     <scopeInfo nodeId="6960953357954139825" fileName="AttributeAccess_Behavior.java" startLine="44" startPosition="90" endLine="49" endPosition="6">
@@ -521,26 +521,26 @@
     <unitInfo nodeId="2906110183022538892" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="29" startPosition="492" endLine="36" endPosition="5" unitName="jetbrains.mps.lang.smodel.behavior.OperationParm_LinkQualifier_Behavior$1" />
   </root>
   <root nodeId="6407023681583057385">
-    <nodeInfo nodeId="6960953357954139849" fileName="AttributeQualifier_Behavior.java" startLine="15" startPosition="90" endLine="16" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6407023681583066591" fileName="AttributeQualifier_Behavior.java" startLine="19" startPosition="84" endLine="20" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6407023681583057387" fileName="AttributeQualifier_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="6407023681583057391" fileName="AttributeQualifier_Behavior.java" startLine="15" startPosition="90" endLine="16" endPosition="201" />
-    <scopeInfo nodeId="6407023681583066589" fileName="AttributeQualifier_Behavior.java" startLine="19" startPosition="84" endLine="20" endPosition="135" />
+    <nodeInfo nodeId="6960953357954139849" fileName="AttributeQualifier_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583066591" fileName="AttributeQualifier_Behavior.java" startLine="20" startPosition="84" endLine="21" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6407023681583057387" fileName="AttributeQualifier_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="6407023681583057391" fileName="AttributeQualifier_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="201" />
+    <scopeInfo nodeId="6407023681583066589" fileName="AttributeQualifier_Behavior.java" startLine="20" startPosition="84" endLine="21" endPosition="100" />
   </root>
   <root nodeId="6407023681583066595">
-    <nodeInfo nodeId="6407023681583098535" fileName="NodeAttributeQualifier_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583098535" fileName="NodeAttributeQualifier_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="6407023681583066597" fileName="NodeAttributeQualifier_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="6407023681583066601" fileName="NodeAttributeQualifier_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="74" />
+    <scopeInfo nodeId="6407023681583066601" fileName="NodeAttributeQualifier_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="82" />
   </root>
   <root nodeId="6407023681583098543">
-    <nodeInfo nodeId="6407023681583098548" fileName="LinkAttributeQualifier_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583098548" fileName="LinkAttributeQualifier_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="6407023681583098545" fileName="LinkAttributeQualifier_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="6407023681583098547" fileName="LinkAttributeQualifier_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="74" />
+    <scopeInfo nodeId="6407023681583098547" fileName="LinkAttributeQualifier_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="82" />
   </root>
   <root nodeId="6407023681583098555">
-    <nodeInfo nodeId="6407023681583098560" fileName="PropertyAttributeQualifier_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6407023681583098560" fileName="PropertyAttributeQualifier_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="6407023681583098557" fileName="PropertyAttributeQualifier_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="6407023681583098559" fileName="PropertyAttributeQualifier_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="74" />
+    <scopeInfo nodeId="6407023681583098559" fileName="PropertyAttributeQualifier_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="82" />
   </root>
 </debugInfo>
 

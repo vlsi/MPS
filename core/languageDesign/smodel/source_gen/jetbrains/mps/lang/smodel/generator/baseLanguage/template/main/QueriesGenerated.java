@@ -337,7 +337,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_6407023681583039952(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode qualifier = SLinkOperations.getTarget(_context.getNode(), "qualifier", true);
-    return SNodeOperations.isInstanceOf(qualifier, "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier") || SConceptPropertyOperations.getBoolean(((SNode) AttributeQualifier_Behavior.call_getTargetConcept_6407023681583066586(qualifier)), "multiple");
+    return SNodeOperations.isInstanceOf(qualifier, "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier") || SConceptPropertyOperations.getBoolean(AttributeQualifier_Behavior.call_getTargetConcept_6407023681583066586(qualifier), "multiple");
   }
 
   public static boolean baseMappingRule_Condition_6407023681583065537(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

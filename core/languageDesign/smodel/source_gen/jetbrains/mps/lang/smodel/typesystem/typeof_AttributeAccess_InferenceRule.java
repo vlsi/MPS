@@ -10,6 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.behavior.AttributeQualifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -22,8 +23,8 @@ public class typeof_AttributeAccess_InferenceRule extends AbstractInferenceRule_
   }
 
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode attr = (SNode) AttributeQualifier_Behavior.call_getTargetConcept_6407023681583066586(SLinkOperations.getTarget(operation, "qualifier", true));
-    if (SConceptPropertyOperations.getBoolean(attr, "multiple")) {
+    SNode attr = AttributeQualifier_Behavior.call_getTargetConcept_6407023681583066586(SLinkOperations.getTarget(operation, "qualifier", true));
+    if (SConceptPropertyOperations.getBoolean(attr, "multiple") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "qualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier")) {
       {
         SNode _nodeToCheck_1029348928467 = operation;
         BaseQuickFixProvider intentionProvider = null;
