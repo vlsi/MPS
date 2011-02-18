@@ -12,9 +12,7 @@ import com.intellij.execution.runners.GenericProgramRunner;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
-import jetbrains.mps.debug.api.DebugSessionManagerComponent;
+import jetbrains.mps.debug.api.*;
 import jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
@@ -42,18 +40,31 @@ public class MPSDebugRunner extends GenericProgramRunner {
   protected RunContentDescriptor createContentDescriptor(Project project, Executor executor, RunProfileState state,
                                                          RunContentDescriptor contentToReuse,
                                                          ExecutionEnvironment env) throws ExecutionException {
+    IDebugger debugger;
     //todo get connection settings
-    if (state instanceof BaseRunProfileState) {
-      BaseRunProfileState baseRunProfileState = (BaseRunProfileState) state;
-      AbstractDebugSessionCreator debugSessionCreator = baseRunProfileState.createDebugSessionCreator(project);
-      ExecutionResult executionResult = debugSessionCreator.startSession(executor, this, state, project);
-      AbstractDebugSession debugSession = debugSessionCreator.getDebugSession();
-      DebugSessionManagerComponent.getInstance(project).addDebugSession(debugSession);
-      DebuggerToolContentBuilder contentBuilder = new DebuggerToolContentBuilder(project, this, executor, executionResult, env);
-      return contentBuilder.showRunContent(contentToReuse);
+    if (state instanceof BaseRunProfileState) { // obsolete run configurations
+      final BaseRunProfileState baseRunProfileState = (BaseRunProfileState) state;
+      debugger = new DefaultDebugger() {
+        @NotNull
+        @Override
+        public AbstractDebugSessionCreator createDebugSessionCreator(@NotNull Project project) {
+          return baseRunProfileState.createDebugSessionCreator(project);
+        }
+      };
+    } else if (state instanceof DebuggerRunProfileState) {
+      debugger = ((DebuggerRunProfileState) state).getDebugger();
     } else {
-      throw new RuntimeException("Unknown Run Profile State");
+      throw new ExecutionException("Unknown Run Profile State");
     }
+    if (debugger == null) {
+      throw new ExecutionException("Can't Start Debugger");
+    }
+    AbstractDebugSessionCreator debugSessionCreator = debugger.createDebugSessionCreator(project);
+    ExecutionResult executionResult = debugSessionCreator.startSession(executor, this, state, project);
+    AbstractDebugSession debugSession = debugSessionCreator.getDebugSession();
+    DebugSessionManagerComponent.getInstance(project).addDebugSession(debugSession);
+    DebuggerToolContentBuilder contentBuilder = new DebuggerToolContentBuilder(project, this, executor, executionResult, env);
+    return contentBuilder.showRunContent(contentToReuse);
   }
 
 

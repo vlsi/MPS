@@ -22,7 +22,7 @@ import jetbrains.mps.debug.api.AbstractDebugger;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
-import jetbrains.mps.debug.runtime.VMCreator;
+import jetbrains.mps.debugger.java.runtime.VmCreator;
 import org.jetbrains.annotations.NotNull;
 
 public class JavaDebugger extends AbstractDebugger implements ApplicationComponent {
@@ -35,7 +35,7 @@ public class JavaDebugger extends AbstractDebugger implements ApplicationCompone
   @NotNull
   @Override
   public AbstractDebugSessionCreator createDebugSessionCreator(@NotNull Project project) {
-    return new VMCreator(project);
+    return new VmCreator(project);
   }
 
   @NotNull

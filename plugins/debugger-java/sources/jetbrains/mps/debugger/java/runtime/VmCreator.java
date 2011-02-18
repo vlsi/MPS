@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.runtime;
+package jetbrains.mps.debugger.java.runtime;
 
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.ExecutionResult;
@@ -19,15 +19,16 @@ import com.sun.jdi.connect.Connector;
 import com.sun.jdi.connect.Connector.Argument;
 import com.sun.jdi.connect.IllegalConnectorArgumentsException;
 import com.sun.jdi.connect.ListeningConnector;
-import com.sun.tools.jdi.SocketListeningConnector;
 import jetbrains.mps.debug.DebuggerKeys;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
+import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.ToDebugAPI;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.api.runtime.execution.IDebuggerManagerThread;
 import jetbrains.mps.debug.integration.runconfigs.RemoteDebugProcessHandler;
 import jetbrains.mps.debug.integration.runconfigs.RemoteRunProfileState;
+import jetbrains.mps.debug.runtime.*;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
 import jetbrains.mps.ide.ThreadUtils;
@@ -42,15 +43,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 04.02.2010
- * Time: 16:39:41
- * To change this template use File | Settings | File Templates.
- */
-public class VMCreator extends AbstractDebugSessionCreator {
-  private static Logger LOG = Logger.getLogger(VMCreator.class);
+public class VmCreator extends AbstractDebugSessionCreator {
+  private static Logger LOG = Logger.getLogger(VmCreator.class);
 
   private static final int LOCAL_START_TIMEOUT = 15000;
 
@@ -71,10 +65,10 @@ public class VMCreator extends AbstractDebugSessionCreator {
   private ExecutionResult myExecutionResult;
   private final DebugSession myDebuggerSession;
 
-  public VMCreator(Project p) {
-    myDebugVMEventsProcessor = new DebugVMEventsProcessor(p, this);
+  public VmCreator(Project project) {
     myDebuggerManagerThread = new DebuggerManagerThread(); //thread started!
-    myDebuggerSession = new DebugSession(myDebugVMEventsProcessor, p);
+    myDebugVMEventsProcessor = new DebugVMEventsProcessor(BreakpointManagerComponent.getInstance(project), myDebuggerManagerThread);
+    myDebuggerSession = new DebugSession(myDebugVMEventsProcessor, project);
   }
 
   private DebugConnectionSettings createLocalConnectionSettings(RunProfileState state) {
@@ -87,6 +81,7 @@ public class VMCreator extends AbstractDebugSessionCreator {
       baseRunProfileState.putUserData(DebuggerKeys.CONNECTION_SETTINGS, connectionSettings.getCommandLine(true));
       return connectionSettings;
     } else {
+      //todo DebuggerRunProfileState???
       throw new RuntimeException("Unknown Run Profile State");
     }
   }
@@ -102,6 +97,7 @@ public class VMCreator extends AbstractDebugSessionCreator {
     // LOG.assertTrue(isInInitialState());
 
     myConnectionSettings = createLocalConnectionSettings(state);
+    myDebugVMEventsProcessor.setConnectionSettings(getConnectionSettings().getPresentation());
 
     createVirtualMachine();
     try {

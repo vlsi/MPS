@@ -92,14 +92,14 @@ public class BreakpointsUiComponent implements ProjectComponent {
   @Override
   public void initComponent() {
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
-    component.addCurrentDebugSessionListener(myDebugSessionListener);
+    component.addDebugSessionListener(myDebugSessionListener);
     myEditorsProvider.addEditorOpenListener(myEditorOpenListener);
   }
 
   @Override
   public void disposeComponent() {
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
-    component.removeCurrentDebugSessionListener(myDebugSessionListener);
+    component.removeDebugSessionListener(myDebugSessionListener);
     myEditorsProvider.removeEditorOpenListener(myEditorOpenListener);
     myEditorsProvider.dispose();
   }

@@ -18,7 +18,6 @@ package jetbrains.mps.debug.evaluation.ui;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ui.components.JBScrollPane;
-import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.evaluation.EvaluationProvider.WatchAdapter;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
@@ -26,8 +25,6 @@ import jetbrains.mps.debug.evaluation.ui.EvaluationTreeActions.AddWatchAction;
 import jetbrains.mps.debug.evaluation.ui.EvaluationTreeActions.EditWatchAction;
 import jetbrains.mps.debug.evaluation.ui.EvaluationTreeActions.RemoveWatchAction;
 import jetbrains.mps.debug.runtime.SessionStopDisposer;
-import jetbrains.mps.ide.actions.DebugActionsUtil;
-import jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons;
 
 import java.awt.BorderLayout;
 

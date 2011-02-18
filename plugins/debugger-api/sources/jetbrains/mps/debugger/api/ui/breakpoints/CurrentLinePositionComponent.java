@@ -101,7 +101,7 @@ public class CurrentLinePositionComponent implements ProjectComponent {
   @Override
   public void initComponent() {
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
-    component.addCurrentDebugSessionListener(myCurrentDebugSessionListener);
+    component.addDebugSessionListener(myCurrentDebugSessionListener);
     myEditorsProvider.addEditorOpenListener(myEditorOpenListener);
   }
 
@@ -109,7 +109,7 @@ public class CurrentLinePositionComponent implements ProjectComponent {
   public void disposeComponent() {
     myIsDisposed = true;
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
-    component.removeCurrentDebugSessionListener(myCurrentDebugSessionListener);
+    component.removeDebugSessionListener(myCurrentDebugSessionListener);
     myEditorsProvider.removeEditorOpenListener(myEditorOpenListener);
     myEditorsProvider.dispose();
   }

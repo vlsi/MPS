@@ -41,11 +41,9 @@ public class DebugVMEventsProcessor {
   private final BreakpointManagerComponent myBreakpointManager;
   private final RequestManager myRequestManager;
   private final SuspendManager mySuspendManager;
-  private final VMCreator myVMCreator;
 
   private final DebugProcessMulticaster myMulticaster;
 
-  private final Project myProject;
   private VirtualMachine myVirtualMachine;
 
   private DebuggerEventThread myEventThread;
@@ -56,14 +54,15 @@ public class DebugVMEventsProcessor {
   protected static final int STATE_DETACHED = 3;
   protected final AtomicInteger myState = new AtomicInteger(STATE_INITIAL);
   private IDebuggableFramesSelector myFramesSelector;
+  private String myConnectionSettings;
+  private final IDebuggerManagerThread myManagerThread;
 
-  public DebugVMEventsProcessor(Project p, VMCreator vmCreator) {
-    myProject = p;
+  public DebugVMEventsProcessor(BreakpointManagerComponent breakpointsManager, IDebuggerManagerThread managerThread) {
     myMulticaster = new DebugProcessMulticaster();
-    myBreakpointManager = p.getComponent(BreakpointManagerComponent.class);
+    myManagerThread = managerThread;
+    myBreakpointManager = breakpointsManager;
     myRequestManager = new RequestManager(this);
     mySuspendManager = new SuspendManager(this);
-    myVMCreator = vmCreator;
   }
 
   public void commitVM(VirtualMachine vm) {
@@ -77,7 +76,7 @@ public class DebugVMEventsProcessor {
 
   /* package */
 
-  DebugProcessMulticaster getMulticaster() {
+  public DebugProcessMulticaster getMulticaster() {
     return myMulticaster;
   }
 
@@ -98,11 +97,15 @@ public class DebugVMEventsProcessor {
   }
 
   public String getConnectionString() {
-    return myVMCreator.getConnectionSettings().getPresentation();
+    return myConnectionSettings;
   }
 
   public void setDebuggableFramesSelector(IDebuggableFramesSelector framesSelector) {
     myFramesSelector = framesSelector;
+  }
+
+  public void setConnectionSettings(String connectionSettings) {
+    myConnectionSettings = connectionSettings;
   }
 
   private class DebuggerEventThread implements Runnable {
@@ -207,7 +210,7 @@ public class DebugVMEventsProcessor {
   }
 
   public IDebuggerManagerThread getManagerThread() {
-    return myVMCreator.getManagerThread();
+    return myManagerThread;
   }
 
   public void addDebugProcessListener(DebugProcessListener listener) {

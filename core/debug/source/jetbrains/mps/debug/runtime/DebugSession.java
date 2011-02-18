@@ -19,14 +19,12 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
   //todo extract abstract superclass to allow suspend/resume/etc. any process if developer implements it
   private final DebugVMEventsProcessor myEventsProcessor;
   private volatile boolean myIsMute = false;
-  private final EvaluationProvider myEvaluationProvider;
 
   public DebugSession(DebugVMEventsProcessor eventsProcessor, Project p) {
     super(p);
     myEventsProcessor = eventsProcessor;
     myEventsProcessor.setDebuggableFramesSelector(getDebuggableFramesSelector());
     eventsProcessor.getMulticaster().addListener(new MyDebugProcessAdapter());
-    myEvaluationProvider = new EvaluationProvider(this);
   }
 
   protected JavaUiState createUiState() {
@@ -97,12 +95,10 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
     VMEventsProcessorManagerComponent vmManager
       = manager.getProject().getComponent(VMEventsProcessorManagerComponent.class);
     vmManager.addDebugSession(this);
-    myEvaluationProvider.init();
   }
 
   @Override
   public void sessionUnregistered(DebugSessionManagerComponent manager) {
-    myEvaluationProvider.dispose();
   }
 
   @Override
@@ -138,11 +134,6 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
       myIsMute = mute;
       fireSessionMuted(DebugSession.this);
     }
-  }
-
-  @Override
-  public IEvaluationProvider getEvaluationProvider() {
-    return myEvaluationProvider;
   }
 
   private class MyDebugProcessAdapter extends DebugProcessAdapter {
