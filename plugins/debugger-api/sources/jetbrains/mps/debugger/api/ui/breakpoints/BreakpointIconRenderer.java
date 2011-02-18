@@ -10,7 +10,6 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.api.integration.ui.DebugActionsUtil;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
-import jetbrains.mps.debugger.api.BreakpointsUiComponent;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -28,11 +27,7 @@ import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- */
-public class BreakpointIconRenderer implements EditorMessageIconRenderer {
+class BreakpointIconRenderer implements EditorMessageIconRenderer {
   public static final IconRendererType TYPE = new IconRendererType(4);
   private final ILocationBreakpoint myBreakpoint;
   private final Component myComponent;

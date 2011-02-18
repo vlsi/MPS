@@ -27,7 +27,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.util.*;
 
-public abstract class BreakpointsView implements DataProvider {
+abstract class BreakpointsView implements DataProvider {
   public static DataKey<IBreakpoint> MPS_BREAKPOINT = DataKey.create("MPS_Breakpoint");
   private List<IBreakpoint> myBreakpointsList;
   private final BreakpointManagerComponent myBreakpointsManager;

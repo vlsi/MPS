@@ -1,4 +1,4 @@
-package jetbrains.mps.debugger.api;
+package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
@@ -10,7 +10,6 @@ import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionListener;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 import jetbrains.mps.debug.api.SessionChangeListener;
-import jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePainter;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.IStackFrame;

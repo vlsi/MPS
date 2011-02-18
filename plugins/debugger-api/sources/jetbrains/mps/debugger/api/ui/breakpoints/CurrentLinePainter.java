@@ -25,7 +25,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-public class CurrentLinePainter extends EditorCellPainter<SNode> {
+class CurrentLinePainter extends EditorCellPainter<SNode> {
   private static final Color STRIPE_COLOR = new Color(0, 0, 255);
 
   @NotNull

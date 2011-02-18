@@ -33,7 +33,7 @@ import java.awt.Component;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
-public class BreakpointsTable extends BreakpointsView {
+class BreakpointsTable extends BreakpointsView {
   private final JTable myBreakpointsTable;
   private final MyAbstractTableModel myBreakpointsTableModel;
 

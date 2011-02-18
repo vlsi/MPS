@@ -23,7 +23,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
-public class JPanelWithCheckbox extends JPanel {
+class JPanelWithCheckbox extends JPanel {
   private final JCheckBox myCheckBox;
 
   public JPanelWithCheckbox(IBreakpoint breakpoint, boolean isSelected) {

@@ -41,7 +41,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class BreakpointsTree extends BreakpointsView {
+class BreakpointsTree extends BreakpointsView {
   private final IOperationContext myContext;
   private final GroupedTree<BreakpointNodeData> myTree;
   private final GroupKind myModuleKind = new ModuleGroupKind();

@@ -205,9 +205,9 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.actions.ToggleBreakpoint_Action" file="ToggleBreakpoint_Action.java">
-    <classNode dependClassName="jetbrains.mps.debugger.api.BreakpointsUiComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />

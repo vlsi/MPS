@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debugger.api;
+package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
@@ -27,9 +27,6 @@ import jetbrains.mps.debug.api.BreakpointManagerComponent.IBreakpointsIO;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionAdapter;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionListener;
 import jetbrains.mps.debug.api.breakpoints.*;
-import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointIconRenderer;
-import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointPainter;
-import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.logging.Logger;

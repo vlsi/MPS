@@ -6,7 +6,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.BreakpointManagerComponent.BreakpointManagerListener;
 import jetbrains.mps.debug.api.breakpoints.*;
-import jetbrains.mps.debugger.api.BreakpointsUiComponent;
 import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsView.BreakpointSelectionListener;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.ide.dialogs.BaseDialog;

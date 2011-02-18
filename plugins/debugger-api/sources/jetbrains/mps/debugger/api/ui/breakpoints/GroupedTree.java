@@ -29,7 +29,7 @@ import javax.swing.UIManager;
 import java.awt.Color;
 import java.util.*;
 
-public abstract class GroupedTree<D extends NodeData> extends MPSTree {
+abstract class GroupedTree<D extends NodeData> extends MPSTree {
   private final IOperationContext myContext;
 
   public GroupedTree(IOperationContext context) {

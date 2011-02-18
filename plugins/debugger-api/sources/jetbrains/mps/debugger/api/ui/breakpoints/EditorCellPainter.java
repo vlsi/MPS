@@ -14,7 +14,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> {
+abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> {
   @Nullable
   protected abstract Color getCellBackgroundColor();
 
