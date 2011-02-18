@@ -65,6 +65,7 @@ public class BreakpointsUiComponent implements ProjectComponent {
   private final MyEditorOpenListener myEditorOpenListener = new MyEditorOpenListener();
   private final LeftMarginMouseListener myMouseListener = new MyLeftMarginMouseListener();
 
+  private final MyBreakpointManagerListener myBreakpointManagerListener = new MyBreakpointManagerListener();
   private final MyBreakpointListener myBreakpointListener = new MyBreakpointListener();
   private final SessionChangeListener myChangeListener = new MySessionChangeAdapter();
   private final DebugSessionListener myDebugSessionListener = new MyDebugSessionAdapter();
@@ -91,13 +92,15 @@ public class BreakpointsUiComponent implements ProjectComponent {
 
   @Override
   public void initComponent() {
+    myEditorsProvider.addEditorOpenListener(myEditorOpenListener);
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.addDebugSessionListener(myDebugSessionListener);
-    myEditorsProvider.addEditorOpenListener(myEditorOpenListener);
+    myBreakpointsManagerComponent.addChangeListener(myBreakpointManagerListener);
   }
 
   @Override
   public void disposeComponent() {
+    myBreakpointsManagerComponent.removeChangeListener(myBreakpointManagerListener);
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.removeDebugSessionListener(myDebugSessionListener);
     myEditorsProvider.removeEditorOpenListener(myEditorOpenListener);

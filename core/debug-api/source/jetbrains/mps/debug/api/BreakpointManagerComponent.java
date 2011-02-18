@@ -87,6 +87,9 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   public void setBreakpointsIO(IBreakpointsIO io) {
     myBreakpointsIO = io;
+    synchronized (myBreakpoints) {  // todo this is a hack
+      loadState(getState());
+    }
   }
 
   public void addBreakpoint(@NotNull IBreakpoint breakpoint) {
@@ -277,6 +280,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   public interface IBreakpointManagerListener {
     void breakpointAdded(@NotNull IBreakpoint breakpoint);
+
     void breakpointRemoved(@NotNull IBreakpoint breakpoint);
   }
 
@@ -297,6 +301,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   public interface IBreakpointsIO {
     @Nullable
     IBreakpoint readBreakpoint(@NotNull Element element);
+
     @Nullable
     Element writeBreakpoint(@NotNull IBreakpoint breakpoint);
   }
