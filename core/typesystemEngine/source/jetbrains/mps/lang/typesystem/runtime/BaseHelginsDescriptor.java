@@ -18,6 +18,7 @@ package jetbrains.mps.lang.typesystem.runtime;
 import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
 import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 
+import java.util.Collections;
 import java.util.Set;
 import java.util.HashSet;
 
@@ -33,38 +34,38 @@ public class BaseHelginsDescriptor implements IHelginsDescriptor {
   protected Set<IOverloadedOpsTypesProvider> myOverloadedOperationsTypesProviders = new HashSet<IOverloadedOpsTypesProvider>();
 
   public Set<InferenceRule_Runtime> getInferenceRules() {
-    return new HashSet<InferenceRule_Runtime>(this.myInferenceRules);
+    return Collections.unmodifiableSet(this.myInferenceRules);
   }
 
   public Set<NonTypesystemRule_Runtime> getNonTypesystemRules() {
-    return new HashSet<NonTypesystemRule_Runtime>(this.myNonTypesystemRules);
+    return Collections.unmodifiableSet(this.myNonTypesystemRules);
   }
 
   public Set<SubtypingRule_Runtime> getSubtypingRules() {
-    return new HashSet<SubtypingRule_Runtime>(this.mySubtypingRules);
+    return Collections.unmodifiableSet(this.mySubtypingRules);
   }
 
   public Set<ComparisonRule_Runtime> getComparisonRules() {
-    return new HashSet<ComparisonRule_Runtime>(this.myComparisonRules);
+    return Collections.unmodifiableSet(this.myComparisonRules);
   }
 
   public Set<IDependency_Runtime> getDependencies() {
-    return new HashSet<IDependency_Runtime>(this.myDependencies);
+    return Collections.unmodifiableSet(this.myDependencies);
   }
 
   public Set<InequationReplacementRule_Runtime> getEliminationRules() {
-    return new HashSet<InequationReplacementRule_Runtime>(this.myInequationReplacementRules);
+    return Collections.unmodifiableSet(this.myInequationReplacementRules);
   }
 
   public Set<IVariableConverter_Runtime> getVariableConverters() {
-    return new HashSet<IVariableConverter_Runtime>(this.myVariableConverters);
+    return Collections.unmodifiableSet(this.myVariableConverters);
   }
 
   public Set<IOverloadedOpsTypesProvider> getOverloadedOperationsTypesProviders() {
-    return new HashSet<IOverloadedOpsTypesProvider>(this.myOverloadedOperationsTypesProviders);
+    return Collections.unmodifiableSet(this.myOverloadedOperationsTypesProviders);
   }
 
   public Set<AbstractDependentComputation_Runtime> getDependentComputations() {
-    return new HashSet<AbstractDependentComputation_Runtime>(this.myDependentComputations);
+    return Collections.unmodifiableSet(this.myDependentComputations);
   }
 }
