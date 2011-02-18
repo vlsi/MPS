@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.integration.runconfigs;
+package jetbrains.mps.debugger.java.run;
 
 import com.intellij.execution.DefaultExecutionResult;
 import com.intellij.execution.ExecutionException;
@@ -6,16 +6,20 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.configurations.RunnerSettings;
+import com.intellij.execution.executors.DefaultDebugExecutor;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
 import jetbrains.mps.debug.api.Debuggers;
+import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
+import jetbrains.mps.runconfigs.runner.BaseMpsRunProfileState;
 import org.jetbrains.annotations.NotNull;
 
-public class RemoteRunProfileState extends BaseRunProfileState {
+public class RemoteRunProfileState extends DebuggerRunProfileState {
   private final Project myProject;
   private final DebugConnectionSettings mySettings;
 
@@ -46,9 +50,13 @@ public class RemoteRunProfileState extends BaseRunProfileState {
     return null;
   }
 
-  @NotNull
   @Override
-  public AbstractDebugSessionCreator createDebugSessionCreator(Project project) {
-    return Debuggers.getInstance().getDebuggerByName("Java").createDebugSessionCreator(project);
+  public IDebugger getDebugger() {
+    return Debuggers.getInstance().getDebuggerByName("Java");
+  }
+
+  @Override
+  public boolean canExecute(String executorId) {
+    return DefaultDebugExecutor.EXECUTOR_ID.equals(executorId);
   }
 }

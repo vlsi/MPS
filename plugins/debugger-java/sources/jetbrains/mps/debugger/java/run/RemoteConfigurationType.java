@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.integration.runconfigs;
+package jetbrains.mps.debugger.java.run;
 
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.ConfigurationType;

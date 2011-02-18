@@ -13,16 +13,27 @@ import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.*;
+import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
 import jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
+import jetbrains.mps.runconfigs.runner.BaseMpsRunProfileState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class MPSDebugRunner extends GenericProgramRunner {
 
   public boolean canRun(@NotNull final String executorId, @NotNull final RunProfile profile) {
-    return executorId.equals(DefaultDebugExecutor.EXECUTOR_ID) && (profile instanceof BaseRunConfig) && (((BaseRunConfig) profile).isDebuggable());
+    return executorId.equals(DefaultDebugExecutor.EXECUTOR_ID) &&
+      (isOldRunConfiguration(profile) || isNewRunConfiguration(profile));
+  }
+
+  private boolean isOldRunConfiguration(RunProfile profile) {
+    return (profile instanceof BaseRunConfig) && (((BaseRunConfig) profile).isDebuggable());
+  }
+
+  private boolean isNewRunConfiguration(RunProfile profile) {
+    return (profile instanceof BaseMpsRunProfileState) && (((BaseMpsRunProfileState) profile).canExecute(DefaultDebugExecutor.EXECUTOR_ID));
   }
 
   @NotNull

@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.api;
+package jetbrains.mps.runconfigs.runner;
 
 import com.intellij.execution.configurations.RunProfileState;
 
-public abstract class DebuggerRunProfileState implements RunProfileState {
-  public abstract IDebugger getDebugger();
+public abstract class BaseMpsRunProfileState implements RunProfileState {
+  public abstract boolean canExecute(String executorId);
 }

@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.integration.runconfigs;
+package jetbrains.mps.debugger.java.run;
 
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.Executor;
@@ -12,7 +12,6 @@ import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
-import jetbrains.mps.debug.integration.runconfigs.ui.RemoteSettingsEditor;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
 import jetbrains.mps.debug.runtime.settings.RemoteConnectionSettings;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;

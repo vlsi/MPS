@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.integration.runconfigs.ui;
+package jetbrains.mps.debugger.java.run;
 
 import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
