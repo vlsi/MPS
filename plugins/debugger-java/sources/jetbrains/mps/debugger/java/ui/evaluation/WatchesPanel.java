@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.evaluation.ui;
+package jetbrains.mps.debugger.java.ui.evaluation;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ui.components.JBScrollPane;
-import jetbrains.mps.debug.evaluation.EvaluationProvider;
-import jetbrains.mps.debug.evaluation.EvaluationProvider.WatchAdapter;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
-import jetbrains.mps.debug.evaluation.ui.EvaluationTreeActions.AddWatchAction;
-import jetbrains.mps.debug.evaluation.ui.EvaluationTreeActions.EditWatchAction;
-import jetbrains.mps.debug.evaluation.ui.EvaluationTreeActions.RemoveWatchAction;
 import jetbrains.mps.debug.runtime.SessionStopDisposer;
+import jetbrains.mps.debugger.java.evaluation.EvaluationProvider;
+import jetbrains.mps.debugger.java.evaluation.EvaluationProvider.WatchAdapter;
+import jetbrains.mps.debugger.java.ui.evaluation.EvaluationTreeActions.AddWatchAction;
+import jetbrains.mps.debugger.java.ui.evaluation.EvaluationTreeActions.EditWatchAction;
+import jetbrains.mps.debugger.java.ui.evaluation.EvaluationTreeActions.RemoveWatchAction;
 
 import java.awt.BorderLayout;
 

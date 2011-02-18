@@ -31,6 +31,7 @@ import jetbrains.mps.debug.integration.runconfigs.RemoteRunProfileState;
 import jetbrains.mps.debug.runtime.*;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
+import jetbrains.mps.debugger.java.evaluation.EvaluationProvider;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
@@ -69,6 +70,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
     myDebuggerManagerThread = new DebuggerManagerThread(); //thread started!
     myDebugVMEventsProcessor = new DebugVMEventsProcessor(BreakpointManagerComponent.getInstance(project), myDebuggerManagerThread);
     myDebuggerSession = new DebugSession(myDebugVMEventsProcessor, project);
+    myDebuggerSession.setEvaluationProvider(new EvaluationProvider(myDebuggerSession));
   }
 
   private DebugConnectionSettings createLocalConnectionSettings(RunProfileState state) {

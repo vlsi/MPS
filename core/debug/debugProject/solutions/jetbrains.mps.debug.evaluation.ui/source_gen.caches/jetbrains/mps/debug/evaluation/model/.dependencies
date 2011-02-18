@@ -44,7 +44,7 @@
     <classNode dependClassName="jetbrains.mps.ide.messages.DefaultMessageHandler" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.progress.util.ProgressWindow" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
@@ -90,7 +90,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.model.StackFrameContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -131,7 +131,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
     <classNode dependClassName="java.util.LinkedHashMap" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />

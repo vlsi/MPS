@@ -13,17 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.evaluation;
+package jetbrains.mps.debugger.java.evaluation;
 
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._void_P0_E0;
+import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debug.api.DebugSessionManagerComponent;
+import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionAdapter;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debug.evaluation.model.LowLevelEvaluationModel;
-import jetbrains.mps.debug.evaluation.ui.EditWatchDialog;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
-import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
-import jetbrains.mps.debug.evaluation.ui.WatchesPanel;
+import jetbrains.mps.debugger.java.ui.evaluation.EditWatchDialog;
+import jetbrains.mps.debugger.java.ui.evaluation.EvaluationDialog;
+import jetbrains.mps.debugger.java.ui.evaluation.WatchesPanel;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -45,9 +48,21 @@ public class EvaluationProvider implements IEvaluationProvider {
 
   public EvaluationProvider(DebugSession debugSession) {
     myDebugSession = debugSession;
+    DebugSessionManagerComponent.getInstance(myDebugSession.getProject()).addDebugSessionListener(new DebugSessionAdapter() {
+      @Override
+      public void registered(AbstractDebugSession session) {
+        init();
+      }
+
+      @Override
+      public void detached(AbstractDebugSession session) {
+        dispose();
+        DebugSessionManagerComponent.getInstance(myDebugSession.getProject()).removeDebugSessionListener(this);
+      }
+    });
   }
 
-  public void init() {
+  private void init() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         myAuxModule = new EvaluationAuxModule(myDebugSession.getProject());
@@ -55,7 +70,7 @@ public class EvaluationProvider implements IEvaluationProvider {
     });
   }
 
-  public void dispose() {
+  private void dispose() {
     myAuxModule.dispose();
     myAuxModule = null;
   }

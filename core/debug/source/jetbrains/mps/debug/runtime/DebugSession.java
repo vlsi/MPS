@@ -9,7 +9,6 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
-import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import org.jetbrains.annotations.NotNull;
 
@@ -19,6 +18,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
   //todo extract abstract superclass to allow suspend/resume/etc. any process if developer implements it
   private final DebugVMEventsProcessor myEventsProcessor;
   private volatile boolean myIsMute = false;
+  private IEvaluationProvider myEvaluationProvider;
 
   public DebugSession(DebugVMEventsProcessor eventsProcessor, Project p) {
     super(p);
@@ -134,6 +134,15 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
       myIsMute = mute;
       fireSessionMuted(DebugSession.this);
     }
+  }
+
+  @Override
+  public IEvaluationProvider getEvaluationProvider() {
+    return myEvaluationProvider;
+  }
+
+  public void setEvaluationProvider(IEvaluationProvider evaluationProvider) {
+    myEvaluationProvider = evaluationProvider;
   }
 
   private class MyDebugProcessAdapter extends DebugProcessAdapter {
