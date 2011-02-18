@@ -12,6 +12,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="library" name="tools" level="project" />
+    <orderEntry type="module" module-name="debugger-api" />
   </component>
 </module>
 

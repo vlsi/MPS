@@ -9,7 +9,7 @@ import jetbrains.mps.debugger.java.evaluation.EvaluationProvider;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
-import jetbrains.mps.debug.api.integration.ui.DebugActionsUtil;
+import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 
 public class EvaluationTreeActions {
   public EvaluationTreeActions() {

@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.api.integration.ui;
+package jetbrains.mps.debugger.api.ui.tree;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;

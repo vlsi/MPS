@@ -20,7 +20,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debug.api.integration.ui.DebugActionsUtil;
+import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class MuteBreakpoints extends ToggleAction {

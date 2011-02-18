@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.api.integration.ui;
+package jetbrains.mps.debugger.api.ui;
 
 import com.intellij.execution.ExecutionManager;
 import com.intellij.execution.executors.DefaultDebugExecutor;

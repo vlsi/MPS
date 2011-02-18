@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.api.integration.ui;
+package jetbrains.mps.debugger.api.ui.tree;
 
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;

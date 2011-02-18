@@ -22,7 +22,7 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable;
-import jetbrains.mps.debug.api.integration.ui.WatchableNode;
+import jetbrains.mps.debugger.api.ui.tree.WatchableNode;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import java.util.List;

@@ -14,7 +14,7 @@ import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
-import jetbrains.mps.debug.api.integration.ui.VariablesTree;
+import jetbrains.mps.debugger.api.ui.tree.VariablesTree;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.IStackFrame;

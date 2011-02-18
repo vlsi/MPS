@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.api.integration.ui;
+package jetbrains.mps.debugger.api.ui.tree;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.application.ApplicationManager;

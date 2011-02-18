@@ -64,9 +64,9 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action" file="EvaluateExpression_Action.java">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.DebugActionsUtil" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.debug.api.integration.ui.DebugActionsUtil" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -96,12 +96,13 @@
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.DebugActionsUtil" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.debug.api.integration.ui.DebugActionsUtil" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractUiState" />
@@ -116,14 +117,13 @@
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.ExportThreadsDialog" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.actions.Pause_Action" file="Pause_Action.java">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.DebugActionsUtil" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.debug.api.integration.ui.DebugActionsUtil" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -138,9 +138,9 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.actions.Resume_Action" file="Resume_Action.java">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.DebugActionsUtil" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.debug.api.integration.ui.DebugActionsUtil" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -155,9 +155,9 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.actions.StepInto_Action" file="StepInto_Action.java">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.DebugActionsUtil" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.debug.api.integration.ui.DebugActionsUtil" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -172,9 +172,9 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.actions.StepOut_Action" file="StepOut_Action.java">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.DebugActionsUtil" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.debug.api.integration.ui.DebugActionsUtil" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -189,9 +189,9 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.actions.StepOver_Action" file="StepOver_Action.java">
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.DebugActionsUtil" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.debug.api.integration.ui.DebugActionsUtil" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />

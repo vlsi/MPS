@@ -26,9 +26,9 @@
   <import index="jvm9" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="qvoq" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="axy0" modelUID="f:java_stub#com.intellij.execution.executors(com.intellij.execution.executors@java_stub)" version="-1" />
-  <import index="7xbf" modelUID="f:java_stub#jetbrains.mps.debug.api.integration.ui(jetbrains.mps.debug.api.integration.ui@java_stub)" version="-1" />
   <import index="sy4" modelUID="f:java_stub#jetbrains.mps.plugins.applicationplugins(jetbrains.mps.plugins.applicationplugins@java_stub)" version="-1" />
   <import index="cyl7" modelUID="f:java_stub#jetbrains.mps.debugger.api.ui.breakpoints(jetbrains.mps.debugger.api.ui.breakpoints@java_stub)" version="-1" />
+  <import index="ghk7" modelUID="f:java_stub#jetbrains.mps.debugger.api.ui(jetbrains.mps.debugger.api.ui@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
@@ -150,10 +150,10 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7064627997011532326">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="s0ft.~IEvaluationProvider" resolveInfo="IEvaluationProvider" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6762701973176588717">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xbf.~DebugActionsUtil%dgetEvaluationProvider(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%devaluation%dIEvaluationProvider" resolveInfo="getEvaluationProvider" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7xbf.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="6762701973176588718" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7078159644845059918">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ghk7.~DebugActionsUtil%dgetEvaluationProvider(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%devaluation%dIEvaluationProvider" resolveInfo="getEvaluationProvider" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ghk7.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="7078159644845059919" />
             </node>
           </node>
         </node>
@@ -193,10 +193,10 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7064627997011532345">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="s0ft.~IEvaluationProvider" resolveInfo="IEvaluationProvider" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6762701973176588715">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xbf.~DebugActionsUtil%dgetEvaluationProvider(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%devaluation%dIEvaluationProvider" resolveInfo="getEvaluationProvider" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7xbf.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="6762701973176588716" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7078159644845059916">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ghk7.~DebugActionsUtil%dgetEvaluationProvider(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%devaluation%dIEvaluationProvider" resolveInfo="getEvaluationProvider" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ghk7.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="7078159644845059917" />
             </node>
           </node>
         </node>
@@ -241,10 +241,10 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7064627997011532366">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rrl.~AbstractDebugSession" resolveInfo="AbstractDebugSession" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6762701973176576575">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xbf.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7xbf.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="6762701973176576576" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3505405076286708200">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ghk7.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ghk7.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="3505405076286708201" />
             </node>
           </node>
         </node>
@@ -628,10 +628,10 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7064627997011532517">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rrl.~AbstractDebugSession" resolveInfo="AbstractDebugSession" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6762701973176576573">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xbf.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7xbf.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="6762701973176576574" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3505405076286708198">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ghk7.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ghk7.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="3505405076286708199" />
             </node>
           </node>
         </node>
@@ -951,10 +951,10 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7064627997011532646">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7064627997011532647">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7064627997011532648">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6762701973176588721">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xbf.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7xbf.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="6762701973176588722" />
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3505405076286681019">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ghk7.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ghk7.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="3505405076286681020" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7064627997011532651">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6rrl.~AbstractDebugSession%dpause()%cvoid" resolveInfo="pause" />
@@ -971,10 +971,10 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7064627997011532656">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rrl.~AbstractDebugSession" resolveInfo="AbstractDebugSession" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6762701973176588719">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xbf.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7xbf.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="6762701973176588720" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3505405076286681017">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ghk7.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ghk7.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="3505405076286681018" />
             </node>
           </node>
         </node>
@@ -1015,13 +1015,13 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7064627997011532674">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7064627997011532675">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7064627997011532676">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6762701973176588725">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xbf.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7xbf.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="6762701973176588726" />
-            </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7064627997011532679">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6rrl.~AbstractDebugSession%dresume()%cvoid" resolveInfo="resume" />
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3505405076286702792">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ghk7.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ghk7.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="3505405076286702793" />
             </node>
           </node>
         </node>
@@ -1039,10 +1039,10 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7064627997011532685">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rrl.~AbstractDebugSession" resolveInfo="AbstractDebugSession" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6762701973176588723">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xbf.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7xbf.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="6762701973176588724" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3505405076286702790">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ghk7.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ghk7.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="3505405076286702791" />
             </node>
           </node>
         </node>
@@ -1087,13 +1087,13 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7064627997011532704">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7064627997011532705">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7064627997011532706">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6762701973176588729">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xbf.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7xbf.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="6762701973176588730" />
-            </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7064627997011532709">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6rrl.~AbstractDebugSession%dstepInto()%cvoid" resolveInfo="stepInto" />
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3505405076286702796">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ghk7.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ghk7.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="3505405076286702797" />
             </node>
           </node>
         </node>
@@ -1107,10 +1107,10 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7064627997011532714">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rrl.~AbstractDebugSession" resolveInfo="AbstractDebugSession" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6762701973176588727">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xbf.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7xbf.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="6762701973176588728" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3505405076286702794">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ghk7.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ghk7.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="3505405076286702795" />
             </node>
           </node>
         </node>
@@ -1155,13 +1155,13 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7064627997011532733">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7064627997011532734">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7064627997011532735">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6762701973176588733">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xbf.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7xbf.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="6762701973176588734" />
-            </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7064627997011532738">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6rrl.~AbstractDebugSession%dstepOut()%cvoid" resolveInfo="stepOut" />
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3505405076286702800">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ghk7.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ghk7.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="3505405076286702801" />
             </node>
           </node>
         </node>
@@ -1175,10 +1175,10 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7064627997011532743">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rrl.~AbstractDebugSession" resolveInfo="AbstractDebugSession" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6762701973176588731">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xbf.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7xbf.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="6762701973176588732" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3505405076286702798">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ghk7.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ghk7.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="3505405076286702799" />
             </node>
           </node>
         </node>
@@ -1223,13 +1223,13 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7064627997011532762">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7064627997011532763">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7064627997011532764">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6762701973176588737">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xbf.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7xbf.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="6762701973176588738" />
-            </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7064627997011532767">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6rrl.~AbstractDebugSession%dstepOver()%cvoid" resolveInfo="stepOver" />
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3505405076286702804">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ghk7.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ghk7.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="3505405076286702805" />
             </node>
           </node>
         </node>
@@ -1243,10 +1243,10 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7064627997011532772">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6rrl.~AbstractDebugSession" resolveInfo="AbstractDebugSession" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6762701973176588735">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xbf.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7xbf.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="6762701973176588736" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3505405076286702802">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ghk7.~DebugActionsUtil" resolveInfo="DebugActionsUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ghk7.~DebugActionsUtil%dgetDebugSession(com%dintellij%dopenapi%dactionSystem%dAnActionEvent)%cjetbrains%dmps%ddebug%dapi%dAbstractDebugSession" resolveInfo="getDebugSession" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="3505405076286702803" />
             </node>
           </node>
         </node>

@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debug.api.integration.ui.DebugActionsUtil;
+import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.debug.api.AbstractUiState;
