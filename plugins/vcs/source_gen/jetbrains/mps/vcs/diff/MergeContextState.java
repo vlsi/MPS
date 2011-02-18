@@ -7,7 +7,6 @@ import java.util.Set;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.Map;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -20,15 +19,15 @@ public class MergeContextState {
   /*package*/ SModel myResultModel;
   /*package*/ Set<ModelChange> myAppliedChanges;
   /*package*/ Set<ModelChange> myExcludedChanges;
-  /*package*/ Map<SNodeId, SNode> myIdReplacementCache;
+  /*package*/ Map<SNodeId, SNodeId> myIdReplacementCache;
 
-  /*package*/ MergeContextState(SModel resultModel, Set<ModelChange> appliedChanges, Set<ModelChange> excludedChanges, Map<SNodeId, SNode> idReplacementCache) {
+  /*package*/ MergeContextState(SModel resultModel, Set<ModelChange> appliedChanges, Set<ModelChange> excludedChanges, Map<SNodeId, SNodeId> idReplacementCache) {
     myResultModel = CopyUtil.copyModel(resultModel);
     myAppliedChanges = SetSequence.fromSetWithValues(new HashSet<ModelChange>(), appliedChanges);
     myExcludedChanges = SetSequence.fromSetWithValues(new HashSet<ModelChange>(), excludedChanges);
-    myIdReplacementCache = MapSequence.fromMap(new HashMap<SNodeId, SNode>(MapSequence.fromMap(idReplacementCache).count()));
-    MapSequence.fromMap(idReplacementCache).visitAll(new IVisitor<IMapping<SNodeId, SNode>>() {
-      public void visit(IMapping<SNodeId, SNode> m) {
+    myIdReplacementCache = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>(MapSequence.fromMap(idReplacementCache).count()));
+    MapSequence.fromMap(idReplacementCache).visitAll(new IVisitor<IMapping<SNodeId, SNodeId>>() {
+      public void visit(IMapping<SNodeId, SNodeId> m) {
         MapSequence.fromMap(myIdReplacementCache).put(m.key(), m.value());
       }
     });

@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModel;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -22,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MergeContext implements NodeCopier {
@@ -33,7 +33,7 @@ public class MergeContext implements NodeCopier {
   private SModel myResultModel;
   private Set<ModelChange> myAppliedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private Set<ModelChange> myExcludedChanges = SetSequence.fromSet(new HashSet<ModelChange>());
-  private Map<SNodeId, SNode> myIdReplacementCache = MapSequence.fromMap(new HashMap<SNodeId, SNode>());
+  private Map<SNodeId, SNodeId> myIdReplacementCache = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>());
 
   public MergeContext(final SModel base, final SModel mine, final SModel repository) {
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -118,15 +118,17 @@ public class MergeContext implements NodeCopier {
     for (SNodeId id : SetSequence.fromSet(MapSequence.fromMap(myIdReplacementCache).keySet())) {
       if (myResultModel.getNodeById(id) == null) {
         // node id is free now! 
-        SNode node = MapSequence.fromMap(myIdReplacementCache).get(id);
-        assert node != null;
+        SNodeId replacedId = MapSequence.fromMap(myIdReplacementCache).get(id);
+        assert replacedId != null;
+        SNode replacedNode = myResultModel.getNodeById(replacedId);
+        assert replacedNode != null;
 
-        SNode copy = CopyUtil.copyAndPreserveId(node);
+        SNode copy = CopyUtil.copyAndPreserveId(replacedNode);
         copy.setId(id);
-        if (SNodeOperations.getParent(node) == null) {
+        if (SNodeOperations.getParent(replacedNode) == null) {
           assert false;
         } else {
-          SNodeOperations.replaceWithAnother(node, copy);
+          SNodeOperations.replaceWithAnother(replacedNode, copy);
         }
 
         MapSequence.fromMap(myIdReplacementCache).put(id, null);
@@ -219,9 +221,10 @@ public class MergeContext implements NodeCopier {
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(copy, null, true, new String[]{}))) {
       SNodeId nodeId = node.getSNodeId();
       if (myResultModel.getNodeById(nodeId) != null) {
-        node.setId(null);
+        SNodeId replacedId = SModel.generateUniqueId();
+        node.setId(replacedId);
         if (!(MapSequence.fromMap(myIdReplacementCache).containsKey(nodeId))) {
-          MapSequence.fromMap(myIdReplacementCache).put(nodeId, node);
+          MapSequence.fromMap(myIdReplacementCache).put(nodeId, replacedId);
         }
       }
     }
