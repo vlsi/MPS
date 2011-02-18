@@ -139,5 +139,21 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
+  <dependency className="jetbrains.mps.debugger.java.ui.evaluation.WatchesPanel" file="WatchesPanel.java">
+    <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.EvaluationProvider" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.SessionStopDisposer" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.ui.evaluation.EvaluationTreeActions" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
+    <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+    <classNode extendsClassName="jetbrains.mps.debugger.java.ui.evaluation.EvaluationUi" />
+  </dependency>
 </dependenciesRoot>
 

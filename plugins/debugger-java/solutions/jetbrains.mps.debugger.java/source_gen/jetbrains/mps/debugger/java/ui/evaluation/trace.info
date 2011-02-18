@@ -161,6 +161,91 @@
     <unitInfo nodeId="4577525712681046291" fileName="AbstractEvaluationDialog.java" startLine="34" startPosition="32" endLine="42" endPosition="5" unitName="jetbrains.mps.debugger.java.ui.evaluation.AbstractEvaluationDialog$2" />
     <unitInfo nodeId="4577525712681046198" fileName="AbstractEvaluationDialog.java" startLine="15" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.debugger.java.ui.evaluation.AbstractEvaluationDialog" />
   </root>
+  <root nodeId="5600062460044309378">
+    <nodeInfo nodeId="5600062460044309381" fileName="WatchesPanel.java" startLine="16" startPosition="48" endLine="17" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySessionStopDisposer" />
+    <nodeInfo nodeId="5600062460044309384" fileName="WatchesPanel.java" startLine="17" startPosition="58" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProvider" />
+    <nodeInfo nodeId="5600062460044309393" fileName="WatchesPanel.java" startLine="20" startPosition="58" endLine="21" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5600062460044309398" fileName="WatchesPanel.java" startLine="21" startPosition="44" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309426" fileName="WatchesPanel.java" startLine="28" startPosition="29" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309431" fileName="WatchesPanel.java" startLine="29" startPosition="35" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309434" fileName="WatchesPanel.java" startLine="30" startPosition="28" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309457" fileName="WatchesPanel.java" startLine="40" startPosition="29" endLine="41" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309479" fileName="WatchesPanel.java" startLine="50" startPosition="29" endLine="51" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309484" fileName="WatchesPanel.java" startLine="51" startPosition="38" endLine="52" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309511" fileName="WatchesPanel.java" startLine="62" startPosition="29" endLine="63" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309518" fileName="WatchesPanel.java" startLine="67" startPosition="6" endLine="68" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309534" fileName="WatchesPanel.java" startLine="68" startPosition="235" endLine="69" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309551" fileName="WatchesPanel.java" startLine="74" startPosition="67" endLine="75" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309567" fileName="WatchesPanel.java" startLine="81" startPosition="67" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309575" fileName="WatchesPanel.java" startLine="87" startPosition="39" endLine="88" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5600062460044309544" fileName="WatchesPanel.java" startLine="73" startPosition="27" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5600062460044309560" fileName="WatchesPanel.java" startLine="80" startPosition="26" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5600062460044309453" fileName="WatchesPanel.java" startLine="38" startPosition="72" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5600062460044309507" fileName="WatchesPanel.java" startLine="60" startPosition="72" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5600062460044309571" fileName="WatchesPanel.java" startLine="85" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getActionGroup#()Lcom/intellij/openapi/actionSystem/ActionGroup;" />
+    <nodeInfo nodeId="5600062460044309446" fileName="WatchesPanel.java" startLine="37" startPosition="69" endLine="43" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309475" fileName="WatchesPanel.java" startLine="48" startPosition="72" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5600062460044309500" fileName="WatchesPanel.java" startLine="59" startPosition="31" endLine="65" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309422" fileName="WatchesPanel.java" startLine="26" startPosition="72" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5600062460044309468" fileName="WatchesPanel.java" startLine="47" startPosition="69" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309540" fileName="WatchesPanel.java" startLine="71" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#()V" />
+    <nodeInfo nodeId="5600062460044309556" fileName="WatchesPanel.java" startLine="78" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="evaluate#()V" />
+    <nodeInfo nodeId="5600062460044309415" fileName="WatchesPanel.java" startLine="25" startPosition="67" endLine="33" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309440" fileName="WatchesPanel.java" startLine="35" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="watchUpdated#(Ljetbrains/mps/debug/evaluation/model/AbstractEvaluationModel;)V" />
+    <nodeInfo nodeId="5600062460044309496" fileName="WatchesPanel.java" startLine="57" startPosition="69" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doDispose#()V" />
+    <nodeInfo nodeId="5600062460044309462" fileName="WatchesPanel.java" startLine="45" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="watchRemoved#(Ljetbrains/mps/debug/evaluation/model/AbstractEvaluationModel;)V" />
+    <nodeInfo nodeId="5600062460044309490" fileName="WatchesPanel.java" startLine="56" startPosition="7" endLine="67" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309409" fileName="WatchesPanel.java" startLine="23" startPosition="71" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="watchAdded#(Ljetbrains/mps/debug/evaluation/model/AbstractEvaluationModel;)V" />
+    <nodeInfo nodeId="5600062460044309402" fileName="WatchesPanel.java" startLine="22" startPosition="26" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5600062460044309387" fileName="WatchesPanel.java" startLine="19" startPosition="0" endLine="70" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WatchesPanel#(Ljetbrains/mps/debugger/java/evaluation/EvaluationProvider;)V" />
+    <scopeInfo nodeId="5600062460044309456" fileName="WatchesPanel.java" startLine="40" startPosition="29" endLine="41" endPosition="28" />
+    <scopeInfo nodeId="5600062460044309510" fileName="WatchesPanel.java" startLine="62" startPosition="29" endLine="63" endPosition="40" />
+    <scopeInfo nodeId="5600062460044309550" fileName="WatchesPanel.java" startLine="74" startPosition="67" endLine="75" endPosition="26" />
+    <scopeInfo nodeId="5600062460044309566" fileName="WatchesPanel.java" startLine="81" startPosition="67" endLine="82" endPosition="22" />
+    <scopeInfo nodeId="5600062460044309574" fileName="WatchesPanel.java" startLine="87" startPosition="39" endLine="88" endPosition="170" />
+    <scopeInfo nodeId="5600062460044309478" fileName="WatchesPanel.java" startLine="50" startPosition="29" endLine="52" endPosition="34" />
+    <scopeInfo nodeId="5600062460044309425" fileName="WatchesPanel.java" startLine="28" startPosition="29" endLine="31" endPosition="34" />
+    <scopeInfo nodeId="5600062460044309543" fileName="WatchesPanel.java" startLine="73" startPosition="27" endLine="76" endPosition="5" />
+    <scopeInfo nodeId="5600062460044309544" fileName="WatchesPanel.java" startLine="73" startPosition="27" endLine="76" endPosition="5">
+      <varInfo nodeId="5600062460044309548" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="5600062460044309559" fileName="WatchesPanel.java" startLine="80" startPosition="26" endLine="83" endPosition="5" />
+    <scopeInfo nodeId="5600062460044309560" fileName="WatchesPanel.java" startLine="80" startPosition="26" endLine="83" endPosition="5">
+      <varInfo nodeId="5600062460044309564" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="5600062460044309453" fileName="WatchesPanel.java" startLine="38" startPosition="72" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="5600062460044309507" fileName="WatchesPanel.java" startLine="60" startPosition="72" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="5600062460044309571" fileName="WatchesPanel.java" startLine="85" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="5600062460044309445" fileName="WatchesPanel.java" startLine="37" startPosition="69" endLine="43" endPosition="11" />
+    <scopeInfo nodeId="5600062460044309475" fileName="WatchesPanel.java" startLine="48" startPosition="72" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="5600062460044309499" fileName="WatchesPanel.java" startLine="59" startPosition="31" endLine="65" endPosition="11" />
+    <scopeInfo nodeId="5600062460044309422" fileName="WatchesPanel.java" startLine="26" startPosition="72" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="5600062460044309467" fileName="WatchesPanel.java" startLine="47" startPosition="69" endLine="54" endPosition="11" />
+    <scopeInfo nodeId="5600062460044309540" fileName="WatchesPanel.java" startLine="71" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="5600062460044309556" fileName="WatchesPanel.java" startLine="78" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="5600062460044309414" fileName="WatchesPanel.java" startLine="25" startPosition="67" endLine="33" endPosition="11" />
+    <scopeInfo nodeId="5600062460044309440" fileName="WatchesPanel.java" startLine="35" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="5600062460044309443" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="5600062460044309496" fileName="WatchesPanel.java" startLine="57" startPosition="69" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="5600062460044309462" fileName="WatchesPanel.java" startLine="45" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="5600062460044309465" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="5600062460044309409" fileName="WatchesPanel.java" startLine="23" startPosition="71" endLine="35" endPosition="0">
+      <varInfo nodeId="5600062460044309412" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="5600062460044309392" fileName="WatchesPanel.java" startLine="20" startPosition="58" endLine="69" endPosition="55" />
+    <scopeInfo nodeId="5600062460044309387" fileName="WatchesPanel.java" startLine="19" startPosition="0" endLine="70" endPosition="3">
+      <varInfo nodeId="5600062460044309390" varName="provider" />
+    </scopeInfo>
+    <unitInfo nodeId="5600062460044309452" fileName="WatchesPanel.java" startLine="38" startPosition="60" endLine="43" endPosition="9" unitName="jetbrains.mps.debugger.java.ui.evaluation.WatchesPanel$2" />
+    <unitInfo nodeId="5600062460044309506" fileName="WatchesPanel.java" startLine="60" startPosition="60" endLine="65" endPosition="9" unitName="jetbrains.mps.debugger.java.ui.evaluation.WatchesPanel$3" />
+    <unitInfo nodeId="5600062460044309474" fileName="WatchesPanel.java" startLine="48" startPosition="60" endLine="54" endPosition="9" unitName="jetbrains.mps.debugger.java.ui.evaluation.WatchesPanel$2" />
+    <unitInfo nodeId="5600062460044309421" fileName="WatchesPanel.java" startLine="26" startPosition="60" endLine="33" endPosition="9" unitName="jetbrains.mps.debugger.java.ui.evaluation.WatchesPanel$2" />
+    <unitInfo nodeId="5600062460044309495" fileName="WatchesPanel.java" startLine="57" startPosition="32" endLine="67" endPosition="5" unitName="jetbrains.mps.debugger.java.ui.evaluation.WatchesPanel$2" />
+    <unitInfo nodeId="5600062460044309408" fileName="WatchesPanel.java" startLine="23" startPosition="36" endLine="56" endPosition="5" unitName="jetbrains.mps.debugger.java.ui.evaluation.WatchesPanel$1" />
+    <unitInfo nodeId="5600062460044309378" fileName="WatchesPanel.java" startLine="16" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.debugger.java.ui.evaluation.WatchesPanel" />
+  </root>
   <root nodeId="5849716370568348282">
     <nodeInfo nodeId="5849716370568348356" fileName="EvaluationDialog.java" startLine="12" startPosition="133" endLine="13" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="162769737603681293" fileName="EvaluationDialog.java" startLine="17" startPosition="29" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
