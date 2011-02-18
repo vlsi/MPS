@@ -9,7 +9,7 @@
 
   <application-components>
     <component>
-      <implementation-class>jetbrains.mps.debugger.api.actions.Api_PluginInitializer</implementation-class>
+      <implementation-class>jetbrains.mps.debugger.api.ui.actions.Api_PluginInitializer</implementation-class>
     </component>
   </application-components>
 
@@ -33,7 +33,7 @@
 
     <!--for being able to use MuteAction in j.m.ide.actions-->
     <group id="DebugMuteAction" popup="false">
-      <action id="Mute" text="Mute" class="jetbrains.mps.debugger.api.actions.MuteBreakpoints"/>
+      <action id="Mute" text="Mute" class="jetbrains.mps.debugger.api.ui.actions.MuteBreakpoints"/>
     </group>
   </actions>
 

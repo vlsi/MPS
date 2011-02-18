@@ -15,6 +15,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
+import jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
 import org.jetbrains.annotations.NotNull;
@@ -48,7 +49,7 @@ public class MPSDebugRunner extends GenericProgramRunner {
       ExecutionResult executionResult = debugSessionCreator.startSession(executor, this, state, project);
       AbstractDebugSession debugSession = debugSessionCreator.getDebugSession();
       DebugSessionManagerComponent.getInstance(project).addDebugSession(debugSession);
-      DebugContentBuilder contentBuilder = new DebugContentBuilder(project, this, executor, executionResult, env);
+      DebuggerToolContentBuilder contentBuilder = new DebuggerToolContentBuilder(project, this, executor, executionResult, env);
       return contentBuilder.showRunContent(contentToReuse);
     } else {
       throw new RuntimeException("Unknown Run Profile State");
