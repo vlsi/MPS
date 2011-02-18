@@ -46,7 +46,6 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private static final String BREAKPOINTS_LIST_ELEMENT = "breakpointsList";
   private static final DummyIO DUMMY_IO = new DummyIO();
 
-  private final Project myProject;
   private final Map<SNodePointer, Set<ILocationBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodePointer, Set<ILocationBreakpoint>>();
   private final Set<IBreakpoint> myBreakpoints = new HashSet<IBreakpoint>();
   private final List<Element> myUnreadBreakpoints = new ArrayList<Element>();
@@ -58,8 +57,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     return project.getComponent(BreakpointManagerComponent.class);
   }
 
-  public BreakpointManagerComponent(Project project) {
-    myProject = project;
+  public BreakpointManagerComponent() {
   }
 
   @NotNull
