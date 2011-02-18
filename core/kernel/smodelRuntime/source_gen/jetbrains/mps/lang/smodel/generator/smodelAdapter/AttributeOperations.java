@@ -232,7 +232,7 @@ public class AttributeOperations {
     private IAttributeDescriptor myAttributeDescriptor;
 
     public AttributeList(SNode attributed, IAttributeDescriptor descriptor) {
-      super(attributed, "_$attribute", AttributeOperations.getAttribute(SNodeOperations.cast(attributed, "jetbrains.mps.lang.core.structure.BaseConcept"), descriptor));
+      super(attributed, "_$attribute", (List<SNode>) Sequence.fromIterable(AttributeOperations.getAttributes(SNodeOperations.cast(attributed, "jetbrains.mps.lang.core.structure.BaseConcept"), descriptor)).toListSequence());
       myAttributeDescriptor = descriptor;
     }
 
