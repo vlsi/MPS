@@ -21,7 +21,7 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.breakpoints.*;
-import jetbrains.mps.debug.api.integration.ui.icons.Icons;
+import jetbrains.mps.debugger.api.ui.icons.Icons;
 import jetbrains.mps.debug.breakpoints.*;
 import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint.ExceptionBreakpointInfo;
 import jetbrains.mps.debugger.java.ui.breakpoints.ExceptionChooserDialog;
@@ -143,13 +143,13 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
     }
     switch (breakpoint.getKind()) {
       case EXCEPTION_BREAKPOINT:
-        return breakpoint.isEnabled() ? jetbrains.mps.debug.integration.Icons.EXCEPTION_BREAKPOINT : jetbrains.mps.debug.integration.Icons.DISABLED_EXCEPTION_BREAKPOINT;
+        return breakpoint.isEnabled() ? jetbrains.mps.debug.integration.ui.icons.Icons.EXCEPTION_BREAKPOINT : jetbrains.mps.debug.integration.ui.icons.Icons.DISABLED_EXCEPTION_BREAKPOINT;
       case LINE_BREAKPOINT:
         return breakpoint.isValid() ? (breakpoint.isEnabled() ? Icons.BREAKPOINT : Icons.DISABLED_BREAKPOINT) : Icons.INV_BREAKPOINT;
       case METHOD_BREAKPOINT:
-        return breakpoint.isValid() ? (breakpoint.isEnabled() ? jetbrains.mps.debug.integration.Icons.METHOD_BREAKPOINT : jetbrains.mps.debug.integration.Icons.DISABLED_METHOD_BREAKPOINT) : Icons.INV_BREAKPOINT;
+        return breakpoint.isValid() ? (breakpoint.isEnabled() ? jetbrains.mps.debug.integration.ui.icons.Icons.METHOD_BREAKPOINT : jetbrains.mps.debug.integration.ui.icons.Icons.DISABLED_METHOD_BREAKPOINT) : Icons.INV_BREAKPOINT;
       case FIELD_BREAKPOINT:
-        return breakpoint.isValid() ? (breakpoint.isEnabled() ? jetbrains.mps.debug.integration.Icons.FIELD_BREAKPOINT : jetbrains.mps.debug.integration.Icons.DISABLED_FIELD_BREAKPOINT) : Icons.INV_BREAKPOINT;
+        return breakpoint.isValid() ? (breakpoint.isEnabled() ? jetbrains.mps.debug.integration.ui.icons.Icons.FIELD_BREAKPOINT : jetbrains.mps.debug.integration.ui.icons.Icons.DISABLED_FIELD_BREAKPOINT) : Icons.INV_BREAKPOINT;
     }
     return null;
   }

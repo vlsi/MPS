@@ -4,7 +4,7 @@ import com.sun.jdi.ThreadReference;
 import com.sun.jdi.Value;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
-import jetbrains.mps.debug.integration.Icons;
+import jetbrains.mps.debug.integration.ui.icons.Icons;
 
 import javax.swing.Icon;
 import java.util.ArrayList;

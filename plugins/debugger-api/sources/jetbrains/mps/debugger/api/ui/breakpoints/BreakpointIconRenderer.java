@@ -9,7 +9,7 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
-import jetbrains.mps.debug.api.integration.ui.icons.Icons;
+import jetbrains.mps.debugger.api.ui.icons.Icons;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell;

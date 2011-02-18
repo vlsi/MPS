@@ -4,7 +4,7 @@ import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.integration.Icons;
+import jetbrains.mps.debug.integration.ui.icons.Icons;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;

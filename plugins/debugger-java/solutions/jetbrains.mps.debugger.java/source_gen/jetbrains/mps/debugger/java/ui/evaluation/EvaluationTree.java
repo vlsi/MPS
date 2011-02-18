@@ -345,7 +345,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
   private static class InitialTreeNode extends TextTreeNode {
     public InitialTreeNode(AbstractEvaluationModel model) {
       super(model.getPresentation() + " = ");
-      setIcon(jetbrains.mps.debug.integration.Icons.WATCH);
+      setIcon(jetbrains.mps.debug.integration.ui.icons.Icons.WATCH);
     }
 
     public boolean isLeaf() {
