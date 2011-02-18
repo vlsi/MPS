@@ -292,66 +292,6 @@ public final class SNode {
     return getParent().getLinkDeclaration(getRole_());
   }
 
-  public SNode getAttribute(String role) {
-    return AttributeOperations.getNodeAttribute(this, role);
-  }
-
-  public List<SNode> getAttributes(String role) {
-    return AttributeOperations.getNodeAttributes(this, role);
-  }
-
-  public void setAttribute(String role, SNode attribute) {
-    AttributeOperations.setNodeAttribute(this, role, attribute);
-  }
-
-  public void addAttribute(String role, SNode attribute) {
-    AttributeOperations.addNodeAttribute(this, role, attribute);
-  }
-
-  //property
-
-  public void setPropertyAttribute(String role, String propertyName, SNode propertyAttribute) {
-    AttributeOperations.setPropertyAttribute(this, role, propertyName, propertyAttribute);
-  }
-
-  public void addPropertyAttribute(String role, String propertyName, SNode propertyAttribute) {
-    AttributeOperations.addPropertyAttribute(this, role, propertyName, propertyAttribute);
-  }
-
-  public SNode getPropertyAttribute(String role, String propertyName) {
-    return AttributeOperations.getPropertyAttribute(this, role, propertyName);
-  }
-
-  public List<SNode> getPropertyAttributes(String role, String propertyName) {
-    return AttributeOperations.getPropertyAttributes(this, role, propertyName);
-  }
-
-  public Set<SNode> getPropertyAttributesForPropertyName(String propertyName) {
-    return AttributeOperations.getPropertyAttributeForPropertyName(this, propertyName);
-  }
-
-  //link
-
-  public void setLinkAttribute(String role, String linkRole, SNode linkAttribute) {
-    AttributeOperations.setLinkAttribute(this, role, linkRole, linkAttribute);
-  }
-
-  public void addLinkAttribute(String role, String linkRole, SNode linkAttribute) {
-    AttributeOperations.addLinkAttribute(this, role, linkRole, linkAttribute);
-  }
-
-  public SNode getLinkAttribute(String role, String linkRole) {
-    return AttributeOperations.getLinkAttribute(this, role, linkRole);
-  }
-
-  public List<SNode> getLinkAttributes(String role, String linkRole) {
-    return AttributeOperations.getLinkAttributes(this, role, linkRole);
-  }
-
-  public Set<SNode> getLinkAttributesForLinkRole(String linkRole) {
-    return AttributeOperations.getLinkAttributeForLinkRole(this, linkRole);
-  }
-
   public Map<String, String> getProperties() {
     ModelAccess.assertLegalRead(this);
 
@@ -1839,7 +1779,7 @@ public final class SNode {
   @Deprecated
   public void setPropertyAttribute(String propertyName, SNode propertyAttribute) {
     // 'default' property attr
-    setPropertyAttribute(null, propertyName, propertyAttribute);
+    AttributeOperations.setPropertyAttribute(this, null, propertyName, propertyAttribute);
   }
 
   @Deprecated
@@ -1850,7 +1790,7 @@ public final class SNode {
   @Deprecated
   public void setLinkAttribute(String role, SNode linkAttribute) {
     // 'default' link attr
-    setLinkAttribute(null, role, linkAttribute);
+    AttributeOperations.setLinkAttribute(this, null, role, linkAttribute);
   }
 
   @Deprecated

@@ -28,6 +28,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -123,7 +124,7 @@ public class TemplateProcessor {
 
     SModel templateModel = templateNode.getModel();
     for (SReference reference : templateNode.getReferencesIterable()) {
-      if (templateNode.getLinkAttribute("referenceMacro" /* TODO refactor */, reference.getRole()) != null) {
+      if (AttributeOperations.getLinkAttribute(templateNode, "referenceMacro", reference.getRole()) != null) {
         continue;
       }
       SNode templateReferentNode = reference.getTargetNode();

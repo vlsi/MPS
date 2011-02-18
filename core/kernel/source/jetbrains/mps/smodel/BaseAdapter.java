@@ -331,7 +331,7 @@ public abstract class BaseAdapter implements INodeAdapter {
 
   @Nullable
   public INodeAdapter getAttribute(String role) {
-    SNode result = myNode.getAttribute(role);
+    SNode result = AttributeOperations.getNodeAttribute(myNode, role);
     if (result == null) {
       return null;
     }
@@ -340,19 +340,19 @@ public abstract class BaseAdapter implements INodeAdapter {
 
   @NotNull
   public List<? extends INodeAdapter> getAttributes(String role) {
-    return toAdapters(myNode.getAttributes(role));
+    return toAdapters(AttributeOperations.getNodeAttributes(myNode, role));
   }
 
   public void setAttribute(String role, INodeAdapter attribute) {
     if (attribute == null) {
-      myNode.setAttribute(role, null);
+      AttributeOperations.setNodeAttribute(myNode, role, null);
     } else {
-      myNode.setAttribute(role, attribute.getNode());
+      AttributeOperations.setNodeAttribute(myNode, role, attribute.getNode());
     }
   }
 
   public void addAttribute(String role, INodeAdapter attribute) {
-    myNode.addAttribute(role, attribute.getNode());
+    AttributeOperations.addNodeAttribute(myNode, role, attribute.getNode());
   }
 
   // ---
@@ -360,7 +360,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   // ---
 
   public INodeAdapter getPropertyAttribute(String role, String propertyName) {
-    SNode node = myNode.getPropertyAttribute(role, propertyName);
+    SNode node = AttributeOperations.getPropertyAttribute(myNode, role, propertyName);
     if (node == null) {
       return null;
     } else {
@@ -370,19 +370,19 @@ public abstract class BaseAdapter implements INodeAdapter {
 
   @NotNull
   public List<? extends INodeAdapter> getPropertyAttributes(String role, String propertyName) {
-    return toAdapters(myNode.getPropertyAttributes(role, propertyName));
+    return toAdapters(AttributeOperations.getPropertyAttributes(myNode, role, propertyName));
   }
 
   public void setPropertyAttribute(String role, String propertyName, INodeAdapter propertyAttribute) {
     if (propertyAttribute == null) {
-      myNode.setPropertyAttribute(role, propertyName, null);
+      AttributeOperations.setPropertyAttribute(myNode, role, propertyName, null);
     } else {
-      myNode.setPropertyAttribute(role, propertyName, propertyAttribute.getNode());
+      AttributeOperations.setPropertyAttribute(myNode, role, propertyName, propertyAttribute.getNode());
     }
   }
 
   public void addPropertyAttribute(String role, String propertyName, INodeAdapter propertyAttribute) {
-    myNode.addPropertyAttribute(role, propertyName, propertyAttribute.getNode());
+    AttributeOperations.addPropertyAttribute(myNode, role, propertyName, propertyAttribute.getNode());
   }
 
   // ---
@@ -390,7 +390,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   // ---
 
   public INodeAdapter getLinkAttribute(String linkAttributeRole, String linkRole) {
-    SNode node = myNode.getLinkAttribute(linkAttributeRole, linkRole);
+    SNode node = AttributeOperations.getLinkAttribute(myNode, linkAttributeRole, linkRole);
     if (node == null) {
       return null;
     } else {
@@ -400,18 +400,18 @@ public abstract class BaseAdapter implements INodeAdapter {
 
   public void setLinkAttribute(String linkAttributeRole, String linkRole, INodeAdapter linkAttribute) {
     if (linkAttribute == null) {
-      myNode.setLinkAttribute(linkAttributeRole, linkRole, null);
+      AttributeOperations.setLinkAttribute(myNode, linkAttributeRole, linkRole, null);
     } else {
-      myNode.setLinkAttribute(linkAttributeRole, linkRole, linkAttribute.getNode());
+      AttributeOperations.setLinkAttribute(myNode, linkAttributeRole, linkRole, linkAttribute.getNode());
     }
   }
 
   public void addLinkAttribute(String linkAttributeRole, String linkRole, INodeAdapter propertyAttribute) {
-    myNode.addLinkAttribute(linkAttributeRole, linkRole, propertyAttribute.getNode());
+    AttributeOperations.addLinkAttribute(myNode, linkAttributeRole, linkRole, propertyAttribute.getNode());
   }
 
   public List<? extends INodeAdapter> getLinkAttributes(String linkAttributeRole, String linkRole) {
-    return toAdapters(myNode.getLinkAttributes(linkAttributeRole, linkRole));
+    return toAdapters(AttributeOperations.getLinkAttributes(myNode, linkAttributeRole, linkRole));
   }
 
 
