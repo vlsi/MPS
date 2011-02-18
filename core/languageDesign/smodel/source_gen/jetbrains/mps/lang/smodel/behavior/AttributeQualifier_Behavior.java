@@ -6,6 +6,19 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.search.ModelAndImportedModelsScope;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.NameUtil;
 
 public class AttributeQualifier_Behavior {
   private static Class[] PARAMETERS_6407023681583066586 = {SNode.class};
@@ -27,5 +40,39 @@ public class AttributeQualifier_Behavior {
 
   public static SNode callSuper_getTargetConcept_6407023681583066586(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), callerConceptFqName, "virtual_getTargetConcept_6407023681583066586", PARAMETERS_6407023681583066586);
+  }
+
+  public static Iterable<SNode> getApplicableRoles_959482772563105834(SNode enclosingNode, String attributeType, SModel model, final IScope scope) {
+    // all applicable attribute roles ('attributeType' subconcepts with role definition) 
+    final SNode container = SLinkOperations.getTarget(AttributeAccess_Behavior.call_getAttributeContainerType_6960953357954139822(SNodeOperations.as(enclosingNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess")), "concept", false);
+    // all attribute concepts of given type 
+    Set<String> subconceptNames = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(attributeType);
+    // filter only applicable 
+    final ModelAndImportedModelsScope modelScope = new ModelAndImportedModelsScope(model, true, scope);
+    return SetSequence.fromSet(subconceptNames).<SNode>select(new ISelector<String, SNode>() {
+      public SNode select(String fqName) {
+        return (SNode) SModelUtil.findConceptDeclaration(fqName, scope);
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(final SNode attr) {
+        return modelScope.isInScope(attr) && ListSequence.fromList(SLinkOperations.getTargets(attr, "conceptProperty", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (SLinkOperations.getTarget(it, "conceptPropertyDeclaration", false) != null);
+          }
+        }).<SNode>select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(it, "conceptPropertyDeclaration", false);
+          }
+        }).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode decl) {
+            return SPropertyOperations.hasValue(decl, "name", "role") && ListSequence.fromList(SLinkOperations.getConceptLinkTargets(attr, "attributed")).any(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return SConceptOperations.isSubConceptOf(container, NameUtil.nodeFQName(it));
+              }
+            });
+          }
+        });
+      }
+    });
   }
 }
