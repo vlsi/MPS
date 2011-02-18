@@ -1288,18 +1288,18 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7064627997011532790">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7064627997011532791">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7064627997011532792">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4471992445213977603">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ktbv.~BreakpointManagerComponentImpl%dgetInstance(com%dintellij%dopenapi%dproject%dProject)%cjetbrains%dmps%ddebugger%dapi%dBreakpointManagerComponentImpl" resolveInfo="getInstance" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ktbv.~BreakpointManagerComponentImpl" resolveInfo="BreakpointManagerComponentImpl" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4471992445213977604">
-                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4471992445213977605" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4471992445213977606">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="358323424933031972">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ktbv.~BreakpointsUiComponent%dgetInstance(com%dintellij%dopenapi%dproject%dProject)%cjetbrains%dmps%ddebugger%dapi%dBreakpointsUiComponent" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ktbv.~BreakpointsUiComponent" resolveInfo="BreakpointsUiComponent" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="358323424933031973">
+                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="358323424933031974" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="358323424933031975">
                   <link role="member" roleId="tp4f.1205756909548" targetNodeId="7064627997011532805" resolveInfo="project" />
                 </node>
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7064627997011532799">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ktbv.~BreakpointManagerComponentImpl%dtoggleBreakpoint(jetbrains%dmps%dnodeEditor%dcells%dEditorCell)%cvoid" resolveInfo="toggleBreakpoint" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ktbv.~BreakpointsUiComponent%dtoggleBreakpoint(jetbrains%dmps%dnodeEditor%dcells%dEditorCell)%cvoid" resolveInfo="toggleBreakpoint" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7064627997011532800">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7064627997011532801" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="7064627997011532802">
@@ -1328,15 +1328,15 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7064714451792151223">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7064714451792151224">
             <property name="name" nameId="tpck.1169194664001" value="breakpointManager" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4471992445213966612">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ktbv.~BreakpointManagerComponentImpl" resolveInfo="BreakpointManagerComponentImpl" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="358323424933019834">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ktbv.~BreakpointsUiComponent" resolveInfo="BreakpointsUiComponent" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4471992445213969721">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ktbv.~BreakpointManagerComponentImpl%dgetInstance(com%dintellij%dopenapi%dproject%dProject)%cjetbrains%dmps%ddebugger%dapi%dBreakpointManagerComponentImpl" resolveInfo="getInstance" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ktbv.~BreakpointManagerComponentImpl" resolveInfo="BreakpointManagerComponentImpl" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4471992445213969722">
-                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4471992445213969723" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="4471992445213969724">
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="358323424933031968">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ktbv.~BreakpointsUiComponent%dgetInstance(com%dintellij%dopenapi%dproject%dProject)%cjetbrains%dmps%ddebugger%dapi%dBreakpointsUiComponent" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ktbv.~BreakpointsUiComponent" resolveInfo="BreakpointsUiComponent" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="358323424933031969">
+                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="358323424933031970" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="358323424933031971">
                   <link role="member" roleId="tp4f.1205756909548" targetNodeId="7064627997011532805" resolveInfo="project" />
                 </node>
               </node>
@@ -1362,7 +1362,7 @@
                 </node>
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7064627997011532814">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7064627997011532821">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ktbv.~BreakpointManagerComponentImpl%disDebuggable(jetbrains%dmps%dnodeEditor%dcells%dEditorCell)%cboolean" resolveInfo="isDebuggable" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ktbv.~BreakpointsUiComponent%disDebuggable(jetbrains%dmps%dnodeEditor%dcells%dEditorCell)%cboolean" resolveInfo="isDebuggable" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7064627997011532822">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7064627997011532823" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="7064627997011532824">

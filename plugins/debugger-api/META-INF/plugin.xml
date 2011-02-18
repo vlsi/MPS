@@ -15,12 +15,10 @@
 
   <project-components>
     <component>
-      <interface-class>jetbrains.mps.debug.api.BreakpointManagerComponent</interface-class>
-      <implementation-class>jetbrains.mps.debugger.api.BreakpointManagerComponentImpl</implementation-class>
+      <implementation-class>jetbrains.mps.debugger.api.BreakpointsUiComponent</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.debugger.api.ui.breakpoints.BreakpointViewSettingsComponent
-      </implementation-class>
+      <implementation-class>jetbrains.mps.debugger.api.ui.breakpoints.BreakpointViewSettingsComponent</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.debugger.api.CurrentLinePositionComponent</implementation-class>

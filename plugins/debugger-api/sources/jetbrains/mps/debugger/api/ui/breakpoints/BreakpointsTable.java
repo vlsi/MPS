@@ -16,7 +16,7 @@
 package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import com.intellij.util.ui.AbstractTableCellEditor;
-import jetbrains.mps.debugger.api.BreakpointManagerComponentImpl;
+import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
@@ -38,7 +38,7 @@ public class BreakpointsTable extends BreakpointsView {
   private final MyAbstractTableModel myBreakpointsTableModel;
 
   // todo  do we really need table view? it is similar to tree view with unchecked everything
-  public BreakpointsTable(BreakpointManagerComponentImpl manager) {
+  public BreakpointsTable(BreakpointManagerComponent manager) {
     super(manager);
     myBreakpointsTable = new JTable();
     myBreakpointsTable.setTableHeader(null);

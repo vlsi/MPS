@@ -3,13 +3,14 @@ package jetbrains.mps.debugger.api.ui.breakpoints;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debugger.api.BreakpointManagerComponentImpl;
+import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.api.integration.ui.DebugActionsUtil;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
+import jetbrains.mps.debugger.api.BreakpointsUiComponent;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -120,14 +121,14 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
     menu.add(new AbstractAction("Remove") {
       @Override
       public void actionPerformed(ActionEvent e) {
-        BreakpointManagerComponentImpl.getInstance(myBreakpoint.getProject()).removeBreakpoint(myBreakpoint);
+        BreakpointManagerComponent.getInstance(myBreakpoint.getProject()).removeBreakpoint(myBreakpoint);
       }
     });
     menu.add(new JSeparator());
     menu.add(new AbstractAction("Properties") {
       @Override
       public void actionPerformed(ActionEvent e) {
-        BreakpointManagerComponentImpl.getInstance(myBreakpoint.getProject()).editBreakpointProperties(myBreakpoint);
+        BreakpointsUiComponent.getInstance(myBreakpoint.getProject()).editBreakpointProperties(myBreakpoint);
       }
     });
     return menu;

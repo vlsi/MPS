@@ -27,6 +27,11 @@
 
   <project-components>
     <component>
+      <implementation-class>jetbrains.mps.debug.api.BreakpointManagerComponent</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.debug.api.DebugSessionManagerComponent</implementation-class>
       <skipForDummyProject/>
     </component>

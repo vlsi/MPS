@@ -3,9 +3,10 @@ package jetbrains.mps.debugger.api.ui.breakpoints;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debugger.api.BreakpointManagerComponentImpl;
-import jetbrains.mps.debugger.api.BreakpointManagerComponentImpl.IBreakpointManagerListener;
+import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.debug.api.BreakpointManagerComponent.BreakpointManagerListener;
 import jetbrains.mps.debug.api.breakpoints.*;
+import jetbrains.mps.debugger.api.BreakpointsUiComponent;
 import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsView.BreakpointSelectionListener;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.ide.dialogs.BaseDialog;
@@ -27,8 +28,9 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   private final JPanel myMainPanel;
   private JComponent myPropertiesEditorPanel;
   private final IOperationContext myContext;
-  private final BreakpointManagerComponentImpl myBreakpointsManager;
+  private final BreakpointManagerComponent myBreakpointsManager;
   private final BreakpointProvidersManager myProvidersManager;
+  private final BreakpointsUiComponent myBreakpointsUi;
   private AnAction myShowNodeAction;
   private AnAction myGotoNodeAction;
   private AnAction myDeleteBreakpointAction;
@@ -43,7 +45,8 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     setModal(false);
 
     myContext = context;
-    myBreakpointsManager = BreakpointManagerComponentImpl.getInstance(myContext.getProject());
+    myBreakpointsManager = BreakpointManagerComponent.getInstance(myContext.getProject());
+    myBreakpointsUi = BreakpointsUiComponent.getInstance(myContext.getProject());
     myProvidersManager = myContext.getComponent(BreakpointProvidersManager.class);
     myCurrentViewIndex = BreakpointViewSettingsComponent.getInstance(myContext.getProject()).getViewIndex();
     myViews = new BreakpointsView[]{new BreakpointsTable(myBreakpointsManager), new BreakpointsTree(myContext, myBreakpointsManager)};
@@ -101,7 +104,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         }
       });
     }
-    myBreakpointsManager.addChangeListener(new IBreakpointManagerListener() {
+    myBreakpointsManager.addChangeListener(new BreakpointManagerListener() {
       @Override
       public void breakpointsChanged() {
         IBreakpoint bp = myViews[myCurrentViewIndex].getSelectedBreakpoint();
@@ -179,7 +182,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         AnAction addBreakpoointAction = new AnAction(kind.getPresentation(), "Create " + kind.getPresentation(), null) {
           @Override
           public void actionPerformed(AnActionEvent e) {
-            myBreakpointsManager.createFromUi(kind);
+            myBreakpointsUi.createFromUi(kind);
           }
         };
         addActionGroup.add(addBreakpoointAction);

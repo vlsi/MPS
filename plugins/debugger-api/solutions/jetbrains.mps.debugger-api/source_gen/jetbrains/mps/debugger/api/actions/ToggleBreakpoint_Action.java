@@ -9,7 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.debugger.api.BreakpointManagerComponentImpl;
+import jetbrains.mps.debugger.api.BreakpointsUiComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -28,7 +28,7 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        BreakpointManagerComponentImpl breakpointManager = BreakpointManagerComponentImpl.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
+        BreakpointsUiComponent breakpointManager = BreakpointsUiComponent.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
         event.getPresentation().setEnabled(breakpointManager != null && breakpointManager.isDebuggable(((EditorCell) MapSequence.fromMap(_params).get("selectedCell"))));
       }
     } catch (Throwable t) {
@@ -60,7 +60,7 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      BreakpointManagerComponentImpl.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).toggleBreakpoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")));
+      BreakpointsUiComponent.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).toggleBreakpoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ToggleBreakpoint", t);
