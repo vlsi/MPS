@@ -1,6 +1,6 @@
-package jetbrains.mps.debug.api.runtime.execution;
+package jetbrains.mps.debug.runtime.execution;
 
-import jetbrains.mps.debug.api.runtime.execution.IDebuggerCommand.CommandPriority;
+import jetbrains.mps.debug.runtime.execution.IDebuggerCommand.CommandPriority;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 

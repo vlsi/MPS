@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.api.runtime.execution;
+package jetbrains.mps.debug.runtime.execution;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.sun.jdi.VMDisconnectedException;

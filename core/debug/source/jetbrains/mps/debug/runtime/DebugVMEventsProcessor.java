@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.debug.runtime;
 
-import com.intellij.openapi.project.Project;
 import com.sun.jdi.InternalException;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.VMDisconnectedException;
@@ -25,9 +24,9 @@ import com.sun.jdi.request.EventRequest;
 import com.sun.jdi.request.StepRequest;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.IDebuggableFramesSelector;
-import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
-import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
-import jetbrains.mps.debug.api.runtime.execution.IDebuggerManagerThread;
+import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
 import jetbrains.mps.debug.breakpoints.LineBreakpoint;
 import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
 import jetbrains.mps.logging.Logger;

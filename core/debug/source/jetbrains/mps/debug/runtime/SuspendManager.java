@@ -20,7 +20,7 @@ import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.event.EventSet;
 import com.sun.jdi.request.EventRequest;
-import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

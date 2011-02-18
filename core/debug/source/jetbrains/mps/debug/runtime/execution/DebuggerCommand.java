@@ -1,4 +1,4 @@
-package jetbrains.mps.debug.api.runtime.execution;
+package jetbrains.mps.debug.runtime.execution;
 
 public abstract class DebuggerCommand implements IDebuggerCommand {
   private boolean myOnHold = false;

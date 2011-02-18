@@ -2,12 +2,11 @@ package jetbrains.mps.debug.runtime;
 
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
-import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import org.jetbrains.annotations.NotNull;
