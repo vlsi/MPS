@@ -10,6 +10,9 @@
   <depends>jetbrains.mps.debugger-api</depends>
 
   <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.debugger.java.JavaDebugger</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
@@ -19,5 +22,6 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
+    <configurationType implementation="jetbrains.mps.debug.integration.runconfigs.RemoteConfigurationType"/>
   </extensions>
 </idea-plugin>

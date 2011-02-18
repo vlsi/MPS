@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.breakpoints;
+package jetbrains.mps.debugger.java.ui.breakpoints;
 
 import com.intellij.ide.ui.ListCellRendererWrapper;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;

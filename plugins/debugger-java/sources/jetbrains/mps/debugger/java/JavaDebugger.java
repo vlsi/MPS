@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug;
+package jetbrains.mps.debugger.java;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
@@ -22,7 +22,6 @@ import jetbrains.mps.debug.api.AbstractDebugger;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
-import jetbrains.mps.debug.breakpoints.JavaBreakpointsProvider;
 import jetbrains.mps.debug.runtime.VMCreator;
 import org.jetbrains.annotations.NotNull;
 

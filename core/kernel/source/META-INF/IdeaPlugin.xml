@@ -113,6 +113,5 @@
 
     <programRunner id="defaultRunRunner" implementation="jetbrains.mps.runconfigs.runner.MPSProgramRunner"/>
     <executor implementation="com.intellij.execution.executors.DefaultRunExecutor" order="first" id="run"/>
-    <configurationType implementation="jetbrains.mps.debug.integration.runconfigs.RemoteConfigurationType"/>
   </extensions>
 </idea-plugin>

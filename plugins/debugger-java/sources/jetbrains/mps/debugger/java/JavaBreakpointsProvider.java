@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.breakpoints;
+package jetbrains.mps.debugger.java;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
@@ -22,7 +22,9 @@ import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.breakpoints.*;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
+import jetbrains.mps.debug.breakpoints.*;
 import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint.ExceptionBreakpointInfo;
+import jetbrains.mps.debugger.java.ui.breakpoints.ExceptionChooserDialog;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
