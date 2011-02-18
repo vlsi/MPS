@@ -602,10 +602,7 @@ public class SNodeOperations {
   }
 
   public static boolean isAttribute(SNode node) {
-    if (node == null) {
-      return false;
-    }
-    return node.isAttribute();
+    return AttributeOperations.isAttribute(node);
   }
 
   public static SNode getNode(String modelUID, String nodeID) {

@@ -617,9 +617,6 @@ public class SModel {
         }
       }
       for (SNode child : node.getChildren()) {
-        if (child.isAttribute()) {
-          continue;   // temporary don't check annotation roles, suppose the model of AnnotationDeclaration is the same as of concept
-        }
         SNode decl = child.getRoleLink();
         if (decl == null) {
           LOG.error("link declaration " + child.getRole_() + " not found for node " + node + " in model " + model.getLongName());

@@ -292,14 +292,6 @@ public final class SNode {
     return getParent().getLinkDeclaration(getRole_());
   }
 
-  public List<SNode> getAllAttributes() {
-    return AttributeOperations.getAllAttributes(this);
-  }
-
-  public boolean isAttribute() {
-    return AttributeOperations.isAttribute(this);
-  }
-
   public SNode getAttribute(String role) {
     return AttributeOperations.getNodeAttribute(this, role);
   }
@@ -1611,7 +1603,7 @@ public final class SNode {
 
     protected SNode next(SNode node) {
       SNode result = node.myNextSibling;
-      while (result != null && result.isAttribute()) {
+      while (result != null && AttributeOperations.isAttribute(result)) {
         result = result.myNextSibling;
       }
       return result;
@@ -1619,7 +1611,7 @@ public final class SNode {
 
     protected SNode prev(SNode node) {
       SNode result = myFirst == node ? null : node.myPrevSibling;
-      while (result != null && result.isAttribute()) {
+      while (result != null && AttributeOperations.isAttribute(result)) {
         result = myFirst == result ? null : result.myPrevSibling;
       }
       return result;

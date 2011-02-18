@@ -31,7 +31,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     }
     if (SNodeOperations.getParent(node) != null && !(jetbrains.mps.smodel.SNodeOperations.isUnknown(SNodeOperations.getParent(node)))) {
       final SNode link = SNodeOperations.getContainingLinkDeclaration(node);
-      if (link == null && !(node.isAttribute())) {
+      if (link == null) {
         component.addError(node, "Child in a role with unknown link", null);
         return;
       }

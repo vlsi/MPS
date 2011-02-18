@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.SModel.ImportElement;
 
 import java.util.ArrayList;
@@ -122,7 +123,7 @@ public final class CopyUtil {
     mapping.put(fromNode, toNode);
 
     for (SNode child : fromNode.getChildren(true)) {
-      if (child.isAttribute()) {
+      if (AttributeOperations.isAttribute(child)) {
         String role = child.getRole_();
         assert role != null;
         toNode.addChild(role, CopyUtil.copy(child, mapping, true));
