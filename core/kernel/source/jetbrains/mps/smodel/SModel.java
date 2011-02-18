@@ -574,6 +574,17 @@ public class SModel {
     fireImportAddedEvent(importElement.getModelReference());
   }
 
+  @Deprecated //only for temp internal use
+  public void removeModelImport_internal(ImportElement importElement) {
+    ModelChange.assertLegalChange(this);
+
+    if (importElement != null) {
+      myImports.remove(importElement);
+      myImplicitImports.add(importElement);  // to save version and ID if model was imported implicitly
+      fireImportRemovedEvent(importElement.getModelReference());
+    }
+  }
+
   public void deleteModelImport(@NotNull SModelReference modelReference) {
     ModelChange.assertLegalChange(this);
 

@@ -10,12 +10,13 @@ public class UpdateAddition_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.lang.stubs.plugin.UpdateAddition_ActionGroup";
 
   public UpdateAddition_ActionGroup() {
-    super("UpdateAddition", ID);
+    super("Update Stub Refs", ID);
     this.setIsInternal(false);
-    this.setPopup(false);
+    this.setPopup(true);
     try {
-      UpdateAddition_ActionGroup.this.addAction("jetbrains.mps.lang.stubs.plugin.UpdateStubRefs_Action");
       UpdateAddition_ActionGroup.this.addAction("jetbrains.mps.lang.stubs.plugin.UpdateModuleStubDeps_Action");
+      UpdateAddition_ActionGroup.this.addAction("jetbrains.mps.lang.stubs.plugin.ReResolveStubRefs_Action");
+      UpdateAddition_ActionGroup.this.addAction("jetbrains.mps.lang.stubs.plugin.UpdateStubRefs_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

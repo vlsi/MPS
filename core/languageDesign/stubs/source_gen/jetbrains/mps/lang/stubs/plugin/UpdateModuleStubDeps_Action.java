@@ -8,21 +8,34 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.workbench.MPSDataKeys;
+import javax.swing.JOptionPane;
+import org.apache.commons.lang.StringUtils;
+import java.util.List;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import java.awt.Frame;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.Dependency;
 
 public class UpdateModuleStubDeps_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(UpdateModuleStubDeps_Action.class);
 
   public UpdateModuleStubDeps_Action() {
-    super("Upgrade Module Stub Deps", "", ICON);
+    super("Upgrade Module Stub Deps (1)", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -38,22 +51,65 @@ public class UpdateModuleStubDeps_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      String stereotype = "java_stub";
-      HashSet<ModuleReference> modules = new HashSet<ModuleReference>();
-
-      for (SModelDescriptor d : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
-        if (d.getStereotype().equals(stereotype)) {
-          for (ModuleReference ref : SetSequence.fromSet(modules)) {
-            d.getModule().addDependency(ref, false);
-          }
-          d.getModule().save();
-        }
+      final String stereotype = JOptionPane.showInputDialog("stereotype: ", "java_stub");
+      if (StringUtils.isEmpty(stereotype)) {
+        return;
       }
+
+      List<Solution> ps = ((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectSolutions();
+      List<Solution> as = ModelAccess.instance().runReadAction(new Computable<List<Solution>>() {
+        public List<Solution> compute() {
+          return MPSModuleRepository.getInstance().getAllSolutions();
+        }
+      });
+
+      final List<ModuleReference> modules = CommonChoosers.showDialogModuleCollectionChooser(((Frame) MapSequence.fromMap(_params).get("frame")), "solution", ListSequence.fromList(ps).<ModuleReference>select(new ISelector<Solution, ModuleReference>() {
+        public ModuleReference select(Solution it) {
+          return it.getModuleReference();
+        }
+      }).toListSequence(), ListSequence.fromList(as).<ModuleReference>select(new ISelector<Solution, ModuleReference>() {
+        public ModuleReference select(Solution it) {
+          return it.getModuleReference();
+        }
+      }).toListSequence());
+
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+outer:
+          for (SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors()) {
+            if (!(d.getStereotype().equals(stereotype))) {
+              continue;
+            }
+
+            for (ModuleReference ref : ListSequence.fromList(modules)) {
+              for (IModule m : d.getModule().getDependenciesManager().getAllDependOnModules()) {
+                if (m.getModuleReference().equals(ref)) {
+                  continue outer;
+                }
+              }
+              Dependency md = new Dependency();
+              md.setModuleRef(ref);
+              md.setReexport(false);
+              ((List<Dependency>) d.getModule().getModuleDescriptor().getDependencies()).add(md);
+            }
+            d.getModule().save();
+
+          }
+        }
+      });
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "UpdateModuleStubDeps", t);
     }
