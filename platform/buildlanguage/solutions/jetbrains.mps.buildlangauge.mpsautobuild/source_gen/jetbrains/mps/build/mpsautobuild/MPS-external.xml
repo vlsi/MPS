@@ -179,6 +179,10 @@
       <zipfileset dir="${mps_home}/plugins/debugger-api/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/debugger-api/classes" prefix="" />
     </jar>
+    <jar destfile="${deploy.dir}/MPS/plugins/debugger-java.jar" filesonly="true" duplicate="preserve" compress="true">
+      <zipfileset dir="${mps_home}/plugins/debugger-java/META-INF" includes="**/plugin.xml" prefix="META-INF" />
+      <zipfileset dir="${mps_home}/plugins/debugger-java/classes" prefix="" />
+    </jar>
     <copy todir="${deploy.dir}/MPS/plugins/cvsIntegration">
       <fileset dir="${mps_home}/plugins/cvsIntegration" excludes="**/*.zip, **/*.iml, **/*.iws" />
     </copy>
