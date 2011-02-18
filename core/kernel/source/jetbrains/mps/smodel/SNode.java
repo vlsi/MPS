@@ -292,31 +292,12 @@ public final class SNode {
     return getParent().getLinkDeclaration(getRole_());
   }
 
-  public List<SNode> getNodeAttributes() {
-    List<SNode> attributes = new ArrayList<SNode>(0);
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
-      if (AttributesRolesUtil.isNodeAttributeRole(child.getRole_())) {
-        attributes.add(child);
-      }
-    }
-    return attributes;
-  }
-
   public List<SNode> getAllAttributes() {
-    List<SNode> attributes = new ArrayList<SNode>(0);
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
-      // for migration period:
-      if (AttributeOperations.isAttribute(child)) {
-        attributes.add(child);
-      }
-    }
-    return attributes;
+    return AttributeOperations.getAllAttributes(this);
   }
 
   public boolean isAttribute() {
     return AttributeOperations.isAttribute(this);
-//    String role_ = getRole_();
-//    return (role_ != null && AttributesRolesUtil.isAttributeRole(role_));
   }
 
   public SNode getAttribute(String role) {

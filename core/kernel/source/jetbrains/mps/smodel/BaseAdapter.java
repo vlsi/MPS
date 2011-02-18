@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.CollectionUtil;
@@ -321,7 +322,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   // ---
 
   public List<INodeAdapter> getAllAttributes() {
-    return toAdapters(getNode().getAllAttributes());
+    return toAdapters(AttributeOperations.getAllAttributes(getNode()));
   }
 
   // ---

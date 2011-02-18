@@ -142,7 +142,7 @@
     <nodeInfo nodeId="8807286715961529178" fileName="NodeMacro_Behavior.java" startLine="36" startPosition="91" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877290808" fileName="NodeMacro_Behavior.java" startLine="21" startPosition="95" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8807286715961529229" fileName="NodeMacro_Behavior.java" startLine="40" startPosition="7" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877290856" fileName="NodeMacro_Behavior.java" startLine="56" startPosition="67" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877290856" fileName="NodeMacro_Behavior.java" startLine="56" startPosition="128" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877290848" fileName="NodeMacro_Behavior.java" startLine="55" startPosition="24" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8807286715961529133" fileName="NodeMacro_Behavior.java" startLine="35" startPosition="28" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="1213877290942" fileName="NodeMacro_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
@@ -161,7 +161,7 @@
     <scopeInfo nodeId="1213877290801" fileName="NodeMacro_Behavior.java" startLine="20" startPosition="91" endLine="26" endPosition="5">
       <varInfo nodeId="1213877290803" varName="prevNodeMacro" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877290855" fileName="NodeMacro_Behavior.java" startLine="56" startPosition="67" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="1213877290855" fileName="NodeMacro_Behavior.java" startLine="56" startPosition="128" endLine="62" endPosition="7" />
     <scopeInfo nodeId="1213877290848" fileName="NodeMacro_Behavior.java" startLine="55" startPosition="24" endLine="63" endPosition="5">
       <varInfo nodeId="1213877290853" varName="currentAttribute" />
     </scopeInfo>

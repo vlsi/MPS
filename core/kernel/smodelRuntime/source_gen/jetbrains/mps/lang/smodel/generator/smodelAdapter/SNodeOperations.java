@@ -506,7 +506,7 @@ public class SNodeOperations {
   }
 
   private static void copyAllAttributes(SNode oldChild, SNode newChild) {
-    for (SNode attribute : oldChild.getAllAttributes()) {
+    for (SNode attribute : AttributeOperations.getAllAttributes(oldChild)) {
       String role = attribute.getRole_();
       if (AttributesRolesUtil.isPropertyAttributeRole(role)) {
         String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
@@ -598,10 +598,7 @@ public class SNodeOperations {
   }
 
   public static List<SNode> getAllAttributes(SNode node) {
-    if (node == null) {
-      return new ArrayList<SNode>();
-    }
-    return node.getAllAttributes();
+    return AttributeOperations.getAllAttributes(node);
   }
 
   public static boolean isAttribute(SNode node) {

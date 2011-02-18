@@ -109,7 +109,7 @@ public class SNodeFactoryOperations {
   }
 
   private static void copyAllAttributes(SNode oldChild, SNode newChild) {
-    for (SNode attribute : oldChild.getAllAttributes()) {
+    for (SNode attribute : AttributeOperations.getAllAttributes(oldChild)) {
       String role = attribute.getRole_();
       if (AttributesRolesUtil.isPropertyAttributeRole(role)) {
         String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
