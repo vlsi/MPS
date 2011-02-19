@@ -4182,22 +4182,6 @@
         </node>
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="1184865302346">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1184865302347">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="6967649818394836537">
-              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="6967649818394836538">
-                <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6967649818394868116">
-                  <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6967649818394868118">
-                    <property name="value" nameId="tpee.1068580123138" value="false" />
-                  </node>
-                </node>
-              </node>
-              <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6967649818394836542">
-                <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="6967649818394836541" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsRoleOperation" typeId="tp25.1144195091934" id="6967649818394868115">
-                  <link role="conceptOfParent" roleId="tp25.1144195362400" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-                  <link role="linkInParent" roleId="tp25.1144195396777" targetNodeId="tpck.5169995583184591170" />
-                </node>
-              </node>
-            </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1184865302348">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1184865302349">
                 <property name="name" nameId="tpck.1169194664001" value="actualRole" />
@@ -4216,13 +4200,9 @@
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1184865302355">
                 <property name="name" nameId="tpck.1169194664001" value="expectedRole" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1225191970308" />
-                <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1184865302357">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~AttributesRolesUtil%dchildRoleFromAttributeRole(java%dlang%dString)%cjava%dlang%dString" resolveInfo="childRoleFromAttributeRole" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="d8ec.~AttributesRolesUtil" resolveInfo="AttributesRolesUtil" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1184865302358">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="h0au.~NodeMacro_AnnotationLink" resolveInfo="NodeMacro_AnnotationLink" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="h0au.~NodeMacro_AnnotationLink%dNODE_MACRO" resolveInfo="NODE_MACRO" />
-                  </node>
+                <node role="initializer" roleId="tpee.1068431790190" type="tp25.LinkNameRefExpression" typeId="tp25.5253134957341697434" id="8843103228117068808">
+                  <link role="conceptDeclaration" roleId="tp25.5253134957341833005" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+                  <link role="linkDeclaration" roleId="tp25.5253134957341833006" targetNodeId="tpck.5169995583184591170" />
                 </node>
               </node>
             </node>
