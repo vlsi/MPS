@@ -8,11 +8,11 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.pattern.structure.PatternExpression;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration;
-import jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class PatternAddingUtil {
   public PatternAddingUtil() {
@@ -33,17 +33,13 @@ public class PatternAddingUtil {
   public static void addVariablePattern(EditorContext context) {
     EditorCell contextCell = context.getSelectedCell();
     SNode node = contextCell.getSNode();
-    SModel model = node.getModel();
     SNode linkDeclaration = (SNode) BaseAdapter.fromAdapter(contextCell.getLinkDeclaration());
     SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
     if (linkDeclaration != null && SPropertyOperations.hasValue(genuineLinkDeclaration, "metaClass", "reference", "reference")) {
-      linkDeclaration = genuineLinkDeclaration;
-      String role = SPropertyOperations.getString(linkDeclaration, "role");
-      LinkPatternVariableDeclaration linkPatternVariable = LinkPatternVariableDeclaration.newInstance(model);
-      node.setLinkAttribute(role, linkPatternVariable.getNode());
+      String role = SPropertyOperations.getString(genuineLinkDeclaration, "role");
+      AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), role), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration");
     } else {
-      PatternVariableDeclaration patternVariable = PatternVariableDeclaration.newInstance(model);
-      node.setAttribute(patternVariable.getNode());
+      AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.Pattern")), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration");
     }
   }
 }

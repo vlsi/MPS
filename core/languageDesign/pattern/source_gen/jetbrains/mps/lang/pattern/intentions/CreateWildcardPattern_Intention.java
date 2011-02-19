@@ -8,7 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.pattern.editor.PatternAddingUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class CreateWildcardPattern_Intention extends BaseIntention implements Intention {
   public CreateWildcardPattern_Intention() {
@@ -47,7 +48,7 @@ public class CreateWildcardPattern_Intention extends BaseIntention implements In
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode currentNode = editorContext.getSelectedNode();
-    currentNode.setAttribute(SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(currentNode), "jetbrains.mps.lang.pattern.structure.WildcardPattern", null));
+    SNodeFactoryOperations.setNewAttribute(currentNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.Pattern")), "jetbrains.mps.lang.pattern.structure.WildcardPattern");
   }
 
   public String getLocationString() {

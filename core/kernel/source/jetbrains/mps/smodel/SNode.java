@@ -1764,37 +1764,4 @@ public final class SNode {
     return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
-  //------------deprecated-------------
-
-  @Deprecated
-  public SNode getAttribute() {
-    return AttributeOperations.getNodeAttribute(this, null);
-  }
-
-  @Deprecated
-  public void setAttribute(SNode attributeConcept) {
-    AttributeOperations.setNodeAttribute(this, null, attributeConcept);
-  }
-
-  @Deprecated
-  public void setPropertyAttribute(String propertyName, SNode propertyAttribute) {
-    // 'default' property attr
-    AttributeOperations.setPropertyAttribute(this, null, propertyName, propertyAttribute);
-  }
-
-  @Deprecated
-  public SNode getPropertyAttribute(String propertyName) {
-    return AttributeOperations.getPropertyAttribute(this, null, propertyName);
-  }
-
-  @Deprecated
-  public void setLinkAttribute(String role, SNode linkAttribute) {
-    // 'default' link attr
-    AttributeOperations.setLinkAttribute(this, null, role, linkAttribute);
-  }
-
-  @Deprecated
-  public SNode getLinkAttribute(String role) {
-    return AttributeOperations.getLinkAttribute(this, null, role);
-  }
 }

@@ -82,7 +82,6 @@ public class CreateReferenceAntiquotation_Intention extends BaseIntention implem
       SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
       assert attributedNode != null;
       AttributeOperations.setAttribute(attributedNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), role), null);
-      attributedNode.setAttribute(null);
       return;
     }
     if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), role)) != null) {
