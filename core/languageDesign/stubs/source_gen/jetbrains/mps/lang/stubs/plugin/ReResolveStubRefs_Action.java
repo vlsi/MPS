@@ -16,16 +16,11 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNode;
-import java.util.Set;
 import jetbrains.mps.smodel.SReference;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.project.ModuleContext;
-import com.intellij.openapi.project.Project;
-import java.util.List;
-import jetbrains.mps.resolve.ResolveResult;
-import java.util.ArrayList;
-import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.smodel.SNodeId;
+import javax.swing.JOptionPane;
+import java.awt.Frame;
 
 public class ReResolveStubRefs_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -54,11 +49,16 @@ public class ReResolveStubRefs_Action extends GeneratedAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      int i = 0;
       for (SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors()) {
         if (!(d instanceof EditableSModelDescriptor)) {
           continue;
@@ -76,24 +76,63 @@ public class ReResolveStubRefs_Action extends GeneratedAction {
         }
 
         for (SNode node : d.getSModel().nodes()) {
-          Set<SReference> refs = new HashSet();
           for (SReference ref : node.getReferences()) {
-            if (ref.getTargetSModelReference().getSModelId() instanceof SModelId.RegularSModelId) {
-              return;
+            SModelId modelId = ref.getTargetSModelReference().getSModelId();
+            SNodeId nodeId = ref.getTargetNodeId();
+
+            if (modelId instanceof SModelId.RegularSModelId) {
+              continue;
             }
             if (ref.getTargetNode() != null) {
               continue;
             }
 
-            refs.add(ref);
+            for (SModelDescriptor md : module.getScope().getModelDescriptors()) {
+              SModelId tryModelId = md.getSModelReference().getSModelId();
+              if (tryModelId instanceof SModelId.RegularSModelId) {
+                continue;
+              }
+
+              if (!(ReResolveStubRefs_Action.this.matches(((SModelId.ForeignSModelId) modelId).getId(), ((SModelId.ForeignSModelId) tryModelId).getId(), _params))) {
+                continue;
+              }
+
+              if (md.getSModel().getNodeById(nodeId) == null) {
+                continue;
+              }
+
+              ref.setTargetSModelReference(md.getSModelReference());
+
+              d.getSModel().addModelImport(md.getSModelReference(), false);
+              d.getSModel().deleteModelImport(ref.getTargetSModelReference());
+
+              i++;
+              break;
+            }
           }
-          ModuleContext context = new ModuleContext(module, ((Project) MapSequence.fromMap(_params).get("project")));
-          List<ResolveResult> result = new ArrayList();
-          Resolver.resolveReferences(refs, context, result, false);
         }
       }
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), i + " problems fixed");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ReResolveStubRefs", t);
     }
+  }
+
+  /*package*/ boolean matches(String id1, String id2, final Map<String, Object> _params) {
+    String id1Ste = id1.substring(0, id1.indexOf("#"));
+    String id2Ste = id2.substring(0, id1.indexOf("#"));
+
+    if (!(id1Ste.equals(id2Ste))) {
+      return false;
+    }
+
+    String id1M = id1.substring(id1.lastIndexOf("#") + 1, id1.length());
+    String id2M = id2.substring(id2.lastIndexOf("#") + 1, id2.length());
+
+    if (!(id1M.equals(id2M))) {
+      return false;
+    }
+
+    return true;
   }
 }

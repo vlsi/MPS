@@ -298,6 +298,7 @@ public class SModelRepository implements ApplicationComponent {
     if (model != null) return model;
 
     if (id instanceof RegularSModelId) return myFqNameToModelDescriptorMap.get(modelReference.getSModelFqName());
+
     return null;
   }
 
