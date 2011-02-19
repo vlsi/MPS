@@ -189,7 +189,6 @@ public final class SNode {
       }
     }
     result.addAll(AttributeOperations.getLinkNamesFromAttributes(this));
-    result.addAll(getLinkNamesFromAttributes());  // compatibility
     return result;
   }
 
@@ -317,29 +316,10 @@ public final class SNode {
 
     fireNodeReadAccess();
     Set<String> result = AttributeOperations.getPropertyNamesFromAttributes(this);
-    result.addAll(getPropertyNamesFromAttributes());  // compatibility
     if (myProperties != null) {
       for (int i = 0; i < myProperties.length; i += 2) {
         result.add(myProperties[i]);
       }
-    }
-    return result;
-  }
-
-  protected Set<String> getPropertyNamesFromAttributes() {
-    Set<String> result = new HashSet<String>();
-    for (String role : getChildRoles(true)) {
-      String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
-      if (propertyName != null) result.add(propertyName);
-    }
-    return result;
-  }
-
-  protected Set<String> getLinkNamesFromAttributes() {
-    Set<String> result = new HashSet<String>();
-    for (String role : getChildRoles(true)) {
-      String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(role);
-      if (linkRole != null) result.add(linkRole);
     }
     return result;
   }

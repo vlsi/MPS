@@ -109,10 +109,6 @@ public class AttributeOperations {
   }
 
   public static String getLinkRole(SNode attribute) {
-    if (!("_$attribute".equals(SNodeOperations.getContainingLinkRole(attribute)))) {
-      // compatibility with old attributes 
-      return AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(SNodeOperations.getContainingLinkRole(attribute));
-    }
     return SPropertyOperations.getString(attribute, "linkRole");
   }
 
@@ -121,10 +117,6 @@ public class AttributeOperations {
   }
 
   public static String getPropertyName(SNode attribute) {
-    if (!("_$attribute".equals(SNodeOperations.getContainingLinkRole(attribute)))) {
-      // compatibility with old attributes 
-      return AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(SNodeOperations.getContainingLinkRole(attribute));
-    }
     return SPropertyOperations.getString(attribute, "propertyName");
   }
 
