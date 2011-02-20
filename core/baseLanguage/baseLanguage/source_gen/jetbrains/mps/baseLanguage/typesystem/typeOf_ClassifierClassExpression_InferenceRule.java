@@ -27,7 +27,7 @@ public class typeOf_ClassifierClassExpression_InferenceRule extends AbstractInfe
       SNode _nodeToCheck_1029348928467 = classExpr;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485115", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485120", true), (SNode) new typeOf_ClassifierClassExpression_InferenceRule.QuotationClass_z3vtx7_a0a0a0().createNode(SLinkOperations.getTarget(classExpr, "classifier", false), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485120", true), (SNode) new typeOf_ClassifierClassExpression_InferenceRule.QuotationClass_z3vtx7_a0a0a0().createNode(SLinkOperations.getTarget(classExpr, "classifier", false), SLinkOperations.getTarget(classExpr, "classifier", false), typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -50,7 +50,7 @@ public class typeOf_ClassifierClassExpression_InferenceRule extends AbstractInfe
     public QuotationClass_z3vtx7_a0a0a0() {
     }
 
-    public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_5, Object parameter_6, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -70,7 +70,7 @@ public class typeOf_ClassifierClassExpression_InferenceRule extends AbstractInfe
       return result;
     }
 
-    public SNode createNode(Object parameter_5) {
+    public SNode createNode(Object parameter_5, Object parameter_6) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;

@@ -209,7 +209,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   @Override
   public int getStart(EditorComponent component) {
     if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN) {
-      return getVerticalBounds(component)._0();
+      return (int) getVerticalBounds(component)._0();
     } else {
       return super.getStart(component);
     }
@@ -218,7 +218,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   @Override
   public int getHeight(EditorComponent component) {
     if (myMessageTarget.getTarget() == MessageTargetEnum.CHILDREN) {
-      return getVerticalBounds(component)._1();
+      return (int) getVerticalBounds(component)._1();
     } else {
       return super.getHeight(component);
     }

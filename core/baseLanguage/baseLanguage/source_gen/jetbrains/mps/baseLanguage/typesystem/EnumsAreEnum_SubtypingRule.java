@@ -28,7 +28,7 @@ public class EnumsAreEnum_SubtypingRule extends SubtypingRule_Runtime implements
     List<SNode> result = new ArrayList<SNode>();
     SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
-      ListSequence.fromList(result).addElement(new EnumsAreEnum_SubtypingRule.QuotationClass_b0gd6z_a0a0a0c0a().createNode(classifier, typeCheckingContext));
+      ListSequence.fromList(result).addElement(new EnumsAreEnum_SubtypingRule.QuotationClass_b0gd6z_a0a0a0c0a().createNode(classifier, classifier, typeCheckingContext));
     }
     return result;
   }
@@ -52,7 +52,7 @@ public class EnumsAreEnum_SubtypingRule extends SubtypingRule_Runtime implements
     public QuotationClass_b0gd6z_a0a0a0c0a() {
     }
 
-    public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_5, Object parameter_6, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -72,7 +72,7 @@ public class EnumsAreEnum_SubtypingRule extends SubtypingRule_Runtime implements
       return result;
     }
 
-    public SNode createNode(Object parameter_5) {
+    public SNode createNode(Object parameter_5, Object parameter_6) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;

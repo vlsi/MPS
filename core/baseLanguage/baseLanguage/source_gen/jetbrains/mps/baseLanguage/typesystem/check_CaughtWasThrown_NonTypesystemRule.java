@@ -69,7 +69,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
 
         if (!(SetSequence.fromSet(thrown).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode t) {
-            return TypeChecker.getInstance().getSubtypingManager().isSubtype(new check_CaughtWasThrown_NonTypesystemRule.QuotationClass_r5g8rc_a0a0a0a0a0a3a0b0b0a().createNode(t, typeCheckingContext), caughtType) || TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new check_CaughtWasThrown_NonTypesystemRule.QuotationClass_r5g8rc_a1a0a0a0a0a3a0b0b0a().createNode(t, typeCheckingContext));
+            return TypeChecker.getInstance().getSubtypingManager().isSubtype(new check_CaughtWasThrown_NonTypesystemRule.QuotationClass_r5g8rc_a0a0a0a0a0a3a0b0b0a().createNode(t, t, typeCheckingContext), caughtType) || TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new check_CaughtWasThrown_NonTypesystemRule.QuotationClass_r5g8rc_a1a0a0a0a0a3a0b0b0a().createNode(t, t, typeCheckingContext));
           }
         }))) {
           {
@@ -163,7 +163,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
     public QuotationClass_r5g8rc_a0a0a0a0a0a3a0b0b0a() {
     }
 
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_3, Object parameter_4, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -176,7 +176,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
       return result;
     }
 
-    public SNode createNode(Object parameter_3) {
+    public SNode createNode(Object parameter_3, Object parameter_4) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -194,7 +194,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
     public QuotationClass_r5g8rc_a1a0a0a0a0a3a0b0b0a() {
     }
 
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_3, Object parameter_4, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -207,7 +207,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
       return result;
     }
 
-    public SNode createNode(Object parameter_3) {
+    public SNode createNode(Object parameter_3, Object parameter_4) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;

@@ -46,7 +46,7 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174350", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.getRepresentative(InstanceType_typevar_1206554174334), (SNode) new typeof_FieldReferenceOperation_InferenceRule.QuotationClass_7hlfbz_a0a5a0().createNode(fieldClassifier, typeCheckingContext), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.getRepresentative(InstanceType_typevar_1206554174334), (SNode) new typeof_FieldReferenceOperation_InferenceRule.QuotationClass_7hlfbz_a0a5a0().createNode(fieldClassifier, fieldClassifier, typeCheckingContext), true, _info_12389875345);
     }
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(typeCheckingContext, SLinkOperations.getTarget(fieldDeclaration, "type", true), mmap);
@@ -88,7 +88,7 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
     public QuotationClass_7hlfbz_a0a5a0() {
     }
 
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_3, Object parameter_4, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -101,7 +101,7 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
       return result;
     }
 
-    public SNode createNode(Object parameter_3) {
+    public SNode createNode(Object parameter_3, Object parameter_4) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;

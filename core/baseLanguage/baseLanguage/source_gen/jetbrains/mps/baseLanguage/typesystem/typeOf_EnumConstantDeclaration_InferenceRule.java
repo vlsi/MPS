@@ -25,7 +25,7 @@ public class typeOf_EnumConstantDeclaration_InferenceRule extends AbstractInfere
 
   public void applyRule(final SNode enumConstantDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode methodClassifier = SNodeOperations.getAncestor(enumConstantDeclaration, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
-    SNode constructedType = new typeOf_EnumConstantDeclaration_InferenceRule.QuotationClass_4rqj66_a0a1a0().createNode(methodClassifier, typeCheckingContext);
+    SNode constructedType = new typeOf_EnumConstantDeclaration_InferenceRule.QuotationClass_4rqj66_a0a1a0().createNode(methodClassifier, methodClassifier, typeCheckingContext);
     // --- 
     {
       SNode _nodeToCheck_1029348928467 = enumConstantDeclaration;
@@ -66,7 +66,7 @@ public class typeOf_EnumConstantDeclaration_InferenceRule extends AbstractInfere
     public QuotationClass_4rqj66_a0a1a0() {
     }
 
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_3, Object parameter_4, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -79,7 +79,7 @@ public class typeOf_EnumConstantDeclaration_InferenceRule extends AbstractInfere
       return result;
     }
 
-    public SNode createNode(Object parameter_3) {
+    public SNode createNode(Object parameter_3, Object parameter_4) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;

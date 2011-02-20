@@ -4974,9 +4974,9 @@
     <nodeInfo nodeId="1504959589938806450" fileName="ChangeEditorMessage.java" startLine="202" startPosition="57" endLine="203" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1504959589938806473" fileName="ChangeEditorMessage.java" startLine="203" startPosition="86" endLine="204" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1504959589938806511" fileName="ChangeEditorMessage.java" startLine="205" startPosition="5" endLine="206" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1504959589938808907" fileName="ChangeEditorMessage.java" startLine="211" startPosition="68" endLine="212" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1504959589938808907" fileName="ChangeEditorMessage.java" startLine="211" startPosition="68" endLine="212" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="317966498942495449" fileName="ChangeEditorMessage.java" startLine="213" startPosition="12" endLine="214" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1504959589938808954" fileName="ChangeEditorMessage.java" startLine="220" startPosition="68" endLine="221" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1504959589938808954" fileName="ChangeEditorMessage.java" startLine="220" startPosition="68" endLine="221" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1504959589938808961" fileName="ChangeEditorMessage.java" startLine="222" startPosition="12" endLine="223" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8401260027345471225" fileName="ChangeEditorMessage.java" startLine="227" startPosition="76" endLine="228" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8401260027345471246" fileName="ChangeEditorMessage.java" startLine="229" startPosition="80" endLine="230" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5119,9 +5119,9 @@
     <scopeInfo nodeId="1504959589938808936" fileName="ChangeEditorMessage.java" startLine="170" startPosition="148" endLine="171" endPosition="113" />
     <scopeInfo nodeId="1504959589938808913" fileName="ChangeEditorMessage.java" startLine="172" startPosition="12" endLine="173" endPosition="0" />
     <scopeInfo nodeId="6974559618470449888" fileName="ChangeEditorMessage.java" startLine="191" startPosition="27" endLine="192" endPosition="17" />
-    <scopeInfo nodeId="317966498942495441" fileName="ChangeEditorMessage.java" startLine="211" startPosition="68" endLine="212" endPosition="47" />
+    <scopeInfo nodeId="317966498942495441" fileName="ChangeEditorMessage.java" startLine="211" startPosition="68" endLine="212" endPosition="53" />
     <scopeInfo nodeId="317966498942495448" fileName="ChangeEditorMessage.java" startLine="213" startPosition="12" endLine="214" endPosition="39" />
-    <scopeInfo nodeId="1504959589938808953" fileName="ChangeEditorMessage.java" startLine="220" startPosition="68" endLine="221" endPosition="47" />
+    <scopeInfo nodeId="1504959589938808953" fileName="ChangeEditorMessage.java" startLine="220" startPosition="68" endLine="221" endPosition="53" />
     <scopeInfo nodeId="1504959589938808960" fileName="ChangeEditorMessage.java" startLine="222" startPosition="12" endLine="223" endPosition="40" />
     <scopeInfo nodeId="8401260027345471207" fileName="ChangeEditorMessage.java" startLine="229" startPosition="80" endLine="230" endPosition="30" />
     <scopeInfo nodeId="8401260027345471262" fileName="ChangeEditorMessage.java" startLine="231" startPosition="46" endLine="232" endPosition="53" />

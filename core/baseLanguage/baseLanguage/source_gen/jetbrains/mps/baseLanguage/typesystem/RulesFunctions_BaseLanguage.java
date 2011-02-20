@@ -198,7 +198,7 @@ __switch__:
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "549437922610106082", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
         _info_12389875345.addRuleToSkip("jetbrains.mps.baseLanguage.typesystem.subtypesOfClassifierTypeWWildcards_InequationReplacementRule");
-        typeCheckingContext.createGreaterThanInequation((SNode) new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a0a2a0a3().createNode(params, genericClassifier, typeCheckingContext), (SNode) instanceType, false, _info_12389875345);
+        typeCheckingContext.createGreaterThanInequation((SNode) new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a0a2a0a3().createNode(genericClassifier, params, genericClassifier, typeCheckingContext), (SNode) instanceType, false, _info_12389875345);
       }
     }
   }
@@ -764,7 +764,7 @@ with_anc:
     public QuotationClass_5ahx9e_a0a2a0a3() {
     }
 
-    public SNode createNode(Object parameter_4, Object parameter_5, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_4, Object parameter_5, Object parameter_6, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -772,9 +772,9 @@ with_anc:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_5);
+        quotedNode1_3.setReferent("classifier", (SNode) parameter_4);
         {
-          List<SNode> nodes = (List<SNode>) parameter_4;
+          List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {
             quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
@@ -784,7 +784,7 @@ with_anc:
       return result;
     }
 
-    public SNode createNode(Object parameter_4, Object parameter_5) {
+    public SNode createNode(Object parameter_4, Object parameter_5, Object parameter_6) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -792,9 +792,9 @@ with_anc:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_5);
+        quotedNode1_3.setReferent("classifier", (SNode) parameter_4);
         {
-          List<SNode> nodes = (List<SNode>) parameter_4;
+          List<SNode> nodes = (List<SNode>) parameter_5;
           for (SNode child : nodes) {
             quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
           }
