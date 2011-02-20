@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vcs;
 
+import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.diff.DiffContent;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vcs.merge.MergeData;
@@ -23,7 +24,9 @@ import jetbrains.mps.util.FileUtil;
 
 import java.io.*;
 import java.nio.ByteBuffer;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class VcsHelperUtil {
   public static void writeMetaInformation(MergeData mergeData, VirtualFile file, File tmpDir) throws IOException {
@@ -53,7 +56,8 @@ public class VcsHelperUtil {
     writeContentsToFile(contents[ModelMergeRequestConstants.CURRENT], file, tmp, VcsMergeVersion.MINE.getSuffix());
     writeContentsToFile(contents[ModelMergeRequestConstants.LAST_REVISION], file, tmp, VcsMergeVersion.REPOSITORY.getSuffix());
     writeMetaInformation(request, file, tmp);
-    File zipfile = chooseZipFileNameForModelFile(file.getPath());
+    File zipfile = chooseZipFileForModelFile(file.getName());
+    zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmp, zipfile);
 
     FileUtil.delete(tmp);
@@ -69,17 +73,19 @@ public class VcsHelperUtil {
     stream.close();
   }
 
-  public static File chooseZipFileNameForModelFile(String modelFilePath) {
-    Calendar cal = Calendar.getInstance();
-    String timestamp = cal.get(Calendar.HOUR_OF_DAY) + "." + cal.get(Calendar.MINUTE) + "." +
-      cal.get(Calendar.DAY_OF_MONTH) + "." + cal.get(Calendar.MONTH) + "." + cal.get(Calendar.YEAR);
-    modelFilePath = modelFilePath + "." + timestamp;
-    File zipfile = new File(modelFilePath + ".zip");
+  public static File chooseZipFileForModelFile(String modelFileName) {
+    String prefix = getMergeBackupDirPath() + File.separator + modelFileName;
+    prefix = prefix + "." + new SimpleDateFormat("yyyy-MM-dd_HH-mm").format(new Date());
+    File zipfile = new File(prefix + ".zip");
     int i = 0;
     while (zipfile.exists()) {
-      zipfile = new File(modelFilePath + "." + i + ".zip");
+      zipfile = new File(prefix + "." + i + ".zip");
       i++;
     }
     return zipfile;
+  }
+
+  public static String getMergeBackupDirPath() {
+    return PathManager.getSystemPath() + File.separator + "merge-backup";
   }
 }

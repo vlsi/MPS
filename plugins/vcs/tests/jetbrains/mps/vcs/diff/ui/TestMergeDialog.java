@@ -57,7 +57,7 @@ public class TestMergeDialog {
     String resultFile;
     if (args.length == 2) {
       try {
-        final SModel[] zipped = ModelUtils.loadZippedModels(new File(args[0]), VcsMergeVersion.values(), false);
+        final SModel[] zipped = ModelUtils.loadZippedModels(new File(args[0]), VcsMergeVersion.values());
         models[0] = zipped[0];
         models[1] = zipped[1];
         models[2] = zipped[2];
