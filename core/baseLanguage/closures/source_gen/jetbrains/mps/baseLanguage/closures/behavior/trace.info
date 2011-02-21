@@ -7,6 +7,7 @@
   <unitInfo fileName="InvokeFunctionExpression_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionExpression_Behavior" />
   <unitInfo fileName="InvokeFunctionOperation_Behavior.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionOperation_Behavior" />
   <unitInfo fileName="ControlAbstractionContainer_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.ControlAbstractionContainer_Behavior" />
+  <unitInfo fileName="AbstractFunctionType_Behavior.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.AbstractFunctionType_Behavior" />
   <unitInfo fileName="FunctionType_Behavior.java" startLine="318" startPosition="0" endLine="334" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior$QuotationClass_ksvwin_a0b0b0g" />
   <unitInfo fileName="FunctionType_Behavior.java" startLine="389" startPosition="0" endLine="405" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior$QuotationClass_ksvwin_a0a0a11" />
   <unitInfo fileName="FunctionType_Behavior.java" startLine="406" startPosition="0" endLine="422" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior$QuotationClass_ksvwin_a0a0a21" />
@@ -642,6 +643,24 @@
     <scopeInfo nodeId="418758558327453321" fileName="InvokeFunctionOperation_Behavior.java" startLine="18" startPosition="107" endLine="19" endPosition="153" />
     <scopeInfo nodeId="418758558327452984" fileName="InvokeFunctionOperation_Behavior.java" startLine="16" startPosition="83" endLine="21" endPosition="34">
       <varInfo nodeId="418758558327453310" varName="type" />
+    </scopeInfo>
+  </root>
+  <root nodeId="5612111951671625667">
+    <nodeInfo nodeId="5612111951671625672" fileName="AbstractFunctionType_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5612111951671625678" fileName="AbstractFunctionType_Behavior.java" startLine="14" startPosition="44" endLine="15" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5612111951671625684" fileName="AbstractFunctionType_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5612111951671625694" fileName="AbstractFunctionType_Behavior.java" startLine="17" startPosition="89" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5612111951671625703" fileName="AbstractFunctionType_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5612111951671625715" fileName="AbstractFunctionType_Behavior.java" startLine="20" startPosition="142" endLine="21" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5612111951671625682" fileName="AbstractFunctionType_Behavior.java" startLine="15" startPosition="20" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="5612111951671625669" fileName="AbstractFunctionType_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="5612111951671625683" fileName="AbstractFunctionType_Behavior.java" startLine="16" startPosition="82" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="5612111951671625682" fileName="AbstractFunctionType_Behavior.java" startLine="15" startPosition="20" endLine="19" endPosition="5">
+      <varInfo nodeId="5612111951671625701" varName="pt" />
+    </scopeInfo>
+    <scopeInfo nodeId="5612111951671625671" fileName="AbstractFunctionType_Behavior.java" startLine="13" startPosition="78" endLine="21" endPosition="37">
+      <varInfo nodeId="5612111951671625673" varName="sb" />
+      <varInfo nodeId="5612111951671625679" varName="sep" />
     </scopeInfo>
   </root>
 </debugInfo>
