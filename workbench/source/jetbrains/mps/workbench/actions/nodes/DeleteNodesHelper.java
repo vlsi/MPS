@@ -21,14 +21,21 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.refactoring.GenericRefactoringAction;
+import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.lang.core.scripts.SafeDelete;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.structure.scripts.SafeDeleteConcept;
+import jetbrains.mps.lang.structure.scripts.SafeDeleteLink;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.refactoring.framework.IRefactoring;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -102,25 +109,32 @@ public class DeleteNodesHelper {
   }
 
   private void safeDelete(final IOperationContext context, final SNode node) {
-    IRefactoring ref = RefactoringUtil.getRefactoringByClassName(SafeDelete.class.getName());
-    final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(ref) {
-      protected Applicability getMinApplicabilityLevel() {
-        return Applicability.OVERRIDDEN;
+    String refactoringClass;
+    if (node == null) {
+      return;
+    } else if (node.isInstanceOfConcept(ConceptDeclaration.concept)) {
+      refactoringClass = SafeDeleteConcept.class.getName();
+    } else if (node.isInstanceOfConcept(LinkDeclaration.concept) ) {
+      refactoringClass = SafeDeleteLink.class.getName();
+    } else {
+      refactoringClass = SafeDelete.class.getName();
+    }
+    final IRefactoring refactoring = RefactoringUtil.getRefactoringByClassName(refactoringClass);
+    final RefactoringContext refactoringContext = new RefactoringContext(refactoring);
+    refactoringContext.setCurrentOperationContext(context);
+    refactoringContext.setSelectedNode(node);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        refactoringContext.setSelectedModel(SNodeOperations.getModel(node).getModelDescriptor());
       }
-    };
+    });
+    refactoringContext.setSelectedModule(context.getModule());
+    refactoringContext.setSelectedProject(context.getProject());
 
-    DataContext dc = new DataContext() {
-      private DataContext myRealContext = DataManager.getInstance().getDataContext();
-
-      @Nullable
-      public Object getData(@NonNls String dataId) {
-        if (dataId.equals(MPSDataKeys.NODE.getName())) return node;
-        else if (dataId.equals(MPSDataKeys.NODES.getName())) return Collections.singletonList(node);
-        else if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return context;
-        else return myRealContext.getData(dataId);
+    new Thread() {
+      public void run() {
+        new RefactoringFacade().execute(refactoring, refactoringContext);
       }
-    };
-    AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, dc);
-    ActionUtils.updateAndPerformAction(safeDeleteAction, event);
+    }.start();
   }
 }
