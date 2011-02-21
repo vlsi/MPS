@@ -879,8 +879,8 @@
     <nodeInfo nodeId="1206570564153" fileName="Attributes.java" startLine="39" startPosition="221" endLine="40" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206570543646" fileName="Attributes.java" startLine="40" startPosition="221" endLine="41" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206561566966" fileName="Attributes.java" startLine="44" startPosition="33" endLine="45" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206561566986" fileName="Attributes.java" startLine="45" startPosition="38" endLine="46" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206561566993" fileName="Attributes.java" startLine="46" startPosition="63" endLine="47" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206561566986" fileName="Attributes.java" startLine="45" startPosition="38" endLine="46" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1206561566993" fileName="Attributes.java" startLine="46" startPosition="109" endLine="47" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206559706544" fileName="Attributes.java" startLine="13" startPosition="25" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accessToNodeAttribute_1#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1206570258842" fileName="Attributes.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accessToReferenceAttribute_1#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1206563178412" fileName="Attributes.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accessToPropertyAttribute_1#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -900,7 +900,7 @@
       <varInfo nodeId="1206563679660" varName="propertyMacro1" />
       <varInfo nodeId="1206563216218" varName="propertyMacro" />
     </scopeInfo>
-    <scopeInfo nodeId="1206559755613" fileName="Attributes.java" startLine="44" startPosition="33" endLine="47" endPosition="92">
+    <scopeInfo nodeId="1206559755613" fileName="Attributes.java" startLine="44" startPosition="33" endLine="47" endPosition="138">
       <varInfo nodeId="1206561566987" varName="nodes" />
       <varInfo nodeId="1206561566994" varName="firstNode" />
     </scopeInfo>
