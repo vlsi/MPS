@@ -12,7 +12,7 @@
       <sourceFolder url="file://$MODULE_DIR$/debugProject/solutions/jetbrains.mps.debug.evaluation.ui/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/classes" />
-      <excludeFolder url="file://$MODULE_DIR$/debugProject/solutions/jetbrains.mps.debug.run.sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/debugger-java/solutions/jetbrains.mps.debugger.java.run.sandbox/classes_gen" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
