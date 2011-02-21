@@ -1340,7 +1340,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         return CellActionType.DELETE;
       }
 
-      if (selectedCell.getAction(CellActionType.DELETE) != null) {
+      if (selectedCell != null && selectedCell.getAction(CellActionType.DELETE) != null) {
         return CellActionType.DELETE;
       }
 
