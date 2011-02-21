@@ -645,7 +645,7 @@ public class ClassifierUpdater {
       return;
     }
 
-    SModelReference targetRef = getModelReferenceFor(NodeNameUtil.getNamespace(annotationType.getName()) , sourceNode.getModel());
+    SModelReference targetRef = getModelReferenceFor(NodeNameUtil.getNamespace(annotationType.getName()), sourceNode.getModel());
     SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
     sourceNode.addReference(SReference.create(role, sourceNode, targetRef, nodeId));
   }
@@ -656,16 +656,16 @@ public class ClassifierUpdater {
     }
 
     ASMClassType classType = (ASMClassType) enumValue.getType();
-    SModelReference targetRef = getModelReferenceFor(NodeNameUtil.getNamespace(classType.getName()),  sourceNode.getModel());
+    SModelReference targetRef = getModelReferenceFor(NodeNameUtil.getNamespace(classType.getName()), sourceNode.getModel());
     SNodeId nodeId = ASMNodeId.createFieldId(classType.getName(), enumValue.getConstant());
     sourceNode.addReference(SReference.create(role, sourceNode, targetRef, nodeId));
   }
 
   public SModelReference getModelReferenceFor(String packageName, SModel model) {
     ModuleReference module = myModule.getModuleFor(packageName, LanguageID.JAVA);
-    if (module ==null){
-      LOG.error("no module found for : "+packageName);
-      return new SModelReference("","");
+    if (module == null) {
+      LOG.error("no module found for : " + packageName + " in " + myModule.getModuleFqName());
+      return new SModelReference("", "");
     }
     SModelReference ref = StubHelper.uidForPackageInStubs(packageName, LanguageID.JAVA, module.getModuleId().toString());
     model.addModelImport(ref, false);
