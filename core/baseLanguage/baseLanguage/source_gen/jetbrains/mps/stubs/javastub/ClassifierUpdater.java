@@ -667,7 +667,7 @@ public class ClassifierUpdater {
       LOG.error("no module found for : " + packageName + " in " + myModule.getModuleFqName());
       return new SModelReference("", "");
     }
-    SModelReference ref = StubHelper.uidForPackageInStubs(packageName, LanguageID.JAVA, module.getModuleId().toString());
+    SModelReference ref = StubHelper.uidForPackageInStubs(packageName, LanguageID.JAVA, module);
     model.addModelImport(ref, false);
     return ref;
   }

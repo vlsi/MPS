@@ -244,7 +244,7 @@ public class NewGeneratorDialog extends BaseDialog {
     }
     if (!alreadyOwnsTemplateModel) {
       EditableSModelDescriptor templateModelDescriptor = newGenerator.createModel(
-        new SModelFqName(getTemplateModelPrefix(sourceLanguage), "main", SModelStereotype.GENERATOR),
+        new SModelFqName(getTemplateModelPrefix(sourceLanguage) + "." + "main", SModelStereotype.GENERATOR),
         newGenerator.getSModelRoots().get(0));
 
       SModel templateModel = templateModelDescriptor.getSModel();

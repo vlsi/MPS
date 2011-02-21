@@ -65,7 +65,7 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
       for (final StubDescriptor sd : list) {
         result.add(new BaseSNodeDescriptor(sd.getClassName(), 0, 0, null) {
           protected SModelReference calculateModelReference() {
-            return StubHelper.uidForPackageInStubs(sd.getPackage(), LanguageID.JAVA, m.getModuleReference().getModuleId().toString());
+            return StubHelper.uidForPackageInStubs(sd.getPackage(), LanguageID.JAVA, m.getModuleReference());
           }
 
           public String getConceptFqName() {
