@@ -24,7 +24,7 @@
   <unitInfo fileName="LanguageHierarchy_Action.java" startLine="23" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.LanguageHierarchy_Action" />
   <unitInfo fileName="NewDevKit_Action.java" startLine="21" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.NewDevKit_Action" />
   <unitInfo fileName="LanguageProperties_Action.java" startLine="24" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.LanguageProperties_Action" />
-  <unitInfo fileName="GoToRules_Action.java" startLine="22" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GoToRules_Action" />
+  <unitInfo fileName="GoToRules_Action.java" startLine="21" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GoToRules_Action" />
   <unitInfo fileName="Mpsdevkit_ApplicationPlugin.java" startLine="20" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
   <unitInfo fileName="NewGenerator_Action.java" startLine="23" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.NewGenerator_Action" />
   <unitInfo fileName="DeleteGenerator_Action.java" startLine="23" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action" />
@@ -160,7 +160,7 @@
     <nodeInfo nodeId="1744445256079578782" fileName="GoToConceptDeclaration_Action.java" startLine="66" startPosition="112" endLine="67" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1744445256079578802">
-    <nodeInfo nodeId="1744445256079578811" fileName="GoToRules_Action.java" startLine="75" startPosition="9" endLine="76" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1744445256079578811" fileName="GoToRules_Action.java" startLine="74" startPosition="9" endLine="75" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1744445256079578830">
     <nodeInfo nodeId="1744445256079578833" fileName="EditorPopupEx_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
