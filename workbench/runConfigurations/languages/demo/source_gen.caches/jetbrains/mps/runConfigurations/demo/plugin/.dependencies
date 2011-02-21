@@ -88,8 +88,8 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="com.intellij.execution.configurations.RunnerSettings" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
-    <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode extendsClassName="com.intellij.execution.ui.ExecutionConsole" />
+    <classNode extendsClassName="jetbrains.mps.runConfigurations.runtime.BaseMpsRunProfileState" />
     <classNode extendsClassName="com.intellij.execution.ExecutionResult" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Demo_ApplicationPlugin" file="Demo_ApplicationPlugin.java">

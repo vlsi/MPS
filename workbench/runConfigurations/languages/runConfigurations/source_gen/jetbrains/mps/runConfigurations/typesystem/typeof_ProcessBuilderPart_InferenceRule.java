@@ -14,17 +14,17 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 
-public class typeof_CommandPart_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-  public typeof_CommandPart_InferenceRule() {
+public class typeof_ProcessBuilderPart_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
+  public typeof_ProcessBuilderPart_InferenceRule() {
   }
 
-  public void applyRule(final SNode commandPart, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+  public void applyRule(final SNode processBuilderPart, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      SNode _nodeToCheck_1029348928467 = commandPart;
+      SNode _nodeToCheck_1029348928467 = processBuilderPart;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "5812151570929638035", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "5812151570929638029", true), (SNode) new typeof_CommandPart_InferenceRule.QuotationClass_wn1xhv_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "5812151570929638029", true), (SNode) new typeof_ProcessBuilderPart_InferenceRule.QuotationClass_nmevkh_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
 
@@ -43,8 +43,8 @@ public class typeof_CommandPart_InferenceRule extends AbstractInferenceRule_Runt
     return false;
   }
 
-  public static class QuotationClass_wn1xhv_a0a0a0 {
-    public QuotationClass_wn1xhv_a0a0a0() {
+  public static class QuotationClass_nmevkh_a0a0a0 {
+    public QuotationClass_nmevkh_a0a0a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {

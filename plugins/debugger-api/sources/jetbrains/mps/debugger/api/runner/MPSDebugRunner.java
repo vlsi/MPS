@@ -53,16 +53,7 @@ public class MPSDebugRunner extends GenericProgramRunner {
                                                          ExecutionEnvironment env) throws ExecutionException {
     IDebugger debugger;
     //todo get connection settings
-    if (state instanceof BaseRunProfileState) { // obsolete run configurations
-      final BaseRunProfileState baseRunProfileState = (BaseRunProfileState) state;
-      debugger = new DefaultDebugger() {
-        @NotNull
-        @Override
-        public AbstractDebugSessionCreator createDebugSessionCreator(@NotNull Project project) {
-          return baseRunProfileState.createDebugSessionCreator(project);
-        }
-      };
-    } else if (state instanceof DebuggerRunProfileState) {
+    if (state instanceof DebuggerRunProfileState) {
       debugger = ((DebuggerRunProfileState) state).getDebugger();
     } else {
       throw new ExecutionException("Unknown Run Profile State");

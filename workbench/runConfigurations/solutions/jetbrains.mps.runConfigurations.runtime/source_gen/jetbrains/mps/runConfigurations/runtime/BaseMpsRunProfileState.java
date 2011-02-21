@@ -4,9 +4,6 @@ package jetbrains.mps.runConfigurations.runtime;
 
 import com.intellij.execution.configurations.RunProfileState;
 
-public abstract class BaseMpsRunProfileState implements RunProfileState {
-  public BaseMpsRunProfileState() {
-  }
-
-  public abstract boolean canExecute(String executorId);
+public interface BaseMpsRunProfileState extends RunProfileState {
+  public boolean canExecute(String executorId);
 }

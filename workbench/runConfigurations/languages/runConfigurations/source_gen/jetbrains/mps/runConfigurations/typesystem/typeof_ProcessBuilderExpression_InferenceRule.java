@@ -18,23 +18,23 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
-public class typeof_CommandExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-  public typeof_CommandExpression_InferenceRule() {
+public class typeof_ProcessBuilderExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
+  public typeof_ProcessBuilderExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode commandExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+  public void applyRule(final SNode processBuilderExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      SNode _nodeToCheck_1029348928467 = commandExpression;
+      SNode _nodeToCheck_1029348928467 = processBuilderExpression;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "2866018809102008333", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "2866018809102008330", true), (SNode) new typeof_CommandExpression_InferenceRule.QuotationClass_1rm7l1_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "2866018809102008330", true), (SNode) new typeof_ProcessBuilderExpression_InferenceRule.QuotationClass_31rd6s_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
     }
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(commandExpression, "workingDirectory", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(processBuilderExpression, "workingDirectory", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "6472627752525616664", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "6472627752525616650", true), (SNode) new typeof_CommandExpression_InferenceRule.QuotationClass_1rm7l1_a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "6472627752525616650", true), (SNode) new typeof_ProcessBuilderExpression_InferenceRule.QuotationClass_31rd6s_a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
 
@@ -53,8 +53,8 @@ public class typeof_CommandExpression_InferenceRule extends AbstractInferenceRul
     return false;
   }
 
-  public static class QuotationClass_1rm7l1_a0a0a0 {
-    public QuotationClass_1rm7l1_a0a0a0() {
+  public static class QuotationClass_31rd6s_a0a0a0 {
+    public QuotationClass_31rd6s_a0a0a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -82,8 +82,8 @@ public class typeof_CommandExpression_InferenceRule extends AbstractInferenceRul
     }
   }
 
-  public static class QuotationClass_1rm7l1_a0a1a0 {
-    public QuotationClass_1rm7l1_a0a1a0() {
+  public static class QuotationClass_31rd6s_a0a1a0 {
+    public QuotationClass_31rd6s_a0a1a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
