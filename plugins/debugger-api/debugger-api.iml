@@ -11,8 +11,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="debug-api" />
+    <orderEntry type="library" name="IDEA-plaform" level="project" />
+    <orderEntry type="module" module-name="plugin" />
+    <orderEntry type="module" module-name="runConfigurations" exported="" />
   </component>
 </module>
 

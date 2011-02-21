@@ -9,6 +9,16 @@
     <scopeInfo nodeId="143080135592810950" fileName="IPersistentConfiguration.java" startLine="11" startPosition="72" endLine="12" endPosition="56" />
     <unitInfo nodeId="1252300412034470124" fileName="IPersistentConfiguration.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" />
   </root>
+  <root nodeId="4548485075613130311">
+    <nodeInfo nodeId="4548485075613130314" fileName="BaseMpsRunProfileState.java" startLine="7" startPosition="73" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseMpsRunProfileState#()V" />
+    <nodeInfo nodeId="4548485075613130318" fileName="BaseMpsRunProfileState.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/lang/String;)Z" />
+    <scopeInfo nodeId="4548485075613130317" fileName="BaseMpsRunProfileState.java" startLine="8" startPosition="35" endLine="8" endPosition="35" />
+    <scopeInfo nodeId="4548485075613130314" fileName="BaseMpsRunProfileState.java" startLine="7" startPosition="73" endLine="9" endPosition="3" />
+    <scopeInfo nodeId="4548485075613130318" fileName="BaseMpsRunProfileState.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
+      <varInfo nodeId="4548485075613130321" varName="executorId" />
+    </scopeInfo>
+    <unitInfo nodeId="4548485075613130311" fileName="BaseMpsRunProfileState.java" startLine="7" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.BaseMpsRunProfileState" />
+  </root>
   <root nodeId="6355961872152753014">
     <unitInfo nodeId="6355961872152753014" fileName="IDebuggableRunProfileState.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.IDebuggableRunProfileState" />
   </root>

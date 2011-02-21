@@ -10,9 +10,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="MPS" />
     <orderEntry type="library" name="tools" level="project" />
     <orderEntry type="module" module-name="debugger-api" />
+    <orderEntry type="module" module-name="debug" />
+    <orderEntry type="library" name="IDEA-plaform" level="project" />
+    <orderEntry type="module" module-name="debug-api" />
+    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="plugin" />
   </component>
 </module>
 

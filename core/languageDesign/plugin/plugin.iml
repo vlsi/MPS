@@ -14,6 +14,7 @@
     <orderEntry type="module" module-name="classifiers" />
     <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="debug" />
+    <orderEntry type="module" module-name="runConfigurations" />
   </component>
 </module>
 

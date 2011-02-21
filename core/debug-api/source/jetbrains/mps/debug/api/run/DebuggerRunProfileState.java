@@ -16,7 +16,7 @@
 package jetbrains.mps.debug.api.run;
 
 import jetbrains.mps.debug.api.IDebugger;
-import jetbrains.mps.runconfigurations.runner.BaseMpsRunProfileState;
+import jetbrains.mps.runConfigurations.runtime.BaseMpsRunProfileState;
 
 public abstract class DebuggerRunProfileState extends BaseMpsRunProfileState {
   public abstract IDebugger getDebugger();

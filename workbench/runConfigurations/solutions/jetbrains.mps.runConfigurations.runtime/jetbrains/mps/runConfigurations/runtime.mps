@@ -39,6 +39,10 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6472627752525360127">
       <property name="name" nameId="tpck.1169194664001" value="ProcessHandlerBuilder" />
     </node>
+    <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4548485075613130311">
+      <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="BaseMpsRunProfileState" />
+    </node>
   </roots>
   <root id="1252300412034470124">
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1252300412034470130">
@@ -839,6 +843,28 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6472627752525360130" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6472627752525360131" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6472627752525360132" />
+    </node>
+  </root>
+  <root id="4548485075613130311">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4548485075613130312" />
+    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4548485075613130313">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="y6zp.~RunProfileState" />
+    </node>
+    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="4548485075613130314">
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4548485075613130315" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4548485075613130316" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4548485075613130317" />
+    </node>
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4548485075613130318">
+      <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="canExecute" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4548485075613130319" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="4548485075613130320" />
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="4548485075613130321">
+        <property name="name" nameId="tpck.1169194664001" value="executorId" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="4548485075613130324" />
+      </node>
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4548485075613130323" />
     </node>
   </root>
 </model>

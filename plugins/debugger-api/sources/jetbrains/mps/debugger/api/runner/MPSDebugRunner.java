@@ -17,7 +17,7 @@ import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
 import jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
-import jetbrains.mps.runconfigurations.runner.BaseMpsRunProfileState;
+import jetbrains.mps.runConfigurations.runtime.BaseMpsRunProfileState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

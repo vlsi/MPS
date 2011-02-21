@@ -12,6 +12,7 @@
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="debug" />
     <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="runConfigurations" />
   </component>
 </module>
 
