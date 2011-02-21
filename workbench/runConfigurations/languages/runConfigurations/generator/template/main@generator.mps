@@ -218,9 +218,6 @@
       <property name="name" nameId="tpck.1169194664001" value="reduce_ConfigurationParameterInsideExecute" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="uhxm.4777576391478077373" resolveInfo="Configuration_Parameter" />
     </node>
-    <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="2866018809101550026">
-      <property name="name" nameId="tpck.1169194664001" value="switch_MacroStatement" />
-    </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6538811202682398048">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ProcessType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
@@ -600,11 +597,6 @@
       <property name="name" nameId="tpck.1169194664001" value="ExecutorToConfigurationField" />
       <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="uhxm.2401501559171392633" resolveInfo="RunConfigurationExecutor" />
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
-    </node>
-    <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="2866018809101549395">
-      <property name="name" nameId="tpck.1169194664001" value="MacroStatementToMethod" />
-      <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="uhxm.2866018809101490239" resolveInfo="IMacroStatement" />
-      <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1081236700938" resolveInfo="StaticMethodDeclaration" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4928971978190676035">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="persistence" />
@@ -6492,15 +6484,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-  </root>
-  <root id="2866018809101550026">
-    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2866018809101550027">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="uhxm.5812151570929638022" resolveInfo="ProcessStatement" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="2866018809101550029">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5812151570929671645" resolveInfo="reduce_ProcessStatement" />
       </node>
     </node>
   </root>
