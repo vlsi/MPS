@@ -36,7 +36,6 @@ core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar
 core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar
 core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar
 core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar
-core/baseLanguage/unitTest/solutions/lib/classes_gen
 core/baseLanguage/tuples/classes
 core/baseLanguage/tuples/runtime/classes
 core/baseLanguage/tuples/classes
