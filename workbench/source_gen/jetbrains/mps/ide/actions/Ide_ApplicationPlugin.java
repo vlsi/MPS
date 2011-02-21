@@ -60,11 +60,9 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new DumpKeyStrokes_Action());
     addAction(new EditNodeExplicit_Action());
     addAction(new EditNode_Action());
-    addAction(new EvaluateExpression_Action());
     addAction(new ExpandAll_Action());
     addAction(new ExpandNode_Action());
     addAction(new Expand_Action());
-    addAction(new ExportThreads_Action());
     addAction(new FastFindNodeUsages_Action());
     addAction(new FindNext_Action());
     addAction(new FindPrevious_Action());
@@ -119,7 +117,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new PasteAsJavaMethods_Action());
     addAction(new PasteAsJavaStatements_Action());
     addAction(new PasteNode_Action());
-    addAction(new Pause_Action());
     addAction(new PrintNodeID_Action());
     addAction(new QuickCreate_Action());
     addAction(new RebuildAllModules_Action());
@@ -140,7 +137,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RenameNamespace_Action());
     addAction(new RenamePackage_Action());
     addAction(new RenameSolution_Action());
-    addAction(new Resume_Action());
     addAction(new RevertMemoryChanges_Action());
     addAction(new SaveModel_Action());
     addAction(new SetBookmarkNoNumber_Action());
@@ -167,30 +163,22 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowParameters_Action());
     addAction(new ShowReferencesToMissingStuff_Action());
     addAction(new SolutionProperties_Action());
-    addAction(new StepInto_Action());
-    addAction(new StepOut_Action());
-    addAction(new StepOver_Action());
     addAction(new SurroundWithIntentions_Action());
     addAction(new TestNodePath_Action());
-    addAction(new ToggleBreakpoint_Action());
     addAction(new UpgradeModelPersistenceGlobally_Action());
     addAction(new UpgradeModelPersistenceInModel_Action());
     addAction(new UpgradeModelPersistenceInModule_Action());
     addAction(new UpgradeModelPersistenceInProject_Action());
     addAction(new UpgradeModulePersistenceGlobally_Action());
-    addAction(new ViewBreakpoints_Action());
     // groups 
     addGroup(new AbstractFileActions_ActionGroup());
     addGroup(new AccessoriesGroupActions_ActionGroup());
     addGroup(new AddToFavoritesGroup_ActionGroup());
     addGroup(new Bookmarks_ActionGroup());
-    addGroup(new Breakpoints_ActionGroup());
     addGroup(new Build_ActionGroup());
     addGroup(new Code_ActionGroup());
     addGroup(new Compile_ActionGroup());
     addGroup(new CreateRootNode_ActionGroup());
-    addGroup(new DebugRunMenu_ActionGroup());
-    addGroup(new DebugTool_ActionGroup());
     addGroup(new DevkitActions_ActionGroup());
     addGroup(new Edit_ActionGroup());
     addGroup(new EditorInternal_ActionGroup());
@@ -258,9 +246,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertInterfaceGroupIntoAnother("VcsGroup", EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_vcs);
     insertInterfaceGroupIntoAnother("VcsGroup", LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_vcs);
     insertInterfaceGroupIntoAnother("VcsGroup", ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_ideavcs);
-    insertInterfaceGroupIntoAnother("DebugMuteAction", DebugTool_ActionGroup.ID, DebugTool_ActionGroup.LABEL_ID_MuteAction);
     insertInterfaceGroupIntoAnother("NavbarPopupMenu", AbstractFileActions_ActionGroup.ID, AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
-    insertInterfaceGroupIntoAnother("DebugStopAction", DebugTool_ActionGroup.ID, DebugTool_ActionGroup.LABEL_ID_StopAction);
     insertInterfaceGroupIntoAnother("RunContextGroup", EditorPopup_ActionGroup.ID, null);
     insertInterfaceGroupIntoAnother("RunContextGroup", EditorTabActions_ActionGroup.ID, null);
     insertInterfaceGroupIntoAnother("RunContextGroup", JUnitTestCaseActions_ActionGroup.ID, null);
@@ -306,7 +292,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, FolderActions_ActionGroup.ID, FolderActions_ActionGroup.LABEL_ID_abstractFileActions);
     insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, ModuleActions_ActionGroup.ID, ModuleActions_ActionGroup.LABEL_ID_abstractFileActions);
     insertGroupIntoAnother(NamespaceInternalActions_ActionGroup.ID, NamespaceActions_ActionGroup.ID, NamespaceActions_ActionGroup.LABEL_ID_namespaceInternal);
-    insertGroupIntoAnother(DebugRunMenu_ActionGroup.ID, "RunMenu", null);
     insertGroupIntoAnother(AddToFavoritesGroup_ActionGroup.ID, FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
     insertGroupIntoAnother(GenerateModule_ActionGroup.ID, GenerateModulePopup_ActionGroup.ID, GenerateModulePopup_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(GenerateModule_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModule);
@@ -318,7 +303,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GenerateFavorites_ActionGroup.ID, Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(Search_ActionGroup.ID, "SearchMenu", null);
     insertGroupIntoAnother(Code_ActionGroup.ID, "CodeMenu", null);
-    insertGroupIntoAnother(Breakpoints_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(FavoritesPopupWrapper_ActionGroup.ID, Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_popup);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_favorites);

@@ -111,13 +111,7 @@
 
     <fileIconProvider implementation="jetbrains.mps.workbench.editors.MPSIconProvider"/>
 
-    <!--why don't we use Idea ones?-->
     <programRunner id="defaultRunRunner" implementation="jetbrains.mps.runconfigurations.runner.MPSProgramRunner"/>
-    <programRunner id="defaultDebugRunner" implementation="jetbrains.mps.debug.api.integration.MPSDebugRunner" order="last"/>
-
     <executor implementation="com.intellij.execution.executors.DefaultRunExecutor" order="first" id="run"/>
-    <executor implementation="com.intellij.execution.executors.DefaultDebugExecutor" order="first" id="run"/>
-
-    <configurationType implementation="jetbrains.mps.debug.integration.runconfigs.RemoteConfigurationType"/>
   </extensions>
 </idea-plugin>

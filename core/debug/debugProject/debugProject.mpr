@@ -20,10 +20,7 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}/solutions/jetbrains.mps.debug.customViewers.sandbox/jetbrains.mps.debug.customViewers.sandbox.msd" folder="" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.debug.evaluation.sandbox/jetbrains.mps.debug.evaluation.sandbox.msd" folder="" />
       <solutionPath path="${project}/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" folder="" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.debug.run.sandbox/jetbrains.mps.debug.run.sandbox.msd" folder="" />
       <solutionPath path="${project}/solutions/jetbrains.mps.debug.tests/jetbrains.mps.debug.tests.msd" folder="" />
     </projectSolutions>
     <projectLanguages>

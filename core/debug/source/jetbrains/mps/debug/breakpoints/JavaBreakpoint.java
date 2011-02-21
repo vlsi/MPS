@@ -21,7 +21,7 @@ import com.sun.jdi.ReferenceType;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.EventRequest;
-import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.*;
 import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
 import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
