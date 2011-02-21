@@ -193,9 +193,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new FolderActions_ActionGroup());
     addGroup(new Folding_ActionGroup());
     addGroup(new GenerateEditorPopup_ActionGroup());
-    addGroup(new GenerateFavorites_ActionGroup());
     addGroup(new GenerateModelPopup_ActionGroup());
-    addGroup(new GenerateModels_ActionGroup());
     addGroup(new GenerateModulePopup_ActionGroup());
     addGroup(new GenerateModule_ActionGroup());
     addGroup(new GenerateOptions_ActionGroup());
@@ -291,12 +289,9 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(AddToFavoritesGroup_ActionGroup.ID, FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
     insertGroupIntoAnother(GenerateModule_ActionGroup.ID, GenerateModulePopup_ActionGroup.ID, GenerateModulePopup_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(GenerateModule_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModule);
-    insertGroupIntoAnother(GenerateModels_ActionGroup.ID, GenerateEditorPopup_ActionGroup.ID, GenerateEditorPopup_ActionGroup.LABEL_ID_generate);
-    insertGroupIntoAnother(GenerateModels_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModel);
     insertGroupIntoAnother(SaveTransientModels_ActionGroup.ID, GenerateOptions_ActionGroup.ID, GenerateOptions_ActionGroup.LABEL_ID_saveTransientModels);
     insertGroupIntoAnother(Compile_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_compile);
     insertGroupIntoAnother(GenerateOptions_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_options);
-    insertGroupIntoAnother(GenerateFavorites_ActionGroup.ID, Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(Search_ActionGroup.ID, "SearchMenu", null);
     insertGroupIntoAnother(Code_ActionGroup.ID, "CodeMenu", null);
     insertGroupIntoAnother(Breakpoints_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
