@@ -35,7 +35,7 @@ public class ShowTypeSystemTrace extends JDialog {
 
   public ShowTypeSystemTrace(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame, SNode node) {
     super(frame);
-  //  t.checkRoot(true);
+    t.checkRoot(true);
     this.setLayout(new BorderLayout());
     this.getContentPane().setBackground(this.getBackground());
     myTree = new TypeSystemTraceTree(operationContext, t, frame, node);
