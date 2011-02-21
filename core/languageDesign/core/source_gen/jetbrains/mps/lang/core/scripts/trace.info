@@ -298,6 +298,11 @@
     <nodeInfo nodeId="828685156158611106" fileName="ConvertAttributes_MigrationScript.java" startLine="141" startPosition="11" endLine="142" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="828685156158611129" fileName="ConvertAttributes_MigrationScript.java" startLine="143" startPosition="16" endLine="144" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="828685156158611131" fileName="ConvertAttributes_MigrationScript.java" startLine="145" startPosition="9" endLine="146" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4268767923418828066" fileName="ConvertAttributes_MigrationScript.java" startLine="166" startPosition="59" endLine="167" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4268767923418828080" fileName="ConvertAttributes_MigrationScript.java" startLine="170" startPosition="52" endLine="171" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4268767923418828082" fileName="ConvertAttributes_MigrationScript.java" startLine="171" startPosition="71" endLine="172" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4268767923418828089" fileName="ConvertAttributes_MigrationScript.java" startLine="172" startPosition="115" endLine="173" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4268767923418828103" fileName="ConvertAttributes_MigrationScript.java" startLine="173" startPosition="160" endLine="174" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3817552599486314163" fileName="ConvertAttributes_MigrationScript.java" startLine="72" startPosition="14" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="828685156158610921" fileName="ConvertAttributes_MigrationScript.java" startLine="123" startPosition="16" endLine="125" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="828685156158611101" fileName="ConvertAttributes_MigrationScript.java" startLine="139" startPosition="16" endLine="141" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -322,6 +327,7 @@
     <scopeInfo nodeId="828685156158611056" fileName="ConvertAttributes_MigrationScript.java" startLine="137" startPosition="168" endLine="138" endPosition="202" />
     <scopeInfo nodeId="828685156158611102" fileName="ConvertAttributes_MigrationScript.java" startLine="139" startPosition="18" endLine="140" endPosition="29" />
     <scopeInfo nodeId="828685156158611122" fileName="ConvertAttributes_MigrationScript.java" startLine="143" startPosition="16" endLine="144" endPosition="27" />
+    <scopeInfo nodeId="4268767923418828065" fileName="ConvertAttributes_MigrationScript.java" startLine="166" startPosition="59" endLine="167" endPosition="167" />
     <scopeInfo nodeId="3364660638048050372" fileName="ConvertAttributes_MigrationScript.java" startLine="35" startPosition="59" endLine="37" endPosition="207">
       <varInfo nodeId="3364660638048050374" varName="role" />
     </scopeInfo>
@@ -333,6 +339,9 @@
     <scopeInfo nodeId="828685156158610976" fileName="ConvertAttributes_MigrationScript.java" startLine="132" startPosition="162" endLine="136" endPosition="71">
       <varInfo nodeId="828685156158611007" varName="linkQ" />
       <varInfo nodeId="828685156158610993" varName="link" />
+    </scopeInfo>
+    <scopeInfo nodeId="4268767923418828063" fileName="ConvertAttributes_MigrationScript.java" startLine="170" startPosition="52" endLine="174" endPosition="55">
+      <varInfo nodeId="4268767923418828083" varName="attr" />
     </scopeInfo>
     <scopeInfo nodeId="3364660638048094282" fileName="ConvertAttributes_MigrationScript.java" startLine="66" startPosition="49" endLine="71" endPosition="11" />
     <scopeInfo nodeId="828685156158608604" fileName="ConvertAttributes_MigrationScript.java" startLine="105" startPosition="107" endLine="110" endPosition="64">
@@ -422,6 +431,7 @@
     <nodeInfo nodeId="7118207596056310752" fileName="ShowAttributes_MigrationScript.java" startLine="28" startPosition="59" endLine="31" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="7374212827370262909" fileName="ShowAttributes_MigrationScript.java" startLine="36" startPosition="52" endLine="36" endPosition="52" />
     <scopeInfo nodeId="7118207596056285489" fileName="ShowAttributes_MigrationScript.java" startLine="62" startPosition="52" endLine="62" endPosition="52" />
+    <scopeInfo nodeId="4268767923418849760" fileName="ShowAttributes_MigrationScript.java" startLine="86" startPosition="52" endLine="86" endPosition="52" />
     <scopeInfo nodeId="7118207596056310753" fileName="ShowAttributes_MigrationScript.java" startLine="29" startPosition="96" endLine="30" endPosition="23" />
     <scopeInfo nodeId="7118207596056301037" fileName="ShowAttributes_MigrationScript.java" startLine="56" startPosition="59" endLine="59" endPosition="0">
       <varInfo nodeId="7118207596056301040" varName="role" />

@@ -66,5 +66,29 @@ public class ShowAttributes_MigrationScript extends BaseMigrationScript {
         return false;
       }
     });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Not converted smodel operations";
+      }
+
+      public String getAdditionalInfo() {
+        return "Not converted smodel operations";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.AttributeAccessOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return true;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
   }
 }
