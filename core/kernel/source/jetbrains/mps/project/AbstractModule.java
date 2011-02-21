@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -557,7 +558,8 @@ public abstract class AbstractModule implements IModule {
 
   @Override
   public ModuleReference getModuleFor(String packageName, String langID) {
-    Set<IModule> deps = getDependenciesManager().getAllDependOnModules();
+    Collection<IModule> scopeModules = IterableUtil.asCollection(getScope().getVisibleModules());
+    Set<IModule> deps = new HashSet<IModule>(scopeModules);
     deps.add(this);
     for (IModule module: deps){
       for (SModelDescriptor model : module.getOwnModelDescriptors()) {
