@@ -171,21 +171,9 @@
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.Language.Actions" />
     </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="3465865320786328030">
-      <property name="name" nameId="tpck.1169194664001" value="LanguageNewActions" />
-      <property name="caption" nameId="tp4k.1204991940915" value="New" />
-      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.Language" />
-    </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="3465865320786328040">
       <property name="name" nameId="tpck.1169194664001" value="LanguageNewCustomPartActions" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.Language" />
-    </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1683977858888862569">
-      <property name="name" nameId="tpck.1169194664001" value="GeneratorNewActions" />
-      <property name="caption" nameId="tp4k.1204991940915" value="New" />
-      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.Generator" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1683977858888862574">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.Generator" />
@@ -324,6 +312,14 @@
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1784959407586169192">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.Devkit" />
       <property name="name" nameId="tpck.1169194664001" value="DevkitActionsEx" />
+    </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1366781238034273697">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.Language" />
+      <property name="name" nameId="tpck.1169194664001" value="LanguageNewGenerator" />
+    </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1366781238034273705">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.Language" />
+      <property name="name" nameId="tpck.1169194664001" value="LanguageNewActionsEx" />
     </node>
   </roots>
   <root id="8586967776370449177">
@@ -2451,31 +2447,6 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="ll11.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
     </node>
   </root>
-  <root id="3465865320786328030">
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="3465865320786328031">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991224874" resolveInfo="LanguageActions" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1204911159306" resolveInfo="newGroup" />
-    </node>
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="3465865320786328032">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3465865320786328033">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="3465865320786327950" resolveInfo="NewGenerator" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="3465865320786328034" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="3465865320786328035">
-        <property name="name" nameId="tpck.1169194664001" value="newAspect" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="3465865320786328036" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3465865320786328037">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="tprs.1215903504454" resolveInfo="NewModel" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3465865320786328038">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="tprs.6747753996184150085" resolveInfo="NewModelFromSource" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3465865320786328053">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="3465865320786305631" resolveInfo="NewAccessoryModel" />
-      </node>
-    </node>
-  </root>
   <root id="3465865320786328040">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.BuildGroupBlock" typeId="tp4k.1207145360364" id="3465865320786328041">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3465865320786328042">
@@ -2503,22 +2474,8 @@
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="3465865320786328051">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="3465865320786328030" resolveInfo="LanguageNewActions" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="3465865320786328035" resolveInfo="newAspect" />
-    </node>
-  </root>
-  <root id="1683977858888862569">
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1683977858888862570">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991229896" resolveInfo="GeneratorActions" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1204980550723" resolveInfo="generatorNew" />
-    </node>
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1683977858888862571">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1683977858888862572">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="tprs.1215903504454" resolveInfo="NewModel" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1683977858888862573">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="tprs.6747753996184150085" resolveInfo="NewModelFromSource" />
-      </node>
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1366781238034273687" resolveInfo="LanguageNewActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1366781238034273692" resolveInfo="newAspect" />
     </node>
   </root>
   <root id="1683977858888862574">
@@ -5948,6 +5905,28 @@
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1784959407586169196">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991228238" resolveInfo="DevkitActions" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1784959407586168727" resolveInfo="properties" />
+    </node>
+  </root>
+  <root id="1366781238034273697">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1366781238034273699">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1366781238034273700">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="3465865320786327950" resolveInfo="NewGenerator" />
+      </node>
+    </node>
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1366781238034273701">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1366781238034273687" resolveInfo="LanguageNewActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1366781238034273702" resolveInfo="newSubModule" />
+    </node>
+  </root>
+  <root id="1366781238034273705">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1366781238034273707">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1366781238034273708">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="3465865320786305631" resolveInfo="NewAccessoryModel" />
+      </node>
+    </node>
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1366781238034273709">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1366781238034273687" resolveInfo="LanguageNewActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1366781238034273704" resolveInfo="newModel" />
     </node>
   </root>
 </model>

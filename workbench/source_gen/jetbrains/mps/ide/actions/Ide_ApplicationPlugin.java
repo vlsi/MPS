@@ -71,8 +71,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FixVirtualPackges_Action());
     addAction(new FoldSelection_Action());
     addAction(new GenerateFiles_Action());
-    addAction(new GetModelContentsFromSource_Action());
-    addAction(new GetModuleContentsFromSource_Action());
     addAction(new GoByCurrentReference_Action());
     addAction(new GoToNodeById_Action());
     addAction(new HighlightInstances_Action());
@@ -87,7 +85,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new MoveFileOrDirectory_Action());
     addAction(new NewDirectory_Action());
     addAction(new NewFile_Action());
-    addAction(new NewModelFromSource_Action());
     addAction(new NewModel_Action());
     addAction(new NewRuntimeModule_Action());
     addAction(new NewSubModel_Action());
@@ -183,11 +180,13 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new GenerateProjectPopup_ActionGroup());
     addGroup(new Generate_ActionGroup());
     addGroup(new GeneratorActions_ActionGroup());
+    addGroup(new GeneratorNewActions_ActionGroup());
     addGroup(new GoByReference_ActionGroup());
     addGroup(new Goto_ActionGroup());
     addGroup(new JUnitTestCaseActions_ActionGroup());
     addGroup(new JUnitTestMethodActions_ActionGroup());
     addGroup(new LanguageActions_ActionGroup());
+    addGroup(new LanguageNewActions_ActionGroup());
     addGroup(new ModelActionsInternal_ActionGroup());
     addGroup(new ModelActions_ActionGroup());
     addGroup(new ModelNewActions_ActionGroup());
@@ -252,6 +251,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(ToolsInternal_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_internal);
     insertGroupIntoAnother(ProjectNewActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_projectNew);
     insertGroupIntoAnother(SolutionNewActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_solutionNew);
+    insertGroupIntoAnother(GeneratorNewActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generatorNew);
+    insertGroupIntoAnother(LanguageNewActions_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_newGroup);
     insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_newActions);
     insertGroupIntoAnother(FileSystemNewActions_ActionGroup.ID, AbstractFileActions_ActionGroup.ID, AbstractFileActions_ActionGroup.LABEL_ID_new);
     insertGroupIntoAnother(PackageNewActions_ActionGroup.ID, PackageActions_ActionGroup.ID, PackageActions_ActionGroup.LABEL_ID_newActions);
