@@ -12,6 +12,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ModelActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.ModelActions_ActionGroup";
   public static final String LABEL_ID_newActions = ID + "newActions";
+  public static final String LABEL_ID_paste = ID + "paste";
   public static final String LABEL_ID_showHelp = ID + "showHelp";
   public static final String LABEL_ID_modelUsages = ID + "modelUsages";
   public static final String LABEL_ID_make = ID + "make";
@@ -34,7 +35,12 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
         ModelActions_ActionGroup.this.addAction(action);
       }
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteNode_Action");
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteAsJavaClass_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(ModelActions_ActionGroup.LABEL_ID_paste);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        ModelActions_ActionGroup.this.addAction(action);
+      }
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModels_Action");
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CloneModel_Action");

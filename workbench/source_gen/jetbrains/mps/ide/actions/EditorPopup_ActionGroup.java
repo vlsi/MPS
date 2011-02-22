@@ -14,6 +14,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopup_ActionGroup";
   public static final String LABEL_ID_goByRef = ID + "goByRef";
   public static final String LABEL_ID_structure = ID + "structure";
+  public static final String LABEL_ID_paste = ID + "paste";
   public static final String LABEL_ID_folding = ID + "folding";
   public static final String LABEL_ID_gotoConceptAspects = ID + "gotoConceptAspects";
   public static final String LABEL_ID_make = ID + "make";
@@ -48,8 +49,12 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
         EditorPopup_ActionGroup.this.addAction(action);
       }
       EditorPopup_ActionGroup.this.addSeparator();
-      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteAsJavaStatements_Action");
-      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteAsJavaMethods_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_paste);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorPopup_ActionGroup.this.addAction(action);
+      }
       EditorPopup_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_folding);

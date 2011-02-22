@@ -1,3 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="ModelActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.java.actions.ModelActions_ActionGroup" />
+  <unitInfo fileName="EditorPopup_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.java.actions.EditorPopup_ActionGroup" />
+  <unitInfo fileName="PasteAsJavaClass_Action.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action" />
+  <unitInfo fileName="PasteAsJavaStatements_Action.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action" />
+  <unitInfo fileName="PasteAsJavaMethods_Action.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action" />
+  <root nodeId="2872212824181502638">
+    <nodeInfo nodeId="2872212824181502641" fileName="ModelActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="2872212824181502643">
+    <nodeInfo nodeId="2872212824181502649" fileName="EditorPopup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2872212824181502650" fileName="EditorPopup_ActionGroup.java" startLine="17" startPosition="108" endLine="18" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="2872212824181502651">
+    <nodeInfo nodeId="2872212824181502656" fileName="PasteAsJavaClass_Action.java" startLine="55" startPosition="9" endLine="56" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="2872212824181502669">
+    <nodeInfo nodeId="2872212824181502674" fileName="PasteAsJavaMethods_Action.java" startLine="56" startPosition="9" endLine="57" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="2872212824181502686">
+    <nodeInfo nodeId="2872212824181502691" fileName="PasteAsJavaStatements_Action.java" startLine="56" startPosition="9" endLine="57" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+</debugInfo>
 
