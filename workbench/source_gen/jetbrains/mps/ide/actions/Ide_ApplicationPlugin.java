@@ -30,7 +30,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AddModuleToProject_Action());
     addAction(new AddToNewFavoritesList_Action());
     addAction(new AnalyzeClasspath_Action());
-    addAction(new CellProperties_Action());
     addAction(new CheckModel_Action());
     addAction(new CheckModelsBeforeGeneration_Action());
     addAction(new CheckProject_Action());
@@ -74,17 +73,14 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FoldSelection_Action());
     addAction(new GenerateFiles_Action());
     addAction(new GenerateTextFromSolution_Action());
-    addAction(new GenerationIntentions_Action());
     addAction(new GetModelContentsFromSource_Action());
     addAction(new GetModuleContentsFromSource_Action());
     addAction(new GoByCurrentReference_Action());
     addAction(new GoToNodeById_Action());
     addAction(new GoToUsageInMappingConfig_Action());
-    addAction(new HighlightCellDependencies_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
     addAction(new InstallIDEAPlugin_Action());
-    addAction(new LanguagePaths_Action());
     addAction(new LoadNonStubModels_Action());
     addAction(new MPSProjectPaths_Action());
     addAction(new MakeAllModules_Action());
@@ -109,7 +105,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new PasteAsJavaStatements_Action());
     addAction(new PasteNode_Action());
     addAction(new Pause_Action());
-    addAction(new PrintNodeID_Action());
     addAction(new QuickCreate_Action());
     addAction(new RebuildAllModules_Action());
     addAction(new RebuildModule_Action());
@@ -137,7 +132,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new SetNodePackage_Action());
     addAction(new ShowBookmarksDialog_Action());
     addAction(new ShowBookmarks_Action());
-    addAction(new ShowCellInExplorer_Action());
     addAction(new ShowClassInHierarchy_Action());
     addAction(new ShowConceptInHierarchy_Action());
     addAction(new ShowErrorMessage_Action());
@@ -159,8 +153,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new StepInto_Action());
     addAction(new StepOut_Action());
     addAction(new StepOver_Action());
-    addAction(new SurroundWithIntentions_Action());
-    addAction(new TestNodePath_Action());
     addAction(new ToggleBreakpoint_Action());
     addAction(new UpgradeModelPersistenceGlobally_Action());
     addAction(new UpgradeModelPersistenceInModel_Action());
@@ -199,7 +191,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new GenerateOptions_ActionGroup());
     addGroup(new GenerateProjectPopup_ActionGroup());
     addGroup(new Generate_ActionGroup());
-    addGroup(new GenerationIntentions_ActionGroup());
     addGroup(new GeneratorActions_ActionGroup());
     addGroup(new GoByReference_ActionGroup());
     addGroup(new Goto_ActionGroup());
@@ -229,7 +220,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new SolutionActions_ActionGroup());
     addGroup(new SolutionNewActions_ActionGroup());
     addGroup(new SolutionRefactoring_ActionGroup());
-    addGroup(new SurroundWithIntentions_ActionGroup());
     addGroup(new ToolsInternal_ActionGroup());
     addGroup(new ToolsUpgrade_ActionGroup());
     addGroup(new Tools_ActionGroup());

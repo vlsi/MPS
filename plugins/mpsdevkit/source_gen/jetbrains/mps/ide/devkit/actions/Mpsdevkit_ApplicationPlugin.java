@@ -12,6 +12,7 @@ import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.actions.Goto_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
+import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -30,22 +31,32 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new AddAccessoryModel_Action());
+    addAction(new CellProperties_Action());
     addAction(new DeleteGenerator_Action());
+    addAction(new GenerationIntentions_Action());
     addAction(new GeneratorProperties_Action());
     addAction(new GoToConceptDeclaration_Action());
     addAction(new GoToEditorDeclaration_Action());
     addAction(new GoToRules_Action());
+    addAction(new HighlightCellDependencies_Action());
     addAction(new LanguageHierarchy_Action());
+    addAction(new LanguagePaths_Action());
     addAction(new LanguageProperties_Action());
     addAction(new NewAccessoryModel_Action());
     addAction(new NewDevKit_Action());
     addAction(new NewGenerator_Action());
+    addAction(new PrintNodeID_Action());
     addAction(new RenameLanguage_Action());
+    addAction(new ShowCellInExplorer_Action());
+    addAction(new SurroundWithIntentions_Action());
+    addAction(new TestNodePath_Action());
     // groups 
     addGroup(new AccessoriesGroupActions_ActionGroup());
+    addGroup(new EditorInternalEx_ActionGroup());
     addGroup(new EditorPopupEx_ActionGroup());
     addGroup(new EditorTabActionsEx_ActionGroup());
     addGroup(new GenerateGeneratorPopup_ActionGroup());
+    addGroup(new GenerationIntentions_ActionGroup());
     addGroup(new GeneratorActions_Delete_ActionGroup());
     addGroup(new GeneratorActions_Properties_ActionGroup());
     addGroup(new GeneratorNewActions_ActionGroup());
@@ -57,6 +68,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new ModulePropertiesGroupEx_ActionGroup());
     addGroup(new NodeActionsEx_ActionGroup());
     addGroup(new ProjectNewActionsEx_ActionGroup());
+    addGroup(new SurroundWithIntentions_ActionGroup());
   }
 
   public void adjustRegularGroups() {
@@ -73,12 +85,14 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GotoEx_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(NodeActionsEx_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(LanguageActionsEx_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_properties);
+    insertGroupIntoAnother(EditorInternalEx_ActionGroup.ID, EditorInternal_ActionGroup.ID, EditorInternal_ActionGroup.LABEL_ID_workbench);
     insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());
+    ListSequence.fromList(res).addElement(new Mac_KeymapChanges());
     return res;
   }
 }
