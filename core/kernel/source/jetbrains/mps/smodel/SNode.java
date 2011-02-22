@@ -1487,7 +1487,7 @@ public final class SNode {
     node.myParent = null;
   }
 
-  private class ChildrenList extends AbstractImmutableList<SNode> {
+  private static class ChildrenList extends AbstractImmutableList<SNode> {
     public ChildrenList(SNode first) {
       super(first);
     }
@@ -1512,21 +1512,24 @@ public final class SNode {
     }
   }
 
-  private class SkipAttributesChildrenList extends AbstractImmutableList<SNode> {
+  private static class SkipAttributesChildrenList extends AbstractImmutableList<SNode> {
     public SkipAttributesChildrenList(SNode first) {
-      super(first);
+      super(skipAttributes(first));
     }
 
     public SkipAttributesChildrenList(SNode first, int size) {
-      super(first, size);
+      super(skipAttributes(first), size);
+    }
+
+    private static SNode skipAttributes(SNode node) {
+      while (node != null && AttributeOperations.isAttribute(node)) {
+        node = node.myNextSibling;
+      }
+      return node;
     }
 
     protected SNode next(SNode node) {
-      SNode result = node.myNextSibling;
-      while (result != null && AttributeOperations.isAttribute(result)) {
-        result = result.myNextSibling;
-      }
-      return result;
+      return skipAttributes(node.myNextSibling);
     }
 
     protected SNode prev(SNode node) {
