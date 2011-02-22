@@ -19,7 +19,6 @@ public class ModulePropertiesGroup_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       ModulePropertiesGroup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SolutionProperties_Action");
-      ModulePropertiesGroup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DevkitProperties_Action");
       {
         LabelledAnchor action = new LabelledAnchor(ModulePropertiesGroup_ActionGroup.LABEL_ID_extensions);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

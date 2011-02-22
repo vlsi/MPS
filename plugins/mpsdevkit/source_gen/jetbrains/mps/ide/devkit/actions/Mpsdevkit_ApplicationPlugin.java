@@ -12,6 +12,7 @@ import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.actions.Goto_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
+import jetbrains.mps.ide.actions.DevkitActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
@@ -33,6 +34,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AddAccessoryModel_Action());
     addAction(new CellProperties_Action());
     addAction(new DeleteGenerator_Action());
+    addAction(new DevkitProperties_Action());
     addAction(new GenerationIntentions_Action());
     addAction(new GeneratorProperties_Action());
     addAction(new GoToConceptDeclaration_Action());
@@ -52,6 +54,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new TestNodePath_Action());
     // groups 
     addGroup(new AccessoriesGroupActions_ActionGroup());
+    addGroup(new DevkitActionsEx_ActionGroup());
     addGroup(new EditorInternalEx_ActionGroup());
     addGroup(new EditorPopupEx_ActionGroup());
     addGroup(new EditorTabActionsEx_ActionGroup());
@@ -84,6 +87,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(EditorTabActionsEx_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(GotoEx_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(NodeActionsEx_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_gotoConceptAspects);
+    insertGroupIntoAnother(DevkitActionsEx_ActionGroup.ID, DevkitActions_ActionGroup.ID, DevkitActions_ActionGroup.LABEL_ID_properties);
     insertGroupIntoAnother(LanguageActionsEx_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_properties);
     insertGroupIntoAnother(EditorInternalEx_ActionGroup.ID, EditorInternal_ActionGroup.ID, EditorInternal_ActionGroup.LABEL_ID_workbench);
     insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
