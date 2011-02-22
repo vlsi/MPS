@@ -68,9 +68,6 @@ public class UpdateStubRefs_Action extends GeneratedAction {
           toRemove.add(elem);
         }
 
-        for (SModel.ImportElement elem : toRemove) {
-          dsmd.getSModel().removeModelImport_internal(elem);
-        }
         SModelRepository.getInstance().markChanged(dsmd, true);
       }
 

@@ -7,6 +7,7 @@ public class StubHelper {
   public StubHelper() {
   }
 
+  @Deprecated
   public static SModelReference uidForPackageInStubs(String pack) {
     return uidForPackageInStubs(pack, LanguageID.JAVA, new ModuleReference(""));
   }

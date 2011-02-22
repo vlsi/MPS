@@ -20,6 +20,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationHistory;
+import jetbrains.mps.smodel.SModelId.ForeignSModelId;
+import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
@@ -572,17 +574,6 @@ public class SModel {
 
     myImports.add(importElement);
     fireImportAddedEvent(importElement.getModelReference());
-  }
-
-  @Deprecated //only for temp internal use
-  public void removeModelImport_internal(ImportElement importElement) {
-    ModelChange.assertLegalChange(this);
-
-    if (importElement != null) {
-      myImports.remove(importElement);
-      myImplicitImports.add(importElement);  // to save version and ID if model was imported implicitly
-      fireImportRemovedEvent(importElement.getModelReference());
-    }
   }
 
   public void deleteModelImport(@NotNull SModelReference modelReference) {

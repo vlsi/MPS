@@ -40,6 +40,9 @@ public abstract class SModelId {
   }
 
   public static SModelId foreign(String kind, String moduleId, String id) {
+    if (moduleId==null||moduleId.length()==0){
+      return new ForeignSModelId(kind + "#" + id);
+    }
     return new ForeignSModelId(kind + "#" + moduleId + "#" + id);
   }
 
