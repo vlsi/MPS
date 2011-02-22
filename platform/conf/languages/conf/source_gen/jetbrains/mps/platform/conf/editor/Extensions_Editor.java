@@ -52,9 +52,9 @@ public class Extensions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_ppatbw_b1a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Extensions_Editor.extensionsFragmentListHandler_ppatbw_b1a(node, "extensionsFragment", editorContext);
+    AbstractCellListHandler handler = new Extensions_Editor.fragmentListHandler_ppatbw_b1a(node, "fragment", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_extensionsFragment");
+    editorCell.setCellId("refNodeList_fragment");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -64,8 +64,8 @@ public class Extensions_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static class extensionsFragmentListHandler_ppatbw_b1a extends RefNodeListHandler {
-    public extensionsFragmentListHandler_ppatbw_b1a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class fragmentListHandler_ppatbw_b1a extends RefNodeListHandler {
+    public fragmentListHandler_ppatbw_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

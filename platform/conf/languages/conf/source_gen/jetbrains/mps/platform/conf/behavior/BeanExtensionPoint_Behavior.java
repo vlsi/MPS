@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class BeanExtensionPoint_Behavior {
   public static void init(SNode thisNode) {
@@ -23,7 +24,18 @@ public class BeanExtensionPoint_Behavior {
     });
   }
 
-  public static BeanProperty call_property_6121364846593790761(SNode thisNode, String name) {
-    return null;
+  public static BeanProperty call_property_6121364846593790761(SNode thisNode, final String name) {
+    return Sequence.fromIterable(BeanUtil.properties(SLinkOperations.getTarget(thisNode, "beanClass", false))).findFirst(new IWhereFilter<BeanProperty>() {
+      public boolean accept(BeanProperty p) {
+        return eq_esf6t4_a0a0a0a0a0a0d(p.name(), name);
+      }
+    });
+  }
+
+  private static boolean eq_esf6t4_a0a0a0a0a0a0d(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

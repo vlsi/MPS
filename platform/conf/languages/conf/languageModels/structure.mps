@@ -60,6 +60,9 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="5314521579133239127">
     <property name="name:0" value="IConfigurationElement" />
     <property name="virtualPackage:0" value="elements" />
+    <node role="extends:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="7161354651095811206">
+      <link role="intfc:0" targetNodeId="5314521579133239148:0" resolveInfo="IConfigurationFragment" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5314521579133239132">
     <property name="name:0" value="ExtensionPoint" />
@@ -107,19 +110,6 @@
       <link role="intfc:0" targetNodeId="3v.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="5066720069350533013">
-    <property name="name:0" value="IConfigurationElementFragment" />
-    <property name="virtualPackage:0" value="configuration" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5066720069350533016">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="element" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="5314521579133239127:0" resolveInfo="IConfigurationElement" />
-    </node>
-    <node role="extends:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5066720069350533015">
-      <link role="intfc:0" targetNodeId="5314521579133239148:0" resolveInfo="IConfigurationChunk" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="5066720069350533017">
     <property name="name:0" value="IExternalConfigurationFragment" />
     <property name="virtualPackage:0" value="configuration" />
@@ -131,15 +121,13 @@
     <property name="name:0" value="XInclude" />
     <property name="virtualPackage:0" value="xml" />
     <link role="extends:0" targetNodeId="5066720069350533029:0" resolveInfo="ConfigurationXmlNode" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="4559888222469859036">
+      <property name="name:0" value="xpointer" />
+      <link role="dataType:0" targetNodeId="3v.1082983041843:0" resolveInfo="string" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1740160309778213311">
       <property name="value:0" value="include" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1740160309778208731">
-      <property name="metaClass:0" value="reference" />
-      <property name="role:0" value="xnode" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="5066720069350533029:0" resolveInfo="ConfigurationXmlNode" />
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5066720069350533028">
       <link role="intfc:0" targetNodeId="5066720069350533017:0" resolveInfo="IExternalFragment" />
@@ -160,25 +148,10 @@
       <link role="intfc:0" targetNodeId="5314521579133239148:0" resolveInfo="IConfigurationFragment" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7130790807395857419">
-    <property name="name:0" value="ConfigurationXmlNodeFragment" />
-    <property name="virtualPackage:0" value="xml" />
-    <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="7130790807395857420">
-      <link role="intfc:0" targetNodeId="5066720069350533013:0" resolveInfo="IConfigurationElementFragment" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7130790807395857422">
     <property name="name:0" value="ExtensionPoints" />
     <property name="virtualPackage:0" value="elements.containers" />
     <link role="extends:0" targetNodeId="5066720069350533029:0" resolveInfo="XmlConfigurationNode" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6121364846593814079">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="extensionPointsFragment" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="1740160309778170998:0" resolveInfo="ExtensionPointsFragment" />
-      <link role="specializedLink:0" targetNodeId="1740160309778170996:0" />
-    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1740160309778213318">
       <property name="value:0" value="extensionPoints" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
@@ -187,29 +160,10 @@
       <link role="intfc:0" targetNodeId="5314521579133239158:0" resolveInfo="IConfiguration" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1740160309778170998">
-    <property name="name:0" value="ExtensionPointsFragment" />
-    <property name="virtualPackage:0" value="elements.fragments" />
-    <link role="extends:0" targetNodeId="7130790807395857419:0" resolveInfo="ConfigurationXmlNodeFragment" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6121364846593814088">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="extensionPoint" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="5314521579133239132:0" resolveInfo="ExtensionPoint" />
-      <link role="specializedLink:0" targetNodeId="5066720069350533016:0" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1740160309778170999">
     <property name="name:0" value="Components" />
     <property name="virtualPackage:0" value="elements.containers" />
     <link role="extends:0" targetNodeId="5066720069350533029:0" resolveInfo="ConfigurationXmlNode" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1740160309778227725">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="componentsFragment" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="1740160309778171002:0" resolveInfo="ComponentsFragment" />
-      <link role="specializedLink:0" targetNodeId="1740160309778170996:0" />
-    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1740160309778213315">
       <property name="value:0" value="components" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
@@ -218,21 +172,6 @@
       <link role="intfc:0" targetNodeId="5314521579133239158:0" resolveInfo="IConfiguration" />
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1740160309778171022">
-      <link role="intfc:0" targetNodeId="1740160309778171018:0" resolveInfo="HasLevel" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1740160309778171002">
-    <property name="name:0" value="ComponentsFragment" />
-    <property name="virtualPackage:0" value="elements.fragments" />
-    <link role="extends:0" targetNodeId="7130790807395857419:0" resolveInfo="ConfigurationXmlNodeFragment" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1740160309778227726">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="component" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="4635942846893810046:0" resolveInfo="Component" />
-      <link role="specializedLink:0" targetNodeId="5066720069350533016:0" />
-    </node>
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1740160309778171024">
       <link role="intfc:0" targetNodeId="1740160309778171018:0" resolveInfo="HasLevel" />
     </node>
   </node>
@@ -323,13 +262,6 @@
     <property name="virtualPackage:0" value="elements.containers" />
     <property name="name:0" value="Extensions" />
     <link role="extends:0" targetNodeId="5066720069350533029:0" resolveInfo="ConfigurationXmlNode" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6121364846593555998">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="extensionsFragment" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="6121364846593555987:0" resolveInfo="ExtensionsFragment" />
-      <link role="specializedLink:0" targetNodeId="1740160309778170996:0" />
-    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1740160309778213319">
       <property name="value:0" value="extensions" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
@@ -357,18 +289,6 @@
       <link role="intfc:0" targetNodeId="5314521579133239158:0" resolveInfo="IConfiguration" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6121364846593555987">
-    <property name="virtualPackage:0" value="elements.fragments" />
-    <property name="name:0" value="ExtensionsFragment" />
-    <link role="extends:0" targetNodeId="7130790807395857419:0" resolveInfo="ConfigurationXmlNodeFragment" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6121364846593555989">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="extension" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="5314521579133239121:0" resolveInfo="Extension" />
-      <link role="specializedLink:0" targetNodeId="5066720069350533016:0" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6121364846593763655">
     <property name="virtualPackage:0" value="elements.extensions" />
     <property name="name:0" value="BeanExtension" />
@@ -389,6 +309,9 @@
       <property name="value:0" value="extension" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="7161354651095876186">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6121364846593790701">
     <property name="virtualPackage:0" value="elements.extensions" />
@@ -400,9 +323,18 @@
       <link role="target:0" targetNodeId="1740160309778171007:0" resolveInfo="IntefaceExtensionPoint" />
       <link role="specializedLink:0" targetNodeId="6121364846593763607:0" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7161354651095889473">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="impl" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2v.1068390468198:3" resolveInfo="ClassConcept" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="618741292999329657">
       <property name="value:0" value="extension" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="7161354651095889469">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6121364846593790726">
@@ -419,6 +351,10 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="618741292999329647">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="5066720069350533013">
+    <property name="name:0" value="IConfigurationElementFragment" />
+    <property name="virtualPackage:0" value="configuration" />
   </node>
 </model>
 

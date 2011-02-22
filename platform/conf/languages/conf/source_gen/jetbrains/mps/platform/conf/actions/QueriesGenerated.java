@@ -28,6 +28,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.platform.conf.behavior.BeanExtensionPoint_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Component_4569055436237489039(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -209,6 +213,99 @@ public class QueriesGenerated {
 
               public String getMatchingText(String pattern) {
                 return (item) + "=";
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+            });
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BeanExtension_7161354651095863073(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.BeanExtension");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Calculable calc = new Calculable() {
+          public Object calculate() {
+            return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.platform.conf.structure.BeanExtensionPoint");
+          }
+        };
+        Iterable<SNode> queryResult = (Iterable) calc.calculate();
+        if (queryResult != null) {
+          for (final SNode item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode be = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.BeanExtension", null);
+                SLinkOperations.setTarget(be, "extensionPoint", (item), false);
+                for (String pn : BeanExtensionPoint_Behavior.call_propertyNames_618741292999315209((item))) {
+                  SNode bea = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.BeanExtensionAttribute", null);
+                  SPropertyOperations.set(bea, "name", pn);
+                  ListSequence.fromList(SLinkOperations.getTargets(be, "attribute", true)).addElement(bea);
+                }
+                return be;
+              }
+
+              public String getMatchingText(String pattern) {
+                return SPropertyOperations.getString((item), "name");
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+            });
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_InterfaceExtension_7161354651095876188(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.InterfaceExtension");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Calculable calc = new Calculable() {
+          public Object calculate() {
+            List<Classifier> classifiers = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.CLASS, operationContext.getScope()).getClassifiers();
+            List<Tuples._2<SNode, SNode>> result = ListSequence.fromList(new ArrayList<Tuples._2<SNode, SNode>>());
+            for (final SNode iep : SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint")) {
+              for (SNode cc : Sequence.fromIterable(((Iterable<Classifier>) classifiers)).<SNode>select(new ISelector<Classifier, SNode>() {
+                public SNode select(Classifier cls) {
+                  return (SNode) cls.getNode();
+                }
+              }).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode cls) {
+                  return SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept") && Classifier_Behavior.call_isDescendant_7165541881557222913(cls, SLinkOperations.getTarget(iep, "iface", false));
+                }
+              })) {
+                ListSequence.fromList(result).addElement(MultiTuple.<SNode,SNode>from(iep, cc));
+              }
+            }
+            return result;
+          }
+        };
+        Iterable<Tuples._2<SNode, SNode>> queryResult = (Iterable) calc.calculate();
+        if (queryResult != null) {
+          for (final Tuples._2<SNode, SNode> item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode ie = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.InterfaceExtension", null);
+                SLinkOperations.setTarget(ie, "extensionPoint", (item)._0(), false);
+                SLinkOperations.setTarget(ie, "impl", (item)._1(), false);
+                return ie;
+              }
+
+              public String getMatchingText(String pattern) {
+                return SPropertyOperations.getString((item)._0(), "name") + " implementation=" + SPropertyOperations.getString((item)._1(), "name");
               }
 
               public String getVisibleMatchingText(String pattern) {

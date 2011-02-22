@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -52,9 +52,9 @@ public class ExtensionPoints_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_cw3nt1_b1a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ExtensionPoints_Editor.extensionPointsFragmentListHandler_cw3nt1_b1a(node, "extensionPointsFragment", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
-    editorCell.setCellId("refNodeList_extensionPointsFragment");
+    AbstractCellListHandler handler = new ExtensionPoints_Editor.fragmentListHandler_cw3nt1_b1a(node, "fragment", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
+    editorCell.setCellId("refNodeList_fragment");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -64,8 +64,8 @@ public class ExtensionPoints_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private static class extensionPointsFragmentListHandler_cw3nt1_b1a extends RefNodeListHandler {
-    public extensionPointsFragmentListHandler_cw3nt1_b1a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class fragmentListHandler_cw3nt1_b1a extends RefNodeListHandler {
+    public fragmentListHandler_cw3nt1_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

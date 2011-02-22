@@ -12,14 +12,22 @@ import jetbrains.mps.project.GlobalScope;
 
 public class XInclude extends ConfigurationXmlNode implements IExternalConfigurationFragment {
   public static final String concept = "jetbrains.mps.platform.conf.structure.XInclude";
+  public static final String XPOINTER = "xpointer";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String XNODE = "xnode";
   public static final String _$ATTRIBUTE = "_$attribute";
 
   public XInclude(SNode node) {
     super(node);
+  }
+
+  public String getXpointer() {
+    return this.getProperty(XInclude.XPOINTER);
+  }
+
+  public void setXpointer(String value) {
+    this.setProperty(XInclude.XPOINTER, value);
   }
 
   public String getShortDescription() {
@@ -44,14 +52,6 @@ public class XInclude extends ConfigurationXmlNode implements IExternalConfigura
 
   public void setVirtualPackage(String value) {
     this.setProperty(XInclude.VIRTUAL_PACKAGE, value);
-  }
-
-  public ConfigurationXmlNode getXnode() {
-    return (ConfigurationXmlNode) this.getReferent(ConfigurationXmlNode.class, XInclude.XNODE);
-  }
-
-  public void setXnode(ConfigurationXmlNode node) {
-    super.setReferent(XInclude.XNODE, node);
   }
 
   public int get_$attributesCount() {
