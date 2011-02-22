@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.lang.reflect.Method;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.List;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
@@ -44,7 +45,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       });
       if (!(canBeChild)) {
         SNode rule = cm.getCanBeChildBlock(operationContext, cbcMethod);
-        component.addError(node, "Node isn't applicable in the context", rule);
+        component.addError(node, "Node " + node + " cannot be child of node " + SNodeOperations.getParent(node), rule);
       }
     }
 
@@ -76,11 +77,11 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       });
       if (!(canBeParent)) {
         SNode rule = cm.getCanBeParentBlock(operationContext, method);
-        component.addError(node, "Node isn't applicable in the context", rule);
+        component.addError(node, "Node " + node + " cannot be parent of node " + child, rule);
       }
-      SNode rule = cm.canBeAncestorReturnBlock(node, childConcept, operationContext);
-      if (rule != null) {
-        component.addError(child, "Node isn't applicable in the context", rule);
+      SNode rule = SNodeOperations.cast(cm.canBeAncestorReturnBlock(node, childConcept, operationContext), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor");
+      if ((rule != null)) {
+        component.addError(child, "Concept " + SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(rule), "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false) + " cannot be ancestor of node " + child, rule);
       }
     }
 
