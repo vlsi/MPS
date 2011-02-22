@@ -13,19 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.generate;
+package jetbrains.mps.ide.make.actions.generate;
 
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.ide.generator.GeneratorUIFacade;
+import jetbrains.mps.ide.generator.OutputViewGenerationHandler;
 
 @Deprecated
-public class GenerateFilesFromModelsAction extends GenerateModelsAction {
-  public GenerateFilesFromModelsAction(boolean rebuildAll) {
-    super("", rebuildAll);
+public class GenerateTextFromModelsAction extends GenerateModelsAction {
+  public GenerateTextFromModelsAction() {
+    super("", true);
     addPlace(null);
   }
 
   public IGenerationHandler getGenerationHandler() {
-    return GeneratorUIFacade.getInstance().getDefaultGenerationHandler();
+    return new OutputViewGenerationHandler();
   }
 }

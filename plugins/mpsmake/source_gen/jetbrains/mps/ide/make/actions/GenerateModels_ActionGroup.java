@@ -4,9 +4,9 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.actions.generate.GenerateFilesFromModelsAction;
+import jetbrains.mps.ide.make.actions.generate.GenerateFilesFromModelsAction;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.workbench.actions.generate.GenerateTextFromModelsAction;
+import jetbrains.mps.ide.make.actions.generate.GenerateTextFromModelsAction;
 
 public class GenerateModels_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GenerateModels_ActionGroup.class);

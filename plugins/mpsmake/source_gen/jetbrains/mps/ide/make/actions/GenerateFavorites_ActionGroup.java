@@ -17,9 +17,9 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.workbench.actions.generate.GenerateFilesFromModelsAction;
+import jetbrains.mps.ide.make.actions.generate.GenerateFilesFromModelsAction;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.workbench.actions.generate.GenerateTextFromModelsAction;
+import jetbrains.mps.ide.make.actions.generate.GenerateTextFromModelsAction;
 import org.jetbrains.annotations.Nullable;
 
 public class GenerateFavorites_ActionGroup extends GeneratedActionGroup {

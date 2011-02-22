@@ -11,6 +11,7 @@
   <import index="5hg8" modelUID="f:java_stub#jetbrains.mps.ide.projectPane.favorites(jetbrains.mps.ide.projectPane.favorites@java_stub)" version="-1" />
   <import index="1jni" modelUID="f:java_stub#javax.swing.tree(javax.swing.tree@java_stub)" version="-1" />
   <import index="lhxa" modelUID="f:java_stub#jetbrains.mps.ide.ui.smodel(jetbrains.mps.ide.ui.smodel@java_stub)" version="-1" />
+  <import index="db10" modelUID="f:java_stub#jetbrains.mps.ide.make.actions.generate(jetbrains.mps.ide.make.actions.generate@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
@@ -236,7 +237,7 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="5882989260841437392" resolveInfo="GenerateFilesFromModel" />
         <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5882989260841437478">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5882989260841437479">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f9oj.~GenerateFilesFromModelsAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateFilesFromModelsAction" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="db10.~GenerateFilesFromModelsAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateFilesFromModelsAction" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5882989260841437480">
               <property name="value" nameId="tpee.1068580123138" value="false" />
             </node>
@@ -247,7 +248,7 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="5882989260841437446" resolveInfo="RegenerateFilesFromModel" />
         <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5882989260841437482">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5882989260841437483">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f9oj.~GenerateFilesFromModelsAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateFilesFromModelsAction" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="db10.~GenerateFilesFromModelsAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateFilesFromModelsAction" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5882989260841437484">
               <property name="value" nameId="tpee.1068580123138" value="true" />
             </node>
@@ -258,7 +259,7 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="5882989260841437419" resolveInfo="GenerateTextFromModel" />
         <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5882989260841437486">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5882989260841437487">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f9oj.~GenerateTextFromModelsAction%d&lt;init&gt;()" resolveInfo="GenerateTextFromModelsAction" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="db10.~GenerateTextFromModelsAction%d&lt;init&gt;()" resolveInfo="GenerateTextFromModelsAction" />
           </node>
         </node>
       </node>
@@ -333,7 +334,7 @@
                   <link role="action" roleId="tp4k.1203088061055" targetNodeId="5882989260841437392" resolveInfo="GenerateFilesFromModel" />
                   <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5882989260841437520">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5882989260841437521">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f9oj.~GenerateFilesFromModelsAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateFilesFromModelsAction" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="db10.~GenerateFilesFromModelsAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateFilesFromModelsAction" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5882989260841437522">
                         <property name="value" nameId="tpee.1068580123138" value="false" />
                       </node>
@@ -346,7 +347,7 @@
                   <link role="action" roleId="tp4k.1203088061055" targetNodeId="5882989260841437446" resolveInfo="RegenerateFilesFromModel" />
                   <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5882989260841437525">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5882989260841437526">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f9oj.~GenerateFilesFromModelsAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateFilesFromModelsAction" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="db10.~GenerateFilesFromModelsAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateFilesFromModelsAction" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5882989260841437527">
                         <property name="value" nameId="tpee.1068580123138" value="true" />
                       </node>
@@ -359,7 +360,7 @@
                   <link role="action" roleId="tp4k.1203088061055" targetNodeId="5882989260841437419" resolveInfo="GenerateTextFromModel" />
                   <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5882989260841437530">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5882989260841437531">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f9oj.~GenerateTextFromModelsAction%d&lt;init&gt;()" resolveInfo="GenerateTextFromModelsAction" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="db10.~GenerateTextFromModelsAction%d&lt;init&gt;()" resolveInfo="GenerateTextFromModelsAction" />
                     </node>
                   </node>
                 </node>
