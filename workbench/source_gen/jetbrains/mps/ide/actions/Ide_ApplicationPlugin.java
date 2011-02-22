@@ -77,7 +77,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GetModuleContentsFromSource_Action());
     addAction(new GoByCurrentReference_Action());
     addAction(new GoToNodeById_Action());
-    addAction(new GoToUsageInMappingConfig_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
     addAction(new InstallIDEAPlugin_Action());
@@ -184,7 +183,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new FileSystemNewActions_ActionGroup());
     addGroup(new FolderActions_ActionGroup());
     addGroup(new Folding_ActionGroup());
-    addGroup(new GenerateEditorPopup_ActionGroup());
     addGroup(new GenerateModelPopup_ActionGroup());
     addGroup(new GenerateModulePopup_ActionGroup());
     addGroup(new GenerateModule_ActionGroup());
@@ -256,7 +254,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_generateModule);
     insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_generateModule);
     insertGroupIntoAnother(GenerateProjectPopup_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_generate);
-    insertGroupIntoAnother(GenerateEditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_generateModel);
     insertGroupIntoAnother(Goto_ActionGroup.ID, "GoToMenu", null);
     insertGroupIntoAnother(GoByReference_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_goByRef);
     insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
