@@ -80,6 +80,15 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Model from Source" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.Actions" />
     </node>
+    <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="2298514111603286867">
+      <property name="id" nameId="tp4k.5023285075122009366" value="jebrains.mps.ide.java" />
+      <property name="name" nameId="tp4k.5023285075122009367" value="Java Integration" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Allows importing sources from Java into MPS" />
+      <property name="version" nameId="tp4k.5023285075122009369" value="1.5" />
+      <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
+      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
+      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
+    </node>
   </roots>
   <root id="2872212824181502638">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2872212824181502640">
@@ -1916,5 +1925,6 @@
       </node>
     </node>
   </root>
+  <root id="2298514111603286867" />
 </model>
 

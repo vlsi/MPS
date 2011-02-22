@@ -24,7 +24,9 @@
 
 
   <application-components>
-
+    <component>
+      <implementation-class>jetbrains.mps.ide.java.actions.Java_PluginInitializer</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

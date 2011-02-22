@@ -55,6 +55,36 @@
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.java.actions.Java_ApplicationPlugin" file="Java_ApplicationPlugin.java">
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.SolutionActionsEx_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.SolutionActions_ActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.SolutionNewActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.EditorPopup_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GeneratorNewActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.ModelNewActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.ModelActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.NewModelFromSource_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action" />
+    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.java.actions.Java_PluginInitializer" file="Java_PluginInitializer.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.Java_ApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.java.actions.Java_ProjectPlugin" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.java.actions.Java_ProjectPlugin" file="Java_ProjectPlugin.java">
+    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.ModelActions_ActionGroup" file="ModelActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -163,5 +193,6 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.java.actions.plugin" file="plugin.xml" />
 </dependenciesRoot>
 
