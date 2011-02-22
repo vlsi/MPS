@@ -43,7 +43,7 @@ public class BlockTreeNode extends TypeSystemStateTreeNode {
   }
 
   public BlockTreeNode(Block block, IOperationContext operationContext, State state) {
-    super(block.getExpandedPresentation(state), operationContext);
+    super(block.getShortPresentation(), operationContext);
     myBlock = block;
   }
 

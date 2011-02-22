@@ -17,12 +17,15 @@ package jetbrains.mps.newTypesystem.presentation.difference;
 
 import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.presentation.state.TypeSystemStateTree;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -31,24 +34,33 @@ public class ShowTypeSystemTrace extends JDialog {
   private Checkbox myBlockDependencies;
   private Checkbox myTraceForNode;
   private Checkbox myGenerationMode;
-  private TypeSystemTraceTree myTree;
+  private TypeSystemTraceTree myTraceTree;
+  private TypeSystemStateTree myStateTree;
 
   public ShowTypeSystemTrace(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame, SNode node) {
     super(frame);
     t.checkRoot(true);
     this.setLayout(new BorderLayout());
     this.getContentPane().setBackground(this.getBackground());
-    myTree = new TypeSystemTraceTree(operationContext, t, frame, node);
-    JScrollPane scrollPane = new JBScrollPane(myTree);
-    scrollPane.setBackground(this.getBackground());
-
-    this.add(scrollPane, BorderLayout.CENTER);
+    myTraceTree = new TypeSystemTraceTree(operationContext, t, frame, node, this);
+    myStateTree = new TypeSystemStateTree(operationContext, myTraceTree.getState());
+    JSplitPane splitPane = new JSplitPane();
+    this.add(splitPane);
+    JBScrollPane traceScrollPane = new JBScrollPane(myTraceTree);
+    traceScrollPane.setPreferredSize(new Dimension(400, 900));
+    JBScrollPane stateScrollPane = new JBScrollPane(myStateTree);
+    stateScrollPane.setPreferredSize(new Dimension(400, 900));
+    splitPane.setDividerLocation(0.6);
+    splitPane.setResizeWeight(0.5);
+    splitPane.setLeftComponent(traceScrollPane);
+    splitPane.setRightComponent(stateScrollPane);
+    
     JPanel checkBoxes = new JPanel();
     checkBoxes.setLayout(new FlowLayout());
     this.add(checkBoxes, BorderLayout.SOUTH);
 
     myBlockDependencies = new Checkbox("Block dependencies");
-    myBlockDependencies.setState(myTree.isShowDependencyOperations());
+    myBlockDependencies.setState(myTraceTree.isShowDependencyOperations());
     myTraceForNode = new Checkbox("Trace for selected node");
     myGenerationMode = new Checkbox("Generation mode");
     checkBoxes.add(myBlockDependencies);
@@ -58,12 +70,12 @@ public class ShowTypeSystemTrace extends JDialog {
     myBlockDependencies.addItemListener(listener);
     myTraceForNode.addItemListener(listener);
     myGenerationMode.addItemListener(listener);
-    myTree.setBackground(getBackground());
-    myTree.setForeground(new Color(0x07025D));
-  //  this.setSize(500, 600);
-    this.setPreferredSize(new Dimension(500, 900));
+    myTraceTree.setBackground(getBackground());
+    myTraceTree.setForeground(new Color(0x07025D));
+
+    this.setPreferredSize(new Dimension(800, 900));
     String title = "TypeSystem trace";
-    if (myTree.isTraceForNode() && node != null) {
+    if (myTraceTree.isTraceForNode() && node != null) {
       title = title.concat(" for selected node (" + node + ")");
     }
     setTitle(title);
@@ -76,6 +88,10 @@ public class ShowTypeSystemTrace extends JDialog {
     return Color.WHITE;
   }
 
+  public void resetState(State state) {
+    myStateTree.resetState(state);
+  }
+
   private class CheckBoxListener implements ItemListener {
 
     @Override
@@ -83,14 +99,14 @@ public class ShowTypeSystemTrace extends JDialog {
       Object source = e.getItemSelectable();
       boolean selected = ItemEvent.SELECTED == e.getStateChange();
       if (source == myTraceForNode) {
-        myTree.setTraceForNode(selected);
+        myTraceTree.setTraceForNode(selected);
       } else if (source== myBlockDependencies) {
-        myTree.setShowDependencyOperations(selected);
+        myTraceTree.setShowDependencyOperations(selected);
       } else {
-        myTree.setGenerationMode(selected);
+        myTraceTree.setGenerationMode(selected);
       }
-      myTree.rebuildNow();
-      myTree.expandAll();
+      myTraceTree.rebuildNow();
+      myTraceTree.expandAll();
     }
   }
 }

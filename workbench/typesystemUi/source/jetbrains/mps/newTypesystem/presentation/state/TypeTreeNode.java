@@ -34,7 +34,7 @@ public class TypeTreeNode extends TypeSystemStateTreeNode {
   public TypeTreeNode(IOperationContext operationContext, SNode node, SNode type, SNode expandedType) {
     super(operationContext);
     myNode = node;
-    setNodeIdentifier(type + " --- > " + expandedType +  " : " + node);
+    setNodeIdentifier(node + " : " +  type + " --- > " + expandedType);
     setIcon(Icons.DEFAULT_ICON);
   }
 
