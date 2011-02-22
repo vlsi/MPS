@@ -10,9 +10,9 @@ public class ToolsInternal_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.ToolsInternal_ActionGroup";
 
   public ToolsInternal_ActionGroup() {
-    super("ToolsInternal", ID);
+    super("Internal", ID);
     this.setIsInternal(false);
-    this.setPopup(false);
+    this.setPopup(true);
     try {
       ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveTransientModels_Action");
       ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DumpKeyStrokes_Action");

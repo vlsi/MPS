@@ -252,6 +252,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GoByReference_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_goByRef);
     insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(EditorInternal_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
+    insertGroupIntoAnother(ToolsInternal_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_internal);
     insertGroupIntoAnother(ProjectNewActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_projectNew);
     insertGroupIntoAnother(SolutionNewActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_solutionNew);
     insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_newActions);
@@ -266,7 +267,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, FolderActions_ActionGroup.ID, FolderActions_ActionGroup.LABEL_ID_abstractFileActions);
     insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, ModuleActions_ActionGroup.ID, ModuleActions_ActionGroup.LABEL_ID_abstractFileActions);
     insertGroupIntoAnother(NamespaceInternalActions_ActionGroup.ID, NamespaceActions_ActionGroup.ID, NamespaceActions_ActionGroup.LABEL_ID_namespaceInternal);
-    insertGroupIntoAnother(ToolsInternal_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_internal);
     insertGroupIntoAnother(DebugRunMenu_ActionGroup.ID, "RunMenu", null);
     insertGroupIntoAnother(AddToFavoritesGroup_ActionGroup.ID, FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
     insertGroupIntoAnother(SaveTransientModels_ActionGroup.ID, GenerateOptions_ActionGroup.ID, GenerateOptions_ActionGroup.LABEL_ID_saveTransientModels);
