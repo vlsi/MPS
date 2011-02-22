@@ -5,10 +5,11 @@
     <classNode extendsClassName="java.lang.Exception" />
   </dependency>
   <dependency className="jetbrains.mps.gwt.client.stubs.GWTModulePathItem" file="GWTModulePathItem.java">
+    <classNode dependClassName="jetbrains.mps.stubs.util.PathItemsReloadableCache" />
     <classNode dependClassName="jetbrains.mps.vfs.IFileNameFilter" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.gwt.client.stubs.PathItem" />
+    <classNode extendsClassName="jetbrains.mps.stubs.util.PathItem" />
   </dependency>
   <dependency className="jetbrains.mps.gwt.client.stubs.GWTModuleReader" file="GWTModuleReader.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -35,24 +36,23 @@
   <dependency className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" file="GWTModuleStubs.java">
     <classNode dependClassName="jetbrains.mps.stubs.BaseStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.IModelRootManager" />
     <classNode dependClassName="org.jdom.input.SAXBuilder" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.io.InputStream" />
     <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="jetbrains.mps.stubs.util.StubModelDescriptors" />
     <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="jetbrains.mps.gwt.client.stubs.PathItem" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.gwt.client.stubs.GWTModulePathItem" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.gwt.client.stubs.PathItemsReloadableCache" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.gwt.client.stubs.GWTModuleFormatException" />
@@ -61,48 +61,17 @@
     <classNode dependClassName="jetbrains.mps.gwt.client.stubs.GWTModuleReader" />
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
+    <classNode dependClassName="jetbrains.mps.stubs.util.PathItem" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.stubs.StubLocation" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.stubs.BaseStubModelRootManager" />
-  </dependency>
-  <dependency className="jetbrains.mps.gwt.client.stubs.PathItem" file="PathItem.java">
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="java.io.InputStream" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="java.io.OutputStream" />
-    <classNode dependClassName="java.io.FileOutputStream" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.RuntimeException" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.io.BufferedOutputStream" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
-    <classNode dependClassName="java.io.BufferedInputStream" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFileNameFilter" />
-  </dependency>
-  <dependency className="jetbrains.mps.gwt.client.stubs.PathItemsReloadableCache" file="PathItemsReloadableCache.java">
-    <classNode dependClassName="jetbrains.mps.gwt.client.stubs.PathItem" />
-    <classNode dependClassName="jetbrains.mps.reloading.ReloadAdapter" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.gwt.client.stubs.GWTModulePathItem" />
-    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
-    <classNode dependClassName="java.util.HashMap" />
   </dependency>
 </dependenciesRoot>
 
