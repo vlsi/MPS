@@ -16,19 +16,17 @@
 package jetbrains.mps.smodel;
 
 class RemoveRootUndoableAction extends SNodeUndoableAction {
-  private SNode myRoot;
 
   RemoveRootUndoableAction(SNode root) {
     super(root);
-    myRoot = root;
   }
 
   protected void doUndo() {
-    myRoot.getModel().addRoot(myRoot);
+    getAffectedNode().getModel().addRoot(getAffectedNode());
   }
 
   protected void doRedo() {
-    myRoot.getModel().removeRoot(myRoot);
+    getAffectedNode().getModel().removeRoot(getAffectedNode());
   }
 
   @Override
