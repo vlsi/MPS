@@ -9,6 +9,7 @@
       <solutionPath path="${project}/solution/mpsdevkit.msd" folder="" />
       <solutionPath path="${mps_home}/workbench/ideSolution/jetbrains.mps.ide.msd" />
       <solutionPath path="${mps_home}/plugins/mpsmake/solution/jetbrains.mps.ide.make.msd" folder="" />
+      <solutionPath path="${mps_home}/plugins/mpsjava/solution/jetbrains.mps.ide.java.msd" folder="" />
     </projectSolutions>
     <projectLanguages />
     <projectDevkits />

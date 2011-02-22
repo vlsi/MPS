@@ -172,6 +172,10 @@
       <zipfileset dir="${mps_home}/plugins/mpsmake/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/mpsmake/classes" prefix="" />
     </jar>
+    <jar destfile="${deploy.dir}/MPS/plugins/mpsjava.jar" filesonly="true" duplicate="preserve" compress="true">
+      <zipfileset dir="${mps_home}/plugins/mpsjava/META-INF" includes="**/plugin.xml" prefix="META-INF" />
+      <zipfileset dir="${mps_home}/plugins/mpsjava/classes" prefix="" />
+    </jar>
     <jar destfile="${deploy.dir}/MPS/plugins/samples.jar" filesonly="true" duplicate="preserve" compress="true">
       <zipfileset dir="${mps_home}/plugins/samples/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/samples/classes" prefix="" />
