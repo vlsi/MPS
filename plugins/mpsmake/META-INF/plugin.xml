@@ -16,7 +16,7 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
   <id>jetbrains.mps.ide.make</id>
-  <name>MPS Generation support</name>
+  <name>Make</name>
   <description>Allows to transform models</description>
   <version>1.5</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
