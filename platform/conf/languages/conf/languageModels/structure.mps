@@ -160,10 +160,6 @@
     <property name="name:0" value="Components" />
     <property name="virtualPackage:0" value="elements.containers" />
     <link role="extends:0" targetNodeId="5066720069350533029:0" resolveInfo="ConfigurationXmlNode" />
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1740160309778213315">
-      <property name="value:0" value="components" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
-    </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1740160309778217810">
       <link role="intfc:0" targetNodeId="5314521579133239158:0" resolveInfo="IConfiguration" />
     </node>
@@ -351,6 +347,25 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="5066720069350533013">
     <property name="name:0" value="IConfigurationElementFragment" />
     <property name="virtualPackage:0" value="configuration" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5522969664585014978">
+    <property name="virtualPackage:0" value="elements" />
+    <property name="name:0" value="ComponentsRoot" />
+    <link role="extends:0" targetNodeId="5066720069350533029:0" resolveInfo="ConfigurationXmlNode" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5522969664585014980">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="node" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="specializedLink:0" targetNodeId="1740160309778170996:0" />
+      <link role="target:0" targetNodeId="5066720069350533029:0" resolveInfo="ConfigurationXmlNode" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5522969664585014979">
+      <link role="intfc:0" targetNodeId="5314521579133239158:0" resolveInfo="IConfiguration" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5522969664585014981">
+      <property name="value:0" value="components" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
   </node>
 </model>
 

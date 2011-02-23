@@ -450,5 +450,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5522969664585014982">
+    <property name="virtualPackage:32" value="elements" />
+    <link role="conceptDeclaration:32" targetNodeId="1.5522969664585014978:0" resolveInfo="Components" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5522969664585014984">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="5522969664585014985">
+        <link role="editorComponent:32" targetNodeId="1740160309778213296" resolveInfo="ConfigurationXmlNode_Header" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5522969664585014986">
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="5522969664585014987">
+          <property name="flag:32" value="false" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Indent:32" id="5522969664585014988" />
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="5522969664585014989" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="5522969664585014990">
+          <link role="relationDeclaration:32" targetNodeId="1.5522969664585014980:0" />
+          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="5522969664585014991" />
+        </node>
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="5522969664585014992" />
+    </node>
+  </node>
 </model>
 

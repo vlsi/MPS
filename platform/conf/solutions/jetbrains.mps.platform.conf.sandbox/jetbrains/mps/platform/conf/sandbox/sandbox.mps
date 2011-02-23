@@ -10,7 +10,7 @@
   <node type="jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument:0" id="1740160309778217800">
     <property name="name:0" value="foobar" />
     <node role="root:0" type="jetbrains.mps.platform.conf.structure.IdeaPlugin:0" id="1740160309778221572">
-      <node role="fragment:0" type="jetbrains.mps.platform.conf.structure.Components:0" id="8546999199441594024" />
+      <node role="fragment:0" type="jetbrains.mps.platform.conf.structure.ComponentsRoot:0" id="8546999199441594024" />
     </node>
   </node>
 </model>

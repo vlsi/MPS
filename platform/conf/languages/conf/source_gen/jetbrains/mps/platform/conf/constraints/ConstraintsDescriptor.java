@@ -12,6 +12,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
+    ListSequence.fromList(this.myConstraints).addElement(new Components_alias_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new BeanExtension_beanExtensionPoint_ReferentConstraint());
   }
 

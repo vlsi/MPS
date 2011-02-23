@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class ConfReader {
   private static final String IDEA_PLUGIN = "idea-plugin";
+  private static final String COMPONENTS = "components";
   private static final String EXTENSION_POINTS = "extensionPoints";
   private static final String EXTENSIONS = "extensions";
   private static final String APPLICATION_COMPONENTS = "applicationComponents";
@@ -52,6 +53,8 @@ public class ConfReader {
     Element root = doc.getRootElement();
     if (IDEA_PLUGIN.equals(root.getName())) {
       readContainers(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.IdeaPlugin"), root);
+    } else if (COMPONENTS.equals(root.getName())) {
+      readContainers(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.ComponentsRoot"), root);
     } else if (EXTENSION_POINTS.equals(root.getName())) {
       readExtensionPoints(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.ExtensionPoints"), root);
     } else if (EXTENSIONS.equals(root.getName())) {
@@ -65,8 +68,8 @@ public class ConfReader {
     }
   }
 
-  private void readContainers(SNode node, Element ideaPlugin) {
-    for (Element container : elements(ideaPlugin, EXTENSION_POINTS, EXTENSIONS, APPLICATION_COMPONENTS, MODULE_COMPONENTS, PROJECT_COMPONENTS)) {
+  private void readContainers(SNode node, Element root) {
+    for (Element container : elements(root, EXTENSION_POINTS, EXTENSIONS, APPLICATION_COMPONENTS, MODULE_COMPONENTS, PROJECT_COMPONENTS)) {
       if (EXTENSION_POINTS.equals(container.getName())) {
         readExtensionPoints(SLinkOperations.addNewChild(node, "fragment", "jetbrains.mps.platform.conf.structure.ExtensionPoints"), container);
       } else if (EXTENSIONS.equals(container.getName())) {
@@ -78,7 +81,6 @@ public class ConfReader {
       } else if (PROJECT_COMPONENTS.equals(container.getName())) {
         readComponents(SLinkOperations.addNewChild(node, "fragment", "jetbrains.mps.platform.conf.structure.Components"), SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "project"), container);
       }
-
     }
   }
 
@@ -103,11 +105,11 @@ public class ConfReader {
   public void readExtensions(SNode node, Element es) {
     for (Element ext : elements(es)) {
       if (APPLICATION_SERVICE.equals(ext.getName())) {
-        readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "application"), es);
+        readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "application"), ext);
       } else if (MODULE_SERVICE.equals(ext.getName())) {
-        readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "module"), es);
+        readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "module"), ext);
       } else if (PROJECT_SERVICE.equals(ext.getName())) {
-        readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "project"), es);
+        readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "project"), ext);
       }
     }
   }
