@@ -563,6 +563,14 @@
       <zipfileset dir="core/kernel/classes" />
     </jar>
   </target>
+  <target name="pack.stubUtils">
+    <mkdir dir="core/kernel/classes" />
+    <jar destfile="${deploy.dir}/MPS/core/stubUtils.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/kernel/stubUtils/stubUtils.msd" prefix="module" />
+      <zipfileset dir="core/kernel/stubUtils" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/kernel/classes" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.kernel">
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.kernel.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/kernel/kernelSolution/jetbrains.mps.kernel.msd" prefix="module" />
