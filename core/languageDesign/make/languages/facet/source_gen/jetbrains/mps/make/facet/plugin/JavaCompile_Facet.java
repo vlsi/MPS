@@ -382,7 +382,7 @@ public class JavaCompile_Facet implements IFacet {
                 FResource fres = ((FResource) r);
                 MapSequence.fromMap(fres.contents()).visitAll(new IVisitor<IMapping<String, String>>() {
                   public void visit(IMapping<String, String> m) {
-                    jc.addSource(m.key(), m.value());
+                    jc.addSourceFile("", m.key(), m.value());
                   }
                 });
                 if (fres.module() != null) {

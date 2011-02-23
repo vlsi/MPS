@@ -3734,7 +3734,8 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="695262645446176880" resolveInfo="jc" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="695262645446209991">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ejwt.~JavaCompiler%daddSource(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="addSource" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ejwt.~JavaCompiler%daddSourceFile(java%dlang%dString,java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="addSourceFile" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1974221830619270961" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="695262645446209993">
                                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="695262645446210025">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="695262645446210022" resolveInfo="m" />
