@@ -15,6 +15,7 @@
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="javaParser" />
     <orderEntry type="module" module-name="baseLanguage" />
+    <orderEntry type="library" name="Beansbinding" level="project" />
   </component>
 </module>
 
