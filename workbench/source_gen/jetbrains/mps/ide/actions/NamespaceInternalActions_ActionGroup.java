@@ -59,7 +59,6 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
         }
       }
       NamespaceInternalActions_ActionGroup.this.add(((ActionGroup) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup")));
-      NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateFiles_Action");
       if (ListSequence.fromList(selectedNodes).count() == 1) {
         NamespaceInternalActions_ActionGroup.this.addSeparator();
         NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action");

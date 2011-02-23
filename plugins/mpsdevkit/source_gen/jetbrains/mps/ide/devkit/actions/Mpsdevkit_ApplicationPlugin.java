@@ -5,9 +5,9 @@ package jetbrains.mps.ide.devkit.actions;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
+import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModulePropertiesGroup_ActionGroup;
@@ -41,6 +41,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GoToConceptDeclaration_Action());
     addAction(new GoToEditorDeclaration_Action());
     addAction(new GoToRules_Action());
+    addAction(new GoToUsageInMappingConfig_Action());
     addAction(new HighlightCellDependencies_Action());
     addAction(new LanguageHierarchy_Action());
     addAction(new LanguagePaths_Action());
@@ -59,6 +60,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new AccessoriesGroupActions_ActionGroup());
     addGroup(new DevkitActionsEx_ActionGroup());
     addGroup(new EditorInternalEx_ActionGroup());
+    addGroup(new GenerateEditorPopup_ActionGroup());
     addGroup(new GenerateGeneratorPopup_ActionGroup());
     addGroup(new GenerationIntentions_ActionGroup());
     addGroup(new GenerationTraceActions_ActionGroup());
@@ -78,6 +80,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(GenerateGeneratorPopup_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generate);
+    insertGroupIntoAnother(GenerateEditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_generateRelated);
     insertGroupIntoAnother(ProjectNewActionsEx_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, ProjectNewActions_ActionGroup.LABEL_ID_end);
     insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_gentrace);

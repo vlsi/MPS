@@ -65,7 +65,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FixDependenciesEverywhere_Action());
     addAction(new FixVirtualPackges_Action());
     addAction(new FoldSelection_Action());
-    addAction(new GenerateFiles_Action());
     addAction(new GoByCurrentReference_Action());
     addAction(new GoToNodeById_Action());
     addAction(new HighlightInstances_Action());

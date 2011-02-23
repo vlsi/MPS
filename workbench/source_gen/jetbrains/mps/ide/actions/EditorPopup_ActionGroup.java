@@ -19,6 +19,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_gotoConceptAspects = ID + "gotoConceptAspects";
   public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_generateModel = ID + "generateModel";
+  public static final String LABEL_ID_generateRelated = ID + "generateRelated";
   public static final String LABEL_ID_gentrace = ID + "gentrace";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_vcs = ID + "vcs";
@@ -79,6 +80,12 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       }
       {
         LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_generateModel);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorPopup_ActionGroup.this.addAction(action);
+      }
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_generateRelated);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         EditorPopup_ActionGroup.this.addAction(action);
