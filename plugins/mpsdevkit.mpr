@@ -6,10 +6,11 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}/solution/mpsdevkit.msd" folder="" />
       <solutionPath path="${mps_home}/workbench/ideSolution/jetbrains.mps.ide.msd" />
-      <solutionPath path="${mps_home}/plugins/mpsmake/solution/jetbrains.mps.ide.make.msd" folder="" />
-      <solutionPath path="${mps_home}/plugins/mpsjava/solution/jetbrains.mps.ide.java.msd" folder="" />
+      <solutionPath path="${project}/mpsdevkit/solution/mpsdevkit.msd" folder="" />
+      <solutionPath path="${project}/mpsmake/solution/jetbrains.mps.ide.make.msd" folder="" />
+      <solutionPath path="${project}/mpsjava/solution/jetbrains.mps.ide.java.msd" folder="" />
+      <solutionPath path="${project}/mpsjava/testsolution/testMaterial.msd" folder="" />
     </projectSolutions>
     <projectLanguages />
     <projectDevkits />

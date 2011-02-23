@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.javaParser.testMaterial" uuid="49166c31-952a-46f6-8970-ea45964379d0" compileInMPS="false" java-stubs-enabled="true" generatorOutputPath="${mps_home}/core/javaParser/source">
+<solution name="jetbrains.mps.ide.java.testMaterial" uuid="49166c31-952a-46f6-8970-ea45964379d0" compileInMPS="false" java-stubs-enabled="true" generatorOutputPath="${mps_home}/plugins/mpsjava/tests">
   <models>
-    <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
+    <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.ide" />
   </models>
   <sourcePath />
   <dependencies>
