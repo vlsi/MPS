@@ -23,6 +23,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new CheckModelsBeforeGeneration_Action());
     addAction(new CleanAllModules_Action());
     addAction(new GenerateTextFromSolution_Action());
     addAction(new GoToUsageInMappingConfig_Action());
@@ -35,6 +36,8 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new GenerateModels_ActionGroup());
     addGroup(new GenerateModulePopup_ActionGroup());
     addGroup(new GenerateModule_ActionGroup());
+    addGroup(new GenerateOptions_ActionGroup());
+    addGroup(new SaveTransientModels_ActionGroup());
   }
 
   public void adjustRegularGroups() {
@@ -44,6 +47,8 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GenerateModule_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModule);
     insertGroupIntoAnother(GenerateModule_ActionGroup.ID, GenerateModulePopup_ActionGroup.ID, GenerateModulePopup_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(Compile_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_compile);
+    insertGroupIntoAnother(GenerateOptions_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_options);
+    insertGroupIntoAnother(SaveTransientModels_ActionGroup.ID, GenerateOptions_ActionGroup.ID, GenerateOptions_ActionGroup.LABEL_ID_saveTransientModels);
     insertGroupIntoAnother(GenerateModels_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModel);
     insertGroupIntoAnother(GenerateModels_ActionGroup.ID, GenerateEditorPopup_ActionGroup.ID, GenerateEditorPopup_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(GenerateFavorites_ActionGroup.ID, Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_generate);

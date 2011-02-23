@@ -31,7 +31,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AddToNewFavoritesList_Action());
     addAction(new AnalyzeClasspath_Action());
     addAction(new CheckModel_Action());
-    addAction(new CheckModelsBeforeGeneration_Action());
     addAction(new CheckProject_Action());
     addAction(new CleanModule_Action());
     addAction(new CleanProject_Action());
@@ -170,7 +169,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new FolderActions_ActionGroup());
     addGroup(new Folding_ActionGroup());
     addGroup(new GenerateModelPopup_ActionGroup());
-    addGroup(new GenerateOptions_ActionGroup());
     addGroup(new GenerateProjectPopup_ActionGroup());
     addGroup(new Generate_ActionGroup());
     addGroup(new GeneratorActions_ActionGroup());
@@ -199,7 +197,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new PropertyNodeActions_ActionGroup());
     addGroup(new ReferenceNodeActions_ActionGroup());
     addGroup(new RuntimeFolderActions_ActionGroup());
-    addGroup(new SaveTransientModels_ActionGroup());
     addGroup(new Search_ActionGroup());
     addGroup(new SolutionActions_ActionGroup());
     addGroup(new SolutionNewActions_ActionGroup());
@@ -261,8 +258,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(NamespaceInternalActions_ActionGroup.ID, NamespaceActions_ActionGroup.ID, NamespaceActions_ActionGroup.LABEL_ID_namespaceInternal);
     insertGroupIntoAnother(DebugRunMenu_ActionGroup.ID, "RunMenu", null);
     insertGroupIntoAnother(AddToFavoritesGroup_ActionGroup.ID, FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
-    insertGroupIntoAnother(SaveTransientModels_ActionGroup.ID, GenerateOptions_ActionGroup.ID, GenerateOptions_ActionGroup.LABEL_ID_saveTransientModels);
-    insertGroupIntoAnother(GenerateOptions_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_options);
     insertGroupIntoAnother(Search_ActionGroup.ID, "SearchMenu", null);
     insertGroupIntoAnother(Code_ActionGroup.ID, "CodeMenu", null);
     insertGroupIntoAnother(Breakpoints_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
