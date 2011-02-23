@@ -18,6 +18,7 @@ public class GenerateOptions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
+      GenerateOptions_ActionGroup.this.addAction("jetbrains.mps.ide.make.actions.Options_Action");
       {
         LabelledAnchor action = new LabelledAnchor(GenerateOptions_ActionGroup.LABEL_ID_saveTransientModels);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

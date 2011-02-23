@@ -86,7 +86,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new OptimizeModelImports_Action());
     addAction(new OptimizeModuleImports_Action());
     addAction(new OptimizeProjectImports_Action());
-    addAction(new Options_Action());
     addAction(new PasteNode_Action());
     addAction(new Pause_Action());
     addAction(new QuickCreate_Action());
@@ -118,7 +117,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowErrorMessage_Action());
     addAction(new ShowImplementations_Action());
     addAction(new ShowInProject_Action());
-    addAction(new ShowMappingsPartitioning_Action());
     addAction(new ShowModelChecker_Action());
     addAction(new ShowModelRepository_Action());
     addAction(new ShowModuleDependencies_Action());
@@ -162,7 +160,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new FileSystemNewActions_ActionGroup());
     addGroup(new FolderActions_ActionGroup());
     addGroup(new Folding_ActionGroup());
-    addGroup(new GenerateModelPopup_ActionGroup());
     addGroup(new Generate_ActionGroup());
     addGroup(new GeneratorActions_ActionGroup());
     addGroup(new GeneratorNewActions_ActionGroup());
@@ -226,7 +223,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Edit_ActionGroup.ID, "EditMenu", null);
     insertGroupIntoAnother(Folding_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_folding);
     insertGroupIntoAnother(Generate_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_aux);
-    insertGroupIntoAnother(GenerateModelPopup_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_generateActions);
     insertGroupIntoAnother(Goto_ActionGroup.ID, "GoToMenu", null);
     insertGroupIntoAnother(GoByReference_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_goByRef);
     insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
