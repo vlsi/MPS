@@ -9,13 +9,17 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.platform.conf.behavior.Components_Behavior;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -28,7 +32,7 @@ public class Components_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dr39ej_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_dr39ej_a");
-    editorCell.addEditorCell(this.createComponent_dr39ej_a0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_dr39ej_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_dr39ej_b0(editorContext, node));
     return editorCell;
   }
@@ -45,9 +49,21 @@ public class Components_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_dr39ej_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ConfigurationXmlNode_Header(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+  private EditorCell createReadOnlyModelAccessor_dr39ej_a0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return Components_Behavior.call_getName_3919891163767797432(node);
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, this.getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setCellId("ReadOnlyModelAccessor_dr39ej_a0");
     return editorCell;
   }
 

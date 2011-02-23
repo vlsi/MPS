@@ -25,9 +25,9 @@ public class ConfReader {
   private static final String COMPONENTS = "components";
   private static final String EXTENSION_POINTS = "extensionPoints";
   private static final String EXTENSIONS = "extensions";
-  private static final String APPLICATION_COMPONENTS = "applicationComponents";
-  private static final String MODULE_COMPONENTS = "moduleComponents";
-  private static final String PROJECT_COMPONENTS = "projectComponents";
+  private static final String APPLICATION_COMPONENTS = "application-components";
+  private static final String MODULE_COMPONENTS = "module-components";
+  private static final String PROJECT_COMPONENTS = "project-components";
   private static final String EXTENSION_POINT = "extensionPoint";
   private static final String NAME = "name";
   private static final String BEAN_CLASS = "beanClass";

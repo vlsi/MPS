@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Components_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.Components_Behavior" />
   <unitInfo fileName="Service_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.Service_Behavior" />
   <unitInfo fileName="Component_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.Component_Behavior" />
   <unitInfo fileName="BeanUtil.java" startLine="64" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$QuotationClass_bgndvd_a0a0a0a" />
@@ -11,6 +12,11 @@
     <nodeInfo nodeId="1740160309778234790" fileName="Component_Behavior.java" startLine="12" startPosition="70" endLine="13" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1740160309778233538" fileName="Component_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="1740160309778233542" fileName="Component_Behavior.java" startLine="12" startPosition="70" endLine="13" endPosition="107" />
+  </root>
+  <root nodeId="3919891163767797429">
+    <nodeInfo nodeId="3919891163767798722" fileName="Components_Behavior.java" startLine="12" startPosition="73" endLine="13" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="3919891163767797431" fileName="Components_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="3919891163767797435" fileName="Components_Behavior.java" startLine="12" startPosition="73" endLine="13" endPosition="108" />
   </root>
   <root nodeId="6121364846593753704">
     <nodeInfo nodeId="6121364846593753712" fileName="Service_Behavior.java" startLine="12" startPosition="70" endLine="13" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -11,7 +11,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)" version="0" />
@@ -39,35 +38,9 @@
       </node>
     </node>
   </node>
-  <visible index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="7161354651095811207">
     <property name="virtualPackage:8" value="elements.containers" />
     <link role="concept:8" targetNodeId="1.1740160309778170999:0" resolveInfo="Components" />
-    <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="5522969664585015020">
-      <link role="applicableProperty:8" targetNodeId="2v.1156235010670:0" resolveInfo="alias" />
-      <node role="propertyGetter:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter:8" id="5522969664585015021">
-        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5522969664585015022">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5522969664585015023">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5522969664585046614">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5522969664585046617">
-                <property name="value:3" value="Components" />
-              </node>
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5522969664585046609">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5522969664585015025">
-                  <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="5522969664585015024" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="5522969664585046603">
-                    <link role="property:16" targetNodeId="1.1740160309778171019:0" resolveInfo="level" />
-                  </node>
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5522969664585046613">
-                  <link role="baseMethodDeclaration:3" targetNodeId="3v.~String.toLowerCase():java.lang.String" resolveInfo="toLowerCase" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="canBeParent:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent:8" id="7161354651095842806">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7161354651095842807">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8546999199441594058">

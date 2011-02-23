@@ -70,12 +70,26 @@
       </node>
     </node>
   </node>
+  <visible index="3" modelUID="r:8f4e8d01-a81e-409b-a7a6-092ad440588f(jetbrains.mps.platform.conf.behavior)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1740160309778213304">
     <property name="virtualPackage:32" value="elements.containers" />
     <link role="conceptDeclaration:32" targetNodeId="1.1740160309778170999:0" resolveInfo="Components" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1740160309778227727">
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="1740160309778227730">
-        <link role="editorComponent:32" targetNodeId="1740160309778213296" resolveInfo="ConfigurationXmlNode_Header" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor:32" id="3919891163767797425">
+        <node role="modelAccessor:32" type="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor:32" id="3919891163767797426">
+          <node role="getter:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter:32" id="3919891163767797427">
+            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3919891163767797428">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3919891163767837982">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3919891163767837984">
+                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="3919891163767837983" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3919891163767837988">
+                    <link role="baseMethodDeclaration:16" targetNodeId="3v.3919891163767797432" resolveInfo="getName" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1740160309778227732">
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1740160309778227733">
@@ -112,7 +126,6 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="1740160309778221578" />
     </node>
   </node>
-  <visible index="3" modelUID="r:8f4e8d01-a81e-409b-a7a6-092ad440588f(jetbrains.mps.platform.conf.behavior)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1740160309778233534">
     <property name="virtualPackage:32" value="elements.components" />
     <link role="conceptDeclaration:32" targetNodeId="1.4635942846893810046:0" resolveInfo="Component" />
