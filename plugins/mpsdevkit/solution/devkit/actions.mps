@@ -354,7 +354,6 @@
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2403997762364994115">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Editor" />
       <property name="name" nameId="tpck.1169194664001" value="GenerateEditorPopup" />
-      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
       <property name="caption" nameId="tp4k.1204991940915" value="Generate (obsolete)" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2403997762364994119">
@@ -6550,7 +6549,7 @@
   <root id="2403997762364994115">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2403997762364994116">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991231476" resolveInfo="EditorPopup" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.2403997762364994114" resolveInfo="generateRelated" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1744445256079578594" resolveInfo="gotoConceptAspects" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2403997762364994117">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2403997762364994118">

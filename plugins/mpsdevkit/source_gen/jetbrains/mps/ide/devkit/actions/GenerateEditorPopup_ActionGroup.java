@@ -12,7 +12,7 @@ public class GenerateEditorPopup_ActionGroup extends GeneratedActionGroup {
   public GenerateEditorPopup_ActionGroup() {
     super("Generate (obsolete)", ID);
     this.setIsInternal(false);
-    this.setPopup(true);
+    this.setPopup(false);
     try {
       GenerateEditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.GoToUsageInMappingConfig_Action");
     } catch (Throwable t) {
