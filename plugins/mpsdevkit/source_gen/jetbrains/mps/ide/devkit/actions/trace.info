@@ -7,6 +7,7 @@
   <unitInfo fileName="GeneratorActions_Properties_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GeneratorActions_Properties_ActionGroup" />
   <unitInfo fileName="GeneratorActions_Delete_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GeneratorActions_Delete_ActionGroup" />
   <unitInfo fileName="LanguageRefactoring_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.LanguageRefactoring_ActionGroup" />
+  <unitInfo fileName="GenerationTraceActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GenerationTraceActions_ActionGroup" />
   <unitInfo fileName="LanguageActionsEx_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.LanguageActionsEx_ActionGroup" />
   <unitInfo fileName="AccessoriesGroupActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.AccessoriesGroupActions_ActionGroup" />
   <unitInfo fileName="GenerateGeneratorPopup_ActionGroup.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GenerateGeneratorPopup_ActionGroup" />
@@ -43,13 +44,58 @@
   <unitInfo fileName="DeleteGenerator_Action.java" startLine="23" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action" />
   <unitInfo fileName="GenerateIntentionAction_Action.java" startLine="20" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GenerateIntentionAction_Action" />
   <unitInfo fileName="NewAspectModel_Action.java" startLine="24" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.NewAspectModel_Action" />
+  <unitInfo fileName="ShowGenerationTrace_Action.java" startLine="24" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.ShowGenerationTrace_Action" />
   <unitInfo fileName="NewAccessoryModel_Action.java" startLine="25" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.NewAccessoryModel_Action" />
   <unitInfo fileName="LanguagePaths_Action.java" startLine="27" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.LanguagePaths_Action" />
   <unitInfo fileName="NewLanguage_Action.java" startLine="21" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.NewLanguage_Action" />
-  <unitInfo fileName="Mpsdevkit_ApplicationPlugin.java" startLine="23" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
+  <unitInfo fileName="ShowGenerationTraceback_Action.java" startLine="24" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.ShowGenerationTraceback_Action" />
   <unitInfo fileName="GenerateTemplateQueries_Action.java" startLine="30" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GenerateTemplateQueries_Action" />
+  <unitInfo fileName="Mpsdevkit_ApplicationPlugin.java" startLine="23" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" />
   <unitInfo fileName="AddAccessoryModel_Action.java" startLine="31" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.AddAccessoryModel_Action" />
   <unitInfo fileName="GoToEditorDeclaration_Action.java" startLine="38" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GoToEditorDeclaration_Action" />
+  <root nodeId="1234869968490316273">
+    <nodeInfo nodeId="1234869968490316306" fileName="ShowGenerationTrace_Action.java" startLine="36" startPosition="7" endLine="37" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234869968490316312" fileName="ShowGenerationTrace_Action.java" startLine="37" startPosition="88" endLine="38" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234869968490316323" fileName="ShowGenerationTrace_Action.java" startLine="39" startPosition="105" endLine="40" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234869968490316337" fileName="ShowGenerationTrace_Action.java" startLine="41" startPosition="16" endLine="42" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234869968490316353" fileName="ShowGenerationTrace_Action.java" startLine="42" startPosition="200" endLine="43" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234869968490316281" fileName="ShowGenerationTrace_Action.java" startLine="84" startPosition="9" endLine="85" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234869968490316289" fileName="ShowGenerationTrace_Action.java" startLine="86" startPosition="131" endLine="87" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234869968490316364" fileName="ShowGenerationTrace_Action.java" startLine="96" startPosition="76" endLine="97" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234869968490316335" fileName="ShowGenerationTrace_Action.java" startLine="41" startPosition="14" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1234869968490316287" fileName="ShowGenerationTrace_Action.java" startLine="85" startPosition="86" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1234869968490316360" fileName="ShowGenerationTrace_Action.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGenTracer#(Ljava/util/Map;)Ljetbrains/mps/lang/generator/plugin/debug/GenerationTracer;" />
+    <nodeInfo nodeId="1234869968490316321" fileName="ShowGenerationTrace_Action.java" startLine="38" startPosition="68" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1234869968490316322" fileName="ShowGenerationTrace_Action.java" startLine="39" startPosition="105" endLine="40" endPosition="52" />
+    <scopeInfo nodeId="1234869968490316288" fileName="ShowGenerationTrace_Action.java" startLine="86" startPosition="131" endLine="87" endPosition="120" />
+    <scopeInfo nodeId="1234869968490316363" fileName="ShowGenerationTrace_Action.java" startLine="96" startPosition="76" endLine="97" endPosition="104" />
+    <scopeInfo nodeId="1234869968490316336" fileName="ShowGenerationTrace_Action.java" startLine="41" startPosition="16" endLine="43" endPosition="64">
+      <varInfo nodeId="1234869968490316338" varName="hasTraceInputData" />
+    </scopeInfo>
+    <scopeInfo nodeId="1234869968490316360" fileName="ShowGenerationTrace_Action.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="1234869968490316305" fileName="ShowGenerationTrace_Action.java" startLine="36" startPosition="7" endLine="44" endPosition="9">
+      <varInfo nodeId="1234869968490316307" varName="tracer" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1234869968490316371">
+    <nodeInfo nodeId="1234869968490316409" fileName="ShowGenerationTraceback_Action.java" startLine="37" startPosition="108" endLine="38" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234869968490316416" fileName="ShowGenerationTraceback_Action.java" startLine="39" startPosition="9" endLine="40" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234869968490316425" fileName="ShowGenerationTraceback_Action.java" startLine="40" startPosition="137" endLine="41" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234869968490316434" fileName="ShowGenerationTraceback_Action.java" startLine="41" startPosition="68" endLine="42" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234869968490316374" fileName="ShowGenerationTraceback_Action.java" startLine="91" startPosition="9" endLine="92" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1234869968490316385" fileName="ShowGenerationTraceback_Action.java" startLine="93" startPosition="92" endLine="94" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234869968490316400" fileName="ShowGenerationTraceback_Action.java" startLine="36" startPosition="7" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1234869968490316383" fileName="ShowGenerationTraceback_Action.java" startLine="92" startPosition="135" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1234869968490316408" fileName="ShowGenerationTraceback_Action.java" startLine="37" startPosition="108" endLine="38" endPosition="79" />
+    <scopeInfo nodeId="1234869968490316384" fileName="ShowGenerationTraceback_Action.java" startLine="93" startPosition="92" endLine="94" endPosition="120" />
+    <scopeInfo nodeId="1234869968490316399" fileName="ShowGenerationTraceback_Action.java" startLine="36" startPosition="7" endLine="42" endPosition="167">
+      <varInfo nodeId="1234869968490316417" varName="tracer" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1234869968490316459">
+    <nodeInfo nodeId="1234869968490316461" fileName="GenerationTraceActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234869968490316462" fileName="GenerationTraceActions_ActionGroup.java" startLine="17" startPosition="119" endLine="18" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
   <root nodeId="1366781238034273697">
     <nodeInfo nodeId="1366781238034273700" fileName="LanguageNewGenerator_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>

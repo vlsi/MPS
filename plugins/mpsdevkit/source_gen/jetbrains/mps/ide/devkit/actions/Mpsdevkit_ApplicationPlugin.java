@@ -7,12 +7,12 @@ import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
 import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
+import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModulePropertiesGroup_ActionGroup;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.actions.Goto_ActionGroup;
-import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.DevkitActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import java.util.List;
@@ -51,6 +51,8 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new PrintNodeID_Action());
     addAction(new RenameLanguage_Action());
     addAction(new ShowCellInExplorer_Action());
+    addAction(new ShowGenerationTrace_Action());
+    addAction(new ShowGenerationTraceback_Action());
     addAction(new SurroundWithIntentions_Action());
     addAction(new TestNodePath_Action());
     // groups 
@@ -61,6 +63,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new EditorTabActionsEx_ActionGroup());
     addGroup(new GenerateGeneratorPopup_ActionGroup());
     addGroup(new GenerationIntentions_ActionGroup());
+    addGroup(new GenerationTraceActions_ActionGroup());
     addGroup(new GeneratorActions_Delete_ActionGroup());
     addGroup(new GeneratorActions_Properties_ActionGroup());
     addGroup(new GotoEx_ActionGroup());
@@ -79,6 +82,8 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GenerateGeneratorPopup_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(ProjectNewActionsEx_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, ProjectNewActions_ActionGroup.LABEL_ID_end);
     insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_refactoring);
+    insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_gentrace);
+    insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_gentrace);
     insertGroupIntoAnother(LanguageNewGenerator_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newSubModule);
     insertGroupIntoAnother(LanguageNewActionsEx_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newModel);
     insertGroupIntoAnother(GeneratorActions_Delete_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_delete);

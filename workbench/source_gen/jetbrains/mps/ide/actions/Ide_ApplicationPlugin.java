@@ -126,8 +126,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowClassInHierarchy_Action());
     addAction(new ShowConceptInHierarchy_Action());
     addAction(new ShowErrorMessage_Action());
-    addAction(new ShowGenerationTrace_Action());
-    addAction(new ShowGenerationTraceback_Action());
     addAction(new ShowImplementations_Action());
     addAction(new ShowInProject_Action());
     addAction(new ShowMappingsPartitioning_Action());
