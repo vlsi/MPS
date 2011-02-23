@@ -59,21 +59,19 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new AccessoriesGroupActions_ActionGroup());
     addGroup(new DevkitActionsEx_ActionGroup());
     addGroup(new EditorInternalEx_ActionGroup());
-    addGroup(new EditorPopupEx_ActionGroup());
-    addGroup(new EditorTabActionsEx_ActionGroup());
     addGroup(new GenerateGeneratorPopup_ActionGroup());
     addGroup(new GenerationIntentions_ActionGroup());
     addGroup(new GenerationTraceActions_ActionGroup());
     addGroup(new GeneratorActions_Delete_ActionGroup());
     addGroup(new GeneratorActions_Properties_ActionGroup());
-    addGroup(new GotoEx_ActionGroup());
+    addGroup(new GotoConceptAspect_ActionGroup());
+    addGroup(new GotoModuleEx_ActionGroup());
     addGroup(new LanguageActionsEx_ActionGroup());
     addGroup(new LanguageNewActionsEx_ActionGroup());
     addGroup(new LanguageNewCustomPartActions_ActionGroup());
     addGroup(new LanguageNewGenerator_ActionGroup());
     addGroup(new LanguageRefactoring_ActionGroup());
     addGroup(new ModulePropertiesGroupEx_ActionGroup());
-    addGroup(new NodeActionsEx_ActionGroup());
     addGroup(new ProjectNewActionsEx_ActionGroup());
     addGroup(new SurroundWithIntentions_ActionGroup());
   }
@@ -89,20 +87,22 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GeneratorActions_Delete_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_delete);
     insertGroupIntoAnother(GeneratorActions_Properties_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_properties);
     insertGroupIntoAnother(ModulePropertiesGroupEx_ActionGroup.ID, ModulePropertiesGroup_ActionGroup.ID, ModulePropertiesGroup_ActionGroup.LABEL_ID_extensions);
-    insertGroupIntoAnother(EditorPopupEx_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_gotoConceptAspects);
-    insertGroupIntoAnother(EditorTabActionsEx_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_gotoConceptAspects);
-    insertGroupIntoAnother(GotoEx_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoConceptAspects);
-    insertGroupIntoAnother(NodeActionsEx_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_gotoConceptAspects);
+    insertGroupIntoAnother(GotoConceptAspect_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_gotoConceptAspects);
+    insertGroupIntoAnother(GotoConceptAspect_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_gotoConceptAspects);
+    insertGroupIntoAnother(GotoConceptAspect_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoConceptAspects);
+    insertGroupIntoAnother(GotoConceptAspect_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(DevkitActionsEx_ActionGroup.ID, DevkitActions_ActionGroup.ID, DevkitActions_ActionGroup.LABEL_ID_properties);
     insertGroupIntoAnother(LanguageActionsEx_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_properties);
     insertGroupIntoAnother(EditorInternalEx_ActionGroup.ID, EditorInternal_ActionGroup.ID, EditorInternal_ActionGroup.LABEL_ID_workbench);
     insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
+    insertGroupIntoAnother(GotoModuleEx_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoModules);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());
     ListSequence.fromList(res).addElement(new Mac_KeymapChanges());
+    ListSequence.fromList(res).addElement(new XWin_KeymapChanges());
     return res;
   }
 }

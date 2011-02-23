@@ -18,9 +18,8 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowNodeInfo_Action", getShortcut("ctrl Q"));
     // simple parameterized 
     addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl 0")));
-    addComplexShortcut("jetbrains.mps.ide.actions.GoToDevkit_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift E")));
     // complex 
-    addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Mac_KeymapChanges.GoToBookmark_ShortcutChange_tqv_g());
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Mac_KeymapChanges.GoToBookmark_ShortcutChange_tqv_f());
   }
 
   public String getScheme() {
@@ -31,8 +30,8 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     return new KeyboardShortcut(KeyStroke.getKeyStroke(stroke), null);
   }
 
-  public class GoToBookmark_ShortcutChange_tqv_g extends BaseKeymapChanges.ComplexShortcut {
-    public GoToBookmark_ShortcutChange_tqv_g() {
+  public class GoToBookmark_ShortcutChange_tqv_f extends BaseKeymapChanges.ComplexShortcut {
+    public GoToBookmark_ShortcutChange_tqv_f() {
     }
 
     public List<Shortcut> getShortcutsFor(Object... objects) {

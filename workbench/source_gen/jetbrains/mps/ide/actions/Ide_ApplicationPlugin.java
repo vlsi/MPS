@@ -265,7 +265,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());
     ListSequence.fromList(res).addElement(new Mac_KeymapChanges());
-    ListSequence.fromList(res).addElement(new XWin_KeymapChanges());
     return res;
   }
 }

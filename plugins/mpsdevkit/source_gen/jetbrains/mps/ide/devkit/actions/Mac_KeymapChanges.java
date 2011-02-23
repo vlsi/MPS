@@ -12,6 +12,7 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     // simple 
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.GenerationIntentions_Action", getShortcut("ctrl N"));
     // simple parameterized 
+    addComplexShortcut("jetbrains.mps.ide.devkit.actions.GoToDevkit_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift E")));
     // complex 
   }
 

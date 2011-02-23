@@ -1566,35 +1566,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.actions.GoToDevkit_Action" file="GoToDevkit_Action.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="java.lang.StringBuilder" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.actions.GoToFile_Action" file="GoToFile_Action.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="java.lang.StringBuilder" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.actions.GoToLanguage_Action" file="GoToLanguage_Action.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -1695,22 +1667,18 @@
     <classNode dependClassName="com.intellij.ide.actions.GotoActionAction" />
     <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GoToModel_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.GoToSolutionAction" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GoToDevkit_Action" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.GoToDevkitAction" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GoToFile_Action" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.GoToLanguageAction" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.GoToSolutionAction" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GoToLanguage_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GoToRootNode_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GoToModel_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.GoToModelAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToSolution_Action" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GoToRootNode_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GoToFile_Action" />
     <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction" />
     <classNode dependClassName="com.intellij.ide.actions.GotoFileAction" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.GoToModelAction" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.HighlightConstants" file="HighlightConstants.java">
@@ -1860,7 +1828,6 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.PasteNode_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelRefactoring_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FileActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.XWin_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddToNewFavoritesList_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.JUnitTestMethodActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Default_KeymapChanges" />
@@ -4428,13 +4395,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.actions.XWin_KeymapChanges" file="XWin_KeymapChanges.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.KeyStroke" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.plugin" file="plugin.xml" />
 </dependenciesRoot>

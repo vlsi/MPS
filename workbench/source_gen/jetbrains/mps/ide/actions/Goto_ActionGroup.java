@@ -11,15 +11,14 @@ import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.ide.actions.GotoFileAction;
 import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
 import jetbrains.mps.workbench.actions.goTo.GoToModelAction;
-import jetbrains.mps.workbench.actions.goTo.GoToLanguageAction;
 import jetbrains.mps.workbench.actions.goTo.GoToSolutionAction;
-import jetbrains.mps.workbench.actions.goTo.GoToDevkitAction;
 
 public class Goto_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Goto_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Goto_ActionGroup";
   public static final String LABEL_ID_gotoVCS = ID + "gotoVCS";
   public static final String LABEL_ID_gotoConceptAspects = ID + "gotoConceptAspects";
+  public static final String LABEL_ID_gotoModules = ID + "gotoModules";
 
   public Goto_ActionGroup() {
     super("Go To", ID);
@@ -46,9 +45,13 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
       }
       Goto_ActionGroup.this.addSeparator();
       Goto_ActionGroup.this.addParameterizedAction(new GoToModel_Action(new GoToModelAction()), PluginId.getId("jetbrains.mps.ide"), new GoToModelAction());
-      Goto_ActionGroup.this.addParameterizedAction(new GoToLanguage_Action(new GoToLanguageAction()), PluginId.getId("jetbrains.mps.ide"), new GoToLanguageAction());
       Goto_ActionGroup.this.addParameterizedAction(new GoToSolution_Action(new GoToSolutionAction()), PluginId.getId("jetbrains.mps.ide"), new GoToSolutionAction());
-      Goto_ActionGroup.this.addParameterizedAction(new GoToDevkit_Action(new GoToDevkitAction()), PluginId.getId("jetbrains.mps.ide"), new GoToDevkitAction());
+      {
+        LabelledAnchor action = new LabelledAnchor(Goto_ActionGroup.LABEL_ID_gotoModules);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        Goto_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
