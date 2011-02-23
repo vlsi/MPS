@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.generator.plugin.debug;
+package jetbrains.mps.ide.devkit.generator;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -27,9 +27,9 @@ import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.generator.plugin.debug.TracerNode.Kind;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 import jetbrains.mps.workbench.tools.CloseAction;
@@ -50,9 +50,11 @@ public class GenerationTracerViewTool extends BaseProjectTool {
 
   private List<GenerationTracerView> myTracerViews = new ArrayList<GenerationTracerView>();
   private ContentManagerAdapter myContentListener;
+  private final GenerationTracer myTracer;
 
-  public GenerationTracerViewTool(Project project) {
+  public GenerationTracerViewTool(Project project, GenerationTracer tracer) {
     super(project, "Generation Tracer", -1, Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
+    myTracer = tracer;
     myNoTabsComponent = new NoTabsComponent(this);
   }
 
@@ -63,7 +65,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
       public void run() {
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
-            setTracingDataIsAvailable(getProject().getComponent(GenerationTracer.class).hasTracingData());
+            setTracingDataIsAvailable(myTracer.hasTracingData());
             showNoTabsComponent();
             setAvailable(false);
             getContentManager().addContentManagerListener(new ContentManagerAdapter() {

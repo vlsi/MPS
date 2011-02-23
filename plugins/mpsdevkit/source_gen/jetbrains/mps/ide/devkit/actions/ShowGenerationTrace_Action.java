@@ -9,7 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
+import jetbrains.mps.ide.devkit.generator.GenerationTracer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.IGenerationTracer;
 
 public class ShowGenerationTrace_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -94,6 +95,6 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
   }
 
   private GenerationTracer getGenTracer(final Map<String, Object> _params) {
-    return ((Project) MapSequence.fromMap(_params).get("project")).getComponent(GenerationTracer.class);
+    return (GenerationTracer) ((Project) MapSequence.fromMap(_params).get("project")).getComponent(IGenerationTracer.class);
   }
 }

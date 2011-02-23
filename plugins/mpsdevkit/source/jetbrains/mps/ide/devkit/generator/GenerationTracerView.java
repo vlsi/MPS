@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.generator.plugin.debug;
+package jetbrains.mps.ide.devkit.generator;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.lang.generator.plugin.debug.icons.Icons;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.devkit.generator.icons.icons.Icons;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.Icon;

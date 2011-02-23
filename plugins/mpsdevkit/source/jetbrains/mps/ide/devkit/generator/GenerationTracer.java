@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.generator.plugin.debug;
+package jetbrains.mps.ide.devkit.generator;
 
 import com.intellij.openapi.project.Project;
 
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
+import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.lang.generator.plugin.debug.TracerNode.Kind;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -77,7 +77,8 @@ public class GenerationTracer implements IGenerationTracer {
       }
     });
   }
-  
+
+  @Override
   public void discardTracing() {
     myActive = false;
     myTracingDataByInputModel = null;

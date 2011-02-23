@@ -13,15 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.generator.plugin.debug;
+package jetbrains.mps.ide.devkit.generator;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.lang.generator.plugin.debug.TracerNode.Kind;
-import jetbrains.mps.lang.generator.plugin.debug.icons.Icons;
+import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
+import jetbrains.mps.ide.devkit.generator.icons.icons.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -95,7 +96,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   }
 
   private ActionGroup createActionGroupForInputNode() {
-    final GenerationTracer tracer = myProject.getComponent(GenerationTracer.class);
+    final GenerationTracer tracer = (GenerationTracer) myProject.getComponent(IGenerationTracer.class);
 
     final TracerNode tracerNode = this.getTracerNode();
     final boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().getNode() != null;
@@ -131,7 +132,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   }
 
   private ActionGroup createActionGroupForOutputNode() {
-    final GenerationTracer tracer = myProject.getComponent(GenerationTracer.class);
+    final GenerationTracer tracer = (GenerationTracer) myProject.getComponent(IGenerationTracer.class);
 
     DefaultActionGroup group = new DefaultActionGroup();
 

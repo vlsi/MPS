@@ -25,7 +25,6 @@ import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.generator.GeneratorCacheComponent;
 import jetbrains.mps.generator.IGenerationTracer;
-import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.make.script.IConfigMonitor;
@@ -276,9 +275,12 @@ public class Generate_Facet implements IFacet {
                 ));
               }
               IGenerationTracer tracer = ((boolean) pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient() ?
-                pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(GenerationTracer.class) :
-                new NullGenerationTracer()
+                pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(IGenerationTracer.class) :
+                null
               );
+              if (tracer == null) {
+                tracer = new NullGenerationTracer();
+              }
               pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions(GenerationOptions.getDefaults().saveTransientModels((boolean) pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient()).strictMode(settings.isStrictMode()).incremental(strategy).generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads()).tracing(settings.getPerformanceTracingLevel(), tracer).reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep()).rebuildAll(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).cleanMake()).keepOutputModel(true));
               return new IResult.SUCCESS(_output_fi61u2_a0c);
             default:
@@ -415,7 +417,10 @@ public class Generate_Facet implements IFacet {
               boolean generationOk;
               GeneratorManager gm = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(GeneratorManager.class);
               if (!((boolean) pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient())) {
-                pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(GenerationTracer.class).discardTracing();
+                IGenerationTracer tracer = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(IGenerationTracer.class);
+                if (tracer != null) {
+                  tracer.discardTracing();
+                }
               }
 
               GenerationHandler gh = new GenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource>() {

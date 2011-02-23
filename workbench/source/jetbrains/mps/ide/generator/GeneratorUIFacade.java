@@ -32,7 +32,6 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
@@ -194,12 +193,19 @@ public class GeneratorUIFacade {
         GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
 
         if (!saveTransientModels) {
-          project.getComponent(GenerationTracer.class).discardTracing();
+          IGenerationTracer component = project.getComponent(IGenerationTracer.class);
+          if (component != null) {
+            component.discardTracing();
+          }
         }
 
         IGenerationTracer tracer = saveTransientModels
-          ? project.getComponent(GenerationTracer.class)
-          : new NullGenerationTracer();
+          ? project.getComponent(IGenerationTracer.class)
+          : null;
+
+        if (tracer == null) {
+          tracer = new NullGenerationTracer();
+        }
 
         IncrementalGenerationStrategy strategy = null;
         if (settings.isIncremental()) {

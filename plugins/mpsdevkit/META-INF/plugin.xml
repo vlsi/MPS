@@ -27,9 +27,17 @@
     <component>
       <implementation-class>jetbrains.mps.ide.devkit.actions.Mpsdevkit_PluginInitializer</implementation-class>
     </component>
+
   </application-components>
 
   <project-components>
+    <component>
+      <interface-class>jetbrains.mps.generator.IGenerationTracer</interface-class>
+      <implementation-class>jetbrains.mps.ide.devkit.generator.GenerationTracer</implementation-class>
+    </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.ide.devkit.generator.GenerationTracerViewTool</implementation-class>
+    </component>
   </project-components>
 </idea-plugin>

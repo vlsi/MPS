@@ -54,6 +54,8 @@ public interface IGenerationTracer {
 
   void startTracing(SModel inputModel, SModel outputModel);
 
+  void discardTracing();
+
   void discardTracing(SModel inputModel, SModel outputModel);
 
   List<Pair<SNode, SNode>> getAllAppiedRulesWithInputNodes(SModelReference outputModelReference);

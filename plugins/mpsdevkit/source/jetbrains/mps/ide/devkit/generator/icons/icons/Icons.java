@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.generator.plugin.debug.icons;
+package jetbrains.mps.ide.devkit.generator.icons.icons;
 
-import jetbrains.mps.lang.generator.plugin.debug.TracerNode;
-import jetbrains.mps.lang.generator.plugin.debug.TracerNode.Kind;
+import jetbrains.mps.ide.devkit.generator.TracerNode;
+import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;

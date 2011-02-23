@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.generator.plugin.debug;
+package jetbrains.mps.ide.devkit.generator;
 
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;

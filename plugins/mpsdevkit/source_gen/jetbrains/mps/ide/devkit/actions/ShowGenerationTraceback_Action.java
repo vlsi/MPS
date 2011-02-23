@@ -13,8 +13,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
+import jetbrains.mps.ide.devkit.generator.GenerationTracer;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
         if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).count() != 1) {
           ShowGenerationTraceback_Action.this.disable(event.getPresentation());
         }
-        GenerationTracer tracer = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(GenerationTracer.class);
+        GenerationTracer tracer = (GenerationTracer) ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(IGenerationTracer.class);
         event.getPresentation().setVisible(tracer.hasTracingData());
         event.getPresentation().setEnabled(tracer.hasTracebackData(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getSModelReference()));
       }
@@ -89,7 +90,7 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GenerationTracer tracer = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(GenerationTracer.class);
+      GenerationTracer tracer = (GenerationTracer) ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(IGenerationTracer.class);
       if (!(tracer.showTracebackData(((SNode) MapSequence.fromMap(_params).get("node"))))) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "No tracing data available");
       }
