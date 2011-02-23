@@ -33,7 +33,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CheckModel_Action());
     addAction(new CheckModelsBeforeGeneration_Action());
     addAction(new CheckProject_Action());
-    addAction(new CleanAllModules_Action());
     addAction(new CleanModule_Action());
     addAction(new CleanProject_Action());
     addAction(new CloneModel_Action());
@@ -78,7 +77,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new InstallIDEAPlugin_Action());
     addAction(new LoadNonStubModels_Action());
     addAction(new MPSProjectPaths_Action());
-    addAction(new MakeAllModules_Action());
     addAction(new MakeModule_Action());
     addAction(new ModelPropertiesWOShortcut_Action());
     addAction(new ModelProperties_Action());
@@ -97,7 +95,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new PasteNode_Action());
     addAction(new Pause_Action());
     addAction(new QuickCreate_Action());
-    addAction(new RebuildAllModules_Action());
     addAction(new RebuildModule_Action());
     addAction(new RecompileProject_Action());
     addAction(new ReloadAll_Action());
@@ -156,7 +153,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Breakpoints_ActionGroup());
     addGroup(new Build_ActionGroup());
     addGroup(new Code_ActionGroup());
-    addGroup(new Compile_ActionGroup());
     addGroup(new CreateRootNode_ActionGroup());
     addGroup(new DebugRunMenu_ActionGroup());
     addGroup(new DebugTool_ActionGroup());
@@ -266,7 +262,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(DebugRunMenu_ActionGroup.ID, "RunMenu", null);
     insertGroupIntoAnother(AddToFavoritesGroup_ActionGroup.ID, FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
     insertGroupIntoAnother(SaveTransientModels_ActionGroup.ID, GenerateOptions_ActionGroup.ID, GenerateOptions_ActionGroup.LABEL_ID_saveTransientModels);
-    insertGroupIntoAnother(Compile_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_compile);
     insertGroupIntoAnother(GenerateOptions_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_options);
     insertGroupIntoAnother(Search_ActionGroup.ID, "SearchMenu", null);
     insertGroupIntoAnother(Code_ActionGroup.ID, "CodeMenu", null);

@@ -8,6 +8,7 @@ import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.Generate_ActionGroup;
+import jetbrains.mps.ide.actions.Build_ActionGroup;
 import jetbrains.mps.ide.actions.Favorites_ActionGroup;
 
 public class Make_ApplicationPlugin extends BaseApplicationPlugin {
@@ -22,9 +23,13 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new CleanAllModules_Action());
     addAction(new GenerateTextFromSolution_Action());
     addAction(new GoToUsageInMappingConfig_Action());
+    addAction(new MakeAllModules_Action());
+    addAction(new RebuildAllModules_Action());
     // groups 
+    addGroup(new Compile_ActionGroup());
     addGroup(new GenerateEditorPopup_ActionGroup());
     addGroup(new GenerateFavorites_ActionGroup());
     addGroup(new GenerateModels_ActionGroup());
@@ -38,6 +43,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GenerateEditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_generateModel);
     insertGroupIntoAnother(GenerateModule_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModule);
     insertGroupIntoAnother(GenerateModule_ActionGroup.ID, GenerateModulePopup_ActionGroup.ID, GenerateModulePopup_ActionGroup.LABEL_ID_generate);
+    insertGroupIntoAnother(Compile_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_compile);
     insertGroupIntoAnother(GenerateModels_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModel);
     insertGroupIntoAnother(GenerateModels_ActionGroup.ID, GenerateEditorPopup_ActionGroup.ID, GenerateEditorPopup_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(GenerateFavorites_ActionGroup.ID, Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_generate);

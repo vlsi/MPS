@@ -2,12 +2,16 @@
 <debugInfo>
   <unitInfo fileName="Make_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_ProjectPlugin" />
   <unitInfo fileName="GenerateModule_ActionGroup.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateModule_ActionGroup" />
+  <unitInfo fileName="Compile_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Compile_ActionGroup" />
   <unitInfo fileName="GenerateModels_ActionGroup.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateModels_ActionGroup" />
   <unitInfo fileName="Make_PluginInitializer.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_PluginInitializer" />
   <unitInfo fileName="GenerateModulePopup_ActionGroup.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateModulePopup_ActionGroup" />
   <unitInfo fileName="GenerateEditorPopup_ActionGroup.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateEditorPopup_ActionGroup" />
-  <unitInfo fileName="Make_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_ApplicationPlugin" />
+  <unitInfo fileName="Make_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ide.make.actions.Make_ApplicationPlugin" />
   <unitInfo fileName="GenerateFavorites_ActionGroup.java" startLine="25" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateFavorites_ActionGroup" />
+  <unitInfo fileName="RebuildAllModules_Action.java" startLine="24" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RebuildAllModules_Action" />
+  <unitInfo fileName="MakeAllModules_Action.java" startLine="24" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.make.actions.MakeAllModules_Action" />
+  <unitInfo fileName="CleanAllModules_Action.java" startLine="26" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CleanAllModules_Action" />
   <unitInfo fileName="RegenerateModule_Action.java" startLine="14" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RegenerateModule_Action" />
   <unitInfo fileName="GenerateModule_Action.java" startLine="14" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.make.actions.GenerateModule_Action" />
   <unitInfo fileName="RegenerateFilesFromModel_Action.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.make.actions.RegenerateFilesFromModel_Action" />
@@ -99,6 +103,50 @@
     <nodeInfo nodeId="2245811281723165278" fileName="GenerateEditorPopup_ActionGroup.java" startLine="26" startPosition="7" endLine="27" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2245811281723165277" fileName="GenerateEditorPopup_ActionGroup.java" startLine="20" startPosition="9" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="2245811281723165277" fileName="GenerateEditorPopup_ActionGroup.java" startLine="21" startPosition="7" endLine="25" endPosition="63" />
+  </root>
+  <root nodeId="5332171957773611161">
+    <nodeInfo nodeId="5332171957773611182" fileName="CleanAllModules_Action.java" startLine="63" startPosition="31" endLine="64" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5332171957773611187" fileName="CleanAllModules_Action.java" startLine="64" startPosition="52" endLine="65" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332171957773611198" fileName="CleanAllModules_Action.java" startLine="65" startPosition="149" endLine="66" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332171957773611180" fileName="CleanAllModules_Action.java" startLine="62" startPosition="63" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5332171957773611179" fileName="CleanAllModules_Action.java" startLine="61" startPosition="69" endLine="68" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332171957773611172" fileName="CleanAllModules_Action.java" startLine="60" startPosition="131" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="5332171957773611164" fileName="CleanAllModules_Action.java" startLine="59" startPosition="9" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="5332171957773611181" fileName="CleanAllModules_Action.java" startLine="63" startPosition="31" endLine="66" endPosition="68">
+      <varInfo nodeId="5332171957773611183" varName="maker" />
+    </scopeInfo>
+    <scopeInfo nodeId="5332171957773611180" fileName="CleanAllModules_Action.java" startLine="62" startPosition="63" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="5332171957773611178" fileName="CleanAllModules_Action.java" startLine="61" startPosition="69" endLine="68" endPosition="13" />
+    <scopeInfo nodeId="5332171957773611172" fileName="CleanAllModules_Action.java" startLine="60" startPosition="131" endLine="70" endPosition="0">
+      <varInfo nodeId="5332171957773611175" varName="indicator" />
+    </scopeInfo>
+    <unitInfo nodeId="5332171957773611180" fileName="CleanAllModules_Action.java" startLine="62" startPosition="51" endLine="68" endPosition="11" unitName="jetbrains.mps.ide.make.actions.CleanAllModules_Action$2" />
+    <unitInfo nodeId="5332171957773611170" fileName="CleanAllModules_Action.java" startLine="60" startPosition="44" endLine="70" endPosition="7" unitName="jetbrains.mps.ide.make.actions.CleanAllModules_Action$1" />
+  </root>
+  <root nodeId="5332171957773611209">
+    <nodeInfo nodeId="5332171957773611211" fileName="Compile_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332171957773611212" fileName="Compile_ActionGroup.java" startLine="17" startPosition="97" endLine="18" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332171957773611213" fileName="Compile_ActionGroup.java" startLine="18" startPosition="98" endLine="19" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="5332171957773611215">
+    <nodeInfo nodeId="5332171957773611218" fileName="MakeAllModules_Action.java" startLine="57" startPosition="9" endLine="58" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5332171957773611228" fileName="MakeAllModules_Action.java" startLine="60" startPosition="27" endLine="61" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332171957773611238" fileName="MakeAllModules_Action.java" startLine="63" startPosition="9" endLine="64" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332171957773611226" fileName="MakeAllModules_Action.java" startLine="59" startPosition="59" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5332171957773611225" fileName="MakeAllModules_Action.java" startLine="58" startPosition="85" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="5332171957773611227" fileName="MakeAllModules_Action.java" startLine="60" startPosition="27" endLine="61" endPosition="184" />
+    <scopeInfo nodeId="5332171957773611226" fileName="MakeAllModules_Action.java" startLine="59" startPosition="59" endLine="63" endPosition="0" />
+    <unitInfo nodeId="5332171957773611226" fileName="MakeAllModules_Action.java" startLine="59" startPosition="47" endLine="63" endPosition="7" unitName="jetbrains.mps.ide.make.actions.MakeAllModules_Action$1" />
+  </root>
+  <root nodeId="5332171957773611251">
+    <nodeInfo nodeId="5332171957773611254" fileName="RebuildAllModules_Action.java" startLine="57" startPosition="9" endLine="58" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5332171957773611264" fileName="RebuildAllModules_Action.java" startLine="60" startPosition="27" endLine="61" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332171957773611274" fileName="RebuildAllModules_Action.java" startLine="63" startPosition="9" endLine="64" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332171957773611262" fileName="RebuildAllModules_Action.java" startLine="59" startPosition="59" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5332171957773611261" fileName="RebuildAllModules_Action.java" startLine="58" startPosition="85" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="5332171957773611263" fileName="RebuildAllModules_Action.java" startLine="60" startPosition="27" endLine="61" endPosition="184" />
+    <scopeInfo nodeId="5332171957773611262" fileName="RebuildAllModules_Action.java" startLine="59" startPosition="59" endLine="63" endPosition="0" />
+    <unitInfo nodeId="5332171957773611262" fileName="RebuildAllModules_Action.java" startLine="59" startPosition="47" endLine="63" endPosition="7" unitName="jetbrains.mps.ide.make.actions.RebuildAllModules_Action$1" />
   </root>
   <root nodeId="5882989260841437392">
     <nodeInfo nodeId="5882989260841437393" fileName="GenerateFilesFromModel_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="action" />
