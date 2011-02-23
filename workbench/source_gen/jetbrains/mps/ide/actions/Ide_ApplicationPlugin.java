@@ -32,7 +32,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AnalyzeClasspath_Action());
     addAction(new CheckModel_Action());
     addAction(new CheckProject_Action());
-    addAction(new CleanModule_Action());
     addAction(new CloneModel_Action());
     addAction(new CloneRoot_Action());
     addAction(new CollapseAll_Action());
@@ -74,7 +73,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new InstallIDEAPlugin_Action());
     addAction(new LoadNonStubModels_Action());
     addAction(new MPSProjectPaths_Action());
-    addAction(new MakeModule_Action());
     addAction(new ModelPropertiesWOShortcut_Action());
     addAction(new ModelProperties_Action());
     addAction(new MoveFileOrDirectory_Action());
@@ -92,7 +90,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new PasteNode_Action());
     addAction(new Pause_Action());
     addAction(new QuickCreate_Action());
-    addAction(new RebuildModule_Action());
     addAction(new ReloadAll_Action());
     addAction(new ReloadStubs_Action());
     addAction(new RemoveAllBookmarks_Action());

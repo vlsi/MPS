@@ -18,7 +18,6 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.progress.ProgressManager;
-import jetbrains.mps.ide.actions.DefaultMakeTask;
 import com.intellij.openapi.project.Project;
 
 public class RebuildAllModules_Action extends GeneratedAction {

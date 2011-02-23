@@ -18,7 +18,6 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.progress.ProgressManager;
-import jetbrains.mps.ide.actions.DefaultMakeTask;
 import com.intellij.openapi.project.Project;
 
 public class RecompileProject_Action extends GeneratedAction {
