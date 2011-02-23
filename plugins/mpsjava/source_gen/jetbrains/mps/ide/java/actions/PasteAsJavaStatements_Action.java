@@ -14,7 +14,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.java.util.JavaPaster;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.javaParser.FeatureKind;
+import jetbrains.mps.ide.java.parser.FeatureKind;
 
 public class PasteAsJavaStatements_Action extends GeneratedAction {
   private static final Icon ICON = null;

@@ -13,24 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.javaParser;
+package jetbrains.mps.ide.java.parser;
 
 /**
  * Created by IntelliJ IDEA.
- * User: User
- * Date: 28.08.2009
- * Time: 20:31:32
+ * User: Cyril.Konopko
+ * Date: 07.12.2009
+ * Time: 16:26:24
  * To change this template use File | Settings | File Templates.
  */
-public class JavaConverterException extends RuntimeException {
-  public JavaConverterException() {
-  }
-
-  public JavaConverterException(String message) {
-    super(message);
-  }
-
-  public JavaConverterException(Throwable cause) {
-    super(cause);
-  }
+public enum FeatureKind {
+  CLASS, NESTED_CLASS, FIELD, METHOD, STATEMENTS;
 }

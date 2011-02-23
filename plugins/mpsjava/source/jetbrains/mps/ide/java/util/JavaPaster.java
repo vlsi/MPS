@@ -2,9 +2,9 @@ package jetbrains.mps.ide.java.util;
 
 import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.datatransfer.PasteEnv;
-import jetbrains.mps.javaParser.ConversionFailedException;
-import jetbrains.mps.javaParser.FeatureKind;
-import jetbrains.mps.javaParser.JavaCompiler;
+import jetbrains.mps.ide.java.parser.ConversionFailedException;
+import jetbrains.mps.ide.java.parser.FeatureKind;
+import jetbrains.mps.ide.java.parser.JavaCompiler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;

@@ -18,7 +18,7 @@ import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import java.io.File;
-import jetbrains.mps.javaParser.JavaCompiler;
+import jetbrains.mps.ide.java.parser.JavaCompiler;
 import jetbrains.mps.project.ModuleContext;
 
 public class GetSolutionContentsFromSourceDialogContentPane extends JPanel {

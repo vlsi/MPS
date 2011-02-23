@@ -13,15 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.javaParser;
+package jetbrains.mps.ide.java.parser;
+
+import jetbrains.mps.reloading.IClassPathItem;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.12.2009
- * Time: 16:26:24
+ * User: User
+ * Date: 31.12.2009
+ * Time: 14:58:12
  * To change this template use File | Settings | File Templates.
  */
-public enum FeatureKind {
-  CLASS, NESTED_CLASS, FIELD, METHOD, STATEMENTS;
+public interface ClasspathObserver {
+  public void classPathAdded(IClassPathItem classPath);
+
+  public void classPathRemoved(IClassPathItem classPath);
 }

@@ -13,7 +13,7 @@
   <dependency className="jetbrains.mps.ide.java.getSolutionFromSource.GetSolutionContentsFromSourceDialogContentPane" file="GetSolutionContentsFromSourceDialogContentPane.java">
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="java.awt.GridLayout" />
-    <classNode dependClassName="jetbrains.mps.javaParser.JavaCompiler" />
+    <classNode dependClassName="jetbrains.mps.ide.common.PathField" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="java.lang.Object" />
@@ -25,11 +25,11 @@
     <classNode dependClassName="org.jdesktop.beansbinding.Bindings" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.ide.common.PathField" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.uiLanguage.runtime.events.Events" />
     <classNode dependClassName="javax.swing.JTextField" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaCompiler" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="org.jdesktop.beansbinding.BeanProperty" />
     <classNode extendsClassName="javax.swing.JComponent" />

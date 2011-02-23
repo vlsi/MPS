@@ -13,19 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.javaParser;
-
-import jetbrains.mps.reloading.IClassPathItem;
+package jetbrains.mps.ide.java.parser;
 
 /**
  * Created by IntelliJ IDEA.
  * User: User
- * Date: 31.12.2009
- * Time: 14:58:12
+ * Date: 28.08.2009
+ * Time: 20:31:32
  * To change this template use File | Settings | File Templates.
  */
-public interface ClasspathObserver {
-  public void classPathAdded(IClassPathItem classPath);
+public class JavaConverterException extends RuntimeException {
+  public JavaConverterException() {
+  }
 
-  public void classPathRemoved(IClassPathItem classPath);
+  public JavaConverterException(String message) {
+    super(message);
+  }
+
+  public JavaConverterException(Throwable cause) {
+    super(cause);
+  }
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.javaParser;
+package jetbrains.mps.ide.java.parser;
 
 import com.intellij.util.containers.HashMap;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.javaParser;
+package jetbrains.mps.ide.java.parser;
 
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.lang.core.structure.INamedConcept;

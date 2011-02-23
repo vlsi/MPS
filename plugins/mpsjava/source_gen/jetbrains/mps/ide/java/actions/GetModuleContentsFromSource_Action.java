@@ -15,7 +15,7 @@ import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
 import jetbrains.mps.vfs.IFile;
 import java.awt.Frame;
-import jetbrains.mps.javaParser.JavaCompiler;
+import jetbrains.mps.ide.java.parser.JavaCompiler;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
 import java.io.File;

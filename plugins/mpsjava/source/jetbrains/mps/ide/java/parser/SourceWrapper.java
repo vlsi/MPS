@@ -1,4 +1,4 @@
-package jetbrains.mps.javaParser;
+package jetbrains.mps.ide.java.parser;
 
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;

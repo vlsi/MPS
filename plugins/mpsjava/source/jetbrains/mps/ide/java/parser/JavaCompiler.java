@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.javaParser;
+package jetbrains.mps.ide.java.parser;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.compiler.MPSNameEnvironment;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.javaParser.UIComponents.MyDialog;
+import jetbrains.mps.ide.java.parser.UIComponents.MyDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;

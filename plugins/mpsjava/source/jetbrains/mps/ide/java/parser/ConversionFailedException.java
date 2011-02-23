@@ -1,4 +1,4 @@
-package jetbrains.mps.javaParser;
+package jetbrains.mps.ide.java.parser;
 
 /**
  * Created by IntelliJ IDEA.
