@@ -13,31 +13,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.module;
+package jetbrains.mps.ide.make.actions.generate;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Deprecated
-public class GenerateAllModulesInProjectAction extends BaseGenerateAction {
-  public GenerateAllModulesInProjectAction(boolean regenerate) {
+public class GenerateAllModelsInModuleAction extends BaseGenerateAction {
+  public GenerateAllModelsInModuleAction(boolean regenerate) {
     super(regenerate);
   }
 
   @Override
   Set<IModule> getModuleToGenerate(AnActionEvent e) {
-    MPSProject mpsProject = e.getData(MPSDataKeys.MPS_PROJECT);
-    assert mpsProject != null;
-    return new HashSet(mpsProject.getModules());
+    Set<IModule> result;
+    List<IModule> moduleList = e.getData(MPSDataKeys.MODULES);
+    if (moduleList == null) moduleList = new ArrayList<IModule>();
+    result = new HashSet(moduleList);
+    if (result.isEmpty()) {
+      IModule contextModule = e.getData(MPSDataKeys.CONTEXT_MODULE);
+      if (contextModule != null) {
+        result.add(contextModule);
+      }
+    }
+    return result;
   }
 
   @Override
   String getObject() {
-    return "Project";
+    return myModules.size() == 1 ? NameUtil.shortNameFromLongName(myModules.iterator().next().getClass().getName()) : "Modules";
   }
 }

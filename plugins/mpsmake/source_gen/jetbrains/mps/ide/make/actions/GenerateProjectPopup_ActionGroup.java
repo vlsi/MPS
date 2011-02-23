@@ -4,7 +4,7 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.actions.module.GenerateAllModulesInProjectAction;
+import jetbrains.mps.ide.make.actions.generate.GenerateAllModulesInProjectAction;
 import com.intellij.openapi.extensions.PluginId;
 
 public class GenerateProjectPopup_ActionGroup extends GeneratedActionGroup {

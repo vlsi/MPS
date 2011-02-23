@@ -997,7 +997,7 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1784959407586166547" resolveInfo="RegenerateModule" />
         <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1784959407586166513">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1784959407586166514">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7mm2.~GenerateAllModelsInModuleAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateAllModelsInModuleAction" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="db10.~GenerateAllModelsInModuleAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateAllModelsInModuleAction" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1784959407586166515">
               <property name="value" nameId="tpee.1068580123138" value="true" />
             </node>
@@ -1008,7 +1008,7 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1784959407586166520" resolveInfo="GenerateModule" />
         <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1784959407586166517">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1784959407586166518">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7mm2.~GenerateAllModelsInModuleAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateAllModelsInModuleAction" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="db10.~GenerateAllModelsInModuleAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateAllModelsInModuleAction" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1784959407586166519">
               <property name="value" nameId="tpee.1068580123138" value="false" />
             </node>
@@ -1594,7 +1594,7 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="2017614408232612710" resolveInfo="RegenerateProject" />
         <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2017614408232612703">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2017614408232612704">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7mm2.~GenerateAllModulesInProjectAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateAllModulesInProjectAction" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="db10.~GenerateAllModulesInProjectAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateAllModulesInProjectAction" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2017614408232612705">
               <property name="value" nameId="tpee.1068580123138" value="true" />
             </node>
@@ -1605,7 +1605,7 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="2017614408232612737" resolveInfo="GenerateProject" />
         <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2017614408232612707">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2017614408232612708">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7mm2.~GenerateAllModulesInProjectAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateAllModulesInProjectAction" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="db10.~GenerateAllModulesInProjectAction%d&lt;init&gt;(boolean)" resolveInfo="GenerateAllModulesInProjectAction" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2017614408232612709">
               <property name="value" nameId="tpee.1068580123138" value="false" />
             </node>

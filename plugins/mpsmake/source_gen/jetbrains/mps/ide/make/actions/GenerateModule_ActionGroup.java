@@ -4,7 +4,7 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction;
+import jetbrains.mps.ide.make.actions.generate.GenerateAllModelsInModuleAction;
 import com.intellij.openapi.extensions.PluginId;
 
 public class GenerateModule_ActionGroup extends GeneratedActionGroup {
