@@ -6,8 +6,7 @@
   </dependency>
   <dependency className="jetbrains.mps.gwt.client.stubs.GWTModulePathItem" file="GWTModulePathItem.java">
     <classNode dependClassName="jetbrains.mps.stubs.util.PathItemsReloadableCache" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFileNameFilter" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.stubs.util.PathItem" />
   </dependency>

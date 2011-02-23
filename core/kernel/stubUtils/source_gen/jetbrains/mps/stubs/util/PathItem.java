@@ -69,7 +69,7 @@ public abstract class PathItem {
     if (fld == null) {
       return PathItem.EMPTY_LIST;
     }
-    List<IFile> lst = fld.list(this.filter());
+    List<IFile> lst = fld.list(this.filter(pkg));
     return ListSequence.fromList(lst).<String>select(new ISelector<IFile, String>() {
       public String select(IFile f) {
         return (String) f.getName();
@@ -97,7 +97,7 @@ public abstract class PathItem {
     return file.openInputStream();
   }
 
-  protected abstract IFileNameFilter filter();
+  protected abstract boolean accepResource(String pkg, String res);
 
   public abstract String baseName(String res);
 
@@ -132,6 +132,14 @@ public abstract class PathItem {
 
   public boolean isJar(String path) {
     return path.endsWith(".jar") || path.endsWith(".JAR");
+  }
+
+  private IFileNameFilter filter(final String pkg) {
+    return new IFileNameFilter() {
+      public boolean accept(IFile parent, String name) {
+        return accepResource(pkg, name);
+      }
+    };
   }
 
   private static File asFile(IFile ifile) {
