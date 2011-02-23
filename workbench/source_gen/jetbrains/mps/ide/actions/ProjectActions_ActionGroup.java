@@ -14,6 +14,7 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_projectNew = ID + "projectNew";
   public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_generate = ID + "generate";
+  public static final String LABEL_ID_compileJava = ID + "compileJava";
   public static final String LABEL_ID_runConfig = ID + "runConfig";
 
   public ProjectActions_ActionGroup() {
@@ -42,9 +43,12 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
       }
       ProjectActions_ActionGroup.this.addSeparator();
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckProject_Action");
-      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CompileProject_Action");
-      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RecompileProject_Action");
-      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanProject_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(ProjectActions_ActionGroup.LABEL_ID_compileJava);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        ProjectActions_ActionGroup.this.addAction(action);
+      }
       {
         LabelledAnchor action = new LabelledAnchor(ProjectActions_ActionGroup.LABEL_ID_runConfig);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

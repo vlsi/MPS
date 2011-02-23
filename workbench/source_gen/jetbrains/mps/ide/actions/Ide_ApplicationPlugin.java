@@ -33,12 +33,10 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CheckModel_Action());
     addAction(new CheckProject_Action());
     addAction(new CleanModule_Action());
-    addAction(new CleanProject_Action());
     addAction(new CloneModel_Action());
     addAction(new CloneRoot_Action());
     addAction(new CollapseAll_Action());
     addAction(new Collapse_Action());
-    addAction(new CompileProject_Action());
     addAction(new CopyModelName_Action());
     addAction(new CopyModuleName_Action());
     addAction(new CopyNodeName_Action());
@@ -95,7 +93,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new Pause_Action());
     addAction(new QuickCreate_Action());
     addAction(new RebuildModule_Action());
-    addAction(new RecompileProject_Action());
     addAction(new ReloadAll_Action());
     addAction(new ReloadStubs_Action());
     addAction(new RemoveAllBookmarks_Action());
@@ -169,7 +166,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new FolderActions_ActionGroup());
     addGroup(new Folding_ActionGroup());
     addGroup(new GenerateModelPopup_ActionGroup());
-    addGroup(new GenerateProjectPopup_ActionGroup());
     addGroup(new Generate_ActionGroup());
     addGroup(new GeneratorActions_ActionGroup());
     addGroup(new GeneratorNewActions_ActionGroup());
@@ -234,7 +230,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Folding_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_folding);
     insertGroupIntoAnother(Generate_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_aux);
     insertGroupIntoAnother(GenerateModelPopup_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_generateActions);
-    insertGroupIntoAnother(GenerateProjectPopup_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(Goto_ActionGroup.ID, "GoToMenu", null);
     insertGroupIntoAnother(GoByReference_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_goByRef);
     insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
