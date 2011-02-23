@@ -22,7 +22,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
-import jetbrains.mps.ide.devkit.generator.icons.icons.Icons;
+import jetbrains.mps.ide.devkit.generator.icons.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SNode;

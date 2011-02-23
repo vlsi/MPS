@@ -17,7 +17,7 @@ package jetbrains.mps.ide.devkit.generator;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.devkit.generator.icons.icons.Icons;
+import jetbrains.mps.ide.devkit.generator.icons.Icons;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.Icon;

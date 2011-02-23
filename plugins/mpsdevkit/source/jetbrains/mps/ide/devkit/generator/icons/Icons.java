@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.devkit.generator.icons.icons;
+package jetbrains.mps.ide.devkit.generator.icons;
 
 import jetbrains.mps.ide.devkit.generator.TracerNode;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
