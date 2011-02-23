@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.platform.conf.stubs.ConfPathItem" file="ConfPathItem.java">
-    <classNode dependClassName="jetbrains.mps.stubs.util.PathItemsReloadableCache" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="jetbrains.mps.stubs.util.PathItemsReloadableCache" />
+    <classNode dependClassName="org.jdom.input.SAXBuilder" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.stubs.ConfReader" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.jdom.JDOMException" />
+    <classNode dependClassName="java.io.InputStream" />
     <classNode extendsClassName="jetbrains.mps.stubs.util.PathItem" />
   </dependency>
   <dependency className="jetbrains.mps.platform.conf.stubs.ConfReader" file="ConfReader.java">

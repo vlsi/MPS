@@ -3,36 +3,65 @@
   <unitInfo fileName="ConfStubs.java" startLine="48" startPosition="87" endLine="52" endPosition="5" unitName="jetbrains.mps.platform.conf.stubs.ConfStubs$1" />
   <unitInfo fileName="ConfStubs.java" startLine="39" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfStubs" />
   <root nodeId="2906282062545452448">
-    <nodeInfo nodeId="2906282062545453663" fileName="ConfPathItem.java" startLine="8" startPosition="44" endLine="9" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SUFFIX" />
-    <nodeInfo nodeId="2906282062545455174" fileName="ConfPathItem.java" startLine="11" startPosition="36" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3919891163767927560" fileName="ConfPathItem.java" startLine="16" startPosition="59" endLine="17" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2906282062545452483" fileName="ConfPathItem.java" startLine="21" startPosition="22" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2906282062545453679" fileName="ConfPathItem.java" startLine="30" startPosition="51" endLine="31" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2906282062545452450" fileName="ConfPathItem.java" startLine="10" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConfPathItem#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2906282062545452478" fileName="ConfPathItem.java" startLine="20" startPosition="38" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2906282062545452485" fileName="ConfPathItem.java" startLine="23" startPosition="5" endLine="27" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2906282062545453673" fileName="ConfPathItem.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPathItem#(Ljava/lang/String;)Ljetbrains/mps/stubs/util/PathItem;" />
-    <nodeInfo nodeId="3919891163767927547" fileName="ConfPathItem.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accepResource#(Ljava/lang/String;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="2906282062545452472" fileName="ConfPathItem.java" startLine="19" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="baseName#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="2906282062545452453" fileName="ConfPathItem.java" startLine="11" startPosition="36" endLine="12" endPosition="16" />
-    <scopeInfo nodeId="3919891163767927554" fileName="ConfPathItem.java" startLine="16" startPosition="59" endLine="17" endPosition="47" />
-    <scopeInfo nodeId="2906282062545452482" fileName="ConfPathItem.java" startLine="21" startPosition="22" endLine="22" endPosition="18" />
-    <scopeInfo nodeId="2906282062545453678" fileName="ConfPathItem.java" startLine="30" startPosition="51" endLine="31" endPosition="86" />
-    <scopeInfo nodeId="2906282062545452450" fileName="ConfPathItem.java" startLine="10" startPosition="0" endLine="13" endPosition="3">
+    <nodeInfo nodeId="2906282062545453663" fileName="ConfPathItem.java" startLine="12" startPosition="44" endLine="13" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SUFFIX" />
+    <nodeInfo nodeId="2906282062545455174" fileName="ConfPathItem.java" startLine="15" startPosition="36" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2124135949565555392" fileName="ConfPathItem.java" startLine="21" startPosition="49" endLine="22" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2124135949565555408" fileName="ConfPathItem.java" startLine="23" startPosition="5" endLine="24" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2124135949565555414" fileName="ConfPathItem.java" startLine="25" startPosition="9" endLine="26" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2124135949565563806" fileName="ConfPathItem.java" startLine="26" startPosition="39" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2124135949565571896" fileName="ConfPathItem.java" startLine="28" startPosition="29" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2124135949565571899" fileName="ConfPathItem.java" startLine="30" startPosition="31" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2124135949565555458" fileName="ConfPathItem.java" startLine="34" startPosition="13" endLine="35" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2906282062545452483" fileName="ConfPathItem.java" startLine="43" startPosition="22" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2906282062545453679" fileName="ConfPathItem.java" startLine="52" startPosition="51" endLine="53" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2906282062545452450" fileName="ConfPathItem.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConfPathItem#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2124135949565555371" fileName="ConfPathItem.java" startLine="20" startPosition="59" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2906282062545452478" fileName="ConfPathItem.java" startLine="42" startPosition="38" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2124135949565555456" fileName="ConfPathItem.java" startLine="33" startPosition="23" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2906282062545452485" fileName="ConfPathItem.java" startLine="45" startPosition="5" endLine="49" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2906282062545453673" fileName="ConfPathItem.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPathItem#(Ljava/lang/String;)Ljetbrains/mps/stubs/util/PathItem;" />
+    <nodeInfo nodeId="2124135949565555454" fileName="ConfPathItem.java" startLine="32" startPosition="15" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2906282062545452472" fileName="ConfPathItem.java" startLine="41" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="baseName#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2124135949565563804" fileName="ConfPathItem.java" startLine="24" startPosition="26" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="3919891163767927547" fileName="ConfPathItem.java" startLine="18" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accepResource#(Ljava/lang/String;Ljava/lang/String;)Z" />
+    <scopeInfo nodeId="2124135949565555462" fileName="ConfPathItem.java" startLine="36" startPosition="0" endLine="36" endPosition="33">
+      <varInfo nodeId="2124135949565555463" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="2124135949565555465" fileName="ConfPathItem.java" startLine="36" startPosition="33" endLine="36" endPosition="33" />
+    <scopeInfo nodeId="2906282062545452453" fileName="ConfPathItem.java" startLine="15" startPosition="36" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="2124135949565555372" fileName="ConfPathItem.java" startLine="21" startPosition="49" endLine="22" endPosition="19" />
+    <scopeInfo nodeId="2124135949565555438" fileName="ConfPathItem.java" startLine="28" startPosition="0" endLine="29" endPosition="19">
+      <varInfo nodeId="2124135949565555439" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="2124135949565555441" fileName="ConfPathItem.java" startLine="28" startPosition="29" endLine="29" endPosition="19" />
+    <scopeInfo nodeId="2124135949565555446" fileName="ConfPathItem.java" startLine="30" startPosition="0" endLine="31" endPosition="19">
+      <varInfo nodeId="2124135949565555447" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="2124135949565555449" fileName="ConfPathItem.java" startLine="30" startPosition="31" endLine="31" endPosition="19" />
+    <scopeInfo nodeId="2124135949565555457" fileName="ConfPathItem.java" startLine="34" startPosition="13" endLine="35" endPosition="21" />
+    <scopeInfo nodeId="2906282062545452482" fileName="ConfPathItem.java" startLine="43" startPosition="22" endLine="44" endPosition="18" />
+    <scopeInfo nodeId="2906282062545453678" fileName="ConfPathItem.java" startLine="52" startPosition="51" endLine="53" endPosition="86" />
+    <scopeInfo nodeId="2124135949565555413" fileName="ConfPathItem.java" startLine="25" startPosition="9" endLine="27" endPosition="60" />
+    <scopeInfo nodeId="2906282062545452450" fileName="ConfPathItem.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
       <varInfo nodeId="2906282062545455171" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545453673" fileName="ConfPathItem.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="2124135949565555455" fileName="ConfPathItem.java" startLine="33" startPosition="23" endLine="37" endPosition="9" />
+    <scopeInfo nodeId="2906282062545453673" fileName="ConfPathItem.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="2906282062545453674" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="3919891163767927547" fileName="ConfPathItem.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="2124135949565563805" fileName="ConfPathItem.java" startLine="32" startPosition="15" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="2906282062545452477" fileName="ConfPathItem.java" startLine="42" startPosition="38" endLine="49" endPosition="6" />
+    <scopeInfo nodeId="2906282062545452472" fileName="ConfPathItem.java" startLine="41" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="2906282062545452473" varName="res" />
+    </scopeInfo>
+    <scopeInfo nodeId="3919891163767927554" fileName="ConfPathItem.java" startLine="20" startPosition="59" endLine="39" endPosition="5">
+      <varInfo nodeId="2124135949565555409" varName="is" />
+    </scopeInfo>
+    <scopeInfo nodeId="3919891163767927547" fileName="ConfPathItem.java" startLine="18" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="3919891163767927552" varName="res" />
       <varInfo nodeId="3919891163767927550" varName="pkg" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545452477" fileName="ConfPathItem.java" startLine="20" startPosition="38" endLine="27" endPosition="6" />
-    <scopeInfo nodeId="2906282062545452472" fileName="ConfPathItem.java" startLine="19" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="2906282062545452473" varName="res" />
-    </scopeInfo>
-    <unitInfo nodeId="2906282062545452448" fileName="ConfPathItem.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfPathItem" />
+    <unitInfo nodeId="2906282062545452448" fileName="ConfPathItem.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfPathItem" />
   </root>
   <root nodeId="7467787244480111609">
     <nodeInfo nodeId="2906282062545455541" fileName="ConfReader.java" startLine="23" startPosition="25" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IDEA_PLUGIN" />
@@ -59,262 +88,281 @@
     <nodeInfo nodeId="7467787244480112816" fileName="ConfReader.java" startLine="47" startPosition="89" endLine="48" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7467787244480112822" fileName="ConfReader.java" startLine="48" startPosition="41" endLine="49" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2906282062545455524" fileName="ConfReader.java" startLine="52" startPosition="49" endLine="53" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2906282062545487722" fileName="ConfReader.java" startLine="54" startPosition="45" endLine="55" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5522969664585014969" fileName="ConfReader.java" startLine="56" startPosition="51" endLine="57" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2906282062545487675" fileName="ConfReader.java" startLine="58" startPosition="57" endLine="59" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2906282062545487740" fileName="ConfReader.java" startLine="60" startPosition="51" endLine="61" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2906282062545487756" fileName="ConfReader.java" startLine="62" startPosition="63" endLine="63" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962295475113782694" fileName="ConfReader.java" startLine="64" startPosition="58" endLine="65" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962295475113782706" fileName="ConfReader.java" startLine="66" startPosition="59" endLine="67" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2906282062545487656" fileName="ConfReader.java" startLine="73" startPosition="57" endLine="74" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2906282062545487760" fileName="ConfReader.java" startLine="75" startPosition="58" endLine="76" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2906282062545487782" fileName="ConfReader.java" startLine="77" startPosition="70" endLine="78" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962295475113782614" fileName="ConfReader.java" startLine="79" startPosition="65" endLine="80" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962295475113782628" fileName="ConfReader.java" startLine="81" startPosition="66" endLine="82" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7754236693164725423" fileName="ConfReader.java" startLine="88" startPosition="55" endLine="89" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7754236693164725468" fileName="ConfReader.java" startLine="89" startPosition="51" endLine="90" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7754236693164725542" fileName="ConfReader.java" startLine="91" startPosition="23" endLine="92" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7754236693164725558" fileName="ConfReader.java" startLine="92" startPosition="126" endLine="93" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7754236693164732335" fileName="ConfReader.java" startLine="93" startPosition="73" endLine="94" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7754236693164732418" fileName="ConfReader.java" startLine="95" startPosition="31" endLine="96" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7754236693164732434" fileName="ConfReader.java" startLine="96" startPosition="130" endLine="97" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7754236693164732486" fileName="ConfReader.java" startLine="97" startPosition="73" endLine="98" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7754236693164732531" fileName="ConfReader.java" startLine="99" startPosition="14" endLine="100" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="8962295475113815315" fileName="ConfReader.java" startLine="107" startPosition="54" endLine="108" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962295475113815357" fileName="ConfReader.java" startLine="109" startPosition="56" endLine="110" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962295475113815369" fileName="ConfReader.java" startLine="111" startPosition="57" endLine="112" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962295475113782806" fileName="ConfReader.java" startLine="118" startPosition="49" endLine="119" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8962295475113782873" fileName="ConfReader.java" startLine="119" startPosition="57" endLine="120" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8962295475113814559" fileName="ConfReader.java" startLine="120" startPosition="63" endLine="121" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8962295475113814583" fileName="ConfReader.java" startLine="121" startPosition="119" endLine="122" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962295475113814739" fileName="ConfReader.java" startLine="123" startPosition="24" endLine="124" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962295475113814854" fileName="ConfReader.java" startLine="126" startPosition="25" endLine="127" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962295475113815175" fileName="ConfReader.java" startLine="132" startPosition="65" endLine="133" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8962295475113815185" fileName="ConfReader.java" startLine="133" startPosition="115" endLine="134" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962295475113815264" fileName="ConfReader.java" startLine="134" startPosition="89" endLine="135" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8962295475113815291" fileName="ConfReader.java" startLine="136" startPosition="22" endLine="137" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962295475113815272" fileName="ConfReader.java" startLine="138" startPosition="5" endLine="139" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8962295475113815308" fileName="ConfReader.java" startLine="140" startPosition="23" endLine="141" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8962295475113815271" fileName="ConfReader.java" startLine="142" startPosition="5" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2906282062545487420" fileName="ConfReader.java" startLine="146" startPosition="85" endLine="147" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2906282062545487430" fileName="ConfReader.java" startLine="149" startPosition="32" endLine="150" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2906282062545487447" fileName="ConfReader.java" startLine="152" startPosition="5" endLine="153" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8962295475113814936" fileName="ConfReader.java" startLine="156" startPosition="54" endLine="157" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8962295475113814963" fileName="ConfReader.java" startLine="157" startPosition="67" endLine="158" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2906282062545487555" fileName="ConfReader.java" startLine="161" startPosition="83" endLine="162" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2906282062545487588" fileName="ConfReader.java" startLine="165" startPosition="45" endLine="166" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2906282062545487598" fileName="ConfReader.java" startLine="168" startPosition="9" endLine="169" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2906282062545487611" fileName="ConfReader.java" startLine="170" startPosition="12" endLine="171" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2906282062545487620" fileName="ConfReader.java" startLine="171" startPosition="68" endLine="172" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2906282062545487472" fileName="ConfReader.java" startLine="176" startPosition="82" endLine="177" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2906282062545487482" fileName="ConfReader.java" startLine="177" startPosition="96" endLine="178" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2906282062545487491" fileName="ConfReader.java" startLine="178" startPosition="66" endLine="179" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2906282062545487516" fileName="ConfReader.java" startLine="183" startPosition="25" endLine="184" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2906282062545487518" fileName="ConfReader.java" startLine="185" startPosition="5" endLine="186" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2906282062545487527" fileName="ConfReader.java" startLine="187" startPosition="18" endLine="188" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2906282062545487532" fileName="ConfReader.java" startLine="189" startPosition="5" endLine="190" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2906282062545455473" fileName="ConfReader.java" startLine="194" startPosition="25" endLine="195" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2906282062545455475" fileName="ConfReader.java" startLine="196" startPosition="5" endLine="197" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2906282062545455484" fileName="ConfReader.java" startLine="198" startPosition="18" endLine="199" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2906282062545455489" fileName="ConfReader.java" startLine="200" startPosition="5" endLine="201" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2906282062545455453" fileName="ConfReader.java" startLine="204" startPosition="49" endLine="205" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7467787244480111617" fileName="ConfReader.java" startLine="208" startPosition="36" endLine="209" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stubModelReference#(Ljava/lang/String;)Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="7754236693164732526" fileName="ConfReader.java" startLine="99" startPosition="12" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8962295475113814702" fileName="ConfReader.java" startLine="122" startPosition="91" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8962295475113814810" fileName="ConfReader.java" startLine="125" startPosition="7" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8962295475113815282" fileName="ConfReader.java" startLine="135" startPosition="58" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8962295475113815299" fileName="ConfReader.java" startLine="139" startPosition="64" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2906282062545487428" fileName="ConfReader.java" startLine="148" startPosition="25" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2906282062545487609" fileName="ConfReader.java" startLine="170" startPosition="10" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2906282062545487511" fileName="ConfReader.java" startLine="182" startPosition="50" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2906282062545487525" fileName="ConfReader.java" startLine="186" startPosition="38" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2906282062545455468" fileName="ConfReader.java" startLine="193" startPosition="50" endLine="196" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2906282062545455482" fileName="ConfReader.java" startLine="197" startPosition="38" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2124135949565563704" fileName="ConfReader.java" startLine="53" startPosition="40" endLine="54" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2906282062545487722" fileName="ConfReader.java" startLine="55" startPosition="39" endLine="56" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5522969664585014969" fileName="ConfReader.java" startLine="57" startPosition="45" endLine="58" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2906282062545487675" fileName="ConfReader.java" startLine="59" startPosition="51" endLine="60" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2906282062545487740" fileName="ConfReader.java" startLine="61" startPosition="45" endLine="62" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2906282062545487756" fileName="ConfReader.java" startLine="63" startPosition="57" endLine="64" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8962295475113782694" fileName="ConfReader.java" startLine="65" startPosition="52" endLine="66" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8962295475113782706" fileName="ConfReader.java" startLine="67" startPosition="53" endLine="68" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2906282062545487656" fileName="ConfReader.java" startLine="74" startPosition="57" endLine="75" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2906282062545487760" fileName="ConfReader.java" startLine="76" startPosition="58" endLine="77" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2906282062545487782" fileName="ConfReader.java" startLine="78" startPosition="70" endLine="79" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8962295475113782614" fileName="ConfReader.java" startLine="80" startPosition="65" endLine="81" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8962295475113782628" fileName="ConfReader.java" startLine="82" startPosition="66" endLine="83" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7754236693164725423" fileName="ConfReader.java" startLine="89" startPosition="55" endLine="90" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7754236693164725468" fileName="ConfReader.java" startLine="90" startPosition="51" endLine="91" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7754236693164725542" fileName="ConfReader.java" startLine="92" startPosition="23" endLine="93" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7754236693164725558" fileName="ConfReader.java" startLine="93" startPosition="126" endLine="94" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7754236693164732335" fileName="ConfReader.java" startLine="94" startPosition="73" endLine="95" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7754236693164732418" fileName="ConfReader.java" startLine="96" startPosition="31" endLine="97" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7754236693164732434" fileName="ConfReader.java" startLine="97" startPosition="130" endLine="98" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7754236693164732486" fileName="ConfReader.java" startLine="98" startPosition="73" endLine="99" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7754236693164732531" fileName="ConfReader.java" startLine="100" startPosition="14" endLine="101" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="8962295475113815315" fileName="ConfReader.java" startLine="108" startPosition="54" endLine="109" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8962295475113815357" fileName="ConfReader.java" startLine="110" startPosition="56" endLine="111" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8962295475113815369" fileName="ConfReader.java" startLine="112" startPosition="57" endLine="113" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8962295475113782806" fileName="ConfReader.java" startLine="119" startPosition="49" endLine="120" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8962295475113782873" fileName="ConfReader.java" startLine="120" startPosition="57" endLine="121" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8962295475113814559" fileName="ConfReader.java" startLine="121" startPosition="63" endLine="122" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8962295475113814583" fileName="ConfReader.java" startLine="122" startPosition="119" endLine="123" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8962295475113814739" fileName="ConfReader.java" startLine="124" startPosition="24" endLine="125" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8962295475113814854" fileName="ConfReader.java" startLine="127" startPosition="25" endLine="128" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8962295475113815175" fileName="ConfReader.java" startLine="133" startPosition="65" endLine="134" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8962295475113815185" fileName="ConfReader.java" startLine="134" startPosition="115" endLine="135" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8962295475113815264" fileName="ConfReader.java" startLine="135" startPosition="89" endLine="136" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8962295475113815291" fileName="ConfReader.java" startLine="137" startPosition="22" endLine="138" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8962295475113815272" fileName="ConfReader.java" startLine="139" startPosition="5" endLine="140" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8962295475113815308" fileName="ConfReader.java" startLine="141" startPosition="23" endLine="142" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8962295475113815271" fileName="ConfReader.java" startLine="143" startPosition="5" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2906282062545487420" fileName="ConfReader.java" startLine="147" startPosition="85" endLine="148" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2906282062545487430" fileName="ConfReader.java" startLine="150" startPosition="32" endLine="151" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2906282062545487447" fileName="ConfReader.java" startLine="153" startPosition="5" endLine="154" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8962295475113814936" fileName="ConfReader.java" startLine="157" startPosition="54" endLine="158" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8962295475113814963" fileName="ConfReader.java" startLine="158" startPosition="67" endLine="159" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2906282062545487555" fileName="ConfReader.java" startLine="162" startPosition="83" endLine="163" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2906282062545487588" fileName="ConfReader.java" startLine="166" startPosition="45" endLine="167" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2906282062545487598" fileName="ConfReader.java" startLine="169" startPosition="9" endLine="170" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2906282062545487611" fileName="ConfReader.java" startLine="171" startPosition="12" endLine="172" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2906282062545487620" fileName="ConfReader.java" startLine="172" startPosition="68" endLine="173" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2906282062545487472" fileName="ConfReader.java" startLine="177" startPosition="82" endLine="178" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2906282062545487482" fileName="ConfReader.java" startLine="178" startPosition="96" endLine="179" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2906282062545487491" fileName="ConfReader.java" startLine="179" startPosition="66" endLine="180" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2906282062545487516" fileName="ConfReader.java" startLine="184" startPosition="25" endLine="185" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2906282062545487518" fileName="ConfReader.java" startLine="186" startPosition="5" endLine="187" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2906282062545487527" fileName="ConfReader.java" startLine="188" startPosition="18" endLine="189" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2906282062545487532" fileName="ConfReader.java" startLine="190" startPosition="5" endLine="191" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2906282062545455473" fileName="ConfReader.java" startLine="195" startPosition="25" endLine="196" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2906282062545455475" fileName="ConfReader.java" startLine="197" startPosition="5" endLine="198" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2906282062545455484" fileName="ConfReader.java" startLine="199" startPosition="18" endLine="200" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2906282062545455489" fileName="ConfReader.java" startLine="201" startPosition="5" endLine="202" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2906282062545455453" fileName="ConfReader.java" startLine="205" startPosition="49" endLine="206" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2124135949565555657" fileName="ConfReader.java" startLine="210" startPosition="22" endLine="211" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2124135949565555496" fileName="ConfReader.java" startLine="212" startPosition="5" endLine="213" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2124135949565555644" fileName="ConfReader.java" startLine="214" startPosition="23" endLine="215" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2124135949565563725" fileName="ConfReader.java" startLine="216" startPosition="5" endLine="217" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2124135949565563733" fileName="ConfReader.java" startLine="217" startPosition="37" endLine="218" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7467787244480111617" fileName="ConfReader.java" startLine="221" startPosition="36" endLine="222" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stubModelReference#(Ljava/lang/String;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="7754236693164732526" fileName="ConfReader.java" startLine="100" startPosition="12" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8962295475113814702" fileName="ConfReader.java" startLine="123" startPosition="91" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8962295475113814810" fileName="ConfReader.java" startLine="126" startPosition="7" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8962295475113815282" fileName="ConfReader.java" startLine="136" startPosition="58" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8962295475113815299" fileName="ConfReader.java" startLine="140" startPosition="64" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2906282062545487428" fileName="ConfReader.java" startLine="149" startPosition="25" endLine="152" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2906282062545487609" fileName="ConfReader.java" startLine="171" startPosition="10" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2906282062545487511" fileName="ConfReader.java" startLine="183" startPosition="50" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2906282062545487525" fileName="ConfReader.java" startLine="187" startPosition="38" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2906282062545455468" fileName="ConfReader.java" startLine="194" startPosition="50" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2906282062545455482" fileName="ConfReader.java" startLine="198" startPosition="38" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2124135949565555648" fileName="ConfReader.java" startLine="209" startPosition="47" endLine="212" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2124135949565555635" fileName="ConfReader.java" startLine="213" startPosition="40" endLine="216" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7467787244480111611" fileName="ConfReader.java" startLine="46" startPosition="0" endLine="50" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConfReader#(Ljetbrains/mps/platform/conf/stubs/ConfReader/Resolver;Ljetbrains/mps/platform/conf/stubs/ConfReader/Resolver;)V" />
-    <nodeInfo nodeId="2906282062545487586" fileName="ConfReader.java" startLine="164" startPosition="201" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2906282062545455447" fileName="ConfReader.java" startLine="203" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createId#(Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="2906282062545487426" fileName="ConfReader.java" startLine="147" startPosition="49" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8962295475113814926" fileName="ConfReader.java" startLine="155" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="elements#(Lorg/jdom/Element;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2906282062545487576" fileName="ConfReader.java" startLine="163" startPosition="78" endLine="168" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2906282062545487462" fileName="ConfReader.java" startLine="175" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addClassifierReference#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8962295475113815030" fileName="ConfReader.java" startLine="106" startPosition="38" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8962295475113815021" fileName="ConfReader.java" startLine="105" startPosition="54" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2906282062545487410" fileName="ConfReader.java" startLine="145" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="elements#(Lorg/jdom/Element;Ljava/lang/String;null)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2906282062545487255" fileName="ConfReader.java" startLine="72" startPosition="139" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7754236693164725489" fileName="ConfReader.java" startLine="90" startPosition="51" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2906282062545487565" fileName="ConfReader.java" startLine="162" startPosition="91" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2906282062545487506" fileName="ConfReader.java" startLine="181" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="namespace#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2906282062545455462" fileName="ConfReader.java" startLine="192" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="shortName#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2906282062545487681" fileName="ConfReader.java" startLine="104" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readExtensions#(Ljetbrains/mps/smodel/SNode;Lorg/jdom/Element;)V" />
-    <nodeInfo nodeId="8962295475113782718" fileName="ConfReader.java" startLine="117" startPosition="67" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2906282062545487644" fileName="ConfReader.java" startLine="71" startPosition="57" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8962295475113815140" fileName="ConfReader.java" startLine="131" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readService#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Lorg/jdom/Element;)V" />
-    <nodeInfo nodeId="2906282062545455531" fileName="ConfReader.java" startLine="53" startPosition="40" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7754236693164693492" fileName="ConfReader.java" startLine="87" startPosition="60" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2906282062545487690" fileName="ConfReader.java" startLine="116" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readComponents#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Lorg/jdom/Element;)V" />
-    <nodeInfo nodeId="2906282062545487545" fileName="ConfReader.java" startLine="160" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfXmlDocReference#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2906282062545455622" fileName="ConfReader.java" startLine="70" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readContainers#(Ljetbrains/mps/smodel/SNode;Lorg/jdom/Element;)V" />
-    <nodeInfo nodeId="2906282062545487369" fileName="ConfReader.java" startLine="86" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readExtensionPoints#(Ljetbrains/mps/smodel/SNode;Lorg/jdom/Element;)V" />
-    <nodeInfo nodeId="7467787244480112784" fileName="ConfReader.java" startLine="51" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="read#(Ljetbrains/mps/smodel/SNode;Lorg/jdom/Document;)V" />
-    <scopeInfo nodeId="2906282062545455532" fileName="ConfReader.java" startLine="54" startPosition="45" endLine="55" endPosition="125" />
-    <scopeInfo nodeId="5522969664585014962" fileName="ConfReader.java" startLine="56" startPosition="51" endLine="57" endPosition="129" />
-    <scopeInfo nodeId="2906282062545455579" fileName="ConfReader.java" startLine="58" startPosition="57" endLine="59" endPosition="135" />
-    <scopeInfo nodeId="2906282062545455594" fileName="ConfReader.java" startLine="60" startPosition="51" endLine="61" endPosition="125" />
-    <scopeInfo nodeId="2906282062545455609" fileName="ConfReader.java" startLine="62" startPosition="63" endLine="63" endPosition="286" />
-    <scopeInfo nodeId="8962295475113782658" fileName="ConfReader.java" startLine="64" startPosition="58" endLine="65" endPosition="281" />
-    <scopeInfo nodeId="8962295475113782673" fileName="ConfReader.java" startLine="66" startPosition="59" endLine="67" endPosition="282" />
-    <scopeInfo nodeId="2906282062545487282" fileName="ConfReader.java" startLine="73" startPosition="57" endLine="74" endPosition="143" />
-    <scopeInfo nodeId="2906282062545487290" fileName="ConfReader.java" startLine="75" startPosition="58" endLine="76" endPosition="133" />
-    <scopeInfo nodeId="2906282062545487292" fileName="ConfReader.java" startLine="77" startPosition="70" endLine="78" endPosition="294" />
-    <scopeInfo nodeId="8962295475113782566" fileName="ConfReader.java" startLine="79" startPosition="65" endLine="80" endPosition="289" />
-    <scopeInfo nodeId="8962295475113782578" fileName="ConfReader.java" startLine="81" startPosition="66" endLine="82" endPosition="290" />
-    <scopeInfo nodeId="7754236693164732527" fileName="ConfReader.java" startLine="99" startPosition="14" endLine="100" endPosition="42" />
-    <scopeInfo nodeId="8962295475113815032" fileName="ConfReader.java" startLine="107" startPosition="54" endLine="108" endPosition="192" />
-    <scopeInfo nodeId="8962295475113815065" fileName="ConfReader.java" startLine="109" startPosition="56" endLine="110" endPosition="187" />
-    <scopeInfo nodeId="8962295475113815117" fileName="ConfReader.java" startLine="111" startPosition="57" endLine="112" endPosition="188" />
-    <scopeInfo nodeId="8962295475113814703" fileName="ConfReader.java" startLine="123" startPosition="24" endLine="124" endPosition="147" />
-    <scopeInfo nodeId="8962295475113814811" fileName="ConfReader.java" startLine="126" startPosition="25" endLine="127" endPosition="147" />
-    <scopeInfo nodeId="8962295475113815283" fileName="ConfReader.java" startLine="136" startPosition="22" endLine="137" endPosition="145" />
-    <scopeInfo nodeId="8962295475113815300" fileName="ConfReader.java" startLine="140" startPosition="23" endLine="141" endPosition="145" />
-    <scopeInfo nodeId="2906282062545487429" fileName="ConfReader.java" startLine="149" startPosition="32" endLine="150" endPosition="61" />
-    <scopeInfo nodeId="2906282062545487587" fileName="ConfReader.java" startLine="165" startPosition="45" endLine="166" endPosition="89" />
-    <scopeInfo nodeId="2906282062545487515" fileName="ConfReader.java" startLine="183" startPosition="25" endLine="184" endPosition="18" />
-    <scopeInfo nodeId="2906282062545487526" fileName="ConfReader.java" startLine="187" startPosition="18" endLine="188" endPosition="16" />
-    <scopeInfo nodeId="2906282062545455472" fileName="ConfReader.java" startLine="194" startPosition="25" endLine="195" endPosition="18" />
-    <scopeInfo nodeId="2906282062545455483" fileName="ConfReader.java" startLine="198" startPosition="18" endLine="199" endPosition="20" />
-    <scopeInfo nodeId="2906282062545455452" fileName="ConfReader.java" startLine="204" startPosition="49" endLine="205" endPosition="78" />
-    <scopeInfo nodeId="7467787244480111617" fileName="ConfReader.java" startLine="208" startPosition="36" endLine="209" endPosition="58">
+    <nodeInfo nodeId="2906282062545487586" fileName="ConfReader.java" startLine="165" startPosition="201" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2906282062545455447" fileName="ConfReader.java" startLine="204" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createId#(Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="2906282062545487426" fileName="ConfReader.java" startLine="148" startPosition="49" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8962295475113814926" fileName="ConfReader.java" startLine="156" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="elements#(Lorg/jdom/Element;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2906282062545487576" fileName="ConfReader.java" startLine="164" startPosition="78" endLine="169" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2906282062545487462" fileName="ConfReader.java" startLine="176" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addClassifierReference#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8962295475113815030" fileName="ConfReader.java" startLine="107" startPosition="38" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8962295475113815021" fileName="ConfReader.java" startLine="106" startPosition="54" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2906282062545487410" fileName="ConfReader.java" startLine="146" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="elements#(Lorg/jdom/Element;Ljava/lang/String;null)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2906282062545487255" fileName="ConfReader.java" startLine="73" startPosition="139" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7754236693164725489" fileName="ConfReader.java" startLine="91" startPosition="51" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2906282062545487565" fileName="ConfReader.java" startLine="163" startPosition="91" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2906282062545487506" fileName="ConfReader.java" startLine="182" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="namespace#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2906282062545455462" fileName="ConfReader.java" startLine="193" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="shortName#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2906282062545487681" fileName="ConfReader.java" startLine="105" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readExtensions#(Ljetbrains/mps/smodel/SNode;Lorg/jdom/Element;)V" />
+    <nodeInfo nodeId="8962295475113782718" fileName="ConfReader.java" startLine="118" startPosition="67" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2124135949565555475" fileName="ConfReader.java" startLine="208" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="canRead#(Lorg/jdom/Document;)Z" />
+    <nodeInfo nodeId="2906282062545487644" fileName="ConfReader.java" startLine="72" startPosition="57" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8962295475113815140" fileName="ConfReader.java" startLine="132" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readService#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Lorg/jdom/Element;)V" />
+    <nodeInfo nodeId="2906282062545455531" fileName="ConfReader.java" startLine="54" startPosition="37" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7754236693164693492" fileName="ConfReader.java" startLine="88" startPosition="60" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2906282062545487690" fileName="ConfReader.java" startLine="117" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readComponents#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Lorg/jdom/Element;)V" />
+    <nodeInfo nodeId="2906282062545487545" fileName="ConfReader.java" startLine="161" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfXmlDocReference#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2906282062545455622" fileName="ConfReader.java" startLine="71" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readContainers#(Ljetbrains/mps/smodel/SNode;Lorg/jdom/Element;)V" />
+    <nodeInfo nodeId="2906282062545487369" fileName="ConfReader.java" startLine="87" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readExtensionPoints#(Ljetbrains/mps/smodel/SNode;Lorg/jdom/Element;)V" />
+    <nodeInfo nodeId="7467787244480112784" fileName="ConfReader.java" startLine="51" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="read#(Ljetbrains/mps/smodel/SNode;Lorg/jdom/Document;)V" />
+    <scopeInfo nodeId="2906282062545455532" fileName="ConfReader.java" startLine="55" startPosition="39" endLine="56" endPosition="125" />
+    <scopeInfo nodeId="5522969664585014962" fileName="ConfReader.java" startLine="57" startPosition="45" endLine="58" endPosition="129" />
+    <scopeInfo nodeId="2906282062545455579" fileName="ConfReader.java" startLine="59" startPosition="51" endLine="60" endPosition="135" />
+    <scopeInfo nodeId="2906282062545455594" fileName="ConfReader.java" startLine="61" startPosition="45" endLine="62" endPosition="125" />
+    <scopeInfo nodeId="2906282062545455609" fileName="ConfReader.java" startLine="63" startPosition="57" endLine="64" endPosition="286" />
+    <scopeInfo nodeId="8962295475113782658" fileName="ConfReader.java" startLine="65" startPosition="52" endLine="66" endPosition="281" />
+    <scopeInfo nodeId="8962295475113782673" fileName="ConfReader.java" startLine="67" startPosition="53" endLine="68" endPosition="282" />
+    <scopeInfo nodeId="2906282062545487282" fileName="ConfReader.java" startLine="74" startPosition="57" endLine="75" endPosition="143" />
+    <scopeInfo nodeId="2906282062545487290" fileName="ConfReader.java" startLine="76" startPosition="58" endLine="77" endPosition="133" />
+    <scopeInfo nodeId="2906282062545487292" fileName="ConfReader.java" startLine="78" startPosition="70" endLine="79" endPosition="294" />
+    <scopeInfo nodeId="8962295475113782566" fileName="ConfReader.java" startLine="80" startPosition="65" endLine="81" endPosition="289" />
+    <scopeInfo nodeId="8962295475113782578" fileName="ConfReader.java" startLine="82" startPosition="66" endLine="83" endPosition="290" />
+    <scopeInfo nodeId="7754236693164732527" fileName="ConfReader.java" startLine="100" startPosition="14" endLine="101" endPosition="42" />
+    <scopeInfo nodeId="8962295475113815032" fileName="ConfReader.java" startLine="108" startPosition="54" endLine="109" endPosition="192" />
+    <scopeInfo nodeId="8962295475113815065" fileName="ConfReader.java" startLine="110" startPosition="56" endLine="111" endPosition="187" />
+    <scopeInfo nodeId="8962295475113815117" fileName="ConfReader.java" startLine="112" startPosition="57" endLine="113" endPosition="188" />
+    <scopeInfo nodeId="8962295475113814703" fileName="ConfReader.java" startLine="124" startPosition="24" endLine="125" endPosition="147" />
+    <scopeInfo nodeId="8962295475113814811" fileName="ConfReader.java" startLine="127" startPosition="25" endLine="128" endPosition="147" />
+    <scopeInfo nodeId="8962295475113815283" fileName="ConfReader.java" startLine="137" startPosition="22" endLine="138" endPosition="145" />
+    <scopeInfo nodeId="8962295475113815300" fileName="ConfReader.java" startLine="141" startPosition="23" endLine="142" endPosition="145" />
+    <scopeInfo nodeId="2906282062545487429" fileName="ConfReader.java" startLine="150" startPosition="32" endLine="151" endPosition="61" />
+    <scopeInfo nodeId="2906282062545487587" fileName="ConfReader.java" startLine="166" startPosition="45" endLine="167" endPosition="89" />
+    <scopeInfo nodeId="2906282062545487515" fileName="ConfReader.java" startLine="184" startPosition="25" endLine="185" endPosition="18" />
+    <scopeInfo nodeId="2906282062545487526" fileName="ConfReader.java" startLine="188" startPosition="18" endLine="189" endPosition="16" />
+    <scopeInfo nodeId="2906282062545455472" fileName="ConfReader.java" startLine="195" startPosition="25" endLine="196" endPosition="18" />
+    <scopeInfo nodeId="2906282062545455483" fileName="ConfReader.java" startLine="199" startPosition="18" endLine="200" endPosition="20" />
+    <scopeInfo nodeId="2906282062545455452" fileName="ConfReader.java" startLine="205" startPosition="49" endLine="206" endPosition="78" />
+    <scopeInfo nodeId="2124135949565555649" fileName="ConfReader.java" startLine="210" startPosition="22" endLine="211" endPosition="19" />
+    <scopeInfo nodeId="2124135949565555636" fileName="ConfReader.java" startLine="214" startPosition="23" endLine="215" endPosition="19" />
+    <scopeInfo nodeId="7467787244480111617" fileName="ConfReader.java" startLine="221" startPosition="36" endLine="222" endPosition="58">
       <varInfo nodeId="7467787244480111618" varName="pkg" />
     </scopeInfo>
     <scopeInfo nodeId="7467787244480111614" fileName="ConfReader.java" startLine="47" startPosition="89" endLine="49" endPosition="41" />
-    <scopeInfo nodeId="8962295475113814935" fileName="ConfReader.java" startLine="156" startPosition="54" endLine="158" endPosition="50">
+    <scopeInfo nodeId="8962295475113814935" fileName="ConfReader.java" startLine="157" startPosition="54" endLine="159" endPosition="50">
       <varInfo nodeId="8962295475113814937" varName="flt" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487610" fileName="ConfReader.java" startLine="170" startPosition="12" endLine="172" endPosition="120" />
-    <scopeInfo nodeId="7754236693164725490" fileName="ConfReader.java" startLine="91" startPosition="23" endLine="94" endPosition="150">
+    <scopeInfo nodeId="2906282062545487610" fileName="ConfReader.java" startLine="171" startPosition="12" endLine="173" endPosition="120" />
+    <scopeInfo nodeId="7754236693164725490" fileName="ConfReader.java" startLine="92" startPosition="23" endLine="95" endPosition="150">
       <varInfo nodeId="7754236693164725543" varName="bep" />
     </scopeInfo>
-    <scopeInfo nodeId="7754236693164732371" fileName="ConfReader.java" startLine="95" startPosition="31" endLine="98" endPosition="151">
+    <scopeInfo nodeId="7754236693164732371" fileName="ConfReader.java" startLine="96" startPosition="31" endLine="99" endPosition="151">
       <varInfo nodeId="7754236693164732419" varName="iep" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487427" fileName="ConfReader.java" startLine="148" startPosition="25" endLine="151" endPosition="7" />
-    <scopeInfo nodeId="2906282062545487428" fileName="ConfReader.java" startLine="148" startPosition="25" endLine="151" endPosition="7">
+    <scopeInfo nodeId="2906282062545487427" fileName="ConfReader.java" startLine="149" startPosition="25" endLine="152" endPosition="7" />
+    <scopeInfo nodeId="2906282062545487428" fileName="ConfReader.java" startLine="149" startPosition="25" endLine="152" endPosition="7">
       <varInfo nodeId="2906282062545487442" varName="or" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487471" fileName="ConfReader.java" startLine="176" startPosition="82" endLine="179" endPosition="123">
+    <scopeInfo nodeId="2906282062545487471" fileName="ConfReader.java" startLine="177" startPosition="82" endLine="180" endPosition="123">
       <varInfo nodeId="2906282062545487473" varName="trgsmref" />
     </scopeInfo>
     <scopeInfo nodeId="7467787244480111611" fileName="ConfReader.java" startLine="46" startPosition="0" endLine="50" endPosition="3">
       <varInfo nodeId="7467787244480112806" varName="javaResolver" />
       <varInfo nodeId="7467787244480112808" varName="confResolver" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487586" fileName="ConfReader.java" startLine="164" startPosition="201" endLine="168" endPosition="0" />
-    <scopeInfo nodeId="2906282062545455447" fileName="ConfReader.java" startLine="203" startPosition="0" endLine="207" endPosition="0">
+    <scopeInfo nodeId="2906282062545487586" fileName="ConfReader.java" startLine="165" startPosition="201" endLine="169" endPosition="0" />
+    <scopeInfo nodeId="2906282062545455447" fileName="ConfReader.java" startLine="204" startPosition="0" endLine="208" endPosition="0">
       <varInfo nodeId="2906282062545455448" varName="fqName" />
     </scopeInfo>
-    <scopeInfo nodeId="8962295475113814926" fileName="ConfReader.java" startLine="155" startPosition="0" endLine="160" endPosition="0">
+    <scopeInfo nodeId="8962295475113814926" fileName="ConfReader.java" startLine="156" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="8962295475113814927" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487575" fileName="ConfReader.java" startLine="163" startPosition="78" endLine="169" endPosition="97">
+    <scopeInfo nodeId="2906282062545487575" fileName="ConfReader.java" startLine="164" startPosition="78" endLine="170" endPosition="97">
       <varInfo nodeId="2906282062545487577" varName="trg" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487462" fileName="ConfReader.java" startLine="175" startPosition="0" endLine="181" endPosition="0">
+    <scopeInfo nodeId="2906282062545487462" fileName="ConfReader.java" startLine="176" startPosition="0" endLine="182" endPosition="0">
       <varInfo nodeId="2906282062545487467" varName="fqClassName" />
       <varInfo nodeId="2906282062545487463" varName="link" />
       <varInfo nodeId="2906282062545487465" varName="src" />
     </scopeInfo>
-    <scopeInfo nodeId="8962295475113815022" fileName="ConfReader.java" startLine="106" startPosition="38" endLine="113" endPosition="7" />
-    <scopeInfo nodeId="2906282062545487419" fileName="ConfReader.java" startLine="146" startPosition="85" endLine="153" endPosition="50">
+    <scopeInfo nodeId="8962295475113815022" fileName="ConfReader.java" startLine="107" startPosition="38" endLine="114" endPosition="7" />
+    <scopeInfo nodeId="2906282062545487419" fileName="ConfReader.java" startLine="147" startPosition="85" endLine="154" endPosition="50">
       <varInfo nodeId="2906282062545487421" varName="flt" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487510" fileName="ConfReader.java" startLine="182" startPosition="50" endLine="190" endPosition="36">
+    <scopeInfo nodeId="2906282062545487510" fileName="ConfReader.java" startLine="183" startPosition="50" endLine="191" endPosition="36">
       <varInfo nodeId="2906282062545487519" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545455467" fileName="ConfReader.java" startLine="193" startPosition="50" endLine="201" endPosition="37">
+    <scopeInfo nodeId="2906282062545455467" fileName="ConfReader.java" startLine="194" startPosition="50" endLine="202" endPosition="37">
       <varInfo nodeId="2906282062545455476" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487688" fileName="ConfReader.java" startLine="105" startPosition="54" endLine="114" endPosition="5" />
-    <scopeInfo nodeId="8962295475113815021" fileName="ConfReader.java" startLine="105" startPosition="54" endLine="114" endPosition="5">
+    <scopeInfo nodeId="2906282062545487688" fileName="ConfReader.java" startLine="106" startPosition="54" endLine="115" endPosition="5" />
+    <scopeInfo nodeId="8962295475113815021" fileName="ConfReader.java" startLine="106" startPosition="54" endLine="115" endPosition="5">
       <varInfo nodeId="8962295475113815023" varName="ext" />
     </scopeInfo>
-    <scopeInfo nodeId="8962295475113782719" fileName="ConfReader.java" startLine="118" startPosition="49" endLine="128" endPosition="7">
+    <scopeInfo nodeId="2124135949565555478" fileName="ConfReader.java" startLine="209" startPosition="47" endLine="218" endPosition="259">
+      <varInfo nodeId="2124135949565555497" varName="root" />
+      <varInfo nodeId="2124135949565563726" varName="rootName" />
+    </scopeInfo>
+    <scopeInfo nodeId="8962295475113782719" fileName="ConfReader.java" startLine="119" startPosition="49" endLine="129" endPosition="7">
       <varInfo nodeId="8962295475113782874" varName="impl" />
       <varInfo nodeId="8962295475113814560" varName="subNode" />
       <varInfo nodeId="8962295475113782807" varName="ifc" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487410" fileName="ConfReader.java" startLine="145" startPosition="0" endLine="155" endPosition="0">
+    <scopeInfo nodeId="2906282062545487410" fileName="ConfReader.java" startLine="146" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="2906282062545487415" varName="orName" />
       <varInfo nodeId="2906282062545487413" varName="name" />
       <varInfo nodeId="2906282062545487411" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487645" fileName="ConfReader.java" startLine="72" startPosition="139" endLine="83" endPosition="7" />
-    <scopeInfo nodeId="8962295475113815143" fileName="ConfReader.java" startLine="132" startPosition="65" endLine="143" endPosition="0">
+    <scopeInfo nodeId="2906282062545487645" fileName="ConfReader.java" startLine="73" startPosition="139" endLine="84" endPosition="7" />
+    <scopeInfo nodeId="8962295475113815143" fileName="ConfReader.java" startLine="133" startPosition="65" endLine="144" endPosition="0">
       <varInfo nodeId="8962295475113815273" varName="impl" />
       <varInfo nodeId="8962295475113815265" varName="ifc" />
       <varInfo nodeId="8962295475113815176" varName="subNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487506" fileName="ConfReader.java" startLine="181" startPosition="0" endLine="192" endPosition="0">
+    <scopeInfo nodeId="2906282062545487506" fileName="ConfReader.java" startLine="182" startPosition="0" endLine="193" endPosition="0">
       <varInfo nodeId="2906282062545487507" varName="fqName" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545455462" fileName="ConfReader.java" startLine="192" startPosition="0" endLine="203" endPosition="0">
+    <scopeInfo nodeId="2906282062545455462" fileName="ConfReader.java" startLine="193" startPosition="0" endLine="204" endPosition="0">
       <varInfo nodeId="2906282062545455463" varName="fqName" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487681" fileName="ConfReader.java" startLine="104" startPosition="0" endLine="116" endPosition="0">
+    <scopeInfo nodeId="2906282062545487681" fileName="ConfReader.java" startLine="105" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="2906282062545487682" varName="node" />
       <varInfo nodeId="2906282062545487684" varName="es" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487697" fileName="ConfReader.java" startLine="117" startPosition="67" endLine="129" endPosition="5" />
-    <scopeInfo nodeId="8962295475113782718" fileName="ConfReader.java" startLine="117" startPosition="67" endLine="129" endPosition="5">
+    <scopeInfo nodeId="2906282062545487697" fileName="ConfReader.java" startLine="118" startPosition="67" endLine="130" endPosition="5" />
+    <scopeInfo nodeId="8962295475113782718" fileName="ConfReader.java" startLine="118" startPosition="67" endLine="130" endPosition="5">
       <varInfo nodeId="8962295475113782720" varName="cmp" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487554" fileName="ConfReader.java" startLine="161" startPosition="83" endLine="173" endPosition="5">
+    <scopeInfo nodeId="2906282062545487554" fileName="ConfReader.java" startLine="162" startPosition="83" endLine="174" endPosition="5">
       <varInfo nodeId="2906282062545487556" varName="trgsmref" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545455625" fileName="ConfReader.java" startLine="71" startPosition="57" endLine="84" endPosition="5" />
-    <scopeInfo nodeId="2906282062545487644" fileName="ConfReader.java" startLine="71" startPosition="57" endLine="84" endPosition="5">
+    <scopeInfo nodeId="2124135949565555475" fileName="ConfReader.java" startLine="208" startPosition="0" endLine="220" endPosition="0">
+      <varInfo nodeId="2124135949565555492" varName="doc" />
+    </scopeInfo>
+    <scopeInfo nodeId="2906282062545455625" fileName="ConfReader.java" startLine="72" startPosition="57" endLine="85" endPosition="5" />
+    <scopeInfo nodeId="2906282062545487644" fileName="ConfReader.java" startLine="72" startPosition="57" endLine="85" endPosition="5">
       <varInfo nodeId="2906282062545487646" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="7754236693164693493" fileName="ConfReader.java" startLine="88" startPosition="55" endLine="101" endPosition="7">
+    <scopeInfo nodeId="7754236693164693493" fileName="ConfReader.java" startLine="89" startPosition="55" endLine="102" endPosition="7">
       <varInfo nodeId="7754236693164725469" varName="ifc" />
       <varInfo nodeId="7754236693164725424" varName="bc" />
     </scopeInfo>
-    <scopeInfo nodeId="8962295475113815140" fileName="ConfReader.java" startLine="131" startPosition="0" endLine="145" endPosition="0">
+    <scopeInfo nodeId="8962295475113815140" fileName="ConfReader.java" startLine="132" startPosition="0" endLine="146" endPosition="0">
       <varInfo nodeId="8962295475113815155" varName="node" />
       <varInfo nodeId="8962295475113815157" varName="level" />
       <varInfo nodeId="8962295475113815159" varName="srv" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487372" fileName="ConfReader.java" startLine="87" startPosition="60" endLine="102" endPosition="5" />
-    <scopeInfo nodeId="7754236693164693492" fileName="ConfReader.java" startLine="87" startPosition="60" endLine="102" endPosition="5">
+    <scopeInfo nodeId="2906282062545487372" fileName="ConfReader.java" startLine="88" startPosition="60" endLine="103" endPosition="5" />
+    <scopeInfo nodeId="7754236693164693492" fileName="ConfReader.java" startLine="88" startPosition="60" endLine="103" endPosition="5">
       <varInfo nodeId="7754236693164693494" varName="ep" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487690" fileName="ConfReader.java" startLine="116" startPosition="0" endLine="131" endPosition="0">
+    <scopeInfo nodeId="2906282062545487690" fileName="ConfReader.java" startLine="117" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="2906282062545487691" varName="node" />
       <varInfo nodeId="8962295475113782590" varName="level" />
       <varInfo nodeId="2906282062545487693" varName="cs" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487545" fileName="ConfReader.java" startLine="160" startPosition="0" endLine="175" endPosition="0">
+    <scopeInfo nodeId="2906282062545487545" fileName="ConfReader.java" startLine="161" startPosition="0" endLine="176" endPosition="0">
       <varInfo nodeId="2906282062545487546" varName="link" />
       <varInfo nodeId="2906282062545487550" varName="fqName" />
       <varInfo nodeId="2906282062545487548" varName="src" />
     </scopeInfo>
-    <scopeInfo nodeId="7467787244480112787" fileName="ConfReader.java" startLine="52" startPosition="49" endLine="68" endPosition="5">
-      <varInfo nodeId="2906282062545455525" varName="root" />
-    </scopeInfo>
-    <scopeInfo nodeId="2906282062545455622" fileName="ConfReader.java" startLine="70" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="2906282062545455622" fileName="ConfReader.java" startLine="71" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="2906282062545487248" varName="node" />
       <varInfo nodeId="2906282062545487251" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="2906282062545487369" fileName="ConfReader.java" startLine="86" startPosition="0" endLine="104" endPosition="0">
+    <scopeInfo nodeId="7467787244480112787" fileName="ConfReader.java" startLine="52" startPosition="49" endLine="69" endPosition="5">
+      <varInfo nodeId="2906282062545455525" varName="root" />
+      <varInfo nodeId="2124135949565563705" varName="rootName" />
+    </scopeInfo>
+    <scopeInfo nodeId="2906282062545487369" fileName="ConfReader.java" startLine="87" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="2906282062545487376" varName="eps" />
       <varInfo nodeId="2906282062545487373" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7467787244480112784" fileName="ConfReader.java" startLine="51" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="7467787244480112784" fileName="ConfReader.java" startLine="51" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="7467787244480112828" varName="confDoc" />
       <varInfo nodeId="7467787244480119521" varName="doc" />
     </scopeInfo>
-    <unitInfo nodeId="7467787244480111615" fileName="ConfReader.java" startLine="208" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfReader$Resolver" />
-    <unitInfo nodeId="2906282062545487586" fileName="ConfReader.java" startLine="164" startPosition="178" endLine="168" endPosition="7" unitName="jetbrains.mps.platform.conf.stubs.ConfReader$1" />
-    <unitInfo nodeId="7467787244480111609" fileName="ConfReader.java" startLine="23" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfReader" />
+    <unitInfo nodeId="7467787244480111615" fileName="ConfReader.java" startLine="221" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfReader$Resolver" />
+    <unitInfo nodeId="2906282062545487586" fileName="ConfReader.java" startLine="165" startPosition="178" endLine="169" endPosition="7" unitName="jetbrains.mps.platform.conf.stubs.ConfReader$1" />
+    <unitInfo nodeId="7467787244480111609" fileName="ConfReader.java" startLine="23" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.platform.conf.stubs.ConfReader" />
   </root>
   <root nodeId="7467787244480120591">
     <nodeInfo nodeId="2906282062545455211" fileName="ConfStubs.java" startLine="59" startPosition="79" endLine="60" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

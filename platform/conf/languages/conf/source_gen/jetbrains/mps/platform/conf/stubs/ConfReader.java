@@ -51,19 +51,20 @@ public class ConfReader {
 
   public void read(SNode confDoc, Document doc) {
     Element root = doc.getRootElement();
-    if (IDEA_PLUGIN.equals(root.getName())) {
+    String rootName = root.getName();
+    if (IDEA_PLUGIN.equals(rootName)) {
       readContainers(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.IdeaPlugin"), root);
-    } else if (COMPONENTS.equals(root.getName())) {
+    } else if (COMPONENTS.equals(rootName)) {
       readContainers(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.ComponentsRoot"), root);
-    } else if (EXTENSION_POINTS.equals(root.getName())) {
+    } else if (EXTENSION_POINTS.equals(rootName)) {
       readExtensionPoints(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.ExtensionPoints"), root);
-    } else if (EXTENSIONS.equals(root.getName())) {
+    } else if (EXTENSIONS.equals(rootName)) {
       readExtensions(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.Extensions"), root);
-    } else if (APPLICATION_COMPONENTS.equals(root.getName())) {
+    } else if (APPLICATION_COMPONENTS.equals(rootName)) {
       readComponents(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.Components"), SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "application"), root);
-    } else if (MODULE_COMPONENTS.equals(root.getName())) {
+    } else if (MODULE_COMPONENTS.equals(rootName)) {
       readComponents(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.Components"), SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "module"), root);
-    } else if (PROJECT_COMPONENTS.equals(root.getName())) {
+    } else if (PROJECT_COMPONENTS.equals(rootName)) {
       readComponents(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.Components"), SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "project"), root);
     }
   }
@@ -203,6 +204,18 @@ public class ConfReader {
 
   public static SNodeId createId(String fqName) {
     return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + shortName(fqName));
+  }
+
+  public static boolean canRead(Document doc) {
+    if (doc == null) {
+      return false;
+    }
+    Element root = doc.getRootElement();
+    if (root == null) {
+      return false;
+    }
+    String rootName = root.getName();
+    return IDEA_PLUGIN.equals(rootName) || COMPONENTS.equals(rootName) || EXTENSION_POINTS.equals(rootName) || EXTENSIONS.equals(rootName) || APPLICATION_COMPONENTS.equals(rootName) || MODULE_COMPONENTS.equals(rootName) || PROJECT_COMPONENTS.equals(rootName);
   }
 
   public static interface Resolver {
