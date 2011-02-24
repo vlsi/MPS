@@ -232,8 +232,9 @@ public class MPSEditorOpener {
 
     // [++] assertions for http://youtrack.jetbrains.net/issue/MPS-7792
     assert baseNode.isRegistered() : "BaseNode is not registered";
-    SNode node = new SNodePointer(baseNode).getNode();
-    assert node != null : "Unable to get Node by SNodePointer";
+    SNodePointer sNodePointer = new SNodePointer(baseNode);
+    SNode node = sNodePointer.getNode();
+    assert node != null : "Unable to get Node by SNodePointer: " + sNodePointer + " (baseNode = " + baseNode + ", root = " + root + ")";
     assert node.isRegistered() : "Returned node is not registered (" + node + "|" + baseNode + ")";
     // [--] assertions for http://youtrack.jetbrains.net/issue/MPS-7792
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
