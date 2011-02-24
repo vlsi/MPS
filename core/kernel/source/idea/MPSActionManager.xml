@@ -55,16 +55,6 @@
       <action id="CreateRunConfiguration" class="com.intellij.execution.actions.CreateAction"/>
     </group>
 
-    <!--for being able to use StopAction in j.m.ide.actions-->
-    <group id="DebugStopAction" popup="false">
-      <reference ref="Stop"/>
-    </group>
-
-    <!--for being able to use MuteAction in j.m.ide.actions-->
-    <group id="DebugMuteAction" popup="false">
-      <action id="Mute" class="jetbrains.mps.debug.api.integration.ui.MuteBreakpoints"/>
-    </group>
-
     <!--actions for alt+shift+F9/F10-->
     <action id="ChooseRunConfiguration" class="com.intellij.execution.actions.ChooseRunConfigurationAction"
             text="Run..." icon="/general/toolWindowRun.png"/>

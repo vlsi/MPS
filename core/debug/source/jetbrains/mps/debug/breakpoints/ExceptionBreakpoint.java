@@ -33,7 +33,7 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
   private static final Logger LOG = Logger.getLogger(ExceptionBreakpoint.class);
   private final String myExceptionName;
 
-  ExceptionBreakpoint(String exceptionName, Project project) {
+  public ExceptionBreakpoint(String exceptionName, Project project) {
     super(project);
     myExceptionName = exceptionName;
   }

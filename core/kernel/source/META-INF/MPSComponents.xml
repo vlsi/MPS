@@ -60,6 +60,7 @@
   <xi:include href="/componentSets/VCS.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/Execution.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="/META-INF/MPSDebuggerComponents.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
     <component>
@@ -160,22 +161,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.debug.customViewers.CustomViewersManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.breakpoints.JavaBreakpointsProvider</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.breakpoints.DefaultProvider</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem</implementation-class>
     </component>
 
@@ -235,10 +220,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.ide.tooltips.MPSToolTipManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.DebugInfoManager</implementation-class>
     </component>
 
     <component>
@@ -369,34 +350,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.typesystem.uiActions.TypecheckerStateView</implementation-class>
-      <skipForDummyProject/>
-    </component>
-
-    <!-- debugger -->
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.BreakpointManagerComponent</implementation-class>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointViewSettingsComponent
-      </implementation-class>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.DebugSessionManagerComponent</implementation-class>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.runtime.VMEventsProcessorManagerComponent</implementation-class>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.debug.api.CurrentLinePositionComponent</implementation-class>
       <skipForDummyProject/>
     </component>
 

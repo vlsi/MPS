@@ -12,12 +12,12 @@
       <sourceFolder url="file://$MODULE_DIR$/debugProject/solutions/jetbrains.mps.debug.evaluation.ui/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/classes" />
-      <excludeFolder url="file://$MODULE_DIR$/debugProject/solutions/jetbrains.mps.debug.run.sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/debugger-java/solutions/jetbrains.mps.debugger.java.run.sandbox/classes_gen" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
-    <orderEntry type="library" name="tools" level="project" />
+    <orderEntry type="library" exported="" name="tools" level="project" />
     <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="Tuples-runtime" />
   </component>
