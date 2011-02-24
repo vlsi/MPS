@@ -20,6 +20,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.HighlightCellDependencies_Action", getShortcut("ctrl alt shift F7"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.LanguageProperties_Action", getShortcut("alt ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.RenameLanguage_Action", getShortcut("shift F6"));
+    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.ShowNodeInExplorer_Action", getShortcut("alt F12"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.SurroundWithIntentions_Action", getShortcut("ctrl alt T"));
     // simple parameterized 
     addComplexShortcut("jetbrains.mps.ide.devkit.actions.GoToDevkit_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift D")));

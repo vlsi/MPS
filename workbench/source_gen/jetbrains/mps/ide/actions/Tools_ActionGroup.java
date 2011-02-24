@@ -20,8 +20,6 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleRepository_Action");
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModelRepository_Action");
       Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowBookmarks_Action");
       Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModelChecker_Action");
       {

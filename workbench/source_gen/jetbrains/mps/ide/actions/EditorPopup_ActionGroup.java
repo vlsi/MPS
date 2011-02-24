@@ -13,6 +13,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorPopup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopup_ActionGroup";
   public static final String LABEL_ID_goByRef = ID + "goByRef";
+  public static final String LABEL_ID_showIn = ID + "showIn";
   public static final String LABEL_ID_structure = ID + "structure";
   public static final String LABEL_ID_paste = ID + "paste";
   public static final String LABEL_ID_folding = ID + "folding";
@@ -38,7 +39,12 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       EditorPopup_ActionGroup.this.addSeparator();
       EditorPopup_ActionGroup.this.addParameterizedAction(new SelectInActionAdapter_Action(new SelectInAction()), PluginId.getId("jetbrains.mps.ide"), new SelectInAction());
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowInProject_Action");
-      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowNodeInExplorer_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_showIn);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorPopup_ActionGroup.this.addAction(action);
+      }
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowNodeInInspector_Action");
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action");
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action");

@@ -8,6 +8,7 @@ import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
+import jetbrains.mps.ide.actions.Tools_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModulePropertiesGroup_ActionGroup;
@@ -54,6 +55,9 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowCellInExplorer_Action());
     addAction(new ShowGenerationTrace_Action());
     addAction(new ShowGenerationTraceback_Action());
+    addAction(new ShowModelRepository_Action());
+    addAction(new ShowModuleRepository_Action());
+    addAction(new ShowNodeInExplorer_Action());
     addAction(new SurroundWithIntentions_Action());
     addAction(new TestNodePath_Action());
     // groups 
@@ -75,6 +79,8 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new LanguageRefactoring_ActionGroup());
     addGroup(new ModulePropertiesGroupEx_ActionGroup());
     addGroup(new ProjectNewActionsEx_ActionGroup());
+    addGroup(new RepositoryToolsGroup_ActionGroup());
+    addGroup(new ShowNodeIn_ActionGroup());
     addGroup(new SurroundWithIntentions_ActionGroup());
   }
 
@@ -83,6 +89,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GenerateEditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(ProjectNewActionsEx_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, ProjectNewActions_ActionGroup.LABEL_ID_end);
     insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_refactoring);
+    insertGroupIntoAnother(RepositoryToolsGroup_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);
     insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_gentrace);
     insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_gentrace);
     insertGroupIntoAnother(LanguageNewGenerator_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newSubModule);
@@ -99,6 +106,9 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(EditorInternalEx_ActionGroup.ID, EditorInternal_ActionGroup.ID, EditorInternal_ActionGroup.LABEL_ID_workbench);
     insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
     insertGroupIntoAnother(GotoModuleEx_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoModules);
+    insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_showIn);
+    insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_showIn);
+    insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_showIn);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
