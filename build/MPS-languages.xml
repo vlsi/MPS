@@ -231,22 +231,6 @@
       <fileset dir="core/languageDesign/editor/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.lang.editor.table">
-    <mkdir dir="core/languageDesign/editor/languages/table/classes_gen" />
-    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.editor.table.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/languageDesign/editor/languages/table/table.mpl" prefix="module" />
-      <zipfileset dir="core/languageDesign/editor/languages/table" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/languageDesign/editor/languages/table/classes_gen" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.lang.editor.table.runtime">
-    <mkdir dir="core/languageDesign/editor/languages/table/runtime/classes_gen" />
-    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.editor.table.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/languageDesign/editor/languages/table/runtime/jetbrains.mps.table.runtime.msd" prefix="module" />
-      <zipfileset dir="core/languageDesign/editor/languages/table/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/languageDesign/editor/languages/table/runtime/classes_gen" />
-    </jar>
-  </target>
   <target name="pack.jetbrains.mps.editor.runtime">
     <mkdir dir="core/languageDesign/editor/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.editor.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -881,6 +865,22 @@
       <zipfileset file="platform/money/runtimeSolution/jetbrains.mps.baseLanguage.money.runtime.msd" prefix="module" />
       <zipfileset dir="platform/money/runtimeSolution" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
       <zipfileset dir="platform/money/runtimeSolution/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.lang.editor.table">
+    <mkdir dir="core/languageDesign/editor/languages/table/classes_gen" />
+    <jar destfile="${deploy.dir}/MPS/platform/editor/jetbrains.mps.lang.editor.table.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/languageDesign/editor/languages/table/table.mpl" prefix="module" />
+      <zipfileset dir="core/languageDesign/editor/languages/table" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/languageDesign/editor/languages/table/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.lang.editor.table.runtime">
+    <mkdir dir="core/languageDesign/editor/languages/table/runtime/classes_gen" />
+    <jar destfile="${deploy.dir}/MPS/platform/editor/jetbrains.mps.lang.editor.table.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/languageDesign/editor/languages/table/runtime/jetbrains.mps.table.runtime.msd" prefix="module" />
+      <zipfileset dir="core/languageDesign/editor/languages/table/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/languageDesign/editor/languages/table/runtime/classes_gen" />
     </jar>
   </target>
   <target name="pack.ypath.main">

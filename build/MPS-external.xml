@@ -45,6 +45,7 @@
     <mkdir dir="${deploy.dir}/MPS/core/devkits" />
     <mkdir dir="${deploy.dir}/MPS/core" />
     <mkdir dir="${deploy.dir}/MPS/platform/ui" />
+    <mkdir dir="${deploy.dir}/MPS/platform/editor" />
     <mkdir dir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/platform" />
     <mkdir dir="${deploy.dir}/MPS/plugin" />
@@ -237,8 +238,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.constraints" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.editorTest" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.table" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.table.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.findUsages" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.typesystem" />
@@ -316,6 +315,9 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.builders" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.math.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.money.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.table" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.table.runtime" />
+    <mkdir dir="${deploy.dir}/MPS/platform/editor" />
     <antcall target="MPS-languages.pack.ypath.main" />
     <antcall target="MPS-languages.pack.ypath.test" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ypath" />

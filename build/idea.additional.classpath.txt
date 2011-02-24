@@ -46,8 +46,6 @@ core/languageDesign/constraints/classes
 core/languageDesign/editor/classes
 core/languageDesign/editor/classes
 core/languageDesign/editor/classes
-core/languageDesign/editor/languages/table/classes_gen
-core/languageDesign/editor/languages/table/runtime/classes_gen
 core/languageDesign/editor/classes
 core/languageDesign/findUsages/classes
 core/languageDesign/findUsages/classes
