@@ -62,7 +62,7 @@ public class ConfStubs extends BaseStubModelRootManager {
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", null);
     PathItem pi = ConfPathItem.getPathItem(location.getPath());
     for (String modres : ListSequence.fromList(pi.resources(pkg))) {
-      SNodeId id = ConfReader.createId(pi.baseName(modres));
+      SNodeId id = ConfReader.createForeignId(pi.baseName(modres));
       SNode doc = (SNode) model.getNodeById(id);
       if ((doc == null)) {
         doc = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument")), sample);

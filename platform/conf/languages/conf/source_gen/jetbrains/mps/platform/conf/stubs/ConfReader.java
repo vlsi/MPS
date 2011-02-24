@@ -7,16 +7,16 @@ import org.jdom.Document;
 import org.jdom.Element;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jdom.Attribute;
+import java.util.List;
 import org.jdom.filter.AbstractFilter;
 import org.jdom.filter.ElementFilter;
-import java.util.List;
 import org.jdom.Namespace;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -40,6 +40,8 @@ public class ConfReader {
   private static final String PROJECT_SERVICE = "projectService";
   private static final String SERVICE_INTERFACE = "serviceInterface";
   private static final String SERVICE_IMPLEMENTATION = "serviceImplementation";
+  private static final String IMPLEMENTATION = "implementation";
+  private static final String EXTENSION_POINT_PREFIX = "META-INF.extensionPoint$";
 
   private ConfReader.Resolver confstubResolver;
   private ConfReader.Resolver javastubResolver;
@@ -85,12 +87,14 @@ public class ConfReader {
     }
   }
 
-  public void readExtensionPoints(SNode node, Element eps) {
+  private void readExtensionPoints(SNode node, Element eps) {
     for (Element ep : elements(eps, EXTENSION_POINT)) {
       String bc = ep.getAttributeValue(BEAN_CLASS);
       String ifc = ep.getAttributeValue(INTERFACE);
       if (bc != null) {
-        SNode bep = SLinkOperations.addNewChild(node, "fragment", "jetbrains.mps.platform.conf.structure.BeanExtensionPoint");
+        SNode bep = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.BeanExtensionPoint", null);
+        bep.setId(createForeignId(EXTENSION_POINT + "$" + ep.getAttributeValue(ConfReader.NAME)));
+        ListSequence.fromList(SLinkOperations.getTargets(node, "fragment", true)).addElement(bep);
         SPropertyOperations.set(bep, "name", ep.getAttributeValue(NAME));
         addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.BeanExtensionPoint", "beanClass"), bep, bc);
       } else if (ifc != null) {
@@ -103,7 +107,7 @@ public class ConfReader {
     }
   }
 
-  public void readExtensions(SNode node, Element es) {
+  private void readExtensions(SNode node, Element es) {
     for (Element ext : elements(es)) {
       if (APPLICATION_SERVICE.equals(ext.getName())) {
         readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "application"), ext);
@@ -111,17 +115,18 @@ public class ConfReader {
         readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "module"), ext);
       } else if (PROJECT_SERVICE.equals(ext.getName())) {
         readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "project"), ext);
+      } else {
+        readExtension(node, ext);
       }
     }
   }
 
-  public void readComponents(SNode node, SNode level, Element cs) {
+  private void readComponents(SNode node, SNode level, Element cs) {
     SPropertyOperations.set(node, "level", SEnumOperations.getEnumMemberValue(level));
     for (Element cmp : elements(cs, COMPONENT)) {
       String ifc = cmp.getChildTextTrim(INTERFACE_CLASS);
       String impl = cmp.getChildTextTrim(IMPLEMENTATION_CLASS);
       SNode subNode = SLinkOperations.addNewChild(node, "fragment", "jetbrains.mps.platform.conf.structure.Component");
-      SPropertyOperations.set(subNode, "level", SEnumOperations.getEnumMemberValue(level));
       if (ifc != null) {
         addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.Component", "ifaceClass"), subNode, ifc);
       }
@@ -131,7 +136,7 @@ public class ConfReader {
     }
   }
 
-  public void readService(SNode node, SNode level, Element srv) {
+  private void readService(SNode node, SNode level, Element srv) {
     SNode subNode = SLinkOperations.addNewChild(node, "fragment", "jetbrains.mps.platform.conf.structure.Service");
     SPropertyOperations.set(subNode, "level", SEnumOperations.getEnumMemberValue(level));
     String ifc = srv.getAttributeValue(SERVICE_INTERFACE);
@@ -142,7 +147,23 @@ public class ConfReader {
     if (impl != null) {
       addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.Service", "serviceImpl"), subNode, impl);
     }
+  }
 
+  private void readExtension(SNode node, Element ext) {
+    String impl = ext.getAttributeValue(IMPLEMENTATION);
+    if (impl != null) {
+      SNode subNode = SLinkOperations.addNewChild(node, "fragment", "jetbrains.mps.platform.conf.structure.InterfaceExtension");
+      addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.InterfaceExtension", "impl"), subNode, impl);
+      addConfXmlNodeReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.InterfaceExtension", "intefaceExtensionPoint"), subNode, EXTENSION_POINT_PREFIX + ext.getName());
+    } else {
+      SNode subNode = SLinkOperations.addNewChild(node, "fragment", "jetbrains.mps.platform.conf.structure.BeanExtension");
+      addConfXmlNodeReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.BeanExtension", "beanExtensionPoint"), subNode, EXTENSION_POINT_PREFIX + ext.getName());
+      for (Attribute attr : (List<Attribute>) ext.getAttributes()) {
+        SNode bea = SLinkOperations.addNewChild(subNode, "attribute", "jetbrains.mps.platform.conf.structure.BeanExtensionAttribute");
+        SPropertyOperations.set(bea, "name", attr.getName());
+        SPropertyOperations.set(bea, "value", attr.getValue());
+      }
+    }
   }
 
   private Iterable<Element> elements(Element parent, String name, String... orName) {
@@ -160,25 +181,30 @@ public class ConfReader {
     return (List<Element>) parent.getContent(flt);
   }
 
-  private void addConfXmlDocReference(SNode link, SNode src, final String fqName) {
+  private void addConfXmlNodeReference(SNode link, SNode src, String fqName) {
     SModelReference trgsmref = this.confstubResolver.stubModelReference(namespace(fqName));
     if (SNodeOperations.getModel(src).getSModelReference().equals(trgsmref)) {
-      SNode trg = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(src), "jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument")).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode gwtmod) {
-          return SPropertyOperations.getString(gwtmod, "name").equals(shortName(fqName));
+      String shortName = shortName(fqName);
+      int dlr = shortName.indexOf("$");
+      if (dlr >= 0) {
+        final String name = shortName.substring(dlr + 1);
+        String elmName = shortName.substring(0, dlr);
+        if (EXTENSION_POINT.equals(elmName)) {
+          // <node> 
+          // <node> 
+          src.addReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName)));
         }
-      });
-      src.addReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trg));
+      }
     } else {
       SNodeOperations.getModel(src).addModelImport(trgsmref, false);
-      src.addReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createId(fqName)));
+      src.addReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName)));
     }
   }
 
   private void addClassifierReference(SNode link, SNode src, String fqClassName) {
     SModelReference trgsmref = this.javastubResolver.stubModelReference(namespace(fqClassName));
     SNodeOperations.getModel(src).addModelImport(trgsmref, false);
-    src.addReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createId(fqClassName)));
+    src.addReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqClassName)));
   }
 
   private static String namespace(String fqName) {
@@ -203,7 +229,7 @@ public class ConfReader {
     return fqName.substring(idx + 1);
   }
 
-  public static SNodeId createId(String fqName) {
+  public static SNodeId createForeignId(String fqName) {
     return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + shortName(fqName));
   }
 
