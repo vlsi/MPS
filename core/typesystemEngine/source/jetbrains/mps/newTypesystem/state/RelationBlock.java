@@ -59,7 +59,16 @@ public abstract class RelationBlock extends Block {
 
  @Override
   public String getShortPresentation() {
-    return myLeftNode + myRelationKind.getRelationSign() + myRightNode;
+    return getPresentationInternal(myLeftNode, myRightNode);
+  }
+
+  private String getPresentationInternal(SNode left, SNode right) {
+    return left + myRelationKind.getRelationSign() + right;
+  }
+
+  @Override
+  public String getExpandedPresentation(State state) {
+    return getPresentationInternal(state.expand(myLeftNode), state.expand(myRightNode));
   }
 
   @Override
