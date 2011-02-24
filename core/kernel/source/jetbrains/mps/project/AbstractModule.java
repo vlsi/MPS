@@ -558,9 +558,14 @@ public abstract class AbstractModule implements IModule {
 
   @Override
   public ModuleReference getModuleFor(String packageName, String langID) {
+    for (SModelDescriptor model : getOwnModelDescriptors()) {
+      if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))){
+        return getModuleReference();
+      }
+    }
+
     Collection<IModule> scopeModules = IterableUtil.asCollection(getScope().getVisibleModules());
     Set<IModule> deps = new HashSet<IModule>(scopeModules);
-    deps.add(this);
     for (IModule module: deps){
       for (SModelDescriptor model : module.getOwnModelDescriptors()) {
         if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))){
