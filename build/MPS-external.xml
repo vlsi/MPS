@@ -360,7 +360,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.analyzers_fb6a" />
     <antcall target="MPS-languages.pack.jetbrains.mps.analyzers.runtime_gb6a" />
     <antcall target="MPS-languages.pack.jetbrains.mps.analyzers.mpsAnalyzers_hb6a" />
-    <antcall target="MPS-languages.pack.youtrack-customfields-common-rest_a43g0" />
+    <copy file="${mps_home}/artifacts/MPS/youtrack-workflow/youtrack-customfields-common-rest.mpsarch.jar" tofile="${deploy.dir}/MPS/platform/custom-fields-rest/youtrack-customfields-common-rest.mpsarch.jar" />
     <mkdir dir="${deploy.dir}/MPS/platform/custom-fields-rest" />
     <antcall target="MPS-languages.pack.jetbrains.youtrack.workflow_a53g0" />
     <antcall target="MPS-languages.pack.jetbrains.youtrack.workflow.designtime_b53g0" />
