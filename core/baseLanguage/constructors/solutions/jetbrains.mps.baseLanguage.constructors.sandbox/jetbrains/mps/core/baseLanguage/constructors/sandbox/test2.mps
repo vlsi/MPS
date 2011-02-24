@@ -3,12 +3,12 @@
   <persistence version="7" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="0ae47ad3-5abd-486c-ac0f-298884f39393(jetbrains.mps.baseLanguage.constructors)" />
-  <import index="gfj4" modelUID="f:java_stub#java.awt.geom(java.awt.geom@java_stub)" version="-1" />
-  <import index="n1y2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="ar19" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.geom(JDK/java.awt.geom@java_stub)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="fbxt" modelUID="r:bd4b8fd9-079b-4b11-a733-9c0bea3600f2(jetbrains.mps.baseLanguage.constructors.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="hdl5" modelUID="r:5dd83915-41f7-4078-8c06-e9d19fdeceb5(jetbrains.mps.core.baseLanguage.constructors.sandbox.test2)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3391577739832808340">
@@ -28,7 +28,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3391577739832808403">
             <property name="name" nameId="tpck.1169194664001" value="r" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3391577739832808404">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gfj4.~Rectangle2D" resolveInfo="Rectangle2D" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ar19.~Rectangle2D" resolveInfo="Rectangle2D" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="fbxt.CustomConstructorUsage" typeId="fbxt.6820702584719416486" id="4867628140900395507">
               <link role="customConstructor" roleId="fbxt.6820702584719569331" targetNodeId="4413962600136184953" resolveInfo="Rectangle" />
@@ -56,11 +56,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3391577739832808424">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3391577739832809101">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3391577739832808425">
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="mwyq.~System" resolveInfo="System" />
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="mwyq.~System%dout" resolveInfo="out" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~System" resolveInfo="System" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~System%dout" resolveInfo="out" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3391577739832809105">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n1y2.~PrintStream%dprintln(java%dlang%dObject)%cvoid" resolveInfo="println" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dObject)%cvoid" resolveInfo="println" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3391577739832809106">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3391577739832808403" resolveInfo="r" />
               </node>
@@ -72,7 +72,7 @@
         <property name="name" nameId="tpck.1169194664001" value="args" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="3391577739832809147">
           <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3391577739832809138">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~String" resolveInfo="String" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
           </node>
         </node>
       </node>
@@ -91,7 +91,7 @@
       <property name="rightParenthesis" nameId="fbxt.3330196687714050065" value="}" />
       <property name="separator" nameId="fbxt.3330196687714050063" value="," />
       <node role="returnType" roleId="fbxt.3330196687714050067" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4413962600136180686">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gfj4.~Point2D" resolveInfo="Point2D" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ar19.~Point2D" resolveInfo="Point2D" />
       </node>
       <node role="arguments" roleId="fbxt.5379647004618201111" type="fbxt.CustomArgumentClause" typeId="fbxt.5379647004618176186" id="4413962600136180680">
         <node role="parameter" roleId="fbxt.5379647004618201121" type="fbxt.CustomConstructorParameter" typeId="fbxt.5379647004618201113" id="4413962600136180681">
@@ -107,7 +107,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4413962600136180687">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4413962600136180689">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4413962600136184949">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gfj4.~Point2D$Double%d&lt;init&gt;(double,double)" resolveInfo="Point2D.Double" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ar19.~Point2D$Double%d&lt;init&gt;(double,double)" resolveInfo="Point2D.Double" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="fbxt.ListParameterReference" typeId="fbxt.4739047193854255783" id="4413962600136184950">
                 <link role="parameter" roleId="fbxt.5379647004618378853" targetNodeId="4413962600136180681" resolveInfo="x" />
               </node>
@@ -125,19 +125,19 @@
       <property name="rightParenthesis" nameId="fbxt.3330196687714050065" value="]" />
       <property name="separator" nameId="fbxt.3330196687714050063" value="&gt;" />
       <node role="returnType" roleId="fbxt.3330196687714050067" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4413962600136184963">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gfj4.~Rectangle2D" resolveInfo="Rectangle2D" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ar19.~Rectangle2D" resolveInfo="Rectangle2D" />
       </node>
       <node role="arguments" roleId="fbxt.5379647004618201111" type="fbxt.CustomArgumentClause" typeId="fbxt.5379647004618176186" id="4413962600136184957">
         <node role="parameter" roleId="fbxt.5379647004618201121" type="fbxt.CustomConstructorParameter" typeId="fbxt.5379647004618201113" id="4413962600136184958">
           <property name="name" nameId="tpck.1169194664001" value="topleft" />
           <node role="type" roleId="fbxt.5379647004618207272" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4413962600136184959">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gfj4.~Point2D" resolveInfo="Point2D" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ar19.~Point2D" resolveInfo="Point2D" />
           </node>
         </node>
         <node role="parameter" roleId="fbxt.5379647004618201121" type="fbxt.CustomConstructorParameter" typeId="fbxt.5379647004618201113" id="4413962600136184960">
           <property name="name" nameId="tpck.1169194664001" value="bottomright" />
           <node role="type" roleId="fbxt.5379647004618207272" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4413962600136184962">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gfj4.~Point2D" resolveInfo="Point2D" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ar19.~Point2D" resolveInfo="Point2D" />
           </node>
         </node>
       </node>
@@ -151,7 +151,7 @@
                 <link role="parameter" roleId="fbxt.5379647004618378853" targetNodeId="4413962600136184958" resolveInfo="topleft" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4413962600136184988">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gfj4.~Point2D%dgetX()%cdouble" resolveInfo="getX" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ar19.~Point2D%dgetX()%cdouble" resolveInfo="getX" />
               </node>
             </node>
           </node>
@@ -165,7 +165,7 @@
                 <link role="parameter" roleId="fbxt.5379647004618378853" targetNodeId="4413962600136184958" resolveInfo="topleft" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4413962600136184995">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gfj4.~Point2D%dgetY()%cdouble" resolveInfo="getY" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ar19.~Point2D%dgetY()%cdouble" resolveInfo="getY" />
               </node>
             </node>
           </node>
@@ -173,7 +173,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4413962600136184964">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4413962600136184966">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4413962600136184968">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gfj4.~Rectangle2D$Double%d&lt;init&gt;(double,double,double,double)" resolveInfo="Rectangle2D.Double" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ar19.~Rectangle2D$Double%d&lt;init&gt;(double,double,double,double)" resolveInfo="Rectangle2D.Double" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4413962600136184989">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4413962600136184984" resolveInfo="x" />
               </node>
@@ -186,7 +186,7 @@
                     <link role="parameter" roleId="fbxt.5379647004618378853" targetNodeId="4413962600136184960" resolveInfo="bottomright" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4413962600136185020">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gfj4.~Point2D%dgetX()%cdouble" resolveInfo="getX" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ar19.~Point2D%dgetX()%cdouble" resolveInfo="getX" />
                   </node>
                 </node>
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4413962600136185021">
@@ -199,7 +199,7 @@
                     <link role="parameter" roleId="fbxt.5379647004618378853" targetNodeId="4413962600136184960" resolveInfo="bottomright" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4413962600136185024">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gfj4.~Point2D%dgetY()%cdouble" resolveInfo="getY" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ar19.~Point2D%dgetY()%cdouble" resolveInfo="getY" />
                   </node>
                 </node>
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4413962600136185025">

@@ -12,13 +12,13 @@
   <import index="tpke" modelUID="r:00000000-0000-4000-0000-011c895905b2(jetbrains.mps.ypath.generator.baseLanguage.template.helper)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <import index="rcrn" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
-  <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="tpkq" modelUID="r:00000000-0000-4000-0000-011c895905a6(jetbrains.mps.ypath.actions)" version="-1" />
-  <import index="hsm2" modelUID="f:java_stub#jetbrains.mps.ypath.runtime(jetbrains.mps.ypath.runtime@java_stub)" version="-1" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="tpkr" modelUID="r:00000000-0000-4000-0000-011c895905a7(jetbrains.mps.ypath.behavior)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="frfz" modelUID="f:java_stub#f18753d4-d7a2-434f-85a3-f8eedf77c99a#jetbrains.mps.ypath.runtime(ypath#1168438160182/jetbrains.mps.ypath.runtime@java_stub)" version="-1" />
+  <import index="98m" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpf3" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" implicit="yes" />
@@ -208,7 +208,7 @@
                   <property name="value" nameId="tpee.1070475926801" value="void" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1216933999859">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227933108">
                     <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1199883169814">
                       <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1076505808687" resolveInfo="WhileStatement" />
@@ -513,12 +513,12 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1199880817283">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1199880817284">
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199880817285">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
                   </node>
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1199880817286">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227896686">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1199880817288" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1199880817289">
@@ -546,11 +546,11 @@
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1199880738549">
                   <property name="name" nameId="tpck.1169194664001" value="axis" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1199880738550">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1199880738551">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227920644">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1199880738553" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1199880738554">
@@ -564,22 +564,22 @@
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199880765575">
                   <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1199880765577" />
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199880768932">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dDESCENDANTS" resolveInfo="DESCENDANTS" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dDESCENDANTS" resolveInfo="DESCENDANTS" />
                   </node>
                 </node>
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199880770340">
                   <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1199880770342" />
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199880771969">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dSELF_DESCENDANTS" resolveInfo="SELF_DESCENDANTS" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dSELF_DESCENDANTS" resolveInfo="SELF_DESCENDANTS" />
                   </node>
                 </node>
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199880775367">
                   <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1199880775369" />
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199880775918">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dANCESTORS" resolveInfo="ANCESTORS" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dANCESTORS" resolveInfo="ANCESTORS" />
                   </node>
                 </node>
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199880780059">
@@ -591,8 +591,8 @@
                     </node>
                   </node>
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199880780721">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dSELF_ANCESTORS" resolveInfo="SELF_ANCESTORS" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dSELF_ANCESTORS" resolveInfo="SELF_ANCESTORS" />
                   </node>
                 </node>
                 <node role="expression" roleId="tpee.1163670766145" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1199880764201">
@@ -624,11 +624,11 @@
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1199880850014">
                   <property name="name" nameId="tpck.1169194664001" value="axis" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1199880850015">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1199880850016">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227913724">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1199880850018" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1199880850019">
@@ -642,22 +642,22 @@
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199880860223">
                   <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1199880860225" />
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199880862856">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dFOLLOWING_SIBLINGS" resolveInfo="FOLLOWING_SIBLINGS" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dFOLLOWING_SIBLINGS" resolveInfo="FOLLOWING_SIBLINGS" />
                   </node>
                 </node>
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199880868724">
                   <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1199880868726" />
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199880870004">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dSELF_FOLLOWING_SIBLINGS" resolveInfo="SELF_FOLLOWING_SIBLINGS" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dSELF_FOLLOWING_SIBLINGS" resolveInfo="SELF_FOLLOWING_SIBLINGS" />
                   </node>
                 </node>
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199880875830">
                   <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1199880875832" />
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199880877404">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dPRECEDING_SIBLINGS" resolveInfo="PRECEDING_SIBLINGS" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dPRECEDING_SIBLINGS" resolveInfo="PRECEDING_SIBLINGS" />
                   </node>
                 </node>
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199880880722">
@@ -669,8 +669,8 @@
                     </node>
                   </node>
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199880882707">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dPRECEDING_SIBLINGS_SELF" resolveInfo="PRECEDING_SIBLINGS_SELF" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dPRECEDING_SIBLINGS_SELF" resolveInfo="PRECEDING_SIBLINGS_SELF" />
                   </node>
                 </node>
                 <node role="expression" roleId="tpee.1163670766145" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1199880859259">
@@ -727,8 +727,8 @@
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpkq.1199801597865" resolveInfo="isIncludingSelf" />
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpkq.1179161788761" resolveInfo="TraversalAxisUtil" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1225096843193">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096843194">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1225096843195" />
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1225096843196">
@@ -839,7 +839,7 @@
                                                               <property name="value" nameId="tpee.1070475926801" value="_zzz_" />
                                                             </node>
                                                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096843078">
-                                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                                                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096843079">
                                                                 <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1225096843080">
                                                                   <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068498886292" resolveInfo="ParameterDeclaration" />
@@ -922,12 +922,12 @@
                                                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747725501">
                                                     <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747725502" />
                                                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747725503">
-                                                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                                     </node>
                                                   </node>
                                                 </node>
                                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747725504">
-                                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                                                 </node>
                                               </node>
                                             </node>
@@ -1080,7 +1080,7 @@
                                                         <property name="value" nameId="tpee.1070475926801" value="_zzz_" />
                                                       </node>
                                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096842870">
-                                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096842871">
                                                           <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1225096842872">
                                                             <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068498886292" resolveInfo="ParameterDeclaration" />
@@ -1163,12 +1163,12 @@
                                             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747725206">
                                               <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747725207" />
                                               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747725208">
-                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                               </node>
                                             </node>
                                           </node>
                                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747725209">
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                                           </node>
                                         </node>
                                       </node>
@@ -1365,12 +1365,12 @@
                                     <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747724857">
                                       <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747724858" />
                                       <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747724859">
-                                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                       </node>
                                     </node>
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747724860">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                                   </node>
                                 </node>
                               </node>
@@ -1565,12 +1565,12 @@
                                     <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747724910">
                                       <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747724911" />
                                       <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747724912">
-                                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                       </node>
                                     </node>
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747724913">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                                   </node>
                                 </node>
                               </node>
@@ -1633,8 +1633,8 @@
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpkq.1199808477900" resolveInfo="isSelfFirst" />
                                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpkq.1179161788761" resolveInfo="TraversalAxisUtil" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1225096838023">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
-                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096838024">
                                     <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1225096838025" />
                                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1225096838026">
@@ -1657,11 +1657,11 @@
                               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096838032">
                                 <property name="name" nameId="tpck.1169194664001" value="axis" />
                                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096838033">
-                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                 </node>
                                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1225096838034">
-                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096838035">
                                     <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1225096838036" />
                                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1225096838037">
@@ -1807,11 +1807,11 @@
                                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_SetOperation" typeId="tp25.1138661924179" id="1225096842662">
                                                   <node role="value" roleId="tp25.1138662048170" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096842663">
                                                     <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1225096842664">
-                                                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                                                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
+                                                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
                                                     </node>
                                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096842665">
-                                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
+                                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
                                                     </node>
                                                   </node>
                                                 </node>
@@ -1980,11 +1980,11 @@
                                                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_SetOperation" typeId="tp25.1138661924179" id="1225096842838">
                                                       <node role="value" roleId="tp25.1138662048170" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096842839">
                                                         <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1225096842840">
-                                                          <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                                                          <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
+                                                          <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                          <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
                                                         </node>
                                                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096842841">
-                                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
+                                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
                                                         </node>
                                                       </node>
                                                     </node>
@@ -2037,11 +2037,11 @@
                                           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096843367">
                                             <property name="name" nameId="tpck.1169194664001" value="axis" />
                                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096843368">
-                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                             </node>
                                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1225096843369">
                                               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096843370">
-                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                               </node>
                                               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096843371">
                                                 <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1225096843372" />
@@ -2083,11 +2083,11 @@
                                           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096838215">
                                             <property name="name" nameId="tpck.1169194664001" value="axis" />
                                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096838216">
-                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                             </node>
                                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1225096838217">
                                               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096838218">
-                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                               </node>
                                               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096838219">
                                                 <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1225096838220" />
@@ -2122,11 +2122,11 @@
                                           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096838231">
                                             <property name="name" nameId="tpck.1169194664001" value="axis" />
                                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096838232">
-                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                             </node>
                                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1225096838233">
                                               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096838234">
-                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                               </node>
                                               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096838235">
                                                 <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1225096838236" />
@@ -2161,11 +2161,11 @@
                                           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096838247">
                                             <property name="name" nameId="tpck.1169194664001" value="axis" />
                                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096838248">
-                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                             </node>
                                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1225096838249">
                                               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096838250">
-                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                               </node>
                                               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096838251">
                                                 <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1225096838252" />
@@ -2219,11 +2219,11 @@
                                       <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096838270">
                                         <property name="name" nameId="tpck.1169194664001" value="axis" />
                                         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096838271">
-                                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                         </node>
                                         <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1225096838272">
                                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096838273">
-                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                           </node>
                                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096838274">
                                             <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1225096838275" />
@@ -2260,11 +2260,11 @@
                                       <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096843296">
                                         <property name="name" nameId="tpck.1169194664001" value="axis" />
                                         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096843297">
-                                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                         </node>
                                         <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1225096843298">
                                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096843299">
-                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                           </node>
                                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096843300">
                                             <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1225096843301" />
@@ -2379,12 +2379,12 @@
                                             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747726279">
                                               <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747726280" />
                                               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747726281">
-                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                               </node>
                                             </node>
                                           </node>
                                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747726282">
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                                           </node>
                                         </node>
                                       </node>
@@ -2397,7 +2397,7 @@
                           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096838338">
                             <property name="name" nameId="tpck.1169194664001" value="_yyy_" />
                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096838339">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1225096838340">
                                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1225096838341">
                                   <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1225096838342">
@@ -2547,12 +2547,12 @@
                                         <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747725395">
                                           <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747725396" />
                                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747725397">
-                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                           </node>
                                         </node>
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747725398">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                                       </node>
                                     </node>
                                   </node>
@@ -2565,7 +2565,7 @@
                       <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096838403">
                         <property name="name" nameId="tpck.1169194664001" value="_zzz_" />
                         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096838404">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                           <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1225096838405">
                             <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1225096838406">
                               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1225096838407">
@@ -2634,11 +2634,11 @@
                           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096838433">
                             <property name="name" nameId="tpck.1169194664001" value="axis" />
                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096838434">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                             </node>
                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1225096838435">
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096838436">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1225096838437" />
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1225096838438">
@@ -2694,11 +2694,11 @@
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1200052155443">
                   <property name="name" nameId="tpck.1169194664001" value="axis" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1200052155444">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1200052155445">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227882591">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1200052155447" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1200052155448">
@@ -2746,8 +2746,8 @@
                     </node>
                   </node>
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1200052155452">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
                   </node>
                 </node>
                 <node role="expression" roleId="tpee.1163670766145" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1200052155464">
@@ -2824,12 +2824,12 @@
                                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747726030">
                                     <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747726031" />
                                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747726032">
-                                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                     </node>
                                   </node>
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747726033">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                                 </node>
                               </node>
                             </node>
@@ -2899,11 +2899,11 @@
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1200052661746">
                   <property name="name" nameId="tpck.1169194664001" value="axis" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1200052661747">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1200052661748">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227930562">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1200052661750" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1200052661751">
@@ -2953,8 +2953,8 @@
                     </node>
                   </node>
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1200052661765">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
                   </node>
                 </node>
                 <node role="expression" roleId="tpee.1163670766145" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1200052661766">
@@ -2986,11 +2986,11 @@
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1199997838714">
                   <property name="name" nameId="tpck.1169194664001" value="axis" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1199997838715">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1199997838716">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227917738">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1199997838718" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1199997838719">
@@ -3004,22 +3004,22 @@
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199997838721">
                   <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1199997838722" />
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199997838723">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dDESCENDANTS" resolveInfo="DESCENDANTS" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dDESCENDANTS" resolveInfo="DESCENDANTS" />
                   </node>
                 </node>
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199997838724">
                   <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1199997838725" />
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199997838726">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dSELF_DESCENDANTS" resolveInfo="SELF_DESCENDANTS" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dSELF_DESCENDANTS" resolveInfo="SELF_DESCENDANTS" />
                   </node>
                 </node>
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199997838727">
                   <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1199997838728" />
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199997838729">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dANCESTORS" resolveInfo="ANCESTORS" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dANCESTORS" resolveInfo="ANCESTORS" />
                   </node>
                 </node>
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199997838730">
@@ -3031,8 +3031,8 @@
                     </node>
                   </node>
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199997838734">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dSELF_ANCESTORS" resolveInfo="SELF_ANCESTORS" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dSELF_ANCESTORS" resolveInfo="SELF_ANCESTORS" />
                   </node>
                 </node>
                 <node role="expression" roleId="tpee.1163670766145" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1199997838735">
@@ -3064,11 +3064,11 @@
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1199997838747">
                   <property name="name" nameId="tpck.1169194664001" value="axis" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1199997838748">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1199997838749">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227943377">
                       <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1199997838751" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1199997838752">
@@ -3082,22 +3082,22 @@
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199997838754">
                   <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1199997838755" />
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199997838756">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dFOLLOWING_SIBLINGS" resolveInfo="FOLLOWING_SIBLINGS" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dFOLLOWING_SIBLINGS" resolveInfo="FOLLOWING_SIBLINGS" />
                   </node>
                 </node>
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199997838757">
                   <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1199997838758" />
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199997838759">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dSELF_FOLLOWING_SIBLINGS" resolveInfo="SELF_FOLLOWING_SIBLINGS" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dSELF_FOLLOWING_SIBLINGS" resolveInfo="SELF_FOLLOWING_SIBLINGS" />
                   </node>
                 </node>
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199997838760">
                   <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1199997838761" />
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199997838762">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dPRECEDING_SIBLINGS" resolveInfo="PRECEDING_SIBLINGS" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dPRECEDING_SIBLINGS" resolveInfo="PRECEDING_SIBLINGS" />
                   </node>
                 </node>
                 <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1199997838763">
@@ -3109,8 +3109,8 @@
                     </node>
                   </node>
                   <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1199997838767">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dPRECEDING_SIBLINGS_SELF" resolveInfo="PRECEDING_SIBLINGS_SELF" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dPRECEDING_SIBLINGS_SELF" resolveInfo="PRECEDING_SIBLINGS_SELF" />
                   </node>
                 </node>
                 <node role="expression" roleId="tpee.1163670766145" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1199997838768">
@@ -3137,7 +3137,7 @@
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1199998525977">
       <node role="creator" roleId="tpee.1145553007750" type="tp2q.SequenceCreator" typeId="tp2q.1224414427926" id="1225096836796">
         <node role="elementType" roleId="tp2q.1224414456414" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096836797">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
         </node>
         <node role="initializer" roleId="tp2q.1224414466839" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1225096836798">
           <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1225096836799">
@@ -3252,7 +3252,7 @@
                                             <property name="value" nameId="tpee.1070475926801" value="_zzz_" />
                                           </node>
                                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096843448">
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096843449">
                                               <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1225096843450">
                                                 <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068581242863" resolveInfo="LocalVariableDeclaration" />
@@ -3335,12 +3335,12 @@
                                 <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747725290">
                                   <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747725291" />
                                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747725292">
-                                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747725293">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                               </node>
                             </node>
                           </node>
@@ -3443,7 +3443,7 @@
                                             <property name="value" nameId="tpee.1070475926801" value="_zzz_" />
                                           </node>
                                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1465573729715750667">
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1465573729715750668">
                                               <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1465573729715750669">
                                                 <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068581242863" resolveInfo="LocalVariableDeclaration" />
@@ -3526,12 +3526,12 @@
                                 <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1465573729715750699">
                                   <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1465573729715750700" />
                                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1465573729715750701">
-                                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" resolveInfo="TemplateQueryContext" />
+                                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" resolveInfo="TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1465573729715750702">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolveInfo="getGenerator" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" resolveInfo="getGenerator" />
                               </node>
                             </node>
                           </node>
@@ -3694,7 +3694,7 @@
                                             <property name="value" nameId="tpee.1070475926801" value="_zzz_" />
                                           </node>
                                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096843129">
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096843130">
                                               <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1225096843131">
                                                 <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068581242863" resolveInfo="LocalVariableDeclaration" />
@@ -3777,12 +3777,12 @@
                                 <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747725660">
                                   <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747725661" />
                                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747725662">
-                                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                   </node>
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747725663">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                               </node>
                             </node>
                           </node>
@@ -3805,7 +3805,7 @@
         <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1200060371326">
           <node role="creator" roleId="tpee.1145553007750" type="tp2q.SequenceCreator" typeId="tp2q.1224414427926" id="1225096837027">
             <node role="elementType" roleId="tp2q.1224414456414" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096837028">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
             </node>
             <node role="initializer" roleId="tp2q.1224414466839" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1225096837029">
               <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1225096837030">
@@ -3891,8 +3891,8 @@
                                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpkq.1179161788761" resolveInfo="TraversalAxisUtil" />
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpkq.1199808477900" resolveInfo="isSelfFirst" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1225096837071">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
-                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096837072">
                                     <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1225096837073" />
                                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1225096837074">
@@ -3961,7 +3961,7 @@
                                                     <property name="value" nameId="tpee.1070475926801" value="_zzz_" />
                                                   </node>
                                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096842919">
-                                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096842920">
                                                       <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1225096842921">
                                                         <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1068581242863" resolveInfo="LocalVariableDeclaration" />
@@ -4044,12 +4044,12 @@
                                         <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747726083">
                                           <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747726084" />
                                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747726085">
-                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                           </node>
                                         </node>
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747726086">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                                       </node>
                                     </node>
                                   </node>
@@ -4152,12 +4152,12 @@
                                             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747725713">
                                               <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747725714" />
                                               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747725715">
-                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                               </node>
                                             </node>
                                           </node>
                                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747725716">
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                                           </node>
                                         </node>
                                       </node>
@@ -4189,11 +4189,11 @@
                                           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096843248">
                                             <property name="name" nameId="tpck.1169194664001" value="axis" />
                                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096843249">
-                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                             </node>
                                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1225096843250">
                                               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096843251">
-                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                               </node>
                                               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096843252">
                                                 <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1225096843253" />
@@ -4235,11 +4235,11 @@
                                           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096837212">
                                             <property name="name" nameId="tpck.1169194664001" value="axis" />
                                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096837213">
-                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                             </node>
                                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1225096837214">
                                               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096837215">
-                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                               </node>
                                               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096837216">
                                                 <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1225096837217" />
@@ -4274,11 +4274,11 @@
                                           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096837228">
                                             <property name="name" nameId="tpck.1169194664001" value="axis" />
                                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096837229">
-                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                             </node>
                                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1225096837230">
                                               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096837231">
-                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                               </node>
                                               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096837232">
                                                 <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1225096837233" />
@@ -4313,11 +4313,11 @@
                                           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096837244">
                                             <property name="name" nameId="tpck.1169194664001" value="axis" />
                                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096837245">
-                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                             </node>
                                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1225096837246">
                                               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096837247">
-                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                               </node>
                                               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096837248">
                                                 <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1225096837249" />
@@ -4371,11 +4371,11 @@
                                       <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096837267">
                                         <property name="name" nameId="tpck.1169194664001" value="axis" />
                                         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096837268">
-                                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                         </node>
                                         <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1225096837269">
                                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096837270">
-                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                           </node>
                                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096837271">
                                             <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1225096837272" />
@@ -4412,11 +4412,11 @@
                                       <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096843393">
                                         <property name="name" nameId="tpck.1169194664001" value="axis" />
                                         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096843394">
-                                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                         </node>
                                         <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1225096843395">
                                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096843396">
-                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                           </node>
                                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096843397">
                                             <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1225096843398" />
@@ -4576,11 +4576,11 @@
                                                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_SetOperation" typeId="tp25.1138661924179" id="1225096842722">
                                                       <node role="value" roleId="tp25.1138662048170" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096842723">
                                                         <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1225096842724">
-                                                          <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                                                          <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
+                                                          <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                          <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
                                                         </node>
                                                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096842725">
-                                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
+                                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
                                                         </node>
                                                       </node>
                                                     </node>
@@ -4620,11 +4620,11 @@
                               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096837369">
                                 <property name="name" nameId="tpck.1169194664001" value="axis" />
                                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096837370">
-                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                                 </node>
                                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1225096837371">
-                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096837372">
                                     <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1225096837373" />
                                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1225096837374">
@@ -4770,11 +4770,11 @@
                                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_SetOperation" typeId="tp25.1138661924179" id="1225096842780">
                                                   <node role="value" roleId="tp25.1138662048170" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096842781">
                                                     <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1225096842782">
-                                                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                                                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="hsm2.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
+                                                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                                                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="frfz.~TraversalAxis%dCHILDREN" resolveInfo="CHILDREN" />
                                                     </node>
                                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096842783">
-                                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
+                                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
                                                     </node>
                                                   </node>
                                                 </node>
@@ -4819,11 +4819,11 @@
                           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1225096837456">
                             <property name="name" nameId="tpck.1169194664001" value="axis" />
                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096837457">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                             </node>
                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1225096837458">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096837459">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1225096837460" />
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1225096837461">
@@ -4866,7 +4866,7 @@
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1210075192239">
       <node role="creator" roleId="tpee.1145553007750" type="tp2q.SequenceCreator" typeId="tp2q.1224414427926" id="1225096836315">
         <node role="elementType" roleId="tp2q.1224414456414" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1225096836316">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
         </node>
         <node role="initializer" roleId="tp2q.1224414466839" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1225096836317">
           <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1225096836318">
@@ -4942,8 +4942,8 @@
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpkq.1199801597865" resolveInfo="isIncludingSelf" />
                         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpkq.1179161788761" resolveInfo="TraversalAxisUtil" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1225096843276">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096843277">
                             <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1225096843278" />
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1225096843279">
@@ -5071,7 +5071,7 @@
                                                       <property name="value" nameId="tpee.1070475926801" value="_zzz_" />
                                                     </node>
                                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096842892">
-                                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096842893">
                                                         <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1225096842894">
                                                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1225096842886" resolveInfo="it" />
@@ -5119,12 +5119,12 @@
                                           <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747725031">
                                             <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747725032" />
                                             <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747725033">
-                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                             </node>
                                           </node>
                                         </node>
                                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747725034">
-                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                                         </node>
                                       </node>
                                     </node>
@@ -5317,7 +5317,7 @@
                                                         <property name="value" nameId="tpee.1070475926801" value="_xxx_" />
                                                       </node>
                                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096842943">
-                                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096842944">
                                                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1225096842945">
                                                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1225096842937" resolveInfo="it" />
@@ -5365,12 +5365,12 @@
                                             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747726173">
                                               <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747726174" />
                                               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747726175">
-                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                               </node>
                                             </node>
                                           </node>
                                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747726176">
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                                           </node>
                                         </node>
                                       </node>
@@ -5584,7 +5584,7 @@
                                                     <property name="value" nameId="tpee.1070475926801" value="_zzz_" />
                                                   </node>
                                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096843102">
-                                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096843103">
                                                       <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1225096843104">
                                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1225096843096" resolveInfo="it" />
@@ -5632,12 +5632,12 @@
                                         <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747725750">
                                           <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747725751" />
                                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747725752">
-                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                           </node>
                                         </node>
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747725753">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                                       </node>
                                     </node>
                                   </node>
@@ -5797,7 +5797,7 @@
                                                         <property name="value" nameId="tpee.1070475926801" value="_xxx_" />
                                                       </node>
                                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096843152">
-                                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1225096843153">
                                                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1225096843154">
                                                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1225096843146" resolveInfo="it" />
@@ -5845,12 +5845,12 @@
                                             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1227747725924">
                                               <node role="expression" roleId="tpee.1070534934092" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1227747725925" />
                                               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1227747725926">
-                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rcrn.~TemplateQueryContext" />
+                                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" />
                                               </node>
                                             </node>
                                           </node>
                                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1227747725927">
-                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rcrn.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
+                                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateQueryContext%dgetGenerator()%cjetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator" />
                                           </node>
                                         </node>
                                       </node>

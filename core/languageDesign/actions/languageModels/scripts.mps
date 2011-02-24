@@ -11,9 +11,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:4248fe95-6be4-4f0d-999a-7840aa402781(jetbrains.mps.lang.actions.scripts)" version="-1" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="3" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
   <node type="jetbrains.mps.lang.script.structure.MigrationScript:0" id="7836612869650926685">
     <property name="migrationFromBuild:0" value="7213" />
@@ -58,11 +58,11 @@
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7836612869650932733">
               <property name="name:3" value="aspect" />
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7836612869650932734">
-                <link role="classifier:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
+                <link role="classifier:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7836612869650932735">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
-                <link role="classConcept:3" targetNodeId="2.~Language" resolveInfo="Language" />
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+                <link role="classConcept:3" targetNodeId="3.~Language" resolveInfo="Language" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7836612869650932736">
                   <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="7836612869650932737">
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7836612869650932738">
@@ -71,7 +71,7 @@
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7836612869650932741">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                   </node>
                 </node>
               </node>
@@ -102,8 +102,8 @@
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="7836612869650932776">
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="7836612869650932780">
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="7836612869650932784">
-                      <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
-                      <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
+                      <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
+                      <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
                     </node>
                     <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7836612869650932779">
                       <link role="variableDeclaration:3" targetNodeId="7836612869650932733" resolveInfo="aspect" />
@@ -115,8 +115,8 @@
                         <link role="variableDeclaration:3" targetNodeId="7836612869650932733" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="7836612869650932765">
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
                       </node>
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="7836612869650932771">
@@ -124,8 +124,8 @@
                         <link role="variableDeclaration:3" targetNodeId="7836612869650932733" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="7836612869650932775">
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
                       </node>
                     </node>
                   </node>
@@ -175,11 +175,11 @@
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3341893916018837250">
               <property name="name:3" value="aspect" />
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3341893916018837251">
-                <link role="classifier:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
+                <link role="classifier:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3341893916018837252">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
-                <link role="classConcept:3" targetNodeId="2.~Language" resolveInfo="Language" />
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+                <link role="classConcept:3" targetNodeId="3.~Language" resolveInfo="Language" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837253">
                   <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3341893916018837254">
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837255">
@@ -188,7 +188,7 @@
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3341893916018837258">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                   </node>
                 </node>
               </node>
@@ -219,8 +219,8 @@
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="3341893916018837265">
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837266">
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837267">
-                      <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                      <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
+                      <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                      <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
                     </node>
                     <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3341893916018837268">
                       <link role="variableDeclaration:3" targetNodeId="3341893916018837250" resolveInfo="aspect" />
@@ -232,8 +232,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837250" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837272">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
                       </node>
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837273">
@@ -241,8 +241,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837250" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837275">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
                       </node>
                     </node>
                   </node>
@@ -304,11 +304,11 @@
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3341893916018837484">
               <property name="name:3" value="aspect" />
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3341893916018837485">
-                <link role="classifier:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
+                <link role="classifier:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3341893916018837486">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
-                <link role="classConcept:3" targetNodeId="2.~Language" resolveInfo="Language" />
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+                <link role="classConcept:3" targetNodeId="3.~Language" resolveInfo="Language" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837487">
                   <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3341893916018837488">
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837489">
@@ -317,7 +317,7 @@
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3341893916018837492">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                   </node>
                 </node>
               </node>
@@ -348,8 +348,8 @@
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="3341893916018837499">
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837500">
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837501">
-                      <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                      <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
+                      <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                      <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
                     </node>
                     <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3341893916018837502">
                       <link role="variableDeclaration:3" targetNodeId="3341893916018837484" resolveInfo="aspect" />
@@ -361,8 +361,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837484" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837506">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
                       </node>
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837507">
@@ -370,8 +370,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837484" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837509">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
                       </node>
                     </node>
                   </node>
@@ -421,11 +421,11 @@
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3341893916018837525">
               <property name="name:3" value="aspect" />
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3341893916018837526">
-                <link role="classifier:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
+                <link role="classifier:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3341893916018837527">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
-                <link role="classConcept:3" targetNodeId="2.~Language" resolveInfo="Language" />
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+                <link role="classConcept:3" targetNodeId="3.~Language" resolveInfo="Language" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837528">
                   <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3341893916018837529">
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837530">
@@ -434,7 +434,7 @@
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3341893916018837533">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                   </node>
                 </node>
               </node>
@@ -465,8 +465,8 @@
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="3341893916018837540">
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837541">
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837542">
-                      <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                      <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
+                      <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                      <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
                     </node>
                     <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3341893916018837543">
                       <link role="variableDeclaration:3" targetNodeId="3341893916018837525" resolveInfo="aspect" />
@@ -478,8 +478,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837525" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837547">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
                       </node>
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837548">
@@ -487,8 +487,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837525" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837550">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
                       </node>
                     </node>
                   </node>
@@ -520,11 +520,11 @@
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3341893916018837572">
               <property name="name:3" value="aspect" />
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3341893916018837573">
-                <link role="classifier:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
+                <link role="classifier:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3341893916018837574">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
-                <link role="classConcept:3" targetNodeId="2.~Language" resolveInfo="Language" />
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+                <link role="classConcept:3" targetNodeId="3.~Language" resolveInfo="Language" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837575">
                   <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3341893916018837576">
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837577">
@@ -533,7 +533,7 @@
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3341893916018837580">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                   </node>
                 </node>
               </node>
@@ -564,8 +564,8 @@
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="3341893916018837587">
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837588">
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837589">
-                      <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                      <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
+                      <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                      <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
                     </node>
                     <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3341893916018837590">
                       <link role="variableDeclaration:3" targetNodeId="3341893916018837572" resolveInfo="aspect" />
@@ -577,8 +577,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837572" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837594">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
                       </node>
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837595">
@@ -586,8 +586,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837572" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837597">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
                       </node>
                     </node>
                   </node>
@@ -619,11 +619,11 @@
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3341893916018837601">
               <property name="name:3" value="aspect" />
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3341893916018837602">
-                <link role="classifier:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
+                <link role="classifier:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3341893916018837603">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
-                <link role="classConcept:3" targetNodeId="2.~Language" resolveInfo="Language" />
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+                <link role="classConcept:3" targetNodeId="3.~Language" resolveInfo="Language" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837604">
                   <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3341893916018837605">
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837606">
@@ -632,7 +632,7 @@
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3341893916018837609">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                   </node>
                 </node>
               </node>
@@ -663,8 +663,8 @@
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="3341893916018837616">
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837617">
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837618">
-                      <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                      <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
+                      <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                      <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
                     </node>
                     <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3341893916018837619">
                       <link role="variableDeclaration:3" targetNodeId="3341893916018837601" resolveInfo="aspect" />
@@ -676,8 +676,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837601" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837623">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
                       </node>
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837624">
@@ -685,8 +685,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837601" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837626">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
                       </node>
                     </node>
                   </node>
@@ -718,11 +718,11 @@
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3341893916018837630">
               <property name="name:3" value="aspect" />
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3341893916018837631">
-                <link role="classifier:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
+                <link role="classifier:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3341893916018837632">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
-                <link role="classConcept:3" targetNodeId="2.~Language" resolveInfo="Language" />
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+                <link role="classConcept:3" targetNodeId="3.~Language" resolveInfo="Language" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837633">
                   <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3341893916018837634">
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837635">
@@ -731,7 +731,7 @@
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3341893916018837638">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                   </node>
                 </node>
               </node>
@@ -762,8 +762,8 @@
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="3341893916018837645">
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837646">
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837647">
-                      <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                      <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
+                      <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                      <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
                     </node>
                     <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3341893916018837648">
                       <link role="variableDeclaration:3" targetNodeId="3341893916018837630" resolveInfo="aspect" />
@@ -775,8 +775,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837630" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837652">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
                       </node>
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837653">
@@ -784,8 +784,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837630" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837655">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
                       </node>
                     </node>
                   </node>
@@ -817,11 +817,11 @@
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3341893916018837659">
               <property name="name:3" value="aspect" />
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3341893916018837660">
-                <link role="classifier:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
+                <link role="classifier:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3341893916018837661">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
-                <link role="classConcept:3" targetNodeId="2.~Language" resolveInfo="Language" />
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+                <link role="classConcept:3" targetNodeId="3.~Language" resolveInfo="Language" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837662">
                   <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3341893916018837663">
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837664">
@@ -830,7 +830,7 @@
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3341893916018837667">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                   </node>
                 </node>
               </node>
@@ -861,8 +861,8 @@
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="3341893916018837674">
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837675">
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837676">
-                      <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                      <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
+                      <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                      <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
                     </node>
                     <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3341893916018837677">
                       <link role="variableDeclaration:3" targetNodeId="3341893916018837659" resolveInfo="aspect" />
@@ -874,8 +874,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837659" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837681">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
                       </node>
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837682">
@@ -883,8 +883,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837659" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837684">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
                       </node>
                     </node>
                   </node>
@@ -916,11 +916,11 @@
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3341893916018837688">
               <property name="name:3" value="aspect" />
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3341893916018837689">
-                <link role="classifier:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
+                <link role="classifier:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3341893916018837690">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
-                <link role="classConcept:3" targetNodeId="2.~Language" resolveInfo="Language" />
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+                <link role="classConcept:3" targetNodeId="3.~Language" resolveInfo="Language" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837691">
                   <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3341893916018837692">
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3341893916018837693">
@@ -929,7 +929,7 @@
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3341893916018837696">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                   </node>
                 </node>
               </node>
@@ -960,8 +960,8 @@
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="3341893916018837703">
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837704">
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837705">
-                      <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                      <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
+                      <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                      <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
                     </node>
                     <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3341893916018837706">
                       <link role="variableDeclaration:3" targetNodeId="3341893916018837688" resolveInfo="aspect" />
@@ -973,8 +973,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837688" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837710">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
                       </node>
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3341893916018837711">
@@ -982,8 +982,8 @@
                         <link role="variableDeclaration:3" targetNodeId="3341893916018837688" resolveInfo="aspect" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="3341893916018837713">
-                        <link role="enumClass:3" targetNodeId="2.~LanguageAspect" resolveInfo="LanguageAspect" />
-                        <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
+                        <link role="enumClass:3" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
+                        <link role="enumConstantDeclaration:3" targetNodeId="3.~LanguageAspect.INTENTIONS" resolveInfo="INTENTIONS" />
                       </node>
                     </node>
                   </node>
