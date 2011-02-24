@@ -4,9 +4,8 @@ package jetbrains.mps.lang.generator.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import java.util.Set;
 import java.util.HashSet;
@@ -19,21 +18,15 @@ public class PropertyMacro_GetPropertyValue_Behavior {
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode propertyMacro = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.generator.structure.PropertyMacro", false, false);
-    SNode attributedNode = SNodeOperations.getParent(propertyMacro);
-    String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(propertyMacro.getRole_());
-    SNode property_ = SModelSearchUtil.findPropertyDeclaration(SNodeOperations.getConceptDeclaration(attributedNode), propertyName);
-    if (property_ != null) {
-      SNode property = SNodeOperations.cast(property_, "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
-      SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
-      if (dataType != null) {
-        return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType);
-      }
+    SNode dataType = SLinkOperations.getTarget(AttributeOperations.getPropertyDeclaration(propertyMacro), "dataType", false);
+    if (dataType != null) {
+      return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType);
     }
-    return new PropertyMacro_GetPropertyValue_Behavior.QuotationClass_90g9ox_a0f0b().createNode();
+    return new PropertyMacro_GetPropertyValue_Behavior.QuotationClass_90g9ox_a0d0b().createNode();
   }
 
-  public static class QuotationClass_90g9ox_a0f0b {
-    public QuotationClass_90g9ox_a0f0b() {
+  public static class QuotationClass_90g9ox_a0d0b {
+    public QuotationClass_90g9ox_a0d0b() {
     }
 
     public SNode createNode() {

@@ -8,6 +8,7 @@ import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -27,6 +28,7 @@ public class SimpleBuilderDeclaration extends BaseSimpleBuilderDeclaration imple
   public static final String PARAMETER = "parameter";
   public static final String CHILD = "child";
   public static final String PROPERTY = "property";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SimpleBuilderDeclaration(SNode node) {
     super(node);
@@ -170,6 +172,26 @@ public class SimpleBuilderDeclaration extends BaseSimpleBuilderDeclaration imple
 
   public void insertProperty(SimpleBuilderProperty prev, SimpleBuilderProperty node) {
     this.insertChild(prev, SimpleBuilderDeclaration.PROPERTY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(SimpleBuilderDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SimpleBuilderDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SimpleBuilderDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(SimpleBuilderDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SimpleBuilderDeclaration._$ATTRIBUTE, node);
   }
 
   public static SimpleBuilderDeclaration newInstance(SModel sm, boolean init) {

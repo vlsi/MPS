@@ -5,13 +5,13 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
-import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
 import jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup;
 import jetbrains.mps.ide.actions.Code_ActionGroup;
 import jetbrains.mps.lang.dataFlow.plugin.DFAActions_ActionGroup;
+import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import java.util.List;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -52,7 +52,6 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     // groups 
     addGroup(new AnalyzersActions_ActionGroup());
     addGroup(new BaseLangaugeCodeCommentsMenuGroup_ActionGroup());
-    addGroup(new BaseLanguageEditorPopupInternal_ActionGroup());
     addGroup(new BaseLanguageEditorPopup_ActionGroup());
     addGroup(new BaseLanguageModelActionsInternal_ActionGroup());
     addGroup(new BaseLanguageNodeActionsInternal_ActionGroup());
@@ -64,7 +63,6 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(BaseLanguageEditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
-    insertGroupIntoAnother(BaseLanguageEditorPopupInternal_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(BaseLanguageModelActionsInternal_ActionGroup.ID, ModelActionsInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(BaseLanguageNodeActionsInternal_ActionGroup.ID, NodeActionsInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(BaseLanguageToolsAddition_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);
@@ -72,7 +70,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_overrideImplement);
     insertGroupIntoAnother(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_comments);
     insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);
-    insertGroupIntoAnother(PrintNodePosition_ActionGroup.ID, EditorInternal_ActionGroup.ID, EditorInternal_ActionGroup.LABEL_ID_printNodePosition);
+    insertGroupIntoAnother(PrintNodePosition_ActionGroup.ID, EditorInternal_ActionGroup.ID, EditorInternal_ActionGroup.LABEL_ID_languages);
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {

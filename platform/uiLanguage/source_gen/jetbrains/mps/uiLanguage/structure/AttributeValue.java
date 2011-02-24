@@ -5,6 +5,9 @@ package jetbrains.mps.uiLanguage.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class AttributeValue extends BaseConcept implements IComponentPart {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ATTRIBUTE = "attribute";
   public static final String VALUE = "value";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AttributeValue(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class AttributeValue extends BaseConcept implements IComponentPart {
 
   public void setValue(Expression node) {
     super.setChild(AttributeValue.VALUE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AttributeValue._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AttributeValue._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AttributeValue._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AttributeValue._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AttributeValue._$ATTRIBUTE, node);
   }
 
   public static AttributeValue newInstance(SModel sm, boolean init) {

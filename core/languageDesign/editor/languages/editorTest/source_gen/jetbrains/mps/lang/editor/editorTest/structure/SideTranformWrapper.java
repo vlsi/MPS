@@ -4,6 +4,9 @@ package jetbrains.mps.lang.editor.editorTest.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class SideTranformWrapper extends BaseConcept implements IBaseTestBlock {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RIGHT_OPEN = "rightOpen";
   public static final String CHILD = "child";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SideTranformWrapper(SNode node) {
     super(node);
@@ -58,6 +62,26 @@ public class SideTranformWrapper extends BaseConcept implements IBaseTestBlock {
 
   public void setChild(IBaseTestBlock node) {
     super.setChild(SideTranformWrapper.CHILD, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(SideTranformWrapper._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SideTranformWrapper._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SideTranformWrapper._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(SideTranformWrapper._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SideTranformWrapper._$ATTRIBUTE, node);
   }
 
   public static SideTranformWrapper newInstance(SModel sm, boolean init) {

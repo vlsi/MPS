@@ -7,6 +7,9 @@ import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +23,7 @@ public class AttributeDeclaration extends BaseConcept implements IMember {
   public static final String TYPE = "type";
   public static final String INITIALIZER = "initializer";
   public static final String ON_CHANGE = "onChange";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AttributeDeclaration(SNode node) {
     super(node);
@@ -79,6 +83,26 @@ public class AttributeDeclaration extends BaseConcept implements IMember {
 
   public void setOnChange(Expression node) {
     super.setChild(AttributeDeclaration.ON_CHANGE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AttributeDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AttributeDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AttributeDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AttributeDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AttributeDeclaration._$ATTRIBUTE, node);
   }
 
   public static AttributeDeclaration newInstance(SModel sm, boolean init) {

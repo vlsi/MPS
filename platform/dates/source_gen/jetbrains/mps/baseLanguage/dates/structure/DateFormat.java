@@ -7,6 +7,7 @@ import jetbrains.mps.baseLanguage.datesInternal.structure.IDateFormat;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +21,7 @@ public class DateFormat extends BaseConcept implements IDateFormat {
   public static final String IS_PUBLIC = "isPublic";
   public static final String DATE_FORMAT_VISIBILITY = "dateFormatVisibility";
   public static final String TOKEN = "token";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public DateFormat(SNode node) {
     super(node);
@@ -92,6 +94,26 @@ public class DateFormat extends BaseConcept implements IDateFormat {
 
   public void insertToken(FormatToken prev, FormatToken node) {
     this.insertChild(prev, DateFormat.TOKEN, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(DateFormat._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, DateFormat._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, DateFormat._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(DateFormat._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DateFormat._$ATTRIBUTE, node);
   }
 
   public static DateFormat newInstance(SModel sm, boolean init) {

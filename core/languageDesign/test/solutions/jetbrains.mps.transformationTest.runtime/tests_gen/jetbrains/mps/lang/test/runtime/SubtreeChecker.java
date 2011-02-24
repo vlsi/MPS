@@ -7,8 +7,10 @@ import junit.framework.Assert;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -41,8 +43,8 @@ public class SubtreeChecker {
     typeCheckingContext.checkIfNotChecked(node, true);
     for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       boolean isError = false;
-      if (SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), true) != null) {
-        SNode container = SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), true);
+      if (AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodePropertiesContainer"))) != null) {
+        SNode container = AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodePropertiesContainer")));
         for (SNode property : SLinkOperations.getTargets(container, "properties", true)) {
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty")) {
             SNode type1 = typeCheckingContext.getTypeDontCheck(child);
@@ -93,8 +95,8 @@ public class SubtreeChecker {
     AnalysisResult<VarSet> initialized = program.analyze(new InitializedVariablesAnalyzer());
     AnalysisResult<VarSet> live = program.analyze(new LivenessAnalyzer());
     for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
-      if (SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), true) != null) {
-        SNode container = SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), true);
+      if (AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodePropertiesContainer"))) != null) {
+        SNode container = AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodePropertiesContainer")));
         for (SNode property : SLinkOperations.getTargets(container, "properties", true)) {
           Instruction instruction;
           List<Instruction> instructions = program.getInstructionsFor(child);
@@ -130,8 +132,8 @@ public class SubtreeChecker {
   public static void performOperations(SNode node) {
     for (SNode nodeToCheck : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       if (nodeToCheck != null) {
-        if (SLinkOperations.getTarget(nodeToCheck, AttributesRolesUtil.childRoleFromAttributeRole("nodeOpraretionsMark"), true) != null) {
-          for (SNode operation : SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, AttributesRolesUtil.childRoleFromAttributeRole("nodeOpraretionsMark"), true), "operations", true)) {
+        if (AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodeOperationsContainer"))) != null) {
+          for (SNode operation : SLinkOperations.getTargets(AttributeOperations.getAttribute(nodeToCheck, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodeOperationsContainer"))), "operations", true)) {
             NodeOperation_Behavior.call_perform_1215601182156(operation, nodeToCheck);
           }
         }

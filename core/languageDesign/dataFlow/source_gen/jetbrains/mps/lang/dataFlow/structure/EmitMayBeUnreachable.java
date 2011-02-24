@@ -5,6 +5,9 @@ package jetbrains.mps.lang.dataFlow.structure;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.baseLanguage.structure.Closureoid;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class EmitMayBeUnreachable extends Statement implements Closureoid {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EMIT_STATEMENT = "emitStatement";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public EmitMayBeUnreachable(SNode node) {
     super(node);
@@ -50,6 +54,26 @@ public class EmitMayBeUnreachable extends Statement implements Closureoid {
 
   public void setEmitStatement(EmitStatement node) {
     super.setChild(EmitMayBeUnreachable.EMIT_STATEMENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(EmitMayBeUnreachable._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, EmitMayBeUnreachable._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, EmitMayBeUnreachable._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(EmitMayBeUnreachable._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EmitMayBeUnreachable._$ATTRIBUTE, node);
   }
 
   public static EmitMayBeUnreachable newInstance(SModel sm, boolean init) {

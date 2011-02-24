@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -26,6 +27,7 @@ public class XMLSAXNodeRule extends BaseConcept implements INamedConcept {
   public static final String VALIDATOR = "validator";
   public static final String ATTRS = "attrs";
   public static final String CHILDREN = "children";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public XMLSAXNodeRule(SNode node) {
     super(node);
@@ -149,6 +151,26 @@ public class XMLSAXNodeRule extends BaseConcept implements INamedConcept {
 
   public void insertChildren(XMLSAXChildRule prev, XMLSAXChildRule node) {
     this.insertChild(prev, XMLSAXNodeRule.CHILDREN, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(XMLSAXNodeRule._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, XMLSAXNodeRule._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, XMLSAXNodeRule._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(XMLSAXNodeRule._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, XMLSAXNodeRule._$ATTRIBUTE, node);
   }
 
   public static XMLSAXNodeRule newInstance(SModel sm, boolean init) {

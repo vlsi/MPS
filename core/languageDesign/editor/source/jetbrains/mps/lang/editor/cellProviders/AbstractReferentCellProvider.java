@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
@@ -79,7 +80,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   //gets an attribute for this provider's node hanging on this provider's role
   public SNode getRoleAttribute() {
-    return getSNode().getLinkAttribute(myGenuineRole);
+    return AttributeOperations.getLinkAttribute(getSNode(), null, myGenuineRole);
   }
 
   // gets a kind of attributes possibly hanging on this provider's role

@@ -8,8 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class AddOperationsMark_Intention extends BaseIntention implements Intention {
   public AddOperationsMark_Intention() {
@@ -48,7 +49,7 @@ public class AddOperationsMark_Intention extends BaseIntention implements Intent
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode newAnootation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeOperationsContainer", null);
-    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeOpraretionsMark"), newAnootation, true);
+    AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodeOperationsContainer")), newAnootation);
     editorContext.select(newAnootation);
   }
 

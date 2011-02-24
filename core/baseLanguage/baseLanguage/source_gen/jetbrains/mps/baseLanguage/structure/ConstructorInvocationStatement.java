@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +17,7 @@ public class ConstructorInvocationStatement extends Statement implements IMethod
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConstructorInvocationStatement(SNode node) {
     super(node);
@@ -79,6 +81,26 @@ public class ConstructorInvocationStatement extends Statement implements IMethod
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, ConstructorInvocationStatement.ACTUAL_ARGUMENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ConstructorInvocationStatement._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConstructorInvocationStatement._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConstructorInvocationStatement._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConstructorInvocationStatement._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConstructorInvocationStatement._$ATTRIBUTE, node);
   }
 
   public static ConstructorInvocationStatement newInstance(SModel sm, boolean init) {

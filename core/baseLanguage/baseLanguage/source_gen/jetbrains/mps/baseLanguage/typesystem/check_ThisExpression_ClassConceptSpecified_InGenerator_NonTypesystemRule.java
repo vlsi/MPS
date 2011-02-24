@@ -14,7 +14,9 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -41,12 +43,12 @@ public class check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesyste
 
     boolean expressionInTemplate = ListSequence.fromList(SNodeOperations.getAncestors(expression, null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true) != null;
+        return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment"))) != null;
       }
     }).isNotEmpty() || (SNodeOperations.getAncestor(expression, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", false, false) != null);
     boolean classifierInTemplate = ListSequence.fromList(SNodeOperations.getAncestors(SLinkOperations.getTarget(expression, "classConcept", false), null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true) != null;
+        return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment"))) != null;
       }
     }).isNotEmpty() || (SNodeOperations.getAncestor(SLinkOperations.getTarget(expression, "classConcept", false), "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", false, false) != null);
     if (expressionInTemplate && !(classifierInTemplate)) {

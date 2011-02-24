@@ -32,10 +32,11 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -45,7 +46,6 @@ import java.util.*;
  * Evgeny Gryaznov, Aug 24, 2010
  */
 public class GeneratorUIFacade {
-
   private static final GeneratorUIFacade INSTANCE = new GeneratorUIFacade();
 
   private GeneratorUIFacade() {
@@ -59,16 +59,13 @@ public class GeneratorUIFacade {
     ExtensionPointName.create("com.intellij.mps.GenerationHandler");
 
   public interface GenerationHandlerProvider {
-
     IGenerationHandler create();
   }
 
   public IGenerationHandler getDefaultGenerationHandler() {
-    for (GenerationHandlerProvider hp : EP_NAME.getExtensions()) {
-      return hp.create();
-    }
-
-    return new JavaGenerationHandler();
+    GenerationHandlerProvider[] ext = EP_NAME.getExtensions();
+    if (ext.length == 0) return new JavaGenerationHandler();
+    return ext[0].create();
   }
 
   /**
@@ -89,10 +86,7 @@ public class GeneratorUIFacade {
                                                    final List<SModelDescriptor> inputModels,
                                                    final IGenerationHandler generationHandler,
                                                    final boolean rebuildAll, boolean skipRequirementsGeneration) {
-
-    if (inputModels.isEmpty()) {
-      return true;
-    }
+    if (inputModels.isEmpty()) return true;
 
     final Project project = invocationContext.getProject();
     assert project != null : "Cannot generate models without a project";
@@ -194,27 +188,42 @@ public class GeneratorUIFacade {
 
     final boolean[] result = new boolean[]{false};
 
-    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive(){
+    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
       public void run(@NotNull ProgressIndicator progress) {
         GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
 
         if (!saveTransientModels) {
-          project.getComponent(GenerationTracer.class).discardTracing();
+          IGenerationTracer component = project.getComponent(IGenerationTracer.class);
+          if (component != null) {
+            component.discardTracing();
+          }
         }
 
         IGenerationTracer tracer = saveTransientModels
-          ? project.getComponent(GenerationTracer.class)
-          : new NullGenerationTracer();
+          ? project.getComponent(IGenerationTracer.class)
+          : null;
+
+        if (tracer == null) {
+          tracer = new NullGenerationTracer();
+        }
 
         IncrementalGenerationStrategy strategy = null;
-        if(settings.isIncremental()) {
+        if (settings.isIncremental()) {
           final GenerationCacheContainer cache = settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null;
           strategy = new IncrementalGenerationStrategy() {
             @Override
             public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
-              return ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
+              if (!(sm instanceof EditableSModelDescriptor)) return null;
+              EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+              if (esm.isPackaged()) return null;
+              if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return null;
+
+              IFile modelFile = esm.getModelFile();
+              if (modelFile == null) return null;
+
+              return ModelDigestHelper.getInstance().getGenerationHashes(modelFile, operationContext);
             }
-                         
+
             @Override
             public GenerationCacheContainer getContainer() {
               return cache;
@@ -257,22 +266,20 @@ public class GeneratorUIFacade {
 
   private List<SModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, Project project) {
     IModule module = model.getModule();
-    if (module == null) {
-      return Collections.emptyList();
-    }
+    if (module == null) return Collections.emptyList();
 
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
 
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
     for (Generator g : GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model.getSModel(), module.getScope())) {
       for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
-        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, ProjectOperationContext.get(project), false, true)) {
+        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, ProjectOperationContext.get(project))) {
           result.add(sm);
         }
       }
 
       for (SModelDescriptor sm : g.getSourceLanguage().getAspectModelDescriptors()) {
-        if (statusManager.generationRequired(sm, ProjectOperationContext.get(project), false, true)) {
+        if (statusManager.generationRequired(sm, ProjectOperationContext.get(project))) {
           result.add(sm);
         }
       }

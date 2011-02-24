@@ -11,36 +11,27 @@ import com.intellij.openapi.extensions.PluginId;
 public class EditorInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorInternal_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorInternal_ActionGroup";
-  public static final String LABEL_ID_printNodePosition = ID + "printNodePosition";
-  public static final String LABEL_ID_VCS = ID + "VCS";
+  public static final String LABEL_ID_workbench = ID + "workbench";
+  public static final String LABEL_ID_languages = ID + "languages";
 
   public EditorInternal_ActionGroup() {
     super("Internal", ID);
     this.setIsInternal(true);
     this.setPopup(true);
     try {
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.TestNodePath_Action");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CellProperties_Action");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerationIntentions_Action");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SurroundWithIntentions_Action");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowCellInExplorer_Action");
-      EditorInternal_ActionGroup.this.addSeparator();
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PrintNodeID_Action");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightCellDependencies_Action");
       {
-        LabelledAnchor action = new LabelledAnchor(EditorInternal_ActionGroup.LABEL_ID_printNodePosition);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        EditorInternal_ActionGroup.this.addAction(action);
-      }
-      {
-        LabelledAnchor action = new LabelledAnchor(EditorInternal_ActionGroup.LABEL_ID_VCS);
+        LabelledAnchor action = new LabelledAnchor(EditorInternal_ActionGroup.LABEL_ID_workbench);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         EditorInternal_ActionGroup.this.addAction(action);
       }
       EditorInternal_ActionGroup.this.addSeparator();
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguagePaths_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorInternal_ActionGroup.LABEL_ID_languages);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorInternal_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -193,7 +193,7 @@ public class Inequalities {
     SNode result = null;
     EquationInfo info = null;
     if (!subTypes.isEmpty()) {
-      result = subTyping.createLCS(new LinkedList<SNode>(subTypes));
+      result = subTyping.createLCS(new LinkedList<SNode>(subTypes), myState.getTypeCheckingContext());
       InequalityBlock block = typesToBlocks.get(result);
       info = (block != null) ? block.getEquationInfo() : typesToBlocks.get(subTypes.iterator().next()).getEquationInfo();
     } else if (!superTypes.isEmpty()) {

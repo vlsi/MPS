@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +17,7 @@ public class TryCatchStatement extends Statement implements IContainsStatementLi
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BODY = "body";
   public static final String CATCH_CLAUSE = "catchClause";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TryCatchStatement(SNode node) {
     super(node);
@@ -71,6 +73,26 @@ public class TryCatchStatement extends Statement implements IContainsStatementLi
 
   public void insertCatchClause(CatchClause prev, CatchClause node) {
     this.insertChild(prev, TryCatchStatement.CATCH_CLAUSE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(TryCatchStatement._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TryCatchStatement._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TryCatchStatement._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(TryCatchStatement._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TryCatchStatement._$ATTRIBUTE, node);
   }
 
   public static TryCatchStatement newInstance(SModel sm, boolean init) {

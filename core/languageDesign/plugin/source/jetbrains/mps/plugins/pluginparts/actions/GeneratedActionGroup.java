@@ -22,12 +22,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
-import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.MPSActions;
-
-import java.util.Collections;
-import java.util.List;
 
 public abstract class GeneratedActionGroup extends BaseGroup {
   protected GeneratedActionGroup(String text, String id) {

@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.uiLanguage.structure.IComponentPart;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -23,6 +24,7 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
   public static final String CONTENT_PANE = "contentPane";
   public static final String BUTTON = "button";
   public static final String CONTENT = "content";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public IDEDialog(SNode node) {
     super(node);
@@ -122,6 +124,26 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
 
   public void insertContent(IComponentPart prev, IComponentPart node) {
     this.insertChild(prev, IDEDialog.CONTENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(IDEDialog._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, IDEDialog._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, IDEDialog._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(IDEDialog._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, IDEDialog._$ATTRIBUTE, node);
   }
 
   public static IDEDialog newInstance(SModel sm, boolean init) {

@@ -89,6 +89,8 @@
   <unitInfo fileName="DeleteStatement_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteStatement_Test$TestBody" />
   <unitInfo fileName="SelectTwoCells_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.SelectTwoCells_Test$TestBody" />
   <unitInfo fileName="RemoveNodeTest_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.RemoveNodeTest_Test$TestBody" />
+  <unitInfo fileName="UndoVariableNameCreationAtOnce_Test.java" startLine="20" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.editorTest.UndoVariableNameCreationAtOnce_Test$TestBody" />
+  <unitInfo fileName="UndoVariableNameChangeAtOnce_Test.java" startLine="20" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.editorTest.UndoVariableNameChangeAtOnce_Test$TestBody" />
   <unitInfo fileName="SimpleUndoTest_Test.java" startLine="20" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.editorTest.SimpleUndoTest_Test$TestBody" />
   <unitInfo fileName="NodeAfterSubstitutionHasNoErrorCell_Test.java" startLine="20" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.editorTest.NodeAfterSubstitutionHasNoErrorCell_Test$TestBody" />
   <unitInfo fileName="WrappingCellShouldntBeSelectable_Test.java" startLine="20" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.editorTest.WrappingCellShouldntBeSelectable_Test$TestBody" />
@@ -116,6 +118,7 @@
   <unitInfo fileName="PressingEndWithSelectedNode_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.PressingEndWithSelectedNode_Test$TestBody" />
   <unitInfo fileName="LT_DotExpression_with_UnaryMinus_Test.java" startLine="22" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_UnaryMinus_Test$TestBody" />
   <unitInfo fileName="DeleteOverridenMethodInBehavior_Test.java" startLine="22" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteOverridenMethodInBehavior_Test$TestBody" />
+  <unitInfo fileName="UndoSustitutionOfExpressionWithIntContant_Test.java" startLine="20" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.editorTest.UndoSustitutionOfExpressionWithIntContant_Test$TestBody" />
   <unitInfo fileName="Post_ThisSettingClassConcept_Test.java" startLine="22" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.Post_ThisSettingClassConcept_Test$TestBody" />
   <unitInfo fileName="CompexTransformTest_Test.java" startLine="22" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.CompexTransformTest_Test$TestBody" />
   <unitInfo fileName="TryingToLeftTransformNewExpression_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.TryingToLeftTransformNewExpression_Test$TestBody" />
@@ -216,6 +219,8 @@
   <unitInfo fileName="DeleteStatement_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteStatement_Test" />
   <unitInfo fileName="SelectTwoCells_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.SelectTwoCells_Test" />
   <unitInfo fileName="RemoveNodeTest_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.editorTest.RemoveNodeTest_Test" />
+  <unitInfo fileName="UndoVariableNameCreationAtOnce_Test.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.UndoVariableNameCreationAtOnce_Test" />
+  <unitInfo fileName="UndoVariableNameChangeAtOnce_Test.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.UndoVariableNameChangeAtOnce_Test" />
   <unitInfo fileName="SimpleUndoTest_Test.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.SimpleUndoTest_Test" />
   <unitInfo fileName="NodeAfterSubstitutionHasNoErrorCell_Test.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.NodeAfterSubstitutionHasNoErrorCell_Test" />
   <unitInfo fileName="WrappingCellShouldntBeSelectable_Test.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.editorTest.WrappingCellShouldntBeSelectable_Test" />
@@ -243,6 +248,7 @@
   <unitInfo fileName="PressingEndWithSelectedNode_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.PressingEndWithSelectedNode_Test" />
   <unitInfo fileName="LT_DotExpression_with_UnaryMinus_Test.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.LT_DotExpression_with_UnaryMinus_Test" />
   <unitInfo fileName="DeleteOverridenMethodInBehavior_Test.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteOverridenMethodInBehavior_Test" />
+  <unitInfo fileName="UndoSustitutionOfExpressionWithIntContant_Test.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.editorTest.UndoSustitutionOfExpressionWithIntContant_Test" />
   <unitInfo fileName="Post_ThisSettingClassConcept_Test.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.Post_ThisSettingClassConcept_Test" />
   <unitInfo fileName="CompexTransformTest_Test.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.CompexTransformTest_Test" />
   <unitInfo fileName="TryingToLeftTransformNewExpression_Test.java" startLine="15" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.TryingToLeftTransformNewExpression_Test" />

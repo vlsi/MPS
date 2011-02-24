@@ -7,8 +7,8 @@
   <unitInfo fileName="IndexedTupleLiteral.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" />
   <unitInfo fileName="IndexedTupleType.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" />
   <unitInfo fileName="NamedTupleLiteral.java" startLine="13" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral" />
-  <unitInfo fileName="NamedTupleComponentAccessOperation.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" />
   <unitInfo fileName="NamedTupleDeclaration.java" startLine="14" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration" />
-  <unitInfo fileName="NamedTupleComponentDeclaration.java" startLine="20" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration" />
+  <unitInfo fileName="NamedTupleComponentAccessOperation.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" />
+  <unitInfo fileName="NamedTupleComponentDeclaration.java" startLine="21" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration" />
 </debugInfo>
 

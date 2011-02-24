@@ -17,6 +17,7 @@ public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
     try {
       TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action");
       TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action");
+      TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowTypeSystemTrace_Action");
       TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action");
       TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowInferredNodeType_Action");
     } catch (Throwable t) {

@@ -5,6 +5,7 @@ package jetbrains.mps.gtext.structure;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +17,7 @@ public class GConditionalLine extends GItem implements GCompositeItem {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_SEPARATE = "isSeparate";
   public static final String ITEM = "item";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public GConditionalLine(SNode node) {
     super(node);
@@ -71,6 +73,26 @@ public class GConditionalLine extends GItem implements GCompositeItem {
 
   public void insertItem(GItem prev, GItem node) {
     this.insertChild(prev, GConditionalLine.ITEM, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(GConditionalLine._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, GConditionalLine._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, GConditionalLine._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(GConditionalLine._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GConditionalLine._$ATTRIBUTE, node);
   }
 
   public static GConditionalLine newInstance(SModel sm, boolean init) {

@@ -7,6 +7,9 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -23,6 +26,7 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
   public static final String JODA_PERIOD_TYPE = "jodaPeriodType";
   public static final String JODA_DURATION_TYPE = "jodaDurationType";
   public static final String PERIOD_FORMAT_METHOD = "periodFormatMethod";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public DateTimeProperty(SNode node) {
     super(node);
@@ -106,6 +110,26 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
 
   public void setPeriodFormatMethod(InstanceMethodDeclaration node) {
     super.setReferent(DateTimeProperty.PERIOD_FORMAT_METHOD, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(DateTimeProperty._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, DateTimeProperty._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, DateTimeProperty._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(DateTimeProperty._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DateTimeProperty._$ATTRIBUTE, node);
   }
 
   public static DateTimeProperty newInstance(SModel sm, boolean init) {

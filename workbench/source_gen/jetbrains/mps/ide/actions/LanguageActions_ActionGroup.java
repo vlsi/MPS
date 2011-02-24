@@ -14,6 +14,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_newGroup = ID + "newGroup";
   public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_generateModule = ID + "generateModule";
+  public static final String LABEL_ID_compileJava = ID + "compileJava";
   public static final String LABEL_ID_find_usages = ID + "find_usages";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_refactoring = ID + "refactoring";
@@ -21,6 +22,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_vcs = ID + "vcs";
   public static final String LABEL_ID_scripts = ID + "scripts";
   public static final String LABEL_ID_find_javastub_usages = ID + "find_javastub_usages";
+  public static final String LABEL_ID_properties = ID + "properties";
 
   public LanguageActions_ActionGroup() {
     super("LanguageActions", ID);
@@ -59,9 +61,12 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModules_Action");
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action");
       LanguageActions_ActionGroup.this.addSeparator();
-      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MakeModule_Action");
-      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RebuildModule_Action");
-      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanModule_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_compileJava);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageActions_ActionGroup.this.addAction(action);
+      }
       LanguageActions_ActionGroup.this.addSeparator();
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetModuleFolder_Action");
       LanguageActions_ActionGroup.this.addSeparator();
@@ -114,8 +119,12 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
         LanguageActions_ActionGroup.this.addAction(action);
       }
       LanguageActions_ActionGroup.this.addSeparator();
-      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguageHierarchy_Action");
-      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguageProperties_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_properties);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageActions_ActionGroup.this.addAction(action);
+      }
       LanguageActions_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

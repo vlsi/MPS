@@ -24,10 +24,11 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class RuleSet<T extends IApplicableToConcept> {
   Map<SNode, Set<T>> myRules = new HashMap<SNode, Set<T>>();
-  Map<SNode, Set<T>> myRulesCache = new HashMap<SNode, Set<T>>();
+  Map<SNode, Set<T>> myRulesCache = new ConcurrentHashMap<SNode, Set<T>>();
 
 
   public void addRuleSetItem(Set<T> rules) {

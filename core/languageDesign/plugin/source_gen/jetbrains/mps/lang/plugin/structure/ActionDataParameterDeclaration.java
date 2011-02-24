@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +21,7 @@ public class ActionDataParameterDeclaration extends BaseConcept implements IMemb
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_OPTIONAL = "isOptional";
   public static final String KEY = "key";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ActionDataParameterDeclaration(SNode node) {
     super(node);
@@ -69,6 +73,26 @@ public class ActionDataParameterDeclaration extends BaseConcept implements IMemb
 
   public void setKey(StaticFieldDeclaration node) {
     super.setReferent(ActionDataParameterDeclaration.KEY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ActionDataParameterDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ActionDataParameterDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ActionDataParameterDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ActionDataParameterDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ActionDataParameterDeclaration._$ATTRIBUTE, node);
   }
 
   public static ActionDataParameterDeclaration newInstance(SModel sm, boolean init) {

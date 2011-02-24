@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +21,7 @@ public class IfStatement extends Statement implements IContainsStatementList {
   public static final String IF_FALSE_STATEMENT = "ifFalseStatement";
   public static final String IF_TRUE = "ifTrue";
   public static final String ELSIF_CLAUSES = "elsifClauses";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public IfStatement(SNode node) {
     super(node);
@@ -107,6 +109,26 @@ public class IfStatement extends Statement implements IContainsStatementList {
 
   public void insertElsifClauses(ElsifClause prev, ElsifClause node) {
     this.insertChild(prev, IfStatement.ELSIF_CLAUSES, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(IfStatement._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, IfStatement._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, IfStatement._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(IfStatement._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, IfStatement._$ATTRIBUTE, node);
   }
 
   public static IfStatement newInstance(SModel sm, boolean init) {

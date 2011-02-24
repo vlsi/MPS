@@ -222,10 +222,6 @@
       <property name="name" nameId="tpck.1169194664001" value="BaseLanguageEditorPopup" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Groups" />
     </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1205247375460">
-      <property name="name" nameId="tpck.1169194664001" value="BaseLanguageEditorPopupInternal" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Groups" />
-    </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1205247740394">
       <property name="name" nameId="tpck.1169194664001" value="BaseLanguageNodeActionsInternal" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Groups" />
@@ -6147,12 +6143,6 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="6049742529940611647" resolveInfo="ShowMembers" />
       </node>
     </node>
-  </root>
-  <root id="1205247375460">
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1205247403415">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991232446" resolveInfo="EditorInternal" />
-    </node>
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148321744" />
   </root>
   <root id="1205247740394">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1205247793147">
@@ -16087,7 +16077,7 @@
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="8156047350005480586">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991232446" resolveInfo="EditorInternal" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.8156047350005480588" resolveInfo="printNodePosition" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.2662234144540708082" resolveInfo="languages" />
     </node>
   </root>
   <root id="7000507154716606309">

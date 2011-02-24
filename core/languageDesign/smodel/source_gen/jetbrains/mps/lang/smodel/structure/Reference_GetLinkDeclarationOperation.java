@@ -4,6 +4,9 @@ package jetbrains.mps.lang.smodel.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -13,6 +16,7 @@ public class Reference_GetLinkDeclarationOperation extends BaseConcept implement
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Reference_GetLinkDeclarationOperation(SNode node) {
     super(node);
@@ -40,6 +44,26 @@ public class Reference_GetLinkDeclarationOperation extends BaseConcept implement
 
   public void setVirtualPackage(String value) {
     this.setProperty(Reference_GetLinkDeclarationOperation.VIRTUAL_PACKAGE, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Reference_GetLinkDeclarationOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Reference_GetLinkDeclarationOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Reference_GetLinkDeclarationOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Reference_GetLinkDeclarationOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Reference_GetLinkDeclarationOperation._$ATTRIBUTE, node);
   }
 
   public static Reference_GetLinkDeclarationOperation newInstance(SModel sm, boolean init) {

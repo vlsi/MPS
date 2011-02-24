@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +24,7 @@ public class DependentComputationItem extends BaseConcept implements INamedConce
   public static final String FIND_MASTER_BLOCK = "findMasterBlock";
   public static final String IS_APPLICABLE_BLOCK = "isApplicableBlock";
   public static final String IS_BLOCKING_BLOCK = "isBlockingBlock";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public DependentComputationItem(SNode node) {
     super(node);
@@ -96,6 +100,26 @@ public class DependentComputationItem extends BaseConcept implements INamedConce
 
   public void setIsBlockingBlock(DependentComputationItem_BlockingBlock node) {
     super.setChild(DependentComputationItem.IS_BLOCKING_BLOCK, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(DependentComputationItem._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, DependentComputationItem._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, DependentComputationItem._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(DependentComputationItem._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DependentComputationItem._$ATTRIBUTE, node);
   }
 
   public static DependentComputationItem newInstance(SModel sm, boolean init) {

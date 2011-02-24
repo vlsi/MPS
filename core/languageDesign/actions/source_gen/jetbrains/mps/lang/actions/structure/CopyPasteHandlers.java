@@ -8,6 +8,7 @@ import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +21,7 @@ public class CopyPasteHandlers extends BaseConcept implements INamedConcept, ICo
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String POST_PROCESSOR = "postProcessor";
   public static final String PRE_PROCESSOR = "preProcessor";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public CopyPasteHandlers(SNode node) {
     super(node);
@@ -95,6 +97,26 @@ public class CopyPasteHandlers extends BaseConcept implements INamedConcept, ICo
 
   public void insertPreProcessor(CopyPreProcessor prev, CopyPreProcessor node) {
     this.insertChild(prev, CopyPasteHandlers.PRE_PROCESSOR, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(CopyPasteHandlers._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, CopyPasteHandlers._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, CopyPasteHandlers._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(CopyPasteHandlers._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CopyPasteHandlers._$ATTRIBUTE, node);
   }
 
   public static CopyPasteHandlers newInstance(SModel sm, boolean init) {

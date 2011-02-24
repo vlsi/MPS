@@ -6,6 +6,9 @@ import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.StatementList;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +21,7 @@ public class FindMatchStatement extends Statement implements RegexpUsingConstruc
   public static final String EXPR = "expr";
   public static final String BODY = "body";
   public static final String REGEXP = "regexp";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FindMatchStatement(SNode node) {
     super(node);
@@ -69,6 +73,26 @@ public class FindMatchStatement extends Statement implements RegexpUsingConstruc
 
   public void setRegexp(RegexpExpression node) {
     super.setChild(FindMatchStatement.REGEXP, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(FindMatchStatement._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FindMatchStatement._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FindMatchStatement._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(FindMatchStatement._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FindMatchStatement._$ATTRIBUTE, node);
   }
 
   public static FindMatchStatement newInstance(SModel sm, boolean init) {

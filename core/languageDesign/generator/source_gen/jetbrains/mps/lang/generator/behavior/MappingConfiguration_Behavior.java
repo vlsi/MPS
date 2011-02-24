@@ -7,9 +7,10 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class MappingConfiguration_Behavior {
@@ -33,9 +34,9 @@ public class MappingConfiguration_Behavior {
   }
 
   public static void call_addMember_3166264919334415805(SNode thisNode, SNode newMember) {
-    if ((SLinkOperations.getTarget(newMember, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) != null)) {
+    if ((AttributeOperations.getAttribute(newMember, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) != null)) {
       SNode ruleNode = SLinkOperations.addNewChild(thisNode, "rootMappingRule", "jetbrains.mps.lang.generator.structure.Root_MappingRule");
-      SLinkOperations.setTarget(ruleNode, "applicableConcept", SLinkOperations.getTarget(SLinkOperations.getTarget(newMember, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true), "applicableConcept", false), false);
+      SLinkOperations.setTarget(ruleNode, "applicableConcept", SLinkOperations.getTarget(AttributeOperations.getAttribute(newMember, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))), "applicableConcept", false), false);
       SLinkOperations.setTarget(ruleNode, "template", SNodeOperations.cast(newMember, "jetbrains.mps.lang.core.structure.INamedConcept"), false);
     } else if (SNodeOperations.isInstanceOf(newMember, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
       SNode mappingRule = SLinkOperations.addNewChild(thisNode, "reductionMappingRule", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");

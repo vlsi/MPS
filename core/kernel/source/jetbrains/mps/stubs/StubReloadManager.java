@@ -113,6 +113,8 @@ public class StubReloadManager implements ApplicationComponent {
         sd.getStubModelEntries().add(sme);
       }
 
+      d.init(sd);
+
       solution.setSolutionDescriptor(sd, false);
 
       StubPath fakePath = new StubPath("", d.getManager());

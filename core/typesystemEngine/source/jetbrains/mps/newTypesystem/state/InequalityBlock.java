@@ -128,16 +128,15 @@ public class InequalityBlock extends RelationBlock {
   private String getPresentationInternal(SNode left, SNode right) {
     String sign = myRelationKind.getRelationSign();
     if (lessThen) {
-      sign = " : " + sign;
+      sign = ":" + sign;
     } else {
-      sign = sign + " : ";
+      sign = sign + ":";
     }
-    return myRelationKind.getTitle() + " : " +
-      left + sign + right;
+    return left + sign + right;
   }
 
   @Override
-  public String getPresentation() {
+  public String getShortPresentation() {
     return getPresentationInternal(myLeftNode, myRightNode);
   }
 

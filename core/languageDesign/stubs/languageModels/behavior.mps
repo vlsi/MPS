@@ -55,10 +55,12 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5516999836374217714">
           <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="5516999836374217719">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="n3kn.StubsCreatorType" typeId="n3kn.5516999836374121342" id="5516999836374217721">
-              <node role="referenceAntiquotation$link_attribute$creatorDeclaration" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="5516999836374217722">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="5516999836374217722">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="creatorDeclaration" />
                 <node role="expression" roleId="tp3r.1196350785111" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="5516999836374217725" />
               </node>
-              <node role="referenceAntiquotation$link_attribute$declaration" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="5553449326502797854">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="5553449326502797854">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="declaration" />
                 <node role="expression" roleId="tp3r.1196350785111" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="5553449326502826649" />
               </node>
             </node>
@@ -81,7 +83,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5553449326502622491">
           <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="5553449326502797851">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="n3kn.ModelManagerType" typeId="n3kn.5553449326502623299" id="5553449326502797853">
-              <node role="referenceAntiquotation$link_attribute$declaration" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="5553449326502826650">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="5553449326502826650">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="declaration" />
                 <node role="expression" roleId="tp3r.1196350785111" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="5553449326502826652" />
               </node>
             </node>

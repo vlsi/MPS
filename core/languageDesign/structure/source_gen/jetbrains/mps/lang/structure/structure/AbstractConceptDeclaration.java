@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -24,6 +25,7 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
   public static final String CONCEPT_LINK = "conceptLink";
   public static final String CONCEPT_PROPERTY_DECLARATION = "conceptPropertyDeclaration";
   public static final String CONCEPT_LINK_DECLARATION = "conceptLinkDeclaration";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AbstractConceptDeclaration(SNode node) {
     super(node);
@@ -187,6 +189,26 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
 
   public void insertConceptLinkDeclaration(ConceptLinkDeclaration prev, ConceptLinkDeclaration node) {
     this.insertChild(prev, AbstractConceptDeclaration.CONCEPT_LINK_DECLARATION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AbstractConceptDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AbstractConceptDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AbstractConceptDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AbstractConceptDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AbstractConceptDeclaration._$ATTRIBUTE, node);
   }
 
   public static AbstractConceptDeclaration newInstance(SModel sm, boolean init) {

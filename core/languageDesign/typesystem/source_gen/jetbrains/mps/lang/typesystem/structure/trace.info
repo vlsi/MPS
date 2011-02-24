@@ -104,46 +104,46 @@
   <unitInfo fileName="RestrictionKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RestrictionKind_PropertySupport" />
   <unitInfo fileName="InequationPriority_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority_PropertySupport" />
   <unitInfo fileName="EquationDirection_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum_PropertySupport" />
-  <unitInfo fileName="NonTypesystemRule.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" />
   <unitInfo fileName="RuntimeErrorType.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RuntimeErrorType" />
-  <unitInfo fileName="SubtypingRule.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.SubtypingRule" />
   <unitInfo fileName="OverloadedOpTypeRule_OneTypeSpecified.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified" />
   <unitInfo fileName="GetOperationType.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.GetOperationType" />
-  <unitInfo fileName="WasSelectedNodeOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation" />
-  <unitInfo fileName="CaretPositionOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.CaretPositionOperation" />
   <unitInfo fileName="Dependency.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.Dependency" />
   <unitInfo fileName="ConceptClauseLinkInfo.java" startLine="13" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo" />
   <unitInfo fileName="ConceptTypeClause.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ConceptTypeClause" />
   <unitInfo fileName="RestrictionKind.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RestrictionKind" />
-  <unitInfo fileName="ComparisonRule.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ComparisonRule" />
-  <unitInfo fileName="InequationsGroup.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationsGroup" />
   <unitInfo fileName="SimpleRule_ProcedureCall.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.SimpleRule_ProcedureCall" />
-  <unitInfo fileName="ListVarDeclaration.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ListVarDeclaration" />
-  <unitInfo fileName="RuntimeListVariable.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RuntimeListVariable" />
-  <unitInfo fileName="RuntimeTypeVariable.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable" />
-  <unitInfo fileName="ApplicableNodeCondition.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition" />
   <unitInfo fileName="CoerceStatement.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.CoerceStatement" />
   <unitInfo fileName="EquationDirection_Enum.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.EquationDirection_Enum" />
   <unitInfo fileName="TypesystemIntention.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" />
   <unitInfo fileName="AbstractOverloadedOpsTypeRule.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule" />
   <unitInfo fileName="MatchStatement.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.MatchStatement" />
-  <unitInfo fileName="InequationReplacementRule.java" startLine="10" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationReplacementRule" />
-  <unitInfo fileName="TypeVarDeclaration.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" />
-  <unitInfo fileName="QuickFixField.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.QuickFixField" />
-  <unitInfo fileName="QuickFixArgument.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.QuickFixArgument" />
-  <unitInfo fileName="AbstractRule.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.AbstractRule" />
   <unitInfo fileName="InequationPriority.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationPriority" />
-  <unitInfo fileName="InferenceRule.java" startLine="12" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InferenceRule" />
+  <unitInfo fileName="NonTypesystemRule.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" />
+  <unitInfo fileName="SubtypingRule.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.SubtypingRule" />
+  <unitInfo fileName="WasSelectedNodeOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation" />
+  <unitInfo fileName="CaretPositionOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.CaretPositionOperation" />
   <unitInfo fileName="OverloadedOperatorTypeRule.java" startLine="11" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule" />
   <unitInfo fileName="AbstractEquationStatement.java" startLine="12" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" />
-  <unitInfo fileName="OverloadedOpRulesContainer.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer" />
-  <unitInfo fileName="ChildTypeRestriction.java" startLine="14" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction" />
-  <unitInfo fileName="InfoStatement.java" startLine="12" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InfoStatement" />
-  <unitInfo fileName="WarningStatement.java" startLine="12" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.WarningStatement" />
-  <unitInfo fileName="ReportErrorStatement.java" startLine="12" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" />
-  <unitInfo fileName="WhenConcreteStatement.java" startLine="14" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" />
-  <unitInfo fileName="DependentComputationItem.java" startLine="13" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.DependentComputationItem" />
-  <unitInfo fileName="TypesystemQuickFix.java" startLine="14" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" />
+  <unitInfo fileName="ComparisonRule.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ComparisonRule" />
+  <unitInfo fileName="InequationsGroup.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationsGroup" />
+  <unitInfo fileName="ListVarDeclaration.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ListVarDeclaration" />
+  <unitInfo fileName="RuntimeListVariable.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RuntimeListVariable" />
+  <unitInfo fileName="RuntimeTypeVariable.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable" />
+  <unitInfo fileName="ApplicableNodeCondition.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition" />
+  <unitInfo fileName="InequationReplacementRule.java" startLine="13" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InequationReplacementRule" />
+  <unitInfo fileName="TypeVarDeclaration.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" />
+  <unitInfo fileName="QuickFixField.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.QuickFixField" />
+  <unitInfo fileName="QuickFixArgument.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.QuickFixArgument" />
+  <unitInfo fileName="AbstractRule.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.AbstractRule" />
+  <unitInfo fileName="InferenceRule.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InferenceRule" />
+  <unitInfo fileName="OverloadedOpRulesContainer.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer" />
+  <unitInfo fileName="ChildTypeRestriction.java" startLine="17" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction" />
+  <unitInfo fileName="InfoStatement.java" startLine="15" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.InfoStatement" />
+  <unitInfo fileName="WarningStatement.java" startLine="15" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.WarningStatement" />
+  <unitInfo fileName="ReportErrorStatement.java" startLine="15" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" />
+  <unitInfo fileName="WhenConcreteStatement.java" startLine="17" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" />
+  <unitInfo fileName="DependentComputationItem.java" startLine="16" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.DependentComputationItem" />
+  <unitInfo fileName="TypesystemQuickFix.java" startLine="15" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" />
   <unitInfo fileName="AbstractInequationStatement.java" startLine="12" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement" />
 </debugInfo>
 

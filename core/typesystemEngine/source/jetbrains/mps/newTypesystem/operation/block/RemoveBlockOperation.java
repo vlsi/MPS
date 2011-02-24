@@ -30,7 +30,7 @@ public class RemoveBlockOperation extends AbstractBlockOperation {
 
   @Override
   public String getPresentation() {
-    String prefix = myBlock.getBlockKind() == BlockKind.WHEN_CONCRETE ? "Executed : [" : "Solved : [";
+    String prefix = myBlock.getBlockKind() == BlockKind.WHEN_CONCRETE ? "Executed : [" : "Solving : [";
     return prefix + myBlock.getPresentation() + "]";
   }
 

@@ -1146,7 +1146,7 @@
       <property name="name" nameId="tpck.1169194664001" value="vertical" />
       <property name="propertyType" value="boolean" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" />
-      <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239869892471">
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239869892471">
         <property name="comment" nameId="tpce.1225118933224" value="Use isVertical()" />
       </node>
     </node>
@@ -1154,7 +1154,7 @@
       <property name="name" nameId="tpck.1169194664001" value="gridLayout" />
       <property name="propertyType" value="boolean" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" />
-      <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239869894921">
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239869894921">
         <property name="comment" nameId="tpce.1225118933224" value="Use isVerticalGrid()" />
       </node>
     </node>
@@ -2016,13 +2016,13 @@
       <property name="name" nameId="tpck.1169194664001" value="vertical" />
       <property name="propertyType" value="boolean" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" />
-      <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239873962700" />
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239873962700" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1140524450555">
       <property name="name" nameId="tpck.1169194664001" value="gridLayout" />
       <property name="propertyType" value="boolean" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" />
-      <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239873964974" />
+      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239873964974" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1140524450556">
       <property name="name" nameId="tpck.1169194664001" value="usesBraces" />

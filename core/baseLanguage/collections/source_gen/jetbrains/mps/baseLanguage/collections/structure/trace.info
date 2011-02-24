@@ -121,38 +121,38 @@
   <unitInfo fileName="SequenceCreator.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" />
   <unitInfo fileName="MapInitializer.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.MapInitializer" />
   <unitInfo fileName="LinkedHashMapOrder_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapOrder_PropertySupport" />
-  <unitInfo fileName="PeekOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.PeekOperation" />
-  <unitInfo fileName="PushOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.PushOperation" />
-  <unitInfo fileName="PopOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.PopOperation" />
-  <unitInfo fileName="RemoveLastElementOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.RemoveLastElementOperation" />
-  <unitInfo fileName="RemoveFirstElementOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation" />
-  <unitInfo fileName="ClearAllElementsOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation" />
-  <unitInfo fileName="AddLastElementOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation" />
-  <unitInfo fileName="AddFirstElementOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation" />
-  <unitInfo fileName="ReverseOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ReverseOperation" />
-  <unitInfo fileName="RemoveAllElementsOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation" />
-  <unitInfo fileName="RemoveElementOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" />
-  <unitInfo fileName="GetElementOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" />
-  <unitInfo fileName="AddAllElementsOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" />
-  <unitInfo fileName="AddElementOperation.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" />
-  <unitInfo fileName="AbstractMappingOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AbstractMappingOperation" />
-  <unitInfo fileName="AsSequenceOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" />
-  <unitInfo fileName="AbstractEnumeratorOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation" />
-  <unitInfo fileName="AbstractIteratorOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AbstractIteratorOperation" />
-  <unitInfo fileName="MapOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.MapOperation" />
-  <unitInfo fileName="SequenceOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.SequenceOperation" />
   <unitInfo fileName="LinkedHashMapOrder.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapOrder" />
-  <unitInfo fileName="RemoveWhereOperation.java" startLine="11" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.RemoveWhereOperation" />
-  <unitInfo fileName="TailListOperation.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.TailListOperation" />
-  <unitInfo fileName="HeadListOperation.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.HeadListOperation" />
-  <unitInfo fileName="RemoveAtElementOperation.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation" />
-  <unitInfo fileName="ForEachVariable.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" />
   <unitInfo fileName="HashMapCreator.java" startLine="13" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" />
-  <unitInfo fileName="SubListOperation.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.SubListOperation" />
-  <unitInfo fileName="SetElementOperation.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.SetElementOperation" />
-  <unitInfo fileName="InsertElementOperation.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation" />
+  <unitInfo fileName="PeekOperation.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.PeekOperation" />
+  <unitInfo fileName="PushOperation.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.PushOperation" />
+  <unitInfo fileName="PopOperation.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.PopOperation" />
+  <unitInfo fileName="RemoveLastElementOperation.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.RemoveLastElementOperation" />
+  <unitInfo fileName="RemoveFirstElementOperation.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation" />
+  <unitInfo fileName="ClearAllElementsOperation.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation" />
+  <unitInfo fileName="AddLastElementOperation.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation" />
+  <unitInfo fileName="AddFirstElementOperation.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation" />
+  <unitInfo fileName="ReverseOperation.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ReverseOperation" />
+  <unitInfo fileName="RemoveAllElementsOperation.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation" />
+  <unitInfo fileName="RemoveElementOperation.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" />
+  <unitInfo fileName="GetElementOperation.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" />
+  <unitInfo fileName="AddAllElementsOperation.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" />
+  <unitInfo fileName="AddElementOperation.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" />
+  <unitInfo fileName="AbstractMappingOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AbstractMappingOperation" />
+  <unitInfo fileName="AsSequenceOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" />
+  <unitInfo fileName="AbstractEnumeratorOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation" />
+  <unitInfo fileName="AbstractIteratorOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AbstractIteratorOperation" />
+  <unitInfo fileName="MapOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.MapOperation" />
+  <unitInfo fileName="SequenceOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.SequenceOperation" />
   <unitInfo fileName="AbstractContainerCreator.java" startLine="15" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" />
-  <unitInfo fileName="CustomContainers.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.CustomContainers" />
-  <unitInfo fileName="CustomContainerDeclaration.java" startLine="17" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" />
+  <unitInfo fileName="RemoveWhereOperation.java" startLine="14" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.RemoveWhereOperation" />
+  <unitInfo fileName="TailListOperation.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.TailListOperation" />
+  <unitInfo fileName="HeadListOperation.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.HeadListOperation" />
+  <unitInfo fileName="RemoveAtElementOperation.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation" />
+  <unitInfo fileName="ForEachVariable.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" />
+  <unitInfo fileName="SubListOperation.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.SubListOperation" />
+  <unitInfo fileName="SetElementOperation.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.SetElementOperation" />
+  <unitInfo fileName="InsertElementOperation.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation" />
+  <unitInfo fileName="CustomContainers.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.CustomContainers" />
+  <unitInfo fileName="CustomContainerDeclaration.java" startLine="20" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" />
 </debugInfo>
 

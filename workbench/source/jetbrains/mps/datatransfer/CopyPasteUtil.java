@@ -18,6 +18,7 @@ package jetbrains.mps.datatransfer;
 import com.intellij.ide.CopyPasteManagerEx;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.structure.IMethodCall;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -140,7 +141,8 @@ public class CopyPasteUtil {
     List<SNode> children = sourceNode.getChildren();
     for (SNode sourceChild : children) {
       if (nodesAndAttributes != null) {
-        if (AttributesRolesUtil.isAttributeRole(sourceChild.getRole_())) {
+        //if (AttributesRolesUtil.isAttributeRole(sourceChild.getRole_())) {
+        if (AttributeOperations.isAttribute(sourceChild)) {
           Set<SNode> nodes = nodesAndAttributes.get(sourceNode);
           if (nodes != null && !nodes.contains(sourceChild)) {
             continue;

@@ -13,6 +13,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.stubs.StubLocation;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.stubs.util.PathItem;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.SNode;
@@ -24,6 +25,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.stubs.util.StubModelDescriptors;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelReference;
 import java.io.InputStream;
 import org.jdom.input.SAXBuilder;
@@ -31,12 +34,7 @@ import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class GWTModuleStubs extends BaseStubModelRootManager {
   public GWTModuleStubs() {
@@ -60,7 +58,7 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
 
   protected void updateModel(final StubLocation location, final SModel model) {
     String pkg = model.getSModelFqName().getLongName();
-    PathItem pi = PathItemsReloadableCache.getPathItem(location.getPath());
+    PathItem pi = GWTModulePathItem.getPathItem(location.getPath());
     List<Tuples._3<String, String, SNode>> modlst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.gwt.client.structure.GWTModule", null);
     for (String modres : ListSequence.fromList(pi.resources(pkg))) {
@@ -74,13 +72,14 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
       }
       ListSequence.fromList(modlst).addElement(MultiTuple.<String,String,SNode>from(pkg, modres, module));
     }
+    final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"));
     GWTModuleReader reader = new GWTModuleReader(new GWTModuleReader.Resolver() {
       public SModelReference stubModelReference(String pk) {
-        return GWTModuleStubs.this.javaStubRef(pk);
+        return descs.javaStubRef(pk);
       }
     }, new GWTModuleReader.Resolver() {
       public SModelReference stubModelReference(String pk) {
-        return GWTModuleStubs.this.smodelRefWithId(pk);
+        return descs.smodelRefWithId(pk);
       }
     });
     for (Tuples._3<String, String, SNode> modpair : ListSequence.fromList(modlst)) {
@@ -106,51 +105,14 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
-    Set<BaseStubModelDescriptor> result = SetSequence.fromSet(new HashSet<BaseStubModelDescriptor>());
-    GWTModuleStubs.this.collectDescriptors(GWTModuleStubs.this, location, result);
-    return result;
+    return new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt")).getDescriptors(GWTModuleStubs.this, location, new _FunctionTypes._return_P1_E0<PathItem, String>() {
+      public PathItem invoke(String path) {
+        return GWTModulePathItem.getPathItem(path);
+      }
+    });
   }
 
   protected String getSelfModuleId() {
     return "954c4d77-e24b-4e49-a5a5-5476c966c092";
-  }
-
-  private void collectDescriptors(IModelRootManager mrm, StubLocation loc, Set<BaseStubModelDescriptor> result) {
-    String pkg = loc.getPrefix();
-    PathItem pi = PathItemsReloadableCache.getPathItem(loc.getPath());
-    for (String subpkg : ListSequence.fromList(pi.subpackages(pkg))) {
-      if (ListSequence.fromList(pi.resources(subpkg)).isNotEmpty()) {
-        SModelReference smref = GWTModuleStubs.this.smodelRefWithId(subpkg);
-        SModelReference smref2 = GWTModuleStubs.this.smodelRefWithFqName(subpkg);
-        SModelDescriptor descById = SModelRepository.getInstance().getModelDescriptor(smref);
-        SModelDescriptor descByFqName = SModelRepository.getInstance().getModelDescriptor(smref2);
-        if (descById != null && descByFqName != null) {
-          SModelRepository.getInstance().addOwnerForDescriptor(descByFqName, loc.getModule());
-          SetSequence.fromSet(result).addElement(((BaseStubModelDescriptor) descByFqName));
-        } else {
-          BaseStubModelDescriptor desc = new BaseStubModelDescriptor(mrm, null, smref);
-          SetSequence.fromSet(result).addElement(desc);
-        }
-      }
-      GWTModuleStubs.this.collectDescriptors(mrm, new StubLocation(loc.getPath(), subpkg, loc.getModule()), result);
-    }
-  }
-
-  private SModelReference smodelRefWithId(String pkg) {
-    String stereo = SModelStereotype.getStubStereotypeForId("gwt");
-    SModelFqName fqname = new SModelFqName(pkg, stereo);
-    SModelId modelId = SModelId.foreign(stereo, pkg);
-    return new SModelReference(fqname, modelId);
-  }
-
-  private SModelReference smodelRefWithFqName(String pkg) {
-    return SModelReference.fromString(pkg + "@" + SModelStereotype.getStubStereotypeForId("gwt"));
-  }
-
-  private SModelReference javaStubRef(String pkg) {
-    String stereo = SModelStereotype.getStubStereotypeForId("java");
-    SModelFqName fqname = new SModelFqName(pkg, stereo);
-    SModelId modelId = SModelId.foreign(stereo, pkg);
-    return new SModelReference(fqname, modelId);
   }
 }

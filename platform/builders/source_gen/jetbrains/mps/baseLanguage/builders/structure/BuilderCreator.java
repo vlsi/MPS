@@ -6,6 +6,9 @@ import jetbrains.mps.baseLanguage.structure.AbstractCreator;
 import jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.StatementList;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class BuilderCreator extends AbstractCreator implements BuilderContainer,
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BUILDER = "builder";
   public static final String BODY = "body";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BuilderCreator(SNode node) {
     super(node);
@@ -60,6 +64,26 @@ public class BuilderCreator extends AbstractCreator implements BuilderContainer,
 
   public void setBody(StatementList node) {
     super.setChild(BuilderCreator.BODY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(BuilderCreator._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BuilderCreator._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BuilderCreator._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(BuilderCreator._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BuilderCreator._$ATTRIBUTE, node);
   }
 
   public static BuilderCreator newInstance(SModel sm, boolean init) {

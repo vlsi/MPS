@@ -250,10 +250,6 @@
 
   <project-components>
     <component>
-      <implementation-class>jetbrains.mps.lang.generator.plugin.debug.GenerationTracer</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager</implementation-class>
     </component>
 
@@ -313,11 +309,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.ide.classpath.ClassPathViewerTool</implementation-class>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.lang.generator.plugin.debug.GenerationTracerViewTool</implementation-class>
       <skipForDummyProject/>
     </component>
 

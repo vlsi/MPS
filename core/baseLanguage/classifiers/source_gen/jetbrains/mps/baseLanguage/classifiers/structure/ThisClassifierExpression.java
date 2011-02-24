@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.classifiers.structure;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.IThisExpression;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class ThisClassifierExpression extends Expression implements IThisExpress
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CLASSIFIER = "classifier";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ThisClassifierExpression(SNode node) {
     super(node);
@@ -50,6 +54,26 @@ public class ThisClassifierExpression extends Expression implements IThisExpress
 
   public void setClassifier(IClassifier node) {
     super.setReferent(ThisClassifierExpression.CLASSIFIER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ThisClassifierExpression._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ThisClassifierExpression._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ThisClassifierExpression._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ThisClassifierExpression._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ThisClassifierExpression._$ATTRIBUTE, node);
   }
 
   public static ThisClassifierExpression newInstance(SModel sm, boolean init) {

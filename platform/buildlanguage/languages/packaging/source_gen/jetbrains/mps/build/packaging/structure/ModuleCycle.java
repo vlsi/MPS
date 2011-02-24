@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class ModuleCycle extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String MODULE_REFERENCE = "moduleReference";
   public static final String DEPENDENCY = "dependency";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ModuleCycle(SNode node) {
     super(node);
@@ -94,6 +96,26 @@ public class ModuleCycle extends BaseConcept implements INamedConcept {
 
   public void insertDependency(ModuleCycleReference prev, ModuleCycleReference node) {
     this.insertChild(prev, ModuleCycle.DEPENDENCY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ModuleCycle._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ModuleCycle._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ModuleCycle._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ModuleCycle._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ModuleCycle._$ATTRIBUTE, node);
   }
 
   public static ModuleCycle newInstance(SModel sm, boolean init) {

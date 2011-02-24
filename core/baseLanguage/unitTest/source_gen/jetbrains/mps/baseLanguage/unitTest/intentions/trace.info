@@ -7,50 +7,50 @@
   <unitInfo fileName="AddRemoveMessage_Intention.java" startLine="12" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.intentions.AddRemoveMessage_Intention" />
   <unitInfo fileName="convert_test_case_to_unittest_case_Intention.java" startLine="25" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.intentions.convert_test_case_to_unittest_case_Intention" />
   <root nodeId="2230548360390192818">
-    <nodeInfo nodeId="2230548360390198539" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="45" startPosition="85" endLine="46" endPosition="38" />
-    <nodeInfo nodeId="2230548360390198543" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="56" startPosition="90" endLine="57" endPosition="363" />
-    <nodeInfo nodeId="1571838961922885080" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="60" startPosition="76" endLine="61" endPosition="129" />
-    <nodeInfo nodeId="1571838961922885087" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="61" startPosition="129" endLine="62" endPosition="91" />
-    <nodeInfo nodeId="1571838961922969825" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="62" startPosition="91" endLine="63" endPosition="99" />
-    <nodeInfo nodeId="1571838961922885104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="64" startPosition="321" endLine="65" endPosition="211" />
-    <nodeInfo nodeId="2230548360390286967" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="68" startPosition="72" endLine="69" endPosition="388" />
-    <nodeInfo nodeId="1571838961922885174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="70" startPosition="14" endLine="71" endPosition="126" />
-    <nodeInfo nodeId="1571838961922885224" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="74" startPosition="98" endLine="75" endPosition="129" />
-    <nodeInfo nodeId="1571838961922885172" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="70" startPosition="12" endLine="72" endPosition="7" />
-    <nodeInfo nodeId="1571838961922885131" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="63" startPosition="99" endLine="66" endPosition="5" />
-    <nodeInfo nodeId="1571838961922885211" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="73" startPosition="5" endLine="76" endPosition="5" />
-    <nodeInfo nodeId="2230548360390286819" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="67" startPosition="93" endLine="72" endPosition="7" />
-    <nodeInfo nodeId="2230548360390286806" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="66" startPosition="5" endLine="73" endPosition="5" />
+    <nodeInfo nodeId="2230548360390198539" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="45" startPosition="85" endLine="46" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2230548360390198543" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="56" startPosition="90" endLine="57" endPosition="363" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1571838961922885080" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="60" startPosition="76" endLine="61" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1571838961922885087" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="61" startPosition="129" endLine="62" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1571838961922969825" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="62" startPosition="91" endLine="63" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1571838961922885104" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="64" startPosition="321" endLine="65" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2230548360390286967" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="68" startPosition="72" endLine="69" endPosition="388" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1571838961922885174" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="70" startPosition="14" endLine="71" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1571838961922885224" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="74" startPosition="98" endLine="75" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1571838961922885172" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="70" startPosition="12" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1571838961922885131" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="63" startPosition="99" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1571838961922885211" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="73" startPosition="5" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2230548360390286819" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="67" startPosition="93" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2230548360390286806" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="66" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="2230548360390192820" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="45" startPosition="85" endLine="46" endPosition="38" />
     <scopeInfo nodeId="2230548360390198542" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="56" startPosition="90" endLine="57" endPosition="363" />
     <scopeInfo nodeId="1571838961922885132" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="64" startPosition="321" endLine="65" endPosition="211" />
     <scopeInfo nodeId="2230548360390286821" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="68" startPosition="72" endLine="69" endPosition="388" />
     <scopeInfo nodeId="1571838961922885173" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="70" startPosition="14" endLine="71" endPosition="126" />
     <scopeInfo nodeId="1571838961922885214" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="74" startPosition="98" endLine="75" endPosition="129" />
-    <scopeInfo nodeId="1571838961922885211" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="73" startPosition="5" endLine="76" endPosition="5" />
+    <scopeInfo nodeId="1571838961922885211" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="73" startPosition="5" endLine="76" endPosition="5" />
     <scopeInfo nodeId="2230548360390286809" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="67" startPosition="93" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="2230548360390286806" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="66" startPosition="5" endLine="73" endPosition="5" />
+    <scopeInfo nodeId="2230548360390286806" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="66" startPosition="5" endLine="73" endPosition="5" />
     <scopeInfo nodeId="2230548360390192822" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="60" startPosition="76" endLine="76" endPosition="5">
       <varInfo nodeId="1571838961922885081" varName="testCase" />
     </scopeInfo>
   </root>
   <root nodeId="7080278351417190887">
-    <nodeInfo nodeId="7080278351417190958" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddRemoveMessage_Intention.java" startLine="40" startPosition="113" endLine="41" endPosition="115" />
-    <nodeInfo nodeId="7080278351417190973" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddRemoveMessage_Intention.java" startLine="42" startPosition="12" endLine="43" endPosition="61" />
-    <nodeInfo nodeId="7080278351417190971" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="AddRemoveMessage_Intention.java" startLine="42" startPosition="10" endLine="44" endPosition="5" />
-    <nodeInfo nodeId="7080278351417190912" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AddRemoveMessage_Intention.java" startLine="32" startPosition="85" endLine="36" endPosition="6" />
-    <nodeInfo nodeId="7080278351417190939" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AddRemoveMessage_Intention.java" startLine="39" startPosition="76" endLine="44" endPosition="5" />
+    <nodeInfo nodeId="7080278351417190958" fileName="AddRemoveMessage_Intention.java" startLine="40" startPosition="113" endLine="41" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7080278351417190973" fileName="AddRemoveMessage_Intention.java" startLine="42" startPosition="12" endLine="43" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7080278351417190971" fileName="AddRemoveMessage_Intention.java" startLine="42" startPosition="10" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7080278351417190912" fileName="AddRemoveMessage_Intention.java" startLine="32" startPosition="85" endLine="36" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7080278351417190939" fileName="AddRemoveMessage_Intention.java" startLine="39" startPosition="76" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="7080278351417190941" fileName="AddRemoveMessage_Intention.java" startLine="40" startPosition="113" endLine="41" endPosition="115" />
     <scopeInfo nodeId="7080278351417190972" fileName="AddRemoveMessage_Intention.java" startLine="42" startPosition="12" endLine="43" endPosition="61" />
     <scopeInfo nodeId="7080278351417190889" fileName="AddRemoveMessage_Intention.java" startLine="32" startPosition="85" endLine="36" endPosition="6" />
     <scopeInfo nodeId="7080278351417190891" fileName="AddRemoveMessage_Intention.java" startLine="39" startPosition="76" endLine="44" endPosition="5" />
   </root>
   <root nodeId="7523560072226634120">
-    <nodeInfo nodeId="7523560072226634142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FlipAssertEquals_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="35" />
-    <nodeInfo nodeId="7523560072226634146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FlipAssertEquals_Intention.java" startLine="36" startPosition="76" endLine="37" endPosition="71" />
-    <nodeInfo nodeId="7523560072226634152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FlipAssertEquals_Intention.java" startLine="37" startPosition="71" endLine="38" endPosition="67" />
-    <nodeInfo nodeId="7523560072226634158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FlipAssertEquals_Intention.java" startLine="38" startPosition="67" endLine="39" endPosition="88" />
-    <nodeInfo nodeId="7523560072226634167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FlipAssertEquals_Intention.java" startLine="39" startPosition="88" endLine="40" endPosition="88" />
+    <nodeInfo nodeId="7523560072226634142" fileName="FlipAssertEquals_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7523560072226634146" fileName="FlipAssertEquals_Intention.java" startLine="36" startPosition="76" endLine="37" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7523560072226634152" fileName="FlipAssertEquals_Intention.java" startLine="37" startPosition="71" endLine="38" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7523560072226634158" fileName="FlipAssertEquals_Intention.java" startLine="38" startPosition="67" endLine="39" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7523560072226634167" fileName="FlipAssertEquals_Intention.java" startLine="39" startPosition="88" endLine="40" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="7523560072226634122" fileName="FlipAssertEquals_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="35" />
     <scopeInfo nodeId="7523560072226634124" fileName="FlipAssertEquals_Intention.java" startLine="36" startPosition="76" endLine="40" endPosition="88">
       <varInfo nodeId="7523560072226634147" varName="expected" />

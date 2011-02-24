@@ -16,12 +16,12 @@
 package jetbrains.mps.newTypesystem.state;
 
 public enum RelationKind {
-  WEAK(" <= ", "SubTyping", true, false, false),
-  STRONG(" <<= ", "SubTyping (strong)", false, false, false),
-  WEAK_CHECK(" <=' ", "Check-only subTyping", true, true, false),
-  STRONG_CHECK(" <<=' ", "Check-only subTyping (strong)", false, true, false),
-  WEAK_COMPARABLE(" ~ ", "Comparable", true, true, true),
-  STRONG_COMPARABLE(" ~~ ", "Comparable (strong)", false, true, true);
+  WEAK("<=", "SubTyping", true, false, false),
+  STRONG("<<=", "SubTyping (strong)", false, false, false),
+  WEAK_CHECK("<='", "Check-only subTyping", true, true, false),
+  STRONG_CHECK("<<='", "Check-only subTyping (strong)", false, true, false),
+  WEAK_COMPARABLE("~", "Comparable", true, true, true),
+  STRONG_COMPARABLE("~~", "Comparable (strong)", false, true, true);
 
   private String myRelationSign;
   private String myTitle;

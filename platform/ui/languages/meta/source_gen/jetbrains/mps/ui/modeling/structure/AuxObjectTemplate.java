@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +21,7 @@ public class AuxObjectTemplate extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RUNTIME_TYPE = "runtimeType";
   public static final String FACTORY = "factory";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AuxObjectTemplate(SNode node) {
     super(node);
@@ -69,6 +73,26 @@ public class AuxObjectTemplate extends BaseConcept implements INamedConcept {
 
   public void setFactory(AuxObjectFactory node) {
     super.setChild(AuxObjectTemplate.FACTORY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AuxObjectTemplate._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AuxObjectTemplate._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AuxObjectTemplate._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AuxObjectTemplate._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AuxObjectTemplate._$ATTRIBUTE, node);
   }
 
   public static AuxObjectTemplate newInstance(SModel sm, boolean init) {

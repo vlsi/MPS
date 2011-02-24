@@ -4,9 +4,9 @@
   <unitInfo fileName="ProjectDescriptionReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.ProjectDescriptionReference" />
   <unitInfo fileName="CycleReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.CycleReference" />
   <unitInfo fileName="PathHolder.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.PathHolder" />
-  <unitInfo fileName="Macros.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.Macros" />
-  <unitInfo fileName="ModuleDescription.java" startLine="14" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.ModuleDescription" />
-  <unitInfo fileName="Cycle.java" startLine="14" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.Cycle" />
-  <unitInfo fileName="ProjectDescription.java" startLine="14" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.ProjectDescription" />
+  <unitInfo fileName="Macros.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.Macros" />
+  <unitInfo fileName="ModuleDescription.java" startLine="15" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.ModuleDescription" />
+  <unitInfo fileName="Cycle.java" startLine="15" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.Cycle" />
+  <unitInfo fileName="ProjectDescription.java" startLine="15" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.build.dependency.structure.ProjectDescription" />
 </debugInfo>
 

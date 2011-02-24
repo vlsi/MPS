@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SearchScopeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -34,7 +35,7 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
   public ReferenceMacroContext(SNode node, SNode outputNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myOutputNode = outputNode;
-    myRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(macroNode.getRole_());
+    myRole = AttributeOperations.getLinkRole(macroNode);
   }
 
   public ReferenceMacroContext(SNode node, SNode outputNode, @NotNull SNodePointer macroNode, @NotNull String role, TemplateContext context, @NotNull ITemplateGenerator generator) {

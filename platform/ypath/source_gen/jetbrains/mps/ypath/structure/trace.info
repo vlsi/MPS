@@ -42,36 +42,36 @@
   <unitInfo fileName="VisitChildrenExpression.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ypath.structure.VisitChildrenExpression" />
   <unitInfo fileName="FragmentTypeEnum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ypath.structure.FragmentTypeEnum_PropertySupport" />
   <unitInfo fileName="TraversalAxis_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ypath.structure.TraversalAxis_PropertySupport" />
-  <unitInfo fileName="GFCardinalParamFun.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ypath.structure.GFCardinalParamFun" />
-  <unitInfo fileName="GFGetterParamFun.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ypath.structure.GFGetterParamFun" />
-  <unitInfo fileName="ParamFeatureSizeFun.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParamFeatureSizeFun" />
-  <unitInfo fileName="ParamFeatureSequenceFun.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParamFeatureSequenceFun" />
-  <unitInfo fileName="ParamFeatureGetFun.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParamFeatureGetFun" />
-  <unitInfo fileName="GFGetterFun.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ypath.structure.GFGetterFun" />
-  <unitInfo fileName="GFCardinalFun.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ypath.structure.GFCardinalFun" />
-  <unitInfo fileName="GeneratorFunctionParam.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ypath.structure.GeneratorFunctionParam" />
-  <unitInfo fileName="ExpressionFunctionParam.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ypath.structure.ExpressionFunctionParam" />
-  <unitInfo fileName="ToStringFun.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ypath.structure.ToStringFun" />
-  <unitInfo fileName="TargetTypeFun.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ypath.structure.TargetTypeFun" />
-  <unitInfo fileName="ParameterQueryFun.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParameterQueryFun" />
-  <unitInfo fileName="ParamFunctionParam.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParamFunctionParam" />
-  <unitInfo fileName="TreePathOperationExpression.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreePathOperationExpression" />
-  <unitInfo fileName="TreePathOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreePathOperation" />
   <unitInfo fileName="SwitchNodeKindStatement.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.ypath.structure.SwitchNodeKindStatement" />
   <unitInfo fileName="IterateOperation.java" startLine="10" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.ypath.structure.IterateOperation" />
-  <unitInfo fileName="TreePathType.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreePathType" />
-  <unitInfo fileName="ParameterWrapper.java" startLine="12" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParameterWrapper" />
-  <unitInfo fileName="TreeNodeKindProperty.java" startLine="12" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreeNodeKindProperty" />
-  <unitInfo fileName="TreeNodeKind.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreeNodeKind" />
+  <unitInfo fileName="GFCardinalParamFun.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ypath.structure.GFCardinalParamFun" />
+  <unitInfo fileName="GFGetterParamFun.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ypath.structure.GFGetterParamFun" />
+  <unitInfo fileName="ParamFeatureSizeFun.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParamFeatureSizeFun" />
+  <unitInfo fileName="ParamFeatureSequenceFun.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParamFeatureSequenceFun" />
+  <unitInfo fileName="ParamFeatureGetFun.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParamFeatureGetFun" />
+  <unitInfo fileName="GFGetterFun.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ypath.structure.GFGetterFun" />
+  <unitInfo fileName="GFCardinalFun.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ypath.structure.GFCardinalFun" />
+  <unitInfo fileName="GeneratorFunctionParam.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ypath.structure.GeneratorFunctionParam" />
+  <unitInfo fileName="ExpressionFunctionParam.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ypath.structure.ExpressionFunctionParam" />
+  <unitInfo fileName="ToStringFun.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ypath.structure.ToStringFun" />
+  <unitInfo fileName="TargetTypeFun.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ypath.structure.TargetTypeFun" />
+  <unitInfo fileName="ParameterQueryFun.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParameterQueryFun" />
+  <unitInfo fileName="ParamFunctionParam.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParamFunctionParam" />
+  <unitInfo fileName="TreePathOperationExpression.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreePathOperationExpression" />
+  <unitInfo fileName="TreePathOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreePathOperation" />
+  <unitInfo fileName="TreePathType.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreePathType" />
   <unitInfo fileName="TraversalAxis.java" startLine="9" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.ypath.structure.TraversalAxis" />
   <unitInfo fileName="FragmentTypeEnum.java" startLine="9" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ypath.structure.FragmentTypeEnum" />
-  <unitInfo fileName="GenericFeature.java" startLine="12" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ypath.structure.GenericFeature" />
-  <unitInfo fileName="TreePathCreator.java" startLine="13" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreePathCreator" />
-  <unitInfo fileName="SequenceFeature.java" startLine="12" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ypath.structure.SequenceFeature" />
-  <unitInfo fileName="ListFeature.java" startLine="12" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ypath.structure.ListFeature" />
-  <unitInfo fileName="ParamListFeature.java" startLine="11" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParamListFeature" />
-  <unitInfo fileName="TreePathAspect.java" startLine="16" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreePathAspect" />
-  <unitInfo fileName="GenericParamFeature.java" startLine="13" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.ypath.structure.GenericParamFeature" />
-  <unitInfo fileName="ParamSequenceFeature.java" startLine="11" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParamSequenceFeature" />
+  <unitInfo fileName="ParameterWrapper.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParameterWrapper" />
+  <unitInfo fileName="TreeNodeKindProperty.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreeNodeKindProperty" />
+  <unitInfo fileName="TreeNodeKind.java" startLine="15" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreeNodeKind" />
+  <unitInfo fileName="GenericFeature.java" startLine="15" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.ypath.structure.GenericFeature" />
+  <unitInfo fileName="TreePathCreator.java" startLine="14" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreePathCreator" />
+  <unitInfo fileName="SequenceFeature.java" startLine="15" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.ypath.structure.SequenceFeature" />
+  <unitInfo fileName="ListFeature.java" startLine="15" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.ypath.structure.ListFeature" />
+  <unitInfo fileName="ParamListFeature.java" startLine="14" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParamListFeature" />
+  <unitInfo fileName="TreePathAspect.java" startLine="17" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.ypath.structure.TreePathAspect" />
+  <unitInfo fileName="GenericParamFeature.java" startLine="16" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.ypath.structure.GenericParamFeature" />
+  <unitInfo fileName="ParamSequenceFeature.java" startLine="14" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.ypath.structure.ParamSequenceFeature" />
 </debugInfo>
 

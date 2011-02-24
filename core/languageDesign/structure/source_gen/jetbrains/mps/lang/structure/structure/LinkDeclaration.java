@@ -4,6 +4,9 @@ package jetbrains.mps.lang.structure.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +22,7 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
   public static final String SOURCE_CARDINALITY = "sourceCardinality";
   public static final String SPECIALIZED_LINK = "specializedLink";
   public static final String TARGET = "target";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public LinkDeclaration(SNode node) {
     super(node);
@@ -96,6 +100,26 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
 
   public void setTarget(AbstractConceptDeclaration node) {
     super.setReferent(LinkDeclaration.TARGET, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(LinkDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, LinkDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, LinkDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(LinkDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, LinkDeclaration._$ATTRIBUTE, node);
   }
 
   public static LinkDeclaration newInstance(SModel sm, boolean init) {

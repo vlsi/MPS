@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class ActionParameterReferenceOperation extends BaseConcept implements IM
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String MEMBER = "member";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ActionParameterReferenceOperation(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class ActionParameterReferenceOperation extends BaseConcept implements IM
 
   public void setParameterDeclaration(ActionParameterDeclaration node) {
     this.setMember(node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ActionParameterReferenceOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ActionParameterReferenceOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ActionParameterReferenceOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ActionParameterReferenceOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ActionParameterReferenceOperation._$ATTRIBUTE, node);
   }
 
   public static ActionParameterReferenceOperation newInstance(SModel sm, boolean init) {

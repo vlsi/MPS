@@ -18,7 +18,6 @@ package jetbrains.mps.workbench.actions.nodes;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.typesystem.structure.AbstractRule;
 import jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition;
 import jetbrains.mps.lang.typesystem.structure.InferenceRule;
@@ -42,7 +41,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GoToRulesHelper {
-  public static void go(Frame frame, EditorCell cell, IOperationContext context, AbstractConceptDeclaration concept) {
+
+  public static void go(Frame frame, EditorCell cell, IOperationContext context, SNode concept) {
     List<SNode> rules = getRules(concept, false);
 
     if (rules.size() == 1) {// single rule
@@ -61,7 +61,7 @@ public class GoToRulesHelper {
     m.show(frame, x, y);
   }
 
-  public static List<SNode> getRules(final AbstractConceptDeclaration conceptDeclaration, final boolean exactConcept) {
+  public static List<SNode> getRules(final SNode conceptDeclaration, final boolean exactConcept) {
     Language language = getDeclaringLanguage(conceptDeclaration);
     List<SNode> rules = new ArrayList<SNode>();
     List<AbstractRule> overriding = new ArrayList<AbstractRule>();
@@ -86,7 +86,7 @@ public class GoToRulesHelper {
       }
     }
     for (AbstractRule overridingRule : overriding) {
-      AbstractConceptDeclaration subConcept = getApplicableConcept(overridingRule.getApplicableNode());
+      SNode subConcept = getApplicableConcept(overridingRule.getApplicableNode());
       for (SNode ruleNode : new ArrayList<SNode>(rules)) {
         if (ruleNode.getAdapter().getClass() == overridingRule.getClass() && isApplicable(ruleNode, subConcept, true)) {
           rules.remove(ruleNode);
@@ -96,38 +96,38 @@ public class GoToRulesHelper {
     return rules;
   }
 
-  public static Language getDeclaringLanguage(AbstractConceptDeclaration concept) {
+  private static Language getDeclaringLanguage(SNode concept) {
     String languageFqName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(concept));
     if (languageFqName == null) return null;
     return MPSModuleRepository.getInstance().getLanguage(languageFqName);
   }
 
-  private static boolean isApplicable(SNode ruleNode, AbstractConceptDeclaration conceptDeclaration, boolean skipExact) {
+  private static boolean isApplicable(SNode ruleNode, SNode conceptDeclaration, boolean skipExact) {
     INodeAdapter object = BaseAdapter.fromNode(ruleNode);
     if (!(object instanceof AbstractRule)) return false;
     AbstractRule rule = (AbstractRule) object;
     if (conceptDeclaration == null) {
       return false;
     }
-    AbstractConceptDeclaration applicableConcept = getApplicableConcept(rule.getApplicableNode());
+    SNode applicableConcept = getApplicableConcept(rule.getApplicableNode());
     if (applicableConcept == null) {
       return false;
     }
     if (skipExact && conceptDeclaration == applicableConcept) {
       return false;
     }
-    return SModelUtil.isAssignableConcept(BaseAdapter.fromAdapter(conceptDeclaration), BaseAdapter.fromAdapter(applicableConcept));
+    return SModelUtil.isAssignableConcept(conceptDeclaration, applicableConcept);
   }
 
-  private static AbstractConceptDeclaration getApplicableConcept(ApplicableNodeCondition applicableNode) {
+  private static SNode getApplicableConcept(ApplicableNodeCondition applicableNode) {
     if (applicableNode instanceof jetbrains.mps.lang.typesystem.structure.ConceptReference) {
       jetbrains.mps.lang.typesystem.structure.ConceptReference conceptReference =
         (jetbrains.mps.lang.typesystem.structure.ConceptReference) applicableNode;
-      return conceptReference.getConcept();
+      return BaseAdapter.fromAdapter(conceptReference.getConcept());
     } else if (applicableNode instanceof PatternCondition) {
       BaseConcept baseConcept = ((PatternCondition) applicableNode).getPattern().getPatternNode();
       if (baseConcept == null) return null;
-      return (AbstractConceptDeclaration) BaseAdapter.fromNode(baseConcept.getNode().getConceptDeclarationNode());
+      return baseConcept.getNode().getConceptDeclarationNode();
     } else {
       return null;
     }

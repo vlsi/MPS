@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class InputRoot extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String USE_IN_TEST = "useInTest";
   public static final String INPUT_CHILD = "inputChild";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public InputRoot(SNode node) {
     super(node);
@@ -83,6 +85,26 @@ public class InputRoot extends BaseConcept implements INamedConcept {
 
   public void insertInputChild(InputNode prev, InputNode node) {
     this.insertChild(prev, InputRoot.INPUT_CHILD, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(InputRoot._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, InputRoot._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, InputRoot._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(InputRoot._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InputRoot._$ATTRIBUTE, node);
   }
 
   public static InputRoot newInstance(SModel sm, boolean init) {

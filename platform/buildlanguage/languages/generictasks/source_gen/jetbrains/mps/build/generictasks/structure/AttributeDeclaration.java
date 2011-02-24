@@ -9,6 +9,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildlanguage.structure.PropertyValueExpression;
 import jetbrains.mps.buildlanguage.structure.PropertyType;
 import jetbrains.mps.buildlanguage.structure.Enum;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -24,6 +27,7 @@ public class AttributeDeclaration extends BaseConcept implements INamedConcept, 
   public static final String DEFAULT = "default";
   public static final String ATTRIBUTE_TYPE = "attributeType";
   public static final String ENUM = "enum";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AttributeDeclaration(SNode node) {
     super(node);
@@ -99,6 +103,26 @@ public class AttributeDeclaration extends BaseConcept implements INamedConcept, 
 
   public void setEnum(Enum node) {
     super.setChild(AttributeDeclaration.ENUM, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AttributeDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AttributeDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AttributeDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AttributeDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AttributeDeclaration._$ATTRIBUTE, node);
   }
 
   public static AttributeDeclaration newInstance(SModel sm, boolean init) {

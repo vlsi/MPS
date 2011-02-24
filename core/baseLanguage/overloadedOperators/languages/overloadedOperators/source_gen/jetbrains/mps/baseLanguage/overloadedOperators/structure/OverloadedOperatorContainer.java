@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class OverloadedOperatorContainer extends BaseConcept implements INamedCo
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String OPERATORS = "operators";
   public static final String CUSTOM_OPERATORS = "customOperators";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public OverloadedOperatorContainer(SNode node) {
     super(node);
@@ -94,6 +96,26 @@ public class OverloadedOperatorContainer extends BaseConcept implements INamedCo
 
   public void insertCustomOperators(CustomOperatorDeclaration prev, CustomOperatorDeclaration node) {
     this.insertChild(prev, OverloadedOperatorContainer.CUSTOM_OPERATORS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(OverloadedOperatorContainer._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, OverloadedOperatorContainer._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, OverloadedOperatorContainer._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(OverloadedOperatorContainer._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, OverloadedOperatorContainer._$ATTRIBUTE, node);
   }
 
   public static OverloadedOperatorContainer newInstance(SModel sm, boolean init) {

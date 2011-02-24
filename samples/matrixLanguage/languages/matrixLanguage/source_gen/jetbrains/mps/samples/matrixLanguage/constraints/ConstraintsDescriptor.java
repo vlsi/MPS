@@ -13,7 +13,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new MatrixIndexVariableRefirence_DefaultSearchScope());
+    ListSequence.fromList(this.myConstraints).addElement(new MatrixIndexVariableReference_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

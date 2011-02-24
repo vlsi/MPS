@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="GenerationParameters_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.structure.GenerationParameters_Language" />
-  <unitInfo fileName="DefaultGeneratorParameter.java" startLine="14" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter" />
-  <unitInfo fileName="DefaultGeneratorParameterContainer.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameterContainer" />
+  <unitInfo fileName="DefaultGeneratorParameter.java" startLine="17" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter" />
+  <unitInfo fileName="DefaultGeneratorParameterContainer.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameterContainer" />
 </debugInfo>
 

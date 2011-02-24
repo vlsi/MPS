@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.math.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class VectorType extends MathPrimitiveType implements MatrixOrVectorType 
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String HEIGHT = "height";
   public static final String ELEMENT_TYPE = "elementType";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public VectorType(SNode node) {
     super(node);
@@ -58,6 +62,26 @@ public class VectorType extends MathPrimitiveType implements MatrixOrVectorType 
 
   public void setElementType(Type node) {
     super.setChild(VectorType.ELEMENT_TYPE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(VectorType._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, VectorType._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, VectorType._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(VectorType._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, VectorType._$ATTRIBUTE, node);
   }
 
   public static VectorType newInstance(SModel sm, boolean init) {

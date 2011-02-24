@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +22,7 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
   public static final String TASK_CALL = "taskCall";
   public static final String DEPENDS = "depends";
   public static final String PROPERTY_LIST = "propertyList";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TargetDeclaration(SNode node) {
     super(node);
@@ -132,6 +134,26 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
 
   public void insertPropertyList(AbstractPropertyDeclaration prev, AbstractPropertyDeclaration node) {
     this.insertChild(prev, TargetDeclaration.PROPERTY_LIST, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(TargetDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TargetDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TargetDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(TargetDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TargetDeclaration._$ATTRIBUTE, node);
   }
 
   public static TargetDeclaration newInstance(SModel sm, boolean init) {

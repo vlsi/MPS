@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.blTypes.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class BLArrayType extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String COMPONENT_TYPE = "componentType";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BLArrayType(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class BLArrayType extends BaseConcept implements INamedConcept {
 
   public void setComponentType(INamedConcept node) {
     super.setReferent(BLArrayType.COMPONENT_TYPE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(BLArrayType._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BLArrayType._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BLArrayType._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(BLArrayType._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BLArrayType._$ATTRIBUTE, node);
   }
 
   public static BLArrayType newInstance(SModel sm, boolean init) {

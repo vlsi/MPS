@@ -3,6 +3,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -113,11 +114,10 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   }
 
   public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    String attributeRole = propertyMacro.getRole_();
-    String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(attributeRole);
+    String propertyName = AttributeOperations.getPropertyName(propertyMacro);
 
     SNode function = RuleUtil.getPropertyMacro_ValueFunction(propertyMacro);
-    if (function == null) {
+    if (propertyName == null || function == null) {
       throw new GenerationFailureException("cannot evaluate property macro", inputNode, templateNode, propertyMacro);
     }
 

@@ -35,7 +35,6 @@ public class Build_ActionGroup extends GeneratedActionGroup {
         Build_ActionGroup.this.addAction(action);
       }
       Build_ActionGroup.this.addSeparator();
-      Build_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Options_Action");
       {
         LabelledAnchor action = new LabelledAnchor(Build_ActionGroup.LABEL_ID_options);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

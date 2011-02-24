@@ -6,6 +6,9 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.lang.core.structure.IMetaLevelChanger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class Quotation extends Expression implements IMetaLevelChanger {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String QUOTED_NODE = "quotedNode";
   public static final String MODEL_TO_CREATE = "modelToCreate";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Quotation(SNode node) {
     super(node);
@@ -60,6 +64,26 @@ public class Quotation extends Expression implements IMetaLevelChanger {
 
   public void setModelToCreate(Expression node) {
     super.setChild(Quotation.MODEL_TO_CREATE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Quotation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Quotation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Quotation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Quotation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Quotation._$ATTRIBUTE, node);
   }
 
   public static Quotation newInstance(SModel sm, boolean init) {

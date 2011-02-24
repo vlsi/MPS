@@ -8,8 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class AddMockAnnotation_Intention extends BaseIntention implements Intention {
   public AddMockAnnotation_Intention() {
@@ -48,7 +49,7 @@ public class AddMockAnnotation_Intention extends BaseIntention implements Intent
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.MockAnnotation", null);
-    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("mockAnnotation"), newAnnotation, true);
+    AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.MockAnnotation")), newAnnotation);
   }
 
   public String getLocationString() {

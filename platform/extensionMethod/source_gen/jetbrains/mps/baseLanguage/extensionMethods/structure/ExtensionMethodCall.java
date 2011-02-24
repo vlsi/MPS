@@ -8,8 +8,9 @@ import jetbrains.mps.baseLanguage.structure.IMethodCall;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.structure.Expression;
+import jetbrains.mps.lang.core.structure.Attribute;
 import java.util.List;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +21,7 @@ public class ExtensionMethodCall extends BaseConcept implements IOperation, IMet
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
 
   public ExtensionMethodCall(SNode node) {
@@ -64,6 +66,26 @@ public class ExtensionMethodCall extends BaseConcept implements IOperation, IMet
 
   public void setExtension(ExtensionMethodDeclaration node) {
     this.setBaseMethodDeclaration(node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ExtensionMethodCall._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ExtensionMethodCall._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ExtensionMethodCall._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ExtensionMethodCall._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ExtensionMethodCall._$ATTRIBUTE, node);
   }
 
   public int getActualArgumentsCount() {

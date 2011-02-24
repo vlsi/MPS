@@ -405,7 +405,7 @@
       <property name="value" nameId="tpce.1105725733873" value="resolve info" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
-    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="6911933836258445303">
+    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="6911933836258445303">
       <property name="comment" nameId="tpce.1225118933224" value="replaced by ReferenceAppendPart" />
     </node>
   </root>

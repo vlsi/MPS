@@ -4,7 +4,7 @@
   <unitInfo fileName="PrintStatement_Editor.java" startLine="24" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.editor.PrintStatement_Editor" />
   <unitInfo fileName="LogStatement_Editor.java" startLine="24" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.baseLanguage.logging.editor.LogStatement_Editor" />
   <root nodeId="1167245582276">
-    <nodeInfo nodeId="1167245583622" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LogStatement_Editor.java" startLine="180" startPosition="111" endLine="181" endPosition="64" />
+    <nodeInfo nodeId="1167245583622" fileName="LogStatement_Editor.java" startLine="180" startPosition="111" endLine="181" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1167245583621" fileName="LogStatement_Editor.java" startLine="180" startPosition="111" endLine="181" endPosition="64" />
   </root>
 </debugInfo>

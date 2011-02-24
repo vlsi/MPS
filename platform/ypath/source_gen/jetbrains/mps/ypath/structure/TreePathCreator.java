@@ -6,6 +6,7 @@ import jetbrains.mps.baseLanguage.structure.AbstractCreator;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +21,7 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
   public static final String PARENT_BLOCK = "parentBlock";
   public static final String CHILDREN_BLOCK = "childrenBlock";
   public static final String FEATURES = "features";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TreePathCreator(SNode node) {
     super(node);
@@ -99,6 +101,26 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
 
   public void insertFeatures(IFeature prev, IFeature node) {
     this.insertChild(prev, TreePathCreator.FEATURES, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(TreePathCreator._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TreePathCreator._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TreePathCreator._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(TreePathCreator._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TreePathCreator._$ATTRIBUTE, node);
   }
 
   public static TreePathCreator newInstance(SModel sm, boolean init) {

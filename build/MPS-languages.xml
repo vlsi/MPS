@@ -146,7 +146,6 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.unitTest.lib">
-    <mkdir dir="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.lib.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/unitTest/solutions/lib/jetbrains.mps.baseLnaguage.unitTest.lib.msd" prefix="module" />
       <zipfileset dir="core/baseLanguage/unitTest/solutions/lib" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
@@ -158,7 +157,6 @@
       <zipfileset file="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
       <zipfileset file="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
       <zipfileset file="core/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-      <zipfileset dir="core/baseLanguage/unitTest/solutions/lib/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.tuples">
@@ -375,8 +373,8 @@
       <fileset dir="core/languageDesign/smodel/classes" />
     </jar>
   </target>
-  <target name="pack.runtime">
-    <jar destfile="${deploy.dir}/MPS/core/languageDesign/runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+  <target name="pack.jetbrains.mps.runtime">
+    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/kernel/smodelRuntime/smodelRuntime.msd" prefix="module" />
       <zipfileset dir="core/kernel/smodelRuntime" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
@@ -562,6 +560,14 @@
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.smodel.resources.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/kernel/resources/jetbrains.mps.smodel.resources.msd" prefix="module" />
       <zipfileset dir="core/kernel/resources" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/kernel/classes" />
+    </jar>
+  </target>
+  <target name="pack.stubUtils">
+    <mkdir dir="core/kernel/classes" />
+    <jar destfile="${deploy.dir}/MPS/core/stubUtils.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/kernel/stubUtils/stubUtils.msd" prefix="module" />
+      <zipfileset dir="core/kernel/stubUtils" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
       <zipfileset dir="core/kernel/classes" />
     </jar>
   </target>

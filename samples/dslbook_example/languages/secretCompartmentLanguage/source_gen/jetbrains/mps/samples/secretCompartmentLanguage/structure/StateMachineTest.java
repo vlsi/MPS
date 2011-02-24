@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class StateMachineTest extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String STATE_MACHINE = "stateMachine";
   public static final String TEST_METHOD = "testMethod";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public StateMachineTest(SNode node) {
     super(node);
@@ -82,6 +84,26 @@ public class StateMachineTest extends BaseConcept implements INamedConcept {
 
   public void insertTestMethod(StateMachineTestMethod prev, StateMachineTestMethod node) {
     this.insertChild(prev, StateMachineTest.TEST_METHOD, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(StateMachineTest._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, StateMachineTest._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, StateMachineTest._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(StateMachineTest._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, StateMachineTest._$ATTRIBUTE, node);
   }
 
   public static StateMachineTest newInstance(SModel sm, boolean init) {

@@ -19,6 +19,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
@@ -499,7 +500,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private SNode replaceWithDefault() {
     EditorContext editorContext = getEditorContext();
     SNode node = getSNode();
-    while (node.isAttribute()) {
+    while (AttributeOperations.isAttribute(node)) {
       node = node.getParent();
     }
     LinkDeclaration link = (LinkDeclaration) BaseAdapter.fromNode(node.getParent().getLinkDeclaration(node.getRole_()));

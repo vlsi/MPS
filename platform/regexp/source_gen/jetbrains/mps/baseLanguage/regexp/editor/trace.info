@@ -112,73 +112,73 @@
   <unitInfo fileName="InlineRegexpExpression_Editor.java" startLine="30" startPosition="0" endLine="401" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_Editor" />
   <unitInfo fileName="ReplaceRegexpOperation_Editor.java" startLine="38" startPosition="0" endLine="596" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_Editor" />
   <root nodeId="1174483140444">
-    <nodeInfo nodeId="4759120547781170167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="RegexpDeclaration_Editor.java" startLine="151" startPosition="31" endLine="155" endPosition="10" />
+    <nodeInfo nodeId="4759120547781170167" fileName="RegexpDeclaration_Editor.java" startLine="151" startPosition="31" endLine="155" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="4759120547781170138" fileName="RegexpDeclaration_Editor.java" startLine="151" startPosition="31" endLine="155" endPosition="10" />
   </root>
   <root nodeId="1174491183609">
-    <nodeInfo nodeId="8786899561264147015" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ParensRegexp_Editor.java" startLine="84" startPosition="105" endLine="85" endPosition="71" />
-    <nodeInfo nodeId="8786899561264147022" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ParensRegexp_Editor.java" startLine="85" startPosition="71" endLine="86" endPosition="158" />
-    <nodeInfo nodeId="8786899561264147050" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ParensRegexp_Editor.java" startLine="86" startPosition="158" endLine="87" endPosition="159" />
-    <nodeInfo nodeId="8786899561264147068" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ParensRegexp_Editor.java" startLine="87" startPosition="159" endLine="88" endPosition="158" />
-    <nodeInfo nodeId="8786899561264147086" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ParensRegexp_Editor.java" startLine="88" startPosition="158" endLine="89" endPosition="159" />
-    <nodeInfo nodeId="8786899561264147027" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ParensRegexp_Editor.java" startLine="89" startPosition="159" endLine="90" endPosition="152" />
-    <nodeInfo nodeId="8786899561264147032" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ParensRegexp_Editor.java" startLine="90" startPosition="152" endLine="91" endPosition="17" />
-    <nodeInfo nodeId="8786899561264147036" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ParensRegexp_Editor.java" startLine="98" startPosition="144" endLine="99" endPosition="94" />
+    <nodeInfo nodeId="8786899561264147015" fileName="ParensRegexp_Editor.java" startLine="84" startPosition="105" endLine="85" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8786899561264147022" fileName="ParensRegexp_Editor.java" startLine="85" startPosition="71" endLine="86" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8786899561264147050" fileName="ParensRegexp_Editor.java" startLine="86" startPosition="158" endLine="87" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8786899561264147068" fileName="ParensRegexp_Editor.java" startLine="87" startPosition="159" endLine="88" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8786899561264147086" fileName="ParensRegexp_Editor.java" startLine="88" startPosition="158" endLine="89" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8786899561264147027" fileName="ParensRegexp_Editor.java" startLine="89" startPosition="159" endLine="90" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8786899561264147032" fileName="ParensRegexp_Editor.java" startLine="90" startPosition="152" endLine="91" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8786899561264147036" fileName="ParensRegexp_Editor.java" startLine="98" startPosition="144" endLine="99" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8786899561264147035" fileName="ParensRegexp_Editor.java" startLine="98" startPosition="144" endLine="99" endPosition="94" />
     <scopeInfo nodeId="8786899561264147014" fileName="ParensRegexp_Editor.java" startLine="84" startPosition="105" endLine="91" endPosition="17">
       <varInfo nodeId="8786899561264147016" varName="res" />
     </scopeInfo>
   </root>
   <root nodeId="1174510563589">
-    <nodeInfo nodeId="1175159234861" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InlineRegexpExpression_Editor.java" startLine="389" startPosition="111" endLine="390" endPosition="61" />
-    <nodeInfo nodeId="1175159195984" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InlineRegexpExpression_Editor.java" startLine="393" startPosition="111" endLine="394" endPosition="58" />
-    <nodeInfo nodeId="1175159221384" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InlineRegexpExpression_Editor.java" startLine="397" startPosition="111" endLine="398" endPosition="67" />
-    <nodeInfo nodeId="7048923897762548600" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InlineRegexpExpression_Editor.java" startLine="287" startPosition="31" endLine="291" endPosition="10" />
+    <nodeInfo nodeId="1175159234861" fileName="InlineRegexpExpression_Editor.java" startLine="389" startPosition="111" endLine="390" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1175159195984" fileName="InlineRegexpExpression_Editor.java" startLine="393" startPosition="111" endLine="394" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1175159221384" fileName="InlineRegexpExpression_Editor.java" startLine="397" startPosition="111" endLine="398" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7048923897762548600" fileName="InlineRegexpExpression_Editor.java" startLine="287" startPosition="31" endLine="291" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1175159234063" fileName="InlineRegexpExpression_Editor.java" startLine="389" startPosition="111" endLine="390" endPosition="61" />
     <scopeInfo nodeId="1175159195327" fileName="InlineRegexpExpression_Editor.java" startLine="393" startPosition="111" endLine="394" endPosition="58" />
     <scopeInfo nodeId="1175159220383" fileName="InlineRegexpExpression_Editor.java" startLine="397" startPosition="111" endLine="398" endPosition="67" />
     <scopeInfo nodeId="7048923897762548599" fileName="InlineRegexpExpression_Editor.java" startLine="287" startPosition="31" endLine="291" endPosition="10" />
   </root>
   <root nodeId="1174564100658">
-    <nodeInfo nodeId="8786899561264252764" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MatchParensRegexp_Editor.java" startLine="125" startPosition="105" endLine="126" endPosition="71" />
-    <nodeInfo nodeId="8786899561264252771" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MatchParensRegexp_Editor.java" startLine="126" startPosition="71" endLine="127" endPosition="158" />
-    <nodeInfo nodeId="8786899561264252776" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MatchParensRegexp_Editor.java" startLine="127" startPosition="158" endLine="128" endPosition="159" />
-    <nodeInfo nodeId="8786899561264252781" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MatchParensRegexp_Editor.java" startLine="128" startPosition="159" endLine="129" endPosition="158" />
-    <nodeInfo nodeId="8786899561264252786" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MatchParensRegexp_Editor.java" startLine="129" startPosition="158" endLine="130" endPosition="159" />
-    <nodeInfo nodeId="8786899561264252791" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MatchParensRegexp_Editor.java" startLine="130" startPosition="159" endLine="131" endPosition="147" />
-    <nodeInfo nodeId="8786899561264252796" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MatchParensRegexp_Editor.java" startLine="131" startPosition="147" endLine="132" endPosition="17" />
-    <nodeInfo nodeId="8786899561264252800" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MatchParensRegexp_Editor.java" startLine="139" startPosition="144" endLine="140" endPosition="94" />
+    <nodeInfo nodeId="8786899561264252764" fileName="MatchParensRegexp_Editor.java" startLine="125" startPosition="105" endLine="126" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8786899561264252771" fileName="MatchParensRegexp_Editor.java" startLine="126" startPosition="71" endLine="127" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8786899561264252776" fileName="MatchParensRegexp_Editor.java" startLine="127" startPosition="158" endLine="128" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8786899561264252781" fileName="MatchParensRegexp_Editor.java" startLine="128" startPosition="159" endLine="129" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8786899561264252786" fileName="MatchParensRegexp_Editor.java" startLine="129" startPosition="158" endLine="130" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8786899561264252791" fileName="MatchParensRegexp_Editor.java" startLine="130" startPosition="159" endLine="131" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8786899561264252796" fileName="MatchParensRegexp_Editor.java" startLine="131" startPosition="147" endLine="132" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8786899561264252800" fileName="MatchParensRegexp_Editor.java" startLine="139" startPosition="144" endLine="140" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8786899561264252799" fileName="MatchParensRegexp_Editor.java" startLine="139" startPosition="144" endLine="140" endPosition="94" />
     <scopeInfo nodeId="8786899561264252763" fileName="MatchParensRegexp_Editor.java" startLine="125" startPosition="105" endLine="132" endPosition="17">
       <varInfo nodeId="8786899561264252765" varName="res" />
     </scopeInfo>
   </root>
   <root nodeId="1174900297678">
-    <nodeInfo nodeId="1353467374623956792" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnaryRegexp_Editor.java" startLine="108" startPosition="111" endLine="109" endPosition="77" />
-    <nodeInfo nodeId="1353467374623956732" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnaryRegexp_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="77" />
+    <nodeInfo nodeId="1353467374623956792" fileName="UnaryRegexp_Editor.java" startLine="108" startPosition="111" endLine="109" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1353467374623956732" fileName="UnaryRegexp_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1353467374623956791" fileName="UnaryRegexp_Editor.java" startLine="108" startPosition="111" endLine="109" endPosition="77" />
     <scopeInfo nodeId="1353467374623956731" fileName="UnaryRegexp_Editor.java" startLine="112" startPosition="111" endLine="113" endPosition="77" />
   </root>
   <root nodeId="1174900929182">
-    <nodeInfo nodeId="1174900973562" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BinaryRegexp_Left_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="95" />
+    <nodeInfo nodeId="1174900973562" fileName="BinaryRegexp_Left_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1174900949529" fileName="BinaryRegexp_Left_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="95" />
   </root>
   <root nodeId="1174900996306">
-    <nodeInfo nodeId="1174901008851" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BinaryRegexp_Right_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="94" />
+    <nodeInfo nodeId="1174901008851" fileName="BinaryRegexp_Right_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1174901008850" fileName="BinaryRegexp_Right_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="94" />
   </root>
   <root nodeId="1174901330112">
-    <nodeInfo nodeId="5752270015879341108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnaryRegexp_Regexp_actions.java" startLine="32" startPosition="75" endLine="33" endPosition="65" />
-    <nodeInfo nodeId="1174901353308" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnaryRegexp_Regexp_actions.java" startLine="33" startPosition="65" endLine="34" endPosition="96" />
-    <nodeInfo nodeId="5752270015879787943" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="UnaryRegexp_Regexp_actions.java" startLine="34" startPosition="96" endLine="35" endPosition="0" />
-    <nodeInfo nodeId="5752270015879787897" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnaryRegexp_Regexp_actions.java" startLine="35" startPosition="0" endLine="36" endPosition="34" />
-    <nodeInfo nodeId="5752270015879787901" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnaryRegexp_Regexp_actions.java" startLine="36" startPosition="34" endLine="37" endPosition="70" />
-    <nodeInfo nodeId="5752270015879787907" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnaryRegexp_Regexp_actions.java" startLine="37" startPosition="70" endLine="38" endPosition="48" />
-    <nodeInfo nodeId="5752270015879787919" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnaryRegexp_Regexp_actions.java" startLine="39" startPosition="25" endLine="40" endPosition="74" />
-    <nodeInfo nodeId="5752270015879787926" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnaryRegexp_Regexp_actions.java" startLine="40" startPosition="74" endLine="41" endPosition="41" />
-    <nodeInfo nodeId="5752270015879787933" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnaryRegexp_Regexp_actions.java" startLine="42" startPosition="51" endLine="43" endPosition="46" />
-    <nodeInfo nodeId="5752270015879787931" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="UnaryRegexp_Regexp_actions.java" startLine="41" startPosition="41" endLine="44" endPosition="9" />
-    <nodeInfo nodeId="5752270015879787914" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="UnaryRegexp_Regexp_actions.java" startLine="38" startPosition="48" endLine="45" endPosition="7" />
+    <nodeInfo nodeId="5752270015879341108" fileName="UnaryRegexp_Regexp_actions.java" startLine="32" startPosition="75" endLine="33" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1174901353308" fileName="UnaryRegexp_Regexp_actions.java" startLine="33" startPosition="65" endLine="34" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5752270015879787943" fileName="UnaryRegexp_Regexp_actions.java" startLine="34" startPosition="96" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5752270015879787897" fileName="UnaryRegexp_Regexp_actions.java" startLine="35" startPosition="0" endLine="36" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5752270015879787901" fileName="UnaryRegexp_Regexp_actions.java" startLine="36" startPosition="34" endLine="37" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5752270015879787907" fileName="UnaryRegexp_Regexp_actions.java" startLine="37" startPosition="70" endLine="38" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5752270015879787919" fileName="UnaryRegexp_Regexp_actions.java" startLine="39" startPosition="25" endLine="40" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5752270015879787926" fileName="UnaryRegexp_Regexp_actions.java" startLine="40" startPosition="74" endLine="41" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5752270015879787933" fileName="UnaryRegexp_Regexp_actions.java" startLine="42" startPosition="51" endLine="43" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5752270015879787931" fileName="UnaryRegexp_Regexp_actions.java" startLine="41" startPosition="41" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5752270015879787914" fileName="UnaryRegexp_Regexp_actions.java" startLine="38" startPosition="48" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="5752270015879787932" fileName="UnaryRegexp_Regexp_actions.java" startLine="42" startPosition="51" endLine="43" endPosition="46" />
     <scopeInfo nodeId="5752270015879787918" fileName="UnaryRegexp_Regexp_actions.java" startLine="39" startPosition="25" endLine="44" endPosition="9">
       <varInfo nodeId="5752270015879787920" varName="lastLeaf" />
@@ -190,17 +190,17 @@
     </scopeInfo>
   </root>
   <root nodeId="1174902509875">
-    <nodeInfo nodeId="5752270015879908191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ParensRegexp_Actions.java" startLine="32" startPosition="75" endLine="33" endPosition="63" />
-    <nodeInfo nodeId="1174902534302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ParensRegexp_Actions.java" startLine="33" startPosition="63" endLine="34" endPosition="94" />
-    <nodeInfo nodeId="5752270015879908201" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="ParensRegexp_Actions.java" startLine="34" startPosition="94" endLine="35" endPosition="0" />
-    <nodeInfo nodeId="5752270015879908203" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ParensRegexp_Actions.java" startLine="35" startPosition="0" endLine="36" endPosition="34" />
-    <nodeInfo nodeId="5752270015879908207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ParensRegexp_Actions.java" startLine="36" startPosition="34" endLine="37" endPosition="70" />
-    <nodeInfo nodeId="5752270015879908213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ParensRegexp_Actions.java" startLine="37" startPosition="70" endLine="38" endPosition="48" />
-    <nodeInfo nodeId="5752270015879908225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ParensRegexp_Actions.java" startLine="39" startPosition="25" endLine="40" endPosition="74" />
-    <nodeInfo nodeId="5752270015879908232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ParensRegexp_Actions.java" startLine="40" startPosition="74" endLine="41" endPosition="41" />
-    <nodeInfo nodeId="5752270015879908239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ParensRegexp_Actions.java" startLine="42" startPosition="51" endLine="43" endPosition="46" />
-    <nodeInfo nodeId="5752270015879908237" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ParensRegexp_Actions.java" startLine="41" startPosition="41" endLine="44" endPosition="9" />
-    <nodeInfo nodeId="5752270015879908220" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ParensRegexp_Actions.java" startLine="38" startPosition="48" endLine="45" endPosition="7" />
+    <nodeInfo nodeId="5752270015879908191" fileName="ParensRegexp_Actions.java" startLine="32" startPosition="75" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1174902534302" fileName="ParensRegexp_Actions.java" startLine="33" startPosition="63" endLine="34" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5752270015879908201" fileName="ParensRegexp_Actions.java" startLine="34" startPosition="94" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5752270015879908203" fileName="ParensRegexp_Actions.java" startLine="35" startPosition="0" endLine="36" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5752270015879908207" fileName="ParensRegexp_Actions.java" startLine="36" startPosition="34" endLine="37" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5752270015879908213" fileName="ParensRegexp_Actions.java" startLine="37" startPosition="70" endLine="38" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5752270015879908225" fileName="ParensRegexp_Actions.java" startLine="39" startPosition="25" endLine="40" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5752270015879908232" fileName="ParensRegexp_Actions.java" startLine="40" startPosition="74" endLine="41" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5752270015879908239" fileName="ParensRegexp_Actions.java" startLine="42" startPosition="51" endLine="43" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5752270015879908237" fileName="ParensRegexp_Actions.java" startLine="41" startPosition="41" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5752270015879908220" fileName="ParensRegexp_Actions.java" startLine="38" startPosition="48" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="5752270015879908238" fileName="ParensRegexp_Actions.java" startLine="42" startPosition="51" endLine="43" endPosition="46" />
     <scopeInfo nodeId="5752270015879908224" fileName="ParensRegexp_Actions.java" startLine="39" startPosition="25" endLine="44" endPosition="9">
       <varInfo nodeId="5752270015879908226" varName="lastLeaf" />
@@ -212,101 +212,101 @@
     </scopeInfo>
   </root>
   <root nodeId="1174904190236">
-    <nodeInfo nodeId="1353467374623956840" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NTimesRegexp_Editor.java" startLine="129" startPosition="111" endLine="130" endPosition="77" />
-    <nodeInfo nodeId="1353467374623956834" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NTimesRegexp_Editor.java" startLine="133" startPosition="111" endLine="134" endPosition="77" />
+    <nodeInfo nodeId="1353467374623956840" fileName="NTimesRegexp_Editor.java" startLine="129" startPosition="111" endLine="130" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1353467374623956834" fileName="NTimesRegexp_Editor.java" startLine="133" startPosition="111" endLine="134" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1353467374623956839" fileName="NTimesRegexp_Editor.java" startLine="129" startPosition="111" endLine="130" endPosition="77" />
     <scopeInfo nodeId="1353467374623956833" fileName="NTimesRegexp_Editor.java" startLine="133" startPosition="111" endLine="134" endPosition="77" />
   </root>
   <root nodeId="1174904496552">
-    <nodeInfo nodeId="1353467374623956802" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AtLeastNTimesRegexp_Editor.java" startLine="142" startPosition="110" endLine="143" endPosition="77" />
-    <nodeInfo nodeId="1353467374623956808" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AtLeastNTimesRegexp_Editor.java" startLine="146" startPosition="110" endLine="147" endPosition="77" />
+    <nodeInfo nodeId="1353467374623956802" fileName="AtLeastNTimesRegexp_Editor.java" startLine="142" startPosition="110" endLine="143" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1353467374623956808" fileName="AtLeastNTimesRegexp_Editor.java" startLine="146" startPosition="110" endLine="147" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1353467374623956801" fileName="AtLeastNTimesRegexp_Editor.java" startLine="142" startPosition="110" endLine="143" endPosition="77" />
     <scopeInfo nodeId="1353467374623956807" fileName="AtLeastNTimesRegexp_Editor.java" startLine="146" startPosition="110" endLine="147" endPosition="77" />
   </root>
   <root nodeId="1174904641130">
-    <nodeInfo nodeId="1353467374623956824" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FromNToMTimesRegexp_Editor.java" startLine="161" startPosition="111" endLine="162" endPosition="77" />
-    <nodeInfo nodeId="1353467374623956818" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FromNToMTimesRegexp_Editor.java" startLine="165" startPosition="111" endLine="166" endPosition="77" />
+    <nodeInfo nodeId="1353467374623956824" fileName="FromNToMTimesRegexp_Editor.java" startLine="161" startPosition="111" endLine="162" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1353467374623956818" fileName="FromNToMTimesRegexp_Editor.java" startLine="165" startPosition="111" endLine="166" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1353467374623956823" fileName="FromNToMTimesRegexp_Editor.java" startLine="161" startPosition="111" endLine="162" endPosition="77" />
     <scopeInfo nodeId="1353467374623956817" fileName="FromNToMTimesRegexp_Editor.java" startLine="165" startPosition="111" endLine="166" endPosition="77" />
   </root>
   <root nodeId="1174906576476">
-    <nodeInfo nodeId="8786899561262712030" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LookRegexp_Editor.java" startLine="104" startPosition="105" endLine="105" endPosition="71" />
-    <nodeInfo nodeId="8786899561262712043" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LookRegexp_Editor.java" startLine="105" startPosition="71" endLine="106" endPosition="147" />
-    <nodeInfo nodeId="8786899561264041584" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LookRegexp_Editor.java" startLine="106" startPosition="147" endLine="107" endPosition="152" />
-    <nodeInfo nodeId="8786899561262712040" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LookRegexp_Editor.java" startLine="107" startPosition="152" endLine="108" endPosition="17" />
-    <nodeInfo nodeId="8786899561262720948" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LookRegexp_Editor.java" startLine="115" startPosition="144" endLine="116" endPosition="94" />
+    <nodeInfo nodeId="8786899561262712030" fileName="LookRegexp_Editor.java" startLine="104" startPosition="105" endLine="105" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8786899561262712043" fileName="LookRegexp_Editor.java" startLine="105" startPosition="71" endLine="106" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8786899561264041584" fileName="LookRegexp_Editor.java" startLine="106" startPosition="147" endLine="107" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8786899561262712040" fileName="LookRegexp_Editor.java" startLine="107" startPosition="152" endLine="108" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8786899561262720948" fileName="LookRegexp_Editor.java" startLine="115" startPosition="144" endLine="116" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8786899561262706096" fileName="LookRegexp_Editor.java" startLine="115" startPosition="144" endLine="116" endPosition="94" />
     <scopeInfo nodeId="8786899561262706094" fileName="LookRegexp_Editor.java" startLine="104" startPosition="105" endLine="108" endPosition="17">
       <varInfo nodeId="8786899561262712031" varName="res" />
     </scopeInfo>
   </root>
   <root nodeId="1174908577381">
-    <nodeInfo nodeId="1174908591353" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LookRegexp_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="96" />
+    <nodeInfo nodeId="1174908591353" fileName="LookRegexp_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1174908585727" fileName="LookRegexp_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="96" />
   </root>
   <root nodeId="1220362181460">
-    <nodeInfo nodeId="1220362268875" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IntersectionSymbolClassPart_Left_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="95" />
+    <nodeInfo nodeId="1220362268875" fileName="IntersectionSymbolClassPart_Left_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1220362243580" fileName="IntersectionSymbolClassPart_Left_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="95" />
   </root>
   <root nodeId="1220362394300">
-    <nodeInfo nodeId="1220362443236" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IntersectionSymbolClassPart_Right_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="94" />
+    <nodeInfo nodeId="1220362443236" fileName="IntersectionSymbolClassPart_Right_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1220362425440" fileName="IntersectionSymbolClassPart_Right_Actions.java" startLine="29" startPosition="75" endLine="30" endPosition="94" />
   </root>
   <root nodeId="1353467374623956844">
-    <nodeInfo nodeId="1353467374623956895" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OrRegexp_Editor.java" startLine="122" startPosition="111" endLine="123" endPosition="74" />
-    <nodeInfo nodeId="1353467374623956904" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OrRegexp_Editor.java" startLine="126" startPosition="111" endLine="127" endPosition="74" />
+    <nodeInfo nodeId="1353467374623956895" fileName="OrRegexp_Editor.java" startLine="122" startPosition="111" endLine="123" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1353467374623956904" fileName="OrRegexp_Editor.java" startLine="126" startPosition="111" endLine="127" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1353467374623956894" fileName="OrRegexp_Editor.java" startLine="122" startPosition="111" endLine="123" endPosition="74" />
     <scopeInfo nodeId="1353467374623956903" fileName="OrRegexp_Editor.java" startLine="126" startPosition="111" endLine="127" endPosition="74" />
   </root>
   <root nodeId="1767845709140465500">
-    <nodeInfo nodeId="1767845709140515304" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReplaceRegexpOperation_removeI.java" startLine="29" startPosition="75" endLine="30" endPosition="59" />
-    <nodeInfo nodeId="1767845709140515310" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReplaceRegexpOperation_removeI.java" startLine="30" startPosition="59" endLine="31" endPosition="75" />
-    <nodeInfo nodeId="1767845709140515317" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplaceRegexpOperation_removeI.java" startLine="31" startPosition="75" endLine="32" endPosition="67" />
-    <nodeInfo nodeId="1767845709140515323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplaceRegexpOperation_removeI.java" startLine="32" startPosition="67" endLine="33" endPosition="71" />
+    <nodeInfo nodeId="1767845709140515304" fileName="ReplaceRegexpOperation_removeI.java" startLine="29" startPosition="75" endLine="30" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515310" fileName="ReplaceRegexpOperation_removeI.java" startLine="30" startPosition="59" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515317" fileName="ReplaceRegexpOperation_removeI.java" startLine="31" startPosition="75" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140515323" fileName="ReplaceRegexpOperation_removeI.java" startLine="32" startPosition="67" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1767845709140471610" fileName="ReplaceRegexpOperation_removeI.java" startLine="29" startPosition="75" endLine="33" endPosition="71">
       <varInfo nodeId="1767845709140515311" varName="toSelect" />
       <varInfo nodeId="1767845709140515305" varName="current" />
     </scopeInfo>
   </root>
   <root nodeId="1767845709140471611">
-    <nodeInfo nodeId="1767845709140515331" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReplaceRegexpOperation_removeM.java" startLine="29" startPosition="75" endLine="30" endPosition="59" />
-    <nodeInfo nodeId="1767845709140515337" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReplaceRegexpOperation_removeM.java" startLine="30" startPosition="59" endLine="31" endPosition="75" />
-    <nodeInfo nodeId="1767845709140515344" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplaceRegexpOperation_removeM.java" startLine="31" startPosition="75" endLine="32" endPosition="61" />
-    <nodeInfo nodeId="1767845709140515350" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplaceRegexpOperation_removeM.java" startLine="32" startPosition="61" endLine="33" endPosition="71" />
+    <nodeInfo nodeId="1767845709140515331" fileName="ReplaceRegexpOperation_removeM.java" startLine="29" startPosition="75" endLine="30" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515337" fileName="ReplaceRegexpOperation_removeM.java" startLine="30" startPosition="59" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515344" fileName="ReplaceRegexpOperation_removeM.java" startLine="31" startPosition="75" endLine="32" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140515350" fileName="ReplaceRegexpOperation_removeM.java" startLine="32" startPosition="61" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1767845709140471614" fileName="ReplaceRegexpOperation_removeM.java" startLine="29" startPosition="75" endLine="33" endPosition="71">
       <varInfo nodeId="1767845709140515338" varName="toSelect" />
       <varInfo nodeId="1767845709140515332" varName="current" />
     </scopeInfo>
   </root>
   <root nodeId="1767845709140471615">
-    <nodeInfo nodeId="1767845709140515358" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReplaceRegexpOperation_removeS.java" startLine="29" startPosition="75" endLine="30" endPosition="59" />
-    <nodeInfo nodeId="1767845709140515364" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReplaceRegexpOperation_removeS.java" startLine="30" startPosition="59" endLine="31" endPosition="75" />
-    <nodeInfo nodeId="1767845709140515371" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplaceRegexpOperation_removeS.java" startLine="31" startPosition="75" endLine="32" endPosition="58" />
-    <nodeInfo nodeId="1767845709140515377" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplaceRegexpOperation_removeS.java" startLine="32" startPosition="58" endLine="33" endPosition="71" />
+    <nodeInfo nodeId="1767845709140515358" fileName="ReplaceRegexpOperation_removeS.java" startLine="29" startPosition="75" endLine="30" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515364" fileName="ReplaceRegexpOperation_removeS.java" startLine="30" startPosition="59" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515371" fileName="ReplaceRegexpOperation_removeS.java" startLine="31" startPosition="75" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140515377" fileName="ReplaceRegexpOperation_removeS.java" startLine="32" startPosition="58" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1767845709140471618" fileName="ReplaceRegexpOperation_removeS.java" startLine="29" startPosition="75" endLine="33" endPosition="71">
       <varInfo nodeId="1767845709140515365" varName="toSelect" />
       <varInfo nodeId="1767845709140515359" varName="current" />
     </scopeInfo>
   </root>
   <root nodeId="1767845709140471619">
-    <nodeInfo nodeId="1767845709140515277" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReplaceRegexpOperation_removeG.java" startLine="29" startPosition="75" endLine="30" endPosition="59" />
-    <nodeInfo nodeId="1767845709140515283" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReplaceRegexpOperation_removeG.java" startLine="30" startPosition="59" endLine="31" endPosition="75" />
-    <nodeInfo nodeId="1767845709140515290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplaceRegexpOperation_removeG.java" startLine="31" startPosition="75" endLine="32" endPosition="65" />
-    <nodeInfo nodeId="1767845709140515296" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplaceRegexpOperation_removeG.java" startLine="32" startPosition="65" endLine="33" endPosition="71" />
+    <nodeInfo nodeId="1767845709140515277" fileName="ReplaceRegexpOperation_removeG.java" startLine="29" startPosition="75" endLine="30" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515283" fileName="ReplaceRegexpOperation_removeG.java" startLine="30" startPosition="59" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515290" fileName="ReplaceRegexpOperation_removeG.java" startLine="31" startPosition="75" endLine="32" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140515296" fileName="ReplaceRegexpOperation_removeG.java" startLine="32" startPosition="65" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1767845709140471622" fileName="ReplaceRegexpOperation_removeG.java" startLine="29" startPosition="75" endLine="33" endPosition="71">
       <varInfo nodeId="1767845709140515284" varName="toSelect" />
       <varInfo nodeId="1767845709140515278" varName="current" />
     </scopeInfo>
   </root>
   <root nodeId="3050481019131644558">
-    <nodeInfo nodeId="3050481019131657061" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="RegexpSequenceByEnter.java" startLine="60" startPosition="146" endLine="61" endPosition="117" />
-    <nodeInfo nodeId="3050481019131863682" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RegexpSequenceByEnter.java" startLine="61" startPosition="117" endLine="62" endPosition="51" />
-    <nodeInfo nodeId="3050481019131657070" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RegexpSequenceByEnter.java" startLine="62" startPosition="51" endLine="63" endPosition="56" />
-    <nodeInfo nodeId="3050481019131944514" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RegexpSequenceByEnter.java" startLine="63" startPosition="56" endLine="64" endPosition="40" />
-    <nodeInfo nodeId="1353467374624921482" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="RegexpSequenceByEnter.java" startLine="106" startPosition="146" endLine="107" endPosition="117" />
-    <nodeInfo nodeId="1353467374624921488" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RegexpSequenceByEnter.java" startLine="107" startPosition="117" endLine="108" endPosition="51" />
-    <nodeInfo nodeId="1353467374624921493" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RegexpSequenceByEnter.java" startLine="108" startPosition="51" endLine="109" endPosition="57" />
-    <nodeInfo nodeId="1353467374624921500" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RegexpSequenceByEnter.java" startLine="109" startPosition="57" endLine="110" endPosition="39" />
+    <nodeInfo nodeId="3050481019131657061" fileName="RegexpSequenceByEnter.java" startLine="60" startPosition="146" endLine="61" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3050481019131863682" fileName="RegexpSequenceByEnter.java" startLine="61" startPosition="117" endLine="62" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3050481019131657070" fileName="RegexpSequenceByEnter.java" startLine="62" startPosition="51" endLine="63" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3050481019131944514" fileName="RegexpSequenceByEnter.java" startLine="63" startPosition="56" endLine="64" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1353467374624921482" fileName="RegexpSequenceByEnter.java" startLine="106" startPosition="146" endLine="107" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1353467374624921488" fileName="RegexpSequenceByEnter.java" startLine="107" startPosition="117" endLine="108" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1353467374624921493" fileName="RegexpSequenceByEnter.java" startLine="108" startPosition="51" endLine="109" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1353467374624921500" fileName="RegexpSequenceByEnter.java" startLine="109" startPosition="57" endLine="110" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="3050481019131644562" fileName="RegexpSequenceByEnter.java" startLine="60" startPosition="146" endLine="64" endPosition="40">
       <varInfo nodeId="3050481019131657062" varName="nt" />
     </scopeInfo>
@@ -315,12 +315,12 @@
     </scopeInfo>
   </root>
   <root nodeId="3796137614137159229">
-    <nodeInfo nodeId="4161170987575926955" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReplaceRegexpOperation_Editor.java" startLine="402" startPosition="31" endLine="403" endPosition="113" />
-    <nodeInfo nodeId="3796137614137203285" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReplaceRegexpOperation_Editor.java" startLine="531" startPosition="111" endLine="532" endPosition="65" />
-    <nodeInfo nodeId="3796137614137159245" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReplaceRegexpOperation_Editor.java" startLine="535" startPosition="111" endLine="536" endPosition="61" />
-    <nodeInfo nodeId="3796137614137159254" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReplaceRegexpOperation_Editor.java" startLine="539" startPosition="111" endLine="540" endPosition="58" />
-    <nodeInfo nodeId="3796137614137159263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReplaceRegexpOperation_Editor.java" startLine="543" startPosition="111" endLine="544" endPosition="67" />
-    <nodeInfo nodeId="3796137614137203331" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReplaceRegexpOperation_Editor.java" startLine="377" startPosition="31" endLine="381" endPosition="10" />
+    <nodeInfo nodeId="4161170987575926955" fileName="ReplaceRegexpOperation_Editor.java" startLine="402" startPosition="31" endLine="403" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137203285" fileName="ReplaceRegexpOperation_Editor.java" startLine="531" startPosition="111" endLine="532" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137159245" fileName="ReplaceRegexpOperation_Editor.java" startLine="535" startPosition="111" endLine="536" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137159254" fileName="ReplaceRegexpOperation_Editor.java" startLine="539" startPosition="111" endLine="540" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137159263" fileName="ReplaceRegexpOperation_Editor.java" startLine="543" startPosition="111" endLine="544" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137203331" fileName="ReplaceRegexpOperation_Editor.java" startLine="377" startPosition="31" endLine="381" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="4161170987575926954" fileName="ReplaceRegexpOperation_Editor.java" startLine="402" startPosition="31" endLine="403" endPosition="113" />
     <scopeInfo nodeId="3796137614137203284" fileName="ReplaceRegexpOperation_Editor.java" startLine="531" startPosition="111" endLine="532" endPosition="65" />
     <scopeInfo nodeId="3796137614137159244" fileName="ReplaceRegexpOperation_Editor.java" startLine="535" startPosition="111" endLine="536" endPosition="61" />
@@ -329,52 +329,52 @@
     <scopeInfo nodeId="3796137614137203330" fileName="ReplaceRegexpOperation_Editor.java" startLine="377" startPosition="31" endLine="381" endPosition="10" />
   </root>
   <root nodeId="3840684028956596921">
-    <nodeInfo nodeId="3840684028956596925" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MatchParensRegexp_removeName.java" startLine="28" startPosition="75" endLine="29" endPosition="115" />
+    <nodeInfo nodeId="3840684028956596925" fileName="MatchParensRegexp_removeName.java" startLine="28" startPosition="75" endLine="29" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="3840684028956596924" fileName="MatchParensRegexp_removeName.java" startLine="28" startPosition="75" endLine="29" endPosition="115" />
   </root>
   <root nodeId="4759120547780522710">
-    <nodeInfo nodeId="4759120547781018328" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NegativeSymbolClassRegexp_toPositive.java" startLine="32" startPosition="75" endLine="33" endPosition="128" />
+    <nodeInfo nodeId="4759120547781018328" fileName="NegativeSymbolClassRegexp_toPositive.java" startLine="32" startPosition="75" endLine="33" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="4759120547780522713" fileName="NegativeSymbolClassRegexp_toPositive.java" startLine="32" startPosition="75" endLine="33" endPosition="128" />
   </root>
   <root nodeId="6129327962764883162">
-    <nodeInfo nodeId="6129327962764883179" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IntervalSymbolClassPart_removeRight.java" startLine="29" startPosition="75" endLine="30" endPosition="138" />
-    <nodeInfo nodeId="6129327962764883190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IntervalSymbolClassPart_removeRight.java" startLine="30" startPosition="138" endLine="31" endPosition="93" />
+    <nodeInfo nodeId="6129327962764883179" fileName="IntervalSymbolClassPart_removeRight.java" startLine="29" startPosition="75" endLine="30" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6129327962764883190" fileName="IntervalSymbolClassPart_removeRight.java" startLine="30" startPosition="138" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="6129327962764883165" fileName="IntervalSymbolClassPart_removeRight.java" startLine="29" startPosition="75" endLine="31" endPosition="93">
       <varInfo nodeId="6129327962764883180" varName="cn" />
     </scopeInfo>
   </root>
   <root nodeId="6129327962765122924">
-    <nodeInfo nodeId="6129327962765122929" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IntervalSymbolClassPart_removeLeft.java" startLine="29" startPosition="75" endLine="30" endPosition="138" />
-    <nodeInfo nodeId="6129327962765122935" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IntervalSymbolClassPart_removeLeft.java" startLine="30" startPosition="138" endLine="31" endPosition="91" />
+    <nodeInfo nodeId="6129327962765122929" fileName="IntervalSymbolClassPart_removeLeft.java" startLine="29" startPosition="75" endLine="30" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6129327962765122935" fileName="IntervalSymbolClassPart_removeLeft.java" startLine="30" startPosition="138" endLine="31" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="6129327962765122927" fileName="IntervalSymbolClassPart_removeLeft.java" startLine="29" startPosition="75" endLine="31" endPosition="91">
       <varInfo nodeId="6129327962765122930" varName="cn" />
     </scopeInfo>
   </root>
   <root nodeId="6129327962765651523">
-    <nodeInfo nodeId="698920857052155248" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InlineRegexpExpression_removeM.java" startLine="29" startPosition="75" endLine="30" endPosition="59" />
-    <nodeInfo nodeId="698920857052155254" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InlineRegexpExpression_removeM.java" startLine="30" startPosition="59" endLine="31" endPosition="75" />
-    <nodeInfo nodeId="698920857052155275" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InlineRegexpExpression_removeM.java" startLine="31" startPosition="75" endLine="32" endPosition="61" />
-    <nodeInfo nodeId="698920857052155267" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InlineRegexpExpression_removeM.java" startLine="32" startPosition="61" endLine="33" endPosition="71" />
+    <nodeInfo nodeId="698920857052155248" fileName="InlineRegexpExpression_removeM.java" startLine="29" startPosition="75" endLine="30" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="698920857052155254" fileName="InlineRegexpExpression_removeM.java" startLine="30" startPosition="59" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="698920857052155275" fileName="InlineRegexpExpression_removeM.java" startLine="31" startPosition="75" endLine="32" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="698920857052155267" fileName="InlineRegexpExpression_removeM.java" startLine="32" startPosition="61" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="6129327962765651526" fileName="InlineRegexpExpression_removeM.java" startLine="29" startPosition="75" endLine="33" endPosition="71">
       <varInfo nodeId="698920857052155255" varName="toSelect" />
       <varInfo nodeId="698920857052155249" varName="current" />
     </scopeInfo>
   </root>
   <root nodeId="6129327962765754916">
-    <nodeInfo nodeId="698920857052046925" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InlineRegexpExpression_removeI.java" startLine="29" startPosition="75" endLine="30" endPosition="59" />
-    <nodeInfo nodeId="698920857052050103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InlineRegexpExpression_removeI.java" startLine="30" startPosition="59" endLine="31" endPosition="75" />
-    <nodeInfo nodeId="6129327962765754920" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InlineRegexpExpression_removeI.java" startLine="31" startPosition="75" endLine="32" endPosition="67" />
-    <nodeInfo nodeId="698920857052050111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InlineRegexpExpression_removeI.java" startLine="32" startPosition="67" endLine="33" endPosition="71" />
+    <nodeInfo nodeId="698920857052046925" fileName="InlineRegexpExpression_removeI.java" startLine="29" startPosition="75" endLine="30" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="698920857052050103" fileName="InlineRegexpExpression_removeI.java" startLine="30" startPosition="59" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6129327962765754920" fileName="InlineRegexpExpression_removeI.java" startLine="31" startPosition="75" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="698920857052050111" fileName="InlineRegexpExpression_removeI.java" startLine="32" startPosition="67" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="6129327962765754919" fileName="InlineRegexpExpression_removeI.java" startLine="29" startPosition="75" endLine="33" endPosition="71">
       <varInfo nodeId="698920857052050104" varName="toSelect" />
       <varInfo nodeId="698920857052046926" varName="current" />
     </scopeInfo>
   </root>
   <root nodeId="6129327962765858411">
-    <nodeInfo nodeId="698920857052155284" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InlineRegexpExpression_removeS.java" startLine="29" startPosition="75" endLine="30" endPosition="59" />
-    <nodeInfo nodeId="698920857052155290" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InlineRegexpExpression_removeS.java" startLine="30" startPosition="59" endLine="31" endPosition="75" />
-    <nodeInfo nodeId="698920857052155311" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InlineRegexpExpression_removeS.java" startLine="31" startPosition="75" endLine="32" endPosition="58" />
-    <nodeInfo nodeId="698920857052155303" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InlineRegexpExpression_removeS.java" startLine="32" startPosition="58" endLine="33" endPosition="71" />
+    <nodeInfo nodeId="698920857052155284" fileName="InlineRegexpExpression_removeS.java" startLine="29" startPosition="75" endLine="30" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="698920857052155290" fileName="InlineRegexpExpression_removeS.java" startLine="30" startPosition="59" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="698920857052155311" fileName="InlineRegexpExpression_removeS.java" startLine="31" startPosition="75" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="698920857052155303" fileName="InlineRegexpExpression_removeS.java" startLine="32" startPosition="58" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="6129327962765858414" fileName="InlineRegexpExpression_removeS.java" startLine="29" startPosition="75" endLine="33" endPosition="71">
       <varInfo nodeId="698920857052155291" varName="toSelect" />
       <varInfo nodeId="698920857052155285" varName="current" />

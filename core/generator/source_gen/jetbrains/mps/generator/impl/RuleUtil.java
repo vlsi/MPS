@@ -8,7 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class RuleUtil {
   public static final String concept_AbstractMacro = "jetbrains.mps.lang.generator.structure.AbstractMacro";
@@ -218,7 +220,7 @@ public class RuleUtil {
   }
 
   public static SNode getTemplateFragmentByAnnotatedNode(SNode node) {
-    return SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true);
+    return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment")));
   }
 
   public static SNode getTemplateDeclarationReference_Template(SNode ref) {

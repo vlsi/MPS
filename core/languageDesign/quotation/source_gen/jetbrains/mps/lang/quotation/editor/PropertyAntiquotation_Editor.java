@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
@@ -139,7 +139,7 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_dqkua3_d0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(node.getRole_());
+        return AttributeOperations.getPropertyName(node);
       }
 
       public void setText(String s) {

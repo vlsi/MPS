@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Visibility;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +22,7 @@ public class BaseExtensionMethodContainer extends GenericDeclaration implements 
   public static final String VISIBILITY = "visibility";
   public static final String METHODS = "methods";
   public static final String STATIC_FIELDS = "staticFields";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BaseExtensionMethodContainer(SNode node) {
     super(node);
@@ -96,6 +98,26 @@ public class BaseExtensionMethodContainer extends GenericDeclaration implements 
 
   public void insertStaticFields(ExtensionStaticFieldDeclaration prev, ExtensionStaticFieldDeclaration node) {
     this.insertChild(prev, BaseExtensionMethodContainer.STATIC_FIELDS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(BaseExtensionMethodContainer._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BaseExtensionMethodContainer._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BaseExtensionMethodContainer._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(BaseExtensionMethodContainer._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BaseExtensionMethodContainer._$ATTRIBUTE, node);
   }
 
   public static BaseExtensionMethodContainer newInstance(SModel sm, boolean init) {

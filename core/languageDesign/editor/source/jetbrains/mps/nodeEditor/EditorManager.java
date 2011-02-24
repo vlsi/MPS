@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.ui.LightColors;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
@@ -145,7 +146,7 @@ public class EditorManager {
     SNode node = refContext.getNode();
 
     if (areAttributesShown()) {
-      for (SNode attribute : node.getNodeAttributes()) {
+      for (SNode attribute : AttributeOperations.getNodeAttributes(node)) {
         assert attribute != null;
         //if creating this cell for this attribute for the first time
         if (!myAttributesStack.contains(attribute)) {

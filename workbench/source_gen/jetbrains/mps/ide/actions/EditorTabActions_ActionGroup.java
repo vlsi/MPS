@@ -11,6 +11,8 @@ import com.intellij.openapi.extensions.PluginId;
 public class EditorTabActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorTabActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorTabActions_ActionGroup";
+  public static final String LABEL_ID_gotoConceptAspects = ID + "gotoConceptAspects";
+  public static final String LABEL_ID_showIn = ID + "showIn";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_structure = ID + "structure";
   public static final String LABEL_ID_diff = ID + "diff";
@@ -22,10 +24,18 @@ public class EditorTabActions_ActionGroup extends GeneratedActionGroup {
     try {
       EditorTabActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteNode_Action");
       EditorTabActions_ActionGroup.this.addSeparator();
-      EditorTabActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action");
-      EditorTabActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action");
-      EditorTabActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRules_Action");
-      EditorTabActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowNodeInExplorer_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorTabActions_ActionGroup.LABEL_ID_gotoConceptAspects);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorTabActions_ActionGroup.this.addAction(action);
+      }
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorTabActions_ActionGroup.LABEL_ID_showIn);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorTabActions_ActionGroup.this.addAction(action);
+      }
       EditorTabActions_ActionGroup.this.addSeparator();
       EditorTabActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action");
       EditorTabActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FastFindNodeUsages_Action");

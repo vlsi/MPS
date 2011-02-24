@@ -9,6 +9,7 @@ import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -29,6 +30,7 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   public static final String PRE_MAPPING_SCRIPT = "preMappingScript";
   public static final String POST_MAPPING_SCRIPT = "postMappingScript";
   public static final String MAPPING_LABEL = "mappingLabel";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public MappingConfiguration(SNode node) {
     super(node);
@@ -252,6 +254,26 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
 
   public void insertMappingLabel(MappingLabelDeclaration prev, MappingLabelDeclaration node) {
     this.insertChild(prev, MappingConfiguration.MAPPING_LABEL, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(MappingConfiguration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, MappingConfiguration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, MappingConfiguration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(MappingConfiguration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, MappingConfiguration._$ATTRIBUTE, node);
   }
 
   public static MappingConfiguration newInstance(SModel sm, boolean init) {

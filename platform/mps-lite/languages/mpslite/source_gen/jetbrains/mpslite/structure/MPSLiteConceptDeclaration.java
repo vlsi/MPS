@@ -4,6 +4,9 @@ package jetbrains.mpslite.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +21,7 @@ public class MPSLiteConceptDeclaration extends BaseConcept implements IMPSLiteCo
   public static final String ABSTRACT = "abstract";
   public static final String LINE_LIST = "lineList";
   public static final String EXTENDS = "extends";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public MPSLiteConceptDeclaration(SNode node) {
     super(node);
@@ -85,6 +89,26 @@ public class MPSLiteConceptDeclaration extends BaseConcept implements IMPSLiteCo
 
   public void setExtends(AbstractConceptReference node) {
     super.setChild(MPSLiteConceptDeclaration.EXTENDS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(MPSLiteConceptDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, MPSLiteConceptDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, MPSLiteConceptDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(MPSLiteConceptDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, MPSLiteConceptDeclaration._$ATTRIBUTE, node);
   }
 
   public static MPSLiteConceptDeclaration newInstance(SModel sm, boolean init) {

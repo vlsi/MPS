@@ -8,6 +8,7 @@ import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class PasteWrappers extends BaseConcept implements INamedConcept, IConcep
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String WRAPPER = "wrapper";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public PasteWrappers(SNode node) {
     super(node);
@@ -74,6 +76,26 @@ public class PasteWrappers extends BaseConcept implements INamedConcept, IConcep
 
   public void insertWrapper(PasteWrapper prev, PasteWrapper node) {
     this.insertChild(prev, PasteWrappers.WRAPPER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(PasteWrappers._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, PasteWrappers._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, PasteWrappers._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(PasteWrappers._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, PasteWrappers._$ATTRIBUTE, node);
   }
 
   public static PasteWrappers newInstance(SModel sm, boolean init) {

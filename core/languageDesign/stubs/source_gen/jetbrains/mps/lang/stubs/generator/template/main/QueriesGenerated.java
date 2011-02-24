@@ -93,6 +93,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "rootDescriptorsBlock", true) != null);
   }
 
+  public static boolean ifMacro_Condition_625258459142302897(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "initBlock", true) != null);
+  }
+
   public static boolean ifMacro_Condition_2856649189863739816(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "export", true), "jetbrains.mps.lang.core.structure.ExportScopeModule");
   }
@@ -115,6 +119,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_4577087497091827887(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "rootDescriptorsBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_625258459142302913(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "initBlock", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_2974122604715183891(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

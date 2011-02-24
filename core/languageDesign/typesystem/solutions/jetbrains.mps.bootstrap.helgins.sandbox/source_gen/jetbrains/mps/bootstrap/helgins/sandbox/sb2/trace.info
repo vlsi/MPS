@@ -3,26 +3,26 @@
   <unitInfo fileName="typeof_InferenceRule_InferenceRule.java" startLine="47" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb2.typeof_InferenceRule_InferenceRule$QuotationClass_axeh26_a0a1a0" />
   <unitInfo fileName="typeof_InferenceRule_InferenceRule.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb2.typeof_InferenceRule_InferenceRule" />
   <root nodeId="1194962178954">
-    <nodeInfo nodeId="1194962413882" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_InferenceRule_InferenceRule.java" startLine="22" startPosition="126" endLine="23" endPosition="94" />
-    <nodeInfo nodeId="1194962407096" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_InferenceRule_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="102" />
-    <nodeInfo nodeId="1194962407096" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_InferenceRule_InferenceRule.java" startLine="25" startPosition="102" endLine="26" endPosition="52" />
-    <nodeInfo nodeId="1194962407096" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_InferenceRule_InferenceRule.java" startLine="26" startPosition="52" endLine="27" endPosition="216" />
-    <nodeInfo nodeId="1194962407096" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_InferenceRule_InferenceRule.java" startLine="27" startPosition="216" endLine="28" endPosition="345" />
-    <nodeInfo nodeId="1194962407096" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_InferenceRule_InferenceRule.java" startLine="23" startPosition="94" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1194962413882" fileName="typeof_InferenceRule_InferenceRule.java" startLine="22" startPosition="126" endLine="23" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194962407096" fileName="typeof_InferenceRule_InferenceRule.java" startLine="24" startPosition="5" endLine="25" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194962407096" fileName="typeof_InferenceRule_InferenceRule.java" startLine="25" startPosition="102" endLine="26" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194962407096" fileName="typeof_InferenceRule_InferenceRule.java" startLine="26" startPosition="52" endLine="27" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194962407096" fileName="typeof_InferenceRule_InferenceRule.java" startLine="27" startPosition="216" endLine="28" endPosition="345" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194962407096" fileName="typeof_InferenceRule_InferenceRule.java" startLine="23" startPosition="94" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="1194962407096" fileName="typeof_InferenceRule_InferenceRule.java" startLine="24" startPosition="5" endLine="28" endPosition="345" />
     <scopeInfo nodeId="1194962178955" fileName="typeof_InferenceRule_InferenceRule.java" startLine="22" startPosition="126" endLine="29" endPosition="5">
       <varInfo nodeId="1194962413883" varName="patternCondition" />
     </scopeInfo>
   </root>
   <root nodeId="1198000897975">
-    <nodeInfo nodeId="1198073370731" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BClass.java" startLine="8" startPosition="24" endLine="9" endPosition="36" />
-    <nodeInfo nodeId="1198073381541" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BClass.java" startLine="9" startPosition="36" endLine="10" endPosition="33" />
-    <nodeInfo nodeId="1198250164479" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BClass.java" startLine="10" startPosition="33" endLine="11" endPosition="13" />
-    <nodeInfo nodeId="1198073342670" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="foobar#()V" fileName="BClass.java" startLine="7" startPosition="52" endLine="13" endPosition="0" />
+    <nodeInfo nodeId="1198073370731" fileName="BClass.java" startLine="8" startPosition="24" endLine="9" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198073381541" fileName="BClass.java" startLine="9" startPosition="36" endLine="10" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1198250164479" fileName="BClass.java" startLine="10" startPosition="33" endLine="11" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1198073342670" fileName="BClass.java" startLine="7" startPosition="52" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="foobar#()V" />
     <scopeInfo nodeId="1198073342673" fileName="BClass.java" startLine="8" startPosition="24" endLine="11" endPosition="13">
       <varInfo nodeId="1198250164480" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="1198073342670" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="foobar#()V" fileName="BClass.java" startLine="7" startPosition="52" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="1198073342670" fileName="BClass.java" startLine="7" startPosition="52" endLine="13" endPosition="0" />
     <unitInfo nodeId="1198000897975" fileName="BClass.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.sandbox.sb2.BClass" />
   </root>
 </debugInfo>

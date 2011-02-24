@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.structure.ExportScope;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +24,8 @@ public class LibraryStubDescriptor extends BaseConcept implements INamedConcept 
   public static final String CREATOR = "creator";
   public static final String ROOTS_BLOCK = "rootsBlock";
   public static final String EXPORT = "export";
+  public static final String INIT_BLOCK = "initBlock";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public LibraryStubDescriptor(SNode node) {
     super(node);
@@ -96,6 +101,34 @@ public class LibraryStubDescriptor extends BaseConcept implements INamedConcept 
 
   public void setExport(ExportScope node) {
     super.setChild(LibraryStubDescriptor.EXPORT, node);
+  }
+
+  public InitModuleBlock getInitBlock() {
+    return (InitModuleBlock) this.getChild(InitModuleBlock.class, LibraryStubDescriptor.INIT_BLOCK);
+  }
+
+  public void setInitBlock(InitModuleBlock node) {
+    super.setChild(LibraryStubDescriptor.INIT_BLOCK, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(LibraryStubDescriptor._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, LibraryStubDescriptor._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, LibraryStubDescriptor._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(LibraryStubDescriptor._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, LibraryStubDescriptor._$ATTRIBUTE, node);
   }
 
   public static LibraryStubDescriptor newInstance(SModel sm, boolean init) {

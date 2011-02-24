@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class QuickFixArgument extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ARGUMENT_TYPE = "argumentType";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public QuickFixArgument(SNode node) {
     super(node);
@@ -60,6 +64,26 @@ public class QuickFixArgument extends BaseConcept implements INamedConcept {
 
   public void setArgumentType(Type node) {
     super.setChild(QuickFixArgument.ARGUMENT_TYPE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(QuickFixArgument._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, QuickFixArgument._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, QuickFixArgument._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(QuickFixArgument._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, QuickFixArgument._$ATTRIBUTE, node);
   }
 
   public static QuickFixArgument newInstance(SModel sm, boolean init) {

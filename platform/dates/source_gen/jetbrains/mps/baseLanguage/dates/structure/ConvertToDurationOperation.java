@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.dates.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -14,6 +17,7 @@ public class ConvertToDurationOperation extends BaseConcept implements IOperatio
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConvertToDurationOperation(SNode node) {
     super(node);
@@ -41,6 +45,26 @@ public class ConvertToDurationOperation extends BaseConcept implements IOperatio
 
   public void setVirtualPackage(String value) {
     this.setProperty(ConvertToDurationOperation.VIRTUAL_PACKAGE, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ConvertToDurationOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConvertToDurationOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConvertToDurationOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConvertToDurationOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConvertToDurationOperation._$ATTRIBUTE, node);
   }
 
   public static ConvertToDurationOperation newInstance(SModel sm, boolean init) {

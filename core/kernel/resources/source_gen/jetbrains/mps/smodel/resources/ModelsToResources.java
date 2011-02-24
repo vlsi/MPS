@@ -36,7 +36,7 @@ public class ModelsToResources {
     if (dirtyOnly) {
       smds = Sequence.fromIterable(smds).where(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor md) {
-          return ModelGenerationStatusManager.getInstance().generationRequired(md, ModelsToResources.this.context, false, true);
+          return ModelGenerationStatusManager.getInstance().generationRequired(md, ModelsToResources.this.context);
         }
       }).toListSequence();
     }

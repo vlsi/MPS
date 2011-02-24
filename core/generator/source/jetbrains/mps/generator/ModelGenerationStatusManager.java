@@ -86,7 +86,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return myCacheGenerator;
   }
 
-  public boolean generationRequired(SModelDescriptor sm, IOperationContext operationContext, boolean fast, boolean defaultValue) {
+  public boolean generationRequired(SModelDescriptor sm, IOperationContext operationContext) {
     if (!(sm instanceof EditableSModelDescriptor)) return false;
     EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
     if (esm.isPackaged()) return false;
@@ -94,8 +94,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     if (GeneratorManager.isDoNotGenerate(sm)) return false;
     if (SModelRepository.getInstance().isChanged(esm)) return true;
 
-    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext, fast);
-    if (generationHashes == null) return defaultValue;
+    IFile modelFile = esm.getModelFile();
+    if (modelFile == null) return true;
+
+    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(modelFile, operationContext);
+    if (generationHashes == null) return true;
 
     String generatedHash = getGenerationHash(sm);
     if (generatedHash == null) return true;
@@ -140,7 +143,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   private String generateHashFileName(GenerationStatus status) {
     SModelDescriptor descriptor = status.getOriginalInputModel();
     String hash = getContentHash(descriptor);
-    if(hash == null) {
+    if (hash == null) {
       return null;
     }
     return ModelGenerationStatusManager.HASH_PREFIX + hash;

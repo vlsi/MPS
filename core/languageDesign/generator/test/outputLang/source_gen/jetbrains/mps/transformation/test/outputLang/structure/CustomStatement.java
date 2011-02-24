@@ -6,6 +6,9 @@ import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class CustomStatement extends Statement implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String INNER = "inner";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public CustomStatement(SNode node) {
     super(node);
@@ -60,6 +64,26 @@ public class CustomStatement extends Statement implements INamedConcept {
 
   public void setInner(Expression node) {
     super.setChild(CustomStatement.INNER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(CustomStatement._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, CustomStatement._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, CustomStatement._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(CustomStatement._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CustomStatement._$ATTRIBUTE, node);
   }
 
   public static CustomStatement newInstance(SModel sm, boolean init) {

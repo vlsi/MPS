@@ -6,9 +6,9 @@
   <unitInfo fileName="CustomOperator.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator" />
   <unitInfo fileName="BinaryOperationReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference" />
   <unitInfo fileName="CustomOperatorUsage.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage" />
-  <unitInfo fileName="CustomOperatorDeclaration.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration" />
-  <unitInfo fileName="LeftOperand.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand" />
   <unitInfo fileName="OverloadedBinaryOperator.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator" />
-  <unitInfo fileName="OverloadedOperatorContainer.java" startLine="14" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer" />
+  <unitInfo fileName="CustomOperatorDeclaration.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration" />
+  <unitInfo fileName="LeftOperand.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand" />
+  <unitInfo fileName="OverloadedOperatorContainer.java" startLine="15" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer" />
 </debugInfo>
 

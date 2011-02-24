@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ui.modeling.structure.Container;
 import jetbrains.mps.baseLanguage.structure.StatementList;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class ContainerCompartment extends BaseConcept implements IUIObjectContex
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONTAINER = "container";
   public static final String BODY = "body";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ContainerCompartment(SNode node) {
     super(node);
@@ -60,6 +64,26 @@ public class ContainerCompartment extends BaseConcept implements IUIObjectContex
 
   public void setBody(StatementList node) {
     super.setChild(ContainerCompartment.BODY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ContainerCompartment._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ContainerCompartment._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ContainerCompartment._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ContainerCompartment._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ContainerCompartment._$ATTRIBUTE, node);
   }
 
   public static ContainerCompartment newInstance(SModel sm, boolean init) {

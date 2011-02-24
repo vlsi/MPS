@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -23,6 +24,7 @@ public class EventHandlerTemplate extends BaseConcept implements INamedConcept {
   public static final String PRODUCER_TYPE = "producerType";
   public static final String SETUP = "setup";
   public static final String PROPERTY_GETTER = "propertyGetter";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public EventHandlerTemplate(SNode node) {
     super(node);
@@ -110,6 +112,26 @@ public class EventHandlerTemplate extends BaseConcept implements INamedConcept {
 
   public void insertPropertyGetter(EventPropertyGetter prev, EventPropertyGetter node) {
     this.insertChild(prev, EventHandlerTemplate.PROPERTY_GETTER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(EventHandlerTemplate._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, EventHandlerTemplate._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, EventHandlerTemplate._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(EventHandlerTemplate._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EventHandlerTemplate._$ATTRIBUTE, node);
   }
 
   public static EventHandlerTemplate newInstance(SModel sm, boolean init) {

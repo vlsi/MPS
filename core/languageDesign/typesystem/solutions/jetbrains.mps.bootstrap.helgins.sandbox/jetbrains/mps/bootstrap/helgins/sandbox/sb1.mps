@@ -29,7 +29,8 @@
           <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1196873755732">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1196873762781">
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1196873765236" />
-              <node role="propertyAntiquotation$property_attribute$name" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="1196873768940">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="1196873768940">
+                <property name="propertyName" nameId="tpck.1757699476691236117" value="name" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1196873781584">
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1196873782868">
                     <property name="value" nameId="tpee.1068580320021" value="4" />
@@ -54,8 +55,9 @@
               <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1196960555088">
                 <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1196960559620">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
-                  <node role="_attr_$link_attribute$classifier" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1196960578871">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3t.LinkPatternVariableDeclaration" typeId="tp3t.1137418540378" id="1196960578871">
                     <property name="varName" nameId="tp3t.1137418571428" value="class" />
+                    <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                   </node>
                 </node>
               </node>

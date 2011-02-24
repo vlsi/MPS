@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def.v6;
 
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -96,7 +97,7 @@ public class VersionUtil {
     return genReferenceString(node.getConceptDeclarationNode(), node.getConceptFqName(), false);
   }
   public String genRole(@NotNull SNode node) {
-    return node.getRole_() == null ? null : genReferenceString(node.isAttribute() ? null : node.getRoleLink(), node.getRole_(), true);
+    return node.getRole_() == null ? null : genReferenceString(AttributeOperations.isAttribute(node) ? null : node.getRoleLink(), node.getRole_(), true);
   }
   public String genRole(@NotNull SReference ref) {
     return genReferenceString(ref.getSourceNode().getLinkDeclaration(ref.getRole()), ref.getRole(), true);

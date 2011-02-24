@@ -75,8 +75,6 @@ public class TypeChecker implements ApplicationComponent {
 
   public TypeChecker(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
-
-
     if (!useOldTypeSystem) {
       myRuntimeSupport = new RuntimeSupportNew(this);
       mySubtypingManager = new SubTypingManagerNew(this);
@@ -89,6 +87,7 @@ public class TypeChecker implements ApplicationComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadHandler);
+    loadAllLanguages();
   }
 
   @NonNls
@@ -136,6 +135,17 @@ public class TypeChecker implements ApplicationComponent {
 
   public void clearForReload() {
     myRulesManager.clear();
+    loadAllLanguages();
+  }
+
+  private void loadAllLanguages() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
+          myRulesManager.loadLanguage(l);
+        }
+      }
+    });
   }
 
   public void enableTypesComputingForCompletion() {
