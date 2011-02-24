@@ -27,7 +27,7 @@ public class StubReloadManager implements ApplicationComponent {
 
   private MPSModuleRepository myRepos;
 
-  private Map<StubPath, PathData> myPath2Data = new HashMap<StubPath, PathData>();
+  private Map<StubPath, Map<ModuleId, PathData>> myPath2Data = new HashMap<StubPath, Map<ModuleId, PathData>>();
 
   private List<String> myLoadedSolutions = new ArrayList<String>();
   private MyStubPaths myLoadedStubPaths = new MyStubPaths();
@@ -54,7 +54,7 @@ public class StubReloadManager implements ApplicationComponent {
     List<StubDescriptor> result = new ArrayList<StubDescriptor>();
 
     for (StubPath path : myLoadedStubPaths.get(module.getModuleReference().getModuleId())) {
-      PathData pd = myPath2Data.get(path);
+      PathData pd = myPath2Data.get(path).get(module.getModuleReference().getModuleId());
       StubLocation location = new StubLocation(path.getPath(), "", module);
       result.addAll(pd.getModelRootManager().getRootNodeDescriptors(location));
     }
@@ -182,8 +182,10 @@ public class StubReloadManager implements ApplicationComponent {
 
   private void disposeStubManagers() {
     //dispose all created model root managers
-    for (PathData data : myPath2Data.values()) {
-      data.getModelRootManager().dispose();
+    for (Map<ModuleId, PathData> d : myPath2Data.values()) {
+      for (PathData data : d.values()) {
+        data.getModelRootManager().dispose();
+      }
     }
 
     //clean references to old managers in stub models
@@ -202,8 +204,8 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   private void loadNewStubs() {
-    Map<StubPath, PathData> oldp2d = myPath2Data;
-    myPath2Data = new HashMap<StubPath, PathData>();
+    Map<StubPath, Map<ModuleId, PathData>> oldp2d = myPath2Data;
+    myPath2Data = new HashMap<StubPath, Map<ModuleId, PathData>>();
 
     for (AbstractModule m : getAllModules()) {
       for (StubPath sp : getModuleStubPaths(m)) {
@@ -215,9 +217,18 @@ public class StubReloadManager implements ApplicationComponent {
 
         PathData data = new PathData(sp);
         data.setModelRootManager(manager);
-        myPath2Data.put(sp, data);
 
-        PathData oldData = oldp2d.get(sp);
+        Map<ModuleId, PathData> d = myPath2Data.get(sp);
+        if (d == null) {
+          d = new HashMap<ModuleId, PathData>();
+          myPath2Data.put(sp, d);
+        }
+
+        ModuleId mid = m.getModuleReference().getModuleId();
+        d.put(mid, data);
+
+        Map<ModuleId, PathData> oldD = oldp2d.get(sp);
+        PathData oldData = oldD == null ? null : oldD.get(mid);
         if (oldData == null || !oldData.isFresh()) {
           Set<BaseStubModelDescriptor> descriptors = manager.updateModels(sp.getPath(), "", m);
           data.setDescriptors(copyDescriptors(descriptors, null));
@@ -244,7 +255,7 @@ public class StubReloadManager implements ApplicationComponent {
     for (AbstractModule m : getAllModules()) {
       for (StubPath sp : getModuleStubPaths(m)) {
         //error was already reported in loadNewStubs
-        if (myPath2Data.get(sp) == null) continue;
+        if (myPath2Data.get(sp) == null || myPath2Data.get(sp).get(m) == null) continue;
         myLoadedStubPaths.add(m, sp);
       }
     }
@@ -335,9 +346,13 @@ public class StubReloadManager implements ApplicationComponent {
     List<StubPath> notChangedStubPaths = new ArrayList<StubPath>();
 
     //todo make time linear [due to stubs list size this is not very significant]
+    outer:
     for (StubPath os : oldStubs) {
-      PathData pd = myPath2Data.get(os);
-      if (pd == null || !pd.isFresh()) continue;
+      Map<ModuleId, PathData> p = myPath2Data.get(os);
+      if (p.size() == 0) continue;
+      for (PathData pd : p.values()) {
+        if (!pd.isFresh()) continue outer;
+      }
 
       for (StubPath ns : newStubs) {
         if (!ObjectUtils.equals(os, ns)) continue;
@@ -410,16 +425,16 @@ public class StubReloadManager implements ApplicationComponent {
     private long getTimestamp() {
       //todo this can be rewritten using filesystem listeners
       IFile path = FileSystem.getInstance().getFileByPath(myStubPath.getPath());
-      if(path == null) return 0L;
+      if (path == null) return 0L;
       return getTimestampRecursive(path);
     }
 
     private static long getTimestampRecursive(IFile path) {
       long max = path.lastModified();
-      if(path.isDirectory()) {
-        for(IFile child : path.list()) {
+      if (path.isDirectory()) {
+        for (IFile child : path.list()) {
           long timestamp = getTimestampRecursive(child);
-          if(timestamp > max) {
+          if (timestamp > max) {
             max = timestamp;
           }
         }
