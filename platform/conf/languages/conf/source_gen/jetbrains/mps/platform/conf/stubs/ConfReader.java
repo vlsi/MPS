@@ -116,6 +116,7 @@ public class ConfReader {
   }
 
   public void readComponents(SNode node, SNode level, Element cs) {
+    SPropertyOperations.set(node, "level", SEnumOperations.getEnumMemberValue(level));
     for (Element cmp : elements(cs, COMPONENT)) {
       String ifc = cmp.getChildTextTrim(INTERFACE_CLASS);
       String impl = cmp.getChildTextTrim(IMPLEMENTATION_CLASS);

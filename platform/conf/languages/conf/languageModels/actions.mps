@@ -41,10 +41,31 @@
           </node>
           <node role="query:23" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query:23" id="4569055436237489043">
             <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4569055436237489044">
-              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4569055436237490293">
-                <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation:16" id="4569055436237490294">
-                  <link role="enumDeclaration:16" targetNodeId="1.1740160309778171009:0" resolveInfo="Level" />
-                  <node role="operation:16" type="jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation:16" id="4569055436237490296" />
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2955496203775060472">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2955496203775060494">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2955496203775060473">
+                    <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator:7" id="2955496203775060475">
+                      <node role="singletonValue:7" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation:16" id="2955496203775060478">
+                        <link role="enumDeclaration:16" targetNodeId="1.1740160309778171009:0" resolveInfo="Level" />
+                        <node role="operation:16" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation:16" id="2955496203775060479">
+                          <node role="valueExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2955496203775060480">
+                            <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="2955496203775060481">
+                              <property name="asCast:16" value="true" />
+                              <link role="concept:16" targetNodeId="1.1740160309778170999:0" resolveInfo="Components" />
+                              <node role="leftExpression:16" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="2955496203775060482" />
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="2955496203775060483">
+                              <link role="property:16" targetNodeId="1.1740160309778171019:0" resolveInfo="level" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="elementType:7" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType:16" id="2955496203775060484">
+                        <link role="enum:16" targetNodeId="1.1740160309778171009:0" resolveInfo="Level" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ToListOperation:7" id="2955496203775060498" />
                 </node>
               </node>
             </node>
@@ -62,22 +83,6 @@
                       <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4569055436237490317">
                         <link role="concept:16" targetNodeId="1.4635942846893810046:0" resolveInfo="Component" />
                       </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4569055436237490319">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="4569055436237521900">
-                  <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4569055436237521907">
-                    <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject:23" id="4569055436237521903" />
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation:16" id="4569055436237521911" />
-                  </node>
-                  <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4569055436237490321">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4569055436237490320">
-                      <link role="variableDeclaration:3" targetNodeId="4569055436237490313" resolveInfo="cmp" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4569055436237521899">
-                      <link role="property:16" targetNodeId="1.1740160309778171019:0" resolveInfo="level" />
                     </node>
                   </node>
                 </node>

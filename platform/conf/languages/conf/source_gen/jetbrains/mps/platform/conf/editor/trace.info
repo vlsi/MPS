@@ -42,12 +42,12 @@
     <scopeInfo nodeId="3919891163767797428" fileName="Components_Editor.java" startLine="54" startPosition="31" endLine="55" endPosition="74" />
   </root>
   <root nodeId="1740160309778233534">
-    <nodeInfo nodeId="1740160309778235488" fileName="Component_Editor.java" startLine="83" startPosition="31" endLine="84" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1740160309778235487" fileName="Component_Editor.java" startLine="83" startPosition="31" endLine="84" endPosition="70" />
+    <nodeInfo nodeId="2955496203774982644" fileName="Component_Editor.java" startLine="62" startPosition="31" endLine="63" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2955496203774982643" fileName="Component_Editor.java" startLine="62" startPosition="31" endLine="63" endPosition="70" />
   </root>
   <root nodeId="6121364846593753609">
-    <nodeInfo nodeId="6121364846593754407" fileName="Service_Editor.java" startLine="83" startPosition="31" endLine="84" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6121364846593754406" fileName="Service_Editor.java" startLine="83" startPosition="31" endLine="84" endPosition="68" />
+    <nodeInfo nodeId="2955496203774769121" fileName="Service_Editor.java" startLine="62" startPosition="31" endLine="63" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="2955496203774769120" fileName="Service_Editor.java" startLine="62" startPosition="31" endLine="63" endPosition="68" />
   </root>
 </debugInfo>
 

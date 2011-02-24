@@ -29,9 +29,6 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1740160309778171030">
       <link role="intfc:0" targetNodeId="5314521579133239127:0" resolveInfo="IConfigurationElement" />
     </node>
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1740160309778171021">
-      <link role="intfc:0" targetNodeId="1740160309778171018:0" resolveInfo="HasLevel" />
-    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="4569055436237522370">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>

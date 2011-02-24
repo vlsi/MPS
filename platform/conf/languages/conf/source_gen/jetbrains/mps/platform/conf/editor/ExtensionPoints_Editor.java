@@ -55,6 +55,7 @@ public class ExtensionPoints_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new ExtensionPoints_Editor.fragmentListHandler_cw3nt1_b1a(node, "fragment", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_fragment");
+    editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

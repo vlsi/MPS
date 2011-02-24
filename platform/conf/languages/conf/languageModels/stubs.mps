@@ -1456,6 +1456,24 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2906282062545487695" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2906282062545487696" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2906282062545487697">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2955496203775000168">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2955496203775000191">
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2955496203775000211">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2955496203775000202">
+                <link role="variableDeclaration:3" targetNodeId="8962295475113782590" resolveInfo="level" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation:16" id="2955496203775000223" />
+            </node>
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2955496203775000170">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2955496203775000169">
+                <link role="variableDeclaration:3" targetNodeId="2906282062545487691" resolveInfo="node" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="2955496203775000182">
+                <link role="property:16" targetNodeId="1.1740160309778171019:0" resolveInfo="level" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="8962295475113782718">
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8962295475113782719">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8962295475113782806">

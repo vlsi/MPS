@@ -9,9 +9,12 @@
   <unitInfo fileName="BeanExtensionPoint_Behavior.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanExtensionPoint_Behavior" />
   <unitInfo fileName="BeanUtil.java" startLine="20" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil" />
   <root nodeId="1740160309778233536">
-    <nodeInfo nodeId="1740160309778234790" fileName="Component_Behavior.java" startLine="12" startPosition="70" endLine="13" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1740160309778233538" fileName="Component_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1740160309778233542" fileName="Component_Behavior.java" startLine="12" startPosition="70" endLine="13" endPosition="107" />
+    <nodeInfo nodeId="2955496203775061909" fileName="Component_Behavior.java" startLine="13" startPosition="70" endLine="14" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2955496203775038500" fileName="Component_Behavior.java" startLine="14" startPosition="123" endLine="18" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1740160309778233538" fileName="Component_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="1740160309778233542" fileName="Component_Behavior.java" startLine="13" startPosition="70" endLine="18" endPosition="6">
+      <varInfo nodeId="2955496203775061910" varName="cs" />
+    </scopeInfo>
   </root>
   <root nodeId="3919891163767797429">
     <nodeInfo nodeId="3919891163767798722" fileName="Components_Behavior.java" startLine="12" startPosition="73" endLine="13" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

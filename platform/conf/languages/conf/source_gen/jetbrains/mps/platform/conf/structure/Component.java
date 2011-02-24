@@ -11,12 +11,11 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Component extends ConfigurationXmlNode implements IConfigurationElement, HasLevel {
+public class Component extends ConfigurationXmlNode implements IConfigurationElement {
   public static final String concept = "jetbrains.mps.platform.conf.structure.Component";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String LEVEL = "level";
   public static final String IFACE_CLASS = "ifaceClass";
   public static final String IMPL_CLASS = "implClass";
   public static final String _$ATTRIBUTE = "_$attribute";
@@ -47,15 +46,6 @@ public class Component extends ConfigurationXmlNode implements IConfigurationEle
 
   public void setVirtualPackage(String value) {
     this.setProperty(Component.VIRTUAL_PACKAGE, value);
-  }
-
-  public Level getLevel() {
-    String value = super.getProperty(Component.LEVEL);
-    return Level.parseValue(value);
-  }
-
-  public void setLevel(Level value) {
-    super.setProperty(Component.LEVEL, value.getValueAsString());
   }
 
   public Classifier getIfaceClass() {
