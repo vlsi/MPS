@@ -30,10 +30,17 @@ public class GenerationCheckHelper {
   }
 
   public boolean checkModelsBeforeGenerationIfNeeded(Project p, IOperationContext operationContext, List<SModelDescriptor> modelDescriptors, Runnable regenerationRunnable) {
+    for (ModelValidator modelValidator : ModelValidator.EP_NAME.getExtensions()) {
+      if(!modelValidator.check(p, operationContext, modelDescriptors, regenerationRunnable)) {
+        return false;
+      }
+    }
     return true;
   }
 
   public void checkModelsAndRun(Project p, IOperationContext operationContext, List<SModelDescriptor> modelDescriptors, Runnable runnable) {
-    runnable.run();
+    if (checkModelsBeforeGenerationIfNeeded(p, operationContext, modelDescriptors, runnable)) {
+      runnable.run();
+    }
   }
 }

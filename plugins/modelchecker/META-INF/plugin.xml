@@ -35,4 +35,10 @@
   <project-components>
 
   </project-components>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <checkinHandlerFactory
+            implementation="jetbrains.mps.ide.modelchecker.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory"/>
+    <mps.ModelValidator implementation="jetbrains.mps.ide.modelchecker.ModelValidatorAdapter"/>
+  </extensions>
 </idea-plugin>
