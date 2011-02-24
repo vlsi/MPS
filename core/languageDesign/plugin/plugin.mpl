@@ -6,9 +6,10 @@
   </models>
   <accessoryModels>
     <model modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
-    <model modelUID="f:java_stub#jetbrains.mps.plugin(jetbrains.mps.plugin@java_stub)" />
-    <model modelUID="f:java_stub#jetbrains.mps.plugins(jetbrains.mps.plugins@java_stub)" />
-    <model modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
+    <model modelUID="f:java_stub#28f9e497-3b42-4291-aeba-0a1039153ab1#jetbrains.mps.plugins(jetbrains.mps.lang.plugin/jetbrains.mps.plugins@java_stub)" />
+    <model modelUID="f:java_stub#1d6e05d7-9de9-40a7-9dad-7b8444280942#jetbrains.mps.plugins(jetbrains.mps.lang.plugin#1203080439937/jetbrains.mps.plugins@java_stub)" />
+    <model modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" />
+    <model modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.plugin(MPS.Classpath/jetbrains.mps.plugin@java_stub)" />
   </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.lang.plugin#1203080439937" uuid="1d6e05d7-9de9-40a7-9dad-7b8444280942">

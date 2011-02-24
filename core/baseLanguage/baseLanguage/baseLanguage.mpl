@@ -5,7 +5,7 @@
     <modelRoot path="${language_descriptor}/utilModels" namespacePrefix="" />
   </models>
   <accessoryModels>
-    <model modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
+    <model modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   </accessoryModels>
   <generators>
     <generator name="java" generatorUID="jetbrains.mps.baseLanguage#1129914002933" uuid="985c8c6a-64b4-486d-a91e-7d4112742556">
