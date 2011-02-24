@@ -374,20 +374,20 @@ public class State {
     return myOperation;
   }
 
-  public void expandAll(final Set<SNode> nodes) {
+  public void expandAll(final Set<SNode> nodes, final boolean finalExpansion) {
     if (nodes != null && !nodes.isEmpty()) {
       executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
         public void run() {
-          myNodeMaps.expandAll(nodes);
+          myNodeMaps.expandAll(nodes, finalExpansion);
         }
       }));
     }
   }
 
-  public void expandAll() {
+  public void expandAll(final boolean finalExpansion) {
     executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
       public void run() {
-        myNodeMaps.expandAll();
+        myNodeMaps.expandAll(finalExpansion);
       }
     }));
   }
