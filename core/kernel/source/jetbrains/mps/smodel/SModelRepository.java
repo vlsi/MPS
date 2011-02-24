@@ -170,6 +170,10 @@ public class SModelRepository implements ApplicationComponent {
         throw new IllegalStateException();
       }
 
+      if (modelDescriptor.getModule()!=owner && modelDescriptor.getStereotype()!="java_stub"){
+        throw new IllegalStateException();
+      }
+
       myModelsToOwners.addLink(modelDescriptor, owner);
       myModelsWithNoOwners.remove(modelDescriptor);
     }
