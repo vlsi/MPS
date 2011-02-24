@@ -15,6 +15,7 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_generate = ID + "generate";
   public static final String LABEL_ID_delete = ID + "delete";
+  public static final String LABEL_ID_check = ID + "check";
   public static final String LABEL_ID_favorites = ID + "favorites";
   public static final String LABEL_ID_scripts = ID + "scripts";
   public static final String LABEL_ID_properties = ID + "properties";
@@ -53,7 +54,12 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
       }
       GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action");
       GeneratorActions_ActionGroup.this.addSeparator();
-      GeneratorActions_ActionGroup.this.addParameterizedAction(new CheckModule_Action("Generator"), PluginId.getId("jetbrains.mps.ide"), "Generator");
+      {
+        LabelledAnchor action = new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_check);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        GeneratorActions_ActionGroup.this.addAction(action);
+      }
       GeneratorActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_favorites);

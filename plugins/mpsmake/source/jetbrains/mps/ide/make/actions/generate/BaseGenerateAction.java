@@ -21,12 +21,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.generator.GenParameters;
+import jetbrains.mps.ide.generator.GenerationCheckHelper;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
 import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.ide.projectPane.ModuleChangingOperationContext;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
@@ -115,8 +114,8 @@ public abstract class BaseGenerateAction extends BaseAction {
 
     final IOperationContext invocationContext1 = invocationContext;
     //noinspection ConstantConditions
-    boolean checkSuccessful = myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class)
-      .checkModelsBeforeGenerationIfNeeded(invocationContext, modelsToGenerate, new Runnable() {
+    boolean checkSuccessful = GenerationCheckHelper.getInstance()
+      .checkModelsBeforeGenerationIfNeeded(myProject, invocationContext, modelsToGenerate, new Runnable() {
         public void run() {
           IGenerationHandler generationHandler = GeneratorUIFacade.getInstance().getDefaultGenerationHandler();
           GeneratorUIFacade.getInstance().generateModels(

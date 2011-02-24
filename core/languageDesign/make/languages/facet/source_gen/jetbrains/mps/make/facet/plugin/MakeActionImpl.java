@@ -6,8 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.workbench.make.WorkbenchMakeService;
 import jetbrains.mps.make.IMakeService;
-import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.ide.generator.GenerationCheckHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -35,8 +34,7 @@ public class MakeActionImpl {
   }
 
   private void dodoExecute(Iterable<? extends IResource> inputRes, Runnable exec) {
-    ModelCheckerTool_Tool mct = this.context.getProject().getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class);
-    mct.checkModelsAndRun(this.context, Sequence.fromIterable(this.selectModels(inputRes)).toListSequence(), exec);
+    GenerationCheckHelper.getInstance().checkModelsAndRun(this.context.getProject(), this.context, Sequence.fromIterable(this.selectModels(inputRes)).toListSequence(), exec);
   }
 
   private Iterable<SModelDescriptor> selectModels(Iterable<? extends IResource> inputRes) {

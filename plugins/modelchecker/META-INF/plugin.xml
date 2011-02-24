@@ -23,7 +23,13 @@
   <idea-version since-build="3000"/>
 
   <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.ide.modelchecker.actions.Modelchecker_PluginInitializer</implementation-class>
+    </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.ide.modelchecker.actions.ModelCheckerSettings</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

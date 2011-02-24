@@ -18,7 +18,7 @@ package jetbrains.mps.ide.make.actions.generate;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
+import jetbrains.mps.ide.generator.GenerationCheckHelper;
 import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
@@ -48,8 +48,8 @@ public abstract class GenerateModelsAction extends BaseAction {
 
   public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     //noinspection ConstantConditions
-    boolean checkSuccessful = myPluginManager.getTool(ModelCheckerTool_Tool.class)
-      .checkModelsBeforeGenerationIfNeeded(myContext, (List<SModelDescriptor>) ((List) myModels), new Runnable() {
+    boolean checkSuccessful = GenerationCheckHelper.getInstance()
+      .checkModelsBeforeGenerationIfNeeded(myContext.getProject(), myContext, (List<SModelDescriptor>) ((List) myModels), new Runnable() {
         public void run() {
           GeneratorUIFacade.getInstance().generateModels(
             myContext,

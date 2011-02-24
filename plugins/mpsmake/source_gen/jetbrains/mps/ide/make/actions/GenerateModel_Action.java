@@ -16,9 +16,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
+import jetbrains.mps.ide.generator.GenerationCheckHelper;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.generator.GeneratorUIFacade;
 
@@ -84,8 +83,7 @@ public class GenerateModel_Action extends GeneratedAction {
       for (SModelDescriptor m : ListSequence.fromList(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")))) {
         modelsToGenerate.add(m);
       }
-      final ModelCheckerTool_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class);
-      boolean checkSuccessful = tool.checkModelsBeforeGenerationIfNeeded(((IOperationContext) MapSequence.fromMap(_params).get("context")), (List) modelsToGenerate, new Runnable() {
+      boolean checkSuccessful = GenerationCheckHelper.getInstance().checkModelsBeforeGenerationIfNeeded(((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), (List) modelsToGenerate, new Runnable() {
         public void run() {
           GeneratorUIFacade.getInstance().generateModels(((IOperationContext) MapSequence.fromMap(_params).get("context")), modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll, false);
         }

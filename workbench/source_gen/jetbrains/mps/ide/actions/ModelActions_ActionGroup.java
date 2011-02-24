@@ -14,6 +14,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_newActions = ID + "newActions";
   public static final String LABEL_ID_paste = ID + "paste";
   public static final String LABEL_ID_showHelp = ID + "showHelp";
+  public static final String LABEL_ID_check = ID + "check";
   public static final String LABEL_ID_modelUsages = ID + "modelUsages";
   public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_generateActions = ID + "generateActions";
@@ -56,7 +57,12 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
         ModelActions_ActionGroup.this.addAction(action);
       }
       ModelActions_ActionGroup.this.addSeparator();
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModel_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(ModelActions_ActionGroup.LABEL_ID_check);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        ModelActions_ActionGroup.this.addAction(action);
+      }
       {
         LabelledAnchor action = new LabelledAnchor(ModelActions_ActionGroup.LABEL_ID_modelUsages);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

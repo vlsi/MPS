@@ -30,8 +30,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AddModuleToProject_Action());
     addAction(new AddToNewFavoritesList_Action());
     addAction(new AnalyzeClasspath_Action());
-    addAction(new CheckModel_Action());
-    addAction(new CheckProject_Action());
     addAction(new CloneModel_Action());
     addAction(new CloneRoot_Action());
     addAction(new CollapseAll_Action());
@@ -61,7 +59,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FindPrevious_Action());
     addAction(new FindSpecificNodeUsages_Action());
     addAction(new Find_Action());
-    addAction(new FindlAllBrokenReferences_Action());
     addAction(new FixDependenciesEverywhere_Action());
     addAction(new FixVirtualPackges_Action());
     addAction(new FoldSelection_Action());
@@ -116,7 +113,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowErrorMessage_Action());
     addAction(new ShowImplementations_Action());
     addAction(new ShowInProject_Action());
-    addAction(new ShowModelChecker_Action());
     addAction(new ShowModuleDependencies_Action());
     addAction(new ShowNodeInInspector_Action());
     addAction(new ShowNodeInfo_Action());

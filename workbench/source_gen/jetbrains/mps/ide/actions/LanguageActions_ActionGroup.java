@@ -14,6 +14,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_newGroup = ID + "newGroup";
   public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_generateModule = ID + "generateModule";
+  public static final String LABEL_ID_check = ID + "check";
   public static final String LABEL_ID_compileJava = ID + "compileJava";
   public static final String LABEL_ID_find_usages = ID + "find_usages";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
@@ -49,7 +50,12 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
         LanguageActions_ActionGroup.this.addAction(action);
       }
       LanguageActions_ActionGroup.this.addSeparator();
-      LanguageActions_ActionGroup.this.addParameterizedAction(new CheckModule_Action("Language"), PluginId.getId("jetbrains.mps.ide"), "Language");
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_check);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageActions_ActionGroup.this.addAction(action);
+      }
       LanguageActions_ActionGroup.this.addSeparator();
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action");
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FixVirtualPackges_Action");

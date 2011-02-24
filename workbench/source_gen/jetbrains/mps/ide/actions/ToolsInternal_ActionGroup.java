@@ -22,7 +22,6 @@ public class ToolsInternal_ActionGroup extends GeneratedActionGroup {
       ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveBootstrapLanguagesDevKitFromLanguageModels_Action");
       ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddGeneralPurposeDevKitToLanguageModels_Action");
       ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddLanguageDesingDevKitToLanguages_Action");
-      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindlAllBrokenReferences_Action");
       ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LoadNonStubModels_Action");
       ToolsInternal_ActionGroup.this.addSeparator();
     } catch (Throwable t) {

@@ -57,7 +57,6 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", getShortcut("ctrl H"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowImplementations_Action", getShortcut("ctrl shift I"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowInProject_Action", getShortcut("alt F2"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.ShowModelChecker_Action", getShortcut("ctrl alt C"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowNodeInInspector_Action", getShortcut("ctrl I"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowNodeInfo_Action", getShortcut("ctrl Q"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowParameters_Action", getShortcut("ctrl P"));
@@ -77,8 +76,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addComplexShortcut("jetbrains.mps.ide.actions.GoToSolution_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift S")));
     addComplexShortcut("jetbrains.mps.ide.actions.SelectInActionAdapter_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("alt F1")));
     // complex 
-    addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Default_KeymapChanges.GoToBookmark_ShortcutChange_qjewi8_lc());
-    addComplexShortcut("jetbrains.mps.ide.actions.SetBookmark_Action", new Default_KeymapChanges.SetBookmark_ShortcutChange_qjewi8_mc());
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Default_KeymapChanges.GoToBookmark_ShortcutChange_qjewi8_kc());
+    addComplexShortcut("jetbrains.mps.ide.actions.SetBookmark_Action", new Default_KeymapChanges.SetBookmark_ShortcutChange_qjewi8_lc());
   }
 
   public String getScheme() {
@@ -89,8 +88,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     return new KeyboardShortcut(KeyStroke.getKeyStroke(stroke), null);
   }
 
-  public class GoToBookmark_ShortcutChange_qjewi8_lc extends BaseKeymapChanges.ComplexShortcut {
-    public GoToBookmark_ShortcutChange_qjewi8_lc() {
+  public class GoToBookmark_ShortcutChange_qjewi8_kc extends BaseKeymapChanges.ComplexShortcut {
+    public GoToBookmark_ShortcutChange_qjewi8_kc() {
     }
 
     public List<Shortcut> getShortcutsFor(Object... objects) {
@@ -100,8 +99,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     }
   }
 
-  public class SetBookmark_ShortcutChange_qjewi8_mc extends BaseKeymapChanges.ComplexShortcut {
-    public SetBookmark_ShortcutChange_qjewi8_mc() {
+  public class SetBookmark_ShortcutChange_qjewi8_lc extends BaseKeymapChanges.ComplexShortcut {
+    public SetBookmark_ShortcutChange_qjewi8_lc() {
     }
 
     public List<Shortcut> getShortcutsFor(Object... objects) {
