@@ -250,9 +250,6 @@ public class State {
     if (myThread == null) {
       myThread = Thread.currentThread();
     }
-    if (myThread != Thread.currentThread() ) {
-      System.out.println(this + " " + myThread + " " + Thread.currentThread() );
-    }
     LOG.assertLog(myInsideStateChangeAction, "state change can be executed only inside state change action");
   }
 

@@ -285,9 +285,6 @@ public class TypeContextManager implements ApplicationComponent {
       context = getContextForEditedRootNode(node.getContainingRoot(), TypeContextManager.DEFAULT_OWNER);
     }
     if (context == null) return null;
-    if (!((TypeCheckingContextNew)context).getState().getEquations().getRepresentatives().isEmpty() && generationMode && resolve.isEmpty()) {
-      System.out.println(generationMode);
-    }
     SNode type = context.getTypeOf(node, myTypeChecker);
     if (generationMode) {
       context.dispose();
