@@ -4,9 +4,9 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.actions.goTo.GoToLanguageAction;
+import jetbrains.mps.ide.devkit.actions.navigate.GoToLanguageAction;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.workbench.actions.goTo.GoToDevkitAction;
+import jetbrains.mps.ide.devkit.actions.navigate.GoToDevkitAction;
 
 public class GotoModuleEx_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GotoModuleEx_ActionGroup.class);

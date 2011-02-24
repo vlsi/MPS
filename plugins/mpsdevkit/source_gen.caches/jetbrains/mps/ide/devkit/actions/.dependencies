@@ -425,11 +425,11 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.GoToDevkit_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.navigate.GoToLanguageAction" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.GoToLanguage_Action" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.GoToDevkitAction" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.GoToLanguageAction" />
+    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.navigate.GoToDevkitAction" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.HighlightCellDependencies_Action" file="HighlightCellDependencies_Action.java">

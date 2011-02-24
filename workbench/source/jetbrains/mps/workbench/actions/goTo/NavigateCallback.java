@@ -27,7 +27,7 @@ import javax.swing.SwingUtilities;
  * Time: 1:02 PM
  * To change this template use File | Settings | File Templates.
  */
-class NavigateCallback extends ChooseByNamePopupComponent.Callback {
+public class NavigateCallback extends ChooseByNamePopupComponent.Callback {
   private NavigationItem myNavigationItem;
 
   @Override

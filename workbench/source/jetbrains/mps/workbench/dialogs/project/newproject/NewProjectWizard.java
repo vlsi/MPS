@@ -40,6 +40,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     myOptions.setCreateNewSolution(true);
 
     addStep(new ProjectStep(myOptions));
+    // FIXME contribute from devkit
     addStep(new LanguageStep(myOptions));
     addStep(new SolutionStep(myOptions));
 

@@ -64,6 +64,7 @@
   <import index="oku6" modelUID="f:java_stub#jetbrains.mps.workbench.tools(jetbrains.mps.workbench.tools@java_stub)" version="-1" />
   <import index="yzcq" modelUID="f:java_stub#jetbrains.mps.ide.moduleRepositoryViewer(jetbrains.mps.ide.moduleRepositoryViewer@java_stub)" version="-1" />
   <import index="zspf" modelUID="f:java_stub#jetbrains.mps.ide.modelRepositoryViewer(jetbrains.mps.ide.modelRepositoryViewer@java_stub)" version="-1" />
+  <import index="8vgd" modelUID="f:java_stub#jetbrains.mps.ide.devkit.actions.navigate(jetbrains.mps.ide.devkit.actions.navigate@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -6459,7 +6460,7 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="4753172061859538970" resolveInfo="GoToLanguage" />
         <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4753172061859538933">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4753172061859538934">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3ky9.~GoToLanguageAction%d&lt;init&gt;()" resolveInfo="GoToLanguageAction" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8vgd.~GoToLanguageAction%d&lt;init&gt;()" resolveInfo="GoToLanguageAction" />
           </node>
         </node>
       </node>
@@ -6467,7 +6468,7 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="4753172061859538944" resolveInfo="GoToDevkit" />
         <node role="actualParameter" roleId="tp4k.1227011543811" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4753172061859538936">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4753172061859538937">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3ky9.~GoToDevkitAction%d&lt;init&gt;()" resolveInfo="GoToDevkitAction" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8vgd.~GoToDevkitAction%d&lt;init&gt;()" resolveInfo="GoToDevkitAction" />
           </node>
         </node>
       </node>
