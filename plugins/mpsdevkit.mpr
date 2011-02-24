@@ -11,6 +11,7 @@
       <solutionPath path="${project}/mpsmake/solution/jetbrains.mps.ide.make.msd" folder="" />
       <solutionPath path="${project}/mpsjava/solution/jetbrains.mps.ide.java.msd" folder="" />
       <solutionPath path="${project}/mpsjava/testsolution/testMaterial.msd" folder="" />
+      <solutionPath path="${project}/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="" />
     </projectSolutions>
     <projectLanguages />
     <projectDevkits />
