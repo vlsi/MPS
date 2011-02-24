@@ -3,13 +3,12 @@
   <persistence version="7" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language-engaged-on-generation namespace="fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)" />
-  <import index="4x4r" modelUID="r:1930e6a1-4a0c-4ebc-8fc7-2b26cd59b380(jetbrains.mps.ui.sandbox.demo)" version="-1" />
   <import index="1taj" modelUID="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" version="-1" />
   <import index="lb0i" modelUID="r:61c770cf-d088-4c1b-909e-3424021db8f2(jetbrains.mps.ui.sandbox)" version="-1" />
-  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
-  <import index="xtmr" modelUID="f:java_stub#fc9ba4c3-4355-4a86-b84b-1c46c728f9ea#org.eclipse.swt.widgets(jetbrains.mps.ui.swt#1250358102411218055/org.eclipse.swt.widgets@java_stub)" version="-1" />
-  <import index="j02e" modelUID="f:java_stub#fc9ba4c3-4355-4a86-b84b-1c46c728f9ea#org.eclipse.swt.layout(jetbrains.mps.ui.swt#1250358102411218055/org.eclipse.swt.layout@java_stub)" version="-1" />
-  <import index="48dz" modelUID="f:java_stub#fc9ba4c3-4355-4a86-b84b-1c46c728f9ea#org.eclipse.swt.graphics(jetbrains.mps.ui.swt#1250358102411218055/org.eclipse.swt.graphics@java_stub)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="xtmr" modelUID="f:java_stub#fc9ba4c3-4355-4a86-b84b-1c46c728f9ea#org.eclipse.swt.widgets(org.eclipse.swt.widgets@java_stub)" version="-1" />
+  <import index="j02e" modelUID="f:java_stub#fc9ba4c3-4355-4a86-b84b-1c46c728f9ea#org.eclipse.swt.layout(org.eclipse.swt.layout@java_stub)" version="-1" />
+  <import index="48dz" modelUID="f:java_stub#fc9ba4c3-4355-4a86-b84b-1c46c728f9ea#org.eclipse.swt.graphics(org.eclipse.swt.graphics@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="syy9" modelUID="r:4f857b30-414f-4703-8cf7-80455f6ad887(jetbrains.mps.ui.sandbox.swt)" version="-1" implicit="yes" />

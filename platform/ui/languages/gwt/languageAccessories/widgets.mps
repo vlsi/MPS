@@ -6,14 +6,12 @@
   <language namespace="e5c2a44a-6085-4aeb-a5b6-851cecd2d926(jetbrains.mps.ui.gwt)" />
   <language namespace="fb26dccf-fa54-4e9a-8ddb-b66311a34393(jetbrains.mps.ui)" />
   <import index="e8m3" modelUID="r:6878192c-cfd9-411c-9af0-6054cf03c27f(jetbrains.mps.ui.gwt.generator.template.main@generator)" version="-1" />
-  <import index="oi5t" modelUID="r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)" version="-1" />
   <import index="2yj1" modelUID="r:c1b84d62-80cc-499b-b655-943c00c7ba88(jetbrains.mps.ui.widgets)" version="1" />
-  <import index="md5g" modelUID="f:java_stub#com.google.gwt.user.client(com.google.gwt.user.client@java_stub)" version="-1" />
-  <import index="7s6f" modelUID="f:java_stub#a5a5d5ab-3987-4848-9421-998f92430773#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt#9106854556042091019/com.google.gwt.user.client.ui@java_stub)" version="-1" />
-  <import index="h581" modelUID="f:java_stub#a5a5d5ab-3987-4848-9421-998f92430773#com.google.gwt.event.logical.shared(jetbrains.mps.ui.gwt#9106854556042091019/com.google.gwt.event.logical.shared@java_stub)" version="-1" />
-  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
-  <import index="zs8a" modelUID="f:java_stub#a5a5d5ab-3987-4848-9421-998f92430773#com.google.gwt.dom.client(jetbrains.mps.ui.gwt#9106854556042091019/com.google.gwt.dom.client@java_stub)" version="-1" />
-  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
+  <import index="7s6f" modelUID="f:java_stub#a5a5d5ab-3987-4848-9421-998f92430773#com.google.gwt.user.client.ui(com.google.gwt.user.client.ui@java_stub)" version="-1" />
+  <import index="h581" modelUID="f:java_stub#a5a5d5ab-3987-4848-9421-998f92430773#com.google.gwt.event.logical.shared(com.google.gwt.event.logical.shared@java_stub)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="zs8a" modelUID="f:java_stub#a5a5d5ab-3987-4848-9421-998f92430773#com.google.gwt.dom.client(com.google.gwt.dom.client@java_stub)" version="-1" />
+  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="sqp9" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.transformation.test.inputModels" uuid="cdd4e8a8-17c1-4f16-b054-27e94948bd47" extenallyVisible="false" compileInMPS="false" java-stubs-enabled="true">
+<solution name="jetbrains.mps.transformation.test.inputModels" uuid="cdd4e8a8-17c1-4f16-b054-27e94948bd47" compileInMPS="false" java-stubs-enabled="true">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.transformation.test.inputModels" />
   </models>
-  <classPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="true">ab0ae915-e3b5-4f35-b55a-c655d649a03c(jetbrains.mps.transformation.test.inputLang)</dependency>
