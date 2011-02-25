@@ -25,7 +25,7 @@ public class check_AnnotationTarget_NonTypesystemRule extends AbstractNonTypesys
     SNode annotationDeclaration = SLinkOperations.getTarget(annotationInstance, "annotation", false);
     SNode targetAi = null;
     for (SNode ai : SLinkOperations.getTargets(annotationDeclaration, "annotation", true)) {
-      if (SLinkOperations.getTarget(ai, "annotation", false) == SNodeOperations.getNode("f:java_stub#java.lang.annotation(java.lang.annotation@java_stub)", "~Target")) {
+      if (SLinkOperations.getTarget(ai, "annotation", false) == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)", "~Target")) {
         targetAi = ai;
         break;
       }

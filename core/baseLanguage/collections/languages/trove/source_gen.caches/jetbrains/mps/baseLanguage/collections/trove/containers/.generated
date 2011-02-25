@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5ztdd4bttc5r6lnujtztw48aq6uzw5g">
+<dependencies version="2" modelHash="3jmy9rzhbvx0cc4nsogdmra1zk8uxal">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7j7f23wpy27xm5qbrp0hshvy38yttz0" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-9by2oq4935snsxooh7zvp147ap19p48" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="167ltg733tpxxxumby1jy8ayh24274t" />
-  <common hash="4w55w5ulz8u6vwkmt5psjo0db3m01q9">
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-cb1ul7irourw560qhn9557vjp9bzuwp" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-2zza588ivcb1gp7iczo4wkv2s01itc" />
+  <common hash="-chmuc1avdfhmuqlxi7mrn9eumwqc2te">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
   </common>
-  <source id="9034802358628764708" name="TroveSets" hash="-2sxoidw30ud7u1rsr31mv7vhj9swo3s">
+  <source id="9034802358628764708" name="TroveSets" hash="-193pq4ubpel2lgoot9xy1a5cgji86d0">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="TroveSets" />
   </source>
-  <source id="1279588871815200384" name="TroveMaps_byte" hash="-44jh9vm2obpeq6d2347ikt97mcy4hql">
+  <source id="1279588871815200384" name="TroveMaps_byte" hash="bcnan42v3xs9u46e6q73mafgscyhyf6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="TroveMaps_byte" />
   </source>
-  <source id="7602110602933849920" name="TroveMaps_double" hash="-d7cg6lwa9l7nkkx98ptwquvuv0q9au2">
+  <source id="7602110602933849920" name="TroveMaps_double" hash="-10h6fxvxkysfw30of9h02ce4p0yxeyv">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="TroveMaps_double" />
   </source>
-  <source id="7602110602933850028" name="TroveMaps_float" hash="7056m2ws6em17xiaaaozneomyv5gn9y">
+  <source id="7602110602933850028" name="TroveMaps_float" hash="-2gcs97p60h1z3kcfivv1trnzmpm182e">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="TroveMaps_float" />
   </source>
-  <source id="7602110602933850130" name="TroveMaps_int" hash="-40l3wfmsre4eui2xd3e7qsa7aae834r">
+  <source id="7602110602933850130" name="TroveMaps_int" hash="xyxlaqdvtk3f6vbrc410yft1ajccz6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="TroveMaps_int" />
   </source>
-  <source id="7602110602933850232" name="TroveMaps_long" hash="damhlosd546g3nprp9c332qa93fogwf">
+  <source id="7602110602933850232" name="TroveMaps_long" hash="-c7ri7ja35bwomjfasmpdjte9su06bz8">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="TroveMaps_long" />
   </source>
-  <source id="7602110602933850334" name="TroveMaps_short" hash="86r31gn3nof2oe0ddw3psk4uq2s3lha">
+  <source id="7602110602933850334" name="TroveMaps_short" hash="-2u1jcmst36cu4z4gwisdeyxu6ppab8s">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="TroveMaps_short" />
   </source>
-  <source id="7602110602933850448" name="TroveMaps_Object" hash="-bhdyuqpc4wvxhgl266usjb92efsb9x2">
+  <source id="7602110602933850448" name="TroveMaps_Object" hash="-cafu4oedbberlhhkqp8rlyhh26mil1p">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="TroveMaps_Object" />
   </source>
-  <source id="4737294400113290499" name="TroveLists" hash="-2rvxa0r9tdtuh4zqeow8jyrf6llp21x">
+  <source id="4737294400113290499" name="TroveLists" hash="-3tdpgn4us0be8g5kyzwtdu92fymw0oc">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
