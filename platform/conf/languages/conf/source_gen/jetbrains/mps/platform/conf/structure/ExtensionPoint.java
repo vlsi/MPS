@@ -4,6 +4,7 @@ package jetbrains.mps.platform.conf.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import jetbrains.mps.lang.core.structure.Attribute;
@@ -12,12 +13,13 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ExtensionPoint extends BaseConcept implements INamedConcept, IConfigurationElement {
+public class ExtensionPoint extends BaseConcept implements INamedConcept, IResolveInfo, IConfigurationElement {
   public static final String concept = "jetbrains.mps.platform.conf.structure.ExtensionPoint";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String _$ATTRIBUTE = "_$attribute";
 
   public ExtensionPoint(SNode node) {
@@ -54,6 +56,14 @@ public class ExtensionPoint extends BaseConcept implements INamedConcept, IConfi
 
   public void setVirtualPackage(String value) {
     this.setProperty(ExtensionPoint.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getResolveInfo() {
+    return this.getProperty(ExtensionPoint.RESOLVE_INFO);
+  }
+
+  public void setResolveInfo(String value) {
+    this.setProperty(ExtensionPoint.RESOLVE_INFO, value);
   }
 
   public int get_$attributesCount() {

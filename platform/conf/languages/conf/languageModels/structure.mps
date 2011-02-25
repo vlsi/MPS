@@ -68,11 +68,18 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5314521579133239133">
       <link role="intfc:0" targetNodeId="3v.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="3793993770298286784">
+      <link role="intfc:0" targetNodeId="3v.1196978630214:0" resolveInfo="IResolveInfo" />
+    </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5314521579133239135">
       <link role="intfc:0" targetNodeId="5314521579133239127:0" resolveInfo="IConfigurationElement" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="6121364846593825080">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473854053:0" resolveInfo="abstract" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3793993770298286790">
+      <property name="value:0" value="extensionPoint" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="5314521579133239148">

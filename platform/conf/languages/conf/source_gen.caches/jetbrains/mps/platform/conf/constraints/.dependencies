@@ -22,12 +22,24 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
   </dependency>
   <dependency className="jetbrains.mps.platform.conf.constraints.ConstraintsDescriptor" file="ConstraintsDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.platform.conf.constraints.BeanExtension_beanExtensionPoint_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.constraints.ExtensionPoint_resolveInfo_PropertyConstraint" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
+  </dependency>
+  <dependency className="jetbrains.mps.platform.conf.constraints.ExtensionPoint_resolveInfo_PropertyConstraint" file="ExtensionPoint_resolveInfo_PropertyConstraint.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodePropertyGetter" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodePropertySetter" />
   </dependency>
   <dependency className="jetbrains.mps.platform.conf.constraints.ExtensionPoints_Constraints" file="ExtensionPoints_Constraints.java">
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />

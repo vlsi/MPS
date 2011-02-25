@@ -16,10 +16,10 @@
   <unitInfo fileName="ConfigurationXmlNode.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.ConfigurationXmlNode" />
   <unitInfo fileName="Extension.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Extension" />
   <unitInfo fileName="XInclude.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.XInclude" />
-  <unitInfo fileName="ExtensionPoint.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.ExtensionPoint" />
   <unitInfo fileName="Component.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Component" />
   <unitInfo fileName="BeanExtensionAttribute.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.BeanExtensionAttribute" />
   <unitInfo fileName="ConfigurationXmlDocument.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument" />
+  <unitInfo fileName="ExtensionPoint.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.ExtensionPoint" />
   <unitInfo fileName="ExtensionPoints.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.ExtensionPoints" />
   <unitInfo fileName="ComponentsRoot.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.ComponentsRoot" />
   <unitInfo fileName="IdeaPlugin.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.IdeaPlugin" />

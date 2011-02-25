@@ -50,7 +50,7 @@
   </roots>
   <root id="1740160309778233536">
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1740160309778233539">
-      <property name="name" nameId="tpck.1169194664001" value="name" />
+      <property name="name" nameId="tpck.1169194664001" value="canonicName" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1740160309778233540" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="1740160309778234789" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1740160309778233542">
@@ -111,7 +111,7 @@
   </root>
   <root id="6121364846593753704">
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="6121364846593753707">
-      <property name="name" nameId="tpck.1169194664001" value="name" />
+      <property name="name" nameId="tpck.1169194664001" value="canonicName" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6121364846593753708" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6121364846593753710">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6121364846593753712">

@@ -60,7 +60,7 @@ public class Component_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_3k4y3b_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return Component_Behavior.call_name_1740160309778233539(node);
+        return Component_Behavior.call_canonicName_1740160309778233539(node);
       }
 
       public void setText(String s) {
