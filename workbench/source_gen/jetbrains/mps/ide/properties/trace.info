@@ -819,28 +819,28 @@
     </scopeInfo>
     <scopeInfo nodeId="1747818952411874067" fileName="StandardComponents.java" startLine="138" startPosition="0" endLine="142" endPosition="0">
       <varInfo nodeId="1747818952411874070" varName="owner" />
-      <varInfo nodeId="1747818952411874072" varName="caption" />
       <varInfo nodeId="1747818952411874074" varName="list" />
+      <varInfo nodeId="1747818952411874072" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="447" startPosition="52" endLine="451" endPosition="13" />
     <scopeInfo nodeId="4060390951635974672" fileName="StandardComponents.java" startLine="479" startPosition="0" endLine="483" endPosition="0">
       <varInfo nodeId="4060390951635974675" varName="owner" />
-      <varInfo nodeId="4060390951635974677" varName="caption" />
       <varInfo nodeId="4060390951635974679" varName="list" />
+      <varInfo nodeId="4060390951635974677" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="4060390951635974689" fileName="StandardComponents.java" startLine="483" startPosition="0" endLine="487" endPosition="0">
       <varInfo nodeId="4060390951635974692" varName="owner" />
-      <varInfo nodeId="4060390951635974694" varName="caption" />
       <varInfo nodeId="4060390951635974696" varName="list" />
+      <varInfo nodeId="4060390951635974694" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="4060390951635974706" fileName="StandardComponents.java" startLine="487" startPosition="0" endLine="491" endPosition="0">
       <varInfo nodeId="4060390951635974709" varName="owner" />
-      <varInfo nodeId="4060390951635974711" varName="caption" />
       <varInfo nodeId="4060390951635974713" varName="list" />
+      <varInfo nodeId="4060390951635974711" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="4060390951635974969" fileName="StandardComponents.java" startLine="546" startPosition="0" endLine="550" endPosition="0">
-      <varInfo nodeId="4060390951635974976" varName="gridwidth" />
       <varInfo nodeId="4060390951635974980" varName="weightx" />
+      <varInfo nodeId="4060390951635974976" varName="gridwidth" />
       <varInfo nodeId="4060390951635974982" varName="weighty" />
       <varInfo nodeId="4060390951635974986" varName="fill" />
       <varInfo nodeId="4060390951635974978" varName="gridheight" />
@@ -859,8 +859,8 @@
     <scopeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="247" startPosition="80" endLine="253" endPosition="0" />
     <scopeInfo nodeId="4060390951635972909" fileName="StandardComponents.java" startLine="560" startPosition="0" endLine="566" endPosition="5">
       <varInfo nodeId="4060390951635972915" varName="checkboxCaption" />
-      <varInfo nodeId="4060390951635972911" varName="object" />
       <varInfo nodeId="4060390951635972917" varName="isInternal" />
+      <varInfo nodeId="4060390951635972911" varName="object" />
       <varInfo nodeId="4060390951635972913" varName="propName" />
     </scopeInfo>
     <scopeInfo nodeId="7355563316698764000" fileName="StandardComponents.java" startLine="193" startPosition="38" endLine="200" endPosition="36" />
@@ -929,8 +929,8 @@
     <scopeInfo nodeId="7355563316698763895" fileName="StandardComponents.java" startLine="122" startPosition="63" endLine="136" endPosition="0" />
     <scopeInfo nodeId="4060390951635973269" fileName="StandardComponents.java" startLine="190" startPosition="0" endLine="204" endPosition="0">
       <varInfo nodeId="4060390951635973272" varName="owner" />
-      <varInfo nodeId="4060390951635973274" varName="caption" />
       <varInfo nodeId="4060390951635973276" varName="list" />
+      <varInfo nodeId="4060390951635973274" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="1809539929827629323" fileName="StandardComponents.java" startLine="205" startPosition="118" endLine="219" endPosition="15" />
     <scopeInfo nodeId="1809539929827629496" fileName="StandardComponents.java" startLine="222" startPosition="123" endLine="236" endPosition="15" />
@@ -938,8 +938,8 @@
     <scopeInfo nodeId="4060390951635974723" fileName="StandardComponents.java" startLine="491" startPosition="0" endLine="505" endPosition="0">
       <varInfo nodeId="4060390951635974733" varName="extension" />
       <varInfo nodeId="4060390951635974726" varName="owner" />
-      <varInfo nodeId="4060390951635974728" varName="caption" />
       <varInfo nodeId="4060390951635974730" varName="list" />
+      <varInfo nodeId="4060390951635974728" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="4060390951635973075" fileName="StandardComponents.java" startLine="121" startPosition="172" endLine="136" endPosition="15" />
     <scopeInfo nodeId="7355563316698764203" fileName="StandardComponents.java" startLine="267" startPosition="64" endLine="282" endPosition="0" />
@@ -949,18 +949,18 @@
     <scopeInfo nodeId="7355563316698763848" fileName="StandardComponents.java" startLine="102" startPosition="63" endLine="118" endPosition="0" />
     <scopeInfo nodeId="4060390951635973125" fileName="StandardComponents.java" startLine="142" startPosition="0" endLine="158" endPosition="0">
       <varInfo nodeId="4060390951635973128" varName="owner" />
-      <varInfo nodeId="4060390951635973130" varName="caption" />
       <varInfo nodeId="4060390951635973132" varName="list" />
+      <varInfo nodeId="4060390951635973130" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="4060390951635973173" fileName="StandardComponents.java" startLine="158" startPosition="0" endLine="174" endPosition="0">
       <varInfo nodeId="4060390951635973176" varName="owner" />
-      <varInfo nodeId="4060390951635973178" varName="caption" />
       <varInfo nodeId="4060390951635973180" varName="list" />
+      <varInfo nodeId="4060390951635973178" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="4060390951635973221" fileName="StandardComponents.java" startLine="174" startPosition="0" endLine="190" endPosition="0">
       <varInfo nodeId="4060390951635973224" varName="owner" />
-      <varInfo nodeId="4060390951635973226" varName="caption" />
       <varInfo nodeId="4060390951635973228" varName="list" />
+      <varInfo nodeId="4060390951635973226" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="1809539929827629633" fileName="StandardComponents.java" startLine="266" startPosition="128" endLine="282" endPosition="15" />
     <scopeInfo nodeId="1809539929827638187" fileName="StandardComponents.java" startLine="285" startPosition="132" endLine="301" endPosition="15" />
@@ -969,13 +969,13 @@
     <scopeInfo nodeId="4060390951635972992" fileName="StandardComponents.java" startLine="101" startPosition="169" endLine="118" endPosition="15" />
     <scopeInfo nodeId="1809539929827629313" fileName="StandardComponents.java" startLine="204" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="1809539929827629316" varName="owner" />
-      <varInfo nodeId="1809539929827629318" varName="caption" />
       <varInfo nodeId="1809539929827629320" varName="list" />
+      <varInfo nodeId="1809539929827629318" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="1809539929827629486" fileName="StandardComponents.java" startLine="221" startPosition="0" endLine="238" endPosition="0">
       <varInfo nodeId="1809539929827629489" varName="owner" />
-      <varInfo nodeId="1809539929827629491" varName="caption" />
       <varInfo nodeId="1809539929827629493" varName="list" />
+      <varInfo nodeId="1809539929827629491" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="8175648731696670213" fileName="StandardComponents.java" startLine="324" startPosition="80" endLine="341" endPosition="0" />
     <scopeInfo nodeId="4060390951635974761" fileName="StandardComponents.java" startLine="506" startPosition="115" endLine="523" endPosition="17">
@@ -986,8 +986,8 @@
     <scopeInfo nodeId="4060390951635973065" fileName="StandardComponents.java" startLine="120" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="1747818952411861749" varName="condition" />
       <varInfo nodeId="4060390951635973068" varName="owner" />
-      <varInfo nodeId="4060390951635973070" varName="caption" />
       <varInfo nodeId="4060390951635973072" varName="list" />
+      <varInfo nodeId="4060390951635973070" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="4060390951635974875" fileName="StandardComponents.java" startLine="526" startPosition="159" endLine="544" endPosition="17">
       <varInfo nodeId="4060390951635974877" varName="panel" />
@@ -997,8 +997,8 @@
     </scopeInfo>
     <scopeInfo nodeId="1809539929827629623" fileName="StandardComponents.java" startLine="265" startPosition="0" endLine="284" endPosition="0">
       <varInfo nodeId="1809539929827629626" varName="owner" />
-      <varInfo nodeId="1809539929827629628" varName="caption" />
       <varInfo nodeId="1809539929827629630" varName="list" />
+      <varInfo nodeId="1809539929827629628" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="1809539929827638178" fileName="StandardComponents.java" startLine="284" startPosition="0" endLine="303" endPosition="0">
       <varInfo nodeId="1809539929827638181" varName="owner" />
@@ -1012,8 +1012,8 @@
     </scopeInfo>
     <scopeInfo nodeId="4060390951635972979" fileName="StandardComponents.java" startLine="100" startPosition="0" endLine="120" endPosition="0">
       <varInfo nodeId="4060390951635972982" varName="owner" />
-      <varInfo nodeId="4060390951635972984" varName="caption" />
       <varInfo nodeId="4060390951635972986" varName="list" />
+      <varInfo nodeId="4060390951635972984" varName="caption" />
       <varInfo nodeId="4060390951635972989" varName="canRemove" />
     </scopeInfo>
     <scopeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="241" startPosition="39" endLine="261" endPosition="36" />
@@ -1023,8 +1023,8 @@
     </scopeInfo>
     <scopeInfo nodeId="4060390951635973380" fileName="StandardComponents.java" startLine="361" startPosition="66" endLine="382" endPosition="18">
       <varInfo nodeId="4060390951635973413" varName="result" />
-      <varInfo nodeId="4060390951635973382" varName="initText" />
       <varInfo nodeId="4060390951635973438" varName="nameField" />
+      <varInfo nodeId="4060390951635973382" varName="initText" />
       <varInfo nodeId="4060390951635973394" varName="isValid" />
     </scopeInfo>
     <scopeInfo nodeId="4060390951635973477" fileName="StandardComponents.java" startLine="385" startPosition="140" endLine="406" endPosition="17">
@@ -1042,8 +1042,8 @@
     </scopeInfo>
     <scopeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="240" startPosition="64" endLine="263" endPosition="0" />
     <scopeInfo nodeId="1809539929827638336" fileName="StandardComponents.java" startLine="323" startPosition="207" endLine="346" endPosition="21">
-      <varInfo nodeId="8175648731696670211" varName="tablePanel" />
       <varInfo nodeId="8175648731696671984" varName="mainPanel" />
+      <varInfo nodeId="8175648731696670211" varName="tablePanel" />
     </scopeInfo>
     <scopeInfo nodeId="1809539929827629579" fileName="StandardComponents.java" startLine="239" startPosition="133" endLine="263" endPosition="15" />
     <scopeInfo nodeId="4060390951635973373" fileName="StandardComponents.java" startLine="360" startPosition="0" endLine="384" endPosition="0">
@@ -1060,14 +1060,14 @@
     <scopeInfo nodeId="1809539929827638321" fileName="StandardComponents.java" startLine="322" startPosition="0" endLine="348" endPosition="0">
       <varInfo nodeId="1809539929827638324" varName="owner" />
       <varInfo nodeId="1809539929827638331" varName="generator" />
-      <varInfo nodeId="1809539929827638326" varName="caption" />
       <varInfo nodeId="1809539929827638328" varName="list" />
+      <varInfo nodeId="1809539929827638326" varName="caption" />
       <varInfo nodeId="1809539929827638333" varName="depGenerators" />
     </scopeInfo>
     <scopeInfo nodeId="1809539929827629569" fileName="StandardComponents.java" startLine="238" startPosition="0" endLine="265" endPosition="0">
       <varInfo nodeId="1809539929827629572" varName="owner" />
-      <varInfo nodeId="1809539929827629574" varName="caption" />
       <varInfo nodeId="1809539929827629576" varName="list" />
+      <varInfo nodeId="1809539929827629574" varName="caption" />
     </scopeInfo>
     <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="426" startPosition="38" endLine="475" endPosition="37">
       <varInfo nodeId="3416087927885134967" varName="jlist" />
@@ -1076,8 +1076,8 @@
     <scopeInfo nodeId="4060390951635974480" fileName="StandardComponents.java" startLine="424" startPosition="172" endLine="477" endPosition="15" />
     <scopeInfo nodeId="4060390951635974468" fileName="StandardComponents.java" startLine="423" startPosition="0" endLine="479" endPosition="0">
       <varInfo nodeId="4060390951635974471" varName="owner" />
-      <varInfo nodeId="4060390951635974473" varName="caption" />
       <varInfo nodeId="4060390951635974475" varName="list" />
+      <varInfo nodeId="4060390951635974473" varName="caption" />
       <varInfo nodeId="4060390951635974478" varName="properties" />
     </scopeInfo>
     <unitInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="247" startPosition="53" endLine="253" endPosition="9" unitName="jetbrains.mps.ide.properties.StandardComponents$10" />
@@ -1477,8 +1477,8 @@
       <varInfo nodeId="5923576889075042092" varName="dataId" />
     </scopeInfo>
     <scopeInfo nodeId="5923576889075042419" fileName="ModelPropertiesDialog.java" startLine="111" startPosition="25" endLine="123" endPosition="78">
-      <varInfo nodeId="5923576889075042425" varName="references" />
       <varInfo nodeId="1921002875291564023" varName="model" />
+      <varInfo nodeId="5923576889075042425" varName="references" />
       <varInfo nodeId="5923576889075042429" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="5923576889075042416" fileName="ModelPropertiesDialog.java" startLine="110" startPosition="57" endLine="125" endPosition="0" />

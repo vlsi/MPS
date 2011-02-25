@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8st5xk9aojzbak6to9ajf23nlx5p97b">
+<dependencies version="2" modelHash="bmo7iwpac8e4mvfrvg5r0emtriemok3">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7j7f23wpy27xm5qbrp0hshvy38yttz0" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-d7iz155b0biu1ihrkmfx6r8rjwyp26c" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="2iyur8k94ponui6te6icqasd0yli4zv" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-83ifaukb89vccacv002uuddrxswzuxf" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2xqme5k39llx07ihnvoll33v8m215e" />
-  <common hash="-5vayhqucv00osaxd6zohqpfgt0be0nl" />
-  <source id="1560298786499489453" name="EditableStringDescriptor" hash="2pv47kfcn9c5h6q0el9ntogw6zq3upm">
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-c5nb0tgn5x3ik166qlbxe33p18qx8iz" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="8piw64nlwt97de6k6fho9w6eaml5xak" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d5ax0i0w21fsp3r2lvns9jctqjjbwsh" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="36l17jjlzwkvt9mm38z504bro2ysrw9" />
+  <common hash="-53s2f74nv6yoibstfqh0xnyopzqjl5e" />
+  <source id="1560298786499489453" name="EditableStringDescriptor" hash="-entgydcqvtjh6uzk74f7bj8tlqxvnzr">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EditableStringDescriptor.java" />
   </source>
-  <source id="1560298786499489905" name="ColumnDescriptor" hash="-58deedmtbxvbagj26n9gkd35bfk8cap">
+  <source id="1560298786499489905" name="ColumnDescriptor" hash="dt6yyk0eaqwt1s8qgkd3qjvo8dfg9ly">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ColumnDescriptor.java" />
   </source>
-  <source id="1560298786499491464" name="StringPathDescriptor" hash="-6fh6w17pax0yfji6hw8cdgupylnd2o9">
+  <source id="1560298786499491464" name="StringPathDescriptor" hash="7h7i5b8lbw6j3enj5r8kcb00ueise6p">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StringPathDescriptor.java" />
   </source>
-  <source id="1560298786499491489" name="BooleanDescriptor" hash="-5rdkgmc1q074ezprwu8s5v6masv28se">
+  <source id="1560298786499491489" name="BooleanDescriptor" hash="3ab9hk6q9qzxusdo9frk594z3es0bf2">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BooleanDescriptor.java" />
   </source>
-  <source id="1560298786499492161" name="RuleTypeDescriptor" hash="-8ph30f2p2m3rgvxd9abmee1s40xhhyz">
+  <source id="1560298786499492161" name="RuleTypeDescriptor" hash="es9ys613lohd506b4oj58fug55zp9gw">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RuleTypeDescriptor.java" />
   </source>
-  <source id="1560298786499492191" name="PriorityRuleDescriptor" hash="mh7f8hohoqv65yvtqhcdkvmq1n8q6i">
+  <source id="1560298786499492191" name="PriorityRuleDescriptor" hash="-a2xupq8kyq00h3z2jbcj097sf9pvoe6">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PriorityRuleDescriptor.java" />
   </source>
-  <source id="1560298786499492265" name="ModuleImportDescriptor" hash="bexim556anr9xatlsm6w4vbv104rh1z">
+  <source id="1560298786499492265" name="ModuleImportDescriptor" hash="6r215546o6jm5tsxw2yqwpt38qhgpsw">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ModuleImportDescriptor.java" />
   </source>
-  <source id="1560298786499493471" name="ModuleDescriptor" hash="72x64335rdck69dto0t6rx148png5ym">
+  <source id="1560298786499493471" name="ModuleDescriptor" hash="38w5j19w4xjnmdeueeke8sambjb8de5">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ModuleDescriptor.java" />
   </source>
-  <source id="1560298786499494704" name="ManagerDescriptor" hash="-50tr9vy6k5qwok4gw9625vijzr5nnh5">
+  <source id="1560298786499494704" name="ManagerDescriptor" hash="-bwwwaamizlxe3erujn6jfvbiowjmt13">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ManagerDescriptor.java" />
   </source>
-  <source id="1560298786499495292" name="DepDescriptor" hash="-1c2p7knim9rf2virelhcyjwpbimr5ud">
+  <source id="1560298786499495292" name="DepDescriptor" hash="4tyerk37cel8v1ttywdts31ptmnav94">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -63,12 +63,12 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DepDescriptor.java" />
   </source>
-  <source id="1560298786499495705" name="VoidColumnDescriptor" hash="-5ovrwrewpeewcpq9e22pdwbzcpmars0">
+  <source id="1560298786499495705" name="VoidColumnDescriptor" hash="5i9rmrkguzrcjcelh9zjwzaf99s336i">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="VoidColumnDescriptor.java" />
   </source>
-  <source id="1560298786499495810" name="IncludedVCSDescriptor" hash="-547lyo4wc53y9n9o5jmg100wnm6d2gt">
+  <source id="1560298786499495810" name="IncludedVCSDescriptor" hash="3wyz1wvk32xy3eo3qztmpkvdab3enh3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -76,7 +76,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IncludedVCSDescriptor.java" />
   </source>
-  <source id="1560298786499497407" name="ModelDescriptor" hash="ew8jgj14izkwex2wxgbypaax3axzcd9">
+  <source id="1560298786499497407" name="ModelDescriptor" hash="-1gb2ieix9r7ag1u63usznl86mqbdtad">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ModelDescriptor.java" />
