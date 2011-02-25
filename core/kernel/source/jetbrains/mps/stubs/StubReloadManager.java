@@ -255,7 +255,7 @@ public class StubReloadManager implements ApplicationComponent {
     for (AbstractModule m : getAllModules()) {
       for (StubPath sp : getModuleStubPaths(m)) {
         //error was already reported in loadNewStubs
-        if (myPath2Data.get(sp) == null || myPath2Data.get(sp).get(m) == null) continue;
+        if (myPath2Data.get(sp) == null || myPath2Data.get(sp).get(m.getModuleReference().getModuleId()) == null) continue;
         myLoadedStubPaths.add(m, sp);
       }
     }
