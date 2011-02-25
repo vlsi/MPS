@@ -18,9 +18,9 @@ public class Stubs_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new FindDuplicatedStubs_Action());
     addAction(new ReResolveStubRefs_Action());
-    addAction(new UpdateModuleStubDeps_Action());
-    addAction(new UpdateStubRefs_Action());
+    addAction(new UpdateLanguageAccessories_Action());
     // groups 
     addGroup(new UpdateAddition_ActionGroup());
   }

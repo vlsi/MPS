@@ -4,10 +4,10 @@ package jetbrains.mps.stubs.javastub;
 
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.stubs.StubLocation;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.reloading.AbstractClassPathItem;
-import jetbrains.mps.stubs.StubLocation;
 import org.objectweb.asm.ClassReader;
 import jetbrains.mps.stubs.javastub.asm.ASMClass;
 import jetbrains.mps.baseLanguage.structure.Classifier;
@@ -25,9 +25,9 @@ import jetbrains.mps.util.NameUtil;
 
 public class ClassifierLoader {
   private IClassPathItem myCpItem;
-  private StubLocation myLocation;
   private SModel myModel;
   private ClassifierUpdater myUpdater;
+  private StubLocation myLocation;
 
   public ClassifierLoader(StubLocation location, SModel model, IClassPathItem cpItem, ClassifierUpdater updater) {
     myLocation = location;
@@ -61,7 +61,7 @@ public class ClassifierLoader {
     ASMClass ac = new ASMClass(reader);
     Classifier res = createClassifierForClass(name, myModel, reader);
     adder.invoke(res.getNode());
-    myUpdater.updateClassifier(myLocation.getModule(),res, ac);
+    myUpdater.updateClassifier(myLocation.getModule(), res, ac);
     updateInnerClassifiers(ac, res);
   }
 

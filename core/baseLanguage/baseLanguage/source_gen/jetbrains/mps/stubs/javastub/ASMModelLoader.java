@@ -11,9 +11,9 @@ public class ASMModelLoader {
   private static final Logger LOG = Logger.getLogger(ASMModelLoader.class);
   public static final boolean SKIP_PRIVATE = false;
 
-  private StubLocation myLocation;
   private IClassPathItem myCpItem;
   private SModel myModel;
+  private StubLocation myLocation;
 
   public ASMModelLoader(StubLocation location, IClassPathItem classPathItem, SModel model) {
     myLocation = location;
@@ -24,7 +24,7 @@ public class ASMModelLoader {
   public void updateModel() {
     try {
       String pack = myModel.getLongName();
-      ClassifierLoader loader = new ClassifierLoader(myLocation,myModel, myCpItem, new ClassifierUpdater());
+      ClassifierLoader loader = new ClassifierLoader(myLocation, myModel, myCpItem, new ClassifierUpdater());
       for (String name : myCpItem.getRootClasses(pack)) {
         if (myModel.getNodeById(ASMNodeId.createId(name)) != null) {
           continue;

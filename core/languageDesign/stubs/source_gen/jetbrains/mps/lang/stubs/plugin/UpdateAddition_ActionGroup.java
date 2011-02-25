@@ -14,9 +14,9 @@ public class UpdateAddition_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      UpdateAddition_ActionGroup.this.addAction("jetbrains.mps.lang.stubs.plugin.UpdateModuleStubDeps_Action");
+      UpdateAddition_ActionGroup.this.addAction("jetbrains.mps.lang.stubs.plugin.UpdateLanguageAccessories_Action");
       UpdateAddition_ActionGroup.this.addAction("jetbrains.mps.lang.stubs.plugin.ReResolveStubRefs_Action");
-      UpdateAddition_ActionGroup.this.addAction("jetbrains.mps.lang.stubs.plugin.UpdateStubRefs_Action");
+      UpdateAddition_ActionGroup.this.addAction("jetbrains.mps.lang.stubs.plugin.FindDuplicatedStubs_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
