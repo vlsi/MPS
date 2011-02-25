@@ -261,14 +261,15 @@
   <dependency className="jetbrains.mps.platform.conf.structure.XInclude" file="XInclude.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.structure.ConfigurationXmlNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.platform.conf.structure.IExternalConfigurationFragment" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.platform.conf.structure.ConfigurationXmlNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
 </dependenciesRoot>

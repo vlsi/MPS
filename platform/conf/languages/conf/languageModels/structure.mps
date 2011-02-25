@@ -125,8 +125,14 @@
     <property name="name:0" value="XInclude" />
     <property name="virtualPackage:0" value="xml" />
     <link role="extends:0" targetNodeId="5066720069350533029:0" resolveInfo="ConfigurationXmlNode" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1829899669318982164">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="document" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="5314521579133271086:0" resolveInfo="ConfigurationXmlDocument" />
+    </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="4559888222469859036">
-      <property name="name:0" value="xpointer" />
+      <property name="name:0" value="includeRoot" />
       <link role="dataType:0" targetNodeId="3v.1082983041843:0" resolveInfo="string" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1740160309778213311">

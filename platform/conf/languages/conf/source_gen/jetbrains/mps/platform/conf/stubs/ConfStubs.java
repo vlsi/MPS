@@ -58,19 +58,19 @@ public class ConfStubs extends BaseStubModelRootManager {
 
   protected void updateModel(final StubLocation location, final SModel model) {
     String pkg = model.getSModelFqName().getLongName();
-    List<Tuples._3<String, String, SNode>> modlst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
+    List<Tuples._3<String, String, SNode>> doclst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", null);
     PathItem pi = ConfPathItem.getPathItem(location.getPath());
-    for (String modres : ListSequence.fromList(pi.resources(pkg))) {
-      SNodeId id = ConfReader.createForeignId(pi.baseName(modres));
+    for (String docres : ListSequence.fromList(pi.resources(pkg))) {
+      SNodeId id = ConfReader.createForeignId(pi.baseName(docres));
       SNode doc = (SNode) model.getNodeById(id);
       if ((doc == null)) {
         doc = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument")), sample);
         doc.setId(id);
-        SPropertyOperations.set(doc, "name", pi.baseName(modres));
+        SPropertyOperations.set(doc, "name", pi.baseName(docres));
         SModelOperations.addRootNode(model, doc);
       }
-      ListSequence.fromList(modlst).addElement(MultiTuple.<String,String,SNode>from(pkg, modres, doc));
+      ListSequence.fromList(doclst).addElement(MultiTuple.<String,String,SNode>from(pkg, docres, doc));
     }
     final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf"));
     ConfReader reader = new ConfReader(new ConfReader.Resolver() {
@@ -82,7 +82,7 @@ public class ConfStubs extends BaseStubModelRootManager {
         return descs.smodelRefWithId(pk);
       }
     });
-    for (Tuples._3<String, String, SNode> modpair : ListSequence.fromList(modlst)) {
+    for (Tuples._3<String, String, SNode> modpair : ListSequence.fromList(doclst)) {
       InputStream is = null;
       try {
         is = pi.openResource(modpair._0(), modpair._1());

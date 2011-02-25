@@ -55,5 +55,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
+  <dependency className="jetbrains.mps.platform.conf.behavior.XInclude_Behavior" file="XInclude_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Iterable" />
+  </dependency>
 </dependenciesRoot>
 

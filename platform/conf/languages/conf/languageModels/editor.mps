@@ -50,11 +50,22 @@
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="1740160309778213313">
         <link role="editorComponent:32" targetNodeId="1740160309778213296" resolveInfo="ConfigurationXmlNode_Header" />
       </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="1829899669319019853">
+        <link role="relationDeclaration:32" targetNodeId="1.1829899669318982164:0" />
+        <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="1829899669319019854">
+          <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1829899669319019856">
+            <property name="readOnly:32" value="true" />
+            <link role="relationDeclaration:32" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1740160309778208728" />
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4559888222469859038">
-        <property name="text:32" value="xpointer=" />
+        <property name="text:32" value="/" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="4559888222469859040">
+        <property name="noTargetText:32" value="&lt;undefined&gt;" />
+        <property name="allowEmptyText:32" value="true" />
         <link role="relationDeclaration:32" targetNodeId="1.4559888222469859036:0" resolveInfo="xpointer" />
       </node>
     </node>
