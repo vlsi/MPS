@@ -21,8 +21,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new AddGeneralPurposeDevKitToLanguageModels_Action());
-    addAction(new AddLanguageDesingDevKitToLanguages_Action());
     addAction(new AddLanguageImport_Action());
     addAction(new AddMissingImports_Action());
     addAction(new AddModelImportByRoot_Action());
@@ -46,7 +44,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new DeleteNode_Action());
     addAction(new DeletePropertyAction_Action());
     addAction(new DeleteReferenceAction_Action());
-    addAction(new DumpKeyStrokes_Action());
     addAction(new EditNodeExplicit_Action());
     addAction(new EditNode_Action());
     addAction(new ExpandAll_Action());
@@ -57,14 +54,12 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FindPrevious_Action());
     addAction(new FindSpecificNodeUsages_Action());
     addAction(new Find_Action());
-    addAction(new FixDependenciesEverywhere_Action());
     addAction(new FixVirtualPackges_Action());
     addAction(new FoldSelection_Action());
     addAction(new GoByCurrentReference_Action());
     addAction(new GoToNodeById_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
-    addAction(new LoadNonStubModels_Action());
     addAction(new MPSProjectPaths_Action());
     addAction(new ModelPropertiesWOShortcut_Action());
     addAction(new ModelProperties_Action());
@@ -75,16 +70,13 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new NewRuntimeModule_Action());
     addAction(new NewSubModel_Action());
     addAction(new NewSubTestModel_Action());
-    addAction(new OptimizeImportsInGlobalScope_Action());
     addAction(new OptimizeModelImports_Action());
     addAction(new OptimizeModuleImports_Action());
     addAction(new OptimizeProjectImports_Action());
     addAction(new PasteNode_Action());
     addAction(new QuickCreate_Action());
     addAction(new RemoveAllBookmarks_Action());
-    addAction(new RemoveBootstrapLanguagesDevKitFromLanguageModels_Action());
     addAction(new RemoveFromFavorites_Action());
-    addAction(new RemoveLanguageDesignDevKitFromModels_Action());
     addAction(new RemoveModuleFromProject_Action());
     addAction(new RemoveTransientModels_Action());
     addAction(new RenameFavoritesList_Action());
@@ -167,7 +159,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new SolutionActions_ActionGroup());
     addGroup(new SolutionNewActions_ActionGroup());
     addGroup(new SolutionRefactoring_ActionGroup());
-    addGroup(new ToolsInternal_ActionGroup());
     addGroup(new ToolsUpgrade_ActionGroup());
     addGroup(new Tools_ActionGroup());
     addGroup(new TransientModulesActions_ActionGroup());
@@ -201,7 +192,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GoByReference_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_goByRef);
     insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(EditorInternal_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
-    insertGroupIntoAnother(ToolsInternal_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_internal);
     insertGroupIntoAnother(ProjectNewActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_projectNew);
     insertGroupIntoAnother(SolutionNewActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_solutionNew);
     insertGroupIntoAnother(GeneratorNewActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generatorNew);
