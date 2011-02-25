@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.textGen;
 
-import com.thoughtworks.xstream.core.util.Base64Encoder;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
@@ -26,8 +25,10 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
+import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.NameUtil;
 
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -96,10 +97,15 @@ public class TextGenManager {
     Object result = buffer.getText();
     String outputEncoding = (String) buffer.getUserObject(OUTPUT_ENCODING);
     if(outputEncoding != null) {
-      if(outputEncoding == "binary") {
-        result = new Base64Encoder().decode((String) result);
+      if(outputEncoding.equals("binary")) {
+        result = EncodingUtil.decodeBase64((String) result);
+      } else {
+        try {
+          result = EncodingUtil.encode((String) result, outputEncoding);
+        } catch(IOException ex) {
+          LOG.error("cannot encode the output stream", ex);
+        }
       }
-      // TODO support non-utf8 encodings
     }
     return new TextGenerationResult(result, buffer.hasErrors(), positionInfo, scopeInfo, unitInfo, deps);
   }
