@@ -24,16 +24,18 @@ public class StubMigrationHelper {
   public static SModelId convertModelId(SModelId id) {
     if (!(id instanceof ForeignSModelId)) return null;
     String fid = ((ForeignSModelId) id).getId();
-    return StubMigrationHelper.convertModelUIDAny(fid, fid.substring(0,fid.indexOf('#')));
+    return StubMigrationHelper.convertModelUIDAny(fid);
   }
 
   //ret null if no need for conversion or failed
-  public static SModelId convertModelUIDAny(String fid, String stereo) {
+  public static SModelId convertModelUIDAny(String fid) {
     int li = fid.lastIndexOf('#');
     int fi = fid.indexOf('#');
     if (fi != li) return null;
     ModuleReference module = null;
     String mid = fid.substring(fi + 1);
+    String stereo = fid.substring(0, fi);
+
     for (SModelDescriptor m : GlobalScope.getInstance().getModelDescriptors(mid)) {
       if (m.getStereotype().equals(stereo)) {
         module = m.getModule().getModuleReference();
