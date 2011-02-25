@@ -64,7 +64,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GoToNodeById_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
-    addAction(new InstallIDEAPlugin_Action());
     addAction(new LoadNonStubModels_Action());
     addAction(new MPSProjectPaths_Action());
     addAction(new ModelPropertiesWOShortcut_Action());
@@ -82,15 +81,12 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new OptimizeProjectImports_Action());
     addAction(new PasteNode_Action());
     addAction(new QuickCreate_Action());
-    addAction(new ReloadAll_Action());
-    addAction(new ReloadStubs_Action());
     addAction(new RemoveAllBookmarks_Action());
     addAction(new RemoveBootstrapLanguagesDevKitFromLanguageModels_Action());
     addAction(new RemoveFromFavorites_Action());
     addAction(new RemoveLanguageDesignDevKitFromModels_Action());
     addAction(new RemoveModuleFromProject_Action());
     addAction(new RemoveTransientModels_Action());
-    addAction(new RenameAspects_Action());
     addAction(new RenameFavoritesList_Action());
     addAction(new RenameFileOrDirectory_Action());
     addAction(new RenameModel_Action());

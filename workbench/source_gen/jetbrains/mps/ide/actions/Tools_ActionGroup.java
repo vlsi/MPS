@@ -13,6 +13,7 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Tools_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Tools_ActionGroup";
   public static final String LABEL_ID_customTools = ID + "customTools";
+  public static final String LABEL_ID_devkitTools = ID + "devkitTools";
   public static final String LABEL_ID_internal = ID + "internal";
 
   public Tools_ActionGroup() {
@@ -28,11 +29,12 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
         Tools_ActionGroup.this.addAction(action);
       }
       Tools_ActionGroup.this.addSeparator();
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ReloadAll_Action");
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ReloadStubs_Action");
-      Tools_ActionGroup.this.addSeparator();
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.InstallIDEAPlugin_Action");
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameAspects_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(Tools_ActionGroup.LABEL_ID_devkitTools);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        Tools_ActionGroup.this.addAction(action);
+      }
       Tools_ActionGroup.this.addSeparator();
       {
         GeneratedActionGroup newAction = new ToolsUpgrade_ActionGroup();
