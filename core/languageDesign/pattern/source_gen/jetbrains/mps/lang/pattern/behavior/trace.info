@@ -88,10 +88,10 @@
     <nodeInfo nodeId="5830155447075837007" fileName="PatternVarsUtil.java" startLine="21" startPosition="126" endLine="22" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5830155447075837022" fileName="PatternVarsUtil.java" startLine="23" startPosition="5" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5830155447076131936" fileName="PatternVarsUtil.java" startLine="27" startPosition="65" endLine="28" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5830155447076131957" fileName="PatternVarsUtil.java" startLine="32" startPosition="103" endLine="33" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5830155447076134015" fileName="PatternVarsUtil.java" startLine="35" startPosition="118" endLine="36" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5830155447076137966" fileName="PatternVarsUtil.java" startLine="38" startPosition="122" endLine="39" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5830155447076137982" fileName="PatternVarsUtil.java" startLine="41" startPosition="126" endLine="42" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5830155447076131957" fileName="PatternVarsUtil.java" startLine="32" startPosition="103" endLine="33" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5830155447076134015" fileName="PatternVarsUtil.java" startLine="35" startPosition="118" endLine="36" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5830155447076137966" fileName="PatternVarsUtil.java" startLine="38" startPosition="122" endLine="39" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5830155447076137982" fileName="PatternVarsUtil.java" startLine="41" startPosition="126" endLine="42" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5830155447076137986" fileName="PatternVarsUtil.java" startLine="43" startPosition="5" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5830155447075815038" fileName="PatternVarsUtil.java" startLine="9" startPosition="30" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PatternVarsUtil#()V" />
     <nodeInfo nodeId="5830155447075815592" fileName="PatternVarsUtil.java" startLine="14" startPosition="34" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -109,10 +109,10 @@
     <scopeInfo nodeId="5830155447075836969" fileName="PatternVarsUtil.java" startLine="18" startPosition="122" endLine="19" endPosition="168" />
     <scopeInfo nodeId="5830155447075836996" fileName="PatternVarsUtil.java" startLine="21" startPosition="126" endLine="22" endPosition="172" />
     <scopeInfo nodeId="5830155447076128417" fileName="PatternVarsUtil.java" startLine="27" startPosition="65" endLine="28" endPosition="104" />
-    <scopeInfo nodeId="5830155447076131948" fileName="PatternVarsUtil.java" startLine="32" startPosition="103" endLine="33" endPosition="92" />
-    <scopeInfo nodeId="5830155447076134004" fileName="PatternVarsUtil.java" startLine="35" startPosition="118" endLine="36" endPosition="115" />
-    <scopeInfo nodeId="5830155447076137954" fileName="PatternVarsUtil.java" startLine="38" startPosition="122" endLine="39" endPosition="115" />
-    <scopeInfo nodeId="5830155447076137971" fileName="PatternVarsUtil.java" startLine="41" startPosition="126" endLine="42" endPosition="94" />
+    <scopeInfo nodeId="5830155447076131948" fileName="PatternVarsUtil.java" startLine="32" startPosition="103" endLine="33" endPosition="133" />
+    <scopeInfo nodeId="5830155447076134004" fileName="PatternVarsUtil.java" startLine="35" startPosition="118" endLine="36" endPosition="166" />
+    <scopeInfo nodeId="5830155447076137954" fileName="PatternVarsUtil.java" startLine="38" startPosition="122" endLine="39" endPosition="166" />
+    <scopeInfo nodeId="5830155447076137971" fileName="PatternVarsUtil.java" startLine="41" startPosition="126" endLine="42" endPosition="135" />
     <scopeInfo nodeId="5830155447075815038" fileName="PatternVarsUtil.java" startLine="9" startPosition="30" endLine="11" endPosition="3" />
     <scopeInfo nodeId="5830155447076128414" fileName="PatternVarsUtil.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="5830155447076131927" varName="patternVar" />

@@ -68,13 +68,13 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_3355120809064707876(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.intentions.structure.IntentionDeclaration")) {
-      return SNodeOperations.getNode("f:java_stub#jetbrains.mps.intentions(jetbrains.mps.intentions@java_stub)", "~BaseIntention");
+      return SNodeOperations.getNode("f:java_stub#79a2d464-32b0-48d2-96f9-b40717277a07#jetbrains.mps.intentions(jetbrains.mps.lang.intentions#1192798684353/jetbrains.mps.intentions@java_stub)", "~BaseIntention");
     }
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.intentions.structure.GenerateIntentionDeclaration")) {
-      return SNodeOperations.getNode("f:java_stub#jetbrains.mps.intentions(jetbrains.mps.intentions@java_stub)", "~GenerateIntention");
+      return SNodeOperations.getNode("f:java_stub#79a2d464-32b0-48d2-96f9-b40717277a07#jetbrains.mps.intentions(jetbrains.mps.lang.intentions#1192798684353/jetbrains.mps.intentions@java_stub)", "~GenerateIntention");
     }
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration")) {
-      return SNodeOperations.getNode("f:java_stub#jetbrains.mps.intentions(jetbrains.mps.intentions@java_stub)", "~SurroundWithIntention");
+      return SNodeOperations.getNode("f:java_stub#79a2d464-32b0-48d2-96f9-b40717277a07#jetbrains.mps.intentions(jetbrains.mps.lang.intentions#1192798684353/jetbrains.mps.intentions@java_stub)", "~SurroundWithIntention");
     }
     return null;
   }

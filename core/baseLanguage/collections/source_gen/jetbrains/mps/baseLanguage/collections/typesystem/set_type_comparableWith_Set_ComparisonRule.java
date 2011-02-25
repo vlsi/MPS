@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTER_3k2v7g_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~Set");
+  private static SNodePointer SNODE_POINTER_3k2v7g_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Set");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 

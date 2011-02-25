@@ -33,7 +33,7 @@ public class BTestCase_Behavior {
       public boolean accept(SNode method) {
         return (ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode annotation) {
-            return SLinkOperations.getTarget(annotation, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#org.junit(org.junit@java_stub)", "~Ignore"));
+            return SLinkOperations.getTarget(annotation, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.junit(MPS.Classpath/org.junit@java_stub)", "~Ignore"));
           }
         }) == null);
       }

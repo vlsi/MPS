@@ -40,7 +40,7 @@
     <nodeInfo nodeId="3583849467508048981" fileName="CheckUtil.java" startLine="117" startPosition="32" endLine="118" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3583849467508042417" fileName="CheckUtil.java" startLine="30" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckUtil#()V" />
     <nodeInfo nodeId="3583849467508042498" fileName="CheckUtil.java" startLine="39" startPosition="37" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3583849467508042542" fileName="CheckUtil.java" startLine="48" startPosition="103" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3583849467508042542" fileName="CheckUtil.java" startLine="48" startPosition="103" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3583849467508049067" fileName="CheckUtil.java" startLine="75" startPosition="106" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3583849467508049073" fileName="CheckUtil.java" startLine="78" startPosition="7" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3583849467508049115" fileName="CheckUtil.java" startLine="92" startPosition="217" endLine="95" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
