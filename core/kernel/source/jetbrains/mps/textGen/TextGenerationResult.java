@@ -16,7 +16,6 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
@@ -28,20 +27,20 @@ import java.util.Map;
 * Evgeny Gryaznov, 1/18/11
 */
 public class TextGenerationResult {
-  private String myText;
+  private Object myResult;
   private boolean myContainErrors;
   private final Map<SNode, TraceablePositionInfo> myPositions;
   private final Map<SNode, ScopePositionInfo> myScopePositions;
   private final Map<SNode, UnitPositionInfo> myUnitPositions;
   private Map<String, List<String>> myDependencies;
 
-  public TextGenerationResult(String text,
+  public TextGenerationResult(Object contents,
                               boolean containErrors,
                               Map<SNode, TraceablePositionInfo> positions,
                               Map<SNode, ScopePositionInfo> scopePositions,
                               Map<SNode, UnitPositionInfo> unitPositions,
                               Map<String, List<String>> dependencies) {
-    myText = text;
+    myResult = contents;
     myContainErrors = containErrors;
     myPositions = positions;
     myScopePositions = scopePositions;
@@ -49,8 +48,8 @@ public class TextGenerationResult {
     myDependencies = dependencies;
   }
 
-  public String getText() {
-    return myText;
+  public Object getResult() {
+    return myResult;
   }
 
   public boolean hasErrors() {

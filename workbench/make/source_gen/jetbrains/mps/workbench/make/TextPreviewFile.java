@@ -18,11 +18,11 @@ import java.io.InputStream;
 public class TextPreviewFile extends StubVirtualFile {
   private static TextPreviewFile.TextPreviewVirtualFileSystem FS = new TextPreviewFile.TextPreviewVirtualFileSystem();
 
-  private Map<String, ? extends CharSequence> forks;
+  private Map<String, Object> forks;
   private String name;
   private String path;
 
-  public TextPreviewFile(String name, String path, Map<String, ? extends CharSequence> forks) {
+  public TextPreviewFile(String name, String path, Map<String, Object> forks) {
     this.name = name;
     this.path = path;
     this.forks = forks;
@@ -33,7 +33,11 @@ public class TextPreviewFile extends StubVirtualFile {
   }
 
   public CharSequence fork(String name) {
-    return forks.get(name);
+    Object contents = forks.get(name);
+    return ((contents instanceof String) ?
+      (String) contents :
+      "<binary content>"
+    );
   }
 
   @Override

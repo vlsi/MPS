@@ -57,10 +57,10 @@ public class OutputViewGenerationHandler extends TextGenerationHandler {
     for (SNode root : roots) {
       TextGenerationResult result = TextGenerationUtil.generateText(context, root);
       wereErrors |= result.hasErrors();
-      final String nodeText = result.getText();
+      final Object nodeText = result.getResult();
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
-          viewTool.append(nodeText);
+          viewTool.append(nodeText instanceof String ? (String) nodeText : "<binary content>");
           viewTool.append("\n");
           viewTool.append("\r\n-------------------------------------------------------------------------------\n");
         }

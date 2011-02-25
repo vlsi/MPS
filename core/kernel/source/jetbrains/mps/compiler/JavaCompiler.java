@@ -42,12 +42,16 @@ public class JavaCompiler {
 
   }
 
-  public void addSourceFile(String path, String filename, String text) {
+  public void addSourceFile(String path, String filename, Object contents) {
+    if(!(contents instanceof String)) {
+      // binary files aren't sources
+      return;
+    }
     if (!path.isEmpty()) {
       path = path + (path.endsWith(File.separator) ? "" : File.separatorChar);
     }
     String filePath = path  + filename;
-    CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), filePath, "UTF-8");
+    CompilationUnit compilationUnit = new CompilationUnit(((String)contents).toCharArray(), filePath, "UTF-8");
     myCompilationUnits.put(NameUtil.namespaceFromPath(filePath.substring(0, MPSExtentions.DOT_JAVAFILE.length())), compilationUnit);
   }
 

@@ -25,6 +25,7 @@ import org.jdom.Element;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -51,6 +52,10 @@ class FileProcessor {
 
   public void saveContent(IFile file, Element content) {
     saveContent(new FileAndContent(file, new XMLFileContent(content)));
+  }
+
+  public void saveContent(IFile file, byte[] content) {
+    saveContent(new FileAndContent(file, new BinaryFileContent(content)));
   }
 
   private void saveContent(FileAndContent fileAndContent) {
@@ -115,6 +120,31 @@ class FileProcessor {
         if (writer != null) {
           try {
             writer.close();
+          } catch (IOException ignored) {}
+        }
+      }
+    }
+  }
+
+  private static class BinaryFileContent implements FileContent {
+    private byte[] myContent;
+
+    private BinaryFileContent(byte[] content) {
+      myContent = content;
+    }
+
+    @Override
+    public void saveToFile(IFile file) {
+      OutputStream stream = null;
+      try {
+        stream = file.openOutputStream();
+        stream.write(myContent);
+      } catch (IOException e) {
+        LOG.error(e);
+      } finally {
+        if (stream != null) {
+          try {
+            stream.close();
           } catch (IOException ignored) {}
         }
       }

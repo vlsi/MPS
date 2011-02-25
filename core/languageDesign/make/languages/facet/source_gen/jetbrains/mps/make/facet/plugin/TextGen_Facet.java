@@ -188,7 +188,7 @@ public class TextGen_Facet implements IFacet {
             case 0:
               for (IResource resource : Sequence.fromIterable(input)) {
                 GResource gres = (GResource) resource;
-                Map<String, String> texts = MapSequence.fromMap(new HashMap<String, String>());
+                Map<String, Object> texts = MapSequence.fromMap(new HashMap<String, Object>());
                 String prefix = JavaNameUtil.packageNameForModelUID(gres.status().getOutputModel().getSModelReference());
 
                 for (SNode root : Sequence.fromIterable(gres.status().getOutputModel().roots()).where(new IWhereFilter<SNode>() {
@@ -205,7 +205,7 @@ public class TextGen_Facet implements IFacet {
                     root.getName() + "." + ext :
                     root.getName()
                   ));
-                  MapSequence.fromMap(texts).put(fname, tgr.getText());
+                  MapSequence.fromMap(texts).put(fname, tgr.getResult());
                 }
 
                 _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new FResource(prefix, texts, gres.module(), gres.model()))));

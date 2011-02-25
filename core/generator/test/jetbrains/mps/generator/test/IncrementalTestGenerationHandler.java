@@ -205,6 +205,11 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
     }
 
     @Override
+    public void saveStream(String name, byte[] content, boolean isCache) {
+      Assert.fail("byte stream is not expected");
+    }
+
+    @Override
     public boolean touch(String name, boolean isCache) {
       Assert.assertFalse(isCache);
       String value = getExistingContent().get(name);

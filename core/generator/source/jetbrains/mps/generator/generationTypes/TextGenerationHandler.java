@@ -50,7 +50,12 @@ public class TextGenerationHandler extends GenerationHandlerBase {
 
   protected void fileGenerated(String targetDir, String fileName, TextGenerationResult result) {
     File target = new File(targetDir + File.separator + fileName);
-    FileUtil.write(target, result.getText());
+    Object value = result.getResult();
+    if(value instanceof String) {
+      FileUtil.write(target, (String) value);
+    } else {
+      FileUtil.write(target, (byte []) value);
+    }
   }
 
   @Override
