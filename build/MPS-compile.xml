@@ -76,7 +76,6 @@
     <path path="lib/platform.jar" />
     <path path="lib/util.jar" />
     <path path="workbench/classes" />
-    <path path="workbench/javaParser/classes" />
   </path>
   <path id="cycle.jetbrains.mps.analyzers_tjc.src">
     <path path="platform/analyzers/languages/analyzers/source_gen" />
