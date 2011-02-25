@@ -61,6 +61,7 @@
   </dependency>
   <dependency className="jetbrains.mps.stubs.javastub.ClassifierUpdater" file="ClassifierUpdater.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Classifier" />
+    <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.TypeVariableReference" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.FloatType" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.asm.ASMFormalTypeParameter" />

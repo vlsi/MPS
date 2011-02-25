@@ -90,6 +90,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 
 public class ClassifierUpdater {
@@ -744,7 +745,10 @@ public class ClassifierUpdater {
       Pair<String, String> p = new Pair<String, String>(packageName, myModule.getModuleFqName());
       if (!(reported.contains(p))) {
         reported.add(p);
-        LOG.error("no module found for: " + packageName + " in " + myModule.getModuleFqName());
+        if (IdeMain.getTestMode() == IdeMain.TestMode.NO_TEST) {
+          LOG.error("no module found for: " + packageName + " in " + myModule.getModuleFqName());
+
+        }
       }
     }
     SModelReference ref = StubHelper.uidForPackageInStubs(packageName, LanguageID.JAVA, module);
