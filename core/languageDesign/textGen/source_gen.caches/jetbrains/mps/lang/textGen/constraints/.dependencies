@@ -19,6 +19,7 @@
   <dependency className="jetbrains.mps.lang.textGen.constraints.ConstraintsDescriptor" file="ConstraintsDescriptor.java">
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.textGen.constraints.EncodingLiteral_encoding_PropertyConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.constraints.OperationDeclaration_DefaultSearchScope" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.constraints.OperationDeclaration_operationName_PropertyConstraint" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
@@ -26,6 +27,18 @@
     <classNode dependClassName="jetbrains.mps.lang.textGen.constraints.ConceptTextGenDeclaration_name_PropertyConstraint" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.textGen.constraints.EncodingLiteral_encoding_PropertyConstraint" file="EncodingLiteral_encoding_PropertyConstraint.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.nio.charset.Charset" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodePropertyValidator" />
   </dependency>
   <dependency className="jetbrains.mps.lang.textGen.constraints.LanguageTextGenDeclaration_Constraints" file="LanguageTextGenDeclaration_Constraints.java">
     <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeARootContext" />

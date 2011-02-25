@@ -14,6 +14,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new ConceptTextGenDeclaration_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new OperationDeclaration_operationName_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new EncodingLiteral_encoding_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new OperationDeclaration_DefaultSearchScope());
     ListSequence.fromList(this.myConstraints).addElement(new UtilityMethodDeclaration_DefaultSearchScope());
   }
