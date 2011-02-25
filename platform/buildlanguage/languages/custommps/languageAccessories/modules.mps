@@ -567,5 +567,72 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.build.packaging.structure.Block:7" id="6603832040602833784">
+    <property name="name:7" value="workflow.libs" />
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="6603832040602833785">
+      <property name="excludes:7" value="" />
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="6603832040602833786">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="6603832040602833787">
+          <property name="name:7" value="youtrack-workflow" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="6603832040602833788">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="6603832040602833789">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="6603832040602833791">
+            <property name="path:7" value="commons-compress" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="6603832040602833794">
+      <property name="excludes:7" value="" />
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="6603832040602833795">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="6603832040602833796">
+          <property name="name:7" value="youtrack-workflow" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="6603832040602833797">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="6603832040602833798">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="6603832040602833800">
+            <property name="path:7" value="commons-io" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="6603832040602833804">
+      <property name="excludes:7" value="" />
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="6603832040602833805">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="6603832040602833806">
+          <property name="name:7" value="youtrack-workflow" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="6603832040602833807">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="6603832040602833808">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="6603832040602833810">
+            <property name="path:7" value="jaxb" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="6603832040602833813">
+      <property name="excludes:7" value="" />
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="6603832040602833814">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="6603832040602833815">
+          <property name="name:7" value="youtrack-workflow" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="6603832040602833816">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="6603832040602833817">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="6603832040602833819">
+            <property name="path:7" value="jersey" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

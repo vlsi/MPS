@@ -525,6 +525,9 @@
           <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="7323513735995988813">
             <link role="block:7" targetNodeId="4v.7323513735995988811" resolveInfo="external.libs" />
           </node>
+          <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="6603832040602833822">
+            <link role="block:7" targetNodeId="5v.6603832040602833784" resolveInfo="workflow.lib" />
+          </node>
           <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.CreateIfNotExists" id="7323513735996158991">
             <property name="artifactName" value="lib/MPS-src.zip" />
             <node role="create" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="7323513735996158992">

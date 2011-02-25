@@ -47,6 +47,10 @@
     <mkdir dir="${deploy.dir}/MPS/lib/yjp" />
     <mkdir dir="${deploy.dir}/MPS/lib/httpclient" />
     <mkdir dir="${deploy.dir}/MPS/lib/tools" />
+    <mkdir dir="${deploy.dir}/MPS/lib/commons-compress" />
+    <mkdir dir="${deploy.dir}/MPS/lib/commons-io" />
+    <mkdir dir="${deploy.dir}/MPS/lib/jaxb" />
+    <mkdir dir="${deploy.dir}/MPS/lib/jersey" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/core" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/platform" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/plugin" />
@@ -81,6 +85,7 @@
   </target>
   <target name="do.the.job" depends="folders.create">
     <fail unless="mps_home" message="Property mps_home unspecified." />
+    <fail unless="youtrack-workflow" message="Property youtrack-workflow unspecified." />
     <copy todir="${deploy.dir}/MPS/bin">
       <fileset dir="${mps_home}/bin" excludes="**/*.hprof, **/*.iml, **/*.iws" />
     </copy>
@@ -168,6 +173,18 @@
     <copy todir="${deploy.dir}/MPS/lib/tools">
       <fileset dir="${mps_home}/lib/tools" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
+    <copy todir="${deploy.dir}/MPS/lib/commons-compress">
+      <fileset dir="${youtrack-workflow}/lib/commons-compress" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/commons-io">
+      <fileset dir="${youtrack-workflow}/lib/commons-io" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/jaxb">
+      <fileset dir="${youtrack-workflow}/lib/jaxb" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/jersey">
+      <fileset dir="${youtrack-workflow}/lib/jersey" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
     <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp">
       <fileset dir="${mps_home}/source" excludes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html" includes="**/*.java" />
     </copy>
@@ -229,7 +246,7 @@
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/core/kernel/classes" excludes="idea/MPSApplicationInfo.xml, " />
     </copy>
-    <antcall target="replace_a7a13b0" />
+    <antcall target="replace_a7a53b0" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/idea" />
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/core/runtime/classes" />
@@ -417,7 +434,7 @@
     <delete dir="${deploy.dir}/MPS/lib/mps.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp" />
   </target>
-  <target name="replace_a7a13b0">
+  <target name="replace_a7a53b0">
     <fail unless="mps_home" message="Property mps_home unspecified." />
     <copy file="${mps_home}/core/kernel/classes/idea/MPSApplicationInfo.xml" tofile="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/MPSApplicationInfo.xml" />
     <replace file="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/MPSApplicationInfo.xml" token="__BUILD_NUMBER__" value="${build.number}" />
