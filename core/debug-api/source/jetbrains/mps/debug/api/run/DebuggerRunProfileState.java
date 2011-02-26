@@ -15,14 +15,9 @@
  */
 package jetbrains.mps.debug.api.run;
 
+import com.intellij.execution.configurations.RunProfileState;
 import jetbrains.mps.debug.api.IDebugger;
-import jetbrains.mps.runConfigurations.runtime.BaseMpsRunProfileState;
 
-public abstract class DebuggerRunProfileState implements BaseMpsRunProfileState {
+public abstract class DebuggerRunProfileState implements RunProfileState {
   public abstract IDebugger getDebugger();
-
-  @Override
-  public boolean canExecute(String executorId) {
-    return true;
-  }
 }

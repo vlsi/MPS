@@ -9,12 +9,22 @@
     <scopeInfo nodeId="143080135592810950" fileName="IPersistentConfiguration.java" startLine="11" startPosition="72" endLine="12" endPosition="56" />
     <unitInfo nodeId="1252300412034470124" fileName="IPersistentConfiguration.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" />
   </root>
-  <root nodeId="197601891060297543">
-    <nodeInfo nodeId="197601891060408122" fileName="BaseMpsRunProfileState.java" startLine="7" startPosition="65" endLine="8" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="197601891060408122" fileName="BaseMpsRunProfileState.java" startLine="7" startPosition="65" endLine="8" endPosition="47">
-      <varInfo nodeId="197601891060408123" varName="executorId" />
+  <root nodeId="3503961503302359248">
+    <nodeInfo nodeId="3503961503302366229" fileName="BaseMpsRunConfiguration.java" startLine="11" startPosition="94" endLine="12" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6458563986494032132" fileName="BaseMpsRunConfiguration.java" startLine="15" startPosition="48" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3503961503302366224" fileName="BaseMpsRunConfiguration.java" startLine="10" startPosition="76" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseMpsRunConfiguration#(Lcom/intellij/openapi/project/Project;Lcom/intellij/execution/configurations/ConfigurationFactory;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3503961503302366243" fileName="BaseMpsRunConfiguration.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/lang/String;)Z" />
+    <scopeInfo nodeId="3503961503302366228" fileName="BaseMpsRunConfiguration.java" startLine="11" startPosition="94" endLine="12" endPosition="34" />
+    <scopeInfo nodeId="3503961503302366246" fileName="BaseMpsRunConfiguration.java" startLine="15" startPosition="48" endLine="16" endPosition="61" />
+    <scopeInfo nodeId="3503961503302366224" fileName="BaseMpsRunConfiguration.java" startLine="10" startPosition="76" endLine="13" endPosition="3">
+      <varInfo nodeId="3503961503302366230" varName="project" />
+      <varInfo nodeId="3503961503302366238" varName="name" />
+      <varInfo nodeId="3503961503302366234" varName="factory" />
     </scopeInfo>
-    <unitInfo nodeId="197601891060297543" fileName="BaseMpsRunProfileState.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.BaseMpsRunProfileState" />
+    <scopeInfo nodeId="3503961503302366243" fileName="BaseMpsRunConfiguration.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="6458563986493948443" varName="executorId" />
+    </scopeInfo>
+    <unitInfo nodeId="3503961503302359248" fileName="BaseMpsRunConfiguration.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.BaseMpsRunConfiguration" />
   </root>
   <root nodeId="6472627752525360127">
     <nodeInfo nodeId="6472627752525360133" fileName="ProcessHandlerBuilder.java" startLine="21" startPosition="36" endLine="22" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandLine" />

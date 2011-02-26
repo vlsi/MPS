@@ -10,17 +10,63 @@ import jetbrains.mps.runConfigurations.runtime.ProcessHandlerBuilder;
 import java.io.File;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import org.apache.commons.lang.StringUtils;
 
 public class Java_Command {
   public Java_Command() {
   }
 
   public static ProcessHandler createProcess(RunConfigurationBase configuration, boolean debug, ProcessListener processListener) throws ExecutionException {
-    String java = "/usr/lib/jvm/java-1.6.0-openjdk/bin/java";
+    String java = getJavaCommand(getJdkHome());
     return new ProcessHandlerBuilder().append(java).append("-version").build(processListener, new File(System.getProperty("user.home")));
   }
 
   public static IDebugger getDebugger() {
     return Debuggers.getInstance().getDebuggerByName("Java");
+  }
+
+  private static String getJavaCommand(String javaHome) {
+    String result = javaHome + fs() + "bin" + fs();
+    String osName = System.getProperty("os.name");
+    if (osName.startsWith("Mac OS")) {
+      return result + "java";
+    } else
+    if (osName.startsWith("Windows")) {
+      return result + "java.exe";
+    } else {
+      return result + "java";
+    }
+
+  }
+
+  private static String fs() {
+    return System.getProperty("file.separator");
+  }
+
+  private static List<String> getJavaHomes() {
+    String systemJavaHome = System.getProperty("java.home");
+    List<String> homes = ListSequence.fromList(new LinkedList<String>());
+    String systemJdkHome = systemJavaHome.substring(0, systemJavaHome.length() - "/jre".length());
+    if (systemJavaHome.endsWith("jre") && new File(systemJdkHome + File.separator + "bin").exists()) {
+      ListSequence.fromList(homes).addElement(systemJdkHome);
+    }
+    if (StringUtils.isNotEmpty(System.getenv("JAVA_HOME"))) {
+      ListSequence.fromList(homes).addElement(System.getenv("JAVA_HOME"));
+    }
+    ListSequence.fromList(homes).addElement(systemJavaHome);
+    return homes;
+  }
+
+  private static String getJdkHome() {
+    List<String> homes = getJavaHomes();
+    for (String javaHome : ListSequence.fromList(homes)) {
+      if (new File(getJavaCommand(javaHome)).exists()) {
+        return javaHome;
+      }
+    }
+    return ListSequence.fromList(homes).first();
   }
 }

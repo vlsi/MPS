@@ -18,6 +18,7 @@ package jetbrains.mps.runconfigurations.runner;
 import com.intellij.execution.runners.DefaultProgramRunner;
 import com.intellij.execution.configurations.RunProfile;
 import com.intellij.execution.executors.DefaultRunExecutor;
+import jetbrains.mps.runConfigurations.runtime.BaseMpsRunConfiguration;
 import jetbrains.mps.runConfigurations.runtime.BaseMpsRunProfileState;
 import org.jetbrains.annotations.NotNull;
 
@@ -28,6 +29,6 @@ public class MPSProgramRunner extends DefaultProgramRunner {
   }
 
   public boolean canRun(@NotNull String executorId, @NotNull RunProfile profile) {
-    return executorId.equals(DefaultRunExecutor.EXECUTOR_ID) && (!(profile instanceof BaseMpsRunProfileState) || ((BaseMpsRunProfileState) profile).canExecute(executorId));
+    return executorId.equals(DefaultRunExecutor.EXECUTOR_ID) && (!(profile instanceof BaseMpsRunConfiguration) || ((BaseMpsRunConfiguration) profile).canExecute(executorId));
   }
 }

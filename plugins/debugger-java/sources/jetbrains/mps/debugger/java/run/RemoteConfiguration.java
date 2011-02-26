@@ -3,6 +3,7 @@ package jetbrains.mps.debugger.java.run;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.*;
+import com.intellij.execution.executors.DefaultDebugExecutor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.openapi.options.ConfigurationException;
@@ -14,13 +15,13 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
 import jetbrains.mps.debug.runtime.settings.RemoteConnectionSettings;
-import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
+import jetbrains.mps.runConfigurations.runtime.BaseMpsRunConfiguration;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
 
-public class RemoteConfiguration extends BaseRunConfig {
+public class RemoteConfiguration extends BaseMpsRunConfiguration {
   private final DebugConnectionSettings mySettings = new RemoteConnectionSettings();
 
   protected RemoteConfiguration(Project project, ConfigurationFactory factory, String name) {
@@ -87,7 +88,7 @@ public class RemoteConfiguration extends BaseRunConfig {
   }
 
   @Override
-  public boolean isDebuggable() {
-    return true;
+  public boolean canExecute(String executorId) {
+    return DefaultDebugExecutor.EXECUTOR_ID.equals(executorId);
   }
 }

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.runConfigurations.runtime.BaseMpsRunProfileState" file="BaseMpsRunProfileState.java">
+  <dependency className="jetbrains.mps.runConfigurations.runtime.BaseMpsRunConfiguration" file="BaseMpsRunConfiguration.java">
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
+    <classNode dependClassName="com.intellij.execution.executors.DefaultRunExecutor" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
+    <classNode extendsClassName="com.intellij.execution.configurations.RunConfigurationBase" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener" file="ConsoleProcessListener.java">
     <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />

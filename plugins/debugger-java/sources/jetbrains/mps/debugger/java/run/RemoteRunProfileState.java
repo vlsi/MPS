@@ -6,7 +6,6 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.configurations.RunnerSettings;
-import com.intellij.execution.executors.DefaultDebugExecutor;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.openapi.project.Project;
@@ -50,10 +49,5 @@ public class RemoteRunProfileState extends DebuggerRunProfileState {
   @Override
   public IDebugger getDebugger() {
     return Debuggers.getInstance().getDebuggerByName("Java");
-  }
-
-  @Override
-  public boolean canExecute(String executorId) {
-    return DefaultDebugExecutor.EXECUTOR_ID.equals(executorId);
   }
 }

@@ -1255,8 +1255,17 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="456055012090368965">
             <property name="name" nameId="tpck.1169194664001" value="java" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="456055012090368966" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="456055012090368967">
-              <property name="value" nameId="tpee.1070475926801" value="/usr/lib/jvm/java-1.6.0-openjdk/bin/java" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4371737370140258355">
+              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4371737370140258354" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="4371737370140258359">
+                <link role="member" roleId="tp4f.1205756909548" targetNodeId="4667331066104871635" resolveInfo="getJavaCommand" />
+                <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4371737370140258360">
+                  <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4371737370140258361" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="4371737370140258362">
+                    <link role="member" roleId="tp4f.1205756909548" targetNodeId="6472627752525328384" resolveInfo="getJdkHome" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

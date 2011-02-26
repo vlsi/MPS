@@ -16,8 +16,7 @@ import jetbrains.mps.debug.api.*;
 import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
 import jetbrains.mps.debugger.api.ui.tool.DebuggerToolContentBuilder;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
-import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
-import jetbrains.mps.runConfigurations.runtime.BaseMpsRunProfileState;
+import jetbrains.mps.runConfigurations.runtime.BaseMpsRunConfiguration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -33,7 +32,7 @@ public class MPSDebugRunner extends GenericProgramRunner {
   }
 
   private boolean isNewRunConfiguration(RunProfile profile) {
-    return (profile instanceof BaseMpsRunProfileState) && (((BaseMpsRunProfileState) profile).canExecute(DefaultDebugExecutor.EXECUTOR_ID));
+    return (profile instanceof BaseMpsRunConfiguration) && (((BaseMpsRunConfiguration) profile).canExecute(DefaultDebugExecutor.EXECUTOR_ID));
   }
 
   @NotNull
