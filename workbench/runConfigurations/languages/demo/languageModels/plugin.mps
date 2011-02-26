@@ -390,7 +390,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="456055012090368958">
             <property name="name" nameId="tpck.1169194664001" value="javaProcess" />
             <node role="type" roleId="tpee.5680397130376446158" type="uhxm.ProcessType" typeId="uhxm.2866018809102008315" id="456055012090368959" />
-            <node role="initializer" roleId="tpee.1068431790190" type="uhxm.CommandReferenceExpression" typeId="uhxm.6957430790227171558" id="456055012090368961">
+            <node role="initializer" roleId="tpee.1068431790190" type="uhxm.CommandStartExpression" typeId="uhxm.6957430790227171558" id="4371737370140195856">
               <link role="commandDeclaration" roleId="uhxm.6355961872152766310" targetNodeId="6957430790227279303" resolveInfo="java" />
             </node>
           </node>
@@ -399,6 +399,12 @@
       <node role="process" roleId="uhxm.2866018809101862242" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="456055012090368962">
         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="456055012090368958" resolveInfo="javaProcess" />
       </node>
+    </node>
+    <node role="debugger" roleId="uhxm.4371737370139995047" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4371737370140200481">
+      <node role="operand" roleId="tpee.1197027771414" type="uhxm.CommandReferenceExpression" typeId="uhxm.4371737370140112219" id="4371737370140200480">
+        <link role="command" roleId="uhxm.4371737370140112220" targetNodeId="6957430790227279303" resolveInfo="java" />
+      </node>
+      <node role="operation" roleId="tpee.1197027833540" type="uhxm.CommandDebuggerOperation" typeId="uhxm.4371737370140136071" id="4371737370140200485" />
     </node>
   </root>
   <root id="223733852661754512">

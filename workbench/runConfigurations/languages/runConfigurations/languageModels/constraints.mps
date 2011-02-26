@@ -55,6 +55,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uhxm.6957430790227171558" resolveInfo="CommandReferenceExpression" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="4371737370140150087">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="uhxm.4371737370140136071" resolveInfo="CommandDebuggerOperation" />
+    </node>
   </roots>
   <root id="1048802521465134864">
     <node role="property" roleId="tp1t.1213098023997" type="tp1t.NodePropertyConstraint" typeId="tp1t.1147467115080" id="1048802521465134865">
@@ -474,6 +478,30 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="6355961872152766306">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="6355961872152766308">
                 <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="uhxm.2401501559171392633" resolveInfo="RunConfigurationExecutor" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="4371737370140150087">
+    <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="4371737370140150088">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4371737370140150089">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4371737370140150090">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4371737370140150099">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4371737370140150094">
+              <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="4371737370140150092">
+                <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
+                <node role="leftExpression" roleId="tp25.1140138123956" type="tp1t.ConstraintFunctionParameter_parentNode" typeId="tp1t.1202989658459" id="4371737370140150091" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="4371737370140150098">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1197027771414" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="4371737370140150103">
+              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="4371737370140150105">
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="uhxm.4371737370140112219" resolveInfo="CommandReferenceExpression" />
               </node>
             </node>
           </node>

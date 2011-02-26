@@ -8,6 +8,7 @@ import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -22,6 +23,7 @@ public class PersistentConfiguration extends BaseConcept implements IPersistentP
   public static final String CHECK_PROPERTIES = "checkProperties";
   public static final String METHODS = "methods";
   public static final String PERSISTENT_PROPERTY = "persistentProperty";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public PersistentConfiguration(SNode node) {
     super(node);
@@ -113,6 +115,26 @@ public class PersistentConfiguration extends BaseConcept implements IPersistentP
 
   public void insertPersistentProperty(PersistentPropertyDeclaration prev, PersistentPropertyDeclaration node) {
     this.insertChild(prev, PersistentConfiguration.PERSISTENT_PROPERTY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(PersistentConfiguration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, PersistentConfiguration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, PersistentConfiguration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(PersistentConfiguration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, PersistentConfiguration._$ATTRIBUTE, node);
   }
 
   public static PersistentConfiguration newInstance(SModel sm, boolean init) {

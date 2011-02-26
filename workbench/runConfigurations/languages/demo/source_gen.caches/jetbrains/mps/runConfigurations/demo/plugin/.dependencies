@@ -66,6 +66,7 @@
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_RunProfileState" file="DemoApplication_Configuration_RunProfileState.java">
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
@@ -88,8 +89,9 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="com.intellij.execution.configurations.RunnerSettings" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
-    <classNode extendsClassName="com.intellij.execution.ui.ExecutionConsole" />
     <classNode extendsClassName="jetbrains.mps.runConfigurations.runtime.BaseMpsRunProfileState" />
+    <classNode extendsClassName="com.intellij.execution.ui.ExecutionConsole" />
+    <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
     <classNode extendsClassName="com.intellij.execution.ExecutionResult" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Demo_ApplicationPlugin" file="Demo_ApplicationPlugin.java">

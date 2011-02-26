@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class EditorOperation extends BaseConcept implements IOperation {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EDITOR_OPERATION_DECLARATION = "editorOperationDeclaration";
   public static final String ARGUMENTS = "arguments";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public EditorOperation(SNode node) {
     super(node);
@@ -74,6 +76,26 @@ public class EditorOperation extends BaseConcept implements IOperation {
 
   public void insertArguments(Expression prev, Expression node) {
     this.insertChild(prev, EditorOperation.ARGUMENTS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(EditorOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, EditorOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, EditorOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(EditorOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EditorOperation._$ATTRIBUTE, node);
   }
 
   public static EditorOperation newInstance(SModel sm, boolean init) {

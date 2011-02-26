@@ -5,6 +5,9 @@ package jetbrains.mps.runConfigurations.structure;
 import jetbrains.mps.baseLanguage.structure.ConceptFunction;
 import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class CheckProperties_Function extends ConceptFunction implements IMember
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public CheckProperties_Function(SNode node) {
     super(node);
@@ -50,6 +54,26 @@ public class CheckProperties_Function extends ConceptFunction implements IMember
 
   public void setVirtualPackage(String value) {
     this.setProperty(CheckProperties_Function.VIRTUAL_PACKAGE, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(CheckProperties_Function._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, CheckProperties_Function._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, CheckProperties_Function._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(CheckProperties_Function._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CheckProperties_Function._$ATTRIBUTE, node);
   }
 
   public static CheckProperties_Function newInstance(SModel sm, boolean init) {

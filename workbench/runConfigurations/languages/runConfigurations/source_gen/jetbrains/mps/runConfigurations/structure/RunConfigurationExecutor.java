@@ -5,6 +5,10 @@ package jetbrains.mps.runConfigurations.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,7 +20,9 @@ public class RunConfigurationExecutor extends BaseConcept implements INamedConce
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RUN_CONFIGURATION = "runConfiguration";
+  public static final String DEBUGGER = "debugger";
   public static final String EXECUTE = "execute";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public RunConfigurationExecutor(SNode node) {
     super(node);
@@ -62,12 +68,40 @@ public class RunConfigurationExecutor extends BaseConcept implements INamedConce
     super.setReferent(RunConfigurationExecutor.RUN_CONFIGURATION, node);
   }
 
+  public Expression getDebugger() {
+    return (Expression) this.getChild(Expression.class, RunConfigurationExecutor.DEBUGGER);
+  }
+
+  public void setDebugger(Expression node) {
+    super.setChild(RunConfigurationExecutor.DEBUGGER, node);
+  }
+
   public ExecuteConfiguration_Function getExecute() {
     return (ExecuteConfiguration_Function) this.getChild(ExecuteConfiguration_Function.class, RunConfigurationExecutor.EXECUTE);
   }
 
   public void setExecute(ExecuteConfiguration_Function node) {
     super.setChild(RunConfigurationExecutor.EXECUTE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(RunConfigurationExecutor._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, RunConfigurationExecutor._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, RunConfigurationExecutor._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(RunConfigurationExecutor._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, RunConfigurationExecutor._$ATTRIBUTE, node);
   }
 
   public static RunConfigurationExecutor newInstance(SModel sm, boolean init) {

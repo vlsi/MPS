@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="CommandReferenceExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.CommandReferenceExpression_Constraints" />
+  <unitInfo fileName="CommandStartExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.CommandStartExpression_Constraints" />
   <unitInfo fileName="TemplateParameterReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.TemplateParameterReference_Constraints" />
   <unitInfo fileName="ReportConfigurationErrorStatement_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ReportConfigurationErrorStatement_Constraints" />
   <unitInfo fileName="EditorPropertyReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.EditorPropertyReference_Constraints" />
   <unitInfo fileName="SettingsEditor_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.SettingsEditor_Constraints" />
+  <unitInfo fileName="CommandDebuggerOperation_Constraints.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.CommandDebuggerOperation_Constraints" />
   <unitInfo fileName="EditorExpression_persistentPropertyDeclaration_ReferentConstraint.java" startLine="46" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.EditorExpression_persistentPropertyDeclaration_ReferentConstraint$QuotationClass_wdxcx5_a1a0a0a0a0a2" />
   <unitInfo fileName="RunConfigurationExecutor_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.RunConfigurationExecutor_name_PropertyConstraint" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ConstraintsDescriptor" />
@@ -40,6 +41,10 @@
       <varInfo nodeId="1448685625140416179" varName="template" />
     </scopeInfo>
   </root>
+  <root nodeId="4371737370140150087">
+    <nodeInfo nodeId="4371737370140150090" fileName="CommandDebuggerOperation_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="4371737370140150089" fileName="CommandDebuggerOperation_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="258" />
+  </root>
   <root nodeId="4777576391478273472">
     <nodeInfo nodeId="4777576391478273476" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4777576391478305670" fileName="PersistentPropertyReferenceOperation_variableDeclaration_ReferentConstraint.java" startLine="32" startPosition="169" endLine="33" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -61,8 +66,8 @@
     <scopeInfo nodeId="587410464426983342" fileName="EditorPropertyReference_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="149" />
   </root>
   <root nodeId="6355961872152754482">
-    <nodeInfo nodeId="6355961872152766295" fileName="CommandReferenceExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6355961872152754484" fileName="CommandReferenceExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="171" />
+    <nodeInfo nodeId="6355961872152766295" fileName="CommandStartExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6355961872152754484" fileName="CommandStartExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="171" />
   </root>
   <root nodeId="7902226081039506341">
     <nodeInfo nodeId="7902226081039506347" fileName="EditorOperation_editorOperationDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="33" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
