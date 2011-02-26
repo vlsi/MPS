@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -22,6 +23,7 @@ public class TypesystemQuickFix extends BaseConcept implements INamedConcept {
   public static final String SET_SELECTION_BLOCK = "setSelectionBlock";
   public static final String QUICK_FIX_ARGUMENT = "quickFixArgument";
   public static final String QUICK_FIX_FIELD = "quickFixField";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TypesystemQuickFix(SNode node) {
     super(node);
@@ -121,6 +123,26 @@ public class TypesystemQuickFix extends BaseConcept implements INamedConcept {
 
   public void insertQuickFixField(QuickFixField prev, QuickFixField node) {
     this.insertChild(prev, TypesystemQuickFix.QUICK_FIX_FIELD, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(TypesystemQuickFix._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TypesystemQuickFix._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TypesystemQuickFix._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(TypesystemQuickFix._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TypesystemQuickFix._$ATTRIBUTE, node);
   }
 
   public static TypesystemQuickFix newInstance(SModel sm, boolean init) {

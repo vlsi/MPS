@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import javax.swing.Icon;
@@ -34,6 +35,7 @@ public class Classifier_Behavior {
   private static Class[] PARAMETERS_1906502351318572840 = {SNode.class};
   private static Class[] PARAMETERS_5017341185733869650 = {SNode.class};
   private static Class[] PARAMETERS_3305065273710880775 = {SNode.class};
+  private static SNodePointer SNODE_POINTER_qw8l7c_a0a1a0a1a2a0a0a1a0a0a71 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~List");
 
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -321,18 +323,25 @@ public class Classifier_Behavior {
         }
         {
           SNode referent;
-          referent = (SNode) this.AntiquotationField_qw8l7c_a0a0a0a0a61;
+          referent = SNODE_POINTER_qw8l7c_a0a1a0a1a2a0a0a1a0a0a71.getNode();
           if (nodeToMatch_qw8l7c_a0a0a0a61.getReferent("classifier") != referent) {
             return false;
           }
         }
         {
           String childRole_qw8l7c_ = "parameter";
-          this.PatternVar_l = ListSequence.fromList(new ArrayList<SNode>());
-          this.PatternVar_foo = null;
-          for (SNode childVar : nodeToMatch_qw8l7c_a0a0a0a61.getChildren(childRole_qw8l7c_)) {
-            this.PatternVar_foo = childVar;
-            ListSequence.fromList(this.PatternVar_l).addElement(childVar);
+          if (nodeToMatch_qw8l7c_a0a0a0a61.getChildCount(childRole_qw8l7c_) != 1) {
+            return false;
+          }
+          {
+            SNode childVar_qw8l7c_a0a0a0a0q = nodeToMatch_qw8l7c_a0a0a0a61.getChildren(childRole_qw8l7c_).get(0);
+            {
+              SNode nodeToMatch_qw8l7c_a0a0a0a0q;
+              nodeToMatch_qw8l7c_a0a0a0a0q = childVar_qw8l7c_a0a0a0a0q;
+              if (!("jetbrains.mps.baseLanguage.structure.IntegerType".equals(nodeToMatch_qw8l7c_a0a0a0a0q.getConceptFqName()))) {
+                return false;
+              }
+            }
           }
         }
       }

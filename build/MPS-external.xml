@@ -45,6 +45,7 @@
     <mkdir dir="${deploy.dir}/MPS/core/devkits" />
     <mkdir dir="${deploy.dir}/MPS/core" />
     <mkdir dir="${deploy.dir}/MPS/platform/ui" />
+    <mkdir dir="${deploy.dir}/MPS/platform/editor" />
     <mkdir dir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/platform" />
     <mkdir dir="${deploy.dir}/MPS/plugin" />
@@ -139,10 +140,7 @@
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/workbench/typesystemUi/classes" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
-      <fileset dir="${mps_home}/workbench/javaParser/classes" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
-    </copy>
-    <antcall target="replace_a31e1a" />
+    <antcall target="replace_a21e1a" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/idea" />
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/MPSPlugin/apiclasses" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
@@ -173,6 +171,18 @@
     <jar destfile="${deploy.dir}/MPS/plugins/mpsdevkit.jar" filesonly="true" duplicate="preserve" compress="true">
       <zipfileset dir="${mps_home}/plugins/mpsdevkit/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/mpsdevkit/classes" prefix="" />
+    </jar>
+    <jar destfile="${deploy.dir}/MPS/plugins/mpsmake.jar" filesonly="true" duplicate="preserve" compress="true">
+      <zipfileset dir="${mps_home}/plugins/mpsmake/META-INF" includes="**/plugin.xml" prefix="META-INF" />
+      <zipfileset dir="${mps_home}/plugins/mpsmake/classes" prefix="" />
+    </jar>
+    <jar destfile="${deploy.dir}/MPS/plugins/mpsjava.jar" filesonly="true" duplicate="preserve" compress="true">
+      <zipfileset dir="${mps_home}/plugins/mpsjava/META-INF" includes="**/plugin.xml" prefix="META-INF" />
+      <zipfileset dir="${mps_home}/plugins/mpsjava/classes" prefix="" />
+    </jar>
+    <jar destfile="${deploy.dir}/MPS/plugins/modelchecker.jar" filesonly="true" duplicate="preserve" compress="true">
+      <zipfileset dir="${mps_home}/plugins/modelchecker/META-INF" includes="**/plugin.xml" prefix="META-INF" />
+      <zipfileset dir="${mps_home}/plugins/modelchecker/classes" prefix="" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/plugins/samples.jar" filesonly="true" duplicate="preserve" compress="true">
       <zipfileset dir="${mps_home}/plugins/samples/META-INF" includes="**/plugin.xml" prefix="META-INF" />
@@ -231,8 +241,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.constraints" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.editorTest" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.table" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.table.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.findUsages" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.typesystem" />
@@ -246,7 +254,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.plugin" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.sharedConcepts" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodel" />
-    <antcall target="MPS-languages.pack.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.script" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.structure" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.core" />
@@ -273,6 +281,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.debug.apiLang" />
     <antcall target="MPS-languages.pack.jetbrains.mps.make.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.smodel.resources" />
+    <antcall target="MPS-languages.pack.stubUtils" />
     <antcall target="MPS-languages.pack.jetbrains.mps.kernel" />
     <mkdir dir="${deploy.dir}/MPS/core" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated" />
@@ -309,6 +318,9 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.builders" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.math.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.money.runtime" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.table" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.table.runtime" />
+    <mkdir dir="${deploy.dir}/MPS/platform/editor" />
     <antcall target="MPS-languages.pack.ypath.main" />
     <antcall target="MPS-languages.pack.ypath.test" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ypath" />
@@ -380,7 +392,7 @@
     <delete dir="${deploy.dir}/MPS/lib/mpsboot.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp" />
   </target>
-  <target name="replace_a31e1a">
+  <target name="replace_a21e1a">
     <fail unless="mps_home" message="Property mps_home unspecified." />
     <copy file="${mps_home}/core/kernel/classes/idea/IdeaApplicationInfo.xml" tofile="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" />
     <replace file="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/IdeaApplicationInfo.xml" token="__BUILD_NUMBER__" value="${build.number}" />

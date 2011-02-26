@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="ClassConcept_DefaultSearchScope.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="constraintLanguageSandbox.model.ClassConcept_DefaultSearchScope" />
   <root nodeId="3025230698924756387">
-    <nodeInfo nodeId="3025230698924771939" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassConcept_DefaultSearchScope.java" startLine="36" startPosition="129" endLine="37" endPosition="137" />
+    <nodeInfo nodeId="3025230698924771939" fileName="ClassConcept_DefaultSearchScope.java" startLine="36" startPosition="129" endLine="37" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="3025230698924756390" fileName="ClassConcept_DefaultSearchScope.java" startLine="25" startPosition="132" endLine="25" endPosition="132" />
     <scopeInfo nodeId="3025230698924771938" fileName="ClassConcept_DefaultSearchScope.java" startLine="36" startPosition="129" endLine="37" endPosition="137" />
   </root>

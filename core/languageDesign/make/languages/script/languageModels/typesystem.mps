@@ -135,7 +135,8 @@
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="505095865854557943">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="505095865854557944">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="q9ra.OptionType" typeId="q9ra.505095865854384053" id="505095865854557946">
-              <node role="referenceAntiquotation$link_attribute$expectedOption" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="505095865854557947">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="505095865854557947">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="expectedOption" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="505095865854557960">
                   <link role="concept" roleId="tp25.1140138128738" targetNodeId="q9ra.505095865854384059" resolveInfo="ExpectedOption" />
                   <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="505095865854557955">
@@ -174,7 +175,8 @@
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1977954644795311541">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1977954644795311542">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="q9ra.OptionType" typeId="q9ra.505095865854384053" id="1977954644795311543">
-              <node role="referenceAntiquotation$link_attribute$expectedOption" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1977954644795311544">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="1977954644795311544">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="expectedOption" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1977954644795311545">
                   <property name="asCast" nameId="tp25.1238684351431" value="true" />
                   <link role="concept" roleId="tp25.1140138128738" targetNodeId="q9ra.505095865854384059" resolveInfo="ExpectedOption" />

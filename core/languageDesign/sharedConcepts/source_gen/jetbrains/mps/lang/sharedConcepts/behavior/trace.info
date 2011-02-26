@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="ConceptFunctionParameter_operationContext_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.behavior.ConceptFunctionParameter_operationContext_Behavior" />
+  <root nodeId="1213877217441">
+    <nodeInfo nodeId="1213877217444" fileName="ConceptFunctionParameter_operationContext_Behavior.java" startLine="11" startPosition="86" endLine="12" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1213877217448" fileName="ConceptFunctionParameter_operationContext_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1213877217443" fileName="ConceptFunctionParameter_operationContext_Behavior.java" startLine="11" startPosition="86" endLine="12" endPosition="17" />
+  </root>
+</debugInfo>
 

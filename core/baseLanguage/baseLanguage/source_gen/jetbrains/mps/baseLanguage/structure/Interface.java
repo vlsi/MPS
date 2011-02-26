@@ -6,6 +6,7 @@ import jetbrains.mps.lang.textGen.structure.UnitConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +18,7 @@ public class Interface extends Classifier implements IBLDeprecatable, UnitConcep
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_DEPRECATED = "isDeprecated";
   public static final String EXTENDED_INTERFACE = "extendedInterface";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Interface(SNode node) {
     super(node);
@@ -72,6 +74,26 @@ public class Interface extends Classifier implements IBLDeprecatable, UnitConcep
 
   public void insertExtendedInterface(ClassifierType prev, ClassifierType node) {
     this.insertChild(prev, Interface.EXTENDED_INTERFACE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Interface._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Interface._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Interface._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Interface._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Interface._$ATTRIBUTE, node);
   }
 
   public static Interface newInstance(SModel sm, boolean init) {

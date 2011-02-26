@@ -5,6 +5,8 @@ package jetbrains.mps.xmlUnitTest.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +18,7 @@ public class Attribute extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Attribute(SNode node) {
     super(node);
@@ -59,6 +62,26 @@ public class Attribute extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(Attribute.VIRTUAL_PACKAGE, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Attribute._$ATTRIBUTE);
+  }
+
+  public Iterator<jetbrains.mps.lang.core.structure.Attribute> _$attributes() {
+    return this.children(jetbrains.mps.lang.core.structure.Attribute.class, Attribute._$ATTRIBUTE);
+  }
+
+  public List<jetbrains.mps.lang.core.structure.Attribute> get_$attributes() {
+    return this.getChildren(jetbrains.mps.lang.core.structure.Attribute.class, Attribute._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(jetbrains.mps.lang.core.structure.Attribute node) {
+    this.addChild(Attribute._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(jetbrains.mps.lang.core.structure.Attribute prev, jetbrains.mps.lang.core.structure.Attribute node) {
+    this.insertChild(prev, Attribute._$ATTRIBUTE, node);
   }
 
   public static Attribute newInstance(SModel sm, boolean init) {

@@ -5,6 +5,9 @@ package jetbrains.mps.make.script.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class Option extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PRESENTATION = "presentation";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Option(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class Option extends BaseConcept implements INamedConcept {
 
   public void setPresentation(Text node) {
     super.setChild(Option.PRESENTATION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Option._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Option._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Option._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Option._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Option._$ATTRIBUTE, node);
   }
 
   public static Option newInstance(SModel sm, boolean init) {

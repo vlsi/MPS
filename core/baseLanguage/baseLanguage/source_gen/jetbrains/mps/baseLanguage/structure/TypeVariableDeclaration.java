@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +22,7 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
   public static final String EXTENDS = "extends";
   public static final String BOUND = "bound";
   public static final String AUX_BOUNDS = "auxBounds";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TypeVariableDeclaration(SNode node) {
     super(node);
@@ -100,6 +102,26 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
 
   public void insertAuxBounds(ClassifierType prev, ClassifierType node) {
     this.insertChild(prev, TypeVariableDeclaration.AUX_BOUNDS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(TypeVariableDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TypeVariableDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TypeVariableDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(TypeVariableDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TypeVariableDeclaration._$ATTRIBUTE, node);
   }
 
   public static TypeVariableDeclaration newInstance(SModel sm, boolean init) {

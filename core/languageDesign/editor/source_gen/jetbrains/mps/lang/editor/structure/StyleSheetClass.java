@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.baseLanguage.structure.IValidIdentifier;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -19,6 +20,7 @@ public class StyleSheetClass extends BaseConcept implements INamedConcept, IVali
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXTENDED_CLASS = "extendedClass";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String STYLE_ITEM = "styleItem";
 
   public StyleSheetClass(SNode node) {
@@ -63,6 +65,26 @@ public class StyleSheetClass extends BaseConcept implements INamedConcept, IVali
 
   public void setExtendedClass(StyleSheetClassReference node) {
     super.setChild(StyleSheetClass.EXTENDED_CLASS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(StyleSheetClass._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, StyleSheetClass._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, StyleSheetClass._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(StyleSheetClass._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, StyleSheetClass._$ATTRIBUTE, node);
   }
 
   public int getStyleItemsCount() {

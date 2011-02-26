@@ -40,6 +40,9 @@ public class WriteHelper {
   }
 
   public void addModelReference(@NotNull SModelReference model) {
+    if (MapSequence.fromMap(myModelIndex).containsKey(model)) {
+      return;
+    }
     int hash = (model.hashCode() % HASH_SIZE + HASH_SIZE) % HASH_SIZE;
     while (SetSequence.fromSet(myUsedIndexes).contains(hash)) {
       hash = (hash + 1) % HASH_SIZE;
@@ -87,7 +90,8 @@ public class WriteHelper {
     return genReferenceString(ref, nodeId.toString());
   }
 
-  public String genReferenceId(SNode node) {
+  @NotNull
+  public String genReferenceId(@NotNull SNode node) {
     return genReferenceId(SNodeOperations.getModel(node).getSModelReference(), node.getSNodeId());
   }
 
@@ -112,15 +116,19 @@ public class WriteHelper {
   }
 
   public String genRoleId(@NotNull SNode node) {
-    SNode roleLink = node.getRoleLink();
-    return (roleLink != null ?
-      genReferenceId(roleLink) :
-      null
+    SNode linkDecl = node.getRoleLink();
+    return ((linkDecl == null) ?
+      null :
+      genReferenceId(linkDecl)
     );
   }
 
   public String genRoleId(@NotNull SReference ref) {
-    return genReferenceId(ref.getSourceNode().getLinkDeclaration(ref.getRole()));
+    SNode linkDecl = ref.getSourceNode().getLinkDeclaration(ref.getRole());
+    return ((linkDecl == null) ?
+      null :
+      genReferenceId(linkDecl)
+    );
   }
 
   public String genName(@NotNull SNode node, @NotNull String prop) {
@@ -128,10 +136,10 @@ public class WriteHelper {
   }
 
   public String genNameId(@NotNull SNode node, @NotNull String prop) {
-    SNode propLink = node.getPropertyDeclaration(prop);
-    return (propLink == null ?
+    SNode propDecl = node.getPropertyDeclaration(prop);
+    return ((propDecl == null) ?
       null :
-      genReferenceId(propLink)
+      genReferenceId(propDecl)
     );
   }
 

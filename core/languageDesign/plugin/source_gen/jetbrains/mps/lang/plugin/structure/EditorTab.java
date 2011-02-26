@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -26,6 +29,7 @@ public class EditorTab extends BaseConcept implements INamedConcept, ICheckedNam
   public static final String NODES_BLOCK = "nodesBlock";
   public static final String CONCEPTS_BLOCK = "conceptsBlock";
   public static final String CREATE_BLOCK = "createBlock";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public EditorTab(SNode node) {
     super(node);
@@ -141,6 +145,26 @@ public class EditorTab extends BaseConcept implements INamedConcept, ICheckedNam
 
   public void setCreateBlock(NewCreateBlock node) {
     super.setChild(EditorTab.CREATE_BLOCK, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(EditorTab._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, EditorTab._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, EditorTab._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(EditorTab._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EditorTab._$ATTRIBUTE, node);
   }
 
   public static EditorTab newInstance(SModel sm, boolean init) {

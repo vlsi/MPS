@@ -5,6 +5,9 @@ package jetbrains.mps.ypath.structure;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class TreePathType extends Type implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NODE_TYPE = "nodeType";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TreePathType(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class TreePathType extends Type implements INamedConcept {
 
   public void setNodeType(Type node) {
     super.setChild(TreePathType.NODE_TYPE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(TreePathType._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TreePathType._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TreePathType._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(TreePathType._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TreePathType._$ATTRIBUTE, node);
   }
 
   public static TreePathType newInstance(SModel sm, boolean init) {

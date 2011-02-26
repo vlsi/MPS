@@ -12,6 +12,7 @@ import jetbrains.mps.baseLanguage.structure.Visibility;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.baseLanguage.structure.AnnotationInstance;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -26,6 +27,7 @@ public class ControlAbstractionDeclaration extends GenericDeclaration implements
   public static final String BODY = "body";
   public static final String VISIBILITY = "visibility";
   public static final String PARAMETER = "parameter";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String ANNOTATION = "annotation";
 
   public ControlAbstractionDeclaration(SNode node) {
@@ -98,6 +100,26 @@ public class ControlAbstractionDeclaration extends GenericDeclaration implements
 
   public void insertParameter(ParameterDeclaration prev, ParameterDeclaration node) {
     this.insertChild(prev, ControlAbstractionDeclaration.PARAMETER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ControlAbstractionDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ControlAbstractionDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ControlAbstractionDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ControlAbstractionDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ControlAbstractionDeclaration._$ATTRIBUTE, node);
   }
 
   public int getAnnotationsCount() {

@@ -7,6 +7,9 @@ import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.datesInternal.structure.Locale;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +22,7 @@ public class TimeZoneNameOperation extends BaseConcept implements IOperation {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String LOCALE = "locale";
   public static final String INSTANT = "instant";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TimeZoneNameOperation(SNode node) {
     super(node);
@@ -70,6 +74,26 @@ public class TimeZoneNameOperation extends BaseConcept implements IOperation {
 
   public void setInstant(Expression node) {
     super.setChild(TimeZoneNameOperation.INSTANT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(TimeZoneNameOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TimeZoneNameOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TimeZoneNameOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(TimeZoneNameOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TimeZoneNameOperation._$ATTRIBUTE, node);
   }
 
   public static TimeZoneNameOperation newInstance(SModel sm, boolean init) {

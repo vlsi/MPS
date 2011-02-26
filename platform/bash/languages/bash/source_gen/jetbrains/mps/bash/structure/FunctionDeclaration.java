@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +19,7 @@ public class FunctionDeclaration extends AbstractCommand implements INamedConcep
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String COMMAND = "command";
   public static final String REDIRECTIONS = "redirections";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FunctionDeclaration(SNode node) {
     super(node);
@@ -81,6 +83,26 @@ public class FunctionDeclaration extends AbstractCommand implements INamedConcep
 
   public void insertRedirections(Redirection prev, Redirection node) {
     this.insertChild(prev, FunctionDeclaration.REDIRECTIONS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(FunctionDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FunctionDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FunctionDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(FunctionDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FunctionDeclaration._$ATTRIBUTE, node);
   }
 
   public static FunctionDeclaration newInstance(SModel sm, boolean init) {

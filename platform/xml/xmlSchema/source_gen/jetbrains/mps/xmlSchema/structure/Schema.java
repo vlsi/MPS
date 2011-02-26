@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -23,6 +24,7 @@ public class Schema extends BaseConcept implements INamedConcept {
   public static final String ROOT_ELEMENT_REFERENCE = "rootElementReference";
   public static final String DEFAULT_NAMESPACE_DECLARATION = "defaultNamespaceDeclaration";
   public static final String DECLARATION_BLOCK = "declarationBlock";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Schema(SNode node) {
     super(node);
@@ -118,6 +120,26 @@ public class Schema extends BaseConcept implements INamedConcept {
 
   public void insertDeclarationBlock(DeclarationBlock prev, DeclarationBlock node) {
     this.insertChild(prev, Schema.DECLARATION_BLOCK, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Schema._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Schema._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Schema._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Schema._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Schema._$ATTRIBUTE, node);
   }
 
   public static Schema newInstance(SModel sm, boolean init) {

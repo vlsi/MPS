@@ -41,6 +41,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.NodeEditorActions.CompleteSmart;
@@ -1339,7 +1340,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         return CellActionType.DELETE;
       }
 
-      if (selectedCell.getAction(CellActionType.DELETE) != null) {
+      if (selectedCell != null && selectedCell.getAction(CellActionType.DELETE) != null) {
         return CellActionType.DELETE;
       }
 
@@ -1562,7 +1563,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (root instanceof EditorCell_Collection) {
       for (EditorCell child : ((EditorCell_Collection) root)) {
         SNode childNode = child.getSNode();
-        if (childNode == node || (childNode != null && childNode.isAttribute() && childNode.getParent() == node)) {
+        if (childNode == node || (childNode != null && AttributeOperations.isAttribute(childNode) && childNode.getParent() == node)) {
           EditorCell result = findCellWithIdWithingBigCell(child, id, node);
           if (result != null) {
             return result;

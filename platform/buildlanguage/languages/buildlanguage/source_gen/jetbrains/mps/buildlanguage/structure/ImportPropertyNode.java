@@ -4,6 +4,9 @@ package jetbrains.mps.buildlanguage.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.property.structure.PropertyNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class ImportPropertyNode extends AbstractImportProperties implements IPro
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROPERTY_NODE = "propertyNode";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ImportPropertyNode(SNode node) {
     super(node);
@@ -58,6 +62,26 @@ public class ImportPropertyNode extends AbstractImportProperties implements IPro
 
   public void setPropertyNode(PropertyNode node) {
     super.setReferent(ImportPropertyNode.PROPERTY_NODE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ImportPropertyNode._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ImportPropertyNode._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ImportPropertyNode._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ImportPropertyNode._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ImportPropertyNode._$ATTRIBUTE, node);
   }
 
   public static ImportPropertyNode newInstance(SModel sm, boolean init) {

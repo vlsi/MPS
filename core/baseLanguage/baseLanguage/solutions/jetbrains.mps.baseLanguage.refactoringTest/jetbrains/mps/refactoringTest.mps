@@ -514,7 +514,7 @@
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1230052406572">
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406573">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406573">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
               <node role="expression" roleId="tpee.1068581517676" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1230052406575">
@@ -534,7 +534,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052406579" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406580">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406580">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -572,7 +572,7 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230052406614">
                   <property name="value" nameId="tpee.1068580320021" value="30" />
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406615">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406615">
                   <property name="name" nameId="tpck.1169194664001" value="c_declaration" />
                 </node>
               </node>
@@ -630,7 +630,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052406636" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052406637" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406638">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406638">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -887,7 +887,7 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ll11.~AnActionEvent%dgetPlace()%cjava%dlang%dString" resolveInfo="getPlace" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406750">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406750">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
@@ -922,7 +922,7 @@
                   </node>
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406766">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406766">
                 <property name="name" nameId="tpck.1169194664001" value="l2" />
               </node>
             </node>
@@ -1024,7 +1024,7 @@
                   </node>
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406811">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406811">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
@@ -1041,7 +1041,7 @@
                   </node>
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755327921679">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755327921679">
                 <property name="name" nameId="tpck.1169194664001" value="l2" />
               </node>
             </node>
@@ -1070,7 +1070,7 @@
                   </node>
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406824">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406824">
                 <property name="name" nameId="tpck.1169194664001" value="l3" />
               </node>
             </node>
@@ -1082,7 +1082,7 @@
           </node>
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052406827" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406828">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406828">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -1102,7 +1102,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="1230052406838" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1230052406839">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877396640" resolveInfo="getPresentation" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406840">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406840">
                     <property name="name" nameId="tpck.1169194664001" value="ref" />
                   </node>
                 </node>
@@ -1150,7 +1150,7 @@
           </node>
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1230052406852" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052406853" />
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406854">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406854">
             <property name="name" nameId="tpck.1169194664001" value="foo" />
           </node>
         </node>
@@ -1193,7 +1193,7 @@
           </node>
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052406872" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406873">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406873">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -1461,7 +1461,7 @@
                               </node>
                             </node>
                           </node>
-                          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406988">
+                          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406988">
                             <property name="name" nameId="tpck.1169194664001" value="l1" />
                           </node>
                         </node>
@@ -1474,7 +1474,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052406983" resolveInfo="a" />
                             </node>
                           </node>
-                          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755327931786">
+                          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755327931786">
                             <property name="name" nameId="tpck.1169194664001" value="l2" />
                           </node>
                         </node>
@@ -1486,7 +1486,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406989">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052406989">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -1564,7 +1564,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407023">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407023">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -1605,7 +1605,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052407033" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407042">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407042">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
@@ -1623,7 +1623,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052407033" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407049">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407049">
                 <property name="name" nameId="tpck.1169194664001" value="l2" />
               </node>
             </node>
@@ -1641,7 +1641,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052407033" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407056">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407056">
                 <property name="name" nameId="tpck.1169194664001" value="l3" />
               </node>
             </node>
@@ -1649,7 +1649,7 @@
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1230052407057" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052407058" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407059">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407059">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -1745,7 +1745,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052407100" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052407101" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407102">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407102">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -1841,14 +1841,14 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230052407142">
                 <property name="value" nameId="tpee.1068580320021" value="3" />
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407143">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407143">
                 <property name="name" nameId="tpck.1169194664001" value="label" />
               </node>
             </node>
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052407144" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407145">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407145">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -1883,7 +1883,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052407162" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407163">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052407163">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -1972,7 +1972,7 @@
           <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1230052444315">
             <property name="name" nameId="tpck.1169194664001" value="b" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230052444316" />
-            <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052444317">
+            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052444317">
               <property name="name" nameId="tpck.1169194664001" value="var" />
             </node>
           </node>
@@ -1985,7 +1985,7 @@
                   <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052444323">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052444323">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
@@ -2003,7 +2003,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052444320" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052444330">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052444330">
                 <property name="name" nameId="tpck.1169194664001" value="l2" />
               </node>
             </node>
@@ -2021,7 +2021,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052444320" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052444337">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052444337">
                 <property name="name" nameId="tpck.1169194664001" value="l3" />
               </node>
             </node>
@@ -2155,7 +2155,7 @@
                   <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052480279">
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.BreakStatement" typeId="tpee.1081855346303" id="1230052480280" />
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480281">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480281">
                     <property name="name" nameId="tpck.1169194664001" value="l2" />
                   </node>
                 </node>
@@ -2171,12 +2171,12 @@
                   <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052480286">
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ContinueStatement" typeId="tpee.1082113931046" id="1230052480287" />
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480288">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480288">
                     <property name="name" nameId="tpck.1169194664001" value="l3" />
                   </node>
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480289">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480289">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
@@ -2319,7 +2319,7 @@
                       </node>
                     </node>
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480356">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480356">
                     <property name="name" nameId="tpck.1169194664001" value="l1" />
                   </node>
                 </node>
@@ -2332,7 +2332,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052480359" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480360">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480360">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -2427,7 +2427,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052480402" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052480403" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480404">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480404">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -2538,7 +2538,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052480455" resolveInfo="a" />
                     </node>
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480452">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480452">
                     <property name="name" nameId="tpck.1169194664001" value="l1" />
                   </node>
                   <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052480453">
@@ -2554,7 +2554,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052480457" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480458">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480458">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -2628,7 +2628,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052480491" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052480492" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480493">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052480493">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -2733,7 +2733,7 @@
                   <property name="value" nameId="tpee.1068580320021" value="25" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052509268">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052509268">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
@@ -2745,7 +2745,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052509265" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755327950000">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755327950000">
                 <property name="name" nameId="tpck.1169194664001" value="l2" />
               </node>
             </node>
@@ -2760,13 +2760,13 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ll11.~AnActionEvent%dgetPlace()%cjava%dlang%dString" resolveInfo="getPlace" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052509275">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052509275">
                 <property name="name" nameId="tpck.1169194664001" value="l3" />
               </node>
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052509276">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052509276">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -2826,7 +2826,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052509300">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052509300">
           <property name="name" nameId="tpck.1169194664001" value="after1" />
         </node>
       </node>
@@ -2895,7 +2895,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052509343">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052509343">
           <property name="name" nameId="tpck.1169194664001" value="after2" />
         </node>
       </node>
@@ -3090,7 +3090,7 @@
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230052551992">
                       <property name="value" nameId="tpee.1068580320021" value="2" />
                     </node>
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052551993">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052551993">
                       <property name="name" nameId="tpck.1169194664001" value="l1" />
                     </node>
                   </node>
@@ -3100,7 +3100,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052551994" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052551995">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052551995">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -3175,7 +3175,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052552028" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052552029" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052552030">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052552030">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -3270,7 +3270,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230052552070">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~Object%dfinalize()%cvoid" resolveInfo="finalize" />
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052552071">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052552071">
                   <property name="name" nameId="tpck.1169194664001" value="l1" />
                 </node>
               </node>
@@ -3284,7 +3284,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052552074" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052552075">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052552075">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -3343,7 +3343,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052552099" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052552100">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052552100">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -3465,7 +3465,7 @@
                       </node>
                     </node>
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052641834">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052641834">
                     <property name="name" nameId="tpck.1169194664001" value="l1" />
                   </node>
                 </node>
@@ -3483,7 +3483,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052641839" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052641840">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052641840">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -3568,7 +3568,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052641877" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052641878" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052641879">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052641879">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -3677,7 +3677,7 @@
                   <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052641926">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052641926">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
@@ -3695,7 +3695,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052641923" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052641933">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052641933">
                 <property name="name" nameId="tpck.1169194664001" value="l2" />
               </node>
             </node>
@@ -3713,7 +3713,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052641923" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052641940">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052641940">
                 <property name="name" nameId="tpck.1169194664001" value="l3" />
               </node>
             </node>
@@ -3735,7 +3735,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052641947" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052641948">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052641948">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -3830,7 +3830,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052642005" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052642006" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642007">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642007">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -3932,14 +3932,14 @@
                   <property name="value" nameId="tpee.1068580320021" value="2" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642050">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642050">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052642051" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642052">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642052">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -3978,7 +3978,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052642068" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052642069" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642070">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642070">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -4082,7 +4082,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052642107" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642114">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642114">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
@@ -4090,7 +4090,7 @@
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230052642115" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052642116" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642117">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642117">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -4147,7 +4147,7 @@
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230052642142" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052642143" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642144">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642144">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -4255,7 +4255,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052642208" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642190">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642190">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
@@ -4273,7 +4273,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052642208" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642197">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642197">
                 <property name="name" nameId="tpck.1169194664001" value="l2" />
               </node>
             </node>
@@ -4293,7 +4293,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052642208" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642205">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642205">
                 <property name="name" nameId="tpck.1169194664001" value="l3" />
               </node>
             </node>
@@ -4438,7 +4438,7 @@
                   </node>
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642271">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642271">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
@@ -4454,7 +4454,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052642276" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642277">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642277">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -4535,7 +4535,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052642312" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052642313" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642314">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642314">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -4648,7 +4648,7 @@
                   </node>
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642364">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642364">
                 <property name="name" nameId="tpck.1169194664001" value="l3" />
               </node>
             </node>
@@ -4693,7 +4693,7 @@
                       </node>
                     </node>
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642384">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642384">
                     <property name="name" nameId="tpck.1169194664001" value="l1" />
                   </node>
                 </node>
@@ -4711,7 +4711,7 @@
               <node role="expression" roleId="tpee.1068581517676" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230052642389">
                 <property name="value" nameId="tpee.1068580320021" value="9" />
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642390">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642390">
                 <property name="name" nameId="tpck.1169194664001" value="l2" />
               </node>
             </node>
@@ -4769,7 +4769,7 @@
                   </node>
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642415">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052642415">
                 <property name="name" nameId="tpck.1169194664001" value="l4" />
               </node>
             </node>
@@ -5013,7 +5013,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1230052684514">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1230052684515">
                 <property name="value" nameId="tpee.1070475926801" value="bla-bla" />
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684516">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684516">
                   <property name="name" nameId="tpck.1169194664001" value="extract" />
                 </node>
               </node>
@@ -5023,7 +5023,7 @@
         <node role="executeFunction" roleId="tp3j.2522969319638198291" type="tp3j.ExecuteBlock" typeId="tp3j.1192795911897" id="1230052684517">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052684518" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684519">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684519">
           <property name="name" nameId="tpck.1169194664001" value="before1" />
         </node>
       </node>
@@ -5037,7 +5037,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052684525" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052684526" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684527">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684527">
           <property name="name" nameId="tpck.1169194664001" value="before2" />
         </node>
       </node>
@@ -5052,7 +5052,7 @@
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230052684533">
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1230052684539" resolveInfo="IntentionClazz" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230052684540" resolveInfo="foo" />
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684534">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684534">
                   <property name="name" nameId="tpck.1169194664001" value="call" />
                 </node>
               </node>
@@ -5062,7 +5062,7 @@
         <node role="executeFunction" roleId="tp3j.2522969319638198291" type="tp3j.ExecuteBlock" typeId="tp3j.1192795911897" id="1230052684535">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052684536" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684537">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684537">
           <property name="name" nameId="tpck.1169194664001" value="after1" />
         </node>
       </node>
@@ -5081,7 +5081,7 @@
             </node>
           </node>
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="1230052684545" />
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684546">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684546">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
@@ -5091,7 +5091,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052684550" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052684551" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684552">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684552">
           <property name="name" nameId="tpck.1169194664001" value="after2" />
         </node>
       </node>
@@ -5126,13 +5126,13 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052684559" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684568">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684568">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684569">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684569">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -5149,7 +5149,7 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230052684577">
                   <property name="value" nameId="tpee.1068580320021" value="10" />
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684578">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684578">
                   <property name="name" nameId="tpck.1169194664001" value="variableDefinition" />
                 </node>
               </node>
@@ -5157,14 +5157,14 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1230052684579">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1230052684580">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052684575" resolveInfo="a" />
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684581">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684581">
                   <property name="name" nameId="tpck.1169194664001" value="expression" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684582">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684582">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -5175,7 +5175,7 @@
         <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1230052684585">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052684586" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684587">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684587">
           <property name="name" nameId="tpck.1169194664001" value="containerBefore" />
         </node>
       </node>
@@ -5207,7 +5207,7 @@
             <property name="name" nameId="tpck.1169194664001" value="a" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230052684600" />
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684601">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684601">
             <property name="name" nameId="tpck.1169194664001" value="foo" />
           </node>
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052684602" />
@@ -5215,7 +5215,7 @@
         <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1230052684603">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052684604" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684605">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684605">
           <property name="name" nameId="tpck.1169194664001" value="containerAfter" />
         </node>
       </node>
@@ -5435,7 +5435,7 @@
                   <property name="value" nameId="tpee.1068580320021" value="10" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684695">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684695">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
@@ -5453,13 +5453,13 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052684692" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755327940892">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755327940892">
                 <property name="name" nameId="tpck.1169194664001" value="l2" />
               </node>
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684696">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684696">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -5472,14 +5472,14 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1230052684701">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230052684702">
                 <property name="value" nameId="tpee.1068580320021" value="0" />
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684703">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684703">
                   <property name="name" nameId="tpck.1169194664001" value="expression" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684704">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684704">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -5488,7 +5488,7 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1230052684706">
         <property name="name" nameId="tpck.1169194664001" value="c1" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052684707" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684708">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684708">
           <property name="name" nameId="tpck.1169194664001" value="containerBefore" />
         </node>
       </node>
@@ -5526,12 +5526,12 @@
             </node>
           </node>
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1230052684718" />
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684719">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684719">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052684720" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684721">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052684721">
           <property name="name" nameId="tpck.1169194664001" value="containerAfter" />
         </node>
       </node>
@@ -5697,12 +5697,12 @@
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1230052902929" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052902930" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052902931" />
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052902932">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052902932">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052902933" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052902934">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052902934">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -5720,7 +5720,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052902942" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052902943">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052902943">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -5818,12 +5818,12 @@
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1230052902981" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052902982" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052902983" />
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052902984">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052902984">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052902985" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052902986">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052902986">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -5838,7 +5838,7 @@
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052902992" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052902993" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052902994">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052902994">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -5932,12 +5932,12 @@
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230052903030" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052903031" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052903032" />
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903033">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903033">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052903034" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903035">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903035">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -5948,7 +5948,7 @@
         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1230052903038">
           <property name="name" nameId="tpck.1169194664001" value="method" />
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="1188338037704648623">
-            <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1188338037704648624">
+            <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1188338037704648624">
               <property name="name" nameId="tpck.1169194664001" value="string" />
             </node>
           </node>
@@ -5956,7 +5956,7 @@
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052903042" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052903043" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903044">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903044">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -6066,7 +6066,7 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230052903090">
                   <property name="value" nameId="tpee.1068580320021" value="1" />
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903091">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903091">
                   <property name="name" nameId="tpck.1169194664001" value="ussage1" />
                 </node>
               </node>
@@ -6086,7 +6086,7 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230052903097">
                   <property name="value" nameId="tpee.1068580320021" value="3" />
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903098">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903098">
                   <property name="name" nameId="tpck.1169194664001" value="ussage2" />
                 </node>
               </node>
@@ -6106,12 +6106,12 @@
             <property name="name" nameId="tpck.1169194664001" value="b" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230052903106" />
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903107">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903107">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052903108" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903109">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903109">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -6173,7 +6173,7 @@
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1230052903135" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052903136" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903137">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052903137">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -6411,12 +6411,12 @@
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1230052943767" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052943768" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052943769" />
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943770">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943770">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052943771" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943772">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943772">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -6435,7 +6435,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052943781" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943782">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943782">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -6548,12 +6548,12 @@
             <property name="name" nameId="tpck.1169194664001" value="a" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230052943829" />
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943830">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943830">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052943831" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943832">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943832">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -6582,7 +6582,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052943845" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943846">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943846">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -6689,7 +6689,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943891">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943891">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230052943892" />
@@ -6699,7 +6699,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052943895" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943896">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943896">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -6724,7 +6724,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052943907" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943908">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943908">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -6834,7 +6834,7 @@
             <property name="name" nameId="tpck.1169194664001" value="b" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230052943956" />
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943957">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943957">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
@@ -6853,7 +6853,7 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230052943967">
                     <property name="value" nameId="tpee.1068580320021" value="1" />
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943968">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943968">
                     <property name="name" nameId="tpck.1169194664001" value="ussage" />
                   </node>
                 </node>
@@ -6862,7 +6862,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943970">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943970">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -6905,7 +6905,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943992">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052943992">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -7135,12 +7135,12 @@
             <property name="name" nameId="tpck.1169194664001" value="a" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230052944089" />
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052944090">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052944090">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052944091" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052944092">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052944092">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -7155,7 +7155,7 @@
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230052944098" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052944099" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052944100">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052944100">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -7261,12 +7261,12 @@
             <property name="name" nameId="tpck.1169194664001" value="b" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.DoubleType" typeId="tpee.1070534513062" id="1230052944144" />
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052944145">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052944145">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052944146" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052944147">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052944147">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -7295,7 +7295,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052944160" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052944161">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052944161">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -7436,7 +7436,7 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230052989017">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230052989018">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230052989021" resolveInfo="foo" />
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989019">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989019">
                       <property name="name" nameId="tpck.1169194664001" value="call" />
                     </node>
                   </node>
@@ -7473,7 +7473,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052989033" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989034">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989034">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -7538,7 +7538,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052989063" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989064">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989064">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -7615,7 +7615,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230052989098">
                       <property name="value" nameId="tpee.1068580320021" value="10" />
                     </node>
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989099">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989099">
                       <property name="name" nameId="tpck.1169194664001" value="call" />
                     </node>
                   </node>
@@ -7658,7 +7658,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052989116" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052989117" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989118">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989118">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -7735,7 +7735,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052989153" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052989154" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989155">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989155">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -7848,7 +7848,7 @@
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230052989209">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230052989178" resolveInfo="foo" />
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989210">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989210">
                       <property name="name" nameId="tpck.1169194664001" value="call" />
                     </node>
                   </node>
@@ -7862,7 +7862,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052989213" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989214">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989214">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -7970,7 +7970,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052989264" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989265">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989265">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -8034,7 +8034,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989293">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989293">
             <property name="name" nameId="tpck.1169194664001" value="definition" />
           </node>
         </node>
@@ -8085,7 +8085,7 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230052989318">
                     <property name="value" nameId="tpee.1068580320021" value="10" />
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989319">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989319">
                     <property name="name" nameId="tpck.1169194664001" value="call" />
                   </node>
                 </node>
@@ -8140,7 +8140,7 @@
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230052989346">
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230052989347">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230052989350" resolveInfo="foo" />
-                      <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989348">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989348">
                         <property name="name" nameId="tpck.1169194664001" value="call" />
                       </node>
                     </node>
@@ -8164,7 +8164,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052989356" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989357">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989357">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -8206,7 +8206,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230052989376" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989377">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230052989377">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -8280,7 +8280,7 @@
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1230053040732">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.1213877396627" resolveInfo="isInTemplates" />
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040733">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040733">
                       <property name="name" nameId="tpck.1169194664001" value="call" />
                     </node>
                   </node>
@@ -8289,7 +8289,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040734">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040734">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -8329,7 +8329,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053040749" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040750">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040750">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -8412,7 +8412,7 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230053040786">
                       <property name="value" nameId="tpee.1068580320021" value="10" />
                     </node>
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040787">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040787">
                       <property name="name" nameId="tpck.1169194664001" value="call" />
                     </node>
                   </node>
@@ -8474,7 +8474,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040815">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040815">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -8576,7 +8576,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040863">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040863">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -8666,7 +8666,7 @@
                   <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="1230053040903" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1230053040904">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053040891" resolveInfo="foo" />
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040905">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040905">
                       <property name="name" nameId="tpck.1169194664001" value="call" />
                     </node>
                   </node>
@@ -8675,7 +8675,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040906">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040906">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -8708,7 +8708,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040921">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053040921">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -8779,7 +8779,7 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1230053073167">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053073161" resolveInfo="a" />
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073168">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073168">
                     <property name="name" nameId="tpck.1169194664001" value="call" />
                   </node>
                 </node>
@@ -8830,7 +8830,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053073188" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073189">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073189">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -8920,7 +8920,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053073228" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073229">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073229">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -8991,7 +8991,7 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1230053073259">
                     <property name="value" nameId="tpee.1070475926801" value="Hello world" />
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073260">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073260">
                     <property name="name" nameId="tpck.1169194664001" value="call" />
                   </node>
                 </node>
@@ -9044,7 +9044,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053073282" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073283">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073283">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -9123,7 +9123,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053073318" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073319">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073319">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -9200,7 +9200,7 @@
                       </node>
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1230053073354" />
                     </node>
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073355">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073355">
                       <property name="name" nameId="tpck.1169194664001" value="call" />
                     </node>
                   </node>
@@ -9248,7 +9248,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053073375" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073376">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073376">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -9336,7 +9336,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053073417" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073418">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073418">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -9414,7 +9414,7 @@
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1230053073453">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053073443" resolveInfo="m" />
                       </node>
-                      <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073454">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073454">
                         <property name="name" nameId="tpck.1169194664001" value="call" />
                       </node>
                     </node>
@@ -9447,7 +9447,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053073466" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073467">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073467">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -9512,7 +9512,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053073496" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073497">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053073497">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -9571,7 +9571,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053114810">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053114820" resolveInfo="foo" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1230053114816" resolveInfo="Static1" />
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053114811">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053114811">
                   <property name="name" nameId="tpck.1169194664001" value="call_1" />
                 </node>
               </node>
@@ -9580,7 +9580,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053114813">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053114831" resolveInfo="foo" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1230053114830" resolveInfo="Static2" />
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053114814">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053114814">
                   <property name="name" nameId="tpck.1169194664001" value="call_2" />
                 </node>
               </node>
@@ -9744,7 +9744,7 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053114888">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053114909" resolveInfo="foo1" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053114889">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053114889">
                     <property name="name" nameId="tpck.1169194664001" value="call1" />
                   </node>
                 </node>
@@ -9757,7 +9757,7 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053114893">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053114923" resolveInfo="foo2" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053114894">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053114894">
                     <property name="name" nameId="tpck.1169194664001" value="call2" />
                   </node>
                 </node>
@@ -9770,7 +9770,7 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053114898">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053114933" resolveInfo="foo3" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053114899">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053114899">
                     <property name="name" nameId="tpck.1169194664001" value="call3" />
                   </node>
                 </node>
@@ -9994,7 +9994,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230053187325">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053187326">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053187354" resolveInfo="foo1" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187327">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187327">
                     <property name="name" nameId="tpck.1169194664001" value="call1" />
                   </node>
                 </node>
@@ -10006,7 +10006,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1230053187331" />
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053187332">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053187364" resolveInfo="foo2" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187333">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187333">
                     <property name="name" nameId="tpck.1169194664001" value="call2" />
                   </node>
                 </node>
@@ -10017,7 +10017,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1230053187336" />
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053187337">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053187380" resolveInfo="foo3" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187338">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187338">
                     <property name="name" nameId="tpck.1169194664001" value="call3" />
                   </node>
                 </node>
@@ -10028,7 +10028,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1230053187341" />
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053187342">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053187399" resolveInfo="foo4" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187343">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187343">
                     <property name="name" nameId="tpck.1169194664001" value="call4" />
                   </node>
                 </node>
@@ -10039,7 +10039,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1230053187346" />
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053187347">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053187407" resolveInfo="foo5" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187348">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187348">
                     <property name="name" nameId="tpck.1169194664001" value="call5" />
                   </node>
                 </node>
@@ -10049,7 +10049,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230053187350">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053187351">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053187422" resolveInfo="foo6" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187352">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187352">
                     <property name="name" nameId="tpck.1169194664001" value="call6" />
                   </node>
                 </node>
@@ -10412,7 +10412,7 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230053187518">
                     <property name="value" nameId="tpee.1068580320021" value="10" />
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187519">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187519">
                     <property name="name" nameId="tpck.1169194664001" value="call" />
                   </node>
                 </node>
@@ -10476,7 +10476,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053187550" resolveInfo="a" />
                       </node>
                     </node>
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187547">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187547">
                       <property name="name" nameId="tpck.1169194664001" value="call" />
                     </node>
                   </node>
@@ -10533,7 +10533,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053187571" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187572">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187572">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -10661,7 +10661,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053187629" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187630">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187630">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -10739,7 +10739,7 @@
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1230053187665">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053187655" resolveInfo="c" />
                       </node>
-                      <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187666">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187666">
                         <property name="name" nameId="tpck.1169194664001" value="call" />
                       </node>
                     </node>
@@ -10791,7 +10791,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053187686" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187687">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187687">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -10899,7 +10899,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053187734" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187735">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187735">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -10968,7 +10968,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1230053187765" />
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053187766">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053187769" resolveInfo="foo" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187767">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187767">
                     <property name="name" nameId="tpck.1169194664001" value="call" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1230053187768">
@@ -11015,7 +11015,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053187786" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187787">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187787">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -11099,7 +11099,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053187826" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187827">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187827">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -11173,7 +11173,7 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230053187861">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053187862">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053187847" resolveInfo="foo" />
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187863">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187863">
                       <property name="name" nameId="tpck.1169194664001" value="call" />
                     </node>
                   </node>
@@ -11183,7 +11183,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187865">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187865">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -11219,7 +11219,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187883">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187883">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -11333,7 +11333,7 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1230053187933">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053187934">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053187919" resolveInfo="m" />
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187935">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187935">
                       <property name="name" nameId="tpck.1169194664001" value="call" />
                     </node>
                   </node>
@@ -11343,7 +11343,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187937">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187937">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -11379,7 +11379,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187955">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053187955">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -11422,14 +11422,14 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053223854">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053223835" resolveInfo="foo" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1230053223834" resolveInfo="AnotherClass" />
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053223855">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053223855">
                   <property name="name" nameId="tpck.1169194664001" value="call" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053223856">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053223856">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -11450,7 +11450,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053223866">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053223866">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -11541,7 +11541,7 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1230053223906">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053223901" resolveInfo="a" />
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053223907">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053223907">
                   <property name="name" nameId="tpck.1169194664001" value="call" />
                 </node>
               </node>
@@ -11549,7 +11549,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053223908" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053223909">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053223909">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -11605,7 +11605,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053223934" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053223935">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053223935">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -11662,7 +11662,7 @@
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230053266372">
                 <property name="value" nameId="tpee.1068580320021" value="10" />
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266373">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266373">
                 <property name="name" nameId="tpck.1169194664001" value="definition" />
               </node>
             </node>
@@ -11673,14 +11673,14 @@
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230053266376" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1230053266377">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053266370" resolveInfo="a" />
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266378">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266378">
                   <property name="name" nameId="tpck.1169194664001" value="reference" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266379">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266379">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -11698,7 +11698,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266387">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266387">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -11847,7 +11847,7 @@
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230053266449" />
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1230053266450">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053266444" resolveInfo="a" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266451">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266451">
                     <property name="name" nameId="tpck.1169194664001" value="ref" />
                   </node>
                 </node>
@@ -11864,7 +11864,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266456">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266456">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -11906,7 +11906,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266476">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266476">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -11937,7 +11937,7 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1230053266492">
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1230053266493">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053266486" resolveInfo="a" />
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266494">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266494">
                       <property name="name" nameId="tpck.1169194664001" value="ref" />
                     </node>
                   </node>
@@ -11949,7 +11949,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266496">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266496">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -11978,7 +11978,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266510">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266510">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -12096,7 +12096,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1230053266559">
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1230053266560">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053266550" resolveInfo="a" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266561">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266561">
                     <property name="name" nameId="tpck.1169194664001" value="ref" />
                   </node>
                 </node>
@@ -12111,7 +12111,7 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230053266564" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266565">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266565">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -12145,7 +12145,7 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230053266580" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266581">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266581">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -12167,7 +12167,7 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230053266593">
                   <property name="value" nameId="tpee.1068580320021" value="10" />
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266594">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266594">
                   <property name="name" nameId="tpck.1169194664001" value="def" />
                 </node>
               </node>
@@ -12193,7 +12193,7 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230053266602" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266603">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266603">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -12233,7 +12233,7 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230053266621" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266622">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266622">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -12333,7 +12333,7 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1230053266664">
                   <property name="value" nameId="tpee.1068580320021" value="5" />
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266665">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266665">
                   <property name="name" nameId="tpck.1169194664001" value="def" />
                 </node>
               </node>
@@ -12354,7 +12354,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266672">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266672">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -12383,7 +12383,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266686">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053266686">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -12463,12 +12463,12 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302538">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302538">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302539" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302540">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302540">
           <property name="name" nameId="tpck.1169194664001" value="before1" />
         </node>
       </node>
@@ -12477,7 +12477,7 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1230053302542">
         <property name="name" nameId="tpck.1169194664001" value="Class2" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302543" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302544">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302544">
           <property name="name" nameId="tpck.1169194664001" value="before2" />
         </node>
       </node>
@@ -12491,7 +12491,7 @@
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1230053302549" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302550" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302551">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302551">
           <property name="name" nameId="tpck.1169194664001" value="after1" />
         </node>
       </node>
@@ -12518,7 +12518,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302562" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302563">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302563">
           <property name="name" nameId="tpck.1169194664001" value="after2" />
         </node>
       </node>
@@ -12593,7 +12593,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302594">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302594">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
@@ -12604,7 +12604,7 @@
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230053302598" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302599" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302600">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302600">
           <property name="name" nameId="tpck.1169194664001" value="before1" />
         </node>
       </node>
@@ -12613,7 +12613,7 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1230053302602">
         <property name="name" nameId="tpck.1169194664001" value="Class2" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302603" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302604">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302604">
           <property name="name" nameId="tpck.1169194664001" value="before2" />
         </node>
       </node>
@@ -12628,7 +12628,7 @@
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230053302610" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302611" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302612">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302612">
           <property name="name" nameId="tpck.1169194664001" value="after1" />
         </node>
       </node>
@@ -12655,7 +12655,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302623" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302624">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302624">
           <property name="name" nameId="tpck.1169194664001" value="after2" />
         </node>
       </node>
@@ -12732,12 +12732,12 @@
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1230053302656" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302657" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230053302658" />
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302659">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302659">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302660" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302661">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302661">
           <property name="name" nameId="tpck.1169194664001" value="before1" />
         </node>
       </node>
@@ -12754,7 +12754,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053302669">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1230053302655" resolveInfo="m" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1230053302654" resolveInfo="Class" />
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302670">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302670">
                   <property name="name" nameId="tpck.1169194664001" value="ussage" />
                 </node>
               </node>
@@ -12762,7 +12762,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302671" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302672">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302672">
           <property name="name" nameId="tpck.1169194664001" value="before2" />
         </node>
       </node>
@@ -12771,7 +12771,7 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1230053302674">
         <property name="name" nameId="tpck.1169194664001" value="Class" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302675" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302676">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302676">
           <property name="name" nameId="tpck.1169194664001" value="after1" />
         </node>
       </node>
@@ -12798,7 +12798,7 @@
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230053302688" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302689" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302690">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302690">
           <property name="name" nameId="tpck.1169194664001" value="after2" />
         </node>
       </node>
@@ -12862,12 +12862,12 @@
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1230053302714" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302715" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230053302716" />
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302717">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302717">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302718" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302719">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302719">
           <property name="name" nameId="tpck.1169194664001" value="before1" />
         </node>
       </node>
@@ -12876,7 +12876,7 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1230053302721">
         <property name="name" nameId="tpck.1169194664001" value="Class2" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302722" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302723">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302723">
           <property name="name" nameId="tpck.1169194664001" value="before2" />
         </node>
       </node>
@@ -12885,7 +12885,7 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1230053302725">
         <property name="name" nameId="tpck.1169194664001" value="Class" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302726" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302727">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302727">
           <property name="name" nameId="tpck.1169194664001" value="after1" />
         </node>
       </node>
@@ -12900,7 +12900,7 @@
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230053302733" />
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302734" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302735">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302735">
           <property name="name" nameId="tpck.1169194664001" value="after2" />
         </node>
       </node>
@@ -12930,7 +12930,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1230057984829" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="1230057984830">
                   <link role="member" roleId="tp4f.1205756909548" targetNodeId="1230057984819" resolveInfo="method" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230057984831">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230057984831">
                     <property name="name" nameId="tpck.1169194664001" value="method" />
                   </node>
                 </node>
@@ -12938,7 +12938,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230057984832">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230057984832">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -12968,7 +12968,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230057984845">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230057984845">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -13105,7 +13105,7 @@
           </node>
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="418758558327019498" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="418758558327019499" />
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="418758558327028830">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="418758558327028830">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
@@ -13126,7 +13126,7 @@
               <node role="expression" roleId="tpee.1068581517676" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="418758558327028809" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="418758558327028831">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="418758558327028831">
             <property name="name" nameId="tpck.1169194664001" value="implementing" />
           </node>
         </node>
@@ -13136,7 +13136,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="418758558327019479" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="418758558327019480" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="418758558327333019">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="418758558327333019">
           <property name="name" nameId="tpck.1169194664001" value="toCheck" />
         </node>
       </node>
@@ -13162,7 +13162,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="418758558327028822" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="418758558327028823" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="418758558327333018">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="418758558327333018">
           <property name="name" nameId="tpck.1169194664001" value="result" />
         </node>
       </node>
@@ -13227,7 +13227,7 @@
           <property name="name" nameId="tpck.1169194664001" value="i" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8495840634674645168" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="8495840634674645187" />
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634674645197">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634674645197">
             <property name="name" nameId="tpck.1169194664001" value="field" />
           </node>
         </node>
@@ -13237,7 +13237,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8495840634674645164" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8495840634674645165" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634674645166">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634674645166">
           <property name="name" nameId="tpck.1169194664001" value="before1" />
         </node>
       </node>
@@ -13251,7 +13251,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8495840634674645193" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8495840634674645194" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634674645195">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634674645195">
           <property name="name" nameId="tpck.1169194664001" value="before2" />
         </node>
       </node>
@@ -13265,7 +13265,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8495840634674645203" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8495840634674645204" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634674648131">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634674648131">
           <property name="name" nameId="tpck.1169194664001" value="after1" />
         </node>
       </node>
@@ -13285,7 +13285,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8495840634674645210" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8495840634674645211" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634674648132">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634674648132">
           <property name="name" nameId="tpck.1169194664001" value="after2" />
         </node>
       </node>
@@ -13362,7 +13362,7 @@
           <property name="name" nameId="tpck.1169194664001" value="i" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8495840634675645378" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="8495840634675243982" />
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634675243983">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634675243983">
             <property name="name" nameId="tpck.1169194664001" value="field" />
           </node>
         </node>
@@ -13372,7 +13372,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8495840634675243987" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8495840634675243988" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634675243989">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634675243989">
           <property name="name" nameId="tpck.1169194664001" value="before1" />
         </node>
       </node>
@@ -13386,7 +13386,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8495840634675645400" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8495840634675645401" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634675645406">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634675645406">
           <property name="name" nameId="tpck.1169194664001" value="after1" />
         </node>
       </node>
@@ -13406,7 +13406,7 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8495840634675645880">
                   <link role="classifier" roleId="tpee.1144433057691" targetNodeId="8495840634675243979" resolveInfo="B" />
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8495840634675243980" resolveInfo="i" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634675645881">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634675645881">
                     <property name="name" nameId="tpck.1169194664001" value="ref1" />
                   </node>
                 </node>
@@ -13414,7 +13414,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634675243997">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634675243997">
           <property name="name" nameId="tpck.1169194664001" value="before2" />
         </node>
       </node>
@@ -13444,7 +13444,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634675299906">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8495840634675299906">
           <property name="name" nameId="tpck.1169194664001" value="after2" />
         </node>
       </node>
@@ -13521,7 +13521,7 @@
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5142438244427169035" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5142438244427169036" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5142438244427169037" />
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5142438244427184259">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5142438244427184259">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
           <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6563905690015669387">
@@ -13535,7 +13535,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5142438244427169032" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5142438244427169033" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5142438244427184177">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5142438244427184177">
           <property name="name" nameId="tpck.1169194664001" value="beforeA" />
         </node>
       </node>
@@ -13549,7 +13549,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5142438244427184194" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5142438244427184195" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5142438244427184216">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5142438244427184216">
           <property name="name" nameId="tpck.1169194664001" value="afterA" />
         </node>
       </node>
@@ -13566,7 +13566,7 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6765021202370589782">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5142438244427169034" resolveInfo="move" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5142438244427169028" resolveInfo="A" />
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6765021202370603433">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6765021202370603433">
                   <property name="name" nameId="tpck.1169194664001" value="usage" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5848299172981714252">
@@ -13587,7 +13587,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5142438244427184185" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5142438244427184186" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5142438244427184188">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5142438244427184188">
           <property name="name" nameId="tpck.1169194664001" value="beforeB" />
         </node>
       </node>
@@ -13631,7 +13631,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5142438244427184207" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5142438244427184208" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5142438244427184215">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5142438244427184215">
           <property name="name" nameId="tpck.1169194664001" value="afterB" />
         </node>
       </node>
@@ -13732,7 +13732,7 @@
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~Object%d&lt;init&gt;()" resolveInfo="Object" />
                         <link role="classifier" roleId="tpee.1170346070688" targetNodeId="6791439617122308114" resolveInfo="II" />
                         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6791439617122308135" />
-                        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6791439617122315423">
+                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6791439617122315423">
                           <property name="name" nameId="tpck.1169194664001" value="convert" />
                         </node>
                         <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6791439617122330154">
@@ -13764,7 +13764,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6791439617122315425">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6791439617122315425">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -13853,7 +13853,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6791439617122315493">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6791439617122315493">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -14014,7 +14014,7 @@
                             </node>
                           </node>
                         </node>
-                        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6791439617122640196">
+                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6791439617122640196">
                           <property name="name" nameId="tpck.1169194664001" value="convert" />
                         </node>
                       </node>
@@ -14033,7 +14033,7 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6791439617122628508" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6791439617122640161">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6791439617122640161">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -14159,7 +14159,7 @@
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6791439617122628438" resolveInfo="Abstract" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6791439617122640162">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6791439617122640162">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -14300,7 +14300,7 @@
                         <node role="typeParameter" roleId="tpee.1201186121363" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2230400082817266649">
                           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Integer" resolveInfo="Integer" />
                         </node>
-                        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2230400082817279736">
+                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2230400082817279736">
                           <property name="name" nameId="tpck.1169194664001" value="convert" />
                         </node>
                       </node>
@@ -14312,7 +14312,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2230400082817279734">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2230400082817279734">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -14416,7 +14416,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2230400082817279735">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2230400082817279735">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -14491,7 +14491,7 @@
                   <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2230400082818031608" />
                   <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2230400082818031609" />
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2230400082818041862">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2230400082818041862">
                   <property name="name" nameId="tpck.1169194664001" value="convert" />
                 </node>
               </node>
@@ -14504,7 +14504,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2230400082818031613" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2230400082818031614" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2230400082818041860">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2230400082818041860">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -14552,7 +14552,7 @@
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2230400082818031590" resolveInfo="IStatic" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2230400082818059882">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2230400082818059882">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -14747,7 +14747,7 @@
                         <node role="typeParameter" roleId="tpee.1201186121363" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="4946830740863806400">
                           <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="4946830740863806406" resolveInfo="F" />
                         </node>
-                        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4946830740863818090">
+                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4946830740863818090">
                           <property name="name" nameId="tpck.1169194664001" value="convert" />
                         </node>
                       </node>
@@ -14774,7 +14774,7 @@
         <node role="typeVariableDeclaration" roleId="tpee.1109279881614" type="tpee.TypeVariableDeclaration" typeId="tpee.1109279763828" id="4946830740863806406">
           <property name="name" nameId="tpck.1169194664001" value="F" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4946830740863818086">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4946830740863818086">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -14935,7 +14935,7 @@
             <property name="name" nameId="tpck.1169194664001" value="F" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4946830740863818082">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4946830740863818082">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -15084,7 +15084,7 @@
                             </node>
                           </node>
                         </node>
-                        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3145818413496514596">
+                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3145818413496514596">
                           <property name="name" nameId="tpck.1169194664001" value="convert" />
                         </node>
                       </node>
@@ -15096,7 +15096,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3145818413496514595">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3145818413496514595">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -15279,7 +15279,7 @@
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3145818413496050427" resolveInfo="IField" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3145818413496514594">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3145818413496514594">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -15444,7 +15444,7 @@
                             <property name="value" nameId="tpee.1068580320021" value="20" />
                           </node>
                         </node>
-                        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3145818413497708748">
+                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3145818413497708748">
                           <property name="name" nameId="tpck.1169194664001" value="convert" />
                         </node>
                       </node>
@@ -15456,7 +15456,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3145818413497708741">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3145818413497708741">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -15607,7 +15607,7 @@
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3145818413497245835" resolveInfo="AConst" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3145818413497708740">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3145818413497708740">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -15675,14 +15675,14 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4412735672778826522" resolveInfo="a" />
                   </node>
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4412735672778826627">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4412735672778826627">
                   <property name="name" nameId="tpck.1169194664001" value="call" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4412735672778826584">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4412735672778826584">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -15744,7 +15744,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4412735672778826611">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4412735672778826611">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -15831,13 +15831,13 @@
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4412735672780107332" resolveInfo="Test" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4412735672780107333" resolveInfo="test" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="4412735672780109166" />
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4412735672780116659">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4412735672780116659">
                 <property name="name" nameId="tpck.1169194664001" value="call" />
               </node>
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4412735672780116656">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4412735672780116656">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -15854,7 +15854,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4412735672780116657">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4412735672780116657">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -16054,7 +16054,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8556882668095192296" resolveInfo="x" />
                   </node>
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8556882668095202188">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8556882668095202188">
                   <property name="name" nameId="tpck.1169194664001" value="replace" />
                 </node>
               </node>
@@ -16159,7 +16159,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8556882668095192305" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8556882668095192306" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8556882668095202186">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8556882668095202186">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -16291,7 +16291,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8556882668095202184" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8556882668095202185" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8556882668095202187">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8556882668095202187">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -16452,7 +16452,7 @@
                   </node>
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8556882668095222204">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8556882668095222204">
                 <property name="name" nameId="tpck.1169194664001" value="replace" />
               </node>
             </node>
@@ -16556,7 +16556,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8556882668095222114" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8556882668095222115" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8556882668095222116">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8556882668095222116">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -16688,7 +16688,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8556882668095222201" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8556882668095222202" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8556882668095222203">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8556882668095222203">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -16879,7 +16879,7 @@
                       </node>
                     </node>
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1998477585418805705">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1998477585418805705">
                     <property name="name" nameId="tpck.1169194664001" value="replace" />
                   </node>
                 </node>
@@ -16961,7 +16961,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1998477585418805599" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1998477585418805600" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1998477585418805703">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1998477585418805703">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -17100,7 +17100,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1998477585418805700" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1998477585418805701" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1998477585418805702">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1998477585418805702">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -17261,7 +17261,7 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n1y2.~PrintStream%dprintln()%cvoid" resolveInfo="println" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7793057097608416367">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7793057097608416367">
                 <property name="name" nameId="tpck.1169194664001" value="replace1" />
               </node>
             </node>
@@ -17275,7 +17275,7 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n1y2.~PrintStream%dprintln()%cvoid" resolveInfo="println" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7793057097608416368">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7793057097608416368">
                 <property name="name" nameId="tpck.1169194664001" value="replace2" />
               </node>
             </node>
@@ -17338,7 +17338,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7793057097608406500" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7793057097608406501" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7793057097608416300">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7793057097608416300">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -17433,7 +17433,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7793057097608416364" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7793057097608416365" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7793057097608416366">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7793057097608416366">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -17534,7 +17534,7 @@
                   </node>
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501976328704">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501976328704">
                 <property name="name" nameId="tpck.1169194664001" value="replace" />
               </node>
             </node>
@@ -17555,7 +17555,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8155843501976328701" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8155843501976328702" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501976328703">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501976328703">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -17632,7 +17632,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8155843501976328766" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8155843501976328767" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501976328768">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501976328768">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -17794,7 +17794,7 @@
                   </node>
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501977560930">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501977560930">
                 <property name="name" nameId="tpck.1169194664001" value="replace" />
               </node>
             </node>
@@ -17856,7 +17856,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8155843501977560831" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8155843501977560832" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501977560833">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501977560833">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -17975,7 +17975,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8155843501977560927" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8155843501977560928" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501977560929">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501977560929">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -18084,7 +18084,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8155843501978461861" resolveInfo="a" />
                   </node>
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501978461869">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501978461869">
                   <property name="name" nameId="tpck.1169194664001" value="replace" />
                 </node>
               </node>
@@ -18106,7 +18106,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8155843501978461866" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8155843501978461867" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501978461868">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501978461868">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -18182,7 +18182,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8155843501978461952" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8155843501978461953" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501978461954">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8155843501978461954">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -18330,7 +18330,7 @@
                         <property name="value" nameId="tpee.1068580320021" value="0" />
                       </node>
                     </node>
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916167869">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916167869">
                       <property name="name" nameId="tpck.1169194664001" value="introduce" />
                     </node>
                   </node>
@@ -18345,7 +18345,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7568753874916167849" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7568753874916167850" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916167868">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916167868">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -18428,7 +18428,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7568753874916167925" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7568753874916167926" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916167927">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916167927">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -18560,7 +18560,7 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n1y2.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolveInfo="println" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7568753874916187344">
                     <property name="value" nameId="tpee.1070475926801" value="bla" />
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916187363">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916187363">
                       <property name="name" nameId="tpck.1169194664001" value="introduce" />
                     </node>
                   </node>
@@ -18604,7 +18604,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7568753874916187360" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7568753874916187361" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916187362">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916187362">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -18693,7 +18693,7 @@
             <property name="value" nameId="tpee.1070475926801" value="bla" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916187414">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916187414">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -18803,7 +18803,7 @@
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="7568753874916226572" />
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7568753874916226573">
                   <property name="value" nameId="tpee.1068580320021" value="10" />
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916226623">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916226623">
                     <property name="name" nameId="tpck.1169194664001" value="introduce" />
                   </node>
                 </node>
@@ -18825,7 +18825,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916226624">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916226624">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -18884,7 +18884,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916226654">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916226654">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -19000,7 +19000,7 @@
                         </node>
                         <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7568753874916244242">
                           <property name="value" nameId="tpee.1070475926801" value="bla" />
-                          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916244260">
+                          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916244260">
                             <property name="name" nameId="tpck.1169194664001" value="introduce" />
                           </node>
                         </node>
@@ -19045,7 +19045,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7568753874916244257" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7568753874916244258" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916244259">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916244259">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -19133,7 +19133,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7568753874916244351" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7568753874916244352" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916244353">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7568753874916244353">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -19275,7 +19275,7 @@
                       </node>
                     </node>
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3109730807963555035">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3109730807963555035">
                     <property name="name" nameId="tpck.1169194664001" value="introduce" />
                   </node>
                 </node>
@@ -19289,7 +19289,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3109730807963543227" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3109730807963543228" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3109730807963545000">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3109730807963545000">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -19361,7 +19361,7 @@
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3109730807963601757" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3109730807963601758" />
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3109730807963601759">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3109730807963601759">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -19471,7 +19471,7 @@
                           </node>
                         </node>
                       </node>
-                      <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3109730807963748237">
+                      <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3109730807963748237">
                         <property name="name" nameId="tpck.1169194664001" value="convert" />
                       </node>
                     </node>
@@ -19481,7 +19481,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3109730807963748236">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3109730807963748236">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -19574,7 +19574,7 @@
             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Comparable" resolveInfo="Comparable" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3109730807963748291">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3109730807963748291">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -19739,7 +19739,7 @@
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2163048091639854989">
                                   <property name="value" nameId="tpee.1070475926801" value="bla" />
-                                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2163048091639855006">
+                                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2163048091639855006">
                                     <property name="name" nameId="tpck.1169194664001" value="introduce" />
                                   </node>
                                 </node>
@@ -19787,7 +19787,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2163048091639855003" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2163048091639855004">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2163048091639855004">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -19914,7 +19914,7 @@
             <property name="value" nameId="tpee.1070475926801" value="bla" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2163048091639855066">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2163048091639855066">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -20013,7 +20013,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6195342755328023630" resolveInfo="b" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328023634">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328023634">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
@@ -20030,7 +20030,7 @@
                   </node>
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328023635">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328023635">
                 <property name="name" nameId="tpck.1169194664001" value="l2" />
               </node>
             </node>
@@ -20055,7 +20055,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6195342755328023632" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328023633">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328023633">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -20144,7 +20144,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6195342755328023700" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328023701">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328023701">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -20412,7 +20412,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6195342755328044268" resolveInfo="a" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328044290">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328044290">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
@@ -20425,7 +20425,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6195342755328044270" resolveInfo="b" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328044291">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328044291">
                 <property name="name" nameId="tpck.1169194664001" value="l2" />
               </node>
             </node>
@@ -20453,7 +20453,7 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6195342755328044271" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328044289">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328044289">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -20656,7 +20656,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328044481">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6195342755328044481">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -20862,7 +20862,7 @@
                       </node>
                     </node>
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1300615610528534084">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1300615610528534084">
                     <property name="name" nameId="tpck.1169194664001" value="replace" />
                   </node>
                 </node>
@@ -20939,7 +20939,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1300615610528534065" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1300615610528534083">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1300615610528534083">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -21106,7 +21106,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1300615610528534265" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1300615610528534266">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1300615610528534266">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -21240,7 +21240,7 @@
                 </node>
                 <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="8823815475437525629" />
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8823815475437535212">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8823815475437535212">
                 <property name="name" nameId="tpck.1169194664001" value="l1" />
               </node>
             </node>
@@ -21250,7 +21250,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8823815475437525631" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8823815475437525649">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8823815475437525649">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -21335,7 +21335,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8823815475437525722" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8823815475437525723">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8823815475437525723">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -21423,7 +21423,7 @@
                             </node>
                             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7093131866560585685">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7093131866560585669" resolveInfo="a" />
-                              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7093131866560585698">
+                              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7093131866560585698">
                                 <property name="name" nameId="tpck.1169194664001" value="inline" />
                               </node>
                             </node>
@@ -21461,7 +21461,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7093131866560585696" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7093131866560585697">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7093131866560585697">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -21529,7 +21529,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7093131866560585731" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7093131866560585770">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7093131866560585770">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -21617,7 +21617,7 @@
                             </node>
                             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7093131866560585802">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7093131866560585786" resolveInfo="a" />
-                              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7093131866560585815">
+                              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7093131866560585815">
                                 <property name="name" nameId="tpck.1169194664001" value="inline" />
                               </node>
                             </node>
@@ -21655,7 +21655,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7093131866560585813" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7093131866560585814">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7093131866560585814">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -21723,7 +21723,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7093131866560585848" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7093131866560585849">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7093131866560585849">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -21785,7 +21785,7 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="9118878263582085086">
                   <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="9118878263582085118">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="9118878263582085118">
                   <property name="name" nameId="tpck.1169194664001" value="inline" />
                 </node>
               </node>
@@ -21858,7 +21858,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9118878263582085116" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="9118878263582085117">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="9118878263582085117">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -21949,7 +21949,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9118878263582085162" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="9118878263582085163">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="9118878263582085163">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -22014,7 +22014,7 @@
                         <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6351584993764365784">
                           <property name="value" nameId="tpee.1068580320021" value="0" />
                         </node>
-                        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6351584993764365824">
+                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6351584993764365824">
                           <property name="name" nameId="tpck.1169194664001" value="inline" />
                         </node>
                       </node>
@@ -22040,7 +22040,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6351584993764365791">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6351584993764365791">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -22078,7 +22078,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6351584993764365823">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6351584993764365823">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -22174,7 +22174,7 @@
                         </node>
                       </node>
                     </node>
-                    <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="995475547969867938">
+                    <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="995475547969867938">
                       <property name="name" nameId="tpck.1169194664001" value="convert" />
                     </node>
                   </node>
@@ -22189,7 +22189,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="995475547969867919" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="995475547969867937">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="995475547969867937">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -22303,7 +22303,7 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="995475547969868018" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="995475547969868019">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="995475547969868019">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -22506,7 +22506,7 @@
                     <property name="value" nameId="tpee.1068580320021" value="0" />
                   </node>
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6974242407276777226">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6974242407276777226">
                   <property name="name" nameId="tpck.1169194664001" value="introduce1" />
                 </node>
               </node>
@@ -22536,7 +22536,7 @@
                     <property name="value" nameId="tpee.1068580320021" value="0" />
                   </node>
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6974242407276777227">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6974242407276777227">
                   <property name="name" nameId="tpck.1169194664001" value="introduce2" />
                 </node>
               </node>
@@ -22570,7 +22570,7 @@
                     <property name="value" nameId="tpee.1068580320021" value="0" />
                   </node>
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6974242407276777228">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6974242407276777228">
                   <property name="name" nameId="tpck.1169194664001" value="introduce3" />
                 </node>
               </node>
@@ -22589,7 +22589,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6974242407276767406" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6974242407276777225">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6974242407276777225">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -22705,7 +22705,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6974242407276777299" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6974242407276777300">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6974242407276777300">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -22944,7 +22944,7 @@
                             </node>
                           </node>
                         </node>
-                        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5161277940733600958">
+                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5161277940733600958">
                           <property name="name" nameId="tpck.1169194664001" value="extract1" />
                         </node>
                       </node>
@@ -22959,7 +22959,7 @@
                             </node>
                           </node>
                         </node>
-                        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5161277940733600959">
+                        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5161277940733600959">
                           <property name="name" nameId="tpck.1169194664001" value="extract2" />
                         </node>
                       </node>
@@ -22974,7 +22974,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5161277940733600957">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5161277940733600957">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -23092,7 +23092,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5161277940733601050">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5161277940733601050">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -23204,7 +23204,7 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3014415391767789133">
                   <property name="value" nameId="tpee.1068580123138" value="true" />
                 </node>
-                <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3014415391767834698">
+                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3014415391767834698">
                   <property name="name" nameId="tpck.1169194664001" value="usage" />
                 </node>
               </node>
@@ -23238,11 +23238,11 @@
             <property name="name" nameId="tpck.1169194664001" value="c" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="3014415391767789147" />
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3014415391767789153">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3014415391767789153">
             <property name="name" nameId="tpck.1169194664001" value="move" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3014415391767789148">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3014415391767789148">
           <property name="name" nameId="tpck.1169194664001" value="before1" />
         </node>
       </node>
@@ -23251,7 +23251,7 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3014415391767789150">
         <property name="name" nameId="tpck.1169194664001" value="C2" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3014415391767789151" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3014415391767789152">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3014415391767789152">
           <property name="name" nameId="tpck.1169194664001" value="before2" />
         </node>
       </node>
@@ -23283,7 +23283,7 @@
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3014415391767789180" />
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3014415391767789213">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3014415391767789213">
           <property name="name" nameId="tpck.1169194664001" value="after1" />
         </node>
       </node>
@@ -23316,7 +23316,7 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="3014415391767789195" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3014415391767789214">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3014415391767789214">
           <property name="name" nameId="tpck.1169194664001" value="after2" />
         </node>
       </node>
@@ -23419,7 +23419,7 @@
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4038232163186978786">
                     <property name="value" nameId="tpee.1068580320021" value="1" />
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4038232163186978788">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4038232163186978788">
                     <property name="name" nameId="tpck.1169194664001" value="introduce" />
                   </node>
                 </node>
@@ -23427,7 +23427,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4038232163186978787">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4038232163186978787">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -23466,7 +23466,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4038232163186978814">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4038232163186978814">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>
@@ -23597,7 +23597,7 @@
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4038232163187008756">
                     <property name="value" nameId="tpee.1068580320021" value="1" />
                   </node>
-                  <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4038232163187008758">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4038232163187008758">
                     <property name="name" nameId="tpck.1169194664001" value="introduce" />
                   </node>
                 </node>
@@ -23605,7 +23605,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4038232163187008757">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4038232163187008757">
           <property name="name" nameId="tpck.1169194664001" value="before" />
         </node>
       </node>
@@ -23646,7 +23646,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4038232163187008788">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4038232163187008788">
           <property name="name" nameId="tpck.1169194664001" value="after" />
         </node>
       </node>

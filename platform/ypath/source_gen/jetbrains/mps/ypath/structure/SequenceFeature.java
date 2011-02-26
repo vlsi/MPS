@@ -5,6 +5,9 @@ package jetbrains.mps.ypath.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +24,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   public static final String OPPOSITE = "opposite";
   public static final String SEQUENCE_FUNCTION = "sequenceFunction";
   public static final String SIZE_FUNCTION = "sizeFunction";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SequenceFeature(SNode node) {
     super(node);
@@ -104,6 +108,26 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
 
   public void setSizeFunction(FeatureSizeFun node) {
     super.setChild(SequenceFeature.SIZE_FUNCTION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(SequenceFeature._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SequenceFeature._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SequenceFeature._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(SequenceFeature._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SequenceFeature._$ATTRIBUTE, node);
   }
 
   public static SequenceFeature newInstance(SModel sm, boolean init) {

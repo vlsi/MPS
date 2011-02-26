@@ -10,6 +10,13 @@ import jetbrains.mps.build.packaging.behavior.Path_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -30,6 +37,20 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_8037435193861318577(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "fullPath");
+  }
+
+  public static boolean ifMacro_Condition_1479728067424414700(final IOperationContext operationContext, final IfMacroContext _context) {
+    Tuples._2<SModel, String> key = MultiTuple.<SModel,String>from(_context.getInputModel(), "idea.additional.classpath");
+    Set<String> processedPaths = (Set<String>) _context.getTransientObject(key);
+    if (processedPaths == null) {
+      processedPaths = SetSequence.fromSet(new HashSet<String>());
+      _context.putTransientObject(key, processedPaths);
+    }
+    boolean wasNotProcesses = !(SetSequence.fromSet(processedPaths).contains(SPropertyOperations.getString(_context.getNode(), "fullPath")));
+    if (wasNotProcesses) {
+      SetSequence.fromSet(processedPaths).addElement(SPropertyOperations.getString(_context.getNode(), "fullPath"));
+    }
+    return wasNotProcesses;
   }
 
   public static Iterable sourceNodesQuery_8037435193861318531(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

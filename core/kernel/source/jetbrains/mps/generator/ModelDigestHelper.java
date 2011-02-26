@@ -11,13 +11,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/**
- * Evgeny Gryaznov, Jun 2, 2010
- */
 public class ModelDigestHelper {
-
   public static final String HEADER = "header";
-  public static final String  FILE = "model";
+  public static final String FILE = "model";
 
   private static ModelDigestHelper ourInstance = new ModelDigestHelper();
   private List<DigestProvider> myProviders = new CopyOnWriteArrayList<DigestProvider>();
@@ -27,34 +23,17 @@ public class ModelDigestHelper {
   }
 
   private ModelDigestHelper() {
+
   }
 
   public void addDigestProvider(DigestProvider provider) {
     myProviders.add(provider);
   }
 
-  public Map<String, String> getGenerationHashes(SModelDescriptor sm, IOperationContext operationContext) {
-    return getGenerationHashes(sm, operationContext, false);
-  }
-
-  public Map<String, String> getGenerationHashes(SModelDescriptor sm, IOperationContext operationContext, boolean useCacheOnly) {
-    if (!(sm instanceof EditableSModelDescriptor)) return null;
-    EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
-    if (esm.isPackaged()) return null;
-    if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return null;
-
-    IFile modelFile = esm.getModelFile();
-    if (modelFile == null) return null;
-
+  public Map<String, String> getGenerationHashes(@NotNull IFile modelFile, IOperationContext operationContext) {
     for (DigestProvider p : myProviders) {
       Map<String, String> result = p.getGenerationHashes(operationContext, modelFile);
-      if (result != null) {
-        return result;
-      }
-    }
-
-    if(useCacheOnly) {
-      return null;
+      if (result != null) return result;
     }
 
     return ModelDigestUtil.getDigestMap(modelFile);

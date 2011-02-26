@@ -595,7 +595,7 @@
               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="607759879653673819">
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="607759879653673820">
                   <property name="value" nameId="tpee.1068580320021" value="0" />
-                  <node role="_attr_$attribute" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="607759879653673821">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="607759879653673821">
                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="607759879653673822">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="607759879653673696" resolveInfo="arguments" />
                     </node>
@@ -766,7 +766,7 @@
               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="607759879653675095">
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="607759879653675097">
                   <property name="value" nameId="tpee.1068580320021" value="0" />
-                  <node role="_attr_$attribute" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="607759879653675098">
+                  <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ListAntiquotation" typeId="tp3r.1196350785118" id="607759879653675098">
                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="607759879653675100">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="607759879653674979" resolveInfo="arguments" />
                     </node>
@@ -1233,7 +1233,7 @@
               <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="5543996881668550171" resolveInfo="var" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550177">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550177">
             <property name="name" nameId="tpck.1169194664001" value="lowLevelVar" />
           </node>
         </node>
@@ -1271,7 +1271,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550189">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550189">
           <property name="name" nameId="tpck.1169194664001" value="lowLevelVarResult" />
         </node>
       </node>
@@ -1289,7 +1289,7 @@
               <node role="type" roleId="tp68.1176743202636" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1454920206667908433" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667908429">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667908429">
             <property name="name" nameId="tpck.1169194664001" value="variableInternal" />
           </node>
         </node>
@@ -1327,7 +1327,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667908420">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667908420">
           <property name="name" nameId="tpck.1169194664001" value="variableInternalResult" />
         </node>
       </node>
@@ -1435,7 +1435,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5543996881668550221">
             <node role="expression" roleId="tpee.1068581517676" type="8sls.EvaluatorsThisExpression" typeId="8sls.6036237525966315974" id="5543996881668550222" />
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550223">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550223">
             <property name="name" nameId="tpck.1169194664001" value="thisExpression" />
           </node>
         </node>
@@ -1452,7 +1452,7 @@
             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="5543996881668550231" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550232">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550232">
           <property name="name" nameId="tpck.1169194664001" value="thisExpressionResult" />
         </node>
       </node>
@@ -1466,7 +1466,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1454920206667900341">
             <node role="expression" roleId="tpee.1068581517676" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="1454920206667900346" />
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900343">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900343">
             <property name="name" nameId="tpck.1169194664001" value="thisInternalExpression" />
           </node>
         </node>
@@ -1483,7 +1483,7 @@
             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="1454920206667900335" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900336">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900336">
           <property name="name" nameId="tpck.1169194664001" value="thisInternalExpressionResult" />
         </node>
       </node>
@@ -1500,12 +1500,12 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5543996881668550240">
                 <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="5543996881668550209" resolveInfo="myField" />
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550241">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550241">
                 <property name="name" nameId="tpck.1169194664001" value="fieldReference" />
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550242">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550242">
             <property name="name" nameId="tpck.1169194664001" value="field" />
           </node>
         </node>
@@ -1538,7 +1538,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550257">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550257">
           <property name="name" nameId="tpck.1169194664001" value="fieldResult" />
         </node>
       </node>
@@ -1556,7 +1556,7 @@
               <node role="instance" roleId="tp68.1177590086595" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="4583341770697734722" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900370">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900370">
             <property name="name" nameId="tpck.1169194664001" value="fieldInternal" />
           </node>
         </node>
@@ -1589,7 +1589,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900360">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900360">
           <property name="name" nameId="tpck.1169194664001" value="fieldInternalResult" />
         </node>
       </node>
@@ -1607,12 +1607,12 @@
             <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5543996881668550263">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5543996881668550206" resolveInfo="myStaticField" />
               <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550264">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550264">
                 <property name="name" nameId="tpck.1169194664001" value="staticFieldReference" />
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550265">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550265">
             <property name="name" nameId="tpck.1169194664001" value="staticField" />
           </node>
         </node>
@@ -1648,7 +1648,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550282">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550282">
           <property name="name" nameId="tpck.1169194664001" value="staticFieldResult" />
         </node>
       </node>
@@ -1668,7 +1668,7 @@
               <property name="fieldName" nameId="tp68.1173995466678" value="out" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900398">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900398">
             <property name="name" nameId="tpck.1169194664001" value="staticFieldInternal" />
           </node>
         </node>
@@ -1702,7 +1702,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900390">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900390">
           <property name="name" nameId="tpck.1169194664001" value="staticFieldInternalResult" />
         </node>
       </node>
@@ -1722,12 +1722,12 @@
                   <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550292">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550292">
                 <property name="name" nameId="tpck.1169194664001" value="methodReference" />
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550293">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550293">
             <property name="name" nameId="tpck.1169194664001" value="method" />
           </node>
         </node>
@@ -1766,7 +1766,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550311">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550311">
           <property name="name" nameId="tpck.1169194664001" value="methodResult" />
         </node>
       </node>
@@ -1789,7 +1789,7 @@
               <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="1454920206667908314" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667908308">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667908308">
             <property name="name" nameId="tpck.1169194664001" value="methodInternal" />
           </node>
         </node>
@@ -1828,7 +1828,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667908297">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667908297">
           <property name="name" nameId="tpck.1169194664001" value="methodInternalResult" />
         </node>
       </node>
@@ -1852,12 +1852,12 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="607759879653675065">
                 <property name="value" nameId="tpee.1070475926801" value="arg" />
               </node>
-              <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653675066">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653675066">
                 <property name="name" nameId="tpck.1169194664001" value="staticMethodReference" />
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653675051">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653675051">
             <property name="name" nameId="tpck.1169194664001" value="staticMethod" />
           </node>
         </node>
@@ -1902,7 +1902,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653675040">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653675040">
           <property name="name" nameId="tpck.1169194664001" value="staticMethodResult" />
         </node>
       </node>
@@ -1926,7 +1926,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667908344">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667908344">
             <property name="name" nameId="tpck.1169194664001" value="staticMethodInternal" />
           </node>
         </node>
@@ -1966,7 +1966,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667908334">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667908334">
           <property name="name" nameId="tpck.1169194664001" value="staticMethodInternalResult" />
         </node>
       </node>
@@ -1990,7 +1990,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653679965">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653679965">
             <property name="name" nameId="tpck.1169194664001" value="arrayAccessOperation" />
           </node>
         </node>
@@ -2044,7 +2044,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653679966">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653679966">
           <property name="name" nameId="tpck.1169194664001" value="arrayAccessOperationResult" />
         </node>
       </node>
@@ -2066,7 +2066,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tpee.ArrayLengthOperation" typeId="tpee.1208890769693" id="607759879653679958" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653679996">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653679996">
             <property name="name" nameId="tpck.1169194664001" value="arrayLengthOperation" />
           </node>
         </node>
@@ -2126,7 +2126,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653680053">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653680053">
           <property name="name" nameId="tpck.1169194664001" value="arrayLengthOperationResult" />
         </node>
       </node>
@@ -2145,7 +2145,7 @@
               <node role="leftExpression" roleId="tpee.1081256993304" type="8sls.EvaluatorsThisExpression" typeId="8sls.6036237525966315974" id="2932187755699710924" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699710928">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699710928">
             <property name="name" nameId="tpck.1169194664001" value="instanceof" />
           </node>
         </node>
@@ -2187,7 +2187,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699710929">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699710929">
           <property name="name" nameId="tpck.1169194664001" value="instanceofResult" />
         </node>
       </node>
@@ -2206,7 +2206,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699923982">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699923982">
             <property name="name" nameId="tpck.1169194664001" value="super" />
           </node>
         </node>
@@ -2245,7 +2245,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699923972">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699923972">
           <property name="name" nameId="tpck.1169194664001" value="superResult" />
         </node>
       </node>
@@ -2266,7 +2266,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699930368">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699930368">
             <property name="name" nameId="tpck.1169194664001" value="constructor" />
           </node>
         </node>
@@ -2296,7 +2296,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699930359">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699930359">
           <property name="name" nameId="tpck.1169194664001" value="constructorResult" />
         </node>
       </node>
@@ -2318,7 +2318,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8441349676536412419">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8441349676536412419">
             <property name="name" nameId="tpck.1169194664001" value="constructorInternal" />
           </node>
         </node>
@@ -2348,7 +2348,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8441349676536412409">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8441349676536412409">
           <property name="name" nameId="tpck.1169194664001" value="constructorInternalResult" />
         </node>
       </node>
@@ -2374,7 +2374,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699948604">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699948604">
             <property name="name" nameId="tpck.1169194664001" value="plusExpression" />
           </node>
         </node>
@@ -2479,7 +2479,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699948605">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699948605">
           <property name="name" nameId="tpck.1169194664001" value="plusExpressionResult" />
         </node>
       </node>
@@ -2507,7 +2507,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3278243436493715623">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3278243436493715623">
             <property name="name" nameId="tpck.1169194664001" value="plusStringExpression" />
           </node>
         </node>
@@ -2622,7 +2622,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3278243436493715610">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="3278243436493715610">
           <property name="name" nameId="tpck.1169194664001" value="plusStringExpressionResult" />
         </node>
       </node>
@@ -2652,7 +2652,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6721540366799618959">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6721540366799618959">
             <property name="name" nameId="tpck.1169194664001" value="equalsExpression" />
           </node>
         </node>
@@ -2733,7 +2733,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6721540366799618960">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6721540366799618960">
           <property name="name" nameId="tpck.1169194664001" value="equalsExpressionResult" />
         </node>
       </node>
@@ -2763,7 +2763,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6721540366799622809">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6721540366799622809">
             <property name="name" nameId="tpck.1169194664001" value="notEqualsExpression" />
           </node>
         </node>
@@ -2846,7 +2846,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6721540366799622796">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6721540366799622796">
           <property name="name" nameId="tpck.1169194664001" value="notEqualsExpressionResult" />
         </node>
       </node>
@@ -2865,7 +2865,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6721540366799627035">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6721540366799627035">
             <property name="name" nameId="tpck.1169194664001" value="notExpression" />
           </node>
         </node>
@@ -2929,7 +2929,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6721540366799627022">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6721540366799627022">
           <property name="name" nameId="tpck.1169194664001" value="notExpressionResult" />
         </node>
       </node>
@@ -2942,7 +2942,7 @@
               <link role="classifier" roleId="tpee.1116615189566" targetNodeId="mwyq.~Object" resolveInfo="Object" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4693929676428713104">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4693929676428713104">
             <property name="name" nameId="tpck.1169194664001" value="classExpression" />
           </node>
         </node>
@@ -2973,7 +2973,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4693929676428713094">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4693929676428713094">
           <property name="name" nameId="tpck.1169194664001" value="classExpressionResult" />
         </node>
       </node>
@@ -2986,7 +2986,7 @@
               <node role="type" roleId="tp68.1174478663778" type="tpee.StringType" typeId="tpee.1225271177708" id="8441349676536441182" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8441349676536441176">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8441349676536441176">
             <property name="name" nameId="tpck.1169194664001" value="classInternalExpression" />
           </node>
         </node>
@@ -3017,7 +3017,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8441349676536441169">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8441349676536441169">
           <property name="name" nameId="tpck.1169194664001" value="classInternalExpressionResult" />
         </node>
       </node>
@@ -3874,7 +3874,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7696059916860905188" resolveInfo="var" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7696059916860905174">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7696059916860905174">
             <property name="name" nameId="tpck.1169194664001" value="localIntVarDeclaration" />
           </node>
         </node>
@@ -3942,7 +3942,7 @@
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7696059916860914292" resolveInfo="intValue" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7696059916860905186">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7696059916860905186">
           <property name="name" nameId="tpck.1169194664001" value="localIntVarDeclarationResult" />
         </node>
       </node>
@@ -3982,7 +3982,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7413144797245913937" resolveInfo="intValue" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245913944">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245913944">
             <property name="name" nameId="tpck.1169194664001" value="localIntVarAssignment" />
           </node>
         </node>
@@ -4057,7 +4057,7 @@
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7413144797245913911" resolveInfo="intValue" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245913929">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245913929">
           <property name="name" nameId="tpck.1169194664001" value="localIntVarAssignmentResult" />
         </node>
       </node>
@@ -4097,7 +4097,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="770214570644685914">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="770214570644685914">
             <property name="name" nameId="tpck.1169194664001" value="localBoxedIntVarDeclaration" />
           </node>
         </node>
@@ -4195,7 +4195,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="770214570644685899">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="770214570644685899">
           <property name="name" nameId="tpck.1169194664001" value="localBoxedIntVarDeclarationResult" />
         </node>
       </node>
@@ -4244,7 +4244,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5325372602757295250">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5325372602757295250">
             <property name="name" nameId="tpck.1169194664001" value="localBoxedIntVarSecondDeclaration" />
           </node>
         </node>
@@ -4351,7 +4351,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5325372602757295233">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5325372602757295233">
           <property name="name" nameId="tpck.1169194664001" value="localBoxedIntVarSecondDeclarationResult" />
         </node>
       </node>
@@ -4398,7 +4398,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245914000">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245914000">
             <property name="name" nameId="tpck.1169194664001" value="localBoxedIntVarAssignment" />
           </node>
         </node>
@@ -4503,7 +4503,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245913983">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245913983">
           <property name="name" nameId="tpck.1169194664001" value="localBoxedIntVarAssignmentResult" />
         </node>
       </node>
@@ -4538,7 +4538,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="770214570644685979" resolveInfo="intValue" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="770214570644685986">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="770214570644685986">
             <property name="name" nameId="tpck.1169194664001" value="localObjectVarDeclaration" />
           </node>
         </node>
@@ -4606,7 +4606,7 @@
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="770214570644685991" resolveInfo="intValue" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="770214570644686012">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="770214570644686012">
           <property name="name" nameId="tpck.1169194664001" value="localObjectVarDeclarationResult" />
         </node>
       </node>
@@ -4648,7 +4648,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7413144797245758000" resolveInfo="classValue" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245758007">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245758007">
             <property name="name" nameId="tpck.1169194664001" value="localObjectVarAssignment" />
           </node>
         </node>
@@ -4723,7 +4723,7 @@
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7413144797245757974" resolveInfo="classValue" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245757992">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245757992">
           <property name="name" nameId="tpck.1169194664001" value="localObjectVarAssignmentResult" />
         </node>
       </node>
@@ -4758,7 +4758,7 @@
               <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="7413144797245923856" resolveInfo="intVar" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245923873">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245923873">
             <property name="name" nameId="tpck.1169194664001" value="localUnBoxedIntVarAssignment" />
           </node>
         </node>
@@ -4843,7 +4843,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245923909">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245923909">
           <property name="name" nameId="tpck.1169194664001" value="localUnBoxedIntVarAssignmentResult" />
         </node>
       </node>
@@ -4871,7 +4871,7 @@
               <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="7413144797245923958" resolveInfo="intVar" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245923971">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245923971">
             <property name="name" nameId="tpck.1169194664001" value="localUnBoxedIntVarDeclaration" />
           </node>
         </node>
@@ -4949,7 +4949,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245923955">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7413144797245923955">
           <property name="name" nameId="tpck.1169194664001" value="localUnBoxedIntVarDeclarationResult" />
         </node>
       </node>
@@ -4985,7 +4985,7 @@
               <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="89292631370179157" resolveInfo="var" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370179170">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370179170">
             <property name="name" nameId="tpck.1169194664001" value="andAssignmentExpression" />
           </node>
         </node>
@@ -5085,7 +5085,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370179198">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370179198">
           <property name="name" nameId="tpck.1169194664001" value="andAssignmentExpressionResult" />
         </node>
       </node>
@@ -5121,7 +5121,7 @@
               <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="89292631370193171" resolveInfo="var" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193185">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193185">
             <property name="name" nameId="tpck.1169194664001" value="orAssignmentExpression" />
           </node>
         </node>
@@ -5221,7 +5221,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193168">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193168">
           <property name="name" nameId="tpck.1169194664001" value="orAssignmentExpressionResult" />
         </node>
       </node>
@@ -5257,7 +5257,7 @@
               <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="89292631370193122" resolveInfo="var" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193136">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193136">
             <property name="name" nameId="tpck.1169194664001" value="xorAssignmentExpression" />
           </node>
         </node>
@@ -5357,7 +5357,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193119">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193119">
           <property name="name" nameId="tpck.1169194664001" value="xorAssignmentExpressionResult" />
         </node>
       </node>
@@ -5393,7 +5393,7 @@
               <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="89292631370192753" resolveInfo="var" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192767">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192767">
             <property name="name" nameId="tpck.1169194664001" value="divAssignmentExpression" />
           </node>
         </node>
@@ -5493,7 +5493,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192750">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192750">
           <property name="name" nameId="tpck.1169194664001" value="divAssignmentExpressionResult" />
         </node>
       </node>
@@ -5529,7 +5529,7 @@
               <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="89292631370192829" resolveInfo="var" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192843">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192843">
             <property name="name" nameId="tpck.1169194664001" value="leftShiftAssignmentExpression" />
           </node>
         </node>
@@ -5629,7 +5629,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192826">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192826">
           <property name="name" nameId="tpck.1169194664001" value="leftShiftAssignmentExpressionResult" />
         </node>
       </node>
@@ -5665,7 +5665,7 @@
               <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="89292631370193073" resolveInfo="var" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193087">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193087">
             <property name="name" nameId="tpck.1169194664001" value="minusAssignmentExpression" />
           </node>
         </node>
@@ -5765,7 +5765,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193070">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193070">
           <property name="name" nameId="tpck.1169194664001" value="minusAssignmentExpressionResult" />
         </node>
       </node>
@@ -5801,7 +5801,7 @@
               <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="89292631370193024" resolveInfo="var" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193038">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193038">
             <property name="name" nameId="tpck.1169194664001" value="mulAssignmentExpression" />
           </node>
         </node>
@@ -5901,7 +5901,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193021">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370193021">
           <property name="name" nameId="tpck.1169194664001" value="mulAssignmentExpressionResult" />
         </node>
       </node>
@@ -5937,7 +5937,7 @@
               <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="89292631370192975" resolveInfo="var" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192989">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192989">
             <property name="name" nameId="tpck.1169194664001" value="plusAssignmentExpression" />
           </node>
         </node>
@@ -6037,7 +6037,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192972">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192972">
           <property name="name" nameId="tpck.1169194664001" value="plusAssignmentExpressionResult" />
         </node>
       </node>
@@ -6073,7 +6073,7 @@
               <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="89292631370192926" resolveInfo="var" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192940">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192940">
             <property name="name" nameId="tpck.1169194664001" value="remAssignmentExpression" />
           </node>
         </node>
@@ -6173,7 +6173,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192923">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370192923">
           <property name="name" nameId="tpck.1169194664001" value="remAssignmentExpressionResult" />
         </node>
       </node>
@@ -6209,7 +6209,7 @@
               <link role="baseVariableDeclaration" roleId="tpee.5497648299878491909" targetNodeId="89292631370196922" resolveInfo="var" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370196936">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370196936">
             <property name="name" nameId="tpck.1169194664001" value="rightShiftAssignmentExpression" />
           </node>
         </node>
@@ -6309,7 +6309,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370196919">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="89292631370196919">
           <property name="name" nameId="tpck.1169194664001" value="rightShiftAssignmentExpressionResult" />
         </node>
       </node>
@@ -6361,7 +6361,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8638796163619040036" resolveInfo="sum" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8638796163619040053">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8638796163619040053">
             <property name="name" nameId="tpck.1169194664001" value="lowLevelVarInForeach" />
           </node>
         </node>
@@ -6479,7 +6479,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8638796163619040055">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8638796163619040055">
           <property name="name" nameId="tpck.1169194664001" value="lowLevelVarInForeachResult" />
         </node>
       </node>
@@ -6531,7 +6531,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1774703052633005929" resolveInfo="sum" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1774703052633005943">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1774703052633005943">
             <property name="name" nameId="tpck.1169194664001" value="lowLevelIntVarInForeach" />
           </node>
         </node>
@@ -6637,7 +6637,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1774703052633005918">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1774703052633005918">
           <property name="name" nameId="tpck.1169194664001" value="lowLevelIntVarInForeachResult" />
         </node>
       </node>
@@ -6683,7 +6683,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6583956526375658292" resolveInfo="notNullStringValue" />
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6583956526375659764">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6583956526375659764">
             <property name="name" nameId="tpck.1169194664001" value="notNullString" />
           </node>
         </node>
@@ -6772,7 +6772,7 @@
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6583956526375658323" resolveInfo="notNullStringValue" />
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6583956526375659765">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="6583956526375659765">
           <property name="name" nameId="tpck.1169194664001" value="notNullStringResult" />
         </node>
       </node>
@@ -6813,7 +6813,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4322674958982459643">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4322674958982459643">
             <property name="name" nameId="tpck.1169194664001" value="nodeReferenceCountViewer" />
           </node>
         </node>
@@ -6886,7 +6886,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4322674958982459621">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4322674958982459621">
           <property name="name" nameId="tpck.1169194664001" value="nodeReferenceCountViewerResult" />
         </node>
       </node>
@@ -6914,7 +6914,7 @@
             </node>
             <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="2281056005883150440" />
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2281056005883150433">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2281056005883150433">
             <property name="name" nameId="tpck.1169194664001" value="arrayInForeach" />
           </node>
         </node>
@@ -6966,7 +6966,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2281056005883150414">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2281056005883150414">
           <property name="name" nameId="tpck.1169194664001" value="arrayInForeachResult" />
         </node>
       </node>
@@ -6989,7 +6989,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8071722462615359851">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8071722462615359851">
             <property name="name" nameId="tpck.1169194664001" value="newArrayOfString" />
           </node>
         </node>
@@ -7019,7 +7019,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8071722462615359838">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8071722462615359838">
           <property name="name" nameId="tpck.1169194664001" value="newArrayOfStringResult" />
         </node>
       </node>
@@ -7041,7 +7041,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="335932010435400783">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="335932010435400783">
             <property name="name" nameId="tpck.1169194664001" value="newEmptyArrayOfString" />
           </node>
         </node>
@@ -7068,7 +7068,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="335932010435400772">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="335932010435400772">
           <property name="name" nameId="tpck.1169194664001" value="newEmptyArrayOfStringResult" />
         </node>
       </node>
@@ -7088,7 +7088,7 @@
               </node>
             </node>
           </node>
-          <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4609929908986493511">
+          <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4609929908986493511">
             <property name="name" nameId="tpck.1169194664001" value="newEmptyArrayOfInt" />
           </node>
         </node>
@@ -7115,7 +7115,7 @@
             </node>
           </node>
         </node>
-        <node role="testNode$attribute" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4609929908986493500">
+        <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4609929908986493500">
           <property name="name" nameId="tpck.1169194664001" value="newEmptyArrayOfIntResult" />
         </node>
       </node>

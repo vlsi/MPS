@@ -15,12 +15,12 @@
   <unitInfo fileName="DefaultClassifierMethodCallOperation_Editor.java" startLine="32" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.editor.DefaultClassifierMethodCallOperation_Editor" />
   <unitInfo fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="41" startPosition="0" endLine="382" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.editor.DefaultClassifierMethodDeclaration_Editor" />
   <root nodeId="1205752655131">
-    <nodeInfo nodeId="1218736992787" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ThisClassifierExpression_Editor.java" startLine="101" startPosition="110" endLine="102" endPosition="72" />
+    <nodeInfo nodeId="1218736992787" fileName="ThisClassifierExpression_Editor.java" startLine="101" startPosition="110" endLine="102" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1218736911691" fileName="ThisClassifierExpression_Editor.java" startLine="101" startPosition="110" endLine="102" endPosition="72" />
   </root>
   <root nodeId="1205769853449">
-    <nodeInfo nodeId="1221310280137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="224" startPosition="111" endLine="225" endPosition="112" />
-    <nodeInfo nodeId="1221310280163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="228" startPosition="111" endLine="229" endPosition="99" />
+    <nodeInfo nodeId="1221310280137" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="224" startPosition="111" endLine="225" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1221310280163" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="228" startPosition="111" endLine="229" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1221310280136" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="224" startPosition="111" endLine="225" endPosition="112" />
     <scopeInfo nodeId="1221310280162" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="228" startPosition="111" endLine="229" endPosition="99" />
   </root>

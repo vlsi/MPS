@@ -7,6 +7,9 @@ import jetbrains.mps.baseLanguage.structure.TypeDerivable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.datesInternal.structure.IDateFormat;
 import jetbrains.mps.baseLanguage.datesInternal.structure.Locale;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +22,7 @@ public class FormatDateTimeExpression extends Expression implements TypeDerivabl
   public static final String DATE_FORMAT = "dateFormat";
   public static final String LOCALE = "locale";
   public static final String DATETIME = "datetime";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FormatDateTimeExpression(SNode node) {
     super(node);
@@ -70,6 +74,26 @@ public class FormatDateTimeExpression extends Expression implements TypeDerivabl
 
   public void setDatetime(Expression node) {
     super.setChild(FormatDateTimeExpression.DATETIME, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(FormatDateTimeExpression._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FormatDateTimeExpression._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FormatDateTimeExpression._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(FormatDateTimeExpression._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FormatDateTimeExpression._$ATTRIBUTE, node);
   }
 
   public static FormatDateTimeExpression newInstance(SModel sm, boolean init) {

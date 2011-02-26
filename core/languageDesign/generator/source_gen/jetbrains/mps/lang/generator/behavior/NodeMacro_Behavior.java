@@ -5,8 +5,10 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class NodeMacro_Behavior {
@@ -51,7 +53,7 @@ public class NodeMacro_Behavior {
       return null;
     }
     SNode result = null;
-    for (SNode currentAttribute : currentNode.getAllAttributes()) {
+    for (SNode currentAttribute : AttributeOperations.getAttributeList(currentNode, new IAttributeDescriptor.AllAttributes())) {
       if (SNodeOperations.isInstanceOf(currentAttribute, "jetbrains.mps.lang.generator.structure.NodeMacro")) {
         if (currentAttribute == currentMacro) {
           break;
@@ -73,7 +75,7 @@ public class NodeMacro_Behavior {
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.generator.structure.BaseMappingRule")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "applicableConcept", false);
     }
-    SNode rootAnnotation = SLinkOperations.getTarget(SNodeOperations.getContainingRoot(thisNode), AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true);
+    SNode rootAnnotation = AttributeOperations.getAttribute(SNodeOperations.getContainingRoot(thisNode), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")));
     return SLinkOperations.getTarget(SNodeOperations.cast(rootAnnotation, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "applicableConcept", false);
   }
 

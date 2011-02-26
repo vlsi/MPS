@@ -8,6 +8,7 @@ import jetbrains.mps.baseLanguage.structure.IWillBeClassifier;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -22,6 +23,7 @@ public class FacetDeclaration extends BaseConcept implements INamedConcept, IWil
   public static final String REQUIRED = "required";
   public static final String OPTIONAL = "optional";
   public static final String TARGET_DECLARATION = "targetDeclaration";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public FacetDeclaration(SNode node) {
     super(node);
@@ -137,6 +139,26 @@ public class FacetDeclaration extends BaseConcept implements INamedConcept, IWil
 
   public void insertTargetDeclaration(TargetDeclaration prev, TargetDeclaration node) {
     this.insertChild(prev, FacetDeclaration.TARGET_DECLARATION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(FacetDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, FacetDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, FacetDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(FacetDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, FacetDeclaration._$ATTRIBUTE, node);
   }
 
   public static FacetDeclaration newInstance(SModel sm, boolean init) {

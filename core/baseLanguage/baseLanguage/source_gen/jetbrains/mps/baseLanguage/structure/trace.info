@@ -189,66 +189,66 @@
   <unitInfo fileName="TrimKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TrimKind_PropertySupport" />
   <unitInfo fileName="SubstringExpression.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.SubstringExpression" />
   <unitInfo fileName="TernaryOperatorExpression.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" />
-  <unitInfo fileName="Closure.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.Closure" />
-  <unitInfo fileName="AssignmentExpression.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AssignmentExpression" />
-  <unitInfo fileName="ArrayCloneOperation.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ArrayCloneOperation" />
-  <unitInfo fileName="BaseStringOperation.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseStringOperation" />
-  <unitInfo fileName="ArrayLengthOperation.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" />
-  <unitInfo fileName="AbstractOperation.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AbstractOperation" />
-  <unitInfo fileName="CommentPart.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.CommentPart" />
-  <unitInfo fileName="Statement.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.Statement" />
-  <unitInfo fileName="Type.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.Type" />
-  <unitInfo fileName="ConceptFunctionParameter.java" startLine="10" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter" />
   <unitInfo fileName="UsingStatement.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.UsingStatement" />
   <unitInfo fileName="AnnotationInstance.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AnnotationInstance" />
   <unitInfo fileName="ArrayCreator.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ArrayCreator" />
   <unitInfo fileName="ArrayCreatorWithInitializer.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" />
   <unitInfo fileName="ClassifierType.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ClassifierType" />
-  <unitInfo fileName="LocalVariableReference.java" startLine="10" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LocalVariableReference" />
-  <unitInfo fileName="ThisExpression.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ThisExpression" />
-  <unitInfo fileName="ReturnStatement.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <unitInfo fileName="VariableReference.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.VariableReference" />
-  <unitInfo fileName="PropertyReference.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.PropertyReference" />
-  <unitInfo fileName="FieldReferenceOperation.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" />
-  <unitInfo fileName="ForeachStatement.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-  <unitInfo fileName="LocalVariableDeclarationStatement.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <unitInfo fileName="ExpressionStatement.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <unitInfo fileName="ParameterDeclaration.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
-  <unitInfo fileName="LoopLabel.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LoopLabel" />
   <unitInfo fileName="TrimKind.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TrimKind" />
-  <unitInfo fileName="ConceptFunction.java" startLine="11" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
-  <unitInfo fileName="BaseVariableDeclaration.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
-  <unitInfo fileName="VarVariableDeclaration.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.VarVariableDeclaration" />
-  <unitInfo fileName="InstanceInitializer.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.InstanceInitializer" />
-  <unitInfo fileName="StaticMethodDeclaration.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
-  <unitInfo fileName="LocalVariableDeclaration.java" startLine="11" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" />
-  <unitInfo fileName="CatchClause.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.CatchClause" />
-  <unitInfo fileName="ClosureParameter.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ClosureParameter" />
-  <unitInfo fileName="CommentedStatementsBlock.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
-  <unitInfo fileName="StatementList.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StatementList" />
-  <unitInfo fileName="AbstractLoopStatement.java" startLine="11" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" />
-  <unitInfo fileName="InstanceMethodDeclaration.java" startLine="11" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  <unitInfo fileName="ConstructorDeclaration.java" startLine="11" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
-  <unitInfo fileName="StaticFieldDeclaration.java" startLine="12" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-  <unitInfo fileName="TryCatchStatement.java" startLine="12" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <unitInfo fileName="Closure.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.Closure" />
+  <unitInfo fileName="AssignmentExpression.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AssignmentExpression" />
+  <unitInfo fileName="ArrayCloneOperation.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ArrayCloneOperation" />
+  <unitInfo fileName="BaseStringOperation.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseStringOperation" />
+  <unitInfo fileName="ArrayLengthOperation.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" />
+  <unitInfo fileName="AbstractOperation.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AbstractOperation" />
+  <unitInfo fileName="CommentPart.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.CommentPart" />
+  <unitInfo fileName="Statement.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.Statement" />
+  <unitInfo fileName="Type.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.Type" />
+  <unitInfo fileName="ConceptFunctionParameter.java" startLine="13" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter" />
+  <unitInfo fileName="LocalVariableReference.java" startLine="13" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LocalVariableReference" />
   <unitInfo fileName="SwitchStatement.java" startLine="12" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-  <unitInfo fileName="BaseMethodCall.java" startLine="12" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseMethodCall" />
-  <unitInfo fileName="Interface.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.Interface" />
-  <unitInfo fileName="GenericDeclaration.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.GenericDeclaration" />
-  <unitInfo fileName="ConstructorInvocationStatement.java" startLine="12" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement" />
-  <unitInfo fileName="InstanceMethodCallOperation.java" startLine="13" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" />
-  <unitInfo fileName="TryStatement.java" startLine="12" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-  <unitInfo fileName="VariableDeclaration.java" startLine="12" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
-  <unitInfo fileName="Property.java" startLine="12" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.Property" />
-  <unitInfo fileName="FieldDeclaration.java" startLine="12" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
-  <unitInfo fileName="ForStatement.java" startLine="13" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-  <unitInfo fileName="TypeVariableDeclaration.java" startLine="14" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" />
-  <unitInfo fileName="ClassCreator.java" startLine="12" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ClassCreator" />
-  <unitInfo fileName="IfStatement.java" startLine="12" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-  <unitInfo fileName="AnonymousClass.java" startLine="13" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AnonymousClass" />
-  <unitInfo fileName="EnumConstantDeclaration.java" startLine="14" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" />
-  <unitInfo fileName="BaseMethodDeclaration.java" startLine="15" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
-  <unitInfo fileName="Classifier.java" startLine="14" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.Classifier" />
-  <unitInfo fileName="ClassConcept.java" startLine="13" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+  <unitInfo fileName="ThisExpression.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ThisExpression" />
+  <unitInfo fileName="ReturnStatement.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <unitInfo fileName="VariableReference.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.VariableReference" />
+  <unitInfo fileName="PropertyReference.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.PropertyReference" />
+  <unitInfo fileName="FieldReferenceOperation.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" />
+  <unitInfo fileName="ForeachStatement.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <unitInfo fileName="LocalVariableDeclarationStatement.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <unitInfo fileName="ExpressionStatement.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <unitInfo fileName="ParameterDeclaration.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
+  <unitInfo fileName="LoopLabel.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LoopLabel" />
+  <unitInfo fileName="ConceptFunction.java" startLine="14" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
+  <unitInfo fileName="BaseVariableDeclaration.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
+  <unitInfo fileName="VarVariableDeclaration.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.VarVariableDeclaration" />
+  <unitInfo fileName="InstanceInitializer.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.InstanceInitializer" />
+  <unitInfo fileName="StaticMethodDeclaration.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <unitInfo fileName="LocalVariableDeclaration.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" />
+  <unitInfo fileName="CatchClause.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.CatchClause" />
+  <unitInfo fileName="ClosureParameter.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ClosureParameter" />
+  <unitInfo fileName="CommentedStatementsBlock.java" startLine="14" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
+  <unitInfo fileName="StatementList.java" startLine="16" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StatementList" />
+  <unitInfo fileName="AbstractLoopStatement.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" />
+  <unitInfo fileName="InstanceMethodDeclaration.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <unitInfo fileName="ConstructorDeclaration.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <unitInfo fileName="StaticFieldDeclaration.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <unitInfo fileName="TryCatchStatement.java" startLine="13" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <unitInfo fileName="BaseMethodCall.java" startLine="13" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseMethodCall" />
+  <unitInfo fileName="Interface.java" startLine="14" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.Interface" />
+  <unitInfo fileName="GenericDeclaration.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.GenericDeclaration" />
+  <unitInfo fileName="ConstructorInvocationStatement.java" startLine="13" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement" />
+  <unitInfo fileName="InstanceMethodCallOperation.java" startLine="14" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" />
+  <unitInfo fileName="TryStatement.java" startLine="13" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+  <unitInfo fileName="VariableDeclaration.java" startLine="13" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
+  <unitInfo fileName="Property.java" startLine="15" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.Property" />
+  <unitInfo fileName="FieldDeclaration.java" startLine="15" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <unitInfo fileName="ForStatement.java" startLine="14" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <unitInfo fileName="TypeVariableDeclaration.java" startLine="15" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" />
+  <unitInfo fileName="ClassCreator.java" startLine="13" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ClassCreator" />
+  <unitInfo fileName="IfStatement.java" startLine="13" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <unitInfo fileName="AnonymousClass.java" startLine="14" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AnonymousClass" />
+  <unitInfo fileName="EnumConstantDeclaration.java" startLine="15" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" />
+  <unitInfo fileName="BaseMethodDeclaration.java" startLine="16" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
+  <unitInfo fileName="Classifier.java" startLine="15" startPosition="0" endLine="216" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.Classifier" />
+  <unitInfo fileName="ClassConcept.java" startLine="14" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ClassConcept" />
 </debugInfo>
 

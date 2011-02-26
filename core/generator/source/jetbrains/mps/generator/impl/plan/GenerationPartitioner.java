@@ -39,8 +39,12 @@ public class GenerationPartitioner {
   private List<CoherentSetData> myCoherentMappings;
   private Set<MappingPriorityRule> myConflictingRules;
 
-  public List<List<TemplateMappingConfiguration>> createMappingSets(List<Generator> generators, Map<SNodePointer, TemplateMappingConfiguration> mappingsMap) {
+  public List<List<TemplateMappingConfiguration>> createMappingSets(Collection<Generator> generators, Map<SNodePointer, TemplateMappingConfiguration> mappingsMap) {
     return convertPlan(doPartitioning(null, generators), mappingsMap);
+  }
+
+  public List<List<SNode>> createMappingSets(Collection<Generator> generators) {
+    return doPartitioning(null, generators);
   }
 
   private static List<List<TemplateMappingConfiguration>> convertPlan(List<List<SNode>> plan, Map<SNodePointer, TemplateMappingConfiguration> mappingsMap) {
@@ -66,7 +70,7 @@ public class GenerationPartitioner {
     myConflictingRules = new HashSet<MappingPriorityRule>();
   }
 
-  private List<List<SNode>> doPartitioning(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators) {
+  private List<List<SNode>> doPartitioning(GeneratorDescriptor descriptorWorkingCopy, Collection<Generator> generators) {
     reset();
     for (Generator generator : generators) {
       for (SNode m : GenerationFacade.getOwnMappings(generator)) {

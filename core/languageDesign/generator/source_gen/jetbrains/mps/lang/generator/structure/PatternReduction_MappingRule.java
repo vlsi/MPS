@@ -5,6 +5,9 @@ package jetbrains.mps.lang.generator.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.pattern.structure.PatternExpression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +21,7 @@ public class PatternReduction_MappingRule extends BaseConcept implements Reducti
   public static final String PATTERN = "pattern";
   public static final String RULE_CONSEQUENCE = "ruleConsequence";
   public static final String CONDITION_FUNCTION = "conditionFunction";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public PatternReduction_MappingRule(SNode node) {
     super(node);
@@ -77,6 +81,26 @@ public class PatternReduction_MappingRule extends BaseConcept implements Reducti
 
   public void setConditionFunction(BaseMappingRule_Condition node) {
     super.setChild(PatternReduction_MappingRule.CONDITION_FUNCTION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(PatternReduction_MappingRule._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, PatternReduction_MappingRule._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, PatternReduction_MappingRule._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(PatternReduction_MappingRule._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, PatternReduction_MappingRule._$ATTRIBUTE, node);
   }
 
   public static PatternReduction_MappingRule newInstance(SModel sm, boolean init) {

@@ -11,14 +11,21 @@ import com.intellij.openapi.extensions.PluginId;
 public class LanguageNewActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(LanguageNewActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup";
+  public static final String LABEL_ID_newSubModule = ID + "newSubModule";
   public static final String LABEL_ID_newAspect = ID + "newAspect";
+  public static final String LABEL_ID_newModel = ID + "newModel";
 
   public LanguageNewActions_ActionGroup() {
     super("New", ID);
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewGenerator_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageNewActions_ActionGroup.LABEL_ID_newSubModule);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageNewActions_ActionGroup.this.addAction(action);
+      }
       LanguageNewActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
@@ -28,8 +35,12 @@ public class LanguageNewActions_ActionGroup extends GeneratedActionGroup {
       }
       LanguageNewActions_ActionGroup.this.addSeparator();
       LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModel_Action");
-      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModelFromSource_Action");
-      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewAccessoryModel_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageNewActions_ActionGroup.LABEL_ID_newModel);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageNewActions_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

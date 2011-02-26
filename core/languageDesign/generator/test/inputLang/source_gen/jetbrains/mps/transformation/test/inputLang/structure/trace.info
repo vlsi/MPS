@@ -8,9 +8,9 @@
   <unitInfo fileName="UseInTest_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.UseInTest_PropertySupport" />
   <unitInfo fileName="Option_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.Option_PropertySupport" />
   <unitInfo fileName="Option.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.Option" />
-  <unitInfo fileName="InputRootWithStatementList.java" startLine="13" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList" />
-  <unitInfo fileName="InputNode.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputNode" />
   <unitInfo fileName="UseInTest.java" startLine="9" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.UseInTest" />
-  <unitInfo fileName="InputRoot.java" startLine="14" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputRoot" />
+  <unitInfo fileName="InputRootWithStatementList.java" startLine="16" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList" />
+  <unitInfo fileName="InputNode.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputNode" />
+  <unitInfo fileName="InputRoot.java" startLine="15" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.structure.InputRoot" />
 </debugInfo>
 

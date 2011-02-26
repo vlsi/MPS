@@ -28,6 +28,7 @@ import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -39,6 +40,19 @@ public class JavaCompiler {
 
   public JavaCompiler() {
 
+  }
+
+  public void addSourceFile(String path, String filename, Object contents) {
+    if(!(contents instanceof String)) {
+      // binary files aren't sources
+      return;
+    }
+    if (!path.isEmpty()) {
+      path = path + (path.endsWith(File.separator) ? "" : File.separatorChar);
+    }
+    String filePath = path  + filename;
+    CompilationUnit compilationUnit = new CompilationUnit(((String)contents).toCharArray(), filePath, "UTF-8");
+    myCompilationUnits.put(NameUtil.namespaceFromPath(filePath.substring(0, MPSExtentions.DOT_JAVAFILE.length())), compilationUnit);
   }
 
   public void addSource(String classFqName, String text) {

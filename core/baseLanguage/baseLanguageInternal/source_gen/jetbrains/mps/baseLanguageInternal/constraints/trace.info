@@ -8,24 +8,24 @@
   <unitInfo fileName="ExtractToConstantRefExpression_original_ReferentConstraint.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractToConstantRefExpression_original_ReferentConstraint" />
   <unitInfo fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="22" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint" />
   <root nodeId="5822086619725599106">
-    <nodeInfo nodeId="5822086619725599149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="34" startPosition="132" endLine="35" endPosition="45" />
-    <nodeInfo nodeId="5822086619725599234" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="41" startPosition="71" endLine="42" endPosition="169" />
-    <nodeInfo nodeId="5822086619725599160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="44" startPosition="5" endLine="45" endPosition="15" />
-    <nodeInfo nodeId="5822086619725599125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="57" startPosition="33" endLine="58" endPosition="239" />
-    <nodeInfo nodeId="5822086619725599137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="60" startPosition="32" endLine="61" endPosition="152" />
-    <nodeInfo nodeId="5822086619725599145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="62" startPosition="12" endLine="63" endPosition="80" />
-    <nodeInfo nodeId="5822086619725599143" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="62" startPosition="10" endLine="64" endPosition="5" />
-    <nodeInfo nodeId="5822086619725599218" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="40" startPosition="148" endLine="43" endPosition="7" />
-    <nodeInfo nodeId="5822086619725599123" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="56" startPosition="129" endLine="59" endPosition="5" />
-    <nodeInfo nodeId="5822086619725599163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="35" startPosition="45" endLine="39" endPosition="6" />
-    <nodeInfo nodeId="5822086619725599180" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="39" startPosition="6" endLine="44" endPosition="5" />
-    <nodeInfo nodeId="5822086619725599135" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="59" startPosition="5" endLine="64" endPosition="5" />
+    <nodeInfo nodeId="5822086619725599149" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="34" startPosition="132" endLine="35" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5822086619725599234" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="41" startPosition="71" endLine="42" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5822086619725599160" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="44" startPosition="5" endLine="45" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5822086619725599125" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="57" startPosition="33" endLine="58" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5822086619725599137" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="60" startPosition="32" endLine="61" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5822086619725599145" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="62" startPosition="12" endLine="63" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5822086619725599143" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="62" startPosition="10" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5822086619725599218" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="40" startPosition="148" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5822086619725599123" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="56" startPosition="129" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5822086619725599163" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="35" startPosition="45" endLine="39" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5822086619725599180" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="39" startPosition="6" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5822086619725599135" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="59" startPosition="5" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="5822086619725599219" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="41" startPosition="71" endLine="42" endPosition="169" />
     <scopeInfo nodeId="5822086619725599124" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="57" startPosition="33" endLine="58" endPosition="239" />
     <scopeInfo nodeId="5822086619725599136" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="60" startPosition="32" endLine="61" endPosition="152" />
     <scopeInfo nodeId="5822086619725599144" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="62" startPosition="12" endLine="63" endPosition="80" />
     <scopeInfo nodeId="5822086619725599181" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="40" startPosition="148" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="5822086619725599180" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="39" startPosition="6" endLine="44" endPosition="5">
+    <scopeInfo nodeId="5822086619725599180" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="39" startPosition="6" endLine="44" endPosition="5">
       <varInfo nodeId="5822086619725599184" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="5822086619725599111" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="56" startPosition="129" endLine="64" endPosition="5" />
@@ -35,25 +35,25 @@
     </scopeInfo>
   </root>
   <root nodeId="5857910569715972120">
-    <nodeInfo nodeId="5857910569715993769" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExtractStaticMethod_CallExpression_staticMethodDeclaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="29" endPosition="7" />
+    <nodeInfo nodeId="5857910569715993769" fileName="ExtractStaticMethod_CallExpression_staticMethodDeclaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="5857910569715972165" fileName="ExtractStaticMethod_CallExpression_staticMethodDeclaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="29" endPosition="7" />
   </root>
   <root nodeId="8733626498296461355">
-    <nodeInfo nodeId="8733626498296472739" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExtractStatementListInnerExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="145" />
+    <nodeInfo nodeId="8733626498296472739" fileName="ExtractStatementListInnerExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8733626498296461357" fileName="ExtractStatementListInnerExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="145" />
   </root>
   <root nodeId="9034046336081513337">
-    <nodeInfo nodeId="9034046336081513343" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="InternalPartialInstanceMethodCall_Constraints.java" startLine="9" startPosition="114" endLine="10" endPosition="38" />
-    <nodeInfo nodeId="9034046336081513340" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InternalPartialInstanceMethodCall_Constraints.java" startLine="10" startPosition="38" endLine="11" endPosition="16" />
+    <nodeInfo nodeId="9034046336081513343" fileName="InternalPartialInstanceMethodCall_Constraints.java" startLine="9" startPosition="114" endLine="10" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9034046336081513340" fileName="InternalPartialInstanceMethodCall_Constraints.java" startLine="10" startPosition="38" endLine="11" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="9034046336081513339" fileName="InternalPartialInstanceMethodCall_Constraints.java" startLine="9" startPosition="114" endLine="11" endPosition="16" />
   </root>
   <root nodeId="937236280924494203">
-    <nodeInfo nodeId="937236280924494207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExtractStaticInnerClassConcept_resolveInfo_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="55" />
+    <nodeInfo nodeId="937236280924494207" fileName="ExtractStaticInnerClassConcept_resolveInfo_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="937236280924494206" fileName="ExtractStaticInnerClassConcept_resolveInfo_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="55" />
   </root>
   <root nodeId="99767819676012236">
-    <nodeInfo nodeId="99767819676013263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExtractToConstantRefExpression_original_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="205" />
-    <nodeInfo nodeId="99767819676150924" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExtractToConstantRefExpression_original_ReferentConstraint.java" startLine="39" startPosition="129" endLine="40" endPosition="83" />
+    <nodeInfo nodeId="99767819676013263" fileName="ExtractToConstantRefExpression_original_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="99767819676150924" fileName="ExtractToConstantRefExpression_original_ReferentConstraint.java" startLine="39" startPosition="129" endLine="40" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="99767819676013262" fileName="ExtractToConstantRefExpression_original_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="205" />
     <scopeInfo nodeId="99767819676139210" fileName="ExtractToConstantRefExpression_original_ReferentConstraint.java" startLine="39" startPosition="129" endLine="40" endPosition="83" />
   </root>

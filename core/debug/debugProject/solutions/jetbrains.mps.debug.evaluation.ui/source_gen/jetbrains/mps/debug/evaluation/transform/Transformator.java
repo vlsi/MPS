@@ -10,8 +10,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.baseLanguage.textGen.LastStatementUtil;
@@ -19,7 +21,6 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -53,7 +54,7 @@ public class Transformator {
         public Iterable<SNode> translate(SNode root) {
           return ListSequence.fromList(SNodeOperations.getDescendants(root, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode node) {
-              return (SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("toEvaluateAnnotation"), true) != null);
+              return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation"))) != null);
             }
           });
         }
@@ -112,8 +113,8 @@ public class Transformator {
   private void postprocess() {
     // clean annotations 
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, null, false, new String[]{}))) {
-      if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("unprocessedAnnotation"), true) != null)) {
-        SNodeOperations.deleteNode(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("unprocessedAnnotation"), true));
+      if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation"))) != null)) {
+        SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation"))));
       }
     }
 
@@ -140,7 +141,7 @@ public class Transformator {
 
     // add unprocessed annotations to everything 
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, null, false, new String[]{}))) {
-      SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("unprocessedAnnotation"), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
+      AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
     }
 
     // here we must calculate type for all binary operations and remeber it 
@@ -337,7 +338,7 @@ public class Transformator {
       SLinkOperations.setTarget(staticMethodCall, "classConcept", SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(localStaticMethodCall, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
       SLinkOperations.setTarget(staticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(localStaticMethodCall, "baseMethodDeclaration", false), false);
       ListSequence.fromList(SLinkOperations.getTargets(staticMethodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)));
-      SLinkOperations.setNewChild(staticMethodCall, AttributesRolesUtil.childRoleFromAttributeRole("unprocessedAnnotation"), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
+      AttributeOperations.createAndSetAttrbiute(staticMethodCall, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
       SNodeOperations.replaceWithAnother(localStaticMethodCall, staticMethodCall);
     }
     // convert local instance method calls to qualified instance method calls 
@@ -349,7 +350,7 @@ public class Transformator {
       SNode instanceMethodCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
       SLinkOperations.setTarget(instanceMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(localInstanceMethodCall, "baseMethodDeclaration", false), false);
       ListSequence.fromList(SLinkOperations.getTargets(instanceMethodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(localInstanceMethodCall, "actualArgument", true)));
-      SLinkOperations.setNewChild(instanceMethodCall, AttributesRolesUtil.childRoleFromAttributeRole("unprocessedAnnotation"), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
+      AttributeOperations.createAndSetAttrbiute(instanceMethodCall, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
       SNodeOperations.replaceWithAnother(localInstanceMethodCall, new Transformator.QuotationClass_rxfadt_a0a0e0d0l().createNode(instanceMethodCall, TransformationUtil.createThisNodeReplacement()));
     }
     // convert local static field references to static field references 
@@ -361,7 +362,7 @@ public class Transformator {
       SNode staticFieldReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
       SLinkOperations.setTarget(staticFieldReference, "variableDeclaration", SLinkOperations.getTarget(localStaticFieldReference, "variableDeclaration", false), false);
       SLinkOperations.setTarget(staticFieldReference, "classifier", SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(localStaticFieldReference, "variableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
-      SLinkOperations.setNewChild(staticFieldReference, AttributesRolesUtil.childRoleFromAttributeRole("unprocessedAnnotation"), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
+      AttributeOperations.createAndSetAttrbiute(staticFieldReference, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
       SNodeOperations.replaceWithAnother(localStaticFieldReference, staticFieldReference);
     }
     // convert local instance field references to fied reference operations 
@@ -372,7 +373,7 @@ public class Transformator {
     })) {
       SNode fieldReferenceOperation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
       SLinkOperations.setTarget(fieldReferenceOperation, "fieldDeclaration", SLinkOperations.getTarget(localInstanceFieldReference, "variableDeclaration", false), false);
-      SLinkOperations.setNewChild(fieldReferenceOperation, AttributesRolesUtil.childRoleFromAttributeRole("unprocessedAnnotation"), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
+      AttributeOperations.createAndSetAttrbiute(fieldReferenceOperation, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation")), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
       SNodeOperations.replaceWithAnother(localInstanceFieldReference, new Transformator.QuotationClass_rxfadt_a0a0d0h0l().createNode(fieldReferenceOperation, TransformationUtil.createThisNodeReplacement()));
     }
   }

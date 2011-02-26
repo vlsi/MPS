@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -23,6 +24,7 @@ public class BeanDeclaration extends BaseConcept implements IClassifier, INamedC
   public static final String ATTRIBUTE = "attribute";
   public static final String METHOD = "method";
   public static final String CONSTRUCTOR = "constructor";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BeanDeclaration(SNode node) {
     super(node);
@@ -118,6 +120,26 @@ public class BeanDeclaration extends BaseConcept implements IClassifier, INamedC
 
   public void insertConstructor(ConstructorDeclaration prev, ConstructorDeclaration node) {
     this.insertChild(prev, BeanDeclaration.CONSTRUCTOR, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(BeanDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BeanDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BeanDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(BeanDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BeanDeclaration._$ATTRIBUTE, node);
   }
 
   public static BeanDeclaration newInstance(SModel sm, boolean init) {

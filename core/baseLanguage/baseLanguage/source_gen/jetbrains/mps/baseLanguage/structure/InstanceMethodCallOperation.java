@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,6 +17,7 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
 
   public InstanceMethodCallOperation(SNode node) {
@@ -60,6 +62,26 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
 
   public void setInstanceMethodDeclaration(InstanceMethodDeclaration node) {
     this.setBaseMethodDeclaration(node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(InstanceMethodCallOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, InstanceMethodCallOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, InstanceMethodCallOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(InstanceMethodCallOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, InstanceMethodCallOperation._$ATTRIBUTE, node);
   }
 
   public int getActualArgumentsCount() {

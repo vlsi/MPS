@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<history>
+  <StructureModification>
+    <dependencies>
+      <model index="cs0q" modelUID="r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)" version="-1" />
+    </dependencies>
+    <rename id="cs0q.5066720069350533029" type="CONCEPT" from="XmlFoo" to="XmlConfigurationNode" />
+  </StructureModification>
+</history>
+

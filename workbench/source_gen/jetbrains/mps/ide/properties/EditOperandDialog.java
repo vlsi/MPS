@@ -145,9 +145,24 @@ public class EditOperandDialog extends BaseDialog {
         } else
         if (innerOperand instanceof MappingConfig_RefSet) {
           for (MappingConfig_AbstractRef ref : ((MappingConfig_RefSet) innerOperand).getMappingConfigs()) {
-            setModelMappingRef(child, (MappingConfig_SimpleRef) ref);
+            if (ref instanceof MappingConfig_SimpleRef) {
+              setModelMappingRef(child, (MappingConfig_SimpleRef) ref);
+            } else if (ref instanceof MappingConfig_RefSet) {
+              setMappingRefSet(child, (MappingConfig_RefSet) ref);
+            }
           }
         }
+      }
+    }
+  }
+
+  private void setMappingRefSet(DefaultMutableTreeNode child, MappingConfig_RefSet innerOperand) {
+    for (MappingConfig_AbstractRef ref : ((MappingConfig_RefSet) innerOperand).getMappingConfigs()) {
+      if (ref instanceof MappingConfig_SimpleRef) {
+        setModelMappingRef(child, (MappingConfig_SimpleRef) ref);
+      } else
+      if (ref instanceof MappingConfig_RefSet) {
+        setMappingRefSet(child, (MappingConfig_RefSet) ref);
       }
     }
   }

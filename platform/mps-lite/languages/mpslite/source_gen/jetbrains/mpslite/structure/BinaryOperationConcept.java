@@ -4,6 +4,9 @@ package jetbrains.mpslite.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -23,6 +26,7 @@ public class BinaryOperationConcept extends BaseConcept implements IMPSLiteConce
   public static final String RIGHT_TARGET = "rightTarget";
   public static final String EXPRESSION_CONCEPT = "expressionConcept";
   public static final String EXTENDS = "extends";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BinaryOperationConcept(SNode node) {
     super(node);
@@ -130,6 +134,26 @@ public class BinaryOperationConcept extends BaseConcept implements IMPSLiteConce
 
   public void setExtends(AbstractConceptReference node) {
     super.setChild(BinaryOperationConcept.EXTENDS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(BinaryOperationConcept._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BinaryOperationConcept._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BinaryOperationConcept._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(BinaryOperationConcept._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BinaryOperationConcept._$ATTRIBUTE, node);
   }
 
   public static BinaryOperationConcept newInstance(SModel sm, boolean init) {

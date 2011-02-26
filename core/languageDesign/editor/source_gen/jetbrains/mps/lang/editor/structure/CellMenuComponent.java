@@ -5,6 +5,9 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class CellMenuComponent extends AbstractComponent implements INamedConcep
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String APPLICABLE_FEATURE = "applicableFeature";
   public static final String MENU_DESCRIPTOR = "menuDescriptor";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public CellMenuComponent(SNode node) {
     super(node);
@@ -68,6 +72,26 @@ public class CellMenuComponent extends AbstractComponent implements INamedConcep
 
   public void setMenuDescriptor(CellMenuDescriptor node) {
     super.setChild(CellMenuComponent.MENU_DESCRIPTOR, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(CellMenuComponent._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, CellMenuComponent._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, CellMenuComponent._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(CellMenuComponent._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, CellMenuComponent._$ATTRIBUTE, node);
   }
 
   public static CellMenuComponent newInstance(SModel sm, boolean init) {

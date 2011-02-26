@@ -22,12 +22,15 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import java.util.ArrayList;
 
 public class ClassifierType_Behavior {
   private static Class[] PARAMETERS_9011026350741578236 = {SNode.class};
   private static SNodePointer SNODE_POINTER_hz3823_a0a1a0a1a2a0a0a0a1a1a0a0a01 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Object");
+  private static SNodePointer SNODE_POINTER_hz3823_a0a1a0a1a2a0a0a0a0a1a01 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~List");
 
   public static void init(SNode thisNode) {
   }
@@ -221,7 +224,7 @@ public class ClassifierType_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
       }
       return result;
@@ -283,18 +286,25 @@ public class ClassifierType_Behavior {
         }
         {
           SNode referent;
-          referent = (SNode) this.AntiquotationField_hz3823_a0a0a1a9;
+          referent = SNODE_POINTER_hz3823_a0a1a0a1a2a0a0a0a0a1a01.getNode();
           if (nodeToMatch_hz3823_a0a1a9.getReferent("classifier") != referent) {
             return false;
           }
         }
         {
           String childRole_hz3823_ = "parameter";
-          this.PatternVar_l = ListSequence.fromList(new ArrayList<SNode>());
-          this.PatternVar_ignored = null;
-          for (SNode childVar : nodeToMatch_hz3823_a0a1a9.getChildren(childRole_hz3823_)) {
-            this.PatternVar_ignored = childVar;
-            ListSequence.fromList(this.PatternVar_l).addElement(childVar);
+          if (nodeToMatch_hz3823_a0a1a9.getChildCount(childRole_hz3823_) != 1) {
+            return false;
+          }
+          {
+            SNode childVar_hz3823_a0a0b0j = nodeToMatch_hz3823_a0a1a9.getChildren(childRole_hz3823_).get(0);
+            {
+              SNode nodeToMatch_hz3823_a0a0b0j;
+              nodeToMatch_hz3823_a0a0b0j = childVar_hz3823_a0a0b0j;
+              if (!("jetbrains.mps.baseLanguage.structure.IntegerType".equals(nodeToMatch_hz3823_a0a0b0j.getConceptFqName()))) {
+                return false;
+              }
+            }
           }
         }
       }

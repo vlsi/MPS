@@ -18,6 +18,7 @@ import java.util.Iterator;
 import jetbrains.mps.lang.constraints.structure.NodePropertyConstraint;
 import java.util.List;
 import jetbrains.mps.lang.constraints.structure.NodeReferentConstraint;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -38,6 +39,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   public static final String REFERENCES = "references";
   public static final String METHOD = "method";
   public static final String STATIC_METHOD = "staticMethod";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConceptBehavior(SNode node) {
     super(node);
@@ -201,6 +203,26 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
 
   public void insertStaticMethod(StaticConceptMethodDeclaration prev, StaticConceptMethodDeclaration node) {
     this.insertChild(prev, ConceptBehavior.STATIC_METHOD, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ConceptBehavior._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConceptBehavior._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConceptBehavior._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConceptBehavior._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConceptBehavior._$ATTRIBUTE, node);
   }
 
   public static ConceptBehavior newInstance(SModel sm, boolean init) {

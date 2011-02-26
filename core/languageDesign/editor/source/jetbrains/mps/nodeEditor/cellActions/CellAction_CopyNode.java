@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cellActions;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._3;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -81,14 +82,14 @@ public class CellAction_CopyNode extends EditorCellAction {
     Map<SNode, Set<SNode>> nodesAndAttributes = new HashMap<SNode, Set<SNode>>();
     for (SNode node : nodeList) {
       final SNode parent = node.getParent();
-      if (parent != null && AttributesRolesUtil.isAttributeRole(node.getRole_())) {
+      if (parent != null && AttributeOperations.isAttribute(node)) {
 
         EditorCell selectedCell = editorComponent.getSelectedCell();
         Condition<EditorCell> condition = new Condition<EditorCell>() {
           public boolean met(EditorCell object) {
             SNode selectedNode = object.getSNode();
             return selectedNode != null &&
-                    selectedNode.getParent() == parent && AttributesRolesUtil.isAttributeRole(selectedNode.getRole_());
+                    selectedNode.getParent() == parent && AttributeOperations.isAttribute(selectedNode);
           }
         };
 

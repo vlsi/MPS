@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +19,7 @@ public class PrimitiveTypeDescriptor extends BaseConcept implements INamedConcep
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXTENDS = "extends";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public PrimitiveTypeDescriptor(SNode node) {
     super(node);
@@ -73,6 +75,26 @@ public class PrimitiveTypeDescriptor extends BaseConcept implements INamedConcep
 
   public void insertExtends(PrimitiveTypeRef prev, PrimitiveTypeRef node) {
     this.insertChild(prev, PrimitiveTypeDescriptor.EXTENDS, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(PrimitiveTypeDescriptor._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, PrimitiveTypeDescriptor._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, PrimitiveTypeDescriptor._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(PrimitiveTypeDescriptor._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, PrimitiveTypeDescriptor._$ATTRIBUTE, node);
   }
 
   public static PrimitiveTypeDescriptor newInstance(SModel sm, boolean init) {

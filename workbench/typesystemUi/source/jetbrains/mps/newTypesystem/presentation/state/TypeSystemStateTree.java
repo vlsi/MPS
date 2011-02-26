@@ -49,7 +49,12 @@ public class TypeSystemStateTree extends MPSTree {
     myState = state;
     this.rebuildNow();
     expandAll();
+  }
 
+  public void resetState(State state) {
+    myState = state;
+    rebuildNow();
+    expandAll();
   }
 
   @Override
@@ -61,8 +66,8 @@ public class TypeSystemStateTree extends MPSTree {
   private TypeSystemStateTreeNode createNode() {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("State", myOperationContext);
     result.add(new TypeSystemStateTreeNode("Solving inequalities in process: " + myState.getInequalities().isSolvingInProcess(), myOperationContext));
-   // result.add(createNode("Inequalities", myState.getBlocks(BlockKind.INEQUALITY), null));
     result.add(createInequalitiesNode());
+    result.add(createNode("Check-only inequalities", myState.getCheckingInequalities(), null));    
     result.add(createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null));
     result.add(createNode("When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null));
     result.add(createNode("Errors", myState.getNodeMaps().getErrorListPresentation(), Color.RED));
@@ -84,7 +89,7 @@ public class TypeSystemStateTree extends MPSTree {
   }
 
   private TypeSystemStateTreeNode createNode(String category, Set<Block> entries, Color color) {
-    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode(category+ "(" + entries.size()+")", myOperationContext);
+    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode(category+ " (" + entries.size()+")", myOperationContext);
     if (color != null) {
       result.setColor(color);
     }

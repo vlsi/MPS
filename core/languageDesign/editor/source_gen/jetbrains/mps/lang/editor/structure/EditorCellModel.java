@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -24,6 +25,7 @@ public class EditorCellModel extends BaseConcept implements IStyleContainer {
   public static final String CELL_BACKGROUND_FUNCTION = "cellBackgroundFunction";
   public static final String FOCUS_POLICY_APPLICABLE = "focusPolicyApplicable";
   public static final String STYLE_ITEM = "styleItem";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public EditorCellModel(SNode node) {
     super(node);
@@ -136,6 +138,26 @@ public class EditorCellModel extends BaseConcept implements IStyleContainer {
 
   public void insertStyleItem(StyleClassItem prev, StyleClassItem node) {
     this.insertChild(prev, EditorCellModel.STYLE_ITEM, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(EditorCellModel._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, EditorCellModel._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, EditorCellModel._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(EditorCellModel._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EditorCellModel._$ATTRIBUTE, node);
   }
 
   public static EditorCellModel newInstance(SModel sm, boolean init) {

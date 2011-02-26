@@ -27,7 +27,7 @@ public class SolutionProperties_Action extends GeneratedAction {
 
   public SolutionProperties_Action() {
     super("Solution Properties", "", ICON);
-    this.setIsAlwaysVisible(true);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 

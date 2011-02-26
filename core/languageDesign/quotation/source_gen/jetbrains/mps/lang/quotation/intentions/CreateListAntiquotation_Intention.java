@@ -7,6 +7,9 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
@@ -42,15 +45,14 @@ public class CreateListAntiquotation_Intention extends BaseIntention implements 
     if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
       SNode attributedNode = SNodeOperations.getParent(contextNode);
       assert attributedNode != null;
-      attributedNode.setAttribute(null);
+      AttributeOperations.setAttribute(attributedNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ListAntiquotation")), null);
       return;
     }
     SModel model = SNodeOperations.getModel(contextNode);
-    if (SNodeOperations.isInstanceOf(((SNode) contextNode.getAttribute()), "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
-      contextNode.setAttribute(null);
+    if ((AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ListAntiquotation"))) != null)) {
+      AttributeOperations.setAttribute(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ListAntiquotation")), null);
     } else {
-      SNode listAntiquotation = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.ListAntiquotation", null);
-      contextNode.setAttribute(listAntiquotation);
+      SNode listAntiquotation = SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ListAntiquotation")), "jetbrains.mps.lang.quotation.structure.ListAntiquotation");
       editorContext.selectWRTFocusPolicy(listAntiquotation);
     }
   }

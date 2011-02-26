@@ -1,3 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.quotation.dataFlow.DFABuilders" />
+  <unitInfo fileName="AbstractAntiquotation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.quotation.dataFlow.AbstractAntiquotation_DataFlow" />
+  <unitInfo fileName="Quotation_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.quotation.dataFlow.Quotation_DataFlow" />
+  <root nodeId="1207243664442">
+    <nodeInfo nodeId="1207243732321" fileName="AbstractAntiquotation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="1207243664444" fileName="AbstractAntiquotation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
+  </root>
+  <root nodeId="1207243772639">
+    <nodeInfo nodeId="1207243820006" fileName="Quotation_DataFlow.java" startLine="16" startPosition="171" endLine="17" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207243785969" fileName="Quotation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="1207243785973" fileName="Quotation_DataFlow.java" startLine="16" startPosition="171" endLine="17" endPosition="57" />
+    <scopeInfo nodeId="1207243772641" fileName="Quotation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
+    <scopeInfo nodeId="1207243785969" fileName="Quotation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
+      <varInfo nodeId="1207243785971" varName="antiquotation" />
+    </scopeInfo>
+  </root>
+</debugInfo>
 

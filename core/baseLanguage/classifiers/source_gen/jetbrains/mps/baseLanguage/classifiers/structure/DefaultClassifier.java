@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +19,7 @@ public class DefaultClassifier extends BaseConcept implements IClassifier {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String FIELD = "field";
   public static final String METHOD = "method";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public DefaultClassifier(SNode node) {
     super(node);
@@ -93,6 +95,26 @@ public class DefaultClassifier extends BaseConcept implements IClassifier {
 
   public void insertMethod(DefaultClassifierMethodDeclaration prev, DefaultClassifierMethodDeclaration node) {
     this.insertChild(prev, DefaultClassifier.METHOD, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(DefaultClassifier._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, DefaultClassifier._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, DefaultClassifier._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(DefaultClassifier._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DefaultClassifier._$ATTRIBUTE, node);
   }
 
   public static DefaultClassifier newInstance(SModel sm, boolean init) {

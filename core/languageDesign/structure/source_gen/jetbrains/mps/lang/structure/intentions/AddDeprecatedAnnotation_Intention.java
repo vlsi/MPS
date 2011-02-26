@@ -6,8 +6,9 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -32,18 +33,18 @@ public class AddDeprecatedAnnotation_Intention extends BaseIntention implements 
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true) == null)) {
+    if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))) == null)) {
       return "Add Deprecated Annotation";
     }
     return "Remove Deprecated Annotation";
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true) == null)) {
+    if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))) == null)) {
       SNode annotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null);
-      SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), annotation, true);
+      AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), annotation);
     } else {
-      SNodeOperations.detachNode(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true));
+      SNodeOperations.detachNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))));
     }
   }
 

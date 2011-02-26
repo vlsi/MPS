@@ -154,6 +154,7 @@
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.creation.NewGeneratorDialog" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="javax.swing.JFrame" />
@@ -162,6 +163,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ConceptEditorOpenHelper" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ConceptEditorHelper" />
@@ -175,12 +177,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.AttributesRolesUtil" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ConceptEditorOpenHelper" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.ide.editorTabs.EditorTabDescriptor" />
   </dependency>
@@ -409,7 +410,6 @@
     <classNode dependClassName="jetbrains.mps.workbench.actions.nodes.GoToRulesHelper" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="java.lang.Character" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="java.util.List" />

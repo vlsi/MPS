@@ -16,18 +16,18 @@
 package jetbrains.mps.smodel;
 
 public abstract class SNodeUndoableAction {
-  private SNodePointer myRoot = null;
+  private SNode myAffectedNode = null;
 
   protected SNodeUndoableAction(SNode affectedNode) {
-    SNode containingRoot = affectedNode.getContainingRoot();
-
-    if (containingRoot != null) {
-      myRoot = new SNodePointer(containingRoot);
-    }
+    myAffectedNode = affectedNode;
   }
 
-  public SNodePointer getRoot() {
-    return myRoot;
+  protected SNode getAffectedNode() {
+    return myAffectedNode;
+  }
+
+  public SNode getRoot() {
+    return myAffectedNode.getContainingRoot();
   }
 
   protected abstract void doUndo();

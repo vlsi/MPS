@@ -23,16 +23,17 @@
     <classNode extendsClassName="jetbrains.mps.lang.core.plugin.AbstractConstraintsChecker" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.ConstraintsChecker" file="ConstraintsChecker.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.PropertySupport" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.INodePropertyValidator" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.smodel.PropertySupport" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.LanguageErrorsComponent" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />

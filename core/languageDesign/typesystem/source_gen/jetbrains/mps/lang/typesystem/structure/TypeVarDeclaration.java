@@ -5,6 +5,9 @@ package jetbrains.mps.lang.typesystem.structure;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class TypeVarDeclaration extends Statement implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NULLABLE = "nullable";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TypeVarDeclaration(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class TypeVarDeclaration extends Statement implements INamedConcept {
 
   public void setNullable(boolean value) {
     this.setBooleanProperty(TypeVarDeclaration.NULLABLE, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(TypeVarDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, TypeVarDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, TypeVarDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(TypeVarDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, TypeVarDeclaration._$ATTRIBUTE, node);
   }
 
   public static TypeVarDeclaration newInstance(SModel sm, boolean init) {

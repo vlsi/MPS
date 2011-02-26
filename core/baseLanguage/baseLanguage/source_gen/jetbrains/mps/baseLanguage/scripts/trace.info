@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="BaseLanguageMigration_MigrationScript.java" startLine="210" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageMigration_MigrationScript$QuotationClass_g7rti7_a0a0a0d0a0a0f0a" />
+  <unitInfo fileName="RemoveNameFromAnonymousClasses_MigrationScript.java" startLine="14" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.RemoveNameFromAnonymousClasses_MigrationScript$1" />
+  <unitInfo fileName="SetReturnTypeInConstructors_MigrationScript.java" startLine="14" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.SetReturnTypeInConstructors_MigrationScript$1" />
+  <unitInfo fileName="ConvertAnnotationInstances_MigrationScript.java" startLine="15" startPosition="28" endLine="39" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.ConvertAnnotationInstances_MigrationScript$1" />
+  <unitInfo fileName="ConvertToLocal_MigrationScript.java" startLine="16" startPosition="28" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.ConvertToLocal_MigrationScript$1" />
+  <unitInfo fileName="ConvertToLocal_MigrationScript.java" startLine="41" startPosition="28" endLine="65" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.ConvertToLocal_MigrationScript$2" />
+  <unitInfo fileName="ConvertToLocal_MigrationScript.java" startLine="66" startPosition="28" endLine="90" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.ConvertToLocal_MigrationScript$3" />
+  <unitInfo fileName="BaseLanguageMigration_MigrationScript.java" startLine="183" startPosition="28" endLine="207" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageMigration_MigrationScript$5" />
+  <unitInfo fileName="BaseLanguageMigration_MigrationScript.java" startLine="25" startPosition="28" endLine="52" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageMigration_MigrationScript$1" />
+  <unitInfo fileName="JavaUtilReferences_MigrationScript.java" startLine="14" startPosition="28" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.JavaUtilReferences_MigrationScript$1" />
+  <unitInfo fileName="BaseLanguageMigration_MigrationScript.java" startLine="53" startPosition="28" endLine="82" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageMigration_MigrationScript$2" />
+  <unitInfo fileName="RemoveNameFromAnonymousClasses_MigrationScript.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.RemoveNameFromAnonymousClasses_MigrationScript" />
+  <unitInfo fileName="SetReturnTypeInConstructors_MigrationScript.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.SetReturnTypeInConstructors_MigrationScript" />
+  <unitInfo fileName="ConvertAnnotationInstances_MigrationScript.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.ConvertAnnotationInstances_MigrationScript" />
+  <unitInfo fileName="RefactorAnonymousClasses_MigrationScript.java" startLine="18" startPosition="28" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.RefactorAnonymousClasses_MigrationScript$1" />
+  <unitInfo fileName="JavaUtilReferences_MigrationScript.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.JavaUtilReferences_MigrationScript" />
+  <unitInfo fileName="RefactorAnonymousClasses_MigrationScript.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.RefactorAnonymousClasses_MigrationScript" />
+  <unitInfo fileName="BaseLanguageMigration_MigrationScript.java" startLine="83" startPosition="28" endLine="132" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageMigration_MigrationScript$3" />
+  <unitInfo fileName="BaseLanguageMigration_MigrationScript.java" startLine="133" startPosition="28" endLine="182" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageMigration_MigrationScript$4" />
+  <unitInfo fileName="FixPriority_MigrationScript.java" startLine="16" startPosition="28" endLine="67" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.FixPriority_MigrationScript$1" />
+  <unitInfo fileName="FixPriority_MigrationScript.java" startLine="13" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.FixPriority_MigrationScript" />
+  <unitInfo fileName="ConvertLoopLabels_MigrationScript.java" startLine="18" startPosition="28" endLine="79" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.ConvertLoopLabels_MigrationScript$1" />
+  <unitInfo fileName="ConvertLoopLabels_MigrationScript.java" startLine="80" startPosition="28" endLine="141" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.ConvertLoopLabels_MigrationScript$2" />
+  <unitInfo fileName="ConvertToLocal_MigrationScript.java" startLine="13" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.ConvertToLocal_MigrationScript" />
+  <unitInfo fileName="ConvertLoopLabels_MigrationScript.java" startLine="15" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.ConvertLoopLabels_MigrationScript" />
+  <unitInfo fileName="BaseLanguageMigration_MigrationScript.java" startLine="22" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.BaseLanguageMigration_MigrationScript" />
+  <root nodeId="1240068519431">
+    <nodeInfo nodeId="1240068640280" fileName="JavaUtilReferences_MigrationScript.java" startLine="28" startPosition="53" endLine="29" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240068664970" fileName="JavaUtilReferences_MigrationScript.java" startLine="30" startPosition="64" endLine="31" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240068587799" fileName="JavaUtilReferences_MigrationScript.java" startLine="33" startPosition="9" endLine="34" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240068622698" fileName="JavaUtilReferences_MigrationScript.java" startLine="29" startPosition="97" endLine="32" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240068592553" fileName="JavaUtilReferences_MigrationScript.java" startLine="27" startPosition="59" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="1240068547762" fileName="JavaUtilReferences_MigrationScript.java" startLine="37" startPosition="52" endLine="37" endPosition="52" />
+    <scopeInfo nodeId="1240068622699" fileName="JavaUtilReferences_MigrationScript.java" startLine="30" startPosition="64" endLine="31" endPosition="24" />
+    <scopeInfo nodeId="1240068592554" fileName="JavaUtilReferences_MigrationScript.java" startLine="28" startPosition="53" endLine="32" endPosition="11">
+      <varInfo nodeId="1240068640281" varName="targetModelFQName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240068592553" fileName="JavaUtilReferences_MigrationScript.java" startLine="27" startPosition="59" endLine="33" endPosition="9">
+      <varInfo nodeId="1240068592557" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240068577504" fileName="JavaUtilReferences_MigrationScript.java" startLine="27" startPosition="59" endLine="34" endPosition="21" />
+  </root>
   <root nodeId="1704189004094297789">
     <nodeInfo nodeId="5311267937735178608" fileName="ConvertToLocal_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5311267937735269222" fileName="ConvertToLocal_MigrationScript.java" startLine="33" startPosition="52" endLine="34" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -13,6 +55,12 @@
     <scopeInfo nodeId="1704189004094302611" fileName="ConvertToLocal_MigrationScript.java" startLine="58" startPosition="52" endLine="59" endPosition="91" />
     <scopeInfo nodeId="3299924278393485442" fileName="ConvertToLocal_MigrationScript.java" startLine="79" startPosition="59" endLine="80" endPosition="94" />
     <scopeInfo nodeId="3299924278393485147" fileName="ConvertToLocal_MigrationScript.java" startLine="83" startPosition="52" endLine="84" endPosition="80" />
+  </root>
+  <root nodeId="3427990840445203005">
+    <nodeInfo nodeId="3427990840445203148" fileName="SetReturnTypeInConstructors_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3427990840445203160" fileName="SetReturnTypeInConstructors_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="3427990840445203147" fileName="SetReturnTypeInConstructors_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="77" />
+    <scopeInfo nodeId="3427990840445203145" fileName="SetReturnTypeInConstructors_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="105" />
   </root>
   <root nodeId="4581730695772514123">
     <nodeInfo nodeId="4581730695772516758" fileName="BaseLanguageMigration_MigrationScript.java" startLine="42" startPosition="52" endLine="43" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -99,8 +147,8 @@
     </scopeInfo>
     <scopeInfo nodeId="4900012836837561170" fileName="BaseLanguageMigration_MigrationScript.java" startLine="170" startPosition="52" endLine="176" endPosition="54">
       <varInfo nodeId="4900012836837561181" varName="ref" />
-      <varInfo nodeId="4900012836837561172" varName="declaration" />
       <varInfo nodeId="4900012836837561193" varName="dec" />
+      <varInfo nodeId="4900012836837561172" varName="declaration" />
     </scopeInfo>
     <scopeInfo nodeId="4900012836837561081" fileName="BaseLanguageMigration_MigrationScript.java" startLine="96" startPosition="59" endLine="117" endPosition="20">
       <varInfo nodeId="4900012836837561094" varName="declaration" />
@@ -229,9 +277,15 @@
       <varInfo nodeId="5098418897313072656" varName="parameter" />
     </scopeInfo>
     <scopeInfo nodeId="5098418897313070123" fileName="RefactorAnonymousClasses_MigrationScript.java" startLine="35" startPosition="52" endLine="44" endPosition="9">
-      <varInfo nodeId="5098418897313098734" varName="map" />
       <varInfo nodeId="420955509724271464" varName="target" />
+      <varInfo nodeId="5098418897313098734" varName="map" />
     </scopeInfo>
+  </root>
+  <root nodeId="5248861918753541286">
+    <nodeInfo nodeId="5248861918753542061" fileName="RemoveNameFromAnonymousClasses_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5248861918753542072" fileName="RemoveNameFromAnonymousClasses_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="5248861918753542060" fileName="RemoveNameFromAnonymousClasses_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="58" />
+    <scopeInfo nodeId="5248861918753541289" fileName="RemoveNameFromAnonymousClasses_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="52" />
   </root>
   <root nodeId="5521717700171455484">
     <nodeInfo nodeId="4107162278167826997" fileName="FixPriority_MigrationScript.java" startLine="30" startPosition="175" endLine="31" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -271,6 +325,10 @@
       <varInfo nodeId="4107162278167978616" varName="parent" />
     </scopeInfo>
     <scopeInfo nodeId="5521717700171463001" fileName="FixPriority_MigrationScript.java" startLine="45" startPosition="52" endLine="61" endPosition="9" />
+  </root>
+  <root nodeId="8647043020514320142">
+    <nodeInfo nodeId="6042967188263921404" fileName="ConvertAnnotationInstances_MigrationScript.java" startLine="32" startPosition="52" endLine="33" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="6042967188263920374" fileName="ConvertAnnotationInstances_MigrationScript.java" startLine="32" startPosition="52" endLine="33" endPosition="110" />
   </root>
 </debugInfo>
 

@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class LocalVariableDeclaration extends VariableDeclaration implements IRe
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NAME = "name";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public LocalVariableDeclaration(SNode node) {
     super(node);
@@ -58,6 +62,26 @@ public class LocalVariableDeclaration extends VariableDeclaration implements IRe
 
   public void setName(String value) {
     this.setProperty(LocalVariableDeclaration.NAME, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(LocalVariableDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, LocalVariableDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, LocalVariableDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(LocalVariableDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, LocalVariableDeclaration._$ATTRIBUTE, node);
   }
 
   public static LocalVariableDeclaration newInstance(SModel sm, boolean init) {

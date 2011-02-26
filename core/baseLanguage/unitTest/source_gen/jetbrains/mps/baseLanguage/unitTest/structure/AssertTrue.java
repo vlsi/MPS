@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.unitTest.structure;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class AssertTrue extends Statement implements MessageHolder {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONDITION = "condition";
   public static final String MESSAGE = "message";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AssertTrue(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class AssertTrue extends Statement implements MessageHolder {
 
   public void setMessage(Message node) {
     super.setChild(AssertTrue.MESSAGE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AssertTrue._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AssertTrue._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AssertTrue._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AssertTrue._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AssertTrue._$ATTRIBUTE, node);
   }
 
   public static AssertTrue newInstance(SModel sm, boolean init) {

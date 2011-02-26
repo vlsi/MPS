@@ -4,6 +4,9 @@ package jetbrains.mpslite.structure;
 
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class ConcretePropertyPart extends PropertyPart implements INamedConcept 
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROPERTY_TYPE = "propertyType";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConcretePropertyPart(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class ConcretePropertyPart extends PropertyPart implements INamedConcept 
 
   public void setPropertyType(MPSLitePropertyType_Enum value) {
     super.setProperty(ConcretePropertyPart.PROPERTY_TYPE, value.getValueAsString());
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ConcretePropertyPart._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConcretePropertyPart._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConcretePropertyPart._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConcretePropertyPart._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConcretePropertyPart._$ATTRIBUTE, node);
   }
 
   public static ConcretePropertyPart newInstance(SModel sm, boolean init) {

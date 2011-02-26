@@ -6,8 +6,10 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -53,7 +55,7 @@ public class NewRootMappingRule_Intention extends BaseIntention implements Inten
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SNode annotation = SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true);
+    SNode annotation = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")));
     if (annotation == null) {
       return false;
     }
@@ -94,7 +96,7 @@ public class NewRootMappingRule_Intention extends BaseIntention implements Inten
     }
     //  add new rule 
     SNode rule = SNodeFactoryOperations.addNewChild(ListSequence.fromList(configs).first(), "rootMappingRule", "jetbrains.mps.lang.generator.structure.Root_MappingRule");
-    SLinkOperations.setTarget(rule, "applicableConcept", SLinkOperations.getTarget(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true), "applicableConcept", false), false);
+    SLinkOperations.setTarget(rule, "applicableConcept", SLinkOperations.getTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))), "applicableConcept", false), false);
     SLinkOperations.setTarget(rule, "template", node, false);
     //  open in editor 
     MPSEditorOpener opener = editorContext.getOperationContext().getComponent(MPSEditorOpener.class);

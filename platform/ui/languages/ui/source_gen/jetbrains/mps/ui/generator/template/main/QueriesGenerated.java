@@ -7,7 +7,9 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.ui.generator.template.helper.SessionObjects;
@@ -31,7 +33,6 @@ import jetbrains.mps.ui.modeling.behavior.UIObjectTemplate_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -98,7 +99,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1251509410704218240(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), AttributesRolesUtil.childRoleFromAttributeRole("OverrideLinkAnnotation"), true) != null);
+    return (AttributeOperations.getAttribute(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.OverrideAnnotation"))) != null);
   }
 
   public static boolean baseMappingRule_Condition_1251509410704218289(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

@@ -12,6 +12,7 @@ import jetbrains.mps.build.packaging.structure.Folder;
 import jetbrains.mps.build.packaging.structure.IStringExpression;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.build.packaging.structure.Macro;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -39,6 +40,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   public static final String STARTUP_DIRECTORY = "startupDirectory";
   public static final String VM_OPTIONS_DIR = "vmOptionsDir";
   public static final String SYSTEM_SPECIFIC_CONFIG = "systemSpecificConfig";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String MACRO = "macro";
 
   public DistribConfiguration(SNode node) {
@@ -215,6 +217,26 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
 
   public void insertSystemSpecificConfig(SystemSpecificConfig prev, SystemSpecificConfig node) {
     this.insertChild(prev, DistribConfiguration.SYSTEM_SPECIFIC_CONFIG, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(DistribConfiguration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, DistribConfiguration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, DistribConfiguration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(DistribConfiguration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, DistribConfiguration._$ATTRIBUTE, node);
   }
 
   public int getMacrosCount() {

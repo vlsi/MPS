@@ -6,6 +6,9 @@ import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.IVisible;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Visibility;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +23,7 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration implements I
   public static final String IS_ABSTRACT = "isAbstract";
   public static final String OVERRIDDEN_METHOD = "overriddenMethod";
   public static final String VISIBILITY = "visibility";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ConceptMethodDeclaration(SNode node) {
     super(node);
@@ -87,6 +91,26 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration implements I
 
   public void setVisibility(Visibility node) {
     super.setChild(ConceptMethodDeclaration.VISIBILITY, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ConceptMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ConceptMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ConceptMethodDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ConceptMethodDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ConceptMethodDeclaration._$ATTRIBUTE, node);
   }
 
   public static ConceptMethodDeclaration newInstance(SModel sm, boolean init) {

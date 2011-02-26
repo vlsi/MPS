@@ -667,7 +667,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="223733852661818502">
           <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="223733852661818503">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="uhxm.PersistentConfigurationType" typeId="uhxm.4777576391478289762" id="7902226081039290397">
-              <node role="referenceAntiquotation$link_attribute$persistentConfiguration" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="7902226081039418063">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="7902226081039418063">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="persistentConfiguration" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7902226081039429591">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="223733852661818471" resolveInfo="configuration" />
                 </node>
@@ -824,7 +825,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="587410464426964104">
           <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="587410464426964105">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="uhxm.PersistentConfigurationType" typeId="uhxm.4777576391478289762" id="587410464426964107">
-              <node role="referenceAntiquotation$link_attribute$persistentConfiguration" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="587410464426964108">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="587410464426964108">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="persistentConfiguration" />
                 <node role="expression" roleId="tp3r.1196350785111" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="587410464426964111" />
               </node>
             </node>
@@ -1166,7 +1168,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="587410464426976723">
           <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="587410464426976724">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="uhxm.TemplatePersistentPropertyType" typeId="uhxm.4157833584164911568" id="587410464426976726">
-              <node role="referenceAntiquotation$link_attribute$propertyTemplate" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="587410464426976727">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="587410464426976727">
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="propertyTemplate" />
                 <node role="expression" roleId="tp3r.1196350785111" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="587410464426976729" />
               </node>
             </node>

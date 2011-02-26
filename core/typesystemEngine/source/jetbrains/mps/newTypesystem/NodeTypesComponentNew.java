@@ -178,10 +178,6 @@ public class NodeTypesComponentNew implements INodeTypesComponent {
     myNonTypeSystemComponent.setChecked();
   }
 
-  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
-    myTypeSystemComponent.computeTypes(nodeToCheck, refreshTypes, forceChildrenCheck,additionalNodes,inferenceMode);
-  }
-
   public void typeOfNodeCalled(SNode node) {
     myTypeSystemComponent.typeOfNodeCalled(node);
   }

@@ -11,8 +11,9 @@ import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.structure.AnnotationInstance;
+import jetbrains.mps.lang.core.structure.Attribute;
 import java.util.List;
+import jetbrains.mps.baseLanguage.structure.AnnotationInstance;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -26,6 +27,7 @@ public class NamedTupleComponentDeclaration extends BaseConcept implements IVali
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String FINAL = "final";
   public static final String TYPE = "type";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String ANNOTATION = "annotation";
 
   public NamedTupleComponentDeclaration(SNode node) {
@@ -86,6 +88,26 @@ public class NamedTupleComponentDeclaration extends BaseConcept implements IVali
 
   public void setType(Type node) {
     super.setChild(NamedTupleComponentDeclaration.TYPE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(NamedTupleComponentDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, NamedTupleComponentDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, NamedTupleComponentDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(NamedTupleComponentDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, NamedTupleComponentDeclaration._$ATTRIBUTE, node);
   }
 
   public int getAnnotationsCount() {

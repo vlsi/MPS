@@ -6,8 +6,8 @@ import jetbrains.mps.stubs.StubLocation;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JavaStubs_JDK extends JavaStubs {
@@ -19,7 +19,7 @@ public class JavaStubs_JDK extends JavaStubs {
     SNode exp = null;
     exp = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.ExportScopePublic", null);
     for (SNode root : model.roots()) {
-      SLinkOperations.setTarget(root, AttributesRolesUtil.childRoleFromAttributeRole("export"), SNodeOperations.copyNode(exp), true);
+      AttributeOperations.setAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope")), SNodeOperations.copyNode(exp));
     }
   }
 }

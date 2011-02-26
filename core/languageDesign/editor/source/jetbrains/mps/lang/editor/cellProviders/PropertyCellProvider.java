@@ -17,6 +17,7 @@ package jetbrains.mps.lang.editor.cellProviders;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
@@ -70,7 +71,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
 
   public SNode getRoleAttribute() {
     SNode node = getSNode();
-    return node.getPropertyAttribute(myPropertyName);
+    return AttributeOperations.getPropertyAttribute(node, null, myPropertyName);
   }
 
   // gets a kind of attributes possibly hanging on this provider's role

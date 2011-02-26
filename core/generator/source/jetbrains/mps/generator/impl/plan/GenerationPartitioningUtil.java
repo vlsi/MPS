@@ -96,7 +96,7 @@ public class GenerationPartitioningUtil {
     }
     List<Language> result = new ArrayList<Language>();
     for (String namespace : namespaces) {
-      Language language = scope.getLanguage(namespace);
+      Language language = scope.getLanguage(new ModuleReference(namespace));
       if (language != null) {
         result.add(language);
       } else {

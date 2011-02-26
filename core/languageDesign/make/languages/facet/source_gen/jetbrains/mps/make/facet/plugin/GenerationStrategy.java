@@ -9,6 +9,9 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.Map;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.ModelDigestHelper;
 
 public class GenerationStrategy implements IncrementalGenerationStrategy {
@@ -26,7 +29,23 @@ public class GenerationStrategy implements IncrementalGenerationStrategy {
     return cache;
   }
 
-  public Map<String, String> getModelHashes(SModelDescriptor descriptor, IOperationContext context) {
-    return ModelDigestHelper.getInstance().getGenerationHashes(descriptor, context);
+  public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext context) {
+    if (!((sm instanceof EditableSModelDescriptor))) {
+      return null;
+    }
+    EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+    if (esm.isPackaged()) {
+      return null;
+    }
+    if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
+      return null;
+    }
+
+    IFile modelFile = esm.getModelFile();
+    if (modelFile == null) {
+      return null;
+    }
+
+    return ModelDigestHelper.getInstance().getGenerationHashes(modelFile, context);
   }
 }

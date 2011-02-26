@@ -1993,8 +1993,9 @@
                             </node>
                             <node role="supertypeExpression" roleId="tpd4.1176543950311" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3342685437084052880">
                               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3342685437084052884">
-                                <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3342685437084063555">
+                                <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3342685437084063555">
                                   <property name="label" nameId="tp3r.6489343236075007666" value="ClassifierType" />
+                                  <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                                   <node role="expression" roleId="tp3r.1196350785111" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="3342685437084063557">
                                     <link role="variable" roleId="tp2q.1153944258490" targetNodeId="2990203945682756118" resolveInfo="cls" />
                                   </node>
@@ -18141,8 +18142,9 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3573019447813594653">
           <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3573019447813594655">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3573019447813594657">
-              <node role="referenceAntiquotation$link_attribute$classifier" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3573019447813594658">
+              <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3573019447813594658">
                 <property name="label" nameId="tp3r.6489343236075007666" value="ClassifierType" />
+                <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
                 <node role="expression" roleId="tp3r.1196350785111" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3573019447813594660">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161373106581143504" resolveInfo="classifier" />
                 </node>

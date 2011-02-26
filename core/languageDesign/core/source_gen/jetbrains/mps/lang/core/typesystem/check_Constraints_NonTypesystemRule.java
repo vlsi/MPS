@@ -48,7 +48,7 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
 
       if (SNodeOperations.getParent(node) != null && !(jetbrains.mps.smodel.SNodeOperations.isUnknown(SNodeOperations.getParent(node)))) {
         SNode link = SNodeOperations.getContainingLinkDeclaration(node);
-        if (link == null && !(node.isAttribute())) {
+        if (link == null) {
           {
             BaseQuickFixProvider intentionProvider = null;
             MessageTarget errorTarget = new NodeMessageTarget();

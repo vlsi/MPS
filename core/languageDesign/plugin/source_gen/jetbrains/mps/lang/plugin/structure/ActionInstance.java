@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +19,7 @@ public class ActionInstance extends BaseConcept implements ActionGroupMember {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ACTION = "action";
   public static final String ACTUAL_PARAMETER = "actualParameter";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ActionInstance(SNode node) {
     super(node);
@@ -73,6 +75,26 @@ public class ActionInstance extends BaseConcept implements ActionGroupMember {
 
   public void insertActualParameter(Expression prev, Expression node) {
     this.insertChild(prev, ActionInstance.ACTUAL_PARAMETER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ActionInstance._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ActionInstance._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ActionInstance._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ActionInstance._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ActionInstance._$ATTRIBUTE, node);
   }
 
   public static ActionInstance newInstance(SModel sm, boolean init) {

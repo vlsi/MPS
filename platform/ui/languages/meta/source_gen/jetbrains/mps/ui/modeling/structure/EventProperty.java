@@ -6,6 +6,9 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,6 +20,7 @@ public class EventProperty extends BaseConcept implements INamedConcept, HasTemp
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DATA_TYPE = "dataType";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public EventProperty(SNode node) {
     super(node);
@@ -60,6 +64,26 @@ public class EventProperty extends BaseConcept implements INamedConcept, HasTemp
 
   public void setDataType(Type node) {
     super.setChild(EventProperty.DATA_TYPE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(EventProperty._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, EventProperty._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, EventProperty._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(EventProperty._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, EventProperty._$ATTRIBUTE, node);
   }
 
   public static EventProperty newInstance(SModel sm, boolean init) {

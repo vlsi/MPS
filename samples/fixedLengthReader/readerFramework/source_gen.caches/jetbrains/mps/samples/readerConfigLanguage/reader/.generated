@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-6zq81qgcck9odcmca2owica46d6jzum">
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-d7iz155b0biu1ihrkmfx6r8rjwyp26c" />
+  <common hash="-dwbiu2ltb418f3k16bgnvhkfyis81cg" />
+  <source id="3515521059660696290" name="ReaderStrategy" hash="-aie4l40fxhe399ex844n0q61wpsquhj">
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <file name="ReaderStrategy.java" />
+  </source>
+  <source id="3515521059660696316" name="Reader" hash="1zkfple3fxksq4dehabeomek1skztn4">
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <file name="Reader.java" />
+  </source>
+</dependencies>
+

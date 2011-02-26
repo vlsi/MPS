@@ -7,9 +7,9 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class CreateAntiquotation_Intention extends BaseIntention implements Intention {
@@ -42,16 +42,13 @@ public class CreateAntiquotation_Intention extends BaseIntention implements Inte
       return;
     }
     if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.Antiquotation")) {
-      SNode attributedNode = SNodeOperations.getParent((SNodeOperations.cast(contextNode, "jetbrains.mps.lang.quotation.structure.Antiquotation")));
-      attributedNode.setAttribute(null);
+      AttributeOperations.setAttribute(SNodeOperations.getParent(contextNode), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.Antiquotation")), null);
       return;
     }
-    SModel model = SNodeOperations.getModel(contextNode);
-    if (SLinkOperations.getTarget(contextNode, AttributesRolesUtil.childRoleFromAttributeRole("antiquotation"), true) != null) {
-      contextNode.setAttribute(null);
+    if (AttributeOperations.getAttribute(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.Antiquotation"))) != null) {
+      AttributeOperations.setAttribute(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.Antiquotation")), null);
     } else {
-      SNode antiquotation = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.Antiquotation", null);
-      contextNode.setAttribute(antiquotation);
+      SNode antiquotation = SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.Antiquotation")), "jetbrains.mps.lang.quotation.structure.Antiquotation");
       editorContext.selectWRTFocusPolicy(antiquotation);
     }
   }

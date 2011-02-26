@@ -12,6 +12,7 @@
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" version="-1" />
+  <languageAspect modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <maxImportIndex value="6" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="2" modelUID="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" version="-1" />
@@ -96,7 +97,7 @@
                                 <link role="baseMethodDeclaration:3" targetNodeId="3.~ModelGenerationStatusManager.getInstance():jetbrains.mps.generator.ModelGenerationStatusManager" resolveInfo="getInstance" />
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3608835296802635803">
-                                <link role="baseMethodDeclaration:3" targetNodeId="3.~ModelGenerationStatusManager.generationRequired(jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.smodel.IOperationContext,boolean,boolean):boolean" resolveInfo="generationRequired" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="3.~ModelGenerationStatusManager.generationRequired(jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.smodel.IOperationContext):boolean" resolveInfo="generationRequired" />
                                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3608835296802635804">
                                   <link role="variableDeclaration:3" targetNodeId="3608835296802635810" resolveInfo="md" />
                                 </node>
@@ -105,12 +106,6 @@
                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="3608835296802635807">
                                     <link role="fieldDeclaration:3" targetNodeId="3608835296802635845" resolveInfo="context" />
                                   </node>
-                                </node>
-                                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3608835296802635808">
-                                  <property name="value:3" value="false" />
-                                </node>
-                                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3608835296802635809">
-                                  <property name="value:3" value="true" />
                                 </node>
                               </node>
                             </node>
@@ -548,6 +543,7 @@
       <link role="classifier:3" targetNodeId="2.6168415856807657256" resolveInfo="IResource" />
     </node>
   </node>
+  <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration:2" id="695262645445904871">
     <property name="name:2" value="FResource" />
     <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="6913581993695011141">
@@ -560,7 +556,9 @@
       <property name="name:2" value="contents" />
       <node role="type:2" type="jetbrains.mps.baseLanguage.collections.structure.MapType:7" id="695262645445911153">
         <node role="keyType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="695262645445911156" />
-        <node role="valueType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="695262645445911157" />
+        <node role="valueType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4145682539058037685">
+          <link role="classifier:3" targetNodeId="2v.~Object" resolveInfo="Object" />
+        </node>
       </node>
     </node>
     <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="6161320994961434005">

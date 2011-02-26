@@ -20,109 +20,109 @@
   <unitInfo fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.textGen.dataFlow.LanguageTextGenDeclaration_DataFlow" />
   <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.textGen.dataFlow.DFABuilders" />
   <root nodeId="1234274822179">
-    <nodeInfo nodeId="1234274829010" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OperationDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="56" />
-    <nodeInfo nodeId="1234274970567" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OperationDeclaration_DataFlow.java" startLine="16" startPosition="56" endLine="17" endPosition="101" />
+    <nodeInfo nodeId="1234274829010" fileName="OperationDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234274970567" fileName="OperationDeclaration_DataFlow.java" startLine="16" startPosition="56" endLine="17" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1234274822181" fileName="OperationDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="101" />
   </root>
   <root nodeId="1234274918427">
-    <nodeInfo nodeId="1234274923805" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OperationCall_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
-    <nodeInfo nodeId="1234275078433" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="OperationCall_DataFlow.java" startLine="17" startPosition="95" endLine="18" endPosition="53" />
-    <nodeInfo nodeId="1234275054014" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OperationCall_DataFlow.java" startLine="16" startPosition="101" endLine="19" endPosition="5" />
+    <nodeInfo nodeId="1234274923805" fileName="OperationCall_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234275078433" fileName="OperationCall_DataFlow.java" startLine="17" startPosition="95" endLine="18" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234275054014" fileName="OperationCall_DataFlow.java" startLine="16" startPosition="101" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="1234275054015" fileName="OperationCall_DataFlow.java" startLine="17" startPosition="95" endLine="18" endPosition="53" />
-    <scopeInfo nodeId="1234275054014" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OperationCall_DataFlow.java" startLine="16" startPosition="101" endLine="19" endPosition="5">
+    <scopeInfo nodeId="1234275054014" fileName="OperationCall_DataFlow.java" startLine="16" startPosition="101" endLine="19" endPosition="5">
       <varInfo nodeId="1234275054018" varName="parameter" />
     </scopeInfo>
     <scopeInfo nodeId="1234274918429" fileName="OperationCall_DataFlow.java" startLine="15" startPosition="102" endLine="19" endPosition="5" />
   </root>
   <root nodeId="1234275154402">
-    <nodeInfo nodeId="1237483541335" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptTextGenDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="56" />
-    <nodeInfo nodeId="1237483501065" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptTextGenDeclaration_DataFlow.java" startLine="16" startPosition="56" endLine="17" endPosition="111" />
-    <nodeInfo nodeId="1234275230463" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptTextGenDeclaration_DataFlow.java" startLine="17" startPosition="111" endLine="18" endPosition="109" />
+    <nodeInfo nodeId="1237483541335" fileName="ConceptTextGenDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237483501065" fileName="ConceptTextGenDeclaration_DataFlow.java" startLine="16" startPosition="56" endLine="17" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1234275230463" fileName="ConceptTextGenDeclaration_DataFlow.java" startLine="17" startPosition="111" endLine="18" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1234275154404" fileName="ConceptTextGenDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="109" />
   </root>
   <root nodeId="1237297313040">
-    <nodeInfo nodeId="1237297315749" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="WithIndentOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
+    <nodeInfo nodeId="1237297315749" fileName="WithIndentOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1237297313042" fileName="WithIndentOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
   </root>
   <root nodeId="1237297500008">
-    <nodeInfo nodeId="1237297502590" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UtilityMethodCall_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
-    <nodeInfo nodeId="1237297520746" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UtilityMethodCall_DataFlow.java" startLine="17" startPosition="89" endLine="18" endPosition="47" />
-    <nodeInfo nodeId="1237297509259" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="UtilityMethodCall_DataFlow.java" startLine="16" startPosition="101" endLine="19" endPosition="5" />
+    <nodeInfo nodeId="1237297502590" fileName="UtilityMethodCall_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237297520746" fileName="UtilityMethodCall_DataFlow.java" startLine="17" startPosition="89" endLine="18" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237297509259" fileName="UtilityMethodCall_DataFlow.java" startLine="16" startPosition="101" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="1237297509260" fileName="UtilityMethodCall_DataFlow.java" startLine="17" startPosition="89" endLine="18" endPosition="47" />
-    <scopeInfo nodeId="1237297509259" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="UtilityMethodCall_DataFlow.java" startLine="16" startPosition="101" endLine="19" endPosition="5">
+    <scopeInfo nodeId="1237297509259" fileName="UtilityMethodCall_DataFlow.java" startLine="16" startPosition="101" endLine="19" endPosition="5">
       <varInfo nodeId="1237297509263" varName="arg" />
     </scopeInfo>
     <scopeInfo nodeId="1237297500010" fileName="UtilityMethodCall_DataFlow.java" startLine="15" startPosition="102" endLine="19" endPosition="5" />
   </root>
   <root nodeId="1237297544949">
-    <nodeInfo nodeId="1237297545890" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UtilityMethodDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="56" />
-    <nodeInfo nodeId="1237297545892" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UtilityMethodDeclaration_DataFlow.java" startLine="16" startPosition="56" endLine="17" endPosition="101" />
+    <nodeInfo nodeId="1237297545890" fileName="UtilityMethodDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237297545892" fileName="UtilityMethodDeclaration_DataFlow.java" startLine="16" startPosition="56" endLine="17" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1237297544951" fileName="UtilityMethodDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="101" />
   </root>
   <root nodeId="1237483202466">
-    <nodeInfo nodeId="1237483226571" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FoundErrorOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
+    <nodeInfo nodeId="1237483226571" fileName="FoundErrorOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1237483202468" fileName="FoundErrorOperation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
   </root>
   <root nodeId="1237483235720">
-    <nodeInfo nodeId="1237483294961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AppendOperation_DataFlow.java" startLine="16" startPosition="85" endLine="17" endPosition="48" />
-    <nodeInfo nodeId="1237483281632" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AppendOperation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
+    <nodeInfo nodeId="1237483294961" fileName="AppendOperation_DataFlow.java" startLine="16" startPosition="85" endLine="17" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237483281632" fileName="AppendOperation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="1237483281636" fileName="AppendOperation_DataFlow.java" startLine="16" startPosition="85" endLine="17" endPosition="48" />
     <scopeInfo nodeId="1237483235722" fileName="AppendOperation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
-    <scopeInfo nodeId="1237483281632" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AppendOperation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
+    <scopeInfo nodeId="1237483281632" fileName="AppendOperation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="1237483281634" varName="part" />
     </scopeInfo>
   </root>
   <root nodeId="1237483307729">
-    <nodeInfo nodeId="1237483325021" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CollectionAppendPart_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
+    <nodeInfo nodeId="1237483325021" fileName="CollectionAppendPart_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1237483307731" fileName="CollectionAppendPart_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="101" />
   </root>
   <root nodeId="1237483338873">
-    <nodeInfo nodeId="1237483364618" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConstantStringAppendPart_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" />
+    <nodeInfo nodeId="1237483364618" fileName="ConstantStringAppendPart_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1237483338875" fileName="ConstantStringAppendPart_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" />
   </root>
   <root nodeId="1237483369901">
-    <nodeInfo nodeId="1237483373622" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InfoAppendPart_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="102" />
+    <nodeInfo nodeId="1237483373622" fileName="InfoAppendPart_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1237483369903" fileName="InfoAppendPart_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="102" />
   </root>
   <root nodeId="1237483382474">
-    <nodeInfo nodeId="1237483384649" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NewLineAppendPart_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" />
+    <nodeInfo nodeId="1237483384649" fileName="NewLineAppendPart_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1237483382476" fileName="NewLineAppendPart_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" />
   </root>
   <root nodeId="1237483388947">
-    <nodeInfo nodeId="1237483391622" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NodeAppendPart_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="102" />
+    <nodeInfo nodeId="1237483391622" fileName="NodeAppendPart_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1237483388949" fileName="NodeAppendPart_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="102" />
   </root>
   <root nodeId="1237483407146">
-    <nodeInfo nodeId="1237483409711" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DecreaseDepthOperation_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" />
+    <nodeInfo nodeId="1237483409711" fileName="DecreaseDepthOperation_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1237483407148" fileName="DecreaseDepthOperation_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" />
   </root>
   <root nodeId="1237483413134">
-    <nodeInfo nodeId="1237483415840" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IncreaseDepthOperation_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" />
+    <nodeInfo nodeId="1237483415840" fileName="IncreaseDepthOperation_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1237483413136" fileName="IncreaseDepthOperation_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" />
   </root>
   <root nodeId="1237483419497">
-    <nodeInfo nodeId="1237483421750" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IndentBufferOperation_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" />
+    <nodeInfo nodeId="1237483421750" fileName="IndentBufferOperation_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1237483419499" fileName="IndentBufferOperation_DataFlow.java" startLine="13" startPosition="102" endLine="14" endPosition="36" />
   </root>
   <root nodeId="1237483518260">
-    <nodeInfo nodeId="1237483551027" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="56" />
-    <nodeInfo nodeId="1237483520232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="16" startPosition="56" endLine="17" endPosition="104" />
-    <nodeInfo nodeId="1237483601309" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="18" startPosition="96" endLine="19" endPosition="55" />
-    <nodeInfo nodeId="1237483607703" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="21" startPosition="90" endLine="22" endPosition="48" />
-    <nodeInfo nodeId="1237483576417" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="17" startPosition="104" endLine="20" endPosition="5" />
-    <nodeInfo nodeId="1237483564843" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5" />
+    <nodeInfo nodeId="1237483551027" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237483520232" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="16" startPosition="56" endLine="17" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237483601309" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="18" startPosition="96" endLine="19" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237483607703" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="21" startPosition="90" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237483576417" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="17" startPosition="104" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1237483564843" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="1237483576418" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="18" startPosition="96" endLine="19" endPosition="55" />
     <scopeInfo nodeId="1237483564844" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="21" startPosition="90" endLine="22" endPosition="48" />
-    <scopeInfo nodeId="1237483576417" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="17" startPosition="104" endLine="20" endPosition="5">
+    <scopeInfo nodeId="1237483576417" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="17" startPosition="104" endLine="20" endPosition="5">
       <varInfo nodeId="1237483576421" varName="declaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1237483564843" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5">
+    <scopeInfo nodeId="1237483564843" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="20" startPosition="5" endLine="23" endPosition="5">
       <varInfo nodeId="1237483564847" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1237483518262" fileName="LanguageTextGenDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="23" endPosition="5" />
   </root>
   <root nodeId="6911933836258446116">
-    <nodeInfo nodeId="6911933836258446119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReferenceAppendPart_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" />
+    <nodeInfo nodeId="6911933836258446119" fileName="ReferenceAppendPart_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="6911933836258446118" fileName="ReferenceAppendPart_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" />
   </root>
 </debugInfo>

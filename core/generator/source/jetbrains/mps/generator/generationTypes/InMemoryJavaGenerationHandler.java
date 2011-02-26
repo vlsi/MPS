@@ -117,9 +117,14 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       TextGenerationResult genResult = TextGenerationUtil.generateText(context, root);
       wereErrors |= genResult.hasErrors();
       String key = getKey(outputModel.getSModelReference(), root);
-      mySources.put(key, genResult.getText());
-      if (isJavaSource(outputNode)) {
-        myJavaSources.add(key);
+      Object result = genResult.getResult();
+      if(result instanceof String) {
+        mySources.put(key, (String) result);
+        if (isJavaSource(outputNode)) {
+          myJavaSources.add(key);
+        }
+      } else {
+        // do we need binary files?
       }
     }
 

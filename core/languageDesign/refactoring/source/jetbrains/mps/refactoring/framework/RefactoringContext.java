@@ -18,6 +18,7 @@ package jetbrains.mps.refactoring.framework;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
@@ -385,7 +386,7 @@ public class RefactoringContext {
               }
             }
           }
-          for (SNode linkAttribute : node.getLinkAttributesForLinkRole(oldRole)) {
+          for (SNode linkAttribute : AttributeOperations.getLinkAttributeForLinkRole(node, oldRole)) {
             if (delete) {
               linkAttribute.delete();
             } else {
@@ -422,7 +423,7 @@ public class RefactoringContext {
           } else {
             node.setProperty(oldName, null, false);
           }
-          for (SNode propertyAttribute : node.getPropertyAttributesForPropertyName(oldName)) {
+          for (SNode propertyAttribute : AttributeOperations.getPropertyAttributeForPropertyName(node, oldName)) {
             if (delete) {
               propertyAttribute.delete();
             } else {

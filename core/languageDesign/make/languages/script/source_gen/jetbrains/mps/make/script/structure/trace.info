@@ -16,17 +16,17 @@
   <unitInfo fileName="ReportFeedbackStatement.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.script.structure.ReportFeedbackStatement" />
   <unitInfo fileName="Feedback_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.script.structure.Feedback_PropertySupport" />
   <unitInfo fileName="Result_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.script.structure.Result_PropertySupport" />
-  <unitInfo fileName="ExpectedInput.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.make.script.structure.ExpectedInput" />
   <unitInfo fileName="AdvanceWorkStatement.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.make.script.structure.AdvanceWorkStatement" />
   <unitInfo fileName="BeginWorkStatement.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.make.script.structure.BeginWorkStatement" />
   <unitInfo fileName="RelayQueryExpression.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.make.script.structure.RelayQueryExpression" />
   <unitInfo fileName="Result.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.make.script.structure.Result" />
-  <unitInfo fileName="OptionType.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.make.script.structure.OptionType" />
   <unitInfo fileName="Feedback.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.make.script.structure.Feedback" />
   <unitInfo fileName="JobDeclaration.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.make.script.structure.JobDeclaration" />
-  <unitInfo fileName="Option.java" startLine="12" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.make.script.structure.Option" />
-  <unitInfo fileName="QueryParameterDeclaration.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.make.script.structure.QueryParameterDeclaration" />
-  <unitInfo fileName="QueryDefinition.java" startLine="13" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.make.script.structure.QueryDefinition" />
-  <unitInfo fileName="ExpectedOption.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.make.script.structure.ExpectedOption" />
+  <unitInfo fileName="ExpectedInput.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.make.script.structure.ExpectedInput" />
+  <unitInfo fileName="OptionType.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.make.script.structure.OptionType" />
+  <unitInfo fileName="Option.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.make.script.structure.Option" />
+  <unitInfo fileName="QueryParameterDeclaration.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.make.script.structure.QueryParameterDeclaration" />
+  <unitInfo fileName="QueryDefinition.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.make.script.structure.QueryDefinition" />
+  <unitInfo fileName="ExpectedOption.java" startLine="16" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.make.script.structure.ExpectedOption" />
 </debugInfo>
 

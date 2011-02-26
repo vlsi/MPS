@@ -19,6 +19,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.actions.behavior.RemoveSTByConditionPart_Behavior;
 import jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActionsBuilder_Behavior;
 import jetbrains.mps.lang.actions.structure.*;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.CellSide;
@@ -39,7 +40,7 @@ public class SideTransformHintSubstituteActionsHelper {
 
   public SideTransformHintSubstituteActionsHelper(SNode sourceNode, CellSide side, String transformTags, IOperationContext context) {
     myContext = context;
-    while (sourceNode.isAttribute()) {
+    while (AttributeOperations.isAttribute(sourceNode)) {
       sourceNode = sourceNode.getParent();
     }
     mySourceNode = sourceNode;

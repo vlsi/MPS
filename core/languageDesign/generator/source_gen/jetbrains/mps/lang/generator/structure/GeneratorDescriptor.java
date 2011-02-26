@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class GeneratorDescriptor extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String GENERATE = "generate";
   public static final String REQUIRES = "requires";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public GeneratorDescriptor(SNode node) {
     super(node);
@@ -82,6 +84,26 @@ public class GeneratorDescriptor extends BaseConcept implements INamedConcept {
 
   public void insertRequires(GeneratorParameterReference prev, GeneratorParameterReference node) {
     this.insertChild(prev, GeneratorDescriptor.REQUIRES, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(GeneratorDescriptor._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, GeneratorDescriptor._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, GeneratorDescriptor._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(GeneratorDescriptor._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, GeneratorDescriptor._$ATTRIBUTE, node);
   }
 
   public static GeneratorDescriptor newInstance(SModel sm, boolean init) {

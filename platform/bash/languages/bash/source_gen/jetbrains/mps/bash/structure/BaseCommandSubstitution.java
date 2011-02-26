@@ -4,6 +4,9 @@ package jetbrains.mps.bash.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class BaseCommandSubstitution extends BaseConcept implements IGeneralized
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String COMMAND = "command";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BaseCommandSubstitution(SNode node) {
     super(node);
@@ -51,6 +55,26 @@ public class BaseCommandSubstitution extends BaseConcept implements IGeneralized
 
   public void setCommand(CommandList node) {
     super.setChild(BaseCommandSubstitution.COMMAND, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(BaseCommandSubstitution._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BaseCommandSubstitution._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BaseCommandSubstitution._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(BaseCommandSubstitution._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BaseCommandSubstitution._$ATTRIBUTE, node);
   }
 
   public static BaseCommandSubstitution newInstance(SModel sm, boolean init) {

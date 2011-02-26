@@ -8,8 +8,8 @@
   <unitInfo fileName="CustomConstructorParameterReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference" />
   <unitInfo fileName="CustomArgumentClause.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause" />
   <unitInfo fileName="CustomConstructorUsage.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage" />
-  <unitInfo fileName="CustomConstructorParameter.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter" />
-  <unitInfo fileName="CustomConstructorContainer.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer" />
-  <unitInfo fileName="CustomConstructor.java" startLine="13" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor" />
+  <unitInfo fileName="CustomConstructorParameter.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter" />
+  <unitInfo fileName="CustomConstructorContainer.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer" />
+  <unitInfo fileName="CustomConstructor.java" startLine="16" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor" />
 </debugInfo>
 

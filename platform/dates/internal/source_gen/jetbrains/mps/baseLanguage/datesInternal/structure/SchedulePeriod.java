@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.datesInternal.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +24,7 @@ public class SchedulePeriod extends BaseConcept implements INamedConcept {
   public static final String DAY_OF_WEEK = "dayOfWeek";
   public static final String DAY_OF_MONTH = "dayOfMonth";
   public static final String MONTH = "month";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SchedulePeriod(SNode node) {
     super(node);
@@ -104,6 +108,26 @@ public class SchedulePeriod extends BaseConcept implements INamedConcept {
 
   public void setMonth(boolean value) {
     this.setBooleanProperty(SchedulePeriod.MONTH, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(SchedulePeriod._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SchedulePeriod._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SchedulePeriod._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(SchedulePeriod._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SchedulePeriod._$ATTRIBUTE, node);
   }
 
   public static SchedulePeriod newInstance(SModel sm, boolean init) {

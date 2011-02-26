@@ -20,6 +20,7 @@ public class TaskCall extends AbstractCall implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DECLARATION = "declaration";
   public static final String ATRIBUTES = "atributes";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public TaskCall(SNode node) {
     super(node);
@@ -91,6 +92,26 @@ public class TaskCall extends AbstractCall implements INamedConcept {
 
   public void insertAtributes(Attribute prev, Attribute node) {
     this.insertChild(prev, TaskCall.ATRIBUTES, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(TaskCall._$ATTRIBUTE);
+  }
+
+  public Iterator<jetbrains.mps.lang.core.structure.Attribute> _$attributes() {
+    return this.children(jetbrains.mps.lang.core.structure.Attribute.class, TaskCall._$ATTRIBUTE);
+  }
+
+  public List<jetbrains.mps.lang.core.structure.Attribute> get_$attributes() {
+    return this.getChildren(jetbrains.mps.lang.core.structure.Attribute.class, TaskCall._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(jetbrains.mps.lang.core.structure.Attribute node) {
+    this.addChild(TaskCall._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(jetbrains.mps.lang.core.structure.Attribute prev, jetbrains.mps.lang.core.structure.Attribute node) {
+    this.insertChild(prev, TaskCall._$ATTRIBUTE, node);
   }
 
   public static TaskCall newInstance(SModel sm, boolean init) {

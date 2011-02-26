@@ -27,28 +27,28 @@
   <unitInfo fileName="StringLiteralRegexp_Behavior.java" startLine="12" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp_Behavior" />
   <unitInfo fileName="Regexp_Behavior.java" startLine="14" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior" />
   <root nodeId="1213877429450">
-    <nodeInfo nodeId="1223362844538" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Regexp_Behavior.java" startLine="24" startPosition="130" endLine="25" endPosition="179" />
-    <nodeInfo nodeId="1223362855008" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Regexp_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="20" />
-    <nodeInfo nodeId="1222864750014" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Regexp_Behavior.java" startLine="30" startPosition="71" endLine="31" endPosition="149" />
-    <nodeInfo nodeId="1222432449456" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Regexp_Behavior.java" startLine="34" startPosition="90" endLine="35" endPosition="67" />
-    <nodeInfo nodeId="1222433811275" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Regexp_Behavior.java" startLine="38" startPosition="73" endLine="39" endPosition="27" />
-    <nodeInfo nodeId="1222857399071" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Regexp_Behavior.java" startLine="42" startPosition="92" endLine="43" endPosition="31" />
-    <nodeInfo nodeId="1222857244355" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Regexp_Behavior.java" startLine="46" startPosition="74" endLine="47" endPosition="34" />
-    <nodeInfo nodeId="1353467374624660345" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Regexp_Behavior.java" startLine="51" startPosition="45" endLine="52" endPosition="15" />
-    <nodeInfo nodeId="1353467374624660238" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Regexp_Behavior.java" startLine="53" startPosition="5" endLine="54" endPosition="43" />
-    <nodeInfo nodeId="1353467374624660281" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Regexp_Behavior.java" startLine="55" startPosition="42" endLine="56" endPosition="27" />
-    <nodeInfo nodeId="8330008649152995803" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Regexp_Behavior.java" startLine="57" startPosition="34" endLine="58" endPosition="24" />
-    <nodeInfo nodeId="1353467374624660320" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Regexp_Behavior.java" startLine="59" startPosition="7" endLine="60" endPosition="19" />
-    <nodeInfo nodeId="1353467374624660247" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Regexp_Behavior.java" startLine="61" startPosition="5" endLine="62" endPosition="25" />
-    <nodeInfo nodeId="1353467374623880344" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Regexp_Behavior.java" startLine="65" startPosition="85" endLine="66" endPosition="17" />
-    <nodeInfo nodeId="4759120547781297404" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Regexp_Behavior.java" startLine="71" startPosition="232" endLine="72" endPosition="21" />
-    <nodeInfo nodeId="4759120547781297306" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Regexp_Behavior.java" startLine="74" startPosition="5" endLine="75" endPosition="16" />
-    <nodeInfo nodeId="1223362833710" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Regexp_Behavior.java" startLine="23" startPosition="76" endLine="26" endPosition="5" />
-    <nodeInfo nodeId="1353467374624660330" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Regexp_Behavior.java" startLine="50" startPosition="82" endLine="53" endPosition="5" />
-    <nodeInfo nodeId="8330008649152995755" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Regexp_Behavior.java" startLine="56" startPosition="27" endLine="59" endPosition="7" />
-    <nodeInfo nodeId="4759120547781297365" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Regexp_Behavior.java" startLine="70" startPosition="82" endLine="73" endPosition="7" />
-    <nodeInfo nodeId="4759120547781297356" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Regexp_Behavior.java" startLine="69" startPosition="77" endLine="74" endPosition="5" />
-    <nodeInfo nodeId="1353467374624660259" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="Regexp_Behavior.java" startLine="54" startPosition="43" endLine="61" endPosition="5" />
+    <nodeInfo nodeId="1223362844538" fileName="Regexp_Behavior.java" startLine="24" startPosition="130" endLine="25" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1223362855008" fileName="Regexp_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222864750014" fileName="Regexp_Behavior.java" startLine="30" startPosition="71" endLine="31" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222432449456" fileName="Regexp_Behavior.java" startLine="34" startPosition="90" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222433811275" fileName="Regexp_Behavior.java" startLine="38" startPosition="73" endLine="39" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222857399071" fileName="Regexp_Behavior.java" startLine="42" startPosition="92" endLine="43" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222857244355" fileName="Regexp_Behavior.java" startLine="46" startPosition="74" endLine="47" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1353467374624660345" fileName="Regexp_Behavior.java" startLine="51" startPosition="45" endLine="52" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1353467374624660238" fileName="Regexp_Behavior.java" startLine="53" startPosition="5" endLine="54" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1353467374624660281" fileName="Regexp_Behavior.java" startLine="55" startPosition="42" endLine="56" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8330008649152995803" fileName="Regexp_Behavior.java" startLine="57" startPosition="34" endLine="58" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1353467374624660320" fileName="Regexp_Behavior.java" startLine="59" startPosition="7" endLine="60" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1353467374624660247" fileName="Regexp_Behavior.java" startLine="61" startPosition="5" endLine="62" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1353467374623880344" fileName="Regexp_Behavior.java" startLine="65" startPosition="85" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4759120547781297404" fileName="Regexp_Behavior.java" startLine="71" startPosition="232" endLine="72" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4759120547781297306" fileName="Regexp_Behavior.java" startLine="74" startPosition="5" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1223362833710" fileName="Regexp_Behavior.java" startLine="23" startPosition="76" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1353467374624660330" fileName="Regexp_Behavior.java" startLine="50" startPosition="82" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8330008649152995755" fileName="Regexp_Behavior.java" startLine="56" startPosition="27" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4759120547781297365" fileName="Regexp_Behavior.java" startLine="70" startPosition="82" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4759120547781297356" fileName="Regexp_Behavior.java" startLine="69" startPosition="77" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1353467374624660259" fileName="Regexp_Behavior.java" startLine="54" startPosition="43" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <scopeInfo nodeId="1213877429460" fileName="Regexp_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
     <scopeInfo nodeId="1223362833712" fileName="Regexp_Behavior.java" startLine="24" startPosition="130" endLine="25" endPosition="179" />
     <scopeInfo nodeId="1213877429453" fileName="Regexp_Behavior.java" startLine="30" startPosition="71" endLine="31" endPosition="149" />
@@ -65,9 +65,9 @@
     <scopeInfo nodeId="1353467374624660260" fileName="Regexp_Behavior.java" startLine="55" startPosition="42" endLine="60" endPosition="19">
       <varInfo nodeId="1353467374624660282" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="4759120547781297356" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Regexp_Behavior.java" startLine="69" startPosition="77" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="4759120547781297356" fileName="Regexp_Behavior.java" startLine="69" startPosition="77" endLine="74" endPosition="5" />
     <scopeInfo nodeId="4759120547781297304" fileName="Regexp_Behavior.java" startLine="69" startPosition="77" endLine="75" endPosition="16" />
-    <scopeInfo nodeId="1353467374624660259" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="Regexp_Behavior.java" startLine="54" startPosition="43" endLine="61" endPosition="5">
+    <scopeInfo nodeId="1353467374624660259" fileName="Regexp_Behavior.java" startLine="54" startPosition="43" endLine="61" endPosition="5">
       <varInfo nodeId="1353467374624660262" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1353467374624660234" fileName="Regexp_Behavior.java" startLine="50" startPosition="82" endLine="62" endPosition="25">
@@ -75,12 +75,12 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877475221">
-    <nodeInfo nodeId="1222856845886" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MatchParensRegexp_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="53" />
-    <nodeInfo nodeId="1222435316154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MatchParensRegexp_Behavior.java" startLine="20" startPosition="53" endLine="21" endPosition="127" />
-    <nodeInfo nodeId="1223362558349" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MatchParensRegexp_Behavior.java" startLine="24" startPosition="65" endLine="25" endPosition="28" />
-    <nodeInfo nodeId="1223362558375" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MatchParensRegexp_Behavior.java" startLine="25" startPosition="28" endLine="26" endPosition="52" />
-    <nodeInfo nodeId="1223362558381" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MatchParensRegexp_Behavior.java" startLine="26" startPosition="52" endLine="27" endPosition="125" />
-    <nodeInfo nodeId="1223362558391" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MatchParensRegexp_Behavior.java" startLine="27" startPosition="125" endLine="28" endPosition="65" />
+    <nodeInfo nodeId="1222856845886" fileName="MatchParensRegexp_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222435316154" fileName="MatchParensRegexp_Behavior.java" startLine="20" startPosition="53" endLine="21" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1223362558349" fileName="MatchParensRegexp_Behavior.java" startLine="24" startPosition="65" endLine="25" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223362558375" fileName="MatchParensRegexp_Behavior.java" startLine="25" startPosition="28" endLine="26" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1223362558381" fileName="MatchParensRegexp_Behavior.java" startLine="26" startPosition="52" endLine="27" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1223362558391" fileName="MatchParensRegexp_Behavior.java" startLine="27" startPosition="125" endLine="28" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1213877475255" fileName="MatchParensRegexp_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="1222435297324" fileName="MatchParensRegexp_Behavior.java" startLine="19" startPosition="90" endLine="21" endPosition="127" />
     <scopeInfo nodeId="1223361984348" fileName="MatchParensRegexp_Behavior.java" startLine="24" startPosition="65" endLine="28" endPosition="65">
@@ -89,53 +89,53 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877492182">
-    <nodeInfo nodeId="1222610383089" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MatchVariableReferenceRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="113" />
+    <nodeInfo nodeId="1222610383089" fileName="MatchVariableReferenceRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1213877492184" fileName="MatchVariableReferenceRegexp_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1222610343968" fileName="MatchVariableReferenceRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="113" />
   </root>
   <root nodeId="1222431791866">
-    <nodeInfo nodeId="1222433006828" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="133" />
-    <nodeInfo nodeId="4759120547781297328" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="24" startPosition="79" endLine="25" endPosition="19" />
-    <nodeInfo nodeId="4759120547781297335" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="141" />
-    <nodeInfo nodeId="8330008649152995376" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="30" startPosition="84" endLine="31" endPosition="43" />
-    <nodeInfo nodeId="8330008649152995383" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="32" startPosition="42" endLine="33" endPosition="27" />
-    <nodeInfo nodeId="8330008649152995399" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="34" startPosition="22" endLine="35" endPosition="21" />
-    <nodeInfo nodeId="8330008649152995406" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="36" startPosition="32" endLine="37" endPosition="22" />
-    <nodeInfo nodeId="8330008649152995414" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="38" startPosition="9" endLine="39" endPosition="24" />
-    <nodeInfo nodeId="8330008649152995423" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="40" startPosition="23" endLine="41" endPosition="23" />
-    <nodeInfo nodeId="8330008649152995432" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="43" startPosition="36" endLine="44" endPosition="26" />
-    <nodeInfo nodeId="8330008649152995440" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="45" startPosition="13" endLine="46" endPosition="28" />
-    <nodeInfo nodeId="8330008649152995449" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="47" startPosition="98" endLine="48" endPosition="26" />
-    <nodeInfo nodeId="8330008649152995456" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="49" startPosition="13" endLine="50" endPosition="25" />
-    <nodeInfo nodeId="8330008649152995474" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="52" startPosition="42" endLine="53" endPosition="23" />
-    <nodeInfo nodeId="8330008649152995483" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="55" startPosition="36" endLine="56" endPosition="26" />
-    <nodeInfo nodeId="8330008649152995491" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="57" startPosition="13" endLine="58" endPosition="28" />
-    <nodeInfo nodeId="8330008649152995500" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="59" startPosition="42" endLine="60" endPosition="26" />
-    <nodeInfo nodeId="8330008649152995505" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="61" startPosition="13" endLine="62" endPosition="25" />
-    <nodeInfo nodeId="8330008649152995522" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="64" startPosition="116" endLine="65" endPosition="23" />
-    <nodeInfo nodeId="8330008649152995560" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="66" startPosition="16" endLine="67" endPosition="22" />
-    <nodeInfo nodeId="8330008649152995396" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="69" startPosition="26" endLine="70" endPosition="20" />
-    <nodeInfo nodeId="8330008649152995572" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="72" startPosition="167" endLine="73" endPosition="26" />
-    <nodeInfo nodeId="8330008649152995580" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="74" startPosition="9" endLine="75" endPosition="21" />
-    <nodeInfo nodeId="8330008649152995587" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="76" startPosition="14" endLine="77" endPosition="25" />
-    <nodeInfo nodeId="8330008649152995592" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="77" startPosition="25" endLine="78" endPosition="45" />
-    <nodeInfo nodeId="8330008649152995598" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="78" startPosition="45" endLine="79" endPosition="56" />
-    <nodeInfo nodeId="8330008649152995620" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="81" startPosition="5" endLine="82" endPosition="25" />
-    <nodeInfo nodeId="8330008649152995341" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="85" startPosition="84" endLine="86" endPosition="84" />
-    <nodeInfo nodeId="8330008649152995558" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="66" startPosition="14" endLine="68" endPosition="9" />
-    <nodeInfo nodeId="4759120547781297326" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="23" startPosition="77" endLine="26" endPosition="5" />
-    <nodeInfo nodeId="8330008649152995404" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="35" startPosition="21" endLine="38" endPosition="9" />
-    <nodeInfo nodeId="8330008649152995430" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="42" startPosition="39" endLine="45" endPosition="13" />
-    <nodeInfo nodeId="8330008649152995447" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="46" startPosition="28" endLine="49" endPosition="13" />
-    <nodeInfo nodeId="8330008649152995481" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="54" startPosition="39" endLine="57" endPosition="13" />
-    <nodeInfo nodeId="8330008649152995498" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="58" startPosition="28" endLine="61" endPosition="13" />
-    <nodeInfo nodeId="8330008649152995570" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="71" startPosition="27" endLine="74" endPosition="9" />
-    <nodeInfo nodeId="8330008649152995585" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="76" startPosition="12" endLine="80" endPosition="7" />
-    <nodeInfo nodeId="8330008649152995428" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="41" startPosition="23" endLine="51" endPosition="11" />
-    <nodeInfo nodeId="8330008649152995479" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="53" startPosition="23" endLine="63" endPosition="11" />
-    <nodeInfo nodeId="8330008649152995421" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="39" startPosition="24" endLine="68" endPosition="9" />
-    <nodeInfo nodeId="8330008649152995390" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="33" startPosition="27" endLine="80" endPosition="7" />
-    <nodeInfo nodeId="8330008649152995381" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="31" startPosition="43" endLine="81" endPosition="5" />
+    <nodeInfo nodeId="1222433006828" fileName="StringLiteralRegexp_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4759120547781297328" fileName="StringLiteralRegexp_Behavior.java" startLine="24" startPosition="79" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4759120547781297335" fileName="StringLiteralRegexp_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8330008649152995376" fileName="StringLiteralRegexp_Behavior.java" startLine="30" startPosition="84" endLine="31" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8330008649152995383" fileName="StringLiteralRegexp_Behavior.java" startLine="32" startPosition="42" endLine="33" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8330008649152995399" fileName="StringLiteralRegexp_Behavior.java" startLine="34" startPosition="22" endLine="35" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8330008649152995406" fileName="StringLiteralRegexp_Behavior.java" startLine="36" startPosition="32" endLine="37" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8330008649152995414" fileName="StringLiteralRegexp_Behavior.java" startLine="38" startPosition="9" endLine="39" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8330008649152995423" fileName="StringLiteralRegexp_Behavior.java" startLine="40" startPosition="23" endLine="41" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8330008649152995432" fileName="StringLiteralRegexp_Behavior.java" startLine="43" startPosition="36" endLine="44" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8330008649152995440" fileName="StringLiteralRegexp_Behavior.java" startLine="45" startPosition="13" endLine="46" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8330008649152995449" fileName="StringLiteralRegexp_Behavior.java" startLine="47" startPosition="98" endLine="48" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8330008649152995456" fileName="StringLiteralRegexp_Behavior.java" startLine="49" startPosition="13" endLine="50" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8330008649152995474" fileName="StringLiteralRegexp_Behavior.java" startLine="52" startPosition="42" endLine="53" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8330008649152995483" fileName="StringLiteralRegexp_Behavior.java" startLine="55" startPosition="36" endLine="56" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8330008649152995491" fileName="StringLiteralRegexp_Behavior.java" startLine="57" startPosition="13" endLine="58" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8330008649152995500" fileName="StringLiteralRegexp_Behavior.java" startLine="59" startPosition="42" endLine="60" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8330008649152995505" fileName="StringLiteralRegexp_Behavior.java" startLine="61" startPosition="13" endLine="62" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8330008649152995522" fileName="StringLiteralRegexp_Behavior.java" startLine="64" startPosition="116" endLine="65" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8330008649152995560" fileName="StringLiteralRegexp_Behavior.java" startLine="66" startPosition="16" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8330008649152995396" fileName="StringLiteralRegexp_Behavior.java" startLine="69" startPosition="26" endLine="70" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8330008649152995572" fileName="StringLiteralRegexp_Behavior.java" startLine="72" startPosition="167" endLine="73" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8330008649152995580" fileName="StringLiteralRegexp_Behavior.java" startLine="74" startPosition="9" endLine="75" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8330008649152995587" fileName="StringLiteralRegexp_Behavior.java" startLine="76" startPosition="14" endLine="77" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8330008649152995592" fileName="StringLiteralRegexp_Behavior.java" startLine="77" startPosition="25" endLine="78" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8330008649152995598" fileName="StringLiteralRegexp_Behavior.java" startLine="78" startPosition="45" endLine="79" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8330008649152995620" fileName="StringLiteralRegexp_Behavior.java" startLine="81" startPosition="5" endLine="82" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8330008649152995341" fileName="StringLiteralRegexp_Behavior.java" startLine="85" startPosition="84" endLine="86" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8330008649152995558" fileName="StringLiteralRegexp_Behavior.java" startLine="66" startPosition="14" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4759120547781297326" fileName="StringLiteralRegexp_Behavior.java" startLine="23" startPosition="77" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8330008649152995404" fileName="StringLiteralRegexp_Behavior.java" startLine="35" startPosition="21" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8330008649152995430" fileName="StringLiteralRegexp_Behavior.java" startLine="42" startPosition="39" endLine="45" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8330008649152995447" fileName="StringLiteralRegexp_Behavior.java" startLine="46" startPosition="28" endLine="49" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8330008649152995481" fileName="StringLiteralRegexp_Behavior.java" startLine="54" startPosition="39" endLine="57" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8330008649152995498" fileName="StringLiteralRegexp_Behavior.java" startLine="58" startPosition="28" endLine="61" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8330008649152995570" fileName="StringLiteralRegexp_Behavior.java" startLine="71" startPosition="27" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8330008649152995585" fileName="StringLiteralRegexp_Behavior.java" startLine="76" startPosition="12" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8330008649152995428" fileName="StringLiteralRegexp_Behavior.java" startLine="41" startPosition="23" endLine="51" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="8330008649152995479" fileName="StringLiteralRegexp_Behavior.java" startLine="53" startPosition="23" endLine="63" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="8330008649152995421" fileName="StringLiteralRegexp_Behavior.java" startLine="39" startPosition="24" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8330008649152995390" fileName="StringLiteralRegexp_Behavior.java" startLine="33" startPosition="27" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8330008649152995381" fileName="StringLiteralRegexp_Behavior.java" startLine="31" startPosition="43" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <scopeInfo nodeId="1222431791868" fileName="StringLiteralRegexp_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="1222431822201" fileName="StringLiteralRegexp_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="133" />
     <scopeInfo nodeId="4759120547781297327" fileName="StringLiteralRegexp_Behavior.java" startLine="24" startPosition="79" endLine="25" endPosition="19" />
@@ -156,10 +156,10 @@
     <scopeInfo nodeId="8330008649152995569" fileName="StringLiteralRegexp_Behavior.java" startLine="71" startPosition="27" endLine="75" endPosition="21" />
     <scopeInfo nodeId="8330008649152995429" fileName="StringLiteralRegexp_Behavior.java" startLine="42" startPosition="39" endLine="50" endPosition="25" />
     <scopeInfo nodeId="8330008649152995480" fileName="StringLiteralRegexp_Behavior.java" startLine="54" startPosition="39" endLine="62" endPosition="25" />
-    <scopeInfo nodeId="8330008649152995428" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="41" startPosition="23" endLine="51" endPosition="11">
+    <scopeInfo nodeId="8330008649152995428" fileName="StringLiteralRegexp_Behavior.java" startLine="41" startPosition="23" endLine="51" endPosition="11">
       <varInfo nodeId="8330008649152995461" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="8330008649152995479" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="53" startPosition="23" endLine="63" endPosition="11">
+    <scopeInfo nodeId="8330008649152995479" fileName="StringLiteralRegexp_Behavior.java" startLine="53" startPosition="23" endLine="63" endPosition="11">
       <varInfo nodeId="8330008649152995510" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="8330008649152995422" fileName="StringLiteralRegexp_Behavior.java" startLine="40" startPosition="23" endLine="51" endPosition="11" />
@@ -168,7 +168,7 @@
     <scopeInfo nodeId="8330008649152995382" fileName="StringLiteralRegexp_Behavior.java" startLine="32" startPosition="42" endLine="80" endPosition="7">
       <varInfo nodeId="8330008649152995384" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="8330008649152995381" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="StringLiteralRegexp_Behavior.java" startLine="31" startPosition="43" endLine="81" endPosition="5">
+    <scopeInfo nodeId="8330008649152995381" fileName="StringLiteralRegexp_Behavior.java" startLine="31" startPosition="43" endLine="81" endPosition="5">
       <varInfo nodeId="8330008649152995610" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="8330008649152995375" fileName="StringLiteralRegexp_Behavior.java" startLine="30" startPosition="84" endLine="82" endPosition="25">
@@ -176,20 +176,20 @@
     </scopeInfo>
   </root>
   <root nodeId="1222433039738">
-    <nodeInfo nodeId="1222433063059" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnicodeCharacterRegexp_Behavior.java" startLine="17" startPosition="90" endLine="18" endPosition="67" />
+    <nodeInfo nodeId="1222433063059" fileName="UnicodeCharacterRegexp_Behavior.java" startLine="17" startPosition="90" endLine="18" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1222433039740" fileName="UnicodeCharacterRegexp_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="1222433041603" fileName="UnicodeCharacterRegexp_Behavior.java" startLine="17" startPosition="90" endLine="18" endPosition="67" />
   </root>
   <root nodeId="1222433139931">
-    <nodeInfo nodeId="1222433158002" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="PredefinedSymbolClassRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="108" />
+    <nodeInfo nodeId="1222433158002" fileName="PredefinedSymbolClassRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1222433139933" fileName="PredefinedSymbolClassRegexp_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1222433142250" fileName="PredefinedSymbolClassRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="108" />
   </root>
   <root nodeId="1222433930821">
-    <nodeInfo nodeId="8330008649153448487" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OrRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="228" />
-    <nodeInfo nodeId="1353467374623956032" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OrRegexp_Behavior.java" startLine="26" startPosition="85" endLine="27" endPosition="16" />
-    <nodeInfo nodeId="1353467374623956863" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OrRegexp_Behavior.java" startLine="30" startPosition="80" endLine="31" endPosition="134" />
-    <nodeInfo nodeId="1222434808099" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OrRegexp_Behavior.java" startLine="19" startPosition="228" endLine="23" endPosition="6" />
+    <nodeInfo nodeId="8330008649153448487" fileName="OrRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1353467374623956032" fileName="OrRegexp_Behavior.java" startLine="26" startPosition="85" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1353467374623956863" fileName="OrRegexp_Behavior.java" startLine="30" startPosition="80" endLine="31" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222434808099" fileName="OrRegexp_Behavior.java" startLine="19" startPosition="228" endLine="23" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1222433930823" fileName="OrRegexp_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1353467374623956025" fileName="OrRegexp_Behavior.java" startLine="26" startPosition="85" endLine="27" endPosition="16" />
     <scopeInfo nodeId="1353467374623956861" fileName="OrRegexp_Behavior.java" startLine="30" startPosition="80" endLine="31" endPosition="134" />
@@ -198,58 +198,58 @@
     </scopeInfo>
   </root>
   <root nodeId="1222434887346">
-    <nodeInfo nodeId="1222435148313" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ParensRegexp_Behavior.java" startLine="17" startPosition="90" endLine="18" endPosition="163" />
+    <nodeInfo nodeId="1222435148313" fileName="ParensRegexp_Behavior.java" startLine="17" startPosition="90" endLine="18" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1222434887348" fileName="ParensRegexp_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="1222434892306" fileName="ParensRegexp_Behavior.java" startLine="17" startPosition="90" endLine="18" endPosition="163" />
   </root>
   <root nodeId="1222436753891">
-    <nodeInfo nodeId="1222436787296" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SeqRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="218" />
-    <nodeInfo nodeId="1353467374623955989" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SeqRegexp_Behavior.java" startLine="22" startPosition="85" endLine="23" endPosition="16" />
+    <nodeInfo nodeId="1222436787296" fileName="SeqRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1353467374623955989" fileName="SeqRegexp_Behavior.java" startLine="22" startPosition="85" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1222436753893" fileName="SeqRegexp_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1222436755350" fileName="SeqRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="218" />
     <scopeInfo nodeId="1353467374623955982" fileName="SeqRegexp_Behavior.java" startLine="22" startPosition="85" endLine="23" endPosition="16" />
   </root>
   <root nodeId="1222437176020">
-    <nodeInfo nodeId="1222437228567" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="RegexpDeclarationReferenceRegexp_Behavior.java" startLine="17" startPosition="90" endLine="18" endPosition="209" />
+    <nodeInfo nodeId="1222437228567" fileName="RegexpDeclarationReferenceRegexp_Behavior.java" startLine="17" startPosition="90" endLine="18" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1222437176022" fileName="RegexpDeclarationReferenceRegexp_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="1222437178339" fileName="RegexpDeclarationReferenceRegexp_Behavior.java" startLine="17" startPosition="90" endLine="18" endPosition="209" />
   </root>
   <root nodeId="1222437727387">
-    <nodeInfo nodeId="8330008649153449204" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NTimesRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="119" />
-    <nodeInfo nodeId="1222437763293" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NTimesRegexp_Behavior.java" startLine="19" startPosition="119" endLine="23" endPosition="67" />
+    <nodeInfo nodeId="8330008649153449204" fileName="NTimesRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222437763293" fileName="NTimesRegexp_Behavior.java" startLine="19" startPosition="119" endLine="23" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1222437727389" fileName="NTimesRegexp_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1222437729034" fileName="NTimesRegexp_Behavior.java" startLine="18" startPosition="90" endLine="23" endPosition="67">
       <varInfo nodeId="8330008649153449205" varName="s" />
     </scopeInfo>
   </root>
   <root nodeId="1222609599871">
-    <nodeInfo nodeId="8330008649153448568" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AtLeastNTimesRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="119" />
-    <nodeInfo nodeId="1222609647354" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AtLeastNTimesRegexp_Behavior.java" startLine="19" startPosition="119" endLine="23" endPosition="68" />
+    <nodeInfo nodeId="8330008649153448568" fileName="AtLeastNTimesRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222609647354" fileName="AtLeastNTimesRegexp_Behavior.java" startLine="19" startPosition="119" endLine="23" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1222609599873" fileName="AtLeastNTimesRegexp_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1222609601611" fileName="AtLeastNTimesRegexp_Behavior.java" startLine="18" startPosition="90" endLine="23" endPosition="68">
       <varInfo nodeId="8330008649153448569" varName="s" />
     </scopeInfo>
   </root>
   <root nodeId="1222609846769">
-    <nodeInfo nodeId="8330008649153448599" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FromNToMTimesRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="119" />
-    <nodeInfo nodeId="1353467374626527608" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FromNToMTimesRegexp_Behavior.java" startLine="19" startPosition="119" endLine="23" endPosition="121" />
+    <nodeInfo nodeId="8330008649153448599" fileName="FromNToMTimesRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1353467374626527608" fileName="FromNToMTimesRegexp_Behavior.java" startLine="19" startPosition="119" endLine="23" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1222609846771" fileName="FromNToMTimesRegexp_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1353467374626527599" fileName="FromNToMTimesRegexp_Behavior.java" startLine="18" startPosition="90" endLine="23" endPosition="121">
       <varInfo nodeId="8330008649153448600" varName="s" />
     </scopeInfo>
   </root>
   <root nodeId="1222857576752">
-    <nodeInfo nodeId="8173814113624650645" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassRegexp_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="98" />
-    <nodeInfo nodeId="8173814113624650634" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassRegexp_Behavior.java" startLine="23" startPosition="86" endLine="24" endPosition="197" />
-    <nodeInfo nodeId="1222857817731" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SymbolClassRegexp_Behavior.java" startLine="27" startPosition="92" endLine="28" endPosition="47" />
-    <nodeInfo nodeId="8173814113624650664" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassRegexp_Behavior.java" startLine="29" startPosition="30" endLine="30" endPosition="104" />
-    <nodeInfo nodeId="1222860537181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassRegexp_Behavior.java" startLine="31" startPosition="5" endLine="32" endPosition="29" />
-    <nodeInfo nodeId="1222857827442" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SymbolClassRegexp_Behavior.java" startLine="28" startPosition="47" endLine="31" endPosition="5" />
+    <nodeInfo nodeId="8173814113624650645" fileName="SymbolClassRegexp_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173814113624650634" fileName="SymbolClassRegexp_Behavior.java" startLine="23" startPosition="86" endLine="24" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222857817731" fileName="SymbolClassRegexp_Behavior.java" startLine="27" startPosition="92" endLine="28" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8173814113624650664" fileName="SymbolClassRegexp_Behavior.java" startLine="29" startPosition="30" endLine="30" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222860537181" fileName="SymbolClassRegexp_Behavior.java" startLine="31" startPosition="5" endLine="32" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222857827442" fileName="SymbolClassRegexp_Behavior.java" startLine="28" startPosition="47" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="1222857576754" fileName="SymbolClassRegexp_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="1222857578602" fileName="SymbolClassRegexp_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="98" />
     <scopeInfo nodeId="8173814113624650629" fileName="SymbolClassRegexp_Behavior.java" startLine="23" startPosition="86" endLine="24" endPosition="197" />
     <scopeInfo nodeId="1222857827443" fileName="SymbolClassRegexp_Behavior.java" startLine="29" startPosition="30" endLine="30" endPosition="104" />
-    <scopeInfo nodeId="1222857827442" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SymbolClassRegexp_Behavior.java" startLine="28" startPosition="47" endLine="31" endPosition="5">
+    <scopeInfo nodeId="1222857827442" fileName="SymbolClassRegexp_Behavior.java" startLine="28" startPosition="47" endLine="31" endPosition="5">
       <varInfo nodeId="1222857827446" varName="part" />
     </scopeInfo>
     <scopeInfo nodeId="1222857748876" fileName="SymbolClassRegexp_Behavior.java" startLine="27" startPosition="92" endLine="32" endPosition="29">
@@ -257,14 +257,14 @@
     </scopeInfo>
   </root>
   <root nodeId="1222861534672">
-    <nodeInfo nodeId="1222861557760" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LookRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="179" />
+    <nodeInfo nodeId="1222861557760" fileName="LookRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1222861534674" fileName="LookRegexp_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1222861536256" fileName="LookRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="179" />
   </root>
   <root nodeId="1222867682828">
-    <nodeInfo nodeId="8330008649153448539" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnaryRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="119" />
-    <nodeInfo nodeId="1222867684396" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnaryRegexp_Behavior.java" startLine="19" startPosition="119" endLine="23" endPosition="65" />
-    <nodeInfo nodeId="1353467374623956749" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnaryRegexp_Behavior.java" startLine="26" startPosition="80" endLine="30" endPosition="6" />
+    <nodeInfo nodeId="8330008649153448539" fileName="UnaryRegexp_Behavior.java" startLine="18" startPosition="90" endLine="19" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1222867684396" fileName="UnaryRegexp_Behavior.java" startLine="19" startPosition="119" endLine="23" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1353467374623956749" fileName="UnaryRegexp_Behavior.java" startLine="26" startPosition="80" endLine="30" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1222867682830" fileName="UnaryRegexp_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1353467374623956747" fileName="UnaryRegexp_Behavior.java" startLine="26" startPosition="80" endLine="30" endPosition="6" />
     <scopeInfo nodeId="1222867684395" fileName="UnaryRegexp_Behavior.java" startLine="18" startPosition="90" endLine="23" endPosition="65">
@@ -272,15 +272,15 @@
     </scopeInfo>
   </root>
   <root nodeId="3796137614137207004">
-    <nodeInfo nodeId="3796137614137207012" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReplaceRegexpOperation_Behavior.java" startLine="12" startPosition="86" endLine="13" endPosition="43" />
-    <nodeInfo nodeId="4161170987575526839" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplaceRegexpOperation_Behavior.java" startLine="15" startPosition="26" endLine="16" endPosition="132" />
-    <nodeInfo nodeId="3796137614137210642" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReplaceRegexpOperation_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="25" />
-    <nodeInfo nodeId="4161170987575526829" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReplaceRegexpOperation_Behavior.java" startLine="14" startPosition="81" endLine="17" endPosition="7" />
-    <nodeInfo nodeId="3796137614137210650" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ReplaceRegexpOperation_Behavior.java" startLine="13" startPosition="43" endLine="18" endPosition="5" />
+    <nodeInfo nodeId="3796137614137207012" fileName="ReplaceRegexpOperation_Behavior.java" startLine="12" startPosition="86" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4161170987575526839" fileName="ReplaceRegexpOperation_Behavior.java" startLine="15" startPosition="26" endLine="16" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137210642" fileName="ReplaceRegexpOperation_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4161170987575526829" fileName="ReplaceRegexpOperation_Behavior.java" startLine="14" startPosition="81" endLine="17" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3796137614137210650" fileName="ReplaceRegexpOperation_Behavior.java" startLine="13" startPosition="43" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="3796137614137207006" fileName="ReplaceRegexpOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="4161170987575526830" fileName="ReplaceRegexpOperation_Behavior.java" startLine="15" startPosition="26" endLine="16" endPosition="132" />
     <scopeInfo nodeId="3796137614137210651" fileName="ReplaceRegexpOperation_Behavior.java" startLine="14" startPosition="81" endLine="17" endPosition="7" />
-    <scopeInfo nodeId="3796137614137210650" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ReplaceRegexpOperation_Behavior.java" startLine="13" startPosition="43" endLine="18" endPosition="5">
+    <scopeInfo nodeId="3796137614137210650" fileName="ReplaceRegexpOperation_Behavior.java" startLine="13" startPosition="43" endLine="18" endPosition="5">
       <varInfo nodeId="3796137614137210654" varName="rep" />
     </scopeInfo>
     <scopeInfo nodeId="3796137614137207010" fileName="ReplaceRegexpOperation_Behavior.java" startLine="12" startPosition="86" endLine="19" endPosition="25">
@@ -288,55 +288,55 @@
     </scopeInfo>
   </root>
   <root nodeId="3796137614137538899">
-    <nodeInfo nodeId="4161170987575807315" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Replacement_Behavior.java" startLine="15" startPosition="91" endLine="16" endPosition="14" />
+    <nodeInfo nodeId="4161170987575807315" fileName="Replacement_Behavior.java" startLine="15" startPosition="91" endLine="16" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="3796137614137538901" fileName="Replacement_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="3796137614137538907" fileName="Replacement_Behavior.java" startLine="15" startPosition="91" endLine="16" endPosition="14" />
   </root>
   <root nodeId="3796137614137538913">
-    <nodeInfo nodeId="3796137614137565914" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LiteralReplacement_Behavior.java" startLine="17" startPosition="91" endLine="18" endPosition="132" />
-    <nodeInfo nodeId="3796137614137567971" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LiteralReplacement_Behavior.java" startLine="22" startPosition="79" endLine="23" endPosition="19" />
-    <nodeInfo nodeId="3796137614137567976" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LiteralReplacement_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="140" />
-    <nodeInfo nodeId="3796137614137565590" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LiteralReplacement_Behavior.java" startLine="28" startPosition="84" endLine="29" endPosition="43" />
-    <nodeInfo nodeId="3796137614137565597" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LiteralReplacement_Behavior.java" startLine="30" startPosition="42" endLine="31" endPosition="27" />
-    <nodeInfo nodeId="3796137614137565613" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="32" startPosition="22" endLine="33" endPosition="21" />
-    <nodeInfo nodeId="3796137614137565620" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LiteralReplacement_Behavior.java" startLine="34" startPosition="32" endLine="35" endPosition="22" />
-    <nodeInfo nodeId="3796137614137565628" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="36" startPosition="9" endLine="37" endPosition="24" />
-    <nodeInfo nodeId="3796137614137565637" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="38" startPosition="23" endLine="39" endPosition="23" />
-    <nodeInfo nodeId="3796137614137565646" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LiteralReplacement_Behavior.java" startLine="41" startPosition="36" endLine="42" endPosition="26" />
-    <nodeInfo nodeId="3796137614137565654" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="43" startPosition="13" endLine="44" endPosition="28" />
-    <nodeInfo nodeId="3796137614137565663" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LiteralReplacement_Behavior.java" startLine="45" startPosition="98" endLine="46" endPosition="26" />
-    <nodeInfo nodeId="3796137614137565670" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="47" startPosition="13" endLine="48" endPosition="25" />
-    <nodeInfo nodeId="3796137614137565688" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="50" startPosition="42" endLine="51" endPosition="23" />
-    <nodeInfo nodeId="3796137614137565697" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LiteralReplacement_Behavior.java" startLine="53" startPosition="36" endLine="54" endPosition="26" />
-    <nodeInfo nodeId="3796137614137565705" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="55" startPosition="13" endLine="56" endPosition="28" />
-    <nodeInfo nodeId="3796137614137565714" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LiteralReplacement_Behavior.java" startLine="57" startPosition="42" endLine="58" endPosition="26" />
-    <nodeInfo nodeId="3796137614137565719" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="59" startPosition="13" endLine="60" endPosition="25" />
-    <nodeInfo nodeId="3796137614137565736" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="62" startPosition="103" endLine="63" endPosition="23" />
-    <nodeInfo nodeId="8942139995509155626" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="64" startPosition="31" endLine="65" endPosition="30" />
-    <nodeInfo nodeId="3796137614137565774" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LiteralReplacement_Behavior.java" startLine="66" startPosition="16" endLine="67" endPosition="22" />
-    <nodeInfo nodeId="3796137614137565610" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LiteralReplacement_Behavior.java" startLine="69" startPosition="26" endLine="70" endPosition="20" />
-    <nodeInfo nodeId="3796137614137565786" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="72" startPosition="23" endLine="73" endPosition="26" />
-    <nodeInfo nodeId="8942139995508725295" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="73" startPosition="26" endLine="74" endPosition="26" />
-    <nodeInfo nodeId="8942139995509155642" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="75" startPosition="30" endLine="76" endPosition="26" />
-    <nodeInfo nodeId="3796137614137565842" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="77" startPosition="9" endLine="78" endPosition="21" />
-    <nodeInfo nodeId="3796137614137565849" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="79" startPosition="14" endLine="80" endPosition="25" />
-    <nodeInfo nodeId="3796137614137565854" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LiteralReplacement_Behavior.java" startLine="80" startPosition="25" endLine="81" endPosition="45" />
-    <nodeInfo nodeId="3796137614137565860" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LiteralReplacement_Behavior.java" startLine="81" startPosition="45" endLine="82" endPosition="56" />
-    <nodeInfo nodeId="3796137614137565882" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LiteralReplacement_Behavior.java" startLine="84" startPosition="5" endLine="85" endPosition="25" />
-    <nodeInfo nodeId="3796137614137565772" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="LiteralReplacement_Behavior.java" startLine="66" startPosition="14" endLine="68" endPosition="9" />
-    <nodeInfo nodeId="3796137614137567957" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LiteralReplacement_Behavior.java" startLine="21" startPosition="74" endLine="24" endPosition="5" />
-    <nodeInfo nodeId="3796137614137565618" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LiteralReplacement_Behavior.java" startLine="33" startPosition="21" endLine="36" endPosition="9" />
-    <nodeInfo nodeId="3796137614137565644" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LiteralReplacement_Behavior.java" startLine="40" startPosition="39" endLine="43" endPosition="13" />
-    <nodeInfo nodeId="3796137614137565661" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LiteralReplacement_Behavior.java" startLine="44" startPosition="28" endLine="47" endPosition="13" />
-    <nodeInfo nodeId="3796137614137565695" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LiteralReplacement_Behavior.java" startLine="52" startPosition="39" endLine="55" endPosition="13" />
-    <nodeInfo nodeId="3796137614137565712" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LiteralReplacement_Behavior.java" startLine="56" startPosition="28" endLine="59" endPosition="13" />
-    <nodeInfo nodeId="3796137614137565847" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="LiteralReplacement_Behavior.java" startLine="79" startPosition="12" endLine="83" endPosition="7" />
-    <nodeInfo nodeId="3796137614137565784" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LiteralReplacement_Behavior.java" startLine="71" startPosition="27" endLine="77" endPosition="9" />
-    <nodeInfo nodeId="3796137614137565642" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="LiteralReplacement_Behavior.java" startLine="39" startPosition="23" endLine="49" endPosition="11" />
-    <nodeInfo nodeId="3796137614137565693" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="LiteralReplacement_Behavior.java" startLine="51" startPosition="23" endLine="61" endPosition="11" />
-    <nodeInfo nodeId="3796137614137565635" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LiteralReplacement_Behavior.java" startLine="37" startPosition="24" endLine="68" endPosition="9" />
-    <nodeInfo nodeId="3796137614137565604" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LiteralReplacement_Behavior.java" startLine="31" startPosition="27" endLine="83" endPosition="7" />
-    <nodeInfo nodeId="3796137614137565595" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="LiteralReplacement_Behavior.java" startLine="29" startPosition="43" endLine="84" endPosition="5" />
+    <nodeInfo nodeId="3796137614137565914" fileName="LiteralReplacement_Behavior.java" startLine="17" startPosition="91" endLine="18" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137567971" fileName="LiteralReplacement_Behavior.java" startLine="22" startPosition="79" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137567976" fileName="LiteralReplacement_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137565590" fileName="LiteralReplacement_Behavior.java" startLine="28" startPosition="84" endLine="29" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3796137614137565597" fileName="LiteralReplacement_Behavior.java" startLine="30" startPosition="42" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3796137614137565613" fileName="LiteralReplacement_Behavior.java" startLine="32" startPosition="22" endLine="33" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137565620" fileName="LiteralReplacement_Behavior.java" startLine="34" startPosition="32" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137565628" fileName="LiteralReplacement_Behavior.java" startLine="36" startPosition="9" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137565637" fileName="LiteralReplacement_Behavior.java" startLine="38" startPosition="23" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137565646" fileName="LiteralReplacement_Behavior.java" startLine="41" startPosition="36" endLine="42" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137565654" fileName="LiteralReplacement_Behavior.java" startLine="43" startPosition="13" endLine="44" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137565663" fileName="LiteralReplacement_Behavior.java" startLine="45" startPosition="98" endLine="46" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137565670" fileName="LiteralReplacement_Behavior.java" startLine="47" startPosition="13" endLine="48" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137565688" fileName="LiteralReplacement_Behavior.java" startLine="50" startPosition="42" endLine="51" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137565697" fileName="LiteralReplacement_Behavior.java" startLine="53" startPosition="36" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137565705" fileName="LiteralReplacement_Behavior.java" startLine="55" startPosition="13" endLine="56" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137565714" fileName="LiteralReplacement_Behavior.java" startLine="57" startPosition="42" endLine="58" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137565719" fileName="LiteralReplacement_Behavior.java" startLine="59" startPosition="13" endLine="60" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137565736" fileName="LiteralReplacement_Behavior.java" startLine="62" startPosition="103" endLine="63" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8942139995509155626" fileName="LiteralReplacement_Behavior.java" startLine="64" startPosition="31" endLine="65" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137565774" fileName="LiteralReplacement_Behavior.java" startLine="66" startPosition="16" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137565610" fileName="LiteralReplacement_Behavior.java" startLine="69" startPosition="26" endLine="70" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137565786" fileName="LiteralReplacement_Behavior.java" startLine="72" startPosition="23" endLine="73" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8942139995508725295" fileName="LiteralReplacement_Behavior.java" startLine="73" startPosition="26" endLine="74" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8942139995509155642" fileName="LiteralReplacement_Behavior.java" startLine="75" startPosition="30" endLine="76" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137565842" fileName="LiteralReplacement_Behavior.java" startLine="77" startPosition="9" endLine="78" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137565849" fileName="LiteralReplacement_Behavior.java" startLine="79" startPosition="14" endLine="80" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137565854" fileName="LiteralReplacement_Behavior.java" startLine="80" startPosition="25" endLine="81" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3796137614137565860" fileName="LiteralReplacement_Behavior.java" startLine="81" startPosition="45" endLine="82" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137565882" fileName="LiteralReplacement_Behavior.java" startLine="84" startPosition="5" endLine="85" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3796137614137565772" fileName="LiteralReplacement_Behavior.java" startLine="66" startPosition="14" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3796137614137567957" fileName="LiteralReplacement_Behavior.java" startLine="21" startPosition="74" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3796137614137565618" fileName="LiteralReplacement_Behavior.java" startLine="33" startPosition="21" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3796137614137565644" fileName="LiteralReplacement_Behavior.java" startLine="40" startPosition="39" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3796137614137565661" fileName="LiteralReplacement_Behavior.java" startLine="44" startPosition="28" endLine="47" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3796137614137565695" fileName="LiteralReplacement_Behavior.java" startLine="52" startPosition="39" endLine="55" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3796137614137565712" fileName="LiteralReplacement_Behavior.java" startLine="56" startPosition="28" endLine="59" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3796137614137565847" fileName="LiteralReplacement_Behavior.java" startLine="79" startPosition="12" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3796137614137565784" fileName="LiteralReplacement_Behavior.java" startLine="71" startPosition="27" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3796137614137565642" fileName="LiteralReplacement_Behavior.java" startLine="39" startPosition="23" endLine="49" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="3796137614137565693" fileName="LiteralReplacement_Behavior.java" startLine="51" startPosition="23" endLine="61" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="3796137614137565635" fileName="LiteralReplacement_Behavior.java" startLine="37" startPosition="24" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3796137614137565604" fileName="LiteralReplacement_Behavior.java" startLine="31" startPosition="27" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3796137614137565595" fileName="LiteralReplacement_Behavior.java" startLine="29" startPosition="43" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <scopeInfo nodeId="3796137614137538915" fileName="LiteralReplacement_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="3796137614137538918" fileName="LiteralReplacement_Behavior.java" startLine="17" startPosition="91" endLine="18" endPosition="132" />
     <scopeInfo nodeId="3796137614137567959" fileName="LiteralReplacement_Behavior.java" startLine="22" startPosition="79" endLine="23" endPosition="19" />
@@ -358,10 +358,10 @@
     <scopeInfo nodeId="3796137614137565783" fileName="LiteralReplacement_Behavior.java" startLine="71" startPosition="27" endLine="78" endPosition="21" />
     <scopeInfo nodeId="3796137614137565643" fileName="LiteralReplacement_Behavior.java" startLine="40" startPosition="39" endLine="48" endPosition="25" />
     <scopeInfo nodeId="3796137614137565694" fileName="LiteralReplacement_Behavior.java" startLine="52" startPosition="39" endLine="60" endPosition="25" />
-    <scopeInfo nodeId="3796137614137565642" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="LiteralReplacement_Behavior.java" startLine="39" startPosition="23" endLine="49" endPosition="11">
+    <scopeInfo nodeId="3796137614137565642" fileName="LiteralReplacement_Behavior.java" startLine="39" startPosition="23" endLine="49" endPosition="11">
       <varInfo nodeId="3796137614137565675" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3796137614137565693" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="LiteralReplacement_Behavior.java" startLine="51" startPosition="23" endLine="61" endPosition="11">
+    <scopeInfo nodeId="3796137614137565693" fileName="LiteralReplacement_Behavior.java" startLine="51" startPosition="23" endLine="61" endPosition="11">
       <varInfo nodeId="3796137614137565724" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="3796137614137565636" fileName="LiteralReplacement_Behavior.java" startLine="38" startPosition="23" endLine="49" endPosition="11" />
@@ -370,7 +370,7 @@
     <scopeInfo nodeId="3796137614137565596" fileName="LiteralReplacement_Behavior.java" startLine="30" startPosition="42" endLine="83" endPosition="7">
       <varInfo nodeId="3796137614137565598" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="3796137614137565595" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="LiteralReplacement_Behavior.java" startLine="29" startPosition="43" endLine="84" endPosition="5">
+    <scopeInfo nodeId="3796137614137565595" fileName="LiteralReplacement_Behavior.java" startLine="29" startPosition="43" endLine="84" endPosition="5">
       <varInfo nodeId="3796137614137565872" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="3796137614137565589" fileName="LiteralReplacement_Behavior.java" startLine="28" startPosition="84" endLine="85" endPosition="25">
@@ -378,61 +378,61 @@
     </scopeInfo>
   </root>
   <root nodeId="3796137614137539492">
-    <nodeInfo nodeId="3796137614137539498" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MatchVariableReferenceReplacement_Behavior.java" startLine="19" startPosition="91" endLine="20" endPosition="46" />
-    <nodeInfo nodeId="3796137614137539504" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MatchVariableReferenceReplacement_Behavior.java" startLine="20" startPosition="46" endLine="21" endPosition="63" />
-    <nodeInfo nodeId="3796137614137539509" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MatchVariableReferenceReplacement_Behavior.java" startLine="21" startPosition="63" endLine="22" endPosition="112" />
+    <nodeInfo nodeId="3796137614137539498" fileName="MatchVariableReferenceReplacement_Behavior.java" startLine="19" startPosition="91" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3796137614137539504" fileName="MatchVariableReferenceReplacement_Behavior.java" startLine="20" startPosition="46" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3796137614137539509" fileName="MatchVariableReferenceReplacement_Behavior.java" startLine="21" startPosition="63" endLine="22" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="3796137614137539494" fileName="MatchVariableReferenceReplacement_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="3796137614137539497" fileName="MatchVariableReferenceReplacement_Behavior.java" startLine="19" startPosition="91" endLine="22" endPosition="112">
       <varInfo nodeId="3796137614137539499" varName="vars" />
     </scopeInfo>
   </root>
   <root nodeId="8173814113624637182">
-    <nodeInfo nodeId="8173814113624732623" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SymbolClassPart_Behavior.java" startLine="11" startPosition="88" endLine="12" endPosition="43" />
-    <nodeInfo nodeId="8173814113624732628" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SymbolClassPart_Behavior.java" startLine="12" startPosition="43" endLine="13" endPosition="14" />
-    <nodeInfo nodeId="8173814113624732632" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SymbolClassPart_Behavior.java" startLine="13" startPosition="14" endLine="14" endPosition="25" />
-    <nodeInfo nodeId="8173814113624732648" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassPart_Behavior.java" startLine="15" startPosition="20" endLine="16" endPosition="19" />
-    <nodeInfo nodeId="8173814113624732655" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassPart_Behavior.java" startLine="17" startPosition="30" endLine="18" endPosition="20" />
-    <nodeInfo nodeId="8173814113624732663" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassPart_Behavior.java" startLine="19" startPosition="7" endLine="20" endPosition="22" />
-    <nodeInfo nodeId="8173814113624732672" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassPart_Behavior.java" startLine="21" startPosition="21" endLine="22" endPosition="21" />
-    <nodeInfo nodeId="8173814113624732681" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassPart_Behavior.java" startLine="24" startPosition="34" endLine="25" endPosition="24" />
-    <nodeInfo nodeId="8173814113624732689" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassPart_Behavior.java" startLine="26" startPosition="11" endLine="27" endPosition="26" />
-    <nodeInfo nodeId="8173814113624732698" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassPart_Behavior.java" startLine="28" startPosition="96" endLine="29" endPosition="24" />
-    <nodeInfo nodeId="8173814113624732705" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassPart_Behavior.java" startLine="30" startPosition="11" endLine="31" endPosition="23" />
-    <nodeInfo nodeId="8173814113624732723" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassPart_Behavior.java" startLine="33" startPosition="40" endLine="34" endPosition="21" />
-    <nodeInfo nodeId="8173814113624732732" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassPart_Behavior.java" startLine="36" startPosition="34" endLine="37" endPosition="24" />
-    <nodeInfo nodeId="8173814113624732740" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassPart_Behavior.java" startLine="38" startPosition="11" endLine="39" endPosition="26" />
-    <nodeInfo nodeId="8173814113624732749" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassPart_Behavior.java" startLine="40" startPosition="40" endLine="41" endPosition="24" />
-    <nodeInfo nodeId="8173814113624732754" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassPart_Behavior.java" startLine="42" startPosition="11" endLine="43" endPosition="23" />
-    <nodeInfo nodeId="8173814113624732771" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassPart_Behavior.java" startLine="45" startPosition="114" endLine="46" endPosition="21" />
-    <nodeInfo nodeId="8173814113624732809" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassPart_Behavior.java" startLine="47" startPosition="14" endLine="48" endPosition="20" />
-    <nodeInfo nodeId="8173814113624732645" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassPart_Behavior.java" startLine="50" startPosition="24" endLine="51" endPosition="18" />
-    <nodeInfo nodeId="8173814113624732821" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassPart_Behavior.java" startLine="53" startPosition="177" endLine="54" endPosition="24" />
-    <nodeInfo nodeId="8173814113624732877" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassPart_Behavior.java" startLine="55" startPosition="7" endLine="56" endPosition="19" />
-    <nodeInfo nodeId="8173814113624732884" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassPart_Behavior.java" startLine="57" startPosition="12" endLine="58" endPosition="23" />
-    <nodeInfo nodeId="8173814113624732889" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SymbolClassPart_Behavior.java" startLine="58" startPosition="23" endLine="59" endPosition="43" />
-    <nodeInfo nodeId="8173814113624732895" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassPart_Behavior.java" startLine="59" startPosition="43" endLine="60" endPosition="54" />
-    <nodeInfo nodeId="8173814113624732907" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SymbolClassPart_Behavior.java" startLine="61" startPosition="5" endLine="62" endPosition="8" />
-    <nodeInfo nodeId="8173814113624732912" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassPart_Behavior.java" startLine="63" startPosition="26" endLine="64" endPosition="18" />
-    <nodeInfo nodeId="8173814113624732919" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassPart_Behavior.java" startLine="65" startPosition="5" endLine="66" endPosition="25" />
-    <nodeInfo nodeId="8173814113624732931" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SymbolClassPart_Behavior.java" startLine="69" startPosition="86" endLine="70" endPosition="93" />
-    <nodeInfo nodeId="8173814113624732959" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassPart_Behavior.java" startLine="72" startPosition="27" endLine="73" endPosition="22" />
-    <nodeInfo nodeId="8173814113624732969" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassPart_Behavior.java" startLine="74" startPosition="7" endLine="75" endPosition="19" />
-    <nodeInfo nodeId="8173814113624732939" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SymbolClassPart_Behavior.java" startLine="76" startPosition="5" endLine="77" endPosition="15" />
-    <nodeInfo nodeId="8173814113624732807" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SymbolClassPart_Behavior.java" startLine="47" startPosition="12" endLine="49" endPosition="7" />
-    <nodeInfo nodeId="8173814113624732653" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SymbolClassPart_Behavior.java" startLine="16" startPosition="19" endLine="19" endPosition="7" />
-    <nodeInfo nodeId="8173814113624732679" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SymbolClassPart_Behavior.java" startLine="23" startPosition="37" endLine="26" endPosition="11" />
-    <nodeInfo nodeId="8173814113624732696" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SymbolClassPart_Behavior.java" startLine="27" startPosition="26" endLine="30" endPosition="11" />
-    <nodeInfo nodeId="8173814113624732730" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SymbolClassPart_Behavior.java" startLine="35" startPosition="37" endLine="38" endPosition="11" />
-    <nodeInfo nodeId="8173814113624732747" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SymbolClassPart_Behavior.java" startLine="39" startPosition="26" endLine="42" endPosition="11" />
-    <nodeInfo nodeId="8173814113624732819" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SymbolClassPart_Behavior.java" startLine="52" startPosition="25" endLine="55" endPosition="7" />
-    <nodeInfo nodeId="8173814113624732910" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SymbolClassPart_Behavior.java" startLine="62" startPosition="8" endLine="65" endPosition="5" />
-    <nodeInfo nodeId="8173814113624732950" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SymbolClassPart_Behavior.java" startLine="71" startPosition="22" endLine="74" endPosition="7" />
-    <nodeInfo nodeId="8173814113624732882" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SymbolClassPart_Behavior.java" startLine="57" startPosition="10" endLine="61" endPosition="5" />
-    <nodeInfo nodeId="8173814113624732941" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SymbolClassPart_Behavior.java" startLine="70" startPosition="93" endLine="76" endPosition="5" />
-    <nodeInfo nodeId="8173814113624732677" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="SymbolClassPart_Behavior.java" startLine="22" startPosition="21" endLine="32" endPosition="9" />
-    <nodeInfo nodeId="8173814113624732728" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="SymbolClassPart_Behavior.java" startLine="34" startPosition="21" endLine="44" endPosition="9" />
-    <nodeInfo nodeId="8173814113624732670" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SymbolClassPart_Behavior.java" startLine="20" startPosition="22" endLine="49" endPosition="7" />
-    <nodeInfo nodeId="8173814113624732639" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SymbolClassPart_Behavior.java" startLine="14" startPosition="25" endLine="61" endPosition="5" />
+    <nodeInfo nodeId="8173814113624732623" fileName="SymbolClassPart_Behavior.java" startLine="11" startPosition="88" endLine="12" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8173814113624732628" fileName="SymbolClassPart_Behavior.java" startLine="12" startPosition="43" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8173814113624732632" fileName="SymbolClassPart_Behavior.java" startLine="13" startPosition="14" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8173814113624732648" fileName="SymbolClassPart_Behavior.java" startLine="15" startPosition="20" endLine="16" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173814113624732655" fileName="SymbolClassPart_Behavior.java" startLine="17" startPosition="30" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173814113624732663" fileName="SymbolClassPart_Behavior.java" startLine="19" startPosition="7" endLine="20" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173814113624732672" fileName="SymbolClassPart_Behavior.java" startLine="21" startPosition="21" endLine="22" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173814113624732681" fileName="SymbolClassPart_Behavior.java" startLine="24" startPosition="34" endLine="25" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173814113624732689" fileName="SymbolClassPart_Behavior.java" startLine="26" startPosition="11" endLine="27" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173814113624732698" fileName="SymbolClassPart_Behavior.java" startLine="28" startPosition="96" endLine="29" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173814113624732705" fileName="SymbolClassPart_Behavior.java" startLine="30" startPosition="11" endLine="31" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173814113624732723" fileName="SymbolClassPart_Behavior.java" startLine="33" startPosition="40" endLine="34" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173814113624732732" fileName="SymbolClassPart_Behavior.java" startLine="36" startPosition="34" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173814113624732740" fileName="SymbolClassPart_Behavior.java" startLine="38" startPosition="11" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173814113624732749" fileName="SymbolClassPart_Behavior.java" startLine="40" startPosition="40" endLine="41" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173814113624732754" fileName="SymbolClassPart_Behavior.java" startLine="42" startPosition="11" endLine="43" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173814113624732771" fileName="SymbolClassPart_Behavior.java" startLine="45" startPosition="114" endLine="46" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173814113624732809" fileName="SymbolClassPart_Behavior.java" startLine="47" startPosition="14" endLine="48" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173814113624732645" fileName="SymbolClassPart_Behavior.java" startLine="50" startPosition="24" endLine="51" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173814113624732821" fileName="SymbolClassPart_Behavior.java" startLine="53" startPosition="177" endLine="54" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173814113624732877" fileName="SymbolClassPart_Behavior.java" startLine="55" startPosition="7" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173814113624732884" fileName="SymbolClassPart_Behavior.java" startLine="57" startPosition="12" endLine="58" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173814113624732889" fileName="SymbolClassPart_Behavior.java" startLine="58" startPosition="23" endLine="59" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8173814113624732895" fileName="SymbolClassPart_Behavior.java" startLine="59" startPosition="43" endLine="60" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173814113624732907" fileName="SymbolClassPart_Behavior.java" startLine="61" startPosition="5" endLine="62" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8173814113624732912" fileName="SymbolClassPart_Behavior.java" startLine="63" startPosition="26" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173814113624732919" fileName="SymbolClassPart_Behavior.java" startLine="65" startPosition="5" endLine="66" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173814113624732931" fileName="SymbolClassPart_Behavior.java" startLine="69" startPosition="86" endLine="70" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8173814113624732959" fileName="SymbolClassPart_Behavior.java" startLine="72" startPosition="27" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173814113624732969" fileName="SymbolClassPart_Behavior.java" startLine="74" startPosition="7" endLine="75" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173814113624732939" fileName="SymbolClassPart_Behavior.java" startLine="76" startPosition="5" endLine="77" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8173814113624732807" fileName="SymbolClassPart_Behavior.java" startLine="47" startPosition="12" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8173814113624732653" fileName="SymbolClassPart_Behavior.java" startLine="16" startPosition="19" endLine="19" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8173814113624732679" fileName="SymbolClassPart_Behavior.java" startLine="23" startPosition="37" endLine="26" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8173814113624732696" fileName="SymbolClassPart_Behavior.java" startLine="27" startPosition="26" endLine="30" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8173814113624732730" fileName="SymbolClassPart_Behavior.java" startLine="35" startPosition="37" endLine="38" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8173814113624732747" fileName="SymbolClassPart_Behavior.java" startLine="39" startPosition="26" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8173814113624732819" fileName="SymbolClassPart_Behavior.java" startLine="52" startPosition="25" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8173814113624732910" fileName="SymbolClassPart_Behavior.java" startLine="62" startPosition="8" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8173814113624732950" fileName="SymbolClassPart_Behavior.java" startLine="71" startPosition="22" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8173814113624732882" fileName="SymbolClassPart_Behavior.java" startLine="57" startPosition="10" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8173814113624732941" fileName="SymbolClassPart_Behavior.java" startLine="70" startPosition="93" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8173814113624732677" fileName="SymbolClassPart_Behavior.java" startLine="22" startPosition="21" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="8173814113624732728" fileName="SymbolClassPart_Behavior.java" startLine="34" startPosition="21" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="8173814113624732670" fileName="SymbolClassPart_Behavior.java" startLine="20" startPosition="22" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8173814113624732639" fileName="SymbolClassPart_Behavior.java" startLine="14" startPosition="25" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="8173814113624637184" fileName="SymbolClassPart_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="8173814113624732654" fileName="SymbolClassPart_Behavior.java" startLine="17" startPosition="30" endLine="18" endPosition="20" />
     <scopeInfo nodeId="8173814113624732680" fileName="SymbolClassPart_Behavior.java" startLine="24" startPosition="34" endLine="25" endPosition="24" />
@@ -455,10 +455,10 @@
     <scopeInfo nodeId="8173814113624637241" fileName="SymbolClassPart_Behavior.java" startLine="69" startPosition="86" endLine="77" endPosition="15">
       <varInfo nodeId="8173814113624732934" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="8173814113624732677" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="SymbolClassPart_Behavior.java" startLine="22" startPosition="21" endLine="32" endPosition="9">
+    <scopeInfo nodeId="8173814113624732677" fileName="SymbolClassPart_Behavior.java" startLine="22" startPosition="21" endLine="32" endPosition="9">
       <varInfo nodeId="8173814113624732710" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="8173814113624732728" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="SymbolClassPart_Behavior.java" startLine="34" startPosition="21" endLine="44" endPosition="9">
+    <scopeInfo nodeId="8173814113624732728" fileName="SymbolClassPart_Behavior.java" startLine="34" startPosition="21" endLine="44" endPosition="9">
       <varInfo nodeId="8173814113624732759" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="8173814113624732671" fileName="SymbolClassPart_Behavior.java" startLine="21" startPosition="21" endLine="32" endPosition="9" />
@@ -471,22 +471,22 @@
     </scopeInfo>
   </root>
   <root nodeId="8173814113624637190">
-    <nodeInfo nodeId="8173814113624650548" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="PredefinedSymbolClassSymbolClassPart_Behavior.java" startLine="17" startPosition="86" endLine="18" endPosition="108" />
+    <nodeInfo nodeId="8173814113624650548" fileName="PredefinedSymbolClassSymbolClassPart_Behavior.java" startLine="17" startPosition="86" endLine="18" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8173814113624637192" fileName="PredefinedSymbolClassSymbolClassPart_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="8173814113624650546" fileName="PredefinedSymbolClassSymbolClassPart_Behavior.java" startLine="17" startPosition="86" endLine="18" endPosition="108" />
   </root>
   <root nodeId="8173814113624637220">
-    <nodeInfo nodeId="8173814113624650558" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IntervalSymbolClassPart_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="259" />
+    <nodeInfo nodeId="8173814113624650558" fileName="IntervalSymbolClassPart_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8173814113624637222" fileName="IntervalSymbolClassPart_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="8173814113624650556" fileName="IntervalSymbolClassPart_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="259" />
   </root>
   <root nodeId="8173814113624637890">
-    <nodeInfo nodeId="8173814113625142905" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IntersectionSymbolClassPart_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="277" />
+    <nodeInfo nodeId="8173814113625142905" fileName="IntersectionSymbolClassPart_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8173814113624637892" fileName="IntersectionSymbolClassPart_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="8173814113624650587" fileName="IntersectionSymbolClassPart_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="277" />
   </root>
   <root nodeId="8173814113624637901">
-    <nodeInfo nodeId="8173814113624650578" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CharacterSymbolClassPart_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="136" />
+    <nodeInfo nodeId="8173814113624650578" fileName="CharacterSymbolClassPart_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="8173814113624637903" fileName="CharacterSymbolClassPart_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="8173814113624650576" fileName="CharacterSymbolClassPart_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="136" />
   </root>

@@ -4,6 +4,9 @@ package jetbrains.mps.lang.smodel.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -13,6 +16,7 @@ public class SEnum_MembersOperation extends BaseConcept implements SEnumOperatio
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SEnum_MembersOperation(SNode node) {
     super(node);
@@ -40,6 +44,26 @@ public class SEnum_MembersOperation extends BaseConcept implements SEnumOperatio
 
   public void setVirtualPackage(String value) {
     this.setProperty(SEnum_MembersOperation.VIRTUAL_PACKAGE, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(SEnum_MembersOperation._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SEnum_MembersOperation._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SEnum_MembersOperation._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(SEnum_MembersOperation._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SEnum_MembersOperation._$ATTRIBUTE, node);
   }
 
   public static SEnum_MembersOperation newInstance(SModel sm, boolean init) {

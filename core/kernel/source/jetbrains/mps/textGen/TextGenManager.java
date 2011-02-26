@@ -22,12 +22,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
+import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.NameUtil;
 
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -41,6 +42,7 @@ public class TextGenManager {
   public static final String DEPENDENCY = "DEPENDENCY";
   public static final String EXTENDS = "EXTENDS";
   public static final String IMPORT = "IMPORT";
+  public static final String OUTPUT_ENCODING = "OUTPUT_ENCODING";
   //temp hack
   public static final String ADDED_IMPORT = "ADDED_IMPORT";
 
@@ -92,7 +94,20 @@ public class TextGenManager {
     deps.put(TextGenManager.DEPENDENCY, dependencies);
     deps.put(TextGenManager.EXTENDS, extend);
 
-    return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), positionInfo, scopeInfo, unitInfo, deps);
+    Object result = buffer.getText();
+    String outputEncoding = (String) buffer.getUserObject(OUTPUT_ENCODING);
+    if(outputEncoding != null) {
+      if(outputEncoding.equals("binary")) {
+        result = EncodingUtil.decodeBase64((String) result);
+      } else {
+        try {
+          result = EncodingUtil.encode((String) result, outputEncoding);
+        } catch(IOException ex) {
+          LOG.error("cannot encode the output stream", ex);
+        }
+      }
+    }
+    return new TextGenerationResult(result, buffer.hasErrors(), positionInfo, scopeInfo, unitInfo, deps);
   }
 
   public boolean canGenerateTextFor(SNode node) {

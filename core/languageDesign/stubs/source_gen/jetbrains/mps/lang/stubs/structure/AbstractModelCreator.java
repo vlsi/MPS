@@ -5,6 +5,9 @@ package jetbrains.mps.lang.stubs.structure;
 import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +22,7 @@ public class AbstractModelCreator extends DefaultClassifier implements IClassifi
   public static final String UPDATE_MODEL_BLOCK = "updateModelBlock";
   public static final String SETTINGS = "settings";
   public static final String ROOT_DESCRIPTORS_BLOCK = "rootDescriptorsBlock";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public AbstractModelCreator(SNode node) {
     super(node);
@@ -86,6 +90,26 @@ public class AbstractModelCreator extends DefaultClassifier implements IClassifi
 
   public void setRootDescriptorsBlock(RootNodeDescriptorsBlock node) {
     super.setChild(AbstractModelCreator.ROOT_DESCRIPTORS_BLOCK, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(AbstractModelCreator._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, AbstractModelCreator._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, AbstractModelCreator._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(AbstractModelCreator._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, AbstractModelCreator._$ATTRIBUTE, node);
   }
 
   public static AbstractModelCreator newInstance(SModel sm, boolean init) {

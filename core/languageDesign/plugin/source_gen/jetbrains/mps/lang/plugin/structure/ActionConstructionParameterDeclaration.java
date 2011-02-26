@@ -5,6 +5,9 @@ package jetbrains.mps.lang.plugin.structure;
 import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration;
 import jetbrains.mps.baseLanguage.classifiers.structure.IMember;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class ActionConstructionParameterDeclaration extends DefaultClassifierFie
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String TO_STRING_FUNCTION = "toStringFunction";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ActionConstructionParameterDeclaration(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class ActionConstructionParameterDeclaration extends DefaultClassifierFie
 
   public void setToStringFunction(ToStringConceptFunction node) {
     super.setChild(ActionConstructionParameterDeclaration.TO_STRING_FUNCTION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ActionConstructionParameterDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ActionConstructionParameterDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ActionConstructionParameterDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ActionConstructionParameterDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ActionConstructionParameterDeclaration._$ATTRIBUTE, node);
   }
 
   public static ActionConstructionParameterDeclaration newInstance(SModel sm, boolean init) {

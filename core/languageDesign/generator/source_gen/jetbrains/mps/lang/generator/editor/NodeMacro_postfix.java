@@ -24,8 +24,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.generator.structure.NodeMacro_AnnotationLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -149,7 +147,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
   private static boolean renderingCondition_crgygw_a0a(SNode node, EditorContext editorContext, IScope scope) {
     String actualRole = node.getRole_();
-    String expectedRole = AttributesRolesUtil.childRoleFromAttributeRole(NodeMacro_AnnotationLink.NODE_MACRO);
+    String expectedRole = "_$attribute";
     return !(actualRole.equals(expectedRole));
   }
 

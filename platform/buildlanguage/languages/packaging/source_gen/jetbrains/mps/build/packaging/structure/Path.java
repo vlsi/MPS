@@ -4,6 +4,9 @@ package jetbrains.mps.build.packaging.structure;
 
 import jetbrains.mps.buildlanguage.structure.PropertyValueExpression;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +18,7 @@ public class Path extends PropertyValueExpression implements IPath {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String MACRO = "macro";
   public static final String COMPOSITE_PATH_COMPONENT = "compositePathComponent";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Path(SNode node) {
     super(node);
@@ -58,6 +62,26 @@ public class Path extends PropertyValueExpression implements IPath {
 
   public void setCompositePathComponent(CompositePathComponent node) {
     super.setChild(Path.COMPOSITE_PATH_COMPONENT, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Path._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Path._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Path._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Path._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Path._$ATTRIBUTE, node);
   }
 
   public static Path newInstance(SModel sm, boolean init) {

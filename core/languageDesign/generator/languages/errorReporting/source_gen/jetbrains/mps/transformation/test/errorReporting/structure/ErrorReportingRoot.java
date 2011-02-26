@@ -5,6 +5,9 @@ package jetbrains.mps.transformation.test.errorReporting.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class ErrorReportingRoot extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String INTVAL = "intval";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ErrorReportingRoot(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class ErrorReportingRoot extends BaseConcept implements INamedConcept {
 
   public void setIntval(int value) {
     this.setIntegerProperty(ErrorReportingRoot.INTVAL, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ErrorReportingRoot._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ErrorReportingRoot._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ErrorReportingRoot._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ErrorReportingRoot._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ErrorReportingRoot._$ATTRIBUTE, node);
   }
 
   public static ErrorReportingRoot newInstance(SModel sm, boolean init) {

@@ -75,7 +75,7 @@ public class AbstractContainerCreator_Component extends AbstractCellProvider {
   }
 
   private EditorCell createCollection_jky4mt_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jky4mt_b0");
     {
       Style style = editorCell.getStyle();

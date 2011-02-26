@@ -8,6 +8,7 @@ import jetbrains.mps.buildlanguage.structure.IAntScript;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -28,6 +29,7 @@ public class Layout extends BaseConcept implements ILayoutComponent, INamedConce
   public static final String VARIABLE = "variable";
   public static final String BUILT_IN_VARIABLE = "builtInVariable";
   public static final String CYCLE = "cycle";
+  public static final String _$ATTRIBUTE = "_$attribute";
   public static final String MACRO = "macro";
 
   public Layout(SNode node) {
@@ -204,6 +206,26 @@ public class Layout extends BaseConcept implements ILayoutComponent, INamedConce
 
   public void insertCycle(ModuleCycle prev, ModuleCycle node) {
     this.insertChild(prev, Layout.CYCLE, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(Layout._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, Layout._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, Layout._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(Layout._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, Layout._$ATTRIBUTE, node);
   }
 
   public int getMacrosCount() {

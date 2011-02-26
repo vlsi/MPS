@@ -12,6 +12,7 @@ import jetbrains.mps.baseLanguage.structure.StatementList;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.ParameterDeclaration;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -24,6 +25,7 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
   public static final String FORCE_MULTI_LINE = "forceMultiLine";
   public static final String BODY = "body";
   public static final String PARAMETER = "parameter";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public ClosureLiteral(SNode node) {
     super(node);
@@ -87,6 +89,26 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
 
   public void insertParameter(ParameterDeclaration prev, ParameterDeclaration node) {
     this.insertChild(prev, ClosureLiteral.PARAMETER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(ClosureLiteral._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, ClosureLiteral._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, ClosureLiteral._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(ClosureLiteral._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, ClosureLiteral._$ATTRIBUTE, node);
   }
 
   public static ClosureLiteral newInstance(SModel sm, boolean init) {

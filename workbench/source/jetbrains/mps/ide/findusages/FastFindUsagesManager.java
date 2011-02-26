@@ -322,7 +322,9 @@ public class FastFindUsagesManager extends FindUsagesManager {
           int start = end;
           while (start >= offset && chars[start] != '.')  --start;
           offset = start + 1;
+        if (end > offset) {
           result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
+        }
   //      }
       }
     }

@@ -53,11 +53,11 @@ public class CoercionManager {
       }
       return null;
     }
-
+    final TypeCheckingContextNew typeCheckingContext = state == null ? null : state.getTypeCheckingContext();
     if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConceptFqName())) {
       List<SNode> children = subtype.getChildren("argument");
 
-      SNode lcs = mySubTyping.createLCS(children);
+      SNode lcs = mySubTyping.createLCS(children, typeCheckingContext );
       return coerceSubTypingNew(lcs, pattern, isWeak, state);
     }
 
@@ -80,7 +80,7 @@ public class CoercionManager {
           }
         }
         CoercionMatcher coercionMatcher = new CoercionMatcher(pattern);
-        boolean success = mySubTyping.searchInSuperTypes(subtype, coercionMatcher, null, isWeak);
+        boolean success = mySubTyping.searchInSuperTypes(subtype, coercionMatcher, null, isWeak, null);
         SNode result;
         if (!success) {
           result = null;

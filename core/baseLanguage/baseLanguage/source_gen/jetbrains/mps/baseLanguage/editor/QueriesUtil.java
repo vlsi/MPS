@@ -14,6 +14,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_parameterObjects(SNode classifier, SNode contextNode) {
@@ -43,9 +45,9 @@ public class QueriesUtil {
           ListSequence.fromList(SLinkOperations.getTargets(newNode, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
         }
       }
-      for (SNode attribute : ListSequence.fromList(oldNode.getAllAttributes())) {
+      for (SNode attribute : ListSequence.fromList(AttributeOperations.getAttributeList(classifier, new IAttributeDescriptor.AllAttributes()))) {
         String role = oldNode.getRoleOf(attribute);
-        newNode.addChild(role, SNodeOperations.copyNode(((SNode) attribute)));
+        newNode.addChild(role, SNodeOperations.copyNode(attribute));
       }
       return newNode;
     }

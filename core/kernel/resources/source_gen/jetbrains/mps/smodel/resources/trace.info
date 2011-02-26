@@ -17,7 +17,7 @@
     <nodeInfo nodeId="3608835296802635848" fileName="ModelsToResources.java" startLine="25" startPosition="25" endLine="26" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3608835296802635832" fileName="ModelsToResources.java" startLine="29" startPosition="59" endLine="30" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3608835296802635781" fileName="ModelsToResources.java" startLine="32" startPosition="58" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3608835296802635800" fileName="ModelsToResources.java" startLine="38" startPosition="52" endLine="39" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3608835296802635800" fileName="ModelsToResources.java" startLine="38" startPosition="52" endLine="39" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3608835296802635815" fileName="ModelsToResources.java" startLine="42" startPosition="5" endLine="43" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3608835296802538216" fileName="ModelsToResources.java" startLine="46" startPosition="80" endLine="47" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="52" startPosition="54" endLine="53" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
@@ -106,7 +106,7 @@
     <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="119" startPosition="28" endLine="119" endPosition="28" />
     <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="126" startPosition="28" endLine="126" endPosition="28" />
     <scopeInfo nodeId="3608835296802635780" fileName="ModelsToResources.java" startLine="32" startPosition="58" endLine="33" endPosition="50" />
-    <scopeInfo nodeId="3608835296802635799" fileName="ModelsToResources.java" startLine="38" startPosition="52" endLine="39" endPosition="128" />
+    <scopeInfo nodeId="3608835296802635799" fileName="ModelsToResources.java" startLine="38" startPosition="52" endLine="39" endPosition="115" />
     <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="109" startPosition="27" endLine="110" endPosition="44" />
     <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="122" startPosition="28" endLine="123" endPosition="74" />
     <scopeInfo nodeId="3608835296802640727" fileName="ModelsToResources.java" startLine="129" startPosition="28" endLine="130" endPosition="42" />

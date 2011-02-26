@@ -8,6 +8,9 @@ import jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy;
 import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -25,6 +28,7 @@ public class BaseIntentionDeclaration extends BaseConcept implements INamedConce
   public static final String CHILD_FILTER_FUNCTION = "childFilterFunction";
   public static final String IS_APPLICABLE_FUNCTION = "isApplicableFunction";
   public static final String EXECUTE_FUNCTION = "executeFunction";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public BaseIntentionDeclaration(SNode node) {
     super(node);
@@ -116,6 +120,26 @@ public class BaseIntentionDeclaration extends BaseConcept implements INamedConce
 
   public void setExecuteFunction(ExecuteBlock node) {
     super.setChild(BaseIntentionDeclaration.EXECUTE_FUNCTION, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(BaseIntentionDeclaration._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, BaseIntentionDeclaration._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, BaseIntentionDeclaration._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(BaseIntentionDeclaration._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BaseIntentionDeclaration._$ATTRIBUTE, node);
   }
 
   public static BaseIntentionDeclaration newInstance(SModel sm, boolean init) {

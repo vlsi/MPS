@@ -3,8 +3,8 @@
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.calculator.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="InputFieldReference_field_ReferentConstraint.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.calculator.constraints.InputFieldReference_field_ReferentConstraint" />
   <root nodeId="1241364804758">
-    <nodeInfo nodeId="1241364841508" fileName="InputFieldReference_field_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="137" />
-    <nodeInfo nodeId="1241364844907" fileName="InputFieldReference_field_ReferentConstraint.java" startLine="28" startPosition="137" endLine="29" endPosition="64" />
+    <nodeInfo nodeId="1241364841508" fileName="InputFieldReference_field_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1241364844907" fileName="InputFieldReference_field_ReferentConstraint.java" startLine="28" startPosition="137" endLine="29" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1241364816356" fileName="InputFieldReference_field_ReferentConstraint.java" startLine="27" startPosition="132" endLine="29" endPosition="64">
       <varInfo nodeId="1241364841509" varName="calc" />
     </scopeInfo>
