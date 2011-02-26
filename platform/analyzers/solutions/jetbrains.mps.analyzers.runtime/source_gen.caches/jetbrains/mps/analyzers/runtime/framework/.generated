@@ -20,7 +20,6 @@
   </source>
   <source id="178770917832659559" name="CustomAnalyzerRunner" hash="39bf1e8f9bfg7ofre9vgtty0xswf7ey">
     <dep model="f:java_stub#7fa12e9c-b949-4976-b4fa-19accbc320b4#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow/jetbrains.mps.lang.dataFlow.framework@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
