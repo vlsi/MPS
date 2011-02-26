@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6zq81qgcck9odcmca2owica46d6jzum">
+<dependencies version="2" modelHash="2egq00ldwm9wo37pcjatkdyvh4k229n">
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-c5nb0tgn5x3ik166qlbxe33p18qx8iz" />
-  <common hash="-dwbiu2ltb418f3k16bgnvhkfyis81cg" />
-  <source id="3515521059660696290" name="ReaderStrategy" hash="-aie4l40fxhe399ex844n0q61wpsquhj">
+  <common hash="-e90mq1ehjzklhkxvfwr23fvnt337dr7" />
+  <source id="3515521059660696290" name="ReaderStrategy" hash="-chojzv5beevtpuw7irj994bi0l3a4ze">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="ReaderStrategy.java" />
   </source>
