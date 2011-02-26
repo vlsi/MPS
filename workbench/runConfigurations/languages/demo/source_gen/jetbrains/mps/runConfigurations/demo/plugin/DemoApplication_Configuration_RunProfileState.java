@@ -22,6 +22,7 @@ import com.intellij.execution.executors.DefaultDebugExecutor;
 import jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debug.api.IDebugger;
+import com.intellij.execution.executors.DefaultRunExecutor;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.openapi.actionSystem.AnAction;
 import javax.swing.JComponent;
@@ -66,6 +67,16 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
 
   public IDebugger getDebugger() {
     return Java_Command.getDebugger();
+  }
+
+  public static boolean canExecute(String executorId) {
+    if (DefaultRunExecutor.EXECUTOR_ID.equals(executorId)) {
+      return true;
+    }
+    if (DefaultDebugExecutor.EXECUTOR_ID.equals(executorId)) {
+      return true;
+    }
+    return false;
   }
 
   private static class MyExecutionResult implements ExecutionResult {

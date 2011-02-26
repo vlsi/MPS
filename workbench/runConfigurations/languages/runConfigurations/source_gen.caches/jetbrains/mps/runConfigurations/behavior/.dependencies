@@ -20,6 +20,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
   </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.behavior.ComplexRunConfigurationExecutor_Behavior" file="ComplexRunConfigurationExecutor_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+  </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.behavior.ConfigurationFromExecutorReference_Behavior" file="ConfigurationFromExecutorReference_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+  </dependency>
   <dependency className="jetbrains.mps.runConfigurations.behavior.CreateEditor_Function_Behavior" file="CreateEditor_Function_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.lang.Class" />

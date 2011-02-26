@@ -10,16 +10,16 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class RunConfigurationExecutor_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-  public RunConfigurationExecutor_name_PropertyConstraint() {
+public class ComplexRunConfigurationExecutor_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
+  public ComplexRunConfigurationExecutor_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("jetbrains.mps.runConfigurations.structure.RunConfigurationExecutor", "name", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.runConfigurations.structure.ComplexRunConfigurationExecutor", "name", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("jetbrains.mps.runConfigurations.structure.RunConfigurationExecutor", "name");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.runConfigurations.structure.ComplexRunConfigurationExecutor", "name");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {

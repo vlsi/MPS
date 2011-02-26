@@ -6,21 +6,22 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${mps_home}/core/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="usages.baselang" />
-      <solutionPath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="usages.lambda" />
+      <solutionPath path="${mps_home}/core/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="old.usages" />
+      <solutionPath path="${mps_home}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" folder="usages" />
+      <solutionPath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="old.usages" />
       <solutionPath path="${project}/solutions/jetbrains.mps.runConfigurations.runtime/jetbrains.mps.runConfigurations.runtime.msd" folder="" />
       <solutionPath path="${project}/solutions/jetbrains.mps.runConfigurations.sandbox/jetbrains.mps.runConfigurations.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="usages.baselang" />
+      <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="old.usages" />
       <languagePath path="${mps_home}/core/baseLanguage/runConfigurations/runConfigurations.mpl" folder="old" />
-      <languagePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" folder="usages.baselang" />
+      <languagePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" folder="old.usages" />
       <languagePath path="${mps_home}/core/debug-api/debugApiProject/languages/api/api.mpl" />
       <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" folder="old" />
-      <languagePath path="${mps_home}/platform/buildlanguage/languages/buildlanguage/buildlanguage.mpl" folder="usages.build" />
-      <languagePath path="${mps_home}/platform/buildlanguage/languages/custommps/custommps.mpl" folder="usages.build" />
-      <languagePath path="${mps_home}/platform/buildlanguage/languages/packaging/packaging.mpl" folder="usages.build" />
-      <languagePath path="${mps_home}/samples/lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="usages.lambda" />
+      <languagePath path="${mps_home}/platform/buildlanguage/languages/buildlanguage/buildlanguage.mpl" folder="old.usages" />
+      <languagePath path="${mps_home}/platform/buildlanguage/languages/custommps/custommps.mpl" folder="old.usages" />
+      <languagePath path="${mps_home}/platform/buildlanguage/languages/packaging/packaging.mpl" folder="old.usages" />
+      <languagePath path="${mps_home}/samples/lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="old.usages" />
       <languagePath path="${project}/languages/demo/demo.mpl" folder="" />
       <languagePath path="${project}/languages/runConfigurations/runConfigurations.mpl" />
     </projectLanguages>

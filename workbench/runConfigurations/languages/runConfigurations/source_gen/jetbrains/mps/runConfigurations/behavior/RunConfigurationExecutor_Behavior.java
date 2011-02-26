@@ -14,4 +14,8 @@ public class RunConfigurationExecutor_Behavior {
   public static String call_getGeneratedClassName_8265043642382454451(SNode thisNode) {
     return PersistentConfiguration_Behavior.call_getGeneratedClassName_1252300412034469137(SLinkOperations.getTarget(thisNode, "runConfiguration", false)) + "_RunProfileState";
   }
+
+  public static String call_getCanExecuteMethodName_7806358006983616236(SNode thisNode) {
+    return "canExecute";
+  }
 }
