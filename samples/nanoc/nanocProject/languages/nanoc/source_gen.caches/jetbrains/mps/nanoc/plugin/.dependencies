@@ -28,7 +28,6 @@
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.plugin.Nanoc_ApplicationPlugin" file="Nanoc_ApplicationPlugin.java">
-    <classNode dependClassName="jetbrains.mps.nanoc.plugin.TraceInfoInitializer_CustomApplicationPlugin" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -149,11 +148,6 @@
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="jetbrains.mps.nanoc.plugin.SourceNanocConfiguration_Configuration" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationFactory" />
-  </dependency>
-  <dependency className="jetbrains.mps.nanoc.plugin.TraceInfoInitializer_CustomApplicationPlugin" file="TraceInfoInitializer_CustomApplicationPlugin.java">
-    <classNode dependClassName="jetbrains.mps.traceInfo.TraceInfoManager" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
 </dependenciesRoot>
 

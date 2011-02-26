@@ -5,6 +5,9 @@ package testRefactoring.structure;
 import testRefactoringTargetLang.structure.AbstractGoodConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class MyVeryGoodConcept1 extends AbstractGoodConcept implements INamedCon
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BROTHER = "brother";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public MyVeryGoodConcept1(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class MyVeryGoodConcept1 extends AbstractGoodConcept implements INamedCon
 
   public void setBrother(MyVeryGoodConcept1 node) {
     super.setReferent(MyVeryGoodConcept1.BROTHER, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(MyVeryGoodConcept1._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, MyVeryGoodConcept1._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, MyVeryGoodConcept1._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(MyVeryGoodConcept1._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, MyVeryGoodConcept1._$ATTRIBUTE, node);
   }
 
   public static MyVeryGoodConcept1 newInstance(SModel sm, boolean init) {

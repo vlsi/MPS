@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="4vl6khwu6kl33814smu2uz0z263t0yd">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7j7f23wpy27xm5qbrp0hshvy38yttz0" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-c5nb0tgn5x3ik166qlbxe33p18qx8iz" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="8piw64nlwt97de6k6fho9w6eaml5xak" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d5ax0i0w21fsp3r2lvns9jctqjjbwsh" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="36l17jjlzwkvt9mm38z504bro2ysrw9" />
+  <common hash="rf6l3w47mnhsc7iu4tl74frt36cs3s" />
+  <source id="3990508698139423539" name="GDBEventsAdapter" hash="cl5v36j13vxajcrsdsixko834r0mgb">
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <file name="GDBEventsAdapter.java" />
+  </source>
+  <source id="3990508698139426857" name="GDBEventsListener" hash="-et93hwh728vuai91pdxwyhszf9w6uew">
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <file name="GDBEventsListener.java" />
+  </source>
+  <source id="3990508698139429160" name="GDBEventsHandler" hash="-ec38fj2gotbwsjzixcxv9g33a8284z7">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="GDBEventsHandler.java" />
+  </source>
+</dependencies>
+

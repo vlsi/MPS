@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Components_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.Components_Behavior" />
   <unitInfo fileName="Service_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.Service_Behavior" />
-  <unitInfo fileName="Component_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.Component_Behavior" />
+  <unitInfo fileName="Component_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.Component_Behavior" />
   <unitInfo fileName="BeanUtil.java" startLine="64" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$QuotationClass_bgndvd_a0a0a0a" />
   <unitInfo fileName="BeanUtil.java" startLine="82" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$QuotationClass_bgndvd_a0a0a0b" />
   <unitInfo fileName="BeanProperty.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanProperty" />
