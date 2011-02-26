@@ -20,8 +20,11 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 
 public class StubMigrationHelper {
+  private static boolean ourRefsFixingMode = true;
+
   //ret null if no need for conversion or failed
   public static SModelId convertModelId(SModelId id) {
+    if (ourRefsFixingMode) return null;
     if (!(id instanceof ForeignSModelId)) return null;
     String fid = ((ForeignSModelId) id).getId();
     return StubMigrationHelper.convertModelUIDAny(fid);
@@ -29,6 +32,7 @@ public class StubMigrationHelper {
 
   //ret null if no need for conversion or failed
   public static SModelId convertModelUIDAny(String fid) {
+    if (ourRefsFixingMode) return null;
     int li = fid.lastIndexOf('#');
     int fi = fid.indexOf('#');
     if (fi != li) return null;
