@@ -3,7 +3,7 @@
   <persistence version="7" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="aeb98137-c8ec-4c86-a51b-f00c080e4652(jetbrains.mps.samples.matrixLanguage)" />
-  <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpoo" modelUID="r:00000000-0000-4000-0000-011c89590454(jetbrains.mps.samples.matrixLanguage.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -47,12 +47,12 @@
             <property name="name" nameId="tpck.1169194664001" value="abc" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpoo.MatrixType" typeId="tpoo.1209978821264" id="1209989364497">
               <node role="scalarType" roleId="tpoo.1210159684238" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210163845732">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpoo.MatrixLiteral" typeId="tpoo.1209987469663" id="1210255383705">
               <node role="scalarType" roleId="tpoo.1210161158423" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210255389402">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
               </node>
               <node role="row" roleId="tpoo.1209987497704" type="tpoo.MatrixRow" typeId="tpoo.1209987479015" id="1215189101329">
                 <node role="items" roleId="tpoo.1209987483934" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1215417598927">
@@ -129,7 +129,7 @@
               </node>
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1215184154730">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1215184154732">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~Double%d&lt;init&gt;(double)" resolveInfo="Double" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Double%d&lt;init&gt;(double)" resolveInfo="Double" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="1210171995394">
                     <property name="value" nameId="tpee.1113006610751" value="10.0" />
                   </node>
@@ -145,7 +145,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1210239674452">
             <property name="name" nameId="tpck.1169194664001" value="sum" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210239674453">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="1210253007174">
               <property name="value" nameId="tpee.1113006610751" value="0.0" />

@@ -9,9 +9,9 @@
   <language namespace="aeb98137-c8ec-4c86-a51b-f00c080e4652(jetbrains.mps.samples.matrixLanguage)" />
   <import index="tpoo" modelUID="r:00000000-0000-4000-0000-011c89590454(jetbrains.mps.samples.matrixLanguage.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="tpdt" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" />
   <import index="tpdu" modelUID="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
@@ -109,7 +109,7 @@
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1210167980573">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpoo.MatrixType" typeId="tpoo.1209978821264" id="1210167980574">
               <node role="scalarType" roleId="tpoo.1210159684238" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210167990991">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
               </node>
             </node>
           </node>
@@ -187,7 +187,7 @@
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1210002109877">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpoo.MatrixType" typeId="tpoo.1209978821264" id="1210002118746">
               <node role="scalarType" roleId="tpoo.1210159684238" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210166195870">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
               </node>
             </node>
           </node>
@@ -205,7 +205,7 @@
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1210003578995">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpoo.MatrixType" typeId="tpoo.1209978821264" id="1210003588099">
               <node role="scalarType" roleId="tpoo.1210159684238" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210166200605">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
               </node>
             </node>
           </node>
@@ -274,7 +274,7 @@
                           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1210171765355">
                             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpoo.MatrixType" typeId="tpoo.1209978821264" id="1210171765356">
                               <node role="scalarType" roleId="tpoo.1210159684238" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210171765357">
-                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
                                 <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1210171765358">
                                   <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1210171765359">
                                     <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1210171765360">
@@ -364,7 +364,7 @@
                             <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1210174269265">
                               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpoo.MatrixType" typeId="tpoo.1209978821264" id="1210174269266">
                                 <node role="scalarType" roleId="tpoo.1210159684238" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1210174269267">
-                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
                                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1210174269268">
                                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1210174269269">
                                       <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1210174269270">

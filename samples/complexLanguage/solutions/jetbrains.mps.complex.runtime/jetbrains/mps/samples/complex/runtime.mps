@@ -3,15 +3,11 @@
   <persistence version="4" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="1" />
-  <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590428(jetbrains.mps.samples.complex.runtime)" version="-1" />
+  <maxImportIndex value="2" />
+  <import index="2" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1196259667740">
     <property name="name:3" value="Complex" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1196266543480">
@@ -405,8 +401,8 @@
               <link role="baseMethodDeclaration:3" targetNodeId="1196259741498" resolveInfo="Complex" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.MulExpression:3" id="1196421477962">
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1196421491295">
-                  <link role="baseMethodDeclaration:3" targetNodeId="1.~Math.cos(double):double" resolveInfo="cos" />
-                  <link role="classConcept:3" targetNodeId="1.~Math" resolveInfo="Math" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="2.~Math.cos(double):double" resolveInfo="cos" />
+                  <link role="classConcept:3" targetNodeId="2.~Math" resolveInfo="Math" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1196421493968">
                     <link role="variableDeclaration:3" targetNodeId="1196421439058" resolveInfo="arg" />
                   </node>
@@ -417,8 +413,8 @@
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.MulExpression:3" id="1196421515252">
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1196421523803">
-                  <link role="baseMethodDeclaration:3" targetNodeId="1.~Math.sin(double):double" resolveInfo="sin" />
-                  <link role="classConcept:3" targetNodeId="1.~Math" resolveInfo="Math" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="2.~Math.sin(double):double" resolveInfo="sin" />
+                  <link role="classConcept:3" targetNodeId="2.~Math" resolveInfo="Math" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1196421525913">
                     <link role="variableDeclaration:3" targetNodeId="1196421439058" resolveInfo="arg" />
                   </node>
@@ -517,8 +513,8 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1196262508600">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1196262537486">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1196263816745">
-            <link role="baseMethodDeclaration:3" targetNodeId="1.~Math.sqrt(double):double" resolveInfo="sqrt" />
-            <link role="classConcept:3" targetNodeId="1.~Math" resolveInfo="Math" />
+            <link role="baseMethodDeclaration:3" targetNodeId="2.~Math.sqrt(double):double" resolveInfo="sqrt" />
+            <link role="classConcept:3" targetNodeId="2.~Math" resolveInfo="Math" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1196263817980">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.MulExpression:3" id="1196263817981">
                 <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1206622054059">
@@ -577,8 +573,8 @@
                 <property name="name:3" value="result" />
                 <node role="type:3" type="jetbrains.mps.baseLanguage.structure.DoubleType:3" id="1196421772509" />
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1196421782856">
-                  <link role="baseMethodDeclaration:3" targetNodeId="1.~Math.acos(double):double" resolveInfo="acos" />
-                  <link role="classConcept:3" targetNodeId="1.~Math" resolveInfo="Math" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="2.~Math.acos(double):double" resolveInfo="acos" />
+                  <link role="classConcept:3" targetNodeId="2.~Math" resolveInfo="Math" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DivExpression:3" id="1196421789094">
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1196421791691">
                       <link role="variableDeclaration:3" targetNodeId="1196421747867" resolveInfo="r" />
@@ -711,8 +707,8 @@
                     </node>
                   </node>
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1206621766242">
-                    <link role="baseMethodDeclaration:3" targetNodeId="1.~Math.abs(double):double" resolveInfo="abs" />
-                    <link role="classConcept:3" targetNodeId="1.~Math" resolveInfo="Math" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="2.~Math.abs(double):double" resolveInfo="abs" />
+                    <link role="classConcept:3" targetNodeId="2.~Math" resolveInfo="Math" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1206621769087">
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1206621769088">
                         <link role="fieldDeclaration:3" targetNodeId="1196259698235" resolveInfo="myImaginary" />
@@ -772,8 +768,8 @@
                 </node>
               </node>
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1206621855975">
-                <link role="classConcept:3" targetNodeId="1.~Math" resolveInfo="Math" />
-                <link role="baseMethodDeclaration:3" targetNodeId="1.~Math.abs(double):double" resolveInfo="abs" />
+                <link role="classConcept:3" targetNodeId="2.~Math" resolveInfo="Math" />
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~Math.abs(double):double" resolveInfo="abs" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1206621855976">
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1206621855977">
                     <link role="fieldDeclaration:3" targetNodeId="1196259698235" resolveInfo="myImaginary" />
@@ -830,8 +826,8 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="1196421567573">
             <link role="baseMethodDeclaration:3" targetNodeId="1196421402037" resolveInfo="createComplexPolar" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1196426272930">
-              <link role="baseMethodDeclaration:3" targetNodeId="1.~Math.pow(double,double):double" resolveInfo="pow" />
-              <link role="classConcept:3" targetNodeId="1.~Math" resolveInfo="Math" />
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~Math.pow(double,double):double" resolveInfo="pow" />
+              <link role="classConcept:3" targetNodeId="2.~Math" resolveInfo="Math" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1206621804180">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1196426275135" />
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1206621804181">

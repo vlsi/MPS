@@ -4,17 +4,13 @@
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.samples.complex)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="3" />
-  <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="3" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959042a(jetbrains.mps.complex.sandbox)" version="-1" />
+  <maxImportIndex value="5" />
+  <import index="4" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1196260114546">
     <property name="name:3" value="Main" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1196260129312">
@@ -59,11 +55,11 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1206619906738">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1206619920202">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1206619906739">
-              <link role="classifier:3" targetNodeId="2.~System" resolveInfo="System" />
-              <link role="variableDeclaration:3" targetNodeId="2.~System.out" resolveInfo="out" />
+              <link role="classifier:3" targetNodeId="4.~System" resolveInfo="System" />
+              <link role="variableDeclaration:3" targetNodeId="4.~System.out" resolveInfo="out" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1206619936532">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+              <link role="baseMethodDeclaration:3" targetNodeId="5.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1206620379141">
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1206620379142">
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.MulExpression:3" id="1206620379143">
@@ -109,11 +105,11 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1206620105311">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1206620108517">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1206620105312">
-              <link role="classifier:3" targetNodeId="2.~System" resolveInfo="System" />
-              <link role="variableDeclaration:3" targetNodeId="2.~System.out" resolveInfo="out" />
+              <link role="classifier:3" targetNodeId="4.~System" resolveInfo="System" />
+              <link role="variableDeclaration:3" targetNodeId="4.~System.out" resolveInfo="out" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1206620116472">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+              <link role="baseMethodDeclaration:3" targetNodeId="5.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1206620163342">
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1206620175423">
                   <node role="expression:3" type="jetbrains.mps.samples.complex.structure.ConjugateComplexExpression:4" id="1206620175424">
@@ -137,11 +133,11 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1206620194975">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1206620198180">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1206620194976">
-              <link role="classifier:3" targetNodeId="2.~System" resolveInfo="System" />
-              <link role="variableDeclaration:3" targetNodeId="2.~System.out" resolveInfo="out" />
+              <link role="classifier:3" targetNodeId="4.~System" resolveInfo="System" />
+              <link role="variableDeclaration:3" targetNodeId="4.~System.out" resolveInfo="out" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1206620203964">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+              <link role="baseMethodDeclaration:3" targetNodeId="5.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1206620231846">
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1206620233818">
                   <link role="variableDeclaration:3" targetNodeId="1196430125279" resolveInfo="c2" />
