@@ -552,8 +552,12 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "iconPath", true) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "iconPath", true), "path"));
   }
 
-  public static boolean ifMacro_Condition_3503961503302369312(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()), "debugger", true) == null);
+  public static boolean ifMacro_Condition_5925077313451982796(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()), "canRun");
+  }
+
+  public static boolean ifMacro_Condition_5925077313451982812(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()), "debugger", true) != null);
   }
 
   public static boolean ifMacro_Condition_6589514334700622429(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -917,9 +921,9 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_6472627752525424777(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode expression = new QueriesGenerated.QuotationClass_x583g4_a0a0a302().createNode();
+    SNode expression = new QueriesGenerated.QuotationClass_x583g4_a0a0a402().createNode();
     for (SNode part : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "part", true))) {
-      expression = new QueriesGenerated.QuotationClass_x583g4_a0a0a1a302().createNode(expression, SNodeOperations.copyNode(SLinkOperations.getTarget(part, "expression", true)));
+      expression = new QueriesGenerated.QuotationClass_x583g4_a0a0a1a402().createNode(expression, SNodeOperations.copyNode(SLinkOperations.getTarget(part, "expression", true)));
     }
     return expression;
   }
@@ -982,8 +986,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a302 {
-    public QuotationClass_x583g4_a0a0a302() {
+  public static class QuotationClass_x583g4_a0a0a402 {
+    public QuotationClass_x583g4_a0a0a402() {
     }
 
     public SNode createNode() {
@@ -1006,8 +1010,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a1a302 {
-    public QuotationClass_x583g4_a0a0a1a302() {
+  public static class QuotationClass_x583g4_a0a0a1a402 {
+    public QuotationClass_x583g4_a0a0a1a402() {
     }
 
     public SNode createNode(Object parameter_10, Object parameter_11) {

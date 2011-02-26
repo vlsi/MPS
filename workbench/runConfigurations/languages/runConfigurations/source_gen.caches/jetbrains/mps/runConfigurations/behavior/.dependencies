@@ -152,6 +152,7 @@
     <classNode dependClassName="jetbrains.mps.runConfigurations.behavior.EditorOperationDeclaration_Behavior" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.behavior.RunConfigurationExecutor_Behavior" file="RunConfigurationExecutor_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior" />

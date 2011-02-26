@@ -19,6 +19,7 @@ public class RunConfigurationExecutor extends BaseConcept implements INamedConce
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String CAN_RUN = "canRun";
   public static final String RUN_CONFIGURATION = "runConfiguration";
   public static final String DEBUGGER = "debugger";
   public static final String EXECUTE = "execute";
@@ -58,6 +59,14 @@ public class RunConfigurationExecutor extends BaseConcept implements INamedConce
 
   public void setVirtualPackage(String value) {
     this.setProperty(RunConfigurationExecutor.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getCanRun() {
+    return this.getBooleanProperty(RunConfigurationExecutor.CAN_RUN);
+  }
+
+  public void setCanRun(boolean value) {
+    this.setBooleanProperty(RunConfigurationExecutor.CAN_RUN, value);
   }
 
   public RunConfiguration getRunConfiguration() {

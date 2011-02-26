@@ -31,6 +31,8 @@ import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
+import com.intellij.execution.executors.DefaultRunExecutor;
+import com.intellij.execution.executors.DefaultDebugExecutor;
 
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);
@@ -145,8 +147,14 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
   }
 
   @Override
-  public boolean canExecute(String excutorId) {
-    return true;
+  public boolean canExecute(String executorId) {
+    if (DefaultRunExecutor.EXECUTOR_ID.equals(executorId)) {
+      return true;
+    }
+    if (DefaultDebugExecutor.EXECUTOR_ID.equals(executorId)) {
+      return true;
+    }
+    return false;
   }
 
   public class MyState {

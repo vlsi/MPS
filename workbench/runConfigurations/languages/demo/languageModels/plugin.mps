@@ -43,6 +43,7 @@
       <link role="configurationType" roleId="uhxm.2401501559171353314" targetNodeId="8750596094204760415" resolveInfo="Demo" />
     </node>
     <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.2401501559171392633" id="8750596094204764240">
+      <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
       <link role="runConfiguration" roleId="uhxm.1048802521465114237" targetNodeId="8750596094204760417" resolveInfo="Demo Application" />
     </node>
     <node type="uhxm.PersistentConfigurationTemplate" typeId="uhxm.4157833584164830749" id="223733852661754512">
@@ -400,11 +401,11 @@
         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="456055012090368958" resolveInfo="javaProcess" />
       </node>
     </node>
-    <node role="debugger" roleId="uhxm.4371737370139995047" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4371737370140200481">
-      <node role="operand" roleId="tpee.1197027771414" type="uhxm.CommandReferenceExpression" typeId="uhxm.4371737370140112219" id="4371737370140200480">
+    <node role="debugger" roleId="uhxm.4371737370139995047" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5925077313451977077">
+      <node role="operand" roleId="tpee.1197027771414" type="uhxm.CommandReferenceExpression" typeId="uhxm.4371737370140112219" id="5925077313451977076">
         <link role="command" roleId="uhxm.4371737370140112220" targetNodeId="6957430790227279303" resolveInfo="java" />
       </node>
-      <node role="operation" roleId="tpee.1197027833540" type="uhxm.CommandDebuggerOperation" typeId="uhxm.4371737370140136071" id="4371737370140200485" />
+      <node role="operation" roleId="tpee.1197027833540" type="uhxm.CommandDebuggerOperation" typeId="uhxm.4371737370140136071" id="5925077313451977081" />
     </node>
   </root>
   <root id="223733852661754512">
