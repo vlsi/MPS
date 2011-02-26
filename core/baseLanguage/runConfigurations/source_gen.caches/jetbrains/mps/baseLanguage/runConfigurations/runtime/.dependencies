@@ -99,8 +99,9 @@
     <classNode extendsClassName="javax.swing.JComponent" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaRunProfileState" file="JavaRunProfileState.java">
-    <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSessionCreator" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState" />

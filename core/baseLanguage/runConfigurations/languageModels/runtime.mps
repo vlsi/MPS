@@ -3962,6 +3962,9 @@
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8255351389869712692">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="seyr.~BaseRunProfileState" resolveInfo="BaseRunProfileState" />
     </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="4371737370140227070">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="mwyq.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </root>
 </model>
 
