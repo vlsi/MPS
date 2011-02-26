@@ -6,7 +6,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)" version="0" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="f:java_stub#com.intellij.util(com.intellij.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument:0" id="1740160309778217800">
     <property name="name:0" value="foobar" />
     <node role="root:0" type="jetbrains.mps.platform.conf.structure.IdeaPlugin:0" id="1740160309778221572">

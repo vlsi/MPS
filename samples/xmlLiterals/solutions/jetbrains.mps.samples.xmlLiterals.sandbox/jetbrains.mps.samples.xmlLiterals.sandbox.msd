@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.samples.xmlLiterals.sandbox" uuid="8eb1dabd-b178-4cda-9ffe-5faf193c0a36" extenallyVisible="true" compileInMPS="true" java-stubs-enabled="true">
+<solution name="jetbrains.mps.samples.xmlLiterals.sandbox" uuid="8eb1dabd-b178-4cda-9ffe-5faf193c0a36" compileInMPS="true" java-stubs-enabled="true">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <classPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>

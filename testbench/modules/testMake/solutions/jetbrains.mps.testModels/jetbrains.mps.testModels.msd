@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.testModels" uuid="0ad673c1-40fc-4b9b-9d51-6b777528efae" extenallyVisible="true" compileInMPS="false" java-stubs-enabled="true">
+<solution name="jetbrains.mps.testModels" uuid="0ad673c1-40fc-4b9b-9d51-6b777528efae" compileInMPS="false" java-stubs-enabled="true">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.testModels" />
   </models>
-  <classPath />
   <sourcePath />
   <usedLanguages>
     <usedLanguage>f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</usedLanguage>
