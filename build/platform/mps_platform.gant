@@ -58,8 +58,14 @@ def layoutFull(String home, String targetDirectory) {
         jar("resources.jar") {
           module("resources"){
             exclude(name: "**/IdeaPlugin.xml")
+            exclude(name: "componentSets/*")
           }
-          module("platform-resources")
+          module("platform-resources") {
+            exclude(name: "META-INF/LangExtensions.xml")
+            exclude(name: "META-INF/PlatformLangPlugin.xml")
+            exclude(name: "META-INF/PlatformLangXmlPlugin.xml")
+            exclude(name: "META-INF/XmlPlugin.xml")
+          }
         }
         jar("resources_en.jar") {
           module("resources-en")
@@ -172,7 +178,8 @@ private List platformImplementationModules() {
           "tests_bootstrap",
           "xml",
           "images",
-          "execution-openapi"
+          "execution-openapi",
+          "execution-impl"
   ]
 }
 
