@@ -20,7 +20,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 
 public class StubMigrationHelper {
-  private static boolean ourRefsFixingMode = true;
+  public static boolean ourRefsFixingMode = true;
 
   //ret null if no need for conversion or failed
   public static SModelId convertModelId(SModelId id) {

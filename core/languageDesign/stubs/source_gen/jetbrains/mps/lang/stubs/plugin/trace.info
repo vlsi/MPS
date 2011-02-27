@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Stubs_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.stubs.plugin.Stubs_ProjectPlugin" />
-  <unitInfo fileName="UpdateAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.stubs.plugin.UpdateAddition_ActionGroup" />
-  <unitInfo fileName="Stubs_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.stubs.plugin.Stubs_ApplicationPlugin" />
+  <unitInfo fileName="UpdateAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.stubs.plugin.UpdateAddition_ActionGroup" />
+  <unitInfo fileName="Stubs_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.stubs.plugin.Stubs_ApplicationPlugin" />
+  <unitInfo fileName="EnableAutoRefsResolving_Action.java" startLine="13" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.stubs.plugin.EnableAutoRefsResolving_Action" />
   <unitInfo fileName="FindDuplicatedStubs_Action.java" startLine="24" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.stubs.plugin.FindDuplicatedStubs_Action" />
   <unitInfo fileName="UpdateLanguageAccessories_Action.java" startLine="23" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.stubs.plugin.UpdateLanguageAccessories_Action" />
   <unitInfo fileName="ReResolveStubRefs_Action.java" startLine="30" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.lang.stubs.plugin.ReResolveStubRefs_Action" />
+  <root nodeId="2116992363922121800">
+    <nodeInfo nodeId="2116992363922236401" fileName="EnableAutoRefsResolving_Action.java" startLine="40" startPosition="9" endLine="41" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
   <root nodeId="2948893561591761858">
     <nodeInfo nodeId="5585424508823446784" fileName="ReResolveStubRefs_Action.java" startLine="65" startPosition="9" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2948893561591761906" fileName="ReResolveStubRefs_Action.java" startLine="68" startPosition="55" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
@@ -122,6 +126,7 @@
     <nodeInfo nodeId="451539991477640739" fileName="UpdateAddition_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2948893561591761862" fileName="UpdateAddition_ActionGroup.java" startLine="17" startPosition="116" endLine="18" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="562290131853838282" fileName="UpdateAddition_ActionGroup.java" startLine="18" startPosition="108" endLine="19" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2116992363922236488" fileName="UpdateAddition_ActionGroup.java" startLine="19" startPosition="110" endLine="20" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="451539991477636997">
     <nodeInfo nodeId="4847821774195672607" fileName="UpdateLanguageAccessories_Action.java" startLine="59" startPosition="78" endLine="60" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

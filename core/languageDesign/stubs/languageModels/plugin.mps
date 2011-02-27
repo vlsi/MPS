@@ -42,6 +42,10 @@
       <property name="name" nameId="tpck.1169194664001" value="FindDuplicatedStubs" />
       <property name="caption" nameId="tp4k.1205250923097" value="Find Duplicated Stubs" />
     </node>
+    <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2116992363922121800">
+      <property name="name" nameId="tpck.1169194664001" value="EnableAutoRefsResolving" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Enable Auto Refs Resolving" />
+    </node>
   </roots>
   <root id="451539991477558581">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="451539991477558583">
@@ -53,6 +57,9 @@
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="562290131853838282">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="562290131853737055" resolveInfo="FindDuplicatedStubs" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2116992363922236488">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2116992363922121800" resolveInfo="EnableAutoRefsResolving" />
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="451539991477558585">
@@ -1304,6 +1311,23 @@
                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.UndefinedType" typeId="tpee.4836112446988635817" id="562290131853835809" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="2116992363922121800">
+    <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="2116992363922121801">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2116992363922121802">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2116992363922236401">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="2116992363922236403">
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2116992363922236486">
+              <property name="value" nameId="tpee.1068580123138" value="false" />
+            </node>
+            <node role="lValue" roleId="tpee.1068498886295" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2116992363922236402">
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="lkfb.~StubMigrationHelper" resolveInfo="StubMigrationHelper" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="lkfb.~StubMigrationHelper%dourRefsFixingMode" resolveInfo="ourRefsFixingMode" />
             </node>
           </node>
         </node>
