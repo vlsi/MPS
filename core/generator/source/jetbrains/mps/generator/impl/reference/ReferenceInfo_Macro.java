@@ -21,6 +21,7 @@ import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
@@ -104,7 +105,7 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
             // model: either current output or java_stub
             if (!modelName.equals(generator.getOutputModel().getLongName())) {
               // external java_stub
-              myExternalTargetModelReference = StubHelper.uidForPackageInStubs(modelName);
+              myExternalTargetModelReference = StubHelper.uidForPackageInStubs(modelName, LanguageID.JAVA, null,true);
             }
           }
         }
