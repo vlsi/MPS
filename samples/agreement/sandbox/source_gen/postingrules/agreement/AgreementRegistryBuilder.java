@@ -14,9 +14,9 @@ import formulaAdapter.ValueDouble;
 import formulaAdapter.UsageDouble;
 import mf.Currency;
 import formulaAdapter.MoneyAddOperation;
-import formulaAdapter.MoneyConstant;
 import formulaAdapter.MoneyMultiplyOperation;
 import formulaAdapter.FeeMoney;
+import formulaAdapter.MoneyConstant;
 import mf.Quantity;
 import mf.Unit;
 import jetbrains.mps.samples.formulaLanguage.api.IfFunction;
@@ -37,8 +37,8 @@ public class AgreementRegistryBuilder {
     result.setValue("BASE_RATE", 10.0, MfDate.PAST);
     result.setValue("BASE_RATE", 12.0, new MfDate(1999, 12, 1));
     result.addPostingRule(EventType.USAGE, new PostingRule_Formula(AccountType.BASE_USAGE, true, new MoneyAdapter(new MultiplyOperation(new ValueDouble("BASE_RATE"), new UsageDouble()), Currency.USD)), new MfDate(1999, 10, 1));
-    result.addPostingRule(EventType.SERVICE_CALL, new PostingRule_Formula(AccountType.SERVICE, true, new MoneyAddOperation(new MultiplyOperation(null, null), new MoneyConstant(10.0, Currency.USD))), new MfDate(1999, 10, 1));
-    result.addPostingRule(EventType.SERVICE_CALL, new PostingRule_Formula(AccountType.SERVICE, true, new MoneyAddOperation(new MultiplyOperation(null, null), new MoneyConstant(15.0, Currency.USD))), new MfDate(1999, 12, 1));
+    result.addPostingRule(EventType.SERVICE_CALL, new PostingRule_Formula(AccountType.SERVICE, true, new MoneyAddOperation(new MoneyMultiplyOperation(new FeeMoney(), null), new MoneyConstant(10.0, Currency.USD))), new MfDate(1999, 10, 1));
+    result.addPostingRule(EventType.SERVICE_CALL, new PostingRule_Formula(AccountType.SERVICE, true, new MoneyAddOperation(new MoneyMultiplyOperation(new FeeMoney(), null), new MoneyConstant(15.0, Currency.USD))), new MfDate(1999, 12, 1));
     result.addPostingRule(EventType.TAX, new PostingRule_Formula(AccountType.TAX, false, new MoneyMultiplyOperation(new FeeMoney(), null)), new MfDate(1999, 10, 1));
     return result;
   }
