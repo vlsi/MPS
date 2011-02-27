@@ -6,7 +6,6 @@
   <accessoryModels>
     <model modelUID="r:00000000-0000-4000-0000-011c89590318(jetbrains.mps.lang.refactoring.samples)" />
     <model modelUID="f:java_stub#3ecd7c84-cde3-45de-886c-135ecc69b742#jetbrains.mps.refactoring.framework.paramchooser(jetbrains.mps.lang.refactoring/jetbrains.mps.refactoring.framework.paramchooser@java_stub)" />
-    <model modelUID="f:java_stub#071dc6d3-9172-49bc-9ecd-8487bb9112a4#jetbrains.mps.refactoring.framework.paramchooser(jetbrains.mps.lang.refactoring#1189697379687/jetbrains.mps.refactoring.framework.paramchooser@java_stub)" />
   </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.lang.refactoring#1189697379687" uuid="071dc6d3-9172-49bc-9ecd-8487bb9112a4">
