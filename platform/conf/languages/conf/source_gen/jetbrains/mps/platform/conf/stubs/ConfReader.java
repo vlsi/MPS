@@ -27,6 +27,8 @@ import jetbrains.mps.smodel.SNodeId;
 public class ConfReader {
   private static final Namespace XI = Namespace.getNamespace("xi", "http://www.w3.org/2001/XInclude");
   private static final String IDEA_PLUGIN = "idea-plugin";
+  private static final String COMPONENT = "component";
+  private static final String ROOT = "root";
   private static final String COMPONENTS = "components";
   private static final String EXTENSION_POINTS = "extensionPoints";
   private static final String EXTENSIONS = "extensions";
@@ -37,7 +39,6 @@ public class ConfReader {
   private static final String NAME = "name";
   private static final String BEAN_CLASS = "beanClass";
   private static final String INTERFACE = "interface";
-  private static final String COMPONENT = "component";
   private static final String INTERFACE_CLASS = "interface-class";
   private static final String IMPLEMENTATION_CLASS = "implementation-class";
   private static final String APPLICATION_SERVICE = "applicationService";
@@ -66,6 +67,10 @@ public class ConfReader {
     String rootName = root.getName();
     if (IDEA_PLUGIN.equals(rootName)) {
       readContainers(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.IdeaPlugin"), root);
+    } else if (COMPONENT.equals(rootName)) {
+      readContainers(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.ComponentRoot"), root);
+    } else if (ROOT.equals(rootName)) {
+      readContainers(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.RootRoot"), root);
     } else if (COMPONENTS.equals(rootName)) {
       readContainers(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.ComponentsRoot"), root);
     } else if (EXTENSION_POINTS.equals(rootName)) {
@@ -129,6 +134,24 @@ public class ConfReader {
     }
   }
 
+  private void readExtensions(SNode node, Element es) {
+    for (Element ext : elements(es)) {
+      if (Namespace.NO_NAMESPACE.equals(ext.getNamespace())) {
+        if (APPLICATION_SERVICE.equals(ext.getName())) {
+          readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "application"), ext);
+        } else if (MODULE_SERVICE.equals(ext.getName())) {
+          readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "module"), ext);
+        } else if (PROJECT_SERVICE.equals(ext.getName())) {
+          readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "project"), ext);
+        } else {
+          readExtension(node, ext);
+        }
+      } else if (XI.equals(ext.getNamespace())) {
+        readInclude(node, ext);
+      }
+    }
+  }
+
   public void readInclude(SNode node, Element include) {
     SNode xi = SLinkOperations.addNewChild(node, "fragment", "jetbrains.mps.platform.conf.structure.XInclude");
     String href = include.getAttributeValue(HREF);
@@ -158,20 +181,6 @@ public class ConfReader {
       Matcher mm = INCLUDE_PTN.matcher(m.group(1));
       if (mm.matches()) {
         SPropertyOperations.set(xi, "includeRoot", mm.group(1));
-      }
-    }
-  }
-
-  private void readExtensions(SNode node, Element es) {
-    for (Element ext : elements(es)) {
-      if (APPLICATION_SERVICE.equals(ext.getName())) {
-        readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "application"), ext);
-      } else if (MODULE_SERVICE.equals(ext.getName())) {
-        readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "module"), ext);
-      } else if (PROJECT_SERVICE.equals(ext.getName())) {
-        readService(node, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "project"), ext);
-      } else {
-        readExtension(node, ext);
       }
     }
   }
@@ -313,7 +322,7 @@ public class ConfReader {
       return false;
     }
     String rootName = root.getName();
-    return IDEA_PLUGIN.equals(rootName) || COMPONENTS.equals(rootName) || EXTENSION_POINTS.equals(rootName) || EXTENSIONS.equals(rootName) || APPLICATION_COMPONENTS.equals(rootName) || MODULE_COMPONENTS.equals(rootName) || PROJECT_COMPONENTS.equals(rootName);
+    return IDEA_PLUGIN.equals(rootName) || COMPONENT.equals(rootName) || COMPONENTS.equals(rootName) || EXTENSION_POINTS.equals(rootName) || EXTENSIONS.equals(rootName) || APPLICATION_COMPONENTS.equals(rootName) || MODULE_COMPONENTS.equals(rootName) || PROJECT_COMPONENTS.equals(rootName);
   }
 
   public static interface Resolver {

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ComponentRoot_Constraints.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ComponentRoot_Constraints" />
+  <unitInfo fileName="RootRoot_Constraints.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.RootRoot_Constraints" />
   <unitInfo fileName="Extensions_Constraints.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.Extensions_Constraints" />
   <unitInfo fileName="ExtensionPoints_Constraints.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ExtensionPoints_Constraints" />
   <unitInfo fileName="Components_Constraints.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.Components_Constraints" />
@@ -51,6 +53,20 @@
     <nodeInfo nodeId="8546999199441594110" fileName="Extensions_Constraints.java" startLine="11" startPosition="116" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="8546999199441594111" fileName="Extensions_Constraints.java" startLine="12" startPosition="132" endLine="13" endPosition="265" />
     <scopeInfo nodeId="7161354651095842822" fileName="Extensions_Constraints.java" startLine="11" startPosition="116" endLine="15" endPosition="16" />
+  </root>
+  <root nodeId="7225089784577918897">
+    <nodeInfo nodeId="7225089784577918903" fileName="RootRoot_Constraints.java" startLine="12" startPosition="126" endLine="13" endPosition="388" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7225089784577918923" fileName="RootRoot_Constraints.java" startLine="14" startPosition="5" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7225089784577918901" fileName="RootRoot_Constraints.java" startLine="11" startPosition="116" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="7225089784577918902" fileName="RootRoot_Constraints.java" startLine="12" startPosition="126" endLine="13" endPosition="388" />
+    <scopeInfo nodeId="7225089784577918900" fileName="RootRoot_Constraints.java" startLine="11" startPosition="116" endLine="15" endPosition="16" />
+  </root>
+  <root nodeId="8009656244648532782">
+    <nodeInfo nodeId="8009656244648532787" fileName="ComponentRoot_Constraints.java" startLine="12" startPosition="131" endLine="13" endPosition="393" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8009656244648532807" fileName="ComponentRoot_Constraints.java" startLine="14" startPosition="5" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8009656244648532785" fileName="ComponentRoot_Constraints.java" startLine="11" startPosition="116" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="8009656244648532786" fileName="ComponentRoot_Constraints.java" startLine="12" startPosition="131" endLine="13" endPosition="393" />
+    <scopeInfo nodeId="8009656244648532784" fileName="ComponentRoot_Constraints.java" startLine="11" startPosition="116" endLine="15" endPosition="16" />
   </root>
 </debugInfo>
 

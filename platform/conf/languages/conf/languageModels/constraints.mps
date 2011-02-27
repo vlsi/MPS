@@ -348,5 +348,121 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="8009656244648532782">
+    <property name="virtualPackage:8" value="elements" />
+    <link role="concept:8" targetNodeId="1.8009656244648532777:0" resolveInfo="ComponentRoot" />
+    <node role="canBeParent:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent:8" id="8009656244648532783">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8009656244648532784">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8009656244648532785">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8009656244648532786">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8009656244648532787">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="8009656244648532788">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="8009656244648532789">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="8009656244648532790">
+                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8009656244648532791">
+                      <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept:8" id="8009656244648532792" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation:16" id="8009656244648532793">
+                        <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8009656244648532794">
+                          <link role="conceptDeclaration:16" targetNodeId="1.5066720069350533017:0" resolveInfo="IExternalConfigurationFragment" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8009656244648532795">
+                      <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept:8" id="8009656244648532796" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation:16" id="8009656244648532797">
+                        <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8009656244648532798">
+                          <link role="conceptDeclaration:16" targetNodeId="1.5314521579133239158:0" resolveInfo="IConfiguration" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="8009656244648532799">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8009656244648532800">
+                    <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept:8" id="8009656244648532801" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation:16" id="8009656244648532802">
+                      <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8009656244648532809">
+                        <link role="conceptDeclaration:16" targetNodeId="1.8009656244648532777:0" resolveInfo="ComponentRoot" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="8009656244648532804">
+            <node role="leftExpression:3" type="jetbrains.mps.lang.smodel.structure.LinkRefExpression:16" id="8009656244648532805">
+              <link role="conceptDeclaration:16" targetNodeId="1.8009656244648532777:0" resolveInfo="ComponentRoot" />
+              <link role="linkDeclaration:16" targetNodeId="1.8009656244648532780:0" />
+            </node>
+            <node role="rightExpression:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link:8" id="8009656244648532806" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8009656244648532807">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="8009656244648532808">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="7225089784577918897">
+    <property name="virtualPackage:8" value="elements" />
+    <link role="concept:8" targetNodeId="1.7225089784577918894:0" resolveInfo="RootRoot" />
+    <node role="canBeParent:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent:8" id="7225089784577918899">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7225089784577918900">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7225089784577918901">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7225089784577918902">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7225089784577918903">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="7225089784577918904">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="7225089784577918905">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="7225089784577918906">
+                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7225089784577918907">
+                      <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept:8" id="7225089784577918908" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation:16" id="7225089784577918909">
+                        <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="7225089784577918910">
+                          <link role="conceptDeclaration:16" targetNodeId="1.5066720069350533017:0" resolveInfo="IExternalConfigurationFragment" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7225089784577918911">
+                      <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept:8" id="7225089784577918912" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation:16" id="7225089784577918913">
+                        <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="7225089784577918914">
+                          <link role="conceptDeclaration:16" targetNodeId="1.5314521579133239158:0" resolveInfo="IConfiguration" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="7225089784577918915">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7225089784577918916">
+                    <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept:8" id="7225089784577918917" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation:16" id="7225089784577918918">
+                      <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="7225089784577918925">
+                        <link role="conceptDeclaration:16" targetNodeId="1.7225089784577918894:0" resolveInfo="RootRoot" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="7225089784577918920">
+            <node role="leftExpression:3" type="jetbrains.mps.lang.smodel.structure.LinkRefExpression:16" id="7225089784577918921">
+              <link role="conceptDeclaration:16" targetNodeId="1.7225089784577918894:0" resolveInfo="RootRoot" />
+              <link role="linkDeclaration:16" targetNodeId="1.7225089784577918896:0" />
+            </node>
+            <node role="rightExpression:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link:8" id="7225089784577918922" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7225089784577918923">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7225089784577918924">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
