@@ -501,9 +501,11 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.debug.evaluation">
+    <mkdir dir="core/debug/languages/evaluation/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.evaluation.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/debug/languages/evaluation/evaluation.mpl" prefix="module" />
       <zipfileset dir="core/debug/languages/evaluation" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/debug/languages/evaluation/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.debug.evaluation.ui">
