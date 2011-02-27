@@ -135,6 +135,7 @@ public class CommonPaths {
     }
 
     addIfExists(result, "/core/runtime/classes");
+    addIfExists(result, "/workbench/runConfigurations/classes");
 
     addIfExists(result, "/lib/platform-api.jar");
     addIfExists(result, "/lib/platform.jar");
