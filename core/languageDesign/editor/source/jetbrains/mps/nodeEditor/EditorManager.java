@@ -322,7 +322,7 @@ public class EditorManager {
             }
 
             public String toString() {
-              return "RTWrapper for " + action;
+              return "RTWrapper for " + action + "(" + action.getClass() + ")";
             }
           });
         }
