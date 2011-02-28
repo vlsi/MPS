@@ -21,6 +21,7 @@ import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 
 /**
@@ -103,7 +104,8 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
             if (!modelName.equals(generator.getOutputModel().getLongName())) {
               // external java_stub
               String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-              Iterable<SModelDescriptor> models = generator.getScope().getModelDescriptors();
+              IModule module = generator.getGeneratorSessionContext().getOriginalInputModel().getModelDescriptor().getModule();
+              Iterable<SModelDescriptor> models = module == null ? generator.getScope().getModelDescriptors() : module.getScope().getModelDescriptors();
               SModelId id = StubMigrationHelper.convertModelUIDInScope(stereo + "#" + modelName, models);
               myExternalTargetModelReference = new SModelReference(new SModelFqName(modelName, stereo), id);
             }
