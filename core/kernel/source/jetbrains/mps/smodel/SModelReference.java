@@ -31,7 +31,7 @@ public final class SModelReference {
     Matcher matcher = MODEL_UID_PATTERN.matcher(s);
     if (matcher.matches()) {
       SModelId modelId = SModelId.fromString(matcher.group(1));
-      SModelId nid = StubMigrationHelper.convertModelId(modelId, false);
+      SModelId nid = StubMigrationHelper.convertModelId(modelId);
       return new SModelReference(SModelFqName.fromString(matcher.group(2)), nid == null ? modelId : nid);
     }
 

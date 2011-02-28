@@ -23,16 +23,16 @@ public class StubMigrationHelper {
   public static boolean ourRefsFixingMode = true;
 
   //ret null if no need for conversion or failed
-  public static SModelId convertModelId(SModelId id, boolean forceResolve) {
-    if ((!forceResolve) && ourRefsFixingMode) return null;
+  public static SModelId convertModelId(SModelId id) {
+    if (ourRefsFixingMode) return null;
     if (!(id instanceof ForeignSModelId)) return null;
     String fid = ((ForeignSModelId) id).getId();
-    return StubMigrationHelper.convertModelUIDAny(fid, false);
+    return StubMigrationHelper.convertModelUIDAny(fid);
   }
 
   //ret null if no need for conversion or failed
-  public static SModelId convertModelUIDAny(String fid, boolean forceResolve) {
-    if ((!forceResolve) && ourRefsFixingMode) return null;
+  public static SModelId convertModelUIDAny(String fid) {
+    if (ourRefsFixingMode) return null;
     int li = fid.lastIndexOf('#');
     int fi = fid.indexOf('#');
     if (fi != li) return null;

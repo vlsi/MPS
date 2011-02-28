@@ -38,7 +38,7 @@ abstract class SReferenceBase extends SReference {
       if (targetModelReference != null) {
         try {
           SModelId id = targetModelReference.getSModelId();
-          SModelId nid = StubMigrationHelper.convertModelId(id,false);
+          SModelId nid = StubMigrationHelper.convertModelId(id);
           if (nid!=null){
             targetModelReference = new SModelReference(targetModelReference.getSModelFqName(), nid);
           }
