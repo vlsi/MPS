@@ -12,10 +12,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <maxImportIndex value="7" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)" version="0" />
-  <import index="6" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="7" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="8" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="9" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="6183559520328404669">
     <property name="virtualPackage:8" value="elements.extensionPoints" />
     <link role="concept:8" targetNodeId="1.1740160309778171006:0" resolveInfo="BeanExtensionPoint" />
@@ -314,12 +314,12 @@
                       <node role="leftExpression:16" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="3793993770298349843" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3793993770298349844">
-                      <link role="baseMethodDeclaration:3" targetNodeId="7.~SNode.getName():java.lang.String" resolveInfo="getName" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="8.~SNode.getName():java.lang.String" resolveInfo="getName" />
                     </node>
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3793993770298349849">
-                  <link role="baseMethodDeclaration:3" targetNodeId="6.~String.replace(char,char):java.lang.String" resolveInfo="replace" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="9.~String.replace(char,char):java.lang.String" resolveInfo="replace" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.CharConstant:3" id="3793993770298349850">
                     <property name="charConstant:3" value="." />
                   </node>
