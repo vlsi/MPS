@@ -19,7 +19,7 @@ public class Add_NotNullAnnotation_QuickFix extends QuickFix_Runtime {
 
   public void execute(SNode node) {
     SNode instance = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null);
-    SLinkOperations.setTarget(instance, "annotation", SNodeOperations.getNode("f:java_stub#2af156ab-65c1-4a62-bd0d-ea734f71eab6#org.jetbrains.annotations(jetbrains.mps.dataFlow.runtime/org.jetbrains.annotations@java_stub)", "~NotNull"), false);
+    SLinkOperations.setTarget(instance, "annotation", SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)", "~NotNull"), false);
     ListSequence.fromList(SLinkOperations.getTargets(((SNode) Add_NotNullAnnotation_QuickFix.this.getField("method")[0]), "annotation", true)).addElement(instance);
   }
 }
