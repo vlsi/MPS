@@ -63,8 +63,8 @@ public class StubModelDescriptors {
 
   public SModelReference javaStubRef(String pkg) {
     String stereo = SModelStereotype.getStubStereotypeForId("java");
-    SModelFqName fqname = new SModelFqName(pkg, stereo);
-    SModelId modelId = SModelId.foreign(stereo, pkg);
+    SModelFqName fqname = new SModelFqName("MPS.Classpath", pkg, stereo);
+    SModelId modelId = SModelId.foreign(stereo, "37a3367b-1fb2-44d8-aa6b-18075e74e003", pkg);
     return new SModelReference(fqname, modelId);
   }
 }

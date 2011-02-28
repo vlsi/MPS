@@ -2240,7 +2240,10 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="740251325273418870">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="740251325273418871">
-                <link role="baseMethodDeclaration:3" targetNodeId="16.~SModelFqName.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="SModelFqName" />
+                <link role="baseMethodDeclaration:3" targetNodeId="16.~SModelFqName.&lt;init&gt;(java.lang.String,java.lang.String,java.lang.String)" resolveInfo="SModelFqName" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2523825325635930624">
+                  <property name="value:3" value="MPS.Classpath" />
+                </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="740251325273418872">
                   <link role="variableDeclaration:3" targetNodeId="740251325273418856" resolveInfo="pkg" />
                 </node>
@@ -2259,9 +2262,12 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="740251325273418877">
               <link role="classConcept:3" targetNodeId="16.~SModelId" resolveInfo="SModelId" />
-              <link role="baseMethodDeclaration:3" targetNodeId="16.~SModelId.foreign(java.lang.String,java.lang.String):jetbrains.mps.smodel.SModelId" resolveInfo="foreign" />
+              <link role="baseMethodDeclaration:3" targetNodeId="16.~SModelId.foreign(java.lang.String,java.lang.String,java.lang.String):jetbrains.mps.smodel.SModelId" resolveInfo="foreign" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="740251325273418878">
                 <link role="variableDeclaration:3" targetNodeId="740251325273418863" resolveInfo="stereo" />
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2523825325635930626">
+                <property name="value:3" value="37a3367b-1fb2-44d8-aa6b-18075e74e003" />
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="740251325273418879">
                 <link role="variableDeclaration:3" targetNodeId="740251325273418856" resolveInfo="pkg" />
