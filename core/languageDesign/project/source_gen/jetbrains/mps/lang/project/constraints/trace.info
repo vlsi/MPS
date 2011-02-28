@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="Module_name_PropertyConstraint.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.Module_name_PropertyConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.ConstraintsDescriptor" />
+  <root nodeId="6370754048397725622">
+    <nodeInfo nodeId="6370754048397739875" fileName="Module_name_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6370754048397730470" fileName="Module_name_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="60" />
+  </root>
+</debugInfo>
+

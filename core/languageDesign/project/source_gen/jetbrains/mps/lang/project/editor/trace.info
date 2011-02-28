@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="ModuleDependency_Editor.java" startLine="115" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.lang.project.editor.ModuleDependency_Editor$_Inline_c4v0tm_a0a" />
+  <unitInfo fileName="Module_Editor.java" startLine="271" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Module_Editor$modelListHandler_iuuvkg_b11a" />
+  <unitInfo fileName="Language_Editor.java" startLine="310" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$generatorListHandler_75gu8q_b11a" />
+  <unitInfo fileName="Language_Editor.java" startLine="348" startPosition="0" endLine="385" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$modelListHandler_75gu8q_e11a" />
+  <unitInfo fileName="Module_Editor.java" startLine="224" startPosition="0" endLine="270" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Module_Editor$dependencyListHandler_iuuvkg_j0" />
+  <unitInfo fileName="Language_Editor.java" startLine="263" startPosition="0" endLine="309" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor$dependencyListHandler_75gu8q_j0" />
+  <unitInfo fileName="ModelReference_Editor.java" startLine="18" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.project.editor.ModelReference_Editor" />
+  <unitInfo fileName="ModuleDependency_Editor.java" startLine="20" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.lang.project.editor.ModuleDependency_Editor" />
+  <unitInfo fileName="Module_Editor.java" startLine="26" startPosition="0" endLine="309" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Module_Editor" />
+  <unitInfo fileName="Language_Editor.java" startLine="26" startPosition="0" endLine="386" endPosition="0" unitName="jetbrains.mps.lang.project.editor.Language_Editor" />
+</debugInfo>
+
