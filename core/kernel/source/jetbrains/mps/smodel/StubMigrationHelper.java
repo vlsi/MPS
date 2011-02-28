@@ -33,11 +33,6 @@ public class StubMigrationHelper {
   //ret null if no need for conversion or failed
   public static SModelId convertModelUIDAny(String fid, boolean forceResolve) {
     if ((!forceResolve) && ourRefsFixingMode) return null;
-    return convertModelUIDInScope(fid, GlobalScope.getInstance().getModelDescriptors());
-  }
-
-  //ret null if no need for conversion or failed
-  public static SModelId convertModelUIDInScope(String fid, Iterable<SModelDescriptor> models) {
     int li = fid.lastIndexOf('#');
     int fi = fid.indexOf('#');
     if (fi != li) return null;
@@ -45,8 +40,8 @@ public class StubMigrationHelper {
     String mid = fid.substring(fi + 1);
     String stereo = fid.substring(0, fi);
 
-    for (SModelDescriptor m : models) {
-      if (m.getLongName().equals(mid) && m.getStereotype().equals(stereo)) {
+    for (SModelDescriptor m : GlobalScope.getInstance().getModelDescriptors(mid)) {
+      if (m.getStereotype().equals(stereo)) {
         module = m.getModule().getModuleReference();
       }
     }
