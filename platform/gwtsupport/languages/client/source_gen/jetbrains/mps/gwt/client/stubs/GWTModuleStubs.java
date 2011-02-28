@@ -72,7 +72,7 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
       }
       ListSequence.fromList(modlst).addElement(MultiTuple.<String,String,SNode>from(pkg, modres, module));
     }
-    final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"));
+    final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"), GWTModuleStubs.this, location);
     GWTModuleReader reader = new GWTModuleReader(new GWTModuleReader.Resolver() {
       public SModelReference stubModelReference(String pk) {
         return descs.javaStubRef(pk);
@@ -105,7 +105,7 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
-    return new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt")).getDescriptors(GWTModuleStubs.this, location, new _FunctionTypes._return_P1_E0<PathItem, String>() {
+    return new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"), GWTModuleStubs.this, location).getDescriptors(new _FunctionTypes._return_P1_E0<PathItem, String>() {
       public PathItem invoke(String path) {
         return GWTModulePathItem.getPathItem(path);
       }

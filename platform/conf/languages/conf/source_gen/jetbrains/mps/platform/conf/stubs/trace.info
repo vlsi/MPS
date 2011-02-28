@@ -525,7 +525,7 @@
     <nodeInfo nodeId="2906282062545455285" fileName="ConfStubs.java" startLine="69" startPosition="22" endLine="70" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2906282062545455294" fileName="ConfStubs.java" startLine="70" startPosition="66" endLine="71" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2906282062545455302" fileName="ConfStubs.java" startLine="72" startPosition="7" endLine="73" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2906282062545455310" fileName="ConfStubs.java" startLine="74" startPosition="5" endLine="75" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2906282062545455310" fileName="ConfStubs.java" startLine="74" startPosition="5" endLine="75" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2906282062545455326" fileName="ConfStubs.java" startLine="77" startPosition="60" endLine="78" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2906282062545455335" fileName="ConfStubs.java" startLine="81" startPosition="60" endLine="82" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2906282062545455344" fileName="ConfStubs.java" startLine="85" startPosition="84" endLine="86" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -544,7 +544,7 @@
     <nodeInfo nodeId="2906282062545455270" fileName="ConfStubs.java" startLine="66" startPosition="48" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2906282062545455398" fileName="ConfStubs.java" startLine="94" startPosition="7" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2906282062545455348" fileName="ConfStubs.java" startLine="86" startPosition="28" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2906282062545455317" fileName="ConfStubs.java" startLine="75" startPosition="113" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2906282062545455317" fileName="ConfStubs.java" startLine="75" startPosition="139" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2906282062545455245" fileName="ConfStubs.java" startLine="63" startPosition="63" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2906282062545455340" fileName="ConfStubs.java" startLine="84" startPosition="7" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="2906282062545455406" fileName="ConfStubs.java" startLine="98" startPosition="0" endLine="98" endPosition="33">

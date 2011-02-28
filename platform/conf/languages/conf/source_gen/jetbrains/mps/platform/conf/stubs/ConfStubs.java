@@ -72,7 +72,7 @@ public class ConfStubs extends BaseStubModelRootManager {
       }
       ListSequence.fromList(doclst).addElement(MultiTuple.<String,String,SNode>from(pkg, docres, doc));
     }
-    final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf"));
+    final StubModelDescriptors descs = new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf"), ConfStubs.this, location);
     ConfReader reader = new ConfReader(new ConfReader.Resolver() {
       public SModelReference stubModelReference(String pk) {
         return descs.javaStubRef(pk);
@@ -103,7 +103,7 @@ public class ConfStubs extends BaseStubModelRootManager {
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
-    return new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf")).getDescriptors(ConfStubs.this, location, new _FunctionTypes._return_P1_E0<PathItem, String>() {
+    return new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("conf"), ConfStubs.this, location).getDescriptors(new _FunctionTypes._return_P1_E0<PathItem, String>() {
       public PathItem invoke(String path) {
         return ConfPathItem.getPathItem(path);
       }
