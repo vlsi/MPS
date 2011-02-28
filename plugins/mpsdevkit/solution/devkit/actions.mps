@@ -494,9 +494,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="DevKit.Internal" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2191995028863167425">
-      <property name="name" nameId="tpck.1169194664001" value="ToolsInternal" />
+      <property name="name" nameId="tpck.1169194664001" value="ToolsInternalEx" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="DevKit.Internal" />
-      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
       <property name="caption" nameId="tp4k.1204991940915" value="Internal" />
     </node>
   </roots>
@@ -9547,9 +9546,6 @@
   </root>
   <root id="2191995028863167425">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2191995028863167426">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2191995028863167427">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="tprs.1215890512584" resolveInfo="RemoveTransientModels" />
-      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2191995028863167428">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="2191995028863167226" resolveInfo="DumpKeyStrokes" />
       </node>
@@ -9577,8 +9573,8 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="2191995028863167436" />
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2191995028863167437">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991238062" resolveInfo="Tools" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.1784959407586156229" resolveInfo="internal" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.5361317699454624365" resolveInfo="InternalTools" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.5361317699454624368" resolveInfo="internal" />
     </node>
   </root>
 </model>

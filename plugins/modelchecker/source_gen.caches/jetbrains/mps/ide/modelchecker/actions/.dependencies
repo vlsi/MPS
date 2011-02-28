@@ -434,6 +434,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.Modelchecker_ApplicationPlugin" file="Modelchecker_ApplicationPlugin.java">
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.Default_KeymapChanges" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ToolsInternalEx_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ShowModelChecker_Action" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.CheckModuleGenerator_ActionGroup" />
@@ -441,12 +442,13 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.ProjectActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.CheckModuleSolution_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.FindlAllBrokenReferences_Action" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.CheckModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.CheckProject_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.CheckProject_Action" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Tools_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.FindlAllBrokenReferences_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ShowModelCheckerTool_ActionGroup" />
@@ -563,6 +565,12 @@
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ProgressContext" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.IModelCheckerFix" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.modelchecker.actions.ToolsInternalEx_ActionGroup" file="ToolsInternalEx_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.TypesystemChecker" file="TypesystemChecker.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />

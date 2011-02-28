@@ -10,6 +10,7 @@ import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
+import jetbrains.mps.ide.actions.ToolsInternal_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -38,6 +39,7 @@ public class Modelchecker_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new CheckModuleSolution_ActionGroup());
     addGroup(new CheckProject_ActionGroup());
     addGroup(new ShowModelCheckerTool_ActionGroup());
+    addGroup(new ToolsInternalEx_ActionGroup());
   }
 
   public void adjustRegularGroups() {
@@ -47,6 +49,7 @@ public class Modelchecker_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(CheckModuleLanguage_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_check);
     insertGroupIntoAnother(CheckModuleGenerator_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_check);
     insertGroupIntoAnother(CheckModel_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_check);
+    insertGroupIntoAnother(ToolsInternalEx_ActionGroup.ID, ToolsInternal_ActionGroup.ID, ToolsInternal_ActionGroup.LABEL_ID_internal);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
