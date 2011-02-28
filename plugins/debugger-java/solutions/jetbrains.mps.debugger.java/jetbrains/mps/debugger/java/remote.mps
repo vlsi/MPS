@@ -19,7 +19,6 @@
   <import index="p8sl" modelUID="f:java_stub#jetbrains.mps.baseLanguage.util.plugin.run(jetbrains.mps.baseLanguage.util.plugin.run@java_stub)" version="-1" implicit="yes" />
   <import index="4bsm" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" implicit="yes" />
   <import index="qvoq" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" implicit="yes" />
-  <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="0" implicit="yes" />
   <roots>
     <node type="uhxm.RunConfigurationKind" typeId="uhxm.2401501559171345994" id="7806358006983489356">
       <property name="name" nameId="tpck.1169194664001" value="RemoteNew" />
@@ -31,8 +30,9 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7806358006983511789">
       <property name="name" nameId="tpck.1169194664001" value="RemoteSettingsEditor" />
     </node>
-    <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.2401501559171392633" id="7806358006983590272">
-      <property name="canRun" nameId="uhxm.5925077313451868299" value="false" />
+    <node type="uhxm.ComplexRunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="801101525254379837">
+      <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
+      <property name="configurationName" nameId="uhxm.7806358006983709801" value="myRunConfiguration" />
       <link role="runConfiguration" roleId="uhxm.1048802521465114237" targetNodeId="7806358006983511602" resolveInfo="RemoteNew" />
     </node>
   </roots>
@@ -863,30 +863,10 @@
       </node>
     </node>
   </root>
-  <root id="7806358006983590272">
-    <node role="execute" roleId="uhxm.7945003362267213473" type="uhxm.ExecuteConfiguration_Function" typeId="uhxm.6139196002333163564" id="7806358006983590273">
-      <node role="process" roleId="uhxm.2866018809101862242" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7806358006983590640">
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7806358006983590634" resolveInfo="handler" />
-      </node>
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7806358006983590275">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7806358006983590633">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7806358006983590634">
-            <property name="name" nameId="tpck.1169194664001" value="handler" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7806358006983590635">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3ri6.~RemoteDebugProcessHandler" resolveInfo="RemoteDebugProcessHandler" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7806358006983590636">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7806358006983590637">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3ri6.~RemoteDebugProcessHandler%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject)" resolveInfo="RemoteDebugProcessHandler" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="uhxm.Project_Parameter" typeId="uhxm.7684700299064179245" id="7806358006983590638" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="debugger" roleId="uhxm.4371737370139995047" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="7806358006983590277">
-      <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
+  <root id="801101525254379837">
+    <node role="execute" roleId="uhxm.7945003362267213473" type="uhxm.ExecuteConfiguration_Function" typeId="uhxm.6139196002333163564" id="801101525254379838">
+      <node role="process" roleId="uhxm.2866018809101862242" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="801101525254384697" />
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="801101525254379840" />
     </node>
   </root>
 </model>

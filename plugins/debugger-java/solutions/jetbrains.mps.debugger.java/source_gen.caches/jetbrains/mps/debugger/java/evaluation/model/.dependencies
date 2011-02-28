@@ -83,9 +83,9 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule" />
-    <classNode dependClassName="jetbrains.mps.smodel.AttributesRolesUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="java.lang.RuntimeException" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext" />
@@ -93,11 +93,12 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.model.LowLevelEvaluationModel" file="LowLevelEvaluationModel.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.UnitConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -108,7 +109,6 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.model.StackFrameContext" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="com.sun.jdi.InvalidStackFrameException" />
-    <classNode dependClassName="jetbrains.mps.smodel.AttributesRolesUtil" />
     <classNode dependClassName="jetbrains.mps.project.StubPath" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.reloading.JarFileClassPathItem" />
@@ -145,6 +145,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel" />
   </dependency>

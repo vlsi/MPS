@@ -22,7 +22,6 @@ import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
-import com.intellij.execution.executors.DefaultDebugExecutor;
 
 public class RemoteNew_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = Logger.getLogger(RemoteNew_Configuration.class);
@@ -96,10 +95,7 @@ public class RemoteNew_Configuration extends BaseMpsRunConfiguration implements 
 
   @Override
   public boolean canExecute(String executorId) {
-    if (DefaultDebugExecutor.EXECUTOR_ID.equals(executorId)) {
-      return true;
-    }
-    return false;
+    return RemoteNew_Configuration_RunProfileState.canExecute(executorId);
   }
 
   public class MyState {
