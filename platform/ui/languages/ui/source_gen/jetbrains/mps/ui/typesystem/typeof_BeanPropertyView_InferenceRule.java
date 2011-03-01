@@ -25,21 +25,18 @@ public class typeof_BeanPropertyView_InferenceRule extends AbstractInferenceRule
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(bv, "bean", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "8381258131358797402", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "8381258131358797394", true), (SNode) new typeof_BeanPropertyView_InferenceRule.QuotationClass_296jbb_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = View_Behavior.call_getProperty_9014158157446906285(bv);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "9014158157446908488", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(bv, "getter", false), "returnType", true), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "9014158157446925826", true), false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = View_Behavior.call_getProperty_9014158157446906285(bv);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "9014158157446942678", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "9014158157446942670", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(bv, "getter", false), "returnType", true), false, _info_12389875345);
     }
   }

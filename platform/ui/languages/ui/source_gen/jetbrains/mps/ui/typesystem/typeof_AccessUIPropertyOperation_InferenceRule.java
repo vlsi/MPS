@@ -25,7 +25,6 @@ public class typeof_AccessUIPropertyOperation_InferenceRule extends AbstractInfe
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(apo);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "1870423755832759894", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "1870423755832759900", true), (SNode) new typeof_AccessUIPropertyOperation_InferenceRule.QuotationClass_ha9sx_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
     {

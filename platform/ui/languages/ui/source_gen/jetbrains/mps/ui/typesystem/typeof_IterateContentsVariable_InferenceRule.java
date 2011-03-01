@@ -29,7 +29,6 @@ public class typeof_IterateContentsVariable_InferenceRule extends AbstractInfere
         SNode _nodeToCheck_1029348928467 = oexp;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "2459884175397753205", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("");
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "2459884175397753198", true), (SNode) new typeof_IterateContentsVariable_InferenceRule.QuotationClass_dmnw7g_a0a1a1a0().createNode(typeCheckingContext.getRepresentative(UIOT_typevar_2459884175397753215), typeCheckingContext), false, _info_12389875345);
       }
       {

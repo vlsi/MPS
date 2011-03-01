@@ -22,7 +22,6 @@ public class typeof_ExpressionView_InferenceRule extends AbstractInferenceRule_R
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ev, "expression", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "9014158157446942649", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "9014158157446942641", true), (SNode) typeCheckingContext.typeOf(View_Behavior.call_getProperty_9014158157446906285(ev), "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "9014158157446942660", true), false, _info_12389875345);
     }
   }
