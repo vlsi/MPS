@@ -13,6 +13,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new Module_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ModuleDependency_module_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
