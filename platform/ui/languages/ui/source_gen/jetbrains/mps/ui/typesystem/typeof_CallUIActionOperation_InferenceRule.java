@@ -24,7 +24,7 @@ public class typeof_CallUIActionOperation_InferenceRule extends AbstractInferenc
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(cao);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "6261739386030573000", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
+      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "6261739386030572992", true), (SNode) new typeof_CallUIActionOperation_InferenceRule.QuotationClass_q5l9s3_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
     {

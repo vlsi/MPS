@@ -207,6 +207,7 @@
                         </node>
                       </node>
                       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="5046156961652249764">
+                        <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
                         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="5046156961652249765">
                           <node role="normalType" roleId="tpd4.1185788644032" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5046156961652249766">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5046156961652249707" resolveInfo="expectedRetType" />
@@ -236,7 +237,6 @@
                             <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1068581517676" />
                           </node>
                         </node>
-                        <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="5970100369440882640" />
                       </node>
                     </node>
                   </node>
@@ -296,6 +296,7 @@
                 </node>
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="5046156961652249799">
+                <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
                 <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="5046156961652249800">
                   <node role="normalType" roleId="tpd4.1185788644032" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5046156961652249801">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5046156961652249707" resolveInfo="expectedRetType" />
@@ -325,7 +326,6 @@
                     <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1068580123156" />
                   </node>
                 </node>
-                <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="5970100369440882474" />
               </node>
             </node>
           </node>

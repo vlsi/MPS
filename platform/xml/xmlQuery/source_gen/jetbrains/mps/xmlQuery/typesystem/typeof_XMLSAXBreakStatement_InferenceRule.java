@@ -23,7 +23,7 @@ public class typeof_XMLSAXBreakStatement_InferenceRule extends AbstractInference
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(stmt, "result", true);
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "8666712036583043747", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("default");
+        _info_12389875345.setInequationGroup("");
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d89ddc4c-de44-408f-97b1-095c4af64bfb(jetbrains.mps.xmlQuery.typesystem)", "8666712036583043739", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(stmt, "jetbrains.mps.xmlQuery.structure.XMLSAXParser", true, false), "root", false), "type", true), false, _info_12389875345);
       }
     }
