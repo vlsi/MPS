@@ -28,8 +28,8 @@
     <nodeInfo nodeId="5744862332973319668" fileName="typeof_ExtensionMethodCall_InferenceRule.java" startLine="40" startPosition="5" endLine="41" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5744862332973319668" fileName="typeof_ExtensionMethodCall_InferenceRule.java" startLine="41" startPosition="61" endLine="42" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5744862332973319668" fileName="typeof_ExtensionMethodCall_InferenceRule.java" startLine="42" startPosition="52" endLine="43" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5744862332973319668" fileName="typeof_ExtensionMethodCall_InferenceRule.java" startLine="43" startPosition="233" endLine="44" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5744862332973319668" fileName="typeof_ExtensionMethodCall_InferenceRule.java" startLine="44" startPosition="54" endLine="45" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5744862332973319668" fileName="typeof_ExtensionMethodCall_InferenceRule.java" startLine="43" startPosition="233" endLine="44" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5744862332973319668" fileName="typeof_ExtensionMethodCall_InferenceRule.java" startLine="44" startPosition="47" endLine="45" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5744862332973319677" fileName="typeof_ExtensionMethodCall_InferenceRule.java" startLine="46" startPosition="5" endLine="47" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="5744862332973319679" fileName="typeof_ExtensionMethodCall_InferenceRule.java" startLine="47" startPosition="72" endLine="48" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="5744862332973319681" fileName="typeof_ExtensionMethodCall_InferenceRule.java" startLine="48" startPosition="30" endLine="49" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -52,25 +52,23 @@
     <nodeInfo nodeId="5744862332973447913" fileName="RulesFunctions_Extension.java" startLine="22" startPosition="5" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5744862332973447913" fileName="RulesFunctions_Extension.java" startLine="23" startPosition="46" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5744862332973447913" fileName="RulesFunctions_Extension.java" startLine="24" startPosition="52" endLine="25" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5744862332973447913" fileName="RulesFunctions_Extension.java" startLine="25" startPosition="233" endLine="26" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5744862332973447913" fileName="RulesFunctions_Extension.java" startLine="26" startPosition="77" endLine="27" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5744862332973447913" fileName="RulesFunctions_Extension.java" startLine="27" startPosition="83" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5744862332973447913" fileName="RulesFunctions_Extension.java" startLine="28" startPosition="60" endLine="29" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5744862332973447913" fileName="RulesFunctions_Extension.java" startLine="25" startPosition="233" endLine="26" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5744862332973447913" fileName="RulesFunctions_Extension.java" startLine="26" startPosition="47" endLine="27" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5744862332973447878" fileName="RulesFunctions_Extension.java" startLine="15" startPosition="39" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RulesFunctions_Extension#()V" />
-    <nodeInfo nodeId="5744862332973447913" fileName="RulesFunctions_Extension.java" startLine="21" startPosition="207" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5744862332973447882" fileName="RulesFunctions_Extension.java" startLine="18" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="inference_equateApplicableType#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5744862332973447913" fileName="RulesFunctions_Extension.java" startLine="21" startPosition="207" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5744862332973447882" fileName="RulesFunctions_Extension.java" startLine="18" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="inference_equateApplicableType#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)V" />
     <scopeInfo nodeId="5744862332973447881" fileName="RulesFunctions_Extension.java" startLine="16" startPosition="37" endLine="16" endPosition="37" />
     <scopeInfo nodeId="5744862332973447878" fileName="RulesFunctions_Extension.java" startLine="15" startPosition="39" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="5744862332973447913" fileName="RulesFunctions_Extension.java" startLine="22" startPosition="5" endLine="29" endPosition="120" />
-    <scopeInfo nodeId="5744862332973447885" fileName="RulesFunctions_Extension.java" startLine="20" startPosition="173" endLine="30" endPosition="5">
+    <scopeInfo nodeId="5744862332973447913" fileName="RulesFunctions_Extension.java" startLine="22" startPosition="5" endLine="27" endPosition="120" />
+    <scopeInfo nodeId="5744862332973447885" fileName="RulesFunctions_Extension.java" startLine="20" startPosition="173" endLine="28" endPosition="5">
       <varInfo nodeId="5744862332973470297" varName="matchedType" />
     </scopeInfo>
-    <scopeInfo nodeId="5744862332973447882" fileName="RulesFunctions_Extension.java" startLine="18" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="5744862332973447882" fileName="RulesFunctions_Extension.java" startLine="18" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="5744862332973447923" varName="instanceType" />
       <varInfo nodeId="5744862332973447936" varName="mmap" />
       <varInfo nodeId="5744862332973447931" varName="extensionMethod" />
     </scopeInfo>
-    <unitInfo nodeId="5744862332973447876" fileName="RulesFunctions_Extension.java" startLine="15" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.typesystem.RulesFunctions_Extension" />
+    <unitInfo nodeId="5744862332973447876" fileName="RulesFunctions_Extension.java" startLine="15" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.typesystem.RulesFunctions_Extension" />
   </root>
   <root nodeId="7685333756920239741">
     <nodeInfo nodeId="7685333756920239746" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="32" startPosition="88" endLine="33" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -91,8 +89,8 @@
     <nodeInfo nodeId="3386826992796746362" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="54" startPosition="7" endLine="55" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3386826992796746362" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="55" startPosition="54" endLine="56" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3386826992796746362" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="56" startPosition="54" endLine="57" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3386826992796746362" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="57" startPosition="235" endLine="58" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3386826992796746362" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="58" startPosition="56" endLine="59" endPosition="364" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3386826992796746362" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="57" startPosition="235" endLine="58" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3386826992796746362" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="58" startPosition="49" endLine="59" endPosition="364" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7685333756920239744" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="31" startPosition="123" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3386826992796746349" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="50" startPosition="99" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3386826992796746292" fileName="typeof_LocalExtendedMethodCall_InferenceRule.java" startLine="40" startPosition="163" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />

@@ -38,7 +38,7 @@ public class typeof_TransposeOperation_InferenceRule extends AbstractInferenceRu
               SNode _nodeToCheck_1029348928467 = operation;
               BaseQuickFixProvider intentionProvider = null;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229140", 0, intentionProvider);
-              _info_12389875345.setInequationGroup("default");
+              _info_12389875345.setInequationGroup("");
               typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229137", true), (SNode) result, false, _info_12389875345);
             }
           } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t), "jetbrains.mps.baseLanguage.math.structure.VectorType")) {
@@ -49,7 +49,7 @@ public class typeof_TransposeOperation_InferenceRule extends AbstractInferenceRu
               SNode _nodeToCheck_1029348928467 = operation;
               BaseQuickFixProvider intentionProvider = null;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229259", 0, intentionProvider);
-              _info_12389875345.setInequationGroup("default");
+              _info_12389875345.setInequationGroup("");
               typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229264", true), (SNode) result, false, _info_12389875345);
             }
           } else {

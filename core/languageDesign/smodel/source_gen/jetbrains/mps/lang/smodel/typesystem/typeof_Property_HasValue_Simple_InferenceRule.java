@@ -46,7 +46,7 @@ public class typeof_Property_HasValue_Simple_InferenceRule extends AbstractInfer
           SNode _nodeToCheck_1029348928467 = value;
           BaseQuickFixProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059218105", 0, intentionProvider);
-          _info_12389875345.setInequationGroup("default");
+          _info_12389875345.setInequationGroup("");
           typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059218110", true), (SNode) new typeof_Property_HasValue_Simple_InferenceRule.QuotationClass_upj3yy_a0a0a0a5a0().createNode(typeCheckingContext), false, _info_12389875345);
         }
       } else
@@ -55,7 +55,7 @@ public class typeof_Property_HasValue_Simple_InferenceRule extends AbstractInfer
           SNode _nodeToCheck_1029348928467 = value;
           BaseQuickFixProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059218118", 0, intentionProvider);
-          _info_12389875345.setInequationGroup("default");
+          _info_12389875345.setInequationGroup("");
           typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059218123", true), (SNode) new typeof_Property_HasValue_Simple_InferenceRule.QuotationClass_upj3yy_a0a0a0a0f0a().createNode(typeCheckingContext), false, _info_12389875345);
         }
       } else
@@ -64,7 +64,7 @@ public class typeof_Property_HasValue_Simple_InferenceRule extends AbstractInfer
           SNode _nodeToCheck_1029348928467 = value;
           BaseQuickFixProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059218131", 0, intentionProvider);
-          _info_12389875345.setInequationGroup("default");
+          _info_12389875345.setInequationGroup("");
           typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059218136", true), (SNode) new typeof_Property_HasValue_Simple_InferenceRule.QuotationClass_upj3yy_a0a0a0a0a5a0().createNode(typeCheckingContext), false, _info_12389875345);
         }
       } else {

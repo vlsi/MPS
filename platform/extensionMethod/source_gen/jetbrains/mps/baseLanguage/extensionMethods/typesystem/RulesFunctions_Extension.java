@@ -23,9 +23,7 @@ public class RulesFunctions_Extension {
       SNode _nodeToCheck_1029348928467 = null;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "5744862332973447913", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("priority_2_1759628044690732299");
-      _info_12389875345.addInequationGroupBefore("priority_1_1759628044690732298");
-      _info_12389875345.addInequationGroupBefore("default");
+      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) instanceType, (SNode) matchedType, false, _info_12389875345);
     }
   }

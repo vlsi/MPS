@@ -58,7 +58,7 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule extends AbstractI
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(linkQualifier, "jetbrains.mps.lang.smodel.structure.PoundExpression"), "expression", true);
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204849792161", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("default");
+        _info_12389875345.setInequationGroup("");
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1204849792163", false), (SNode) new typeof_LinkAttributeAccessQualifier_InferenceRule.QuotationClass_o4tfis_a0a1a7a0().createNode(typeCheckingContext), false, _info_12389875345);
       }
     }

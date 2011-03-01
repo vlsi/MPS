@@ -24,7 +24,7 @@ public class FindMatchStatement_InferenceRule extends AbstractInferenceRule_Runt
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(fm, "expr", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "1178179183656", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
+      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "1178179183657", true), (SNode) new FindMatchStatement_InferenceRule.QuotationClass_187nmk_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }

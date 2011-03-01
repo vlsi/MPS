@@ -35,7 +35,7 @@ public class typeof_LinearSolveOperation_InferenceRule extends AbstractInference
                   SNode _nodeToCheck_1029348928467 = op;
                   BaseQuickFixProvider intentionProvider = null;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060213", 0, intentionProvider);
-                  _info_12389875345.setInequationGroup("default");
+                  _info_12389875345.setInequationGroup("");
                   typeCheckingContext.createLessThanInequation((SNode) SNodeOperations.copyNode(MathTypeUtil.qFloat), (SNode) typeCheckingContext.getRepresentative(T_typevar_5359814223490060193), false, _info_12389875345);
                 }
                 if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(matrixType), "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType")) {
@@ -43,7 +43,7 @@ public class typeof_LinearSolveOperation_InferenceRule extends AbstractInference
                     SNode _nodeToCheck_1029348928467 = op;
                     BaseQuickFixProvider intentionProvider = null;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060186", 0, intentionProvider);
-                    _info_12389875345.setInequationGroup("default");
+                    _info_12389875345.setInequationGroup("");
                     typeCheckingContext.createLessThanInequation((SNode) MathUtil.getUnboxedElementType(typeCheckingContext.getRepresentative(matrixType)), (SNode) typeCheckingContext.getRepresentative(T_typevar_5359814223490060193), false, _info_12389875345);
                   }
                 } else {
@@ -58,7 +58,7 @@ public class typeof_LinearSolveOperation_InferenceRule extends AbstractInference
                     SNode _nodeToCheck_1029348928467 = op;
                     BaseQuickFixProvider intentionProvider = null;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060227", 0, intentionProvider);
-                    _info_12389875345.setInequationGroup("default");
+                    _info_12389875345.setInequationGroup("");
                     typeCheckingContext.createLessThanInequation((SNode) MathUtil.getUnboxedElementType(typeCheckingContext.getRepresentative(matrixType)), (SNode) typeCheckingContext.getRepresentative(T_typevar_5359814223490060193), false, _info_12389875345);
                   }
                 } else {
