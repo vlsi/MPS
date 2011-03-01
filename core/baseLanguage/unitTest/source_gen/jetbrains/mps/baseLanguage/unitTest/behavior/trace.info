@@ -31,7 +31,7 @@
     <nodeInfo nodeId="8084800926155112013" fileName="BTestCase_Behavior.java" startLine="26" startPosition="26" endLine="27" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8084800926155111998" fileName="BTestCase_Behavior.java" startLine="28" startPosition="264" endLine="29" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8084800926155112021" fileName="BTestCase_Behavior.java" startLine="29" startPosition="264" endLine="30" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8084800926155112059" fileName="BTestCase_Behavior.java" startLine="35" startPosition="51" endLine="36" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8084800926155112059" fileName="BTestCase_Behavior.java" startLine="35" startPosition="51" endLine="36" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8084800926155112073" fileName="BTestCase_Behavior.java" startLine="40" startPosition="8" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1216136251476" fileName="BTestCase_Behavior.java" startLine="44" startPosition="75" endLine="45" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7691748101595472042" fileName="BTestCase_Behavior.java" startLine="51" startPosition="222" endLine="52" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -55,7 +55,7 @@
     <nodeInfo nodeId="8084800926155112048" fileName="BTestCase_Behavior.java" startLine="32" startPosition="207" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="8084800926155112031" fileName="BTestCase_Behavior.java" startLine="31" startPosition="5" endLine="40" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <scopeInfo nodeId="1213877487743" fileName="BTestCase_Behavior.java" startLine="22" startPosition="43" endLine="22" endPosition="43" />
-    <scopeInfo nodeId="8084800926155112058" fileName="BTestCase_Behavior.java" startLine="35" startPosition="51" endLine="36" endPosition="167" />
+    <scopeInfo nodeId="8084800926155112058" fileName="BTestCase_Behavior.java" startLine="35" startPosition="51" endLine="36" endPosition="218" />
     <scopeInfo nodeId="1216136232489" fileName="BTestCase_Behavior.java" startLine="44" startPosition="75" endLine="45" endPosition="73" />
     <scopeInfo nodeId="7691748101595466460" fileName="BTestCase_Behavior.java" startLine="51" startPosition="222" endLine="52" endPosition="77" />
     <scopeInfo nodeId="3324600636006964374" fileName="BTestCase_Behavior.java" startLine="63" startPosition="205" endLine="64" endPosition="319" />

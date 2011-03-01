@@ -9,6 +9,8 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.math.behavior.MathUtil;
 
@@ -272,7 +274,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
+      return SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
+    }
+
+    public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType");
     }
   }
 
@@ -288,7 +294,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
+      return SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
+    }
+
+    public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType");
     }
   }
 
@@ -304,7 +314,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
+      return SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
+    }
+
+    public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType");
     }
   }
 
@@ -336,7 +350,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
+      return SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
+    }
+
+    public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType");
     }
   }
 
@@ -345,14 +363,18 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myLeftOperandType = MathTypeUtil.qBigDecimal;
       this.myRightOperandType = MathTypeUtil.qBigDecimal;
       this.myOperationConceptFQName = conceptFQ;
-      this.myLeftTypeIsExact = false;
-      this.myRightTypeIsExact = false;
+      this.myLeftTypeIsExact = true;
+      this.myRightTypeIsExact = true;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
+      return SNodeOperations.copyNode(MathTypeUtil.qBoolean);
+    }
+
+    public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return !(SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType"));
     }
   }
 
@@ -361,14 +383,18 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myLeftOperandType = MathTypeUtil.qBigDecimal;
       this.myRightOperandType = MathTypeUtil.qBigDecimal;
       this.myOperationConceptFQName = conceptFQ;
-      this.myLeftTypeIsExact = false;
-      this.myRightTypeIsExact = false;
+      this.myLeftTypeIsExact = true;
+      this.myRightTypeIsExact = true;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
+      return SNodeOperations.copyNode(MathTypeUtil.qBoolean);
+    }
+
+    public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return !(SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType"));
     }
   }
 
@@ -377,14 +403,18 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myLeftOperandType = MathTypeUtil.qBigDecimal;
       this.myRightOperandType = MathTypeUtil.qBigDecimal;
       this.myOperationConceptFQName = conceptFQ;
-      this.myLeftTypeIsExact = false;
-      this.myRightTypeIsExact = false;
+      this.myLeftTypeIsExact = true;
+      this.myRightTypeIsExact = true;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
+      return SNodeOperations.copyNode(MathTypeUtil.qBoolean);
+    }
+
+    public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return !(SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType"));
     }
   }
 
@@ -393,14 +423,18 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myLeftOperandType = MathTypeUtil.qBigDecimal;
       this.myRightOperandType = MathTypeUtil.qBigDecimal;
       this.myOperationConceptFQName = conceptFQ;
-      this.myLeftTypeIsExact = false;
-      this.myRightTypeIsExact = false;
+      this.myLeftTypeIsExact = true;
+      this.myRightTypeIsExact = true;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
+      return SNodeOperations.copyNode(MathTypeUtil.qBoolean);
+    }
+
+    public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return !(SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType"));
     }
   }
 
@@ -416,7 +450,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
+      return MathTypeUtil.join(leftOperandType, rightOperandType);
+    }
+
+    public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType");
     }
   }
 
@@ -432,7 +470,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
+      return MathTypeUtil.join(leftOperandType, rightOperandType);
+    }
+
+    public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType");
     }
   }
 
@@ -448,7 +490,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
+      return MathTypeUtil.join(leftOperandType, rightOperandType);
+    }
+
+    public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType");
     }
   }
 
@@ -464,7 +510,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
+      return MathTypeUtil.join(leftOperandType, rightOperandType);
+    }
+
+    public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType");
     }
   }
 

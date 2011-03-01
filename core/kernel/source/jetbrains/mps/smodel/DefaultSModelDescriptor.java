@@ -161,10 +161,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
    */
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
-    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
+
     DescriptorLoadResult dr = ModelPersistence.loadDescriptor(getModelFile());
     myPersistenceVersion = dr.getPersistenceVersion();
     myMetadata = dr.getMetadata();
+
+    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
 
     ModelLoadResult result = load(getLoadingState());
     replaceModel(result.getModel(), getLoadingState());

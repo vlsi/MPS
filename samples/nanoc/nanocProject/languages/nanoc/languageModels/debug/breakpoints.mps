@@ -4,23 +4,21 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <maxImportIndex value="7" />
-  <import index="1" modelUID="f:java_stub#jetbrains.mps.debug.api(jetbrains.mps.debug.api@java_stub)" version="-1" />
+  <languageAspect modelUID="r:6cbc34f0-fc44-4f49-8c51-c9b5f566fbee(jetbrains.mps.nanoc.debug.breakpoints)" version="-1" />
+  <maxImportIndex value="12" />
   <import index="2" modelUID="r:18bd05e9-50fb-4ed6-9d57-1fded0456fb9(jetbrains.mps.nanoc.debug.requests)" version="-1" />
-  <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="4" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="5" modelUID="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)" version="-1" />
   <import index="6" modelUID="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)" version="-1" />
-  <import index="7" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
+  <import index="8" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.api(MPS.Classpath/jetbrains.mps.debug.api@java_stub)" version="-1" />
+  <import index="9" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="10" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.project(MPS.Classpath/com.intellij.openapi.project@java_stub)" version="-1" />
+  <import index="12" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3990508698139426916">
     <property name="name:3" value="GDBBreakpoint" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3990508698139426917" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3990508698139426918">
-      <link role="classifier:3" targetNodeId="1.~AbstractMPSBreakpoint" />
+      <link role="classifier:3" targetNodeId="8.~AbstractMPSBreakpoint" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="3990508698139426919">
       <property name="name:3" value="myBreakpointRequestor" />
@@ -46,7 +44,7 @@
       <property name="isFinal:3" value="true" />
       <property name="name:3" value="BKPT" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3990508698139426929">
-        <link role="classifier:3" targetNodeId="2v.~String" />
+        <link role="classifier:3" targetNodeId="9.~String" />
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3990508698139426930" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3990508698139426931">
@@ -57,7 +55,7 @@
       <property name="isFinal:3" value="true" />
       <property name="name:3" value="NUMBER" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3990508698139426933">
-        <link role="classifier:3" targetNodeId="2v.~String" />
+        <link role="classifier:3" targetNodeId="9.~String" />
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3990508698139426934" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3990508698139426935">
@@ -70,18 +68,18 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3990508698139426939">
         <property name="name:3" value="nodePointer" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3990508698139426940">
-          <link role="classifier:3" targetNodeId="3.~SNodePointer" />
+          <link role="classifier:3" targetNodeId="10.~SNodePointer" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3990508698139426941">
         <property name="name:3" value="project" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3990508698139426942">
-          <link role="classifier:3" targetNodeId="4.~Project" />
+          <link role="classifier:3" targetNodeId="11.~Project" />
         </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3990508698139426943">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="3990508698139426944">
-          <link role="baseMethodDeclaration:3" targetNodeId="1.~AbstractMPSBreakpoint.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,com.intellij.openapi.project.Project)" />
+          <link role="baseMethodDeclaration:3" targetNodeId="8.~AbstractMPSBreakpoint.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,com.intellij.openapi.project.Project)" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3990508698139426945">
             <link role="variableDeclaration:3" targetNodeId="3990508698139426939" resolveInfo="nodePointer" />
           </node>
@@ -101,14 +99,14 @@
             <link role="classConcept:3" targetNodeId="5.3990508698139428411" resolveInfo="CppDebugSession" />
             <link role="baseMethodDeclaration:3" targetNodeId="5.3990508698139428669" resolveInfo="performAllSessionsAction" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3990508698139426953">
-              <link role="variableDeclaration:3" targetNodeId="1.~AbstractMPSBreakpoint.myProject" />
+              <link role="variableDeclaration:3" targetNodeId="8.~AbstractMPSBreakpoint.myProject" />
             </node>
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3990508698139426954">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3990508698139426955">
                 <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="3990508698139426956">
                   <property name="name:3" value="" />
                   <link role="classifier:3" targetNodeId="5.3990508698139424665" resolveInfo="CppDebugSession.DebugSessionAction" />
-                  <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.&lt;init&gt;()" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="9.~Object.&lt;init&gt;()" />
                   <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3990508698139426957">
                     <property name="name:3" value="run" />
                     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3990508698139426958" />
@@ -152,14 +150,14 @@
             <link role="classConcept:3" targetNodeId="5.3990508698139428411" resolveInfo="CppDebugSession" />
             <link role="baseMethodDeclaration:3" targetNodeId="5.3990508698139428669" resolveInfo="performAllSessionsAction" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3990508698139426969">
-              <link role="variableDeclaration:3" targetNodeId="1.~AbstractMPSBreakpoint.myProject" />
+              <link role="variableDeclaration:3" targetNodeId="8.~AbstractMPSBreakpoint.myProject" />
             </node>
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3990508698139426970">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3990508698139426971">
                 <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="3990508698139426972">
                   <property name="name:3" value="" />
                   <link role="classifier:3" targetNodeId="5.3990508698139424665" resolveInfo="CppDebugSession.DebugSessionAction" />
-                  <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.&lt;init&gt;()" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="9.~Object.&lt;init&gt;()" />
                   <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3990508698139426973">
                     <property name="name:3" value="run" />
                     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3990508698139426974" />
@@ -230,7 +228,7 @@
                       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3990508698139426997">
                         <property name="name:3" value="receivedStreamAnswers" />
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3990508698139426998">
-                          <link role="classifier:3" targetNodeId="7.~List" />
+                          <link role="classifier:3" targetNodeId="12.~List" />
                           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3990508698139426999">
                             <link role="classifier:3" targetNodeId="6.3990508698139426770" resolveInfo="StreamAnswer" />
                           </node>
@@ -307,8 +305,8 @@
                             <property name="name:3" value="number" />
                             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3990508698139427065" />
                             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3990508698139427066">
-                              <link role="classConcept:3" targetNodeId="2v.~Integer" />
-                              <link role="baseMethodDeclaration:3" targetNodeId="2v.~Integer.parseInt(java.lang.String):int" />
+                              <link role="classConcept:3" targetNodeId="9.~Integer" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="9.~Integer.parseInt(java.lang.String):int" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3990508698139427067">
                                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3990508698139427068">
                                   <link role="variableDeclaration:3" targetNodeId="3990508698139427055" resolveInfo="numberValue" />
@@ -333,10 +331,10 @@
                       </node>
                     </node>
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="3990508698139427000">
-                      <link role="baseMethodDeclaration:3" targetNodeId="1.~AbstractMPSBreakpoint.getFileName():java.lang.String" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="8.~AbstractMPSBreakpoint.getFileName():java.lang.String" />
                     </node>
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="3990508698139427001">
-                      <link role="baseMethodDeclaration:3" targetNodeId="1.~AbstractMPSBreakpoint.getLineIndexInFile():int" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="8.~AbstractMPSBreakpoint.getLineIndexInFile():int" />
                     </node>
                   </node>
                 </node>
@@ -383,7 +381,7 @@
                       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3990508698139427020">
                         <property name="name:3" value="receivedStreamAnswers" />
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3990508698139427021">
-                          <link role="classifier:3" targetNodeId="7.~List" />
+                          <link role="classifier:3" targetNodeId="12.~List" />
                           <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3990508698139427022">
                             <link role="classifier:3" targetNodeId="6.3990508698139426770" resolveInfo="StreamAnswer" />
                           </node>

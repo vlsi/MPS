@@ -23,7 +23,6 @@
     <classNode dependClassName="jetbrains.mps.reloading.ClassPathFactory" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.stubs.StubDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
     <classNode dependClassName="jetbrains.mps.stubs.StubLocation" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />

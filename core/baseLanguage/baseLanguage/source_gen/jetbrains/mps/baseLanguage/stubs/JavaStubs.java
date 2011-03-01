@@ -21,7 +21,6 @@ import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageID;
 
@@ -50,7 +49,7 @@ public class JavaStubs extends BaseStubModelRootManager {
     if (cpItem == null) {
       return;
     }
-    new ASMModelLoader(cpItem, model).updateModel();
+    new ASMModelLoader(location, cpItem, model).updateModel();
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
@@ -87,10 +86,9 @@ public class JavaStubs extends BaseStubModelRootManager {
 
     for (String subpackage : cpItem.getSubpackages(pack)) {
       if (cpItem.getRootClasses(subpackage).iterator().hasNext()) {
-        SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, JavaStubs.this.getLanguageId());
+        SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, JavaStubs.this.getLanguageId(), location.getModule().getModuleReference());
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
-          SModelReference ref = SModelReference.fromString(subpackage + "@" + SModelStereotype.getStubStereotypeForId(JavaStubs.this.getLanguageId()));
-          SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(ref);
+          SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
           assert descriptor instanceof BaseStubModelDescriptor;
           result.add((BaseStubModelDescriptor) descriptor);
         } else {

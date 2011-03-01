@@ -5,10 +5,10 @@
   <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <import index="1" modelUID="f:java_stub#org.apache.commons.lang(org.apache.commons.lang@java_stub)" version="-1" />
-  <import index="2" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
+  <import index="10" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#34f23130-e35c-4795-a45a-85d828b16016#org.apache.commons.lang(jetbrains.mps.gtext.runtime/org.apache.commons.lang@java_stub)" version="-1" />
+  <import index="12" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.jetbrains.annotations(MPS.Classpath/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="5" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="0" implicit="yes" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -150,8 +150,8 @@
                           <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4972886494893401794">
                             <node role="6.expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="4972886494893401795">
                               <node role="6.rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4972886494893401796">
-                                <link role="6.classConcept:3" targetNodeId="4.~Math" resolveInfo="Math" />
-                                <link role="6.baseMethodDeclaration:3" targetNodeId="4.~Math.max(int,int):int" resolveInfo="max" />
+                                <link role="6.classConcept:3" targetNodeId="10.~Math" resolveInfo="Math" />
+                                <link role="6.baseMethodDeclaration:3" targetNodeId="10.~Math.max(int,int):int" resolveInfo="max" />
                                 <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="4972886494893401797">
                                   <node role="6.index:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4972886494893401798">
                                     <link role="6.variableDeclaration:3" targetNodeId="4972886494893401768:0" resolveInfo="j" />
@@ -207,8 +207,8 @@
                         </node>
                       </node>
                       <node role="6.condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4972886494893401816">
-                        <link role="6.classConcept:3" targetNodeId="1.~ObjectUtils" resolveInfo="ObjectUtils" />
-                        <link role="6.baseMethodDeclaration:3" targetNodeId="1.~ObjectUtils.equals(java.lang.Object,java.lang.Object):boolean" resolveInfo="equals" />
+                        <link role="6.classConcept:3" targetNodeId="11.~ObjectUtils" resolveInfo="ObjectUtils" />
+                        <link role="6.baseMethodDeclaration:3" targetNodeId="11.~ObjectUtils.equals(java.lang.Object,java.lang.Object):boolean" resolveInfo="equals" />
                         <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression:7" id="4972886494893401817">
                           <node role="8.index:7" type="jetbrains.mps.baseLanguage.structure.MinusExpression:3" id="4972886494893401818">
                             <node role="6.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4972886494893401819">
@@ -305,7 +305,7 @@
         </node>
       </node>
       <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4972886494893401869">
-        <link role="6.annotation:3" targetNodeId="2.~NotNull" resolveInfo="NotNull" />
+        <link role="6.annotation:3" targetNodeId="12.~NotNull" resolveInfo="NotNull" />
       </node>
     </node>
     <node role="6.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4972886494893401870">
@@ -497,8 +497,8 @@
                     </node>
                   </node>
                   <node role="6.condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4972886494893402079">
-                    <link role="6.classConcept:3" targetNodeId="1.~ObjectUtils" resolveInfo="ObjectUtils" />
-                    <link role="6.baseMethodDeclaration:3" targetNodeId="1.~ObjectUtils.equals(java.lang.Object,java.lang.Object):boolean" resolveInfo="equals" />
+                    <link role="6.classConcept:3" targetNodeId="11.~ObjectUtils" resolveInfo="ObjectUtils" />
+                    <link role="6.baseMethodDeclaration:3" targetNodeId="11.~ObjectUtils.equals(java.lang.Object,java.lang.Object):boolean" resolveInfo="equals" />
                     <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression:7" id="4972886494893402080">
                       <node role="8.index:7" type="jetbrains.mps.baseLanguage.structure.MinusExpression:3" id="4972886494893402081">
                         <node role="6.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4972886494893402082">
@@ -563,7 +563,7 @@
         </node>
       </node>
       <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4972886494893401906">
-        <link role="6.annotation:3" targetNodeId="2.~NotNull" resolveInfo="NotNull" />
+        <link role="6.annotation:3" targetNodeId="12.~NotNull" resolveInfo="NotNull" />
       </node>
     </node>
     <node role="6.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4972886494893402109">
@@ -784,7 +784,7 @@
         </node>
       </node>
       <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4972886494893402113">
-        <link role="6.annotation:3" targetNodeId="2.~NotNull" resolveInfo="NotNull" />
+        <link role="6.annotation:3" targetNodeId="12.~NotNull" resolveInfo="NotNull" />
       </node>
       <node role="6.returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="4972886494893402114">
         <node role="8.elementType:7" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType:2" id="4972886494893402115">
@@ -925,7 +925,7 @@
         </node>
       </node>
       <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4972886494893402279">
-        <link role="6.annotation:3" targetNodeId="2.~NotNull" resolveInfo="NotNull" />
+        <link role="6.annotation:3" targetNodeId="12.~NotNull" resolveInfo="NotNull" />
       </node>
       <node role="6.returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="4972886494893402280">
         <node role="8.elementType:7" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType:2" id="4972886494893402281">
@@ -1022,7 +1022,7 @@
           </node>
         </node>
         <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4972886494893401566">
-          <link role="6.annotation:3" targetNodeId="2.~NotNull" resolveInfo="NotNull" />
+          <link role="6.annotation:3" targetNodeId="12.~NotNull" resolveInfo="NotNull" />
         </node>
       </node>
       <node role="6.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4972886494893401567">
@@ -1033,7 +1033,7 @@
           </node>
         </node>
         <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4972886494893401570">
-          <link role="6.annotation:3" targetNodeId="2.~NotNull" resolveInfo="NotNull" />
+          <link role="6.annotation:3" targetNodeId="12.~NotNull" resolveInfo="NotNull" />
         </node>
       </node>
       <node role="6.returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4972886494893373485" />

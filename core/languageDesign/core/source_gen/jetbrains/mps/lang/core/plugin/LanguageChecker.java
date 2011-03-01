@@ -50,11 +50,11 @@ public class LanguageChecker implements IEditorChecker, EditorMessageOwner {
     }
   };
   private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter() {
-    public void modelRemoved(SModelDescriptor descriptor) {
+    public void beforeModelRemoved(SModelDescriptor descriptor) {
       modelDescriptorRemoved(descriptor);
     }
 
-    public void modelDeleted(SModelDescriptor descriptor) {
+    public void beforeModelDeleted(SModelDescriptor descriptor) {
       modelDescriptorRemoved(descriptor);
     }
   };

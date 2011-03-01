@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -553,6 +554,26 @@ public abstract class AbstractModule implements IModule {
     if (timestampString == null) return true;
     long timestamp = Long.decode(timestampString);
     return timestamp != myDescriptorFile.lastModified();
+  }
+
+  @Override
+  public ModuleReference getModuleFor(String packageName, String langID) {
+    for (SModelDescriptor model : getOwnModelDescriptors()) {
+      if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))){
+        return getModuleReference();
+      }
+    }
+
+    Collection<IModule> scopeModules = IterableUtil.asCollection(getScope().getVisibleModules());
+    Set<IModule> deps = new HashSet<IModule>(scopeModules);
+    for (IModule module: deps){
+      for (SModelDescriptor model : module.getOwnModelDescriptors()) {
+        if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))){
+          return module.getModuleReference();
+        }
+      }
+    }
+    return null;
   }
 
   public String getOutputFor(SModelDescriptor model) {

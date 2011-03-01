@@ -34,10 +34,10 @@ public class AnnotationMethodDeclaration_Behavior {
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Annotation")) {
         return true;
       }
-      if (classifier == SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~String")) {
+      if (classifier == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String")) {
         return true;
       }
-      if (classifier == SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Class")) {
+      if (classifier == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Class")) {
         return true;
       }
       return false;

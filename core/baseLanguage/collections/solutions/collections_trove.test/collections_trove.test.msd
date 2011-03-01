@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="collections_trove.test" uuid="fb186431-2788-490b-9e84-c2b84ef0ca77" extenallyVisible="true" compileInMPS="true" java-stubs-enabled="false">
+<solution name="collections_trove.test" uuid="fb186431-2788-490b-9e84-c2b84ef0ca77" compileInMPS="true" java-stubs-enabled="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <classPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">b5660d3a-8a0d-4815-881b-7c884f61c9c7(internalCollections.test)</dependency>

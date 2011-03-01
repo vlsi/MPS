@@ -2,13 +2,13 @@
 <model modelUID="r:43e0ac78-ea80-4032-8b3a-2710b3192190(jetbrains.mps.vcs.conflictable)">
   <persistence version="6" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <import index="8" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.vfs(MPS.Classpath/jetbrains.mps.vfs@java_stub)" version="-1" />
+  <import index="9" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="10" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.descriptor(MPS.Classpath/jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
   <import index="1" modelUID="r:43e0ac78-ea80-4032-8b3a-2710b3192190(jetbrains.mps.vcs.conflictable)" version="-1" implicit="yes" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
-  <import index="4" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" implicit="yes" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
-  <import index="6" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" implicit="yes" />
-  <import index="7" modelUID="f:java_stub#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" implicit="yes" />
   <root_stubs>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247635468">
       <property name="5.abstractClass:3" value="true" />
@@ -42,7 +42,7 @@
       <property name="2.name:0" value="getFile" />
       <node role="5.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247635479" />
       <node role="5.returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635480">
-        <link role="5.classifier:3" targetNodeId="4.~IFile" />
+        <link role="5.classifier:3" targetNodeId="8.~IFile" />
       </node>
       <node role="5.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247635481" />
     </node>
@@ -67,7 +67,7 @@
       <node role="5.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4707157387247635493">
         <property name="2.name:0" value="object" />
         <node role="5.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635494">
-          <link role="5.classifier:3" targetNodeId="3.~Object" />
+          <link role="5.classifier:3" targetNodeId="9.~Object" />
         </node>
       </node>
       <node role="5.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247635495">
@@ -96,7 +96,7 @@
               <link role="5.baseMethodDeclaration:3" targetNodeId="4707157387247635478" resolveInfo="getFile" />
             </node>
             <node role="5.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635508">
-              <link role="5.baseMethodDeclaration:3" targetNodeId="3.~Object.equals(java.lang.Object):boolean" />
+              <link role="5.baseMethodDeclaration:3" targetNodeId="9.~Object.equals(java.lang.Object):boolean" />
               <node role="5.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4707157387247635509">
                 <node role="5.operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="4707157387247635510">
                   <node role="5.expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="4707157387247635511">
@@ -117,7 +117,7 @@
         </node>
       </node>
       <node role="5.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247635515">
-        <link role="5.annotation:3" targetNodeId="3.~Override" />
+        <link role="5.annotation:3" targetNodeId="9.~Override" />
       </node>
     </node>
     <node role="5.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4707157387247635516">
@@ -131,7 +131,7 @@
               <link role="5.baseMethodDeclaration:3" targetNodeId="4707157387247635478" resolveInfo="getFile" />
             </node>
             <node role="5.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635523">
-              <link role="5.baseMethodDeclaration:3" targetNodeId="3.~Object.hashCode():int" />
+              <link role="5.baseMethodDeclaration:3" targetNodeId="9.~Object.hashCode():int" />
             </node>
           </node>
         </node>
@@ -148,7 +148,7 @@
       <property name="5.isFinal:3" value="true" />
       <property name="2.name:0" value="myModule" />
       <node role="5.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635528">
-        <link role="5.classifier:3" targetNodeId="6.~IModule" />
+        <link role="5.classifier:3" targetNodeId="10.~IModule" />
       </node>
       <node role="5.visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4707157387247635529" />
     </node>
@@ -164,7 +164,7 @@
       <node role="5.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4707157387247635536">
         <property name="2.name:0" value="module" />
         <node role="5.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635537">
-          <link role="5.classifier:3" targetNodeId="6.~IModule" />
+          <link role="5.classifier:3" targetNodeId="10.~IModule" />
         </node>
       </node>
       <node role="5.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4707157387247635538">
@@ -210,7 +210,7 @@
       <property name="2.name:0" value="getFile" />
       <node role="5.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247635556" />
       <node role="5.returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635557">
-        <link role="5.classifier:3" targetNodeId="4.~IFile" />
+        <link role="5.classifier:3" targetNodeId="8.~IFile" />
       </node>
       <node role="5.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247635558">
         <node role="5.statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4707157387247635559">
@@ -219,7 +219,7 @@
               <link role="5.variableDeclaration:3" targetNodeId="4707157387247635527" resolveInfo="myModule" />
             </node>
             <node role="5.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635562">
-              <link role="5.baseMethodDeclaration:3" targetNodeId="6.~IModule.getDescriptorFile():jetbrains.mps.vfs.IFile" />
+              <link role="5.baseMethodDeclaration:3" targetNodeId="10.~IModule.getDescriptorFile():jetbrains.mps.vfs.IFile" />
             </node>
           </node>
         </node>
@@ -236,7 +236,7 @@
               <link role="5.variableDeclaration:3" targetNodeId="4707157387247635527" resolveInfo="myModule" />
             </node>
             <node role="5.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635570">
-              <link role="5.baseMethodDeclaration:3" targetNodeId="6.~IModule.reloadFromDisk(boolean):void" />
+              <link role="5.baseMethodDeclaration:3" targetNodeId="10.~IModule.reloadFromDisk(boolean):void" />
               <node role="5.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="4707157387247635571">
                 <property name="5.value:3" value="true" />
               </node>
@@ -256,7 +256,7 @@
               <link role="5.variableDeclaration:3" targetNodeId="4707157387247635527" resolveInfo="myModule" />
             </node>
             <node role="5.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635579">
-              <link role="5.baseMethodDeclaration:3" targetNodeId="6.~IModule.needReloading():boolean" />
+              <link role="5.baseMethodDeclaration:3" targetNodeId="10.~IModule.needReloading():boolean" />
             </node>
           </node>
         </node>
@@ -273,7 +273,7 @@
       <property name="5.isFinal:3" value="true" />
       <property name="2.name:0" value="myModel" />
       <node role="5.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635584">
-        <link role="5.classifier:3" targetNodeId="7.~EditableSModelDescriptor" />
+        <link role="5.classifier:3" targetNodeId="11.~EditableSModelDescriptor" />
       </node>
       <node role="5.visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4707157387247635585" />
     </node>
@@ -289,7 +289,7 @@
       <node role="5.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4707157387247635592">
         <property name="2.name:0" value="model" />
         <node role="5.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635593">
-          <link role="5.classifier:3" targetNodeId="7.~EditableSModelDescriptor" />
+          <link role="5.classifier:3" targetNodeId="11.~EditableSModelDescriptor" />
         </node>
       </node>
       <node role="5.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4707157387247635594">
@@ -335,7 +335,7 @@
       <property name="2.name:0" value="getFile" />
       <node role="5.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247635612" />
       <node role="5.returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247635613">
-        <link role="5.classifier:3" targetNodeId="4.~IFile" />
+        <link role="5.classifier:3" targetNodeId="8.~IFile" />
       </node>
       <node role="5.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247635614">
         <node role="5.statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4707157387247635615">
@@ -344,7 +344,7 @@
               <link role="5.variableDeclaration:3" targetNodeId="4707157387247635583" resolveInfo="myModel" />
             </node>
             <node role="5.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635618">
-              <link role="5.baseMethodDeclaration:3" targetNodeId="7.~EditableSModelDescriptor.getModelFile():jetbrains.mps.vfs.IFile" />
+              <link role="5.baseMethodDeclaration:3" targetNodeId="11.~EditableSModelDescriptor.getModelFile():jetbrains.mps.vfs.IFile" />
             </node>
           </node>
         </node>
@@ -361,7 +361,7 @@
               <link role="5.variableDeclaration:3" targetNodeId="4707157387247635583" resolveInfo="myModel" />
             </node>
             <node role="5.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635626">
-              <link role="5.baseMethodDeclaration:3" targetNodeId="7.~EditableSModelDescriptor.reloadFromDisk():void" />
+              <link role="5.baseMethodDeclaration:3" targetNodeId="11.~EditableSModelDescriptor.reloadFromDisk():void" />
             </node>
           </node>
         </node>
@@ -378,7 +378,7 @@
               <link role="5.variableDeclaration:3" targetNodeId="4707157387247635583" resolveInfo="myModel" />
             </node>
             <node role="5.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247635634">
-              <link role="5.baseMethodDeclaration:3" targetNodeId="7.~EditableSModelDescriptor.needsReloading():boolean" />
+              <link role="5.baseMethodDeclaration:3" targetNodeId="11.~EditableSModelDescriptor.needsReloading():boolean" />
             </node>
           </node>
         </node>

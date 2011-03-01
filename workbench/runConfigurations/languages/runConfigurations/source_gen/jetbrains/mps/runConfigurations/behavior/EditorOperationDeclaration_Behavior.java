@@ -17,7 +17,7 @@ public class EditorOperationDeclaration_Behavior {
   }
 
   public static SNode call_getMethodbyName_666608846720150311(SNode thisNode, final String name) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#com.intellij.openapi.options(com.intellij.openapi.options@java_stub)", "~SettingsEditor"), "method", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.options(MPS.Classpath/com.intellij.openapi.options@java_stub)", "~SettingsEditor"), "method", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").startsWith(name);
       }

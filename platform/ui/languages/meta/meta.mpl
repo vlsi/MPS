@@ -24,9 +24,6 @@
   <dependencies>
     <dependency reexport="false">c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</dependency>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
-    <dependency reexport="false">71c80332-b17f-4f0a-be23-b5cba1d261f7(jetbrains.mps.ui.swt)</dependency>
-    <dependency reexport="false">f65201f1-7dc7-4cfc-9f79-ca0a316cf695(jetbrains.mps.ui.modeling#1773430080753795670)</dependency>
-    <dependency reexport="false">da5e4290-fe8f-4051-99eb-423e4107c1b4(jetbrains.mps.ui#5725024602606565468)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>

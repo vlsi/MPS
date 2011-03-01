@@ -12,13 +12,13 @@
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" version="-1" />
-  <languageAspect modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <maxImportIndex value="6" />
-  <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <maxImportIndex value="11" />
   <import index="2" modelUID="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" version="-1" />
-  <import index="3" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
-  <import index="4" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
-  <import index="6" modelUID="f:java_stub#jetbrains.mps.compiler(jetbrains.mps.compiler@java_stub)" version="-1" />
+  <import index="7" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="8" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="9" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator(MPS.Classpath/jetbrains.mps.generator@java_stub)" version="-1" />
+  <import index="10" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.compiler(MPS.Classpath/jetbrains.mps.compiler@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7219626660275504879">
     <property name="name:3" value="ModelsToResources" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7219626660275509691">
@@ -30,7 +30,7 @@
             <property name="name:3" value="smds" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="3608835296802635834">
               <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3608835296802637330">
-                <link role="classifier:3" targetNodeId="1.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+                <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
               </node>
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3608835296802635837">
@@ -57,11 +57,11 @@
                             <link role="variableDeclaration:3" targetNodeId="3608835296802635787" resolveInfo="desc" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3608835296802635785">
-                            <link role="baseMethodDeclaration:3" targetNodeId="1.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
                           </node>
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3608835296802635786">
-                          <link role="baseMethodDeclaration:3" targetNodeId="4.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="8.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                         </node>
                       </node>
                     </node>
@@ -93,11 +93,11 @@
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3608835296802635800">
                             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608835296802635801">
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3608835296802635802">
-                                <link role="classConcept:3" targetNodeId="3.~ModelGenerationStatusManager" resolveInfo="ModelGenerationStatusManager" />
-                                <link role="baseMethodDeclaration:3" targetNodeId="3.~ModelGenerationStatusManager.getInstance():jetbrains.mps.generator.ModelGenerationStatusManager" resolveInfo="getInstance" />
+                                <link role="classConcept:3" targetNodeId="9.~ModelGenerationStatusManager" resolveInfo="ModelGenerationStatusManager" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="9.~ModelGenerationStatusManager.getInstance():jetbrains.mps.generator.ModelGenerationStatusManager" resolveInfo="getInstance" />
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3608835296802635803">
-                                <link role="baseMethodDeclaration:3" targetNodeId="3.~ModelGenerationStatusManager.generationRequired(jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.smodel.IOperationContext):boolean" resolveInfo="generationRequired" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="9.~ModelGenerationStatusManager.generationRequired(jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.smodel.IOperationContext):boolean" resolveInfo="generationRequired" />
                                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3608835296802635804">
                                   <link role="variableDeclaration:3" targetNodeId="3608835296802635810" resolveInfo="md" />
                                 </node>
@@ -155,7 +155,7 @@
         <property name="name:3" value="smds" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="3608835296802538212">
           <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3608835296802637332">
-            <link role="classifier:3" targetNodeId="1.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+            <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
           </node>
         </node>
       </node>
@@ -166,7 +166,7 @@
             <property name="name:3" value="models" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="3608835296802538218">
               <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3608835296802538219">
-                <link role="classifier:3" targetNodeId="1.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+                <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
               </node>
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3608835296802538220" />
@@ -186,7 +186,7 @@
                         <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator:7" id="3608835296802640723">
                           <node role="singletonValue:7" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3608835296802640724" />
                           <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3608835296802640725">
-                            <link role="classifier:3" targetNodeId="1.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+                            <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
                           </node>
                         </node>
                       </node>
@@ -217,7 +217,7 @@
                                           <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetLastOperation:7" id="3608835296802640741" />
                                         </node>
                                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3608835296802640742">
-                                          <link role="baseMethodDeclaration:3" targetNodeId="1.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
+                                          <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
                                         </node>
                                       </node>
                                     </node>
@@ -269,7 +269,7 @@
                                           <link role="variableDeclaration:3" targetNodeId="3608835296802640802" resolveInfo="smd" />
                                         </node>
                                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3608835296802640765">
-                                          <link role="baseMethodDeclaration:3" targetNodeId="1.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
+                                          <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
                                         </node>
                                       </node>
                                       <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608835296802640766">
@@ -280,7 +280,7 @@
                                           <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetLastOperation:7" id="3608835296802640769" />
                                         </node>
                                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3608835296802640770">
-                                          <link role="baseMethodDeclaration:3" targetNodeId="1.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
+                                          <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
                                         </node>
                                       </node>
                                     </node>
@@ -299,7 +299,7 @@
                                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetLastOperation:7" id="3608835296802640779" />
                                                 </node>
                                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3608835296802640780">
-                                                  <link role="baseMethodDeclaration:3" targetNodeId="1.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
+                                                  <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
                                                 </node>
                                               </node>
                                             </node>
@@ -343,7 +343,7 @@
                                       <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3608835296802640797">
                                         <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="3608835296802640798">
                                           <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3608835296802640799">
-                                            <link role="classifier:3" targetNodeId="1.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+                                            <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
                                           </node>
                                           <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3608835296802640800">
                                             <link role="variableDeclaration:3" targetNodeId="3608835296802640802" resolveInfo="smd" />
@@ -410,14 +410,14 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3608835296802635842">
         <property name="name:3" value="context" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3608835296802635844">
-          <link role="classifier:3" targetNodeId="1.~IOperationContext" resolveInfo="IOperationContext" />
+          <link role="classifier:3" targetNodeId="7.~IOperationContext" resolveInfo="IOperationContext" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7219626660275504885">
         <property name="name:3" value="models" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="7219626660275504887">
           <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3608835296802638269">
-            <link role="classifier:3" targetNodeId="1.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+            <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
           </node>
         </node>
       </node>
@@ -457,7 +457,7 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3608835296802635820" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="3608835296802635821">
         <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3608835296802637803">
-          <link role="classifier:3" targetNodeId="1.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+          <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
         </node>
       </node>
     </node>
@@ -465,7 +465,7 @@
       <property name="name:3" value="context" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3608835296802635846" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3608835296802635847">
-        <link role="classifier:3" targetNodeId="1.~IOperationContext" resolveInfo="IOperationContext" />
+        <link role="classifier:3" targetNodeId="7.~IOperationContext" resolveInfo="IOperationContext" />
       </node>
     </node>
   </node>
@@ -475,7 +475,7 @@
       <property name="final:2" value="false" />
       <property name="name:2" value="module" />
       <node role="type:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2257725414731981665">
-        <link role="classifier:3" targetNodeId="4.~IModule" resolveInfo="IModule" />
+        <link role="classifier:3" targetNodeId="8.~IModule" resolveInfo="IModule" />
       </node>
     </node>
     <node role="visibility:2" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2257725414731981666" />
@@ -489,14 +489,14 @@
       <property name="final:2" value="false" />
       <property name="name:2" value="module" />
       <node role="type:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2257725414731981670">
-        <link role="classifier:3" targetNodeId="4.~IModule" resolveInfo="IModule" />
+        <link role="classifier:3" targetNodeId="8.~IModule" resolveInfo="IModule" />
       </node>
     </node>
     <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="2257725414731981671">
       <property name="final:2" value="false" />
       <property name="name:2" value="model" />
       <node role="type:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2257725414731981672">
-        <link role="classifier:3" targetNodeId="1.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+        <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
       </node>
     </node>
     <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="2257725414731981673">
@@ -504,7 +504,7 @@
       <property name="name:2" value="models" />
       <node role="type:2" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="2257725414731981674">
         <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2257725414731981675">
-          <link role="classifier:3" targetNodeId="1.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+          <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
         </node>
       </node>
     </node>
@@ -512,7 +512,7 @@
       <property name="final:2" value="false" />
       <property name="name:2" value="status" />
       <node role="type:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2257725414731981677">
-        <link role="classifier:3" targetNodeId="3.~GenerationStatus" resolveInfo="GenerationStatus" />
+        <link role="classifier:3" targetNodeId="9.~GenerationStatus" resolveInfo="GenerationStatus" />
       </node>
     </node>
     <node role="visibility:2" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2257725414731981678" />
@@ -526,7 +526,7 @@
       <property name="final:2" value="false" />
       <property name="name:2" value="module" />
       <node role="type:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2257725414731981682">
-        <link role="classifier:3" targetNodeId="4.~IModule" resolveInfo="IModule" />
+        <link role="classifier:3" targetNodeId="8.~IModule" resolveInfo="IModule" />
       </node>
     </node>
     <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="2257725414731981683">
@@ -534,7 +534,7 @@
       <property name="name:2" value="models" />
       <node role="type:2" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="2257725414731981684">
         <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2257725414731981685">
-          <link role="classifier:3" targetNodeId="1.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+          <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
         </node>
       </node>
     </node>
@@ -543,7 +543,6 @@
       <link role="classifier:3" targetNodeId="2.6168415856807657256" resolveInfo="IResource" />
     </node>
   </node>
-  <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration:2" id="695262645445904871">
     <property name="name:2" value="FResource" />
     <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="6913581993695011141">
@@ -557,7 +556,7 @@
       <node role="type:2" type="jetbrains.mps.baseLanguage.collections.structure.MapType:7" id="695262645445911153">
         <node role="keyType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="695262645445911156" />
         <node role="valueType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4145682539058037685">
-          <link role="classifier:3" targetNodeId="2v.~Object" resolveInfo="Object" />
+          <link role="classifier:3" targetNodeId="10.~Object" resolveInfo="Object" />
         </node>
       </node>
     </node>
@@ -565,14 +564,14 @@
       <property name="final:2" value="false" />
       <property name="name:2" value="module" />
       <node role="type:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6161320994961434006">
-        <link role="classifier:3" targetNodeId="4.~IModule" resolveInfo="IModule" />
+        <link role="classifier:3" targetNodeId="8.~IModule" resolveInfo="IModule" />
       </node>
     </node>
     <node role="component:2" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration:2" id="6161320994961434007">
       <property name="final:2" value="false" />
       <property name="name:2" value="model" />
       <node role="type:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6161320994961434008">
-        <link role="classifier:3" targetNodeId="1.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+        <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
       </node>
     </node>
     <node role="visibility:2" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="695262645445904872" />
@@ -586,7 +585,7 @@
       <property name="final:2" value="false" />
       <property name="name:2" value="classes" />
       <node role="type:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="695262645446156183">
-        <link role="classifier:3" targetNodeId="6.~IClassesData" resolveInfo="IClassesData" />
+        <link role="classifier:3" targetNodeId="11.~IClassesData" resolveInfo="IClassesData" />
       </node>
     </node>
     <node role="visibility:2" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="695262645445911159" />

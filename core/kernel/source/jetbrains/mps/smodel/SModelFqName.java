@@ -24,6 +24,14 @@ import org.apache.commons.lang.ObjectUtils;
 public class SModelFqName implements Comparable<Object> {
   public static SModelFqName fromString(String s) {
     if (s == null) s = "";
+
+    int indexSlash = s.indexOf("/");
+    String module = "";
+    if (indexSlash >= 0) {
+      module = s.substring(0, indexSlash);
+      s = s.substring(indexSlash + 1, s.length());
+    }
+
     int index = s.indexOf("@");
     String stereotype = "";
     if (index >= 0) {
@@ -34,21 +42,24 @@ public class SModelFqName implements Comparable<Object> {
       longName = s.substring(0, index);
     }
 
-    return new SModelFqName(longName, stereotype);
+    return new SModelFqName(module, longName, stereotype);
   }
 
+  private final String myModuleFqName;
   private final String myLongName;
   private final String myStereotype;
 
-  public SModelFqName(String namePrefix, String shortName, String stereotype) {
-    this(namePrefix + "." + shortName, stereotype);
+  public SModelFqName(String longName, String stereotype) {
+    this(null, longName, stereotype);
   }
 
-  public SModelFqName(String longName, String stereotype) {
+  public SModelFqName(String moduleFqName, String longName, String stereotype) {
     if (longName == null) longName = "";
     if (stereotype == null) stereotype = "";
+    if (moduleFqName == null) moduleFqName = "";
     myLongName = InternUtil.intern(longName);
     myStereotype = InternUtil.intern(stereotype);
+    myModuleFqName = InternUtil.intern(moduleFqName);
   }
 
   public boolean equals(Object o) {
@@ -63,7 +74,9 @@ public class SModelFqName implements Comparable<Object> {
   }
 
   public String toString() {
-    return myLongName + (myStereotype.length() == 0 ? "" : "@" + myStereotype);
+    String module = myModuleFqName.equals("") ? "" : myModuleFqName + "/";
+    String stereotype = myStereotype.length() == 0 ? "" : "@" + myStereotype;
+    return module + myLongName + stereotype;
   }
 
   public String getLongName() {

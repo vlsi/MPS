@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ui.sandbox" uuid="3f6b4db2-3eb5-44c8-a9bd-d6d426d08010" extenallyVisible="true" compileInMPS="true" java-stubs-enabled="true">
+<solution name="jetbrains.mps.ui.sandbox" uuid="3f6b4db2-3eb5-44c8-a9bd-d6d426d08010" compileInMPS="true" java-stubs-enabled="true">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">e4b8c369-fc30-46b2-b8d0-e41a8e19c78f(internalCollections.sandbox)</dependency>
-    <dependency reexport="false">e5c2a44a-6085-4aeb-a5b6-851cecd2d926(jetbrains.mps.ui.gwt)</dependency>
-    <dependency reexport="false">a5a5d5ab-3987-4848-9421-998f92430773(jetbrains.mps.ui.gwt#9106854556042091019)</dependency>
-    <dependency reexport="false">51805413-e01e-4f51-bf62-a054ab51eb54(jetbrains.mps.ui.swing)</dependency>
-    <dependency reexport="false">fc9ba4c3-4355-4a86-b84b-1c46c728f9ea(jetbrains.mps.ui.swt#1250358102411218055)</dependency>
     <dependency reexport="false">954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)</dependency>
   </dependencies>
   <usedLanguages>

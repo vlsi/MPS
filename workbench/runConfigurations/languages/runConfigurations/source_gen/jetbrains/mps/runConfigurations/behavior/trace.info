@@ -123,13 +123,13 @@
   </root>
   <root nodeId="666608846720004798">
     <nodeInfo nodeId="666608846720150325" fileName="EditorOperationDeclaration_Behavior.java" startLine="21" startPosition="39" endLine="22" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="666608846720150323" fileName="EditorOperationDeclaration_Behavior.java" startLine="20" startPosition="242" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="666608846720150323" fileName="EditorOperationDeclaration_Behavior.java" startLine="20" startPosition="293" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="666608846720150317" fileName="EditorOperationDeclaration_Behavior.java" startLine="19" startPosition="98" endLine="24" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="666608846720004800" fileName="EditorOperationDeclaration_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="666608846720150324" fileName="EditorOperationDeclaration_Behavior.java" startLine="21" startPosition="39" endLine="22" endPosition="74" />
-    <scopeInfo nodeId="666608846720150323" fileName="EditorOperationDeclaration_Behavior.java" startLine="20" startPosition="242" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="666608846720150323" fileName="EditorOperationDeclaration_Behavior.java" startLine="20" startPosition="293" endLine="24" endPosition="0" />
     <scopeInfo nodeId="666608846720150316" fileName="EditorOperationDeclaration_Behavior.java" startLine="19" startPosition="98" endLine="24" endPosition="7" />
-    <unitInfo nodeId="666608846720150323" fileName="EditorOperationDeclaration_Behavior.java" startLine="20" startPosition="219" endLine="24" endPosition="5" unitName="jetbrains.mps.runConfigurations.behavior.EditorOperationDeclaration_Behavior$1" />
+    <unitInfo nodeId="666608846720150323" fileName="EditorOperationDeclaration_Behavior.java" startLine="20" startPosition="270" endLine="24" endPosition="5" unitName="jetbrains.mps.runConfigurations.behavior.EditorOperationDeclaration_Behavior$1" />
   </root>
   <root nodeId="666608846720016381">
     <nodeInfo nodeId="666608846720150305" fileName="ApplyTo_Function_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

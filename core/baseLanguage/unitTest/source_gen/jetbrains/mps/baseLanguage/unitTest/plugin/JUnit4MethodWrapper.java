@@ -76,7 +76,7 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("annotation", quotedNode1_2, SModelReference.fromString("f:java_stub#org.junit(org.junit@java_stub)"), SNodeId.fromString("~Test")));
+        quotedNode1_2.addReference(SReference.create("annotation", quotedNode1_2, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.junit(org.junit@java_stub)"), SNodeId.fromString("~Test")));
         result = quotedNode1_2;
       }
       return result;

@@ -97,14 +97,14 @@ public class ConstructorDeclaration_Behavior {
     SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
     if (classifierType == null) {
-      return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Object"), "constructor", true)).first();
+      return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "constructor", true)).first();
     }
     SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
     if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
       return null;
     }
     SNode superclass = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    if (superclass != SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Enum")) {
+    if (superclass != SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum")) {
       List<SNode> constructors = SLinkOperations.getTargets(superclass, "constructor", true);
       if (ListSequence.fromList(constructors).isEmpty()) {
         return null;

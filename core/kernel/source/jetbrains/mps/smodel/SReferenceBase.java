@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -25,11 +26,27 @@ import org.jetbrains.annotations.Nullable;
  */
 abstract class SReferenceBase extends SReference {
 
+  public static boolean ourStubMode = true;
+
   protected volatile SNode myImmatureTargetNode;            // young
   private volatile SModelReference myTargetModelReference;  // mature
 
   protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference, SNode immatureTargetNode) {
     super(InternUtil.intern(role), sourceNode);
+
+    if (ourStubMode) {
+      if (targetModelReference != null) {
+        try {
+          SModelId id = targetModelReference.getSModelId();
+          SModelId nid = StubMigrationHelper.convertModelId(id);
+          if (nid!=null){
+            targetModelReference = new SModelReference(targetModelReference.getSModelFqName(), nid);
+          }
+        } catch (Throwable t) {
+        }
+      }
+    }
+
 
     // if ref is 'mature' then 'targetModelRefernce' is either NOT NULL, or it is broken external reference.
     myTargetModelReference = targetModelReference;

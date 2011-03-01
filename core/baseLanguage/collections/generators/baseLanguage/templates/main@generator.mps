@@ -13,12 +13,9 @@
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
-  <import index="t1ti" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <import index="d8ec" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="tpef" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tp2k" modelUID="r:00000000-0000-4000-0000-011c89590330(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util)" version="-1" />
@@ -27,6 +24,9 @@
   <import index="vq2z" modelUID="r:242df33e-bb74-49e9-9cfb-0712ffc0ed0e(jetbrains.mps.internal.collections.runtime.impl)" version="-1" />
   <import index="kos1" modelUID="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" version="-1" />
   <import index="tp2g" modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp68" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" implicit="yes" />
@@ -1057,7 +1057,7 @@
                               <node role="statement" roleId="tpef.1068581517665" type="tpef.ReturnStatement" typeId="tpef.1068581242878" id="1224426276518">
                                 <node role="expression" roleId="tpef.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1224426276519">
                                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1224426276520">
-                                    <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                                    <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                                   </node>
                                 </node>
                               </node>
@@ -1069,7 +1069,7 @@
                   </node>
                 </node>
                 <node role="returnType" roleId="tp68.1175794062018" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1224426173823">
-                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Iterable" resolveInfo="Iterable" />
+                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Iterable" resolveInfo="Iterable" />
                   <node role="parameter" roleId="tpef.1109201940907" type="tpef.Type" typeId="tpef.1068431790189" id="1224426173824">
                     <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1224426173825">
                       <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1224426173826">
@@ -1119,7 +1119,7 @@
                                 <node role="statement" roleId="tpef.1068581517665" type="tpef.ReturnStatement" typeId="tpef.1068581242878" id="1224426173850">
                                   <node role="expression" roleId="tpef.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1224426173851">
                                     <node role="quotedNode" roleId="tp3r.1196350785114" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1224426173852">
-                                      <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                                      <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                                     </node>
                                   </node>
                                 </node>
@@ -1466,8 +1466,8 @@
                             <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="3444116434174667068" resolveInfo="dType" />
                           </node>
                           <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.StaticFieldReference" typeId="tpef.1070533707846" id="3444116434174667090">
-                            <link role="classifier" roleId="tpef.1144433057691" targetNodeId="mwyq.~Boolean" resolveInfo="Boolean" />
-                            <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="mwyq.~Boolean%dTRUE" resolveInfo="TRUE" />
+                            <link role="classifier" roleId="tpef.1144433057691" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
+                            <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="e2lb.~Boolean%dTRUE" resolveInfo="TRUE" />
                           </node>
                         </node>
                       </node>
@@ -1625,8 +1625,8 @@
                         <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="3444116434174665592" resolveInfo="dType" />
                       </node>
                       <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.StaticFieldReference" typeId="tpef.1070533707846" id="3444116434174665614">
-                        <link role="classifier" roleId="tpef.1144433057691" targetNodeId="mwyq.~Boolean" resolveInfo="Boolean" />
-                        <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="mwyq.~Boolean%dTRUE" resolveInfo="TRUE" />
+                        <link role="classifier" roleId="tpef.1144433057691" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
+                        <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="e2lb.~Boolean%dTRUE" resolveInfo="TRUE" />
                       </node>
                     </node>
                   </node>
@@ -1725,8 +1725,8 @@
                             <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="3444116434174665230" resolveInfo="dType" />
                           </node>
                           <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.StaticFieldReference" typeId="tpef.1070533707846" id="3444116434174665268">
-                            <link role="classifier" roleId="tpef.1144433057691" targetNodeId="mwyq.~Boolean" resolveInfo="Boolean" />
-                            <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="mwyq.~Boolean%dTRUE" resolveInfo="TRUE" />
+                            <link role="classifier" roleId="tpef.1144433057691" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
+                            <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="e2lb.~Boolean%dTRUE" resolveInfo="TRUE" />
                           </node>
                         </node>
                       </node>
@@ -2167,8 +2167,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1237783176940" resolveInfo="AllConstant" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1237786275127">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.StaticFieldReference" typeId="tpef.1070533707846" id="1237786288133">
-          <link role="classifier" roleId="tpef.1144433057691" targetNodeId="mwyq.~Integer" resolveInfo="Integer" />
-          <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="mwyq.~Integer%dMAX_VALUE" resolveInfo="MAX_VALUE" />
+          <link role="classifier" roleId="tpef.1144433057691" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+          <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="e2lb.~Integer%dMAX_VALUE" resolveInfo="MAX_VALUE" />
         </node>
       </node>
     </node>
@@ -2388,7 +2388,7 @@
                       <node role="statement" roleId="tpef.1068581517665" type="tpef.ReturnStatement" typeId="tpef.1068581242878" id="1226410564241">
                         <node role="expression" roleId="tpef.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1226410564242">
                           <node role="quotedNode" roleId="tp3r.1196350785114" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1226410564243">
-                            <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                            <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                           </node>
                         </node>
                       </node>
@@ -2548,7 +2548,7 @@
                         <node role="statement" roleId="tpef.1068581517665" type="tpef.ExpressionStatement" typeId="tpef.1068580123155" id="1228857453419">
                           <node role="expression" roleId="tpef.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1228857453420">
                             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1228857458159">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                             </node>
                           </node>
                         </node>
@@ -2900,7 +2900,7 @@
                         <node role="statement" roleId="tpef.1068581517665" type="tpef.ReturnStatement" typeId="tpef.1068581242878" id="1226410635758">
                           <node role="expression" roleId="tpef.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1226410635759">
                             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1226410635760">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                             </node>
                           </node>
                         </node>
@@ -3089,7 +3089,7 @@
                                   <node role="leftExpression" roleId="tp25.1145404616321" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1208888305602" />
                                 </node>
                                 <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1208888305603">
-                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="d8ec.~SNode%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
+                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="lkfb.~SNode%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
                                 </node>
                               </node>
                               <node role="leftExpression" roleId="tpef.1081773367580" type="tpef.StringLiteral" typeId="tpef.1070475926800" id="1208888305604">
@@ -3099,8 +3099,8 @@
                           </node>
                         </node>
                         <node role="rValue" roleId="tpef.1068498886297" type="tpef.StaticFieldReference" typeId="tpef.1070533707846" id="1208888305605">
-                          <link role="classifier" roleId="tpef.1144433057691" targetNodeId="mwyq.~Boolean" resolveInfo="Boolean" />
-                          <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="mwyq.~Boolean%dTRUE" resolveInfo="TRUE" />
+                          <link role="classifier" roleId="tpef.1144433057691" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
+                          <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="e2lb.~Boolean%dTRUE" resolveInfo="TRUE" />
                         </node>
                       </node>
                     </node>
@@ -3248,15 +3248,15 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1223636590990">
-                      <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="d8ec.~SNode%dgetModel()%cjetbrains%dmps%dsmodel%dSModel" resolveInfo="getModel" />
+                      <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="lkfb.~SNode%dgetModel()%cjetbrains%dmps%dsmodel%dSModel" resolveInfo="getModel" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1223636628931">
-                    <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="d8ec.~SModel%dgetLongName()%cjava%dlang%dString" resolveInfo="getLongName" />
+                    <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="lkfb.~SModel%dgetLongName()%cjava%dlang%dString" resolveInfo="getLongName" />
                   </node>
                 </node>
                 <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1223636666438">
-                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="mwyq.~String%dstartsWith(java%dlang%dString)%cboolean" resolveInfo="startsWith" />
+                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="e2lb.~String%dstartsWith(java%dlang%dString)%cboolean" resolveInfo="startsWith" />
                   <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.StringLiteral" typeId="tpef.1070475926800" id="1223636667963">
                     <property name="value" nameId="tpef.1070475926801" value="jetbrains.mps.internal.collections.runtime" />
                   </node>
@@ -3301,7 +3301,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1151689724996" resolveInfo="SequenceType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1206457189502">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1206457207462">
-          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Iterable" resolveInfo="Iterable" />
+          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Iterable" resolveInfo="Iterable" />
           <node role="parameter" roleId="tpef.1109201940907" type="tpef.Type" typeId="tpef.1068431790189" id="1206457208458">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1206457211831">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1206457211832">
@@ -3329,7 +3329,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1151688443754" resolveInfo="ListType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1206457233225">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1206457240695">
-          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
           <node role="parameter" roleId="tpef.1109201940907" type="tpef.Type" typeId="tpef.1068431790189" id="1206457241959">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1206457244546">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1206457244547">
@@ -3385,7 +3385,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.5686963296372475025" resolveInfo="QueueType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="5478544378670463320">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="5478544378670463323">
-          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~Queue" resolveInfo="Queue" />
+          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~Queue" resolveInfo="Queue" />
           <node role="parameter" roleId="tpef.1109201940907" type="tpef.Type" typeId="tpef.1068431790189" id="5478544378670463325">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="5478544378670463326">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="5478544378670463327">
@@ -3469,7 +3469,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1226511727824" resolveInfo="SetType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1226933748323">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1226933754901">
-          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~Set" resolveInfo="Set" />
+          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~Set" resolveInfo="Set" />
           <node role="parameter" roleId="tpef.1109201940907" type="tpef.Type" typeId="tpef.1068431790189" id="1226933756371">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1226933763793">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1226933763794">
@@ -3497,7 +3497,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1240247491866" resolveInfo="SortedSetType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1240253359162">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240253359163">
-          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~SortedSet" resolveInfo="SortedSet" />
+          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~SortedSet" resolveInfo="SortedSet" />
           <node role="parameter" roleId="tpef.1109201940907" type="tpef.Type" typeId="tpef.1068431790189" id="1240253359164">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1240253359165">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1240253359166">
@@ -3525,7 +3525,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1197683403723" resolveInfo="MapType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1206958832680">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1206958846413">
-          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~Map" resolveInfo="Map" />
+          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~Map" resolveInfo="Map" />
           <node role="parameter" roleId="tpef.1109201940907" type="tpef.Type" typeId="tpef.1068431790189" id="1206958847582">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1206958852509">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1206958852510">
@@ -3573,7 +3573,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1240239337991" resolveInfo="SortedMapType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1240240841295">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240240841296">
-          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~SortedMap" resolveInfo="SortedMap" />
+          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~SortedMap" resolveInfo="SortedMap" />
           <node role="parameter" roleId="tpef.1109201940907" type="tpef.Type" typeId="tpef.1068431790189" id="1240240841297">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1240240841298">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1240240841299">
@@ -3622,7 +3622,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1237467705688" resolveInfo="IteratorType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1237481524573">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1237481532526">
-          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~Iterator" resolveInfo="Iterator" />
+          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~Iterator" resolveInfo="Iterator" />
           <node role="parameter" roleId="tpef.1109201940907" type="tpef.Type" typeId="tpef.1068431790189" id="1237481539554">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1237481547205">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1237481547206">
@@ -3650,7 +3650,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1240151247486" resolveInfo="ContainerIteratorType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1240153126471">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240153126472">
-          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~Iterator" resolveInfo="Iterator" />
+          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~Iterator" resolveInfo="Iterator" />
           <node role="parameter" roleId="tpef.1109201940907" type="tpef.Type" typeId="tpef.1068431790189" id="1240153126473">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1240153126474">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1240153126475">
@@ -4390,7 +4390,7 @@
             <node role="expression" roleId="tpef.1079359253376" type="tpef.CastExpression" typeId="tpef.1070534934090" id="1237490845388">
               <node role="expression" roleId="tpef.1070534934092" type="tpef.Expression" typeId="tpef.1068431790191" id="1237490845389" />
               <node role="type" roleId="tpef.1070534934091" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1237544204026">
-                <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~Iterator" resolveInfo="Iterator" />
+                <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~Iterator" resolveInfo="Iterator" />
               </node>
             </node>
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1237545433522">
@@ -4458,8 +4458,8 @@
                 <node role="statement" roleId="tpef.1068581517665" type="tpef.ExpressionStatement" typeId="tpef.1068580123155" id="1241088083626">
                   <node role="expression" roleId="tpef.1068580123156" type="tpef.AssignmentExpression" typeId="tpef.1068498886294" id="1241088167688">
                     <node role="rValue" roleId="tpef.1068498886297" type="tpef.StaticFieldReference" typeId="tpef.1070533707846" id="1241088170017">
-                      <link role="classifier" roleId="tpef.1144433057691" targetNodeId="mwyq.~Boolean" resolveInfo="Boolean" />
-                      <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="mwyq.~Boolean%dTRUE" resolveInfo="TRUE" />
+                      <link role="classifier" roleId="tpef.1144433057691" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
+                      <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="e2lb.~Boolean%dTRUE" resolveInfo="TRUE" />
                     </node>
                     <node role="lValue" roleId="tpef.1068498886295" type="tpef.DotExpression" typeId="tpef.1197027756228" id="1241088158749">
                       <node role="operand" roleId="tpef.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1241088083627" />
@@ -4476,7 +4476,7 @@
                                 <node role="leftExpression" roleId="tp25.1145404616321" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1241088757614" />
                               </node>
                               <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1241088769422">
-                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="d8ec.~SNode%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
+                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="lkfb.~SNode%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
                               </node>
                             </node>
                           </node>
@@ -4517,7 +4517,7 @@
                                     <node role="leftExpression" roleId="tp25.1145404616321" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="598602464790988944" />
                                   </node>
                                   <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="598602464790988945">
-                                    <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="d8ec.~SNode%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
+                                    <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="lkfb.~SNode%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
                                   </node>
                                 </node>
                               </node>
@@ -4605,7 +4605,7 @@
               <node role="throwable" roleId="tpef.1164903359217" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="598602464790988928">
                 <property name="name" nameId="tpck.1169194664001" value="e" />
                 <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="598602464790988931">
-                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~RuntimeException" resolveInfo="RuntimeException" />
+                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~RuntimeException" resolveInfo="RuntimeException" />
                 </node>
               </node>
               <node role="catchBody" roleId="tpef.1164903359218" type="tpef.StatementList" typeId="tpef.1068580123136" id="598602464790988930">
@@ -5091,7 +5091,7 @@
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="2063877164996195526">
           <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="urs3.6543581031674024599" resolveInfo="toGenericArray" />
           <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.ClassifierClassExpression" typeId="tpef.1116615150612" id="2063877164996195527">
-            <link role="classifier" roleId="tpef.1116615189566" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+            <link role="classifier" roleId="tpef.1116615189566" targetNodeId="e2lb.~Object" resolveInfo="Object" />
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="2063877164996195528">
               <property name="linkRole" nameId="tpck.1757699476691236116" value="classifier" />
               <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="2063877164996195529">
@@ -5227,7 +5227,7 @@
                     <node role="expression" roleId="tpef.1068581517676" type="tpef.DotExpression" typeId="tpef.1197027756228" id="2063877164996195585">
                       <node role="operand" roleId="tpef.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2063877164996195586">
                         <node role="quotedNode" roleId="tp3r.1196350785114" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="2063877164996195587">
-                          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                          <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                         </node>
                       </node>
                       <node role="operation" roleId="tpef.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2063877164996195588">
@@ -5246,7 +5246,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1207236100912" resolveInfo="ToIteratorOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1208428638253">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1208693473100">
-          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="mwyq.~Iterable%diterator()%cjava%dutil%dIterator" resolveInfo="iterator" />
+          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="e2lb.~Iterable%diterator()%cjava%dutil%dIterator" resolveInfo="iterator" />
         </node>
       </node>
     </node>
@@ -5650,7 +5650,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1227022210526" resolveInfo="ClearAllElementsOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1227023324435">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1227023334369">
-          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~List%dclear()%cvoid" resolveInfo="clear" />
+          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~List%dclear()%cvoid" resolveInfo="clear" />
         </node>
       </node>
     </node>
@@ -5882,7 +5882,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1201306600024" resolveInfo="ContainsKeyOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1206958967573">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1208694660866">
-          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~Map%dcontainsKey(java%dlang%dObject)%cboolean" resolveInfo="containsKey" />
+          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~Map%dcontainsKey(java%dlang%dObject)%cboolean" resolveInfo="containsKey" />
           <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.Expression" typeId="tpef.1068431790191" id="1208694660867">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1208694660868">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1208694660869">
@@ -5906,7 +5906,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1237907129112" resolveInfo="ContainsValueOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1237907310052">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1237907361662">
-          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~Map%dcontainsValue(java%dlang%dObject)%cboolean" resolveInfo="containsValue" />
+          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~Map%dcontainsValue(java%dlang%dObject)%cboolean" resolveInfo="containsValue" />
           <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.Expression" typeId="tpef.1068431790191" id="1237907361663">
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1237907361664">
               <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1237907361665">
@@ -5930,7 +5930,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1201872418428" resolveInfo="GetKeysOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1206959045655">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1208694663928">
-          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~Map%dkeySet()%cjava%dutil%dSet" resolveInfo="keySet" />
+          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~Map%dkeySet()%cjava%dutil%dSet" resolveInfo="keySet" />
         </node>
       </node>
     </node>
@@ -5938,7 +5938,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1237909114519" resolveInfo="GetValuesOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1237909585592">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1237909612953">
-          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~Map%dvalues()%cjava%dutil%dCollection" resolveInfo="values" />
+          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~Map%dvalues()%cjava%dutil%dCollection" resolveInfo="values" />
         </node>
       </node>
     </node>
@@ -5970,7 +5970,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1208542034276" resolveInfo="MapClearOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1208966530929">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1208966582470">
-          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~Map%dclear()%cvoid" resolveInfo="clear" />
+          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~Map%dclear()%cvoid" resolveInfo="clear" />
         </node>
       </node>
     </node>
@@ -6075,7 +6075,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1206959377848">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.DotExpression" typeId="tpef.1197027756228" id="1206959377849">
           <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1206959377850">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~Map%dget(java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="get" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~Map%dget(java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="get" />
             <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.Expression" typeId="tpef.1068431790191" id="1206959377851">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1206959377852">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1206959377853">
@@ -6146,7 +6146,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1206959138990">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.DotExpression" typeId="tpef.1197027756228" id="1206959138991">
           <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1206959138992">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~Map%dput(java%dlang%dObject,java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="put" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~Map%dput(java%dlang%dObject,java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="put" />
             <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.Expression" typeId="tpef.1068431790191" id="1206959151684">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1206959154842">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1206959154843">
@@ -6643,7 +6643,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1226934395923" resolveInfo="ClearSetOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1226934737395">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1226934831887">
-          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~Set%dclear()%cvoid" resolveInfo="clear" />
+          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~Set%dclear()%cvoid" resolveInfo="clear" />
         </node>
       </node>
     </node>
@@ -6763,7 +6763,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1237467461002" resolveInfo="GetIteratorOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1237483475829">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1237489890691">
-          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="mwyq.~Iterable%diterator()%cjava%dutil%dIterator" resolveInfo="iterator" />
+          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="e2lb.~Iterable%diterator()%cjava%dutil%dIterator" resolveInfo="iterator" />
         </node>
       </node>
     </node>
@@ -6771,7 +6771,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1237470895604" resolveInfo="HasNextOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1237484350589">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1237489866278">
-          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~Iterator%dhasNext()%cboolean" resolveInfo="hasNext" />
+          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~Iterator%dhasNext()%cboolean" resolveInfo="hasNext" />
         </node>
       </node>
     </node>
@@ -6779,7 +6779,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1237471031357" resolveInfo="GetNextOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1237484363307">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1237489858060">
-          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~Iterator%dnext()%cjava%dlang%dObject" resolveInfo="next" />
+          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~Iterator%dnext()%cjava%dlang%dObject" resolveInfo="next" />
         </node>
       </node>
     </node>
@@ -6787,7 +6787,7 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp2q.1240151544672" resolveInfo="RemoveOperation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1240152032591">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1240152070312">
-          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~Iterator%dremove()%cvoid" resolveInfo="remove" />
+          <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~Iterator%dremove()%cvoid" resolveInfo="remove" />
         </node>
       </node>
     </node>
@@ -6963,7 +6963,7 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="1240221363712">
                             <property name="name" nameId="tpck.1169194664001" value="entries" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240221363713">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1240221363714">
                                 <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp2q.1206655735055" resolveInfo="MapEntry" />
                               </node>
@@ -6993,12 +6993,12 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="1240221363724">
                             <property name="name" nameId="tpck.1169194664001" value="keys" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240221363725">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1240221363726" />
                             </node>
                             <node role="initializer" roleId="tpef.1068431790190" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="1240221363727">
                               <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="1240221363728">
-                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
+                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
                                 <node role="typeParameter" roleId="tpef.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1240221363729" />
                               </node>
                             </node>
@@ -7012,7 +7012,7 @@
                                   <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="1240221363724" resolveInfo="keys" />
                                 </node>
                                 <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1240221363735">
-                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
+                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
                                   <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.DotExpression" typeId="tpef.1197027756228" id="1240221363736">
                                     <node role="operand" roleId="tpef.1197027771414" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="1240221363737">
                                       <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="1240221363740" resolveInfo="e" />
@@ -7045,7 +7045,7 @@
                   </node>
                 </node>
                 <node role="typeParameter" roleId="tp68.1200499032583" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240221363744">
-                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1240221363745">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1240221363746">
                       <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="1240221363747">
@@ -7074,7 +7074,7 @@
                   </node>
                 </node>
                 <node role="typeParameter" roleId="tp68.1200499032583" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240221363756">
-                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1240221363757">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1240221363758">
                       <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="1240221363759">
@@ -7128,7 +7128,7 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="1240221363780">
                             <property name="name" nameId="tpck.1169194664001" value="entries" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240221363781">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1240221363782">
                                 <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp2q.1206655735055" resolveInfo="MapEntry" />
                               </node>
@@ -7158,12 +7158,12 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="1240221363792">
                             <property name="name" nameId="tpck.1169194664001" value="values" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240221363793">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1240221363794" />
                             </node>
                             <node role="initializer" roleId="tpef.1068431790190" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="1240221363795">
                               <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="1240221363796">
-                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
+                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
                                 <node role="typeParameter" roleId="tpef.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1240221363797" />
                               </node>
                             </node>
@@ -7177,7 +7177,7 @@
                                   <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="1240221363792" resolveInfo="values" />
                                 </node>
                                 <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1240221363803">
-                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
+                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
                                   <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.DotExpression" typeId="tpef.1197027756228" id="1240221363804">
                                     <node role="operand" roleId="tpef.1197027771414" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="1240221363805">
                                       <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="1240221363808" resolveInfo="e" />
@@ -7341,7 +7341,7 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="1240240884360">
                             <property name="name" nameId="tpck.1169194664001" value="entries" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240240884361">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1240240884362">
                                 <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp2q.1206655735055" resolveInfo="MapEntry" />
                               </node>
@@ -7371,12 +7371,12 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="1240240884372">
                             <property name="name" nameId="tpck.1169194664001" value="keys" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240240884373">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1240240884374" />
                             </node>
                             <node role="initializer" roleId="tpef.1068431790190" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="1240240884375">
                               <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="1240240884376">
-                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
+                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
                                 <node role="typeParameter" roleId="tpef.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1240240884377" />
                               </node>
                             </node>
@@ -7390,7 +7390,7 @@
                                   <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="1240240884372" resolveInfo="keys" />
                                 </node>
                                 <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1240240884383">
-                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
+                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
                                   <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.DotExpression" typeId="tpef.1197027756228" id="1240240884384">
                                     <node role="operand" roleId="tpef.1197027771414" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="1240240884385">
                                       <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="1240240884388" resolveInfo="e" />
@@ -7423,7 +7423,7 @@
                   </node>
                 </node>
                 <node role="typeParameter" roleId="tp68.1200499032583" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240240884392">
-                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1240240884393">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1240240884394">
                       <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="1240240884395">
@@ -7452,7 +7452,7 @@
                   </node>
                 </node>
                 <node role="typeParameter" roleId="tp68.1200499032583" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240240884404">
-                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1240240884405">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1240240884406">
                       <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="1240240884407">
@@ -7506,7 +7506,7 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="1240240884428">
                             <property name="name" nameId="tpck.1169194664001" value="entries" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240240884429">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1240240884430">
                                 <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp2q.1206655735055" resolveInfo="MapEntry" />
                               </node>
@@ -7536,12 +7536,12 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="1240240884440">
                             <property name="name" nameId="tpck.1169194664001" value="values" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1240240884441">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1240240884442" />
                             </node>
                             <node role="initializer" roleId="tpef.1068431790190" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="1240240884443">
                               <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="1240240884444">
-                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
+                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
                                 <node role="typeParameter" roleId="tpef.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1240240884445" />
                               </node>
                             </node>
@@ -7555,7 +7555,7 @@
                                   <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="1240240884440" resolveInfo="values" />
                                 </node>
                                 <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1240240884451">
-                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
+                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
                                   <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.DotExpression" typeId="tpef.1197027756228" id="1240240884452">
                                     <node role="operand" roleId="tpef.1197027771414" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="1240240884453">
                                       <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="1240240884456" resolveInfo="e" />
@@ -7767,7 +7767,7 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="9034802358628571890">
                             <property name="name" nameId="tpck.1169194664001" value="entries" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="9034802358628571891">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9034802358628571892">
                                 <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp2q.1206655735055" resolveInfo="MapEntry" />
                               </node>
@@ -7797,12 +7797,12 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="9034802358628571902">
                             <property name="name" nameId="tpck.1169194664001" value="keys" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="9034802358628571903">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9034802358628571904" />
                             </node>
                             <node role="initializer" roleId="tpef.1068431790190" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="9034802358628571905">
                               <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="9034802358628571906">
-                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
+                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
                                 <node role="typeParameter" roleId="tpef.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9034802358628571907" />
                               </node>
                             </node>
@@ -7816,7 +7816,7 @@
                                   <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="9034802358628571902" resolveInfo="keys" />
                                 </node>
                                 <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="9034802358628571913">
-                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
+                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
                                   <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.DotExpression" typeId="tpef.1197027756228" id="9034802358628571914">
                                     <node role="operand" roleId="tpef.1197027771414" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="9034802358628571915">
                                       <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="9034802358628571918" resolveInfo="e" />
@@ -7849,7 +7849,7 @@
                   </node>
                 </node>
                 <node role="typeParameter" roleId="tp68.1200499032583" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="9034802358628571922">
-                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="9034802358628571923">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="9034802358628571924">
                       <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="9034802358628571925">
@@ -7878,7 +7878,7 @@
                   </node>
                 </node>
                 <node role="typeParameter" roleId="tp68.1200499032583" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="9034802358628571934">
-                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="9034802358628571935">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="9034802358628571936">
                       <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="9034802358628571937">
@@ -7932,7 +7932,7 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="9034802358628571958">
                             <property name="name" nameId="tpck.1169194664001" value="entries" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="9034802358628571959">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9034802358628571960">
                                 <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp2q.1206655735055" resolveInfo="MapEntry" />
                               </node>
@@ -7962,12 +7962,12 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="9034802358628571970">
                             <property name="name" nameId="tpck.1169194664001" value="values" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="9034802358628571971">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9034802358628571972" />
                             </node>
                             <node role="initializer" roleId="tpef.1068431790190" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="9034802358628571973">
                               <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="9034802358628571974">
-                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
+                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
                                 <node role="typeParameter" roleId="tpef.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9034802358628571975" />
                               </node>
                             </node>
@@ -7981,7 +7981,7 @@
                                   <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="9034802358628571970" resolveInfo="values" />
                                 </node>
                                 <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="9034802358628571981">
-                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
+                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
                                   <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.DotExpression" typeId="tpef.1197027756228" id="9034802358628571982">
                                     <node role="operand" roleId="tpef.1197027771414" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="9034802358628571983">
                                       <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="9034802358628571986" resolveInfo="e" />
@@ -8211,7 +8211,7 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="1206971585585">
                             <property name="name" nameId="tpck.1169194664001" value="entries" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1206971585586">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1206971622073">
                                 <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp2q.1206655735055" resolveInfo="MapEntry" />
                               </node>
@@ -8241,12 +8241,12 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="1206971634716">
                             <property name="name" nameId="tpck.1169194664001" value="keys" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1206971634717">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1206971637376" />
                             </node>
                             <node role="initializer" roleId="tpef.1068431790190" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="1217888431452">
                               <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="1217888431454">
-                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
+                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
                                 <node role="typeParameter" roleId="tpef.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1206971666130" />
                               </node>
                             </node>
@@ -8260,7 +8260,7 @@
                                   <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="1206971634716" resolveInfo="res" />
                                 </node>
                                 <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1206971684738">
-                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
+                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
                                   <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.DotExpression" typeId="tpef.1197027756228" id="1206971685477">
                                     <node role="operand" roleId="tpef.1197027771414" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="1206971685313">
                                       <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="1206971670601" resolveInfo="e" />
@@ -8293,7 +8293,7 @@
                   </node>
                 </node>
                 <node role="typeParameter" roleId="tp68.1200499032583" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1206971522299">
-                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1206971522300">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1206971522301">
                       <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="1206971522302">
@@ -8322,7 +8322,7 @@
                   </node>
                 </node>
                 <node role="typeParameter" roleId="tp68.1200499032583" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1206971529528">
-                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+                  <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
                   <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1206971529529">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1206971529530">
                       <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="1206971529531">
@@ -8376,7 +8376,7 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="1206971733320">
                             <property name="name" nameId="tpck.1169194664001" value="entries" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1206971733321">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1206971733322">
                                 <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp2q.1206655735055" resolveInfo="MapEntry" />
                               </node>
@@ -8406,12 +8406,12 @@
                           <node role="localVariableDeclaration" roleId="tpef.1068581242865" type="tpef.LocalVariableDeclaration" typeId="tpef.1068581242863" id="1206971733333">
                             <property name="name" nameId="tpck.1169194664001" value="values" />
                             <node role="type" roleId="tpef.5680397130376446158" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="1206971733334">
-                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
+                              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
                               <node role="parameter" roleId="tpef.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1206971733335" />
                             </node>
                             <node role="initializer" roleId="tpef.1068431790190" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="1217888396111">
                               <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="1217888396113">
-                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
+                                <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
                                 <node role="typeParameter" roleId="tpef.1212687122400" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1206971733337" />
                               </node>
                             </node>
@@ -8425,7 +8425,7 @@
                                   <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="1206971733333" resolveInfo="res" />
                                 </node>
                                 <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1206971733343">
-                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
+                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
                                   <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.DotExpression" typeId="tpef.1197027756228" id="1206971733344">
                                     <node role="operand" roleId="tpef.1197027771414" type="tpef.LocalVariableReference" typeId="tpef.1068581242866" id="1206971733345">
                                       <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="1206971733348" resolveInfo="e" />
@@ -8766,7 +8766,7 @@
                                   <node role="leftExpression" roleId="tp25.1145404616321" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1208888271229" />
                                 </node>
                                 <node role="operation" roleId="tpef.1197027833540" type="tpef.InstanceMethodCallOperation" typeId="tpef.1202948039474" id="1208888271230">
-                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="d8ec.~SNode%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
+                                  <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="lkfb.~SNode%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
                                 </node>
                               </node>
                               <node role="leftExpression" roleId="tpef.1081773367580" type="tpef.StringLiteral" typeId="tpef.1070475926800" id="1208888271231">
@@ -8776,8 +8776,8 @@
                           </node>
                         </node>
                         <node role="rValue" roleId="tpef.1068498886297" type="tpef.StaticFieldReference" typeId="tpef.1070533707846" id="1208888271232">
-                          <link role="classifier" roleId="tpef.1144433057691" targetNodeId="mwyq.~Boolean" resolveInfo="Boolean" />
-                          <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="mwyq.~Boolean%dTRUE" resolveInfo="TRUE" />
+                          <link role="classifier" roleId="tpef.1144433057691" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
+                          <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="e2lb.~Boolean%dTRUE" resolveInfo="TRUE" />
                         </node>
                       </node>
                     </node>
@@ -13805,8 +13805,8 @@
                             <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="3002214349487398491" resolveInfo="actualType" />
                           </node>
                           <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.StaticFieldReference" typeId="tpef.1070533707846" id="3002214349487398505">
-                            <link role="classifier" roleId="tpef.1144433057691" targetNodeId="mwyq.~Boolean" resolveInfo="Boolean" />
-                            <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="mwyq.~Boolean%dTRUE" resolveInfo="TRUE" />
+                            <link role="classifier" roleId="tpef.1144433057691" targetNodeId="e2lb.~Boolean" resolveInfo="Boolean" />
+                            <link role="variableDeclaration" roleId="tpef.1068581517664" targetNodeId="e2lb.~Boolean%dTRUE" resolveInfo="TRUE" />
                           </node>
                         </node>
                       </node>
@@ -13848,7 +13848,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="3444116434173277300">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="3444116434173277302">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="3444116434173277303">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~ArrayList%d&lt;init&gt;()" resolveInfo="ArrayList" />
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.Type" typeId="tpef.1068431790189" id="3444116434173277304">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3444116434173277305">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="3444116434173277306">
@@ -13898,7 +13898,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1562299158921542625">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="1562299158921542626">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="1562299158921542627">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~ArrayList%d&lt;init&gt;(int)" resolveInfo="ArrayList" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~ArrayList%d&lt;init&gt;(int)" resolveInfo="ArrayList" />
             <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.Expression" typeId="tpef.1068431790191" id="1562299158921547862">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1562299158921547864">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1562299158921547865">
@@ -13999,7 +13999,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="3444116434173277332">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="3444116434173277334">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="3444116434173277335">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~PriorityQueue%d&lt;init&gt;()" resolveInfo="PriorityQueue" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~PriorityQueue%d&lt;init&gt;()" resolveInfo="PriorityQueue" />
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.Type" typeId="tpef.1068431790189" id="3444116434173277336">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3444116434173277337">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="3444116434173277338">
@@ -14049,7 +14049,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1562299158921547875">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="1562299158921547876">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="1562299158921547877">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~PriorityQueue%d&lt;init&gt;(int)" resolveInfo="PriorityQueue" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~PriorityQueue%d&lt;init&gt;(int)" resolveInfo="PriorityQueue" />
             <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.Expression" typeId="tpef.1068431790191" id="1562299158921547918">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1562299158921547919">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1562299158921547920">
@@ -14115,7 +14115,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="3444116434173277348">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="3444116434173277350">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="3444116434173277351">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~LinkedHashSet%d&lt;init&gt;()" resolveInfo="LinkedHashSet" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~LinkedHashSet%d&lt;init&gt;()" resolveInfo="LinkedHashSet" />
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.Type" typeId="tpef.1068431790189" id="3444116434173277352">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3444116434173277353">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="3444116434173277354">
@@ -14165,7 +14165,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1562299158921547927">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="1562299158921547928">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="1562299158921547929">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~LinkedHashSet%d&lt;init&gt;(int)" resolveInfo="LinkedHashSet" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~LinkedHashSet%d&lt;init&gt;(int)" resolveInfo="LinkedHashSet" />
             <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.Expression" typeId="tpef.1068431790191" id="1562299158921547983">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1562299158921547984">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1562299158921547985">
@@ -14231,7 +14231,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2261417478149594880">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="2261417478149594881">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="2261417478149594882">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~TreeSet%d&lt;init&gt;(java%dutil%dComparator)" resolveInfo="TreeSet" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~TreeSet%d&lt;init&gt;(java%dutil%dComparator)" resolveInfo="TreeSet" />
             <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.Expression" typeId="tpef.1068431790191" id="2261417478149629085">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2261417478149629132">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="2261417478149629133">
@@ -14297,7 +14297,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="3444116434173277364">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="3444116434173277366">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="3444116434173277367">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~TreeSet%d&lt;init&gt;()" resolveInfo="TreeSet" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~TreeSet%d&lt;init&gt;()" resolveInfo="TreeSet" />
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.Type" typeId="tpef.1068431790189" id="3444116434173277368">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3444116434173277369">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="3444116434173277370">
@@ -14332,7 +14332,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="3444116434173277380">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="3444116434173277382">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="3444116434173277383">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~HashSet%d&lt;init&gt;()" resolveInfo="HashSet" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~HashSet%d&lt;init&gt;()" resolveInfo="HashSet" />
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.Type" typeId="tpef.1068431790189" id="3444116434173277384">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3444116434173277385">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="3444116434173277386">
@@ -14382,7 +14382,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1562299158921547992">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="1562299158921547993">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="1562299158921547994">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~HashSet%d&lt;init&gt;(java%dutil%dCollection)" resolveInfo="HashSet" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~HashSet%d&lt;init&gt;(java%dutil%dCollection)" resolveInfo="HashSet" />
             <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.Expression" typeId="tpef.1068431790191" id="1562299158921548036">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1562299158921548037">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1562299158921548038">
@@ -14447,7 +14447,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="8536718853244871111">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="8536718853244871113">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="8536718853244882879">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="mwyq.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
             <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="8536718853244882880">
               <property name="linkRole" nameId="tpck.1757699476691236116" value="baseMethodDeclaration" />
               <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="8536718853244882881">
@@ -14603,8 +14603,8 @@
                 <node role="statement" roleId="tpef.1068581517665" type="tpef.ExpressionStatement" typeId="tpef.1068580123155" id="1279588871815121482">
                   <node role="expression" roleId="tpef.1068580123156" type="tpef.CastExpression" typeId="tpef.1070534934090" id="1279588871815121496">
                     <node role="expression" roleId="tpef.1070534934092" type="tpef.StaticMethodCall" typeId="tpef.1081236700937" id="1279588871815121497">
-                      <link role="classConcept" roleId="tpef.1144433194310" targetNodeId="d8ec.~CopyUtil" resolveInfo="CopyUtil" />
-                      <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="d8ec.~CopyUtil%dcopy(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="copy" />
+                      <link role="classConcept" roleId="tpef.1144433194310" targetNodeId="lkfb.~CopyUtil" resolveInfo="CopyUtil" />
+                      <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="lkfb.~CopyUtil%dcopy(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="copy" />
                       <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.DotExpression" typeId="tpef.1197027756228" id="1279588871815121498">
                         <node role="operand" roleId="tpef.1197027771414" type="tpef.DotExpression" typeId="tpef.1197027756228" id="1279588871815121499">
                           <node role="operand" roleId="tpef.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1279588871815121500" />
@@ -15033,7 +15033,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6651873253983907039">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="6651873253983907041">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="6651873253983907042">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~LinkedHashMap%d&lt;init&gt;(int,float,boolean)" resolveInfo="LinkedHashMap" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~LinkedHashMap%d&lt;init&gt;(int,float,boolean)" resolveInfo="LinkedHashMap" />
             <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.IntegerConstant" typeId="tpef.1068580320020" id="6651873253983907043">
               <property name="value" nameId="tpef.1068580320021" value="16" />
             </node>
@@ -15062,7 +15062,7 @@
               </node>
             </node>
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="6651873253983907058">
-              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6651873253983907059">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6651873253983907060">
                   <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="6651873253983907061">
@@ -15083,7 +15083,7 @@
               </node>
             </node>
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="6651873253983907070">
-              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6651873253983907071">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6651873253983907072">
                   <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="6651873253983907073">
@@ -15127,7 +15127,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6651873253983907094">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="6651873253983907095">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="6651873253983907096">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~LinkedHashMap%d&lt;init&gt;(int,float,boolean)" resolveInfo="LinkedHashMap" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~LinkedHashMap%d&lt;init&gt;(int,float,boolean)" resolveInfo="LinkedHashMap" />
             <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.Expression" typeId="tpef.1068431790191" id="6651873253983907136">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6651873253983907138">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6651873253983907139">
@@ -15169,7 +15169,7 @@
               </node>
             </node>
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="6651873253983907109">
-              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6651873253983907110">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6651873253983907111">
                   <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="6651873253983907112">
@@ -15190,7 +15190,7 @@
               </node>
             </node>
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="6651873253983907118">
-              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6651873253983907119">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6651873253983907120">
                   <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="6651873253983907121">
@@ -15234,9 +15234,9 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6651873253983907272">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="6651873253983907274">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="6651873253983907275">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~TreeMap%d&lt;init&gt;()" resolveInfo="TreeMap" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~TreeMap%d&lt;init&gt;()" resolveInfo="TreeMap" />
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="6651873253983907276">
-              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6651873253983907277">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6651873253983907278">
                   <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="6651873253983907279">
@@ -15257,7 +15257,7 @@
               </node>
             </node>
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="6651873253983907288">
-              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6651873253983907289">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6651873253983907290">
                   <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="6651873253983907291">
@@ -15286,9 +15286,9 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6651873253983906799">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="6651873253983906801">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="6651873253983906802">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~HashMap%d&lt;init&gt;()" resolveInfo="HashMap" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~HashMap%d&lt;init&gt;()" resolveInfo="HashMap" />
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="6651873253983906803">
-              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6651873253983906804">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6651873253983906805">
                   <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="6651873253983906806">
@@ -15309,7 +15309,7 @@
               </node>
             </node>
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="6651873253983906815">
-              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6651873253983906816">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6651873253983906817">
                   <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="6651873253983906818">
@@ -15463,8 +15463,8 @@
                     <node role="type" roleId="tpef.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7602110602932568734" />
                     <node role="initializer" roleId="tpef.1068431790190" type="tpef.CastExpression" typeId="tpef.1070534934090" id="7602110602932568735">
                       <node role="expression" roleId="tpef.1070534934092" type="tpef.StaticMethodCall" typeId="tpef.1081236700937" id="7602110602932568736">
-                        <link role="classConcept" roleId="tpef.1144433194310" targetNodeId="d8ec.~CopyUtil" resolveInfo="CopyUtil" />
-                        <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="d8ec.~CopyUtil%dcopy(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="copy" />
+                        <link role="classConcept" roleId="tpef.1144433194310" targetNodeId="lkfb.~CopyUtil" resolveInfo="CopyUtil" />
+                        <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="lkfb.~CopyUtil%dcopy(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="copy" />
                         <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.DotExpression" typeId="tpef.1197027756228" id="7602110602932568737">
                           <node role="operand" roleId="tpef.1197027771414" type="tpef.DotExpression" typeId="tpef.1197027756228" id="7602110602932568738">
                             <node role="operand" roleId="tpef.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="7602110602932568739" />
@@ -15689,9 +15689,9 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6651873253983906992">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="6651873253983906994">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="6651873253983906995">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~HashMap%d&lt;init&gt;()" resolveInfo="HashMap" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~HashMap%d&lt;init&gt;()" resolveInfo="HashMap" />
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="6651873253983906996">
-              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6651873253983906997">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6651873253983906998">
                   <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="6651873253983906999">
@@ -15712,7 +15712,7 @@
               </node>
             </node>
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="6651873253983907008">
-              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6651873253983907009">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6651873253983907010">
                   <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="6651873253983907011">
@@ -15756,7 +15756,7 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6651873253983908400">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpef.GenericNewExpression" typeId="tpef.1145552977093" id="6651873253983908401">
           <node role="creator" roleId="tpef.1145553007750" type="tpef.ClassCreator" typeId="tpef.1212685548494" id="6651873253983908402">
-            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="t1ti.~HashMap%d&lt;init&gt;(int)" resolveInfo="HashMap" />
+            <link role="baseMethodDeclaration" roleId="tpef.1068499141037" targetNodeId="k7g3.~HashMap%d&lt;init&gt;(int)" resolveInfo="HashMap" />
             <node role="actualArgument" roleId="tpef.1068499141038" type="tpef.Expression" typeId="tpef.1068431790191" id="6651873253983908430">
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6651873253983908445">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6651873253983908446">
@@ -15774,7 +15774,7 @@
               </node>
             </node>
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="6651873253983908403">
-              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6651873253983908404">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6651873253983908405">
                   <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="6651873253983908406">
@@ -15795,7 +15795,7 @@
               </node>
             </node>
             <node role="typeParameter" roleId="tpef.1212687122400" type="tpef.ClassifierType" typeId="tpef.1107535904670" id="6651873253983908412">
-              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
+              <link role="classifier" roleId="tpef.1107535924139" targetNodeId="e2lb.~Object" resolveInfo="Object" />
               <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6651873253983908413">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6651873253983908414">
                   <node role="body" roleId="tpef.1137022507850" type="tpef.StatementList" typeId="tpef.1068580123136" id="6651873253983908415">

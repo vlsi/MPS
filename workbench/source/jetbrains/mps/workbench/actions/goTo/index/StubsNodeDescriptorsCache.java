@@ -35,7 +35,7 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
     }
   };
 
-  private ModuleRepositoryAdapter myModuleRepoListener = new ModuleRepositoryAdapter(){
+  private ModuleRepositoryAdapter myModuleRepoListener = new ModuleRepositoryAdapter() {
     public void moduleRemoved(IModule module) {
       myCache.remove(module);
     }
@@ -58,14 +58,14 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
     MPSModuleRepository.getInstance().removeModuleRepositoryListener(myModuleRepoListener);
   }
 
-  public List<BaseSNodeDescriptor> getSNodeDescriptors(IModule m) {
+  public List<BaseSNodeDescriptor> getSNodeDescriptors(final IModule m) {
     if (!myCache.containsKey(m)) {
       List<StubDescriptor> list = StubReloadManager.getInstance().getRootNodeDescriptors(((AbstractModule) m));
       List<BaseSNodeDescriptor> result = new ArrayList<BaseSNodeDescriptor>(list.size());
       for (final StubDescriptor sd : list) {
         result.add(new BaseSNodeDescriptor(sd.getClassName(), 0, 0, null) {
           protected SModelReference calculateModelReference() {
-            return StubHelper.uidForPackageInStubs(sd.getPackage());
+            return StubHelper.uidForPackageInStubs(sd.getPackage(), LanguageID.JAVA, m.getModuleReference());
           }
 
           public String getConceptFqName() {

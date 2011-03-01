@@ -8,9 +8,9 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpki" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
-  <import index="hsm2" modelUID="f:java_stub#jetbrains.mps.ypath.runtime(jetbrains.mps.ypath.runtime@java_stub)" version="-1" />
   <import index="tpkq" modelUID="r:00000000-0000-4000-0000-011c895905a6(jetbrains.mps.ypath.actions)" version="-1" />
   <import index="tpkr" modelUID="r:00000000-0000-4000-0000-011c895905a7(jetbrains.mps.ypath.behavior)" version="-1" />
+  <import index="frfz" modelUID="f:java_stub#f18753d4-d7a2-434f-85a3-f8eedf77c99a#jetbrains.mps.ypath.runtime(ypath#1168438160182/jetbrains.mps.ypath.runtime@java_stub)" version="-1" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -135,11 +135,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1199879911080">
             <property name="name" nameId="tpck.1169194664001" value="axis" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1199879922913">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1199879911082">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hsm2.~TraversalAxis" resolveInfo="TraversalAxis" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="frfz.~TraversalAxis" resolveInfo="TraversalAxis" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dparseValue(java%dlang%dString)%cjetbrains%dmps%dypath%druntime%dTraversalAxis" resolveInfo="parseValue" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227921919">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1199879931535">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1199879877239" resolveInfo="node" />
@@ -289,7 +289,7 @@
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1199879911080" resolveInfo="axis" />
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096924482">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
                                     </node>
                                   </node>
                                 </node>
@@ -424,7 +424,7 @@
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1199879911080" resolveInfo="axis" />
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1225096924538">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hsm2.~TraversalAxis%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="frfz.~TraversalAxis%dgetValue()%cjava%dlang%dString" resolveInfo="getValue" />
                                       </node>
                                     </node>
                                   </node>

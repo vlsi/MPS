@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint" file="GDBBreakpoint.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.CppDebugSession" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.RecordValue" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.CppDebugSession" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.ResultAnswer" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.StreamAnswer" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.StringValue" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.RemoveBreakpointRequestor" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.BreakpointRequestor" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.GDBRequestManager" />
-    <classNode dependClassName="jetbrains.mps.nanoc.debug.requests.RemoveBreakpointRequestor" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.StringValue" />
+    <classNode dependClassName="jetbrains.mps.nanoc.debug.answer.StreamAnswer" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="jetbrains.mps.debug.api.AbstractMPSBreakpoint" />
   </dependency>
 </dependenciesRoot>

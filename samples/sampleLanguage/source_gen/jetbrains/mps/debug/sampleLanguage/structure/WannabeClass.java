@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +19,7 @@ public class WannabeClass extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String METHOD = "method";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public WannabeClass(SNode node) {
     super(node);
@@ -73,6 +75,26 @@ public class WannabeClass extends BaseConcept implements INamedConcept {
 
   public void insertMethod(WannabeMethod prev, WannabeMethod node) {
     this.insertChild(prev, WannabeClass.METHOD, node);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(WannabeClass._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, WannabeClass._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, WannabeClass._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(WannabeClass._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, WannabeClass._$ATTRIBUTE, node);
   }
 
   public static WannabeClass newInstance(SModel sm, boolean init) {

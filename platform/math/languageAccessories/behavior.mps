@@ -12,12 +12,12 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <import index="39kg" modelUID="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" version="-1" />
-  <import index="nk3g" modelUID="f:java_stub#java.math(java.math@java_stub)" version="-1" />
-  <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="tpcu" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="k2b1" modelUID="r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)" version="-1" />
+  <import index="epq1" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
@@ -831,8 +831,8 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1300076822026746768">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1300076822026746769">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1300076822026746770">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nk3g.~MathContext" resolveInfo="MathContext" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nk3g.~MathContext%dDECIMAL32" resolveInfo="DECIMAL32" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="epq1.~MathContext" resolveInfo="MathContext" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="epq1.~MathContext%dDECIMAL32" resolveInfo="DECIMAL32" />
                   </node>
                 </node>
               </node>
@@ -846,8 +846,8 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1300076822026746774">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1300076822026746775">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1300076822026746776">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nk3g.~MathContext" resolveInfo="MathContext" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nk3g.~MathContext%dDECIMAL64" resolveInfo="DECIMAL64" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="epq1.~MathContext" resolveInfo="MathContext" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="epq1.~MathContext%dDECIMAL64" resolveInfo="DECIMAL64" />
                   </node>
                 </node>
               </node>
@@ -861,8 +861,8 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1300076822026746780">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1300076822026746781">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1300076822026746782">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nk3g.~MathContext" resolveInfo="MathContext" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nk3g.~MathContext%dDECIMAL128" resolveInfo="DECIMAL128" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="epq1.~MathContext" resolveInfo="MathContext" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="epq1.~MathContext%dDECIMAL128" resolveInfo="DECIMAL128" />
                   </node>
                 </node>
               </node>
@@ -876,8 +876,8 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1300076822026746786">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1300076822026746787">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1300076822026746788">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="nk3g.~MathContext" resolveInfo="MathContext" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="nk3g.~MathContext%dUNLIMITED" resolveInfo="UNLIMITED" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="epq1.~MathContext" resolveInfo="MathContext" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="epq1.~MathContext%dUNLIMITED" resolveInfo="UNLIMITED" />
                   </node>
                 </node>
               </node>
@@ -923,7 +923,7 @@
               <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1300076822026746808">
                 <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1300076822026746809">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1300076822026746810">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nk3g.~MathContext%d&lt;init&gt;(int,java%dmath%dRoundingMode)" resolveInfo="MathContext" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="epq1.~MathContext%d&lt;init&gt;(int,java%dmath%dRoundingMode)" resolveInfo="MathContext" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.Expression" typeId="tpee.1068431790191" id="1300076822026746811">
                       <node role="_$attribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1300076822026746812">
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1300076822026746813">
@@ -983,8 +983,8 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1300076822026748004">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1300076822026748005">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1300076822026748006">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="nk3g.~RoundingMode" resolveInfo="RoundingMode" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="nk3g.~RoundingMode%dCEILING" resolveInfo="CEILING" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="epq1.~RoundingMode" resolveInfo="RoundingMode" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="epq1.~RoundingMode%dCEILING" resolveInfo="CEILING" />
                   </node>
                 </node>
               </node>
@@ -998,8 +998,8 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1300076822026748010">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1300076822026748011">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1300076822026748012">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="nk3g.~RoundingMode" resolveInfo="RoundingMode" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="nk3g.~RoundingMode%dDOWN" resolveInfo="DOWN" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="epq1.~RoundingMode" resolveInfo="RoundingMode" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="epq1.~RoundingMode%dDOWN" resolveInfo="DOWN" />
                   </node>
                 </node>
               </node>
@@ -1013,8 +1013,8 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1300076822026748016">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1300076822026748017">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1300076822026748018">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="nk3g.~RoundingMode" resolveInfo="RoundingMode" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="nk3g.~RoundingMode%dFLOOR" resolveInfo="FLOOR" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="epq1.~RoundingMode" resolveInfo="RoundingMode" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="epq1.~RoundingMode%dFLOOR" resolveInfo="FLOOR" />
                   </node>
                 </node>
               </node>
@@ -1028,8 +1028,8 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1300076822026748022">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1300076822026748023">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1300076822026748024">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="nk3g.~RoundingMode" resolveInfo="RoundingMode" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="nk3g.~RoundingMode%dHALF_DOWN" resolveInfo="HALF_DOWN" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="epq1.~RoundingMode" resolveInfo="RoundingMode" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="epq1.~RoundingMode%dHALF_DOWN" resolveInfo="HALF_DOWN" />
                   </node>
                 </node>
               </node>
@@ -1043,8 +1043,8 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1300076822026748028">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1300076822026748029">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1300076822026748030">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="nk3g.~RoundingMode" resolveInfo="RoundingMode" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="nk3g.~RoundingMode%dHALF_EVEN" resolveInfo="HALF_EVEN" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="epq1.~RoundingMode" resolveInfo="RoundingMode" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="epq1.~RoundingMode%dHALF_EVEN" resolveInfo="HALF_EVEN" />
                   </node>
                 </node>
               </node>
@@ -1058,8 +1058,8 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1300076822026748034">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1300076822026748035">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1300076822026748036">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="nk3g.~RoundingMode" resolveInfo="RoundingMode" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="nk3g.~RoundingMode%dHALF_UP" resolveInfo="HALF_UP" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="epq1.~RoundingMode" resolveInfo="RoundingMode" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="epq1.~RoundingMode%dHALF_UP" resolveInfo="HALF_UP" />
                   </node>
                 </node>
               </node>
@@ -1073,8 +1073,8 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1300076822026748040">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1300076822026748041">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1300076822026748042">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="nk3g.~RoundingMode" resolveInfo="RoundingMode" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="nk3g.~RoundingMode%dUNNECESSARY" resolveInfo="UNNECESSARY" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="epq1.~RoundingMode" resolveInfo="RoundingMode" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="epq1.~RoundingMode%dUNNECESSARY" resolveInfo="UNNECESSARY" />
                   </node>
                 </node>
               </node>
@@ -1088,8 +1088,8 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1300076822026748046">
                 <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1300076822026748047">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1300076822026748048">
-                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="nk3g.~RoundingMode" resolveInfo="RoundingMode" />
-                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="nk3g.~RoundingMode%dUP" resolveInfo="UP" />
+                    <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="epq1.~RoundingMode" resolveInfo="RoundingMode" />
+                    <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="epq1.~RoundingMode%dUP" resolveInfo="UP" />
                   </node>
                 </node>
               </node>
@@ -1185,7 +1185,7 @@
           <node role="condition" roleId="tpee.1068580123160" type="tp25.EqualsStructurallyExpression" typeId="tp25.1227264722563" id="2705856473428697755">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2705856473428697756">
               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2705856473428697757">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Short" resolveInfo="Short" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Short" resolveInfo="Short" />
               </node>
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="2705856473428697758">
@@ -1210,7 +1210,7 @@
           <node role="condition" roleId="tpee.1068580123160" type="tp25.EqualsStructurallyExpression" typeId="tp25.1227264722563" id="2705856473428697766">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2705856473428697767">
               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2705856473428697768">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Integer" resolveInfo="Integer" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
               </node>
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="2705856473428697769">
@@ -1235,7 +1235,7 @@
           <node role="condition" roleId="tpee.1068580123160" type="tp25.EqualsStructurallyExpression" typeId="tp25.1227264722563" id="2705856473428697777">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2705856473428697778">
               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2705856473428697779">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Long" resolveInfo="Long" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Long" resolveInfo="Long" />
               </node>
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="2705856473428697780">
@@ -1260,7 +1260,7 @@
           <node role="condition" roleId="tpee.1068580123160" type="tp25.EqualsStructurallyExpression" typeId="tp25.1227264722563" id="2705856473428697788">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2705856473428697789">
               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2705856473428697790">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Float" resolveInfo="Float" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Float" resolveInfo="Float" />
               </node>
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="2705856473428697791">
@@ -1285,7 +1285,7 @@
           <node role="condition" roleId="tpee.1068580123160" type="tp25.EqualsStructurallyExpression" typeId="tp25.1227264722563" id="2705856473428697799">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2705856473428697800">
               <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2705856473428697801">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Double" resolveInfo="Double" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Double" resolveInfo="Double" />
               </node>
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="2705856473428697802">
@@ -1743,7 +1743,7 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5217243589491051787">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~String" resolveInfo="String" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5217243589491051788" />
     </node>

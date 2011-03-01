@@ -100,7 +100,7 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
       public void run() {
         superclass.value = SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
         if (superclass.value == null) {
-          superclass.value = SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Object");
+          superclass.value = SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
         }
         if (ListSequence.fromList(SLinkOperations.getTargets(superclass.value, "constructor", true)).count() > 1) {
           needsShowConstructorsDialog.value = true;

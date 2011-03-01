@@ -4,12 +4,12 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <import index="5" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="7" modelUID="f:java_stub#com.intellij.util(com.intellij.util@java_stub)" version="-1" />
   <import index="8" modelUID="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" version="-1" />
-  <import index="9" modelUID="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" version="-1" />
-  <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="11" modelUID="f:java_stub#org.apache.commons.lang(org.apache.commons.lang@java_stub)" version="-1" />
+  <import index="12" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="13" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
+  <import index="14" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#org.apache.commons.lang(MPS.Classpath/org.apache.commons.lang@java_stub)" version="-1" />
+  <import index="15" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.util(MPS.Classpath/com.intellij.util@java_stub)" version="-1" />
+  <import index="16" modelUID="f:java_stub#fd392034-7849-419d-9071-12563d152375#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures/jetbrains.mps.baseLanguage.closures.runtime@java_stub)" version="-1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="4" modelUID="r:36539f52-7ec3-4937-98bf-1fbc1fbe99fc(jetbrains.mps.vcs.mergedriver)" version="-1" implicit="yes" />
@@ -55,11 +55,11 @@
             <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7551811584090966839">
               <node role="3.expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7551811584090966841">
                 <node role="3.operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7551811584090966840">
-                  <link role="3.classifier:3" targetNodeId="2.~System" resolveInfo="System" />
-                  <link role="3.variableDeclaration:3" targetNodeId="2.~System.err" resolveInfo="err" />
+                  <link role="3.classifier:3" targetNodeId="12.~System" resolveInfo="System" />
+                  <link role="3.variableDeclaration:3" targetNodeId="12.~System.err" resolveInfo="err" />
                 </node>
                 <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7551811584090966845">
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="5.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="13.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="7551811584090974867">
                     <node role="3.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7551811584090974870">
                       <property name="3.value:3" value=" &lt;base&gt; &lt;current&gt; &lt;other&gt; [marker-size]" />
@@ -78,8 +78,8 @@
             </node>
             <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7551811584090947895">
               <node role="3.expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7551811584090966832">
-                <link role="3.baseMethodDeclaration:3" targetNodeId="2.~System.exit(int):void" resolveInfo="exit" />
-                <link role="3.classConcept:3" targetNodeId="2.~System" resolveInfo="System" />
+                <link role="3.baseMethodDeclaration:3" targetNodeId="12.~System.exit(int):void" resolveInfo="exit" />
+                <link role="3.classConcept:3" targetNodeId="12.~System" resolveInfo="System" />
                 <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="7551811584090966833">
                   <property name="3.value:3" value="2" />
                 </node>
@@ -101,8 +101,8 @@
             <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8452496433460051970">
               <node role="3.expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="8452496433460051971">
                 <node role="3.rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8452496433460051966">
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="2.~Integer.parseInt(java.lang.String):int" resolveInfo="parseInt" />
-                  <link role="3.classConcept:3" targetNodeId="2.~Integer" resolveInfo="Integer" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="12.~Integer.parseInt(java.lang.String):int" resolveInfo="parseInt" />
+                  <link role="3.classConcept:3" targetNodeId="12.~Integer" resolveInfo="Integer" />
                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="8452496433460051967">
                     <node role="3.index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8452496433460051968">
                       <property name="3.value:3" value="3" />
@@ -163,7 +163,7 @@
                         <node role="3.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8452496433460051653">
                           <property name="1.name:0" value="in" />
                           <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8452496433460051654">
-                            <link role="3.classifier:3" targetNodeId="5.~FileInputStream" resolveInfo="FileInputStream" />
+                            <link role="3.classifier:3" targetNodeId="13.~FileInputStream" resolveInfo="FileInputStream" />
                           </node>
                           <node role="3.initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8452496433460051655" />
                         </node>
@@ -174,11 +174,11 @@
                             <node role="3.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8452496433460051659">
                               <property name="1.name:0" value="file" />
                               <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8452496433460051660">
-                                <link role="3.classifier:3" targetNodeId="5.~File" resolveInfo="File" />
+                                <link role="3.classifier:3" targetNodeId="13.~File" resolveInfo="File" />
                               </node>
                               <node role="3.initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8452496433460051661">
                                 <node role="3.creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8452496433460051662">
-                                  <link role="3.baseMethodDeclaration:3" targetNodeId="5.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
+                                  <link role="3.baseMethodDeclaration:3" targetNodeId="13.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
                                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8452496433460051663">
                                     <link role="3.variableDeclaration:3" targetNodeId="8452496433460051710" resolveInfo="fn" />
                                   </node>
@@ -190,7 +190,7 @@
                             <node role="3.expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="8452496433460051665">
                               <node role="3.rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8452496433460051666">
                                 <node role="3.creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8452496433460051667">
-                                  <link role="3.baseMethodDeclaration:3" targetNodeId="5.~FileInputStream.&lt;init&gt;(java.io.File)" resolveInfo="FileInputStream" />
+                                  <link role="3.baseMethodDeclaration:3" targetNodeId="13.~FileInputStream.&lt;init&gt;(java.io.File)" resolveInfo="FileInputStream" />
                                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8452496433460051668">
                                     <link role="3.variableDeclaration:3" targetNodeId="8452496433460051659" resolveInfo="file" />
                                   </node>
@@ -217,7 +217,7 @@
                                             <link role="3.variableDeclaration:3" targetNodeId="8452496433460051659" resolveInfo="file" />
                                           </node>
                                           <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1994098776472004135">
-                                            <link role="3.baseMethodDeclaration:3" targetNodeId="5.~File.length():long" resolveInfo="length" />
+                                            <link role="3.baseMethodDeclaration:3" targetNodeId="13.~File.length():long" resolveInfo="length" />
                                           </node>
                                         </node>
                                         <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1994098776472004136" />
@@ -235,7 +235,7 @@
                                 <link role="3.variableDeclaration:3" targetNodeId="8452496433460051653" resolveInfo="in" />
                               </node>
                               <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433460051684">
-                                <link role="3.baseMethodDeclaration:3" targetNodeId="5.~FileInputStream.read(byte[]):int" resolveInfo="read" />
+                                <link role="3.baseMethodDeclaration:3" targetNodeId="13.~FileInputStream.read(byte[]):int" resolveInfo="read" />
                                 <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8452496433460051685">
                                   <link role="3.variableDeclaration:3" targetNodeId="8452496433460051671" resolveInfo="content" />
                                 </node>
@@ -252,7 +252,7 @@
                           <node role="3.throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8452496433460051689">
                             <property name="1.name:0" value="e" />
                             <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8452496433460051690">
-                              <link role="3.classifier:3" targetNodeId="5.~IOException" resolveInfo="IOException" />
+                              <link role="3.classifier:3" targetNodeId="13.~IOException" resolveInfo="IOException" />
                             </node>
                           </node>
                           <node role="3.catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8452496433460051691">
@@ -272,7 +272,7 @@
                                         <link role="3.variableDeclaration:3" targetNodeId="8452496433460051653" resolveInfo="in" />
                                       </node>
                                       <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433460051702">
-                                        <link role="3.baseMethodDeclaration:3" targetNodeId="5.~FileInputStream.close():void" resolveInfo="close" />
+                                        <link role="3.baseMethodDeclaration:3" targetNodeId="13.~FileInputStream.close():void" resolveInfo="close" />
                                       </node>
                                     </node>
                                   </node>
@@ -281,7 +281,7 @@
                                   <node role="3.throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8452496433460051704">
                                     <property name="1.name:0" value="ignored" />
                                     <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8452496433460051705">
-                                      <link role="3.classifier:3" targetNodeId="5.~IOException" resolveInfo="IOException" />
+                                      <link role="3.classifier:3" targetNodeId="13.~IOException" resolveInfo="IOException" />
                                     </node>
                                   </node>
                                   <node role="3.catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8452496433460051706" />
@@ -313,7 +313,7 @@
           <node role="3.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8452496433460051726">
             <property name="1.name:0" value="out" />
             <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8452496433460051727">
-              <link role="3.classifier:3" targetNodeId="5.~FileOutputStream" resolveInfo="FileOutputStream" />
+              <link role="3.classifier:3" targetNodeId="13.~FileOutputStream" resolveInfo="FileOutputStream" />
             </node>
             <node role="3.initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8452496433460051792" />
           </node>
@@ -327,7 +327,7 @@
                 </node>
                 <node role="3.rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8452496433460051753">
                   <node role="3.creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8452496433460051754">
-                    <link role="3.baseMethodDeclaration:3" targetNodeId="5.~FileOutputStream.&lt;init&gt;(java.lang.String)" resolveInfo="FileOutputStream" />
+                    <link role="3.baseMethodDeclaration:3" targetNodeId="13.~FileOutputStream.&lt;init&gt;(java.lang.String)" resolveInfo="FileOutputStream" />
                     <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="7838535536158153754">
                       <node role="3.index:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="7838535536158153757">
                         <property name="3.value:3" value="1" />
@@ -361,8 +361,8 @@
                                   <property name="3.value:3" value="\n" />
                                 </node>
                                 <node role="3.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7838535536158153615">
-                                  <link role="3.baseMethodDeclaration:3" targetNodeId="11.~StringUtils.repeat(java.lang.String,int):java.lang.String" resolveInfo="repeat" />
-                                  <link role="3.classConcept:3" targetNodeId="11.~StringUtils" resolveInfo="StringUtils" />
+                                  <link role="3.baseMethodDeclaration:3" targetNodeId="14.~StringUtils.repeat(java.lang.String,int):java.lang.String" resolveInfo="repeat" />
+                                  <link role="3.classConcept:3" targetNodeId="14.~StringUtils" resolveInfo="StringUtils" />
                                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7838535536158153854">
                                     <link role="3.variableDeclaration:3" targetNodeId="7838535536158152982" resolveInfo="m" />
                                   </node>
@@ -373,7 +373,7 @@
                               </node>
                             </node>
                             <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7838535536158153618">
-                              <link role="3.baseMethodDeclaration:3" targetNodeId="2.~String.getBytes(java.lang.String):byte[]" resolveInfo="getBytes" />
+                              <link role="3.baseMethodDeclaration:3" targetNodeId="12.~String.getBytes(java.lang.String):byte[]" resolveInfo="getBytes" />
                               <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7838535536158153619">
                                 <property name="3.value:3" value="utf-8" />
                               </node>
@@ -385,14 +385,14 @@
                         <node role="3.throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7838535536158152987">
                           <property name="1.name:0" value="e" />
                           <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7838535536158153599">
-                            <link role="3.classifier:3" targetNodeId="5.~UnsupportedEncodingException" resolveInfo="UnsupportedEncodingException" />
+                            <link role="3.classifier:3" targetNodeId="13.~UnsupportedEncodingException" resolveInfo="UnsupportedEncodingException" />
                           </node>
                         </node>
                         <node role="3.catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7838535536158152989">
                           <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.ThrowStatement:3" id="7838535536158153600">
                             <node role="3.throwable:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7838535536158153602">
                               <node role="3.creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7838535536158153604">
-                                <link role="3.baseMethodDeclaration:3" targetNodeId="2.~RuntimeException.&lt;init&gt;(java.lang.Throwable)" resolveInfo="RuntimeException" />
+                                <link role="3.baseMethodDeclaration:3" targetNodeId="12.~RuntimeException.&lt;init&gt;(java.lang.Throwable)" resolveInfo="RuntimeException" />
                                 <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7838535536158153605">
                                   <link role="3.variableDeclaration:3" targetNodeId="7838535536158152987" resolveInfo="e" />
                                 </node>
@@ -416,7 +416,7 @@
                   <link role="3.variableDeclaration:3" targetNodeId="8452496433460051726" resolveInfo="out" />
                 </node>
                 <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433460120747">
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="5.~FileOutputStream.write(byte[]):void" resolveInfo="write" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="13.~FileOutputStream.write(byte[]):void" resolveInfo="write" />
                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression:3" id="7838535536158153622">
                     <node role="10.function:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7838535536158153623">
                       <link role="3.variableDeclaration:3" targetNodeId="7838535536158152965" resolveInfo="marker" />
@@ -439,7 +439,7 @@
                   <link role="3.variableDeclaration:3" targetNodeId="8452496433460051726" resolveInfo="out" />
                 </node>
                 <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433460067726">
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="5.~FileOutputStream.write(byte[]):void" resolveInfo="write" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="13.~FileOutputStream.write(byte[]):void" resolveInfo="write" />
                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression:7" id="8452496433460067728">
                     <node role="6.list:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8452496433460067727">
                       <link role="3.variableDeclaration:3" targetNodeId="8452496433460051643" resolveInfo="contents" />
@@ -457,7 +457,7 @@
                   <link role="3.variableDeclaration:3" targetNodeId="8452496433460051726" resolveInfo="out" />
                 </node>
                 <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433460067749">
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="5.~FileOutputStream.write(byte[]):void" resolveInfo="write" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="13.~FileOutputStream.write(byte[]):void" resolveInfo="write" />
                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression:3" id="7838535536158153625">
                     <node role="10.function:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7838535536158153626">
                       <link role="3.variableDeclaration:3" targetNodeId="7838535536158152965" resolveInfo="marker" />
@@ -480,7 +480,7 @@
                   <link role="3.variableDeclaration:3" targetNodeId="8452496433460051726" resolveInfo="out" />
                 </node>
                 <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433460067762">
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="5.~FileOutputStream.write(byte[]):void" resolveInfo="write" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="13.~FileOutputStream.write(byte[]):void" resolveInfo="write" />
                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression:7" id="8452496433460067763">
                     <node role="6.list:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8452496433460067764">
                       <link role="3.variableDeclaration:3" targetNodeId="8452496433460051643" resolveInfo="contents" />
@@ -498,7 +498,7 @@
                   <link role="3.variableDeclaration:3" targetNodeId="8452496433460051726" resolveInfo="out" />
                 </node>
                 <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433460120762">
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="5.~FileOutputStream.write(byte[]):void" resolveInfo="write" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="13.~FileOutputStream.write(byte[]):void" resolveInfo="write" />
                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression:3" id="7838535536158153630">
                     <node role="10.function:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7838535536158153631">
                       <link role="3.variableDeclaration:3" targetNodeId="7838535536158152965" resolveInfo="marker" />
@@ -521,7 +521,7 @@
                   <link role="3.variableDeclaration:3" targetNodeId="8452496433460051726" resolveInfo="out" />
                 </node>
                 <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433460120816">
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="5.~FileOutputStream.write(byte[]):void" resolveInfo="write" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="13.~FileOutputStream.write(byte[]):void" resolveInfo="write" />
                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression:7" id="8452496433460120817">
                     <node role="6.list:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8452496433460120818">
                       <link role="3.variableDeclaration:3" targetNodeId="8452496433460051643" resolveInfo="contents" />
@@ -539,7 +539,7 @@
                   <link role="3.variableDeclaration:3" targetNodeId="8452496433460051726" resolveInfo="out" />
                 </node>
                 <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433460120831">
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="5.~FileOutputStream.write(byte[]):void" resolveInfo="write" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="13.~FileOutputStream.write(byte[]):void" resolveInfo="write" />
                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression:3" id="7838535536158153635">
                     <node role="10.function:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7838535536158153636">
                       <link role="3.variableDeclaration:3" targetNodeId="7838535536158152965" resolveInfo="marker" />
@@ -553,8 +553,8 @@
             </node>
             <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8452496433460120863">
               <node role="3.expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8452496433460120865">
-                <link role="3.baseMethodDeclaration:3" targetNodeId="2.~System.exit(int):void" resolveInfo="exit" />
-                <link role="3.classConcept:3" targetNodeId="2.~System" resolveInfo="System" />
+                <link role="3.baseMethodDeclaration:3" targetNodeId="12.~System.exit(int):void" resolveInfo="exit" />
+                <link role="3.classConcept:3" targetNodeId="12.~System" resolveInfo="System" />
                 <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8452496433460120866">
                   <property name="3.value:3" value="1" />
                 </node>
@@ -565,14 +565,14 @@
             <node role="3.throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8452496433460051718">
               <property name="1.name:0" value="ignored" />
               <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8452496433460051721">
-                <link role="3.classifier:3" targetNodeId="5.~IOException" resolveInfo="IOException" />
+                <link role="3.classifier:3" targetNodeId="13.~IOException" resolveInfo="IOException" />
               </node>
             </node>
             <node role="3.catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8452496433460051720">
               <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8452496433460120867">
                 <node role="3.expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8452496433460120868">
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="2.~System.exit(int):void" resolveInfo="exit" />
-                  <link role="3.classConcept:3" targetNodeId="2.~System" resolveInfo="System" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="12.~System.exit(int):void" resolveInfo="exit" />
+                  <link role="3.classConcept:3" targetNodeId="12.~System" resolveInfo="System" />
                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8452496433460120869">
                     <property name="3.value:3" value="2" />
                   </node>
@@ -597,7 +597,7 @@
                           <link role="3.variableDeclaration:3" targetNodeId="8452496433460051726" resolveInfo="out" />
                         </node>
                         <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433460051801">
-                          <link role="3.baseMethodDeclaration:3" targetNodeId="5.~FileOutputStream.close():void" resolveInfo="close" />
+                          <link role="3.baseMethodDeclaration:3" targetNodeId="13.~FileOutputStream.close():void" resolveInfo="close" />
                         </node>
                       </node>
                     </node>
@@ -606,7 +606,7 @@
                     <node role="3.throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8452496433460051819">
                       <property name="1.name:0" value="ignored" />
                       <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8452496433460051822">
-                        <link role="3.classifier:3" targetNodeId="5.~IOException" resolveInfo="IOException" />
+                        <link role="3.classifier:3" targetNodeId="13.~IOException" resolveInfo="IOException" />
                       </node>
                     </node>
                     <node role="3.catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8452496433460051821" />
@@ -627,11 +627,11 @@
           <node role="3.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7551811584091055981">
             <property name="1.name:0" value="cmd" />
             <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7551811584091055982">
-              <link role="3.classifier:3" targetNodeId="2.~StringBuilder" resolveInfo="StringBuilder" />
+              <link role="3.classifier:3" targetNodeId="12.~StringBuilder" resolveInfo="StringBuilder" />
             </node>
             <node role="3.initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7551811584091055985">
               <node role="3.creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7551811584091055986">
-                <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.&lt;init&gt;()" resolveInfo="StringBuilder" />
+                <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.&lt;init&gt;()" resolveInfo="StringBuilder" />
               </node>
             </node>
           </node>
@@ -647,17 +647,17 @@
                         <link role="3.variableDeclaration:3" targetNodeId="7551811584091055981" resolveInfo="sb" />
                       </node>
                       <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7551811584091055994">
-                        <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(char):java.lang.StringBuilder" resolveInfo="append" />
+                        <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(char):java.lang.StringBuilder" resolveInfo="append" />
                         <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.CharConstant:3" id="7551811584091055995">
                           <property name="3.charConstant:3" value="\&quot;" />
                         </node>
                       </node>
                     </node>
                     <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7551811584091056000">
-                      <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+                      <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                       <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7551811584091056002">
-                        <link role="3.baseMethodDeclaration:3" targetNodeId="2.~System.getProperty(java.lang.String):java.lang.String" resolveInfo="getProperty" />
-                        <link role="3.classConcept:3" targetNodeId="2.~System" resolveInfo="System" />
+                        <link role="3.baseMethodDeclaration:3" targetNodeId="12.~System.getProperty(java.lang.String):java.lang.String" resolveInfo="getProperty" />
+                        <link role="3.classConcept:3" targetNodeId="12.~System" resolveInfo="System" />
                         <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7551811584091056003">
                           <property name="3.value:3" value="java.home" />
                         </node>
@@ -665,30 +665,30 @@
                     </node>
                   </node>
                   <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7551811584091056008">
-                    <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+                    <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                     <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7551811584091056009">
-                      <link role="3.classifier:3" targetNodeId="5.~File" resolveInfo="File" />
-                      <link role="3.variableDeclaration:3" targetNodeId="5.~File.separator" resolveInfo="separator" />
+                      <link role="3.classifier:3" targetNodeId="13.~File" resolveInfo="File" />
+                      <link role="3.variableDeclaration:3" targetNodeId="13.~File.separator" resolveInfo="separator" />
                     </node>
                   </node>
                 </node>
                 <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7551811584091056014">
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7551811584091056015">
                     <property name="3.value:3" value="bin" />
                   </node>
                 </node>
               </node>
               <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7551811584091056020">
-                <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+                <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                 <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7551811584091056022">
-                  <link role="3.classifier:3" targetNodeId="5.~File" resolveInfo="File" />
-                  <link role="3.variableDeclaration:3" targetNodeId="5.~File.separator" resolveInfo="separator" />
+                  <link role="3.classifier:3" targetNodeId="13.~File" resolveInfo="File" />
+                  <link role="3.variableDeclaration:3" targetNodeId="13.~File.separator" resolveInfo="separator" />
                 </node>
               </node>
             </node>
             <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7551811584091056027">
-              <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+              <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
               <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7551811584091056028">
                 <property name="3.value:3" value="java\&quot;" />
               </node>
@@ -701,7 +701,7 @@
               <link role="3.variableDeclaration:3" targetNodeId="7551811584091055981" resolveInfo="cmd" />
             </node>
             <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7551811584091064185">
-              <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+              <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
               <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7551811584091064186">
                 <property name="3.value:3" value=" -cp " />
               </node>
@@ -715,10 +715,10 @@
                 <link role="3.variableDeclaration:3" targetNodeId="7551811584091055981" resolveInfo="cmd" />
               </node>
               <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433459982019">
-                <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+                <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                 <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8452496433459982020">
-                  <link role="3.classConcept:3" targetNodeId="7.~PathUtil" resolveInfo="PathUtil" />
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="7.~PathUtil.getJarPathForClass(java.lang.Class):java.lang.String" resolveInfo="getJarPathForClass" />
+                  <link role="3.classConcept:3" targetNodeId="15.~PathUtil" resolveInfo="PathUtil" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="15.~PathUtil.getJarPathForClass(java.lang.Class):java.lang.String" resolveInfo="getJarPathForClass" />
                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="8452496433459982021">
                     <link role="3.classifier:3" targetNodeId="7551811584090935086" resolveInfo="MergeDriverMain" />
                   </node>
@@ -726,10 +726,10 @@
               </node>
             </node>
             <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433459982026">
-              <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+              <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
               <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="8452496433459982027">
-                <link role="3.classifier:3" targetNodeId="5.~File" resolveInfo="File" />
-                <link role="3.variableDeclaration:3" targetNodeId="5.~File.pathSeparator" resolveInfo="pathSeparator" />
+                <link role="3.classifier:3" targetNodeId="13.~File" resolveInfo="File" />
+                <link role="3.variableDeclaration:3" targetNodeId="13.~File.pathSeparator" resolveInfo="pathSeparator" />
               </node>
             </node>
           </node>
@@ -741,10 +741,10 @@
                 <link role="3.variableDeclaration:3" targetNodeId="7551811584091055981" resolveInfo="cmd" />
               </node>
               <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433459982032">
-                <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+                <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                 <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8452496433459982033">
-                  <link role="3.classConcept:3" targetNodeId="7.~PathUtil" resolveInfo="PathUtil" />
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="7.~PathUtil.getJarPathForClass(java.lang.Class):java.lang.String" resolveInfo="getJarPathForClass" />
+                  <link role="3.classConcept:3" targetNodeId="15.~PathUtil" resolveInfo="PathUtil" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="15.~PathUtil.getJarPathForClass(java.lang.Class):java.lang.String" resolveInfo="getJarPathForClass" />
                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="8452496433459982044">
                     <link role="3.classifier:3" targetNodeId="8.6543581031674031083" resolveInfo="ListSequence" />
                   </node>
@@ -752,10 +752,10 @@
               </node>
             </node>
             <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433459982035">
-              <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+              <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
               <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="8452496433459982036">
-                <link role="3.classifier:3" targetNodeId="5.~File" resolveInfo="File" />
-                <link role="3.variableDeclaration:3" targetNodeId="5.~File.pathSeparator" resolveInfo="pathSeparator" />
+                <link role="3.classifier:3" targetNodeId="13.~File" resolveInfo="File" />
+                <link role="3.variableDeclaration:3" targetNodeId="13.~File.pathSeparator" resolveInfo="pathSeparator" />
               </node>
             </node>
           </node>
@@ -767,21 +767,21 @@
                 <link role="3.variableDeclaration:3" targetNodeId="7551811584091055981" resolveInfo="cmd" />
               </node>
               <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433459982050">
-                <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+                <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                 <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8452496433459982051">
-                  <link role="3.classConcept:3" targetNodeId="7.~PathUtil" resolveInfo="PathUtil" />
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="7.~PathUtil.getJarPathForClass(java.lang.Class):java.lang.String" resolveInfo="getJarPathForClass" />
+                  <link role="3.classConcept:3" targetNodeId="15.~PathUtil" resolveInfo="PathUtil" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="15.~PathUtil.getJarPathForClass(java.lang.Class):java.lang.String" resolveInfo="getJarPathForClass" />
                   <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="7838535536158152897">
-                    <link role="3.classifier:3" targetNodeId="9.~_FunctionTypes" resolveInfo="_FunctionTypes" />
+                    <link role="3.classifier:3" targetNodeId="16.~_FunctionTypes" resolveInfo="_FunctionTypes" />
                   </node>
                 </node>
               </node>
             </node>
             <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7838535536158152893">
-              <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+              <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
               <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7838535536158152894">
-                <link role="3.classifier:3" targetNodeId="5.~File" resolveInfo="File" />
-                <link role="3.variableDeclaration:3" targetNodeId="5.~File.pathSeparator" resolveInfo="pathSeparator" />
+                <link role="3.classifier:3" targetNodeId="13.~File" resolveInfo="File" />
+                <link role="3.variableDeclaration:3" targetNodeId="13.~File.pathSeparator" resolveInfo="pathSeparator" />
               </node>
             </node>
           </node>
@@ -792,12 +792,12 @@
               <link role="3.variableDeclaration:3" targetNodeId="7551811584091055981" resolveInfo="cmd" />
             </node>
             <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8452496433460120875">
-              <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+              <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
               <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8452496433460120876">
-                <link role="3.classConcept:3" targetNodeId="7.~PathUtil" resolveInfo="PathUtil" />
-                <link role="3.baseMethodDeclaration:3" targetNodeId="7.~PathUtil.getJarPathForClass(java.lang.Class):java.lang.String" resolveInfo="getJarPathForClass" />
+                <link role="3.classConcept:3" targetNodeId="15.~PathUtil" resolveInfo="PathUtil" />
+                <link role="3.baseMethodDeclaration:3" targetNodeId="15.~PathUtil.getJarPathForClass(java.lang.Class):java.lang.String" resolveInfo="getJarPathForClass" />
                 <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="8452496433460120880">
-                  <link role="3.classifier:3" targetNodeId="11.~StringUtils" resolveInfo="StringUtils" />
+                  <link role="3.classifier:3" targetNodeId="14.~StringUtils" resolveInfo="StringUtils" />
                 </node>
               </node>
             </node>
@@ -810,20 +810,20 @@
                 <link role="3.variableDeclaration:3" targetNodeId="7551811584091055981" resolveInfo="cmd" />
               </node>
               <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7551811584091064194">
-                <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+                <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                 <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7551811584091064195">
                   <property name="3.value:3" value=" " />
                 </node>
               </node>
             </node>
             <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7551811584091064200">
-              <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+              <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
               <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7551811584091064203">
                 <node role="3.operand:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="7551811584091064202">
                   <link role="3.classifier:3" targetNodeId="7551811584090935086" resolveInfo="MergeDriverMain" />
                 </node>
                 <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7551811584091064207">
-                  <link role="3.baseMethodDeclaration:3" targetNodeId="2.~Class.getName():java.lang.String" resolveInfo="getName" />
+                  <link role="3.baseMethodDeclaration:3" targetNodeId="12.~Class.getName():java.lang.String" resolveInfo="getName" />
                 </node>
               </node>
             </node>
@@ -835,7 +835,7 @@
               <link role="3.variableDeclaration:3" targetNodeId="7551811584091055981" resolveInfo="cmd" />
             </node>
             <node role="3.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7551811584091064224">
-              <link role="3.baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.toString():java.lang.String" resolveInfo="toString" />
+              <link role="3.baseMethodDeclaration:3" targetNodeId="12.~StringBuilder.toString():java.lang.String" resolveInfo="toString" />
             </node>
           </node>
         </node>

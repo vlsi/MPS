@@ -43,23 +43,13 @@ public class PersistenceUpdater {
           if (wasInitialized) {
             modelDescriptor.save();
           }
-          if (modelDescriptor.getPersistenceVersion() >= toVersion) continue;
+
+          int fromVersion = modelDescriptor.getPersistenceVersion();
+          if (fromVersion >= toVersion) continue;
+
           assert file != null;
-
-          int ver;
-          SModel model;
-          if (wasInitialized){
-            ver = modelDescriptor.getPersistenceVersion();
-            model = modelDescriptor.getSModel();
-          }else{
-            ver = ModelPersistence.loadDescriptor(file).getPersistenceVersion();
-            model = ModelPersistence.readModel(file);
-          }
-          if (ver >= toVersion) continue;
-
-          ModelPersistence.upgradePersistence(file, model, ver, toVersion);
-          if (!wasInitialized) continue;
-
+          SModel model = wasInitialized ? modelDescriptor.getSModel() : ModelPersistence.readModel(file);
+          ModelPersistence.upgradePersistence(file, model, fromVersion, toVersion);
           modelDescriptor.reloadFromDisk();
         }
       }

@@ -5,9 +5,9 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="2c55c7ac-60c3-4eea-b9db-0d627bd2dcb9(jetbrains.mps.xml)" />
   <language namespace="64f62b28-36e3-4052-9f72-f616211ae615(jetbrains.mps.xmlInternal)" />
-  <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="n1y2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="5p1m" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
+  <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
@@ -72,7 +72,7 @@
         <node role="see" roleId="m373.2217234381367277533" type="m373.SeeBlockDocTag" typeId="m373.2217234381367190443" id="4021391592916073102">
           <property name="text" nameId="m373.2217234381367190444" value="see, yes" />
           <node role="reference" roleId="m373.2217234381367190458" type="m373.MethodDocReference" typeId="m373.2217234381367530195" id="4021391592916151383">
-            <link role="methodDeclaration" roleId="m373.2217234381367530196" targetNodeId="mwyq.~CharacterDataUndefined%d&lt;init&gt;()" resolveInfo="CharacterDataUndefined" />
+            <link role="methodDeclaration" roleId="m373.2217234381367530196" targetNodeId="e2lb.~CharacterDataUndefined%d&lt;init&gt;()" resolveInfo="CharacterDataUndefined" />
           </node>
         </node>
       </node>
@@ -105,11 +105,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8970989240999294857">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8970989240999295534">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8970989240999294858">
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="mwyq.~System" resolveInfo="System" />
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="mwyq.~System%dout" resolveInfo="out" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~System" resolveInfo="System" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~System%dout" resolveInfo="out" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8970989240999295538">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n1y2.~PrintStream%dprintln(int)%cvoid" resolveInfo="println" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(int)%cvoid" resolveInfo="println" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8970989240999295539">
                 <property name="value" nameId="tpee.1068580320021" value="3" />
               </node>
@@ -123,7 +123,7 @@
         </node>
       </node>
       <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6832197706140414139">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~ArrayStoreException" resolveInfo="ArrayStoreException" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~ArrayStoreException" resolveInfo="ArrayStoreException" />
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="4021391592915198827" />
       <node role="_$attribute" roleId="tpck.5169995583184591170" type="m373.MethodDocComment" typeId="m373.5349172909345532724" id="4021391592915198832">
@@ -181,7 +181,7 @@
           <node role="part" roleId="m373.8970989240999019149" type="m373.InlineTagCommentLinePart" typeId="m373.8970989240999019145" id="4021391592916713264">
             <node role="tag" roleId="m373.6962838954693749192" type="m373.ValueInlineDocTag" typeId="m373.6962838954693748795" id="4021391592916713266">
               <node role="variableReference" roleId="m373.2565027568480644422" type="m373.StaticFieldDocReference" typeId="m373.6501140109493894267" id="4021391592916713272">
-                <link role="declaration" roleId="m373.5562345046718956740" targetNodeId="5p1m.~BorderLayout%dNORTH" resolveInfo="NORTH" />
+                <link role="declaration" roleId="m373.5562345046718956740" targetNodeId="1t7x.~BorderLayout%dNORTH" resolveInfo="NORTH" />
               </node>
             </node>
           </node>
@@ -215,7 +215,7 @@
         <node role="throwsTag" roleId="m373.5858074156537516428" type="m373.ThrowsBlockDocTag" typeId="m373.5858074156537397872" id="4021391592915198837">
           <property name="text" nameId="m373.5858074156537397874" value="ase :)" />
           <node role="exceptionType" roleId="m373.6832197706140448505" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4021391592915198838">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~ArrayStoreException" resolveInfo="ArrayStoreException" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~ArrayStoreException" resolveInfo="ArrayStoreException" />
           </node>
         </node>
         <node role="return" roleId="m373.5858074156537516440" type="m373.ReturnBlockDocTag" typeId="m373.5858074156537516430" id="4021391592915198839">
@@ -231,12 +231,12 @@
         </node>
         <node role="see" roleId="m373.2217234381367277533" type="m373.SeeBlockDocTag" typeId="m373.2217234381367190443" id="4021391592915304163">
           <node role="reference" roleId="m373.2217234381367190458" type="m373.MethodDocReference" typeId="m373.2217234381367530195" id="4021391592915413267">
-            <link role="methodDeclaration" roleId="m373.2217234381367530196" targetNodeId="mwyq.~Integer%dtoString(int,int)%cjava%dlang%dString" resolveInfo="toString" />
+            <link role="methodDeclaration" roleId="m373.2217234381367530196" targetNodeId="e2lb.~Integer%dtoString(int,int)%cjava%dlang%dString" resolveInfo="toString" />
           </node>
         </node>
         <node role="see" roleId="m373.2217234381367277533" type="m373.SeeBlockDocTag" typeId="m373.2217234381367190443" id="4021391592915787821">
           <node role="reference" roleId="m373.2217234381367190458" type="m373.ClassifierDocReference" typeId="m373.2217234381367530212" id="4021391592915878290">
-            <link role="classifier" roleId="m373.2217234381367530213" targetNodeId="5p1m.~JobAttributes$DialogType" resolveInfo="JobAttributes.DialogType" />
+            <link role="classifier" roleId="m373.2217234381367530213" targetNodeId="1t7x.~JobAttributes$DialogType" resolveInfo="JobAttributes.DialogType" />
           </node>
         </node>
         <node role="version" roleId="m373.8465538089690331491" type="m373.VersionBlockDocTag" typeId="m373.8465538089690324384" id="4021391592915198843">
@@ -256,7 +256,7 @@
         <property name="name" nameId="tpck.1169194664001" value="s" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.VariableArityType" typeId="tpee.1219920932475" id="4021391592915636742">
           <node role="componentType" roleId="tpee.1219921048460" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4021391592915636741">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~String" resolveInfo="String" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
           </node>
         </node>
       </node>
