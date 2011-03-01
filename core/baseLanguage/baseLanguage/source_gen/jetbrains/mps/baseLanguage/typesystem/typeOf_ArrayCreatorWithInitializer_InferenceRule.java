@@ -27,7 +27,7 @@ public class typeOf_ArrayCreatorWithInitializer_InferenceRule extends AbstractIn
         SNode _nodeToCheck_1029348928467 = value;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175600269225", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("default");
+        _info_12389875345.setInequationGroup("");
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175600272400", true), (SNode) SLinkOperations.getTarget(arrayCreator, "componentType", true), false, _info_12389875345);
       }
     }

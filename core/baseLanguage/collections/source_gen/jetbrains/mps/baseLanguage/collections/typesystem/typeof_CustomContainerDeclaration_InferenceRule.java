@@ -22,7 +22,7 @@ public class typeof_CustomContainerDeclaration_InferenceRule extends AbstractInf
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ccd, "factory", true);
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1279588871815202423", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("default");
+        _info_12389875345.setInequationGroup("");
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1279588871815202415", true), (SNode) SLinkOperations.getTarget(ccd, "runtimeType", true), false, _info_12389875345);
       }
     }

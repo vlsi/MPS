@@ -35,14 +35,14 @@ public class typeof_RemoveWhereOperation_InferenceRule extends AbstractInference
       SNode _nodeToCheck_1029348928467 = rwo;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "3055999550620863372", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
+      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.getRepresentative(OPERAND_TYPE_typevar_3055999550620867612), (SNode) IContainerOperation_Behavior.call_expectedOperandType_2141797557973018589(rwo, typeCheckingContext.getRepresentative(PARAM_TYPE_typevar_3055999550620863371)), false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(rwo, "closure", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "3055999550620863384", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
+      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "3055999550620863386", true), (SNode) new typeof_RemoveWhereOperation_InferenceRule.QuotationClass_w1as5g_a0a4a0().createNode(typeCheckingContext.getRepresentative(PARAM_TYPE_typevar_3055999550620863371), typeCheckingContext), false, _info_12389875345);
     }
     {

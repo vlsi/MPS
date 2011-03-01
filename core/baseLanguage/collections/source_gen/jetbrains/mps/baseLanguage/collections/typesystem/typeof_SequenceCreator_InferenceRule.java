@@ -33,7 +33,7 @@ public class typeof_SequenceCreator_InferenceRule extends AbstractInferenceRule_
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(creator, "initializer", true);
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1224414640119", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("default");
+        _info_12389875345.setInequationGroup("");
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1224414629838", true), (SNode) new typeof_SequenceCreator_InferenceRule.QuotationClass_qzfpnd_a0a0a2a0().createNode(elementType, typeCheckingContext), false, _info_12389875345);
       }
     }

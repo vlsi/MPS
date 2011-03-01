@@ -25,7 +25,7 @@ public class subtypesOfLowerBoundType_InequationReplacementRule extends Abstract
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4691618959158120669", 0, intentionProvider);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-        _info_12389875345.setInequationGroup("default");
+        _info_12389875345.setInequationGroup("");
         typeCheckingContext.createGreaterThanInequation((SNode) SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), (SNode) SLinkOperations.getTarget(supertype, "bound", true), false, _info_12389875345);
       }
     } else {
@@ -34,7 +34,7 @@ public class subtypesOfLowerBoundType_InequationReplacementRule extends Abstract
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4691618959158120638", 0, intentionProvider);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-        _info_12389875345.setInequationGroup("default");
+        _info_12389875345.setInequationGroup("");
         typeCheckingContext.createGreaterThanInequation((SNode) subtype, (SNode) SLinkOperations.getTarget(supertype, "bound", true), false, _info_12389875345);
       }
     }
