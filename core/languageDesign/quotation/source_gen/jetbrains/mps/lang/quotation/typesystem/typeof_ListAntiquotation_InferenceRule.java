@@ -24,7 +24,6 @@ public class typeof_ListAntiquotation_InferenceRule extends AbstractInferenceRul
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "expression", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196864131532", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196864123848", true), (SNode) new typeof_ListAntiquotation_InferenceRule.QuotationClass_6o8snu_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
