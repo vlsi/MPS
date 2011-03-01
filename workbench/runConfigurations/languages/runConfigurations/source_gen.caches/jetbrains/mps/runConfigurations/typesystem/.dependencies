@@ -57,6 +57,7 @@
     <classNode dependClassName="jetbrains.mps.runConfigurations.typesystem.typeof_PersistentConfigurationTemplateInitializer_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.typesystem.typeof_Execute_Function_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.typesystem.typeof_Debug_Parameter_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.typesystem.typeof_DebuggerSettings_Parameter_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.typesystem.EditorIsSusbtypeOfEditor_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.typesystem.typeof_EditorExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.typesystem.typeof_ProcessBuilderExpression_InferenceRule" />
@@ -126,6 +127,19 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.runConfigurations.typesystem.typeof_DebuggerSettings_Parameter_InferenceRule" file="typeof_DebuggerSettings_Parameter_InferenceRule.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />

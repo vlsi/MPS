@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4knmvftlyrfvz6hhmrozkiqea5berf8">
+<dependencies version="2" modelHash="iqatfjvzro38a1p5bsse5wqnybdhtb">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="2p780og5m0gbxc8o1jqevoem9o3jenx" />
@@ -13,9 +13,10 @@
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="cv4v4yu2mg2qwn3qgmp4opgx2qhvapi" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="222hfoec4eclho8dndo8bvi3jfygysm" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d5ax0i0w21fsp3r2lvns9jctqjjbwsh" />
+  <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" hash="-6gb8gxttzcitamzi0lppg9gf5zslc1q" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="36l17jjlzwkvt9mm38z504bro2ysrw9" />
   <dep model="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" hash="8uc4wr75j45pu9mt07eoa95612h1dax" />
-  <common hash="-dkfzx3y1ovsqklypz5w5vk5lzoc4a4p">
+  <common hash="-av8hiomovhcsrbwkyqpnkz44vysgveb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -45,6 +46,7 @@
   </source>
   <source id="2401501559171345994" name="RunConfigurationKind" hash="-2oezmcbl9x571ob6o89r4cvtwz394oj">
     <dep root="4806795137173575894" />
+    <dep root="6957430790227171559" />
     <dep root="7806358006983738927" />
     <dep root="7902226081039505552" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -65,6 +67,7 @@
   <source id="2401501559171392633" name="RunConfigurationExecutor" hash="-5qp71pdqzk2k4sgrtcjg9xtvkfiij4q">
     <dep root="2401501559171345993" />
     <dep root="6139196002333163564" />
+    <dep root="6957430790227171559" />
     <dep root="7806358006983738927" />
     <dep root="7902226081039505552" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -277,6 +280,7 @@
     <dep root="1048802521465149470" />
     <dep root="3754890006475816671" />
     <dep root="587410464426801915" />
+    <dep root="6957430790227171559" />
     <dep root="77193491200308913" />
     <dep root="7806358006983738927" />
     <dep root="7902226081039505552" />
@@ -294,6 +298,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PersistentConfiguration.java" />
   </source>
@@ -368,6 +373,7 @@
     <file name="PersistentConfigurationMethod.java" />
   </source>
   <source id="974940122351326363" name="CheckProperties_Function" hash="95xeoqlyzp5ouhqjaw9qxjtxfak34sj">
+    <dep root="6957430790227171559" />
     <dep root="7806358006983738927" />
     <dep root="7902226081039505552" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -387,6 +393,7 @@
   <source id="974940122351427315" name="ReportConfigurationErrorStatement" hash="2w4fhxkin509ykp89mmo5f9o0ihjs77">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -395,6 +402,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ReportConfigurationErrorStatement.java" />
   </source>
@@ -469,7 +477,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IconPath.java" />
   </source>
-  <source id="6139196002333163564" name="ExecuteConfiguration_Function" hash="-asd35sn5p48liut5nqa6v7p3s01o3my">
+  <source id="6139196002333163564" name="ExecuteConfiguration_Function" hash="4h6a66g4xeerw4pgmiqbr2q78mfezq9">
     <dep root="7902226081039505552" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -659,6 +667,7 @@
     <file name="ComplexRunConfigurationExecutor.java" />
   </source>
   <source id="7806358006983738927" name="ConfigurationFromExecutorReference" hash="-edh8dm1covc1nfgzmsfgc712l98tfu4">
+    <dep root="6957430790227171559" />
     <dep root="7902226081039505552" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -673,7 +682,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ConfigurationFromExecutorReference.java" />
   </source>
-  <source id="7806358006983776826" name="GetDebuggerSettings_Function" hash="-5m28zw5h4hq8evrs40fhe155jpnibbl">
+  <source id="7806358006983776826" name="GetDebuggerSettings_Function" hash="-vdv5sb5rv3td87j4b1vlpi3vkrzgv8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -683,6 +692,17 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GetDebuggerSettings_Function.java" />
+  </source>
+  <source id="4816403309550879744" name="DebuggerSettings_Parameter" hash="6219no895fz2pjr0f2avwnkwz1oei6t">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="DebuggerSettings_Parameter.java" />
   </source>
 </dependencies>
 

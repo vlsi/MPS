@@ -18,6 +18,7 @@
   <import index="uhxm" modelUID="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.runConfigurations.structure)" version="-1" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="44uo" modelUID="r:40062e7d-2d40-4964-a55f-255e1fee23d7(jetbrains.mps.debugger.java.remote)" version="-1" implicit="yes" />
+  <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="0" implicit="yes" />
   <roots>
     <node type="uhxm.RunConfigurationKind" typeId="uhxm.2401501559171345994" id="7806358006983489356">
       <property name="name" nameId="tpck.1169194664001" value="RemoteNew" />
@@ -866,6 +867,20 @@
     <node role="execute" roleId="uhxm.7945003362267213473" type="uhxm.ExecuteConfiguration_Function" typeId="uhxm.6139196002333163564" id="801101525254379838">
       <node role="process" roleId="uhxm.2866018809101862242" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="801101525254384697" />
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="801101525254379840" />
+    </node>
+    <node role="debugger" roleId="uhxm.4371737370139995047" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="3091009652595960627">
+      <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
+    </node>
+    <node role="getDebuggerSettings" roleId="uhxm.7806358006983776828" type="uhxm.GetDebuggerSettings_Function" typeId="uhxm.7806358006983776826" id="3091009652595960628">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3091009652595960629">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3091009652595960630">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3091009652595960631">
+            <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3091009652595960633">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z1l1.~RemoteConnectionSettings%d&lt;init&gt;()" resolveInfo="RemoteConnectionSettings" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </root>
 </model>

@@ -1,13 +1,9 @@
 package jetbrains.mps.debug.runtime.settings;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 04.02.2010
- * Time: 17:03:08
- * To change this template use File | Settings | File Templates.
- */
-public abstract class DebugConnectionSettings { //not just a record
+import jetbrains.mps.debug.api.IDebuggerSettings;
+import org.jetbrains.annotations.NotNull;
+
+public abstract class DebugConnectionSettings implements IDebuggerSettings {
   private boolean myUseSockets;
   private String myHostName;
   private int myPort;
@@ -84,6 +80,7 @@ public abstract class DebugConnectionSettings { //not just a record
     return getCommandLine(true);
   }
 
+  @NotNull
   public String getCommandLine(boolean application) {
     boolean serverMode = isServerMode();
     if (application) serverMode = !serverMode;

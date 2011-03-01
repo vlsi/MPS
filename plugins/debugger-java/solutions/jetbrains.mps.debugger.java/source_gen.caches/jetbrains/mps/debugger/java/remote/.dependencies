@@ -46,19 +46,22 @@
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationFactory" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.remote.RemoteNew_Configuration_RunProfileState" file="RemoteNew_Configuration_RunProfileState.java">
+    <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="jetbrains.mps.debugger.java.remote.RemoteNew_Configuration" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="com.intellij.execution.executors.DefaultRunExecutor" />
-    <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
+    <classNode dependClassName="com.intellij.execution.executors.DefaultDebugExecutor" />
+    <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
-    <classNode dependClassName="com.intellij.execution.Executor" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
+    <classNode dependClassName="com.intellij.execution.Executor" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationPerRunnerSettings" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.execution.configurations.RunnerSettings" />
@@ -66,6 +69,7 @@
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode extendsClassName="com.intellij.execution.ui.ExecutionConsole" />
     <classNode extendsClassName="com.intellij.execution.ExecutionResult" />
+    <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.remote.RemoteNew_Kind" file="RemoteNew_Kind.java">
     <classNode dependClassName="java.lang.String" />

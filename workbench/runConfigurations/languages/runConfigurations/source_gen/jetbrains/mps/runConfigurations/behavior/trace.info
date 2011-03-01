@@ -15,11 +15,11 @@
   <unitInfo fileName="Dispose_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.Dispose_Function_Behavior" />
   <unitInfo fileName="CreateEditor_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CreateEditor_Function_Behavior" />
   <unitInfo fileName="ApplyTo_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ApplyTo_Function_Behavior" />
-  <unitInfo fileName="ExecuteConfiguration_Function_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ExecuteConfiguration_Function_Behavior" />
   <unitInfo fileName="PersistentConfigurationType_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfigurationType_Behavior" />
   <unitInfo fileName="CommandDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CommandDeclaration_Behavior" />
   <unitInfo fileName="EditorOperationDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.EditorOperationDeclaration_Behavior" />
   <unitInfo fileName="ExecuteCommand_Function_Behavior.java" startLine="55" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ExecuteCommand_Function_Behavior$QuotationClass_2xjiq0_a0a0b" />
+  <unitInfo fileName="ExecuteConfiguration_Function_Behavior.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ExecuteConfiguration_Function_Behavior" />
   <unitInfo fileName="PersistentConfigurationTemplate_Behavior.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfigurationTemplate_Behavior" />
   <unitInfo fileName="ExecuteCommand_Function_Behavior.java" startLine="20" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ExecuteCommand_Function_Behavior" />
   <unitInfo fileName="PersistentPropertyDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentPropertyDeclaration_Behavior" />
@@ -117,9 +117,14 @@
     <scopeInfo nodeId="587410464426976717" fileName="PersistentConfigurationTemplate_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="107" />
   </root>
   <root nodeId="6538811202682334474">
-    <nodeInfo nodeId="6538811202682341883" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="18" startPosition="92" endLine="19" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="6538811202682334476" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="6538811202682334480" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="18" startPosition="92" endLine="19" endPosition="141" />
+    <nodeInfo nodeId="6538811202682341883" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="22" startPosition="92" endLine="23" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3091009652595831569" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="27" startPosition="208" endLine="28" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3091009652595831585" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3091009652595830748" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="26" startPosition="81" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="6538811202682334476" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
+    <scopeInfo nodeId="6538811202682334480" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="22" startPosition="92" endLine="23" endPosition="141" />
+    <scopeInfo nodeId="3091009652595830750" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="27" startPosition="208" endLine="28" endPosition="281" />
+    <scopeInfo nodeId="3091009652595815826" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="26" startPosition="81" endLine="30" endPosition="164" />
   </root>
   <root nodeId="666608846720004798">
     <nodeInfo nodeId="666608846720150325" fileName="EditorOperationDeclaration_Behavior.java" startLine="21" startPosition="39" endLine="22" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
