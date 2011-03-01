@@ -30,7 +30,7 @@ public class typeof_GenerationContextOp_DirtyNode_InferenceRule extends Abstract
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "nodeToCheck", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "6908928803899694660", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
+      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "6908928803899694662", true), (SNode) new typeof_GenerationContextOp_DirtyNode_InferenceRule.QuotationClass_3ufvnu_a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }

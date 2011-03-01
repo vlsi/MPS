@@ -24,7 +24,7 @@ public class typeof_EmitCodeForStatement_InferenceRule extends AbstractInference
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(emitCodeForStatement, "codeFor", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)", "4358085932829606435", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
+      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959037a(jetbrains.mps.lang.dataFlow.typesystem)", "4358085932829606431", true), (SNode) new typeof_EmitCodeForStatement_InferenceRule.QuotationClass_qloz51_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }

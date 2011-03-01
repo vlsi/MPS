@@ -149,6 +149,7 @@
                 </node>
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateGreaterThanInequationStatement" typeId="tpd4.1174663239020" id="2299894485109903431">
+                <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
                 <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="2299894485109903432">
                   <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="2299894485109903433">
                     <node role="term" roleId="tpd4.1174657509053" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2299894485109903434">
@@ -178,7 +179,6 @@
                     </node>
                   </node>
                 </node>
-                <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="2299894485109903449" />
                 <node role="nodeToCheck" roleId="tpd4.1174662598553" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7155962213902745796">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7155962213902745777" resolveInfo="actualParam" />
                 </node>

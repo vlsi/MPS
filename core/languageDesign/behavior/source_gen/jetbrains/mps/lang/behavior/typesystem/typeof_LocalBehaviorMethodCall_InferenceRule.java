@@ -52,7 +52,7 @@ public class typeof_LocalBehaviorMethodCall_InferenceRule extends AbstractInfere
           SNode _nodeToCheck_1029348928467 = arg;
           BaseQuickFixProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593492", 0, intentionProvider);
-          _info_12389875345.setInequationGroup("default");
+          _info_12389875345.setInequationGroup("");
           typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593497", true), (SNode) typeCheckingContext.typeOf(parameter, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "6496299201655593494", true), false, _info_12389875345);
         }
       }

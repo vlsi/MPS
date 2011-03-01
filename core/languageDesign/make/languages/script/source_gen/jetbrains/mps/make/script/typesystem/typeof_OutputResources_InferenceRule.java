@@ -24,7 +24,7 @@ public class typeof_OutputResources_InferenceRule extends AbstractInferenceRule_
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(or, "resource", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "2360002718792622216", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
+      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "2360002718792622208", true), (SNode) new typeof_OutputResources_InferenceRule.QuotationClass_rptc1i_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
