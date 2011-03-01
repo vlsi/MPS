@@ -30,7 +30,6 @@ public class typeof_WatchableCreator_InferenceRule extends AbstractInferenceRule
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(watchableCreator, "value", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debug.customViewers.typesystem)", "5264817233616805974", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debug.customViewers.typesystem)", "5264817233616805966", true), (SNode) new typeof_WatchableCreator_InferenceRule.QuotationClass_3l18gj_a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
