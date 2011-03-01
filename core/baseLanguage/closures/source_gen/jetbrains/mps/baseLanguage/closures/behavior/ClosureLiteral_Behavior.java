@@ -62,6 +62,10 @@ public class ClosureLiteral_Behavior {
     return new ArrayList<SNode>();
   }
 
+  public static boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
+    return true;
+  }
+
   public static boolean virtual_isClosure_3262277503800835439(SNode thisNode) {
     return true;
   }

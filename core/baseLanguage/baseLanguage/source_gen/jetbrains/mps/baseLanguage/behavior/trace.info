@@ -152,7 +152,6 @@
   <unitInfo fileName="IMethodCall_Behavior.java" startLine="147" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior$Pattern_fq0410_a0a0a5a2a1a2" />
   <unitInfo fileName="ClassifierType_Behavior.java" startLine="268" startPosition="0" endLine="328" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClassifierType_Behavior$Pattern_hz3823_a0a0a1a01" />
   <unitInfo fileName="Classifier_Behavior.java" startLine="306" startPosition="0" endLine="366" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior$Pattern_qw8l7c_a1a0a0a71" />
-  <unitInfo fileName="IMethodLike_Behavior.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior" />
   <unitInfo fileName="IWillBeClassifier_Behavior.java" startLine="22" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior" />
   <unitInfo fileName="IOperation_Behavior.java" startLine="11" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
   <unitInfo fileName="ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior" />
@@ -163,6 +162,7 @@
   <unitInfo fileName="InstanceMethodCallOperation_Behavior.java" startLine="25" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_Behavior" />
   <unitInfo fileName="ILocalDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ILocalDeclaration_Behavior" />
   <unitInfo fileName="EnumConstantDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior" />
+  <unitInfo fileName="IMethodLike_Behavior.java" startLine="14" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior" />
   <unitInfo fileName="LocalVariableDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_Behavior" />
   <unitInfo fileName="InstanceMethodDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_Behavior" />
   <unitInfo fileName="ConceptFunction_Behavior.java" startLine="14" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior" />
@@ -3306,28 +3306,30 @@
     <scopeInfo nodeId="1239212866630" fileName="GenericNewExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" />
   </root>
   <root nodeId="1239354340297">
-    <nodeInfo nodeId="2432385533253995636" fileName="IMethodLike_Behavior.java" startLine="23" startPosition="78" endLine="24" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2432385533253965729" fileName="IMethodLike_Behavior.java" startLine="27" startPosition="102" endLine="28" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2432385533253965672" fileName="IMethodLike_Behavior.java" startLine="28" startPosition="52" endLine="29" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2432385533253965683" fileName="IMethodLike_Behavior.java" startLine="30" startPosition="558" endLine="31" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2432385533253965702" fileName="IMethodLike_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2432385533253995602" fileName="IMethodLike_Behavior.java" startLine="34" startPosition="109" endLine="35" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2432385533253995624" fileName="IMethodLike_Behavior.java" startLine="36" startPosition="111" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2432385533253995629" fileName="IMethodLike_Behavior.java" startLine="38" startPosition="14" endLine="39" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2432385533253965715" fileName="IMethodLike_Behavior.java" startLine="41" startPosition="5" endLine="42" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2432385533253995627" fileName="IMethodLike_Behavior.java" startLine="38" startPosition="12" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2432385533253965681" fileName="IMethodLike_Behavior.java" startLine="29" startPosition="135" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2432385533253995609" fileName="IMethodLike_Behavior.java" startLine="35" startPosition="171" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2432385533253965708" fileName="IMethodLike_Behavior.java" startLine="33" startPosition="67" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="1239354340299" fileName="IMethodLike_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="1239354409449" fileName="IMethodLike_Behavior.java" startLine="23" startPosition="78" endLine="24" endPosition="143" />
-    <scopeInfo nodeId="2432385533253965682" fileName="IMethodLike_Behavior.java" startLine="30" startPosition="558" endLine="31" endPosition="60" />
-    <scopeInfo nodeId="2432385533253995610" fileName="IMethodLike_Behavior.java" startLine="36" startPosition="111" endLine="37" endPosition="29" />
-    <scopeInfo nodeId="2432385533253995628" fileName="IMethodLike_Behavior.java" startLine="38" startPosition="14" endLine="39" endPosition="108" />
-    <scopeInfo nodeId="2432385533253965709" fileName="IMethodLike_Behavior.java" startLine="34" startPosition="109" endLine="40" endPosition="7">
+    <nodeInfo nodeId="2432385533253995636" fileName="IMethodLike_Behavior.java" startLine="24" startPosition="78" endLine="25" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2432385533253965729" fileName="IMethodLike_Behavior.java" startLine="28" startPosition="102" endLine="29" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2432385533253965672" fileName="IMethodLike_Behavior.java" startLine="29" startPosition="52" endLine="30" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2432385533253965683" fileName="IMethodLike_Behavior.java" startLine="31" startPosition="558" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2432385533253965702" fileName="IMethodLike_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2432385533253995602" fileName="IMethodLike_Behavior.java" startLine="35" startPosition="109" endLine="36" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2432385533253995624" fileName="IMethodLike_Behavior.java" startLine="37" startPosition="111" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2432385533253995629" fileName="IMethodLike_Behavior.java" startLine="39" startPosition="14" endLine="40" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2432385533253965715" fileName="IMethodLike_Behavior.java" startLine="42" startPosition="5" endLine="43" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4989157187872667483" fileName="IMethodLike_Behavior.java" startLine="46" startPosition="84" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2432385533253995627" fileName="IMethodLike_Behavior.java" startLine="39" startPosition="12" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2432385533253965681" fileName="IMethodLike_Behavior.java" startLine="30" startPosition="135" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2432385533253995609" fileName="IMethodLike_Behavior.java" startLine="36" startPosition="171" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2432385533253965708" fileName="IMethodLike_Behavior.java" startLine="34" startPosition="67" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1239354340299" fileName="IMethodLike_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
+    <scopeInfo nodeId="1239354409449" fileName="IMethodLike_Behavior.java" startLine="24" startPosition="78" endLine="25" endPosition="143" />
+    <scopeInfo nodeId="2432385533253965682" fileName="IMethodLike_Behavior.java" startLine="31" startPosition="558" endLine="32" endPosition="60" />
+    <scopeInfo nodeId="2432385533253995610" fileName="IMethodLike_Behavior.java" startLine="37" startPosition="111" endLine="38" endPosition="29" />
+    <scopeInfo nodeId="2432385533253995628" fileName="IMethodLike_Behavior.java" startLine="39" startPosition="14" endLine="40" endPosition="108" />
+    <scopeInfo nodeId="4989157187872658726" fileName="IMethodLike_Behavior.java" startLine="46" startPosition="84" endLine="47" endPosition="17" />
+    <scopeInfo nodeId="2432385533253965709" fileName="IMethodLike_Behavior.java" startLine="35" startPosition="109" endLine="41" endPosition="7">
       <varInfo nodeId="2432385533253995603" varName="innerStatementList" />
     </scopeInfo>
-    <scopeInfo nodeId="2432385533253965666" fileName="IMethodLike_Behavior.java" startLine="27" startPosition="102" endLine="42" endPosition="25">
+    <scopeInfo nodeId="2432385533253965666" fileName="IMethodLike_Behavior.java" startLine="28" startPosition="102" endLine="43" endPosition="25">
       <varInfo nodeId="2432385533253965730" varName="statements" />
       <varInfo nodeId="2432385533253965703" varName="lastStatement" />
     </scopeInfo>

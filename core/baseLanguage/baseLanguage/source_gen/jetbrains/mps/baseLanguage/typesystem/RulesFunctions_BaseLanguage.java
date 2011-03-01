@@ -568,14 +568,19 @@ with_anc:
           }
         }
         if (ListSequence.fromList(ancSLs).contains(IMethodLike_Behavior.call_getBody_1239354440022(SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike")))) {
-          for (final SNode thr : IMethodLike_Behavior.call_getThrowableTypes_6204026822016975623(SNodeOperations.cast(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike"))) {
-            ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
-              public boolean accept(SNode tt) {
-                return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, thr);
-              }
-            });
+          SNode methodLike = SNodeOperations.cast(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike");
+          if (IMethodLike_Behavior.call_implicitThrows_4989157187872658723(methodLike)) {
+            ListSequence.fromList(throwTypes).clear();
+          } else {
+            for (final SNode thr : IMethodLike_Behavior.call_getThrowableTypes_6204026822016975623(methodLike)) {
+              ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
+                public boolean accept(SNode tt) {
+                  return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, thr);
+                }
+              });
+            }
+            use_quickfix = true;
           }
-          use_quickfix = true;
         }
         break with_anc;
       } while (false);
