@@ -173,6 +173,10 @@
       <zipfileset dir="${mps_home}/plugins/mpsmake/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/mpsmake/classes" prefix="" />
     </jar>
+    <jar destfile="${deploy.dir}/MPS/plugins/migration.jar" filesonly="true" duplicate="preserve" compress="true">
+      <zipfileset dir="${mps_home}/plugins/migration/META-INF" includes="**/plugin.xml" prefix="META-INF" />
+      <zipfileset dir="${mps_home}/plugins/migration/classes" prefix="" />
+    </jar>
     <jar destfile="${deploy.dir}/MPS/plugins/mpsjava.jar" filesonly="true" duplicate="preserve" compress="true">
       <zipfileset dir="${mps_home}/plugins/mpsjava/META-INF" includes="**/plugin.xml" prefix="META-INF" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/classes" prefix="" />
@@ -264,6 +268,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.stubs" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodelTests" />
     <antcall target="MPS-languages.pack.jetbrains.mps.make.facet" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.project" />
     <antcall target="MPS-languages.pack.jetbrains.mps.make.script" />
     <mkdir dir="${deploy.dir}/MPS/core/languageDesign" />
     <antcall target="MPS-languages.pack.jetbrains.mps.devkit.general-purpose" />
