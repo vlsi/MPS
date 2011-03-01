@@ -26,7 +26,6 @@ public class typeof_Node_InsertPrevSiblingOperation_InferenceRule extends Abstra
         SNode _nodeToCheck_1029348928467 = parameter;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "incompatible type: snode expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057110413", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("");
         typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057110415", true), (SNode) new typeof_Node_InsertPrevSiblingOperation_InferenceRule.QuotationClass_vszmfv_a0a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
       }
     }

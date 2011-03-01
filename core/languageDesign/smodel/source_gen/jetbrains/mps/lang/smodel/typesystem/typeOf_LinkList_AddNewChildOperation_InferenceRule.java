@@ -41,7 +41,6 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule extends Abstract
         SNode _nodeToCheck_1029348928467 = op;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227536411703", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("");
         typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227536397149", true), (SNode) new typeOf_LinkList_AddNewChildOperation_InferenceRule.QuotationClass_w9gdy4_a0a1a0d0a().createNode(typeCheckingContext.getRepresentative(Concept_typevar_1206099501305), typeCheckingContext), true, _info_12389875345);
       }
     }

@@ -24,14 +24,12 @@ public class typeof_OverloadedOperatorTypeRule_InferenceRule extends AbstractInf
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(rule, "leftOperandType", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236265244130", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236265221450", true), (SNode) new typeof_OverloadedOperatorTypeRule_InferenceRule.QuotationClass_ig6ncr_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(rule, "rightOperandType", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236265251600", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236265251605", true), (SNode) new typeof_OverloadedOperatorTypeRule_InferenceRule.QuotationClass_ig6ncr_a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }

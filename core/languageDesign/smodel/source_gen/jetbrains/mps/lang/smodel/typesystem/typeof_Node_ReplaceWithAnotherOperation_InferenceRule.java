@@ -24,7 +24,6 @@ public class typeof_Node_ReplaceWithAnotherOperation_InferenceRule extends Abstr
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "replacementNode", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206488011466", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206488003353", true), (SNode) new typeof_Node_ReplaceWithAnotherOperation_InferenceRule.QuotationClass_wjy3ci_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
     // op returns node passed in parameter 

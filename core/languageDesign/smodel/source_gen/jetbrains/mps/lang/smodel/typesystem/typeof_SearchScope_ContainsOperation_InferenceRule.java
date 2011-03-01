@@ -30,7 +30,6 @@ public class typeof_SearchScope_ContainsOperation_InferenceRule extends Abstract
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "nodeToCheck", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221172585585", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221172573203", true), (SNode) new typeof_SearchScope_ContainsOperation_InferenceRule.QuotationClass_gpl01q_a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
