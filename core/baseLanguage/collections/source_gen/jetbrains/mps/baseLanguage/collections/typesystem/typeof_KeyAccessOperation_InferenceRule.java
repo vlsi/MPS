@@ -27,7 +27,6 @@ public class typeof_KeyAccessOperation_InferenceRule extends AbstractInferenceRu
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(operation);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240825643060", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240825643071", true), (SNode) new typeof_KeyAccessOperation_InferenceRule.QuotationClass_dpjavo_a0a2a0().createNode(typeCheckingContext.getRepresentative(KEY_typevar_1240825643058), typeCheckingContext.getRepresentative(VALUE_typevar_1240825643059), typeCheckingContext), false, _info_12389875345);
     }
     {

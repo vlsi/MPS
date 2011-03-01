@@ -26,7 +26,6 @@ public class typeof_SingletonSequenceCreator_InferenceRule extends AbstractInfer
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(creator, "singletonValue", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1235574608531", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1235574583102", true), (SNode) elementType, false, _info_12389875345);
     }
     {

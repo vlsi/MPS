@@ -71,7 +71,6 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
               BaseQuickFixProvider intentionProvider = null;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202742499735", 0, intentionProvider);
               _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-              _info_12389875345.setInequationGroup("");
               typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, false, _info_12389875345);
             }
           }
@@ -94,7 +93,6 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
                 BaseQuickFixProvider intentionProvider = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1202746383183", 0, intentionProvider);
                 _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-                _info_12389875345.setInequationGroup("");
                 typeCheckingContext.createLessThanInequation((SNode) ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), (SNode) fpt, false, _info_12389875345);
               }
             }

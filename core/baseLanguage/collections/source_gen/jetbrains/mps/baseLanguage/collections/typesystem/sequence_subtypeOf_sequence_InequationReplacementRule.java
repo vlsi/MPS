@@ -24,7 +24,6 @@ public class sequence_subtypeOf_sequence_InequationReplacementRule extends Abstr
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5108199730660924415", 0, intentionProvider);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-        _info_12389875345.setInequationGroup("");
         typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), false, _info_12389875345);
       }
     }

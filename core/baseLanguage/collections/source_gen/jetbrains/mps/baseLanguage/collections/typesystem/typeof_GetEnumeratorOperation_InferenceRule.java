@@ -26,7 +26,6 @@ public class typeof_GetEnumeratorOperation_InferenceRule extends AbstractInferen
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(emunerator);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237549347224", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237549347226", true), (SNode) new typeof_GetEnumeratorOperation_InferenceRule.QuotationClass_jit5ug_a0a1a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1237549347223), typeCheckingContext), false, _info_12389875345);
     }
     {

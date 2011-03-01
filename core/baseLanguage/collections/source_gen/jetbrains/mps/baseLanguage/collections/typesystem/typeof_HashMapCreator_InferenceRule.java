@@ -32,7 +32,6 @@ public class typeof_HashMapCreator_InferenceRule extends AbstractInferenceRule_R
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(hashMapCreator, "initSize", true);
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1562299158921037865", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("");
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1562299158921037853", true), (SNode) new typeof_HashMapCreator_InferenceRule.QuotationClass_dvqbcx_a0a0a1a0().createNode(typeCheckingContext), false, _info_12389875345);
       }
     }
