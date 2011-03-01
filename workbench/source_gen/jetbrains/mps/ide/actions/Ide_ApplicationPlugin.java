@@ -103,11 +103,9 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowParameters_Action());
     addAction(new ShowReferencesToMissingStuff_Action());
     addAction(new SolutionProperties_Action());
-    addAction(new UpgradeModelPersistenceGlobally_Action());
     addAction(new UpgradeModelPersistenceInModel_Action());
     addAction(new UpgradeModelPersistenceInModule_Action());
     addAction(new UpgradeModelPersistenceInProject_Action());
-    addAction(new UpgradeModulePersistenceGlobally_Action());
     // groups 
     addGroup(new AbstractFileActions_ActionGroup());
     addGroup(new AddToFavoritesGroup_ActionGroup());
@@ -160,7 +158,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new SolutionNewActions_ActionGroup());
     addGroup(new SolutionRefactoring_ActionGroup());
     addGroup(new ToolsInternal_ActionGroup());
-    addGroup(new ToolsUpgrade_ActionGroup());
     addGroup(new Tools_ActionGroup());
     addGroup(new TransientModulesActions_ActionGroup());
   }

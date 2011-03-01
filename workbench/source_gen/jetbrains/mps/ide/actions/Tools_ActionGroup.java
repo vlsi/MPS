@@ -7,7 +7,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.AnAction;
 
 public class Tools_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Tools_ActionGroup.class);
@@ -36,16 +35,6 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
         Tools_ActionGroup.this.addAction(action);
       }
       Tools_ActionGroup.this.addSeparator();
-      {
-        GeneratedActionGroup newAction = new ToolsUpgrade_ActionGroup();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getId());
-        if (oldAction == null) {
-          manager.registerAction(newAction.getId(), newAction, PluginId.getId("jetbrains.mps.ide"));
-          oldAction = newAction;
-        }
-        Tools_ActionGroup.this.addAction(oldAction);
-      }
       {
         LabelledAnchor action = new LabelledAnchor(Tools_ActionGroup.LABEL_ID_internal);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

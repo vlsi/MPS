@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="Migration_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration_ProjectPlugin" />
+  <unitInfo fileName="Upgrade_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Upgrade_ActionGroup" />
+  <unitInfo fileName="Migration_PluginInitializer.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration_PluginInitializer" />
+  <unitInfo fileName="Migration_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration_ApplicationPlugin" />
+  <unitInfo fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="16" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.UpgradeModulePersistenceGlobally_Action" />
+  <unitInfo fileName="UpgradeModelPersistenceGlobally_Action.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceGlobally_Action" />
+  <root nodeId="8325776762397714266">
+    <nodeInfo nodeId="8325776762397714268" fileName="Upgrade_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8325776762397714269" fileName="Upgrade_ActionGroup.java" startLine="17" startPosition="119" endLine="18" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="8325776762397714271">
+    <nodeInfo nodeId="8325776762397714275" fileName="UpgradeModelPersistenceGlobally_Action.java" startLine="50" startPosition="9" endLine="51" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8325776762397714280" fileName="UpgradeModelPersistenceGlobally_Action.java" startLine="51" startPosition="71" endLine="52" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="8325776762397714287">
+    <nodeInfo nodeId="8325776762397714301" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="47" startPosition="34" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8325776762397714302" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8325776762397714296" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="46" startPosition="103" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8325776762397714290" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="45" startPosition="9" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="8325776762397714300" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="47" startPosition="34" endLine="48" endPosition="19" />
+    <scopeInfo nodeId="8325776762397714295" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="46" startPosition="103" endLine="50" endPosition="22" />
+    <scopeInfo nodeId="8325776762397714290" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="45" startPosition="9" endLine="51" endPosition="7" />
+  </root>
+</debugInfo>
+
