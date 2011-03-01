@@ -7,6 +7,9 @@ import junit.framework.TestCase;
 public class Parent_Test extends TestCase {
   public int foo;
 
+  public Parent_Test() {
+  }
+
   public void testStub() {
     // do nothing 
   }
