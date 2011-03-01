@@ -4365,12 +4365,21 @@
         </node>
       </node>
       <node role="3.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4707157387247630635">
-        <property name="1.name:0" value="actionButtonPresentation" />
+        <property name="1.name:0" value="okActionButtonPresentation" />
         <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247630636">
           <link role="3.classifier:3" targetNodeId="45.~ActionButtonPresentation" />
         </node>
         <node role="3.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247630637">
           <link role="3.annotation:3" targetNodeId="47.~Nullable" />
+        </node>
+      </node>
+      <node role="3.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3716576341274400761">
+        <property name="1.name:0" value="cancelActionButtonPresentation" />
+        <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3716576341274400762">
+          <link role="3.classifier:3" targetNodeId="45.~ActionButtonPresentation" resolveInfo="ActionButtonPresentation" />
+        </node>
+        <node role="3.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3716576341274400763">
+          <link role="3.annotation:3" targetNodeId="47.~Nullable" resolveInfo="Nullable" />
         </node>
       </node>
       <node role="3.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247630638">
@@ -4397,7 +4406,7 @@
           <node role="3.ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247630647">
             <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4707157387247630648">
               <node role="3.expression:3" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall:3" id="4707157387247630649">
-                <link role="3.baseMethodDeclaration:3" targetNodeId="44.~DiffRequestFactoryImpl.createMergeRequest(java.lang.String,java.lang.String,java.lang.String,com.intellij.openapi.vfs.VirtualFile,com.intellij.openapi.project.Project,com.intellij.openapi.diff.ActionButtonPresentation):com.intellij.openapi.diff.MergeRequest" />
+                <link role="3.baseMethodDeclaration:3" targetNodeId="44.~DiffRequestFactoryImpl.createMergeRequest(java.lang.String,java.lang.String,java.lang.String,com.intellij.openapi.vfs.VirtualFile,com.intellij.openapi.project.Project,com.intellij.openapi.diff.ActionButtonPresentation,com.intellij.openapi.diff.ActionButtonPresentation):com.intellij.openapi.diff.MergeRequest" resolveInfo="createMergeRequest" />
                 <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4707157387247630650">
                   <link role="3.variableDeclaration:3" targetNodeId="4707157387247630624" resolveInfo="leftText" />
                 </node>
@@ -4415,6 +4424,9 @@
                 </node>
                 <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4707157387247630655">
                   <link role="3.variableDeclaration:3" targetNodeId="4707157387247630635" resolveInfo="actionButtonPresentation" />
+                </node>
+                <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3716576341274400764">
+                  <link role="3.variableDeclaration:3" targetNodeId="3716576341274400761" resolveInfo="cancelActionButtonPresentation" />
                 </node>
               </node>
             </node>
@@ -4441,6 +4453,9 @@
               </node>
               <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4707157387247630664">
                 <link role="3.variableDeclaration:3" targetNodeId="4707157387247630635" resolveInfo="actionButtonPresentation" />
+              </node>
+              <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3716576341274400766">
+                <link role="3.variableDeclaration:3" targetNodeId="3716576341274400761" resolveInfo="cancelActionButtonPresentation" />
               </node>
             </node>
           </node>
@@ -8990,28 +9005,37 @@
         </node>
       </node>
       <node role="3.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4707157387247632464">
-        <property name="1.name:0" value="actionButtonPresentation" />
+        <property name="1.name:0" value="okActionButtonPresentation" />
         <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247632465">
           <link role="3.classifier:3" targetNodeId="45.~ActionButtonPresentation" />
         </node>
       </node>
+      <node role="3.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3716576341274400769">
+        <property name="1.name:0" value="cancelActionButtonPresentation" />
+        <node role="3.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3716576341274400770">
+          <link role="3.classifier:3" targetNodeId="45.~ActionButtonPresentation" resolveInfo="ActionButtonPresentation" />
+        </node>
+      </node>
       <node role="3.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247632466">
-        <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="4707157387247632467">
-          <link role="3.baseMethodDeclaration:3" targetNodeId="44.~MergeRequestImpl.&lt;init&gt;(java.lang.String,java.lang.String,java.lang.String,com.intellij.openapi.project.Project,com.intellij.openapi.diff.ActionButtonPresentation)" />
-          <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4707157387247632468">
+        <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="3716576341274400128">
+          <link role="3.baseMethodDeclaration:3" targetNodeId="44.~MergeRequestImpl.&lt;init&gt;(java.lang.String,java.lang.String,java.lang.String,com.intellij.openapi.project.Project,com.intellij.openapi.diff.ActionButtonPresentation,com.intellij.openapi.diff.ActionButtonPresentation)" resolveInfo="MergeRequestImpl" />
+          <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3716576341274400129">
             <link role="3.variableDeclaration:3" targetNodeId="4707157387247632453" resolveInfo="leftText" />
           </node>
-          <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4707157387247632469">
+          <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3716576341274400130">
             <link role="3.variableDeclaration:3" targetNodeId="4707157387247632457" resolveInfo="originalContent" />
           </node>
-          <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4707157387247632470">
+          <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3716576341274400131">
             <link role="3.variableDeclaration:3" targetNodeId="4707157387247632455" resolveInfo="rightText" />
           </node>
-          <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4707157387247632471">
+          <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3716576341274400132">
             <link role="3.variableDeclaration:3" targetNodeId="4707157387247632462" resolveInfo="project" />
           </node>
-          <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4707157387247632472">
+          <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3716576341274400133">
             <link role="3.variableDeclaration:3" targetNodeId="4707157387247632464" resolveInfo="actionButtonPresentation" />
+          </node>
+          <node role="3.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3716576341274400771">
+            <link role="3.variableDeclaration:3" targetNodeId="3716576341274400769" resolveInfo="cancelActionButtonPresentation" />
           </node>
         </node>
         <node role="3.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4707157387247632473">

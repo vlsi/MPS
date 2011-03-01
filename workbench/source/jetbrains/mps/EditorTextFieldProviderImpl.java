@@ -24,6 +24,7 @@ import com.intellij.openapi.editor.ex.EditorEx;
 import com.intellij.openapi.fileTypes.FileTypes;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.EditorCustomization;
+import com.intellij.ui.EditorCustomization.Feature;
 import com.intellij.ui.EditorTextField;
 import com.intellij.ui.EditorTextFieldProvider;
 import org.jetbrains.annotations.NotNull;
@@ -73,6 +74,19 @@ public class EditorTextFieldProviderImpl implements EditorTextFieldProvider {
   public EditorTextField getEditorField(@NotNull Language language,
                                         @NotNull final Project project,
                                         @NotNull final EditorCustomization.Feature... features) {
+    return primGetEditorField(project);
+  }
+
+  @NotNull
+  @Override
+  public EditorTextField getEditorField(@NotNull Language language,
+                                        @NotNull Project project,
+                                        @NotNull Iterable<Feature> enabledFeatures,
+                                        @NotNull Iterable<Feature> disabledFeatures) {
+    return primGetEditorField(project);
+  }
+
+  private EditorTextField primGetEditorField(final Project project) {
     return new EditorTextField("", project, FileTypes.PLAIN_TEXT) {
       @Override
       protected EditorEx createEditor() {
@@ -91,5 +105,4 @@ public class EditorTextFieldProviderImpl implements EditorTextFieldProvider {
       }
     };
   }
-
 }

@@ -605,21 +605,22 @@
     <unitInfo nodeId="4707157387247628917" fileName="DiffBuilder.java" startLine="43" startPosition="0" endLine="421" endPosition="0" unitName="jetbrains.mps.vcs.diff.DiffBuilder" />
   </root>
   <root nodeId="4707157387247630609">
-    <nodeInfo nodeId="4707157387247630648" fileName="MPSDiffRequestFactory.java" startLine="20" startPosition="75" endLine="21" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247630656" fileName="MPSDiffRequestFactory.java" startLine="22" startPosition="5" endLine="23" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4707157387247630648" fileName="MPSDiffRequestFactory.java" startLine="20" startPosition="75" endLine="21" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4707157387247630656" fileName="MPSDiffRequestFactory.java" startLine="22" startPosition="5" endLine="23" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247630617" fileName="MPSDiffRequestFactory.java" startLine="14" startPosition="67" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSDiffRequestFactory#()V" />
-    <nodeInfo nodeId="4707157387247630639" fileName="MPSDiffRequestFactory.java" startLine="19" startPosition="206" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4707157387247630621" fileName="MPSDiffRequestFactory.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMergeRequest#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/intellij/openapi/vfs/VirtualFile;Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/diff/ActionButtonPresentation;)Lcom/intellij/openapi/diff/MergeRequest;" />
+    <nodeInfo nodeId="4707157387247630639" fileName="MPSDiffRequestFactory.java" startLine="19" startPosition="275" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4707157387247630621" fileName="MPSDiffRequestFactory.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMergeRequest#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/intellij/openapi/vfs/VirtualFile;Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/diff/ActionButtonPresentation;Lcom/intellij/openapi/diff/ActionButtonPresentation;)Lcom/intellij/openapi/diff/MergeRequest;" />
     <scopeInfo nodeId="4707157387247630620" fileName="MPSDiffRequestFactory.java" startLine="15" startPosition="34" endLine="15" endPosition="34" />
-    <scopeInfo nodeId="4707157387247630647" fileName="MPSDiffRequestFactory.java" startLine="20" startPosition="75" endLine="21" endPosition="117" />
+    <scopeInfo nodeId="4707157387247630647" fileName="MPSDiffRequestFactory.java" startLine="20" startPosition="75" endLine="21" endPosition="151" />
     <scopeInfo nodeId="4707157387247630617" fileName="MPSDiffRequestFactory.java" startLine="14" startPosition="67" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="4707157387247630638" fileName="MPSDiffRequestFactory.java" startLine="19" startPosition="206" endLine="23" endPosition="112" />
+    <scopeInfo nodeId="4707157387247630638" fileName="MPSDiffRequestFactory.java" startLine="19" startPosition="275" endLine="23" endPosition="146" />
     <scopeInfo nodeId="4707157387247630621" fileName="MPSDiffRequestFactory.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="4707157387247630624" varName="leftText" />
       <varInfo nodeId="4707157387247630633" varName="project" />
       <varInfo nodeId="4707157387247630626" varName="rightText" />
-      <varInfo nodeId="4707157387247630635" varName="actionButtonPresentation" />
       <varInfo nodeId="4707157387247630630" varName="file" />
+      <varInfo nodeId="3716576341274400761" varName="cancelActionButtonPresentation" />
+      <varInfo nodeId="4707157387247630635" varName="okActionButtonPresentation" />
       <varInfo nodeId="4707157387247630628" varName="originalContent" />
     </scopeInfo>
     <unitInfo nodeId="4707157387247630609" fileName="MPSDiffRequestFactory.java" startLine="14" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.vcs.diff.MPSDiffRequestFactory" />
@@ -1274,25 +1275,26 @@
   </root>
   <root nodeId="4707157387247632445">
     <nodeInfo nodeId="4707157387247632448" fileName="ModelMergeRequest.java" startLine="16" startPosition="57" endLine="17" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFile" />
-    <nodeInfo nodeId="4707157387247632467" fileName="ModelMergeRequest.java" startLine="19" startPosition="187" endLine="20" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4707157387247632473" fileName="ModelMergeRequest.java" startLine="20" startPosition="83" endLine="21" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3716576341274400128" fileName="ModelMergeRequest.java" startLine="19" startPosition="246" endLine="20" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4707157387247632473" fileName="ModelMergeRequest.java" startLine="20" startPosition="117" endLine="21" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247632477" fileName="ModelMergeRequest.java" startLine="21" startPosition="50" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247632485" fileName="ModelMergeRequest.java" startLine="26" startPosition="32" endLine="27" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4707157387247632495" fileName="ModelMergeRequest.java" startLine="30" startPosition="45" endLine="31" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247632505" fileName="ModelMergeRequest.java" startLine="31" startPosition="88" endLine="32" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247632508" fileName="ModelMergeRequest.java" startLine="32" startPosition="42" endLine="33" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247632451" fileName="ModelMergeRequest.java" startLine="18" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelMergeRequest#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/intellij/openapi/vfs/VirtualFile;Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/diff/ActionButtonPresentation;)V" />
+    <nodeInfo nodeId="4707157387247632451" fileName="ModelMergeRequest.java" startLine="18" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelMergeRequest#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/intellij/openapi/vfs/VirtualFile;Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/diff/ActionButtonPresentation;Lcom/intellij/openapi/diff/ActionButtonPresentation;)V" />
     <nodeInfo nodeId="4707157387247632481" fileName="ModelMergeRequest.java" startLine="24" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#()Lcom/intellij/openapi/vfs/VirtualFile;" />
     <nodeInfo nodeId="4707157387247632488" fileName="ModelMergeRequest.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolved#([B)V" />
     <scopeInfo nodeId="4707157387247632484" fileName="ModelMergeRequest.java" startLine="26" startPosition="32" endLine="27" endPosition="18" />
-    <scopeInfo nodeId="4707157387247632466" fileName="ModelMergeRequest.java" startLine="19" startPosition="187" endLine="22" endPosition="18" />
+    <scopeInfo nodeId="4707157387247632466" fileName="ModelMergeRequest.java" startLine="19" startPosition="246" endLine="22" endPosition="18" />
     <scopeInfo nodeId="4707157387247632494" fileName="ModelMergeRequest.java" startLine="30" startPosition="45" endLine="33" endPosition="60" />
     <scopeInfo nodeId="4707157387247632451" fileName="ModelMergeRequest.java" startLine="18" startPosition="0" endLine="23" endPosition="3">
       <varInfo nodeId="4707157387247632453" varName="leftText" />
       <varInfo nodeId="4707157387247632462" varName="project" />
       <varInfo nodeId="4707157387247632455" varName="rightText" />
-      <varInfo nodeId="4707157387247632464" varName="actionButtonPresentation" />
       <varInfo nodeId="4707157387247632459" varName="file" />
+      <varInfo nodeId="3716576341274400769" varName="cancelActionButtonPresentation" />
+      <varInfo nodeId="4707157387247632464" varName="okActionButtonPresentation" />
       <varInfo nodeId="4707157387247632457" varName="originalContent" />
     </scopeInfo>
     <scopeInfo nodeId="4707157387247632481" fileName="ModelMergeRequest.java" startLine="24" startPosition="0" endLine="29" endPosition="0" />
