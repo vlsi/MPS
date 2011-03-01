@@ -5,6 +5,9 @@ package jetbrains.mps.runConfigurations.demo.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +19,7 @@ public class SomeConcept extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String VALID = "valid";
+  public static final String _$ATTRIBUTE = "_$attribute";
 
   public SomeConcept(SNode node) {
     super(node);
@@ -59,6 +63,26 @@ public class SomeConcept extends BaseConcept implements INamedConcept {
 
   public void setValid(boolean value) {
     this.setBooleanProperty(SomeConcept.VALID, value);
+  }
+
+  public int get_$attributesCount() {
+    return this.getChildCount(SomeConcept._$ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> _$attributes() {
+    return this.children(Attribute.class, SomeConcept._$ATTRIBUTE);
+  }
+
+  public List<Attribute> get_$attributes() {
+    return this.getChildren(Attribute.class, SomeConcept._$ATTRIBUTE);
+  }
+
+  public void add_$attribute(Attribute node) {
+    this.addChild(SomeConcept._$ATTRIBUTE, node);
+  }
+
+  public void insert_$attribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, SomeConcept._$ATTRIBUTE, node);
   }
 
   public static SomeConcept newInstance(SModel sm, boolean init) {
