@@ -98,7 +98,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
         {
           quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_1;
-          quotedNode1_9.setProperty("name", "getProperty");
+          quotedNode1_9.setProperty("name", (String) parameter_19);
           {
             quotedNode_2 = (SNode) parameter_17;
             SNode quotedNode1_10;
@@ -134,6 +134,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
                 {
                   quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, GlobalScope.getInstance(), false);
                   SNode quotedNode1_16 = quotedNode_8;
+                  quotedNode1_16.setReferent("fieldDeclaration", (SNode) parameter_18);
                   quotedNode_6.addChild("operation", quotedNode1_16);
                 }
                 quotedNode_5.addChild("expression", quotedNode1_14);
@@ -219,7 +220,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
         {
           quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_13 = quotedNode_1;
-          quotedNode1_13.setProperty("name", "getProperty");
+          quotedNode1_13.setProperty("name", (String) parameter_26);
           {
             quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_14 = quotedNode_2;
@@ -255,6 +256,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
                   {
                     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, GlobalScope.getInstance(), false);
                     SNode quotedNode1_22 = quotedNode_12;
+                    quotedNode1_22.setReferent("fieldDeclaration", (SNode) parameter_25);
                     quotedNode_10.addChild("operation", quotedNode1_22);
                   }
                   quotedNode_8.addChild("lValue", quotedNode1_20);
@@ -268,7 +270,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
           {
             quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_23 = quotedNode_5;
-            quotedNode1_23.setProperty("name", "value");
+            quotedNode1_23.setProperty("name", (String) parameter_28);
             {
               quotedNode_7 = (SNode) parameter_27;
               SNode quotedNode1_24;

@@ -9,11 +9,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Expression_Behavior {
-  private static Class[] PARAMETERS_1213877519769 = {SNode.class ,IModule.class};
+  private static Class[] PARAMETERS_1213877519769 = {SNode.class ,Object.class};
   private static Class[] PARAMETERS_1213877519781 = {SNode.class};
   private static Class[] PARAMETERS_1213877519786 = {SNode.class};
   private static Class[] PARAMETERS_1238860258777 = {SNode.class};
-  private static Class[] PARAMETERS_1238860310638 = {SNode.class ,IModule.class};
+  private static Class[] PARAMETERS_1238860310638 = {SNode.class ,Object.class};
   private static Class[] PARAMETERS_1239211900844 = {SNode.class};
 
   public static void init(SNode thisNode) {

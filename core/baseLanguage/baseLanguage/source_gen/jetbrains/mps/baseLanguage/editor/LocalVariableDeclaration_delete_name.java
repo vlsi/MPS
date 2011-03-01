@@ -52,6 +52,7 @@ public class LocalVariableDeclaration_delete_name {
           {
             quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", null, GlobalScope.getInstance(), false);
             SNode quotedNode1_4 = quotedNode_2;
+            quotedNode1_4.setReferent("classifier", (SNode) parameter_5);
             quotedNode_1.addChild("expression", quotedNode1_4);
           }
           result = quotedNode1_3;

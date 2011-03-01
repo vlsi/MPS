@@ -85,6 +85,7 @@ public class AbstractClassifierReference_KeyMap extends EditorCellKeyMap {
             {
               quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
               SNode quotedNode1_6 = quotedNode_3;
+              quotedNode1_6.setReferent("classifier", (SNode) parameter_7);
               quotedNode_2.addChild("type", quotedNode1_6);
             }
             quotedNode_1.addChild("localVariableDeclaration", quotedNode1_5);

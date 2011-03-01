@@ -22,6 +22,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class Type_Behavior {
   private static Class[] PARAMETERS_1213877337304 = {SNode.class};
@@ -306,6 +307,7 @@ public class Type_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -323,7 +325,7 @@ public class Type_Behavior {
       {
         SNode nodeToMatch_smb55n_a0a0a41;
         nodeToMatch_smb55n_a0a0a41 = nodeToMatch;
-        if (!("jetbrains.mps.lang.core.structure.BaseConcept".equals(nodeToMatch_smb55n_a0a0a41.getConceptFqName()))) {
+        if (MatchingUtil.matchNodes((SNode) this.AntiquotationField_smb55n_a0a0a0a41, nodeToMatch_smb55n_a0a0a41)) {
           return false;
         }
       }
