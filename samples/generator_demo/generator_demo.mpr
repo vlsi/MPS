@@ -13,7 +13,7 @@
       <languagePath path="${project}/languages/demoLang2/demoLang2.mpl" />
       <languagePath path="${project}/languages/demoLang3/demoLang3.mpl" folder="" />
       <languagePath path="${project}/languages/demoLang4/demoLang4.mpl" folder="" />
-      <languagePath path="${project}/../sampleXML/languages/sampleXML/sampleXML.mpl" />
+      <languagePath path="${mps_home}/samples/sampleXML/languages/sampleXML/sampleXML.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>

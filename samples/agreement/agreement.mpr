@@ -20,11 +20,11 @@
     <projectSolutions>
       <solutionPath path="${project}/framework/jetbrains.mps.samples.agreement.framework.msd" folder="" />
       <solutionPath path="${project}/sandbox/agreementRegistryBuilder.msd" />
-      <solutionPath path="${project}/../formulaLanguage/runtime/jetbrains.mps.samples.formula.runtime.msd" />
+      <solutionPath path="${mps_home}/samples/formulaLanguage/runtime/jetbrains.mps.samples.formula.runtime.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/agreementLanguage/languageDescriptor.mpl" />
-      <languagePath path="${project}/../formulaLanguage/language/formulaLanguage.mpl" />
+      <languagePath path="${mps_home}/samples/formulaLanguage/language/formulaLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>

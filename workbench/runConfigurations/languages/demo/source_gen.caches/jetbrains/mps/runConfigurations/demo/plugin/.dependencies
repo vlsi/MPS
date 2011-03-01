@@ -69,7 +69,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="com.intellij.execution.executors.DefaultRunExecutor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="com.intellij.execution.executors.DefaultDebugExecutor" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
@@ -84,15 +84,15 @@
     <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="com.intellij.execution.configurations.RunnerSettings" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
+    <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode extendsClassName="com.intellij.execution.ui.ExecutionConsole" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
     <classNode extendsClassName="com.intellij.execution.ExecutionResult" />
+    <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
   </dependency>
   <dependency className="jetbrains.mps.runConfigurations.demo.plugin.Demo_ApplicationPlugin" file="Demo_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />

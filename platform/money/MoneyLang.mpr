@@ -20,8 +20,7 @@
     <option name="warnings" value="true" />
   </component>
   <component name="MPSProject">
-    <projectSolutions>
-    </projectSolutions>
+    <projectSolutions />
     <projectLanguages>
       <languagePath path="${project}/money.mpl" />
     </projectLanguages>
