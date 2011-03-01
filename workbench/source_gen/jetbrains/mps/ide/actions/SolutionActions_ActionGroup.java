@@ -20,6 +20,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_refactoring = ID + "refactoring";
   public static final String LABEL_ID_favorites = ID + "favorites";
   public static final String LABEL_ID_vcs = ID + "vcs";
+  public static final String LABEL_ID_migration = ID + "migration";
   public static final String LABEL_ID_scripts = ID + "scripts";
 
   public SolutionActions_ActionGroup() {
@@ -84,7 +85,6 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         SolutionActions_ActionGroup.this.addAction(action);
       }
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceInModule_Action");
       SolutionActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_favorites);
@@ -100,6 +100,12 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
         SolutionActions_ActionGroup.this.addAction(action);
       }
       SolutionActions_ActionGroup.this.addSeparator();
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_migration);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
       {
         LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_scripts);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

@@ -54,7 +54,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FindPrevious_Action());
     addAction(new FindSpecificNodeUsages_Action());
     addAction(new Find_Action());
-    addAction(new FixVirtualPackges_Action());
     addAction(new FoldSelection_Action());
     addAction(new GoByCurrentReference_Action());
     addAction(new GoToNodeById_Action());
@@ -104,8 +103,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowReferencesToMissingStuff_Action());
     addAction(new SolutionProperties_Action());
     addAction(new UpgradeModelPersistenceInModel_Action());
-    addAction(new UpgradeModelPersistenceInModule_Action());
-    addAction(new UpgradeModelPersistenceInProject_Action());
     // groups 
     addGroup(new AbstractFileActions_ActionGroup());
     addGroup(new AddToFavoritesGroup_ActionGroup());

@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Migration_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration_ProjectPlugin" />
+  <unitInfo fileName="MigrateProject_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.MigrateProject_ActionGroup" />
+  <unitInfo fileName="MigrateModule_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.MigrateModule_ActionGroup" />
   <unitInfo fileName="Upgrade_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Upgrade_ActionGroup" />
   <unitInfo fileName="Migration_PluginInitializer.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration_PluginInitializer" />
-  <unitInfo fileName="Migration_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration_ApplicationPlugin" />
+  <unitInfo fileName="Migration_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.Migration_ApplicationPlugin" />
   <unitInfo fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="16" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.UpgradeModulePersistenceGlobally_Action" />
   <unitInfo fileName="UpgradeModelPersistenceGlobally_Action.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceGlobally_Action" />
+  <unitInfo fileName="UpgradeModelPersistenceInProject_Action.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceInProject_Action" />
+  <unitInfo fileName="UpgradeModelPersistenceInModule_Action.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceInModule_Action" />
+  <unitInfo fileName="FixVirtualPackages_Action.java" startLine="25" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ide.migration.actions.FixVirtualPackages_Action" />
+  <root nodeId="2494245796547321708">
+    <nodeInfo nodeId="2494245796547321710" fileName="MigrateModule_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2494245796547321711" fileName="MigrateModule_ActionGroup.java" startLine="17" startPosition="125" endLine="18" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="2494245796547321715">
+    <nodeInfo nodeId="2494245796547321717" fileName="MigrateProject_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="2494245796547321719">
+    <nodeInfo nodeId="2494245796547321801" fileName="FixVirtualPackages_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2494245796547321722" fileName="FixVirtualPackages_Action.java" startLine="65" startPosition="9" endLine="66" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2494245796547321730" fileName="FixVirtualPackages_Action.java" startLine="66" startPosition="92" endLine="67" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2494245796547321738" fileName="FixVirtualPackages_Action.java" startLine="67" startPosition="76" endLine="68" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2494245796547321746" fileName="FixVirtualPackages_Action.java" startLine="69" startPosition="38" endLine="70" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2494245796547321756" fileName="FixVirtualPackages_Action.java" startLine="72" startPosition="105" endLine="73" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="2494245796547321762" fileName="FixVirtualPackages_Action.java" startLine="74" startPosition="11" endLine="75" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2494245796547321769" fileName="FixVirtualPackages_Action.java" startLine="75" startPosition="157" endLine="76" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2494245796547321777" fileName="FixVirtualPackages_Action.java" startLine="77" startPosition="58" endLine="78" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="2494245796547321781" fileName="FixVirtualPackages_Action.java" startLine="79" startPosition="11" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2494245796547321782" fileName="FixVirtualPackages_Action.java" startLine="80" startPosition="0" endLine="81" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2494245796547321754" fileName="FixVirtualPackages_Action.java" startLine="71" startPosition="38" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2494245796547321775" fileName="FixVirtualPackages_Action.java" startLine="76" startPosition="88" endLine="79" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2494245796547321752" fileName="FixVirtualPackages_Action.java" startLine="70" startPosition="115" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2494245796547321744" fileName="FixVirtualPackages_Action.java" startLine="68" startPosition="135" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="2494245796547321800" fileName="FixVirtualPackages_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="86" />
+    <scopeInfo nodeId="2494245796547321755" fileName="FixVirtualPackages_Action.java" startLine="72" startPosition="105" endLine="73" endPosition="21" />
+    <scopeInfo nodeId="2494245796547321776" fileName="FixVirtualPackages_Action.java" startLine="77" startPosition="58" endLine="78" endPosition="21" />
+    <scopeInfo nodeId="2494245796547321753" fileName="FixVirtualPackages_Action.java" startLine="71" startPosition="38" endLine="81" endPosition="189">
+      <varInfo nodeId="2494245796547321770" varName="conceptPack" />
+      <varInfo nodeId="2494245796547321763" varName="aspectPack" />
+    </scopeInfo>
+    <scopeInfo nodeId="2494245796547321752" fileName="FixVirtualPackages_Action.java" startLine="70" startPosition="115" endLine="82" endPosition="9">
+      <varInfo nodeId="2494245796547321793" varName="aspect" />
+    </scopeInfo>
+    <scopeInfo nodeId="2494245796547321745" fileName="FixVirtualPackages_Action.java" startLine="69" startPosition="38" endLine="82" endPosition="9">
+      <varInfo nodeId="2494245796547321747" varName="aspects" />
+    </scopeInfo>
+    <scopeInfo nodeId="2494245796547321744" fileName="FixVirtualPackages_Action.java" startLine="68" startPosition="135" endLine="83" endPosition="7">
+      <varInfo nodeId="2494245796547321796" varName="concept" />
+    </scopeInfo>
+  </root>
+  <root nodeId="2494245796547321807">
+    <nodeInfo nodeId="2494245796547321812" fileName="UpgradeModelPersistenceInModule_Action.java" startLine="55" startPosition="9" endLine="56" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2494245796547321817" fileName="UpgradeModelPersistenceInModule_Action.java" startLine="56" startPosition="71" endLine="57" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
+  <root nodeId="2494245796547321827">
+    <nodeInfo nodeId="2494245796547321832" fileName="UpgradeModelPersistenceInProject_Action.java" startLine="55" startPosition="9" endLine="56" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2494245796547321837" fileName="UpgradeModelPersistenceInProject_Action.java" startLine="56" startPosition="71" endLine="57" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  </root>
   <root nodeId="8325776762397714266">
     <nodeInfo nodeId="8325776762397714268" fileName="Upgrade_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8325776762397714269" fileName="Upgrade_ActionGroup.java" startLine="17" startPosition="119" endLine="18" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
