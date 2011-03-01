@@ -70,10 +70,6 @@ public abstract class EditorCellKeyMapAction {
   }
 
   protected List<SNode> getSelectedNodes(EditorContext context) {
-    List<SNode> selecteNodes = context.getNodeEditorComponent().getNodeRangeSelection().getNodes();
-    if (selecteNodes.isEmpty()) {
-      selecteNodes.add(context.getSelectedNode());
-    }
-    return selecteNodes;
+    return context.getNodeEditorComponent().getSelectedNodes();
   }
 }
