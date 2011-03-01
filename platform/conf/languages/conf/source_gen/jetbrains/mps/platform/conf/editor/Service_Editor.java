@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -26,6 +27,10 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 public class Service_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_m4h17_a(editorContext, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createComponent_m4h17_a(editorContext, node);
   }
 
   private EditorCell createCollection_m4h17_a(EditorContext editorContext, SNode node) {
@@ -51,6 +56,12 @@ public class Service_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_m4h17_b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_m4h17_c1a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_m4h17_d1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_m4h17_a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new IConfigurationElement_brokenRefs(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 

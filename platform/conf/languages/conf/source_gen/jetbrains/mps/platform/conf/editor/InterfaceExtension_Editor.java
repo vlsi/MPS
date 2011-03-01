@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -20,6 +21,10 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 public class InterfaceExtension_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4lf1wj_a(editorContext, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createComponent_4lf1wj_a(editorContext, node);
   }
 
   private EditorCell createCollection_4lf1wj_a(EditorContext editorContext, SNode node) {
@@ -43,6 +48,12 @@ public class InterfaceExtension_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_4lf1wj_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4lf1wj_b1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_4lf1wj_a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new IConfigurationElement_brokenRefs(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 

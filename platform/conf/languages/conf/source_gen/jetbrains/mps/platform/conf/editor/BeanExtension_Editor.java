@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -27,11 +28,21 @@ public class BeanExtension_Editor extends DefaultNodeEditor {
     return this.createCollection_s16oji_a(editorContext, node);
   }
 
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createComponent_s16oji_a(editorContext, node);
+  }
+
   private EditorCell createCollection_s16oji_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_s16oji_a");
     editorCell.addEditorCell(this.createRefCell_s16oji_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_s16oji_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_s16oji_a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new IConfigurationElement_brokenRefs(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
