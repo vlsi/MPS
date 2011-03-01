@@ -29,7 +29,6 @@ public class typeof_MathSymbolIndex_InferenceRule extends AbstractInferenceRule_
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(index, "iterable", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1236428024064", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1236428005978", true), (SNode) new typeof_MathSymbolIndex_InferenceRule.QuotationClass_xcqvod_a0a1a0().createNode(typeCheckingContext.getRepresentative(T_typevar_1236428072284), typeCheckingContext), false, _info_12389875345);
     }
     {
