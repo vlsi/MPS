@@ -24,7 +24,6 @@ public class typeof_DimensionExpression_InferenceRule extends AbstractInferenceR
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(dim, "expression", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9089072050011382632", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9089072050011351050", true), (SNode) new typeof_DimensionExpression_InferenceRule.QuotationClass_dh410z_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
