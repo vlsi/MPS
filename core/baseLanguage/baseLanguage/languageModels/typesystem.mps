@@ -16299,27 +16299,46 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1239122910791">
                   <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1239122857487" resolveInfo="localVariableReference" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1239122956747">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5620135147607645641">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1225456272518" resolveInfo="isVariableDefinedInThisMethod" />
                 </node>
               </node>
             </node>
             <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1239122905634">
-              <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="1239123004897">
-                <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1239123006289">
-                  <property name="value" nameId="tpee.1070475926801" value="Variable must be final" />
-                </node>
-                <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1239123019456">
-                  <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1239122857487" resolveInfo="localVariableReference" />
-                </node>
-                <node role="helginsIntention" roleId="tpd4.1227096802791" type="tpd4.TypesystemIntention" typeId="tpd4.1210784285454" id="1241101113554">
-                  <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="1241100983853" resolveInfo="MakeVariableFinal" />
-                  <node role="actualArgument" roleId="tpd4.1210784493590" type="tpd4.TypesystemIntentionArgument" typeId="tpd4.1210784384552" id="1241101115272">
-                    <link role="quickFixArgument" roleId="tpd4.1216386999476" targetNodeId="1241101001015" resolveInfo="varRef" />
-                    <node role="value" roleId="tpd4.1210784642750" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1241101120667">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5620135147607667575">
+                <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5620135147607667576">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="1239123004897">
+                    <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1239123006289">
+                      <property name="value" nameId="tpee.1070475926801" value="Variable must be final" />
+                    </node>
+                    <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1239123019456">
                       <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1239122857487" resolveInfo="localVariableReference" />
                     </node>
+                    <node role="helginsIntention" roleId="tpd4.1227096802791" type="tpd4.TypesystemIntention" typeId="tpd4.1210784285454" id="1241101113554">
+                      <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="1241100983853" resolveInfo="MakeVariableFinal" />
+                      <node role="actualArgument" roleId="tpd4.1210784493590" type="tpd4.TypesystemIntentionArgument" typeId="tpd4.1210784384552" id="1241101115272">
+                        <link role="quickFixArgument" roleId="tpd4.1216386999476" targetNodeId="1241101001015" resolveInfo="varRef" />
+                        <node role="value" roleId="tpd4.1210784642750" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1241101120667">
+                          <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1239122857487" resolveInfo="localVariableReference" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
+                </node>
+                <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5620135147607667589">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5620135147607667580">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="5620135147607667579">
+                      <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1239122857487" resolveInfo="localVariableReference" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="5620135147607667584">
+                      <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="5620135147607667585">
+                        <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="5620135147607667588">
+                          <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.5620135147607645642" resolveInfo="IFinalWrapper" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNullOperation" typeId="tp25.1171999116870" id="5620135147607667594" />
                 </node>
               </node>
             </node>
