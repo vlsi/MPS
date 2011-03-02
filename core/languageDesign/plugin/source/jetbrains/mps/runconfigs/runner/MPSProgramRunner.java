@@ -18,6 +18,7 @@ package jetbrains.mps.runconfigs.runner;
 import com.intellij.execution.runners.DefaultProgramRunner;
 import com.intellij.execution.configurations.RunProfile;
 import com.intellij.execution.executors.DefaultRunExecutor;
+import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
 import org.jetbrains.annotations.NotNull;
 
 public class MPSProgramRunner extends DefaultProgramRunner {
@@ -27,6 +28,6 @@ public class MPSProgramRunner extends DefaultProgramRunner {
   }
 
   public boolean canRun(@NotNull String executorId, @NotNull RunProfile profile) {
-    return executorId.equals(DefaultRunExecutor.EXECUTOR_ID) && (!(profile instanceof BaseMpsRunProfileState) || ((BaseMpsRunProfileState) profile).canExecute(executorId));
+    return executorId.equals(DefaultRunExecutor.EXECUTOR_ID) && !profile.getClass().getName().contains("Remote"); // TODO this is a tmp fix until new runConfigurations available
   }
 }

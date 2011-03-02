@@ -24,16 +24,11 @@ import org.jetbrains.annotations.Nullable;
 public class MPSDebugRunner extends GenericProgramRunner {
 
   public boolean canRun(@NotNull final String executorId, @NotNull final RunProfile profile) {
-    return executorId.equals(DefaultDebugExecutor.EXECUTOR_ID) &&
-      (isOldRunConfiguration(profile) || isNewRunConfiguration(profile));
+    return executorId.equals(DefaultDebugExecutor.EXECUTOR_ID) && isOldRunConfiguration(profile);
   }
 
   private boolean isOldRunConfiguration(RunProfile profile) {
     return (profile instanceof BaseRunConfig) && (((BaseRunConfig) profile).isDebuggable());
-  }
-
-  private boolean isNewRunConfiguration(RunProfile profile) {
-    return (profile instanceof BaseMpsRunProfileState) && (((BaseMpsRunProfileState) profile).canExecute(DefaultDebugExecutor.EXECUTOR_ID));
   }
 
   @NotNull
