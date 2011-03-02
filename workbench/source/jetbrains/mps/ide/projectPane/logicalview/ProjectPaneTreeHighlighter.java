@@ -101,7 +101,7 @@ public class ProjectPaneTreeHighlighter {
         SModelTreeNode modelNode = (SModelTreeNode) treeNode;
         if (modelNode.getSModelDescriptor() == null) return;
 
-        addListeners(modelNode);
+        myListeners.put(modelNode, new Listeners(modelNode)).startListening();
       }
     }
 
@@ -110,7 +110,7 @@ public class ProjectPaneTreeHighlighter {
         SModelTreeNode modelNode = (SModelTreeNode) treeNode;
         if (modelNode.getSModelDescriptor() == null) return;
 
-        removeListeners(modelNode);
+        myListeners.remove(modelNode).stopListening();
       }
     }
 
@@ -130,17 +130,6 @@ public class ProjectPaneTreeHighlighter {
           node.renewPresentation();
         }
       }
-    }
-
-    protected void addListeners(SModelTreeNode modelNode) {
-      Listeners listeners = new Listeners(modelNode);
-      listeners.startListening();
-      myListeners.put(modelNode, listeners);
-    }
-
-    protected void removeListeners(SModelTreeNode modelNode) {
-      Listeners listeners = myListeners.remove(modelNode);
-      listeners.stopListening();
     }
 
     private class Listeners {
