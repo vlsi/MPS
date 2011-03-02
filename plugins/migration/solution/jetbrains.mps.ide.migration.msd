@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ide.migration" uuid="f79b80ff-2fee-4243-9291-a156ab1cfc01" compileInMPS="true" java-stubs-enabled="false" generatorOutputPath="${mps_home}/plugins/migration/source_gen">
+<solution name="jetbrains.mps.ide.migration" uuid="f79b80ff-2fee-4243-9291-a156ab1cfc01" compileInMPS="false" java-stubs-enabled="false" generatorOutputPath="${mps_home}/plugins/migration/source_gen">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.ide.migration" />
   </models>

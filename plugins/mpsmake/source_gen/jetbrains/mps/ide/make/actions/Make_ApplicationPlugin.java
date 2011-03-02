@@ -13,6 +13,11 @@ import jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup;
 import jetbrains.mps.ide.actions.Build_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.Favorites_ActionGroup;
+import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
+import java.util.List;
+import jetbrains.mps.workbench.action.BaseKeymapChanges;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Make_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.ide.make");
@@ -35,11 +40,18 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GenerateTextFromSolution_Action());
     addAction(new MakeAllModules_Action());
     addAction(new MakeModule_Action());
+    addAction(new MakeProject_Action());
+    addAction(new MakeSelectedModels_Action());
+    addAction(new MakeSelectedModules_Action());
     addAction(new Options_Action());
     addAction(new RebuildAllModules_Action());
     addAction(new RebuildModule_Action());
+    addAction(new RebuildProject_Action());
+    addAction(new RebuildSelectedModels_Action());
+    addAction(new RebuildSelectedModules_Action());
     addAction(new RecompileProject_Action());
     addAction(new ShowMappingsPartitioning_Action());
+    addAction(new TextPreviewModel_Action());
     // groups 
     addGroup(new Compile_ActionGroup());
     addGroup(new GenerateFavorites_ActionGroup());
@@ -49,10 +61,16 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new GenerateModule_ActionGroup());
     addGroup(new GenerateOptions_ActionGroup());
     addGroup(new GenerateProjectPopup_ActionGroup());
+    addGroup(new GlobalMake_ActionGroup());
     addGroup(new JavaModuleActions_ActionGroup());
+    addGroup(new Make_ActionGroup());
     addGroup(new NamespaceGenerateFiles_ActionGroup());
+    addGroup(new NamespaceMake_ActionGroup());
     addGroup(new ProjectCompileActions_ActionGroup());
+    addGroup(new ProjectMake_ActionGroup());
     addGroup(new SaveTransientModels_ActionGroup());
+    addGroup(new TextPreviewGroup_ActionGroup());
+    addGroup(new ToolbarMake_ActionGroup());
   }
 
   public void adjustRegularGroups() {
@@ -72,5 +90,21 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GenerateModels_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_generateModel);
     insertGroupIntoAnother(GenerateModels_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModel);
     insertGroupIntoAnother(GenerateFavorites_ActionGroup.ID, Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_generate);
+    insertGroupIntoAnother(Make_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_make);
+    insertGroupIntoAnother(Make_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_make);
+    insertGroupIntoAnother(Make_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_make);
+    insertGroupIntoAnother(Make_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_make);
+    insertGroupIntoAnother(Make_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_make);
+    insertGroupIntoAnother(ProjectMake_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_make);
+    insertGroupIntoAnother(GlobalMake_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_make);
+    insertGroupIntoAnother(TextPreviewGroup_ActionGroup.ID, Make_ActionGroup.ID, Make_ActionGroup.LABEL_ID_preview);
+    insertGroupIntoAnother(NamespaceMake_ActionGroup.ID, NamespaceMakeActions_ActionGroup.ID, NamespaceMakeActions_ActionGroup.LABEL_ID_make);
+    insertGroupIntoAnother(ToolbarMake_ActionGroup.ID, "MPSToolbarRunGroup", null);
+  }
+
+  public List<BaseKeymapChanges> initKeymaps() {
+    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
+    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
+    return res;
   }
 }
