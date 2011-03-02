@@ -44,8 +44,6 @@
                     serviceImplementation="com.intellij.usages.impl.UsageViewManagerImpl"/>
     <projectService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
                     serviceImplementation="jetbrains.mps.codeStyle.MPSCodeStyleFacade"/>
-    <projectService serviceInterface="com.intellij.ide.util.gotoByName.GotoFileConfiguration"
-                    serviceImplementation="com.intellij.ide.util.gotoByName.GotoFileConfiguration"/>
 
     <projectService serviceInterface="com.intellij.ui.EditorTextFieldProvider"
                     serviceImplementation="jetbrains.mps.EditorTextFieldProviderImpl"/>
