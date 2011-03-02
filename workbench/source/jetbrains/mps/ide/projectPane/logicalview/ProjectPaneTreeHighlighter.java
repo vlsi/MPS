@@ -55,7 +55,7 @@ public class ProjectPaneTreeHighlighter {
   private MyMPSTreeNodeListener myNodeListener = new MyMPSTreeNodeListener();
   private ProjectPaneTree myTree;
 
-  public void init(ProjectPaneTree tree){
+  public void init(ProjectPaneTree tree) {
     myTree = tree;
 
     myTree.addTreeNodeListener(myNodeListener);
@@ -65,17 +65,8 @@ public class ProjectPaneTreeHighlighter {
     connection.subscribe(DumbService.DUMB_MODE, new MyDumbModeListener());
   }
 
-  public void dispose(){
+  public void dispose() {
     myTree.removeTreeNodeListener(myNodeListener);
-  }
-
-
-  private void visit(MPSTreeNode rootNode, TreeNodeVisitor visitor) {
-    //todo width-first will be better because we normally see upper level first
-    visitor.visitNode(rootNode);
-    for (MPSTreeNode node : rootNode) {
-      visit(node, visitor);
-    }
   }
 
   private class MyDumbModeListener implements DumbModeListener {
@@ -91,6 +82,14 @@ public class ProjectPaneTreeHighlighter {
       if (p.isDisposed()) return;
 
       visit(myTree.getRootNode(), myGenStatusVisitor);
+    }
+
+    private void visit(MPSTreeNode rootNode, TreeNodeVisitor visitor) {
+      //todo width-first will be better because we normally see upper level first
+      visitor.visitNode(rootNode);
+      for (MPSTreeNode node : rootNode) {
+        visit(node, visitor);
+      }
     }
   }
 
@@ -134,28 +133,14 @@ public class ProjectPaneTreeHighlighter {
     }
 
     protected void addListeners(SModelTreeNode modelNode) {
-      SModelDescriptor md = modelNode.getSModelDescriptor();
-      Listeners listeners = new Listeners(modelNode, md);
+      Listeners listeners = new Listeners(modelNode);
+      listeners.startListening();
       myListeners.put(modelNode, listeners);
-
-      SModelEventsDispatcher.getInstance().registerListener(listeners.myEventsListener);
-      md.addModelListener(listeners.mySimpleModelListener);
-
-      if (!SModelStereotype.isStubModelStereotype(md.getStereotype())) {
-        ModelGenerationStatusManager.getInstance().addGenerationStatusListener(listeners.myStatusListener);
-      }
     }
 
     protected void removeListeners(SModelTreeNode modelNode) {
-      SModelDescriptor md = modelNode.getSModelDescriptor();
       Listeners listeners = myListeners.remove(modelNode);
-
-      if (!SModelStereotype.isStubModelStereotype(md.getStereotype())) {
-        ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(listeners.myStatusListener);
-      }
-
-      md.removeModelListener(listeners.mySimpleModelListener);
-      SModelEventsDispatcher.getInstance().unregisterListener(listeners.myEventsListener);
+      listeners.stopListening();
     }
 
     private class Listeners {
@@ -166,8 +151,9 @@ public class ProjectPaneTreeHighlighter {
 
       private SModelDescriptor myModel;
 
-      public Listeners(SModelTreeNode node, SModelDescriptor model) {
-        myModel = model;
+      public Listeners(SModelTreeNode node) {
+        myModel = node.getSModelDescriptor();
+
         mySimpleModelListener = new SimpleModelListener(node) {
           public void modelChangedDramatically(SModel model) {
             updateNodePresentation(false, true);
@@ -183,7 +169,7 @@ public class ProjectPaneTreeHighlighter {
           }
         };
         myStatusListener = new MyGenerationStatusListener();
-        if (model instanceof EditableSModelDescriptor) {
+        if (myModel instanceof EditableSModelDescriptor) {
           myTreeUpdater = new MySNodeTreeUpdater(node.getOperationContext().getProject(), node);
           myTreeUpdater.setDependencyRecorder(node.getDependencyRecorder());
         }
@@ -198,6 +184,24 @@ public class ProjectPaneTreeHighlighter {
             myTreeUpdater.eventsHappenedInCommand(events);
           }
         };
+      }
+
+      public void startListening() {
+        SModelEventsDispatcher.getInstance().registerListener(myEventsListener);
+        myModel.addModelListener(mySimpleModelListener);
+
+        if (!SModelStereotype.isStubModelStereotype(myModel.getStereotype())) {
+          ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myStatusListener);
+        }
+      }
+
+      public void stopListening() {
+        if (!SModelStereotype.isStubModelStereotype(myModel.getStereotype())) {
+          ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
+        }
+
+        myModel.removeModelListener(mySimpleModelListener);
+        SModelEventsDispatcher.getInstance().unregisterListener(myEventsListener);
       }
 
       private class MyGenerationStatusListener implements ModelGenerationStatusListener {
