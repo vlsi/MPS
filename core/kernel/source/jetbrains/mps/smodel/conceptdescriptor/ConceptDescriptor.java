@@ -7,9 +7,9 @@ import java.util.Set;
 public interface ConceptDescriptor {
   // LanguageHierarchyCache replace
   // todo: descendants here?
-  public Set<String> getParentsNames(final String conceptFqName);
-  public boolean isAssignable(String fromConceptFqName, String toConceptFqName);
-  public Set<String> getAncestorsNames(final String conceptFqName);
+  public Set<String> getParentsNames();
+  public boolean isAssignableTo(String toConceptFqName);
+  public Set<String> getAncestorsNames();
 //  public Set<String> getDescendantsOfConcept(String conceptFQName);
 //  public Set<String> getAllDescendantsOfConcept(String conceptFqName);
 //  public Set<String> getDefaultSubstitutableDescendantsOf(String concept, Language language);
