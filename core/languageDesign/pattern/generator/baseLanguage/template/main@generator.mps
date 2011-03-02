@@ -417,9 +417,9 @@
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8288845019109286149">
                         <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8288845019109286154">
                           <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="8288845019109286151" />
-                          <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" typeId="tpf3.1221218985173" id="8288845019109286158">
-                            <link role="label" roleId="tpf3.1221219379823" targetNodeId="1215479326412" resolveInfo="patternVarField" />
-                            <node role="inputNode" roleId="tpf3.1221219370977" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8288845019109286160">
+                          <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="42878125759535762">
+                            <link role="label" roleId="tpf3.1216860049628" targetNodeId="1215479326412" resolveInfo="patternVarField" />
+                            <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="42878125759539828">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4072414341992405822" resolveInfo="attribute" />
                             </node>
                           </node>
@@ -839,14 +839,14 @@
                           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8288845019109318688">
                             <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8288845019109318689">
                               <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="8288845019109318690" />
-                              <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" typeId="tpf3.1221218985173" id="8288845019109318691">
-                                <link role="label" roleId="tpf3.1221219379823" targetNodeId="1215479326412" resolveInfo="patternVarField" />
-                                <node role="inputNode" roleId="tpf3.1221219370977" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8288845019109318698">
-                                  <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="8288845019109318699">
+                              <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="42878125759541861">
+                                <link role="label" roleId="tpf3.1216860049628" targetNodeId="1215479326412" resolveInfo="patternVarField" />
+                                <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.DotExpression" typeId="tpee.1197027756228" id="42878125759545927">
+                                  <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="42878125759545928">
                                     <link role="concept" roleId="tp25.1140138128738" targetNodeId="tp3t.4264731254635442556" resolveInfo="OrPatternVariableReference" />
-                                    <node role="leftExpression" roleId="tp25.1140138123956" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="8288845019109318700" />
+                                    <node role="leftExpression" roleId="tp25.1140138123956" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="42878125759545929" />
                                   </node>
-                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="8288845019109318701">
+                                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="42878125759545930">
                                     <link role="link" roleId="tp25.1138056516764" targetNodeId="tp3t.4264731254635442557" />
                                   </node>
                                 </node>
@@ -1339,9 +1339,9 @@
                                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8288845019109318681">
                                   <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8288845019109318682">
                                     <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="8288845019109318683" />
-                                    <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" typeId="tpf3.1221218985173" id="8288845019109318684">
-                                      <link role="label" roleId="tpf3.1221219379823" targetNodeId="1215479326412" resolveInfo="patternVarField" />
-                                      <node role="inputNode" roleId="tpf3.1221219370977" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8288845019109318686">
+                                    <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="42878125759547963">
+                                      <link role="label" roleId="tpf3.1216860049628" targetNodeId="1215479326412" resolveInfo="patternVarField" />
+                                      <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="42878125759552029">
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1190931377171" resolveInfo="propertyPattern" />
                                       </node>
                                     </node>
@@ -2217,9 +2217,9 @@
                                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8288845019109318674">
                                   <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8288845019109318675">
                                     <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="8288845019109318676" />
-                                    <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" typeId="tpf3.1221218985173" id="8288845019109318677">
-                                      <link role="label" roleId="tpf3.1221219379823" targetNodeId="1215479326412" resolveInfo="patternVarField" />
-                                      <node role="inputNode" roleId="tpf3.1221219370977" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8288845019109318679">
+                                    <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="42878125759556094">
+                                      <link role="label" roleId="tpf3.1216860049628" targetNodeId="1215479326412" resolveInfo="patternVarField" />
+                                      <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="42878125759560160">
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1190931377514" resolveInfo="linkPattern" />
                                       </node>
                                     </node>
@@ -2999,9 +2999,9 @@
                                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6283201779507549591">
                                               <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8288845019109286161">
                                                 <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="6283201779507549593" />
-                                                <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" typeId="tpf3.1221218985173" id="8288845019109286165">
-                                                  <link role="label" roleId="tpf3.1221219379823" targetNodeId="1215479326412" resolveInfo="patternVarField" />
-                                                  <node role="inputNode" roleId="tpf3.1221219370977" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8288845019109286167">
+                                                <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="42878125759562193">
+                                                  <link role="label" roleId="tpf3.1216860049628" targetNodeId="1215479326412" resolveInfo="patternVarField" />
+                                                  <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="42878125759566247">
                                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6283201779507549586" resolveInfo="attribute" />
                                                   </node>
                                                 </node>
@@ -3317,9 +3317,9 @@
                                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8288845019109318668">
                                               <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8288845019109318669">
                                                 <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="8288845019109318670" />
-                                                <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" typeId="tpf3.1221218985173" id="8288845019109318671">
-                                                  <link role="label" roleId="tpf3.1221219379823" targetNodeId="1215479326412" resolveInfo="patternVarField" />
-                                                  <node role="inputNode" roleId="tpf3.1221219370977" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8288845019109318672">
+                                                <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="42878125759568280">
+                                                  <link role="label" roleId="tpf3.1216860049628" targetNodeId="1215479326412" resolveInfo="patternVarField" />
+                                                  <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="42878125759572346">
                                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6283201779507549709" resolveInfo="attribute" />
                                                   </node>
                                                 </node>
@@ -3486,9 +3486,9 @@
                                                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8288845019109318655">
                                                   <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8288845019109318660">
                                                     <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="8288845019109318657" />
-                                                    <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" typeId="tpf3.1221218985173" id="8288845019109318664">
-                                                      <link role="label" roleId="tpf3.1221219379823" targetNodeId="1215479326412" resolveInfo="patternVarField" />
-                                                      <node role="inputNode" roleId="tpf3.1221219370977" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8288845019109318666">
+                                                    <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="42878125759574379">
+                                                      <link role="label" roleId="tpf3.1216860049628" targetNodeId="1215479326412" resolveInfo="patternVarField" />
+                                                      <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="42878125759578445">
                                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6283201779507549764" resolveInfo="attribute" />
                                                       </node>
                                                     </node>
@@ -3573,12 +3573,12 @@
                                                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8288845019109374398">
                                                   <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8288845019109374399">
                                                     <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="8288845019109374400" />
-                                                    <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" typeId="tpf3.1221218985173" id="8288845019109374408">
-                                                      <link role="label" roleId="tpf3.1221219379823" targetNodeId="1215479326412" resolveInfo="patternVarField" />
-                                                      <node role="inputNode" roleId="tpf3.1221219370977" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8288845019109374410">
-                                                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="8288845019109374411" />
-                                                        <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="3071170492188517819">
-                                                          <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="3071170492188517820">
+                                                    <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="42878125759580478">
+                                                      <link role="label" roleId="tpf3.1216860049628" targetNodeId="1215479326412" resolveInfo="patternVarField" />
+                                                      <node role="inputNode" roleId="tpf3.1216860049632" type="tpee.DotExpression" typeId="tpee.1197027756228" id="42878125759584362">
+                                                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="42878125759584363" />
+                                                        <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="42878125759584364">
+                                                          <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="42878125759584365">
                                                             <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="tp3t.1136720037773" resolveInfo="AsPattern" />
                                                           </node>
                                                         </node>
