@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.pattern.generator.baseLanguage.template.util.PatternGeneratorUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
 import jetbrains.mps.lang.pattern.behavior.PatternExpression_Behavior;
@@ -377,12 +376,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_412500033819201095(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast((_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(_context.getNode(), "patternVarField", operationContext)), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    return SNodeOperations.cast((_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "patternVarField")), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_4855904478357147770(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(_context.getNode(), "patternVarField", operationContext);
-
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "patternVarField");
   }
 
   public static Object referenceMacro_GetReferent_4855904478357147837(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -390,10 +388,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_4855904478357130292(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    /*
-      PatternGeneratorUtil.get(_context, _context.getNode());
-    */
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(_context.getNode(), "patternVarField", operationContext);
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "patternVarField");
   }
 
   public static boolean ifMacro_Condition_1190931376948(final IOperationContext operationContext, final IfMacroContext _context) {
