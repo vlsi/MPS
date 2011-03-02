@@ -29,9 +29,6 @@ import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SearchScopeOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.typesystem.behavior.SubtypingRule_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -1191,17 +1188,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1176817939040(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode parent = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false)), "jetbrains.mps.lang.typesystem.structure.CoerceStatement");
-    /*
-      List<SNode> vars = _context.getAllOutputNodesByInputNodeAndMappingLabel(parent, "coercedNode");
-      SNode varRef = _context.getOutputNode();
-      final ISearchScope varScope = SNodeOperations.getReferentSearchScope(varRef, "localVariableDeclaration", operationContext);
-      return ListSequence.fromList(vars).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SearchScopeOperations.containsNode(varScope, it);
-        }
-      }).first();
-    */
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(parent, "coercedNode", operationContext);
+    return _context.getOutputNodeByInputNodeAndMappingLabel(parent, "coercedNode");
   }
 
   public static Object referenceMacro_GetReferent_5830155447076418565(final IOperationContext operationContext, final ReferenceMacroContext _context) {
