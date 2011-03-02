@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane.logicalview.visitor;
+package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;

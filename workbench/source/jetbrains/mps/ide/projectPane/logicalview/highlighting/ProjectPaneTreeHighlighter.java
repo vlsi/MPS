@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane.logicalview;
+package jetbrains.mps.ide.projectPane.logicalview.highlighting;
 
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.DumbService.DumbModeListener;
@@ -24,11 +24,14 @@ import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
+import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
+import jetbrains.mps.ide.projectPane.logicalview.SimpleModelListener;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.visitor.ProjectPaneModifiedMarker;
-import jetbrains.mps.ide.projectPane.logicalview.visitor.ProjectPaneTreeErrorChecker;
-import jetbrains.mps.ide.projectPane.logicalview.visitor.ProjectPaneTreeGenStatusUpdater;
-import jetbrains.mps.ide.projectPane.logicalview.visitor.TreeNodeVisitor;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneModifiedMarker;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeErrorChecker;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeGenStatusUpdater;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.TreeNodeVisitor;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeListener;

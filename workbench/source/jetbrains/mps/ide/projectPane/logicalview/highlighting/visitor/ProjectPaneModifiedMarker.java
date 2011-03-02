@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane.logicalview.visitor;
+package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
 import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.ide.projectPane.Icons;
