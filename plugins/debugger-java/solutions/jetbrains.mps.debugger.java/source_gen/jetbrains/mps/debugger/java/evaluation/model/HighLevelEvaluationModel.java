@@ -8,7 +8,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -24,8 +23,8 @@ public class HighLevelEvaluationModel extends AbstractEvaluationModel {
   public HighLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, boolean isInContext) {
     super(project, session, module, new StackFrameContext(session.getUiState()), isInContext);
 
-    ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
-      public SNode compute() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
         // TODO not all languages have block statements; type of used statement should be specified via plugin 
         myNodeToShow = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
         AttributeOperations.createAndSetAttrbiute(myNodeToShow, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation")), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
@@ -35,7 +34,7 @@ public class HighLevelEvaluationModel extends AbstractEvaluationModel {
         HighLevelEvaluationModel.this.myLocationRootCopy = SNodeOperations.copyNode(locationRoot);
         SNode locationNodeCopy = HighLevelEvaluationModel.this.findNodesCopy(locationRoot, HighLevelEvaluationModel.this.myLocationRootCopy, locationNode);
 
-        return SNodeOperations.insertNextSiblingChild(locationNodeCopy, myNodeToShow);
+        SNodeOperations.insertNextSiblingChild(locationNodeCopy, myNodeToShow);
       }
     });
   }

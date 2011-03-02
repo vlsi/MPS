@@ -13,7 +13,6 @@ import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import java.util.List;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.workbench.MPSDataKeys;
