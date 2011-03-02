@@ -24,6 +24,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public final class BehaviorManager implements ApplicationComponent {
+  // todo: static it!
   public static BehaviorManager getInstance() {
     return ApplicationManager.getApplication().getComponent(BehaviorManager.class);
   }

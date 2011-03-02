@@ -1,5 +1,6 @@
 package jetbrains.mps.smodel.conceptdescriptor;
 
+import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
 
@@ -14,17 +15,17 @@ public class InterpretedDescriptor implements ConceptDescriptor {
 
   @Override
   public Set<String> getParentsNames() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return LanguageHierarchyCache.getInstance()._getParentsNames(fqName);
   }
 
   @Override
   public boolean isAssignableTo(String toConceptFqName) {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return LanguageHierarchyCache.getInstance()._isAssignable(fqName, toConceptFqName);
   }
 
   @Override
   public Set<String> getAncestorsNames() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return LanguageHierarchyCache.getInstance()._getAncestorsNames(fqName);
   }
 
   @Override
