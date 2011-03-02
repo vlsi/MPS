@@ -16,6 +16,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 
+import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
