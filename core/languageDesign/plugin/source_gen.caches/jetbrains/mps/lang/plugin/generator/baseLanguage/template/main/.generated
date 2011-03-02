@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="borvjcmc806hlrsffn4yxhwg37cfr48">
+<dependencies version="2" modelHash="cmer3jvkmmxr6wy6b3vzdfvjvwb3bmw">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" />
@@ -39,7 +39,7 @@
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d5ax0i0w21fsp3r2lvns9jctqjjbwsh" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="36l17jjlzwkvt9mm38z504bro2ysrw9" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="dwqlvrpltykekrcpgnxv3x4ri89ls8c" />
-  <common hash="-36ch58vsk3kf69to0xgzkvcuntccrac">
+  <common hash="446qyx7gik3dw7akq77zana6xqns9he">
     <dep root="1203086899006" />
     <dep root="1203094364055" />
     <dep root="1203866806543" />
@@ -147,7 +147,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1203086899006" name="GeneratedAction_Template" hash="19vv8ad1vaodei7m9expphk8kxcdew4">
+  <source id="1203086899006" name="GeneratedAction_Template" hash="dqlaua5wx991kl862496hb5a7exxpzc">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1203094364055" name="MainGeneratedGroup" hash="-c2uljr49gdyvbsdf2v84wfh8bmdliaw">
@@ -324,7 +324,7 @@
   <source id="1862809785209155798" name="reduce_GetSelectedTabOperation" hash="9rjfxx56iwh6labt5arb8ahrvmas8pv">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5508914264442964685" name="BaseGeneratedTool" hash="edulpw58qsyxo8txtflx7ejtyrjguy5">
+  <source id="5508914264442964685" name="BaseGeneratedTool_Template" hash="bhncgthmk1f32f4xd2qf6yb7rftv4yg">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="5508914264443136130" name="weave_ToolDeclaration_deprecatedDispose" hash="3u719o3lihy6yamhzedds45076bb59w">

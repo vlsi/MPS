@@ -54,9 +54,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.FileGeneratorDeclaration_Behavior" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.FileGeneratorDeclaration_Behavior" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
