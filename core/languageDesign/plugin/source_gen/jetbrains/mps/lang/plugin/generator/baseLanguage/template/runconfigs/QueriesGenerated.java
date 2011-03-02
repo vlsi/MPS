@@ -254,16 +254,16 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ConfigConstructor");
   }
 
-  public static Object referenceMacro_GetReferent_4351631783611294090(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_4351631783611294035(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object referenceMacro_GetReferent_5695371969964085824(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode type = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     return SLinkOperations.getTarget(type, "classifier", false);
   }
 
-  public static Object referenceMacro_GetReferent_6330579352581274361(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object referenceMacro_GetReferent_4351631783611294035(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5695371969964085842(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
