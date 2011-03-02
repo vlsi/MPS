@@ -27,6 +27,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.Style;
 
 public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -154,6 +155,11 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_1dey68_a2a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1dey68_a2a");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.EDITABLE, true);
+        style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+      }
       editorCell.setDefaultText("");
       return editorCell;
     }
