@@ -6,13 +6,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 04.02.2010
- * Time: 17:13:08
- * To change this template use File | Settings | File Templates.
- */
 public class DebugProcessMulticaster {
   private static Logger LOG = Logger.getLogger(DebugProcessMulticaster.class);
   private final List<DebugProcessListener> myListeners = new ArrayList<DebugProcessListener>();

@@ -24,10 +24,11 @@ import com.sun.jdi.request.EventRequest;
 import com.sun.jdi.request.StepRequest;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.IDebuggableFramesSelector;
+import jetbrains.mps.debug.breakpoints.LineBreakpoint;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
-import jetbrains.mps.debug.breakpoints.LineBreakpoint;
+import jetbrains.mps.debug.runtime.execution.SystemMessagesReporter;
 import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -41,11 +42,12 @@ public class DebugVMEventsProcessor {
   private final RequestManager myRequestManager;
   private final SuspendManager mySuspendManager;
 
-  private final DebugProcessMulticaster myMulticaster;
-
   private VirtualMachine myVirtualMachine;
 
   private DebuggerEventThread myEventThread;
+
+  private final DebugProcessMulticaster myMulticaster = new DebugProcessMulticaster();
+  private final SystemMessagesReporter myReporter = new SystemMessagesReporter(myMulticaster);
 
   protected static final int STATE_INITIAL = 0;
   protected static final int STATE_ATTACHED = 1;
@@ -53,11 +55,9 @@ public class DebugVMEventsProcessor {
   protected static final int STATE_DETACHED = 3;
   protected final AtomicInteger myState = new AtomicInteger(STATE_INITIAL);
   private IDebuggableFramesSelector myFramesSelector;
-  private String myConnectionSettings;
   private final IDebuggerManagerThread myManagerThread;
 
   public DebugVMEventsProcessor(BreakpointManagerComponent breakpointsManager, IDebuggerManagerThread managerThread) {
-    myMulticaster = new DebugProcessMulticaster();
     myManagerThread = managerThread;
     myBreakpointManager = breakpointsManager;
     myRequestManager = new RequestManager(this);
@@ -95,16 +95,12 @@ public class DebugVMEventsProcessor {
     return myBreakpointManager;
   }
 
-  public String getConnectionString() {
-    return myConnectionSettings;
+  public SystemMessagesReporter getSystemMessagesReporter() {
+    return myReporter;
   }
 
   public void setDebuggableFramesSelector(IDebuggableFramesSelector framesSelector) {
     myFramesSelector = framesSelector;
-  }
-
-  public void setConnectionSettings(String connectionSettings) {
-    myConnectionSettings = connectionSettings;
   }
 
   private class DebuggerEventThread implements Runnable {
@@ -159,31 +155,24 @@ public class DebugVMEventsProcessor {
                     /*  else if (event instanceof ClassUnloadEvent){
                       processDefaultEvent(suspendContext);
                     }*/
-                  }
-                  catch (VMDisconnectedException e) {
+                  } catch (VMDisconnectedException e) {
                     //LOG.debug(e);
-                  }
-                  catch (InternalException e) {
+                  } catch (InternalException e) {
                     //LOG.info(e);
-                  }
-                  catch (Throwable e) {
+                  } catch (Throwable e) {
                     LOG.error(e);
                   }
                 }
               }
             });
 
-          }
-          catch (InternalException e) {
+          } catch (InternalException e) {
             // LOG.debug(e);
-          }
-          catch (InterruptedException e) {
+          } catch (InterruptedException e) {
             throw e;
-          }
-          catch (VMDisconnectedException e) {
+          } catch (VMDisconnectedException e) {
             throw e;
-          }
-          catch (Throwable e) {
+          } catch (Throwable e) {
             // LOG.debug(e);
           }
         }
@@ -320,8 +309,7 @@ public class DebugVMEventsProcessor {
     try {
       preprocessEvent(suspendContext, null);
       //  cancelRunToCursorBreakpoint();
-    }
-    finally {
+    } finally {
       if (myEventThread != null) {
         myEventThread.stopListening();
         myEventThread = null;
@@ -360,6 +348,12 @@ public class DebugVMEventsProcessor {
     } else {
       getSuspendManager().voteSuspend(suspendContext);
     }
+  }
+
+
+  private void stopConnecting() {
+    // todo DebugProcessImpl.stopConnecting
+    closeProcess(true);
   }
 
   private void closeProcess(boolean closedByUser) {
@@ -451,8 +445,7 @@ public class DebugVMEventsProcessor {
           virtualMachine.dispose();
         }
       } else {
-// TODO       
-//        stopConnecting();
+        stopConnecting();
       }
     }
   }
