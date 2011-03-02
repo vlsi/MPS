@@ -102,7 +102,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowParameters_Action());
     addAction(new ShowReferencesToMissingStuff_Action());
     addAction(new SolutionProperties_Action());
-    addAction(new UpgradeModelPersistenceInModel_Action());
     // groups 
     addGroup(new AbstractFileActions_ActionGroup());
     addGroup(new AddToFavoritesGroup_ActionGroup());

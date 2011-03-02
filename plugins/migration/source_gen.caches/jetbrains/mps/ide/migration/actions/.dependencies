@@ -24,6 +24,12 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.migration.actions.MigrateModel_ActionGroup" file="MigrateModel_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.migration.actions.MigrateModule_ActionGroup" file="MigrateModule_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -39,18 +45,21 @@
   <dependency className="jetbrains.mps.ide.migration.actions.Migration_ApplicationPlugin" file="Migration_ApplicationPlugin.java">
     <classNode dependClassName="jetbrains.mps.ide.migration.actions.UpgradeModulePersistenceGlobally_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ProjectActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.actions.MigrateModel_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.SolutionActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.migration.actions.FixVirtualPackages_Action" />
     <classNode dependClassName="jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceInModule_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceGlobally_Action" />
     <classNode dependClassName="jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceInProject_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceGlobally_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.Tools_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.migration.actions.Upgrade_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.migration.actions.MigrateModule_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceInModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DevkitActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.migration.actions.MigrateProject_ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.Tools_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.actions.Migration_PluginInitializer" file="Migration_PluginInitializer.java">
@@ -79,6 +88,23 @@
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.ui.PersistenceUpdater" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceInModel_Action" file="UpgradeModelPersistenceInModel_Action.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.awt.Frame" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.ui.PersistenceUpdater" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.actions.UpgradeModelPersistenceInModule_Action" file="UpgradeModelPersistenceInModule_Action.java">

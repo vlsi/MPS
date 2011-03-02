@@ -847,12 +847,6 @@
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Dialogs.Collect" />
     </node>
-    <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3905468763930344101">
-      <property name="name" nameId="tpck.1169194664001" value="UpgradeModelPersistenceInModel" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Upgrade Model Persistence" />
-      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Model.Actions" />
-    </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7824118464175996831">
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="BaseAddMethodDialog" />
@@ -1272,9 +1266,6 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1222173595836">
         <property name="name" nameId="tpck.1169194664001" value="refactoring" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3905468763930415933">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="3905468763930344101" resolveInfo="UpgradeModelPersistenceInModel" />
-      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1221757534230" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="2834677590308140822">
         <property name="name" nameId="tpck.1169194664001" value="favorites" />
@@ -1288,6 +1279,9 @@
         <property name="name" nameId="tpck.1169194664001" value="ideavcs" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1204909603015" />
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="2195176318621670475">
+        <property name="name" nameId="tpck.1169194664001" value="migration" />
+      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="4555696683442018021">
         <property name="name" nameId="tpck.1169194664001" value="scripts" />
       </node>
@@ -17895,55 +17889,6 @@
       <property name="name" nameId="tpck.1169194664001" value="T" />
       <node role="bound" roleId="tpee.1214996921760" type="tp25.SNodeType" typeId="tp25.1138055754698" id="9078697818357582358">
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-      </node>
-    </node>
-  </root>
-  <root id="3905468763930344101">
-    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="3905468763930377316">
-      <property name="name" nameId="tpck.1169194664001" value="mainFrame" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dFRAME" resolveInfo="FRAME" />
-    </node>
-    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="3905468763930377318">
-      <property name="name" nameId="tpck.1169194664001" value="modelDescriptor" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="a8em.~MPSDataKeys%dMODEL" resolveInfo="MODEL" />
-    </node>
-    <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="3905468763930344102">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3905468763930344103">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3905468763930405495">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3905468763930405496">
-            <property name="name" nameId="tpck.1169194664001" value="persistenceUpdater" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4491228596001051503">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9je2.~PersistenceUpdater" resolveInfo="PersistenceUpdater" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3905468763930405499">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3905468763930405500">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9je2.~PersistenceUpdater%d&lt;init&gt;()" resolveInfo="PersistenceUpdater" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3905468763930405502">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3905468763930405504">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3905468763930405503">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3905468763930405496" resolveInfo="persistenceUpdater" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3905468763930405508">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9je2.~PersistenceUpdater%dupgradePersistenceInModel(jetbrains%dmps%dsmodel%dSModelDescriptor,java%dawt%dFrame)%cvoid" resolveInfo="upgradePersistenceInModel" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3905468763930415923">
-                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="3905468763930415924" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="3905468763930415925">
-                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="3905468763930377318" resolveInfo="modelDescriptor" />
-                </node>
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3905468763930415927">
-                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="3905468763930415928" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="3905468763930415929">
-                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="3905468763930377316" resolveInfo="mainFrame" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </root>
