@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.remote.RemoteNew_Configuration" file="RemoteNew_Configuration.java">
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+  <dependency className="jetbrains.mps.debugger.java.remote.DefaultRemoteNew_Configuration" file="DefaultRemoteNew_Configuration.java">
+    <classNode dependClassName="jetbrains.mps.debugger.java.remote.DefaultRemoteNew_Configuration_Editor" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="java.lang.CloneNotSupportedException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.remote.RemoteNew_Configuration_Factory" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -13,7 +13,7 @@
     <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
     <classNode dependClassName="com.intellij.execution.Executor" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.settings.RemoteConnectionSettings" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.remote.RemoteNew_Configuration_RunProfileState" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.remote.DefaultRemoteNew_Configuration_RunProfileState" />
     <classNode dependClassName="com.intellij.openapi.util.WriteExternalException" />
     <classNode dependClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode dependClassName="java.lang.String" />
@@ -21,36 +21,36 @@
     <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.options.SettingsEditor" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.remote.DefaultRemoteNew_Configuration_Factory" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationInfoProvider" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.remote.RemoteNew_Configuration_Editor" />
     <classNode dependClassName="com.intellij.openapi.util.JDOMExternalizable" />
     <classNode extendsClassName="jetbrains.mps.runConfigurations.runtime.IPersistentConfiguration" />
     <classNode extendsClassName="jetbrains.mps.runConfigurations.runtime.BaseMpsRunConfiguration" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.remote.RemoteNew_Configuration_Editor" file="RemoteNew_Configuration_Editor.java">
+  <dependency className="jetbrains.mps.debugger.java.remote.DefaultRemoteNew_Configuration_Editor" file="DefaultRemoteNew_Configuration_Editor.java">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.remote.RemoteNew_Configuration" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.remote.DefaultRemoteNew_Configuration" />
     <classNode dependClassName="jetbrains.mps.debugger.java.remote.RemoteSettingsEditor" />
     <classNode extendsClassName="com.intellij.openapi.options.SettingsEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.remote.RemoteNew_Configuration_Factory" file="RemoteNew_Configuration_Factory.java">
+  <dependency className="jetbrains.mps.debugger.java.remote.DefaultRemoteNew_Configuration_Factory" file="DefaultRemoteNew_Configuration_Factory.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="jetbrains.mps.debugger.java.remote.RemoteNew_Kind" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.remote.RemoteNew_Configuration" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.remote.DefaultRemoteNew_Configuration" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.java.remote.RemoteNew_Configuration_RunProfileState" file="RemoteNew_Configuration_RunProfileState.java">
+  <dependency className="jetbrains.mps.debugger.java.remote.DefaultRemoteNew_Configuration_RunProfileState" file="DefaultRemoteNew_Configuration_RunProfileState.java">
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.remote.RemoteNew_Configuration" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.run.RemoteDebugProcessHandler" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="com.intellij.execution.executors.DefaultRunExecutor" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
     <classNode dependClassName="com.intellij.execution.executors.DefaultDebugExecutor" />
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
@@ -64,6 +64,8 @@
     <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.remote.DefaultRemoteNew_Configuration" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="com.intellij.execution.configurations.RunnerSettings" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
@@ -78,9 +80,9 @@
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.remote.RemoteNew_Configuration_Factory" />
-    <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.remote.DefaultRemoteNew_Configuration_Factory" />
+    <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />

@@ -11,8 +11,10 @@ import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
+import jetbrains.mps.debug.runtime.settings.RemoteConnectionSettings;
 import org.jetbrains.annotations.NotNull;
 
 public class RemoteRunProfileState extends DebuggerRunProfileState {
@@ -44,6 +46,11 @@ public class RemoteRunProfileState extends DebuggerRunProfileState {
   @Override
   public ConfigurationPerRunnerSettings getConfigurationSettings() {
     return null;
+  }
+
+  @Override
+  public IDebuggerSettings createDebuggerSettings() {
+    return new RemoteConnectionSettings();
   }
 
   @Override

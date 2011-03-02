@@ -15,23 +15,25 @@ import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.impl.ConsoleViewImpl;
+import jetbrains.mps.debugger.java.run.RemoteDebugProcessHandler;
+import com.intellij.execution.process.ProcessHandler;
+import jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
-import com.intellij.execution.executors.DefaultRunExecutor;
+import jetbrains.mps.debug.api.IDebuggerSettings;
 import com.intellij.execution.executors.DefaultDebugExecutor;
-import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.openapi.actionSystem.AnAction;
 import javax.swing.JComponent;
 
-public class RemoteNew_Configuration_RunProfileState extends DebuggerRunProfileState implements RunProfileState {
+public class DefaultRemoteNew_Configuration_RunProfileState extends DebuggerRunProfileState implements RunProfileState {
   @NotNull
-  private final RemoteNew_Configuration myRunConfiguration;
+  private final DefaultRemoteNew_Configuration myRunConfiguration;
   @NotNull
   private final ExecutionEnvironment myEnvironment;
 
-  public RemoteNew_Configuration_RunProfileState(@NotNull RemoteNew_Configuration configuration, @NotNull Executor executor, @NotNull ExecutionEnvironment environment) {
+  public DefaultRemoteNew_Configuration_RunProfileState(@NotNull DefaultRemoteNew_Configuration configuration, @NotNull Executor executor, @NotNull ExecutionEnvironment environment) {
     myRunConfiguration = configuration;
     myEnvironment = environment;
   }
@@ -48,7 +50,10 @@ public class RemoteNew_Configuration_RunProfileState extends DebuggerRunProfileS
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
     final ConsoleViewImpl consoleView = new ConsoleViewImpl(project, false);
-    return new RemoteNew_Configuration_RunProfileState.MyExecutionResult(null, new RemoteNew_Configuration_RunProfileState.MyExecutionConsole(consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
+    RemoteDebugProcessHandler handler = new RemoteDebugProcessHandler(project);
+    ProcessHandler _processHandler = handler;
+    _processHandler.addProcessListener(new ConsoleProcessListener(consoleView));
+    return new DefaultRemoteNew_Configuration_RunProfileState.MyExecutionResult(_processHandler, new DefaultRemoteNew_Configuration_RunProfileState.MyExecutionConsole(consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         consoleView.dispose();
       }
@@ -60,10 +65,12 @@ public class RemoteNew_Configuration_RunProfileState extends DebuggerRunProfileS
     return Debuggers.getInstance().getDebuggerByName("Java");
   }
 
+  @Nullable
+  protected IDebuggerSettings createDebuggerSettings() {
+    return myRunConfiguration.getSettings();
+  }
+
   public static boolean canExecute(String executorId) {
-    if (DefaultRunExecutor.EXECUTOR_ID.equals(executorId)) {
-      return true;
-    }
     if (DefaultDebugExecutor.EXECUTOR_ID.equals(executorId)) {
       return true;
     }

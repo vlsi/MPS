@@ -23,6 +23,8 @@ import com.intellij.execution.executors.DefaultDebugExecutor;
 import jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.debug.api.IDebuggerSettings;
+import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.openapi.actionSystem.AnAction;
 import javax.swing.JComponent;
@@ -57,7 +59,9 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
       }
     });
     ProcessHandler javaProcess = Java_Command.createProcess(myConfiguration, (executor).getId().equals(DefaultDebugExecutor.EXECUTOR_ID), new ConsoleProcessListener(consoleView));
-    return new DemoApplication_Configuration_RunProfileState.MyExecutionResult(javaProcess, new DemoApplication_Configuration_RunProfileState.MyExecutionConsole(consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
+    ProcessHandler _processHandler = javaProcess;
+    consoleView.attachToProcess(_processHandler);
+    return new DemoApplication_Configuration_RunProfileState.MyExecutionResult(_processHandler, new DemoApplication_Configuration_RunProfileState.MyExecutionConsole(consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         consoleView.dispose();
       }
@@ -67,6 +71,11 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
 
   public IDebugger getDebugger() {
     return Java_Command.getDebugger();
+  }
+
+  @Nullable
+  protected IDebuggerSettings createDebuggerSettings() {
+    return new LocalConnectionSettings(true);
   }
 
   public static boolean canExecute(String executorId) {

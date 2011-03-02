@@ -6,17 +6,17 @@ import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.project.Project;
 
-public class RemoteNew_Configuration_Factory extends ConfigurationFactory {
-  public RemoteNew_Configuration_Factory(RemoteNew_Kind type) {
+public class DefaultRemoteNew_Configuration_Factory extends ConfigurationFactory {
+  public DefaultRemoteNew_Configuration_Factory(RemoteNew_Kind type) {
     super(type);
   }
 
   public RunConfiguration createTemplateConfiguration(Project project) {
-    return new RemoteNew_Configuration(project, this, "Template Configuration");
+    return new DefaultRemoteNew_Configuration(project, this, "Template Configuration");
   }
 
   @Override
   public String getName() {
-    return "RemoteNew";
+    return "DefaultRemoteNew";
   }
 }

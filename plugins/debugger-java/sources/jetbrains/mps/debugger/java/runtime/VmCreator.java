@@ -22,7 +22,9 @@ import com.sun.jdi.connect.ListeningConnector;
 import jetbrains.mps.debug.DebuggerKeys;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.api.ToDebugAPI;
+import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
@@ -73,18 +75,15 @@ public class VmCreator extends AbstractDebugSessionCreator {
     myDebuggerSession.setEvaluationProvider(new EvaluationProvider(myDebuggerSession));
   }
 
-  private DebugConnectionSettings createLocalConnectionSettings(RunProfileState state) {
-    if (state instanceof RemoteRunProfileState) {
-      RemoteRunProfileState remoteState = (RemoteRunProfileState) state;
-      return remoteState.getSettings();
-    } else if (state instanceof BaseRunProfileState) {
-      BaseRunProfileState baseRunProfileState = (BaseRunProfileState) state;
-      DebugConnectionSettings connectionSettings = new LocalConnectionSettings(true);
-      baseRunProfileState.putUserData(DebuggerKeys.CONNECTION_SETTINGS, connectionSettings.getCommandLine(true));
-      return connectionSettings;
+  private DebugConnectionSettings createLocalConnectionSettings(RunProfileState state) throws ExecutionException {
+    if (state instanceof DebuggerRunProfileState) {
+      IDebuggerSettings debuggerSettings = ((DebuggerRunProfileState) state).getDebuggerSettings();
+      if (debuggerSettings instanceof DebugConnectionSettings) {
+        return (DebugConnectionSettings) debuggerSettings;
+      }
+      throw new ExecutionException("Unknown Debugger Settings " + debuggerSettings);
     } else {
-      //todo DebuggerRunProfileState???
-      throw new RuntimeException("Unknown Run Profile State");
+      throw new ExecutionException("Unknown Run Profile State");
     }
   }
 
@@ -93,8 +92,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
   public ExecutionResult startSession(final Executor executor,
                                       final ProgramRunner runner,
                                       final RunProfileState state,
-                                      Project project
-  ) throws ExecutionException {
+                                      Project project) throws ExecutionException {
     assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
     // LOG.assertTrue(isInInitialState());
 

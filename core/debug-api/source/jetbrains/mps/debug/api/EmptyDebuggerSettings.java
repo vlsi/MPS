@@ -18,6 +18,15 @@ package jetbrains.mps.debug.api;
 import org.jetbrains.annotations.NotNull;
 
 public class EmptyDebuggerSettings implements IDebuggerSettings {
+  private static final EmptyDebuggerSettings myInstance = new EmptyDebuggerSettings();
+
+  public static EmptyDebuggerSettings getInstance() {
+    return myInstance;
+  }
+
+  private EmptyDebuggerSettings(){
+  }
+
   @NotNull
   @Override
   public String getCommandLine(boolean application) {

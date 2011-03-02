@@ -6,10 +6,10 @@ import com.intellij.openapi.options.SettingsEditor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.options.ConfigurationException;
 
-public class RemoteNew_Configuration_Editor extends SettingsEditor<RemoteNew_Configuration> {
+public class DefaultRemoteNew_Configuration_Editor extends SettingsEditor<DefaultRemoteNew_Configuration> {
   private RemoteSettingsEditor myEditor;
 
-  public RemoteNew_Configuration_Editor() {
+  public DefaultRemoteNew_Configuration_Editor() {
   }
 
   protected void disposeEditor() {
@@ -20,11 +20,11 @@ public class RemoteNew_Configuration_Editor extends SettingsEditor<RemoteNew_Con
     return myEditor = new RemoteSettingsEditor();
   }
 
-  protected void applyEditorTo(final RemoteNew_Configuration configuration) throws ConfigurationException {
+  protected void applyEditorTo(final DefaultRemoteNew_Configuration configuration) throws ConfigurationException {
     myEditor.apply(configuration.getSettings());
   }
 
-  protected void resetEditorFrom(final RemoteNew_Configuration configuration) {
+  protected void resetEditorFrom(final DefaultRemoteNew_Configuration configuration) {
     myEditor.reset(configuration.getSettings());
   }
 }

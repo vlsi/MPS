@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ComplexRunConfigurationExecutor_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ComplexRunConfigurationExecutor_Behavior" />
   <unitInfo fileName="CommandMethod_Behavior.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CommandMethod_Behavior" />
   <unitInfo fileName="ConfigurationFromExecutorReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ConfigurationFromExecutorReference_Behavior" />
   <unitInfo fileName="SettingsEditor_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.SettingsEditor_Behavior" />
+  <unitInfo fileName="ComplexRunConfigurationExecutor_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ComplexRunConfigurationExecutor_Behavior" />
   <unitInfo fileName="RunConfigurationKind_Behavior.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.RunConfigurationKind_Behavior" />
   <unitInfo fileName="RunConfiguration_Behavior.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.RunConfiguration_Behavior" />
   <unitInfo fileName="RunConfigurationExecutor_Behavior.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.RunConfigurationExecutor_Behavior" />
@@ -206,8 +206,10 @@
     </scopeInfo>
   </root>
   <root nodeId="7806358006983709805">
-    <nodeInfo nodeId="7806358006983709808" fileName="ComplexRunConfigurationExecutor_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="7806358006983709807" fileName="ComplexRunConfigurationExecutor_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="81" />
+    <nodeInfo nodeId="7806358006983709808" fileName="ComplexRunConfigurationExecutor_Behavior.java" startLine="10" startPosition="43" endLine="11" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="442015021861811748" fileName="ComplexRunConfigurationExecutor_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="7806358006983709807" fileName="ComplexRunConfigurationExecutor_Behavior.java" startLine="10" startPosition="43" endLine="11" endPosition="81" />
+    <scopeInfo nodeId="442015021861764811" fileName="ComplexRunConfigurationExecutor_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="75" />
   </root>
   <root nodeId="7806358006983757881">
     <nodeInfo nodeId="7806358006983757902" fileName="ConfigurationFromExecutorReference_Behavior.java" startLine="12" startPosition="76" endLine="13" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

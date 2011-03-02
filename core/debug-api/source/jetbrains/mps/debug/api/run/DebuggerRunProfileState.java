@@ -16,8 +16,39 @@
 package jetbrains.mps.debug.api.run;
 
 import com.intellij.execution.configurations.RunProfileState;
+import jetbrains.mps.debug.api.EmptyDebuggerSettings;
 import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.debug.api.IDebuggerSettings;
+import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class DebuggerRunProfileState implements RunProfileState {
+  private static final Logger LOG = Logger.getLogger(DebuggerRunProfileState.class);
+  @NotNull
+  protected IDebuggerSettings myDebuggerSettings = EmptyDebuggerSettings.getInstance();
+  private boolean myUpdated = false;
+
+  protected void updateDebuggerSettings() {
+    if (myUpdated) {
+      LOG.warning("Updating debugger settings twice.");
+      return;
+    }
+    myUpdated = true;
+    IDebuggerSettings debuggerSettings = createDebuggerSettings();
+    if (debuggerSettings != null) {
+      myDebuggerSettings = debuggerSettings;
+    }
+  }
+
+  @NotNull
+  public IDebuggerSettings getDebuggerSettings() {
+    updateDebuggerSettings();
+    return myDebuggerSettings;
+  }
+
+  @Nullable
+  protected abstract IDebuggerSettings createDebuggerSettings();
+
   public abstract IDebugger getDebugger();
 }
