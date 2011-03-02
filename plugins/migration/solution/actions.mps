@@ -7,13 +7,13 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <import index="a8em" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
-  <import index="9je2" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel.persistence.ui(jetbrains.mps.smodel.persistence.ui@java_stub)" version="-1" />
   <import index="lkfb" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="-1" />
   <import index="tpcn" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="4zw2" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
+  <import index="x3c6" modelUID="f:java_stub#f79b80ff-2fee-4243-9291-a156ab1cfc01#jetbrains.mps.ide.migration.persistence(jetbrains.mps.ide.migration/jetbrains.mps.ide.migration.persistence@java_stub)" version="-1" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -109,12 +109,12 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8325776762397714275">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8325776762397714276">
             <property name="name" nameId="tpck.1169194664001" value="persistenceUpdater" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8325776762397714277">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9je2.~PersistenceUpdater" resolveInfo="PersistenceUpdater" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4387843510752418132">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="x3c6.~PersistenceUpdater" resolveInfo="PersistenceUpdater" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8325776762397714278">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8325776762397714279">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9je2.~PersistenceUpdater%d&lt;init&gt;()" resolveInfo="PersistenceUpdater" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x3c6.~PersistenceUpdater%d&lt;init&gt;()" resolveInfo="PersistenceUpdater" />
               </node>
             </node>
           </node>
@@ -125,7 +125,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8325776762397714276" resolveInfo="persistenceUpdater" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8325776762397714283">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9je2.~PersistenceUpdater%dupgradePersistenceInAllVisibleModels(java%dawt%dFrame)%cvoid" resolveInfo="upgradePersistenceInAllVisibleModels" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x3c6.~PersistenceUpdater%dupgradePersistenceInAllVisibleModels(java%dawt%dFrame)%cvoid" resolveInfo="upgradePersistenceInAllVisibleModels" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8325776762397714284">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8325776762397714285" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="8325776762397714286">
@@ -439,12 +439,12 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2494245796547321812">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2494245796547321813">
             <property name="name" nameId="tpck.1169194664001" value="persistenceUpdater" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2494245796547321814">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9je2.~PersistenceUpdater" resolveInfo="PersistenceUpdater" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4387843510752436239">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="x3c6.~PersistenceUpdater" resolveInfo="PersistenceUpdater" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2494245796547321815">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2494245796547321816">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9je2.~PersistenceUpdater%d&lt;init&gt;()" resolveInfo="PersistenceUpdater" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x3c6.~PersistenceUpdater%d&lt;init&gt;()" resolveInfo="PersistenceUpdater" />
               </node>
             </node>
           </node>
@@ -455,7 +455,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2494245796547321813" resolveInfo="persistenceUpdater" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2494245796547321820">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9je2.~PersistenceUpdater%dupgradePersistenceInModule(jetbrains%dmps%dproject%dIModule,java%dawt%dFrame)%cvoid" resolveInfo="upgradePersistenceInModule" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x3c6.~PersistenceUpdater%dupgradePersistenceInModule(jetbrains%dmps%dproject%dIModule,java%dawt%dFrame)%cvoid" resolveInfo="upgradePersistenceInModule" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2494245796547321821">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2494245796547321822" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="2494245796547321823">
@@ -488,12 +488,12 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2494245796547321832">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2494245796547321833">
             <property name="name" nameId="tpck.1169194664001" value="persistenceUpdater" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2494245796547321834">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9je2.~PersistenceUpdater" resolveInfo="PersistenceUpdater" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4387843510752508759">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="x3c6.~PersistenceUpdater" resolveInfo="PersistenceUpdater" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2494245796547321835">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2494245796547321836">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9je2.~PersistenceUpdater%d&lt;init&gt;()" resolveInfo="PersistenceUpdater" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x3c6.~PersistenceUpdater%d&lt;init&gt;()" resolveInfo="PersistenceUpdater" />
               </node>
             </node>
           </node>
@@ -504,7 +504,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2494245796547321833" resolveInfo="persistenceUpdater" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2494245796547321840">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9je2.~PersistenceUpdater%dupgradePersistenceInProject(com%dintellij%dopenapi%dproject%dProject,java%dawt%dFrame)%cvoid" resolveInfo="upgradePersistenceInProject" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x3c6.~PersistenceUpdater%dupgradePersistenceInProject(com%dintellij%dopenapi%dproject%dProject,java%dawt%dFrame)%cvoid" resolveInfo="upgradePersistenceInProject" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2494245796547321841">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2494245796547321842" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="2494245796547321843">
@@ -548,12 +548,12 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2195176318621671127">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2195176318621671128">
             <property name="name" nameId="tpck.1169194664001" value="persistenceUpdater" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2195176318621671129">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9je2.~PersistenceUpdater" resolveInfo="PersistenceUpdater" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4387843510752436238">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="x3c6.~PersistenceUpdater" resolveInfo="PersistenceUpdater" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2195176318621671130">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2195176318621671131">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9je2.~PersistenceUpdater%d&lt;init&gt;()" resolveInfo="PersistenceUpdater" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x3c6.~PersistenceUpdater%d&lt;init&gt;()" resolveInfo="PersistenceUpdater" />
               </node>
             </node>
           </node>
@@ -564,7 +564,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2195176318621671128" resolveInfo="persistenceUpdater" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2195176318621671135">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9je2.~PersistenceUpdater%dupgradePersistenceInModel(jetbrains%dmps%dsmodel%dSModelDescriptor,java%dawt%dFrame)%cvoid" resolveInfo="upgradePersistenceInModel" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="x3c6.~PersistenceUpdater%dupgradePersistenceInModel(jetbrains%dmps%dsmodel%dSModelDescriptor,java%dawt%dFrame)%cvoid" resolveInfo="upgradePersistenceInModel" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2195176318621671136">
                 <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2195176318621671137" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="2195176318621671138">

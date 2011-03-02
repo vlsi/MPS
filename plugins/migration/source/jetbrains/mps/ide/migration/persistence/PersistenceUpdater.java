@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.persistence.ui;
+package jetbrains.mps.ide.migration.persistence;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.*;

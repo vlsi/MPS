@@ -11,7 +11,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.persistence.ui.PersistenceUpdater;
+import jetbrains.mps.ide.migration.persistence.PersistenceUpdater;
 import jetbrains.mps.project.IModule;
 import java.awt.Frame;
 

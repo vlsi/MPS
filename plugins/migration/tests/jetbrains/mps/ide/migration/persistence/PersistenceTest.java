@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.persistence;
+package jetbrains.mps.ide.migration.persistence;
 
 import jetbrains.mps.BaseMPSTest;
 import jetbrains.mps.ModelAssert;
@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.ui.PersistenceUpdater;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;

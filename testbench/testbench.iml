@@ -82,6 +82,7 @@
     <orderEntry type="module" module-name="make" />
     <orderEntry type="module" module-name="editor.table.tests" />
     <orderEntry type="module" module-name="miscTests" />
+    <orderEntry type="module" module-name="migration" />
   </component>
 </module>
 
