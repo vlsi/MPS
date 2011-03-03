@@ -26,6 +26,7 @@
         <jarDirectory url="file://$MODULE_DIR$/solutions/lib/lib/jmock-2.5.1" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="unitTest-runtime" />
   </component>
 </module>
 
