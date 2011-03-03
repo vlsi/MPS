@@ -22,8 +22,8 @@
   <import index="14" modelUID="f:java_stub#b55d8dfc-0d9d-43d5-886d-c644e7083bff#jetbrains.mps.smodel.persistence(jetbrains.mps.smodel.persistence@java_stub)" version="-1" />
   <import index="15" modelUID="f:java_stub#b55d8dfc-0d9d-43d5-886d-c644e7083bff#jetbrains.mps.stubs(jetbrains.mps.stubs@java_stub)" version="-1" />
   <import index="16" modelUID="f:java_stub#b55d8dfc-0d9d-43d5-886d-c644e7083bff#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="17" modelUID="f:java_stub#b55d8dfc-0d9d-43d5-886d-c644e7083bff#jetbrains.mps.project.structure.modules(stubUtils/jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
-  <import index="18" modelUID="f:java_stub#b55d8dfc-0d9d-43d5-886d-c644e7083bff#jetbrains.mps.project(stubUtils/jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="17" modelUID="f:java_stub#b55d8dfc-0d9d-43d5-886d-c644e7083bff#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
+  <import index="18" modelUID="f:java_stub#b55d8dfc-0d9d-43d5-886d-c644e7083bff#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="740251325273382988">
     <property name="name:3" value="PathItem" />
     <property name="abstractClass:3" value="true" />
@@ -2168,7 +2168,20 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="740251325273418918">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="740251325273418919">
-                <link role="baseMethodDeclaration:3" targetNodeId="16.~SModelFqName.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="SModelFqName" />
+                <link role="baseMethodDeclaration:3" targetNodeId="16.~SModelFqName.&lt;init&gt;(java.lang.String,java.lang.String,java.lang.String)" resolveInfo="SModelFqName" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3820102184366751535">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3820102184366751530">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3820102184366751529">
+                      <link role="variableDeclaration:3" targetNodeId="6093929675701331567" resolveInfo="stubLoc" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3820102184366751534">
+                      <link role="baseMethodDeclaration:3" targetNodeId="15.~StubLocation.getModuleRef():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleRef" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3820102184366751539">
+                    <link role="baseMethodDeclaration:3" targetNodeId="17.~ModuleReference.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
+                  </node>
+                </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="740251325273418920">
                   <link role="variableDeclaration:3" targetNodeId="740251325273418907" resolveInfo="pkg" />
                 </node>
@@ -2186,10 +2199,28 @@
               <link role="classifier:3" targetNodeId="16.~SModelId" resolveInfo="SModelId" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="740251325273418925">
-              <link role="baseMethodDeclaration:3" targetNodeId="16.~SModelId.foreign(java.lang.String,java.lang.String):jetbrains.mps.smodel.SModelId" resolveInfo="foreign" />
               <link role="classConcept:3" targetNodeId="16.~SModelId" resolveInfo="SModelId" />
+              <link role="baseMethodDeclaration:3" targetNodeId="16.~SModelId.foreign(java.lang.String,java.lang.String,java.lang.String):jetbrains.mps.smodel.SModelId" resolveInfo="foreign" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="740251325273470821">
                 <link role="variableDeclaration:3" targetNodeId="740251325273470799" resolveInfo="stereotype" />
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4695844298098174060">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4695844298098173374">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4695844298098173375">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4695844298098173376">
+                      <link role="variableDeclaration:3" targetNodeId="6093929675701331567" resolveInfo="stubLoc" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4695844298098173377">
+                      <link role="baseMethodDeclaration:3" targetNodeId="15.~StubLocation.getModuleRef():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleRef" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4695844298098173379">
+                    <link role="baseMethodDeclaration:3" targetNodeId="17.~ModuleReference.getModuleId():jetbrains.mps.project.ModuleId" resolveInfo="getModuleId" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4695844298098174064">
+                  <link role="baseMethodDeclaration:3" targetNodeId="18.~ModuleId.toString():java.lang.String" resolveInfo="toString" />
+                </node>
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="740251325273418927">
                 <link role="variableDeclaration:3" targetNodeId="740251325273418907" resolveInfo="pkg" />

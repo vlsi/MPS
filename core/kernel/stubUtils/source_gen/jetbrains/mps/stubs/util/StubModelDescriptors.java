@@ -58,8 +58,8 @@ public class StubModelDescriptors {
   }
 
   public SModelReference smodelRefWithId(String pkg) {
-    SModelFqName fqname = new SModelFqName(pkg, stubStereotype);
-    SModelId modelId = SModelId.foreign(stubStereotype, pkg);
+    SModelFqName fqname = new SModelFqName(stubLoc.getModuleRef().getModuleFqName(), pkg, stubStereotype);
+    SModelId modelId = SModelId.foreign(stubStereotype, stubLoc.getModuleRef().getModuleId().toString(), pkg);
     return new SModelReference(fqname, modelId);
   }
 
