@@ -7,4 +7,7 @@ public enum Fruits {
   APPLES(),
   ORANGES(),
   CARS();
+
+  Fruits() {
+  }
 }

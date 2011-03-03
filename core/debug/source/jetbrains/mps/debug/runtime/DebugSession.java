@@ -163,7 +163,6 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
     @Override
     public void processAttached(@NotNull DebugVMEventsProcessor process) {
       myExecutionState = ExecutionState.Running;
-      myProcessHandler.notifyTextAvailable("Connected to the target VM, " + process.getConnectionString() + "\n", ProcessOutputTypes.SYSTEM);
     }
 
     @Override
@@ -171,7 +170,6 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
       myExecutionState = ExecutionState.Stopped;
       setState(getUiState(), new JavaUiState(null, DebugSession.this), false);
       fireSessionResumed(DebugSession.this); // TODO hack
-      myProcessHandler.notifyTextAvailable("Disconnected from the target VM, " + process.getConnectionString() + "\n", ProcessOutputTypes.SYSTEM);
     }
   }
 

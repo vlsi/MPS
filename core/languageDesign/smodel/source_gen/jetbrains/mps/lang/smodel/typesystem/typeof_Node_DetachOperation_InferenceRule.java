@@ -25,7 +25,6 @@ public class typeof_Node_DetachOperation_InferenceRule extends AbstractInference
       SNode _nodeToCheck_1029348928467 = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(node);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4733308734233397410", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4733308734233397421", false), (SNode) new typeof_Node_DetachOperation_InferenceRule.QuotationClass_w8228d_a0a1a0().createNode(typeCheckingContext.getRepresentative(Concept_typevar_1228341932957), typeCheckingContext), false, _info_12389875345);
     }
     {

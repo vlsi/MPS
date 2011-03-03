@@ -27,7 +27,7 @@ public class JavaLocation extends ProxyForJava implements ILocation {
     try {
       return myLocation.sourceName();
     } catch (AbsentInformationException ex) {
-      LOG.error(ex);
+      LOG.debug("", ex); //just in case we do not swallow it
       return null;
     }
   }

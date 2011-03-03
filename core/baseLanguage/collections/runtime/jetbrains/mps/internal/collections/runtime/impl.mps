@@ -5,8 +5,8 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <import index="urs3" modelUID="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" version="-1" />
   <import index="kos1" modelUID="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" version="-1" />
-  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
-  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -6237,7 +6237,6 @@
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.DoWhileStatement" typeId="tpee.1177666668936" id="6543581031674028711">
-            <property name="label" nameId="tpee.1199465379613" value="loop" />
             <node role="condition" roleId="tpee.1177666688034" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6543581031674028712">
               <property name="value" nameId="tpee.1068580123138" value="true" />
             </node>
@@ -6267,7 +6266,9 @@
                       <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="6543581031674028725">
                         <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="6543581031674028726">
                           <node role="statement" roleId="tpee.1068581517665" type="tpee.BreakStatement" typeId="tpee.1081855346303" id="6543581031674028727">
-                            <property name="label" nameId="tpee.1199466066648" value="loop" />
+                            <node role="loopLabelReference" roleId="tpee.9056323058805176516" type="tpee.LoopLabelReference" typeId="tpee.363746191845183785" id="2997876658469103886">
+                              <link role="loopLabel" roleId="tpee.363746191845183786" targetNodeId="2997876658469103885" resolveInfo="loop" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -6315,7 +6316,9 @@
                               </node>
                             </node>
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.BreakStatement" typeId="tpee.1081855346303" id="6543581031674028746">
-                              <property name="label" nameId="tpee.1199466066648" value="loop" />
+                              <node role="loopLabelReference" roleId="tpee.9056323058805176516" type="tpee.LoopLabelReference" typeId="tpee.363746191845183785" id="2997876658469103887">
+                                <link role="loopLabel" roleId="tpee.363746191845183786" targetNodeId="2997876658469103885" resolveInfo="loop" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -6342,7 +6345,9 @@
                       <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="6543581031674028755">
                         <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="6543581031674028756">
                           <node role="statement" roleId="tpee.1068581517665" type="tpee.BreakStatement" typeId="tpee.1081855346303" id="6543581031674028757">
-                            <property name="label" nameId="tpee.1199466066648" value="loop" />
+                            <node role="loopLabelReference" roleId="tpee.9056323058805176516" type="tpee.LoopLabelReference" typeId="tpee.363746191845183785" id="2997876658469103888">
+                              <link role="loopLabel" roleId="tpee.363746191845183786" targetNodeId="2997876658469103885" resolveInfo="loop" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -6390,7 +6395,9 @@
                               </node>
                             </node>
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.BreakStatement" typeId="tpee.1081855346303" id="6543581031674028776">
-                              <property name="label" nameId="tpee.1199466066648" value="loop" />
+                              <node role="loopLabelReference" roleId="tpee.9056323058805176516" type="tpee.LoopLabelReference" typeId="tpee.363746191845183785" id="2997876658469103889">
+                                <link role="loopLabel" roleId="tpee.363746191845183786" targetNodeId="2997876658469103885" resolveInfo="loop" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -6453,7 +6460,9 @@
                           </node>
                         </node>
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.BreakStatement" typeId="tpee.1081855346303" id="6543581031674028800">
-                          <property name="label" nameId="tpee.1199466066648" value="loop" />
+                          <node role="loopLabelReference" roleId="tpee.9056323058805176516" type="tpee.LoopLabelReference" typeId="tpee.363746191845183785" id="2997876658469103890">
+                            <link role="loopLabel" roleId="tpee.363746191845183786" targetNodeId="2997876658469103885" resolveInfo="loop" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -6469,7 +6478,9 @@
                       <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="6543581031674028805">
                         <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="6543581031674028806">
                           <node role="statement" roleId="tpee.1068581517665" type="tpee.BreakStatement" typeId="tpee.1081855346303" id="6543581031674028807">
-                            <property name="label" nameId="tpee.1199466066648" value="loop" />
+                            <node role="loopLabelReference" roleId="tpee.9056323058805176516" type="tpee.LoopLabelReference" typeId="tpee.363746191845183785" id="2997876658469103891">
+                              <link role="loopLabel" roleId="tpee.363746191845183786" targetNodeId="2997876658469103885" resolveInfo="loop" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -6517,7 +6528,9 @@
                               </node>
                             </node>
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.BreakStatement" typeId="tpee.1081855346303" id="6543581031674028826">
-                              <property name="label" nameId="tpee.1199466066648" value="loop" />
+                              <node role="loopLabelReference" roleId="tpee.9056323058805176516" type="tpee.LoopLabelReference" typeId="tpee.363746191845183785" id="2997876658469103892">
+                                <link role="loopLabel" roleId="tpee.363746191845183786" targetNodeId="2997876658469103885" resolveInfo="loop" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -6553,7 +6566,9 @@
                         <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="6543581031674028839">
                           <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="6543581031674028840">
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.BreakStatement" typeId="tpee.1081855346303" id="6543581031674028841">
-                              <property name="label" nameId="tpee.1199466066648" value="loop" />
+                              <node role="loopLabelReference" roleId="tpee.9056323058805176516" type="tpee.LoopLabelReference" typeId="tpee.363746191845183785" id="2997876658469103893">
+                                <link role="loopLabel" roleId="tpee.363746191845183786" targetNodeId="2997876658469103885" resolveInfo="loop" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -6601,7 +6616,9 @@
                                 </node>
                               </node>
                               <node role="statement" roleId="tpee.1068581517665" type="tpee.BreakStatement" typeId="tpee.1081855346303" id="6543581031674028860">
-                                <property name="label" nameId="tpee.1199466066648" value="loop" />
+                                <node role="loopLabelReference" roleId="tpee.9056323058805176516" type="tpee.LoopLabelReference" typeId="tpee.363746191845183785" id="2997876658469103894">
+                                  <link role="loopLabel" roleId="tpee.363746191845183786" targetNodeId="2997876658469103885" resolveInfo="loop" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -6651,7 +6668,9 @@
                               </node>
                             </node>
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.BreakStatement" typeId="tpee.1081855346303" id="6543581031674028879">
-                              <property name="label" nameId="tpee.1199466066648" value="loop" />
+                              <node role="loopLabelReference" roleId="tpee.9056323058805176516" type="tpee.LoopLabelReference" typeId="tpee.363746191845183785" id="2997876658469103895">
+                                <link role="loopLabel" roleId="tpee.363746191845183786" targetNodeId="2997876658469103885" resolveInfo="loop" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -6661,6 +6680,9 @@
                   </node>
                 </node>
               </node>
+            </node>
+            <node role="loopLabel" roleId="tpee.363746191845183793" type="tpee.LoopLabel" typeId="tpee.363746191845175146" id="2997876658469103885">
+              <property name="name" nameId="tpck.1169194664001" value="loop" />
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="6401275180973221760">
@@ -10803,7 +10825,6 @@
             </node>
             <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="6543581031674036512">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.DoWhileStatement" typeId="tpee.1177666668936" id="6543581031674036513">
-                <property name="label" nameId="tpee.1199465379613" value="skipping" />
                 <node role="condition" roleId="tpee.1177666688034" type="tpee.GreaterThanExpression" typeId="tpee.1081506762703" id="6543581031674036514">
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6543581031674036515">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6543581031674036261" resolveInfo="countDown" />
@@ -10875,6 +10896,9 @@
                       </node>
                     </node>
                   </node>
+                </node>
+                <node role="loopLabel" roleId="tpee.363746191845183793" type="tpee.LoopLabel" typeId="tpee.363746191845175146" id="2997876658469103876">
+                  <property name="name" nameId="tpck.1169194664001" value="skipping" />
                 </node>
               </node>
             </node>

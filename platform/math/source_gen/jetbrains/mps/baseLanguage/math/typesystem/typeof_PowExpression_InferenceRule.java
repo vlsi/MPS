@@ -44,7 +44,6 @@ public class typeof_PowExpression_InferenceRule extends AbstractInferenceRule_Ru
               SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "exponent", true);
               BaseQuickFixProvider intentionProvider = null;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339050393", 0, intentionProvider);
-              _info_12389875345.setInequationGroup("default");
               typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339041697", true), (SNode) SNodeOperations.copyNode(MathTypeUtil.qDouble), false, _info_12389875345);
             }
           } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t1_typevar_1238338983313), "jetbrains.mps.baseLanguage.math.structure.BigIntegerType") || SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t1_typevar_1238338983313), "jetbrains.mps.baseLanguage.math.structure.BigDecimalType") || SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t1_typevar_1238338983313), "jetbrains.mps.baseLanguage.math.structure.ComplexType")) {
@@ -58,7 +57,6 @@ public class typeof_PowExpression_InferenceRule extends AbstractInferenceRule_Ru
               SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "exponent", true);
               BaseQuickFixProvider intentionProvider = null;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "When power base has complex or big decimal type power exponent must have integer type", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339123613", 0, intentionProvider);
-              _info_12389875345.setInequationGroup("default");
               typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339118558", true), (SNode) SNodeOperations.copyNode(MathTypeUtil.qInt), false, _info_12389875345);
             }
           } else {

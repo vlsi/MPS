@@ -60,7 +60,7 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
     });
     ProcessHandler javaProcess = Java_Command.createProcess(myConfiguration, (executor).getId().equals(DefaultDebugExecutor.EXECUTOR_ID), new ConsoleProcessListener(consoleView));
     ProcessHandler _processHandler = javaProcess;
-    consoleView.attachToProcess(_processHandler);
+    _processHandler.addProcessListener(new ConsoleProcessListener(consoleView));
     return new DemoApplication_Configuration_RunProfileState.MyExecutionResult(_processHandler, new DemoApplication_Configuration_RunProfileState.MyExecutionConsole(consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         consoleView.dispose();

@@ -11,8 +11,10 @@ import jetbrains.mps.smodel.INodeAdapter;
 public interface ISearchScope {
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition);
+  @Deprecated
   @NotNull
   public List<INodeAdapter> getAdapters(Condition<INodeAdapter> condition);
+  @Deprecated
   @NotNull
   public <T extends INodeAdapter> List<T> getAdapters(Class<T> adapterClass);
   public boolean isInScope(SNode node);

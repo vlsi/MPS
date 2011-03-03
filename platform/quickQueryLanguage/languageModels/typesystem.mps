@@ -16,6 +16,7 @@
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="tpg2" modelUID="r:00000000-0000-4000-0000-011c8959050e(jetbrains.mps.quickQueryLanguage.typesystem)" version="-1" implicit="yes" />
   <import index="tpeh" modelUID="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" version="-1" implicit="yes" />
+  <import index="oe5h" modelUID="r:a2f19e10-2813-4139-a451-ab70035813fc(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1218796573288">
       <property name="name" nameId="tpck.1169194664001" value="typeof_Query_node_Parameter" />
@@ -87,7 +88,7 @@
               <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="5046156961652249698" resolveInfo="bmd" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5046156961652249711">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1239354342632" resolveInfo="getExpectedRetType" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1239354342632" resolveInfo="getExpectedRetType" />
             </node>
           </node>
         </node>
@@ -207,6 +208,7 @@
                         </node>
                       </node>
                       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="5046156961652249764">
+                        <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
                         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="5046156961652249765">
                           <node role="normalType" roleId="tpd4.1185788644032" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5046156961652249766">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5046156961652249707" resolveInfo="expectedRetType" />
@@ -236,7 +238,6 @@
                             <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1068581517676" />
                           </node>
                         </node>
-                        <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="5970100369440882640" />
                       </node>
                     </node>
                   </node>
@@ -259,7 +260,7 @@
                   <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="5046156961652249698" resolveInfo="bmd" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5046156961652249784">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1239354409446" resolveInfo="getLastStatement" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1239354409446" resolveInfo="getLastStatement" />
                 </node>
               </node>
             </node>
@@ -296,6 +297,7 @@
                 </node>
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="5046156961652249799">
+                <property name="inequationPriority" nameId="tpd4.1212056105818" value="0" />
                 <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="5046156961652249800">
                   <node role="normalType" roleId="tpd4.1185788644032" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5046156961652249801">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5046156961652249707" resolveInfo="expectedRetType" />
@@ -325,7 +327,6 @@
                     <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1068580123156" />
                   </node>
                 </node>
-                <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="5970100369440882474" />
               </node>
             </node>
           </node>

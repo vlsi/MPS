@@ -35,7 +35,6 @@ public class typeof_SimpleBuilder_InferenceRule extends AbstractInferenceRule_Ru
         SNode _nodeToCheck_1029348928467 = ListSequence.fromList(SLinkOperations.getTargets(builder, "argument", true)).getElement(i);
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "4315270135340745084", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("default");
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "4315270135340745046", true), (SNode) SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(builder, "declaration", false), "parameter", true)).getElement(i), "type", true), false, _info_12389875345);
       }
     }

@@ -5,6 +5,9 @@ package jetbrains.mps.complex.sandbox;
 import jetbrains.mps.samples.complex.runtime.Complex;
 
 public class Main {
+  public Main() {
+  }
+
   public static void main(String[] args) {
     Complex c1 = Complex.sum(new Complex(1, 0), Complex.product(new Complex(2, 0), Complex.getI()));
     Complex c2 = Complex.sub(new Complex(1, 0), Complex.product(new Complex(2, 0), Complex.getI()));

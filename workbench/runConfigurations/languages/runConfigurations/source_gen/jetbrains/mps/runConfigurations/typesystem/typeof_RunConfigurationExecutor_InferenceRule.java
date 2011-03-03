@@ -24,7 +24,6 @@ public class typeof_RunConfigurationExecutor_InferenceRule extends AbstractInfer
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(runConfigurationExecutor, "debugger", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "4371737370140017633", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "4371737370140017625", true), (SNode) new typeof_RunConfigurationExecutor_InferenceRule.QuotationClass_zeqdpd_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }

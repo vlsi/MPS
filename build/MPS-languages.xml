@@ -467,6 +467,14 @@
       <zipfileset dir="core/languageDesign/make/classes" />
     </jar>
   </target>
+  <target name="pack.jetbrains.mps.lang.project">
+    <mkdir dir="core/languageDesign/project/classes_gen" />
+    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.project.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/languageDesign/project/project.mpl" prefix="module" />
+      <zipfileset dir="core/languageDesign/project" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/languageDesign/project/classes_gen" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.make.script">
     <mkdir dir="core/languageDesign/make/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.make.script.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">

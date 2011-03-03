@@ -25,7 +25,6 @@ public class typeof_EditorExpression_InferenceRule extends AbstractInferenceRule
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(editorExpression, "persistentPropertyDeclaration", false);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "3815075966210472766", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "3815075966210472768", true), (SNode) new typeof_EditorExpression_InferenceRule.QuotationClass_a3jan8_a0a1a0().createNode(typeCheckingContext.getRepresentative(T_typevar_3815075966210467113), typeCheckingContext), false, _info_12389875345);
     }
     {

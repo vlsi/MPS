@@ -11,6 +11,7 @@
     <property name="build.number.file" value="${input.dir}/build.number" />
     <fail unless="mps_home" message="Property mps_home unspecified." />
     <fail unless="input.dir" message="Property input.dir unspecified." />
+    <fail unless="mps_home" message="Property mps_home unspecified." />
     <fail unless="output.dir" message="Property output.dir unspecified." />
     <property file="${mps_home}/build.number" prefix="repo" />
     <echo file="${build.number.file}" append="true">${line.separator}idea.platform.build.number=${repo.idea.platform.build.number}</echo>

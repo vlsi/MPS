@@ -66,6 +66,7 @@ public class TypeSystemTraceTree extends MPSTree {
   private boolean showTypesExpansion = false;
   private ShowTypeSystemTrace myParent;
   private State myStateCopy;
+  private State myGenerationStateCopy;
   private AbstractOperation myOldDifference;
 
   public boolean isTraceForNode() {
@@ -78,9 +79,11 @@ public class TypeSystemTraceTree extends MPSTree {
 
   public void setGenerationMode(boolean generationMode) {
     this.generationMode = generationMode;
+    myOldDifference = null;
     if (this.generationMode) {
       TypeCheckingContextNew context = (TypeCheckingContextNew)TypeContextManager.getInstance().createTypeCheckingContext(mySelectedNode);
       context.getTypeInGenerationMode(mySelectedNode);
+      myGenerationStateCopy = context.getState();
       myDifference = context.getOperation();
       myCurrentContext = context;
     } else {
@@ -249,15 +252,16 @@ public class TypeSystemTraceTree extends MPSTree {
   private void showState(final MPSTreeNode newNode) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        State state=  generationMode ? myGenerationStateCopy : myStateCopy;
         AbstractOperation rootDifference = myCurrentContext.getOperation();
         Object difference = newNode.getUserObject();
         if (myOldDifference == null) {
-          myStateCopy.clear(false);
-          myStateCopy.executeOperationsBeforeAnchor(rootDifference, difference);
+          state.clear(false);
+          state.executeOperationsBeforeAnchor(rootDifference, difference);
         } else {
-          myStateCopy.updateState(myOldDifference, (AbstractOperation)difference);
+          state.updateState(myOldDifference, (AbstractOperation)difference);
         }
-        myParent.resetState(myStateCopy);
+        myParent.resetState(state);
         myOldDifference = (AbstractOperation)difference;
       }
     });

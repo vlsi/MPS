@@ -2,6 +2,7 @@
 <debugInfo>
   <unitInfo fileName="ClassifierMember.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ClassifierMember" />
   <unitInfo fileName="IControlFlowInterrupter.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter" />
+  <unitInfo fileName="IFinalWrapper.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IFinalWrapper" />
   <unitInfo fileName="IVariableDeclaration.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IVariableDeclaration" />
   <unitInfo fileName="IWillBeClassifier.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IWillBeClassifier" />
   <unitInfo fileName="ITryCatchStatement.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ITryCatchStatement" />

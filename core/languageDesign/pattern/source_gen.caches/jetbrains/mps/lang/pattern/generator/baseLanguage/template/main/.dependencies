@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.pattern.generator.baseLanguage.template.main.QueriesGenerated" file="QueriesGenerated.java">
-    <classNode dependClassName="jetbrains.mps.lang.pattern.generator.baseLanguage.template.util.PatternGeneratorUtil" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

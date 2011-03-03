@@ -59,7 +59,6 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
               SNode _nodeToCheck_1029348928467 = invoke;
               BaseQuickFixProvider intentionProvider = null;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2608385503904033275", 0, intentionProvider);
-              _info_12389875345.setInequationGroup("default");
               typeCheckingContext.createGreaterThanInequation((SNode) typeCheckingContext.getRepresentative(ret_typevar_642108346586029335), (SNode) FunctionTypeUtil.getResultType(typeCheckingContext.getRepresentative(ftype_typevar_642108346586029342)), false, _info_12389875345);
             }
             {
@@ -80,7 +79,6 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
                   SNode _nodeToCheck_1029348928467 = pt;
                   BaseQuickFixProvider intentionProvider = null;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2608385503904033282", 0, intentionProvider);
-                  _info_12389875345.setInequationGroup("default");
                   typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2608385503904033284", true), (SNode) fpt, false, _info_12389875345);
                 }
               }

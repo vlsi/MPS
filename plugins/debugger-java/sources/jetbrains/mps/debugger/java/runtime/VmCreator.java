@@ -97,14 +97,14 @@ public class VmCreator extends AbstractDebugSessionCreator {
     // LOG.assertTrue(isInInitialState());
 
     myConnectionSettings = createLocalConnectionSettings(state);
-    myDebugVMEventsProcessor.setConnectionSettings(getConnectionSettings().getPresentation());
+    myDebugVMEventsProcessor.getSystemMessagesReporter().setProcessName(getConnectionSettings().getPresentation());
 
     createVirtualMachine();
     try {
       synchronized (myProcessListeners) {
         myExecutionResult = execute(executor, runner, state);
         if (myExecutionResult == null) {
-          fail();
+          createVmFailed("Execution result created by " + runner + " is null.");
           return null;
         }
         for (ProcessListener processListener : myProcessListeners) {
@@ -113,13 +113,24 @@ public class VmCreator extends AbstractDebugSessionCreator {
         myProcessListeners.clear();
         @NotNull ProcessHandler processHandler = myExecutionResult.getProcessHandler();
         myDebuggerSession.setProcessHandler(processHandler);
+        myDebugVMEventsProcessor.getSystemMessagesReporter().setProcessHandler(processHandler);
         fixStopBugUnderLinux(processHandler, myDebuggerSession);
       }
     } catch (ExecutionException e) {
-      fail();
+      createVmFailed(e);
       throw e;
     }
     return myExecutionResult;
+  }
+
+  private void createVmFailed(Throwable t) {
+    createVmFailed(t.getMessage());
+    LOG.warning("Create VM failed", t);
+  }
+
+  private void createVmFailed(String message) {
+    myDebugVMEventsProcessor.getSystemMessagesReporter().reportError(message);
+    fail();
   }
 
   private void fixStopBugUnderLinux(final ProcessHandler processHandler, final DebugSession session) {
@@ -153,7 +164,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
       }
       myIsFailed = true;
     }
-    stop(false);
+    myDebugVMEventsProcessor.stop(false);
   }
 
 
@@ -184,8 +195,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
               LOG.debug("Created VM " + vm);
               break;
             } catch (Throwable t) {
-              fail();
-              LOG.error(t);
+              createVmFailed(t);
               break;
             }
           }
@@ -244,7 +254,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
           LOG.debug("Start accepting.");
           return connector.accept(myArguments);
         } catch (IOException ex) {
-          LOG.error(ex);
           throw new RunFailedException(ex);
         } finally {
           if (myArguments != null) {
@@ -263,7 +272,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
         try {
           return connector.attach(myArguments);
         } catch (IOException ex) {
-          LOG.error(ex);
           throw new RunFailedException(ex);
         }
       }
@@ -321,10 +329,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
       }
     }
     return null;
-  }
-
-  public void stop(boolean forceTerminate) {
-    //todo impl
   }
 
   public void addProcessListener(ProcessListener processListener) {

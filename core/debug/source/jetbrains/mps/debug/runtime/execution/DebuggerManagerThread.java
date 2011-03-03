@@ -53,6 +53,7 @@ public class DebuggerManagerThread implements IDebuggerManagerThread {
     myWorkerThread = null;
     // in idea they also deal with case in which current command takes to long to execute
     // see DebuggerManagerThreadImpl.terminateAndInvoke
+    // thanks god the comment above exists
   }
 
   @Override
@@ -125,7 +126,7 @@ public class DebuggerManagerThread implements IDebuggerManagerThread {
       while (true) {
         try {
           processCommand(myCommandQueue.get());
-        } catch (VMDisconnectedException e) {
+        } catch (VMDisconnectedException e) { // todo if not this exception this code could be in debug-api
           break;
         } catch (DebuggerCommandQueueClosedException e) {
           break;

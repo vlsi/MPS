@@ -39,7 +39,7 @@ public class JavaThread extends ProxyForJava implements IThread {
       }
       return frames;
     } catch (IncompatibleThreadStateException ex) {
-      LOG.warning("IncompatibleThreadStateException", ex);
+      LOG.debug("IncompatibleThreadStateException", ex);
       return Collections.emptyList();
     }
   }

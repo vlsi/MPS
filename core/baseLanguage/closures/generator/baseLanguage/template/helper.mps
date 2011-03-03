@@ -6557,7 +6557,6 @@
                       </node>
                     </node>
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="6789088485022860903">
-                      <property name="label" nameId="tpee.1199465379613" value="with_tvd" />
                       <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="6789088485022860904">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="6789088485022860910">
                           <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="6789088485022860926">
@@ -6686,7 +6685,9 @@
                                         </node>
                                       </node>
                                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ContinueStatement" typeId="tpee.1082113931046" id="6789088485022860966">
-                                        <property name="label" nameId="tpee.1199470060942" value="with_tvd" />
+                                        <node role="loopLabelReference" roleId="tpee.9056323058805226429" type="tpee.LoopLabelReference" typeId="tpee.363746191845183785" id="2997876658469103904">
+                                          <link role="loopLabel" roleId="tpee.363746191845183786" targetNodeId="2997876658469103903" resolveInfo="with_tvd" />
+                                        </node>
                                       </node>
                                     </node>
                                   </node>
@@ -6762,6 +6763,9 @@
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="6789088485022860909">
                           <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1109279881614" />
                         </node>
+                      </node>
+                      <node role="loopLabel" roleId="tpee.363746191845183793" type="tpee.LoopLabel" typeId="tpee.363746191845175146" id="2997876658469103903">
+                        <property name="name" nameId="tpck.1169194664001" value="with_tvd" />
                       </node>
                     </node>
                     <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1215470164415">

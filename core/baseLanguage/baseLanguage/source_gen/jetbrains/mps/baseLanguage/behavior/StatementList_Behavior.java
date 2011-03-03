@@ -54,8 +54,14 @@ public class StatementList_Behavior {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() > 1) {
       return false;
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.IContainsStatementList")) {
-      return false;
+    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() == 1) {
+      SNode statement = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).first();
+      if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")) {
+        return false;
+      }
+      if (ListSequence.fromList(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, new String[]{})).isNotEmpty()) {
+        return false;
+      }
     }
     return true;
   }

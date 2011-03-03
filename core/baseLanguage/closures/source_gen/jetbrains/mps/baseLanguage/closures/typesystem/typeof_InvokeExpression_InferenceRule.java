@@ -41,7 +41,6 @@ public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule
         SNode _nodeToCheck_1029348928467 = p;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "7073484723012007685", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("default");
         typeCheckingContext.createGreaterThanInequation((SNode) typeCheckingContext.getRepresentative(ClosureFormalParamType_typevar_7073484723012007681), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "7073484723012007691", true), true, _info_12389875345);
       }
       ListSequence.fromList(ptypes).addElement(typeCheckingContext.getRepresentative(ClosureFormalParamType_typevar_7073484723012007681));

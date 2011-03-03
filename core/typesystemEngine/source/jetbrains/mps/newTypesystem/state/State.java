@@ -262,7 +262,11 @@ public class State {
     }
     myOperationStack.push(operation);
     operation.execute(this);
-    myOperationStack.pop();
+    if (!myOperationStack.empty()) {
+      myOperationStack.pop();
+    } else {
+      LOG.warning("Operation stack in type system state was empty");
+    }
   }
 
   public AbstractOperation getLastOperation() {

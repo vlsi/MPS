@@ -27,7 +27,6 @@ public class typeof_Node_GetConceptOperation_InferenceRule extends AbstractInfer
       SNode _nodeToCheck_1029348928467 = operand;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225294384509", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225294367215", false), (SNode) new typeof_Node_GetConceptOperation_InferenceRule.QuotationClass_qqzg7i_a0a2a0().createNode(typeCheckingContext.getRepresentative(C_typevar_1225294414283), typeCheckingContext), false, _info_12389875345);
     }
     {

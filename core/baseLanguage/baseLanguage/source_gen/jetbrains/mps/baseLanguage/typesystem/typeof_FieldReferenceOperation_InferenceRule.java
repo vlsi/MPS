@@ -45,7 +45,6 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
       SNode _nodeToCheck_1029348928467 = fieldReference;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206554174350", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.getRepresentative(InstanceType_typevar_1206554174334), (SNode) new typeof_FieldReferenceOperation_InferenceRule.QuotationClass_7hlfbz_a0a5a0().createNode(fieldClassifier, typeCheckingContext), true, _info_12389875345);
     }
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
@@ -60,8 +59,6 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
       SNode _nodeToCheck_1029348928467 = null;
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044098", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("priority_4_1759628044690732301");
-      _info_12389875345.addInequationGroupBefore("priority_3_1759628044690732300");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(fieldReference, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044095", true), (SNode) new typeof_FieldReferenceOperation_InferenceRule.QuotationClass_7hlfbz_a0a9a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, fieldClassifier, typeCheckingContext.getRepresentative(InstanceType_typevar_1206554174334), mmap);

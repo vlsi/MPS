@@ -4,11 +4,11 @@
   <unitInfo fileName="TextMacro_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.constraints.TextMacro_Constraints" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.constraints.ConstraintsDescriptor" />
   <root nodeId="9152904044274469613">
-    <nodeInfo nodeId="9152904044274484469" fileName="TextMacro_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="146" />
+    <nodeInfo nodeId="9152904044274484469" fileName="TextMacro_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="9152904044274469615" fileName="TextMacro_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="146" />
   </root>
   <root nodeId="9152904044274518160">
-    <nodeInfo nodeId="9152904044274518163" fileName="ElementMacro_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="146" />
+    <nodeInfo nodeId="9152904044274518163" fileName="ElementMacro_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="9152904044274518162" fileName="ElementMacro_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="146" />
   </root>
 </debugInfo>

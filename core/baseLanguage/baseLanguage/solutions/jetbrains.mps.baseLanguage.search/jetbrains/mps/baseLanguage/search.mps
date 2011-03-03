@@ -40,6 +40,7 @@
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
   <import index="5h2r" modelUID="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" version="-1" implicit="yes" />
+  <import index="oe5h" modelUID="r:a2f19e10-2813-4139-a451-ab70035813fc(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3161373106581136688">
       <property name="name" nameId="tpck.1169194664001" value="ClassifiersCache" />
@@ -4772,7 +4773,6 @@
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="3161373106581138798">
-            <property name="label" nameId="tpee.1199465379613" value="forEachInAllMethods" />
             <node role="iterable" roleId="tpee.1144226360166" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3161373106581138799">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161373106581138733" resolveInfo="allMethods" />
             </node>
@@ -5045,7 +5045,9 @@
                               </node>
                             </node>
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ContinueStatement" typeId="tpee.1082113931046" id="3161373106581138913">
-                              <property name="label" nameId="tpee.1199470060942" value="forEachInAllMethods" />
+                              <node role="loopLabelReference" roleId="tpee.9056323058805226429" type="tpee.LoopLabelReference" typeId="tpee.363746191845183785" id="2997876658469103911">
+                                <link role="loopLabel" roleId="tpee.363746191845183786" targetNodeId="2997876658469103910" resolveInfo="forEachInAllMethods" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -5170,7 +5172,9 @@
                                   </node>
                                 </node>
                                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ContinueStatement" typeId="tpee.1082113931046" id="3161373106581138964">
-                                  <property name="label" nameId="tpee.1199470060942" value="forEachInAllMethods" />
+                                  <node role="loopLabelReference" roleId="tpee.9056323058805226429" type="tpee.LoopLabelReference" typeId="tpee.363746191845183785" id="2997876658469103912">
+                                    <link role="loopLabel" roleId="tpee.363746191845183786" targetNodeId="2997876658469103910" resolveInfo="forEachInAllMethods" />
+                                  </node>
                                 </node>
                               </node>
                             </node>
@@ -5315,6 +5319,9 @@
                   </node>
                 </node>
               </node>
+            </node>
+            <node role="loopLabel" roleId="tpee.363746191845183793" type="tpee.LoopLabel" typeId="tpee.363746191845175146" id="2997876658469103910">
+              <property name="name" nameId="tpck.1169194664001" value="forEachInAllMethods" />
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3161373106581139019">
@@ -15574,7 +15581,7 @@
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2455828994472385252" resolveInfo="desc" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2455828994472385289">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.7165541881557222913" resolveInfo="isDescendant" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.7165541881557222913" resolveInfo="isDescendant" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2455828994472385290">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2455828994472385272" resolveInfo="anc" />
                                   </node>

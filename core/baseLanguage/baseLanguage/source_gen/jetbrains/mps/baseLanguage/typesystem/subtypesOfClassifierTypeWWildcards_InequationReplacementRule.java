@@ -60,7 +60,6 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                       BaseQuickFixProvider intentionProvider = null;
                       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6281385834685063550", 0, intentionProvider);
                       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-                      _info_12389875345.setInequationGroup("default");
                       typeCheckingContext.createGreaterThanInequation((SNode) myParam, (SNode) finalTypeParam, false, _info_12389875345);
                     }
                     {

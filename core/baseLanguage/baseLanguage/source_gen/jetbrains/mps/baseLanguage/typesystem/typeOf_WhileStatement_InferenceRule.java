@@ -24,7 +24,6 @@ public class typeOf_WhileStatement_InferenceRule extends AbstractInferenceRule_R
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(whileStatement, "condition", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176895826326", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176895814772", true), (SNode) new typeOf_WhileStatement_InferenceRule.QuotationClass_pb4wtd_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }

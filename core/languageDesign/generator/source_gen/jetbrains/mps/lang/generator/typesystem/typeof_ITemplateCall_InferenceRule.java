@@ -39,7 +39,6 @@ public class typeof_ITemplateCall_InferenceRule extends AbstractInferenceRule_Ru
             SNode _nodeToCheck_1029348928467 = ListSequence.fromList(actualArguments).getElement(i);
             BaseQuickFixProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "4665309944889675072", 0, intentionProvider);
-            _info_12389875345.setInequationGroup("default");
             typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "4665309944889705399", true), (SNode) SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).getElement(i), "type", true), false, _info_12389875345);
           }
         }

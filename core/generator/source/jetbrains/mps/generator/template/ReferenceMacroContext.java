@@ -53,6 +53,7 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
 
   public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode inputNode, String label, IOperationContext operationContext) {
     List<SNode> outputNodes = this.getAllOutputNodesByInputNodeAndMappingLabel(inputNode, label);
+    if(outputNodes == null) return null;
     SNode referenceSourceNode = getOutputNode();
     String referenceRole = myRole;
     ISearchScope referenceScope = SNodeOperations.getReferentSearchScope(referenceSourceNode, referenceRole, operationContext);

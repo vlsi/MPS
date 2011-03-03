@@ -27,7 +27,6 @@ public class typeof_ExtrSymbol_InferenceRule extends AbstractInferenceRule_Runti
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(symbol, "expression", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1236431731877", 0, intentionProvider);
-      _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1236431731879", true), (SNode) new typeof_ExtrSymbol_InferenceRule.QuotationClass_mykjdy_a0a0a0().createNode(typeCheckingContext), true, _info_12389875345);
     }
     {

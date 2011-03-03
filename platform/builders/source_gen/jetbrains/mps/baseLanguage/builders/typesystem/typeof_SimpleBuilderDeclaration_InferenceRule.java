@@ -23,7 +23,6 @@ public class typeof_SimpleBuilderDeclaration_InferenceRule extends AbstractInfer
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(declaration, "creator", true);
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "3816167865390950068", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("default");
         typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "3816167865390950060", true), (SNode) SLinkOperations.getTarget(declaration, "type", true), false, _info_12389875345);
       }
     }
@@ -32,7 +31,6 @@ public class typeof_SimpleBuilderDeclaration_InferenceRule extends AbstractInfer
         SNode _nodeToCheck_1029348928467 = declaration;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)", "8969040284892462967", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("default");
         typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(declaration, "type", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(declaration, "extends", false), "type", true), false, _info_12389875345);
       }
     }

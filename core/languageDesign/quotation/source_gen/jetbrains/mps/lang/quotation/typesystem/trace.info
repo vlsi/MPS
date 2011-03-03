@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="47" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_PropertyAntiquotation_InferenceRule$QuotationClass_r9cjy_a0a0a0" />
-  <unitInfo fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="47" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_ReferenceAntiquotation_InferenceRule$QuotationClass_htbc4h_a0a0a0" />
-  <unitInfo fileName="typeof_Antiquotation_InferenceRule.java" startLine="47" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_Antiquotation_InferenceRule$QuotationClass_57pil5_a0a0a0" />
+  <unitInfo fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="46" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_PropertyAntiquotation_InferenceRule$QuotationClass_r9cjy_a0a0a0" />
+  <unitInfo fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="46" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_ReferenceAntiquotation_InferenceRule$QuotationClass_htbc4h_a0a0a0" />
+  <unitInfo fileName="typeof_Antiquotation_InferenceRule.java" startLine="46" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_Antiquotation_InferenceRule$QuotationClass_57pil5_a0a0a0" />
   <unitInfo fileName="typeof_Quotation_InferenceRule.java" startLine="48" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_Quotation_InferenceRule$QuotationClass_wzo52i_a0a1a0" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.TypesystemDescriptor" />
-  <unitInfo fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="47" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_ListAntiquotation_InferenceRule$QuotationClass_6o8snu_a0a0a0" />
+  <unitInfo fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="46" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_ListAntiquotation_InferenceRule$QuotationClass_6o8snu_a0a0a0" />
   <unitInfo fileName="check_ListAntiquotation_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.check_ListAntiquotation_NonTypesystemRule" />
   <unitInfo fileName="check_Antiquotation_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.check_Antiquotation_NonTypesystemRule" />
-  <unitInfo fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_PropertyAntiquotation_InferenceRule" />
-  <unitInfo fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_ReferenceAntiquotation_InferenceRule" />
-  <unitInfo fileName="typeof_Antiquotation_InferenceRule.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_Antiquotation_InferenceRule" />
+  <unitInfo fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_PropertyAntiquotation_InferenceRule" />
+  <unitInfo fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_ReferenceAntiquotation_InferenceRule" />
+  <unitInfo fileName="typeof_Antiquotation_InferenceRule.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_Antiquotation_InferenceRule" />
   <unitInfo fileName="typeof_Quotation_InferenceRule.java" startLine="19" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_Quotation_InferenceRule" />
-  <unitInfo fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="18" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_ListAntiquotation_InferenceRule" />
+  <unitInfo fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="18" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.quotation.typesystem.typeof_ListAntiquotation_InferenceRule" />
   <root nodeId="1196352592946">
     <nodeInfo nodeId="1196352592948" fileName="typeof_Quotation_InferenceRule.java" startLine="23" startPosition="122" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196858483110" fileName="typeof_Quotation_InferenceRule.java" startLine="25" startPosition="5" endLine="26" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -29,41 +29,37 @@
     <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="24" startPosition="100" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="26" startPosition="212" endLine="27" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="358" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="358" />
-    <scopeInfo nodeId="1196863835660" fileName="typeof_Antiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="26" startPosition="212" endLine="27" endPosition="358" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1196863846268" fileName="typeof_Antiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="358" />
+    <scopeInfo nodeId="1196863835660" fileName="typeof_Antiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1196864098675">
     <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="24" startPosition="100" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="26" startPosition="212" endLine="27" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="367" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="367" />
-    <scopeInfo nodeId="1196864098676" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="26" startPosition="212" endLine="27" endPosition="367" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1196864105033" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="367" />
+    <scopeInfo nodeId="1196864098676" fileName="typeof_ReferenceAntiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1196864120832">
     <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="24" startPosition="100" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="26" startPosition="212" endLine="27" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="362" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="362" />
-    <scopeInfo nodeId="1196864120833" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="26" startPosition="212" endLine="27" endPosition="362" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1196864131532" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="362" />
+    <scopeInfo nodeId="1196864120833" fileName="typeof_ListAntiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1196866827112">
     <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="24" startPosition="100" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="25" startPosition="52" endLine="26" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="26" startPosition="212" endLine="27" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="365" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <scopeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="365" />
-    <scopeInfo nodeId="1196866827113" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="26" startPosition="212" endLine="27" endPosition="365" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <scopeInfo nodeId="1196866840326" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="23" startPosition="5" endLine="27" endPosition="365" />
+    <scopeInfo nodeId="1196866827113" fileName="typeof_PropertyAntiquotation_InferenceRule.java" startLine="22" startPosition="124" endLine="28" endPosition="5" />
   </root>
   <root nodeId="1202840492692">
     <nodeInfo nodeId="1202840626667" fileName="check_Antiquotation_NonTypesystemRule.java" startLine="22" startPosition="126" endLine="23" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
