@@ -13,6 +13,36 @@
     <stubModelEntry path="${mps_home}/lib/resources.jar" include="false">
       <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     </stubModelEntry>
+    <stubModelEntry path="${mps_home}/plugins/debugger-api" include="false">
+      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/plugins/debugger-java" include="false">
+      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/plugins/ideaIntegration" include="false">
+      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/plugins/migration" include="false">
+      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/plugins/modelchecker" include="false">
+      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/plugins/mpsdevkit" include="false">
+      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/plugins/mpsjava" include="false">
+      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/plugins/mpsmake" include="false">
+      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/plugins/samples" include="false">
+      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${mps_home}/plugins/vcs" include="false">
+      <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
+    </stubModelEntry>
   </stubModelEntries>
   <sourcePath />
   <dependencies>

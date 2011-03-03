@@ -4,6 +4,7 @@ package jetbrains.mps.platform.conf.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
@@ -12,14 +13,15 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Plugin extends BaseConcept implements IConfigurationFragment, INamedConcept {
+public class Plugin extends BaseConcept implements IConfigurationFragment, INamedConcept, IResolveInfo {
   public static final String concept = "jetbrains.mps.platform.conf.structure.Plugin";
-  public static final String UID = "uid";
+  public static final String ID = "id";
   public static final String VERSION = "version";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NAME = "name";
+  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String VENDOR = "vendor";
   public static final String IDEA_VERSION = "ideaVersion";
   public static final String HELPSET = "helpset";
@@ -31,12 +33,12 @@ public class Plugin extends BaseConcept implements IConfigurationFragment, IName
     super(node);
   }
 
-  public String getUid() {
-    return this.getProperty(Plugin.UID);
+  public String getId() {
+    return this.getProperty(Plugin.ID);
   }
 
-  public void setUid(String value) {
-    this.setProperty(Plugin.UID, value);
+  public void setId(String value) {
+    this.setProperty(Plugin.ID, value);
   }
 
   public String getVersion() {
@@ -77,6 +79,14 @@ public class Plugin extends BaseConcept implements IConfigurationFragment, IName
 
   public void setName(String value) {
     this.setProperty(Plugin.NAME, value);
+  }
+
+  public String getResolveInfo() {
+    return this.getProperty(Plugin.RESOLVE_INFO);
+  }
+
+  public void setResolveInfo(String value) {
+    this.setProperty(Plugin.RESOLVE_INFO, value);
   }
 
   public PluginVendor getVendor() {

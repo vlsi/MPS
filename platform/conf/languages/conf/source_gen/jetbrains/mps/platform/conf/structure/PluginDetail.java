@@ -9,7 +9,8 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 public enum PluginDetail {
   description("description", "description"),
   changeNotes("change-notes", "changeNotes"),
-  resourceBundle("resource-bundle", "resourceBundle");
+  resourceBundle("resource-bundle", "resourceBundle"),
+  category("category", "category");
 
   private String myName;
   private String myValue;
@@ -36,6 +37,7 @@ public enum PluginDetail {
     ListSequence.fromList(list).addElement(PluginDetail.description);
     ListSequence.fromList(list).addElement(PluginDetail.changeNotes);
     ListSequence.fromList(list).addElement(PluginDetail.resourceBundle);
+    ListSequence.fromList(list).addElement(PluginDetail.category);
     return list;
   }
 
@@ -55,6 +57,9 @@ public enum PluginDetail {
     }
     if (value.equals(PluginDetail.resourceBundle.getValueAsString())) {
       return PluginDetail.resourceBundle;
+    }
+    if (value.equals(PluginDetail.category.getValueAsString())) {
+      return PluginDetail.category;
     }
     return PluginDetail.getDefault();
   }

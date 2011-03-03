@@ -25,9 +25,12 @@ public class PluginVendor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_xr2yug_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_xr2yug_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xr2yug_d0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_xr2yug_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xr2yug_f0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_xr2yug_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_xr2yug_e0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_xr2yug_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_xr2yug_g0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_xr2yug_h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_xr2yug_i0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_xr2yug_j0(editorContext, node));
     return editorCell;
   }
 
@@ -39,27 +42,59 @@ public class PluginVendor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xr2yug_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "url=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_xr2yug_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xr2yug_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "email=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_xr2yug_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_xr2yug_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_xr2yug_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "url=");
+    editorCell.setCellId("Constant_xr2yug_e0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_xr2yug_g0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "email=");
+    editorCell.setCellId("Constant_xr2yug_g0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_xr2yug_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "logo=");
-    editorCell.setCellId("Constant_xr2yug_f0");
+    editorCell.setCellId("Constant_xr2yug_i0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createProperty_xr2yug_c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_name");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_xr2yug_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("url");
     provider.setNoTargetText("<no url>");
@@ -77,7 +112,7 @@ public class PluginVendor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_xr2yug_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_xr2yug_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("email");
     provider.setNoTargetText("<no email>");
@@ -95,7 +130,7 @@ public class PluginVendor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_xr2yug_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_xr2yug_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("logo");
     provider.setNoTargetText("<no logo>");

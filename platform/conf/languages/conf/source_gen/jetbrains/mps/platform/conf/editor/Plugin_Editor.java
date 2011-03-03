@@ -109,7 +109,7 @@ public class Plugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_o3c6bg_e0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uid=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id=");
     editorCell.setCellId("Constant_o3c6bg_e0a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -250,11 +250,11 @@ public class Plugin_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_o3c6bg_g0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("uid");
-    provider.setNoTargetText("<no uid>");
+    provider.setRole("id");
+    provider.setNoTargetText("<no id>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_uid");
+    editorCell.setCellId("property_id");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

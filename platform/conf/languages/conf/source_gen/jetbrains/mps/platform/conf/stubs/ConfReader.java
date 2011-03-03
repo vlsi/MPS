@@ -9,9 +9,9 @@ import org.jdom.Document;
 import org.jdom.Element;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.regex.Matcher;
 import jetbrains.mps.platform.conf.behavior.Service_Behavior;
@@ -53,6 +53,26 @@ public class ConfReader {
   private static final String XPOINTER = "xpointer";
   private static final Pattern XPOINTER_PTN = Pattern.compile("xpointer\\((.*)\\)");
   private static final Pattern INCLUDE_PTN = Pattern.compile("\\/(.*)\\/\\*");
+  private static final String ID = "id";
+  private static final String VERSION = "version";
+  private static final String DESCRIPTION = "description";
+  private static final String CHANGE_NOTES = "change-notes";
+  private static final String RESOURCE_BUNDLE = "resource-bundle";
+  private static final String VENDOR = "vendor";
+  private static final String DEPENDS = "depends";
+  private static final String HELPSET = "helpset";
+  private static final String IDEA_VERSION = "idea-version";
+  private static final String URL = "url";
+  private static final String EMAIL = "email";
+  private static final String LOGO = "logo";
+  private static final String CONFIG = "config";
+  private static final String OPTIONAL = "optional";
+  private static final String PLUGIN = "plugin";
+  private static final String FILE = "file";
+  private static final String PATH = "path";
+  private static final String SINCE_BUILD = "since-build";
+  private static final String UNTIL_BUILD = "until-build";
+  private static final String CATEGORY = "category";
 
   private ConfReader.Resolver confstubResolver;
   private ConfReader.Resolver javastubResolver;
@@ -66,7 +86,9 @@ public class ConfReader {
     Element root = doc.getRootElement();
     String rootName = root.getName();
     if (IDEA_PLUGIN.equals(rootName)) {
-      readContainers(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.IdeaPlugin"), root);
+      SNode ip = SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.IdeaPlugin");
+      readPlugin(ip, root);
+      readContainers(ip, root);
     } else if (COMPONENT.equals(rootName)) {
       readContainers(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.ComponentRoot"), root);
     } else if (ROOT.equals(rootName)) {
@@ -83,6 +105,46 @@ public class ConfReader {
       readComponents(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.Components"), SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "module"), root);
     } else if (PROJECT_COMPONENTS.equals(rootName)) {
       readComponents(SLinkOperations.setNewChild(confDoc, "root", "jetbrains.mps.platform.conf.structure.Components"), SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "project"), root);
+    }
+  }
+
+  private void readPlugin(SNode node, Element root) {
+    SNode plugin = SLinkOperations.setNewChild(node, "plugin", "jetbrains.mps.platform.conf.structure.Plugin");
+    for (Element prp : elements(root, NAME, ID, VERSION)) {
+      if (Namespace.NO_NAMESPACE.equals(prp.getNamespace())) {
+        plugin.setProperty(prp.getName(), prp.getTextTrim());
+      }
+    }
+    for (Element dtl : elements(root, DESCRIPTION, CHANGE_NOTES, RESOURCE_BUNDLE, CATEGORY)) {
+      if (Namespace.NO_NAMESPACE.equals(dtl.getNamespace())) {
+        SNode pd = SLinkOperations.addNewChild(plugin, "details", "jetbrains.mps.platform.conf.structure.PluginDetails");
+        SPropertyOperations.set(pd, "kind", dtl.getName());
+        SPropertyOperations.set(pd, "value", dtl.getTextTrim());
+      }
+    }
+    for (Element elm : elements(root, VENDOR, DEPENDS, HELPSET, IDEA_VERSION)) {
+      if (Namespace.NO_NAMESPACE.equals(elm.getNamespace())) {
+        if (VENDOR.equals(elm.getName())) {
+          SNode pv = SLinkOperations.setNewChild(plugin, "vendor", "jetbrains.mps.platform.conf.structure.PluginVendor");
+          SPropertyOperations.set(pv, "name", elm.getTextTrim());
+          SPropertyOperations.set(pv, "url", elm.getAttributeValue(URL));
+          SPropertyOperations.set(pv, "email", elm.getAttributeValue(EMAIL));
+          SPropertyOperations.set(pv, "logo", elm.getAttributeValue(LOGO));
+        } else if (DEPENDS.equals(elm.getName())) {
+          SNode pd = SLinkOperations.addNewChild(plugin, "depends", "jetbrains.mps.platform.conf.structure.PluginDependency");
+          SPropertyOperations.set(pd, "config", elm.getAttributeValue(CONFIG));
+          SPropertyOperations.set(pd, "optional", "" + Boolean.valueOf(elm.getAttributeValue(OPTIONAL)));
+          addConfXmlNodeReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.PluginDependency", "plugin"), pd, fqName(META_INF, PLUGIN, elm.getTextTrim()));
+        } else if (HELPSET.equals(elm.getName())) {
+          SNode ph = SLinkOperations.setNewChild(plugin, "helpset", "jetbrains.mps.platform.conf.structure.PluginHelpset");
+          SPropertyOperations.set(ph, "file", elm.getAttributeValue(FILE));
+          SPropertyOperations.set(ph, "path", elm.getAttributeValue(PATH));
+        } else if (IDEA_VERSION.equals(elm.getName())) {
+          SNode iv = SLinkOperations.setNewChild(plugin, "ideaVersion", "jetbrains.mps.platform.conf.structure.IdeaVersion");
+          SPropertyOperations.set(iv, "sinceBuild", elm.getAttributeValue(SINCE_BUILD));
+          SPropertyOperations.set(iv, "untilBuild", elm.getAttributeValue(UNTIL_BUILD));
+        }
+      }
     }
   }
 
@@ -263,7 +325,7 @@ public class ConfReader {
       int dlr = shortName.indexOf("$");
       if (dlr >= 0) {
         String elmName = shortName.substring(0, dlr);
-        if (EXTENSION_POINT.equals(elmName)) {
+        if (EXTENSION_POINT.equals(elmName) || ConfReader.PLUGIN.equals(elmName)) {
           src.addReference(new StaticReference(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName), null));
         }
       }

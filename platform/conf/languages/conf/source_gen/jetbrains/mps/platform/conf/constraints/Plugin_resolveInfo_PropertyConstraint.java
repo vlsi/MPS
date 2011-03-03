@@ -10,27 +10,31 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
-public class ExtensionPoint_resolveInfo_PropertyConstraint implements IModelConstraints, INodePropertyGetter, INodePropertySetter {
-  public ExtensionPoint_resolveInfo_PropertyConstraint() {
+public class Plugin_resolveInfo_PropertyConstraint implements IModelConstraints, INodePropertyGetter, INodePropertySetter {
+  public Plugin_resolveInfo_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyGetter("jetbrains.mps.platform.conf.structure.ExtensionPoint", "resolveInfo", this);
-    manager.registerNodePropertySetter("jetbrains.mps.platform.conf.structure.ExtensionPoint", "resolveInfo", this);
+    manager.registerNodePropertyGetter("jetbrains.mps.platform.conf.structure.Plugin", "resolveInfo", this);
+    manager.registerNodePropertySetter("jetbrains.mps.platform.conf.structure.Plugin", "resolveInfo", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyGetter("jetbrains.mps.platform.conf.structure.ExtensionPoint", "resolveInfo");
-    manager.unRegisterNodePropertySetter("jetbrains.mps.platform.conf.structure.ExtensionPoint", "resolveInfo");
+    manager.unRegisterNodePropertyGetter("jetbrains.mps.platform.conf.structure.Plugin", "resolveInfo");
+    manager.unRegisterNodePropertySetter("jetbrains.mps.platform.conf.structure.Plugin", "resolveInfo");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    String name = node.getName();
-    name = (name == null ?
-      node.getId() :
-      name
+    String id = node.getProperty("id");
+    id = (id == null ?
+      node.getName() :
+      id
     );
-    return SConceptPropertyOperations.getString(node, "alias") + "$" + (name).replace('.', '-');
+    id = (id == null ?
+      node.getId() :
+      id
+    );
+    return SConceptPropertyOperations.getString(node, "alias") + "$" + (id).replace('.', '-');
   }
 
   public void execPropertySet(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
