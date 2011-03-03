@@ -10,10 +10,19 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GeneratorParameterReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.generator.structure.GeneratorParameterReference";
+  public static final String IS_OPTIONAL = "isOptional";
   public static final String DECLARATION = "declaration";
 
   public GeneratorParameterReference(SNode node) {
     super(node);
+  }
+
+  public boolean getIsOptional() {
+    return this.getBooleanProperty(GeneratorParameterReference.IS_OPTIONAL);
+  }
+
+  public void setIsOptional(boolean value) {
+    this.setBooleanProperty(GeneratorParameterReference.IS_OPTIONAL, value);
   }
 
   public IGeneratorParameter getDeclaration() {

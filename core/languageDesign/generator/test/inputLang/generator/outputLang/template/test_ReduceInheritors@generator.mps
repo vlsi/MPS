@@ -161,6 +161,10 @@
         </node>
       </node>
     </node>
+    <node role="generationParameters" roleId="tpf8.2456082753387314114" type="tpf8.GeneratorParameterReference" typeId="tpf8.650531548511911818" id="5540778578667816563">
+      <property name="isOptional" nameId="tpf8.5540778578667478296" value="true" />
+      <link role="declaration" roleId="tpf8.650531548511911820" targetNodeId="1646518082434723264" resolveInfo="arch" />
+    </node>
   </root>
   <root id="1206460153890">
     <node role="_$attribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="1206460183016">
@@ -186,20 +190,13 @@
   <root id="1646518082434540593">
     <node role="parameters" roleId="q5cj.8484425748929510073" type="q5cj.DefaultGeneratorParameter" typeId="q5cj.8484425748929510068" id="1646518082434722004">
       <property name="name" nameId="tpck.1169194664001" value="os" />
-      <node role="type" roleId="tpf8.650531548511609557" type="tpee.StringType" typeId="tpee.1225271177708" id="1646518082434723262" />
+      <node role="type" roleId="tpf8.650531548511609557" type="tpee.StringType" typeId="tpee.1225271177708" id="5540778578667816565" />
     </node>
     <node role="parameters" roleId="q5cj.8484425748929510073" type="q5cj.DefaultGeneratorParameter" typeId="q5cj.8484425748929510068" id="1646518082434723264">
       <property name="name" nameId="tpck.1169194664001" value="arch" />
-      <node role="type" roleId="tpf8.650531548511609557" type="tpee.StringType" typeId="tpee.1225271177708" id="1646518082434723266" />
+      <node role="type" roleId="tpf8.650531548511609557" type="tpee.StringType" typeId="tpee.1225271177708" id="5540778578667816564" />
     </node>
   </root>
-  <root id="5023471013036366740">
-    <node role="requires" roleId="tpf8.650531548511911821" type="tpf8.GeneratorParameterReference" typeId="tpf8.650531548511911818" id="7941504602773316098">
-      <link role="declaration" roleId="tpf8.650531548511911820" targetNodeId="1646518082434722004" resolveInfo="os" />
-    </node>
-    <node role="requires" roleId="tpf8.650531548511911821" type="tpf8.GeneratorParameterReference" typeId="tpf8.650531548511911818" id="7941504602773316100">
-      <link role="declaration" roleId="tpf8.650531548511911820" targetNodeId="1646518082434723264" resolveInfo="arch" />
-    </node>
-  </root>
+  <root id="5023471013036366740" />
 </model>
 

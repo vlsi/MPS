@@ -30,6 +30,7 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   public static final String PRE_MAPPING_SCRIPT = "preMappingScript";
   public static final String POST_MAPPING_SCRIPT = "postMappingScript";
   public static final String MAPPING_LABEL = "mappingLabel";
+  public static final String GENERATION_PARAMETERS = "generationParameters";
   public static final String _$ATTRIBUTE = "_$attribute";
 
   public MappingConfiguration(SNode node) {
@@ -254,6 +255,26 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
 
   public void insertMappingLabel(MappingLabelDeclaration prev, MappingLabelDeclaration node) {
     this.insertChild(prev, MappingConfiguration.MAPPING_LABEL, node);
+  }
+
+  public int getGenerationParametersesCount() {
+    return this.getChildCount(MappingConfiguration.GENERATION_PARAMETERS);
+  }
+
+  public Iterator<GeneratorParameterReference> generationParameterses() {
+    return this.children(GeneratorParameterReference.class, MappingConfiguration.GENERATION_PARAMETERS);
+  }
+
+  public List<GeneratorParameterReference> getGenerationParameterses() {
+    return this.getChildren(GeneratorParameterReference.class, MappingConfiguration.GENERATION_PARAMETERS);
+  }
+
+  public void addGenerationParameters(GeneratorParameterReference node) {
+    this.addChild(MappingConfiguration.GENERATION_PARAMETERS, node);
+  }
+
+  public void insertGenerationParameters(GeneratorParameterReference prev, GeneratorParameterReference node) {
+    this.insertChild(prev, MappingConfiguration.GENERATION_PARAMETERS, node);
   }
 
   public int get_$attributesCount() {
