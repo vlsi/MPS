@@ -8515,8 +8515,12 @@
   </root>
   <root id="3157361072876778597">
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="3157361072876778599">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="3157361072876504995" resolveInfo="ConceptDescriptor" />
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="3157361072876816812">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpce.1169125989551" resolveInfo="InterfaceConceptDeclaration" />
+      <link role="template" roleId="tpf8.1167514355421" targetNodeId="3157361072876504995" resolveInfo="ConceptDescriptor" />
     </node>
   </root>
 </model>

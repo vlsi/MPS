@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-eiolxyiquvprasn0myqavk5pivg7lb5">
+<dependencies version="2" modelHash="-canan0qtle772fly4n1s4amnqoei3mh">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -189,7 +189,7 @@
   <source id="3157361072876504995" name="ConceptDescriptor" hash="-8u2hakmm2aoxm9wd9oa4lb8yqs0zyhq">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="3157361072876778597" name="MAPPING_descriptors" hash="ex0hy2dwwo4ueqtbotuus2js751grfx">
+  <source id="3157361072876778597" name="MAPPING_descriptors" hash="28jrlt1bl7be5fvn210rqlbnooe4952">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>
