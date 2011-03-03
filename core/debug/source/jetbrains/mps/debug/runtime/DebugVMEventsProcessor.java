@@ -26,7 +26,6 @@ import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.IDebuggableFramesSelector;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
-import jetbrains.mps.debug.breakpoints.LineBreakpoint;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
@@ -242,65 +241,58 @@ public class DebugVMEventsProcessor {
   //============================================ EVENTS PROCESSING =============================================
 
 
-  private void processLocatableEvent(SuspendContext suspendContext, final LocatableEvent event) {
+  private void processLocatableEvent(final SuspendContext suspendContext, final LocatableEvent event) {
     ThreadReference thread = event.thread();
     LOG.assertLog(thread.isSuspended());
     preprocessEvent(suspendContext, thread);
 
     //we use schedule to allow processing other events during processing this one
     //this is especially nesessary if a method is breakpoint condition
-    //todo shedule later
     SuspendContextCommand suspendCommand = new SuspendContextCommand(suspendContext) {
       @Override
       protected void action() throws Exception {
+        final SuspendManager suspendManager = mySuspendManager;
 
+        SuspendContext pausedContext = getSuspendManager().getPausedContext();
+        if (pausedContext != null && pausedContext.isEvaluating()) {
+          suspendManager.voteResume(suspendContext);
+          return;
+        }
+
+        //breakpoint found
+        final LocatableEventRequestor requestor = (LocatableEventRequestor) getRequestManager().findRequestor(event.request());
+
+        boolean resumePreferred = requestor != null && EventRequest.SUSPEND_NONE == requestor.getSuspendPolicy();
+        boolean requestHit = false;
+
+        try {
+          requestHit = (requestor != null) && requestor.processLocatableEvent(this, event);
+          // } catch () {
+          // todo: catch a special exception here, show modal window like "error evaluation breakpoint condition, do you want to
+          // todo "stop at the breakpoint, Y/N etc.
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
+
+        if (requestHit) {
+          if (requestor instanceof JavaBreakpoint && ((JavaBreakpoint) requestor).isLogMessage()) {
+            myReporter.reportInformation("Breakpoint hit: " + ((JavaBreakpoint) requestor).getPresentation());
+          }
+
+          if (requestor instanceof IBreakpoint) {
+            // if requestor is a breakpoint and this breakpoint was hit, no matter its suspend policy
+            myBreakpointManager.processBreakpointHit((IBreakpoint) requestor);
+          }
+        }
+
+        if (!requestHit || resumePreferred) {
+          suspendManager.voteResume(suspendContext);
+        } else {
+          suspendManager.voteSuspend(suspendContext);
+        }
       }
     };
-    //getManagerThread().schedule(new SuspendContextCommandImpl(suspendContext) {
-    //  public void contextAction() throws Exception {
-    final SuspendManager suspendManager = mySuspendManager;
-
-    SuspendContext pausedContext = getSuspendManager().getPausedContext();
-    if (pausedContext != null && pausedContext.isEvaluating()) {
-      suspendManager.voteResume(suspendContext);
-      return;
-    }
-
-    //breakpoint found
-    final LocatableEventRequestor requestor = (LocatableEventRequestor) getRequestManager().findRequestor(event.request());
-
-    boolean resumePreferred = requestor != null && EventRequest.SUSPEND_NONE == requestor.getSuspendPolicy();
-    boolean requestHit = false;
-
-    try {
-      requestHit = (requestor != null) && requestor.processLocatableEvent(suspendCommand, event);
-      // } catch () {
-      // todo: catch a special exception here, show modal window like "error evaluation breakpoint condition, do you want to
-      // todo "stop at the breakpoint, Y/N etc.
-    } catch (Throwable t) {
-      LOG.error(t);
-    }
-
-    if (requestHit) {
-      if (requestor instanceof JavaBreakpoint && ((JavaBreakpoint) requestor).isLogMessage()) {
-        myReporter.reportInformation("Breakpoint hit: " + ((JavaBreakpoint) requestor).getPresentation());
-      }
-
-      if (requestor instanceof IBreakpoint) {
-        // if requestor is a breakpoint and this breakpoint was hit, no matter its suspend policy
-        myBreakpointManager.processBreakpointHit((IBreakpoint) requestor);
-      }
-    }
-
-    if (!requestHit || resumePreferred) {
-      suspendManager.voteResume(suspendContext);
-    } else {
-      suspendManager.voteSuspend(suspendContext);
-    }
-
-    // sheduled command parenthesis
-    //    }
-    //  });
+    getManagerThread().schedule(suspendCommand);
   }
 
   // a class is prepared: let's set breakpoint requests from breakpoints
