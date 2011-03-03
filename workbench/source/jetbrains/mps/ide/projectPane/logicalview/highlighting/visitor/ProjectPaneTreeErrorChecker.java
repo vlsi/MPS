@@ -21,11 +21,13 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.smodel.*;
 
 import javax.swing.SwingUtilities;
+import java.util.Collections;
 import java.util.List;
 
 public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
@@ -54,7 +56,9 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
   protected void visitModuleNode(final ProjectModuleTreeNode node) {
     List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        return ModuleValidatorFactory.createValidator(node.getModule()).getErrors();
+        IModule module = node.getModule();
+        if (module==null) return Collections.emptyList();
+        return ModuleValidatorFactory.createValidator(module).getErrors();
       }
     });
 
