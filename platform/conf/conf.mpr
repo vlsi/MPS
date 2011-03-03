@@ -7,6 +7,8 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/solutions/jetbrains.mps.platform.conf.sandbox/jetbrains.mps.platform.conf.sandbox.msd" />
+      <solutionPath path="${mps_home}/plugins/debugger-api/solutions/jetbrains.mps.debugger-api/jetbrains.mps.debugger-api.msd" />
+      <solutionPath path="${mps_home}/plugins/debugger-java/solutions/jetbrains.mps.debugger.java/jetbrains.mps.debugger.java.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/conf/conf.mpl" />
