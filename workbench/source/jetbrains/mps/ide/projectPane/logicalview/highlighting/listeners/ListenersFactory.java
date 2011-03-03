@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners;
 
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
@@ -24,7 +26,10 @@ public class ListenersFactory {
       SModelTreeNode modelNode = (SModelTreeNode) node;
       if (modelNode.getSModelDescriptor() == null) return null;
       return new SModelNodeListeners(modelNode);
+    } else if (node instanceof ProjectModuleTreeNode){
+      return new ModuleNodeListeners(((ProjectModuleTreeNode) node));
     }
+
     return null;
   }
 

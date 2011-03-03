@@ -23,6 +23,11 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.SimpleModelListener;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.ListenersFactory.NodeListeners;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneModifiedMarker;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeErrorChecker;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeGenStatusUpdater;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeGenStatusUpdater.GenerationStatus;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
@@ -35,6 +40,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
 import java.util.List;
 import java.util.Set;
 
@@ -44,41 +50,24 @@ public class SModelNodeListeners implements NodeListeners {
   private SModelEventsListener myEventsListener;
   private MySNodeTreeUpdater myTreeUpdater;
 
+  private SModelTreeNode myTreeNode;
   private SModelDescriptor myModel;
 
-  public SModelNodeListeners(SModelTreeNode modelNode) {
+  private ProjectPaneTreeGenStatusUpdater myGenStatusVisitor = new ProjectPaneTreeGenStatusUpdater();
+  private ProjectPaneTreeErrorChecker myErrorVisitor = new ProjectPaneTreeErrorChecker();
+  private ProjectPaneModifiedMarker myModifiedMarker = new ProjectPaneModifiedMarker();
+
+  public SModelNodeListeners(final SModelTreeNode modelNode) {
+    myTreeNode = modelNode;
     myModel = modelNode.getSModelDescriptor();
 
-    mySimpleModelListener = new SimpleModelListener(modelNode) {
-      public void modelChangedDramatically(SModel model) {
-        updateNodePresentation(false, true);
-      }
-
-      public void modelChanged(SModel model) {
-        updateNodePresentation(false, true);
-      }
-
-      public boolean isValid() {
-        if (!super.isValid()) return false;
-        return !(myModel.getLoadingState() != ModelLoadingState.NOT_LOADED && myModel.getSModel().isDisposed());
-      }
-    };
+    mySimpleModelListener = new MySimpleModelListener(modelNode);
     myStatusListener = new MyGenerationStatusListener();
     if (myModel instanceof EditableSModelDescriptor) {
       myTreeUpdater = new MySNodeTreeUpdater(modelNode.getOperationContext().getProject(), modelNode);
       myTreeUpdater.setDependencyRecorder(modelNode.getDependencyRecorder());
     }
-    myEventsListener = new SModelEventsListener() {
-      @NotNull
-      public SModelDescriptor getModelDescriptor() {
-        return myModel;
-      }
-
-      public void eventsHappened(List<SModelEvent> events) {
-        if (myTreeUpdater == null) return;
-        myTreeUpdater.eventsHappenedInCommand(events);
-      }
-    };
+    myEventsListener = new MySModelEventsListener();
   }
 
   public void startListening() {
@@ -99,11 +88,54 @@ public class SModelNodeListeners implements NodeListeners {
     SModelEventsDispatcher.getInstance().unregisterListener(myEventsListener);
   }
 
+  private void visitNode(SModelTreeNode modelNode) {
+    myGenStatusVisitor.visitNode(modelNode);
+    myErrorVisitor.visitNode(modelNode);
+    myModifiedMarker.visitNode(modelNode);
+  }
+
   private class MyGenerationStatusListener implements ModelGenerationStatusListener {
     public void generatedFilesChanged(SModelDescriptor sm) {
-      if (sm == myModel) {
-        mySimpleModelListener.modelSaved(sm);
-      }
+      if (sm != myModel) return;
+      myGenStatusVisitor.generated();
+      myGenStatusVisitor.visitNode(myTreeNode);
+    }
+  }
+
+  private class MySimpleModelListener extends SimpleModelListener {
+    private final SModelTreeNode myModelNode;
+
+    public MySimpleModelListener(SModelTreeNode modelNode) {
+      super(modelNode);
+      myModelNode = modelNode;
+    }
+
+    public void modelChangedDramatically(SModel model) {
+      updateNodePresentation(false, true);
+      visitNode(myModelNode);
+    }
+
+    public void modelChanged(SModel model) {
+      updateNodePresentation(false, true);
+      visitNode(myModelNode);
+    }
+
+    public boolean isValid() {
+      if (!super.isValid()) return false;
+      if (myModel.getLoadingState() == ModelLoadingState.NOT_LOADED) return true;
+      return !myModel.getSModel().isDisposed();
+    }
+  }
+
+  private class MySModelEventsListener implements SModelEventsListener {
+    @NotNull
+    public SModelDescriptor getModelDescriptor() {
+      return myModel;
+    }
+
+    public void eventsHappened(List<SModelEvent> events) {
+      if (myTreeUpdater == null) return;
+      myTreeUpdater.eventsHappenedInCommand(events);
     }
   }
 

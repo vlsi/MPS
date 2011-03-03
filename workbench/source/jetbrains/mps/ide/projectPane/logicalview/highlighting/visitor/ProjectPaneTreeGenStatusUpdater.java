@@ -20,6 +20,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -32,31 +33,58 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.SwingUtilities;
+import javax.swing.tree.TreeNode;
 
 public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
-  protected void visitModelNode(final SModelTreeNode node) {
-    GenerationStatus generationStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
-      public GenerationStatus compute() {
-        return getGenerationStatus(node);
-      }
-    });
-    updateNodeLater(node, generationStatus.getMessage());
-  }
+  private boolean wasGenerationRequired = false;
 
-  protected void visitModuleNode(final ProjectModuleTreeNode node) {
-    String text = "packaged";
-    if (!node.getModule().isPackaged()) {
+  protected void visitModelNode(final SModelTreeNode modelNode) {
+    if (!ProjectPane.isShowGenStatus()) return;
+
+    if (wasGenerationRequired) {
+      updateNodeLater(modelNode, GenerationStatus.REQUIRED.getMessage());
+    } else {
+      GenerationStatus generationStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
+        public GenerationStatus compute() {
+          return getGenerationStatus(modelNode);
+        }
+      });
+      String message = generationStatus.getMessage();
+      wasGenerationRequired = generationStatus== GenerationStatus.REQUIRED;
+      updateNodeLater(modelNode, message);
+    }
+
+    TreeNode node = modelNode;
+    do {
+      node = node.getParent();
+    } while (!(node instanceof ProjectModuleTreeNode));
+    final ProjectModuleTreeNode finalNode = ((ProjectModuleTreeNode) node);
+
+    String text;
+    if (finalNode.getModule().isPackaged()) {
+      text = "packaged";
+    } else if (wasGenerationRequired) {
+      text = GenerationStatus.REQUIRED.getMessage();
+    } else {
       text = ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          return generationRequired(node).getMessage();
+          return generationRequired(finalNode).getMessage();
         }
       });
     }
-    updateNodeLater(node, text);
+    updateNodeLater(finalNode, text);
+  }
+
+  protected void visitModuleNode(final ProjectModuleTreeNode node) {
+
   }
 
   protected void visitProjectNode(ProjectTreeNode node) {
 
+  }
+
+  public void generated() {
+    wasGenerationRequired = false;
   }
 
   private GenerationStatus generationRequired(ProjectModuleTreeNode node) {

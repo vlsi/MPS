@@ -39,8 +39,6 @@ import java.util.Map;
 
 public class ProjectPaneTreeHighlighter {
   private ProjectPaneTreeGenStatusUpdater myGenStatusVisitor = new ProjectPaneTreeGenStatusUpdater();
-  private ProjectPaneTreeErrorChecker myErrorVisitor = new ProjectPaneTreeErrorChecker();
-  private ProjectPaneModifiedMarker myModifiedMarker = new ProjectPaneModifiedMarker();
   private MyMPSTreeNodeListener myNodeListener = new MyMPSTreeNodeListener();
   private ProjectPaneTree myTree;
 
@@ -88,7 +86,8 @@ public class ProjectPaneTreeHighlighter {
     public void treeNodeAdded(MPSTreeNode treeNode, MPSTree tree) {
       NodeListeners l = ListenersFactory.createListenersFor(treeNode);
       if (l == null) return;
-      myListeners.put(treeNode, l).startListening();
+      myListeners.put(treeNode, l);
+      l.startListening();
     }
 
     public void treeNodeRemoved(MPSTreeNode treeNode, MPSTree tree) {
@@ -98,21 +97,7 @@ public class ProjectPaneTreeHighlighter {
     }
 
     public void treeNodeUpdated(MPSTreeNode treeNode, MPSTree tree) {
-      myErrorVisitor.visitNode(treeNode);
-      if (ProjectPane.isShowGenStatus()) {
-        myGenStatusVisitor.visitNode(treeNode);
-      }
-      myModifiedMarker.visitNode(treeNode);
 
-      if (treeNode instanceof SModelTreeNode) {
-        MPSTreeNode node = treeNode;
-        while (!(node instanceof ProjectModuleTreeNode) && node != null) {
-          node = ((MPSTreeNode) node.getParent());
-        }
-        if (node != null) {
-          node.renewPresentation();
-        }
-      }
     }
   }
 }
