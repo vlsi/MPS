@@ -28,7 +28,9 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 
@@ -36,12 +38,16 @@ import javax.swing.SwingUtilities;
 import javax.swing.tree.TreeNode;
 
 public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
-  private boolean wasGenerationRequired = false;
-
   protected void visitModelNode(final SModelTreeNode modelNode) {
     if (!ProjectPane.isShowGenStatus()) return;
 
-    if (wasGenerationRequired) {
+    SModelDescriptor md = modelNode.getSModelDescriptor();
+    if (md.getLoadingState() == ModelLoadingState.NOT_LOADED) return;
+    if (!(md instanceof EditableSModelDescriptor)) return;
+
+    boolean wasChanged = SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) md));
+
+    if (wasChanged) {
       updateNodeLater(modelNode, GenerationStatus.REQUIRED.getMessage());
     } else {
       GenerationStatus generationStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
@@ -50,7 +56,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
         }
       });
       String message = generationStatus.getMessage();
-      wasGenerationRequired = generationStatus== GenerationStatus.REQUIRED;
+      wasChanged = generationStatus== GenerationStatus.REQUIRED;
       updateNodeLater(modelNode, message);
     }
 
@@ -63,7 +69,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     String text;
     if (finalNode.getModule().isPackaged()) {
       text = "packaged";
-    } else if (wasGenerationRequired) {
+    } else if (wasChanged) {
       text = GenerationStatus.REQUIRED.getMessage();
     } else {
       text = ModelAccess.instance().runReadAction(new Computable<String>() {
@@ -81,10 +87,6 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
   protected void visitProjectNode(ProjectTreeNode node) {
 
-  }
-
-  public void generated() {
-    wasGenerationRequired = false;
   }
 
   private GenerationStatus generationRequired(ProjectModuleTreeNode node) {

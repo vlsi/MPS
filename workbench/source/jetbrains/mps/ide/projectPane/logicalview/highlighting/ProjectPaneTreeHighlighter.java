@@ -59,7 +59,6 @@ public class ProjectPaneTreeHighlighter {
   private class MyDumbModeListener implements DumbModeListener {
     public void enteredDumbMode() {
       if (!ProjectPane.isShowGenStatus()) return;
-      myGenStatusVisitor.generated();
       visit(myTree.getRootNode(), myGenStatusVisitor);
     }
 
@@ -69,7 +68,6 @@ public class ProjectPaneTreeHighlighter {
       Project p = myTree.getProject();
       if (p.isDisposed()) return;
 
-      myGenStatusVisitor.generated();
       visit(myTree.getRootNode(), myGenStatusVisitor);
     }
 

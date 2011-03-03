@@ -98,7 +98,6 @@ public class SModelNodeListeners implements NodeListeners {
   private class MyGenerationStatusListener implements ModelGenerationStatusListener {
     public void generatedFilesChanged(SModelDescriptor sm) {
       if (sm != myModel) return;
-      myGenStatusVisitor.generated();
       myGenStatusVisitor.visitNode(myTreeNode);
     }
   }
@@ -122,7 +121,7 @@ public class SModelNodeListeners implements NodeListeners {
     }
 
     public void modelSaved(SModelDescriptor sm) {
-      myModifiedMarker.visitNode(myModelNode);
+      visitNode(myModelNode);
     }
 
     public boolean isValid() {
