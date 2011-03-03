@@ -21,6 +21,7 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String TOP_PRIORITY_GROUP = "topPriorityGroup";
+  public static final String CONDITION = "condition";
   public static final String ROOT_MAPPING_RULE = "rootMappingRule";
   public static final String WEAVING_MAPPING_RULE = "weavingMappingRule";
   public static final String REDUCTION_MAPPING_RULE = "reductionMappingRule";
@@ -75,6 +76,14 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
 
   public void setTopPriorityGroup(boolean value) {
     this.setBooleanProperty(MappingConfiguration.TOP_PRIORITY_GROUP, value);
+  }
+
+  public MappingConfiguration_Condition getCondition() {
+    return (MappingConfiguration_Condition) this.getChild(MappingConfiguration_Condition.class, MappingConfiguration.CONDITION);
+  }
+
+  public void setCondition(MappingConfiguration_Condition node) {
+    super.setChild(MappingConfiguration.CONDITION, node);
   }
 
   public int getRootMappingRulesCount() {

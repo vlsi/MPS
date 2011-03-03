@@ -10,6 +10,7 @@
   <unitInfo fileName="PropertyMacro_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.PropertyMacro_AnnotationLink" />
   <unitInfo fileName="NodeMacro_AnnotationLink.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.NodeMacro_AnnotationLink" />
   <unitInfo fileName="ITemplateCall.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.ITemplateCall" />
+  <unitInfo fileName="MappingConfiguration_Condition.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MappingConfiguration_Condition" />
   <unitInfo fileName="TemplateArgumentQuery.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TemplateArgumentQuery" />
   <unitInfo fileName="MapSrcMacro_PostMapperFunction.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction" />
   <unitInfo fileName="DropRootRule_Condition.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.DropRootRule_Condition" />
@@ -82,6 +83,6 @@
   <unitInfo fileName="TemplateCallMacro.java" startLine="14" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TemplateCallMacro" />
   <unitInfo fileName="TemplateDeclaration.java" startLine="17" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TemplateDeclaration" />
   <unitInfo fileName="TemplateSwitch.java" startLine="16" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TemplateSwitch" />
-  <unitInfo fileName="MappingConfiguration.java" startLine="17" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MappingConfiguration" />
+  <unitInfo fileName="MappingConfiguration.java" startLine="17" startPosition="0" endLine="317" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MappingConfiguration" />
 </debugInfo>
 

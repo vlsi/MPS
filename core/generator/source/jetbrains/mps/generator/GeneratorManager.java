@@ -49,8 +49,9 @@ public class GeneratorManager {
   }
 
   /**
-   * @return false if canceled
+   * use GenerationFacade
    */
+  @Deprecated
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
@@ -60,8 +61,9 @@ public class GeneratorManager {
   }
 
   /**
-   * @return false if canceled
+   * use GenerationFacade
    */
+  @Deprecated
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
@@ -79,8 +81,9 @@ public class GeneratorManager {
   }
 
   /**
-   * @return false if canceled
+   * use GenerationFacade
    */
+  @Deprecated
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,

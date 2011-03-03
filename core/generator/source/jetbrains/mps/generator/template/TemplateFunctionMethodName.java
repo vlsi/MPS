@@ -81,4 +81,8 @@ public class TemplateFunctionMethodName {
   public static String patternRule_Condition(SNode pattern) {
     return "patternRule_Condition_" + pattern.getId();
   }
+
+  public static String mappingConfiguration_Condition(SNode function) {
+    return "mappingConfiguration_Condition_" + function.getId();
+  }
 }

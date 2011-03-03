@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
-import java.util.Iterator;
 import java.util.List;
 
 /**
