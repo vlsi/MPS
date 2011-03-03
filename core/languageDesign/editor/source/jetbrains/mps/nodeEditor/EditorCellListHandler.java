@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -48,8 +47,8 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
     myElementRole = SModelUtil.getLinkDeclarationRole(genuineLink);
   }
 
-  public LinkDeclaration getLinkDeclaration() {
-    return (LinkDeclaration) BaseAdapter.fromNode(myLinkDeclaration);
+  public SNode getLinkDeclaration() {
+    return myLinkDeclaration;
   }
 
   public ConceptDeclaration getChildConcept() {

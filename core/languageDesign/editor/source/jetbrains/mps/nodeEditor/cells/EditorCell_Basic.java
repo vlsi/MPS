@@ -78,7 +78,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private EditorCellKeyMap myKeyMap;
   private String myCellId;
   private String myRole;
-  private LinkDeclaration myLinkDeclaration;
+  private SNode myLinkDeclaration;
   private SNode myRefNode;
   private boolean myInTree;
   private boolean myIsReferenceCell = false;
@@ -373,12 +373,12 @@ public abstract class EditorCell_Basic implements EditorCell {
     myRole = role;
   }
 
-  public void setLinkDeclaration(final LinkDeclaration link) {
+  public void setLinkDeclaration(final SNode link) {
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
         myLinkDeclaration = link;
         if (myLinkDeclaration != null) {
-          myIsReferenceCell = link.getMetaClass() != LinkMetaclass.aggregation;
+          myIsReferenceCell = SNodeUtil.getLinkDeclaration_IsReference(link);
         } else {
           myIsReferenceCell = false;
         }
@@ -391,7 +391,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (role != null) {
       return (LinkDeclaration) BaseAdapter.fromNode(getSNode().getLinkDeclaration(role));
     }
-    return myLinkDeclaration;
+    return (LinkDeclaration) BaseAdapter.fromNode(myLinkDeclaration);
   }
 
   public boolean isReferenceCell() {

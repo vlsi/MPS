@@ -23,11 +23,9 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_InsertIntoCollection;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
 import java.util.*;
-import java.awt.event.KeyEvent;
 
 public abstract class AbstractCellListHandler {
   public static final String ELEMENT_CELL_ACTIONS_SET = "element-cell-actions-set";

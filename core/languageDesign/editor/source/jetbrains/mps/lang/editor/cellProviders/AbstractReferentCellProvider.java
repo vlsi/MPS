@@ -17,9 +17,6 @@ package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -44,7 +41,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   protected SNode myLinkDeclaration;
   protected String myGenuineRole;
-  protected LinkDeclaration myGenuineLinkDeclaration;
+  protected SNode myGenuineLinkDeclaration;
 
   protected boolean myIsAggregation;
   protected boolean myIsCardinality0;
@@ -68,12 +65,11 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
-        myGenuineLinkDeclaration = (LinkDeclaration) BaseAdapter.fromNode(SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration));
-        myGenuineRole = myGenuineLinkDeclaration.getRole();
-        myIsAggregation = myGenuineLinkDeclaration.getMetaClass() == LinkMetaclass.aggregation;
-        Cardinality sourceCardinality = myGenuineLinkDeclaration.getSourceCardinality();
-        myIsCardinality0 = (sourceCardinality == Cardinality._0__1 || sourceCardinality == Cardinality._0__n);
-        myIsCardinality1 = (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._1__n);
+        myGenuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
+        myGenuineRole = SModelUtil.getLinkDeclarationRole(myGenuineLinkDeclaration);
+        myIsAggregation = !SNodeUtil.getLinkDeclaration_IsReference(myGenuineLinkDeclaration);
+        myIsCardinality1 = SNodeUtil.getLinkDeclaration_IsAtLeastOneMultiplicity(myGenuineLinkDeclaration);
+        myIsCardinality0 = !myIsCardinality1;
       }
     });
   }

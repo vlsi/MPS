@@ -66,8 +66,13 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     return result;
   }
 
+  @Deprecated
   public static SNode createNode(@NotNull AbstractConceptDeclaration nodeConcept1, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
     SNode nodeConcept = BaseAdapter.fromAdapter(nodeConcept1);
+    return createNode(nodeConcept, sampleNode, enclosingNode, model, scope);
+  }
+
+  public static SNode createNode(@NotNull SNode nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
     if (model == null) {
       model = AuxilaryRuntimeModel.getDescriptor().getSModel();
     }
