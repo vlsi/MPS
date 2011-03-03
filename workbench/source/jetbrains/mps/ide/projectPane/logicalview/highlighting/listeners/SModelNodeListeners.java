@@ -16,6 +16,8 @@
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.GenerationFacade;
+import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
@@ -26,8 +28,6 @@ import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.Listener
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneModifiedMarker;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeErrorChecker;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeGenStatusUpdater;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeGenStatusUpdater.GenerationStatus;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
@@ -40,7 +40,6 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreeNode;
 import java.util.List;
 import java.util.Set;
 
@@ -71,6 +70,8 @@ public class SModelNodeListeners implements NodeListeners {
   }
 
   public void startListening() {
+    visitNode(myTreeNode);
+
     SModelEventsDispatcher.getInstance().registerListener(myEventsListener);
     myModel.addModelListener(mySimpleModelListener);
 
@@ -118,6 +119,10 @@ public class SModelNodeListeners implements NodeListeners {
     public void modelChanged(SModel model) {
       updateNodePresentation(false, true);
       visitNode(myModelNode);
+    }
+
+    public void modelSaved(SModelDescriptor sm) {
+      myModifiedMarker.visitNode(myModelNode);
     }
 
     public boolean isValid() {

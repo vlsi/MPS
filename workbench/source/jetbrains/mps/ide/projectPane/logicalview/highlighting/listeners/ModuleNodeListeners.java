@@ -24,11 +24,14 @@ import jetbrains.mps.reloading.ReloadAdapter;
 public class ModuleNodeListeners implements NodeListeners {
   private ProjectModuleTreeNode myNode;
 
+  private ProjectPaneTreeErrorChecker myChecker = new ProjectPaneTreeErrorChecker();
+
   public ModuleNodeListeners(ProjectModuleTreeNode node) {
     myNode = node;
   }
 
   public void startListening() {
+    myChecker.visitNode(myNode);
     ClassLoaderManager.getInstance().addReloadHandler(new MyReloadAdapter());
   }
 
@@ -38,7 +41,7 @@ public class ModuleNodeListeners implements NodeListeners {
 
   private class MyReloadAdapter extends ReloadAdapter {
     public void onAfterReload() {
-      new ProjectPaneTreeErrorChecker().visitNode(myNode);
+      myChecker.visitNode(myNode);
     }
   }
 }
