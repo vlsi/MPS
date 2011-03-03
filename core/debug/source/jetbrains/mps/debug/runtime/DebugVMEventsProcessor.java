@@ -24,6 +24,8 @@ import com.sun.jdi.request.EventRequest;
 import com.sun.jdi.request.StepRequest;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.IDebuggableFramesSelector;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
+import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
 import jetbrains.mps.debug.breakpoints.LineBreakpoint;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
@@ -279,9 +281,15 @@ public class DebugVMEventsProcessor {
       LOG.error(t);
     }
 
-    if (requestHit && requestor instanceof LineBreakpoint) {
-      // if requestor is a breakpoint and this breakpoint was hit, no matter its suspend policy
-      myBreakpointManager.processBreakpointHit((LineBreakpoint) requestor);
+    if (requestHit) {
+      if (requestor instanceof JavaBreakpoint && ((JavaBreakpoint) requestor).isLogMessage()) {
+        myReporter.reportInformation("Breakpoint hit: " + ((JavaBreakpoint) requestor).getPresentation());
+      }
+
+      if (requestor instanceof IBreakpoint) {
+        // if requestor is a breakpoint and this breakpoint was hit, no matter its suspend policy
+        myBreakpointManager.processBreakpointHit((IBreakpoint) requestor);
+      }
     }
 
     if (!requestHit || resumePreferred) {

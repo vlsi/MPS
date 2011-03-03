@@ -65,10 +65,6 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
 
   @Override
   public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
-    if (event instanceof ExceptionEvent) {
-      ObjectReference exception = ((ExceptionEvent) event).exception();
-      System.err.println("Exception event " + exception);
-    }
     return true;
   }
 

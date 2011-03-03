@@ -156,13 +156,13 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
 
   private static class MyIBreakpointPropertiesUi implements IBreakpointPropertiesUi<JavaBreakpoint> {
     private JavaBreakpoint myBreakpoint;
-    private final JPanel myUi;
+    private final JPanel myMainPanel;
+    private final JCheckBox myLogMessageButton;
     private final JRadioButton[] myButtons = new JRadioButton[SuspendPolicy.values().length];
 
     public MyIBreakpointPropertiesUi() {
-      myUi = new JPanel(new FlowLayout(FlowLayout.LEADING));
-
-      myUi.setBorder(new TitledBorder("Suspend policy"));
+      JPanel suspendPanel = new JPanel(new FlowLayout(FlowLayout.LEADING));
+      suspendPanel.setBorder(new TitledBorder("Suspend policy"));
 
       ButtonGroup group = new ButtonGroup();
       for (SuspendPolicy policy : SuspendPolicy.values()) {
@@ -179,8 +179,23 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
           }
         });
         group.add(button);
-        myUi.add(button);
+        suspendPanel.add(button);
       }
+
+      JPanel actionPanel = new JPanel(new FlowLayout(FlowLayout.LEADING));
+      actionPanel.setBorder(new TitledBorder("Actions"));
+      myLogMessageButton = new JCheckBox("Log message to console");
+      myLogMessageButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          myBreakpoint.setLogMessage(myLogMessageButton.isSelected());
+        }
+      });
+      actionPanel.add(myLogMessageButton);
+
+      myMainPanel = new JPanel(new FlowLayout(FlowLayout.LEADING));
+      myMainPanel.add(suspendPanel);
+      myMainPanel.add(actionPanel);
     }
 
     @Override
@@ -192,11 +207,12 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
           myButtons[policy.ordinal()].setSelected(true);
         }
       }
+      myLogMessageButton.setSelected(myBreakpoint.isLogMessage());
     }
 
     @Override
     public JComponent getMainComponent() {
-      return myUi;
+      return myMainPanel;
     }
 
     private static enum SuspendPolicy {
