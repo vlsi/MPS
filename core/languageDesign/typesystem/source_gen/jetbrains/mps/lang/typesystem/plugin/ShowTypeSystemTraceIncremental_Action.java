@@ -18,12 +18,12 @@ import jetbrains.mps.newTypesystem.presentation.difference.ShowTypeSystemTrace;
 import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
 
-public class ShowTypeSystemTrace_Action extends GeneratedAction {
+public class ShowTypeSystemTraceIncremental_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowTypeSystemTrace_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowTypeSystemTraceIncremental_Action.class);
 
-  public ShowTypeSystemTrace_Action() {
-    super("Show Typesystem Trace", "", ICON);
+  public ShowTypeSystemTraceIncremental_Action() {
+    super("Show Incremental Typesystem Trace", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -32,7 +32,7 @@ public class ShowTypeSystemTrace_Action extends GeneratedAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "ShowTypeSystemTrace", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowTypeSystemTraceIncremental", t);
       this.disable(event.getPresentation());
     }
   }
@@ -71,10 +71,10 @@ public class ShowTypeSystemTrace_Action extends GeneratedAction {
       typeCheckingContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getTypeCheckingContext();
       if (typeCheckingContext instanceof TypeCheckingContextNew) {
         TypeCheckingContextNew t = (TypeCheckingContextNew) typeCheckingContext;
-        new ShowTypeSystemTrace(t, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SNode) MapSequence.fromMap(_params).get("node")), true);
+        new ShowTypeSystemTrace(t, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SNode) MapSequence.fromMap(_params).get("node")), false);
       }
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTrace", t);
+      LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTraceIncremental", t);
     }
   }
 }

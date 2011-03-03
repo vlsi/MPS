@@ -6,12 +6,13 @@
   <unitInfo fileName="TypesystemActions_ActionGroup.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Default_KeymapChanges" />
   <unitInfo fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemPlugin_CustomProjectPlugin" />
-  <unitInfo fileName="Typesystem_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ApplicationPlugin" />
+  <unitInfo fileName="Typesystem_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ApplicationPlugin" />
   <unitInfo fileName="ShowInequationsForCell_Action.java" startLine="18" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowInequationsForCell_Action" />
   <unitInfo fileName="GoToTypeErrorRule_Action.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action" />
   <unitInfo fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="23" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action" />
   <unitInfo fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="22" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup" />
   <unitInfo fileName="ShowInferredNodeType_Action.java" startLine="22" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowInferredNodeType_Action" />
+  <unitInfo fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowTypeSystemTraceIncremental_Action" />
   <unitInfo fileName="ShowTypeSystemTrace_Action.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowTypeSystemTrace_Action" />
   <unitInfo fileName="GoToTypeErrorRule_InGroup_Action.java" startLine="17" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_InGroup_Action" />
   <unitInfo fileName="ShowNodeType_Action.java" startLine="26" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action" />
@@ -27,7 +28,7 @@
   </root>
   <root nodeId="1205245331359">
     <nodeInfo nodeId="1230216511092" fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3924602344979582140" fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="17" startPosition="133" endLine="18" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1920304158212503676" fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="17" startPosition="133" endLine="18" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="1206101816406">
     <nodeInfo nodeId="1206105127535" fileName="GoToTypeErrorRule_Action.java" startLine="29" startPosition="87" endLine="30" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -78,6 +79,16 @@
     <nodeInfo nodeId="1230215568466" fileName="ShowInequationsForCell_Action.java" startLine="51" startPosition="142" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <scopeInfo nodeId="1230215568467" fileName="ShowInequationsForCell_Action.java" startLine="52" startPosition="37" endLine="53" endPosition="68" />
     <scopeInfo nodeId="1230215611393" fileName="ShowInequationsForCell_Action.java" startLine="54" startPosition="14" endLine="55" endPosition="80" />
+  </root>
+  <root nodeId="1920304158212346242">
+    <nodeInfo nodeId="1920304158212346251" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1920304158212346254" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="70" startPosition="46" endLine="71" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1920304158212346264" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="72" startPosition="66" endLine="73" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1920304158212346270" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="73" startPosition="80" endLine="74" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1920304158212346262" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="71" startPosition="125" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="1920304158212346263" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="72" startPosition="66" endLine="74" endPosition="214">
+      <varInfo nodeId="1920304158212346265" varName="t" />
+    </scopeInfo>
   </root>
   <root nodeId="4290387479601509657">
     <nodeInfo nodeId="4290387479601537361" fileName="GoToTypeErrorRule_InGroup_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="errorId" />
@@ -169,9 +180,9 @@
     <nodeInfo nodeId="4213432195536169031" fileName="ShowTypeSystemTrace_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4213432195536180219" fileName="ShowTypeSystemTrace_Action.java" startLine="70" startPosition="46" endLine="71" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6867415733702648393" fileName="ShowTypeSystemTrace_Action.java" startLine="72" startPosition="66" endLine="73" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4213432195536185602" fileName="ShowTypeSystemTrace_Action.java" startLine="73" startPosition="80" endLine="74" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4213432195536185602" fileName="ShowTypeSystemTrace_Action.java" startLine="73" startPosition="80" endLine="74" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4213432195536180227" fileName="ShowTypeSystemTrace_Action.java" startLine="71" startPosition="125" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="4213432195536180228" fileName="ShowTypeSystemTrace_Action.java" startLine="72" startPosition="66" endLine="74" endPosition="207">
+    <scopeInfo nodeId="4213432195536180228" fileName="ShowTypeSystemTrace_Action.java" startLine="72" startPosition="66" endLine="74" endPosition="213">
       <varInfo nodeId="6867415733702648394" varName="t" />
     </scopeInfo>
   </root>
