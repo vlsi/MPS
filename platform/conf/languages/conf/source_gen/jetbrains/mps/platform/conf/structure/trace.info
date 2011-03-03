@@ -31,11 +31,11 @@
   <unitInfo fileName="RootRoot.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.RootRoot" />
   <unitInfo fileName="ExtensionPoints.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.ExtensionPoints" />
   <unitInfo fileName="ComponentsRoot.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.ComponentsRoot" />
+  <unitInfo fileName="IdeaPluginRoot.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.IdeaPluginRoot" />
   <unitInfo fileName="Extensions.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Extensions" />
   <unitInfo fileName="Service.java" startLine="14" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Service" />
-  <unitInfo fileName="IdeaPlugin.java" startLine="13" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.IdeaPlugin" />
   <unitInfo fileName="Components.java" startLine="13" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Components" />
   <unitInfo fileName="PluginVendor.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.PluginVendor" />
-  <unitInfo fileName="Plugin.java" startLine="16" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Plugin" />
+  <unitInfo fileName="Plugin.java" startLine="15" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Plugin" />
 </debugInfo>
 

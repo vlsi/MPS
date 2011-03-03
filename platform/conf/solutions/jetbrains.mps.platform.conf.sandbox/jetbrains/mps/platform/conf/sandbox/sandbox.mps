@@ -10,11 +10,11 @@
     </node>
   </roots>
   <root id="1740160309778217800">
-    <node role="root" roleId="cs0q.7130790807395857418" type="cs0q.IdeaPlugin" typeId="cs0q.1740160309778217806" id="1740160309778221572">
+    <node role="root" roleId="cs0q.7130790807395857418" type="cs0q.IdeaPluginRoot" typeId="cs0q.1740160309778217806" id="1740160309778221572">
       <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.ComponentsRoot" typeId="cs0q.5522969664585014978" id="8546999199441594024" />
       <node role="plugin" roleId="cs0q.6536266708345503827" type="cs0q.Plugin" typeId="cs0q.6536266708345244486" id="6536266708345522338">
         <property name="name" nameId="tpck.1169194664001" value="foobar" />
-        <property name="uid" nameId="cs0q.6536266708345244491" value="foo.bar" />
+        <property name="uid" value="foo.bar" />
         <property name="version" nameId="cs0q.6536266708345244493" value="1.0" />
         <node role="vendor" roleId="cs0q.6536266708345244498" type="cs0q.PluginVendor" typeId="cs0q.6536266708345244494" id="6536266708345559403" />
         <node role="ideaVersion" roleId="cs0q.6536266708345477901" type="cs0q.IdeaVersion" typeId="cs0q.6536266708345477897" id="6536266708345559404" />

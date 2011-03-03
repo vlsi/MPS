@@ -96,8 +96,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5066720069350533029" resolveInfo="ConfigurationXmlNode" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1740160309778217806">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements" />
-      <property name="name" nameId="tpck.1169194664001" value="IdeaPlugin" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="xml.root" />
+      <property name="name" nameId="tpck.1169194664001" value="IdeaPluginRoot" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5066720069350533029" resolveInfo="ConfigurationXmlNode" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6121364846593763655">
@@ -120,17 +120,17 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="configuration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5522969664585014978">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="xml.root" />
       <property name="name" nameId="tpck.1169194664001" value="ComponentsRoot" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5066720069350533029" resolveInfo="ConfigurationXmlNode" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8009656244648532777">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="xml.root" />
       <property name="name" nameId="tpck.1169194664001" value="ComponentRoot" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5066720069350533029" resolveInfo="ConfigurationXmlNode" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7225089784577918894">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="elements" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="xml.root" />
       <property name="name" nameId="tpck.1169194664001" value="RootRoot" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5066720069350533029" resolveInfo="ConfigurationXmlNode" />
     </node>
@@ -141,7 +141,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6536266708345244486">
       <property name="name" nameId="tpck.1169194664001" value="Plugin" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.plugin" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1740160309778217806" resolveInfo="IdeaPlugin" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6536266708345244487">
       <property name="name" nameId="tpck.1169194664001" value="PluginDependency" />
@@ -392,11 +392,8 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="5066720069350533029" resolveInfo="ConfigurationXmlNode" />
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1740160309778170996" />
     </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6536266708345503827">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="plugin" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6536266708345244486" resolveInfo="Plugin" />
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="4691677767846423023">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1740160309778217807">
       <property name="value" nameId="tpce.1105725733873" value="idea-plugin" />

@@ -213,7 +213,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
-  <dependency className="jetbrains.mps.platform.conf.structure.IdeaPlugin" file="IdeaPlugin.java">
+  <dependency className="jetbrains.mps.platform.conf.structure.IdeaPluginRoot" file="IdeaPluginRoot.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.platform.conf.structure.IConfiguration" />
@@ -224,7 +224,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.platform.conf.structure.Plugin" />
     <classNode dependClassName="jetbrains.mps.platform.conf.structure.ConfigurationXmlNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
@@ -276,6 +275,7 @@
     <classNode dependClassName="jetbrains.mps.platform.conf.structure.PluginHelpset" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.platform.conf.structure.IdeaPluginRoot" />
     <classNode dependClassName="jetbrains.mps.platform.conf.structure.IdeaVersion" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="java.util.List" />
