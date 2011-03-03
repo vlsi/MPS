@@ -19,6 +19,7 @@ public class GenerationOptions {
   private final boolean myRebuildAll;
 
   private final IncrementalGenerationStrategy myIncrementalStrategy;
+  private final GenerationParametersProvider myParametersProvider;
   private boolean myKeepOutputModel;
 
   private final boolean myGenerateInParallel;
@@ -33,10 +34,10 @@ public class GenerationOptions {
   private IGenerationTracer myGenerationTracer;
 
   private GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll,
-                           boolean generateInParallel, int numberOfThreads, int tracingMode, boolean showInfo,
-                           boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
-                           @NotNull IGenerationTracer generationTracer, IncrementalGenerationStrategy incrementalStrategy,
-                           boolean keepOutputModel) {
+                            boolean generateInParallel, int numberOfThreads, int tracingMode, boolean showInfo,
+                            boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
+                            @NotNull IGenerationTracer generationTracer, IncrementalGenerationStrategy incrementalStrategy,
+                            GenerationParametersProvider parametersProvider, boolean keepOutputModel) {
     mySaveTransientModels = saveTransientModels;
     myGenerateInParallel = generateInParallel;
     myStrictMode = strictMode;
@@ -49,6 +50,7 @@ public class GenerationOptions {
     myKeepModelsWithWarnings = keepModelsWithWarnings;
     myGenerationTracer = generationTracer;
     myIncrementalStrategy = incrementalStrategy;
+    myParametersProvider = parametersProvider;
     myKeepOutputModel = keepOutputModel;
   }
 
@@ -107,6 +109,10 @@ public class GenerationOptions {
     return myNumberOfModelsToKeep;
   }
 
+  public GenerationParametersProvider getParametersProvider() {
+    return myParametersProvider;
+  }
+
   public static OptionsBuilder getDefaults() {
     return new OptionsBuilder();
   }
@@ -118,7 +124,7 @@ public class GenerationOptions {
   /**
    * Options builder
    * Usage:
-   *    GenerationOptions.getDefaults().saveTransientModels(true).reporting(true, true, true, 4);
+   * GenerationOptions.getDefaults().saveTransientModels(true).reporting(true, true, true, 4);
    */
   public static class OptionsBuilder {
 
@@ -135,6 +141,8 @@ public class GenerationOptions {
     private boolean myKeepModelsWithWarnings = true;
     private int myNumberOfModelsToKeep = 16;
 
+    private GenerationParametersProvider myParametersProvider = null;
+
     private IGenerationTracer myGenerationTracer = NullGenerationTracer.INSTANCE;
     private boolean myKeepOutputModel;
 
@@ -144,11 +152,17 @@ public class GenerationOptions {
     public GenerationOptions create() {
       return new GenerationOptions(myStrictMode, mySaveTransientModels, myRebuildAll,
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
-        myKeepModelsWithWarnings, myNumberOfModelsToKeep, myGenerationTracer, myIncrementalStrategy, myKeepOutputModel);
+        myKeepModelsWithWarnings, myNumberOfModelsToKeep, myGenerationTracer, myIncrementalStrategy,
+        myParametersProvider, myKeepOutputModel);
     }
 
     public OptionsBuilder saveTransientModels(boolean saveTransientModels) {
       mySaveTransientModels = saveTransientModels;
+      return this;
+    }
+
+    public OptionsBuilder parameters(GenerationParametersProvider parametersProvider) {
+      myParametersProvider = parametersProvider;
       return this;
     }
 
@@ -187,7 +201,7 @@ public class GenerationOptions {
       return this;
     }
 
-    public OptionsBuilder keepOutputModel (boolean keepOutputModel) {
+    public OptionsBuilder keepOutputModel(boolean keepOutputModel) {
       myKeepOutputModel = keepOutputModel;
       return this;
     }
