@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.runtime.TemplateModel;
 
 public class QueriesGenerated {
@@ -29,6 +30,13 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1206460249786(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
+  }
+
+  public static boolean mappingConfiguration_Condition_2507865635201605483(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return (((Integer) _context.getGenerationParameter("r:b0ad82b1-199d-401f-8f4b-67d4a41c537d.GlobalParameters.list")) == null ?
+      true :
+      ((Integer) _context.getGenerationParameter("r:b0ad82b1-199d-401f-8f4b-67d4a41c537d.GlobalParameters.list")) < 2
+    );
   }
 
   public static TemplateModel getDescriptor() {

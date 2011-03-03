@@ -46,6 +46,7 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef_Behavior;
+import jetbrains.mps.lang.generator.behavior.IGeneratorParameter_Behavior;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_3076445114127780910(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -3366,6 +3367,11 @@ public class QueriesGenerated {
         return IOperation_Behavior.call_getDotExpression_1224687669172(it);
       }
     }));
+    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef")).<SNode>select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return IOperation_Behavior.call_getDotExpression_1224687669172(it);
+      }
+    }));
     for (SNode node : nodes) {
       SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", null);
       SLinkOperations.setTarget(replacement, "typeHint", SNodeOperations.cast(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.structure.Type"), true);
@@ -3470,6 +3476,20 @@ public class QueriesGenerated {
         GenerationContextOp_PatternRef_Behavior.call_setTarget_1758784108620254533(op, null);
       }
     }
+    {
+      // references in 'get prev input by label' 
+      List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef");
+      for (SNode op : ops) {
+        SNode paramref = SLinkOperations.getTarget(op, "importClause", false);
+        if (paramref == null || (SLinkOperations.getTarget(paramref, "declaration", false) == null)) {
+          _context.showErrorMessage(op, "reference on generation parameter is broken");
+          continue;
+        }
+        SPropertyOperations.set(op, "name_intern", IGeneratorParameter_Behavior.call_getUniqueId_650531548511609559(SLinkOperations.getTarget(paramref, "declaration", false)));
+        SLinkOperations.setTarget(op, "importClause", null, false);
+      }
+    }
+
   }
 
   public static void mappingScript_CodeBlock_6342833957791858286(final IOperationContext operationContext, final MappingScriptContext _context) {
