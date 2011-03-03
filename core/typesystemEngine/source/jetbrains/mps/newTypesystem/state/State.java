@@ -18,6 +18,8 @@ package jetbrains.mps.newTypesystem.state;
 
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
@@ -139,6 +141,14 @@ public class State {
     }
     boolean addedAnew = myBlocks.add(dataFlowBlock);
     assert addedAnew;
+  }
+
+  public void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status) {
+    try{
+      executeOperation(new ApplyRuleOperation(node, rule, status));
+    } catch (Throwable t) {
+      LOG.error("an error occurred while applying rule to node " + node, t, node);
+    }
   }
 
   public void substitute(SNode oldVar, SNode type) {

@@ -19,12 +19,12 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.application.ReadAction;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.operation.ApplyRuleOperation;
 import jetbrains.mps.newTypesystem.operation.TypeAssignedOperation;
 import jetbrains.mps.newTypesystem.operation.TypeExpandedOperation;
 import jetbrains.mps.newTypesystem.operation.block.AbstractBlockOperation;
@@ -55,55 +55,36 @@ import java.util.*;
  */
 public class TypeSystemTraceTree extends MPSTree {
   private final IOperationContext myOperationContext;
-  private AbstractOperation myDifference;
+  private AbstractOperation myOperation;
   private final TypeCheckingContextNew myTypeCheckingContextNew;
   private TypeCheckingContextNew myCurrentContext;
   private final SNode mySelectedNode;
   private final Set<SNode> myNodes;
-  private boolean showDependencyOperations = false;
-  private boolean traceForNode = false;
   private boolean generationMode = false;
-  private boolean showTypesExpansion = false;
   private ShowTypeSystemTrace myParent;
   private State myStateCopy;
   private State myGenerationStateCopy;
-  private AbstractOperation myOldDifference;
-
-  public boolean isTraceForNode() {
-     return traceForNode;
-  }
-
-  public void setTraceForNode(boolean traceForNode) {
-    this.traceForNode = traceForNode;
-  }
+  private AbstractOperation myOldOperation;
 
   public void setGenerationMode(boolean generationMode) {
     this.generationMode = generationMode;
-    myOldDifference = null;
+    myOldOperation = null;
     if (this.generationMode) {
       TypeCheckingContextNew context = (TypeCheckingContextNew)TypeContextManager.getInstance().createTypeCheckingContext(mySelectedNode);
       context.getTypeInGenerationMode(mySelectedNode);
       myGenerationStateCopy = context.getState();
-      myDifference = context.getOperation();
+      myOperation = context.getOperation();
       myCurrentContext = context;
     } else {
-      myDifference = myTypeCheckingContextNew.getOperation();
+      myOperation = myTypeCheckingContextNew.getOperation();
       myCurrentContext = myTypeCheckingContextNew;
     }
-  }
-
-  public void setShowDependencyOperations(boolean showDependencyOperations) {
-    this.showDependencyOperations = showDependencyOperations;
-  }
-
-  public boolean isShowDependencyOperations() {
-    return showDependencyOperations;
   }
 
   public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame, SNode node, ShowTypeSystemTrace parent) {
     myOperationContext = operationContext;
     myTypeCheckingContextNew = tcc;
-    myDifference = tcc.getOperation();
+    myOperation = tcc.getOperation();
     mySelectedNode = node;
     myNodes = new HashSet<SNode>();
     myNodes.addAll(node.getDescendants());
@@ -114,7 +95,6 @@ public class TypeSystemTraceTree extends MPSTree {
     this.rebuildNow();
     expandAll();
     addTreeSelectionListener(new MyTreeSelectionListener());
-
   }
 
   public State getState() {
@@ -124,32 +104,47 @@ public class TypeSystemTraceTree extends MPSTree {
   @Override
   protected MPSTreeNode rebuild() {
     setRootVisible(false);
-    if (traceForNode && mySelectedNode !=null) {
-      getSliceVars(myDifference);
+    setGenerationMode(TraceSettings.isGenerationMode());
+    if (TraceSettings.isTraceForSelectedNode() && mySelectedNode !=null) {
+      getSliceVars(myOperation);
       return createListTraceForNode();
     }
-    return createNode(myDifference);
+    TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(myStateCopy.getOperation(), myOperationContext);
+    create(myOperation, result);
+    return result;
   }
 
   private TypeSystemTraceTreeNode createNode(AbstractOperation diff) {
-
     TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(diff, myOperationContext);
     if (diff.getConsequences() != null) {
       for (AbstractOperation child : diff.getConsequences()) {
         if (filterNodeType(child)) {
           TypeSystemTraceTreeNode node = createNode(child);
           result.add(node);
-          
         }
       }
     }
     return result;
   }
 
+  private void create(AbstractOperation diff, TypeSystemTraceTreeNode result) {
+    if (diff.getConsequences() != null) {
+      for (AbstractOperation child : diff.getConsequences()) {
+        if (filterNodeType(child)) {
+          TypeSystemTraceTreeNode node = new TypeSystemTraceTreeNode(child, myOperationContext);
+          create(child, node);
+          result.add(node);
+        } else {
+          create(child, result);
+        }
+      }
+    }
+  }
+
   private MPSTreeNode createListTraceForNode() {
-    TypeSystemTraceTreeNode root = new TypeSystemTraceTreeNode(myDifference, myOperationContext);
+    TypeSystemTraceTreeNode root = new TypeSystemTraceTreeNode(myOperation, myOperationContext);
     List<TypeSystemTraceTreeNode> result = new LinkedList<TypeSystemTraceTreeNode>();
-    createList(myDifference, result);
+    createList(myOperation, result);
     for (TypeSystemTraceTreeNode node : result) {
       root.add(node);
     }
@@ -168,8 +163,7 @@ public class TypeSystemTraceTree extends MPSTree {
   }
 
   private boolean showNode(AbstractOperation diff) {
-
-    if (mySelectedNode == null && traceForNode) {
+    if (mySelectedNode == null && TraceSettings.isTraceForSelectedNode()) {
       return true;
     }
     if (myNodes.contains(diff.getSource())) {
@@ -193,13 +187,13 @@ public class TypeSystemTraceTree extends MPSTree {
   }
 
   private boolean filterNodeType(AbstractOperation operation) {
-    if (operation instanceof TypeExpandedOperation && !showTypesExpansion) {
+    if (!TraceSettings.isShowTypesExpansion() && operation instanceof TypeExpandedOperation) {
       return false;
     }
-    if (showDependencyOperations) {
-      return true;
+    if (!TraceSettings.isShowApplyRuleOperations() && operation instanceof ApplyRuleOperation)  {
+      return false;
     }
-    if (operation instanceof AddDependencyOperation || operation instanceof RemoveDependencyOperation) {
+    if (!TraceSettings.isShowBlockDependencies() && operation instanceof AddDependencyOperation || operation instanceof RemoveDependencyOperation) {
       return false;
     }
     return true;
@@ -252,23 +246,22 @@ public class TypeSystemTraceTree extends MPSTree {
   private void showState(final MPSTreeNode newNode) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        State state=  generationMode ? myGenerationStateCopy : myStateCopy;
+        State state =  TraceSettings.isGenerationMode() ? myGenerationStateCopy : myStateCopy;
         AbstractOperation rootDifference = myCurrentContext.getOperation();
         Object difference = newNode.getUserObject();
-        if (myOldDifference == null) {
+        if (myOldOperation == null) {
           state.clear(false);
           state.executeOperationsBeforeAnchor(rootDifference, difference);
         } else {
-          state.updateState(myOldDifference, (AbstractOperation)difference);
+          state.updateState(myOldOperation, (AbstractOperation)difference);
         }
         myParent.resetState(state);
-        myOldDifference = (AbstractOperation)difference;
+        myOldOperation = (AbstractOperation)difference;
       }
     });
   }
 
   private class MyTreeSelectionListener implements TreeSelectionListener {
-
     @Override
     public void valueChanged(TreeSelectionEvent e) {
       TreePath path = e.getNewLeadSelectionPath();

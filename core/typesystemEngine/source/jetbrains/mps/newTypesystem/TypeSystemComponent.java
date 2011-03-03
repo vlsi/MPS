@@ -391,7 +391,7 @@ class TypeSystemComponent extends CheckingComponent {
       SNode oldCheckedNode = myCurrentCheckedNode;
       myCurrentCheckedNode = node;
       for (Pair<InferenceRule_Runtime, IsApplicableStatus> rule : newRules) {
-        myNodeTypesComponent.applyRuleToNode(node, rule.o1, rule.o2);
+        myState.applyRuleToNode(node, rule.o1, rule.o2);
       }
       myCurrentCheckedNode = oldCheckedNode;
       result = myCurrentTypeAffected;
