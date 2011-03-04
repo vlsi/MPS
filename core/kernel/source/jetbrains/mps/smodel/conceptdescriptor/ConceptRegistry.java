@@ -21,7 +21,8 @@ public class ConceptRegistry implements ApplicationComponent {
     new CompiledDescriptorProvider()
   );
 
-  private final ConceptDescriptorProvider conceptDescriptorProvider = checkingDescriptorProvider;
+//  private final ConceptDescriptorProvider conceptDescriptorProvider = checkingDescriptorProvider;
+  private final ConceptDescriptorProvider conceptDescriptorProvider = mixedDescriptorProvided;
 
   private final Map<String, ConceptDescriptor> descriptors = newHashMap();
 

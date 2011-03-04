@@ -17,7 +17,7 @@ public class CheckingDescriptorProvider implements ConceptDescriptorProvider {
       // todo: ?
       return originalDescriptor;
     } else {
-      return new CheckingConceptDescriptor(originalDescriptor, newDescriptor);
+      return new CheckingConceptDescriptor(fqName, originalDescriptor, newDescriptor);
     }
   }
 }

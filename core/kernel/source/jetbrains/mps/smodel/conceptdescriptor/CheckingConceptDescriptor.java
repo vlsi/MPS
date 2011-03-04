@@ -8,17 +8,19 @@ import java.util.Set;
 public class CheckingConceptDescriptor implements ConceptDescriptor {
   private final ConceptDescriptor original;
   private final ConceptDescriptor toCheck;
+  private final String fqName;
 
-  public CheckingConceptDescriptor(ConceptDescriptor original, ConceptDescriptor toCheck) {
+  public CheckingConceptDescriptor(String fqName, ConceptDescriptor original, ConceptDescriptor toCheck) {
     this.original = original;
     this.toCheck = toCheck;
+    this.fqName = fqName;
   }
 
   private <T> T checkEquals(T expected, T actual, String type) {
     if (!expected.equals(actual)) {
-      System.out.println("!Not equals " + type + ": " + expected + " / " + actual);
+      System.out.println("!(" + fqName + ") Not equals " + type + ": " + expected + " / " + actual);
     } else {
-      System.out.println("Ok :-) " + actual + " / " + type);
+      System.out.println("(" + fqName + ") Ok :-) " + actual + " / " + type);
     }
 
     return expected;
