@@ -9,6 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.runtime.TemplateModel;
 
 public class QueriesGenerated {
@@ -33,10 +36,16 @@ public class QueriesGenerated {
   }
 
   public static boolean mappingConfiguration_Condition_2507865635201605483(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return (((Integer) _context.getGenerationParameter("r:7837797c-dca2-49dd-b813-1ebbb73cd3bb.GlobalParameters.list")) == null ?
+    return (((Integer) _context.getGenerationParameter("r:adca65c8-400e-4857-84ca-14f7b82e64ce.GlobalParameters.list")) == null ?
       true :
-      ((Integer) _context.getGenerationParameter("r:7837797c-dca2-49dd-b813-1ebbb73cd3bb.GlobalParameters.list")) < 2
+      ((Integer) _context.getGenerationParameter("r:adca65c8-400e-4857-84ca-14f7b82e64ce.GlobalParameters.list")) < 2
     );
+  }
+
+  public static SNode insertMacro_Query_7612440128092282150(final IOperationContext operationContext, final TemplateQueryContextWithMacro _context) {
+    SNode inode = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
+    SPropertyOperations.set(inode, "text", "Inserted node for input=" + SPropertyOperations.getString(_context.getNode(), "name"));
+    return inode;
   }
 
   public static TemplateModel getDescriptor() {
