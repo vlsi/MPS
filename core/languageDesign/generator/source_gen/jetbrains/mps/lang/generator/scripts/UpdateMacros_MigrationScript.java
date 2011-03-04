@@ -54,7 +54,38 @@ public class UpdateMacros_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isShowAsIntention() {
-        return false;
+        return true;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Replace $MAP_SRC$ -> $LABEL$ (if applicable) ";
+      }
+
+      public String getAdditionalInfo() {
+        return "Replace $MAP_SRC$ -> $LABEL$ (if applicable) ";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        if ((SLinkOperations.getTarget(node, "mappingLabel", false) == null) || StringUtils.isEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name"))) {
+          return false;
+        }
+        if ((SLinkOperations.getTarget(node, "mapperFunction", true) != null) || (SLinkOperations.getTarget(node, "postMapperFunction", true) != null) || (SLinkOperations.getTarget(node, "sourceNodeQuery", true) != null)) {
+          return false;
+        }
+        return true;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.LabelMacro");
+      }
+
+      public boolean isShowAsIntention() {
+        return true;
       }
     });
   }
