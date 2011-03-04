@@ -23,7 +23,7 @@ public class CreateRowInEmptyTable_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("8316952525720946185", "8316952525720946207");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.lang.editor.plugin.Insert_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Insert_Action");
     }
   }
 }

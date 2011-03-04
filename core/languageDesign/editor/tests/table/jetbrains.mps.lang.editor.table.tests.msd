@@ -10,7 +10,7 @@
   </stubModelEntries>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</dependency>
+    <dependency reexport="false">5b1f863d-65a0-41a6-a801-33896be24202(jetbrains.mps.ide.editor)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>df8799e7-254a-406f-bd67-f4cc27337152(jetbrains.mps.lang.editor.tableTests)</usedLanguage>

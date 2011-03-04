@@ -24,7 +24,7 @@ public class Post_ThisSavingClassConceptUnset_Test extends BaseTransformationTes
       final IEditor editor = TestBody.this.initEditor("222793074662091832", "222793074662091867");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.invokeAction(editorComponent, "$Copy");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.lang.editor.plugin.Insert_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Insert_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
     }
   }

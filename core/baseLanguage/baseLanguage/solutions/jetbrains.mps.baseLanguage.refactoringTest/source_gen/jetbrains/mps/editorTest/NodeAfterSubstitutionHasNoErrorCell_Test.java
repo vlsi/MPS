@@ -23,7 +23,7 @@ public class NodeAfterSubstitutionHasNoErrorCell_Test extends BaseTransformation
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("3727822333335546447", "8664476900639779216");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.lang.editor.plugin.Insert_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Insert_Action");
       BaseEditorTestBody.typeString(editorComponent, "stub@");
     }
   }

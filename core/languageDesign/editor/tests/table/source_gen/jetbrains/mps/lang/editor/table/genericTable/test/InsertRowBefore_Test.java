@@ -23,7 +23,7 @@ public class InsertRowBefore_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("6341395909949371894", "6341395909949371916");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.lang.editor.plugin.Insert_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Insert_Action");
     }
   }
 }

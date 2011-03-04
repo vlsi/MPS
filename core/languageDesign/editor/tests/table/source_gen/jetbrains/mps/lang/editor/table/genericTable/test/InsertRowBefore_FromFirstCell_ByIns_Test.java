@@ -23,7 +23,7 @@ public class InsertRowBefore_FromFirstCell_ByIns_Test extends BaseTransformation
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("5481602834662762304", "5481602834662762326");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.lang.editor.plugin.InsertBefore_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.InsertBefore_Action");
     }
   }
 }

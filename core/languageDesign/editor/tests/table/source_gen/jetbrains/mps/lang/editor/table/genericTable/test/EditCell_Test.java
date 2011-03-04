@@ -23,7 +23,7 @@ public class EditCell_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("6170050146384276510", "6170050146384276532");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.lang.editor.plugin.SelectUp_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectUp_Action");
       BaseEditorTestBody.typeString(editorComponent, "newValue");
 
     }

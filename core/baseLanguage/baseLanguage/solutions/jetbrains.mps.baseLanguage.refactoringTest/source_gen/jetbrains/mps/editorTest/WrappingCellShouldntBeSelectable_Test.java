@@ -23,8 +23,8 @@ public class WrappingCellShouldntBeSelectable_Test extends BaseTransformationTes
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("2322823743453985857", "2322823743453985861");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.lang.editor.plugin.SelectUp_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.lang.editor.plugin.SelectUp_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectUp_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.SelectUp_Action");
     }
   }
 }

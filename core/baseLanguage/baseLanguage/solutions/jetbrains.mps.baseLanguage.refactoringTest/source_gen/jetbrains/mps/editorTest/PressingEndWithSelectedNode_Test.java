@@ -26,7 +26,7 @@ public class PressingEndWithSelectedNode_Test extends BaseTransformationTest {
       final IEditor editor = TestBody.this.initEditor("1232980665819", "1232980720898");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl UP", "ctrl UP", "ctrl UP"));
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.lang.editor.plugin.End_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.End_Action");
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " LEFT"));
     }
   }
