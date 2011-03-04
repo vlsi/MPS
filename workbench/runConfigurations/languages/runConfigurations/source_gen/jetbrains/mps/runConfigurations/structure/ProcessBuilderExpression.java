@@ -13,6 +13,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ProcessBuilderExpression extends Expression {
   public static final String concept = "jetbrains.mps.runConfigurations.structure.ProcessBuilderExpression";
   public static final String WORKING_DIRECTORY = "workingDirectory";
+  public static final String LISTENER = "listener";
   public static final String PART = "part";
 
   public ProcessBuilderExpression(SNode node) {
@@ -25,6 +26,14 @@ public class ProcessBuilderExpression extends Expression {
 
   public void setWorkingDirectory(Expression node) {
     super.setChild(ProcessBuilderExpression.WORKING_DIRECTORY, node);
+  }
+
+  public Expression getListener() {
+    return (Expression) this.getChild(Expression.class, ProcessBuilderExpression.LISTENER);
+  }
+
+  public void setListener(Expression node) {
+    super.setChild(ProcessBuilderExpression.LISTENER, node);
   }
 
   public int getPartsCount() {
