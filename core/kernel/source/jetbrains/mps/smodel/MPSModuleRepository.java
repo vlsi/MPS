@@ -18,6 +18,8 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.FileTypeManager;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
@@ -40,8 +42,9 @@ public class MPSModuleRepository implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
 
   private static MPSModuleRepository ourInstance = null;
+
   public static MPSModuleRepository getInstance() {
-    if (ourInstance ==null){
+    if (ourInstance == null) {
       ourInstance = ApplicationManager.getApplication().getComponent(MPSModuleRepository.class);
     }
     return ourInstance;
@@ -108,11 +111,8 @@ public class MPSModuleRepository implements ApplicationComponent {
   public void invalidateCaches() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        MPSProjects projects = MPSProjects.instance();
-        if (projects != null) {
-          for (MPSProject p : projects.getProjects()) {
-            p.getProject().getComponent(ProjectScope.class).invalidateCaches();
-          }
+        for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+          p.getComponent(ProjectScope.class).invalidateCaches();
         }
 
         for (IModule m : getAllModules()) {

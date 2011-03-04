@@ -137,9 +137,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
         myProjectFile = projectFile;
         myProjectDescriptor = projectDescriptor;
 
-        MPSProjects projects = MPSProjects.instance();
-        projects.addProject(MPSProject.this);
-
         readModules();
 
         for (IModule m : getModules()) {
@@ -156,9 +153,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
   public void dispose(final boolean reloadAll) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        MPSProjects projects = MPSProjects.instance();
-        projects.removeProject(MPSProject.this);
-
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
 

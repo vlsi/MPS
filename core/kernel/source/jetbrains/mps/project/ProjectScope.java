@@ -18,10 +18,12 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -33,6 +35,9 @@ public class ProjectScope extends DefaultScope implements ProjectComponent {
   }
 
   protected Set<IModule> getInitialModules() {
+    Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
+    assert Arrays.asList(openProjects).contains(myProject) : "trying to get scope on a not-yet-loaded project";
+
     MPSProject mpsProject = myProject.getComponent(MPSProject.class);
 
     Set<IModule> result = new HashSet<IModule>();
