@@ -358,7 +358,7 @@ public class RefactoringContext {
         allConceptFeatures.addAll(exactConceptFeatures);
       }
 
-      for (String parentConceptFQName : LanguageHierarchyCache.getInstance().getAncestorsNames(conceptFQName)) {
+      for (String parentConceptFQName : LanguageHierarchyCache.getAncestorsNames(conceptFQName)) {
         Set<ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(parentConceptFQName);
         if (conceptFeatures != null) {
           allConceptFeatures.addAll(conceptFeatures);

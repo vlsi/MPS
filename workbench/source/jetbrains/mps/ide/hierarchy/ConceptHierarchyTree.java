@@ -23,7 +23,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptD
     if (visited.contains(node)) {
       throw new CircularHierarchyException(node, "circular concept hierarchy");
     }
-    Set<String> parents = myCache.getParentsNames(NameUtil.nodeFQName(node));
+    Set<String> parents = LanguageHierarchyCache.getParentsNames(NameUtil.nodeFQName(node));
     Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
     for (String s : parents) {
       SNode conceptDeclaration = SModelUtil.findConceptDeclaration(s, GlobalScope.getInstance());

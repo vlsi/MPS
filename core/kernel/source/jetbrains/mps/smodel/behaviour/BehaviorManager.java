@@ -52,6 +52,10 @@ public final class BehaviorManager implements ApplicationComponent {
     return ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).invoke(returnType, node, methodName, parametersTypes, parameters);
   }
 
+  public static <T> T staticInvoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
+    return ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).invoke(returnType, node, methodName, parametersTypes, parameters);
+  }
+
   public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
     return ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
   }
