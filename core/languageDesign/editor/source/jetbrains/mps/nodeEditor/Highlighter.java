@@ -19,9 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.project.DumbService;
-import com.intellij.openapi.project.IndexNotReadyException;
-import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.*;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.MPSCore;
@@ -30,8 +28,6 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.MPSProject.ProjectDisposeListener;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -62,6 +58,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Object PENDING_LOCK = new Object();
 
   private volatile boolean myStopThread = false;
+  private ProjectManager myProjectManager;
   private FileEditorManager myFileEditorManager;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
@@ -82,7 +79,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private ReloadListener myReloadListener = new ReloadAdapter() {
     public void unload() {
       addPendingAction(new Runnable() {
-        @Override
         public void run() {
           myCheckedOnceEditors.clear();
           myInspectorMessagesCreated = false;
@@ -100,7 +96,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   };
   private SModelListener myModelReloadListener = new SModelAdapter() {
-    @Override
     public void modelReplaced(SModelDescriptor sm) {
       for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
         SNode sNode = editorComponent.getEditedNode();
@@ -117,18 +112,20 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       myLastCommandTime = System.currentTimeMillis();
     }
   };
+  private ProjectManagerAdapter myProjectCloseListener = new ProjectManagerAdapter() {
+    public void projectClosing(Project project) {
+      if (project != myProject) return;
+      stopUpdater();
+    }
+  };
 
-  public Highlighter(MPSProject mpsProject, Project project,FileEditorManager fileEditorManager, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager,InspectorTool inspector) {
+  public Highlighter(Project project, ProjectManager projectManager, FileEditorManager fileEditorManager, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager, InspectorTool inspector) {
     myProject = project;
+    myProjectManager = projectManager;
     myFileEditorManager = fileEditorManager;
     myGlobalSModelEventsManager = eventsManager;
     myClassLoaderManager = classLoaderManager;
     myInspectorTool = inspector;
-    mpsProject.addDisposeListener(new ProjectDisposeListener() {
-      public void onBeforeDispose() {
-        stopUpdater();
-      }
-    });
   }
 
   public void projectOpened() {
@@ -162,9 +159,11 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     ModelAccess.instance().addCommandListener(myCommandListener);
     myThread = new HighlighterThread();
     myThread.start();
+    myProjectManager.addProjectManagerListener(myProjectCloseListener);
   }
 
   public void projectClosed() {
+    myProjectManager.removeProjectManagerListener(myProjectCloseListener);
     ModelAccess.instance().removeCommandListener(myCommandListener);
     myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
     myGlobalSModelEventsManager.removeGlobalModelListener(myModelReloadListener);
@@ -256,7 +255,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   protected void doUpdate() {
-    if ( ApplicationManager.getApplication().isDisposed()) {
+    if (ApplicationManager.getApplication().isDisposed()) {
       return;
     }
     // SwingUtilities.invokeLater(new Runnable() {
@@ -330,7 +329,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
-          for(IEditor editor : list) {
+          for (IEditor editor : list) {
             EditorComponent editorComponent = editor.getCurrentEditorComponent();
             if (editorComponent != null) {
               editorComponents.add(editorComponent);
