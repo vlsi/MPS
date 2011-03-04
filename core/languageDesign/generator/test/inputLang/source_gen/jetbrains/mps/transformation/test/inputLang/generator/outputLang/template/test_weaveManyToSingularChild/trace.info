@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.QueriesGenerated" />
-  <unitInfo fileName="Mappingmain.java" startLine="80" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain$RootMappingRule0" />
-  <unitInfo fileName="Mappingmain.java" startLine="114" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain$WeavingRule0" />
+  <unitInfo fileName="Mappingmain.java" startLine="80" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain$RootMappingRule0" />
+  <unitInfo fileName="Mappingmain.java" startLine="113" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain$WeavingRule0" />
   <unitInfo fileName="Templateweave__InputNode__A.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Templateweave__InputNode__A" />
-  <unitInfo fileName="Templatemap__outputNode.java" startLine="15" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Templatemap__outputNode" />
   <unitInfo fileName="TemplateModelImpl.java" startLine="18" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.TemplateModelImpl" />
-  <unitInfo fileName="Mappingmain.java" startLine="24" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain" />
+  <unitInfo fileName="Templatemap__outputNode.java" startLine="15" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Templatemap__outputNode" />
+  <unitInfo fileName="Mappingmain.java" startLine="24" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain" />
   <root nodeId="1218738629621">
     <nodeInfo nodeId="1218738691459" fileName="QueriesGenerated.java" startLine="15" startPosition="146" endLine="16" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1218738882048" fileName="QueriesGenerated.java" startLine="19" startPosition="146" endLine="20" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
