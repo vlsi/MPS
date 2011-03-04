@@ -1,11 +1,22 @@
 package jetbrains.mps.smodel;
 
 import com.google.common.collect.ImmutableSet;
+import jetbrains.mps.smodel.conceptdescriptor.ConceptRegistry;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class ConceptUtils {
   public static ImmutableSet<String> getAncestors(String conceptName, Set<String> parents) {
-    return null;
+    List<String> result = new ArrayList<String>();
+
+    result.add(conceptName);
+    ConceptRegistry conceptRegistry = ConceptRegistry.getInstance();
+    for (String parent : parents) {
+      result.addAll(conceptRegistry.getConceptDescriptor(parent).getAncestorsNames());
+    }
+
+    return ImmutableSet.copyOf(result);
   }
 }
