@@ -26,6 +26,31 @@
     </scopeInfo>
     <unitInfo nodeId="3503961503302359248" fileName="BaseMpsRunConfiguration.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.BaseMpsRunConfiguration" />
   </root>
+  <root nodeId="4762811064051417884">
+    <nodeInfo nodeId="4762811064051417898" fileName="DefaultExecutionResult.java" startLine="17" startPosition="101" endLine="18" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4762811064051417902" fileName="DefaultExecutionResult.java" startLine="18" startPosition="31" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4762811064051417917" fileName="DefaultExecutionResult.java" startLine="22" startPosition="45" endLine="23" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4762811064051417924" fileName="DefaultExecutionResult.java" startLine="26" startPosition="34" endLine="27" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4762811064051417934" fileName="DefaultExecutionResult.java" startLine="30" startPosition="49" endLine="31" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4762811064051417885" fileName="DefaultExecutionResult.java" startLine="11" startPosition="64" endLine="13" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProcessHandler" />
+    <nodeInfo nodeId="4762811064051417889" fileName="DefaultExecutionResult.java" startLine="13" startPosition="48" endLine="15" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConsole" />
+    <nodeInfo nodeId="4762811064051417894" fileName="DefaultExecutionResult.java" startLine="16" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultExecutionResult#(Lcom/intellij/execution/process/ProcessHandler;Lcom/intellij/execution/ui/ExecutionConsole;)V" />
+    <nodeInfo nodeId="4762811064051417913" fileName="DefaultExecutionResult.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProcessHandler#()Lcom/intellij/execution/process/ProcessHandler;" />
+    <nodeInfo nodeId="4762811064051417919" fileName="DefaultExecutionResult.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getActions#()[Lcom/intellij/openapi/actionSystem/AnAction;" />
+    <nodeInfo nodeId="4762811064051417930" fileName="DefaultExecutionResult.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExecutionConsole#()Lcom/intellij/execution/ui/ExecutionConsole;" />
+    <scopeInfo nodeId="4762811064051417916" fileName="DefaultExecutionResult.java" startLine="22" startPosition="45" endLine="23" endPosition="28" />
+    <scopeInfo nodeId="4762811064051417923" fileName="DefaultExecutionResult.java" startLine="26" startPosition="34" endLine="27" endPosition="27" />
+    <scopeInfo nodeId="4762811064051417933" fileName="DefaultExecutionResult.java" startLine="30" startPosition="49" endLine="31" endPosition="21" />
+    <scopeInfo nodeId="4762811064051417897" fileName="DefaultExecutionResult.java" startLine="17" startPosition="101" endLine="19" endPosition="24" />
+    <scopeInfo nodeId="4762811064051417894" fileName="DefaultExecutionResult.java" startLine="16" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="4762811064051417906" varName="process" />
+      <varInfo nodeId="4762811064051417909" varName="console" />
+    </scopeInfo>
+    <scopeInfo nodeId="4762811064051417913" fileName="DefaultExecutionResult.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="4762811064051417919" fileName="DefaultExecutionResult.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="4762811064051417930" fileName="DefaultExecutionResult.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <unitInfo nodeId="4762811064051417884" fileName="DefaultExecutionResult.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.runConfigurations.runtime.DefaultExecutionResult" />
+  </root>
   <root nodeId="6472627752525360127">
     <nodeInfo nodeId="6472627752525360133" fileName="ProcessHandlerBuilder.java" startLine="21" startPosition="36" endLine="22" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandLine" />
     <nodeInfo nodeId="6472627752525372557" fileName="ProcessHandlerBuilder.java" startLine="28" startPosition="42" endLine="29" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

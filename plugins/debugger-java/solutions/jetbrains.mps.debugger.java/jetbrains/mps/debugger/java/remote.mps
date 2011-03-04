@@ -886,9 +886,11 @@
             </node>
           </node>
         </node>
-      </node>
-      <node role="process" roleId="uhxm.2866018809101862242" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8261999457268953472">
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8261999457268953467" resolveInfo="handler" />
+        <node role="statement" roleId="tpee.1068581517665" type="uhxm.StartProcessHandlerStatement" typeId="uhxm.4762811064051339799" id="4762811064051417353">
+          <node role="process" roleId="uhxm.4762811064051339801" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4762811064051417752">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8261999457268953467" resolveInfo="handler" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="debugger" roleId="uhxm.4371737370139995047" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="3091009652595960627">

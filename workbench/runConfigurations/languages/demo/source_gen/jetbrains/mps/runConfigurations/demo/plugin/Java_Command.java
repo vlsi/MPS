@@ -21,7 +21,7 @@ public class Java_Command {
 
   public static ProcessHandler createProcess(RunConfigurationBase configuration, boolean debug, ProcessListener processListener) throws ExecutionException {
     String java = getJavaCommand(getJdkHome());
-    return new ProcessHandlerBuilder().append(java).append("-version").build(processListener, new File(System.getProperty("user.home")));
+    return new ProcessHandlerBuilder().append(java).append("-version").build(new File(System.getProperty("user.home")));
   }
 
   public static IDebugger getDebugger() {

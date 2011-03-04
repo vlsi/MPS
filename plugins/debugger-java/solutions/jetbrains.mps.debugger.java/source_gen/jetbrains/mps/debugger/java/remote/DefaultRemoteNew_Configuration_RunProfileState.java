@@ -14,18 +14,17 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
-import com.intellij.execution.impl.ConsoleViewImpl;
 import jetbrains.mps.debugger.java.run.RemoteDebugProcessHandler;
+import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener;
+import jetbrains.mps.runConfigurations.runtime.DefaultExecutionResult;
+import jetbrains.mps.runConfigurations.runtime.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import com.intellij.execution.executors.DefaultDebugExecutor;
-import com.intellij.execution.ui.ExecutionConsole;
-import com.intellij.openapi.actionSystem.AnAction;
-import javax.swing.JComponent;
 
 public class DefaultRemoteNew_Configuration_RunProfileState extends DebuggerRunProfileState implements RunProfileState {
   @NotNull
@@ -49,16 +48,20 @@ public class DefaultRemoteNew_Configuration_RunProfileState extends DebuggerRunP
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    final ConsoleViewImpl consoleView = new ConsoleViewImpl(project, false);
+    // <node> 
     RemoteDebugProcessHandler handler = new RemoteDebugProcessHandler(project);
-    ProcessHandler _processHandler = handler;
-    _processHandler.addProcessListener(new ConsoleProcessListener(consoleView));
-    return new DefaultRemoteNew_Configuration_RunProfileState.MyExecutionResult(_processHandler, new DefaultRemoteNew_Configuration_RunProfileState.MyExecutionConsole(consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        consoleView.dispose();
-      }
-    }));
-
+    {
+      final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
+      ProcessHandler _processHandler = handler;
+      _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
+      return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
+          _consoleView.dispose();
+        }
+      }));
+    }
+    // <node> 
+    // <node> 
   }
 
   public IDebugger getDebugger() {
@@ -75,55 +78,5 @@ public class DefaultRemoteNew_Configuration_RunProfileState extends DebuggerRunP
       return true;
     }
     return false;
-  }
-
-  private static class MyExecutionResult implements ExecutionResult {
-    @NotNull
-    private final ProcessHandler myProcessHandler;
-    @NotNull
-    private final ExecutionConsole myConsole;
-
-    public MyExecutionResult(@NotNull ProcessHandler process, @NotNull ExecutionConsole console) {
-      myProcessHandler = process;
-      myConsole = console;
-    }
-
-    public ProcessHandler getProcessHandler() {
-      return myProcessHandler;
-    }
-
-    public AnAction[] getActions() {
-      return new AnAction[0];
-    }
-
-    public ExecutionConsole getExecutionConsole() {
-      return myConsole;
-    }
-  }
-
-  private static class MyExecutionConsole implements ExecutionConsole {
-    @Nullable
-    private final _FunctionTypes._void_P0_E0 myDispose;
-    private final JComponent myComponent;
-
-    public MyExecutionConsole(JComponent component, @Nullable _FunctionTypes._void_P0_E0 dispose) {
-      myDispose = dispose;
-      myComponent = component;
-    }
-
-    public JComponent getPreferredFocusableComponent() {
-      return myComponent;
-    }
-
-    public void dispose() {
-      if (myDispose == null) {
-        return;
-      }
-      myDispose.invoke();
-    }
-
-    public JComponent getComponent() {
-      return myComponent;
-    }
   }
 }

@@ -621,6 +621,10 @@ public class QueriesGenerated {
     return CommandDeclaration_Behavior.call_isDebuggable_2064548906020951200(_context.getNode());
   }
 
+  public static boolean ifMacro_Condition_4762811064051506833(final IOperationContext operationContext, final IfMacroContext _context) {
+    return false;
+  }
+
   public static boolean ifMacro_Condition_6472627752525616868(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "workingDirectory", true) != null);
   }
@@ -655,10 +659,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_4806795137173746010(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "iconPath", true);
-  }
-
-  public static SNode sourceNodeQuery_8261999457268974177(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "execute", true), "process", true);
   }
 
   public static SNode sourceNodeQuery_4371737370140155848(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -763,6 +763,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_6472627752525616884(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "workingDirectory", true);
+  }
+
+  public static SNode sourceNodeQuery_4762811064051426913(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "process", true);
   }
 
   public static Iterable sourceNodesQuery_4928971978190680336(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -970,9 +974,9 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_6472627752525424777(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode expression = new QueriesGenerated.QuotationClass_x583g4_a0a0a412().createNode();
+    SNode expression = new QueriesGenerated.QuotationClass_x583g4_a0a0a512().createNode();
     for (SNode part : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "part", true))) {
-      expression = new QueriesGenerated.QuotationClass_x583g4_a0a0a1a412().createNode(expression, SNodeOperations.copyNode(SLinkOperations.getTarget(part, "expression", true)));
+      expression = new QueriesGenerated.QuotationClass_x583g4_a0a0a1a512().createNode(expression, SNodeOperations.copyNode(SLinkOperations.getTarget(part, "expression", true)));
     }
     return expression;
   }
@@ -1035,8 +1039,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a412 {
-    public QuotationClass_x583g4_a0a0a412() {
+  public static class QuotationClass_x583g4_a0a0a512 {
+    public QuotationClass_x583g4_a0a0a512() {
     }
 
     public SNode createNode() {
@@ -1059,8 +1063,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a1a412 {
-    public QuotationClass_x583g4_a0a0a1a412() {
+  public static class QuotationClass_x583g4_a0a0a1a512 {
+    public QuotationClass_x583g4_a0a0a1a512() {
     }
 
     public SNode createNode(Object parameter_10, Object parameter_11) {

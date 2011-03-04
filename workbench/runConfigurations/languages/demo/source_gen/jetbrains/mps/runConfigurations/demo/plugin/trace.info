@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="DemoApplication_Configuration_RunProfileState.java" startLine="64" startPosition="197" endLine="68" endPosition="5" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_RunProfileState$2" />
   <unitInfo fileName="Demo_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.Demo_ApplicationPlugin" />
   <unitInfo fileName="DemoApplication_Configuration.java" startLine="152" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration$MyState" />
   <unitInfo fileName="Make_Configuration.java" startLine="65" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.Make_Configuration$MyState" />
@@ -9,14 +8,12 @@
   <unitInfo fileName="Demo_ProjectPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.Demo_ProjectPlugin" />
   <unitInfo fileName="Node_Configuration.java" startLine="126" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration$MyState" />
   <unitInfo fileName="Make_Configuration_Editor.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.Make_Configuration_Editor" />
-  <unitInfo fileName="DemoApplication_Configuration_RunProfileState.java" startLine="88" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_RunProfileState$MyExecutionResult" />
-  <unitInfo fileName="DemoApplication_Configuration_RunProfileState.java" startLine="112" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_RunProfileState$MyExecutionConsole" />
   <unitInfo fileName="Node_Configuration_Editor.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration_Editor" />
   <unitInfo fileName="Demo_Kind.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.Demo_Kind" />
   <unitInfo fileName="DemoApplication_Configuration_Editor.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_Editor" />
   <unitInfo fileName="Java_Command.java" startLine="18" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.Java_Command" />
+  <unitInfo fileName="DemoApplication_Configuration_RunProfileState.java" startLine="33" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_RunProfileState" />
   <unitInfo fileName="Make_Configuration.java" startLine="14" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.Make_Configuration" />
-  <unitInfo fileName="DemoApplication_Configuration_RunProfileState.java" startLine="32" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_RunProfileState" />
   <unitInfo fileName="Node_Configuration.java" startLine="20" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.Node_Configuration" />
   <unitInfo fileName="DemoApplication_Configuration.java" startLine="35" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration" />
   <root nodeId="223733852661754512">
@@ -81,7 +78,7 @@
   </root>
   <root nodeId="6957430790227279303">
     <nodeInfo nodeId="456055012090368964" fileName="Java_Command.java" startLine="22" startPosition="156" endLine="23" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="456055012090368969" fileName="Java_Command.java" startLine="23" startPosition="47" endLine="24" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="456055012090368969" fileName="Java_Command.java" startLine="23" startPosition="47" endLine="24" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4667331066104874836" fileName="Java_Command.java" startLine="31" startPosition="57" endLine="32" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4667331066104874846" fileName="Java_Command.java" startLine="32" startPosition="51" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4667331066104874869" fileName="Java_Command.java" startLine="34" startPosition="38" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -113,7 +110,7 @@
     <scopeInfo nodeId="6472627752525328345" fileName="Java_Command.java" startLine="53" startPosition="102" endLine="54" endPosition="61" />
     <scopeInfo nodeId="6472627752525328366" fileName="Java_Command.java" startLine="56" startPosition="61" endLine="57" endPosition="74" />
     <scopeInfo nodeId="6472627752525329297" fileName="Java_Command.java" startLine="66" startPosition="56" endLine="67" endPosition="24" />
-    <scopeInfo nodeId="6957430790227279305" fileName="Java_Command.java" startLine="22" startPosition="156" endLine="24" endPosition="137">
+    <scopeInfo nodeId="6957430790227279305" fileName="Java_Command.java" startLine="22" startPosition="156" endLine="24" endPosition="120">
       <varInfo nodeId="456055012090368965" varName="java" />
     </scopeInfo>
     <scopeInfo nodeId="6472627752525328395" fileName="Java_Command.java" startLine="65" startPosition="58" endLine="68" endPosition="7" />
@@ -143,15 +140,25 @@
     <scopeInfo nodeId="7684700299064222831" fileName="Make_Configuration_Editor.java" startLine="20" startPosition="38" endLine="22" endPosition="22" />
   </root>
   <root nodeId="7806358006983646762">
-    <nodeInfo nodeId="7806358006983648106" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="54" startPosition="76" endLine="55" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7806358006983648106" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="54" startPosition="49" endLine="55" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7806358006983648112" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="57" startPosition="25" endLine="58" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7806358006983648121" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="60" startPosition="7" endLine="61" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3091009652595852527" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="77" startPosition="56" endLine="78" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4762811064051453188" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="61" startPosition="5" endLine="62" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4762811064051453188" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="62" startPosition="79" endLine="63" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4762811064051453188" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="63" startPosition="109" endLine="64" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4762811064051453188" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="66" startPosition="30" endLine="67" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3091009652595852527" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="78" startPosition="56" endLine="79" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7806358006983648110" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="56" startPosition="57" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4762811064051453188" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="65" startPosition="148" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
     <nodeInfo nodeId="7806358006983648109" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="55" startPosition="65" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4762811064051453188" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="64" startPosition="83" endLine="69" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4762811064051453188" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="60" startPosition="7" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <scopeInfo nodeId="7806358006983648111" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="57" startPosition="25" endLine="58" endPosition="80" />
+    <scopeInfo nodeId="4762811064051453188" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="66" startPosition="30" endLine="67" endPosition="33" />
     <scopeInfo nodeId="7806358006983648110" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="56" startPosition="57" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="4762811064051453188" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="65" startPosition="148" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="4762811064051453188" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="61" startPosition="5" endLine="69" endPosition="10" />
     <unitInfo nodeId="7806358006983648110" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="56" startPosition="45" endLine="60" endPosition="5" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_RunProfileState$1" />
+    <unitInfo nodeId="4762811064051453188" fileName="DemoApplication_Configuration_RunProfileState.java" startLine="65" startPosition="118" endLine="69" endPosition="7" unitName="jetbrains.mps.runConfigurations.demo.plugin.DemoApplication_Configuration_RunProfileState$2" />
   </root>
   <root nodeId="8750596094204760417">
     <nodeInfo nodeId="3347833162492362904" fileName="DemoApplication_Configuration_Editor.java" startLine="14" startPosition="105" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLabel" />

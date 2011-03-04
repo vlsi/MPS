@@ -24,7 +24,7 @@
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" version="-1" />
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="4tn0" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.runtime(jetbrains.mps.debug.runtime@java_stub)" version="-1" />
-  <import index="z1l1" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.runtime.settings(MPS.Classpath/jetbrains.mps.debug.runtime.settings@java_stub)" version="-1" />
+  <import index="z1l1" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.runtime.settings(jetbrains.mps.debug.runtime.settings@java_stub)" version="-1" />
   <import index="uhxm" modelUID="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.runConfigurations.structure)" version="-1" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="y88" modelUID="r:19e0b24f-7b0d-4520-8681-31caef71baed(jetbrains.mps.runConfigurations.demo.plugin)" version="-1" implicit="yes" />
@@ -54,7 +54,7 @@
       <property name="isDebuggable" value="true" />
     </node>
     <node type="uhxm.ComplexRunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="7806358006983646762">
-      <property name="canRun" nameId="uhxm.5925077313451868299" value="false" />
+      <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
       <property name="configurationName" nameId="uhxm.7806358006983709801" value="myConfiguration" />
       <link role="runConfiguration" roleId="uhxm.1048802521465114237" targetNodeId="8750596094204760417" resolveInfo="Demo Application" />
     </node>
@@ -1283,18 +1283,20 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7806358006983648121">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7806358006983648122">
-            <property name="name" nameId="tpck.1169194664001" value="javaProcess" />
-            <node role="type" roleId="tpee.5680397130376446158" type="uhxm.ProcessType" typeId="uhxm.2866018809102008315" id="7806358006983648123" />
-            <node role="initializer" roleId="tpee.1068431790190" type="uhxm.CommandStartExpression" typeId="uhxm.6957430790227171558" id="7806358006983648124">
-              <link role="commandDeclaration" roleId="uhxm.6355961872152766310" targetNodeId="6957430790227279303" resolveInfo="java" />
+        <node role="statement" roleId="tpee.1068581517665" type="uhxm.StartProcessHandlerStatement" typeId="uhxm.4762811064051339799" id="4762811064051453188">
+          <node role="process" roleId="uhxm.4762811064051339801" type="uhxm.ProcessBuilderExpression" typeId="uhxm.5812151570929638022" id="4762811064051513452">
+            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="4762811064051513453">
+              <node role="expression" roleId="uhxm.5812151570929658237" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4762811064051513454">
+                <property name="value" nameId="tpee.1070475926801" value="java" />
+              </node>
+            </node>
+            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="4762811064051513455">
+              <node role="expression" roleId="uhxm.5812151570929658237" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4762811064051513456">
+                <property name="value" nameId="tpee.1070475926801" value="-version" />
+              </node>
             </node>
           </node>
         </node>
-      </node>
-      <node role="process" roleId="uhxm.2866018809101862242" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7806358006983648125">
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7806358006983648122" resolveInfo="javaProcess" />
       </node>
     </node>
     <node role="debugger" roleId="uhxm.4371737370139995047" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7806358006983668557">
