@@ -16,19 +16,17 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class BeanExtension_beanExtensionPoint_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-  public BeanExtension_beanExtensionPoint_ReferentConstraint() {
+public class InterfaceExtension_intefaceExtensionPoint_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
+  public InterfaceExtension_intefaceExtensionPoint_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.platform.conf.structure.BeanExtension", "extensionPoint", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.platform.conf.structure.InterfaceExtension", "extensionPoint", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.platform.conf.structure.BeanExtension", "extensionPoint");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.platform.conf.structure.InterfaceExtension", "extensionPoint");
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
@@ -42,20 +40,12 @@ public class BeanExtension_beanExtensionPoint_ReferentConstraint extends BaseNod
       }
     }).<SNode>translate(new ITranslator2<SModelDescriptor, SNode>() {
       public Iterable<SNode> translate(SModelDescriptor smd) {
-        return SModelOperations.getNodes(((SModel) smd.getSModel()), "jetbrains.mps.platform.conf.structure.BeanExtensionPoint");
+        return SModelOperations.getNodes(((SModel) smd.getSModel()), "jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint");
       }
     });
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {
-    return new SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "8515964913726225384");
-  }
-
-  public boolean hasPresentation() {
-    return true;
-  }
-
-  public String getPresentation(final IOperationContext operationContext, final PresentationReferentConstraintContext _context) {
-    return SPropertyOperations.getString(_context.getLinkTarget(), "name");
+    return new SNodePointer("r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)", "8515964913726293783");
   }
 }

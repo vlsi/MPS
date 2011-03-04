@@ -111,7 +111,7 @@ public class IConfigurationElement_brokenRefs extends AbstractCellProvider {
         sb = sb.append("\n         nodeId: ").append(ref.getTargetNodeId());
         sb = (ref.getResolveInfo() != null ?
           sb.append("\n    resolveInfo: \"").append(ref.getResolveInfo()).append("\"\n") :
-          sb.append("\n no resolveInfo")
+          sb.append("\n no resolveInfo\n")
         );
         return sb;
       }

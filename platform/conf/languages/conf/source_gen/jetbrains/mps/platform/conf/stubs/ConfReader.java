@@ -22,6 +22,7 @@ import org.jdom.filter.ElementFilter;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class ConfReader {
@@ -325,7 +326,8 @@ public class ConfReader {
       if (dlr >= 0) {
         String elmName = shortName.substring(0, dlr);
         if (EXTENSION_POINT.equals(elmName) || ConfReader.PLUGIN.equals(elmName)) {
-          src.addReference(new StaticReference(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName), null));
+          // <node> 
+          src.addReference(new DynamicReference(SPropertyOperations.getString(link, "role"), src, trgsmref, shortName));
         }
       }
     } else {

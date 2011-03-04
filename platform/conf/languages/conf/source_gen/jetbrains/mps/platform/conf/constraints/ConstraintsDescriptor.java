@@ -16,6 +16,9 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new ExtensionPoint_resolveInfo_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ConfigurationXmlDocument_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new BeanExtension_beanExtensionPoint_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new InterfaceExtension_intefaceExtensionPoint_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Extension_extensionPoint_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PluginDependency_plugin_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
