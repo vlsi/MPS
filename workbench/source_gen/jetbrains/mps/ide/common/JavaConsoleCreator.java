@@ -55,6 +55,7 @@ public class JavaConsoleCreator {
 
   public static ConsoleViewImpl createConsoleView(Project project) {
     ConsoleViewImpl result = new ConsoleViewImpl(project, false);
+    result.getComponent(); // init editor in order to fix MPS-11721
     result.addMessageFilter(new JavaConsoleCreator.StackTraceFilter());
     return result;
   }
