@@ -109,6 +109,51 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return outputNodes == null ? Collections.<SNode>emptyList() : outputNodes;
   }
 
+  @Override
+  public SNode insertNode(SNode child, SNodePointer templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
+    // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
+    // planning the generation steps.
+    Language childLang = child.getNodeLanguage();
+    if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
+      if (!childLang.getGenerators().isEmpty()) {
+        SNode tNode = templateNode.getNode();
+        generator.getLogger().error(child, "language of output node is '" + childLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
+          GeneratorUtil.describe(tNode, "template"),
+          GeneratorUtil.describe(templateContext.getInput(), "input"),
+          new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'"));
+      }
+    }
+
+    if (child.isRegistered()) {
+      // must be "in air"
+      child = CopyUtil.copy(child);
+    }
+    // replace references back to input model
+    validateReferences(child, templateContext.getInput());
+    return child;
+  }
+
+  private void validateReferences(SNode node, SNode inputNode) {
+    for (SReference reference : node.getReferencesArray()) {
+      // reference to input model - illegal
+      if (generator.getInputModel().getSModelReference().equals(reference.getTargetSModelReference())) {
+        // replace
+        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
+          reference.getRole(),
+          reference.getSourceNode(),
+          inputNode,
+          reference.getTargetNode());
+        PostponedReference postponedReference = new PostponedReference(
+          refInfo,
+          generator);
+        reference.getSourceNode().replaceReference(reference, postponedReference);
+      }
+    }
+    for (SNode child : node.getChildren()) {
+      validateReferences(child, inputNode);
+    }
+  }
+
   public Collection<SNode> trySwitch(SNodePointer switch_, String mappingName, TemplateContext context) throws GenerationException {
     Collection<SNode> collection = generator.tryToReduce(context, switch_, mappingName, reductionContext);
     if (collection != null) {

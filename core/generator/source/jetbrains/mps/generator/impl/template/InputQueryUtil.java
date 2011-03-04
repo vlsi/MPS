@@ -44,6 +44,19 @@ public class InputQueryUtil {
     return res;
   }
 
+  public static SNode getNodeToInsert(SNode insertMacro, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
+    try {
+      SNode query = RuleUtil.getInsertMacro_Query(insertMacro);
+      if(query != null) {
+        return reductionContext.getQueryExecutor().evaluateInsertQuery(context.getInput(), insertMacro, query, context);
+      }
+
+      throw new GenerationFailureException("couldn't get nodes to insert", context.getInput(), insertMacro, null);
+    } catch (Throwable t) {
+      throw new GenerationFailureException("couldn't get nodes to insert", context.getInput(), insertMacro, null, t);
+    }
+  }
+
   public static List<SNode> getNewInputNodes(SNode nodeMacro, SNode currentInputNode, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
     try {
       SNode nodesQuery = RuleUtil.getSourceNodesQuery(nodeMacro);

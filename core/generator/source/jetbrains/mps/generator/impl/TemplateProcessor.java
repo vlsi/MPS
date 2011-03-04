@@ -18,16 +18,11 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
-import jetbrains.mps.generator.impl.reference.PostponedReference;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_MacroNode;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_TemplateNode;
+import jetbrains.mps.generator.impl.reference.*;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
-import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
@@ -238,15 +233,43 @@ public class TemplateProcessor {
             Language outputNodeLang = outputNode.getNodeLanguage();
             if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(outputNodeLang)) {
               if (!outputNodeLang.getGenerators().isEmpty()) {
-                myGenerator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleFqName() + "' - this language did not show up when computing generation steps!");
-                myGenerator.getLogger().error(templateContext.getInput(), " -- was input: " + templateContext.getInput().getDebugText());
-                myGenerator.getLogger().error(macro, " -- was template: " + macro.getDebugText());
-                myGenerator.getLogger().error(null, " -- workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'");
+                myGenerator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
+                  GeneratorUtil.describe(macro, "template"),
+                  GeneratorUtil.describe(templateContext.getInput(), "input"),
+                  new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'"));
               }
             }
           }
           outputNodes.addAll(_outputNodes);
         }
+      }
+      return outputNodes;
+    } else if (macroConceptFQName.equals(RuleUtil.concept_InsertMacro)) {
+      // $INSERT$
+      SNode child = InputQueryUtil.getNodeToInsert(macro, templateContext.subContext(mappingName), myReductionContext);
+      if (child != null) {
+        // check node languages : prevent 'insert' query from returnning node, which language was not counted when
+        // planning the generation steps.
+        Language childLang = child.getNodeLanguage();
+        if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
+          if (!childLang.getGenerators().isEmpty()) {
+            myGenerator.getLogger().error(child, "language of output node is '" + childLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
+              GeneratorUtil.describe(macro, "template"),
+              GeneratorUtil.describe(templateContext.getInput(), "input"),
+              new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'"));
+          }
+        }
+
+        if (child.isRegistered()) {
+          // must be "in air"
+          child = CopyUtil.copy(child);
+        }
+        // replace references back to input model
+        validateReferences(child, templateContext.getInput());
+
+        // label
+        myGenerator.getMappings().addOutputNodeByInputNodeAndMappingName(templateContext.getInput(), mappingName, child);
+        outputNodes.add(child);
       }
       return outputNodes;
 
@@ -399,7 +422,7 @@ public class TemplateProcessor {
       }
 
       final String[] parameterNames = RuleUtil.getTemplateDeclarationParameterNames(includeTemplate);
-      if(parameterNames == null) {
+      if (parameterNames == null) {
         myGenerator.showErrorMessage(newInputNode, null, macro, "error processing $INCLUDE$: target template is broken");
         return null;
       }
@@ -509,6 +532,27 @@ public class TemplateProcessor {
         }
       }
       return outputNodes;
+    }
+  }
+
+  private void validateReferences(SNode node, SNode inputNode) {
+    for (SReference reference : node.getReferencesArray()) {
+      // reference to input model - illegal
+      if (myGenerator.getInputModel().getSModelReference().equals(reference.getTargetSModelReference())) {
+        // replace
+        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
+          reference.getRole(),
+          reference.getSourceNode(),
+          inputNode,
+          reference.getTargetNode());
+        PostponedReference postponedReference = new PostponedReference(
+          refInfo,
+          myGenerator);
+        reference.getSourceNode().replaceReference(reference, postponedReference);
+      }
+    }
+    for (SNode child : node.getChildren()) {
+      validateReferences(child, inputNode);
     }
   }
 
