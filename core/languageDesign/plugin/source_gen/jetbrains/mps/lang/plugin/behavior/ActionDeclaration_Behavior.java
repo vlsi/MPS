@@ -65,7 +65,7 @@ public class ActionDeclaration_Behavior {
   }
 
   public static String call_getPrefix_1588596821190636875(SNode thisNode, String sourcePath) {
-    return sourcePath + "/" + NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode)).replace(".", "/");
+    return sourcePath.replaceAll("\\\\", "/") + "/" + NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode)).replace(".", "/");
   }
 
   public static String call_getFullPath_6301602537765917913(SNode thisNode, IModule module) {
