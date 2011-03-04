@@ -5,6 +5,7 @@
   <unitInfo fileName="NodeMacro_postfix.java" startLine="81" startPosition="83" endLine="92" endPosition="5" unitName="jetbrains.mps.lang.generator.editor.NodeMacro_postfix$1" />
   <unitInfo fileName="GeneratorParameterReference_Editor.java" startLine="139" startPosition="83" endLine="150" endPosition="5" unitName="jetbrains.mps.lang.generator.editor.GeneratorParameterReference_Editor$1" />
   <unitInfo fileName="NodeMacro_Editor.java" startLine="201" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.NodeMacro_Editor$NodeMacro_component_cellMenu_a0a0" />
+  <unitInfo fileName="LabelMacro_Editor.java" startLine="248" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LabelMacro_Editor$LabelMacro_component_cellMenu_a0a0" />
   <unitInfo fileName="LoopMacro_Editor.java" startLine="309" startPosition="0" endLine="320" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LoopMacro_Editor$LoopMacro_component_cellMenu_a0a0" />
   <unitInfo fileName="CopySrcListMacro_Editor.java" startLine="309" startPosition="0" endLine="320" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopySrcListMacro_Editor$CopySrcListMacro_component_cellMenu_a0a0" />
   <unitInfo fileName="IncludeMacro_Editor.java" startLine="405" startPosition="0" endLine="416" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.IncludeMacro_Editor$IncludeMacro_component_cellMenu_a0a0" />
@@ -28,6 +29,7 @@
   <unitInfo fileName="TemplateDeclarationReference_Editor.java" startLine="55" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclarationReference_Editor$_Inline_krqspc_a0a" />
   <unitInfo fileName="WeaveEach_RuleConsequence_Editor.java" startLine="150" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.WeaveEach_RuleConsequence_Editor$_Inline_hfot0g_a2b0" />
   <unitInfo fileName="NodeMacro_postfix.java" startLine="162" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.NodeMacro_postfix$_Inline_crgygw_a1a" />
+  <unitInfo fileName="LabelMacro_Editor.java" startLine="214" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LabelMacro_Editor$_Inline_x0em22_a2b2a" />
   <unitInfo fileName="CopyScrNodeMacro_inspector.java" startLine="241" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopyScrNodeMacro_inspector$_Inline_m1raju_a2b2a" />
   <unitInfo fileName="LoopMacro_Editor.java" startLine="275" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LoopMacro_Editor$_Inline_l06mua_a2b2a" />
   <unitInfo fileName="CopySrcListMacro_Editor.java" startLine="275" startPosition="0" endLine="308" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopySrcListMacro_Editor$_Inline_vmyx7q_a2b2a" />
@@ -118,6 +120,7 @@
   <unitInfo fileName="ReferenceMacro_Editor.java" startLine="23" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.ReferenceMacro_Editor" />
   <unitInfo fileName="GeneratorParameterReference_Editor.java" startLine="29" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.GeneratorParameterReference_Editor" />
   <unitInfo fileName="MappingScript_Editor.java" startLine="21" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MappingScript_Editor" />
+  <unitInfo fileName="LabelMacro_Editor.java" startLine="29" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.LabelMacro_Editor" />
   <unitInfo fileName="CopyScrNodeMacro_inspector.java" startLine="23" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.CopyScrNodeMacro_inspector" />
   <unitInfo fileName="TemplateDeclaration_Editor.java" startLine="39" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateDeclaration_Editor" />
   <unitInfo fileName="MacrosSwitch_KeyMap.java" startLine="18" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap" />

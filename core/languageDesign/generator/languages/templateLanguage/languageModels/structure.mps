@@ -430,6 +430,11 @@
       <property name="name" nameId="tpck.1169194664001" value="MappingConfiguration_Condition" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1216768419888" resolveInfo="TemplateQueryBase" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5133195082121471908">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
+      <property name="name" nameId="tpck.1169194664001" value="LabelMacro" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1087833466690" resolveInfo="NodeMacro" />
+    </node>
   </roots>
   <root id="1087833241328">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1167756362303">
@@ -1777,6 +1782,16 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7830515785164762755">
       <property name="value" nameId="tpce.1105725733873" value="condition" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+  </root>
+  <root id="5133195082121471908">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5133195082121477331">
+      <property name="value" nameId="tpce.1105725733873" value="$LABEL$" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5133195082121477332">
+      <property name="value" nameId="tpce.1105725733873" value="attach label to output node" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
   </root>
 </model>

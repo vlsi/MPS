@@ -250,6 +250,12 @@ public class TemplateProcessor {
       }
       return outputNodes;
 
+    } else if (macroConceptFQName.equals(RuleUtil.concept_LabelMacro)) {
+      // $LABEL$
+      List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, templateContext.subContext(mappingName), nodeMacrosToSkip + 1);
+      if (_outputNodes != null) outputNodes.addAll(_outputNodes);
+      return outputNodes;
+
     } else if (macroConceptFQName.equals(RuleUtil.concept_IfMacro)) {
       // $IF$
       List<SNode> _outputNodes = null;

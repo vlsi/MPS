@@ -1534,7 +1534,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2760176984813713372(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.getConceptDeclaration(_context.getNode()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro");
+    return SNodeOperations.getConceptDeclaration(_context.getNode()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro") || SNodeOperations.getConceptDeclaration(_context.getNode()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.LabelMacro");
   }
 
   public static boolean ifMacro_Condition_4155486055398088768(final IOperationContext operationContext, final IfMacroContext _context) {
