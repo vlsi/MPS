@@ -16,9 +16,9 @@
 package jetbrains.mps.workbench.actions.goTo.index;
 
 import com.intellij.util.indexing.ID;
-import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
@@ -41,7 +41,7 @@ public class NamedNodeIndex extends BaseSNodeDescriptorIndex {
 
   private static class SNodeCondition implements Condition<SNode> {
     public boolean met(SNode node) {
-      return node.isRoot() || node.getPersistentProperty(INamedConcept.NAME) != null;
+      return node.isRoot() || node.getPersistentProperty(SNodeUtil.property_INamedConcept_name) != null;
     }
   }
 }
