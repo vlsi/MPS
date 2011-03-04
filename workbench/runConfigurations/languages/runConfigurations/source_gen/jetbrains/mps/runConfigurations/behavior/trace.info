@@ -11,10 +11,10 @@
   <unitInfo fileName="PersistentConfigurationTemplate_Behavior.java" startLine="31" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfigurationTemplate_Behavior$QuotationClass_3swbqk_a0a0b" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="84" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0a0d" />
   <unitInfo fileName="PersistentConfiguration_Behavior.java" startLine="102" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior$QuotationClass_4ves9l_a0c0i" />
-  <unitInfo fileName="ApplyTo_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ApplyTo_Function_Behavior" />
-  <unitInfo fileName="CreateEditor_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CreateEditor_Function_Behavior" />
-  <unitInfo fileName="Dispose_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.Dispose_Function_Behavior" />
   <unitInfo fileName="ResetFrom_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ResetFrom_Function_Behavior" />
+  <unitInfo fileName="Dispose_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.Dispose_Function_Behavior" />
+  <unitInfo fileName="CreateEditor_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CreateEditor_Function_Behavior" />
+  <unitInfo fileName="ApplyTo_Function_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.ApplyTo_Function_Behavior" />
   <unitInfo fileName="PersistentConfigurationType_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.PersistentConfigurationType_Behavior" />
   <unitInfo fileName="CommandDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.CommandDeclaration_Behavior" />
   <unitInfo fileName="EditorOperationDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.behavior.EditorOperationDeclaration_Behavior" />
@@ -103,56 +103,40 @@
     <scopeInfo nodeId="3754890006475720283" fileName="RunConfigurationKind_Behavior.java" startLine="12" startPosition="87" endLine="16" endPosition="87" />
   </root>
   <root nodeId="3931156975942961958">
-    <nodeInfo nodeId="4762811064051172164" fileName="IconPath_Behavior.java" startLine="19" startPosition="221" endLine="20" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3931156975943044263" fileName="IconPath_Behavior.java" startLine="21" startPosition="74" endLine="22" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8948360425794362330" fileName="IconPath_Behavior.java" startLine="23" startPosition="38" endLine="24" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3931156975943044321" fileName="IconPath_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3931156975943044408" fileName="IconPath_Behavior.java" startLine="32" startPosition="44" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3931156975943044413" fileName="IconPath_Behavior.java" startLine="36" startPosition="31" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4762811064051197705" fileName="IconPath_Behavior.java" startLine="44" startPosition="43" endLine="45" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3931156975943044336" fileName="IconPath_Behavior.java" startLine="45" startPosition="123" endLine="46" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3931156975943044345" fileName="IconPath_Behavior.java" startLine="46" startPosition="45" endLine="47" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4762811064051088588" fileName="IconPath_Behavior.java" startLine="51" startPosition="20" endLine="52" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4762811064051088583" fileName="IconPath_Behavior.java" startLine="52" startPosition="76" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3931156975943044367" fileName="IconPath_Behavior.java" startLine="54" startPosition="9" endLine="55" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3931156975942962000" fileName="IconPath_Behavior.java" startLine="60" startPosition="94" endLine="61" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3931156975943044270" fileName="IconPath_Behavior.java" startLine="22" startPosition="93" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3931156975943044403" fileName="IconPath_Behavior.java" startLine="31" startPosition="146" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/String;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="3931156975943044411" fileName="IconPath_Behavior.java" startLine="35" startPosition="52" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="4762811064051088578" fileName="IconPath_Behavior.java" startLine="50" startPosition="30" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3931156975943044260" fileName="IconPath_Behavior.java" startLine="20" startPosition="119" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3931156975943044334" fileName="IconPath_Behavior.java" startLine="43" startPosition="144" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3931156975943044365" fileName="IconPath_Behavior.java" startLine="49" startPosition="51" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3931156975943044393" fileName="IconPath_Behavior.java" startLine="30" startPosition="97" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3931156975943044330" fileName="IconPath_Behavior.java" startLine="42" startPosition="113" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="3931156975942961960" fileName="IconPath_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
-    <scopeInfo nodeId="3931156975943044271" fileName="IconPath_Behavior.java" startLine="23" startPosition="38" endLine="24" endPosition="38" />
-    <scopeInfo nodeId="3931156975943044404" fileName="IconPath_Behavior.java" startLine="32" startPosition="44" endLine="33" endPosition="20" />
-    <scopeInfo nodeId="3931156975943044412" fileName="IconPath_Behavior.java" startLine="36" startPosition="31" endLine="37" endPosition="21" />
-    <scopeInfo nodeId="3931156975942961999" fileName="IconPath_Behavior.java" startLine="60" startPosition="94" endLine="61" endPosition="245" />
-    <scopeInfo nodeId="4762811064051088579" fileName="IconPath_Behavior.java" startLine="51" startPosition="20" endLine="53" endPosition="20" />
-    <scopeInfo nodeId="3931156975943044335" fileName="IconPath_Behavior.java" startLine="44" startPosition="43" endLine="47" endPosition="63">
-      <varInfo nodeId="3931156975943044337" varName="index" />
-      <varInfo nodeId="4762811064051197706" varName="fullPath" />
+    <nodeInfo nodeId="4762811064051200373" fileName="IconPath_Behavior.java" startLine="18" startPosition="97" endLine="19" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4762811064051200386" fileName="IconPath_Behavior.java" startLine="20" startPosition="74" endLine="21" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4762811064051200395" fileName="IconPath_Behavior.java" startLine="22" startPosition="38" endLine="23" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4762811064051200407" fileName="IconPath_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4762811064051200416" fileName="IconPath_Behavior.java" startLine="29" startPosition="101" endLine="30" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4762811064051200429" fileName="IconPath_Behavior.java" startLine="31" startPosition="74" endLine="32" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4762811064051200455" fileName="IconPath_Behavior.java" startLine="33" startPosition="38" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4762811064051200462" fileName="IconPath_Behavior.java" startLine="34" startPosition="45" endLine="35" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4762811064051200475" fileName="IconPath_Behavior.java" startLine="37" startPosition="5" endLine="38" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3931156975942962000" fileName="IconPath_Behavior.java" startLine="41" startPosition="94" endLine="42" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4762811064051200393" fileName="IconPath_Behavior.java" startLine="21" startPosition="93" endLine="24" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4762811064051200436" fileName="IconPath_Behavior.java" startLine="32" startPosition="93" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4762811064051200383" fileName="IconPath_Behavior.java" startLine="19" startPosition="119" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4762811064051200426" fileName="IconPath_Behavior.java" startLine="30" startPosition="119" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <scopeInfo nodeId="3931156975942961960" fileName="IconPath_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="4762811064051200394" fileName="IconPath_Behavior.java" startLine="22" startPosition="38" endLine="23" endPosition="20" />
+    <scopeInfo nodeId="3931156975942961999" fileName="IconPath_Behavior.java" startLine="41" startPosition="94" endLine="42" endPosition="245" />
+    <scopeInfo nodeId="4762811064051200437" fileName="IconPath_Behavior.java" startLine="33" startPosition="38" endLine="35" endPosition="63">
+      <varInfo nodeId="4762811064051200456" varName="index" />
     </scopeInfo>
-    <scopeInfo nodeId="3931156975943044262" fileName="IconPath_Behavior.java" startLine="21" startPosition="74" endLine="25" endPosition="7">
-      <varInfo nodeId="3931156975943044264" varName="prefix" />
+    <scopeInfo nodeId="4762811064051200385" fileName="IconPath_Behavior.java" startLine="20" startPosition="74" endLine="24" endPosition="7">
+      <varInfo nodeId="4762811064051200387" varName="prefix" />
     </scopeInfo>
-    <scopeInfo nodeId="3931156975943044403" fileName="IconPath_Behavior.java" startLine="31" startPosition="146" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="3931156975943044411" fileName="IconPath_Behavior.java" startLine="35" startPosition="52" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="3931156975943044366" fileName="IconPath_Behavior.java" startLine="50" startPosition="30" endLine="55" endPosition="155" />
-    <scopeInfo nodeId="3931156975943044260" fileName="IconPath_Behavior.java" startLine="20" startPosition="119" endLine="26" endPosition="5" />
-    <scopeInfo nodeId="3931156975943044334" fileName="IconPath_Behavior.java" startLine="43" startPosition="144" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="3931156975943044241" fileName="IconPath_Behavior.java" startLine="19" startPosition="221" endLine="27" endPosition="29">
-      <varInfo nodeId="4762811064051172165" varName="fullPath" />
+    <scopeInfo nodeId="4762811064051200428" fileName="IconPath_Behavior.java" startLine="31" startPosition="74" endLine="36" endPosition="7">
+      <varInfo nodeId="4762811064051200430" varName="prefix" />
     </scopeInfo>
-    <scopeInfo nodeId="3931156975943044365" fileName="IconPath_Behavior.java" startLine="49" startPosition="51" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="3931156975943044391" fileName="IconPath_Behavior.java" startLine="30" startPosition="97" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="3931156975942961967" fileName="IconPath_Behavior.java" startLine="42" startPosition="113" endLine="57" endPosition="7" />
-    <unitInfo nodeId="3931156975943044403" fileName="IconPath_Behavior.java" startLine="31" startPosition="97" endLine="35" endPosition="5" unitName="jetbrains.mps.runConfigurations.behavior.IconPath_Behavior$1" />
-    <unitInfo nodeId="3931156975943044411" fileName="IconPath_Behavior.java" startLine="35" startPosition="11" endLine="39" endPosition="5" unitName="jetbrains.mps.runConfigurations.behavior.IconPath_Behavior$2" />
-    <unitInfo nodeId="3931156975943044334" fileName="IconPath_Behavior.java" startLine="43" startPosition="96" endLine="49" endPosition="5" unitName="jetbrains.mps.runConfigurations.behavior.IconPath_Behavior$3" />
-    <unitInfo nodeId="3931156975943044365" fileName="IconPath_Behavior.java" startLine="49" startPosition="11" endLine="57" endPosition="5" unitName="jetbrains.mps.runConfigurations.behavior.IconPath_Behavior$4" />
+    <scopeInfo nodeId="4762811064051200383" fileName="IconPath_Behavior.java" startLine="19" startPosition="119" endLine="25" endPosition="5" />
+    <scopeInfo nodeId="4762811064051200426" fileName="IconPath_Behavior.java" startLine="30" startPosition="119" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="3931156975943044391" fileName="IconPath_Behavior.java" startLine="18" startPosition="97" endLine="26" endPosition="17">
+      <varInfo nodeId="4762811064051200374" varName="fullPath" />
+    </scopeInfo>
+    <scopeInfo nodeId="3931156975942961967" fileName="IconPath_Behavior.java" startLine="29" startPosition="101" endLine="38" endPosition="151">
+      <varInfo nodeId="4762811064051200417" varName="fullPath" />
+    </scopeInfo>
   </root>
   <root nodeId="4667331066104791517">
     <nodeInfo nodeId="4667331066104791520" fileName="CommandMethod_Behavior.java" startLine="10" startPosition="43" endLine="11" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

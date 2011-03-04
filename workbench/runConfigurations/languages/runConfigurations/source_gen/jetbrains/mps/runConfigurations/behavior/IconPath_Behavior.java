@@ -4,7 +4,6 @@ package jetbrains.mps.runConfigurations.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -16,45 +15,27 @@ public class IconPath_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static Object call_findPrefix_3931156975943044238(SNode thisNode, IModule module, _FunctionTypes._return_P1_E0<? extends Object, ? super String> onFound, _FunctionTypes._return_P0_E0<? extends Object> onMissed) {
+  public static boolean call_isResourceIcon_3931156975943044388(SNode thisNode, IModule module) {
     String fullPath = MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, "path"), module.getModuleFqName());
     for (String source : ListSequence.fromList(module.getSourcePaths())) {
       String prefix = IconPath_Behavior.call_getPrefix_3931156975942961996(thisNode, source);
       if (fullPath.contains(prefix)) {
-        return onFound.invoke(prefix);
-      }
-    }
-    return onMissed.invoke();
-  }
-
-  public static boolean call_isResourceIcon_3931156975943044388(SNode thisNode, IModule module) {
-    return (Boolean) IconPath_Behavior.call_findPrefix_3931156975943044238(thisNode, module, new _FunctionTypes._return_P1_E0<Boolean, String>() {
-      public Boolean invoke(String prefix) {
         return true;
       }
-    }, new _FunctionTypes._return_P0_E0<Boolean>() {
-      public Boolean invoke() {
-        return false;
-      }
-    });
+    }
+    return false;
   }
 
-  public static String call_getIconResourcePath_3931156975942961964(final SNode thisNode, final IModule module) {
-    return (String) IconPath_Behavior.call_findPrefix_3931156975943044238(thisNode, module, new _FunctionTypes._return_P1_E0<String, String>() {
-      public String invoke(String prefix) {
-        String fullPath = MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, "path"), module.getModuleFqName());
+  public static String call_getIconResourcePath_3931156975942961964(SNode thisNode, IModule module) {
+    String fullPath = MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, "path"), module.getModuleFqName());
+    for (String source : ListSequence.fromList(module.getSourcePaths())) {
+      String prefix = IconPath_Behavior.call_getPrefix_3931156975942961996(thisNode, source);
+      if (fullPath.contains(prefix)) {
         int index = fullPath.indexOf(prefix);
         return fullPath.substring(index + prefix.length() + 1);
       }
-    }, new _FunctionTypes._return_P0_E0<String>() {
-      public String invoke() {
-        if (false) {
-          // well. this is a hack to generate a proper type for the closure 
-          return "";
-        }
-        throw new RuntimeException("Icon path " + SPropertyOperations.getString(thisNode, "path") + " does not lie inside module " + module + " sources.");
-      }
-    });
+    }
+    throw new RuntimeException("Icon path " + SPropertyOperations.getString(thisNode, "path") + " does not lie inside module " + module + " sources.");
   }
 
   public static String call_getPrefix_3931156975942961996(SNode thisNode, String sourcePath) {
