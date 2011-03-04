@@ -19,7 +19,6 @@ import com.sun.jdi.connect.Connector;
 import com.sun.jdi.connect.Connector.Argument;
 import com.sun.jdi.connect.IllegalConnectorArgumentsException;
 import com.sun.jdi.connect.ListeningConnector;
-import jetbrains.mps.debug.DebuggerKeys;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.IDebuggerSettings;
@@ -28,15 +27,12 @@ import jetbrains.mps.debug.api.run.DebuggerRunProfileState;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
-import jetbrains.mps.debugger.java.run.RemoteDebugProcessHandler;
-import jetbrains.mps.debugger.java.run.RemoteRunProfileState;
 import jetbrains.mps.debug.runtime.*;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
-import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
 import jetbrains.mps.debugger.java.evaluation.EvaluationProvider;
+import jetbrains.mps.debugger.java.remote.RemoteProcessHandler;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -134,7 +130,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
   }
 
   private void fixStopBugUnderLinux(final ProcessHandler processHandler, final DebugSession session) {
-    if (!(processHandler instanceof RemoteDebugProcessHandler)) {
+    if (!(processHandler instanceof RemoteProcessHandler)) {
       // add listener only to non-remote process handler:
       // on Unix systems destroying process does not cause VMDeathEvent to be generated,
       // so we need to call debugProcess.stop() explicitly for graceful termination.

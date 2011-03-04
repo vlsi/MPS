@@ -14,15 +14,15 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 
-public class RemoteNew_Kind implements ConfigurationType {
-  private static final Icon ICON = new ImageIcon(RemoteNew_Kind.class.getResource("remote_run_configuration.png"));
+public class Remote_Kind implements ConfigurationType {
+  private static final Icon ICON = new ImageIcon(Remote_Kind.class.getResource("remote_run_configuration.png"));
 
-  public RemoteNew_Kind() {
+  public Remote_Kind() {
   }
 
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
-    ListSequence.fromList(result).addElement(new DefaultRemoteNew_Configuration_Factory(this));
+    ListSequence.fromList(result).addElement(new Remote_Configuration_Factory(this));
     // todo foreign configurations 
     return ListSequence.fromList(result).toGenericArray(ConfigurationFactory.class);
   }
@@ -30,7 +30,7 @@ public class RemoteNew_Kind implements ConfigurationType {
   @NonNls
   @NotNull
   public String getId() {
-    return "RemoteNew";
+    return "Remote";
   }
 
   public Icon getIcon() {
@@ -42,10 +42,10 @@ public class RemoteNew_Kind implements ConfigurationType {
   }
 
   public String getDisplayName() {
-    return "RemoteNew";
+    return "Remote";
   }
 
-  public static RemoteNew_Kind getInstance() {
-    return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), RemoteNew_Kind.class);
+  public static Remote_Kind getInstance() {
+    return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), Remote_Kind.class);
   }
 }

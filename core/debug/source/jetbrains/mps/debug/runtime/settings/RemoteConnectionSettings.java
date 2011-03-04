@@ -1,8 +1,12 @@
 package jetbrains.mps.debug.runtime.settings;
 
 public class RemoteConnectionSettings extends DebugConnectionSettings {
+  public RemoteConnectionSettings(String hostName, int port) {
+    super(hostName, port);
+  }
+
   public RemoteConnectionSettings() {
-    super(true, "localhost", 5005, "");
+    super();
   }
 
   public static String getClientCommandLine(boolean useSockets, int port) {

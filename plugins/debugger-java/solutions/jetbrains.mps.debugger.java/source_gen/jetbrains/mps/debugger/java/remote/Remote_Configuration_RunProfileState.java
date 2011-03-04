@@ -14,9 +14,8 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debugger.java.run.RemoteDebugProcessHandler;
-import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.execution.process.ProcessHandler;
+import com.intellij.execution.impl.ConsoleViewImpl;
 import jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener;
 import jetbrains.mps.runConfigurations.runtime.DefaultExecutionResult;
 import jetbrains.mps.runConfigurations.runtime.DefaultExecutionConsole;
@@ -26,13 +25,13 @@ import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import com.intellij.execution.executors.DefaultDebugExecutor;
 
-public class DefaultRemoteNew_Configuration_RunProfileState extends DebuggerRunProfileState implements RunProfileState {
+public class Remote_Configuration_RunProfileState extends DebuggerRunProfileState implements RunProfileState {
   @NotNull
-  private final DefaultRemoteNew_Configuration myRunConfiguration;
+  private final Remote_Configuration myRunConfiguration;
   @NotNull
   private final ExecutionEnvironment myEnvironment;
 
-  public DefaultRemoteNew_Configuration_RunProfileState(@NotNull DefaultRemoteNew_Configuration configuration, @NotNull Executor executor, @NotNull ExecutionEnvironment environment) {
+  public Remote_Configuration_RunProfileState(@NotNull Remote_Configuration configuration, @NotNull Executor executor, @NotNull ExecutionEnvironment environment) {
     myRunConfiguration = configuration;
     myEnvironment = environment;
   }
@@ -48,11 +47,10 @@ public class DefaultRemoteNew_Configuration_RunProfileState extends DebuggerRunP
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    // <node> 
-    RemoteDebugProcessHandler handler = new RemoteDebugProcessHandler(project);
+    RemoteProcessHandler handler = new RemoteProcessHandler(project);
     {
-      final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
       ProcessHandler _processHandler = handler;
+      final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
         public void invoke() {
@@ -60,8 +58,6 @@ public class DefaultRemoteNew_Configuration_RunProfileState extends DebuggerRunP
         }
       }));
     }
-    // <node> 
-    // <node> 
   }
 
   public IDebugger getDebugger() {

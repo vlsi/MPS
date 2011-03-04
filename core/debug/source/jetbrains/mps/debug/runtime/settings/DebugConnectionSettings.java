@@ -4,10 +4,19 @@ import jetbrains.mps.debug.api.IDebuggerSettings;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class DebugConnectionSettings implements IDebuggerSettings {
-  private boolean myUseSockets;
+  private boolean myUseSockets = true;
   private String myHostName;
   private int myPort;
-  private String mySharedMemoryAddress;
+  private String mySharedMemoryAddress = "";
+
+  protected DebugConnectionSettings(){}
+
+  protected DebugConnectionSettings(String hostName, int port) {
+    myUseSockets = true;
+    mySharedMemoryAddress = "";
+    myHostName = hostName;
+    myPort = port;
+  }
 
   protected DebugConnectionSettings(boolean useSockets, String hostName, int port, String sharedMemoryAddress) {
     myUseSockets = useSockets;

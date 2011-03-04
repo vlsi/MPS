@@ -23,13 +23,13 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 
-public class DefaultRemoteNew_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  private static final Logger LOG = Logger.getLogger(DefaultRemoteNew_Configuration.class);
+public class Remote_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
+  private static final Logger LOG = Logger.getLogger(Remote_Configuration.class);
 
   @NotNull
-  private DefaultRemoteNew_Configuration.MyState myState = new DefaultRemoteNew_Configuration.MyState();
+  private Remote_Configuration.MyState myState = new Remote_Configuration.MyState();
 
-  public DefaultRemoteNew_Configuration(Project project, DefaultRemoteNew_Configuration_Factory factory, String name) {
+  public Remote_Configuration(Project project, Remote_Configuration_Factory factory, String name) {
     super(project, factory, name);
   }
 
@@ -55,11 +55,11 @@ public class DefaultRemoteNew_Configuration extends BaseMpsRunConfiguration impl
   }
 
   @Override
-  public DefaultRemoteNew_Configuration clone() {
-    DefaultRemoteNew_Configuration clone = null;
+  public Remote_Configuration clone() {
+    Remote_Configuration clone = null;
     try {
       clone = createCloneTemplate();
-      clone.myState = (DefaultRemoteNew_Configuration.MyState) myState.clone();
+      clone.myState = (Remote_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
       LOG.error(ex);
@@ -69,7 +69,7 @@ public class DefaultRemoteNew_Configuration extends BaseMpsRunConfiguration impl
 
   @Nullable
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
-    return new DefaultRemoteNew_Configuration_RunProfileState(this, executor, environment);
+    return new Remote_Configuration_RunProfileState(this, executor, environment);
   }
 
   @Nullable
@@ -81,32 +81,32 @@ public class DefaultRemoteNew_Configuration extends BaseMpsRunConfiguration impl
     return null;
   }
 
-  public SettingsEditor<DefaultRemoteNew_Configuration> getConfigurationEditor() {
-    return (SettingsEditor<DefaultRemoteNew_Configuration>) getEditor();
+  public SettingsEditor<Remote_Configuration> getConfigurationEditor() {
+    return (SettingsEditor<Remote_Configuration>) getEditor();
   }
 
-  public DefaultRemoteNew_Configuration createCloneTemplate() {
-    return (DefaultRemoteNew_Configuration) super.clone();
+  public Remote_Configuration createCloneTemplate() {
+    return (Remote_Configuration) super.clone();
   }
 
   public SettingsEditor<? extends IPersistentConfiguration> getEditor() {
-    return new DefaultRemoteNew_Configuration_Editor();
+    return new Remote_Configuration_Editor();
   }
 
   @Override
   public boolean canExecute(String executorId) {
-    return DefaultRemoteNew_Configuration_RunProfileState.canExecute(executorId);
+    return Remote_Configuration_RunProfileState.canExecute(executorId);
   }
 
   public class MyState {
-    public RemoteConnectionSettings mySettings = new RemoteConnectionSettings();
+    public RemoteConnectionSettings mySettings = new RemoteConnectionSettings("localhost", 5005);
 
     public MyState() {
     }
 
     @Override
     public Object clone() throws CloneNotSupportedException {
-      DefaultRemoteNew_Configuration.MyState state = new DefaultRemoteNew_Configuration.MyState();
+      Remote_Configuration.MyState state = new Remote_Configuration.MyState();
       state.mySettings = mySettings;
       return state;
     }

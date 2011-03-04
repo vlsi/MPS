@@ -14,11 +14,11 @@ public class RunConfigurationsInitializer_CustomProjectPlugin extends BaseCustom
 
   public void doInit(MPSProject project) {
     ExtensionPoint<ConfigurationType> extensionPoint = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
-    extensionPoint.registerExtension(new RemoteNew_Kind());
+    extensionPoint.registerExtension(new Remote_Kind());
   }
 
   public void doDispose(MPSProject project) {
     ExtensionPoint<ConfigurationType> extensionPoint = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
-    extensionPoint.unregisterExtension(RemoteNew_Kind.getInstance());
+    extensionPoint.unregisterExtension(Remote_Kind.getInstance());
   }
 }

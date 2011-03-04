@@ -22,7 +22,6 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <configurationType implementation="jetbrains.mps.debugger.java.run.RemoteConfigurationType"/>
-    <configurationType implementation="jetbrains.mps.debugger.java.remote.RemoteNew_Kind"/>
+    <configurationType implementation="jetbrains.mps.debugger.java.remote.Remote_Kind"/>
   </extensions>
 </idea-plugin>
