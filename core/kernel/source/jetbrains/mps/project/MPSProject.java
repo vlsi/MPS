@@ -59,11 +59,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent, PersistentStateComponent<Element> {
   private Project myProject;
   private Element myProjectElement;
-  private List<ProjectDisposeListener> myListeners;
 
   public MPSProject(Project project) {
     myProject = project;
-    myListeners = new CopyOnWriteArrayList<ProjectDisposeListener>();
   }
 
   public Element getState() {
@@ -117,10 +115,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
 
   //-----------project holder end
 
-  public static final String COMPONENTS = "components";
   public static final String COMPONENT = "component";
   public static final String CLASS = "class";
-  public static final String BUNDLE = "bundle";
 
   private static final Logger LOG = Logger.getLogger(MPSProject.class);
 
@@ -163,10 +159,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
         MPSProjects projects = MPSProjects.instance();
         projects.removeProject(MPSProject.this);
 
-        for (ProjectDisposeListener listener : myListeners) {
-          listener.onBeforeDispose();
-        }
-
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
 
@@ -181,7 +173,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
         }
 
         CleanupManager.getInstance().cleanup();
-        myListeners.clear();
       }
     });
 
@@ -191,10 +182,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
         ProjectUtil.closeAndDispose(myProject);
       }
     }
-  }
-
-  public void addDisposeListener(ProjectDisposeListener listener) {
-    myListeners.add(listener);
   }
 
   //--modules
@@ -458,10 +445,5 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
   // should be left for compatibility with generated plugins (editor openers)
   public <T> T getComponent(Class<T> clazz) {
     return getProject().getComponent(clazz);
-  }
-
-  public static interface ProjectDisposeListener {
-
-    void onBeforeDispose();
   }
 }
