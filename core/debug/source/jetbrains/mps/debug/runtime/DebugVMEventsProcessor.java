@@ -276,7 +276,7 @@ public class DebugVMEventsProcessor {
 
         if (requestHit) {
           if (requestor instanceof JavaBreakpoint && ((JavaBreakpoint) requestor).isLogMessage()) {
-            myReporter.reportInformation("Breakpoint hit: " + ((JavaBreakpoint) requestor).getPresentation());
+            myReporter.reportInformation("Breakpoint hit: " + ((JavaBreakpoint) requestor).getPresentation() + " " + event.location().sourceName() + ":" + event.location().lineNumber());
           }
 
           if (requestor instanceof IBreakpoint) {
