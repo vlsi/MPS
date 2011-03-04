@@ -1,7 +1,6 @@
 package jetbrains.mps.smodel.conceptdescriptor;
 
 import jetbrains.mps.smodel.SNode;
-import org.junit.Test;
 
 import java.util.Set;
 
