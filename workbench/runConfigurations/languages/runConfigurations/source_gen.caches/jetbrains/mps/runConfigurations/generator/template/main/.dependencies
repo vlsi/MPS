@@ -9,6 +9,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.generator.template.MapSrcMacroContext" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.behavior.ConfigurationFromExecutorReference_Behavior" />
+    <classNode dependClassName="jetbrains.mps.runConfigurations.behavior.IconPath_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.behavior.PersistentConfiguration_Behavior" />
@@ -42,7 +43,6 @@
     <classNode dependClassName="jetbrains.mps.runConfigurations.behavior.CommandDeclaration_Behavior" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.runConfigurations.behavior.RunConfigurationKind_Behavior" />
-    <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReferenceMacroContext" />
   </dependency>
 </dependenciesRoot>

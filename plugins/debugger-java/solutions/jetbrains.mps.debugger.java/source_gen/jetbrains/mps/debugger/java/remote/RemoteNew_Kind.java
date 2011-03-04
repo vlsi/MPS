@@ -4,8 +4,7 @@ package jetbrains.mps.debugger.java.remote;
 
 import com.intellij.execution.configurations.ConfigurationType;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
+import javax.swing.ImageIcon;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -16,7 +15,7 @@ import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 
 public class RemoteNew_Kind implements ConfigurationType {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/plugins/debugger-java/resources/jetbrains/mps/debugger/java/remote/remote_run_configuration.png", "jetbrains.mps.debugger.java"), true);
+  private static final Icon ICON = new ImageIcon(RemoteNew_Kind.class.getResource("remote_run_configuration.png"));
 
   public RemoteNew_Kind() {
   }
