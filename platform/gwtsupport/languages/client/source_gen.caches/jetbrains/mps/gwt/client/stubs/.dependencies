@@ -11,6 +11,7 @@
     <classNode extendsClassName="jetbrains.mps.stubs.util.PathItem" />
   </dependency>
   <dependency className="jetbrains.mps.gwt.client.stubs.GWTModuleReader" file="GWTModuleReader.java">
+    <classNode dependClassName="jetbrains.mps.smodel.DynamicReference" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class GWTModuleReader {
@@ -155,8 +156,9 @@ public class GWTModuleReader {
       });
       src.addReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trg));
     } else {
-      SNodeOperations.getModel(src).addModelImport(trgsmref, false);
-      src.addReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createId(fqName)));
+      // <node> 
+      // <node> 
+      src.addReference(new DynamicReference(SPropertyOperations.getString(link, "role"), src, trgsmref, shortName(fqName)));
     }
   }
 

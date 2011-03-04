@@ -19,6 +19,6 @@
   <unitInfo fileName="EntryPoint.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.EntryPoint" />
   <unitInfo fileName="PatternFilter.java" startLine="12" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.PatternFilter" />
   <unitInfo fileName="Attr.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.Attr" />
-  <unitInfo fileName="GWTModule.java" startLine="15" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.GWTModule" />
+  <unitInfo fileName="GWTModule.java" startLine="16" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.gwt.client.structure.GWTModule" />
 </debugInfo>
 

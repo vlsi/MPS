@@ -18,6 +18,8 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="nbss" modelUID="r:77b60a8d-2582-4f88-b038-f330599ad949(buildtest)" version="-1" implicit="yes" />
+  <import index="jxw0" modelUID="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.core(jetbrains.mps.gwt.client/com.google.gwt.core@gwt_stub)" version="-1" implicit="yes" />
+  <import index="vibg" modelUID="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user(jetbrains.mps.gwt.client/com.google.gwt.user@gwt_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="k1iy.GWTModule" typeId="k1iy.1572321421811286040" id="3789315678729139397">
       <property name="name" nameId="tpck.1169194664001" value="buildtest" />
@@ -28,10 +30,10 @@
   </roots>
   <root id="3789315678729139397">
     <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="3789315678729222221">
-      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="ogon.~Core" resolveInfo="Core" />
+      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="jxw0.~Core" resolveInfo="Core" />
     </node>
     <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="3789315678729222222">
-      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="143.~User" resolveInfo="User" />
+      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="vibg.~User" resolveInfo="User" />
     </node>
     <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="3789315678729139406">
       <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="9vrl.1624295421069330098" resolveInfo="runtime" />
