@@ -22,6 +22,7 @@
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/conf/conf.mpl" />
+      <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs />
