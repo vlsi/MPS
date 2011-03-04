@@ -22,8 +22,8 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.util.ShutDownTracker;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
@@ -45,7 +45,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 @State(
   name = "MPSProject",
@@ -110,7 +109,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
   }
 
   public void disposeComponent() {
-    dispose(!ShutDownTracker.isShutdownHookRunning());
+    dispose(false);
   }
 
   //-----------project holder end
@@ -146,27 +145,24 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
     });
   }
 
-  public void dispose() {
-    dispose(true);
+  @Deprecated //now this is done in ProjectCloseClassReloader
+  public void dispose(boolean reloadAll) {
+    dispose();
   }
 
-  public void dispose(final boolean reloadAll) {
+  public void dispose() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
+        ClassLoaderManager.getInstance().unloadAll(new EmptyProgressIndicator());
+
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
 
-        MPSModuleRepository.getInstance().removeUnusedModules();
-        SModelRepository.getInstance().removeUnusedDescriptors();
-        if (reloadAll) {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-        } else {
-          if (!MPSCore.getInstance().isTestMode()) {
-            ClassLoaderManager.getInstance().unloadAll(new EmptyProgressIndicator());
-          }
-        }
-
         CleanupManager.getInstance().cleanup();
+
+        if (ProjectManager.getInstance().getOpenProjects().length > 0) {
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+        }
       }
     });
 
