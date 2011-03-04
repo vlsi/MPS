@@ -805,11 +805,6 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="mapperFunction" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1170725621272" resolveInfo="MapSrcMacro_MapperFunction" />
-      <node role="specializedLink" roleId="tpce.1071599698500" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1225229678695">
-        <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-        <property name="role" nameId="tpce.1071599776563" value="postMapperFunction" />
-        <link role="target" roleId="tpce.1071599976176" targetNodeId="1225228973247" resolveInfo="MapSrcMacro_PostMapperFunction" />
-      </node>
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1225229689103">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
