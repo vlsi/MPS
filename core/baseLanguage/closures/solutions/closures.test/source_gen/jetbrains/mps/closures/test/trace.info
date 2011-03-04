@@ -695,8 +695,8 @@
     <nodeInfo nodeId="3376587159404841565" fileName="YieldClosures_Test.java" startLine="1207" startPosition="38" endLine="1208" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="3376587159404841569" fileName="YieldClosures_Test.java" startLine="1209" startPosition="28" endLine="1210" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3376587159404841569" fileName="YieldClosures_Test.java" startLine="1210" startPosition="39" endLine="1211" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3376587159404841573" fileName="YieldClosures_Test.java" startLine="1212" startPosition="28" endLine="1213" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3376587159404841573" fileName="YieldClosures_Test.java" startLine="1213" startPosition="38" endLine="1214" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3376587159404841573" fileName="YieldClosures_Test.java" startLine="1212" startPosition="28" endLine="1213" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3376587159404841573" fileName="YieldClosures_Test.java" startLine="1213" startPosition="39" endLine="1214" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="3376587159404841576" fileName="YieldClosures_Test.java" startLine="1215" startPosition="28" endLine="1216" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3376587159404841576" fileName="YieldClosures_Test.java" startLine="1216" startPosition="39" endLine="1217" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="3376587159404841515" fileName="YieldClosures_Test.java" startLine="1218" startPosition="28" endLine="1219" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
@@ -4191,8 +4191,8 @@
     <nodeInfo nodeId="5902225204490684995" fileName="WhileBreak_Test.java" startLine="74" startPosition="39" endLine="75" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="5902225204490685010" fileName="WhileBreak_Test.java" startLine="76" startPosition="28" endLine="77" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5902225204490685010" fileName="WhileBreak_Test.java" startLine="77" startPosition="38" endLine="78" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5902225204490685015" fileName="WhileBreak_Test.java" startLine="79" startPosition="28" endLine="80" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5902225204490685015" fileName="WhileBreak_Test.java" startLine="80" startPosition="38" endLine="81" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="5902225204490685015" fileName="WhileBreak_Test.java" startLine="79" startPosition="28" endLine="80" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5902225204490685015" fileName="WhileBreak_Test.java" startLine="80" startPosition="39" endLine="81" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="5902225204490684995" fileName="WhileBreak_Test.java" startLine="82" startPosition="28" endLine="83" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="5902225204490684995" fileName="WhileBreak_Test.java" startLine="85" startPosition="31" endLine="86" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5902225204490685016" fileName="WhileBreak_Test.java" startLine="96" startPosition="52" endLine="97" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />

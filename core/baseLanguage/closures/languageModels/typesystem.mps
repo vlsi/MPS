@@ -25,7 +25,6 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tp2j" modelUID="r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)" version="-1" implicit="yes" />
   <import index="tpeh" modelUID="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" version="-1" implicit="yes" />
-  <import index="oe5h" modelUID="r:a2f19e10-2813-4139-a451-ab70035813fc(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1199547501670">
       <property name="name" nameId="tpck.1169194664001" value="typeof_InvokeFunctionExpression" />
@@ -2895,7 +2894,7 @@
                 <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1221579075934" resolveInfo="closure" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="143424088783141841">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1239354409446" resolveInfo="getLastStatement" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1239354409446" resolveInfo="getLastStatement" />
               </node>
             </node>
           </node>
@@ -2926,7 +2925,7 @@
                   <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1221579075934" resolveInfo="closure" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="9026942911488777032">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1230212745736" resolveInfo="isExecuteSynchronous" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1230212745736" resolveInfo="isExecuteSynchronous" />
                 </node>
               </node>
             </node>
@@ -3594,7 +3593,7 @@
                 <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1225797528201" resolveInfo="invoke" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5612111951671508226">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877410070" resolveInfo="getOperand" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877410070" resolveInfo="getOperand" />
               </node>
             </node>
           </node>
@@ -4086,7 +4085,7 @@
               <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="81108310549037925" resolveInfo="closureLiteral" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="81108310549155641">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1230212745736" resolveInfo="isExecuteSynchronous" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1230212745736" resolveInfo="isExecuteSynchronous" />
             </node>
           </node>
         </node>

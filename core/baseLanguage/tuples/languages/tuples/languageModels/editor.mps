@@ -21,7 +21,6 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="e8yq" modelUID="r:a841fea4-52c0-4064-96f2-7687a509aba5(jetbrains.mps.baseLanguage.tuples.editor)" version="-1" implicit="yes" />
   <import index="17gi" modelUID="r:0fb6a3b3-d9c2-4977-abcb-f851ef5e4897(jetbrains.mps.baseLanguage.tuples.behavior)" version="-1" implicit="yes" />
-  <import index="oe5h" modelUID="r:a2f19e10-2813-4139-a451-ab70035813fc(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1238852221639">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cx9y.1238852151516" resolveInfo="IndexedTupleType" />
@@ -448,7 +447,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1239463555277" resolveInfo="nodeType" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1239463555288">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877337304" resolveInfo="getVariableSuffixes" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877337304" resolveInfo="getVariableSuffixes" />
                           </node>
                         </node>
                         <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1239463555289">

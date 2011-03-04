@@ -26,7 +26,6 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="blrm" modelUID="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)" version="-1" implicit="yes" />
-  <import index="oe5h" modelUID="r:a2f19e10-2813-4139-a451-ab70035813fc(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1238853976031">
       <property name="name" nameId="tpck.1169194664001" value="typeof_IndexedTupleLiteral" />
@@ -272,7 +271,7 @@
             </node>
           </node>
           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1238863518119">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1238860258777" resolveInfo="isCompileTimeConstant" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1238860258777" resolveInfo="isCompileTimeConstant" />
           </node>
         </node>
         <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238863619782">
@@ -322,7 +321,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1238863900107">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1238860310638" resolveInfo="getCompileTimeConstantValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1238860310638" resolveInfo="getCompileTimeConstantValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238863900108">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1238863900109">
                       <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="1238863900110">
@@ -532,7 +531,7 @@
             </node>
           </node>
           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1238863684725">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1238860258777" resolveInfo="isCompileTimeConstant" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1238860258777" resolveInfo="isCompileTimeConstant" />
           </node>
         </node>
       </node>
@@ -1053,7 +1052,7 @@
                 <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1239579751282" resolveInfo="operation" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3862929002918414721">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877410070" resolveInfo="getOperand" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877410070" resolveInfo="getOperand" />
               </node>
             </node>
           </node>

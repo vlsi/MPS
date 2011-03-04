@@ -42,7 +42,6 @@
   <import index="ryl9" modelUID="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)" version="-1" implicit="yes" />
   <import index="tpe3" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" implicit="yes" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
-  <import index="oe5h" modelUID="r:a2f19e10-2813-4139-a451-ab70035813fc(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="1230058635633">
       <property name="name" nameId="tpck.1169194664001" value="AnonymousClassTest" />
@@ -1985,7 +1984,7 @@
       <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1232554649249">
         <property name="name" nameId="tpck.1169194664001" value="eval" />
         <property name="isPrivate" nameId="1i04.1225194472833" value="false" />
-        <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="oe5h.1213877519769" resolveInfo="eval" />
+        <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpek.1213877519769" resolveInfo="eval" />
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1232554649292">
           <property name="name" nameId="tpck.1169194664001" value="module" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1232554649293">

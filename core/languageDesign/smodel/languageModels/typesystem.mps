@@ -27,7 +27,6 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
   <import index="tpeq" modelUID="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" version="-1" implicit="yes" />
-  <import index="oe5h" modelUID="r:a2f19e10-2813-4139-a451-ab70035813fc(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1178287490510">
       <property name="name" nameId="tpck.1169194664001" value="typeof_SNodeTypeCastExpression" />
@@ -8218,7 +8217,7 @@
                       <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1206659958692" resolveInfo="op" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4101496941862450649">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877410070" resolveInfo="getOperand" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877410070" resolveInfo="getOperand" />
                     </node>
                   </node>
                 </node>

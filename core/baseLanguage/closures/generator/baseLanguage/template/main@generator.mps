@@ -37,7 +37,6 @@
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="faxn" modelUID="r:c8f09818-27d0-4e31-9cdf-dedd92fee7ef(jetbrains.mps.baseLanguage.closures.util)" version="-1" implicit="yes" />
   <import index="tp2e" modelUID="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" version="-1" implicit="yes" />
-  <import index="oe5h" modelUID="r:a2f19e10-2813-4139-a451-ab70035813fc(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1199623542211">
       <property name="name" nameId="tpck.1169194664001" value="main" />
@@ -12606,7 +12605,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1201686945051" resolveInfo="bmc" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2619154382621429270">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877435747" resolveInfo="deriveType" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877435747" resolveInfo="deriveType" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2619154382621429271">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1201693549025" resolveInfo="arg" />
                             </node>
@@ -16120,7 +16119,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1219747408213" resolveInfo="cc" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2619154382621208894">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877435747" resolveInfo="deriveType" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877435747" resolveInfo="deriveType" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2619154382621208895">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1219747408185" resolveInfo="arg" />
                             </node>
@@ -38564,7 +38563,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4923436771430698295">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1239355137616" resolveInfo="canServeAsReturn" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1239355137616" resolveInfo="canServeAsReturn" />
                 </node>
               </node>
               <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4923436771430698268">
@@ -39116,7 +39115,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5988816933596133438" resolveInfo="ac" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5988816933596133503">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877435747" resolveInfo="deriveType" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877435747" resolveInfo="deriveType" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5988816933596133504">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5988816933596133493" resolveInfo="arg" />
                             </node>

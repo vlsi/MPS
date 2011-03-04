@@ -77,7 +77,7 @@ __switch__:
                       this.__CP__ = 8;
                       break;
                     case 15:
-                      this.__CP__ = 1;
+                      this.__CP__ = -1;
                       break;
                     default:
                       break __loop__;

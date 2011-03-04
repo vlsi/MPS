@@ -17,11 +17,12 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
-import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+
+import java.util.List;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_671853460608709085(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -202,7 +203,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5189627237350270300(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ((List<SNode>) _context.getVariable("related"));
+    return ((Iterable<SNode>) _context.getVariable("related"));
   }
 
   public static Iterable sourceNodesQuery_671853460608824199(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

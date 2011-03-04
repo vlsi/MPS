@@ -18,7 +18,6 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="wbvt" modelUID="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)" version="-1" implicit="yes" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
-  <import index="oe5h" modelUID="r:a2f19e10-2813-4139-a451-ab70035813fc(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1234257860776">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation" />
@@ -87,7 +86,7 @@
   <root id="1234257860776">
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1234265130010">
       <property name="name" nameId="tpck.1169194664001" value="isReturnsVoid" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="oe5h.1234359555698" resolveInfo="isReturnsVoid" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpek.1234359555698" resolveInfo="isReturnsVoid" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1234265130012">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1234265138564">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1234265140441">
@@ -1180,7 +1179,7 @@
     </node>
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1236687782698">
       <property name="name" nameId="tpck.1169194664001" value="needConceptFunction" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="oe5h.1236687728308" resolveInfo="needConceptFunction" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpek.1236687728308" resolveInfo="needConceptFunction" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236687782700">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1236687801734">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1236687803393">
@@ -1317,7 +1316,7 @@
     </node>
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1260930188116560111">
       <property name="name" nameId="tpck.1169194664001" value="isLegalAsStatement" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="oe5h.1239211900844" resolveInfo="isLegalAsStatement" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpek.1239211900844" resolveInfo="isLegalAsStatement" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1260930188116560114">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1260930188116560117">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1260930188116560119">

@@ -23,7 +23,6 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="2omo" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" implicit="yes" />
   <import index="dmyu" modelUID="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)" version="-1" implicit="yes" />
-  <import index="oe5h" modelUID="r:a2f19e10-2813-4139-a451-ab70035813fc(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="2omo.LanguageTextGenDeclaration" typeId="2omo.1233921373471" id="1234796104060">
       <property name="name" nameId="tpck.1169194664001" value="BaseLanguageTextGen" />
@@ -3712,13 +3711,13 @@
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6160828558200604833">
               <node role="operand" roleId="tpee.1197027771414" type="2omo.NodeParameter" typeId="2omo.1233748055915" id="6160828558200604832" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6160828558200604837">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.521412098689998668" resolveInfo="isStatic" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.521412098689998668" resolveInfo="isStatic" />
               </node>
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="582575223451604485">
               <node role="operand" roleId="tpee.1197027771414" type="2omo.NodeParameter" typeId="2omo.1233748055915" id="582575223451604482" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6160828558200601527">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.521412098689998677" resolveInfo="isInner" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.521412098689998677" resolveInfo="isInner" />
               </node>
             </node>
           </node>
@@ -10687,7 +10686,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4555902841936368845" resolveInfo="conceptFunction" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4555902841936368854">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877374441" resolveInfo="getExpectedReturnType" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877374441" resolveInfo="getExpectedReturnType" />
                     </node>
                   </node>
                 </node>

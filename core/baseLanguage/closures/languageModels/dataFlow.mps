@@ -11,7 +11,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp41" modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" implicit="yes" />
   <import index="tp2h" modelUID="r:00000000-0000-4000-0000-011c89590335(jetbrains.mps.baseLanguage.closures.dataFlow)" version="-1" implicit="yes" />
-  <import index="oe5h" modelUID="r:a2f19e10-2813-4139-a451-ab70035813fc(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="1216646381341">
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
@@ -57,7 +56,7 @@
               <node role="operand" roleId="tpee.1197027771414" type="tp41.NodeParameter" typeId="tp41.1206442747519" id="1216727110902" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1216727098955">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1214501165480" resolveInfo="getExternalVariablesDeclarations" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1214501165480" resolveInfo="getExternalVariablesDeclarations" />
             </node>
           </node>
         </node>

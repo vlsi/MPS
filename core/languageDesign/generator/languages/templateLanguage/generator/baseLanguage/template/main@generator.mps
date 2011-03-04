@@ -43,7 +43,6 @@
   <import index="tpf9" modelUID="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" version="-1" implicit="yes" />
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
-  <import index="oe5h" modelUID="r:a2f19e10-2813-4139-a451-ab70035813fc(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1167163214015">
       <property name="name" nameId="tpck.1169194664001" value="insert_CreateRootRule_Condition" />
@@ -1987,7 +1986,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8224086392574421524" resolveInfo="it" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8224086392574421523">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1224687669172" resolveInfo="getDotExpression" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1224687669172" resolveInfo="getDotExpression" />
                           </node>
                         </node>
                       </node>
@@ -2024,7 +2023,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8224086392574421554" resolveInfo="it" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8224086392574421553">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1224687669172" resolveInfo="getDotExpression" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1224687669172" resolveInfo="getDotExpression" />
                           </node>
                         </node>
                       </node>
@@ -22890,7 +22889,7 @@
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3814174928061636331">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.1213877374441" resolveInfo="getExpectedReturnType" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877374441" resolveInfo="getExpectedReturnType" />
                             </node>
                           </node>
                         </node>

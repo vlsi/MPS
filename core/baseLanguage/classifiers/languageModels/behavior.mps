@@ -18,7 +18,6 @@
   <import index="tpcu" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" implicit="yes" />
   <import index="tp4h" modelUID="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)" version="-1" implicit="yes" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
-  <import index="oe5h" modelUID="r:a2f19e10-2813-4139-a451-ab70035813fc(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877255427">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp4f.1205752174734" resolveInfo="IClassifierPart" />
@@ -420,7 +419,7 @@
     </node>
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1233077650940">
       <property name="name" nameId="tpck.1169194664001" value="canBeAnnotated" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="oe5h.1233076312117" resolveInfo="canBeAnnotated" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpek.1233076312117" resolveInfo="canBeAnnotated" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1233077650942">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1233077655320">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1233077656322">
@@ -439,7 +438,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8884554759541375754">
             <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="8884554759541375755" />
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8884554759541375756">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oe5h.5017341185733869581" resolveInfo="getVisibilityIcon" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.5017341185733869581" resolveInfo="getVisibilityIcon" />
             </node>
           </node>
         </node>
@@ -1119,7 +1118,7 @@
     </node>
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1221661926912">
       <property name="name" nameId="tpck.1169194664001" value="getExtractMethodRefactoringProcessor" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="oe5h.1221393367929" resolveInfo="getExtractMethodRefactoringProcessor" />
+      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpek.1221393367929" resolveInfo="getExtractMethodRefactoringProcessor" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1221661926913" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1221661926915">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1221661952188">
@@ -1127,7 +1126,7 @@
             <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="1221661952190">
               <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="1221661952191">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
-                <link role="classifier" roleId="tpee.1170346070688" targetNodeId="oe5h.3206102269307400537" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
+                <link role="classifier" roleId="tpee.1170346070688" targetNodeId="tpek.3206102269307400537" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
                 <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1221661952193" />
                 <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1221661952194">
                   <property name="name" nameId="tpck.1169194664001" value="createNewMethod" />
@@ -1281,7 +1280,7 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3206102269307406140">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="oe5h.3206102269307400537" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpek.3206102269307400537" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1221670644669">
         <property name="name" nameId="tpck.1169194664001" value="nodesToRefactor" />
