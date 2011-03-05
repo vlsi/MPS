@@ -45,7 +45,7 @@ public class ActionDeclaration_Behavior {
     String fullPath = ActionDeclaration_Behavior.call_getFullPath_6301602537765917913(thisNode, module);
     for (String sourcePath : ListSequence.fromList(module.getSourcePaths())) {
       String prefix = ActionDeclaration_Behavior.call_getPrefix_1588596821190636875(thisNode, sourcePath);
-      if (fullPath.startsWith(prefix)) {
+      if (fullPath.toLowerCase().startsWith(prefix.toLowerCase())) {
         return true;
       }
     }
@@ -56,16 +56,15 @@ public class ActionDeclaration_Behavior {
     String fullPath = ActionDeclaration_Behavior.call_getFullPath_6301602537765917913(thisNode, module);
     for (String sourcePath : ListSequence.fromList(module.getSourcePaths())) {
       String prefix = ActionDeclaration_Behavior.call_getPrefix_1588596821190636875(thisNode, sourcePath);
-      if (fullPath.startsWith(prefix)) {
-        int index = fullPath.indexOf(prefix);
-        return fullPath.substring(index + prefix.length() + 1);
+      if (fullPath.toLowerCase().startsWith(prefix.toLowerCase())) {
+        return fullPath.substring(prefix.length() + 1);
       }
     }
     throw new RuntimeException("Icon path " + SPropertyOperations.getString(thisNode, "iconPath") + " is outside of any source folders.");
   }
 
   public static String call_getPrefix_1588596821190636875(SNode thisNode, String sourcePath) {
-    return sourcePath.replaceAll("\\\\", "/") + "/" + NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode)).replace(".", "/");
+    return sourcePath + "/" + NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode)).replace(".", "/");
   }
 
   public static String call_getFullPath_6301602537765917913(SNode thisNode, IModule module) {
