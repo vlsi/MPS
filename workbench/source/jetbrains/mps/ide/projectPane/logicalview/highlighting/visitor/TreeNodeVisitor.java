@@ -25,7 +25,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public abstract class TreeNodeVisitor {
-  private ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(2, 2, 10, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>());
+  private static ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(2, 2, 10, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>());
 
   public final void visitNode(final MPSTreeNode node) {
     myExecutor.execute(new Runnable() {
