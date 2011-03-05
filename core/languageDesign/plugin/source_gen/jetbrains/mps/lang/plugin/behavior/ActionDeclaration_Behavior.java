@@ -45,7 +45,7 @@ public class ActionDeclaration_Behavior {
     String fullPath = ActionDeclaration_Behavior.call_getFullPath_6301602537765917913(thisNode, module);
     for (String sourcePath : ListSequence.fromList(module.getSourcePaths())) {
       String prefix = ActionDeclaration_Behavior.call_getPrefix_1588596821190636875(thisNode, sourcePath);
-      if (fullPath.toLowerCase().startsWith(prefix.toLowerCase())) {
+      if (fullPath.startsWith(prefix)) {
         return true;
       }
     }
@@ -56,7 +56,7 @@ public class ActionDeclaration_Behavior {
     String fullPath = ActionDeclaration_Behavior.call_getFullPath_6301602537765917913(thisNode, module);
     for (String sourcePath : ListSequence.fromList(module.getSourcePaths())) {
       String prefix = ActionDeclaration_Behavior.call_getPrefix_1588596821190636875(thisNode, sourcePath);
-      if (fullPath.toLowerCase().startsWith(prefix.toLowerCase())) {
+      if (fullPath.startsWith(prefix)) {
         return fullPath.substring(prefix.length() + 1);
       }
     }
@@ -64,10 +64,10 @@ public class ActionDeclaration_Behavior {
   }
 
   public static String call_getPrefix_1588596821190636875(SNode thisNode, String sourcePath) {
-    return sourcePath + "/" + NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode)).replace(".", "/");
+    return sourcePath.replace("\\", "/") + "/" + NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode)).replace(".", "/");
   }
 
   public static String call_getFullPath_6301602537765917913(SNode thisNode, IModule module) {
-    return MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, "iconPath"), module.getModuleFqName());
+    return MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, "iconPath"), module.getModuleFqName()).replace("\\", "/");
   }
 }
