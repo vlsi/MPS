@@ -23,6 +23,8 @@ import jetbrains.mps.smodel.conceptdescriptor.ConceptRegistry;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.InvocationTargetException;
+
 public final class BehaviorManager implements ApplicationComponent {
   // todo: static it!
   public static BehaviorManager getInstance() {
@@ -54,6 +56,19 @@ public final class BehaviorManager implements ApplicationComponent {
 
   public static <T> T staticInvoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
     return ConceptRegistry.getInstance().getConceptDescriptorForInstanceNode(node).invoke(returnType, node, methodName, parametersTypes, parameters);
+  }
+
+  public static <T> T newStaticInvoke(Object behaviorObject, Class nodeClass, Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
+    // todo: behavior object is needed ?
+    Object[] params = new Object[parameters.length + 1];
+    params[0] = node;
+    System.arraycopy(parameters, 0, params, 1, parameters.length);
+    try {
+      return (T) nodeClass.getMethod(methodName, parametersTypes).invoke(behaviorObject, params);
+    } catch (Exception e) {
+      // todo: ?
+      return null;
+    }
   }
 
   public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
