@@ -17,12 +17,10 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
@@ -170,7 +168,7 @@ public class SModelRepository implements ApplicationComponent {
         throw new IllegalStateException();
       }
 
-      if (modelDescriptor.getModule()!=null && modelDescriptor.getModule()!=owner && modelDescriptor.getStereotype()!="java_stub"){
+      if (modelDescriptor.getModule() != null && modelDescriptor.getModule() != owner && modelDescriptor.getStereotype() != "java_stub") {
         throw new IllegalStateException();
       }
 
@@ -301,9 +299,12 @@ public class SModelRepository implements ApplicationComponent {
     SModelDescriptor model = myIdToModelDescriptorMap.get(id);
     if (model != null) return model;
 
-    if (id instanceof RegularSModelId) return myFqNameToModelDescriptorMap.get(modelReference.getSModelFqName());
+    if (!(id instanceof RegularSModelId)) return null;
 
-    return null;
+    SModelFqName fqName = modelReference.getSModelFqName();
+    if (fqName == null) return null;
+
+    return myFqNameToModelDescriptorMap.get(fqName);
   }
 
   public SModelDescriptor getModelDescriptor(SModelFqName modelFqName) {
