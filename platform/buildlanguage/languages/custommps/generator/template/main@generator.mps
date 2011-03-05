@@ -52,7 +52,7 @@
       <property name="name" nameId="tpck.1169194664001" value="MPS-autodist" />
       <property name="startupClass" nameId="60oz.1230058022109" value="jetbrains.mps.Launcher" />
       <property name="useVMOptionsFile" nameId="60oz.1231691563959" value="true" />
-      <property name="defaultVMOptions" nameId="60oz.1231691593776" value="-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=92m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" />
+      <property name="defaultVMOptions" nameId="60oz.1231691593776" value="-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=150m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" />
       <property name="additionalVMOptions" nameId="60oz.1240321503907" value="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005" />
       <link role="buildScriptConfiguration" roleId="60oz.1230216533585" targetNodeId="1233926062534" resolveInfo="default" />
     </node>
