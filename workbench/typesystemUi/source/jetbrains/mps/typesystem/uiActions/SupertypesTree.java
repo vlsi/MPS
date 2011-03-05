@@ -18,13 +18,11 @@ package jetbrains.mps.typesystem.uiActions;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
-import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.ide.dialogs.BaseNodeDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.AbstractAction;
@@ -39,7 +37,7 @@ public class SupertypesTree extends AbstractHierarchyTree {
   private boolean myShowOnlyStrong = false;
 
   public SupertypesTree(AbstractHierarchyView abstractHierarchyView) {
-    super(abstractHierarchyView, BaseConcept.concept, false);
+    super(abstractHierarchyView, SNodeUtil.concept_BaseConcept, false);
   }
 
   protected String noNodeString() {
