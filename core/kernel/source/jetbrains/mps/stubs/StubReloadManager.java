@@ -349,7 +349,7 @@ public class StubReloadManager implements ApplicationComponent {
     outer:
     for (StubPath os : oldStubs) {
       Map<ModuleId, PathData> p = myPath2Data.get(os);
-      if (p.size() == 0) continue;
+      if (p==null || p.size() == 0) continue;
       for (PathData pd : p.values()) {
         if (!pd.isFresh()) continue outer;
       }
