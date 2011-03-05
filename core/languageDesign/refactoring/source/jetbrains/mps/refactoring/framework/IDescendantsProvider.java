@@ -16,9 +16,10 @@
 package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SNode;
 
 import java.util.Set;
 
 public interface IDescendantsProvider {
-  public Set<INodeAdapter> getDescendants(INodeAdapter nodeAdapter);
+  public Set<SNode> getDescendants(SNode nodeAdapter);
 }

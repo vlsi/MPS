@@ -125,12 +125,12 @@
   <unitInfo fileName="ShowParameters_Action.java" startLine="25" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowParameters_Action" />
   <unitInfo fileName="GoToNodeById_Action.java" startLine="26" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToNodeById_Action" />
   <unitInfo fileName="CloneRoot_Action.java" startLine="26" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.CloneRoot_Action" />
+  <unitInfo fileName="RenamePackage_Action.java" startLine="24" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.RenamePackage_Action" />
   <unitInfo fileName="RenameNamespace_Action.java" startLine="24" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameNamespace_Action" />
-  <unitInfo fileName="RenamePackage_Action.java" startLine="25" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.RenamePackage_Action" />
   <unitInfo fileName="GeneratorActions_ActionGroup.java" startLine="11" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ide.actions.GeneratorActions_ActionGroup" />
   <unitInfo fileName="GoByReference_ActionGroup.java" startLine="26" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.ide.actions.GoByReference_ActionGroup" />
   <unitInfo fileName="HighlightUsages_Action.java" startLine="29" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.actions.HighlightUsages_Action" />
-  <unitInfo fileName="ShowClassInHierarchy_Action.java" startLine="21" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowClassInHierarchy_Action" />
+  <unitInfo fileName="ShowClassInHierarchy_Action.java" startLine="20" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowClassInHierarchy_Action" />
   <unitInfo fileName="NewSolution_Action.java" startLine="22" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.ide.actions.NewSolution_Action" />
   <unitInfo fileName="DeleteModules_Action.java" startLine="25" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteModules_Action" />
   <unitInfo fileName="DeleteNode_Action.java" startLine="24" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteNode_Action" />
@@ -143,7 +143,7 @@
   <unitInfo fileName="RemoveModuleFromProject_Action.java" startLine="30" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveModuleFromProject_Action" />
   <unitInfo fileName="RenameFileOrDirectory_Action.java" startLine="24" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="12" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges" />
-  <unitInfo fileName="ShowConceptInHierarchy_Action.java" startLine="25" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action" />
+  <unitInfo fileName="ShowConceptInHierarchy_Action.java" startLine="24" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action" />
   <unitInfo fileName="NewRuntimeModule_Action.java" startLine="36" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action" />
   <unitInfo fileName="ShowImplementations_Action.java" startLine="40" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowImplementations_Action" />
   <unitInfo fileName="PasteNode_Action.java" startLine="35" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.ide.actions.PasteNode_Action" />
@@ -1105,73 +1105,73 @@
     <scopeInfo nodeId="1215907618032" fileName="ShowErrorMessage_Action.java" startLine="23" startPosition="87" endLine="24" endPosition="17" />
   </root>
   <root nodeId="1216119398364">
-    <nodeInfo nodeId="698754844178413840" fileName="ShowClassInHierarchy_Action.java" startLine="31" startPosition="87" endLine="32" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216119707536" fileName="ShowClassInHierarchy_Action.java" startLine="74" startPosition="9" endLine="75" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216119756067" fileName="ShowClassInHierarchy_Action.java" startLine="75" startPosition="87" endLine="76" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216119830834" fileName="ShowClassInHierarchy_Action.java" startLine="76" startPosition="159" endLine="77" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216119882330" fileName="ShowClassInHierarchy_Action.java" startLine="77" startPosition="152" endLine="78" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="698754844178415210" fileName="ShowClassInHierarchy_Action.java" startLine="86" startPosition="73" endLine="87" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="698754844178415250" fileName="ShowClassInHierarchy_Action.java" startLine="88" startPosition="99" endLine="89" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6223531255410204452" fileName="ShowClassInHierarchy_Action.java" startLine="91" startPosition="111" endLine="92" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6223531255410204489" fileName="ShowClassInHierarchy_Action.java" startLine="93" startPosition="31" endLine="94" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="698754844178413856" fileName="ShowClassInHierarchy_Action.java" startLine="96" startPosition="5" endLine="97" endPosition="324" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="698754844178094384" fileName="ShowClassInHierarchy_Action.java" startLine="97" startPosition="324" endLine="98" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="698754844178415228" fileName="ShowClassInHierarchy_Action.java" startLine="87" startPosition="105" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6223531255410204470" fileName="ShowClassInHierarchy_Action.java" startLine="92" startPosition="127" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6223531255410204409" fileName="ShowClassInHierarchy_Action.java" startLine="90" startPosition="5" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="698754844178094380" fileName="ShowClassInHierarchy_Action.java" startLine="85" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextClassifier#(Ljava/util/Map;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1216119546445" fileName="ShowClassInHierarchy_Action.java" startLine="31" startPosition="87" endLine="32" endPosition="84" />
-    <scopeInfo nodeId="698754844178415229" fileName="ShowClassInHierarchy_Action.java" startLine="88" startPosition="99" endLine="89" endPosition="94" />
-    <scopeInfo nodeId="6223531255410204471" fileName="ShowClassInHierarchy_Action.java" startLine="93" startPosition="31" endLine="94" endPosition="26" />
-    <scopeInfo nodeId="6223531255410204410" fileName="ShowClassInHierarchy_Action.java" startLine="91" startPosition="111" endLine="95" endPosition="7">
+    <nodeInfo nodeId="698754844178413840" fileName="ShowClassInHierarchy_Action.java" startLine="30" startPosition="87" endLine="31" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216119707536" fileName="ShowClassInHierarchy_Action.java" startLine="73" startPosition="9" endLine="74" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216119756067" fileName="ShowClassInHierarchy_Action.java" startLine="74" startPosition="87" endLine="75" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216119830834" fileName="ShowClassInHierarchy_Action.java" startLine="75" startPosition="159" endLine="76" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216119882330" fileName="ShowClassInHierarchy_Action.java" startLine="76" startPosition="109" endLine="77" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="698754844178415210" fileName="ShowClassInHierarchy_Action.java" startLine="85" startPosition="73" endLine="86" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="698754844178415250" fileName="ShowClassInHierarchy_Action.java" startLine="87" startPosition="99" endLine="88" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6223531255410204452" fileName="ShowClassInHierarchy_Action.java" startLine="90" startPosition="111" endLine="91" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6223531255410204489" fileName="ShowClassInHierarchy_Action.java" startLine="92" startPosition="31" endLine="93" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="698754844178413856" fileName="ShowClassInHierarchy_Action.java" startLine="95" startPosition="5" endLine="96" endPosition="324" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="698754844178094384" fileName="ShowClassInHierarchy_Action.java" startLine="96" startPosition="324" endLine="97" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="698754844178415228" fileName="ShowClassInHierarchy_Action.java" startLine="86" startPosition="105" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6223531255410204470" fileName="ShowClassInHierarchy_Action.java" startLine="91" startPosition="127" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6223531255410204409" fileName="ShowClassInHierarchy_Action.java" startLine="89" startPosition="5" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="698754844178094380" fileName="ShowClassInHierarchy_Action.java" startLine="84" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextClassifier#(Ljava/util/Map;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1216119546445" fileName="ShowClassInHierarchy_Action.java" startLine="30" startPosition="87" endLine="31" endPosition="84" />
+    <scopeInfo nodeId="698754844178415229" fileName="ShowClassInHierarchy_Action.java" startLine="87" startPosition="99" endLine="88" endPosition="94" />
+    <scopeInfo nodeId="6223531255410204471" fileName="ShowClassInHierarchy_Action.java" startLine="92" startPosition="31" endLine="93" endPosition="26" />
+    <scopeInfo nodeId="6223531255410204410" fileName="ShowClassInHierarchy_Action.java" startLine="90" startPosition="111" endLine="94" endPosition="7">
       <varInfo nodeId="6223531255410204453" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="698754844178094383" fileName="ShowClassInHierarchy_Action.java" startLine="86" startPosition="73" endLine="98" endPosition="22">
+    <scopeInfo nodeId="698754844178094383" fileName="ShowClassInHierarchy_Action.java" startLine="85" startPosition="73" endLine="97" endPosition="22">
       <varInfo nodeId="698754844178413857" varName="outerClass" />
       <varInfo nodeId="698754844178415211" varName="refNode" />
     </scopeInfo>
-    <scopeInfo nodeId="698754844178094380" fileName="ShowClassInHierarchy_Action.java" startLine="85" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="698754844178094380" fileName="ShowClassInHierarchy_Action.java" startLine="84" startPosition="0" endLine="99" endPosition="0" />
   </root>
   <root nodeId="1216120033386">
-    <nodeInfo nodeId="6223531255410204610" fileName="ShowConceptInHierarchy_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216120033399" fileName="ShowConceptInHierarchy_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216120033408" fileName="ShowConceptInHierarchy_Action.java" startLine="83" startPosition="135" endLine="84" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216120033418" fileName="ShowConceptInHierarchy_Action.java" startLine="84" startPosition="217" endLine="85" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6223531255410204736" fileName="ShowConceptInHierarchy_Action.java" startLine="93" startPosition="67" endLine="94" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6223531255410204746" fileName="ShowConceptInHierarchy_Action.java" startLine="95" startPosition="117" endLine="96" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6223531255410204755" fileName="ShowConceptInHierarchy_Action.java" startLine="98" startPosition="119" endLine="99" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6223531255410204765" fileName="ShowConceptInHierarchy_Action.java" startLine="100" startPosition="28" endLine="101" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6223531255410204774" fileName="ShowConceptInHierarchy_Action.java" startLine="103" startPosition="5" endLine="104" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6223531255410204886" fileName="ShowConceptInHierarchy_Action.java" startLine="105" startPosition="31" endLine="106" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6223531255410204792" fileName="ShowConceptInHierarchy_Action.java" startLine="107" startPosition="5" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2925366645633918965" fileName="ShowConceptInHierarchy_Action.java" startLine="109" startPosition="92" endLine="110" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2925366645633918967" fileName="ShowConceptInHierarchy_Action.java" startLine="111" startPosition="5" endLine="112" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2925366645633918975" fileName="ShowConceptInHierarchy_Action.java" startLine="112" startPosition="102" endLine="113" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2925366645633918989" fileName="ShowConceptInHierarchy_Action.java" startLine="114" startPosition="123" endLine="115" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2925366645633918994" fileName="ShowConceptInHierarchy_Action.java" startLine="116" startPosition="5" endLine="117" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6223531255410204744" fileName="ShowConceptInHierarchy_Action.java" startLine="94" startPosition="105" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6223531255410204763" fileName="ShowConceptInHierarchy_Action.java" startLine="99" startPosition="142" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6223531255410204858" fileName="ShowConceptInHierarchy_Action.java" startLine="104" startPosition="187" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2925366645633918957" fileName="ShowConceptInHierarchy_Action.java" startLine="108" startPosition="0" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2925366645633918982" fileName="ShowConceptInHierarchy_Action.java" startLine="113" startPosition="71" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6223531255410204753" fileName="ShowConceptInHierarchy_Action.java" startLine="97" startPosition="5" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2925366645633918951" fileName="ShowConceptInHierarchy_Action.java" startLine="92" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConceptNode#(Ljava/util/Map;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="2925366645633918865" fileName="ShowConceptInHierarchy_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="80" />
-    <scopeInfo nodeId="6223531255410204745" fileName="ShowConceptInHierarchy_Action.java" startLine="95" startPosition="117" endLine="96" endPosition="112" />
-    <scopeInfo nodeId="6223531255410204764" fileName="ShowConceptInHierarchy_Action.java" startLine="100" startPosition="28" endLine="101" endPosition="23" />
-    <scopeInfo nodeId="6223531255410204859" fileName="ShowConceptInHierarchy_Action.java" startLine="105" startPosition="31" endLine="106" endPosition="26" />
-    <scopeInfo nodeId="2925366645633918964" fileName="ShowConceptInHierarchy_Action.java" startLine="109" startPosition="92" endLine="110" endPosition="18" />
-    <scopeInfo nodeId="2925366645633918988" fileName="ShowConceptInHierarchy_Action.java" startLine="114" startPosition="123" endLine="115" endPosition="18" />
-    <scopeInfo nodeId="6223531255410204754" fileName="ShowConceptInHierarchy_Action.java" startLine="98" startPosition="119" endLine="102" endPosition="7">
+    <nodeInfo nodeId="6223531255410204610" fileName="ShowConceptInHierarchy_Action.java" startLine="34" startPosition="87" endLine="35" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216120033399" fileName="ShowConceptInHierarchy_Action.java" startLine="81" startPosition="9" endLine="82" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216120033408" fileName="ShowConceptInHierarchy_Action.java" startLine="82" startPosition="135" endLine="83" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216120033418" fileName="ShowConceptInHierarchy_Action.java" startLine="83" startPosition="158" endLine="84" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6223531255410204736" fileName="ShowConceptInHierarchy_Action.java" startLine="92" startPosition="67" endLine="93" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6223531255410204746" fileName="ShowConceptInHierarchy_Action.java" startLine="94" startPosition="117" endLine="95" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6223531255410204755" fileName="ShowConceptInHierarchy_Action.java" startLine="97" startPosition="119" endLine="98" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6223531255410204765" fileName="ShowConceptInHierarchy_Action.java" startLine="99" startPosition="28" endLine="100" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6223531255410204774" fileName="ShowConceptInHierarchy_Action.java" startLine="102" startPosition="5" endLine="103" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6223531255410204886" fileName="ShowConceptInHierarchy_Action.java" startLine="104" startPosition="31" endLine="105" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6223531255410204792" fileName="ShowConceptInHierarchy_Action.java" startLine="106" startPosition="5" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2925366645633918965" fileName="ShowConceptInHierarchy_Action.java" startLine="108" startPosition="92" endLine="109" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633918967" fileName="ShowConceptInHierarchy_Action.java" startLine="110" startPosition="5" endLine="111" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2925366645633918975" fileName="ShowConceptInHierarchy_Action.java" startLine="111" startPosition="102" endLine="112" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2925366645633918989" fileName="ShowConceptInHierarchy_Action.java" startLine="113" startPosition="123" endLine="114" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2925366645633918994" fileName="ShowConceptInHierarchy_Action.java" startLine="115" startPosition="5" endLine="116" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6223531255410204744" fileName="ShowConceptInHierarchy_Action.java" startLine="93" startPosition="105" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6223531255410204763" fileName="ShowConceptInHierarchy_Action.java" startLine="98" startPosition="142" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6223531255410204858" fileName="ShowConceptInHierarchy_Action.java" startLine="103" startPosition="187" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2925366645633918957" fileName="ShowConceptInHierarchy_Action.java" startLine="107" startPosition="0" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2925366645633918982" fileName="ShowConceptInHierarchy_Action.java" startLine="112" startPosition="71" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6223531255410204753" fileName="ShowConceptInHierarchy_Action.java" startLine="96" startPosition="5" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2925366645633918951" fileName="ShowConceptInHierarchy_Action.java" startLine="91" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConceptNode#(Ljava/util/Map;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="2925366645633918865" fileName="ShowConceptInHierarchy_Action.java" startLine="34" startPosition="87" endLine="35" endPosition="80" />
+    <scopeInfo nodeId="6223531255410204745" fileName="ShowConceptInHierarchy_Action.java" startLine="94" startPosition="117" endLine="95" endPosition="112" />
+    <scopeInfo nodeId="6223531255410204764" fileName="ShowConceptInHierarchy_Action.java" startLine="99" startPosition="28" endLine="100" endPosition="23" />
+    <scopeInfo nodeId="6223531255410204859" fileName="ShowConceptInHierarchy_Action.java" startLine="104" startPosition="31" endLine="105" endPosition="26" />
+    <scopeInfo nodeId="2925366645633918964" fileName="ShowConceptInHierarchy_Action.java" startLine="108" startPosition="92" endLine="109" endPosition="18" />
+    <scopeInfo nodeId="2925366645633918988" fileName="ShowConceptInHierarchy_Action.java" startLine="113" startPosition="123" endLine="114" endPosition="18" />
+    <scopeInfo nodeId="6223531255410204754" fileName="ShowConceptInHierarchy_Action.java" startLine="97" startPosition="119" endLine="101" endPosition="7">
       <varInfo nodeId="6223531255410204756" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="2925366645633918953" fileName="ShowConceptInHierarchy_Action.java" startLine="93" startPosition="67" endLine="117" endPosition="113">
+    <scopeInfo nodeId="2925366645633918953" fileName="ShowConceptInHierarchy_Action.java" startLine="92" startPosition="67" endLine="116" endPosition="113">
       <varInfo nodeId="6223531255410204737" varName="refNode" />
       <varInfo nodeId="2925366645633918976" varName="editedNode" />
       <varInfo nodeId="2925366645633918968" varName="tabbedEditor" />
       <varInfo nodeId="6223531255410204775" varName="outerConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="2925366645633918951" fileName="ShowConceptInHierarchy_Action.java" startLine="92" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="2925366645633918951" fileName="ShowConceptInHierarchy_Action.java" startLine="91" startPosition="0" endLine="118" endPosition="0" />
   </root>
   <root nodeId="1216120752903">
     <nodeInfo nodeId="7793469387662800201" fileName="RevertMemoryChanges_Action.java" startLine="27" startPosition="87" endLine="28" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3260,35 +3260,37 @@
     <unitInfo nodeId="6840593892233915904" fileName="RenameModel_Action.java" startLine="82" startPosition="47" endLine="86" endPosition="7" unitName="jetbrains.mps.ide.actions.RenameModel_Action$1" />
   </root>
   <root nodeId="6840593892233919195">
-    <nodeInfo nodeId="6840593892233919206" fileName="RenamePackage_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6840593892233919255" fileName="RenamePackage_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6840593892233919277" fileName="RenamePackage_Action.java" startLine="70" startPosition="74" endLine="71" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6840593892233919296" fileName="RenamePackage_Action.java" startLine="71" startPosition="105" endLine="72" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6840593892233919249" fileName="RenamePackage_Action.java" startLine="74" startPosition="27" endLine="75" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6840593892233919307" fileName="RenamePackage_Action.java" startLine="77" startPosition="9" endLine="78" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6840593892233920019" fileName="RenamePackage_Action.java" startLine="79" startPosition="28" endLine="80" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6840593892233920037" fileName="RenamePackage_Action.java" startLine="84" startPosition="63" endLine="85" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6840593892233920054" fileName="RenamePackage_Action.java" startLine="85" startPosition="70" endLine="86" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6840593892233920010" fileName="RenamePackage_Action.java" startLine="78" startPosition="142" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6840593892233919215" fileName="RenamePackage_Action.java" startLine="73" startPosition="59" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6840593892233920130" fileName="RenamePackage_Action.java" startLine="86" startPosition="78" endLine="90" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6840593892233919214" fileName="RenamePackage_Action.java" startLine="72" startPosition="48" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6840593892233920030" fileName="RenamePackage_Action.java" startLine="83" startPosition="27" endLine="91" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6840593892233920028" fileName="RenamePackage_Action.java" startLine="82" startPosition="69" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6840593892233920027" fileName="RenamePackage_Action.java" startLine="81" startPosition="7" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="6840593892233919205" fileName="RenamePackage_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="90" />
-    <scopeInfo nodeId="6840593892233919216" fileName="RenamePackage_Action.java" startLine="74" startPosition="27" endLine="75" endPosition="56" />
-    <scopeInfo nodeId="6840593892233920011" fileName="RenamePackage_Action.java" startLine="79" startPosition="28" endLine="80" endPosition="15" />
-    <scopeInfo nodeId="6840593892233919215" fileName="RenamePackage_Action.java" startLine="73" startPosition="59" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="6840593892233920033" fileName="RenamePackage_Action.java" startLine="84" startPosition="63" endLine="90" endPosition="15">
+    <nodeInfo nodeId="6840593892233919206" fileName="RenamePackage_Action.java" startLine="34" startPosition="87" endLine="35" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6840593892233919255" fileName="RenamePackage_Action.java" startLine="68" startPosition="9" endLine="69" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6840593892233919277" fileName="RenamePackage_Action.java" startLine="69" startPosition="74" endLine="70" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6840593892233919296" fileName="RenamePackage_Action.java" startLine="70" startPosition="105" endLine="71" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6840593892233919249" fileName="RenamePackage_Action.java" startLine="73" startPosition="27" endLine="74" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6840593892233919307" fileName="RenamePackage_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6840593892233920019" fileName="RenamePackage_Action.java" startLine="78" startPosition="28" endLine="79" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6840593892233920037" fileName="RenamePackage_Action.java" startLine="83" startPosition="42" endLine="84" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6840593892233920054" fileName="RenamePackage_Action.java" startLine="84" startPosition="86" endLine="85" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6840593892233920010" fileName="RenamePackage_Action.java" startLine="77" startPosition="142" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6840593892233919215" fileName="RenamePackage_Action.java" startLine="72" startPosition="59" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6840593892233920130" fileName="RenamePackage_Action.java" startLine="85" startPosition="78" endLine="89" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6840593892233919214" fileName="RenamePackage_Action.java" startLine="71" startPosition="48" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8536960582516089680" fileName="RenamePackage_Action.java" startLine="82" startPosition="27" endLine="90" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6840593892233920028" fileName="RenamePackage_Action.java" startLine="81" startPosition="69" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6840593892233920027" fileName="RenamePackage_Action.java" startLine="80" startPosition="7" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <scopeInfo nodeId="6840593892233919205" fileName="RenamePackage_Action.java" startLine="34" startPosition="87" endLine="35" endPosition="90" />
+    <scopeInfo nodeId="6840593892233919216" fileName="RenamePackage_Action.java" startLine="73" startPosition="27" endLine="74" endPosition="56" />
+    <scopeInfo nodeId="6840593892233920011" fileName="RenamePackage_Action.java" startLine="78" startPosition="28" endLine="79" endPosition="15" />
+    <scopeInfo nodeId="6840593892233919215" fileName="RenamePackage_Action.java" startLine="72" startPosition="59" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="6840593892233920033" fileName="RenamePackage_Action.java" startLine="83" startPosition="42" endLine="89" endPosition="15">
       <varInfo nodeId="6840593892233920038" varName="oldPackage" />
       <varInfo nodeId="6840593892233920055" varName="newPackage" />
     </scopeInfo>
-    <scopeInfo nodeId="6840593892233920029" fileName="RenamePackage_Action.java" startLine="83" startPosition="27" endLine="91" endPosition="11" />
-    <scopeInfo nodeId="6840593892233920030" fileName="RenamePackage_Action.java" startLine="83" startPosition="27" endLine="91" endPosition="11" />
-    <scopeInfo nodeId="6840593892233920028" fileName="RenamePackage_Action.java" startLine="82" startPosition="69" endLine="93" endPosition="0" />
-    <unitInfo nodeId="6840593892233919215" fileName="RenamePackage_Action.java" startLine="73" startPosition="47" endLine="77" endPosition="7" unitName="jetbrains.mps.ide.actions.RenamePackage_Action$1" />
-    <unitInfo nodeId="6840593892233920028" fileName="RenamePackage_Action.java" startLine="82" startPosition="57" endLine="93" endPosition="7" unitName="jetbrains.mps.ide.actions.RenamePackage_Action$2" />
+    <scopeInfo nodeId="6840593892233920029" fileName="RenamePackage_Action.java" startLine="82" startPosition="27" endLine="90" endPosition="11" />
+    <scopeInfo nodeId="8536960582516089680" fileName="RenamePackage_Action.java" startLine="82" startPosition="27" endLine="90" endPosition="11">
+      <varInfo nodeId="8536960582516089716" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6840593892233920028" fileName="RenamePackage_Action.java" startLine="81" startPosition="69" endLine="92" endPosition="0" />
+    <unitInfo nodeId="6840593892233919215" fileName="RenamePackage_Action.java" startLine="72" startPosition="47" endLine="76" endPosition="7" unitName="jetbrains.mps.ide.actions.RenamePackage_Action$1" />
+    <unitInfo nodeId="6840593892233920028" fileName="RenamePackage_Action.java" startLine="81" startPosition="57" endLine="92" endPosition="7" unitName="jetbrains.mps.ide.actions.RenamePackage_Action$2" />
   </root>
   <root nodeId="7054831363147542055">
     <nodeInfo nodeId="7054831363147658711" fileName="MappingDialog.java" startLine="37" startPosition="47" endLine="38" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainComponent" />

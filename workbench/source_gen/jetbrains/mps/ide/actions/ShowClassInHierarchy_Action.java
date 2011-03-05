@@ -14,9 +14,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.hierarchy.BaseLanguageHierarchyViewTool;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ShowClassInHierarchy_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -74,7 +73,7 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
     try {
       SNode classNode = ShowClassInHierarchy_Action.this.getContextClassifier(_params);
       BaseLanguageHierarchyViewTool tool = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(BaseLanguageHierarchyViewTool.class);
-      tool.showItemInHierarchy(((Classifier) SNodeOperations.getAdapter(classNode)), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      tool.showItemInHierarchy(classNode, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

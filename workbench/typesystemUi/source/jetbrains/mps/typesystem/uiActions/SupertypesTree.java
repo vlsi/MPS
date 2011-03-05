@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
+import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
+import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
+import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.ide.dialogs.BaseNodeDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
-import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
-import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
@@ -34,32 +35,32 @@ import java.awt.event.ActionEvent;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SupertypesTree extends AbstractHierarchyTree<INodeAdapter> {
+public class SupertypesTree extends AbstractHierarchyTree {
   private boolean myShowOnlyStrong = false;
 
   public SupertypesTree(AbstractHierarchyView abstractHierarchyView) {
-    super(abstractHierarchyView, INodeAdapter.class, false);
+    super(abstractHierarchyView, BaseConcept.concept, false);
   }
 
   protected String noNodeString() {
     return "(no type)";
   }
 
-  protected INodeAdapter getParent(INodeAdapter node) {
+  protected SNode getParent(SNode node) {
     return null;
   }
 
-  protected Set<INodeAdapter> getParents(INodeAdapter node, Set<INodeAdapter> visited) {
-    return new HashSet<INodeAdapter>();
+  protected Set<SNode> getParents(SNode node, Set<SNode> visited) {
+    return new HashSet<SNode>();
   }
 
-  protected Set<INodeAdapter> getDescendants(INodeAdapter node, Set<INodeAdapter> visited) {
+  protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
     if (node == null) {
-      return new HashSet<INodeAdapter>();
+      return new HashSet<SNode>();
     }
     Set<SNode> supertypes = TypeChecker.getInstance().getSubtypingManager().
-      collectImmediateSupertypes(node.getNode(), !myShowOnlyStrong);
-    return BaseAdapter.toAdapters(supertypes);
+      collectImmediateSupertypes(node, !myShowOnlyStrong);
+    return supertypes;
   }
 
   public void setShowOnlyStrong(boolean showOnlyStrong) {
@@ -67,7 +68,7 @@ public class SupertypesTree extends AbstractHierarchyTree<INodeAdapter> {
     rebuildLater();
   }
 
-  public boolean doubleClick(final HierarchyTreeNode<INodeAdapter> hierarchyTreeNode) {
+  public boolean doubleClick(final HierarchyTreeNode hierarchyTreeNode) {
     final BaseNodeDialog dialog = new MyBaseNodeDialog(hierarchyTreeNode);
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
@@ -81,14 +82,14 @@ public class SupertypesTree extends AbstractHierarchyTree<INodeAdapter> {
     return true;
   }
 
-  public String calculateNodeIdentifier(HierarchyTreeNode<INodeAdapter> treeNode) {
-    return PresentationManager.toString(treeNode.getNode().getNode());
+  public String calculateNodeIdentifier(HierarchyTreeNode treeNode) {
+    return PresentationManager.toString(treeNode.getNode());
   }
 
   private class MyBaseNodeDialog extends BaseNodeDialog {
-    private final HierarchyTreeNode<INodeAdapter> myHierarchyTreeNode;
+    private final HierarchyTreeNode myHierarchyTreeNode;
 
-    public MyBaseNodeDialog(HierarchyTreeNode<INodeAdapter> hierarchyTreeNode) throws HeadlessException {
+    public MyBaseNodeDialog(HierarchyTreeNode hierarchyTreeNode) throws HeadlessException {
       super("", SupertypesTree.this.myOperationContext);
       myHierarchyTreeNode = hierarchyTreeNode;
     }
@@ -98,7 +99,7 @@ public class SupertypesTree extends AbstractHierarchyTree<INodeAdapter> {
     }
 
     protected SNode getNode() {
-      return myHierarchyTreeNode.getNode().getNode();
+      return myHierarchyTreeNode.getNode();
     }
 
     public DialogDimensions getDefaultDimensionSettings() {

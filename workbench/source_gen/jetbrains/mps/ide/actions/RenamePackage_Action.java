@@ -19,8 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class RenamePackage_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -81,10 +80,10 @@ public class RenamePackage_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          for (SNode node : SetSequence.fromSet(nodes.value)) {
-            String oldPackage = node.getProperty(SModelTreeNode.PACK);
+          for (SNode node : nodes.value) {
+            String oldPackage = SPropertyOperations.getString(node, "virtualPackage");
             String newPackage = newName + oldPackage.substring(name.length());
-            node.setProperty(SModelTreeNode.PACK, (newPackage.length() > 0 ?
+            SPropertyOperations.set(node, "virtualPackage", (newPackage.length() > 0 ?
               newPackage :
               null
             ));
