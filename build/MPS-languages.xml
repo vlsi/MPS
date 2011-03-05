@@ -567,9 +567,17 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.kernel">
+    <mkdir dir="core/kernel/source" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.kernel.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/kernel/kernelSolution/jetbrains.mps.kernel.msd" prefix="module" />
       <zipfileset dir="core/kernel/kernelSolution" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/kernel/source" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.typesystemEngine">
+    <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.typesystemEngine.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" prefix="module" />
+      <zipfileset dir="core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.xml.deprecated">

@@ -329,6 +329,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -430,6 +431,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -531,6 +533,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -632,6 +635,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -733,6 +737,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/contracts/languages/contracts/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
@@ -836,6 +841,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/dates/classes_gen" />
     <path path="platform/dates/internal/classes_gen" />
     <path path="platform/dates/runtime/classes_gen" />
@@ -943,6 +949,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/dates/runtime/classes_gen" />
     <path path="platform/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -1046,6 +1053,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1148,6 +1156,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1252,6 +1261,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1354,6 +1364,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1457,6 +1468,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1559,6 +1571,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1662,6 +1675,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1763,6 +1777,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1872,6 +1887,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -1974,6 +1990,7 @@
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/bash/languages/bash/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2087,6 +2104,7 @@
     <path path="platform/buildlanguage/languages/packaging/classes" />
     <path path="platform/buildlanguage/languages/packaging/classes_gen" />
     <path path="platform/buildlanguage/languages/property/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2201,6 +2219,7 @@
     <path path="platform/buildlanguage/languages/packaging/classes" />
     <path path="platform/buildlanguage/languages/packaging/classes_gen" />
     <path path="platform/buildlanguage/languages/property/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2314,6 +2333,7 @@
     <path path="platform/buildlanguage/languages/packaging/classes" />
     <path path="platform/buildlanguage/languages/packaging/classes_gen" />
     <path path="platform/buildlanguage/languages/property/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2426,6 +2446,7 @@
     <path path="platform/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="platform/buildlanguage/languages/generictasks/classes_gen" />
     <path path="platform/buildlanguage/languages/property/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2529,6 +2550,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2630,6 +2652,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2731,6 +2754,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2832,6 +2856,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2933,6 +2958,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3044,6 +3070,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3145,6 +3172,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3246,6 +3274,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3347,6 +3376,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3448,6 +3478,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3549,6 +3580,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3651,6 +3683,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3753,6 +3786,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3857,6 +3891,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -3965,6 +4000,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4068,6 +4104,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4180,6 +4217,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4283,6 +4321,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4396,6 +4435,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4500,6 +4540,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4603,6 +4644,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4705,6 +4747,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4808,6 +4851,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4909,6 +4953,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -5013,6 +5058,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -5114,6 +5160,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -5216,6 +5263,7 @@
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/conf/languages/conf/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
