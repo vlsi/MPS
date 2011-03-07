@@ -520,6 +520,7 @@ public class SModelRepository implements ApplicationComponent {
 
   //-------todo: changed functionality - is better to be moved to SModelDescriptor fully
 
+  @Deprecated
   private void markChanged(SModel model, boolean changed) {
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor instanceof EditableSModelDescriptor) {
@@ -527,10 +528,12 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
+  @Deprecated
   public void markChanged(SModel model) {
     markChanged(model, true);
   }
 
+  @Deprecated
   public void markUnchanged(SModel model) {
     markChanged(model, false);
   }

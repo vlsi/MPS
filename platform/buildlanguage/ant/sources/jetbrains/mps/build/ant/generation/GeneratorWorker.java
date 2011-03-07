@@ -202,24 +202,19 @@ public class GeneratorWorker extends MpsWorker {
     for (final SModelDescriptor model : models) {
       assert model != null;
 
-      Set<IModule> owningModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
-        public Set<IModule> compute() {
-          return model.getModules();
+      IModule owningModule = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+        public IModule compute() {
+          return model.getModule();
         }
       });
 
-      IModule module = null;
-      if (owningModules.size() > 0) {
-        module = owningModules.iterator().next();
-      }
-
-      if (module == null) {
+      if (owningModule == null) {
         warning("Model " + model.getLongName() + " won't be generated because module for it can not be found.");
       } else {
-        List<SModelDescriptor> modelsList = moduleToModels.get(module);
+        List<SModelDescriptor> modelsList = moduleToModels.get(owningModule);
         if (modelsList == null) {
           modelsList = new ArrayList<SModelDescriptor>();
-          moduleToModels.put(module, modelsList);
+          moduleToModels.put(owningModule, modelsList);
         }
         modelsList.add(model);
       }
