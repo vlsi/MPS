@@ -65,6 +65,7 @@ def layoutFull(String home, String targetDirectory) {
             exclude(name: "META-INF/PlatformLangPlugin.xml")
             exclude(name: "META-INF/PlatformLangXmlPlugin.xml")
             exclude(name: "META-INF/XmlPlugin.xml")
+            exclude(name: "META-INF/XmlActions.xml")
           }
         }
         jar("resources_en.jar") {
