@@ -15,15 +15,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.runtime.TemplateModel;
 
 public class QueriesGenerated {
-  public static boolean baseMappingRule_Condition_1206461124351(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), "useInTest", "reduceInheritors", "none");
-  }
-
   public static boolean baseMappingRule_Condition_1206461877475(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), "useInTest", "reduceInheritors", "none");
   }
 
   public static boolean baseMappingRule_Condition_1206461190505(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), "useInTest", "reduceInheritors", "none");
+  }
+
+  public static boolean baseMappingRule_Condition_1206461124351(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), "useInTest", "reduceInheritors", "none");
   }
 
@@ -36,9 +36,9 @@ public class QueriesGenerated {
   }
 
   public static boolean mappingConfiguration_Condition_2507865635201605483(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return (((Integer) _context.getGenerationParameter("r:adca65c8-400e-4857-84ca-14f7b82e64ce.GlobalParameters.list")) == null ?
+    return (((Integer) _context.getGenerationParameter("r:b7e03598-55b4-440a-91da-cf1721f37e9e.GlobalParameters.list")) == null ?
       true :
-      ((Integer) _context.getGenerationParameter("r:adca65c8-400e-4857-84ca-14f7b82e64ce.GlobalParameters.list")) < 2
+      ((Integer) _context.getGenerationParameter("r:b7e03598-55b4-440a-91da-cf1721f37e9e.GlobalParameters.list")) < 2
     );
   }
 
