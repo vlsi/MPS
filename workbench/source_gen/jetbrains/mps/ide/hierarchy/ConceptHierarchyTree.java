@@ -11,7 +11,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ConceptHierarchyTree extends AbstractHierarchyTree {
@@ -39,7 +38,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       SNode concept = SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
       SNode extendsConcept = SLinkOperations.getTarget(concept, "extends", false);
-      if (extendsConcept == null && !(NameUtil.nodeFQName(concept).equals(BaseConcept.concept))) {
+      if (extendsConcept == null && concept != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")) {
         extendsConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
       }
       return extendsConcept;

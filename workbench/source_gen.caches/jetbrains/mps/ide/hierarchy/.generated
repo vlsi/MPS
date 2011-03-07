@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4lw5bss3714lwdx53pqpb82p0bnivwz">
+<dependencies version="2" modelHash="959v2jo5kn25rlqg970r5tfhs026z97">
   <dep model="f:java_stub#2af156ab-65c1-4a62-bd0d-ea734f71eab6#jetbrains.mps.baseLanguage.icons(jetbrains.mps.dataFlow.runtime/jetbrains.mps.baseLanguage.icons@java_stub)" />
-  <dep model="f:java_stub#2af156ab-65c1-4a62-bd0d-ea734f71eab6#jetbrains.mps.lang.core.structure(jetbrains.mps.dataFlow.runtime/jetbrains.mps.lang.core.structure@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.dnd(MPS.Classpath/com.intellij.ide.dnd@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.ide.dnd.aware(MPS.Classpath/com.intellij.ide.dnd.aware@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi(MPS.Classpath/com.intellij.openapi@java_stub)" />
@@ -52,7 +51,7 @@
   <dep model="r:72d64ad3-3ff4-48cf-ad25-2f545520d9c5(jetbrains.mps.ide.hierarchy.icons)" hash="20dzscj7ejtp6qgrnvfn1f0iv7epyxt" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d5ax0i0w21fsp3r2lvns9jctqjjbwsh" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-5cfaxtdlkbuy22agcqk9x6g9ooa98ti" />
-  <common hash="8ldhdppskvu7ir5w4v1bg70q1kw01sq">
+  <common hash="2dqrdpi1ubjuved9kp7jmbhav97q4hd">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
   </common>
   <source id="5797068448049410631" name="HierarchyViewTool" hash="5ki7pglnt13ry730y4knig41lvsbdm1">
@@ -112,7 +111,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BaseLanguageHierarchyViewTool.java" />
   </source>
-  <source id="5797068448049411821" name="LanguageHierarchiesComponent" hash="5djbenfas5c7byw0nrlitrazgfugvpv">
+  <source id="5797068448049411821" name="LanguageHierarchiesComponent" hash="-53can91he9vzh2w65ov5fersdp40272">
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.openapi.actionSystem(MPS.Classpath/com.intellij.openapi.actionSystem@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.ide.projectPane(MPS.Classpath/jetbrains.mps.ide.projectPane@java_stub)" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
@@ -166,8 +165,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ChildHierarchyTreeNode.java" />
   </source>
-  <source id="5797068448049414443" name="ConceptHierarchyTree" hash="-2r5x6pw5yinni38fc4fij3nat0szvmf">
-    <dep model="f:java_stub#2af156ab-65c1-4a62-bd0d-ea734f71eab6#jetbrains.mps.lang.core.structure(jetbrains.mps.dataFlow.runtime/jetbrains.mps.lang.core.structure@java_stub)" />
+  <source id="5797068448049414443" name="ConceptHierarchyTree" hash="4d1az5s04ualic4nkevc0fb461n1zqh">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
