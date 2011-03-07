@@ -13,8 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class AddClassMethodStrategy implements StratergyAddMethodDialog.ContainerStrategy {
   private SNode myClassConcept;
@@ -47,17 +45,16 @@ public class AddClassMethodStrategy implements StratergyAddMethodDialog.Containe
     return methods;
   }
 
-  private Integer getSuperclssesCount(SNode node) {
+  private Integer getSuperclassesCount(SNode node) {
     SNode classifier = SNodeOperations.as(node, "jetbrains.mps.baseLanguage.structure.Classifier");
-    if ((node == null)) {
+    if ((classifier == null)) {
       return 0;
     }
-    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(classifier)), IClassifiersSearchScope.CLASSIFFIER);
-    return scope.getAdapters(Classifier.class).size();
+    return new ClassifierAndSuperClassifiersScope(classifier).getClassifiers().size();
   }
 
   public int compareContainers(SNode c1, SNode c2) {
-    return getSuperclssesCount(c2).compareTo(getSuperclssesCount(c1));
+    return getSuperclassesCount(c2).compareTo(getSuperclassesCount(c1));
   }
 
   public SNode getMainContainer() {

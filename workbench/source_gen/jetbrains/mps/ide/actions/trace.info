@@ -3990,82 +3990,80 @@
     <unitInfo nodeId="7824118464175997551" fileName="StratergyAddMethodDialog.java" startLine="31" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.ide.actions.StratergyAddMethodDialog" />
   </root>
   <root nodeId="7824118464176019393">
-    <nodeInfo nodeId="7824118464176019396" fileName="AddClassMethodStrategy.java" startLine="19" startPosition="91" endLine="20" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassConcept" />
-    <nodeInfo nodeId="7824118464176019399" fileName="AddClassMethodStrategy.java" startLine="20" startPosition="31" endLine="21" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextMethod" />
-    <nodeInfo nodeId="7824118464176019418" fileName="AddClassMethodStrategy.java" startLine="25" startPosition="25" endLine="26" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464176019429" fileName="AddClassMethodStrategy.java" startLine="26" startPosition="132" endLine="27" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464176019448" fileName="AddClassMethodStrategy.java" startLine="32" startPosition="112" endLine="33" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464176019466" fileName="AddClassMethodStrategy.java" startLine="33" startPosition="112" endLine="34" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464176019478" fileName="AddClassMethodStrategy.java" startLine="35" startPosition="42" endLine="36" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464176019486" fileName="AddClassMethodStrategy.java" startLine="36" startPosition="39" endLine="37" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7824118464176019496" fileName="AddClassMethodStrategy.java" startLine="37" startPosition="169" endLine="38" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464176019509" fileName="AddClassMethodStrategy.java" startLine="38" startPosition="185" endLine="39" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464176019514" fileName="AddClassMethodStrategy.java" startLine="39" startPosition="64" endLine="40" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464176019536" fileName="AddClassMethodStrategy.java" startLine="41" startPosition="22" endLine="42" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464176019528" fileName="AddClassMethodStrategy.java" startLine="43" startPosition="14" endLine="44" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464176019546" fileName="AddClassMethodStrategy.java" startLine="46" startPosition="5" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8962463912773900976" fileName="AddClassMethodStrategy.java" startLine="50" startPosition="51" endLine="51" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8962463912773900970" fileName="AddClassMethodStrategy.java" startLine="52" startPosition="25" endLine="53" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8962463912773899749" fileName="AddClassMethodStrategy.java" startLine="54" startPosition="5" endLine="55" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8962463912773901096" fileName="AddClassMethodStrategy.java" startLine="55" startPosition="178" endLine="56" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8962463912773901153" fileName="AddClassMethodStrategy.java" startLine="59" startPosition="52" endLine="60" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464176019575" fileName="AddClassMethodStrategy.java" startLine="63" startPosition="35" endLine="64" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464176019587" fileName="AddClassMethodStrategy.java" startLine="67" startPosition="47" endLine="68" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7824118464176019526" fileName="AddClassMethodStrategy.java" startLine="43" startPosition="12" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8962463912773900958" fileName="AddClassMethodStrategy.java" startLine="51" startPosition="99" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7824118464176019561" fileName="AddClassMethodStrategy.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="7824118464176019571" fileName="AddClassMethodStrategy.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainContainer#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7824118464176019581" fileName="AddClassMethodStrategy.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7824118464176019414" fileName="AddClassMethodStrategy.java" startLine="24" startPosition="57" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7824118464176019524" fileName="AddClassMethodStrategy.java" startLine="40" startPosition="194" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7824118464176019407" fileName="AddClassMethodStrategy.java" startLine="23" startPosition="58" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7824118464176019402" fileName="AddClassMethodStrategy.java" startLine="22" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddClassMethodStrategy#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8962463912773899654" fileName="AddClassMethodStrategy.java" startLine="49" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuperclssesCount#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Integer;" />
-    <nodeInfo nodeId="7824118464176019473" fileName="AddClassMethodStrategy.java" startLine="34" startPosition="153" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7824118464176019440" fileName="AddClassMethodStrategy.java" startLine="31" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" />
-    <scopeInfo nodeId="7824118464176019535" fileName="AddClassMethodStrategy.java" startLine="41" startPosition="22" endLine="42" endPosition="224" />
-    <scopeInfo nodeId="7824118464176019527" fileName="AddClassMethodStrategy.java" startLine="43" startPosition="14" endLine="44" endPosition="109" />
-    <scopeInfo nodeId="8962463912773900959" fileName="AddClassMethodStrategy.java" startLine="52" startPosition="25" endLine="53" endPosition="15" />
-    <scopeInfo nodeId="7824118464176019568" fileName="AddClassMethodStrategy.java" startLine="59" startPosition="52" endLine="60" endPosition="70" />
-    <scopeInfo nodeId="7824118464176019574" fileName="AddClassMethodStrategy.java" startLine="63" startPosition="35" endLine="64" endPosition="26" />
-    <scopeInfo nodeId="7824118464176019586" fileName="AddClassMethodStrategy.java" startLine="67" startPosition="47" endLine="68" endPosition="115" />
-    <scopeInfo nodeId="7824118464176019417" fileName="AddClassMethodStrategy.java" startLine="25" startPosition="25" endLine="27" endPosition="146" />
-    <scopeInfo nodeId="7824118464176019561" fileName="AddClassMethodStrategy.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+    <nodeInfo nodeId="7824118464176019396" fileName="AddClassMethodStrategy.java" startLine="17" startPosition="91" endLine="18" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassConcept" />
+    <nodeInfo nodeId="7824118464176019399" fileName="AddClassMethodStrategy.java" startLine="18" startPosition="31" endLine="19" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextMethod" />
+    <nodeInfo nodeId="7824118464176019418" fileName="AddClassMethodStrategy.java" startLine="23" startPosition="25" endLine="24" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464176019429" fileName="AddClassMethodStrategy.java" startLine="24" startPosition="132" endLine="25" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464176019448" fileName="AddClassMethodStrategy.java" startLine="30" startPosition="112" endLine="31" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464176019466" fileName="AddClassMethodStrategy.java" startLine="31" startPosition="112" endLine="32" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464176019478" fileName="AddClassMethodStrategy.java" startLine="33" startPosition="42" endLine="34" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464176019486" fileName="AddClassMethodStrategy.java" startLine="34" startPosition="39" endLine="35" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7824118464176019496" fileName="AddClassMethodStrategy.java" startLine="35" startPosition="169" endLine="36" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464176019509" fileName="AddClassMethodStrategy.java" startLine="36" startPosition="185" endLine="37" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464176019514" fileName="AddClassMethodStrategy.java" startLine="37" startPosition="64" endLine="38" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464176019536" fileName="AddClassMethodStrategy.java" startLine="39" startPosition="22" endLine="40" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464176019528" fileName="AddClassMethodStrategy.java" startLine="41" startPosition="14" endLine="42" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464176019546" fileName="AddClassMethodStrategy.java" startLine="44" startPosition="5" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8962463912773900976" fileName="AddClassMethodStrategy.java" startLine="48" startPosition="52" endLine="49" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8962463912773900970" fileName="AddClassMethodStrategy.java" startLine="50" startPosition="31" endLine="51" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8962463912773901096" fileName="AddClassMethodStrategy.java" startLine="52" startPosition="5" endLine="53" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8962463912773901153" fileName="AddClassMethodStrategy.java" startLine="56" startPosition="52" endLine="57" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464176019575" fileName="AddClassMethodStrategy.java" startLine="60" startPosition="35" endLine="61" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464176019587" fileName="AddClassMethodStrategy.java" startLine="64" startPosition="47" endLine="65" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7824118464176019526" fileName="AddClassMethodStrategy.java" startLine="41" startPosition="12" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8962463912773900958" fileName="AddClassMethodStrategy.java" startLine="49" startPosition="99" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7824118464176019561" fileName="AddClassMethodStrategy.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareContainers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="7824118464176019571" fileName="AddClassMethodStrategy.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainContainer#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7824118464176019581" fileName="AddClassMethodStrategy.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainer#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7824118464176019414" fileName="AddClassMethodStrategy.java" startLine="22" startPosition="57" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7824118464176019524" fileName="AddClassMethodStrategy.java" startLine="38" startPosition="194" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7824118464176019407" fileName="AddClassMethodStrategy.java" startLine="21" startPosition="58" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7824118464176019402" fileName="AddClassMethodStrategy.java" startLine="20" startPosition="0" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddClassMethodStrategy#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8962463912773899654" fileName="AddClassMethodStrategy.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuperclassesCount#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Integer;" />
+    <nodeInfo nodeId="7824118464176019473" fileName="AddClassMethodStrategy.java" startLine="32" startPosition="153" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7824118464176019440" fileName="AddClassMethodStrategy.java" startLine="29" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddMethods#(Ljava/util/List;)Ljava/util/List;" />
+    <scopeInfo nodeId="7824118464176019535" fileName="AddClassMethodStrategy.java" startLine="39" startPosition="22" endLine="40" endPosition="224" />
+    <scopeInfo nodeId="7824118464176019527" fileName="AddClassMethodStrategy.java" startLine="41" startPosition="14" endLine="42" endPosition="109" />
+    <scopeInfo nodeId="8962463912773900959" fileName="AddClassMethodStrategy.java" startLine="50" startPosition="31" endLine="51" endPosition="15" />
+    <scopeInfo nodeId="7824118464176019568" fileName="AddClassMethodStrategy.java" startLine="56" startPosition="52" endLine="57" endPosition="72" />
+    <scopeInfo nodeId="7824118464176019574" fileName="AddClassMethodStrategy.java" startLine="60" startPosition="35" endLine="61" endPosition="26" />
+    <scopeInfo nodeId="7824118464176019586" fileName="AddClassMethodStrategy.java" startLine="64" startPosition="47" endLine="65" endPosition="115" />
+    <scopeInfo nodeId="7824118464176019417" fileName="AddClassMethodStrategy.java" startLine="23" startPosition="25" endLine="25" endPosition="146" />
+    <scopeInfo nodeId="7824118464176019561" fileName="AddClassMethodStrategy.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="7824118464176019564" varName="c1" />
       <varInfo nodeId="7824118464176019566" varName="c2" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464176019571" fileName="AddClassMethodStrategy.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="7824118464176019581" fileName="AddClassMethodStrategy.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="7824118464176019571" fileName="AddClassMethodStrategy.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="7824118464176019581" fileName="AddClassMethodStrategy.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="7824118464176019584" varName="methodDecl" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464176019414" fileName="AddClassMethodStrategy.java" startLine="24" startPosition="57" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="7824118464176019406" fileName="AddClassMethodStrategy.java" startLine="23" startPosition="58" endLine="29" endPosition="7" />
-    <scopeInfo nodeId="8962463912773899657" fileName="AddClassMethodStrategy.java" startLine="50" startPosition="51" endLine="56" endPosition="54">
-      <varInfo nodeId="8962463912773899750" varName="scope" />
+    <scopeInfo nodeId="7824118464176019414" fileName="AddClassMethodStrategy.java" startLine="22" startPosition="57" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8962463912773899657" fileName="AddClassMethodStrategy.java" startLine="48" startPosition="52" endLine="53" endPosition="86">
       <varInfo nodeId="8962463912773900977" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464176019402" fileName="AddClassMethodStrategy.java" startLine="22" startPosition="0" endLine="30" endPosition="3">
+    <scopeInfo nodeId="7824118464176019406" fileName="AddClassMethodStrategy.java" startLine="21" startPosition="58" endLine="27" endPosition="7" />
+    <scopeInfo nodeId="7824118464176019402" fileName="AddClassMethodStrategy.java" startLine="20" startPosition="0" endLine="28" endPosition="3">
       <varInfo nodeId="7824118464176019404" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8962463912773899654" fileName="AddClassMethodStrategy.java" startLine="49" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="8962463912773899654" fileName="AddClassMethodStrategy.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="8962463912773900935" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464176019477" fileName="AddClassMethodStrategy.java" startLine="35" startPosition="42" endLine="45" endPosition="7">
+    <scopeInfo nodeId="7824118464176019477" fileName="AddClassMethodStrategy.java" startLine="33" startPosition="42" endLine="43" endPosition="7">
       <varInfo nodeId="7824118464176019487" varName="method" />
       <varInfo nodeId="7824118464176019479" varName="classNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464176019473" fileName="AddClassMethodStrategy.java" startLine="34" startPosition="153" endLine="46" endPosition="5">
+    <scopeInfo nodeId="7824118464176019473" fileName="AddClassMethodStrategy.java" startLine="32" startPosition="153" endLine="44" endPosition="5">
       <varInfo nodeId="7824118464176019475" varName="methodNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464176019447" fileName="AddClassMethodStrategy.java" startLine="32" startPosition="112" endLine="47" endPosition="19">
+    <scopeInfo nodeId="7824118464176019447" fileName="AddClassMethodStrategy.java" startLine="30" startPosition="112" endLine="45" endPosition="19">
       <varInfo nodeId="7824118464176019467" varName="methods" />
       <varInfo nodeId="7824118464176019449" varName="insertion" />
     </scopeInfo>
-    <scopeInfo nodeId="7824118464176019440" fileName="AddClassMethodStrategy.java" startLine="31" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="7824118464176019440" fileName="AddClassMethodStrategy.java" startLine="29" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="7824118464176019444" varName="baseMethods" />
     </scopeInfo>
-    <unitInfo nodeId="7824118464176019413" fileName="AddClassMethodStrategy.java" startLine="24" startPosition="45" endLine="29" endPosition="5" unitName="jetbrains.mps.ide.actions.AddClassMethodStrategy$1" />
-    <unitInfo nodeId="7824118464176019393" fileName="AddClassMethodStrategy.java" startLine="19" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.actions.AddClassMethodStrategy" />
+    <unitInfo nodeId="7824118464176019413" fileName="AddClassMethodStrategy.java" startLine="22" startPosition="45" endLine="27" endPosition="5" unitName="jetbrains.mps.ide.actions.AddClassMethodStrategy$1" />
+    <unitInfo nodeId="7824118464176019393" fileName="AddClassMethodStrategy.java" startLine="17" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ide.actions.AddClassMethodStrategy" />
   </root>
   <root nodeId="7824118464176019596">
     <nodeInfo nodeId="7824118464176019599" fileName="AddConceptMethodStrategy.java" startLine="18" startPosition="93" endLine="19" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBehavior" />

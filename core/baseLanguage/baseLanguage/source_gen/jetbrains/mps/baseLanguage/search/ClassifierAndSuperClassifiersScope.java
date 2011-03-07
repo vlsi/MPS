@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.search;
 
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.ArrayList;
@@ -14,7 +16,6 @@ import jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration;
 import jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration;
 import jetbrains.mps.baseLanguage.structure.EnumClass;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.ConstructorDeclaration;
@@ -38,6 +39,14 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     super(constraint ^ (constraint & (IClassifiersSearchScope.INSTANCE_METHOD | IClassifiersSearchScope.STATIC_METHOD | IClassifiersSearchScope.CONSTRUCTOR | IClassifiersSearchScope.INSTANCE_FIELD | IClassifiersSearchScope.STATIC_FIELD)));
     this.myTopClassifier = topClassifier;
     this.myOriginalConstraint = constraint;
+  }
+
+  public ClassifierAndSuperClassifiersScope(@Nullable SNode topClassifier, int constraint) {
+    this(((Classifier) SNodeOperations.getAdapter(topClassifier)), constraint);
+  }
+
+  public ClassifierAndSuperClassifiersScope(@Nullable SNode topClassifier) {
+    this(((Classifier) SNodeOperations.getAdapter(topClassifier)));
   }
 
   @NotNull
