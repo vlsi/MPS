@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.platform.conf.constraints.Actions_Constraints" file="Actions_Constraints.java">
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAParentContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+  </dependency>
   <dependency className="jetbrains.mps.platform.conf.constraints.BeanExtension_beanExtensionPoint_ReferentConstraint" file="BeanExtension_beanExtensionPoint_ReferentConstraint.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
