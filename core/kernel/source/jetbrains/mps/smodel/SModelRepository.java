@@ -367,8 +367,8 @@ public class SModelRepository implements ApplicationComponent {
       try {
         emd.save();
         emd.setChanged(false);
-      } catch (Throwable t) {
-        LOG.error(t);
+      } catch (Exception e) {
+        LOG.error(e);
       }
     }
   }

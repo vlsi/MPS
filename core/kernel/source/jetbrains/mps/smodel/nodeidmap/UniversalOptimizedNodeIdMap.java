@@ -20,12 +20,9 @@ import gnu.trove.TLongObjectHashMap;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Regular;
-import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
-import jetbrains.mps.util.CompositeIterable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 
 public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
