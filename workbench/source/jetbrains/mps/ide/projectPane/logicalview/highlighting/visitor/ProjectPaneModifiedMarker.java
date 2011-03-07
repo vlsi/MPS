@@ -23,7 +23,6 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import javax.swing.Icon;
@@ -35,7 +34,7 @@ public class ProjectPaneModifiedMarker extends TreeNodeVisitor {
     if (md.getLoadingState() == ModelLoadingState.NOT_LOADED) return;
     if (!(md instanceof EditableSModelDescriptor)) return;
 
-    boolean changed = SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) md));
+    boolean changed = ((EditableSModelDescriptor) md).isChanged();
     updateNodeLater(node, changed ? new LayeredIcon(node.getDefaultIcon(), Icons.MODIFIED_ICON) : node.getDefaultIcon());
   }
 

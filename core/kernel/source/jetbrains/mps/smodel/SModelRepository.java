@@ -143,7 +143,7 @@ public class SModelRepository implements ApplicationComponent {
     ModelAccess.assertLegalWrite();
 
     registerModelDescriptor(modelDescriptor, owner);
-    markChanged(modelDescriptor, true);
+    modelDescriptor.setChanged(true);
     fireModelCreatedEvent(modelDescriptor);
   }
 
@@ -521,9 +521,9 @@ public class SModelRepository implements ApplicationComponent {
   //-------todo: changed functionality - is better to be moved to SModelDescriptor fully
 
   private void markChanged(SModel model, boolean changed) {
-    SModelDescriptor modelDescriptor = getModelDescriptor(model.getSModelReference());
+    SModelDescriptor modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor instanceof EditableSModelDescriptor) {
-      markChanged(((EditableSModelDescriptor) modelDescriptor), changed);
+      ((EditableSModelDescriptor) modelDescriptor).setChanged(changed);
     }
   }
 
@@ -533,17 +533,6 @@ public class SModelRepository implements ApplicationComponent {
 
   public void markUnchanged(SModel model) {
     markChanged(model, false);
-  }
-
-  public void markChanged(EditableSModelDescriptor descriptor, boolean b) {
-    synchronized (myModelsLock) {
-      if (!myModelDescriptors.contains(descriptor)) return;
-      descriptor.setChanged(b);
-    }
-  }
-
-  public boolean isChanged(EditableSModelDescriptor descriptor) {
-    return descriptor.isChanged();
   }
 
   public Set<SModelDescriptor> getChangedModels() {

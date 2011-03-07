@@ -30,7 +30,6 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 
@@ -45,7 +44,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     if (md.getLoadingState() == ModelLoadingState.NOT_LOADED) return;
     if (!(md instanceof EditableSModelDescriptor)) return;
 
-    boolean wasChanged = SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) md));
+    boolean wasChanged = ((EditableSModelDescriptor) md).isChanged();
 
     if (wasChanged) {
       updateNodeLater(modelNode, GenerationStatus.REQUIRED.getMessage());

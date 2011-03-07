@@ -118,7 +118,7 @@ public class ModelRepositoryComponent {
       protected void doUpdatePresentation() {
         setIcon(IconManager.getIconFor(myModelDescriptor));
         if ((myModelDescriptor instanceof EditableSModelDescriptor) &&
-          SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor))) {
+          ((EditableSModelDescriptor) myModelDescriptor).isChanged()) {
           setFontStyle(getFontStyle() | Font.BOLD);
           //setColor(new Color(0x00, 0x00, 0x90));
         }

@@ -79,7 +79,7 @@ public abstract class AbstractModule implements IModule {
     }
 
     EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createNewModel(root, name, this);
-    SModelRepository.getInstance().markChanged(model, true);
+    model.setChanged(true);
 
     for (ModelCreationListener listener : ourModelCreationListeners) {
       if (listener.isApplicable(model)) {
