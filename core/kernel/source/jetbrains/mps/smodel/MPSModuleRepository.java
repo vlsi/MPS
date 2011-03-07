@@ -17,18 +17,14 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ManyToManyMap;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NonNls;
@@ -79,22 +75,6 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   }
 
-  public void addRepositoryListener(MPSModuleRepositoryListener listener) {
-    myListeners.add(listener);
-  }
-
-  public void removeRepositoryListener(MPSModuleRepositoryListener listener) {
-    myListeners.remove(listener);
-  }
-
-  private void fireRepositoryChanged() {
-    invalidateCaches();
-
-    for (MPSModuleRepositoryListener listener : myListeners) {
-      listener.repositoryChanged();
-    }
-  }
-
   public void invalidateCaches() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -112,6 +92,16 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   public boolean isKnownModule(IModule m) {
     return myModules.contains(m);
+  }
+
+  public boolean existsModule(ModuleReference ref) {
+    return getModule(ref) != null;
+  }
+
+  public boolean existsModule(IModule module, MPSModuleOwner owner) {
+    assertCanRead();
+
+    return myModuleToOwners.contains(module, owner);
   }
 
   public Set<MPSModuleOwner> getOwners(IModule module) {
@@ -198,22 +188,12 @@ public class MPSModuleRepository implements ApplicationComponent {
     return (TM) module;
   }
 
-  public boolean existsModule(ModuleReference ref) {
-    return getModule(ref) != null;
-  }
-
-  public boolean existsModule(IModule module, MPSModuleOwner owner) {
-    assertCanRead();
-
-    return myModuleToOwners.contains(module, owner);
-  }
-
   public void addModule(IModule module, MPSModuleOwner owner) {
     assertCanWrite();
 
     myDirtyFlag = true;
     if (existsModule(module, owner)) {
-      throw new RuntimeException("Couldn't add module \"" + module.getModuleFqName() + "\" : this module is already registered with this very owner: " + owner);
+      throw new IllegalStateException("Couldn't add module \"" + module.getModuleFqName() + "\" : this module is already registered with this very owner: " + owner);
     }
     String canonicalDescriptorPath = IFileUtils.getCanonicalPath(module.getDescriptorFile());
     if (canonicalDescriptorPath != null && !myCanonicalFileToModuleMap.containsKey(canonicalDescriptorPath)) {
@@ -242,6 +222,29 @@ public class MPSModuleRepository implements ApplicationComponent {
     myModules.add(module);
 
     fireModuleAdded(module);
+  }
+
+  public void removeModule(IModule module) {
+    assertCanWrite();
+
+    if (!myModules.contains(module)) {
+      return;
+    }
+
+    IFile descriptorFile = module.getDescriptorFile();
+
+    myModuleToOwners.clearFirst(module);
+    myModules.remove(module);
+    myFqNameToModulesMap.remove(module.getModuleFqName());
+    if (module.getModuleReference().getModuleId() != null) {
+      myIdToModuleMap.remove(module.getModuleReference().getModuleId());
+    }
+
+    if (descriptorFile != null) {
+      myCanonicalFileToModuleMap.remove(IFileUtils.getCanonicalPath(descriptorFile));
+    }
+
+    fireModuleRemoved(module);
   }
 
   public void unRegisterModules(MPSModuleOwner owner, Condition<IModule> condition) {
@@ -319,29 +322,6 @@ public class MPSModuleRepository implements ApplicationComponent {
     Set<IModule> toBeRemoved = new HashSet<IModule>(myModules);
     toBeRemoved.removeAll(visibleModules);
     return toBeRemoved;
-  }
-
-  public void removeModule(IModule module) {
-    assertCanWrite();
-
-    if (!myModules.contains(module)) {
-      return;
-    }
-
-    IFile descriptorFile = module.getDescriptorFile();
-
-    myModuleToOwners.clearFirst(module);
-    myModules.remove(module);
-    myFqNameToModulesMap.remove(module.getModuleFqName());
-    if (module.getModuleReference().getModuleId() != null) {
-      myIdToModuleMap.remove(module.getModuleReference().getModuleId());
-    }
-
-    if (descriptorFile != null) {
-      myCanonicalFileToModuleMap.remove(IFileUtils.getCanonicalPath(descriptorFile));
-    }
-
-    fireModuleRemoved(module);
   }
 
   public Language getLanguage(String namespace) {
@@ -429,6 +409,16 @@ public class MPSModuleRepository implements ApplicationComponent {
     return getAllModules(IModule.class);
   }
 
+  public Set<Language> getAllExtendingLanguages(Language l) {
+    Set<Language> result = new HashSet<Language>();
+    for (Language lang : getAllLanguages()) {
+      if (lang.getExtendedLanguages().contains(l)) {
+        result.add(lang);
+      }
+    }
+    return result;
+  }
+
   public List<IModule> getAllModulesInDirectory(IFile file) {
     assertCanRead();
 
@@ -438,16 +428,6 @@ public class MPSModuleRepository implements ApplicationComponent {
       String moduleCanonicalPath = IFileUtils.getCanonicalPath(m.getDescriptorFile());
       if (moduleCanonicalPath != null && moduleCanonicalPath.startsWith(path)) {
         result.add(m);
-      }
-    }
-    return result;
-  }
-
-  public Set<Language> getAllExtendingLanguages(Language l) {
-    Set<Language> result = new HashSet<Language>();
-    for (Language lang : getAllLanguages()) {
-      if (lang.getExtendedLanguages().contains(l)) {
-        result.add(lang);
       }
     }
     return result;
@@ -478,12 +458,28 @@ public class MPSModuleRepository implements ApplicationComponent {
     ModelAccess.assertLegalWrite();
   }
 
+  public void addRepositoryListener(MPSModuleRepositoryListener listener) {
+    myListeners.add(listener);
+  }
+
+  public void removeRepositoryListener(MPSModuleRepositoryListener listener) {
+    myListeners.remove(listener);
+  }
+
   public void addModuleRepositoryListener(ModuleRepositoryListener listener) {
     myModuleListeners.add(listener);
   }
 
   public void removeModuleRepositoryListener(ModuleRepositoryListener listener) {
     myModuleListeners.remove(listener);
+  }
+
+  private void fireRepositoryChanged() {
+    invalidateCaches();
+
+    for (MPSModuleRepositoryListener listener : myListeners) {
+      listener.repositoryChanged();
+    }
   }
 
   private void fireModuleAdded(IModule module) {
