@@ -41,7 +41,7 @@ public class ModulesMiner {
     return INSTANCE;
   }
 
-  private static Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new LinkedHashMap<String, Class<? extends IModule>>();
+  private Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new LinkedHashMap<String, Class<? extends IModule>>();
 
   private ModulesMiner() {
     initializeExtensionsToModuleTypesMap();
