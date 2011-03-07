@@ -29,6 +29,7 @@ import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.library.Library;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.make.MPSCompilationResult;
@@ -356,7 +357,7 @@ public abstract class MpsWorker {
       tmpmodules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
         public List<IModule> compute() {
           IFile file = FileSystem.getInstance().getFileByPath(moduleFile.getPath());
-          return MPSModuleRepository.getInstance().readModuleDescriptors(file.isDirectory() ? file : file.getParent(), new MPSModuleOwner() {
+          return ModulesMiner.getInstance().readModuleDescriptors(file.isDirectory() ? file : file.getParent(), new MPSModuleOwner() {
           });
         }
       });

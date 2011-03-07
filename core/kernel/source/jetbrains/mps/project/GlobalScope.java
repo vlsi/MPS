@@ -58,7 +58,7 @@ public class GlobalScope extends BaseScope {
   }
 
   public List<DevKit> getVisibleDevkits() {
-    return myMPSModuleRepository.getAllModules(DevKit.class);
+    return myMPSModuleRepository.getAllDevkits();
   }
 
   public List<Solution> getVisibleSolutions() {

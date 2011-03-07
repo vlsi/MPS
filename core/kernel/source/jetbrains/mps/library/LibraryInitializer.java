@@ -71,7 +71,7 @@ public class LibraryInitializer {
       MPSModuleOwner owner = new MPSModuleOwner() {
       };
       myLibsToOwners.put(loadLib, owner);
-      myRepo.readModuleDescriptors(FileSystem.getInstance().getFileByPath(loadLib), owner, refreshFiles);
+      ModulesMiner.getInstance().readModuleDescriptors(FileSystem.getInstance().getFileByPath(loadLib), owner, refreshFiles);
       fireOnLoad(owner);
     }
 
