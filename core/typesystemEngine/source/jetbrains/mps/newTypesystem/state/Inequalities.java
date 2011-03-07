@@ -116,7 +116,7 @@ public class Inequalities {
         if (TypesUtil.isVariable(output)) {
           myNodes.add(output);
         }
-        if (input != output) {
+        if (input != output && output != null) {
           addVariablesLink(input, output);
           myNodesToBlocks.addLink(input, inequality);
           if (!TypesUtil.isVariable(input) && !TypesUtil.isVariable(output)) {
@@ -131,7 +131,9 @@ public class Inequalities {
             }
           }
         }
-        myNodesToBlocks.addLink(output, inequality);
+        if (output != null) {
+          myNodesToBlocks.addLink(output, inequality);
+        }
       }
     }
   }
