@@ -847,7 +847,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8605160448688984319" resolveInfo="IActionItem" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8605160448688984326">
-      <property name="value" nameId="tpce.1105725733873" value="----" />
+      <property name="value" nameId="tpce.1105725733873" value="---- (separator)" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>

@@ -12,10 +12,11 @@
   </roots>
   <root id="1740160309778217800">
     <node role="root" roleId="cs0q.7130790807395857418" type="cs0q.Plugin" typeId="cs0q.6536266708345244486" id="7208030699524859782">
+      <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.Components" typeId="cs0q.1740160309778170999" id="3886786302241615093" />
       <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.Actions" typeId="cs0q.4383174161801812099" id="7208030699524859783">
         <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.Group" typeId="cs0q.4383174161802026701" id="4146194781600412277">
           <property name="id" nameId="cs0q.4383174161802026699" value="343434" />
-          <node role="actionItem" roleId="cs0q.8605160448688984317" type="cs0q.Separator" typeId="cs0q.8605160448688984324" id="4146194781600604409" />
+          <node role="actionItem" roleId="cs0q.8605160448688984317" type="cs0q.Separator" typeId="cs0q.8605160448688984324" id="3886786302241755448" />
           <node role="actionItem" roleId="cs0q.8605160448688984317" type="cs0q.ActionReference" typeId="cs0q.4383174161802026707" id="4146194781600604415">
             <link role="action" roleId="cs0q.4383174161802026708" targetNodeId="4146194781600412277" />
           </node>
@@ -29,16 +30,21 @@
             <link role="action" roleId="cs0q.4383174161802026708" targetNodeId="4146194781600412277" />
           </node>
         </node>
+        <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.Group" typeId="cs0q.4383174161802026701" id="3886786302241703521" />
+        <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.Action" typeId="cs0q.8605160448688984307" id="3886786302241428374" />
         <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.Action" typeId="cs0q.8605160448688984307" id="7208030699524868312">
           <property name="id" nameId="cs0q.4383174161802026699" value="adasdas" />
           <node role="shortcut" roleId="cs0q.8605160448688984308" type="cs0q.KeyboardShortcut" typeId="cs0q.4383174161802016298" id="7208030699524902450">
             <property name="keymap" nameId="cs0q.4383174161802016296" value="asd" />
           </node>
+          <node role="addToGroup" roleId="cs0q.8605160448688984311" type="cs0q.GroupReference" typeId="cs0q.4383174161802026705" id="3886786302241757392" />
+          <node role="addToGroup" roleId="cs0q.8605160448688984311" type="cs0q.GroupReference" typeId="cs0q.4383174161802026705" id="3886786302241759710" />
           <node role="addToGroup" roleId="cs0q.8605160448688984311" type="cs0q.GroupReference" typeId="cs0q.4383174161802026705" id="7208030699524950021">
             <property name="position" nameId="cs0q.8605160448689289382" value="before" />
           </node>
         </node>
       </node>
+      <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.ConfigurationXmlNode" typeId="cs0q.5066720069350533029" id="3886786302241755558" />
     </node>
   </root>
 </model>
