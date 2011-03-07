@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class GroupReference_group_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -57,6 +56,6 @@ public class GroupReference_group_ReferentConstraint extends BaseNodeReferenceSe
   }
 
   public String getPresentation(final IOperationContext operationContext, final PresentationReferentConstraintContext _context) {
-    return SConceptPropertyOperations.getString(_context.getParameterNode(), "alias") + " " + SPropertyOperations.getString(_context.getParameterNode(), "id");
+    return SPropertyOperations.getString(_context.getParameterNode(), "id");
   }
 }

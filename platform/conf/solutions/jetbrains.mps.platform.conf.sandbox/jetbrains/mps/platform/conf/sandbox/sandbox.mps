@@ -29,6 +29,9 @@
           <node role="actionItem" roleId="cs0q.8605160448688984317" type="cs0q.ActionReference" typeId="cs0q.4383174161802026707" id="4146194781600611063">
             <link role="action" roleId="cs0q.4383174161802026708" targetNodeId="4146194781600412277" />
           </node>
+          <node role="addToGroup" roleId="cs0q.8605160448688984311" type="cs0q.GroupReference" typeId="cs0q.4383174161802026705" id="5158603367164418337">
+            <link role="group" roleId="cs0q.4383174161802026706" targetNodeId="4146194781600412277" resolveInfo="group$343434" />
+          </node>
         </node>
         <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.Group" typeId="cs0q.4383174161802026701" id="3886786302241703521" />
         <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.Action" typeId="cs0q.8605160448688984307" id="3886786302241428374" />
@@ -37,9 +40,7 @@
           <node role="shortcut" roleId="cs0q.8605160448688984308" type="cs0q.KeyboardShortcut" typeId="cs0q.4383174161802016298" id="7208030699524902450">
             <property name="keymap" nameId="cs0q.4383174161802016296" value="asd" />
           </node>
-          <node role="addToGroup" roleId="cs0q.8605160448688984311" type="cs0q.GroupReference" typeId="cs0q.4383174161802026705" id="3886786302241757392" />
-          <node role="addToGroup" roleId="cs0q.8605160448688984311" type="cs0q.GroupReference" typeId="cs0q.4383174161802026705" id="3886786302241759710" />
-          <node role="addToGroup" roleId="cs0q.8605160448688984311" type="cs0q.GroupReference" typeId="cs0q.4383174161802026705" id="7208030699524950021">
+          <node role="addToGroup" roleId="cs0q.8605160448688984311" type="cs0q.GroupReference" typeId="cs0q.4383174161802026705" id="5158603367164230888">
             <property name="position" nameId="cs0q.8605160448689289382" value="before" />
           </node>
         </node>
