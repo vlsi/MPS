@@ -52,7 +52,7 @@ public class InterfaceExtension_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_4lf1wj_a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IConfigurationElement_brokenRefs(node);
+    AbstractCellProvider provider = new BaseConcept_brokenRefs(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }

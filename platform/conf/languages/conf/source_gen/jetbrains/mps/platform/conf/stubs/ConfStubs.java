@@ -82,11 +82,11 @@ public class ConfStubs extends BaseStubModelRootManager {
         return descs.smodelRefWithId(pk);
       }
     });
-    for (Tuples._3<String, String, SNode> modpair : ListSequence.fromList(doclst)) {
+    for (Tuples._3<String, String, SNode> doctuple : ListSequence.fromList(doclst)) {
       InputStream is = null;
       try {
-        is = pi.openResource(modpair._0(), modpair._1());
-        reader.read(modpair._2(), new SAXBuilder().build(is));
+        is = pi.openResource(doctuple._0(), doctuple._1());
+        reader.read(doctuple._2(), new SAXBuilder().build(is));
       } catch (IOException e) {
         e.printStackTrace();
       } catch (JDOMException e) {

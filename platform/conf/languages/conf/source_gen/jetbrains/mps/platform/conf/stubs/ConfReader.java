@@ -74,6 +74,27 @@ public class ConfReader {
   private static final String SINCE_BUILD = "since-build";
   private static final String UNTIL_BUILD = "until-build";
   private static final String CATEGORY = "category";
+  private static final String ACTIONS = "actions";
+  private static final String ACTION = "action";
+  private static final String GROUP = "group";
+  private static final String TEXT = "text";
+  private static final String ICON = "icon";
+  private static final String POPUP = "popup";
+  private static final String CLASS = "class";
+  private static final String SHORTCUT = "shortcut";
+  private static final String KEYBOARD_SHORTCUT = "keyboard-shortcut";
+  private static final String MOUSE_SHORTCUT = "mouse-shortcut";
+  private static final String KEYMAP = "keymap";
+  private static final String FIRST_KEYSTROKE = "first-keystroke";
+  private static final String SECOND_KEYSTROKE = "second-keystroke";
+  private static final String KEYSTROKE = "keystroke";
+  private static final String ADD_TO_GROUP = "add-to-group";
+  private static final String ANCHOR = "anchor";
+  private static final String GROUP_ID = "group-id";
+  private static final String RELATIVE_TO_ACTION = "relative-to-action";
+  private static final String REFERENCE = "reference";
+  private static final String SEPARATOR = "separator";
+  private static final String REF = "ref";
 
   private ConfReader.Resolver confstubResolver;
   private ConfReader.Resolver javastubResolver;
@@ -149,7 +170,7 @@ public class ConfReader {
   }
 
   private void readContainers(SNode node, Element root) {
-    for (Element container : elements(root, EXTENSION_POINTS, EXTENSIONS, APPLICATION_COMPONENTS, MODULE_COMPONENTS, PROJECT_COMPONENTS)) {
+    for (Element container : elements(root, EXTENSION_POINTS, EXTENSIONS, APPLICATION_COMPONENTS, MODULE_COMPONENTS, PROJECT_COMPONENTS, ACTIONS)) {
       if (Namespace.NO_NAMESPACE.equals(container.getNamespace())) {
         if (EXTENSION_POINTS.equals(container.getName())) {
           readExtensionPoints(SLinkOperations.addNewChild(node, "fragment", "jetbrains.mps.platform.conf.structure.ExtensionPoints"), container);
@@ -161,12 +182,101 @@ public class ConfReader {
           readComponents(SLinkOperations.addNewChild(node, "fragment", "jetbrains.mps.platform.conf.structure.Components"), SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "module"), container);
         } else if (PROJECT_COMPONENTS.equals(container.getName())) {
           readComponents(SLinkOperations.addNewChild(node, "fragment", "jetbrains.mps.platform.conf.structure.Components"), SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"), "project"), container);
+        } else if (ACTIONS.equals(container.getName())) {
+          readActions(SLinkOperations.addNewChild(node, "fragment", "jetbrains.mps.platform.conf.structure.Actions"), container);
         }
       } else if (XI.equals(container.getNamespace())) {
         if (INCLUDE.equals(container.getName())) {
           readInclude(node, container);
         }
       }
+    }
+  }
+
+  private void readActions(SNode node, Element actions) {
+    for (Element item : elements(actions, ACTION, GROUP)) {
+      if (Namespace.NO_NAMESPACE.equals(item.getNamespace())) {
+        if (ACTION.equals(item.getName())) {
+          readAction(SLinkOperations.addNewChild(node, "fragment", "jetbrains.mps.platform.conf.structure.Action"), item);
+        } else if (GROUP.equals(item.getName())) {
+          readGroup(SLinkOperations.addNewChild(node, "fragment", "jetbrains.mps.platform.conf.structure.Group"), item);
+        }
+      } else if (XI.equals(item.getNamespace())) {
+        if (INCLUDE.equals(item.getName())) {
+          readInclude(node, item);
+        }
+      }
+    }
+  }
+
+  private void readAction(SNode node, Element action) {
+    this.readActionProperties(node, action);
+    addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.Action", "actionClass"), node, action.getAttributeValue(CLASS));
+    for (Element e : elements(action, SHORTCUT, KEYBOARD_SHORTCUT, MOUSE_SHORTCUT, ADD_TO_GROUP)) {
+      if (Namespace.NO_NAMESPACE.equals(e.getNamespace())) {
+        if (SHORTCUT.equals(e.getName())) {
+          SNode subNode = SLinkOperations.addNewChild(node, "shortcut", "jetbrains.mps.platform.conf.structure.Shortcut");
+          SPropertyOperations.set(subNode, "keymap", e.getAttributeValue(KEYMAP));
+          SPropertyOperations.set(subNode, "keystroke", e.getAttributeValue(FIRST_KEYSTROKE));
+          SPropertyOperations.set(subNode, "keystroke2", e.getAttributeValue(SECOND_KEYSTROKE));
+        } else if (KEYBOARD_SHORTCUT.equals(e.getName())) {
+          SNode subNode = SLinkOperations.addNewChild(node, "shortcut", "jetbrains.mps.platform.conf.structure.KeyboardShortcut");
+          SPropertyOperations.set(subNode, "keymap", e.getAttributeValue(KEYMAP));
+          SPropertyOperations.set(subNode, "keystroke", e.getAttributeValue(FIRST_KEYSTROKE));
+          SPropertyOperations.set(subNode, "keystroke2", e.getAttributeValue(SECOND_KEYSTROKE));
+        } else if (MOUSE_SHORTCUT.equals(e.getName())) {
+          SNode subNode = SLinkOperations.addNewChild(node, "shortcut", "jetbrains.mps.platform.conf.structure.MouseShortcut");
+          SPropertyOperations.set(subNode, "keymap", e.getAttributeValue(KEYMAP));
+          SPropertyOperations.set(subNode, "keystroke", e.getAttributeValue(KEYSTROKE));
+        } else if (ADD_TO_GROUP.equals(e.getName())) {
+          this.readAddToGroup(node, e);
+        }
+      }
+    }
+  }
+
+  private void readGroup(SNode node, Element group) {
+    readActionProperties(node, group);
+    String gc = group.getAttributeValue(CLASS);
+    if (gc != null) {
+      addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.Action", "actionClass"), node, gc);
+    }
+    for (Element e : elements(group, ACTION, REFERENCE, SEPARATOR, ADD_TO_GROUP)) {
+      if (Namespace.NO_NAMESPACE.equals(e.getNamespace())) {
+        if (ACTION.equals(e.getName())) {
+          readAction(SLinkOperations.addNewChild(node, "actionItem", "jetbrains.mps.platform.conf.structure.Action"), e);
+        } else if (REFERENCE.equals(e.getName())) {
+          SNode ar = SLinkOperations.addNewChild(node, "actionItem", "jetbrains.mps.platform.conf.structure.ActionReference");
+          String ref = e.getAttributeValue(REF);
+          ref = (ref == null ?
+            e.getAttributeValue(ID) :
+            ref
+          );
+          addConfXmlNodeReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.ActionReference", "action"), ar, fqName(META_INF, ACTION, ref));
+        } else if (SEPARATOR.equals(e.getName())) {
+          SLinkOperations.addNewChild(node, "actionItem", "jetbrains.mps.platform.conf.structure.Separator");
+        } else if (ADD_TO_GROUP.equals(e.getName())) {
+          readAddToGroup(node, e);
+        }
+      }
+    }
+  }
+
+  private void readActionProperties(SNode node, Element action) {
+    SPropertyOperations.set(node, "id", action.getAttributeValue(ID));
+    SPropertyOperations.set(node, "text", action.getAttributeValue(TEXT));
+    SPropertyOperations.set(node, "description", action.getAttributeValue(DESCRIPTION));
+    SPropertyOperations.set(node, "icon", action.getAttributeValue(ICON));
+    SPropertyOperations.set(node, "popup", "" + Boolean.valueOf(action.getAttributeValue(POPUP)));
+  }
+
+  private void readAddToGroup(SNode node, Element e) {
+    SNode gr = SLinkOperations.addNewChild(node, "addToGroup", "jetbrains.mps.platform.conf.structure.GroupReference");
+    SPropertyOperations.set(gr, "position", SEnumOperations.getEnumMemberValue(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "GroupPosition"), e.getAttributeValue(ANCHOR))));
+    addConfXmlNodeReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.GroupReference", "group"), gr, fqName(META_INF, ACTION, e.getAttributeValue(GROUP_ID)));
+    String anchor = e.getAttributeValue(RELATIVE_TO_ACTION);
+    if (anchor != null) {
+      addConfXmlNodeReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.GroupReference", "anchor"), gr, fqName(META_INF, ACTION, anchor));
     }
   }
 
@@ -325,7 +435,7 @@ public class ConfReader {
       int dlr = shortName.indexOf("$");
       if (dlr >= 0) {
         String elmName = shortName.substring(0, dlr);
-        if (EXTENSION_POINT.equals(elmName) || ConfReader.PLUGIN.equals(elmName)) {
+        if (EXTENSION_POINT.equals(elmName) || PLUGIN.equals(elmName) || ACTION.equals(elmName)) {
           // <node> 
           src.addReference(new DynamicReference(SPropertyOperations.getString(link, "role"), src, trgsmref, shortName));
         }

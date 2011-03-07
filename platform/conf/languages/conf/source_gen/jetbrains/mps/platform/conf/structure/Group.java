@@ -6,46 +6,17 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import java.util.Iterator;
 import java.util.List;
-import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Group extends AbstractAction implements IConfigurationElement {
+public class Group extends AbstractAction {
   public static final String concept = "jetbrains.mps.platform.conf.structure.Group";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String GROUP_CLASS = "groupClass";
   public static final String ACTION_ITEM = "actionItem";
-  public static final String _$ATTRIBUTE = "_$attribute";
 
   public Group(SNode node) {
     super(node);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(Group.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(Group.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(Group.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(Group.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(Group.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(Group.VIRTUAL_PACKAGE, value);
   }
 
   public ClassConcept getGroupClass() {
@@ -74,26 +45,6 @@ public class Group extends AbstractAction implements IConfigurationElement {
 
   public void insertActionItem(IActionItem prev, IActionItem node) {
     this.insertChild(prev, Group.ACTION_ITEM, node);
-  }
-
-  public int get_$attributesCount() {
-    return this.getChildCount(Group._$ATTRIBUTE);
-  }
-
-  public Iterator<Attribute> _$attributes() {
-    return this.children(Attribute.class, Group._$ATTRIBUTE);
-  }
-
-  public List<Attribute> get_$attributes() {
-    return this.getChildren(Attribute.class, Group._$ATTRIBUTE);
-  }
-
-  public void add_$attribute(Attribute node) {
-    this.addChild(Group._$ATTRIBUTE, node);
-  }
-
-  public void insert_$attribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, Group._$ATTRIBUTE, node);
   }
 
   public static Group newInstance(SModel sm, boolean init) {

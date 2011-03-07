@@ -33,6 +33,10 @@ public class Group_Editor extends DefaultNodeEditor {
     return this.createCollection_o84zp2_a(editorContext, node);
   }
 
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createComponent_o84zp2_a(editorContext, node);
+  }
+
   private EditorCell createCollection_o84zp2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_o84zp2_a");
@@ -105,6 +109,12 @@ public class Group_Editor extends DefaultNodeEditor {
 
   private EditorCell createComponent_o84zp2_a1a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AbstractAction_properties(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createComponent_o84zp2_a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new BaseConcept_brokenRefs(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }

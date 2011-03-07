@@ -33,6 +33,10 @@ public class Action_Editor extends DefaultNodeEditor {
     return this.createCollection_8bscln_a(editorContext, node);
   }
 
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createComponent_8bscln_a(editorContext, node);
+  }
+
   private EditorCell createCollection_8bscln_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_8bscln_a");
@@ -88,8 +92,7 @@ public class Action_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createIndentCell_8bscln_a2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8bscln_b2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_8bscln_c2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_8bscln_b2a(editorContext, node));
     return editorCell;
   }
 
@@ -123,6 +126,12 @@ public class Action_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createComponent_8bscln_a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new BaseConcept_brokenRefs(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
   private EditorCell createConstant_8bscln_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class:");
     editorCell.setCellId("Constant_8bscln_b1a");
@@ -130,15 +139,8 @@ public class Action_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8bscln_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "add to group:");
-    editorCell.setCellId("Constant_8bscln_b2a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_8bscln_c2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Action_Editor.addToGroupListHandler_8bscln_c2a(node, "addToGroup", editorContext);
+  private EditorCell createRefNodeList_8bscln_b2a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Action_Editor.addToGroupListHandler_8bscln_b2a(node, "addToGroup", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_addToGroup");
     {
@@ -254,8 +256,8 @@ public class Action_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class addToGroupListHandler_8bscln_c2a extends RefNodeListHandler {
-    public addToGroupListHandler_8bscln_c2a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class addToGroupListHandler_8bscln_b2a extends RefNodeListHandler {
+    public addToGroupListHandler_8bscln_b2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

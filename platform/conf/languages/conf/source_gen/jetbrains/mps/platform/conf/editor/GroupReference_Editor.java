@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -24,6 +25,10 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 public class GroupReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_b7gqtc_a(editorContext, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createComponent_b7gqtc_a(editorContext, node);
   }
 
   private EditorCell createAlternation_b7gqtc_c0(EditorContext editorContext, SNode node) {
@@ -69,6 +74,12 @@ public class GroupReference_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createProperty_b7gqtc_a0c0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_b7gqtc_b0c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_b7gqtc_a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new BaseConcept_brokenRefs(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
