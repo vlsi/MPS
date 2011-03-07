@@ -2865,7 +2865,7 @@ parametersLoop:
   }
 
   public static class Pattern_x583g4_a0a1a2a3a53 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar__;
+    public static SNode PatternVar__;
 
     public Pattern_x583g4_a0a1a2a3a53() {
     }
@@ -2877,7 +2877,7 @@ parametersLoop:
         if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_x583g4_a0a1d0jb.getConceptFqName()))) {
           return false;
         }
-        this.PatternVar__ = nodeToMatch_x583g4_a0a1d0jb.getReferent("concept");
+        PatternVar__ = nodeToMatch_x583g4_a0a1d0jb.getReferent("concept");
       }
       return true;
     }
@@ -2888,13 +2888,13 @@ parametersLoop:
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar__ = (SNode) pattern.getFieldValue("PatternVar__");
+        PatternVar__ = (SNode) pattern.getFieldValue("PatternVar__");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar__".equals(fieldName)) {
-        return this.PatternVar__;
+        return PatternVar__;
       }
       return null;
     }
@@ -3434,7 +3434,7 @@ parametersLoop:
   }
 
   public static class Pattern_x583g4_a0a1a1a0a3a2a0a7a5a0a684 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_p;
+    public static SNode PatternVar_p;
 
     public Pattern_x583g4_a0a1a1a0a3a2a0a7a5a0a684() {
     }
@@ -3480,13 +3480,13 @@ parametersLoop:
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
+        PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_p".equals(fieldName)) {
-        return this.PatternVar_p;
+        return PatternVar_p;
       }
       return null;
     }

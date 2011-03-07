@@ -103,7 +103,7 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
   }
 
   public static class Pattern_x5x8gb_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_p;
+    public static SNode PatternVar_p;
 
     public Pattern_x5x8gb_a0a0a0a2() {
     }
@@ -142,13 +142,13 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
+        PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_p".equals(fieldName)) {
-        return this.PatternVar_p;
+        return PatternVar_p;
       }
       return null;
     }

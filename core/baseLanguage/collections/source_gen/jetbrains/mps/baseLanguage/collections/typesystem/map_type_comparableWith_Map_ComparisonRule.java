@@ -52,8 +52,8 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
   }
 
   public static class Pattern_yoc8ci_a0a0a0a3 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_KEY;
-    /*package*/ SNode PatternVar_VALUE;
+    public static SNode PatternVar_KEY;
+    public static SNode PatternVar_VALUE;
 
     public Pattern_yoc8ci_a0a0a0a3() {
     }
@@ -96,17 +96,17 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_KEY = (SNode) pattern.getFieldValue("PatternVar_KEY");
-        this.PatternVar_VALUE = (SNode) pattern.getFieldValue("PatternVar_VALUE");
+        PatternVar_KEY = (SNode) pattern.getFieldValue("PatternVar_KEY");
+        PatternVar_VALUE = (SNode) pattern.getFieldValue("PatternVar_VALUE");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_KEY".equals(fieldName)) {
-        return this.PatternVar_KEY;
+        return PatternVar_KEY;
       }
       if ("PatternVar_VALUE".equals(fieldName)) {
-        return this.PatternVar_VALUE;
+        return PatternVar_VALUE;
       }
       return null;
     }

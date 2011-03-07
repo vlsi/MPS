@@ -105,7 +105,7 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
   }
 
   public static class Pattern_jipg91_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_elementType;
+    public static SNode PatternVar_elementType;
 
     public Pattern_jipg91_a0a0a0a2() {
     }
@@ -137,13 +137,13 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_elementType = (SNode) pattern.getFieldValue("PatternVar_elementType");
+        PatternVar_elementType = (SNode) pattern.getFieldValue("PatternVar_elementType");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_elementType".equals(fieldName)) {
-        return this.PatternVar_elementType;
+        return PatternVar_elementType;
       }
       return null;
     }

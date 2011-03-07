@@ -266,8 +266,9 @@ public class ClassifierType_Behavior {
   }
 
   public static class Pattern_hz3823_a0a0a1a01 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ List<SNode> PatternVar_l;
-    /*package*/ SNode PatternVar_ignored;
+    public static List<SNode> PatternVar_l;
+    public static SNode PatternVar_ignored;
+
     /*package*/ Object AntiquotationField_hz3823_a0a0a1a9;
 
     public Pattern_hz3823_a0a0a1a01(Object parameter_hz3823_a0a0a1a9) {
@@ -291,9 +292,9 @@ public class ClassifierType_Behavior {
         {
           String childRole_hz3823_ = "parameter";
           this.PatternVar_l = ListSequence.fromList(new ArrayList<SNode>());
-          this.PatternVar_ignored = null;
+          PatternVar_ignored = null;
           for (SNode childVar : nodeToMatch_hz3823_a0a1a9.getChildren(childRole_hz3823_)) {
-            this.PatternVar_ignored = childVar;
+            PatternVar_ignored = childVar;
             ListSequence.fromList(this.PatternVar_l).addElement(childVar);
           }
         }
@@ -307,17 +308,17 @@ public class ClassifierType_Behavior {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_l = (List<SNode>) pattern.getFieldValue("PatternVar_l");
-        this.PatternVar_ignored = (SNode) pattern.getFieldValue("PatternVar_ignored");
+        PatternVar_l = (List<SNode>) pattern.getFieldValue("PatternVar_l");
+        PatternVar_ignored = (SNode) pattern.getFieldValue("PatternVar_ignored");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_l".equals(fieldName)) {
-        return this.PatternVar_l;
+        return PatternVar_l;
       }
       if ("PatternVar_ignored".equals(fieldName)) {
-        return this.PatternVar_ignored;
+        return PatternVar_ignored;
       }
       return null;
     }

@@ -52,7 +52,7 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
   }
 
   public static class Pattern_9xe6am_a0a0a0a3 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_ELEMENT_TYPE;
+    public static SNode PatternVar_ELEMENT_TYPE;
 
     public Pattern_9xe6am_a0a0a0a3() {
     }
@@ -91,13 +91,13 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_ELEMENT_TYPE = (SNode) pattern.getFieldValue("PatternVar_ELEMENT_TYPE");
+        PatternVar_ELEMENT_TYPE = (SNode) pattern.getFieldValue("PatternVar_ELEMENT_TYPE");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_ELEMENT_TYPE".equals(fieldName)) {
-        return this.PatternVar_ELEMENT_TYPE;
+        return PatternVar_ELEMENT_TYPE;
       }
       return null;
     }

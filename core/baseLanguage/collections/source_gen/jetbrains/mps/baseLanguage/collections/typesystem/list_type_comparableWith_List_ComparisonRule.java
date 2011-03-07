@@ -52,7 +52,7 @@ public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule
   }
 
   public static class Pattern_ovtchh_a0a0a0a3 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_ELEMENT;
+    public static SNode PatternVar_ELEMENT;
 
     public Pattern_ovtchh_a0a0a0a3() {
     }
@@ -91,13 +91,13 @@ public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_ELEMENT = (SNode) pattern.getFieldValue("PatternVar_ELEMENT");
+        PatternVar_ELEMENT = (SNode) pattern.getFieldValue("PatternVar_ELEMENT");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_ELEMENT".equals(fieldName)) {
-        return this.PatternVar_ELEMENT;
+        return PatternVar_ELEMENT;
       }
       return null;
     }

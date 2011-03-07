@@ -145,8 +145,9 @@ public class IMethodCall_Behavior {
   }
 
   public static class Pattern_fq0410_a0a0a5a2a1a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ List<SNode> PatternVar_param;
-    /*package*/ SNode PatternVar_ignore;
+    public static List<SNode> PatternVar_param;
+    public static SNode PatternVar_ignore;
+
     /*package*/ Object AntiquotationField_fq0410_a0a0a5a2a1a1;
 
     public Pattern_fq0410_a0a0a5a2a1a2(Object parameter_fq0410_a0a0a5a2a1a1) {
@@ -170,9 +171,9 @@ public class IMethodCall_Behavior {
         {
           String childRole_fq0410_ = "parameter";
           this.PatternVar_param = ListSequence.fromList(new ArrayList<SNode>());
-          this.PatternVar_ignore = null;
+          PatternVar_ignore = null;
           for (SNode childVar : nodeToMatch_fq0410_a0a5a2a1a1.getChildren(childRole_fq0410_)) {
-            this.PatternVar_ignore = childVar;
+            PatternVar_ignore = childVar;
             ListSequence.fromList(this.PatternVar_param).addElement(childVar);
           }
         }
@@ -186,17 +187,17 @@ public class IMethodCall_Behavior {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_param = (List<SNode>) pattern.getFieldValue("PatternVar_param");
-        this.PatternVar_ignore = (SNode) pattern.getFieldValue("PatternVar_ignore");
+        PatternVar_param = (List<SNode>) pattern.getFieldValue("PatternVar_param");
+        PatternVar_ignore = (SNode) pattern.getFieldValue("PatternVar_ignore");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_param".equals(fieldName)) {
-        return this.PatternVar_param;
+        return PatternVar_param;
       }
       if ("PatternVar_ignore".equals(fieldName)) {
-        return this.PatternVar_ignore;
+        return PatternVar_ignore;
       }
       return null;
     }

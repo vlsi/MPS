@@ -6,12 +6,14 @@
   <unitInfo fileName="IsStrongSubtypeExpression_Editor.java" startLine="104" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.IsStrongSubtypeExpression_Editor$ReplaceWith_IsSubtypeExpression_cellMenu_a0a0_0" />
   <unitInfo fileName="AbstractEquationStatement_Editor.java" startLine="132" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractEquationStatement_Editor$ReplaceWith_AbstractEquationStatement_cellMenu_a0b0" />
   <unitInfo fileName="CreateEquationStatement_Editor.java" startLine="177" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.CreateEquationStatement_Editor$ReplaceWith_AbstractEquationStatement_cellMenu_a0b0_0" />
-  <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="327" startPosition="0" endLine="335" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$ReplaceWith_AbstractEquationStatement_cellMenu_a0c0a" />
-  <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="336" startPosition="0" endLine="344" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$ReplaceWith_AbstractEquationStatement_cellMenu_a0b1a" />
+  <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="384" startPosition="0" endLine="392" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$ReplaceWith_AbstractEquationStatement_cellMenu_a0d0a" />
+  <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="393" startPosition="0" endLine="401" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$ReplaceWith_AbstractEquationStatement_cellMenu_a0c1a" />
   <unitInfo fileName="TypeOfExpression_Editor.java" startLine="57" startPosition="48" endLine="67" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.TypeOfExpression_Editor$1" />
   <unitInfo fileName="AbstractEquationStatement_Editor.java" startLine="101" startPosition="48" endLine="111" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractEquationStatement_Editor$1" />
-  <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="107" startPosition="48" endLine="117" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$1" />
-  <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="128" startPosition="48" endLine="138" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$2" />
+  <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="109" startPosition="48" endLine="119" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$1" />
+  <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="132" startPosition="48" endLine="142" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$2" />
+  <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="155" startPosition="48" endLine="165" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$3" />
+  <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="177" startPosition="48" endLine="187" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$4" />
   <unitInfo fileName="SimpleRule_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.SimpleRule_Editor" />
   <unitInfo fileName="TypeClause_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypeClause_Editor" />
   <unitInfo fileName="ApplicableNodeCondition_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.ApplicableNodeCondition_Editor" />
@@ -151,8 +153,8 @@
   <unitInfo fileName="ComparisonRule_Editor.java" startLine="20" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.ComparisonRule_Editor" />
   <unitInfo fileName="DependentComputationItem_Editor.java" startLine="21" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.DependentComputationItem_Editor" />
   <unitInfo fileName="SubtypingRule_Editor.java" startLine="23" startPosition="0" endLine="331" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.SubtypingRule_Editor" />
-  <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="30" startPosition="0" endLine="345" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor" />
   <unitInfo fileName="NonTypesystemRule_Editor.java" startLine="34" startPosition="0" endLine="370" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.NonTypesystemRule_Editor" />
+  <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="30" startPosition="0" endLine="402" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor" />
   <unitInfo fileName="InferenceRule_Editor.java" startLine="42" startPosition="0" endLine="418" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.InferenceRule_Editor" />
   <unitInfo fileName="OverloadedOperatorTypeRule_Editor.java" startLine="31" startPosition="0" endLine="414" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.OverloadedOperatorTypeRule_Editor" />
   <root nodeId="1174643042913">

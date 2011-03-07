@@ -103,7 +103,7 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
   }
 
   public static class Pattern_u9nlj8_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_elemType;
+    public static SNode PatternVar_elemType;
 
     public Pattern_u9nlj8_a0a0a0a2() {
     }
@@ -142,13 +142,13 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_elemType = (SNode) pattern.getFieldValue("PatternVar_elemType");
+        PatternVar_elemType = (SNode) pattern.getFieldValue("PatternVar_elemType");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_elemType".equals(fieldName)) {
-        return this.PatternVar_elemType;
+        return PatternVar_elemType;
       }
       return null;
     }

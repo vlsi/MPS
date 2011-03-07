@@ -103,7 +103,7 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
   }
 
   public static class Pattern_4viu4b_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_ELEMENT_TYPE;
+    public static SNode PatternVar_ELEMENT_TYPE;
 
     public Pattern_4viu4b_a0a0a0a2() {
     }
@@ -142,13 +142,13 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_ELEMENT_TYPE = (SNode) pattern.getFieldValue("PatternVar_ELEMENT_TYPE");
+        PatternVar_ELEMENT_TYPE = (SNode) pattern.getFieldValue("PatternVar_ELEMENT_TYPE");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_ELEMENT_TYPE".equals(fieldName)) {
-        return this.PatternVar_ELEMENT_TYPE;
+        return PatternVar_ELEMENT_TYPE;
       }
       return null;
     }

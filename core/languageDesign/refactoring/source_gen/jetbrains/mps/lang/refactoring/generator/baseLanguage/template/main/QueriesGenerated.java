@@ -864,7 +864,7 @@ public class QueriesGenerated {
   }
 
   public static class Pattern_x583g4_a0a0a0a81 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_concept;
+    public static SNode PatternVar_concept;
 
     public Pattern_x583g4_a0a0a0a81() {
     }
@@ -876,7 +876,7 @@ public class QueriesGenerated {
         if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_x583g4_a0a0a81.getConceptFqName()))) {
           return false;
         }
-        this.PatternVar_concept = nodeToMatch_x583g4_a0a0a81.getReferent("concept");
+        PatternVar_concept = nodeToMatch_x583g4_a0a0a81.getReferent("concept");
       }
       return true;
     }
@@ -887,13 +887,13 @@ public class QueriesGenerated {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_concept = (SNode) pattern.getFieldValue("PatternVar_concept");
+        PatternVar_concept = (SNode) pattern.getFieldValue("PatternVar_concept");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_concept".equals(fieldName)) {
-        return this.PatternVar_concept;
+        return PatternVar_concept;
       }
       return null;
     }

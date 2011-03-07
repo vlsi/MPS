@@ -103,7 +103,7 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
   }
 
   public static class Pattern_9omwya_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_ELEMENT;
+    public static SNode PatternVar_ELEMENT;
 
     public Pattern_9omwya_a0a0a0a2() {
     }
@@ -142,13 +142,13 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_ELEMENT = (SNode) pattern.getFieldValue("PatternVar_ELEMENT");
+        PatternVar_ELEMENT = (SNode) pattern.getFieldValue("PatternVar_ELEMENT");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_ELEMENT".equals(fieldName)) {
-        return this.PatternVar_ELEMENT;
+        return PatternVar_ELEMENT;
       }
       return null;
     }

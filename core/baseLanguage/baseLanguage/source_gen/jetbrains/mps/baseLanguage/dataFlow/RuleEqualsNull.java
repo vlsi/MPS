@@ -24,10 +24,11 @@ public class RuleEqualsNull extends DataFlowConstructor {
   }
 
   public static class Pattern_vwsftd_a0a extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ SNode PatternVar_p;
-    /*package*/ SNode PatternVar_f;
-    /*package*/ SNode PatternVar_fd;
-    /*package*/ SNode PatternVar_d;
+    public static SNode PatternVar_p;
+    public static SNode PatternVar_f;
+    public static SNode PatternVar_fd;
+    public static SNode PatternVar_d;
+
     private GeneratedMatchingPattern myOrPattern_vwsftd_a0a0;
 
     public Pattern_vwsftd_a0a() {
@@ -131,25 +132,25 @@ public class RuleEqualsNull extends DataFlowConstructor {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
-        this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
-        this.PatternVar_f = (SNode) pattern.getFieldValue("PatternVar_f");
-        this.PatternVar_fd = (SNode) pattern.getFieldValue("PatternVar_fd");
-        this.PatternVar_d = (SNode) pattern.getFieldValue("PatternVar_d");
+        PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
+        PatternVar_f = (SNode) pattern.getFieldValue("PatternVar_f");
+        PatternVar_fd = (SNode) pattern.getFieldValue("PatternVar_fd");
+        PatternVar_d = (SNode) pattern.getFieldValue("PatternVar_d");
       }
     }
 
     public Object getFieldValue(String fieldName) {
       if ("PatternVar_p".equals(fieldName)) {
-        return myOrPattern_vwsftd_a0a0.getFieldValue(fieldName);
+        return PatternVar_p;
       }
       if ("PatternVar_f".equals(fieldName)) {
-        return this.PatternVar_f;
+        return PatternVar_f;
       }
       if ("PatternVar_fd".equals(fieldName)) {
-        return this.PatternVar_fd;
+        return PatternVar_fd;
       }
       if ("PatternVar_d".equals(fieldName)) {
-        return this.PatternVar_d;
+        return PatternVar_d;
       }
       return null;
     }
@@ -203,8 +204,6 @@ public class RuleEqualsNull extends DataFlowConstructor {
     }
 
     public static class Pattern_vwsftd_a0a0a2a2a1a1a1a1a1a3a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
-      /*package*/ SNode PatternVar_p;
-
       public Pattern_vwsftd_a0a0a2a2a1a1a1a1a1a3a0a0a0a() {
       }
 
@@ -254,15 +253,9 @@ public class RuleEqualsNull extends DataFlowConstructor {
       }
 
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-        if (pattern != null && pattern.getClass() == this.getClass()) {
-          this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
-        }
       }
 
       public Object getFieldValue(String fieldName) {
-        if ("PatternVar_p".equals(fieldName)) {
-          return this.PatternVar_p;
-        }
         return null;
       }
 
@@ -271,8 +264,6 @@ public class RuleEqualsNull extends DataFlowConstructor {
     }
 
     public static class Pattern_vwsftd_a0a0a3a2a1a1a1a1a1a3a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
-      /*package*/ SNode PatternVar_p;
-
       public Pattern_vwsftd_a0a0a3a2a1a1a1a1a1a3a0a0a0a() {
       }
 
@@ -322,15 +313,9 @@ public class RuleEqualsNull extends DataFlowConstructor {
       }
 
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-        if (pattern != null && pattern.getClass() == this.getClass()) {
-          this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
-        }
       }
 
       public Object getFieldValue(String fieldName) {
-        if ("PatternVar_p".equals(fieldName)) {
-          return this.PatternVar_p;
-        }
         return null;
       }
 
