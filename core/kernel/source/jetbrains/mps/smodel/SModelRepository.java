@@ -373,18 +373,6 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
-  public void updateReferences() {
-    ModelAccess.assertLegalWrite();
-
-    for (SModelDescriptor sm : getModelDescriptors()) {
-      if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
-
-      if (sm.getSModel().updateSModelReferences() && (sm instanceof EditableSModelDescriptor)) {
-        markChanged(((EditableSModelDescriptor) sm), true);
-      }
-    }
-  }
-
   public boolean hasOwners(SModelDescriptor modelDescriptor) {
     synchronized (myModelsLock) {
       return !myModelsToOwners.getByFirst(modelDescriptor).isEmpty();

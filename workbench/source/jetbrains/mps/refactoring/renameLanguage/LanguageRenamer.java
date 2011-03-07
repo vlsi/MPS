@@ -19,6 +19,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -113,8 +114,8 @@ public class LanguageRenamer {
   }
 
   private void updateReferences() {
-    SModelRepository.getInstance().updateReferences();
-    MPSModuleRepository.getInstance().updateReferences();
+    ReferenceUpdater.getInstance().updateModelReferences();
+    ReferenceUpdater.getInstance().updateModuleReferences();
   }
 
   private void checkPreconditions() {

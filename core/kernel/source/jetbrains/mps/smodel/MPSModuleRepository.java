@@ -468,28 +468,6 @@ public class MPSModuleRepository implements ApplicationComponent {
     return null;
   }
 
-  public void updateReferences() {
-    assertCanWrite();
-
-    for (IModule m : getAllModules()) {
-      AbstractModule module = (AbstractModule) m;
-
-      boolean needSaving = false;
-
-      if (module.updateSModelReferences()) {
-        needSaving = true;
-      }
-
-      if (module.updateModuleReferences()) {
-        needSaving = true;
-      }
-
-      if (needSaving && !module.isPackaged()) {
-        module.save();
-      }
-    }
-  }
-
   private void assertCanRead() {
     if (!ModelAccess.instance().canRead()) {
       throw new IllegalStateException("Can't read");
@@ -497,9 +475,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   private void assertCanWrite() {
-    if (!ModelAccess.instance().canWrite()) {
-      throw new IllegalStateException("Can't write");
-    }
+    ModelAccess.assertLegalWrite();
   }
 
   public void addModuleRepositoryListener(ModuleRepositoryListener listener) {
