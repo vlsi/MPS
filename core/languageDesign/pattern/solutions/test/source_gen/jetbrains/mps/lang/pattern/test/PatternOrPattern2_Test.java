@@ -28,7 +28,7 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
 
   @Test
   public void testMethod() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/plugin/plugin.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
+    this.initTest("${mps_home}/platform/analyzers/analyzers.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
     this.runTest("jetbrains.mps.lang.pattern.test.PatternOrPattern2_Test$TestBody", "testOrPattern2", true);
   }
 
@@ -106,8 +106,9 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
     }
 
     public static class Pattern_49ctdq_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-      /*package*/ SNode PatternVar_body;
-      /*package*/ SNode PatternVar_s;
+      public static SNode PatternVar_body;
+      public static SNode PatternVar_s;
+
       private GeneratedMatchingPattern myOrPattern_pf9dr6_a0a;
 
       public Pattern_49ctdq_a0a1a1a() {
@@ -186,17 +187,17 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
 
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         if (pattern != null && pattern.getClass() == this.getClass()) {
-          this.PatternVar_body = (SNode) pattern.getFieldValue("PatternVar_body");
-          this.PatternVar_s = (SNode) pattern.getFieldValue("PatternVar_s");
+          PatternVar_body = (SNode) pattern.getFieldValue("PatternVar_body");
+          PatternVar_s = (SNode) pattern.getFieldValue("PatternVar_s");
         }
       }
 
       public Object getFieldValue(String fieldName) {
         if ("PatternVar_body".equals(fieldName)) {
-          return this.PatternVar_body;
+          return PatternVar_body;
         }
         if ("PatternVar_s".equals(fieldName)) {
-          return myOrPattern_pf9dr6_a0a.getFieldValue(fieldName);
+          return PatternVar_s;
         }
         return null;
       }
@@ -205,8 +206,6 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
       }
 
       public static class Pattern_49ctdq_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-        /*package*/ SNode PatternVar_s;
-
         public Pattern_49ctdq_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a() {
         }
 
@@ -256,15 +255,9 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
         }
 
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-          if (pattern != null && pattern.getClass() == this.getClass()) {
-            this.PatternVar_s = (SNode) pattern.getFieldValue("PatternVar_s");
-          }
         }
 
         public Object getFieldValue(String fieldName) {
-          if ("PatternVar_s".equals(fieldName)) {
-            return this.PatternVar_s;
-          }
           return null;
         }
 
@@ -273,8 +266,6 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
       }
 
       public static class Pattern_49ctdq_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-        /*package*/ SNode PatternVar_s;
-
         public Pattern_49ctdq_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a() {
         }
 
@@ -324,15 +315,9 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
         }
 
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-          if (pattern != null && pattern.getClass() == this.getClass()) {
-            this.PatternVar_s = (SNode) pattern.getFieldValue("PatternVar_s");
-          }
         }
 
         public Object getFieldValue(String fieldName) {
-          if ("PatternVar_s".equals(fieldName)) {
-            return this.PatternVar_s;
-          }
           return null;
         }
 

@@ -4,7 +4,7 @@
   <unitInfo fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_Behavior" />
   <unitInfo fileName="PatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternVariableDeclaration_Behavior" />
   <unitInfo fileName="ActionStatement_Behavior.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.ActionStatement_Behavior" />
-  <unitInfo fileName="PatternExpression_Behavior.java" startLine="15" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternExpression_Behavior" />
+  <unitInfo fileName="PatternExpression_Behavior.java" startLine="15" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternExpression_Behavior" />
   <root nodeId="111677556049506422">
     <nodeInfo nodeId="111677556049506446" fileName="ActionStatement_Behavior.java" startLine="13" startPosition="132" endLine="14" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="111677556049506457" fileName="ActionStatement_Behavior.java" startLine="15" startPosition="5" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -36,46 +36,47 @@
     <nodeInfo nodeId="4855904478357072976" fileName="PatternExpression_Behavior.java" startLine="24" startPosition="51" endLine="25" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4855904478357072985" fileName="PatternExpression_Behavior.java" startLine="25" startPosition="204" endLine="26" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4855904478357072994" fileName="PatternExpression_Behavior.java" startLine="26" startPosition="208" endLine="27" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7228132814203642401" fileName="PatternExpression_Behavior.java" startLine="28" startPosition="105" endLine="29" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4855904478357073013" fileName="PatternExpression_Behavior.java" startLine="30" startPosition="5" endLine="31" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4855904478357073023" fileName="PatternExpression_Behavior.java" startLine="34" startPosition="89" endLine="35" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4855904478357073034" fileName="PatternExpression_Behavior.java" startLine="35" startPosition="103" endLine="36" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4855904478357073045" fileName="PatternExpression_Behavior.java" startLine="36" startPosition="48" endLine="37" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4855904478357073081" fileName="PatternExpression_Behavior.java" startLine="39" startPosition="74" endLine="40" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4855904478357073091" fileName="PatternExpression_Behavior.java" startLine="40" startPosition="54" endLine="41" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4855904478357073041" fileName="PatternExpression_Behavior.java" startLine="43" startPosition="5" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8288845019109062449" fileName="PatternExpression_Behavior.java" startLine="47" startPosition="86" endLine="48" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8288845019109098038" fileName="PatternExpression_Behavior.java" startLine="48" startPosition="103" endLine="49" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8288845019109098018" fileName="PatternExpression_Behavior.java" startLine="51" startPosition="172" endLine="52" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8288845019109098044" fileName="PatternExpression_Behavior.java" startLine="54" startPosition="5" endLine="55" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4855904478357089512" fileName="PatternExpression_Behavior.java" startLine="58" startPosition="78" endLine="59" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7228132814203642389" fileName="PatternExpression_Behavior.java" startLine="27" startPosition="212" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8288845019109098016" fileName="PatternExpression_Behavior.java" startLine="50" startPosition="33" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4855904478357073063" fileName="PatternExpression_Behavior.java" startLine="38" startPosition="33" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8288845019109098012" fileName="PatternExpression_Behavior.java" startLine="49" startPosition="48" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4855904478357073055" fileName="PatternExpression_Behavior.java" startLine="37" startPosition="38" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2472566096668983580" fileName="PatternExpression_Behavior.java" startLine="29" startPosition="107" endLine="30" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4855904478357073013" fileName="PatternExpression_Behavior.java" startLine="32" startPosition="6" endLine="33" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4855904478357073023" fileName="PatternExpression_Behavior.java" startLine="36" startPosition="89" endLine="37" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4855904478357073034" fileName="PatternExpression_Behavior.java" startLine="37" startPosition="103" endLine="38" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4855904478357073045" fileName="PatternExpression_Behavior.java" startLine="38" startPosition="48" endLine="39" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4855904478357073081" fileName="PatternExpression_Behavior.java" startLine="41" startPosition="74" endLine="42" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4855904478357073091" fileName="PatternExpression_Behavior.java" startLine="42" startPosition="54" endLine="43" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4855904478357073041" fileName="PatternExpression_Behavior.java" startLine="45" startPosition="5" endLine="46" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8288845019109062449" fileName="PatternExpression_Behavior.java" startLine="49" startPosition="86" endLine="50" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8288845019109098038" fileName="PatternExpression_Behavior.java" startLine="50" startPosition="103" endLine="51" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8288845019109098018" fileName="PatternExpression_Behavior.java" startLine="53" startPosition="172" endLine="54" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8288845019109098044" fileName="PatternExpression_Behavior.java" startLine="56" startPosition="5" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4855904478357089512" fileName="PatternExpression_Behavior.java" startLine="60" startPosition="78" endLine="61" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2472566096668983578" fileName="PatternExpression_Behavior.java" startLine="28" startPosition="6" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8288845019109098016" fileName="PatternExpression_Behavior.java" startLine="52" startPosition="33" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4855904478357073063" fileName="PatternExpression_Behavior.java" startLine="40" startPosition="33" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2472566096668983577" fileName="PatternExpression_Behavior.java" startLine="27" startPosition="212" endLine="32" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
+    <nodeInfo nodeId="8288845019109098012" fileName="PatternExpression_Behavior.java" startLine="51" startPosition="48" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4855904478357073055" fileName="PatternExpression_Behavior.java" startLine="39" startPosition="38" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <scopeInfo nodeId="534621188390792431" fileName="PatternExpression_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="201537367881178493" fileName="PatternExpression_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="14" />
-    <scopeInfo nodeId="7228132814203642390" fileName="PatternExpression_Behavior.java" startLine="28" startPosition="105" endLine="29" endPosition="229" />
-    <scopeInfo nodeId="8288845019109098017" fileName="PatternExpression_Behavior.java" startLine="51" startPosition="172" endLine="52" endPosition="54" />
-    <scopeInfo nodeId="4855904478357073123" fileName="PatternExpression_Behavior.java" startLine="58" startPosition="78" endLine="59" endPosition="17" />
-    <scopeInfo nodeId="4855904478357073064" fileName="PatternExpression_Behavior.java" startLine="39" startPosition="74" endLine="41" endPosition="62" />
-    <scopeInfo nodeId="8288845019109098015" fileName="PatternExpression_Behavior.java" startLine="50" startPosition="33" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="4855904478357073057" fileName="PatternExpression_Behavior.java" startLine="38" startPosition="33" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="8288845019109098012" fileName="PatternExpression_Behavior.java" startLine="49" startPosition="48" endLine="54" endPosition="5">
+    <scopeInfo nodeId="2472566096668983579" fileName="PatternExpression_Behavior.java" startLine="29" startPosition="107" endLine="30" endPosition="231" />
+    <scopeInfo nodeId="8288845019109098017" fileName="PatternExpression_Behavior.java" startLine="53" startPosition="172" endLine="54" endPosition="54" />
+    <scopeInfo nodeId="4855904478357073123" fileName="PatternExpression_Behavior.java" startLine="60" startPosition="78" endLine="61" endPosition="17" />
+    <scopeInfo nodeId="4855904478357073064" fileName="PatternExpression_Behavior.java" startLine="41" startPosition="74" endLine="43" endPosition="62" />
+    <scopeInfo nodeId="8288845019109098015" fileName="PatternExpression_Behavior.java" startLine="52" startPosition="33" endLine="55" endPosition="7" />
+    <scopeInfo nodeId="4855904478357073057" fileName="PatternExpression_Behavior.java" startLine="40" startPosition="33" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="8288845019109098012" fileName="PatternExpression_Behavior.java" startLine="51" startPosition="48" endLine="56" endPosition="5">
       <varInfo nodeId="8288845019109098013" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="4855904478357073055" fileName="PatternExpression_Behavior.java" startLine="37" startPosition="38" endLine="43" endPosition="5">
+    <scopeInfo nodeId="4855904478357073055" fileName="PatternExpression_Behavior.java" startLine="39" startPosition="38" endLine="45" endPosition="5">
       <varInfo nodeId="4855904478357073056" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="4855904478357072960" fileName="PatternExpression_Behavior.java" startLine="23" startPosition="83" endLine="31" endPosition="21">
-      <varInfo nodeId="4855904478357072971" varName="variables" />
-    </scopeInfo>
-    <scopeInfo nodeId="8288845019109059990" fileName="PatternExpression_Behavior.java" startLine="47" startPosition="86" endLine="55" endPosition="18">
+    <scopeInfo nodeId="8288845019109059990" fileName="PatternExpression_Behavior.java" startLine="49" startPosition="86" endLine="57" endPosition="18">
       <varInfo nodeId="8288845019109098039" varName="result" />
       <varInfo nodeId="8288845019109062450" varName="variables" />
     </scopeInfo>
-    <scopeInfo nodeId="4855904478357073021" fileName="PatternExpression_Behavior.java" startLine="34" startPosition="89" endLine="44" endPosition="18">
+    <scopeInfo nodeId="4855904478357072960" fileName="PatternExpression_Behavior.java" startLine="23" startPosition="83" endLine="33" endPosition="21">
+      <varInfo nodeId="4855904478357072971" varName="variables" />
+    </scopeInfo>
+    <scopeInfo nodeId="4855904478357073021" fileName="PatternExpression_Behavior.java" startLine="36" startPosition="89" endLine="46" endPosition="18">
       <varInfo nodeId="4855904478357073035" varName="result" />
       <varInfo nodeId="4855904478357073046" varName="names" />
       <varInfo nodeId="4855904478357073024" varName="variables" />
