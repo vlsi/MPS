@@ -11,7 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class Shortcut extends BaseConcept {
   public static final String concept = "jetbrains.mps.platform.conf.structure.Shortcut";
   public static final String KEYSTROKE = "keystroke";
-  public static final String SECOND_KEYSTROKE = "secondKeystroke";
+  public static final String KEYSTROKE2 = "keystroke2";
   public static final String KEYMAP = "keymap";
 
   public Shortcut(SNode node) {
@@ -26,12 +26,12 @@ public class Shortcut extends BaseConcept {
     this.setProperty(Shortcut.KEYSTROKE, value);
   }
 
-  public String getSecondKeystroke() {
-    return this.getProperty(Shortcut.SECOND_KEYSTROKE);
+  public String getKeystroke2() {
+    return this.getProperty(Shortcut.KEYSTROKE2);
   }
 
-  public void setSecondKeystroke(String value) {
-    this.setProperty(Shortcut.SECOND_KEYSTROKE, value);
+  public void setKeystroke2(String value) {
+    this.setProperty(Shortcut.KEYSTROKE2, value);
   }
 
   public String getKeymap() {

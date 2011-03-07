@@ -16,6 +16,7 @@ public class Action extends AbstractAction implements IActionItem {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String ACTION_CLASS = "actionClass";
   public static final String SHORTCUT = "shortcut";
   public static final String _$ATTRIBUTE = "_$attribute";
 
@@ -48,11 +49,11 @@ public class Action extends AbstractAction implements IActionItem {
   }
 
   public ClassConcept getActionClass() {
-    return this.ensureAdapter(ClassConcept.class, "actionClass", this.getActionClass());
+    return (ClassConcept) this.getReferent(ClassConcept.class, Action.ACTION_CLASS);
   }
 
   public void setActionClass(ClassConcept node) {
-    this.setActionClass(node);
+    super.setReferent(Action.ACTION_CLASS, node);
   }
 
   public int getShortcutsCount() {

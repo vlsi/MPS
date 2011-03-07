@@ -30,7 +30,6 @@
   <unitInfo fileName="Separator.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Separator" />
   <unitInfo fileName="ConfigurationXmlNode.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.ConfigurationXmlNode" />
   <unitInfo fileName="Extension.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Extension" />
-  <unitInfo fileName="Group.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Group" />
   <unitInfo fileName="ActionReference.java" startLine="14" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.ActionReference" />
   <unitInfo fileName="XInclude.java" startLine="13" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.XInclude" />
   <unitInfo fileName="Component.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Component" />
@@ -45,10 +44,11 @@
   <unitInfo fileName="IdeaPluginRoot.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.IdeaPluginRoot" />
   <unitInfo fileName="Extensions.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Extensions" />
   <unitInfo fileName="Service.java" startLine="14" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Service" />
-  <unitInfo fileName="Action.java" startLine="14" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Action" />
+  <unitInfo fileName="Action.java" startLine="14" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Action" />
+  <unitInfo fileName="Group.java" startLine="14" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Group" />
   <unitInfo fileName="Components.java" startLine="13" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Components" />
   <unitInfo fileName="PluginVendor.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.PluginVendor" />
-  <unitInfo fileName="AbstractAction.java" startLine="14" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.AbstractAction" />
+  <unitInfo fileName="AbstractAction.java" startLine="13" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.AbstractAction" />
   <unitInfo fileName="Plugin.java" startLine="15" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Plugin" />
 </debugInfo>
 
