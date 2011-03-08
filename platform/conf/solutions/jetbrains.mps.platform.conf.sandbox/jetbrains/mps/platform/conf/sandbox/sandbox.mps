@@ -5,6 +5,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="cs0q" modelUID="r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)" version="1" implicit="yes" />
   <import index="dd40" modelUID="r:7d73e2b1-54e0-4481-9616-2b4b627a22db(jetbrains.mps.platform.conf.sandbox.sandbox)" version="-1" implicit="yes" />
+  <import index="2wu3" modelUID="f:conf_stub#cbcd3c3c-107b-4f03-8578-e11f87477262#META-INF(jetbrains.mps.platform.conf.sandbox/META-INF@conf_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="cs0q.ConfigurationXmlDocument" typeId="cs0q.5314521579133271086" id="1740160309778217800">
       <property name="name" nameId="tpck.1169194664001" value="foobar" />
@@ -12,7 +13,10 @@
   </roots>
   <root id="1740160309778217800">
     <node role="root" roleId="cs0q.7130790807395857418" type="cs0q.Plugin" typeId="cs0q.6536266708345244486" id="7208030699524859782">
-      <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.Components" typeId="cs0q.1740160309778170999" id="3886786302241615093" />
+      <property name="name" nameId="tpck.1169194664001" value="NNNNN" />
+      <node role="depends" roleId="cs0q.6536266708345244499" type="cs0q.PluginDependency" typeId="cs0q.6536266708345244487" id="6191093908411707946">
+        <link role="plugin" roleId="cs0q.6536266708345244489" targetNodeId="2wu3.6191093908411762657" resolveInfo="IDEA CORE" />
+      </node>
       <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.Actions" typeId="cs0q.4383174161801812099" id="7208030699524859783">
         <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.Group" typeId="cs0q.4383174161802026701" id="4146194781600412277">
           <property name="id" nameId="cs0q.4383174161802026699" value="343434" />
@@ -46,6 +50,11 @@
         </node>
       </node>
       <node role="fragment" roleId="cs0q.1740160309778170996" type="cs0q.ConfigurationXmlNode" typeId="cs0q.5066720069350533029" id="3886786302241755558" />
+      <node role="vendor" roleId="cs0q.6536266708345244498" type="cs0q.PluginVendor" typeId="cs0q.6536266708345244494" id="6191093908411707942">
+        <property name="name" nameId="tpck.1169194664001" value="asd" />
+      </node>
+      <node role="helpset" roleId="cs0q.6536266708345477912" type="cs0q.PluginHelpset" typeId="cs0q.6536266708345477909" id="6191093908411707944" />
+      <node role="ideaVersion" roleId="cs0q.6536266708345477901" type="cs0q.IdeaVersion" typeId="cs0q.6536266708345477897" id="6191093908411707949" />
     </node>
   </root>
 </model>

@@ -12,7 +12,7 @@
     <classNode extendsClassName="jetbrains.mps.stubs.util.PathItem" />
   </dependency>
   <dependency className="jetbrains.mps.platform.conf.stubs.ConfReader" file="ConfReader.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.DynamicReference" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.util.regex.Pattern" />
@@ -23,8 +23,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.DynamicReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -32,8 +31,8 @@
     <classNode dependClassName="org.jdom.filter.ElementFilter" />
     <classNode dependClassName="org.jdom.Attribute" />
     <classNode dependClassName="org.jdom.Namespace" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="java.util.regex.Matcher" />
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />

@@ -131,39 +131,42 @@ public class ConfReader {
   }
 
   private void readPlugin(SNode node, Element root) {
-    for (Element prp : elements(root, NAME, ID, VERSION)) {
-      if (Namespace.NO_NAMESPACE.equals(prp.getNamespace())) {
-        node.setProperty(prp.getName(), prp.getTextTrim());
+    setProperty("name", node, null);
+    setProperty("id", node, null);
+    setProperty("version", node, null);
+    for (Element elm : elements(root, NAME, ID, VERSION)) {
+      if (Namespace.NO_NAMESPACE.equals(elm.getNamespace())) {
+        setProperty(elm.getName(), node, elm.getTextTrim());
       }
     }
-    for (Element dtl : elements(root, DESCRIPTION, CHANGE_NOTES, RESOURCE_BUNDLE, CATEGORY)) {
-      if (Namespace.NO_NAMESPACE.equals(dtl.getNamespace())) {
+    for (Element elm : elements(root, DESCRIPTION, CHANGE_NOTES, RESOURCE_BUNDLE, CATEGORY)) {
+      if (Namespace.NO_NAMESPACE.equals(elm.getNamespace())) {
         SNode pd = SLinkOperations.addNewChild(node, "details", "jetbrains.mps.platform.conf.structure.PluginDetails");
-        SPropertyOperations.set(pd, "kind", dtl.getName());
-        SPropertyOperations.set(pd, "value", dtl.getTextTrim());
+        setProperty("kind", pd, elm.getName());
+        setProperty("value", pd, elm.getTextTrim());
       }
     }
     for (Element elm : elements(root, VENDOR, DEPENDS, HELPSET, IDEA_VERSION)) {
       if (Namespace.NO_NAMESPACE.equals(elm.getNamespace())) {
         if (VENDOR.equals(elm.getName())) {
           SNode pv = SLinkOperations.setNewChild(node, "vendor", "jetbrains.mps.platform.conf.structure.PluginVendor");
-          SPropertyOperations.set(pv, "name", elm.getTextTrim());
-          SPropertyOperations.set(pv, "url", elm.getAttributeValue(URL));
-          SPropertyOperations.set(pv, "email", elm.getAttributeValue(EMAIL));
-          SPropertyOperations.set(pv, "logo", elm.getAttributeValue(LOGO));
+          setProperty("name", pv, elm.getTextTrim());
+          setProperty("url", pv, elm.getAttributeValue(URL));
+          setProperty("email", pv, elm.getAttributeValue(EMAIL));
+          setProperty("logo", pv, elm.getAttributeValue(LOGO));
         } else if (DEPENDS.equals(elm.getName())) {
           SNode pd = SLinkOperations.addNewChild(node, "depends", "jetbrains.mps.platform.conf.structure.PluginDependency");
-          SPropertyOperations.set(pd, "config", elm.getAttributeValue(CONFIG));
-          SPropertyOperations.set(pd, "optional", "" + Boolean.valueOf(elm.getAttributeValue(OPTIONAL)));
+          setProperty("config", pd, elm.getAttributeValue(CONFIG));
+          setProperty("optional", pd, elm.getAttributeValue(OPTIONAL));
           addConfXmlNodeReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.PluginDependency", "plugin"), pd, fqName(META_INF, PLUGIN, elm.getTextTrim()));
         } else if (HELPSET.equals(elm.getName())) {
           SNode ph = SLinkOperations.setNewChild(node, "helpset", "jetbrains.mps.platform.conf.structure.PluginHelpset");
-          SPropertyOperations.set(ph, "file", elm.getAttributeValue(FILE));
-          SPropertyOperations.set(ph, "path", elm.getAttributeValue(PATH));
+          setProperty("file", ph, elm.getAttributeValue(FILE));
+          setProperty("path", ph, elm.getAttributeValue(PATH));
         } else if (IDEA_VERSION.equals(elm.getName())) {
           SNode iv = SLinkOperations.setNewChild(node, "ideaVersion", "jetbrains.mps.platform.conf.structure.IdeaVersion");
-          SPropertyOperations.set(iv, "sinceBuild", elm.getAttributeValue(SINCE_BUILD));
-          SPropertyOperations.set(iv, "untilBuild", elm.getAttributeValue(UNTIL_BUILD));
+          setProperty("sinceBuild", iv, elm.getAttributeValue(SINCE_BUILD));
+          setProperty("untilBuild", iv, elm.getAttributeValue(UNTIL_BUILD));
         }
       }
     }
@@ -212,24 +215,24 @@ public class ConfReader {
   private void readAction(SNode node, Element action) {
     this.readActionProperties(node, action);
     addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.Action", "actionClass"), node, action.getAttributeValue(CLASS));
-    for (Element e : elements(action, SHORTCUT, KEYBOARD_SHORTCUT, MOUSE_SHORTCUT, ADD_TO_GROUP)) {
-      if (Namespace.NO_NAMESPACE.equals(e.getNamespace())) {
-        if (SHORTCUT.equals(e.getName())) {
-          SNode subNode = SLinkOperations.addNewChild(node, "shortcut", "jetbrains.mps.platform.conf.structure.Shortcut");
-          SPropertyOperations.set(subNode, "keymap", e.getAttributeValue(KEYMAP));
-          SPropertyOperations.set(subNode, "keystroke", e.getAttributeValue(FIRST_KEYSTROKE));
-          SPropertyOperations.set(subNode, "keystroke2", e.getAttributeValue(SECOND_KEYSTROKE));
-        } else if (KEYBOARD_SHORTCUT.equals(e.getName())) {
-          SNode subNode = SLinkOperations.addNewChild(node, "shortcut", "jetbrains.mps.platform.conf.structure.KeyboardShortcut");
-          SPropertyOperations.set(subNode, "keymap", e.getAttributeValue(KEYMAP));
-          SPropertyOperations.set(subNode, "keystroke", e.getAttributeValue(FIRST_KEYSTROKE));
-          SPropertyOperations.set(subNode, "keystroke2", e.getAttributeValue(SECOND_KEYSTROKE));
-        } else if (MOUSE_SHORTCUT.equals(e.getName())) {
-          SNode subNode = SLinkOperations.addNewChild(node, "shortcut", "jetbrains.mps.platform.conf.structure.MouseShortcut");
-          SPropertyOperations.set(subNode, "keymap", e.getAttributeValue(KEYMAP));
-          SPropertyOperations.set(subNode, "keystroke", e.getAttributeValue(KEYSTROKE));
-        } else if (ADD_TO_GROUP.equals(e.getName())) {
-          this.readAddToGroup(node, e);
+    for (Element elm : elements(action, SHORTCUT, KEYBOARD_SHORTCUT, MOUSE_SHORTCUT, ADD_TO_GROUP)) {
+      if (Namespace.NO_NAMESPACE.equals(elm.getNamespace())) {
+        if (SHORTCUT.equals(elm.getName())) {
+          SNode shc = SLinkOperations.addNewChild(node, "shortcut", "jetbrains.mps.platform.conf.structure.Shortcut");
+          setProperty("keymap", shc, elm.getAttributeValue(KEYMAP));
+          setProperty("keystroke", shc, elm.getAttributeValue(FIRST_KEYSTROKE));
+          setProperty("keystroke2", shc, elm.getAttributeValue(SECOND_KEYSTROKE));
+        } else if (KEYBOARD_SHORTCUT.equals(elm.getName())) {
+          SNode shc = SLinkOperations.addNewChild(node, "shortcut", "jetbrains.mps.platform.conf.structure.KeyboardShortcut");
+          setProperty("keymap", shc, elm.getAttributeValue(KEYMAP));
+          setProperty("keystroke", shc, elm.getAttributeValue(FIRST_KEYSTROKE));
+          setProperty("keystroke2", shc, elm.getAttributeValue(SECOND_KEYSTROKE));
+        } else if (MOUSE_SHORTCUT.equals(elm.getName())) {
+          SNode shc = SLinkOperations.addNewChild(node, "shortcut", "jetbrains.mps.platform.conf.structure.MouseShortcut");
+          setProperty("keymap", shc, elm.getAttributeValue(KEYMAP));
+          setProperty("keystroke", shc, elm.getAttributeValue(KEYSTROKE));
+        } else if (ADD_TO_GROUP.equals(elm.getName())) {
+          this.readAddToGroup(node, elm);
         }
       }
     }
@@ -263,11 +266,11 @@ public class ConfReader {
   }
 
   private void readActionProperties(SNode node, Element action) {
-    SPropertyOperations.set(node, "id", action.getAttributeValue(ID));
-    SPropertyOperations.set(node, "text", action.getAttributeValue(TEXT));
-    SPropertyOperations.set(node, "description", action.getAttributeValue(DESCRIPTION));
-    SPropertyOperations.set(node, "icon", action.getAttributeValue(ICON));
-    SPropertyOperations.set(node, "popup", "" + Boolean.valueOf(action.getAttributeValue(POPUP)));
+    setProperty("id", node, action.getAttributeValue(ID));
+    setProperty("text", node, action.getAttributeValue(TEXT));
+    setProperty("description", node, action.getAttributeValue(DESCRIPTION));
+    setProperty("icon", node, action.getAttributeValue(ICON));
+    setProperty("popup", node, action.getAttributeValue(POPUP));
   }
 
   private void readAddToGroup(SNode node, Element e) {
@@ -289,13 +292,13 @@ public class ConfReader {
           SNode bep = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.BeanExtensionPoint", null);
           bep.setId(createForeignId(resolveInfo(EXTENSION_POINT, ep.getAttributeValue(NAME))));
           ListSequence.fromList(SLinkOperations.getTargets(node, "fragment", true)).addElement(bep);
-          SPropertyOperations.set(bep, "name", ep.getAttributeValue(NAME));
+          setProperty("name", bep, ep.getAttributeValue(NAME));
           addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.BeanExtensionPoint", "beanClass"), bep, bc);
         } else if (ifc != null) {
           SNode iep = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", null);
           iep.setId(createForeignId(resolveInfo(EXTENSION_POINT, ep.getAttributeValue(NAME))));
           ListSequence.fromList(SLinkOperations.getTargets(node, "fragment", true)).addElement(iep);
-          SPropertyOperations.set(iep, "name", ep.getAttributeValue(NAME));
+          setProperty("name", iep, ep.getAttributeValue(NAME));
           addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", "iface"), iep, ifc);
         } else {
           throw new IllegalStateException();
@@ -410,12 +413,12 @@ public class ConfReader {
         flt = (AbstractFilter) flt.or(new ElementFilter(or, Namespace.NO_NAMESPACE));
       }
     }
-    return (List<Element>) parent.getContent(flt.or(new ElementFilter("include", XI)));
+    return (List<Element>) parent.getContent(flt.or(new ElementFilter(INCLUDE, XI)));
   }
 
   private Iterable<Element> elements(Element parent) {
     AbstractFilter flt = new ElementFilter(Namespace.NO_NAMESPACE);
-    return (List<Element>) parent.getContent(flt.or(new ElementFilter("include", XI)));
+    return (List<Element>) parent.getContent(flt.or(new ElementFilter(INCLUDE, XI)));
   }
 
   private void addConfXmlDocumentReference(SNode link, SNode src, String fqName) {
@@ -450,6 +453,13 @@ public class ConfReader {
     SModelReference trgsmref = this.javastubResolver.stubModelReference(namespace(fqClassName));
     SNodeOperations.getModel(src).addModelImport(trgsmref, false);
     src.addReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqClassName)));
+  }
+
+  public static void setProperty(String property, SNode node, String value) {
+    node.setProperty(property, (value != null ?
+      value :
+      ""
+    ), false);
   }
 
   private static String namespace(String fqName) {

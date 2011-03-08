@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="XInclude_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.XInclude_Behavior" />
-  <unitInfo fileName="Service_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.Service_Behavior" />
   <unitInfo fileName="Components_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.Components_Behavior" />
+  <unitInfo fileName="Service_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.Service_Behavior" />
   <unitInfo fileName="Component_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.Component_Behavior" />
-  <unitInfo fileName="BeanUtil.java" startLine="64" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$QuotationClass_bgndvd_a0a0a0a" />
-  <unitInfo fileName="BeanUtil.java" startLine="82" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$QuotationClass_bgndvd_a0a0a0b" />
+  <unitInfo fileName="BeanUtil.java" startLine="62" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$QuotationClass_bgndvd_a0a0a0a" />
+  <unitInfo fileName="BeanUtil.java" startLine="80" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil$QuotationClass_bgndvd_a0a0a0b" />
   <unitInfo fileName="BeanProperty.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanProperty" />
   <unitInfo fileName="BeanExtensionPoint_Behavior.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanExtensionPoint_Behavior" />
-  <unitInfo fileName="BeanUtil.java" startLine="20" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil" />
+  <unitInfo fileName="BeanUtil.java" startLine="20" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.platform.conf.behavior.BeanUtil" />
   <root nodeId="1740160309778233536">
     <nodeInfo nodeId="2955496203775061909" fileName="Component_Behavior.java" startLine="13" startPosition="77" endLine="14" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2955496203775038500" fileName="Component_Behavior.java" startLine="14" startPosition="123" endLine="18" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

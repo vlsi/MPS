@@ -1112,6 +1112,7 @@
         <property name="text" nameId="tpc2.1073389577007" value="config=" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6536266708345478004">
+        <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.6536266708345244501" resolveInfo="config" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="6536266708345477989" />
@@ -1140,12 +1141,14 @@
         <property name="text" nameId="tpc2.1073389577007" value="file=" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6536266708345479211">
+        <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.6536266708345477910" resolveInfo="file" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6536266708345479213">
         <property name="text" nameId="tpc2.1073389577007" value="path=" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6536266708345479217">
+        <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.6536266708345477911" resolveInfo="path" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="6536266708345479206" />
@@ -1333,6 +1336,7 @@
               <property name="text" nameId="tpc2.1073389577007" value="text:" />
             </node>
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7208030699524554186">
+              <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.4383174161802026696" resolveInfo="text" />
             </node>
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7208030699524554174">
