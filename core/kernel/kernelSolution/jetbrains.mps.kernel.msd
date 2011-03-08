@@ -18,7 +18,6 @@
   <dependencies>
     <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
     <dependency reexport="false">d568f86b-af37-4d5b-8d74-867bd13f2ff4(jetbrains.mps.editor.runtime)</dependency>
-    <dependency reexport="false">f79b80ff-2fee-4243-9291-a156ab1cfc01(jetbrains.mps.ide.migration)</dependency>
     <dependency reexport="false">aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</dependency>
     <dependency reexport="false">7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)</dependency>
     <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</dependency>
