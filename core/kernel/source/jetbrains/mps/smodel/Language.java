@@ -349,11 +349,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public String getGeneratorOutputPath() {
-    String generatorOutputPath = myLanguageDescriptor.getGenPath();
-    if (generatorOutputPath == null) {
-      generatorOutputPath = myDescriptorFile.getParent().child("source_gen").getAbsolutePath();
-    }
-    return generatorOutputPath;
+    IFile result = ProjectPathUtil.getGeneratorOutputPath(getDescriptorFile(), getModuleDescriptor());
+    return result != null ? result.getAbsolutePath() : null;
   }
 
   public String getTestsGeneratorOutputPath() {

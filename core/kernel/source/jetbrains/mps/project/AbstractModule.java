@@ -403,25 +403,11 @@ public abstract class AbstractModule implements IModule {
 
   @Override
   public List<SModelDescriptor> getEditableUserModels() {
-    return Collections.<SModelDescriptor>emptyList();
+    return Collections.emptyList();
   }
 
   public IFile getClassesGen() {
-    IFile classesDir = getClassesDirParent();
-    if (classesDir == null) return null;
-    if (isPackaged()) return classesDir;
-
-    return classesDir.child("classes_gen");
-  }
-
-  private IFile getClassesDirParent() {
-    if (isPackaged()) {
-      String filename = getBundleHome().getAbsolutePath() + "!";
-      return FileSystem.getInstance().getFileByPath(filename);
-    } else {
-      if (getDescriptorFile() == null) return null;
-      return getDescriptorFile().getParent();
-    }
+    return ProjectPathUtil.getClassesGenFolder(getDescriptorFile());
   }
 
   public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
@@ -559,16 +545,16 @@ public abstract class AbstractModule implements IModule {
   @Override
   public ModuleReference getModuleFor(String packageName, String langID) {
     for (SModelDescriptor model : getOwnModelDescriptors()) {
-      if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))){
+      if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))) {
         return getModuleReference();
       }
     }
 
     Collection<IModule> scopeModules = IterableUtil.asCollection(getScope().getVisibleModules());
     Set<IModule> deps = new HashSet<IModule>(scopeModules);
-    for (IModule module: deps){
+    for (IModule module : deps) {
       for (SModelDescriptor model : module.getOwnModelDescriptors()) {
-        if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))){
+        if (model.getLongName().equals(packageName) && model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(langID))) {
           return module.getModuleReference();
         }
       }

@@ -25,7 +25,7 @@ import java.util.*;
 public class StubReloadManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(StubReloadManager.class);
 
-  private MPSModuleRepository myRepos;
+  private MPSModuleRepository myModuleRepository;
 
   private Map<StubPath, Map<ModuleId, PathData>> myPath2Data = new HashMap<StubPath, Map<ModuleId, PathData>>();
 
@@ -33,8 +33,8 @@ public class StubReloadManager implements ApplicationComponent {
   private MyStubPaths myLoadedStubPaths = new MyStubPaths();
   private List<StubPath> myNotChangedStubPaths;
 
-  public StubReloadManager(MPSModuleRepository repos) {
-    myRepos = repos;
+  public StubReloadManager(MPSModuleRepository moduleRepository) {
+    myModuleRepository = moduleRepository;
   }
 
   public void reload() {
@@ -100,7 +100,7 @@ public class StubReloadManager implements ApplicationComponent {
       if (myLoadedSolutions.contains(d.getModuleId())) continue;
 
       myLoadedSolutions.add(d.getModuleId());
-      Solution solution = this.myRepos.getSolution(new ModuleReference(d.getModuleName(), d.getModuleId()));
+      Solution solution = myModuleRepository.getSolution(new ModuleReference(d.getModuleName(), d.getModuleId()));
       assert solution != null : d.getModuleName();
 
       SolutionDescriptor sd = solution.getModuleDescriptor();
@@ -131,7 +131,7 @@ public class StubReloadManager implements ApplicationComponent {
   private List<BaseLibStubDescriptor> createLibDescrs() {
     List<BaseLibStubDescriptor> result = new ArrayList<BaseLibStubDescriptor>();
 
-    List<Language> languages = this.myRepos.getAllLanguages();
+    List<Language> languages = myModuleRepository.getAllLanguages();
     for (Language l : languages) {
       SModelDescriptor descriptor = LanguageAspect.STUBS.get(l);
       if (descriptor == null) continue;
@@ -303,7 +303,7 @@ public class StubReloadManager implements ApplicationComponent {
 
   private List<AbstractModule> getAllModules() {
     List<AbstractModule> modules = new ArrayList<AbstractModule>();
-    for (IModule m : myRepos.getAllModules()) {
+    for (IModule m : myModuleRepository.getAllModules()) {
       if (!(m instanceof AbstractModule)) continue;
       modules.add(((AbstractModule) m));
     }
@@ -377,14 +377,15 @@ public class StubReloadManager implements ApplicationComponent {
       return res;
     }
 
-    public void add(AbstractModule m, StubPath sp) {
-      List<StubPath> oldList = get(m.getModuleReference().getModuleId());
-      if (oldList == null) {
-        oldList = new ArrayList<StubPath>();
+    public void add(final AbstractModule m, StubPath sp) {
+      ModuleId key = m.getModuleReference().getModuleId();
+      List<StubPath> value = get(key);
+      if (value == null) {
+        value = new ArrayList<StubPath>();
       }
 
-      oldList.add(sp);
-      put(m.getModuleReference().getModuleId(), oldList);
+      value.add(sp);
+      put(key, value);
     }
   }
 

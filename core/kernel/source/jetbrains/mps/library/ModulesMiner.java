@@ -16,21 +16,28 @@
 package jetbrains.mps.library;
 
 import com.intellij.openapi.fileTypes.FileTypeManager;
-import jetbrains.mps.generator.cache.BaseModelCache;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
+import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
+import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
 /**
- *  Detects modules in a folder. Loads them into MPSModuleRepository
+ * Detects modules in a folder. Loads them into MPSModuleRepository
  */
 public class ModulesMiner {
 
@@ -75,35 +82,52 @@ public class ModulesMiner {
   }
 
   public List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner) {
-    return readModuleDescriptors(dir, owner, new HashSet<IFile>(), false);
+    return readModuleDescriptors(dir, owner, false);
   }
 
-  public List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner, boolean refreshFiles) {
-    return readModuleDescriptors(dir, owner, new HashSet<IFile>(), refreshFiles);
-  }
-
-  private List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner, Set<IFile> excludes, boolean refreshFiles) {
+  public List<IModule> readModuleDescriptors(IFile dir, final MPSModuleOwner owner, boolean refreshFiles) {
     assertCanWrite();
 
+    List<IModule> result = new ArrayList<IModule>();
+    readModuleDescriptors(dir, new HashSet<IFile>(), result, refreshFiles, new DescriptorReader<IModule>() {
+      @Override
+      public IModule read(IFile file, Set<IFile> excludes) {
+        return loadModule_internal(file, owner, getModuleExtension(file.getName()), excludes);
+      }
+    });
+    return result;
+  }
+
+  public List<ModuleDescriptor> collectModuleDescriptors(IFile dir, boolean refreshFiles) {
+    List<ModuleDescriptor> result = new ArrayList<ModuleDescriptor>();
+    readModuleDescriptors(dir, new HashSet<IFile>(), result, refreshFiles, new DescriptorReader<ModuleDescriptor>() {
+      @Override
+      public ModuleDescriptor read(IFile file, Set<IFile> excludes) {
+        return loadDescriptorOnly_internal(file, getModuleExtension(file.getName()), excludes);
+      }
+    });
+    return result;
+  }
+
+  private <T> void readModuleDescriptors(IFile dir, Set<IFile> excludes, List<T> result, boolean refreshFiles, DescriptorReader<T> reader) {
     if (refreshFiles) {
       FileSystem.getInstance().refresh(dir);
     }
 
-    List<IModule> result = new ArrayList<IModule>();
     String dirName = dir.getName();
 
-    if (FileTypeManager.getInstance().isFileIgnored(dirName)) return result;
+    if (FileTypeManager.getInstance().isFileIgnored(dirName)) return;
 
     List<IFile> files = dir.list();
     if (files == null) {
-      return result;
+      return;
     }
 
     for (IFile file : files) {
       if (hasModuleExtension(file.getName())) {
-        IModule module = readModuleDescriptor_internal(file, owner, getModuleExtension(file.getName()), excludes);
-        if (module != null) {
-          result.add(module);
+        T descriptor = reader.read(file, excludes);
+        if (descriptor != null) {
+          result.add(descriptor);
         }
       }
     }
@@ -115,44 +139,83 @@ public class ModulesMiner {
 
       if (childDir.getName().endsWith(MPSExtentions.MPS_ARCH)) {
         IFile dirInJar = FileSystem.getInstance().getFileByPath(childDir.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
-        result.addAll(readModuleDescriptors(dirInJar, owner, excludes, refreshFiles));
+        readModuleDescriptors(dirInJar, excludes, result, refreshFiles, reader);
       }
 
-      result.addAll(readModuleDescriptors(childDir, owner, excludes, refreshFiles));
+      readModuleDescriptors(childDir, excludes, result, refreshFiles, reader);
     }
-    return result;
   }
 
-  private IModule readModuleDescriptor_internal(IFile dir, MPSModuleOwner owner, String extension, Set<IFile> excludes) {
+  private ModuleDescriptor loadDescriptorOnly_internal(IFile descriptorFile, String extension, Set<IFile> excludes) {
+    ModuleDescriptor descriptor = null;
+    try {
+      Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
+      if (cls == Language.class) {
+        descriptor = LanguageDescriptorPersistence.loadLanguageDescriptor(descriptorFile);
+      } else if (cls == Solution.class) {
+        descriptor = SolutionDescriptorPersistence.loadSolutionDescriptor(descriptorFile);
+      } else {
+        descriptor = DevkitDescriptorPersistence.loadDevKitDescriptor(descriptorFile);
+      }
+
+      processExcludes(descriptorFile, descriptor, excludes);
+    } catch (Exception t) {
+      LOG.error("Fail to load module from descriptor " + descriptorFile.getAbsolutePath(), t);
+    }
+    return descriptor;
+  }
+
+  private IModule loadModule_internal(IFile descriptorFile, MPSModuleOwner owner, String extension, Set<IFile> excludes) {
     AbstractModule module = null;
     try {
       Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
-      module = (AbstractModule) MPSModuleRepository.getInstance().registerModule(dir, owner, cls);
+      module = (AbstractModule) MPSModuleRepository.getInstance().registerModule(descriptorFile, owner, cls);
+      processExcludes(descriptorFile, module.getModuleDescriptor(), excludes);
 
-      for (String sourceDir : module.getSourcePaths()) {
-        excludes.add(FileSystem.getInstance().getFileByPath(sourceDir));
-      }
-      if (module.getGeneratorOutputPath() != null) {
-        excludes.add(BaseModelCache.getCachesDir(module, module.getGeneratorOutputPath()));
-      }
-      if (module.getTestsGeneratorOutputPath() != null) {
-        excludes.add(BaseModelCache.getCachesDir(module, module.getTestsGeneratorOutputPath()));
-      }
-      for (SModelRoot root : module.getSModelRoots()) {
-        excludes.add(FileSystem.getInstance().getFileByPath(root.getPath()));
-      }
-
-      if (module.getClassesGen() != null) {
-        excludes.add(module.getClassesGen());
-      }
-      for (StubPath sp : module.getStubPaths()) {
-        excludes.add(FileSystem.getInstance().getFileByPath(sp.getPath()));
-      }
-    } catch (Throwable t) {
-      LOG.error("Fail to load module from descriptor " + dir.getAbsolutePath(), t);
+    } catch (Exception t) {
+      LOG.error("Fail to load module from descriptor " + descriptorFile.getAbsolutePath(), t);
     }
 
     return module;
+  }
+
+  private void processExcludes(@NotNull IFile descriptorFile, ModuleDescriptor descriptor, Set<IFile> excludes) {
+    if (descriptor == null) {
+      return;
+    }
+
+    for (String p : descriptor.getSourcePaths()) {
+      excludes.add(FileSystem.getInstance().getFileByPath(p));
+    }
+
+    IFile genPath = ProjectPathUtil.getGeneratorOutputPath(descriptorFile, descriptor);
+    if (genPath != null) {
+      excludes.add(genPath);
+      if (!descriptorFile.isReadOnly()) {
+        FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(genPath.getAbsolutePath()));
+      }
+    }
+
+    IFile testsGenPath = ProjectPathUtil.getGeneratorTestsOutputPath(descriptorFile, descriptor);
+    if (testsGenPath != null) {
+      excludes.add(genPath);
+      if (!descriptorFile.isReadOnly()) {
+        FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(testsGenPath.getAbsolutePath()));
+      }
+    }
+
+    for (ModelRoot root : descriptor.getModelRoots()) {
+      excludes.add(FileSystem.getInstance().getFileByPath(root.getPath()));
+    }
+
+    IFile classesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile);
+    if (classesGen != null) {
+      excludes.add(classesGen);
+    }
+
+    for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
+      excludes.add(FileSystem.getInstance().getFileByPath(entry.getPath()));
+    }
   }
 
   private boolean hasModuleExtension(String name) {
@@ -170,5 +233,9 @@ public class ModulesMiner {
     if (!ModelAccess.instance().canWrite()) {
       throw new IllegalStateException("Can't write");
     }
+  }
+
+  private static interface DescriptorReader<T> {
+    T read(IFile file, Set<IFile> excludes);
   }
 }
