@@ -46,6 +46,7 @@ public class IdeaVersion_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("sinceBuild");
     provider.setNoTargetText("<no sinceBuild>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_sinceBuild");
@@ -64,6 +65,7 @@ public class IdeaVersion_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("untilBuild");
     provider.setNoTargetText("<no untilBuild>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_untilBuild");

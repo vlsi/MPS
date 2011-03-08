@@ -990,6 +990,9 @@
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="4691677767846423032" />
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1501699210267466612">
+          <property name="text" nameId="tpc2.1073389577007" value="name:" />
+        </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6536266708345477929">
           <property name="text" nameId="tpc2.1073389577007" value="&quot;" />
         </node>
@@ -1000,24 +1003,26 @@
           <property name="text" nameId="tpc2.1073389577007" value="&quot;" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6536266708345477936">
-          <property name="text" nameId="tpc2.1073389577007" value="id=" />
+          <property name="text" nameId="tpc2.1073389577007" value="id:" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6536266708345477938">
           <property name="text" nameId="tpc2.1073389577007" value="&quot;" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="2195238324467496098">
+          <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.6536266708345244491" resolveInfo="id" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6536266708345477943">
           <property name="text" nameId="tpc2.1073389577007" value="&quot;" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6536266708345477945">
-          <property name="text" nameId="tpc2.1073389577007" value="version=" />
+          <property name="text" nameId="tpc2.1073389577007" value="version:" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6536266708345477947">
           <property name="text" nameId="tpc2.1073389577007" value="&quot;" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6536266708345477949">
+          <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.6536266708345244493" resolveInfo="version" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6536266708345477951">
@@ -1155,6 +1160,7 @@
         <property name="text" nameId="tpc2.1073389577007" value="&quot;" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="2195238324467554682">
+        <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2195238324467554684">
@@ -1164,18 +1170,21 @@
         <property name="text" nameId="tpc2.1073389577007" value="url=" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6536266708345479231">
+        <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.6536266708345244495" resolveInfo="url" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6536266708345479233">
         <property name="text" nameId="tpc2.1073389577007" value="email=" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6536266708345479237">
+        <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.6536266708345244496" resolveInfo="email" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6536266708345479239">
         <property name="text" nameId="tpc2.1073389577007" value="logo=" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6536266708345479241">
+        <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.6536266708345244497" resolveInfo="logo" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="6536266708345479222" />
@@ -1187,12 +1196,14 @@
         <property name="text" nameId="tpc2.1073389577007" value="since build=" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6536266708345522349">
+        <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.6536266708345477899" resolveInfo="sinceBuild" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6536266708345522354">
         <property name="text" nameId="tpc2.1073389577007" value="until build=" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6536266708345522356">
+        <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.6536266708345477900" resolveInfo="untilBuild" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="6536266708345522346" />

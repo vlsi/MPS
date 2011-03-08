@@ -80,6 +80,7 @@ public class PluginVendor_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
@@ -98,6 +99,7 @@ public class PluginVendor_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("url");
     provider.setNoTargetText("<no url>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_url");
@@ -116,6 +118,7 @@ public class PluginVendor_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("email");
     provider.setNoTargetText("<no email>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_email");
@@ -134,6 +137,7 @@ public class PluginVendor_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("logo");
     provider.setNoTargetText("<no logo>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_logo");

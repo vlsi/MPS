@@ -50,16 +50,17 @@ public class Plugin_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createIndentCell_o3c6bg_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o3c6bg_b1a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_o3c6bg_c1a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_o3c6bg_d1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_o3c6bg_c1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_o3c6bg_d1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o3c6bg_e1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o3c6bg_f1a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_o3c6bg_g1a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_o3c6bg_h1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_o3c6bg_g1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_o3c6bg_h1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o3c6bg_i1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o3c6bg_j1a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_o3c6bg_k1a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_o3c6bg_l1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_o3c6bg_k1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_o3c6bg_l1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_o3c6bg_m1a(editorContext, node));
     return editorCell;
   }
 
@@ -109,57 +110,64 @@ public class Plugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_o3c6bg_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name:");
     editorCell.setCellId("Constant_o3c6bg_b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_o3c6bg_d1a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_o3c6bg_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
-    editorCell.setCellId("Constant_o3c6bg_d1a");
+    editorCell.setCellId("Constant_o3c6bg_c1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_o3c6bg_e1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_o3c6bg_e1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_o3c6bg_f1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id:");
     editorCell.setCellId("Constant_o3c6bg_f1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_o3c6bg_h1a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_o3c6bg_g1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
-    editorCell.setCellId("Constant_o3c6bg_h1a");
+    editorCell.setCellId("Constant_o3c6bg_g1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_o3c6bg_i1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_o3c6bg_i1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_o3c6bg_j1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version:");
     editorCell.setCellId("Constant_o3c6bg_j1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_o3c6bg_l1a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_o3c6bg_k1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
-    editorCell.setCellId("Constant_o3c6bg_l1a");
+    editorCell.setCellId("Constant_o3c6bg_k1a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_o3c6bg_m1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
+    editorCell.setCellId("Constant_o3c6bg_m1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -262,7 +270,7 @@ public class Plugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_o3c6bg_c1a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_o3c6bg_d1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -280,10 +288,11 @@ public class Plugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_o3c6bg_g1a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_o3c6bg_h1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("id");
     provider.setNoTargetText("<no id>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_id");
@@ -298,10 +307,11 @@ public class Plugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_o3c6bg_k1a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_o3c6bg_l1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("version");
     provider.setNoTargetText("<no version>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_version");
