@@ -198,24 +198,24 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<StubPath> getOwnStubPaths() {
-    ArrayList<StubPath> result = new ArrayList<StubPath>();
     if (isCompileInMPS() && getClassesGen() != null && new File(getClassesGen().getAbsolutePath()).exists()) {
-      result.add(new StubPath(getClassesGen().getAbsolutePath(), LanguageID.JAVA_MANAGER));
+      return Collections.singletonList(new StubPath(getClassesGen().getAbsolutePath(), LanguageID.JAVA_MANAGER));
     }
-    return result;
+    return Collections.emptyList();
   }
 
   public List<StubPath> getStubPaths() {
-    ArrayList<StubPath> result = new ArrayList<StubPath>();
-
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
-      for (StubModelsEntry entry : getModuleDescriptor().getStubModelEntries()) {
+      List<StubModelsEntry> stubModelEntries = getModuleDescriptor().getStubModelEntries();
+      ArrayList<StubPath> result = new ArrayList<StubPath>(stubModelEntries.size());
+      for (StubModelsEntry entry : stubModelEntries) {
         result.add(new StubPath(entry.getPath(), entry.getManager()));
       }
+      return result;
     }
 
-    return result;
+    return Collections.emptyList();
   }
 
   protected List<StubModelsEntry> getStubModelEntriesToIncludeOrExclude() {

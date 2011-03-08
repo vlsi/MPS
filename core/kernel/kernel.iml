@@ -37,6 +37,7 @@
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="library" name="Trove4j" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
+    <orderEntry type="library" name="Commons-collections" level="project" />
   </component>
 </module>
 
