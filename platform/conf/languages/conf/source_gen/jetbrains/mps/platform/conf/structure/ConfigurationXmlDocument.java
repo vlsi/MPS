@@ -57,11 +57,11 @@ public class ConfigurationXmlDocument extends BaseConcept implements INamedConce
     this.setProperty(ConfigurationXmlDocument.VIRTUAL_PACKAGE, value);
   }
 
-  public ConfigurationXmlNode getRoot() {
-    return (ConfigurationXmlNode) this.getChild(ConfigurationXmlNode.class, ConfigurationXmlDocument.ROOT);
+  public ConfigurationXmlRootNode getRoot() {
+    return (ConfigurationXmlRootNode) this.getChild(ConfigurationXmlRootNode.class, ConfigurationXmlDocument.ROOT);
   }
 
-  public void setRoot(ConfigurationXmlNode node) {
+  public void setRoot(ConfigurationXmlRootNode node) {
     super.setChild(ConfigurationXmlDocument.ROOT, node);
   }
 

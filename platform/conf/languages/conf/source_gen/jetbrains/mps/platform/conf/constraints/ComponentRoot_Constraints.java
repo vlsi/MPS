@@ -4,14 +4,9 @@ package jetbrains.mps.platform.conf.constraints;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAParentContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ComponentRoot_Constraints {
   public static boolean canBeAParent(final IOperationContext operationContext, final CanBeAParentContext _context) {
-    if (SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.ComponentRoot", "node") == _context.getLink()) {
-      return !(SConceptOperations.isSubConceptOf(_context.getChildConcept(), "jetbrains.mps.platform.conf.structure.ComponentRoot")) && (SConceptOperations.isSubConceptOf(_context.getChildConcept(), "jetbrains.mps.platform.conf.structure.IConfiguration") || SConceptOperations.isSubConceptOf(_context.getChildConcept(), "jetbrains.mps.platform.conf.structure.IExternalConfigurationFragment"));
-    }
-    return true;
+    return ConfigurationXmlRootNode_constraintsUtil.canBeParent(_context.getLink(), _context.getChildConcept());
   }
 }

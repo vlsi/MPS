@@ -42,6 +42,7 @@
   <unitInfo fileName="ExtensionPoints.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.ExtensionPoints" />
   <unitInfo fileName="ComponentsRoot.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.ComponentsRoot" />
   <unitInfo fileName="Actions.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Actions" />
+  <unitInfo fileName="ConfigurationXmlRootNode.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.ConfigurationXmlRootNode" />
   <unitInfo fileName="IdeaPluginRoot.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.IdeaPluginRoot" />
   <unitInfo fileName="Extensions.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Extensions" />
   <unitInfo fileName="Service.java" startLine="14" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.platform.conf.structure.Service" />

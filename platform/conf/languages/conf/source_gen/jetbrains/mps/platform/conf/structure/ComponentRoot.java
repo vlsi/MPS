@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ComponentRoot extends ConfigurationXmlNode implements IConfiguration {
+public class ComponentRoot extends ConfigurationXmlRootNode implements IConfiguration {
   public static final String concept = "jetbrains.mps.platform.conf.structure.ComponentRoot";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

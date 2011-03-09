@@ -161,6 +161,11 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="elements.actions" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cs0q.4383174161802026705" resolveInfo="GroupReference" />
     </node>
+    <node type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="3963070320413821546">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="xml" />
+      <property name="name" nameId="tpck.1169194664001" value="ConfigurationXmlRootNode_children" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="cs0q.3963070320413563577" resolveInfo="ConfigurationXmlRootNode" />
+    </node>
   </roots>
   <root id="5314521579133271088">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5314521579133271090">
@@ -552,16 +557,8 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="5522969664585014985">
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1740160309778213296" resolveInfo="ConfigurationXmlNode_Header" />
       </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5522969664585014986">
-        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="5522969664585014987">
-          <property name="flag" nameId="tpc2.1186414551515" value="false" />
-        </node>
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="5522969664585014988" />
-        <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="5522969664585014989" />
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="5522969664585014990">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.5522969664585014980" />
-          <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="2955496203774982637" />
-        </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3963070320413821558">
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="3963070320413821546" resolveInfo="ConfigurationXmlRootNode_children" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="5522969664585014992" />
     </node>
@@ -571,16 +568,8 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="8009656244648532813">
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1740160309778213296" resolveInfo="ConfigurationXmlNode_Header" />
       </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="8009656244648532814">
-        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="8009656244648532815">
-          <property name="flag" nameId="tpc2.1186414551515" value="false" />
-        </node>
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="8009656244648532816" />
-        <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="8009656244648532817" />
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="8009656244648532818">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.8009656244648532780" />
-          <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="8009656244648532819" />
-        </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3963070320413821556">
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="3963070320413821546" resolveInfo="ConfigurationXmlRootNode_children" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="8009656244648532820" />
     </node>
@@ -590,16 +579,8 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="7225089784577918929">
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1740160309778213296" resolveInfo="ConfigurationXmlNode_Header" />
       </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7225089784577918930">
-        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="7225089784577918931">
-          <property name="flag" nameId="tpc2.1186414551515" value="false" />
-        </node>
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="7225089784577918932" />
-        <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="7225089784577918933" />
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="7225089784577918934">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.7225089784577918896" />
-          <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="7225089784577918935" />
-        </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3963070320413821567">
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="3963070320413821546" resolveInfo="ConfigurationXmlRootNode_children" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="7225089784577918936" />
     </node>
@@ -1074,16 +1055,8 @@
           <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="6536266708345477966" />
         </node>
       </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4691677767846423026">
-        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="4691677767846423027">
-          <property name="flag" nameId="tpc2.1186414551515" value="false" />
-        </node>
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="4691677767846423028" />
-        <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="4691677767846423029" />
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="4691677767846423030">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.1740160309778221573" />
-          <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="4691677767846423031" />
-        </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3963070320413821569">
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="3963070320413821546" resolveInfo="ConfigurationXmlRootNode_children" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="6536266708345477922" />
     </node>
@@ -1660,6 +1633,19 @@
     </node>
     <node role="inspectedCellModel" roleId="tpc2.1078153129734" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="6922949653362976027">
       <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="6880840382462248685" resolveInfo="BaseConcept_brokenRefs" />
+    </node>
+  </root>
+  <root id="3963070320413821546">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3963070320413821548">
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="3963070320413821549">
+        <property name="flag" nameId="tpc2.1186414551515" value="false" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="3963070320413821550" />
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="3963070320413821551" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="3963070320413821552">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="cs0q.3963070320413656617" />
+        <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="3963070320413821553" />
+      </node>
     </node>
   </root>
 </model>

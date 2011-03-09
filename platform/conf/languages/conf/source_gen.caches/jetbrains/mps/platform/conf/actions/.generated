@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4xomlbwcq6jkljtgrw2fzmwcahf2uz0">
+<dependencies version="2" modelHash="-3wrypqgfa1r60ck7u3ljacmqyb0i6w5">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(MPS.Classpath/jetbrains.mps.util@java_stub)" />
@@ -36,7 +36,7 @@
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d5ax0i0w21fsp3r2lvns9jctqjjbwsh" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-9p407qrtqkh4c13zulfpxpsujsb6ugh" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-3b0zkq6a0d2p4ylvpa7iezg8ro73tl0" />
-  <dep model="r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)" hash="-837ux2jw8wvue8e7sq29t2d9joz8zon" />
+  <dep model="r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)" hash="5w9823u7hyahfq67kcmswj13s2kcz38" />
   <dep model="r:e1acdb32-2aee-4485-9fb3-7df994baeae3(jetbrains.mps.baseLanguage.extensionMethods.generator.template.main@generator)" hash="8s1unzv2peteemazzqnu8d9qta5kg9t" />
   <dep model="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" hash="cdtpmii56kd4yobep0qs5o8brj2ey1q" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-5cfaxtdlkbuy22agcqk9x6g9ooa98ti" />
@@ -95,34 +95,34 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="4569055436237489038" name="Component_variants" hash="ddew14orrn8e8k83jk5z2jpd2mlx5gx">
+  <source id="4569055436237489038" name="Component_variants" hash="-4isc13yeihg1x2mzdnmjz7dhxnm8c8s">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="6121364846593714734" name="Service_variants" hash="-skogljarlqktstwo40twrp8xm12m3q">
+  <source id="6121364846593714734" name="Service_variants" hash="-crzw5p5r9n5pq3mq9xnj4cy98kasdlg">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="6183559520328570475" name="BeanExtensionPoint_beanClass" hash="8ojop7szyytaqrnfwd9lu95nfl45979">
+  <source id="6183559520328570475" name="BeanExtensionPoint_beanClass" hash="-13obpl24jnh6o4nb7d0jz5g8epuefec">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="6618365175184889515" name="InterfaceExtensionPoint_interface" hash="109uohz3lpp3thkx72v5ftylq7d8439">
+  <source id="6618365175184889515" name="InterfaceExtensionPoint_interface" hash="58m75hfntikl52kj9onlmwlo9tj79n4">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="6618365175184971339" name="BeanExtensionAttribute" hash="c75cqk7zu26ytxsjofoc6lwky4cjh26">
+  <source id="6618365175184971339" name="BeanExtensionAttribute" hash="-c58uyrmayjn3h07r2w3j0yqgjp1hig9">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="7161354651095863072" name="BeanExtension" hash="-1od1z0phf9dpqwcr41gytrduutftvc">
+  <source id="7161354651095863072" name="BeanExtension" hash="-6ewquso5xch3fdm48hpinvl86zvg50z">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="7161354651095876187" name="InterfaceExtension" hash="2619ua95mxnmeuviph4hizbjd4wgmu">
+  <source id="7161354651095876187" name="InterfaceExtension" hash="-6ccgen81zkw960l44pgx5d8ckk1qbe7">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="3886786302241722680" name="IActionItem_subs" hash="ch8931t37s2rgruzytv779aquiixbs6">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="3886786302241755455" name="GroupReference_subs" hash="-6xe2gx3xhcce1h1emj0rsdn9n4e9qq0">
+  <source id="3886786302241755455" name="GroupReference_subs" hash="-adbgd8y9ifn4mpzx5sbds50ivrb03t4">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="8841589787282420429" name="Components_variants" hash="-8v2k0od81am2lzypkrmquv2tf3rxgks">
+  <source id="8841589787282420429" name="Components_variants" hash="661jbixns5tp4mwg8bsioodgwc8k8bm">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

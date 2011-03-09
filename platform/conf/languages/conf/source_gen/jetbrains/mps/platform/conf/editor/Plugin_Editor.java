@@ -37,7 +37,7 @@ public class Plugin_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_o3c6bg_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_o3c6bg_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_o3c6bg_c0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_o3c6bg_d0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_o3c6bg_d0(editorContext, node));
     return editorCell;
   }
 
@@ -91,20 +91,14 @@ public class Plugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_o3c6bg_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_o3c6bg_d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createIndentCell_o3c6bg_a3a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_o3c6bg_b3a(editorContext, node));
+  private EditorCell createComponent_o3c6bg_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new ConfigurationXmlNode_Header(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createComponent_o3c6bg_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ConfigurationXmlNode_Header(node);
+  private EditorCell createComponent_o3c6bg_d0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new ConfigurationXmlRootNode_children(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
@@ -196,25 +190,12 @@ public class Plugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_o3c6bg_b3a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Plugin_Editor.nodeListHandler_o3c6bg_b3a(node, "node", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_node");
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
-  }
-
   private EditorCell createIndentCell_o3c6bg_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
   private EditorCell createIndentCell_o3c6bg_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
-  }
-
-  private EditorCell createIndentCell_o3c6bg_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
@@ -421,44 +402,6 @@ public class Plugin_Editor extends DefaultNodeEditor {
       editorCell.setCellId("Constant_o3c6bg_a4b2a");
       editorCell.setDefaultText("<no depends>");
       return editorCell;
-    }
-  }
-
-  private static class nodeListHandler_o3c6bg_b3a extends RefNodeListHandler {
-    public nodeListHandler_o3c6bg_b3a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
-    }
-
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
-    }
-
-    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
-      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
-      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
-      return elementCell;
-    }
-
-    public EditorCell createEmptyCell(EditorContext editorContext) {
-      EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
-      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      return emptyCell;
-    }
-
-    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
-        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
-        SNode substituteInfoNode = listOwner;
-        if (elementNode != null) {
-          substituteInfoNode = elementNode;
-          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
-        }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
-        }
-      }
     }
   }
 }

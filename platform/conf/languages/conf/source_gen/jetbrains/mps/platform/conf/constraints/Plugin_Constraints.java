@@ -5,7 +5,7 @@ package jetbrains.mps.platform.conf.constraints;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAParentContext;
 
-public class RootRoot_Constraints {
+public class Plugin_Constraints {
   public static boolean canBeAParent(final IOperationContext operationContext, final CanBeAParentContext _context) {
     return ConfigurationXmlRootNode_constraintsUtil.canBeParent(_context.getLink(), _context.getChildConcept());
   }

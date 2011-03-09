@@ -71,9 +71,6 @@
   <root id="4569055436237489038">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="4569055436237489039">
       <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="cs0q.4635942846893810046" resolveInfo="Component" />
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="8841589787282446860">
-        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="cs0q.4635942846893810046" resolveInfo="Component" />
-      </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="4569055436237489040">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="cs0q.4635942846893810046" resolveInfo="Component" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.ParameterizedSubstituteMenuPart" typeId="tpdg.1177337641126" id="4569055436237489041">
@@ -162,9 +159,6 @@
   <root id="6121364846593714734">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="6121364846593714735">
       <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="cs0q.1740160309778171016" resolveInfo="Service" />
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="8841589787282446876">
-        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="cs0q.1740160309778171016" resolveInfo="Service" />
-      </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="6121364846593714737">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="cs0q.1740160309778171016" resolveInfo="Service" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.ParameterizedSubstituteMenuPart" typeId="tpdg.1177337641126" id="6121364846593714738">
@@ -248,9 +242,6 @@
   <root id="6183559520328570475">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="6183559520328570476">
       <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="cs0q.1740160309778171006" resolveInfo="BeanExtensionPoint" />
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="8841589787282446856">
-        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="cs0q.1740160309778171006" resolveInfo="BeanExtensionPoint" />
-      </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="6183559520328570478">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="cs0q.1740160309778171006" resolveInfo="BeanExtensionPoint" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.ParameterizedSubstituteMenuPart" typeId="tpdg.1177337641126" id="6183559520328570480">
@@ -426,9 +417,6 @@
   <root id="6618365175184889515">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="6618365175184889516">
       <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="cs0q.1740160309778171007" resolveInfo="IntefaceExtensionPoint" />
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="8841589787282446873">
-        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="cs0q.1740160309778171007" resolveInfo="IntefaceExtensionPoint" />
-      </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="6618365175184889518">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="cs0q.1740160309778171007" resolveInfo="IntefaceExtensionPoint" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.ParameterizedSubstituteMenuPart" typeId="tpdg.1177337641126" id="6618365175184901013">
@@ -572,9 +560,6 @@
   <root id="6618365175184971339">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="6618365175184971340">
       <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="cs0q.6121364846593790726" resolveInfo="BeanExtensionAttribute" />
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="8841589787282446072">
-        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="cs0q.6121364846593790726" resolveInfo="BeanExtensionAttribute" />
-      </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="6618365175184971341">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="cs0q.6121364846593790726" resolveInfo="BeanExtensionAttribute" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.ParameterizedSubstituteMenuPart" typeId="tpdg.1177337641126" id="6618365175184971342">
@@ -659,9 +644,6 @@
   <root id="7161354651095863072">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="7161354651095863073">
       <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="cs0q.6121364846593763655" resolveInfo="BeanExtension" />
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="8841589787282446070">
-        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="cs0q.6121364846593763655" resolveInfo="BeanExtension" />
-      </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="7161354651095863074">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="cs0q.6121364846593763655" resolveInfo="BeanExtension" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.ParameterizedSubstituteMenuPart" typeId="tpdg.1177337641126" id="7161354651095863075">
@@ -798,9 +780,6 @@
   <root id="7161354651095876187">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="7161354651095876188">
       <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="cs0q.6121364846593790701" resolveInfo="InterfaceExtension" />
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="8841589787282446868">
-        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="cs0q.6121364846593790701" resolveInfo="InterfaceExtension" />
-      </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="7161354651095876189">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="cs0q.6121364846593790701" resolveInfo="InterfaceExtension" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.ParameterizedSubstituteMenuPart" typeId="tpdg.1177337641126" id="7161354651095876190">
@@ -1222,9 +1201,6 @@
   <root id="3886786302241755455">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="3886786302241755456">
       <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="cs0q.4383174161802026705" resolveInfo="GroupReference" />
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="8841589787282446865">
-        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="cs0q.4383174161802026705" resolveInfo="GroupReference" />
-      </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="3886786302241755462">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="cs0q.4383174161802026705" resolveInfo="GroupReference" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.ParameterizedSubstituteMenuPart" typeId="tpdg.1177337641126" id="3886786302241755464">
@@ -1343,9 +1319,6 @@
   <root id="8841589787282420429">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="8841589787282420430">
       <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="cs0q.1740160309778170999" resolveInfo="Components" />
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.RemovePart" typeId="tpdg.1177409831820" id="8841589787282446863">
-        <link role="conceptToRemove" roleId="tpdg.1177409838946" targetNodeId="cs0q.1740160309778170999" resolveInfo="Components" />
-      </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="8841589787282420435">
         <link role="concept" roleId="tpdg.1177333551023" targetNodeId="cs0q.1740160309778170999" resolveInfo="Components" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.ParameterizedSubstituteMenuPart" typeId="tpdg.1177337641126" id="8841589787282420437">
