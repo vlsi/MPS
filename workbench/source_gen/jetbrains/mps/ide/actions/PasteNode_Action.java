@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.PasteEnv;
-import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.ide.resolve.Resolver;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.ProjectPane;

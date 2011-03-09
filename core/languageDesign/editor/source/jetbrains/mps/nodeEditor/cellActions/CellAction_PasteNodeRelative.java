@@ -22,7 +22,7 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.ide.resolve.Resolver;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
