@@ -43,7 +43,8 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_7923290658387314702(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel());
+    LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel());
+    return false;
   }
 
   public static Object propertyMacro_GetPropertyValue_1225195370259(final IOperationContext operationContext, final PropertyMacroContext _context) {
