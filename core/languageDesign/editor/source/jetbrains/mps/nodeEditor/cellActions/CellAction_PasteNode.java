@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.datatransfer.CopyPasteUtil;
+import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.datatransfer.PasteNodeData;

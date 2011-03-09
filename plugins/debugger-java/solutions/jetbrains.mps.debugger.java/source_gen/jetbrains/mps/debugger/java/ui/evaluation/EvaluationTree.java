@@ -32,7 +32,7 @@ import java.awt.Color;
 import jetbrains.mps.ide.messages.Icons;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.datatransfer.CopyPasteUtil;
+import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 
 /*package*/ class EvaluationTree extends MPSTree implements DataProvider {

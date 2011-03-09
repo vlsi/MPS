@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
-import jetbrains.mps.datatransfer.TextPasteUtil;
+import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import javax.swing.JScrollPane;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;

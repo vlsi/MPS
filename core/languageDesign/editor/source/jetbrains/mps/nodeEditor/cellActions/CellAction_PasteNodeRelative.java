@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor.cellActions;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.datatransfer.CopyPasteUtil;
+import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.logging.Logger;
