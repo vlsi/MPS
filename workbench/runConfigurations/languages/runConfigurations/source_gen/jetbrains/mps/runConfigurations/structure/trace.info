@@ -14,7 +14,7 @@
   <unitInfo fileName="DebuggerSettings_Parameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.DebuggerSettings_Parameter" />
   <unitInfo fileName="EditorPropertyDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.EditorPropertyDeclaration" />
   <unitInfo fileName="Configuration_Parameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.Configuration_Parameter" />
-  <unitInfo fileName="StartProcessStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.StartProcessStatement" />
+  <unitInfo fileName="StartStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.StartStatement" />
   <unitInfo fileName="CommandMethod.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.CommandMethod" />
   <unitInfo fileName="ProcessType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.ProcessType" />
   <unitInfo fileName="TemplateParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.TemplateParameter" />
@@ -25,6 +25,7 @@
   <unitInfo fileName="SettingsEditorType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.SettingsEditorType" />
   <unitInfo fileName="IconPath.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.IconPath" />
   <unitInfo fileName="PersistentConfigurationType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.PersistentConfigurationType" />
+  <unitInfo fileName="StartProcessHandlerStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.StartProcessHandlerStatement" />
   <unitInfo fileName="CommandReferenceExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.CommandReferenceExpression" />
   <unitInfo fileName="TemplatePersistentPropertyType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.TemplatePersistentPropertyType" />
   <unitInfo fileName="EditorExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.EditorExpression" />
@@ -32,11 +33,11 @@
   <unitInfo fileName="ReportConfigurationErrorStatement.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.ReportConfigurationErrorStatement" />
   <unitInfo fileName="ComplexRunConfigurationExecutor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.ComplexRunConfigurationExecutor" />
   <unitInfo fileName="RunConfiguration.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.RunConfiguration" />
-  <unitInfo fileName="StartProcessHandlerStatement.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.StartProcessHandlerStatement" />
+  <unitInfo fileName="StartCommandStatement.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.StartCommandStatement" />
   <unitInfo fileName="PersistentConfigurationTemplate.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplate" />
   <unitInfo fileName="CommandStartExpression.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.CommandStartExpression" />
-  <unitInfo fileName="ProcessBuilderExpression.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.ProcessBuilderExpression" />
   <unitInfo fileName="PersistentConfigurationTemplateInitializer.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.PersistentConfigurationTemplateInitializer" />
+  <unitInfo fileName="ProcessBuilderExpression.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.ProcessBuilderExpression" />
   <unitInfo fileName="CommandDebuggerOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.CommandDebuggerOperation" />
   <unitInfo fileName="SettingsEditor.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.SettingsEditor" />
   <unitInfo fileName="ConfigurationFromExecutorReference.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.runConfigurations.structure.ConfigurationFromExecutorReference" />
