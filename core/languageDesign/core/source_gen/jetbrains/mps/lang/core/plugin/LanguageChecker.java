@@ -30,6 +30,7 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
@@ -199,7 +200,18 @@ public class LanguageChecker implements IEditorChecker, EditorMessageOwner {
     if (!(wasCheckedOnce)) {
       errorsComponent.clear();
     }
-    boolean changed = errorsComponent.check(node, myRules, operationContext);
+    boolean changed = false;
+    TypeCheckingContext typecheckingContext = editorComponent.getTypeCheckingContext();
+    try {
+      if (typecheckingContext != null) {
+        typecheckingContext.setIsNonTypesystemComputation();
+      }
+      changed = errorsComponent.check(node, myRules, operationContext);
+    } finally {
+      if (typecheckingContext != null) {
+        typecheckingContext.resetIsNonTypesystemComputation();
+      }
+    }
     myMessagesChanged = changed;
     for (IErrorReporter errorReporter : errorsComponent.getErrors()) {
 

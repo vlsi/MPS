@@ -215,6 +215,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.ConstraintsChecker" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.LanguageErrorsComponent" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.IEditorChecker" />
