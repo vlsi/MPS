@@ -456,10 +456,12 @@ public class ConfReader {
   }
 
   public static void setProperty(String property, SNode node, String value) {
-    node.setProperty(property, (value != null ?
-      value :
-      ""
-    ), false);
+    if (value != null) {
+      node.setProperty(property, (value != null ?
+        value :
+        ""
+      ), false);
+    }
   }
 
   private static String namespace(String fqName) {

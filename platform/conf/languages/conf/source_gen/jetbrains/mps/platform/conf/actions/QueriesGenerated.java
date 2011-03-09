@@ -390,7 +390,43 @@ public class QueriesGenerated {
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.Group"), "alias") + " " + SPropertyOperations.getString((item), "id");
+                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.GroupReference"), "alias") + " " + SPropertyOperations.getString((item), "id");
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+            });
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Components_8841589787282420430(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.Components");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Calculable calc = new Calculable() {
+          public Object calculate() {
+            return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:d3304d29-cd93-4341-982d-9f0d1a8b40bf(jetbrains.mps.platform.conf.structure)", "Level"));
+          }
+        };
+        Iterable<SNode> queryResult = (Iterable) calc.calculate();
+        if (queryResult != null) {
+          for (final SNode item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode cs = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.Components", null);
+                SPropertyOperations.set(cs, "level", SEnumOperations.getEnumMemberValue((item)));
+                return cs;
+              }
+
+              public String getMatchingText(String pattern) {
+                return SEnumOperations.getEnumMemberValue((item)).toLowerCase() + "Components";
               }
 
               public String getVisibleMatchingText(String pattern) {

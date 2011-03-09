@@ -9,26 +9,26 @@
   <unitInfo fileName="Extension_name.java" startLine="55" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Extension_name$_Inline_rol0et_a0a" />
   <unitInfo fileName="BeanExtension_Editor.java" startLine="75" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.BeanExtension_Editor$_Inline_s16oji_a0a" />
   <unitInfo fileName="XInclude_Editor.java" startLine="84" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.XInclude_Editor$_Inline_87hi9q_a1a" />
-  <unitInfo fileName="BeanExtensionPoint_Editor.java" startLine="86" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.BeanExtensionPoint_Editor$_Inline_g4nm2t_a2a" />
   <unitInfo fileName="IntefaceExtensionPoint_Editor.java" startLine="86" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.IntefaceExtensionPoint_Editor$_Inline_wfmmwk_a2a" />
+  <unitInfo fileName="BeanExtensionPoint_Editor.java" startLine="86" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.BeanExtensionPoint_Editor$_Inline_g4nm2t_a2a" />
   <unitInfo fileName="InterfaceExtension_Editor.java" startLine="103" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.InterfaceExtension_Editor$_Inline_4lf1wj_a0a" />
-  <unitInfo fileName="PluginDependency_Editor.java" startLine="110" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.PluginDependency_Editor$_Inline_at6inr_a1a" />
   <unitInfo fileName="ActionReference_Editor.java" startLine="110" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ActionReference_Editor$_Inline_ld3k57_a1a" />
+  <unitInfo fileName="PluginDependency_Editor.java" startLine="111" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.PluginDependency_Editor$_Inline_at6inr_a1a" />
   <unitInfo fileName="Component_Editor.java" startLine="125" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Component_Editor$_Inline_3k4y3b_a2a" />
-  <unitInfo fileName="Service_Editor.java" startLine="136" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Service_Editor$_Inline_m4h17_a1b0" />
   <unitInfo fileName="InterfaceExtension_Editor.java" startLine="136" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.InterfaceExtension_Editor$_Inline_4lf1wj_a1b0" />
+  <unitInfo fileName="Service_Editor.java" startLine="136" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Service_Editor$_Inline_m4h17_a1b0" />
   <unitInfo fileName="Component_Editor.java" startLine="158" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Component_Editor$_Inline_3k4y3b_a4a" />
   <unitInfo fileName="Service_Editor.java" startLine="169" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Service_Editor$_Inline_m4h17_a3b0" />
   <unitInfo fileName="GroupReference_Editor.java" startLine="194" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.GroupReference_Editor$_Inline_b7gqtc_a1a" />
   <unitInfo fileName="Action_Editor.java" startLine="208" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Action_Editor$_Inline_8bscln_a2b0" />
   <unitInfo fileName="Group_Editor.java" startLine="220" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Group_Editor$_Inline_o84zp2_a2b0a" />
   <unitInfo fileName="GroupReference_Editor.java" startLine="227" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.GroupReference_Editor$_Inline_b7gqtc_a1a2a" />
-  <unitInfo fileName="ComponentsRoot_Editor.java" startLine="67" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ComponentsRoot_Editor$nodeListHandler_bbnw3e_b1a" />
-  <unitInfo fileName="ComponentRoot_Editor.java" startLine="67" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ComponentRoot_Editor$nodeListHandler_d2bpdi_b1a" />
   <unitInfo fileName="RootRoot_Editor.java" startLine="67" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.RootRoot_Editor$nodeListHandler_p164r8_b1a" />
-  <unitInfo fileName="Extensions_Editor.java" startLine="68" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Extensions_Editor$fragmentListHandler_ppatbw_b1a" />
-  <unitInfo fileName="ExtensionPoints_Editor.java" startLine="68" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ExtensionPoints_Editor$fragmentListHandler_cw3nt1_b1a" />
+  <unitInfo fileName="ComponentRoot_Editor.java" startLine="67" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ComponentRoot_Editor$nodeListHandler_d2bpdi_b1a" />
+  <unitInfo fileName="ComponentsRoot_Editor.java" startLine="67" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ComponentsRoot_Editor$nodeListHandler_bbnw3e_b1a" />
   <unitInfo fileName="Actions_Editor.java" startLine="68" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Actions_Editor$fragmentListHandler_ji0n87_b1a" />
+  <unitInfo fileName="ExtensionPoints_Editor.java" startLine="68" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ExtensionPoints_Editor$fragmentListHandler_cw3nt1_b1a" />
+  <unitInfo fileName="Extensions_Editor.java" startLine="68" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Extensions_Editor$fragmentListHandler_ppatbw_b1a" />
   <unitInfo fileName="Components_Editor.java" startLine="84" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Components_Editor$fragmentListHandler_dr39ej_b1a" />
   <unitInfo fileName="BeanExtension_Editor.java" startLine="108" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.BeanExtension_Editor$attributeListHandler_s16oji_b0" />
   <unitInfo fileName="Plugin_Editor.java" startLine="427" startPosition="0" endLine="464" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Plugin_Editor$nodeListHandler_o3c6bg_b3a" />
@@ -39,34 +39,34 @@
   <unitInfo fileName="Group_Editor.java" startLine="302" startPosition="0" endLine="350" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Group_Editor$addToGroupListHandler_o84zp2_b3a0" />
   <unitInfo fileName="Plugin_Editor.java" startLine="329" startPosition="0" endLine="377" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Plugin_Editor$detailsListHandler_o3c6bg_d1c0" />
   <unitInfo fileName="Plugin_Editor.java" startLine="378" startPosition="0" endLine="426" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Plugin_Editor$dependsListHandler_o3c6bg_e1c0" />
-  <unitInfo fileName="BeanExtensionAttribute_Editor.java" startLine="16" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.BeanExtensionAttribute_Editor" />
   <unitInfo fileName="PluginDetails_Editor.java" startLine="16" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.PluginDetails_Editor" />
+  <unitInfo fileName="BeanExtensionAttribute_Editor.java" startLine="16" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.BeanExtensionAttribute_Editor" />
   <unitInfo fileName="Extension_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Extension_Editor" />
   <unitInfo fileName="IdeaVersion_Editor.java" startLine="16" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.IdeaVersion_Editor" />
   <unitInfo fileName="Extension_name.java" startLine="17" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Extension_name" />
-  <unitInfo fileName="PluginHelpset_Editor.java" startLine="16" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.PluginHelpset_Editor" />
-  <unitInfo fileName="ComponentsRoot_Editor.java" startLine="23" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ComponentsRoot_Editor" />
-  <unitInfo fileName="ComponentRoot_Editor.java" startLine="23" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ComponentRoot_Editor" />
+  <unitInfo fileName="PluginHelpset_Editor.java" startLine="16" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.PluginHelpset_Editor" />
   <unitInfo fileName="RootRoot_Editor.java" startLine="23" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.RootRoot_Editor" />
-  <unitInfo fileName="Extensions_Editor.java" startLine="23" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Extensions_Editor" />
-  <unitInfo fileName="ExtensionPoints_Editor.java" startLine="23" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ExtensionPoints_Editor" />
+  <unitInfo fileName="ComponentRoot_Editor.java" startLine="23" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ComponentRoot_Editor" />
+  <unitInfo fileName="ComponentsRoot_Editor.java" startLine="23" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ComponentsRoot_Editor" />
   <unitInfo fileName="Actions_Editor.java" startLine="23" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Actions_Editor" />
+  <unitInfo fileName="ExtensionPoints_Editor.java" startLine="23" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ExtensionPoints_Editor" />
+  <unitInfo fileName="Extensions_Editor.java" startLine="23" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Extensions_Editor" />
   <unitInfo fileName="ConfigurationXmlDocument_Editor.java" startLine="20" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ConfigurationXmlDocument_Editor" />
   <unitInfo fileName="Components_Editor.java" startLine="27" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Components_Editor" />
   <unitInfo fileName="XInclude_Editor.java" startLine="19" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.XInclude_Editor" />
-  <unitInfo fileName="BeanExtensionPoint_Editor.java" startLine="19" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.BeanExtensionPoint_Editor" />
   <unitInfo fileName="IntefaceExtensionPoint_Editor.java" startLine="19" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.IntefaceExtensionPoint_Editor" />
+  <unitInfo fileName="BeanExtensionPoint_Editor.java" startLine="19" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.BeanExtensionPoint_Editor" />
   <unitInfo fileName="BaseConcept_brokenRefs.java" startLine="26" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.BaseConcept_brokenRefs" />
   <unitInfo fileName="MouseShortcut_Editor.java" startLine="20" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.MouseShortcut_Editor" />
   <unitInfo fileName="BeanExtension_Editor.java" startLine="26" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.BeanExtension_Editor" />
   <unitInfo fileName="ActionReference_Editor.java" startLine="19" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.ActionReference_Editor" />
-  <unitInfo fileName="PluginDependency_Editor.java" startLine="18" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.PluginDependency_Editor" />
+  <unitInfo fileName="PluginDependency_Editor.java" startLine="18" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.PluginDependency_Editor" />
   <unitInfo fileName="Shortcut_Editor.java" startLine="20" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Shortcut_Editor" />
   <unitInfo fileName="PluginVendor_Editor.java" startLine="16" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.PluginVendor_Editor" />
   <unitInfo fileName="InterfaceExtension_Editor.java" startLine="21" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.InterfaceExtension_Editor" />
   <unitInfo fileName="Component_Editor.java" startLine="27" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Component_Editor" />
   <unitInfo fileName="Service_Editor.java" startLine="27" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Service_Editor" />
-  <unitInfo fileName="AbstractAction_properties.java" startLine="18" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.AbstractAction_properties" />
+  <unitInfo fileName="AbstractAction_properties.java" startLine="18" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.AbstractAction_properties" />
   <unitInfo fileName="GroupReference_Editor.java" startLine="25" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.GroupReference_Editor" />
   <unitInfo fileName="Action_Editor.java" startLine="31" startPosition="0" endLine="339" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Action_Editor" />
   <unitInfo fileName="Group_Editor.java" startLine="31" startPosition="0" endLine="351" endPosition="0" unitName="jetbrains.mps.platform.conf.editor.Group_Editor" />

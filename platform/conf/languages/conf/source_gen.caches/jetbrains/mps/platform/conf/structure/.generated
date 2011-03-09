@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9hpv2a4ogpfvvi87g2fgy3rzqcxhtgz">
+<dependencies version="2" modelHash="-837ux2jw8wvue8e7sq29t2d9joz8zon">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -14,7 +14,6 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-2zza588ivcb1gp7iczo4wkv2s01itc" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="222hfoec4eclho8dndo8bvi3jfygysm" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d5ax0i0w21fsp3r2lvns9jctqjjbwsh" />
-  <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" hash="-6gb8gxttzcitamzi0lppg9gf5zslc1q" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-5cfaxtdlkbuy22agcqk9x6g9ooa98ti" />
   <common hash="2dtt2nc2jpxzmqn4nrvt4a8zkknxo2x">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -27,10 +26,11 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Conf_Language.java" />
   </common>
-  <source id="4635942846893810046" name="Component" hash="-8m2xfxgznsgrl1clwqtuzm266ws46uu">
+  <source id="4635942846893810046" name="Component" hash="-3hnwfj20yz4wklto8jf3xl7dhzu1wxy">
     <dep root="5066720069350533029" />
     <dep root="5314521579133239127" />
     <dep root="5314521579133239148" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -52,6 +52,7 @@
     <dep root="5314521579133239127" />
     <dep root="5314521579133239132" />
     <dep root="5314521579133239148" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -79,7 +80,7 @@
     <dep root="5314521579133239127" />
     <dep root="5314521579133239148" />
     <dep root="6536266708345244486" />
-    <dep root="6536266708345244494" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -113,7 +114,8 @@
   </source>
   <source id="5314521579133271086" name="ConfigurationXmlDocument" hash="7lx8wif6un7eo5h27eauq0trhb13dfk">
     <dep root="5066720069350533029" />
-    <dep root="6536266708345244494" />
+    <dep root="6536266708345244486" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -142,6 +144,7 @@
     <dep root="5066720069350533029" />
     <dep root="5314521579133239148" />
     <dep root="5314521579133271086" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -160,6 +163,7 @@
   </source>
   <source id="5066720069350533029" name="ConfigurationXmlNode" hash="-8ay1vgjj8aykjjzj7dddvzawu9mxgha">
     <dep root="5314521579133239148" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -179,6 +183,7 @@
     <dep root="5314521579133239148" />
     <dep root="5314521579133239158" />
     <dep root="8009656244648532777" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -193,52 +198,16 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ExtensionPoints.java" />
   </source>
-  <source id="1740160309778170999" name="Components" hash="-38m6wn41zfwvupibphqvnkc5381ocd8" dependsOnCreated="true">
-    <dep root="1740160309778171006" />
-    <dep root="1740160309778171007" />
+  <source id="1740160309778170999" name="Components" hash="-38m6wn41zfwvupibphqvnkc5381ocd8">
     <dep root="1740160309778171009" />
     <dep root="1740160309778171016" />
     <dep root="1740160309778171018" />
-    <dep root="1740160309778208723" />
-    <dep root="1740160309778217806" />
-    <dep root="4383174161801812099" />
-    <dep root="4383174161801969971" />
-    <dep root="4383174161802016293" />
-    <dep root="4383174161802016297" />
-    <dep root="4383174161802016298" />
-    <dep root="4383174161802026701" />
-    <dep root="4383174161802026705" />
-    <dep root="4383174161802026707" />
-    <dep root="4635942846893810046" />
-    <dep root="5066720069350533013" />
-    <dep root="5066720069350533017" />
-    <dep root="5066720069350533027" />
     <dep root="5066720069350533029" />
-    <dep root="5314521579133239121" />
-    <dep root="5314521579133239127" />
-    <dep root="5314521579133239132" />
     <dep root="5314521579133239148" />
     <dep root="5314521579133239158" />
-    <dep root="5314521579133271086" />
-    <dep root="5522969664585014978" />
-    <dep root="6121364846593763655" />
-    <dep root="6121364846593790701" />
-    <dep root="6121364846593790726" />
-    <dep root="6536266708345244484" />
-    <dep root="6536266708345244486" />
-    <dep root="6536266708345244487" />
-    <dep root="6536266708345244494" />
-    <dep root="6536266708345244502" />
-    <dep root="6536266708345477897" />
-    <dep root="6536266708345477902" />
-    <dep root="6536266708345477909" />
-    <dep root="7130790807395857422" />
-    <dep root="7225089784577918894" />
     <dep root="8009656244648532777" />
     <dep root="8605160448688984307" />
-    <dep root="8605160448688984319" />
     <dep root="8605160448688984324" />
-    <dep root="8605160448689289377" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -252,11 +221,10 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Components.java" />
   </source>
-  <source id="1740160309778171006" name="BeanExtensionPoint" hash="-92cgqhygsp98crkbz7ayj2x6mwf26ud">
+  <source id="1740160309778171006" name="BeanExtensionPoint" hash="ae8n3ej5jt41ipaj5jvc4jwv94o31i7">
     <dep root="5314521579133239132" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -271,7 +239,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BeanExtensionPoint.java" />
   </source>
-  <source id="1740160309778171007" name="IntefaceExtensionPoint" hash="6sql6h01lys00tj8g2ywk12olgiyaki">
+  <source id="1740160309778171007" name="IntefaceExtensionPoint" hash="-4n83wkh6w0ewhzg0bob4e0j3vcpczjz">
     <dep root="5314521579133239132" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -302,10 +270,12 @@
     <file name="Level.java" />
     <file name="Level_PropertySupport.java" />
   </source>
-  <source id="1740160309778171016" name="Service" hash="-4fyrl8y6bqmboue0ik4tdqbavcus17u">
+  <source id="1740160309778171016" name="Service" hash="-djpiehril4iehnioy7gakj7g0f42o2s">
+    <dep root="1740160309778170999" />
     <dep root="1740160309778171009" />
     <dep root="1740160309778171018" />
     <dep root="5314521579133239121" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -338,6 +308,7 @@
     <dep root="5314521579133239148" />
     <dep root="5314521579133239158" />
     <dep root="8009656244648532777" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -357,6 +328,7 @@
     <dep root="5314521579133239148" />
     <dep root="5314521579133239158" />
     <dep root="8009656244648532777" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -371,7 +343,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IdeaPluginRoot.java" />
   </source>
-  <source id="6121364846593763655" name="BeanExtension" hash="-8ramtf6pbhlrpz63lx701fthsydnep">
+  <source id="6121364846593763655" name="BeanExtension" hash="-dq84q7428l92pc6xj2gv4vyqhyhicac">
     <dep root="1740160309778171006" />
     <dep root="5314521579133239121" />
     <dep root="6121364846593790726" />
@@ -387,7 +359,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BeanExtension.java" />
   </source>
-  <source id="6121364846593790701" name="InterfaceExtension" hash="-y05u285s247uf2twcezuoq0sj96tya">
+  <source id="6121364846593790701" name="InterfaceExtension" hash="bjajra06t0hbh7rpv7n7ftvvi385ogc">
     <dep root="1740160309778171007" />
     <dep root="5314521579133239121" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -403,8 +375,9 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InterfaceExtension.java" />
   </source>
-  <source id="6121364846593790726" name="BeanExtensionAttribute" hash="-ejy3mp5e6raowkiyje1np9xt3gmscj4">
-    <dep root="6536266708345244494" />
+  <source id="6121364846593790726" name="BeanExtensionAttribute" hash="-6doe018j78lzc73957vflv9k6i2lhc0">
+    <dep root="6536266708345244486" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -430,6 +403,7 @@
     <dep root="5314521579133239148" />
     <dep root="5314521579133239158" />
     <dep root="8009656244648532777" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -448,6 +422,7 @@
     <dep root="5066720069350533029" />
     <dep root="5314521579133239148" />
     <dep root="5314521579133239158" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -467,6 +442,7 @@
     <dep root="5314521579133239148" />
     <dep root="5314521579133239158" />
     <dep root="8009656244648532777" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -495,6 +471,7 @@
     <dep root="6536266708345244502" />
     <dep root="6536266708345477897" />
     <dep root="6536266708345477909" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -528,6 +505,8 @@
     <file name="PluginDependency.java" />
   </source>
   <source id="6536266708345244494" name="PluginVendor" hash="4b26rtxe368x2a8ylkvq9b68b7bo4j4">
+    <dep root="6536266708345244486" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -603,6 +582,7 @@
     <dep root="5314521579133239148" />
     <dep root="5314521579133239158" />
     <dep root="8009656244648532777" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -623,6 +603,7 @@
     <dep root="5314521579133239127" />
     <dep root="5314521579133239148" />
     <dep root="6536266708345244486" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984324" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -690,9 +671,51 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Group.java" />
   </source>
-  <source id="4383174161802026705" name="GroupReference" hash="9ql9t3pjkfvhbxeo97y7l8r3tfrzall">
+  <source id="4383174161802026705" name="GroupReference" hash="9ql9t3pjkfvhbxeo97y7l8r3tfrzall" dependsOnCreated="true">
+    <dep root="1740160309778170999" />
+    <dep root="1740160309778171006" />
+    <dep root="1740160309778171007" />
+    <dep root="1740160309778171009" />
+    <dep root="1740160309778171016" />
+    <dep root="1740160309778171018" />
+    <dep root="1740160309778208723" />
+    <dep root="1740160309778217806" />
+    <dep root="4383174161801812099" />
     <dep root="4383174161801969971" />
+    <dep root="4383174161802016293" />
+    <dep root="4383174161802016297" />
+    <dep root="4383174161802016298" />
     <dep root="4383174161802026701" />
+    <dep root="4383174161802026707" />
+    <dep root="4635942846893810046" />
+    <dep root="5066720069350533013" />
+    <dep root="5066720069350533017" />
+    <dep root="5066720069350533027" />
+    <dep root="5066720069350533029" />
+    <dep root="5314521579133239121" />
+    <dep root="5314521579133239127" />
+    <dep root="5314521579133239132" />
+    <dep root="5314521579133239148" />
+    <dep root="5314521579133239158" />
+    <dep root="5314521579133271086" />
+    <dep root="5522969664585014978" />
+    <dep root="6121364846593763655" />
+    <dep root="6121364846593790701" />
+    <dep root="6121364846593790726" />
+    <dep root="6536266708345244484" />
+    <dep root="6536266708345244486" />
+    <dep root="6536266708345244487" />
+    <dep root="6536266708345244494" />
+    <dep root="6536266708345244502" />
+    <dep root="6536266708345477897" />
+    <dep root="6536266708345477902" />
+    <dep root="6536266708345477909" />
+    <dep root="7130790807395857422" />
+    <dep root="7225089784577918894" />
+    <dep root="8009656244648532777" />
+    <dep root="8605160448688984307" />
+    <dep root="8605160448688984319" />
+    <dep root="8605160448688984324" />
     <dep root="8605160448689289377" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -712,6 +735,7 @@
   </source>
   <source id="4383174161802026707" name="ActionReference" hash="d8fixzlbsn0gttd2lqpi38ohyqxgpl7">
     <dep root="4383174161801969971" />
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984319" />
     <dep root="8605160448688984324" />
     <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
@@ -756,6 +780,7 @@
     <file name="IActionItem.java" />
   </source>
   <source id="8605160448688984324" name="Separator" hash="-bcocmcmc2rt06k61ia8l2ba9n3efb5s">
+    <dep root="8605160448688984307" />
     <dep root="8605160448688984319" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
