@@ -33,7 +33,6 @@
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <import index="afxk" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" implicit="yes" />
   <import index="ws6q" modelUID="f:java_stub#1d6e05d7-9de9-40a7-9dad-7b8444280942#jetbrains.mps.plugins(jetbrains.mps.plugins@java_stub)" version="-1" implicit="yes" />
-  <import index="tp4s" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3754890006475666593">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="uhxm.2401501559171345993" resolveInfo="RunConfiguration" />
@@ -1633,7 +1632,7 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1035654111815830692">
               <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="1035654111815830693" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1035654111815830694">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp4s.6301602537765917913" resolveInfo="getFullPath" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1035654111815830652" resolveInfo="getFullPath" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1035654111815830695">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1035654111815830719" resolveInfo="module" />
                 </node>
@@ -1661,7 +1660,7 @@
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1035654111815830705">
                   <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="1035654111815830706" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1035654111815830707">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp4s.1588596821190636875" resolveInfo="getPrefix" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1035654111815830629" resolveInfo="getPrefix" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1035654111815830708">
                       <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1035654111815830697" resolveInfo="sourcePath" />
                     </node>

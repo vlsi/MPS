@@ -4,7 +4,6 @@ package jetbrains.mps.runConfigurations.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NodeNameUtil;
@@ -17,9 +16,9 @@ public class IconPath_Behavior {
   }
 
   public static boolean call_isResoureIcon_1035654111815830674(SNode thisNode, IModule module) {
-    String fullPath = ActionDeclaration_Behavior.call_getFullPath_6301602537765917913(thisNode, module);
+    String fullPath = IconPath_Behavior.call_getFullPath_1035654111815830652(thisNode, module);
     for (String sourcePath : ListSequence.fromList(module.getSourcePaths())) {
-      String prefix = ActionDeclaration_Behavior.call_getPrefix_1588596821190636875(thisNode, sourcePath);
+      String prefix = IconPath_Behavior.call_getPrefix_1035654111815830629(thisNode, sourcePath);
       if (fullPath.startsWith(prefix)) {
         return true;
       }
