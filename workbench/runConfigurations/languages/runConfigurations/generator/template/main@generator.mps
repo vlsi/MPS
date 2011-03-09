@@ -6503,7 +6503,7 @@
                       <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3931156975943057547">
                         <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3931156975943057546" />
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3931156975943057551">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ojho.3931156975943044388" resolveInfo="isResourceIcon" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ojho.1035654111815830674" resolveInfo="isResoureIcon" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3931156975943057564">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3931156975943057565">
                               <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="3931156975943057566" />
@@ -6541,7 +6541,7 @@
                                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3931156975943075227">
                                     <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3931156975943075228" />
                                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3931156975943075244">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ojho.3931156975942961964" resolveInfo="getIconResourcePath" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ojho.1035654111815830578" resolveInfo="getIconResourcePath" />
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3931156975943075251">
                                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3931156975943075246">
                                           <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="3931156975943075245" />

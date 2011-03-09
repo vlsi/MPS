@@ -4,41 +4,45 @@ package jetbrains.mps.runConfigurations.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.plugins.MacrosUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.plugins.MacrosUtil;
 
 public class IconPath_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static boolean call_isResourceIcon_3931156975943044388(SNode thisNode, IModule module) {
-    String fullPath = MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, "path"), module.getModuleFqName());
-    for (String source : ListSequence.fromList(module.getSourcePaths())) {
-      String prefix = IconPath_Behavior.call_getPrefix_3931156975942961996(thisNode, source);
-      if (fullPath.contains(prefix)) {
+  public static boolean call_isResoureIcon_1035654111815830674(SNode thisNode, IModule module) {
+    String fullPath = ActionDeclaration_Behavior.call_getFullPath_6301602537765917913(thisNode, module);
+    for (String sourcePath : ListSequence.fromList(module.getSourcePaths())) {
+      String prefix = ActionDeclaration_Behavior.call_getPrefix_1588596821190636875(thisNode, sourcePath);
+      if (fullPath.startsWith(prefix)) {
         return true;
       }
     }
     return false;
   }
 
-  public static String call_getIconResourcePath_3931156975942961964(SNode thisNode, IModule module) {
-    String fullPath = MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, "path"), module.getModuleFqName());
-    for (String source : ListSequence.fromList(module.getSourcePaths())) {
-      String prefix = IconPath_Behavior.call_getPrefix_3931156975942961996(thisNode, source);
-      if (fullPath.contains(prefix)) {
-        int index = fullPath.indexOf(prefix);
-        return fullPath.substring(index + prefix.length() + 1);
+  public static String call_getIconResourcePath_1035654111815830578(SNode thisNode, IModule module) {
+    String fullPath = IconPath_Behavior.call_getFullPath_1035654111815830652(thisNode, module);
+    for (String sourcePath : ListSequence.fromList(module.getSourcePaths())) {
+      String prefix = IconPath_Behavior.call_getPrefix_1035654111815830629(thisNode, sourcePath);
+      if (fullPath.startsWith(prefix)) {
+        return fullPath.substring(prefix.length() + 1);
       }
     }
-    throw new RuntimeException("Icon path " + SPropertyOperations.getString(thisNode, "path") + " does not lie inside module " + module + " sources.");
+    throw new RuntimeException("Icon path " + SPropertyOperations.getString(thisNode, "path") + " is outside of any source folders.");
   }
 
-  public static String call_getPrefix_3931156975942961996(SNode thisNode, String sourcePath) {
-    return sourcePath + "/" + NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.lang.core.structure.INamedConcept"))).replace(".", "/");
+  public static String call_getPrefix_1035654111815830629(SNode thisNode, String sourcePath) {
+    return sourcePath.replace("\\", "/") + "/" + NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.lang.core.structure.INamedConcept"))).replace(".", "/");
+  }
+
+  public static String call_getFullPath_1035654111815830652(SNode thisNode, IModule module) {
+    return MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, "path"), module.getModuleFqName()).replace("\\", "/");
   }
 }

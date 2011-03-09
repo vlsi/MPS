@@ -236,7 +236,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_3931156975943075222(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // todo this is a hack to support icons in plugins 
-    return IconPath_Behavior.call_getIconResourcePath_3931156975942961964(_context.getNode(), _context.getInvocationContext().getModule());
+    return IconPath_Behavior.call_getIconResourcePath_1035654111815830578(_context.getNode(), _context.getInvocationContext().getModule());
   }
 
   public static Object propertyMacro_GetPropertyValue_4762811064051191935(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -614,7 +614,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_3931156975943044417(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(IconPath_Behavior.call_isResourceIcon_3931156975943044388(_context.getNode(), _context.getInvocationContext().getModule()));
+    return !(IconPath_Behavior.call_isResoureIcon_1035654111815830674(_context.getNode(), _context.getInvocationContext().getModule()));
   }
 
   public static boolean ifMacro_Condition_456055012090411300(final IOperationContext operationContext, final IfMacroContext _context) {
