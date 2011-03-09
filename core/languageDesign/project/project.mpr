@@ -4,10 +4,6 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="Git.Settings">
-    <option name="CHECKOUT_INCLUDE_TAGS" value="false" />
-    <option name="UPDATE_CHANGES_POLICY" value="STASH" />
-  </component>
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/solutions/jetbrains.mps.lang.project.sandbox/jetbrains.mps.lang.project.sandbox.msd" />
@@ -23,7 +19,7 @@
   </component>
   <component name="ProjectRootManager" version="2" />
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>
 

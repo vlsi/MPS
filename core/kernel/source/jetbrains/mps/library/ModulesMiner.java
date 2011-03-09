@@ -98,12 +98,16 @@ public class ModulesMiner {
     return result;
   }
 
-  public List<ModuleDescriptor> collectModuleDescriptors(IFile dir, boolean refreshFiles) {
-    List<ModuleDescriptor> result = new ArrayList<ModuleDescriptor>();
-    readModuleDescriptors(dir, new HashSet<IFile>(), result, refreshFiles, new DescriptorReader<ModuleDescriptor>() {
+  public List<ModuleHandle> collectModules(IFile dir, boolean refreshFiles) {
+    List<ModuleHandle> result = new ArrayList<ModuleHandle>();
+    readModuleDescriptors(dir, new HashSet<IFile>(), result, refreshFiles, new DescriptorReader<ModuleHandle>() {
       @Override
-      public ModuleDescriptor read(IFile file, Set<IFile> excludes) {
-        return loadDescriptorOnly_internal(file, getModuleExtension(file.getName()), excludes);
+      public ModuleHandle read(IFile file, Set<IFile> excludes) {
+        ModuleDescriptor moduleDescriptor = loadDescriptorOnly_internal(file, excludes);
+        if(moduleDescriptor != null) {
+          return new ModuleHandle(file, moduleDescriptor);
+        }
+        return null;
       }
     });
     return result;
@@ -146,23 +150,34 @@ public class ModulesMiner {
     }
   }
 
-  private ModuleDescriptor loadDescriptorOnly_internal(IFile descriptorFile, String extension, Set<IFile> excludes) {
-    ModuleDescriptor descriptor = null;
+  public ModuleDescriptor loadModuleDescriptor(IFile file) {
+    String extension = getModuleExtension(file.getName());
     try {
       Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
       if (cls == Language.class) {
-        descriptor = LanguageDescriptorPersistence.loadLanguageDescriptor(descriptorFile);
+        return LanguageDescriptorPersistence.loadLanguageDescriptor(file);
       } else if (cls == Solution.class) {
-        descriptor = SolutionDescriptorPersistence.loadSolutionDescriptor(descriptorFile);
+        return SolutionDescriptorPersistence.loadSolutionDescriptor(file);
       } else {
-        descriptor = DevkitDescriptorPersistence.loadDevKitDescriptor(descriptorFile);
+        return DevkitDescriptorPersistence.loadDevKitDescriptor(file);
       }
+    } catch (Exception t) {
+      LOG.error("Fail to load module from descriptor " + file.getAbsolutePath(), t);
+      return null;
+    }
+  }
 
-      processExcludes(descriptorFile, descriptor, excludes);
+  private ModuleDescriptor loadDescriptorOnly_internal(IFile descriptorFile, Set<IFile> excludes) {
+    try {
+      ModuleDescriptor descriptor = loadModuleDescriptor(descriptorFile);
+      if(descriptor != null) {
+        processExcludes(descriptorFile, descriptor, excludes);
+      }
+      return descriptor;
     } catch (Exception t) {
       LOG.error("Fail to load module from descriptor " + descriptorFile.getAbsolutePath(), t);
     }
-    return descriptor;
+    return null;
   }
 
   private IModule loadModule_internal(IFile descriptorFile, MPSModuleOwner owner, String extension, Set<IFile> excludes) {
@@ -237,5 +252,23 @@ public class ModulesMiner {
 
   private static interface DescriptorReader<T> {
     T read(IFile file, Set<IFile> excludes);
+  }
+
+  public static class ModuleHandle {
+    private IFile file;
+    private ModuleDescriptor descriptor;
+
+    public ModuleHandle(IFile file, ModuleDescriptor descriptor) {
+      this.file = file;
+      this.descriptor = descriptor;
+    }
+
+    public IFile getFile() {
+      return file;
+    }
+
+    public ModuleDescriptor getDescriptor() {
+      return descriptor;
+    }
   }
 }
