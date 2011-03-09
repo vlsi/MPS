@@ -9,6 +9,7 @@
   <unitInfo fileName="ThisNodeExpression_Editor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ThisNodeExpression_Editor" />
   <unitInfo fileName="ConceptMethodDeclaration_Menu.java" startLine="18" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptMethodDeclaration_Menu" />
   <unitInfo fileName="ConceptMethodDeclaration_Visibility.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptMethodDeclaration_Visibility" />
+  <unitInfo fileName="ConceptDeclarationReference_Editor.java" startLine="56" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptDeclarationReference_Editor$_Inline_dhgas9_a1a" />
   <unitInfo fileName="SuperNodeExpression_Editor.java" startLine="141" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.SuperNodeExpression_Editor$_Inline_n52m2z_a1b0" />
   <unitInfo fileName="SuperNodeExpression_Editor.java" startLine="174" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.SuperNodeExpression_Editor$_Inline_n52m2z_a1a" />
   <unitInfo fileName="ConceptMethodDeclaration_Editor.java" startLine="537" startPosition="0" endLine="569" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptMethodDeclaration_Editor$_Inline_gmtuod_a4i2a" />
@@ -16,6 +17,7 @@
   <unitInfo fileName="ConceptBehavior_Editor.java" startLine="608" startPosition="0" endLine="640" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptBehavior_Editor$_Inline_cuxtnd_a1a1b1a" />
   <unitInfo fileName="ConceptBehavior_Editor.java" startLine="574" startPosition="0" endLine="607" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptBehavior_Editor$_Inline_cuxtnd_a1a0" />
   <unitInfo fileName="LocalBehaviorMethodCall_Editor.java" startLine="69" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.LocalBehaviorMethodCall_Editor$_Inline_1qnt20_a0a" />
+  <unitInfo fileName="ConceptDeclarationsHolder_Editor.java" startLine="88" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptDeclarationsHolder_Editor$conceptListHandler_a8oizz_b0" />
   <unitInfo fileName="StaticConceptMethodDeclaration_Editor.java" startLine="328" startPosition="0" endLine="365" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.StaticConceptMethodDeclaration_Editor$annotationListHandler_gggi92_d0" />
   <unitInfo fileName="ConceptMethodDeclaration_Editor.java" startLine="666" startPosition="0" endLine="703" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptMethodDeclaration_Editor$annotationListHandler_gmtuod_f0" />
   <unitInfo fileName="ConceptBehavior_Editor.java" startLine="641" startPosition="0" endLine="693" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptBehavior_Editor$propertiesListHandler_cuxtnd_a6b1a" />
@@ -24,8 +26,10 @@
   <unitInfo fileName="ConceptBehavior_Editor.java" startLine="800" startPosition="0" endLine="852" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptBehavior_Editor$staticMethodListHandler_cuxtnd_k1b0" />
   <unitInfo fileName="StaticConceptMethodDeclaration_Editor.java" startLine="269" startPosition="0" endLine="327" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.StaticConceptMethodDeclaration_Editor$parameterListHandler_gggi92_f2a" />
   <unitInfo fileName="ConceptMethodDeclaration_Editor.java" startLine="603" startPosition="0" endLine="665" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptMethodDeclaration_Editor$parameterListHandler_gmtuod_g2a" />
+  <unitInfo fileName="ConceptDeclarationReference_Editor.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptDeclarationReference_Editor" />
   <unitInfo fileName="LocalBehaviorMethodCall_Editor.java" startLine="24" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.LocalBehaviorMethodCall_Editor" />
   <unitInfo fileName="ConceptConstructorDeclaration_Editor.java" startLine="23" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptConstructorDeclaration_Editor" />
+  <unitInfo fileName="ConceptDeclarationsHolder_Editor.java" startLine="26" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptDeclarationsHolder_Editor" />
   <unitInfo fileName="SuperNodeExpression_Editor.java" startLine="26" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.SuperNodeExpression_Editor" />
   <unitInfo fileName="StaticConceptMethodDeclaration_Editor.java" startLine="42" startPosition="0" endLine="378" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.StaticConceptMethodDeclaration_Editor" />
   <unitInfo fileName="ConceptMethodDeclaration_Editor.java" startLine="49" startPosition="0" endLine="716" endPosition="0" unitName="jetbrains.mps.lang.behavior.editor.ConceptMethodDeclaration_Editor" />
