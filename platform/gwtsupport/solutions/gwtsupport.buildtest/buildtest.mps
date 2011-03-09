@@ -7,11 +7,12 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <import index="9vrl" modelUID="r:9e8f23e3-7bd3-4292-ac1d-5693a6c373f3(jetbrains.mps.internal.collections)" version="-1" />
   <import index="nva4" modelUID="r:6a4f00d3-a72e-48b0-96be-a5139db9536c(jetbrains.mps.baseLanguage.closures)" version="-1" />
-  <import index="ogon" modelUID="f:gwt_stub#com.google.gwt.core(com.google.gwt.core@gwt_stub)" version="-1" />
-  <import index="143" modelUID="f:gwt_stub#com.google.gwt.user(com.google.gwt.user@gwt_stub)" version="-1" />
   <import index="taj" modelUID="f:java_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.core.client(com.google.gwt.core.client@java_stub)" version="-1" />
   <import index="od37" modelUID="f:java_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user.client.ui(com.google.gwt.user.client.ui@java_stub)" version="-1" />
   <import index="63d2" modelUID="f:java_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.dom.client(com.google.gwt.dom.client@java_stub)" version="-1" />
+  <import index="vibg" modelUID="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user(com.google.gwt.user@gwt_stub)" version="-1" />
+  <import index="jxw0" modelUID="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.core(com.google.gwt.core@gwt_stub)" version="-1" />
+  <import index="dn91" modelUID="r:ab8aa33b-a984-44fa-94d6-fd9eb7f4fbaa(collections)" version="-1" />
   <import index="k1iy" modelUID="r:940623f0-75cf-4f64-98fc-aef3fadfaedd(jetbrains.mps.gwt.client.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -28,13 +29,13 @@
   </roots>
   <root id="3789315678729139397">
     <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="3789315678729222221">
-      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="ogon.~Core" resolveInfo="Core" />
+      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="jxw0.~Core" resolveInfo="Core" />
     </node>
     <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="3789315678729222222">
-      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="143.~User" resolveInfo="User" />
+      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="vibg.~User" resolveInfo="User" />
     </node>
     <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="3789315678729139406">
-      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="9vrl.1624295421069330098" resolveInfo="runtime" />
+      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="dn91.3687926015106425021" resolveInfo="runtime" />
     </node>
     <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="3789315678729139408">
       <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="nva4.1624295421069327411" resolveInfo="runtime" />
