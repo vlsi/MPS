@@ -13,6 +13,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.stubs.StubLocation;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.stubs.StubSource;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.stubs.javastub.ASMModelLoader;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
@@ -44,7 +45,7 @@ public class JavaStubs extends BaseStubModelRootManager {
     return result;
   }
 
-  protected void updateModel(final StubLocation location, final SModel model) {
+  protected void updateModel(final StubLocation location, final SModel model, final StubSource source) {
     IClassPathItem cpItem = JavaStubs.this.createClassPathItem(location);
     if (cpItem == null) {
       return;
