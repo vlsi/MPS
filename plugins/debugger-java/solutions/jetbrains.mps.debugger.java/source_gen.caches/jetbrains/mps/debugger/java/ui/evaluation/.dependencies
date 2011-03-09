@@ -70,6 +70,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.datatransfer.CopyPasteUtil" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.model.AbstractEvaluationModel" />
@@ -83,7 +84,6 @@
     <classNode dependClassName="java.io.StringWriter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
-    <classNode dependClassName="jetbrains.mps.datatransfer.CopyPasteUtil" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

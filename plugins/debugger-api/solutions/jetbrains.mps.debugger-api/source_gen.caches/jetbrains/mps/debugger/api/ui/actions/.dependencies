@@ -82,9 +82,9 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.actions.ExportThreadsDialog" file="ExportThreadsDialog.java">
     <classNode dependClassName="javax.swing.JTextArea" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.datatransfer.CopyPasteUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.datatransfer.CopyPasteUtil" />
     <classNode dependClassName="javax.swing.JScrollPane" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.StringBuffer" />
