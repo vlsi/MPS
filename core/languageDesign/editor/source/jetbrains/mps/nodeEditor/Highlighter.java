@@ -28,6 +28,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -58,7 +59,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Object PENDING_LOCK = new Object();
 
   private volatile boolean myStopThread = false;
-  private ProjectManager myProjectManager;
   private FileEditorManager myFileEditorManager;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
@@ -112,16 +112,13 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       myLastCommandTime = System.currentTimeMillis();
     }
   };
-  private ProjectManagerAdapter myProjectCloseListener = new ProjectManagerAdapter() {
-    public void projectClosing(Project project) {
-      if (project != myProject) return;
-      stopUpdater();
-    }
-  };
 
-  public Highlighter(Project project, ProjectManager projectManager, FileEditorManager fileEditorManager, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager, InspectorTool inspector) {
+  /*
+   * MPSProject was used as a parameter of this constructor because corresponding component should be initialised after
+   * MPSProject and un-initialized before it.
+   */
+  public Highlighter(MPSProject mpsProject, Project project, ProjectManager projectManager, FileEditorManager fileEditorManager, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager, InspectorTool inspector) {
     myProject = project;
-    myProjectManager = projectManager;
     myFileEditorManager = fileEditorManager;
     myGlobalSModelEventsManager = eventsManager;
     myClassLoaderManager = classLoaderManager;
@@ -159,12 +156,10 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     ModelAccess.instance().addCommandListener(myCommandListener);
     myThread = new HighlighterThread();
     myThread.start();
-    myProjectManager.addProjectManagerListener(myProjectCloseListener);
   }
 
   public void projectClosed() {
-    myProjectManager.removeProjectManagerListener(myProjectCloseListener);
-// was: stopUpdater();    
+    stopUpdater();
     ModelAccess.instance().removeCommandListener(myCommandListener);
     myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
     myGlobalSModelEventsManager.removeGlobalModelListener(myModelReloadListener);
