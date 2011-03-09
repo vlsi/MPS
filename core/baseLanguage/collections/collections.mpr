@@ -32,6 +32,7 @@
       <solutionPath path="${project}/solutions/internalCollections.test/internalCollections.test.msd" />
       <solutionPath path="${project}/languages/trove/runtime/collections_trove.runtime.msd" folder="" />
       <solutionPath path="${project}/runtime/collections.runtime.msd" folder="" />
+      <solutionPath path="${project}/runtime/gwt/collections.runtime.gwt.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/closures/closures.mpl" />

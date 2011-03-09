@@ -10,12 +10,13 @@
   <import index="taj" modelUID="f:java_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.core.client(com.google.gwt.core.client@java_stub)" version="-1" />
   <import index="od37" modelUID="f:java_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user.client.ui(com.google.gwt.user.client.ui@java_stub)" version="-1" />
   <import index="63d2" modelUID="f:java_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.dom.client(com.google.gwt.dom.client@java_stub)" version="-1" />
+  <import index="dn91" modelUID="r:ab8aa33b-a984-44fa-94d6-fd9eb7f4fbaa(collections)" version="-1" />
+  <import index="jxw0" modelUID="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.core(com.google.gwt.core@gwt_stub)" version="-1" />
+  <import index="vibg" modelUID="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user(com.google.gwt.user@gwt_stub)" version="-1" />
   <import index="k1iy" modelUID="r:940623f0-75cf-4f64-98fc-aef3fadfaedd(jetbrains.mps.gwt.client.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="gc05" modelUID="r:08f902c8-ff6a-43df-b543-532598ca57f7(jetbrains.mps.gwt.client.sandbox)" version="-1" implicit="yes" />
-  <import index="jxw0" modelUID="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.core(jetbrains.mps.gwt.client/com.google.gwt.core@gwt_stub)" version="-1" implicit="yes" />
-  <import index="vibg" modelUID="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user(jetbrains.mps.gwt.client/com.google.gwt.user@gwt_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="k1iy.GWTModule" typeId="k1iy.1572321421811286040" id="8778502744741320291">
       <property name="name" nameId="tpck.1169194664001" value="Test" />
@@ -26,7 +27,7 @@
   </roots>
   <root id="8778502744741320291">
     <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="1957929848381631864">
-      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="9vrl.1624295421069330098" resolveInfo="runtime" />
+      <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="dn91.3687926015106425021" resolveInfo="runtime" />
     </node>
     <node role="element" roleId="k1iy.1572321421811416508" type="k1iy.Inherits" typeId="k1iy.1572321421811299552" id="1957929848381669951">
       <link role="module" roleId="k1iy.1572321421811299553" targetNodeId="nva4.1624295421069327411" resolveInfo="runtime" />
