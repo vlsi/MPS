@@ -32,6 +32,10 @@ public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new Insert_Action());
     addAction(new LocalEnd_Action());
     addAction(new LocalHome_Action());
+    addAction(new MoveDown_Action());
+    addAction(new MoveLeft_Action());
+    addAction(new MoveRight_Action());
+    addAction(new MoveUp_Action());
     addAction(new RootEnd_Action());
     addAction(new RootHome_Action());
     addAction(new SelectDown_Action());

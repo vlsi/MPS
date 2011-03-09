@@ -26,6 +26,10 @@ public class EditorActions_ActionGroup extends GeneratedActionGroup {
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.SelectDown_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.Insert_Action");
       EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.InsertBefore_Action");
+      EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      EditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -19,6 +19,10 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.Insert_Action", getShortcut(" ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.LocalEnd_Action", getShortcut("ctrl RIGHT"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.LocalHome_Action", getShortcut("ctrl LEFT"));
+    addSimpleShortcut("jetbrains.mps.ide.editor.actions.MoveDown_Action", getShortcut(" DOWN"));
+    addSimpleShortcut("jetbrains.mps.ide.editor.actions.MoveLeft_Action", getShortcut(" LEFT"));
+    addSimpleShortcut("jetbrains.mps.ide.editor.actions.MoveRight_Action", getShortcut(" RIGHT"));
+    addSimpleShortcut("jetbrains.mps.ide.editor.actions.MoveUp_Action", getShortcut(" UP"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.RootEnd_Action", getShortcut("ctrl END"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.RootHome_Action", getShortcut("ctrl HOME"));
     addSimpleShortcut("jetbrains.mps.ide.editor.actions.SelectDown_Action", getShortcut("ctrl DOWN"), getShortcut("ctrl shift W"));
