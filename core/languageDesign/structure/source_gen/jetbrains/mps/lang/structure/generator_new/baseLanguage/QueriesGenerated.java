@@ -34,6 +34,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.TemplateFragmentContext;
@@ -1106,7 +1107,15 @@ __switch__:
 
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       SNode conceptDeclaration = SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
-      SetSequence.fromSet(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)));
+      SetSequence.fromSet(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "implements", true)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return (SLinkOperations.getTarget(it, "intfc", false) != null);
+        }
+      }).<SNode>select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SLinkOperations.getTarget(it, "intfc", false);
+        }
+      }));
 
       if ((SLinkOperations.getTarget(conceptDeclaration, "extends", false) != null)) {
         SetSequence.fromSet(result).addElement(SLinkOperations.getTarget(conceptDeclaration, "extends", false));
@@ -1119,7 +1128,15 @@ __switch__:
 
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
       SNode conceptDeclaration = SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
-      SetSequence.fromSet(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "extends", true)));
+      SetSequence.fromSet(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "extends", true)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return (SLinkOperations.getTarget(it, "intfc", false) != null);
+        }
+      }).<SNode>select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SLinkOperations.getTarget(it, "intfc", false);
+        }
+      }));
     }
 
     return SetSequence.fromSet(result).where(new IWhereFilter<SNode>() {
