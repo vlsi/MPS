@@ -18,9 +18,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelReference;
@@ -50,10 +47,7 @@ public class ProjectStubs extends BaseStubModelRootManager {
   protected void updateModel(final StubLocation location, final SModel model, final StubSource source) {
     IFile file = ((BaseStubModelDescriptor.FileStubSource) source).getFile();
     ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(file);
-    SNode module = SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.project.structure.Module", null);
-    SPropertyOperations.set(module, "namespace", descriptor.getNamespace());
-    SPropertyOperations.set(module, "uuid", descriptor.getUUID());
-    SPropertyOperations.set(module, "compileInMPS", "" + descriptor.getCompileInMPS());
+    new ProjectStubLoader(file, descriptor, model).convert();
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
