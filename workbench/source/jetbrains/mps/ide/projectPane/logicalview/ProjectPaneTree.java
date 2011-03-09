@@ -12,7 +12,6 @@ import jetbrains.mps.ide.projectPane.ProjectPaneDnDListener;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.ProjectPaneTreeHighlighter;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.*;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 
@@ -138,7 +137,7 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
           for (final SNode node : contextDescriptor.getSModel().roots()) {
             String nodePack = ModelAccess.instance().runReadAction(new Computable<String>() {
               public String compute() {
-                return node.getProperty(BaseConcept.VIRTUAL_PACKAGE);
+                return node.getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
               }
             });
             if (nodePack == null) continue;

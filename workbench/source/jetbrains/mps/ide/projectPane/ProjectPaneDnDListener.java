@@ -7,15 +7,9 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -57,7 +51,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
   private String getVirtualPackage(final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
-        String result = node.getProperty(BaseConcept.VIRTUAL_PACKAGE);
+        String result = node.getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
         return (result == null) ? "" : result;
       }
     });
@@ -178,7 +172,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
           for (Pair<SNode, String> sourceNode : sourceNodes) {
             String fullTargetPack = getFullTargetPack(targetPackage, sourceNode.o2);
             sourceNode.o1.setProperty(SModelTreeNode.PACK, fullTargetPack);
-            if (SNodeOperations.isInstanceOf(sourceNode.o1, AbstractConceptDeclaration.concept)) {
+            if (SNodeOperations.isInstanceOf(sourceNode.o1, SNodeUtil.concept_AbstractConceptDeclaration)) {
               List<SNode> allAspects = AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(sourceNode.o1);
               for (SNode aspect : allAspects) {
                 aspect.setProperty(SModelTreeNode.PACK, fullTargetPack);

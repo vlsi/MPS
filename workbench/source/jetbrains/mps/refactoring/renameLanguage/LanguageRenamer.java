@@ -67,7 +67,7 @@ public class LanguageRenamer {
     }
 
     EditableSModelDescriptor structure = myLanguage.getStructureModelDescriptor();
-    for (SNode concept : structure.getSModel().getFastNodeFinder().getNodes(AbstractConceptDeclaration.concept, true)) {
+    for (SNode concept : structure.getSModel().getFastNodeFinder().getNodes(SNodeUtil.concept_AbstractConceptDeclaration, true)) {
       myContext.changeFeatureName(concept, myNewName + ".structure." + concept.getName(), concept.getName());
     }
 

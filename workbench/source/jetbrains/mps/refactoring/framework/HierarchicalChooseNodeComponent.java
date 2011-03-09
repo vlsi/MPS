@@ -18,11 +18,10 @@ package jetbrains.mps.refactoring.framework;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.*;
@@ -131,7 +130,7 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     private IDescendantsProvider myDescendantsProvider;
 
     public MyHierarchyTree(IDescendantsProvider descendantsProvider) {
-      super(null, BaseConcept.concept, false);
+      super(null, SNodeUtil.concept_BaseConcept, false);
       myDescendantsProvider = descendantsProvider;
     }
 
@@ -144,7 +143,7 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     }
 
     protected Set<SNode> getParents(SNode node, Set<SNode> visited) {
-      return new HashSet();
+      return new HashSet<SNode>();
     }
 
     protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
