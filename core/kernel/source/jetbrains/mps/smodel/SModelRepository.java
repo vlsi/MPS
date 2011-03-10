@@ -201,18 +201,20 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public void removeModelDescriptor(SModelDescriptor md) {
-    fireBeforeModelRemoved(md);
-    myModelsWithOwners.remove(md);
-    if (md.getSModelReference().getSModelId() != null) {
-      myIdToModelDescriptorMap.remove(md.getSModelReference().getSModelId());
+    synchronized (myModelsLock) {
+      fireBeforeModelRemoved(md);
+      myModelsWithOwners.remove(md);
+      if (md.getSModelReference().getSModelId() != null) {
+        myIdToModelDescriptorMap.remove(md.getSModelReference().getSModelId());
+      }
+      if (md instanceof EditableSModelDescriptor) {
+        boolean result = removeModelFromFileCache(((EditableSModelDescriptor) md));
+        LOG.assertLog(result, "model " + md + " do not have a path in file cache");
+      }
+      removeListeners(md);
+      fireModelRemoved(md);
+      md.dispose();
     }
-    if (md instanceof EditableSModelDescriptor) {
-      boolean result = removeModelFromFileCache(((EditableSModelDescriptor) md));
-      LOG.assertLog(result, "model " + md + " do not have a path in file cache");
-    }
-    removeListeners(md);
-    fireModelRemoved(md);
-    md.dispose();
   }
 
   public void unRegisterModelDescriptors(ModelOwner owner) {
@@ -229,26 +231,30 @@ public class SModelRepository implements ApplicationComponent {
     modelDescriptor.removeModelListener(myModelsListener);
   }
 
+  private boolean myWasError = false;
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
     if (modelReference == null) return null;
 
-    SModelId id = modelReference.getSModelId();
-
-    SModelDescriptor model = myIdToModelDescriptorMap.get(id);
-    if (model != null) return model;
-
-    if (!(id instanceof RegularSModelId)) return null;
-
-    SModelFqName fqName = modelReference.getSModelFqName();
-    if (fqName == null) return null;
-
-    LOG.warning("getModelDescriptor() is executed by fqName. This is likely to cause problems. And it is veeery slow.", new Throwable());
     synchronized (myModelsLock) {
-      for (SModelDescriptor d : myModelsWithOwners.keySet()) {
-        if (EqualUtil.equals(fqName, d.getSModelReference().getSModelFqName())) return d;
+      SModelId id = modelReference.getSModelId();
+
+      //todo remove this code
+      if (id == null) {
+        SModelFqName fqName = modelReference.getSModelFqName();
+        if (fqName == null) return null;
+
+        if (!myWasError){
+          myWasError = true;
+          //LOG.warning("getModelDescriptor() is executed by fqName. This is likely to cause problems. And it is veeery slow.", new Throwable());
+        }
+        for (SModelDescriptor d : myModelsWithOwners.keySet()) {
+          if (EqualUtil.equals(fqName, d.getSModelReference().getSModelFqName())) return d;
+        }
+        return null;
       }
+
+      return myIdToModelDescriptorMap.get(id);
     }
-    return null;
   }
 
   public List<SModelDescriptor> getModelDescriptors(ModelOwner modelOwner) {
