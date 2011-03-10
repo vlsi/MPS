@@ -39,8 +39,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.ide.datatransfer.TextPasteUtil" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
-    <classNode dependClassName="jetbrains.mps.datatransfer.TextPasteUtil" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Action" file="AnalyzeStacktrace_Action.java">
@@ -92,11 +92,11 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" file="BaseLanguageCustomPlugin_CustomProjectPlugin.java">
-    <classNode dependClassName="jetbrains.mps.resolve.MethodDeclarationsFixer" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker" />
+    <classNode dependClassName="jetbrains.mps.ide.resolve.MethodDeclarationsFixer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ToDoHighlighter" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup" file="BaseLanguageEditorPopup_ActionGroup.java">
