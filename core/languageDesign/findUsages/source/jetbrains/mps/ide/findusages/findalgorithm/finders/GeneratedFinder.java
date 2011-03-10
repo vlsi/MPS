@@ -23,11 +23,10 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationHelper;
+import jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper;
 import org.apache.commons.lang.ObjectUtils;
 
 import java.util.ArrayList;
@@ -145,9 +144,9 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
         SModel structureModel = conceptDeclaration.getModel();
         Language language = (Language) structureModel.getModelDescriptor().getModule();
         SModel editorModel = language.getEditorModelDescriptor().getSModel();
-        ConceptEditorDeclaration conceptEditorDeclaration = GoToEditorDeclarationHelper.findEditorDeclaration(editorModel, conceptDeclaration);
+        SNode conceptEditorDeclaration = GoToEditorDeclarationHelper.findEditorDeclaration(editorModel, conceptDeclaration);
         if (conceptEditorDeclaration == null) return -1;
-        SNode editorNode = conceptEditorDeclaration.getNode();
+        SNode editorNode = conceptEditorDeclaration;
         int index = indexInEditor(editorNode, searchedNode.getRole_(), new Pair(-1, false)).o1;
         if (index != -1 || ancestor.getParent() == null) {
           return index;
