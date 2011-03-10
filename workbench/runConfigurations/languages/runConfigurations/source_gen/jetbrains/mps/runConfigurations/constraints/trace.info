@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="AbstractProcessBuilderPart_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.AbstractProcessBuilderPart_Constraints" />
   <unitInfo fileName="CommandParameterReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.CommandParameterReference_Constraints" />
   <unitInfo fileName="CommandParameterAssignment_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.CommandParameterAssignment_Constraints" />
   <unitInfo fileName="ConfigurationFromExecutorReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.runConfigurations.constraints.ConfigurationFromExecutorReference_Constraints" />
@@ -39,6 +40,10 @@
     <scopeInfo nodeId="1448685625140415373" fileName="TemplateParameterReference_constructorParameterDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="34" endPosition="75">
       <varInfo nodeId="1448685625140416179" varName="template" />
     </scopeInfo>
+  </root>
+  <root nodeId="4087584177122787422">
+    <nodeInfo nodeId="4087584177122787425" fileName="AbstractProcessBuilderPart_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="4087584177122787424" fileName="AbstractProcessBuilderPart_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="136" />
   </root>
   <root nodeId="4371737370140150087">
     <nodeInfo nodeId="4371737370140150090" fileName="CommandDebuggerOperation_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

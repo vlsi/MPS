@@ -57,7 +57,7 @@ public class Java_Command {
 
   public ProcessHandler createProcess() throws ExecutionException {
     String java = getJavaCommand(myJrePath);
-    return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).append("-classpath").append(myClassPath).append(myClassName).append(myProgramParameter).build();
+    return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", myClassPath).append(myClassName).append(myProgramParameter).build();
   }
 
   public static IDebugger getDebugger() {

@@ -17,11 +17,11 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="uhxm.974940122351427315" resolveInfo="ReportConfigurationErrorStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="2866018809101830268">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.processBuilder" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="uhxm.5812151570929638022" resolveInfo="ProcessStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="2866018809101830294">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.processBuilder" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="uhxm.5812151570929638024" resolveInfo="ProcessStatementPart" />
     </node>
   </roots>

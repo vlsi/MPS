@@ -9,11 +9,11 @@ import org.jetbrains.annotations.Nullable;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.process.ProcessAdapter;
 import java.io.File;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.process.ProcessListener;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.io.IOException;
@@ -43,9 +43,30 @@ public class ProcessHandlerBuilder {
     return this;
   }
 
-  public ProcessHandlerBuilder append(List<String> command) {
+  public ProcessHandlerBuilder append(@NotNull List<String> command) {
     for (String commandPart : ListSequence.fromList(command)) {
       append(commandPart);
+    }
+    return this;
+  }
+
+  public ProcessHandlerBuilder appendKey(@Nullable String key, @Nullable String parameter) {
+    if (StringUtils.isNotEmpty(key) && StringUtils.isNotEmpty(parameter)) {
+      return append("-" + key).append(parameter);
+    }
+    return this;
+  }
+
+  public ProcessHandlerBuilder appendKey(@Nullable String key, String... parameter) {
+    if (StringUtils.isNotEmpty(key) && parameter.length > 0) {
+      return append(key).append(parameter);
+    }
+    return this;
+  }
+
+  public ProcessHandlerBuilder appendKey(@Nullable String key, @NotNull List<String> parameters) {
+    if (StringUtils.isNotEmpty(key) && ListSequence.fromList(parameters).isNotEmpty()) {
+      return append(key).append(parameters);
     }
     return this;
   }

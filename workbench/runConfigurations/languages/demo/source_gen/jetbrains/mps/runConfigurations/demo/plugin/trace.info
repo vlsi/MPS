@@ -78,7 +78,7 @@
   </root>
   <root nodeId="6957430790227279303">
     <nodeInfo nodeId="6110408870098905660" fileName="Java_Command.java" startLine="58" startPosition="67" endLine="59" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6110408870098905669" fileName="Java_Command.java" startLine="59" startPosition="44" endLine="60" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6110408870098905669" fileName="Java_Command.java" startLine="59" startPosition="44" endLine="60" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4667331066104874836" fileName="Java_Command.java" startLine="67" startPosition="57" endLine="68" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4667331066104874846" fileName="Java_Command.java" startLine="68" startPosition="51" endLine="69" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4667331066104874869" fileName="Java_Command.java" startLine="70" startPosition="38" endLine="71" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -110,7 +110,7 @@
     <scopeInfo nodeId="6472627752525328345" fileName="Java_Command.java" startLine="89" startPosition="102" endLine="90" endPosition="61" />
     <scopeInfo nodeId="6472627752525328366" fileName="Java_Command.java" startLine="92" startPosition="61" endLine="93" endPosition="74" />
     <scopeInfo nodeId="6472627752525329297" fileName="Java_Command.java" startLine="102" startPosition="56" endLine="103" endPosition="24" />
-    <scopeInfo nodeId="6110408870098905659" fileName="Java_Command.java" startLine="58" startPosition="67" endLine="60" endPosition="182">
+    <scopeInfo nodeId="6110408870098905659" fileName="Java_Command.java" startLine="58" startPosition="67" endLine="60" endPosition="177">
       <varInfo nodeId="6110408870098905661" varName="java" />
     </scopeInfo>
     <scopeInfo nodeId="6472627752525328395" fileName="Java_Command.java" startLine="101" startPosition="58" endLine="104" endPosition="7" />

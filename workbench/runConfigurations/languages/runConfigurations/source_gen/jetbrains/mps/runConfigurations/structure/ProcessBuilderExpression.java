@@ -40,19 +40,19 @@ public class ProcessBuilderExpression extends Expression {
     return this.getChildCount(ProcessBuilderExpression.PART);
   }
 
-  public Iterator<ProcessBuilderPart> parts() {
-    return this.children(ProcessBuilderPart.class, ProcessBuilderExpression.PART);
+  public Iterator<AbstractProcessBuilderPart> parts() {
+    return this.children(AbstractProcessBuilderPart.class, ProcessBuilderExpression.PART);
   }
 
-  public List<ProcessBuilderPart> getParts() {
-    return this.getChildren(ProcessBuilderPart.class, ProcessBuilderExpression.PART);
+  public List<AbstractProcessBuilderPart> getParts() {
+    return this.getChildren(AbstractProcessBuilderPart.class, ProcessBuilderExpression.PART);
   }
 
-  public void addPart(ProcessBuilderPart node) {
+  public void addPart(AbstractProcessBuilderPart node) {
     this.addChild(ProcessBuilderExpression.PART, node);
   }
 
-  public void insertPart(ProcessBuilderPart prev, ProcessBuilderPart node) {
+  public void insertPart(AbstractProcessBuilderPart prev, AbstractProcessBuilderPart node) {
     this.insertChild(prev, ProcessBuilderExpression.PART, node);
   }
 

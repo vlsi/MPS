@@ -61,6 +61,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_ProcessBuilderKeyPart_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_ProcessBuilderPart_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }

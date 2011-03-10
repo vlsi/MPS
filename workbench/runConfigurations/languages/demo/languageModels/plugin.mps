@@ -1229,13 +1229,11 @@
                 <link role="parameter" roleId="uhxm.7100369931888933680" targetNodeId="6110408870098958059" resolveInfo="virtualMachineParameter" />
               </node>
             </node>
-            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="7100369931889021487">
-              <node role="expression" roleId="uhxm.5812151570929658237" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7100369931889021489">
-                <property name="value" nameId="tpee.1070475926801" value="-classpath" />
+            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderKeyPart" typeId="uhxm.4087584177122787415" id="4087584177122844967">
+              <node role="key" roleId="uhxm.4087584177122787417" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4087584177122845837">
+                <property name="value" nameId="tpee.1070475926801" value="classpath" />
               </node>
-            </node>
-            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="7100369931889021490">
-              <node role="expression" roleId="uhxm.5812151570929658237" type="uhxm.CommandParameterReference" typeId="uhxm.7100369931888933679" id="7100369931889021492">
+              <node role="value" roleId="uhxm.4087584177122787418" type="uhxm.CommandParameterReference" typeId="uhxm.7100369931888933679" id="4087584177122845838">
                 <link role="parameter" roleId="uhxm.7100369931888933680" targetNodeId="6110408870099121942" resolveInfo="classPath" />
               </node>
             </node>
