@@ -5,10 +5,9 @@
 >
 <module><inherits name=""></inherits>
 <inherits name=""></inherits>
-<inherits name="jetbrains.mps.internal.collections.runtime"></inherits>
+<inherits name="collections.runtime"></inherits>
 <inherits name="jetbrains.mps.baseLanguage.closures.runtime"></inherits>
 <source path=""></source>
 <entry-point class="buildtest.SampleModule"></entry-point>
-<inherits name="jetbrains.mps.internal.collections.runtime"></inherits>
 <inherits name="jetbrains.mps.baseLanguage.closures.runtime"></inherits>
 </module>
