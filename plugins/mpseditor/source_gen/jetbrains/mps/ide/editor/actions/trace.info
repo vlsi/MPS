@@ -20,7 +20,7 @@
   <unitInfo fileName="MoveUp_Action.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.MoveUp_Action" />
   <unitInfo fileName="MoveRight_Action.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.MoveRight_Action" />
   <unitInfo fileName="MoveLeft_Action.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.MoveLeft_Action" />
-  <unitInfo fileName="Insert_Action.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Insert_Action" />
+  <unitInfo fileName="Insert_Action.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.Insert_Action" />
   <unitInfo fileName="SelectLocalHome_Action.java" startLine="22" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.SelectLocalHome_Action" />
   <unitInfo fileName="SelectLocalEnd_Action.java" startLine="22" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.SelectLocalEnd_Action" />
   <unitInfo fileName="ExtractComponent_Action.java" startLine="20" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.ExtractComponent_Action" />
@@ -198,16 +198,15 @@
     <nodeInfo nodeId="7791284463049069774" fileName="Home_Action.java" startLine="50" startPosition="9" endLine="51" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   </root>
   <root nodeId="7791284463049069782">
-    <nodeInfo nodeId="7791284463049069832" fileName="Insert_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7791284463049069834" fileName="Insert_Action.java" startLine="29" startPosition="84" endLine="30" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7791284463049069791" fileName="Insert_Action.java" startLine="65" startPosition="309" endLine="66" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7791284463049069796" fileName="Insert_Action.java" startLine="66" startPosition="114" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7791284463049069825" fileName="Insert_Action.java" startLine="69" startPosition="7" endLine="70" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7791284463049069789" fileName="Insert_Action.java" startLine="64" startPosition="97" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7791284463049069787" fileName="Insert_Action.java" startLine="63" startPosition="9" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="7791284463049069831" fileName="Insert_Action.java" startLine="28" startPosition="87" endLine="30" endPosition="216" />
-    <scopeInfo nodeId="7791284463049069790" fileName="Insert_Action.java" startLine="65" startPosition="309" endLine="67" endPosition="17" />
-    <scopeInfo nodeId="7791284463049069788" fileName="Insert_Action.java" startLine="64" startPosition="97" endLine="68" endPosition="9" />
+    <nodeInfo nodeId="7791284463049069834" fileName="Insert_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7791284463049069791" fileName="Insert_Action.java" startLine="64" startPosition="309" endLine="65" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7791284463049069796" fileName="Insert_Action.java" startLine="65" startPosition="114" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7791284463049069825" fileName="Insert_Action.java" startLine="68" startPosition="7" endLine="69" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7791284463049069789" fileName="Insert_Action.java" startLine="63" startPosition="97" endLine="67" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7791284463049069787" fileName="Insert_Action.java" startLine="62" startPosition="9" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <scopeInfo nodeId="7791284463049069831" fileName="Insert_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="306" />
+    <scopeInfo nodeId="7791284463049069790" fileName="Insert_Action.java" startLine="64" startPosition="309" endLine="66" endPosition="17" />
+    <scopeInfo nodeId="7791284463049069788" fileName="Insert_Action.java" startLine="63" startPosition="97" endLine="67" endPosition="9" />
   </root>
   <root nodeId="7791284463049069850">
     <nodeInfo nodeId="7791284463049069862" fileName="InsertBefore_Action.java" startLine="27" startPosition="87" endLine="28" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -381,24 +380,24 @@
     <unitInfo nodeId="7791284463049113795" fileName="EditorActionUtils.java" startLine="16" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
   </root>
   <root nodeId="991796682690297081">
-    <nodeInfo nodeId="5826399350075689958" fileName="MoveLeft_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5826399350075689958" fileName="MoveLeft_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2970227569291910187" fileName="MoveLeft_Action.java" startLine="62" startPosition="9" endLine="63" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="5826399350075689957" fileName="MoveLeft_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="125" />
+    <scopeInfo nodeId="5826399350075689957" fileName="MoveLeft_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="215" />
   </root>
   <root nodeId="991796682690297084">
-    <nodeInfo nodeId="5826399350075689969" fileName="MoveRight_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5826399350075689969" fileName="MoveRight_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2970227569291910195" fileName="MoveRight_Action.java" startLine="62" startPosition="9" endLine="63" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="5826399350075689968" fileName="MoveRight_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="125" />
+    <scopeInfo nodeId="5826399350075689968" fileName="MoveRight_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="215" />
   </root>
   <root nodeId="991796682690297087">
-    <nodeInfo nodeId="5826399350075689980" fileName="MoveUp_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5826399350075689980" fileName="MoveUp_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2970227569291910203" fileName="MoveUp_Action.java" startLine="62" startPosition="9" endLine="63" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="5826399350075689979" fileName="MoveUp_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="125" />
+    <scopeInfo nodeId="5826399350075689979" fileName="MoveUp_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="215" />
   </root>
   <root nodeId="991796682690297090">
-    <nodeInfo nodeId="5826399350075689073" fileName="MoveDown_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5826399350075689073" fileName="MoveDown_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2970227569291899365" fileName="MoveDown_Action.java" startLine="62" startPosition="9" endLine="63" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <scopeInfo nodeId="5826399350075689072" fileName="MoveDown_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="125" />
+    <scopeInfo nodeId="5826399350075689072" fileName="MoveDown_Action.java" startLine="28" startPosition="87" endLine="29" endPosition="215" />
   </root>
 </debugInfo>
 
