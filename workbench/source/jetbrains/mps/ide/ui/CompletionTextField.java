@@ -92,7 +92,9 @@ public abstract class CompletionTextField extends JTextField {
     });
 
     registerKeyboardAction(myUpAction, KeyStroke.getKeyStroke("UP"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    registerKeyboardAction(myUpAction, KeyStroke.getKeyStroke("UP"), WHEN_FOCUSED);
     registerKeyboardAction(myDownAction, KeyStroke.getKeyStroke("DOWN"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    registerKeyboardAction(myDownAction, KeyStroke.getKeyStroke("DOWN"), WHEN_FOCUSED);
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
