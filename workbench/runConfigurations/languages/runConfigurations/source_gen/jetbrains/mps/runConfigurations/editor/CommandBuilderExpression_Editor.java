@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -22,36 +24,53 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
-public class CommandStartExpression_Editor extends DefaultNodeEditor {
+public class CommandBuilderExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_k1l6ge_a(editorContext, node);
+    return this.createCollection_lo57cy_a(editorContext, node);
   }
 
-  private EditorCell createCollection_k1l6ge_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_lo57cy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_k1l6ge_a");
-    editorCell.addEditorCell(this.createRefCell_k1l6ge_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_k1l6ge_b0(editorContext, node));
+    editorCell.setCellId("Collection_lo57cy_a");
+    editorCell.addEditorCell(this.createRefCell_lo57cy_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_lo57cy_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_lo57cy_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_lo57cy_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_k1l6ge_b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CommandStartExpression_Editor.argumentListHandler_k1l6ge_b0(node, "argument", editorContext);
+  private EditorCell createConstant_lo57cy_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    editorCell.setCellId("Constant_lo57cy_b0");
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_lo57cy_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    editorCell.setCellId("Constant_lo57cy_d0");
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_lo57cy_c0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CommandBuilderExpression_Editor.argumentListHandler_lo57cy_c0(node, "argument", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_argument");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefCell_k1l6ge_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_lo57cy_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("commandDeclaration");
-    provider.setNoTargetText("<no commandDeclaration>");
+    provider.setRole("command");
+    provider.setNoTargetText("<no command>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CommandStartExpression_Editor._Inline_k1l6ge_a0a());
+    provider.setAuxiliaryCellProvider(new CommandBuilderExpression_Editor._Inline_lo57cy_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -64,8 +83,8 @@ public class CommandStartExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_k1l6ge_a0a extends InlineCellProvider {
-    public _Inline_k1l6ge_a0a() {
+  public static class _Inline_lo57cy_a0a extends InlineCellProvider {
+    public _Inline_lo57cy_a0a() {
       super();
     }
 
@@ -74,10 +93,10 @@ public class CommandStartExpression_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_k1l6ge_a0a0(editorContext, node);
+      return this.createProperty_lo57cy_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_k1l6ge_a0a0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_lo57cy_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -97,8 +116,8 @@ public class CommandStartExpression_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class argumentListHandler_k1l6ge_b0 extends RefNodeListHandler {
-    public argumentListHandler_k1l6ge_b0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class argumentListHandler_lo57cy_c0 extends RefNodeListHandler {
+    public argumentListHandler_lo57cy_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

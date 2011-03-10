@@ -100,11 +100,15 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="3091009652595852676">
       <property name="name" nameId="tpck.1169194664001" value="typeof_DebuggerSettings_Parameter" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex.settings" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4762811064051535604">
       <property name="name" nameId="tpck.1169194664001" value="typeof_StartProcessHandlerStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.complex" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
+    </node>
+    <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6110408870099081487">
+      <property name="name" nameId="tpck.1169194664001" value="typeof_CommandParameterAssignment" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution.command" />
     </node>
   </roots>
   <root id="4777576391478107089">
@@ -944,6 +948,44 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4762811064051535606">
       <property name="name" nameId="tpck.1169194664001" value="startProcessHandlerStatement" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.4762811064051339799" resolveInfo="StartProcessHandlerStatement" />
+    </node>
+  </root>
+  <root id="6110408870099081487">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6110408870099081488">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateStrongLessThanInequationStatement" typeId="tpd4.1179832490862" id="6110408870099081499">
+        <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="6110408870099081500" />
+        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="6110408870099081504">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6110408870099081511">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6110408870099081506">
+              <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6110408870099081505">
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6110408870099081489" resolveInfo="commandParameterAssignment" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6110408870099081510">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="uhxm.6110408870099081469" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6110408870099081515">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.5680397130376446158" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="6110408870099081503">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="6110408870099081491">
+            <node role="term" roleId="tpd4.1174657509053" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6110408870099081494">
+              <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6110408870099081493">
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="6110408870099081489" resolveInfo="commandParameterAssignment" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6110408870099081498">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="uhxm.6110408870099081468" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6110408870099081489">
+      <property name="name" nameId="tpck.1169194664001" value="commandParameterAssignment" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="uhxm.6110408870099081467" resolveInfo="CommandParameterAssignment" />
     </node>
   </root>
 </model>

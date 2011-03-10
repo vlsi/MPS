@@ -10,6 +10,7 @@
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debug.apiLang)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <import index="f1er" modelUID="r:b2897562-8c8f-4b0e-a52e-5dedfbf1b862(jetbrains.mps.runConfigurations.demo.structure)" version="-1" />
   <import index="fmpm" modelUID="r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)" version="-1" />
   <import index="p84h" modelUID="r:6ca9e89f-d17e-40d3-aff6-7953521fc77e(jetbrains.mps.baseLanguage.runConfigurations.generator.template.main@generator)" version="-1" />
@@ -25,8 +26,8 @@
   <import index="30pf" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="4tn0" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.runtime(jetbrains.mps.debug.runtime@java_stub)" version="-1" />
   <import index="z1l1" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.debug.runtime.settings(jetbrains.mps.debug.runtime.settings@java_stub)" version="-1" />
-  <import index="l649" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.ui(MPS.Classpath/com.intellij.execution.ui@java_stub)" version="-1" />
-  <import index="u5xh" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.impl(MPS.Classpath/com.intellij.execution.impl@java_stub)" version="-1" />
+  <import index="l649" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.ui(com.intellij.execution.ui@java_stub)" version="-1" />
+  <import index="u5xh" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#com.intellij.execution.impl(com.intellij.execution.impl@java_stub)" version="-1" />
   <import index="uhxm" modelUID="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.runConfigurations.structure)" version="-1" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="y88" modelUID="r:19e0b24f-7b0d-4520-8681-31caef71baed(jetbrains.mps.runConfigurations.demo.plugin)" version="-1" implicit="yes" />
@@ -1196,56 +1197,112 @@
         </node>
       </node>
     </node>
-    <node role="execute" roleId="uhxm.6957430790227234457" type="uhxm.ExecuteCommand_Function" typeId="uhxm.6957430790227171581" id="6957430790227279304">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6957430790227279305">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="456055012090368964">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="456055012090368965">
+    <node role="debugger" roleId="uhxm.2064548906020947554" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="6355961872152746086">
+      <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
+    </node>
+    <node role="execute" roleId="uhxm.6110408870098804607" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="6110408870098905658">
+      <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="6110408870098905659">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6110408870098905660">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6110408870098905661">
             <property name="name" nameId="tpck.1169194664001" value="java" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="456055012090368966" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4371737370140258355">
-              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4371737370140258354" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="4371737370140258359">
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6110408870098905662" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6110408870098905663">
+              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="6110408870098905664" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="6110408870098905665">
                 <link role="member" roleId="tp4f.1205756909548" targetNodeId="4667331066104871635" resolveInfo="getJavaCommand" />
-                <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4371737370140258360">
-                  <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4371737370140258361" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="4371737370140258362">
-                    <link role="member" roleId="tp4f.1205756909548" targetNodeId="6472627752525328384" resolveInfo="getJdkHome" />
-                  </node>
+                <node role="actualArgument" roleId="tp4f.1205770614681" type="uhxm.CommandParameterReference" typeId="uhxm.7100369931888933679" id="7100369931889021480">
+                  <link role="parameter" roleId="uhxm.7100369931888933680" targetNodeId="6110408870098943716" resolveInfo="jrePath" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="456055012090368969">
-          <node role="expression" roleId="tpee.1068580123156" type="uhxm.ProcessBuilderExpression" typeId="uhxm.5812151570929638022" id="456055012090368970">
-            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="456055012090368971">
-              <node role="expression" roleId="uhxm.5812151570929658237" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="456055012090368973">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="456055012090368965" resolveInfo="java" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6110408870098905669">
+          <node role="expression" roleId="tpee.1068580123156" type="uhxm.ProcessBuilderExpression" typeId="uhxm.5812151570929638022" id="6110408870098905670">
+            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="6110408870098905671">
+              <node role="expression" roleId="uhxm.5812151570929658237" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6110408870098905672">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6110408870098905661" resolveInfo="java" />
               </node>
             </node>
-            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="456055012090368974">
-              <node role="expression" roleId="uhxm.5812151570929658237" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="456055012090368976">
-                <property name="value" nameId="tpee.1070475926801" value="-version" />
+            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="7100369931889021481">
+              <node role="expression" roleId="uhxm.5812151570929658237" type="uhxm.CommandParameterReference" typeId="uhxm.7100369931888933679" id="7100369931889021483">
+                <link role="parameter" roleId="uhxm.7100369931888933680" targetNodeId="6110408870098958059" resolveInfo="virtualMachineParameter" />
               </node>
             </node>
-            <node role="workingDirectory" roleId="uhxm.6472627752525599075" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6472627752525616642">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6472627752525616644">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6472627752525616646">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~System%dgetProperty(java%dlang%dString)%cjava%dlang%dString" resolveInfo="getProperty" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e2lb.~System" resolveInfo="System" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6472627752525616647">
-                    <property name="value" nameId="tpee.1070475926801" value="user.home" />
-                  </node>
-                </node>
+            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="7100369931889021487">
+              <node role="expression" roleId="uhxm.5812151570929658237" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7100369931889021489">
+                <property name="value" nameId="tpee.1070475926801" value="-classpath" />
+              </node>
+            </node>
+            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="7100369931889021490">
+              <node role="expression" roleId="uhxm.5812151570929658237" type="uhxm.CommandParameterReference" typeId="uhxm.7100369931888933679" id="7100369931889021492">
+                <link role="parameter" roleId="uhxm.7100369931888933680" targetNodeId="6110408870099121942" resolveInfo="classPath" />
+              </node>
+            </node>
+            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="7100369931889021498">
+              <node role="expression" roleId="uhxm.5812151570929658237" type="uhxm.CommandParameterReference" typeId="uhxm.7100369931888933679" id="7100369931889021500">
+                <link role="parameter" roleId="uhxm.7100369931888933680" targetNodeId="7100369931889021495" resolveInfo="className" />
+              </node>
+            </node>
+            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="7100369931889021501">
+              <node role="expression" roleId="uhxm.5812151570929658237" type="uhxm.CommandParameterReference" typeId="uhxm.7100369931888933679" id="7100369931889021503">
+                <link role="parameter" roleId="uhxm.7100369931888933680" targetNodeId="6110408870098943719" resolveInfo="programParameter" />
               </node>
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node role="debugger" roleId="uhxm.2064548906020947554" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="6355961872152746086">
-      <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
+    <node role="parameterDeclaration" roleId="uhxm.6110408870098804606" type="uhxm.CommandParameterDeclaration" typeId="uhxm.6110408870098804581" id="6110408870098935287">
+      <property name="name" nameId="tpck.1169194664001" value="workingDirectory" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7100369931888933673">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fxg7.~File" resolveInfo="File" />
+      </node>
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7100369931888933675">
+        <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7100369931888933676">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7100369931888933677">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~System%dgetProperty(java%dlang%dString)%cjava%dlang%dString" resolveInfo="getProperty" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e2lb.~System" resolveInfo="System" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7100369931888933678">
+              <property name="value" nameId="tpee.1070475926801" value="user.home" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="parameterDeclaration" roleId="uhxm.6110408870098804606" type="uhxm.CommandParameterDeclaration" typeId="uhxm.6110408870098804581" id="6110408870098943716">
+      <property name="name" nameId="tpck.1169194664001" value="jrePath" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6110408870098943718" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6110408870098958068">
+        <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="6110408870098958069" />
+        <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="6110408870098958070">
+          <link role="member" roleId="tp4f.1205756909548" targetNodeId="6472627752525328384" resolveInfo="getJdkHome" />
+        </node>
+      </node>
+    </node>
+    <node role="parameterDeclaration" roleId="uhxm.6110408870098804606" type="uhxm.CommandParameterDeclaration" typeId="uhxm.6110408870098804581" id="6110408870098943719">
+      <property name="name" nameId="tpck.1169194664001" value="programParameter" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6110408870098943721" />
+    </node>
+    <node role="parameterDeclaration" roleId="uhxm.6110408870098804606" type="uhxm.CommandParameterDeclaration" typeId="uhxm.6110408870098804581" id="6110408870098958059">
+      <property name="name" nameId="tpck.1169194664001" value="virtualMachineParameter" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="6110408870098958061" />
+    </node>
+    <node role="parameterDeclaration" roleId="uhxm.6110408870098804606" type="uhxm.CommandParameterDeclaration" typeId="uhxm.6110408870098804581" id="7100369931889021495">
+      <property name="name" nameId="tpck.1169194664001" value="className" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="7100369931889021497" />
+    </node>
+    <node role="parameterDeclaration" roleId="uhxm.6110408870098804606" type="uhxm.CommandParameterDeclaration" typeId="uhxm.6110408870098804581" id="6110408870099121942">
+      <property name="name" nameId="tpck.1169194664001" value="classPath" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="6110408870099121944">
+        <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="6110408870099121946" />
+      </node>
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6110408870099121948">
+        <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="6110408870099121949">
+          <node role="elementType" roleId="tp2q.1237721435807" type="tpee.StringType" typeId="tpee.1225271177708" id="6110408870099121950" />
+        </node>
+      </node>
     </node>
   </root>
   <root id="7806358006983646762">
@@ -1285,30 +1342,13 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="uhxm.StartProcessHandlerStatement" typeId="uhxm.4762811064051339799" id="4762811064051453188">
-          <node role="process" roleId="uhxm.4762811064051339801" type="uhxm.ProcessBuilderExpression" typeId="uhxm.5812151570929638022" id="4762811064051513452">
-            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="4762811064051513453">
-              <node role="expression" roleId="uhxm.5812151570929658237" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4762811064051513454">
-                <property name="value" nameId="tpee.1070475926801" value="java" />
-              </node>
-            </node>
-            <node role="part" roleId="uhxm.5812151570929638044" type="uhxm.ProcessBuilderPart" typeId="uhxm.5812151570929638024" id="4762811064051513455">
-              <node role="expression" roleId="uhxm.5812151570929658237" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4762811064051513456">
+        <node role="statement" roleId="tpee.1068581517665" type="uhxm.StartProcessHandlerStatement" typeId="uhxm.4762811064051339799" id="7100369931888857629">
+          <node role="process" roleId="uhxm.4762811064051339801" type="uhxm.CommandBuilderExpression" typeId="uhxm.6957430790227171558" id="7100369931888857634">
+            <link role="command" roleId="uhxm.6355961872152766310" targetNodeId="6957430790227279303" resolveInfo="java" />
+            <node role="argument" roleId="uhxm.6355961872152766311" type="uhxm.CommandParameterAssignment" typeId="uhxm.6110408870099081467" id="7100369931888882762">
+              <link role="parameterDeclaration" roleId="uhxm.6110408870099081469" targetNodeId="6110408870098943719" resolveInfo="programParameter" />
+              <node role="value" roleId="uhxm.6110408870099081468" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7100369931888911423">
                 <property name="value" nameId="tpee.1070475926801" value="-version" />
-              </node>
-            </node>
-            <node role="listener" roleId="uhxm.5113380214722521555" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5113380214722640073">
-              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5113380214722640075">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mvo7.8265043642382453576" resolveInfo="ConsoleProcessListener" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5113380214722640076">
-                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5113380214722640078">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="u5xh.~ConsoleViewImpl%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,boolean)" resolveInfo="ConsoleViewImpl" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="uhxm.Project_Parameter" typeId="uhxm.7684700299064179245" id="5113380214722640079" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5113380214722640081">
-                      <property name="value" nameId="tpee.1068580123138" value="false" />
-                    </node>
-                  </node>
-                </node>
               </node>
             </node>
           </node>

@@ -28,7 +28,7 @@ public class typeof_CommandReferenceExpression_InferenceRule extends AbstractInf
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.runConfigurations.structure.CommandStartExpression";
+    return "jetbrains.mps.runConfigurations.structure.CommandBuilderExpression";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

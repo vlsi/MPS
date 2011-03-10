@@ -55,4 +55,11 @@ public class RunConfigurations_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }
+
+  public static Style getConceptFunctionHeader(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    return style;
+  }
 }

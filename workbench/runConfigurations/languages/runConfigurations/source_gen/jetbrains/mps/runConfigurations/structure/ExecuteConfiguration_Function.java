@@ -5,7 +5,6 @@ package jetbrains.mps.runConfigurations.structure;
 import jetbrains.mps.baseLanguage.structure.ConceptFunction;
 import jetbrains.mps.baseLanguage.structure.ILocalVariableElementList;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.Iterator;
 import jetbrains.mps.lang.core.structure.Attribute;
 import java.util.List;
@@ -18,8 +17,6 @@ public class ExecuteConfiguration_Function extends ConceptFunction implements IL
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String PROCESS = "process";
-  public static final String TOOL = "tool";
   public static final String _$ATTRIBUTE = "_$attribute";
 
   public ExecuteConfiguration_Function(SNode node) {
@@ -48,22 +45,6 @@ public class ExecuteConfiguration_Function extends ConceptFunction implements IL
 
   public void setVirtualPackage(String value) {
     this.setProperty(ExecuteConfiguration_Function.VIRTUAL_PACKAGE, value);
-  }
-
-  public Expression getProcess() {
-    return (Expression) this.getChild(Expression.class, ExecuteConfiguration_Function.PROCESS);
-  }
-
-  public void setProcess(Expression node) {
-    super.setChild(ExecuteConfiguration_Function.PROCESS, node);
-  }
-
-  public Expression getTool() {
-    return (Expression) this.getChild(Expression.class, ExecuteConfiguration_Function.TOOL);
-  }
-
-  public void setTool(Expression node) {
-    super.setChild(ExecuteConfiguration_Function.TOOL, node);
   }
 
   public int get_$attributesCount() {

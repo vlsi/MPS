@@ -24,7 +24,7 @@ public class typeof_Execute_Function_InferenceRule extends AbstractInferenceRule
 
   public void applyRule(final SNode execute_Function, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(execute_Function, "process", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(execute_Function, "", false);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "2866018809102008358", 0, intentionProvider);
       typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.runConfigurations.typesystem)", "2866018809102008345", true), (SNode) new typeof_Execute_Function_InferenceRule.QuotationClass_eiqrrn_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);

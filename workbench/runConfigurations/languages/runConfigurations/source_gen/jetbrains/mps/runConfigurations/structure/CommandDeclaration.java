@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.apiLang.structure.DebuggerReference;
+import jetbrains.mps.baseLanguage.structure.BlockStatement;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.lang.core.structure.Attribute;
@@ -23,6 +24,7 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept, IC
   public static final String DEBUGGER = "debugger";
   public static final String EXECUTE = "execute";
   public static final String METHOD = "method";
+  public static final String PARAMETER_DECLARATION = "parameterDeclaration";
   public static final String _$ATTRIBUTE = "_$attribute";
 
   public CommandDeclaration(SNode node) {
@@ -69,11 +71,11 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept, IC
     super.setChild(CommandDeclaration.DEBUGGER, node);
   }
 
-  public ExecuteCommand_Function getExecute() {
-    return (ExecuteCommand_Function) this.getChild(ExecuteCommand_Function.class, CommandDeclaration.EXECUTE);
+  public BlockStatement getExecute() {
+    return (BlockStatement) this.getChild(BlockStatement.class, CommandDeclaration.EXECUTE);
   }
 
-  public void setExecute(ExecuteCommand_Function node) {
+  public void setExecute(BlockStatement node) {
     super.setChild(CommandDeclaration.EXECUTE, node);
   }
 
@@ -95,6 +97,26 @@ public class CommandDeclaration extends BaseConcept implements INamedConcept, IC
 
   public void insertMethod(CommandMethod prev, CommandMethod node) {
     this.insertChild(prev, CommandDeclaration.METHOD, node);
+  }
+
+  public int getParameterDeclarationsCount() {
+    return this.getChildCount(CommandDeclaration.PARAMETER_DECLARATION);
+  }
+
+  public Iterator<CommandParameterDeclaration> parameterDeclarations() {
+    return this.children(CommandParameterDeclaration.class, CommandDeclaration.PARAMETER_DECLARATION);
+  }
+
+  public List<CommandParameterDeclaration> getParameterDeclarations() {
+    return this.getChildren(CommandParameterDeclaration.class, CommandDeclaration.PARAMETER_DECLARATION);
+  }
+
+  public void addParameterDeclaration(CommandParameterDeclaration node) {
+    this.addChild(CommandDeclaration.PARAMETER_DECLARATION, node);
+  }
+
+  public void insertParameterDeclaration(CommandParameterDeclaration prev, CommandParameterDeclaration node) {
+    this.insertChild(prev, CommandDeclaration.PARAMETER_DECLARATION, node);
   }
 
   public int get_$attributesCount() {

@@ -18,9 +18,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.runConfigurations.runtime.ProcessHandlerBuilder;
-import jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener;
 import com.intellij.execution.impl.ConsoleViewImpl;
+import jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener;
 import jetbrains.mps.runConfigurations.runtime.DefaultExecutionResult;
 import jetbrains.mps.runConfigurations.runtime.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -59,7 +58,7 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
       }
     });
     {
-      ProcessHandler _processHandler = new ProcessHandlerBuilder().append("java").append("-version").build(new ConsoleProcessListener(new ConsoleViewImpl(project, false)));
+      ProcessHandler _processHandler = new Java_Command().setProgramParameter("-version").createProcess();
       final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
       _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {

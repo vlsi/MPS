@@ -5,6 +5,8 @@ package jetbrains.mps.runConfigurations.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.NodeNameUtil;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class CommandDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -16,6 +18,10 @@ public class CommandDeclaration_Behavior {
 
   public static String call_getGeneratedClassName_456055012090410556(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name").substring(0, 1).toUpperCase() + SPropertyOperations.getString(thisNode, "name").substring(1) + "_Command";
+  }
+
+  public static String call_getFullName_6110408870099162004(SNode thisNode) {
+    return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode)) + "." + CommandDeclaration_Behavior.call_getGeneratedClassName_456055012090410556(thisNode);
   }
 
   public static String getCreateProcessMethodName_456055012090411356() {

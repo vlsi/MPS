@@ -36,21 +36,6 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="Remote" type="Remote" factoryName="Remote">
-      <MyState>
-        <option name="mySettings">
-          <RemoteConnectionSettings>
-            <option name="hostName" value="localhost" />
-            <option name="port" value="5006" />
-            <option name="sharedMemoryAddress" value="" />
-            <option name="useSockets" value="true" />
-          </RemoteConnectionSettings>
-        </option>
-      </MyState>
-      <method />
-    </configuration>
-  </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$mps_home$" vcs="Git" />
   </component>
