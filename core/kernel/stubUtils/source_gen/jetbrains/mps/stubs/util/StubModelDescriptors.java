@@ -41,12 +41,10 @@ public class StubModelDescriptors {
     for (String subpkg : ListSequence.fromList(pi.subpackages(pkg))) {
       if (ListSequence.fromList(pi.resources(subpkg)).isNotEmpty()) {
         SModelReference smref = smodelRefWithId(subpkg);
-        SModelReference smref2 = smodelRefWithFqName(subpkg);
         SModelDescriptor descById = SModelRepository.getInstance().getModelDescriptor(smref);
-        SModelDescriptor descByFqName = SModelRepository.getInstance().getModelDescriptor(smref2);
-        if (descById != null && descByFqName != null) {
+        if (descById != null) {
           assert descById.getModule()==loc.getModule();
-          SetSequence.fromSet(result).addElement(((BaseStubModelDescriptor) descByFqName));
+          SetSequence.fromSet(result).addElement(((BaseStubModelDescriptor) descById));
         } else {
           BaseStubModelDescriptor desc = new BaseStubModelDescriptor(mrm, null, smref);
           SModelRepository.getInstance().registerModelDescriptor(desc, loc.getModule());
