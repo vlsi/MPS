@@ -56,6 +56,11 @@ import java.util.*;
 )
 public class IntentionsManager implements ApplicationComponent, PersistentStateComponent<IntentionsManager.MyState> {
   private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
+
+  public static String getDescriptorClassName(ModuleReference langRef) {
+    return "IntentionsDescriptor";
+  }
+
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
       clear();
@@ -257,7 +262,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   public Language getIntentionLanguage(Intention intention) {
     checkLoaded();
     ModuleReference ref = myIntentionsLanguages.get(intention.getClass());
-    if (ref==null) return null;
+    if (ref == null) return null;
     return MPSModuleRepository.getInstance().getLanguage(ref);
   }
 
@@ -265,7 +270,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   public SNode getNodeByIntention(Intention intention) {
     checkLoaded();
     SNodePointer pointer = myNodesByIntentions.get(intention);
-    if (pointer==null) return intention.getNodeByIntention();
+    if (pointer == null) return intention.getNodeByIntention();
     SNode node = pointer.getNode();
     if (node == null) return intention.getNodeByIntention();
     return node;
@@ -299,8 +304,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private void load() {
     for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
-      String descriptorClassName = "IntentionsDescriptor";
-      initIntentionsDescriptor(language, LanguageAspect.INTENTIONS, descriptorClassName);
+      String className = getDescriptorClassName(language.getModuleReference());
+      initIntentionsDescriptor(language, LanguageAspect.INTENTIONS, className);
     }
 
     ModelAccess.instance().runReadAction(new Runnable() {

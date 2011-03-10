@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="76u7blq1019eriwixglnoqulo5bw8pl">
+<dependencies version="2" modelHash="1bet4t344uttp5zd5s6xrk5u1yzt9ee">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.smodel(MPS.Classpath/jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="6hfquyjtps6xhz2bbjmk1iqrrd1og0q" />
@@ -69,7 +69,7 @@
   <source id="5059472413256584828" name="reduce_ContextParamWrite" hash="cwqhuet4w39ikteyfdmq8ks903bwx93">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="7225749753175239766" name="IntentionsDescriptor" hash="-vauzb0oxeu82ml4szmwbqtjidvoin7">
+  <source id="7225749753175239766" name="IntentionsDescriptor" hash="-9a8kl8m911rvzp01autq3js51anw7bd">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

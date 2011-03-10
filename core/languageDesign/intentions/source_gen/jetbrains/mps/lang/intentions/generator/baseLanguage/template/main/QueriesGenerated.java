@@ -19,6 +19,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -89,6 +91,12 @@ public class QueriesGenerated {
         return eq_x583g4_a0a0a0a0a0a0a0o(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(_context.getNode(), "name"));
       }
     }).first().getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7991477654791693985(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    IModule module = _context.getOriginalInputModel().getModelDescriptor().getModule();
+    assert module instanceof Language;
+    return IntentionsManager.getDescriptorClassName(module.getModuleReference());
   }
 
   public static Object referenceMacro_GetReferent_4945049520561168160(final IOperationContext operationContext, final ReferenceMacroContext _context) {
