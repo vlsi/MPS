@@ -8,6 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.runConfigurations.runtime.ProcessHandlerBuilder;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
@@ -57,7 +58,8 @@ public class Java_Command {
 
   public ProcessHandler createProcess() throws ExecutionException {
     String java = getJavaCommand(myJrePath);
-    return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", myClassPath).append(myClassName).append(myProgramParameter).build();
+    String classPathString = IterableUtils.join(ListSequence.fromList(myClassPath), ps());
+    return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter).appendKey("classpath", classPathString).append(myClassName).append(myProgramParameter).build();
   }
 
   public static IDebugger getDebugger() {
@@ -80,6 +82,10 @@ public class Java_Command {
 
   private static String fs() {
     return System.getProperty("file.separator");
+  }
+
+  private static String ps() {
+    return System.getProperty("path.separator");
   }
 
   private static List<String> getJavaHomes() {

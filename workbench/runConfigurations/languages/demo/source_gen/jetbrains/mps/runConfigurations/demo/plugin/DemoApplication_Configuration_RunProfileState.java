@@ -17,15 +17,17 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.reloading.EachClassPathItemVisitor;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.util.CollectionUtil;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import jetbrains.mps.runConfigurations.runtime.ConsoleProcessListener;
@@ -63,14 +65,8 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
     final Wrappers._T<String> fqName = new Wrappers._T<String>();
     final SNode node = myConfiguration.getNode().getNode();
     final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        fqName.value = NameUtil.nodeFQName(node);
-        module.value = SNodeOperations.getModel(node).getModelDescriptor().getModule();
-      }
-    });
     final List<String> classPath = ListSequence.fromList(new ArrayList<String>());
-    module.value.getClassPathItem().accept(new EachClassPathItemVisitor() {
+    final EachClassPathItemVisitor visitor = new EachClassPathItemVisitor() {
       @Override
       public void visit(FileClassPathItem item) {
         ListSequence.fromList(classPath).addElement(item.getClassPath());
@@ -80,7 +76,15 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
       public void visit(JarFileClassPathItem item) {
         ListSequence.fromList(classPath).addElement(item.getFile().getAbsolutePath());
       }
+    };
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        fqName.value = NameUtil.nodeFQName(node);
+        module.value = SNodeOperations.getModel(node).getModelDescriptor().getModule();
+        AbstractModule.getDependenciesClasspath(CollectionUtil.set(module.value), true).accept(visitor);
+      }
     });
+    module.value.getClassPathItem().accept(visitor);
     {
       ProcessHandler _processHandler = new Java_Command().setProgramParameter("Julia").setVirtualMachineParameter(myDebuggerSettings.getCommandLine(true)).setClassPath(classPath).setClassName(fqName.value).createProcess();
       final ConsoleViewImpl _consoleView = new ConsoleViewImpl(project, false);
