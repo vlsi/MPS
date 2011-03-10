@@ -59,14 +59,14 @@ public class ProcessHandlerBuilder {
 
   public ProcessHandlerBuilder appendKey(@Nullable String key, String... parameter) {
     if (StringUtils.isNotEmpty(key) && parameter.length > 0) {
-      return append(key).append(parameter);
+      return append("-" + key).append(parameter);
     }
     return this;
   }
 
   public ProcessHandlerBuilder appendKey(@Nullable String key, @NotNull List<String> parameters) {
     if (StringUtils.isNotEmpty(key) && ListSequence.fromList(parameters).isNotEmpty()) {
-      return append(key).append(parameters);
+      return append("-" + key).append(parameters);
     }
     return this;
   }

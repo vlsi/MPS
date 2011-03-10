@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -32,7 +32,7 @@ public class CommandBuilderExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_lo57cy_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lo57cy_a");
     editorCell.addEditorCell(this.createRefCell_lo57cy_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lo57cy_b0(editorContext, node));
@@ -59,7 +59,7 @@ public class CommandBuilderExpression_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNodeList_lo57cy_c0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new CommandBuilderExpression_Editor.argumentListHandler_lo57cy_c0(node, "argument", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_argument");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
