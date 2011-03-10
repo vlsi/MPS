@@ -21,7 +21,7 @@ public class Home_Action extends GeneratedAction {
   public Home_Action() {
     super("Move Caret to Line Start", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

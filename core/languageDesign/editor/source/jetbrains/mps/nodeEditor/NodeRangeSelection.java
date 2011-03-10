@@ -117,8 +117,14 @@ public class NodeRangeSelection implements KeyboardHandler {
   }
 
   public boolean activate(KeyEvent keyEvent) {
-    EditorCell selectedCell = myEditorComponent.getSelectedCell();
-    SNode childNode = findAppropriateNode(selectedCell);
+    final EditorCell selectedCell = myEditorComponent.getSelectedCell();
+    SNode childNode = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+
+      @Override
+      public SNode compute() {
+        return findAppropriateNode(selectedCell);
+      }
+    });
 
     if (childNode != selectedCell.getSNode()) {
       myEditorComponent.selectNode(childNode);

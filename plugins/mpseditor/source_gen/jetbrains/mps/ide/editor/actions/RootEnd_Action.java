@@ -21,7 +21,7 @@ public class RootEnd_Action extends GeneratedAction {
   public RootEnd_Action() {
     super("Move Caret to Text End", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

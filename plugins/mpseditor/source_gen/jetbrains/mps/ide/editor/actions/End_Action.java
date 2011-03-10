@@ -21,7 +21,7 @@ public class End_Action extends GeneratedAction {
   public End_Action() {
     super("Move Caret to Line End", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
