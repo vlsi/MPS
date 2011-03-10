@@ -172,7 +172,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       final VFSNotifier vfsNotifier = new VFSNotifier(visitor.myDeletedFiles, visitor.myRenamedFiles);
       if (vfsNotifier.hasPendingNotifications()) {
         for (MPSNodeVirtualFile deletedFile : visitor.myDeletedFiles) {
-          myVirtualFiles.remove(deletedFile);
+          myVirtualFiles.remove(deletedFile.getSNodePointer());
         }
 
         SwingUtilities.invokeLater(new Runnable() {
@@ -250,7 +250,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         MPSNodeVirtualFile file = entry.getValue();
         if (node == null) {
           deletedFiles.add(file);
-          myVirtualFiles.remove(file);
+          myVirtualFiles.remove(file.getSNodePointer());
         } else {
           String oldName = file.getName();
           String newName = node.getPresentation();
